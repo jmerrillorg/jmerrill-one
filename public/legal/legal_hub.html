@@ -1,57 +1,26 @@
-<!-- Triggering Git track -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Legal Information | J Merrill One</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      padding: 2rem;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #1E90FF;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      margin: 1rem 0;
-    }
-    a {
-      text-decoration: none;
-      color: #1E90FF;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body>
-  <div class="container">
-    <h1>Legal Information</h1>
-    <p>Below you will find links to the official legal policies that govern the use of jmerrill.one and its associated services:</p>
-    <ul> 
-      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
-      <li><a href="/legal/terms-and-conditions.html">Terms & Conditions</a></li>
-      <li><a href="/legal/accessibility-statement.html">Accessibility Statement</a></li>
-      <li><a href="/legal/website-disclaimer.html">Website Disclaimer</a></li>
+<body class="bg-white text-gray-800 font-sans">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-center mb-6">Legal Information</h1>
+    <p class="text-center mb-8">
+      Below you will find links to the official legal policies that govern the use of <strong>jmerrill.one</strong> and its associated services.
+    </p>
+    <ul class="space-y-4 text-blue-600 text-lg text-center">
+      <li><a href="/legal/privacy-policy.html" class="hover:underline">Privacy Policy</a></li>
+      <li><a href="/legal/terms-and-conditions.html" class="hover:underline">Terms & Conditions</a></li>
+      <li><a href="/legal/accessibility-statement.html" class="hover:underline">Accessibility Statement</a></li>
+      <li><a href="/legal/website-disclaimer.html" class="hover:underline">Website Disclaimer</a></li>
     </ul>
-    <p>For questions or concerns, please contact us at <a href="mailto:legal@jmerrill.one">legal@jmerrill.one</a>.</p>
+    <p class="text-sm text-center text-gray-600 mt-10">
+      For questions or concerns, contact us at <a href="mailto:legal@jmerrill.one" class="underline">legal@jmerrill.one</a>
+    </p>
   </div>
 </body>
 </html>
