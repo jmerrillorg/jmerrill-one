@@ -44,14 +44,9 @@ export default function Home() {
         <p className="mt-2">J Merrill One</p>
         <p>📍 434 Hillpine Dr, Columbus, OH 43207-5010</p>
         <p>📞 Main Line: (614) 965-6057</p>
-        <p>📲 Text: (614) 490-1185</p>
         <p>✉ Email: <a href="mailto:info@jmerrill.one" className="text-blue-600">info@jmerrill.one</a></p>
       </section>
 
-      {/* Footer */}
-      <footer className="mt-10 w-full text-center p-4 bg-gray-800 text-white">
-        <p>&copy; {new Date().getFullYear()} J Merrill One. All Rights Reserved.</p>
-      </footer>
-    </div>
+      </div>
   );
 }
