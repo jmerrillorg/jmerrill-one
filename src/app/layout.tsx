@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link"; // ✅ Import Link from Next.js
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Styled Navbar */}
         <header className="bg-blue-600 shadow-md text-white px-6 py-4 flex justify-between items-center">
-          <a
+          <Link
             href="/"
             style={{
               color: "white",
@@ -37,7 +38,7 @@ export default function RootLayout({
             }}
           >
             J Merrill One
-          </a>
+          </Link>
 
           <nav style={{ display: "flex", gap: "1.5rem" }}>
             <a href="https://jmerrill.pub" style={{ color: "white", textDecoration: "none" }}>
@@ -49,9 +50,9 @@ export default function RootLayout({
             <a href="https://jmerrill.org" style={{ color: "white", textDecoration: "none" }}>
               Foundation
             </a>
-            <a href="/legal/legal_hub.html" style={{ color: "white", textDecoration: "none" }}>
+            <Link href="/legal/legal_hub.html" style={{ color: "white", textDecoration: "none" }}>
               Legal
-            </a>
+            </Link>
           </nav>
         </header>
 
@@ -70,12 +71,12 @@ export default function RootLayout({
         >
           <p>
             © {new Date().getFullYear()} J Merrill One. All rights reserved. |{" "}
-            <a
+            <Link
               href="/legal/legal_hub.html"
               style={{ textDecoration: "underline", color: "#1E90FF" }}
             >
               Legal Information
-            </a>
+            </Link>
           </p>
         </footer>
       </body>
