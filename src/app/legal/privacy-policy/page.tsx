@@ -15,7 +15,7 @@ export const metadata = {
         url: "https://jmerrill.one/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "J Merrill One – Your Hub for Publishing, Financial Services, and Community Development",
+        alt: "J Merrill One &rsquo; Your Hub for Publishing, Financial Services, and Community Development",
       },
     ],
   },
