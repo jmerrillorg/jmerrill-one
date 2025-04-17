@@ -10,9 +10,9 @@ export const metadata: Metadata = buildMetadata({
 export default function FoundationPage() {
   return (
     <main className="min-h-screen bg-background text-foreground px-6 py-16 text-center">
-      <h1 className="text-4xl font-bold text-primary mb-4">J Merrill Foundation, Inc.</h1>
+      <h1 className="text-4xl font-bold text-foundation mb-4">J Merrill Foundation, Inc.</h1>
       <p className="text-lg text-secondary mb-6">
-        Purpose. Wisdom. Empowerment. We&rsquo;re building programs and partnerships that uplift communities and transform futures.
+        Purpose. Wisdom. Empowerment. We’re building programs and partnerships that uplift communities and transform futures.
       </p>
       <p className="text-subtle">This page will include funding opportunities, volunteer initiatives, and impact reports. Stay tuned.</p>
     </main>

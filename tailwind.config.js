@@ -10,33 +10,37 @@ module.exports = {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         accent: 'var(--accent)',
-        card: 'var(--accent)', // NEW: use in bg-card
-
-        // ✅ Brand-Specific Colors
-    publishing: '#1E90FF',
-    financial: '#007F5C',
-    foundation: '#93329E',
-    productions: '#F97316',
-      },
-      
-      fontFamily: {
-        geist: ['var(--font-geist-sans)', 'sans-serif'],
-        geistmono: ['var(--font-geist-mono)', 'monospace'],
+        card: 'var(--accent)',
+        publishing: '#1E90FF',
+        financial: '#007F5C',
+        foundation: '#93329E',
+        productions: '#F97316',
+        appointments: '#2563EB',
       },
     },
   },
   plugins: [
-    plugin(function ({ addUtilities }) {
+    plugin(function ({ addUtilities, theme }) {
       addUtilities({
-        '.bg-card': {
-          backgroundColor: 'var(--accent)',
-        },
-        '.text-body': {
-          color: 'var(--foreground)',
-        },
-        '.text-subtle': {
-          color: 'var(--secondary)',
-        },
+        '.bg-card': { backgroundColor: 'var(--accent)' },
+        '.text-body': { color: 'var(--foreground)' },
+        '.text-subtle': { color: 'var(--secondary)' },
+      });
+
+      const brandColors = ['publishing', 'financial', 'foundation', 'productions', 'appointments'];
+
+      brandColors.forEach((name) => {
+        const hex = theme('colors')[name];
+        if (!hex) return;
+
+        addUtilities({
+          [`.text-${name}`]: { color: hex },
+          [`.bg-${name}`]: { backgroundColor: hex },
+          [`.hover\\:bg-${name}\\/90:hover`]: {
+            backgroundColor: hex + 'E6', // 90% opacity for hex
+          },
+          [`.border-${name}`]: { borderColor: hex },
+        });
       });
     }),
   ],
