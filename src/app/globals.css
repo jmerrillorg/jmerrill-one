@@ -2,48 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === Custom Theme Variables (Light Mode) === */
-:root {
-  --background: #F9FAFB;         /* Light neutral background */
-  --foreground: #262626;         /* Dark gray text */
+/* === J Merrill One – Custom Theme Variables === */
 
-  --primary: #1E90FF;            /* J Merrill Blue */
-  --secondary: #262626;          /* Dark gray */
-  --accent: #ffffff;             /* White */
+/* Light Mode (Default) */
+:root {
+  --background: #F9FAFB;           /* Light neutral background */
+  --foreground: #262626;           /* Dark gray text */
+  --primary: #1E90FF;              /* J Merrill One Blue */
+  --secondary: #262626;            /* Body text / headings */
+  --accent: #ffffff;               /* White for elements & callouts */
 
   --font-geist-sans: 'Geist', sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
 }
 
-/* === Light Mode (default) === */
-:root {
-  --background: #F9FAFB;
-  --foreground: #262626;
-
-  --primary: #1E90FF;
-  --secondary: #262626;
-  --accent: #ffffff;
-
-  --font-geist-sans: 'Geist', sans-serif;
-  --font-geist-mono: 'Geist Mono', monospace;
-}
-
-/* === Dark Mode via data-theme attribute === */
+/* === Dark Mode (Improved Contrast) === */
 html[data-theme='dark'] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --accent: #171717;
+  --background: #0a0a0a;          /* Very dark background */
+  --foreground: #f3f4f6;          /* Near-white text */
+  --secondary: #d1d5db;           /* Lighter gray for subtext */
+  --primary: #60a5fa;             /* Softer Dodger Blue */
+  --accent: #1f2937;              /* Dark gray for cards/boxes */
 }
 
-/* === Global Base Styling === */
+/* === Base Styles === */
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* === Link Styling === */
+/* === Link Styles === */
 a {
   color: var(--primary);
   text-decoration: underline;
@@ -52,15 +42,27 @@ a:hover {
   color: #0d6efd; /* Deeper blue on hover */
 }
 
-/* === Optional Utility Classes (if not using Tailwind directly for these) === */
+/* === Utility Classes for Tailwind Alignment === */
 .bg-background {
   background-color: var(--background);
 }
-
 .text-foreground {
   color: var(--foreground);
 }
-
 .text-primary {
   color: var(--primary);
+}
+.text-secondary {
+  color: var(--secondary);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+
+/* === Font Utility (Fallback if Tailwind Plugin Not Used) === */
+.font-geist {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+.font-geist-mono {
+  font-family: var(--font-geist-mono), monospace;
 }

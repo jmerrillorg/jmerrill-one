@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://jmerrill.one/</loc>
+    <priority>1.00</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://jmerrill.one/legal</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://jmerrill.one/legal/privacy-policy</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://jmerrill.one/legal/terms-and-conditions</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://jmerrill.one/legal/accessibility-statement</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://jmerrill.one/legal/website-disclaimer</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+</urlset>

@@ -1,53 +1,37 @@
-// src/app/appointments/page.tsx
+import type { Metadata } from "next";
+import AppointmentCard from "@/components/AppointmentCard";
+import { buildMetadata } from "@/lib/seo";
 
-import { AppointmentCard, AppointmentSection } from "@/components/AppointmentCard";
+export const metadata: Metadata = buildMetadata({
+  title: "Book an Appointment | J Merrill One",
+  description: "Easily schedule consultations for publishing, insurance, and community programs.",
+  path: "/appointments",
+});
 
 export default function AppointmentsPage() {
-  const sections: AppointmentSection[] = [
-    {
-      title: "J Merrill Publishing, Inc.",
-      description: "Schedule your publishing consultation or strategy session.",
-      button: {
-        label: "Book Publishing Appointment",
-        url: "https://outlook.office.com/book/JMerrillPublishingInc@jmerrill.pub/"
-      }
-    },
-    {
-      title: "J Merrill Financial, LLC.",
-      description: "Meet for insurance, pre-need, or policy review services.",
-      button: {
-        label: "Book Financial Appointment",
-        url: "https://outlook.office.com/book/JMerrillFinancial@jmerrill.financial/"
-      }
-    },
-    {
-      title: "J Merrill Foundation, Inc.",
-      description: "Connect about programs, partnerships, and community outreach.",
-      button: {
-        label: "Book Foundation Appointment",
-        url: "https://outlook.office.com/book/JMerrillFoundation@jmerrill.org/"
-      }
-    },
-    {
-      title: "Marlan Gary Funeral Home",
-      description: "Pre-need planning or funeral consultation services.",
-      button: {
-        label: "Book Funeral Appointment",
-        url: "https://outlook.office.com/book/MarlanGaryPreNeed@jmerrill.financial/"
-      }
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-white py-12 px-6">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-10">
-        Appointments Hub
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {sections.map((section, i) => (
-          <AppointmentCard key={i} section={section} />
-        ))}
+    <main className="bg-background text-foreground min-h-screen p-6">
+      <div className="max-w-5xl mx-auto space-y-10">
+        <h1 className="text-3xl font-bold text-primary">Schedule an Appointment</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <AppointmentCard
+            title="Publishing Consultation"
+            description="Discuss your manuscript, package options, and publishing timeline with our team."
+            href="https://outlook.office.com/book/JMerrillPublishingInc@jmerrill.pub/"
+          />
+          <AppointmentCard
+            title="Financial Planning"
+            description="Book a session to review your insurance, pre-need planning, or financial goals."
+            href="https://bit.ly/4iZLTXc"
+          />
+          <AppointmentCard
+            title="Foundation Project Meeting"
+            description="Set up time to talk about programs, grants, or collaborative work with JMF."
+            href="https://outlook.office.com/book/JMerrillFoundationInc@jmerrill.org/"
+          />
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link"; // ✅ Import Link from Next.js
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,61 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Styled Navbar */}
-        <header className="bg-blue-600 shadow-md text-white px-6 py-4 flex justify-between items-center">
-          <Link
-            href="/"
-            style={{
-              color: "white",
-              fontWeight: "bold",
-              fontSize: "1.25rem",
-              textDecoration: "none",
-            }}
-          >
-            J Merrill One
-          </Link>
+    <html lang="en" data-theme="light">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} font-geist antialiased bg-background text-foreground transition-colors`}
+      >
+        {/* Top Navigation */}
+        <Navbar />
 
-          <nav style={{ display: "flex", gap: "1.5rem" }}>
-            <a href="https://jmerrill.pub" style={{ color: "white", textDecoration: "none" }}>
-              Publishing
-            </a>
-            <a href="https://jmerrill.financial" style={{ color: "white", textDecoration: "none" }}>
-              Financial
-            </a>
-            <a href="https://jmerrill.org" style={{ color: "white", textDecoration: "none" }}>
-              Foundation
-            </a>
-            <Link href="/legal/legal_hub.html" style={{ color: "white", textDecoration: "none" }}>
-              Legal
-            </Link>
-          </nav>
-        </header>
+        {/* Main Content */}
+        <main className="min-h-screen flex flex-col">{children}</main>
 
-        {children}
-
-        {/* Footer */}
-        <footer
-          style={{
-            textAlign: "center",
-            fontSize: "0.875rem",
-            padding: "1rem",
-            borderTop: "1px solid #eaeaea",
-            marginTop: "2rem",
-            color: "#666",
-          }}
-        >
-          <p>
-            © {new Date().getFullYear()} J Merrill One. All rights reserved. |{" "}
-            <Link
-              href="/legal/legal_hub.html"
-              style={{ textDecoration: "underline", color: "#1E90FF" }}
-            >
-              Legal Information
-            </Link>
-          </p>
-        </footer>
+        {/* Site Footer */}
+        <Footer />
       </body>
     </html>
   );
