@@ -15,7 +15,7 @@ export const metadata = {
         url: "https://jmerrill.one/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "J Merrill One &rsquo; Your Hub for Publishing, Financial Services, and Community Development",
+        alt: "J Merrill One’s Your Hub for Publishing, Financial Services, and Community Development",
       },
     ],
   },
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
         </a>
       </p>
 
-      <h2 className="text-2xl font-semibold text-primary mb-2">6. Children&apos;s Privacy</h2>
+      <h2 className="text-2xl font-semibold text-primary mb-2">6. Privacy Regarding Children</h2>
       <p className="mb-6">
         We do not knowingly collect personal data from children under the age of 13.
       </p>

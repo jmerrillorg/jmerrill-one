@@ -1,11 +1,11 @@
 export const metadata = {
   title: "Terms & Conditions | J Merrill One",
   description:
-    "Understand the rules, responsibilities, and policies that govern your use of J Merrill One's publishing, financial, nonprofit, and media services.",
+    "Understand the rules, responsibilities, and policies that govern your use of J Merrill One’s publishing, financial, nonprofit, and media services.",
   openGraph: {
     title: "Terms & Conditions | J Merrill One",
     description:
-      "Review the terms that apply to all users of J Merrill One's platforms and services.",
+      "Review the terms that apply to all users of J Merrill One’s platforms and services.",
     url: "https://jmerrill.one/legal/terms-and-conditions",
     siteName: "J Merrill One",
     type: "article",
@@ -62,7 +62,7 @@ export default function TermsConditionsPage() {
       <h2 className="text-2xl font-semibold text-primary mb-2">5. Disclaimers</h2>
       <p className="mb-6">
         We make no guarantees of outcomes unless expressly stated in a service agreement. All
-        services are provided on an &quot;as-is&quot; basis.
+        services are provided on an &ldquo;as-is&rdquo; basis.
       </p>
 
       <h2 className="text-2xl font-semibold text-primary mb-2">6. Limitation of Liability</h2>
