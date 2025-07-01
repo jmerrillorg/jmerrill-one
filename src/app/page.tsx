@@ -1,99 +1,121 @@
-import Image from "next/image";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "../lib/seo";
+import { ServiceCard } from "../components/ServiceCard";
+import HeroLogo from "../components/client/HeroLogo";
 
 export const metadata = buildMetadata({
   title: "Welcome to J Merrill One",
-  description: "Your hub for Publishing, Financial Services, and Community Development.",
+  description: "J Merrill One – Publishing. Financial Services. Nonprofit Impact.",
   path: "/",
 });
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground">
-      {/* Logo Section */}
-      <div className="w-full flex justify-center mt-10">
-        <Image
-          src="/logo.jpg"
-          alt="J Merrill Logo"
-          width={200}
-          height={200}
-          className="rounded-full border-4 border-primary"
-        />
-      </div>
+    <div className="relative min-h-screen flex flex-col items-center justify-center bg-background text-foreground">
+      {/* Animated Logo */}
+      <HeroLogo />
 
-      {/* Main Content */}
-      <main className="text-center mt-6 p-4">
-        <h1 className="text-4xl font-bold text-primary">Welcome to J Merrill One</h1>
-        <p className="mt-2 text-lg text-secondary">
-          Your hub for Publishing, Financial Services, and Community Development.
+      {/* Headline */}
+      <h1 className="text-4xl font-bold text-primary mt-6 text-center">
+        Welcome to <strong>J Merrill One</strong>
+      </h1>
+      <p className="mt-2 text-lg text-secondary text-center">
+        <strong>J Merrill One</strong> – Publishing. Financial Services. Nonprofit Impact.
+      </p>
+
+      {/* Mission */}
+      <section className="mt-8 max-w-4xl text-center px-6">
+        <p className="text-base text-muted">
+          At <strong>J Merrill One</strong>, we empower individuals, entrepreneurs, and communities
+          through transformative publishing, financial security, and mission-driven nonprofit engagement.
         </p>
-      </main>
+      </section>
 
-      {/* Services Section */}
+      {/* Services */}
       <section className="mt-10 w-full max-w-6xl px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <a
-            href="https://jmerrill.pub"
-            className="p-6 bg-accent border-2 border-publishing rounded-xl shadow transition hover:ring-2 hover:ring-publishing text-center"
-          >
-            <h2 className="text-2xl font-semibold text-publishing">Publishing</h2>
-            <p className="text-foreground mt-2">
-              Empowering authors with full-service publishing solutions.
-            </p>
-          </a>
-          <a
-            href="/foundation"
-            className="p-6 bg-accent border-2 border-foundation rounded-xl shadow transition hover:ring-2 hover:ring-foundation text-center"
-          >
-            <h2 className="text-2xl font-semibold text-foundation">Foundation</h2>
-            <p className="text-foreground mt-2">
-              Supporting communities through outreach and education.
-            </p>
-          </a>
-          <a
-            href="https://jmerrill.financial"
-            className="p-6 bg-accent border-2 border-financial rounded-xl shadow transition hover:ring-2 hover:ring-financial text-center"
-          >
-            <h2 className="text-2xl font-semibold text-financial">Financial</h2>
-            <p className="text-foreground mt-2">
-              Providing financial services, insurance, and legacy planning.
-            </p>
-          </a>
-          <a
-            href="/appointments"
-            className="p-6 bg-accent border-2 border-gray-300 rounded-xl shadow transition hover:ring-2 hover:ring-primary text-center"
-          >
-            <h2 className="text-2xl font-semibold text-primary">Appointments</h2>
-            <p className="text-foreground mt-2">
-              Book consultations for publishing, financial, or nonprofit services.
-            </p>
-          </a>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ServiceCard
+            href="https://www.jmerrill.pub"
+            emoji="📘"
+            title="Publishing"
+            description="Empowering authors with full-service publishing solutions."
+            borderColor="publishing"
+            ringColor="publishing"
+          />
+          <ServiceCard
+            href="https://www.jmerrill.foundation"
+            emoji="🟣"
+            title="Foundation"
+            description="Supporting communities through outreach and education."
+            borderColor="foundation"
+            ringColor="foundation"
+          />
+          <ServiceCard
+            href="https://www.jmerrill.financial"
+            emoji="💼"
+            title="Financial"
+            description="Providing financial services, insurance, and legacy planning."
+            borderColor="financial"
+            ringColor="financial"
+          />
         </div>
       </section>
 
-      {/* Coming Soon Section */}
-      <section className="mt-12 text-center w-full max-w-4xl px-6">
-        <h2 className="text-2xl font-semibold text-primary">Coming Soon</h2>
-        <p className="text-productions mt-2">
-          <a href="/productions" className="underline hover:text-productions/80 transition">
-            J Merrill Productions
-          </a>{" "}
-          – Expanding into media and immersive content.
-        </p>
-      </section>
+      {/* Contact & Footer */}
+      <section className="mt-12 w-full max-w-6xl px-6 py-6 rounded-xl shadow bg-card text-body">
+        <h2 className="text-2xl font-semibold text-primary text-center mb-6">Contact Us</h2>
+        <div className="grid md:grid-cols-3 gap-6 text-sm text-subtle">
+          <div className="text-center md:text-left">
+            <p className="font-bold text-body">Headquarters</p>
+            <p>2323 W 5th Ave, Suite 120</p>
+            <p>Columbus, OH 43204</p>
+          </div>
+          <div className="text-center md:text-left">
+            <p className="font-bold text-body">Contact</p>
+            <p>Main Line: (614) 965-6057</p>
+            <p>
+              Email:{" "}
+              <a href="mailto:info@jmerrill.one" className="text-primary underline">
+                info@jmerrill.one
+              </a>
+            </p>
+            <p>
+              Web:{" "}
+              <a href="https://www.jmerrill.one" className="text-primary underline">
+                www.jmerrill.one
+              </a>
+            </p>
+          </div>
+          <div className="text-center md:text-left">
+            <p className="font-bold text-body">Hours</p>
+            <p>Mon–Thu: 10:00 AM – 6:00 PM</p>
+            <p>Fri: 10:00 AM – 4:00 PM</p>
+            <p>Sat: By Appointment Only</p>
+            <p>Sun: Closed</p>
+          </div>
+        </div>
 
-      {/* Contact Section */}
-      <section className="mt-12 text-center w-full max-w-4xl px-6 py-6 rounded-xl shadow bg-card text-body">
-        <h2 className="text-2xl font-semibold text-primary">Contact Us</h2>
-        <p className="mt-2">J Merrill One</p>
-        <p className="text-subtle">📍 434 Hillpine Dr, Columbus, OH 43207-5010</p>
-        <p className="text-subtle">📞 Main Line: (614) 965-6057</p>
-        <p className="text-subtle">
-          ✉ Email: {" "}
-          <a href="mailto:info@jmerrill.one" className="text-primary underline">
-            info@jmerrill.one
-          </a>
-        </p>
+        {/* Divider */}
+        <hr className="my-6 border-muted" />
+
+        {/* Legal & Identity */}
+        <div className="text-center text-xs text-subtle mt-4 space-y-1">
+          <p>© 2025 <strong>J Merrill One</strong>. All rights reserved.</p>
+          <p>
+            <strong>J Merrill One</strong> is a collective of purpose-driven ventures:
+            <br />
+            <a href="https://www.jmerrill.pub" className="font-bold text-primary hover:underline">
+              📘 <strong>J Merrill Publishing, Inc.</strong>
+            </a>{" · "}
+            <a href="https://www.jmerrill.financial" className="font-bold text-primary hover:underline">
+              💼 <strong>J Merrill Financial, LLC</strong>
+            </a>{" · "}
+            <a href="https://www.jmerrill.foundation" className="font-bold text-primary hover:underline">
+              🟣 <strong>J Merrill Foundation, Inc.</strong>
+            </a>
+          </p>
+          <p>Registered in Ohio · EINs available upon request</p>
+          <p>Tax-exempt status applies to <strong>J Merrill Foundation, Inc.</strong></p>
+        </div>
       </section>
     </div>
   );
