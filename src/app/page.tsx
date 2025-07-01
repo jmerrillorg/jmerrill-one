@@ -60,8 +60,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact & Footer */}
-      <section className="mt-12 w-full max-w-6xl px-6 py-6 rounded-xl shadow bg-card text-body">
+      {/* Contact card only (legal lives in global <Footer />) */}
+      <section className="mt-12 w-full max-w-4xl px-6 py-6 rounded-xl shadow bg-card text-body">
         <h2 className="text-2xl font-semibold text-primary text-center mb-6">Contact Us</h2>
         <div className="grid md:grid-cols-3 gap-6 text-sm text-subtle">
           <div className="text-center md:text-left">
@@ -73,13 +73,13 @@ export default function Home() {
             <p className="font-bold text-body">Contact</p>
             <p>Main Line: (614) 965-6057</p>
             <p>
-              Email:{" "}
+              Email:&nbsp;
               <a href="mailto:info@jmerrill.one" className="text-primary underline">
                 info@jmerrill.one
               </a>
             </p>
             <p>
-              Web:{" "}
+              Web:&nbsp;
               <a href="https://www.jmerrill.one" className="text-primary underline">
                 www.jmerrill.one
               </a>
@@ -87,34 +87,11 @@ export default function Home() {
           </div>
           <div className="text-center md:text-left">
             <p className="font-bold text-body">Hours</p>
-            <p>Mon–Thu: 10:00 AM – 6:00 PM</p>
-            <p>Fri: 10:00 AM – 4:00 PM</p>
+            <p>Mon–Thu: 10 AM – 6 PM</p>
+            <p>Fri: 10 AM – 4 PM</p>
             <p>Sat: By Appointment Only</p>
             <p>Sun: Closed</p>
           </div>
-        </div>
-
-        {/* Divider */}
-        <hr className="my-6 border-muted" />
-
-        {/* Legal & Identity */}
-        <div className="text-center text-xs text-subtle mt-4 space-y-1">
-          <p>© 2025 <strong>J Merrill One</strong>. All rights reserved.</p>
-          <p>
-            <strong>J Merrill One</strong> is a collective of purpose-driven ventures:
-            <br />
-            <a href="https://www.jmerrill.pub" className="font-bold text-primary hover:underline">
-              📘 <strong>J Merrill Publishing, Inc.</strong>
-            </a>{" · "}
-            <a href="https://www.jmerrill.financial" className="font-bold text-primary hover:underline">
-              💼 <strong>J Merrill Financial, LLC</strong>
-            </a>{" · "}
-            <a href="https://www.jmerrill.foundation" className="font-bold text-primary hover:underline">
-              🟣 <strong>J Merrill Foundation, Inc.</strong>
-            </a>
-          </p>
-          <p>Registered in Ohio · EINs available upon request</p>
-          <p>Tax-exempt status applies to <strong>J Merrill Foundation, Inc.</strong></p>
         </div>
       </section>
     </div>
