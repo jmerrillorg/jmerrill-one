@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< Updated upstream
 
 /* === J Merrill One – Custom Theme Variables === */
 
@@ -65,4 +66,10 @@ a:hover {
 }
 .font-geist-mono {
   font-family: var(--font-geist-mono), monospace;
+=======
+
+/* Optional: fallback styles */
+body {
+  @apply bg-white text-black font-sans; /* fallback if CSS variables fail */
+>>>>>>> Stashed changes
 }
