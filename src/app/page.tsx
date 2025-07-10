@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+// ✅ Home Page /src/app/page.tsx
 import { buildMetadata } from "../lib/seo";
 import { ServiceCard } from "../components/ServiceCard";
 import HeroLogo from "../components/client/HeroLogo";
@@ -8,14 +8,9 @@ export const metadata = buildMetadata({
   description: "J Merrill One – Publishing. Financial Services. Nonprofit Impact.",
   path: "/",
 });
-=======
-// ✅ Home Page /new_one/src/app/page.tsx
-import HeroLogo from "@/components/HeroLogo";
->>>>>>> Stashed changes
 
 export default function HomePage() {
   return (
-<<<<<<< Updated upstream
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-background text-foreground">
       {/* Animated Logo */}
       <HeroLogo />
@@ -100,20 +95,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-=======
-    <div className="text-center py-20">
-      <HeroLogo />
-      <h1 className="text-4xl font-bold text-primary mt-6">Welcome to J Merrill One</h1>
-      <p className="mt-4 text-lg text-secondary">Publishing. Financial Services. Nonprofit Impact.</p>
-      <div className="mt-8">
-        <a
-          href="/brands"
-          className="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
-        >
-          Explore Our Brands
-        </a>
-      </div>
->>>>>>> Stashed changes
     </div>
   );
 }
