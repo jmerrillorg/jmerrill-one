@@ -1,6 +1,10 @@
-// src/lib/seo.ts
-
 const defaultImage = "https://jmerrill.one/og-image.jpg";
+
+export const siteMetadata = {
+  title: "J Merrill One",
+  description: "Your hub for Publishing, Financial Services, and Community Development.",
+  url: "https://jmerrill.one"
+};
 
 export function buildMetadata({
   title,

@@ -16,11 +16,10 @@ export function HeroLogo() {
         width={200}
         height={200}
         className="rounded-full border-4 border-primary"
-        priority // ensures LCP is fast
+        priority
       />
     </motion.div>
   );
 }
 
-// Keep default export for backward-compat with existing imports
 export default HeroLogo;

@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255 255 255;
+  --foreground: 17 17 17;
+  --primary: 30 144 255;
+  --secondary: 147 50 158;
+  --accent: 249 115 22;
+}
+
+/* === Base === */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-primary;
+  }
+
+  a {
+    @apply text-accent hover:underline;
+  }
+
+  strong {
+    @apply text-primary font-semibold;
+  }
+
+  code {
+    @apply px-1 py-0.5 rounded bg-secondary/20 text-sm font-mono;
+  }
+}
+
+/* === Components === */
+@layer components {
+  .btn-primary {
+    @apply inline-block px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-4 py-2 bg-secondary text-primary rounded-lg font-medium hover:bg-secondary/80 transition;
+  }
+
+  .badge-accent {
+    @apply inline-flex items-center px-2 py-1 bg-accent text-white text-xs rounded-full;
+  }
+
+  .card {
+    @apply bg-white shadow-md rounded-2xl p-6 border border-secondary/20;
+  }
+}
+
+/* === Utilities === */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}

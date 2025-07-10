@@ -1,73 +1,91 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
-import ThemeToggle from './ThemeToggle';
-import { AnimatePresence, motion } from 'framer-motion';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+import ThemeToggle from "./ThemeToggle";
+import { useState } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+const mainLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/appointments", label: "Appointments" },
+  { href: "/brands", label: "Brands" },
+  { href: "/contact", label: "Contact" },
+];
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+const moreLinks = [
+  { href: "/labs", label: "Labs" },
+  { href: "/projects", label: "Projects" },
+  { href: "/legal", label: "Legal Hub" },
+];
+
+export default function NavBar() {
+  const pathname = usePathname();
 
   return (
-    <header className="bg-background shadow-md sticky top-0 z-50 transition-colors">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="text-xl font-bold text-primary">
-          <Link href="/">J Merrill One</Link>
-        </div>
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link href="/" className="font-bold text-lg text-primary">
+          J Merrill One
+        </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6 font-medium text-foreground">
-          <Link href="https://jmerrill.pub" className="text-publishing hover:text-publishing/80">Publishing</Link>
-          <Link href="https://jmerrill.financial" className="text-financial hover:text-financial/80">Financial</Link>
-          <Link href="https://jmerrill.foundation" className="text-foundation hover:text-foundation/80">Foundation</Link>
-          <Link href="/appointments" className="text-appointments hover:text-appointments/80">Appointments</Link>
-
-          {/* Dropdown with animation */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              className="text-foreground hover:text-primary"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              More ▾
-            </button>
-
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  key="dropdown"
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute mt-2 right-0 w-48 bg-background border border-gray-200 shadow-md rounded-md p-2 space-y-2 text-sm z-50"
-                >
-                  <Link href="/legal" className="block hover:text-primary">Legal Hub</Link>
-                  <Link href="/legal/privacy-policy" className="block hover:text-primary">Privacy Policy</Link>
-                  <Link href="/legal/terms-and-conditions" className="block hover:text-primary">Terms & Conditions</Link>
-                  <Link href="/legal/accessibility-statement" className="block hover:text-primary">Accessibility</Link>
-                </motion.div>
+        <div className="flex items-center gap-6 text-sm">
+          {mainLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={clsx(
+                "transition-colors hover:text-primary",
+                pathname === href ? "text-primary font-semibold" : "text-foreground"
               )}
-            </AnimatePresence>
-          </div>
+            >
+              {label}
+            </Link>
+          ))}
+
+          <Menu as="div" className="relative inline-block text-left">
+            <div>
+              <Menu.Button className="inline-flex justify-center w-full text-sm font-medium text-foreground hover:text-primary">
+                More <ChevronDownIcon className="w-4 h-4 ml-1" aria-hidden="true" />
+              </Menu.Button>
+            </div>
+
+            <Transition
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              <Menu.Items className="absolute right-0 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-md bg-background shadow-lg ring-1 ring-black/5 focus:outline-none z-50">
+                <div className="px-1 py-1">
+                  {moreLinks.map(({ href, label }) => (
+                    <Menu.Item key={href}>
+                      {({ active }) => (
+                        <Link
+                          href={href}
+                          className={clsx(
+                            "block px-4 py-2 text-sm",
+                            active ? "text-primary font-semibold" : "text-foreground"
+                          )}
+                        >
+                          {label}
+                        </Link>
+                      )}
+                    </Menu.Item>
+                  ))}
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
 
           <ThemeToggle />
         </div>
-
-        {/* Mobile Menu Placeholder */}
-        {/* If you're ready to build out the mobile version, I can drop that too */}
-      </nav>
+      </div>
     </header>
   );
 }

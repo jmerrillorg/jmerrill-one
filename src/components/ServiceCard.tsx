@@ -13,9 +13,9 @@ interface ServiceCardProps {
 }
 
 const borderClasses: Record<ServiceCardProps["borderColor"], string> = {
-  publishing: "border-publishing text-publishing",
-  foundation: "border-foundation text-foundation",
-  financial: "border-financial text-financial",
+  publishing: "border-publishing text-publishing dark:border-publishing dark:text-publishing",
+  foundation: "border-foundation text-foundation dark:border-foundation dark:text-foundation",
+  financial: "border-financial text-financial dark:border-financial dark:text-financial",
 };
 
 const ringClasses: Record<ServiceCardProps["ringColor"], string> = {
@@ -32,20 +32,20 @@ export const ServiceCard: FC<ServiceCardProps> = ({
   borderColor,
   ringColor,
 }) => {
-  const borderClass = borderClasses[borderColor] ?? "border-gray-300 text-gray-500";
-  const ringClass = ringClasses[ringColor] ?? "hover:ring-2 hover:ring-gray-300";
+  const borderClass = borderClasses[borderColor] ?? "border-gray-300 text-gray-700 dark:text-gray-200";
+  const ringClass = ringClasses[ringColor] ?? "hover:ring-2 hover:ring-gray-400";
 
   return (
     <motion.a
       href={href}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.98 }}
-      className={`p-6 bg-accent border-2 rounded-xl shadow transition text-center ${borderClass} ${ringClass}`}
+      className={`p-6 bg-white dark:bg-gray-900 border-2 rounded-xl shadow-md transition duration-200 ease-in-out text-center ${borderClass} ${ringClass}`}
     >
       <h2 className="text-2xl font-semibold">
         {emoji} {title}
       </h2>
-      <p className="text-foreground mt-2">{description}</p>
+      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{description}</p>
     </motion.a>
   );
 };

@@ -1,3 +1,5 @@
+import HeroLogo from "@/components/shared/HeroLogo";
+
 export const metadata = {
   title: "Privacy Policy | J Merrill One",
   description:
@@ -31,12 +33,17 @@ export const metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-12 bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary">Privacy Policy</h1>
+      <div className="flex justify-center mb-6">
+        <HeroLogo />
+      </div>
 
-      <p className="mb-4">
+      <h1 className="text-3xl font-bold mb-6 text-primary text-center">Privacy Policy</h1>
+
+      <p className="mb-4 text-center">
         Welcome to <strong>J Merrill One</strong> – Publishing. Financial Services. Nonprofit Impact.
         This Privacy Policy outlines how we collect, use, disclose, and protect your information across all our affiliated entities:
       </p>
+
       <ul className="list-disc list-inside mb-6">
         <li>J Merrill Publishing, Inc.</li>
         <li>J Merrill Financial, LLC</li>

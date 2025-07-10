@@ -1,3 +1,5 @@
+import HeroLogo from "@/components/shared/HeroLogo";
+
 export const metadata = {
   title: "Terms & Conditions | J Merrill One",
   description:
@@ -22,12 +24,17 @@ export const metadata = {
 export default function TermsConditionsPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-12 bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary">Terms &amp; Conditions</h1>
+      <div className="flex justify-center mb-6">
+        <HeroLogo />
+      </div>
 
-      <p className="mb-4">
+      <h1 className="text-3xl font-bold mb-6 text-primary text-center">Terms &amp; Conditions</h1>
+
+      <p className="mb-4 text-center">
         These Terms &amp; Conditions apply to all users of <strong>J Merrill One</strong> and the
         associated services of:
       </p>
+
       <ul className="list-disc list-inside mb-6">
         <li>J Merrill Publishing, Inc.</li>
         <li>J Merrill Financial, LLC</li>
@@ -84,14 +91,14 @@ export default function TermsConditionsPage() {
 
       <h2 className="text-2xl font-semibold text-primary mb-2">9. Contact Us</h2>
       <p className="mb-2">
-        📧{' '}
+        📧{" "}
         <a href="mailto:legal@jmerrill.one" className="underline text-primary">
           legal@jmerrill.one
         </a>
         <br />
         📞 +1 (614) 965-6057
         <br />
-        📍 434 Hillpine Dr., Columbus, OH 43207
+        📍 2323 W 5th Ave, Suite 120, Columbus, OH 43204
       </p>
     </main>
   );
