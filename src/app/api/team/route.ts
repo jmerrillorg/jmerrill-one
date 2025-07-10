@@ -1,7 +1,17 @@
-// src/app/api/team/route.ts
 import { NextResponse } from 'next/server';
 import { Client } from '@microsoft/microsoft-graph-client';
 import 'isomorphic-fetch';
+
+interface GraphUser {
+  id: string;
+  displayName?: string;
+  jobTitle?: string;
+  mail?: string;
+  userPrincipalName?: string;
+  mobilePhone?: string;
+  department?: string;
+  profilePhotoUrl?: string;
+}
 
 export async function GET(request: Request) {
   try {
@@ -36,7 +46,7 @@ export async function GET(request: Request) {
       authProvider: (done) => done(null, accessToken),
     });
 
-    const allUsers: any[] = [];
+    const allUsers: GraphUser[] = [];
     let response = await client
       .api('/users')
       .select('id,displayName,jobTitle,mail,userPrincipalName,mobilePhone,department')
@@ -50,7 +60,6 @@ export async function GET(request: Request) {
       allUsers.push(...response.value);
     }
 
-    // Optional filters
     const filteredUsers = allUsers.filter((user) => {
       const domainMatch = domainFilter ? user.mail?.toLowerCase().endsWith(domainFilter.toLowerCase()) : true;
       const jobMatch = jobTitleFilter ? user.jobTitle?.toLowerCase().includes(jobTitleFilter.toLowerCase()) : true;
@@ -58,15 +67,17 @@ export async function GET(request: Request) {
       return domainMatch && jobMatch && deptMatch;
     });
 
-    // Append profilePhoto proxy route URL (optional – requires image proxy setup)
-    const enrichedUsers = filteredUsers.map(user => ({
+    const enrichedUsers = filteredUsers.map((user) => ({
       ...user,
       profilePhotoUrl: `/api/team/photo?id=${user.id}`,
     }));
 
     return NextResponse.json(enrichedUsers);
-  } catch (error: any) {
+  } catch (error) {
     console.error('Graph API Error:', error);
-    return NextResponse.json({ error: error.message || 'Unknown error' }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : 'Unknown error' },
+      { status: 500 }
+    );
   }
 }

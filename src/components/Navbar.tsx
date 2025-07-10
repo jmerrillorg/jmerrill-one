@@ -1,25 +1,24 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import clsx from "clsx";
-import ThemeToggle from "./ThemeToggle";
-import { useState } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
+import ThemeToggle from './ThemeToggle';
+import { Menu, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const mainLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/appointments", label: "Appointments" },
-  { href: "/brands", label: "Brands" },
-  { href: "/contact", label: "Contact" },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/appointments', label: 'Appointments' },
+  { href: '/brands', label: 'Brands' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const moreLinks = [
-  { href: "/labs", label: "Labs" },
-  { href: "/projects", label: "Projects" },
-  { href: "/legal", label: "Legal Hub" },
+  { href: '/labs', label: 'Labs' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/legal', label: 'Legal Hub' },
 ];
 
 export default function NavBar() {
@@ -38,18 +37,20 @@ export default function NavBar() {
               key={href}
               href={href}
               className={clsx(
-                "transition-colors hover:text-primary",
-                pathname === href ? "text-primary font-semibold" : "text-foreground"
+                'transition-colors hover:text-primary',
+                pathname === href ? 'text-primary font-semibold' : 'text-foreground'
               )}
             >
               {label}
             </Link>
           ))}
 
+          {/* Dropdown */}
           <Menu as="div" className="relative inline-block text-left">
             <div>
-              <Menu.Button className="inline-flex justify-center w-full text-sm font-medium text-foreground hover:text-primary">
-                More <ChevronDownIcon className="w-4 h-4 ml-1" aria-hidden="true" />
+              <Menu.Button className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary">
+                More
+                <ChevronDownIcon className="w-4 h-4 ml-1" aria-hidden="true" />
               </Menu.Button>
             </div>
 
@@ -69,8 +70,8 @@ export default function NavBar() {
                         <Link
                           href={href}
                           className={clsx(
-                            "block px-4 py-2 text-sm",
-                            active ? "text-primary font-semibold" : "text-foreground"
+                            'block px-4 py-2 text-sm',
+                            active ? 'text-primary font-semibold' : 'text-foreground'
                           )}
                         >
                           {label}
@@ -83,7 +84,10 @@ export default function NavBar() {
             </Transition>
           </Menu>
 
-          <ThemeToggle />
+          {/* Theme Toggle moved to the right */}
+          <div className="ml-2">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>

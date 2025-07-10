@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
 
 const bookingLinks: Record<string, string> = {
   publishing: "https://outlook.office.com/book/JMerrillPublishingInc@jmerrill.pub/",
@@ -9,9 +8,12 @@ const bookingLinks: Record<string, string> = {
   foundation: "https://outlook.office.com/owa/calendar/JMerrillFoundationInc2@jmerrill.one/bookings/"
 };
 
-export default function SchedulePage() {
-  const searchParams = useSearchParams();
-  const brandParam = searchParams?.get("brand") || "publishing";
+export default function SchedulePage({
+  searchParams,
+}: {
+  searchParams: { brand?: string };
+}) {
+  const brandParam = searchParams?.brand?.toLowerCase() || "publishing";
   const [iframeUrl, setIframeUrl] = useState<string>(bookingLinks["publishing"]);
 
   useEffect(() => {
@@ -36,7 +38,9 @@ export default function SchedulePage() {
                 key={b}
                 onClick={() => window.location.href = `/appointments?brand=${b}`}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition border ${
-                  brandParam === b ? "bg-blue-600 text-white border-blue-600" : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300"
+                  brandParam === b
+                    ? "bg-blue-600 text-white border-blue-600"
+                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300"
                 }`}
               >
                 {b.charAt(0).toUpperCase() + b.slice(1)}
