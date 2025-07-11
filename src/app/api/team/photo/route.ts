@@ -1,4 +1,3 @@
-// src/app/api/team/photo/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { ConfidentialClientApplication } from '@azure/msal-node';
 import 'isomorphic-fetch';
@@ -13,9 +12,11 @@ const msalConfig = {
 
 const cca = new ConfidentialClientApplication(msalConfig);
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest): Promise<NextResponse> {
   const userId = req.nextUrl.searchParams.get('id');
-  if (!userId) return NextResponse.json({ error: 'Missing user ID' }, { status: 400 });
+  if (!userId) {
+    return NextResponse.json({ error: 'Missing user ID' }, { status: 400 });
+  }
 
   try {
     const tokenRes = await cca.acquireTokenByClientCredential({
@@ -23,7 +24,9 @@ export async function GET(req: NextRequest) {
     });
 
     const accessToken = tokenRes?.accessToken;
-    if (!accessToken) throw new Error('Access token missing');
+    if (!accessToken) {
+      throw new Error('Access token missing');
+    }
 
     const photoRes = await fetch(`https://graph.microsoft.com/v1.0/users/${userId}/photo/$value`, {
       headers: { Authorization: `Bearer ${accessToken}` },
@@ -36,12 +39,13 @@ export async function GET(req: NextRequest) {
     const imageBuffer = await photoRes.arrayBuffer();
     return new NextResponse(Buffer.from(imageBuffer), {
       headers: {
-        'Content-Type': photoRes.headers.get('Content-Type') || 'image/jpeg',
+        'Content-Type': photoRes.headers.get('Content-Type') ?? 'image/jpeg',
         'Cache-Control': 'no-store',
       },
     });
-  } catch (err: any) {
-    console.error('Photo fetch error:', err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+  } catch (err) {
+    const error = err as Error;
+    console.error('Photo fetch error:', error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

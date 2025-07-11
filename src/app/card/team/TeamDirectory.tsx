@@ -5,8 +5,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getUsersWithPhotos } from '@/utils/graph/getUsersWithPhotos';
 
+interface TeamUser {
+  id: string;
+  displayName: string;
+  jobTitle?: string;
+  mail?: string;
+  photoUrl?: string;
+}
+
 export default function TeamDirectory() {
-  const [users, setUsers] = useState<any[]>([]);
+  const [users, setUsers] = useState<TeamUser[]>([]);
 
   useEffect(() => {
     async function loadUsers() {
@@ -38,7 +46,9 @@ export default function TeamDirectory() {
                   height={120}
                   className="rounded-full object-cover shadow-sm mb-4"
                 />
-                <h2 className="text-xl font-semibold group-hover:text-primary">{user.displayName}</h2>
+                <h2 className="text-xl font-semibold group-hover:text-primary">
+                  {user.displayName}
+                </h2>
                 <p className="text-sm text-muted-foreground">{user.jobTitle}</p>
                 <p className="text-sm text-secondary mt-1">{user.mail}</p>
               </div>
@@ -47,7 +57,9 @@ export default function TeamDirectory() {
         </div>
 
         {users.length === 0 && (
-          <p className="text-center text-muted-foreground mt-10">No team members found.</p>
+          <p className="text-center text-muted-foreground mt-10">
+            No team members found.
+          </p>
         )}
       </div>
     </div>

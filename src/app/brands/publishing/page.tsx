@@ -37,32 +37,32 @@ const services = [
   {
     title: "Full-Service Publishing",
     description: "From manuscript to market — editing, design, ISBN, and distribution included.",
-    cta: "/publishing/full-service",
+    cta: "/services/full-service",
   },
   {
     title: "Blockchain Publishing",
     description: "Protect your work with verified blockchain metadata and smart contract royalties.",
-    cta: "/publishing/blockchain",
+    cta: "/services/blockchain",
   },
   {
     title: "Audiobook Production",
     description: "Studio-quality audiobooks with AI or human narrators — mastered and ready for Audible.",
-    cta: "/publishing/audiobook",
+    cta: "/services/audiobook",
   },
   {
     title: "Branding",
     description: "Logos, author photos, personal branding kits, and Amazon-ready bios.",
-    cta: "/publishing/branding",
+    cta: "/services/branding",
   },
   {
     title: "Legacy Publishing",
     description: "Memoirs and family stories preserved beautifully for future generations.",
-    cta: "/publishing/legacy",
+    cta: "/services/legacy",
   },
   {
     title: "Marketing & Promotion",
     description: "Launch campaigns, book trailers, and PR to boost visibility and connect with readers.",
-    cta: "/publishing/marketing",
+    cta: "/services/marketing",
   },
 ];
 

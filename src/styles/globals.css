@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: 255 255 255;
-  --foreground: 17 17 17;
-  --primary: 30 144 255;
-  --secondary: 147 50 158;
-  --accent: 249 115 22;
+  --background: 0 0% 100%; /* white */
+  --foreground: 0 0% 7%; /* #111111 */
+  --primary: 210 100% 56%; /* Dodger Blue (#1E90FF) */
+  --secondary: 289 49% 41%; /* Royal Purple (#93329E) */
+  --accent: 30 95% 54%; /* Orange (#F97316) */
 }
 
 /* === Base === */
@@ -44,7 +44,7 @@
   }
 
   .btn-secondary {
-    @apply inline-block px-4 py-2 bg-secondary text-primary rounded-lg font-medium hover:bg-secondary/80 transition;
+    @apply inline-block px-4 py-2 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/80 transition;
   }
 
   .badge-accent {
