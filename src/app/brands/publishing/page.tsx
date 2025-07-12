@@ -8,32 +8,30 @@ export const metadata = buildMetadata({
   description:
     "Explore full-service publishing, blockchain books, audiobooks, and more with J Merrill Publishing, Inc.",
   path: "/publishing",
+  openGraph: {
+    title: "Publishing Services | J Merrill Publishing, Inc.",
+    description:
+      "Helping authors help themselves with full-service publishing, blockchain, audiobooks, and more.",
+    url: "https://jmerrill.one/publishing",
+    siteName: "J Merrill One",
+    type: "website",
+    images: [
+      {
+        url: "https://jmerrill.one/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "J Merrill Publishing Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Publishing Services | J Merrill Publishing, Inc.",
+    description:
+      "Helping authors help themselves — explore full-service, blockchain, audiobooks, and more.",
+    images: ["https://jmerrill.one/og-image.jpg"],
+  },
 });
-
-export const openGraph = {
-  title: "Publishing Services | J Merrill Publishing, Inc.",
-  description:
-    "Helping authors help themselves with full-service publishing, blockchain, audiobooks, and more.",
-  url: "https://jmerrill.one/publishing",
-  siteName: "J Merrill One",
-  type: "website",
-  images: [
-    {
-      url: "https://jmerrill.one/og-image.jpg",
-      width: 1200,
-      height: 630,
-      alt: "J Merrill Publishing Services",
-    },
-  ],
-};
-
-export const twitter = {
-  card: "summary_large_image",
-  title: "Publishing Services | J Merrill Publishing, Inc.",
-  description:
-    "Helping authors help themselves — explore full-service, blockchain, audiobooks, and more.",
-  images: ["https://jmerrill.one/og-image.jpg"],
-};
 
 // Define allowed color types
 type ServiceColor = "publishing" | "foundation" | "financial";
