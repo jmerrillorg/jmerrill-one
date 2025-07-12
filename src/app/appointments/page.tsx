@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const bookingLinks: Record<string, string> = {
   publishing: 'https://outlook.office.com/book/JMerrillPublishingInc@jmerrill.pub/',
@@ -8,22 +9,15 @@ const bookingLinks: Record<string, string> = {
   foundation: 'https://outlook.office.com/owa/calendar/JMerrillFoundationInc2@jmerrill.one/bookings/',
 };
 
-// ✅ Correctly typed props for Next.js app router
-type AppointmentsPageProps = {
-  searchParams?: {
-    brand?: string;
-  };
-};
-
-export default function SchedulePage({ searchParams }: AppointmentsPageProps) {
-  const brandParam = searchParams?.brand?.toLowerCase() || 'publishing';
+export default function SchedulePage() {
+  const searchParams = useSearchParams();
+  const brand = searchParams.get('brand')?.toLowerCase() || 'publishing';
   const [iframeUrl, setIframeUrl] = useState<string>(bookingLinks['publishing']);
 
   useEffect(() => {
-    const selected = brandParam.toLowerCase();
-    const base = bookingLinks[selected] || bookingLinks['publishing'];
-    setIframeUrl(base);
-  }, [brandParam]);
+    const selected = bookingLinks[brand] || bookingLinks['publishing'];
+    setIframeUrl(selected);
+  }, [brand]);
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 text-center">
@@ -41,7 +35,7 @@ export default function SchedulePage({ searchParams }: AppointmentsPageProps) {
                 key={b}
                 onClick={() => window.location.href = `/appointments?brand=${b}`}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition border ${
-                  brandParam === b
+                  brand === b
                     ? 'bg-blue-600 text-white border-blue-600'
                     : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300'
                 }`}
