@@ -10,6 +10,7 @@ interface ServiceCardProps {
   description: string;
   borderColor: "publishing" | "foundation" | "financial";
   ringColor: "publishing" | "foundation" | "financial";
+  className?: string; // ✅ NEW: Allow optional className prop
 }
 
 const borderClasses: Record<ServiceCardProps["borderColor"], string> = {
@@ -31,6 +32,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
   description,
   borderColor,
   ringColor,
+  className = "", // ✅ NEW: default empty string
 }) => {
   const borderClass = borderClasses[borderColor] ?? "border-gray-300 text-gray-700 dark:text-gray-200";
   const ringClass = ringClasses[ringColor] ?? "hover:ring-2 hover:ring-gray-400";
@@ -40,7 +42,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       href={href}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.98 }}
-      className={`p-6 bg-white dark:bg-gray-900 border-2 rounded-xl shadow-md transition duration-200 ease-in-out text-center ${borderClass} ${ringClass}`}
+      className={`p-6 bg-white dark:bg-gray-900 border-2 rounded-xl shadow-md transition duration-200 ease-in-out text-center ${borderClass} ${ringClass} ${className}`}
     >
       <h2 className="text-2xl font-semibold">
         {emoji} {title}

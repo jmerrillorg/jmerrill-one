@@ -1,5 +1,5 @@
-import Link from "next/link";
-import HeroLogo from "@/components/shared/HeroLogo";
+import HeroLogo from '@/components/shared/HeroLogo';
+import { BrandCard } from '@/components/BrandCard';
 
 export default function HomePage() {
   return (
@@ -12,35 +12,9 @@ export default function HomePage() {
       </p>
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 max-w-6xl w-full">
-        <Link
-          href="/brands/publishing"
-          className="block p-6 rounded-2xl shadow-md bg-card hover:shadow-lg border border-secondary/50"
-        >
-          <h2 className="text-xl font-semibold text-publishing mb-2">Publishing</h2>
-          <p className="text-sm text-muted-foreground">
-            Helping authors help themselves — with full-service, blockchain, audiobook, branding, legacy, and marketing.
-          </p>
-        </Link>
-
-        <Link
-          href="/brands/financial"
-          className="block p-6 rounded-2xl shadow-md bg-card hover:shadow-lg border border-secondary/50"
-        >
-          <h2 className="text-xl font-semibold text-financial mb-2">Financial</h2>
-          <p className="text-sm text-muted-foreground">
-            From insurance and advance planning to financial literacy and legacy protection — your future is in good hands.
-          </p>
-        </Link>
-
-        <Link
-          href="/brands/foundation"
-          className="block p-6 rounded-2xl shadow-md bg-card hover:shadow-lg border border-secondary/50"
-        >
-          <h2 className="text-xl font-semibold text-foundation mb-2">Foundation</h2>
-          <p className="text-sm text-muted-foreground">
-            Merging purpose with innovation — community programs, labs, and digital empowerment to drive change.
-          </p>
-        </Link>
+        <BrandCard brand="Publishing" variant="home" />
+        <BrandCard brand="Financial" variant="home" />
+        <BrandCard brand="Foundation" variant="home" />
       </section>
 
       <div className="mt-10 text-sm text-secondary">

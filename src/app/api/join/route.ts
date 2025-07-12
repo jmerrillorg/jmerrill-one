@@ -1,24 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import formidable from 'formidable';
+import formidable, { File as FormidableFile } from 'formidable';
+import { IncomingMessage } from 'http';
 import { promises as fs } from 'fs';
-import path from 'path';
 
-// Required to handle file uploads in Next.js API routes
 export const config = {
   api: {
     bodyParser: false,
   },
 };
 
+type ParsedForm = {
+  fields: Record<string, string>;
+  files: Record<string, FormidableFile | FormidableFile[]>;
+};
+
 export async function POST(req: NextRequest) {
   try {
-    const form = formidable({ multiples: false, uploadDir: '/tmp', keepExtensions: true });
+    const form = formidable({
+      multiples: false,
+      uploadDir: '/tmp',
+      keepExtensions: true,
+    });
 
-    const data = await new Promise<{ fields: any; files: any }>((resolve, reject) => {
-      form.parse(req as any, (err, fields, files) => {
-        if (err) reject(err);
-        else resolve({ fields, files });
+    const data: ParsedForm = await new Promise((resolve, reject) => {
+      form.parse(req as unknown as IncomingMessage, (err, fields, files) => {
+        if (err) return reject(err);
+        resolve({
+          fields: Object.fromEntries(
+            Object.entries(fields).map(([key, value]) => [
+              key,
+              Array.isArray(value) ? value[0] : value,
+            ])
+          ) as Record<string, string>,
+          files: files as Record<string, FormidableFile | FormidableFile[]>,
+        });
       });
     });
 
@@ -34,7 +50,9 @@ export async function POST(req: NextRequest) {
       message,
     } = data.fields;
 
-    const manuscript = data.files.manuscript?.[0] ?? data.files.manuscript;
+    const manuscriptFile = Array.isArray(data.files.manuscript)
+      ? data.files.manuscript[0]
+      : data.files.manuscript;
 
     const transporter = nodemailer.createTransport({
       host: 'smtp.office365.com',
@@ -42,7 +60,7 @@ export async function POST(req: NextRequest) {
       secure: false,
       auth: {
         user: 'jackie@jmerrill.pub',
-        pass: process.env.M365_APP_PASSWORD!, // Store securely
+        pass: process.env.M365_APP_PASSWORD!,
       },
     });
 
@@ -63,13 +81,13 @@ Estimated Publishing Date: ${estimatedPubDate}
 
 Message:
 ${message}
-      `,
-      attachments: manuscript
+      `.trim(),
+      attachments: manuscriptFile?.filepath
         ? [
             {
-              filename: manuscript.originalFilename || 'manuscript',
-              path: manuscript.filepath,
-              contentType: manuscript.mimetype,
+              filename: manuscriptFile.originalFilename ?? 'manuscript',
+              path: manuscriptFile.filepath,
+              contentType: manuscriptFile.mimetype ?? undefined,
             },
           ]
         : [],
@@ -77,9 +95,8 @@ ${message}
 
     await transporter.sendMail(mailOptions);
 
-    // Clean up file after sending (optional)
-    if (manuscript?.filepath) {
-      await fs.unlink(manuscript.filepath);
+    if (manuscriptFile?.filepath) {
+      await fs.unlink(manuscriptFile.filepath);
     }
 
     return NextResponse.json({ success: true });

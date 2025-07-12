@@ -1,5 +1,5 @@
 import Link from "next/link";
-import HeroLogo from '@/components/shared/HeroLogo'
+import HeroLogo from '@/components/shared/HeroLogo';
 
 const brands = [
   {
@@ -36,16 +36,16 @@ const brands = [
 
 export default function BrandsPage() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16">
-      <div className="flex flex-col items-center text-center mb-10">
+    <section className="max-w-6xl mx-auto px-6 py-16 bg-background text-foreground">
+      <div className="flex flex-col items-center text-center mb-12">
         <HeroLogo />
         <h1 className="text-4xl font-bold mt-6">Our Brands</h1>
-        <p className="mt-2 text-lg text-muted max-w-2xl">
+        <p className="mt-3 text-lg text-muted max-w-2xl">
           J Merrill One is a collective of purpose-driven ventures – serving publishing, financial planning, and nonprofit innovation.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {brands.map((brand) => (
           <Link
             key={brand.name}

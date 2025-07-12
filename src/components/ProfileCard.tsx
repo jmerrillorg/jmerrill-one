@@ -35,20 +35,20 @@ export default function ProfileCard({
   bookingLink,
   socials = {},
 }: ProfileCardProps) {
-  const fallback = '/logo.png';
+  const fallbackImage = '/logo.png';
   const profileImage = imageSrc || `/api/photo/${email}`;
 
   return (
     <div className="text-center text-[#111] dark:text-white px-4">
       <Image
         src={profileImage}
-        alt={name}
+        alt={`${name}'s profile image`}
         width={120}
         height={120}
         className="rounded-full mx-auto mb-4 bg-white object-cover"
         onError={(e) => {
           const target = e.target as HTMLImageElement;
-          if (target.src !== fallback) target.src = fallback;
+          if (target.src !== fallbackImage) target.src = fallbackImage;
         }}
       />
 
@@ -56,27 +56,38 @@ export default function ProfileCard({
       <p className="text-sm text-gray-500 dark:text-gray-300">{title}</p>
       {tagline && <p className="mt-2 italic text-blue-500">{tagline}</p>}
 
-      <div className="mt-6 mx-auto max-w-md rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 space-y-3 text-left">
+      <div className="mt-6 mx-auto max-w-md rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 space-y-4 text-left">
         {phone && (
           <p>
-            <span className="font-medium">📞 Phone:</span>{' '}
-            <a href={`tel:${phone}`} className="text-blue-600 dark:text-blue-400">{phone}</a>
+            <span className="font-semibold">📞 Phone:</span>{' '}
+            <a href={`tel:${phone}`} className="text-blue-600 dark:text-blue-400">
+              {phone}
+            </a>
           </p>
         )}
         <p>
-          <span className="font-medium">✉️ Email:</span>{' '}
-          <a href={`mailto:${email}`} className="text-blue-600 dark:text-blue-400">{email}</a>
+          <span className="font-semibold">✉️ Email:</span>{' '}
+          <a href={`mailto:${email}`} className="text-blue-600 dark:text-blue-400">
+            {email}
+          </a>
         </p>
         {website && (
           <p>
-            <span className="font-medium">🌐 Website:</span>{' '}
-            <a href={website} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400">
+            <span className="font-semibold">🌐 Website:</span>{' '}
+            <a
+              href={website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400"
+            >
               {website}
             </a>
           </p>
         )}
         {address && (
-          <p><span className="font-medium">🏢 Office:</span> {address}</p>
+          <p>
+            <span className="font-semibold">🏢 Office:</span> {address}
+          </p>
         )}
       </div>
 
@@ -91,7 +102,10 @@ export default function ProfileCard({
             Book Appointment
           </a>
         )}
-        <a href="/card" className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800 transition">
+        <a
+          href="/card"
+          className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800 transition"
+        >
           View Team Directory
         </a>
       </div>
@@ -103,23 +117,43 @@ export default function ProfileCard({
         </div>
       )}
 
-      <div className="mt-8 flex justify-center gap-6 text-2xl">
-        {socials.linkedin && (
-          <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-600">
-            <Linkedin className="w-6 h-6" />
-          </a>
-        )}
-        {socials.instagram && (
-          <a href={socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-pink-500">
-            <Instagram className="w-6 h-6" />
-          </a>
-        )}
-        {socials.facebook && (
-          <a href={socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-700">
-            <Facebook className="w-6 h-6" />
-          </a>
-        )}
-      </div>
+      {(socials.linkedin || socials.instagram || socials.facebook) && (
+        <div className="mt-8 flex justify-center gap-6 text-2xl">
+          {socials.linkedin && (
+            <a
+              href={socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="hover:text-blue-600"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+          )}
+          {socials.instagram && (
+            <a
+              href={socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-pink-500"
+            >
+              <Instagram className="w-6 h-6" />
+            </a>
+          )}
+          {socials.facebook && (
+            <a
+              href={socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:text-blue-700"
+            >
+              <Facebook className="w-6 h-6" />
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }

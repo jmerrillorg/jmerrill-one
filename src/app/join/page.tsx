@@ -26,7 +26,9 @@ export default function JoinPage() {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value, files } = e.target as HTMLInputElement;
     setFormData((prev) => ({
       ...prev,
@@ -85,7 +87,9 @@ export default function JoinPage() {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6 text-primary">Join the J Merrill Publishing Family</h1>
+      <h1 className="text-2xl font-bold mb-6 text-primary">
+        Join the J Merrill Publishing Family
+      </h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <Field label="First Name" name="firstName" value={formData.firstName} onChange={handleChange} />
@@ -97,7 +101,7 @@ export default function JoinPage() {
         <Field label="Your Timezone" name="timezone" value={formData.timezone} onChange={handleChange} />
         <Field label="Where are you in the publishing process?" name="initialStatus" value={formData.initialStatus} onChange={handleChange} />
         <Field label="Estimated Publishing Date" name="estimatedPubDate" type="date" value={formData.estimatedPubDate} onChange={handleChange} />
-        
+
         <div>
           <Label htmlFor="message">Message (Optional)</Label>
           <Textarea
@@ -127,7 +131,7 @@ export default function JoinPage() {
   );
 }
 
-// 🔁 Reusable Input Field
+// ✅ Updated Type for `onChange` to avoid `any`
 function Field({
   label,
   name,
@@ -139,7 +143,7 @@ function Field({
   name: string;
   type?: string;
   value: string;
-  onChange: (e: React.ChangeEvent<any>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }) {
   return (
     <div>
