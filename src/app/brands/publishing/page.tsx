@@ -1,13 +1,12 @@
-import { buildMetadata } from "@/lib/seo";
 import { ServiceCard } from "@/components/ServiceCard";
 import HeroLogo from "@/components/shared/HeroLogo";
 import Link from "next/link";
 
-export const metadata = buildMetadata({
+export const metadata = {
   title: "Publishing Services | J Merrill Publishing, Inc.",
   description:
     "Explore full-service publishing, blockchain books, audiobooks, and more with J Merrill Publishing, Inc.",
-  path: "/publishing",
+  metadataBase: new URL("https://jmerrill.one"),
   openGraph: {
     title: "Publishing Services | J Merrill Publishing, Inc.",
     description:
@@ -31,7 +30,7 @@ export const metadata = buildMetadata({
       "Helping authors help themselves — explore full-service, blockchain, audiobooks, and more.",
     images: ["https://jmerrill.one/og-image.jpg"],
   },
-});
+};
 
 // Define allowed color types
 type ServiceColor = "publishing" | "foundation" | "financial";
