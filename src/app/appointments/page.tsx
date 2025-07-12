@@ -1,24 +1,27 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const bookingLinks: Record<string, string> = {
-  publishing: "https://outlook.office.com/book/JMerrillPublishingInc@jmerrill.pub/",
-  financial: "https://outlook.office.com/book/JMerrillFinancialLLC@jmerrill.pub/",
-  foundation: "https://outlook.office.com/owa/calendar/JMerrillFoundationInc2@jmerrill.one/bookings/"
+  publishing: 'https://outlook.office.com/book/JMerrillPublishingInc@jmerrill.pub/',
+  financial: 'https://outlook.office.com/book/JMerrillFinancialLLC@jmerrill.pub/',
+  foundation: 'https://outlook.office.com/owa/calendar/JMerrillFoundationInc2@jmerrill.one/bookings/',
 };
 
-export default function SchedulePage({
-  searchParams,
-}: {
-  searchParams: { brand?: string };
-}) {
-  const brandParam = searchParams?.brand?.toLowerCase() || "publishing";
-  const [iframeUrl, setIframeUrl] = useState<string>(bookingLinks["publishing"]);
+// ✅ Correctly typed props for Next.js app router
+type AppointmentsPageProps = {
+  searchParams?: {
+    brand?: string;
+  };
+};
+
+export default function SchedulePage({ searchParams }: AppointmentsPageProps) {
+  const brandParam = searchParams?.brand?.toLowerCase() || 'publishing';
+  const [iframeUrl, setIframeUrl] = useState<string>(bookingLinks['publishing']);
 
   useEffect(() => {
     const selected = brandParam.toLowerCase();
-    const base = bookingLinks[selected] || bookingLinks["publishing"];
+    const base = bookingLinks[selected] || bookingLinks['publishing'];
     setIframeUrl(base);
   }, [brandParam]);
 
@@ -39,8 +42,8 @@ export default function SchedulePage({
                 onClick={() => window.location.href = `/appointments?brand=${b}`}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition border ${
                   brandParam === b
-                    ? "bg-blue-600 text-white border-blue-600"
-                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300"
+                    ? 'bg-blue-600 text-white border-blue-600'
+                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300'
                 }`}
               >
                 {b.charAt(0).toUpperCase() + b.slice(1)}
@@ -65,7 +68,7 @@ export default function SchedulePage({
 
           {/* Need Help CTA */}
           <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
-            Need help choosing a service?{" "}
+            Need help choosing a service?{' '}
             <a href="/contact" className="text-blue-600 hover:underline">Contact us</a> or call (614) 965-6057.
           </div>
         </div>
