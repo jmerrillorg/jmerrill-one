@@ -2,38 +2,33 @@ import { NextRequest, NextResponse } from 'next/server';
 import { ConfidentialClientApplication } from '@azure/msal-node';
 import 'isomorphic-fetch';
 
-const {
-  AZURE_CLIENT_ID,
-  AZURE_CLIENT_SECRET,
-  AZURE_TENANT_ID,
-  AZURE_GRAPH_SCOPE = 'https://graph.microsoft.com/.default',
-  AZURE_GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0',
-} = process.env;
-
-// Early return if any required credential is missing
-if (!AZURE_CLIENT_ID || !AZURE_CLIENT_SECRET || !AZURE_TENANT_ID) {
-  console.warn('Missing Azure credentials in environment variables');
-}
-
-const msalConfig = {
-  auth: {
-    clientId: AZURE_CLIENT_ID!,
-    authority: `https://login.microsoftonline.com/${AZURE_TENANT_ID}`,
-    clientSecret: AZURE_CLIENT_SECRET!,
-  },
-};
-
-const cca = new ConfidentialClientApplication(msalConfig);
-
 export async function GET(req: NextRequest): Promise<NextResponse> {
-  const userId = req.nextUrl.searchParams.get('id');
-
-  if (!userId) {
-    return NextResponse.json({ error: 'Missing user ID' }, { status: 400 });
-  }
+  const {
+    AZURE_CLIENT_ID,
+    AZURE_CLIENT_SECRET,
+    AZURE_TENANT_ID,
+    AZURE_GRAPH_SCOPE = 'https://graph.microsoft.com/.default',
+    AZURE_GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0',
+  } = process.env;
 
   if (!AZURE_CLIENT_ID || !AZURE_CLIENT_SECRET || !AZURE_TENANT_ID) {
-    return NextResponse.json({ error: 'Azure credentials are not configured' }, { status: 500 });
+    console.warn('Missing Azure credentials in environment variables');
+    return NextResponse.json({ error: 'Azure credentials not configured' }, { status: 500 });
+  }
+
+  const msalConfig = {
+    auth: {
+      clientId: AZURE_CLIENT_ID,
+      authority: `https://login.microsoftonline.com/${AZURE_TENANT_ID}`,
+      clientSecret: AZURE_CLIENT_SECRET,
+    },
+  };
+
+  const cca = new ConfidentialClientApplication(msalConfig);
+
+  const userId = req.nextUrl.searchParams.get('id');
+  if (!userId) {
+    return NextResponse.json({ error: 'Missing user ID' }, { status: 400 });
   }
 
   try {
@@ -47,7 +42,6 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     }
 
     const photoUrl = `${AZURE_GRAPH_ENDPOINT}/users/${userId}/photo/$value`;
-
     const photoRes = await fetch(photoUrl, {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
