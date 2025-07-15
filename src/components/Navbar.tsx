@@ -16,7 +16,6 @@ const mainLinks = [
 ];
 
 const moreLinks = [
-  { href: '/labs', label: 'Labs' },
   { href: '/projects', label: 'Projects' },
   { href: '/legal', label: 'Legal Hub' },
 ];
