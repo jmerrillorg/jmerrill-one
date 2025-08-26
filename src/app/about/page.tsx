@@ -4,7 +4,7 @@ import HeroLogo from '@/components/shared/HeroLogo';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Timeline from '@/components/Timeline';
-import { BrandCard } from '@/components/BrandCard';
+import BrandCard from '@/components/BrandCard';
 
 export default function AboutPage() {
   return (

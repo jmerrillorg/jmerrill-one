@@ -11,7 +11,6 @@ const mainLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/appointments', label: 'Appointments' },
-  { href: '/brands', label: 'Brands' },
   { href: '/contact', label: 'Contact' },
 ];
 
