@@ -50,4 +50,4 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, variant = 'home' })
       )}
     </div>
   );
-};
+}; 
