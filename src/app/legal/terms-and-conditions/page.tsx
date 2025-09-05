@@ -28,7 +28,9 @@ export default function TermsConditionsPage() {
         <HeroLogo />
       </div>
 
-      <h1 className="text-3xl font-bold mb-6 text-primary text-center">Terms &amp; Conditions</h1>
+      <h1 className="text-3xl font-bold mb-6 text-primary text-center">
+        Terms &amp; Conditions
+      </h1>
 
       <p className="mb-4 text-center">
         These Terms &amp; Conditions apply to all users of <strong>J Merrill One</strong> and the
@@ -100,7 +102,20 @@ export default function TermsConditionsPage() {
         This agreement shall be governed by the laws of the State of Ohio, USA.
       </p>
 
-      <h2 className="text-2xl font-semibold text-primary mb-2">10. Contact Us</h2>
+      <h2 className="text-2xl font-semibold text-primary mb-2">10. Related Policies</h2>
+      <p className="mb-6">
+        Please review our{" "}
+        <a
+          href="/legal/privacy-policy"
+          className="underline text-primary"
+        >
+          Privacy Policy
+        </a>{" "}
+        to understand how we collect, use, and protect your information. By using our
+        services, you agree to both these Terms &amp; Conditions and our Privacy Policy.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-primary mb-2">11. Contact Us</h2>
       <p className="mb-2">
         📧{" "}
         <a href="mailto:legal@jmerrill.one" className="underline text-primary">
