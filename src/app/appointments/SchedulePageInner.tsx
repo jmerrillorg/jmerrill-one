@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 const bookingLinks: Record<string, string> = {
-  publishing: 'https://outlook.office.com/book/JMerrillPublishingInc@jmerrill.pub/',
-  financial: 'https://outlook.office.com/book/JMerrillFinancialLLC@jmerrill.pub/',
-  foundation: 'https://outlook.office.com/owa/calendar/JMerrillFoundationInc2@jmerrill.one/bookings/',
+  publishing: 'https://outlook.office.com/book/JMerrillPublishing@jmerrill.one/?ismsaljsauthenabled',
+  financial: 'https://outlook.office.com/book/JMerrillFinancial@jmerrill.one/?ismsaljsauthenabled',
+  foundation: 'https://outlook.office.com/book/JMerrillFoundation@jmerrill.one/?ismsaljsauthenabled',
+  jackie: 'https://outlook.office.com/book/JackieSmithJrMrJMerrill@jmerrill.one/?ismsaljsauthenabled',
 };
 
 export default function SchedulePageInner() {
@@ -33,14 +34,16 @@ export default function SchedulePageInner() {
             {Object.keys(bookingLinks).map((b) => (
               <button
                 key={b}
-                onClick={() => window.location.href = `/appointments?brand=${b}`}
+                onClick={() => (window.location.href = `/appointments?brand=${b}`)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition border ${
                   brand === b
                     ? 'bg-blue-600 text-white border-blue-600'
                     : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300'
                 }`}
               >
-                {b.charAt(0).toUpperCase() + b.slice(1)}
+                {b === 'jackie'
+                  ? 'Jackie'
+                  : b.charAt(0).toUpperCase() + b.slice(1)}
               </button>
             ))}
           </div>
