@@ -1,20 +1,20 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import {
   getServices,
   businessMap,
   RawService,
   CleanService,
 } from "@/lib/graphClient";
-import services from "@/data/services.json"; // fallback JSON
+import services from "@/data/services.json";
 
-// Shape of the JSON file
 type ServiceJSON = {
   [brand: string]: CleanService[];
 };
 
 export async function GET(
-  request: Request,
-  context: { params: { brand: string } }
+  request: NextRequest,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  context: any
 ) {
   const { brand } = context.params;
 
@@ -27,7 +27,6 @@ export async function GET(
       );
     }
 
-    // 🔹 Try Graph API first
     try {
       const rawServices: RawService[] = await getServices(businessId);
 
