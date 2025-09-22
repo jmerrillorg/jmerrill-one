@@ -14,7 +14,7 @@ type ServiceJSON = {
 
 export async function GET(
   request: Request,
-  context: { params: Record<string, string> }
+  context: { params: { brand: string } }
 ) {
   const { brand } = context.params;
 
