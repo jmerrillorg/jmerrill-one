@@ -113,7 +113,13 @@ export default function ProfileCard({
       {qrCodeDataUrl && (
         <div className="mt-10">
           <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">Scan to save:</p>
-          <img src={qrCodeDataUrl} alt="QR Code" className="mx-auto w-32 h-32" />
+          <Image
+            src={qrCodeDataUrl}
+            alt="QR Code"
+            width={128}
+            height={128}
+            className="mx-auto w-32 h-32"
+          />
         </div>
       )}
 
