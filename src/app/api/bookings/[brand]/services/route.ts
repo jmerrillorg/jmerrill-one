@@ -14,9 +14,9 @@ type ServiceJSON = {
 
 export async function GET(
   request: Request,
-  { params }: { params: { brand: string } }
+  context: { params: Record<string, string> }
 ) {
-  const { brand } = params;
+  const { brand } = context.params;
 
   try {
     const businessId = businessMap[brand];
@@ -43,7 +43,6 @@ export async function GET(
     } catch (graphError) {
       console.warn("⚠️ Graph API failed, falling back to JSON", graphError);
 
-      // 🔹 Fallback to static JSON
       const fallbackServices =
         (services as ServiceJSON)[brand] ?? ([] as CleanService[]);
       return NextResponse.json({ services: fallbackServices, fallback: true });
