@@ -13,7 +13,7 @@ export default function MarlaCardPage() {
   const fullName = 'Marla J. Smith';
   const title = 'Vice President | Publishing & Foundation';
   const tagline = 'J Merrill One – Publishing | Foundation';
-  const phone = '(614) 965-6057';
+  const directPhone = '(614) 965-6057';
   const email = 'marla@jmerrill.pub';
   const website = 'https://www.jmerrill.one';
   const address = '2323 W 5th Ave, Suite 120, Columbus, OH 43204';
@@ -37,7 +37,7 @@ export default function MarlaCardPage() {
   const handleVCardDownload = () => {
     const blob = generateVCard({
       fullName,
-      phone,
+      phone: directPhone,
       email,
       website,
       org: 'J Merrill One',
@@ -64,7 +64,10 @@ export default function MarlaCardPage() {
           name={fullName}
           title={title}
           tagline={tagline}
-          phone={phone}
+          missionStatement="Committed to uplifting voices, preserving stories, and building generational bridges through publishing and purpose."
+          phones={[
+            { label: '📲 Direct (Call/Text)', number: directPhone },
+          ]}
           email={email}
           website={website}
           address={address}
@@ -76,6 +79,7 @@ export default function MarlaCardPage() {
             instagram: 'https://www.instagram.com/jmerrillone/',
             facebook: 'https://www.facebook.com/JMerrillOne',
           }}
+          onDownloadVCard={handleVCardDownload}
         />
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">

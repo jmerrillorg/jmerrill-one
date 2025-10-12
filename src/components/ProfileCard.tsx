@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // ✅ Added import
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 type ProfileCardProps = {
@@ -81,7 +82,7 @@ export default function ProfileCard({
         </div>
       )}
 
-      {/* Contact Details */}
+      {/* Contact Info */}
       <div className="mt-6 mx-auto max-w-md rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 space-y-4 text-left">
         {[...phones].reverse().map((p, idx) => (
           <p key={idx}>
@@ -94,12 +95,14 @@ export default function ProfileCard({
             </a>
           </p>
         ))}
+
         <p>
           <span className="font-semibold">✉️ Email:</span>{' '}
           <a href={`mailto:${email}`} className="text-blue-600 dark:text-blue-400">
             {email}
           </a>
         </p>
+
         {website && (
           <p>
             <span className="font-semibold">🌐 Website:</span>{' '}
@@ -113,6 +116,7 @@ export default function ProfileCard({
             </a>
           </p>
         )}
+
         {address && (
           <p>
             <span className="font-semibold">🏢 Office:</span> {address}
@@ -132,12 +136,13 @@ export default function ProfileCard({
             Book Appointment
           </a>
         )}
-        <a
+        {/* ✅ Fixed: use <Link /> for internal navigation */}
+        <Link
           href="/card"
           className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800 transition"
         >
           View Team Directory
-        </a>
+        </Link>
       </div>
 
       {/* QR Code */}
@@ -154,7 +159,7 @@ export default function ProfileCard({
         </div>
       )}
 
-      {/* Social Media */}
+      {/* Social Links */}
       {(socials.linkedin || socials.instagram || socials.facebook) && (
         <div className="mt-8 flex justify-center gap-6 text-2xl">
           {socials.linkedin && (

@@ -6,4 +6,38 @@
     "tagline": "J Merrill One – Publishing | Financial | Foundation",
     "missionStatement": "Empowering legacies through publishing, planning, and purpose — one family, one story, one vision at a time.",
     "phones": [
-      { "label": "
+      { "label": "📲 Direct (Call/Text)", "number": "(614) 245-5560" },
+      { "label": "🏢 Office (Voice Only)", "number": "(614) 965-6057" }
+    ],
+    "email": "jackie@jmerrill.one",
+    "website": "https://www.jmerrill.one",
+    "address": "2323 W 5th Ave, Suite 120, Columbus, OH 43204",
+    "imageSrc": "/images/team/jackie.jpg",
+    "bookingLink": "https://www.jmerrill.one/appointments",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/jmerrillone/",
+      "instagram": "https://www.instagram.com/jmerrillone/",
+      "facebook": "https://www.facebook.com/JMerrillOne"
+    }
+  },
+  {
+    "slug": "marla",
+    "fullName": "Marla J. Smith",
+    "title": "Vice President | Publishing & Foundation",
+    "tagline": "J Merrill One – Publishing | Foundation",
+    "missionStatement": "Committed to uplifting voices, preserving stories, and building generational bridges through publishing and purpose.",
+    "phones": [
+      { "label": "📲 Direct (Call/Text)", "number": "(614) 965-6057" }
+    ],
+    "email": "marla@jmerrill.pub",
+    "website": "https://www.jmerrill.one",
+    "address": "2323 W 5th Ave, Suite 120, Columbus, OH 43204",
+    "imageSrc": "/images/team/marla.jpg",
+    "bookingLink": "https://outlook.office.com/book/jmerrillpublishinginc@jmerrill.pub/",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/jmerrillone/",
+      "instagram": "https://www.instagram.com/jmerrillone/",
+      "facebook": "https://www.facebook.com/JMerrillOne"
+    }
+  }
+]
