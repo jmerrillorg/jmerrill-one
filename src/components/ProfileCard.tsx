@@ -8,13 +8,15 @@ type ProfileCardProps = {
   name: string;
   title: string;
   tagline?: string;
-  phone?: string;
+  missionStatement?: string;
+  phones?: { label: string; number: string }[];
   email: string;
   website?: string;
   address?: string;
   imageSrc?: string;
   qrCodeDataUrl?: string;
   bookingLink?: string;
+  onDownloadVCard?: () => void;
   socials?: {
     linkedin?: string;
     instagram?: string;
@@ -26,13 +28,15 @@ export default function ProfileCard({
   name,
   title,
   tagline,
-  phone,
+  missionStatement,
+  phones = [],
   email,
   website,
   address,
   imageSrc,
   qrCodeDataUrl,
   bookingLink,
+  onDownloadVCard,
   socials = {},
 }: ProfileCardProps) {
   const fallbackImage = '/logo.png';
@@ -40,6 +44,7 @@ export default function ProfileCard({
 
   return (
     <div className="text-center text-[#111] dark:text-white px-4">
+      {/* Profile Image */}
       <Image
         src={profileImage}
         alt={`${name}'s profile image`}
@@ -52,19 +57,43 @@ export default function ProfileCard({
         }}
       />
 
+      {/* Name & Title */}
       <h1 className="text-3xl font-bold">{name}</h1>
       <p className="text-sm text-gray-500 dark:text-gray-300">{title}</p>
-      {tagline && <p className="mt-2 italic text-blue-500">{tagline}</p>}
 
+      {/* Tagline & Mission */}
+      {tagline && <p className="mt-2 italic text-blue-500">{tagline}</p>}
+      {missionStatement && (
+        <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+          {missionStatement}
+        </p>
+      )}
+
+      {/* vCard Download */}
+      {onDownloadVCard && (
+        <div className="mt-6 flex justify-center">
+          <button
+            onClick={onDownloadVCard}
+            className="px-5 py-2 rounded-lg font-medium bg-publishing text-white hover:bg-appointments transition"
+          >
+            Download Contact (vCard)
+          </button>
+        </div>
+      )}
+
+      {/* Contact Details */}
       <div className="mt-6 mx-auto max-w-md rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 space-y-4 text-left">
-        {phone && (
-          <p>
-            <span className="font-semibold">📞 Phone:</span>{' '}
-            <a href={`tel:${phone}`} className="text-blue-600 dark:text-blue-400">
-              {phone}
+        {[...phones].reverse().map((p, idx) => (
+          <p key={idx}>
+            <span className="font-semibold">{p.label}:</span>{' '}
+            <a
+              href={`tel:${p.number.replace(/\D/g, '')}`}
+              className="text-blue-600 dark:text-blue-400"
+            >
+              {p.number}
             </a>
           </p>
-        )}
+        ))}
         <p>
           <span className="font-semibold">✉️ Email:</span>{' '}
           <a href={`mailto:${email}`} className="text-blue-600 dark:text-blue-400">
@@ -91,6 +120,7 @@ export default function ProfileCard({
         )}
       </div>
 
+      {/* Action Buttons */}
       <div className="mt-6 flex flex-wrap justify-center gap-4">
         {bookingLink && (
           <a
@@ -110,6 +140,7 @@ export default function ProfileCard({
         </a>
       </div>
 
+      {/* QR Code */}
       {qrCodeDataUrl && (
         <div className="mt-10">
           <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">Scan to save:</p>
@@ -123,6 +154,7 @@ export default function ProfileCard({
         </div>
       )}
 
+      {/* Social Media */}
       {(socials.linkedin || socials.instagram || socials.facebook) && (
         <div className="mt-8 flex justify-center gap-6 text-2xl">
           {socials.linkedin && (

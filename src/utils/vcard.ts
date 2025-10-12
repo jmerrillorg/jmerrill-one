@@ -1,6 +1,7 @@
-type VCardOptions = {
+export type VCardOptions = {
   fullName: string;
-  phone: string;
+  phone: string; // Direct line (call/text)
+  additionalPhones?: string[]; // Office or other lines
   email: string;
   website: string;
   org?: string;
@@ -10,6 +11,7 @@ type VCardOptions = {
 export function generateVCard({
   fullName,
   phone,
+  additionalPhones = [],
   email,
   website,
   org = 'J Merrill One',
@@ -21,7 +23,10 @@ export function generateVCard({
     `FN:${fullName}`,
     `ORG:${org}`,
     `TITLE:${title}`,
-    `TEL;TYPE=WORK,VOICE:${phone}`,
+    `TEL;TYPE=CELL,VOICE:${phone}`, // Direct line (call/text)
+    ...additionalPhones.map(
+      (p) => `TEL;TYPE=WORK,VOICE:${p}` // Office line(s)
+    ),
     `EMAIL:${email}`,
     `URL:${website}`,
     'END:VCARD',
