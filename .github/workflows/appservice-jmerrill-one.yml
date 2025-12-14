@@ -11,24 +11,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ------------------------------------------------------------
+      # 1. Checkout
+      # ------------------------------------------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      # ------------------------------------------------------------
+      # 2. Node.js Setup (Node 22 + pnpm cache)
+      # ------------------------------------------------------------
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'pnpm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      # ------------------------------------------------------------
+      # 3. Enable Corepack + pnpm (CANONICAL)
+      # ------------------------------------------------------------
+      - name: Enable Corepack
+        run: corepack enable
 
+      - name: Set up pnpm
+        run: corepack prepare pnpm@9.15.4 --activate
+
+      # ------------------------------------------------------------
+      # 4. Install dependencies
+      # ------------------------------------------------------------
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # ------------------------------------------------------------
+      # 5. Build Next.js (App Service / SSR)
+      # ------------------------------------------------------------
       - name: Build Next.js app
         run: pnpm build
 
+      # ------------------------------------------------------------
+      # 6. Deploy to Azure App Service
+      # ------------------------------------------------------------
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
