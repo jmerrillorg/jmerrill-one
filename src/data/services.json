@@ -1,0 +1,52 @@
+{
+  "publishing": [
+    {
+      "id": "pub1",
+      "displayName": "Manuscript Review",
+      "defaultDuration": "60",
+      "price": 150,
+      "description": "Full editorial analysis of your manuscript."
+    },
+    {
+      "id": "pub2",
+      "displayName": "Distribution Setup",
+      "defaultDuration": "45",
+      "price": 200,
+      "description": "Configure book distribution across global channels."
+    }
+  ],
+  "financial": [
+    {
+      "id": "fin1",
+      "displayName": "Estate Planning Consultation",
+      "defaultDuration": "60",
+      "price": 100,
+      "description": "Personalized estate and trust planning session."
+    },
+    {
+      "id": "fin2",
+      "displayName": "Final Expense Planning",
+      "defaultDuration": "45",
+      "price": 75,
+      "description": "Guidance on pre-need and end-of-life expense coverage."
+    }
+  ],
+  "foundation": [
+    {
+      "id": "fd1",
+      "displayName": "Community Grant Application Help",
+      "defaultDuration": "30",
+      "price": 0,
+      "description": "Free support session for grant applications."
+    }
+  ],
+  "jackie": [
+    {
+      "id": "jk1",
+      "displayName": "1-on-1 Coaching",
+      "defaultDuration": "60",
+      "price": 250,
+      "description": "Executive coaching session with Jackie Smith, Jr."
+    }
+  ]
+}

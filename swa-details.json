@@ -1,0 +1,43 @@
+{
+  "allowConfigFileUpdates": true,
+  "branch": "main",
+  "buildProperties": null,
+  "contentDistributionEndpoint": "https://content-eus2.infrastructure.6.azurestaticapps.net",
+  "customDomains": [
+    "www.jmerrill.one",
+    "jmerrill.one"
+  ],
+  "databaseConnections": [],
+  "defaultHostname": "lively-flower-04d9c640f.6.azurestaticapps.net",
+  "enterpriseGradeCdnStatus": "Disabled",
+  "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/jmerrill-one/providers/Microsoft.Web/staticSites/jmerrill-one",
+  "identity": null,
+  "keyVaultReferenceIdentity": "SystemAssigned",
+  "kind": null,
+  "linkedBackends": [],
+  "location": "East US 2",
+  "name": "jmerrill-one",
+  "privateEndpointConnections": [],
+  "provider": "GitHub",
+  "publicNetworkAccess": null,
+  "repositoryToken": null,
+  "repositoryUrl": "https://github.com/jmerrillorg/jmerrill-one",
+  "resourceGroup": "jmerrill-one",
+  "sku": {
+    "capabilities": null,
+    "capacity": null,
+    "family": null,
+    "locations": null,
+    "name": "Standard",
+    "size": null,
+    "skuCapacity": null,
+    "tier": "Standard"
+  },
+  "stagingEnvironmentPolicy": "Enabled",
+  "tags": {
+    "Project": "J Merrill One"
+  },
+  "templateProperties": null,
+  "type": "Microsoft.Web/staticSites",
+  "userProvidedFunctionApps": null
+}
