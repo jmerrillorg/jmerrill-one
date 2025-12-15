@@ -1,8 +1,8 @@
-const nextConfig = {
-  output: undefined, // or remove entirely
-  experimental: {
-    appDir: true,
-  },
-}
+import type { NextConfig } from "next";
 
-export default nextConfig
+const nextConfig: NextConfig = {
+  output: "standalone",
+  reactStrictMode: true,
+};
+
+export default nextConfig;
