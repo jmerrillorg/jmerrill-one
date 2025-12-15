@@ -1,75 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< Updated upstream
 
-/* === J Merrill One – Custom Theme Variables === */
+/* ======================================================
+   J Merrill One — Global Theme Variables (Canonical)
+   ====================================================== */
 
-/* Light Mode (Default) */
+/* ---------- Light Mode (Default) ---------- */
 :root {
-  --background: #F9FAFB;           /* Light neutral background */
-  --foreground: #262626;           /* Dark gray text */
-  --primary: #1E90FF;              /* J Merrill One Blue */
-  --secondary: #262626;            /* Body text / headings */
-  --accent: #ffffff;               /* White for elements & callouts */
+  --background: #f9fafb;          /* Light neutral background */
+  --foreground: #262626;          /* Primary text */
+  --primary: #1e90ff;             /* JM1 Blue */
+  --secondary: #334155;           /* Subtext / headings */
+  --accent: #ffffff;              /* Cards / surfaces */
 
-  --font-geist-sans: 'Geist', sans-serif;
-  --font-geist-mono: 'Geist Mono', monospace;
+  --card: #ffffff;
+  --card-foreground: #262626;
+
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #2563eb;
+
+  --radius: 0.75rem;
+
+  --font-geist-sans: "Geist", system-ui, sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
 }
 
-/* === Dark Mode (Improved Contrast) === */
-html[data-theme='dark'] {
-  --background: #0a0a0a;          /* Very dark background */
-  --foreground: #f3f4f6;          /* Near-white text */
-  --secondary: #d1d5db;           /* Lighter gray for subtext */
-  --primary: #60a5fa;             /* Softer Dodger Blue */
-  --accent: #1f2937;              /* Dark gray for cards/boxes */
+/* ---------- Dark Mode ---------- */
+/* Canon rule: class-based dark mode */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #f3f4f6;
+  --secondary: #d1d5db;
+  --primary: #60a5fa;
+  --accent: #1f2937;
+
+  --card: #111827;
+  --card-foreground: #f3f4f6;
+
+  --border: #1f2937;
+  --input: #1f2937;
+  --ring: #60a5fa;
 }
 
-/* === Base Styles === */
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* ======================================================
+   Base Layer — Tailwind-aligned defaults
+   ====================================================== */
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  a {
+    @apply text-jm1-brand underline-offset-4;
+  }
+
+  a:hover {
+    @apply underline;
+  }
 }
 
-/* === Link Styles === */
-a {
-  color: var(--primary);
-  text-decoration: underline;
-}
-a:hover {
-  color: #0d6efd; /* Deeper blue on hover */
-}
+/* ======================================================
+   Utility Helpers (Minimal, Non-Conflicting)
+   ====================================================== */
 
-/* === Utility Classes for Tailwind Alignment === */
 .bg-background {
   background-color: var(--background);
 }
+
 .text-foreground {
   color: var(--foreground);
 }
-.text-primary {
-  color: var(--primary);
-}
+
 .text-secondary {
   color: var(--secondary);
 }
+
 .bg-accent {
   background-color: var(--accent);
 }
 
-/* === Font Utility (Fallback if Tailwind Plugin Not Used) === */
 .font-geist {
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-geist-sans);
 }
-.font-geist-mono {
-  font-family: var(--font-geist-mono), monospace;
-=======
 
-/* Optional: fallback styles */
-body {
-  @apply bg-white text-black font-sans; /* fallback if CSS variables fail */
->>>>>>> Stashed changes
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
 }
