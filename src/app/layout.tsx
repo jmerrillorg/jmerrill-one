@@ -1,13 +1,16 @@
-// This is the correct RootLayout for Next.js App Router
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter, Geist_Mono } from "next/font/google";
+
 import "@/styles/globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar"; // ✅ exact casing
 import Footer from "@/components/Footer";
 import { siteMetadata } from "@/lib/seo";
 
-// Load fonts with variable declarations
+// -------------------------
+// Fonts
+// -------------------------
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -20,12 +23,18 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+// -------------------------
+// Metadata
+// -------------------------
 export const metadata: Metadata = siteMetadata;
 
 interface RootLayoutProps {
   children: ReactNode;
 }
 
+// -------------------------
+// Root Layout (Server Component)
+// -------------------------
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" data-theme="light">
@@ -33,7 +42,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={`${inter.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground transition-colors`}
       >
         <Navbar />
-        <main className="min-h-screen flex flex-col">{children}</main>
+
+        <main className="min-h-screen flex flex-col">
+          {children}
+        </main>
+
         <Footer />
       </body>
     </html>

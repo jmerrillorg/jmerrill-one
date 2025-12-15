@@ -3,11 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import { useEffect, useState, Fragment } from 'react';
+
 import ThemeToggle from './ThemeToggle';
 
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import { Fragment, useId } from 'react';
 
 // -------------------------
 // Navigation link groups
@@ -22,7 +23,7 @@ const mainLinks = [
 const moreLinks = [
   { href: '/projects', label: 'Projects' },
   { href: '/legal', label: 'Legal Hub' },
-  { href: '/card/directory', label: 'Team Directory' }, // ✅ new
+  { href: '/card/directory', label: 'Team Directory' },
 ];
 
 // -------------------------
@@ -31,8 +32,14 @@ const moreLinks = [
 export default function NavBar() {
   const pathname = usePathname();
 
-  // Ensures SSR + Client IDs remain identical
-  const menuId = useId();
+  // ✅ Prevent hydration mismatch
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -63,15 +70,11 @@ export default function NavBar() {
           ))}
 
           {/* More dropdown */}
-          <Menu as="div" className="relative inline-block text-left" id={menuId}>
-            <div>
-              <Menu.Button
-                className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary"
-              >
-                More
-                <ChevronDownIcon className="w-4 h-4 ml-1" aria-hidden="true" />
-              </Menu.Button>
-            </div>
+          <Menu as="div" className="relative inline-block text-left">
+            <Menu.Button className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary">
+              More
+              <ChevronDownIcon className="ml-1 h-4 w-4" aria-hidden="true" />
+            </Menu.Button>
 
             <Transition
               as={Fragment}
@@ -82,9 +85,7 @@ export default function NavBar() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Menu.Items
-                className="absolute right-0 mt-2 w-40 origin-top-right rounded-md bg-background shadow-lg ring-1 ring-black/5 focus:outline-none z-50"
-              >
+              <Menu.Items className="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded-md bg-background shadow-lg ring-1 ring-black/5 focus:outline-none">
                 <div className="px-1 py-1">
                   {moreLinks.map(({ href, label }) => (
                     <Menu.Item key={href}>
@@ -92,9 +93,9 @@ export default function NavBar() {
                         <Link
                           href={href}
                           className={clsx(
-                            'block px-4 py-2 text-sm rounded-sm',
+                            'block rounded-sm px-4 py-2 text-sm',
                             active
-                              ? 'text-primary font-semibold bg-accent/50'
+                              ? 'bg-accent/50 text-primary font-semibold'
                               : 'text-foreground'
                           )}
                         >
@@ -109,11 +110,8 @@ export default function NavBar() {
           </Menu>
 
           {/* Theme toggle */}
-          <div className="ml-2">
-            <ThemeToggle />
-          </div>
+          <ThemeToggle />
         </div>
-
       </div>
     </header>
   );
