@@ -11,23 +11,30 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 // -------------------------
-// Navigation link groups
+// Primary JM1 divisions
 // -------------------------
-const mainLinks = [
+const primaryLinks = [
   { href: '/', label: 'Home' },
+  { href: '/publishing', label: 'Publishing' },
+  { href: '/financial', label: 'Financial' },
+  { href: '/foundation', label: 'Foundation' },
+  { href: '/productions', label: 'Productions' },
+];
+
+// -------------------------
+// Secondary / utility links
+// -------------------------
+const utilityLinks = [
   { href: '/about', label: 'About' },
   { href: '/appointments', label: 'Appointments' },
   { href: '/contact', label: 'Contact' },
-];
-
-const moreLinks = [
   { href: '/projects', label: 'Projects' },
   { href: '/legal', label: 'Legal Hub' },
   { href: '/card/directory', label: 'Team Directory' },
 ];
 
 // -------------------------
-// JM1 Canon NavBar
+// JM1 Canon NavBar (Phase 3)
 // -------------------------
 export default function NavBar() {
   const pathname = usePathname();
@@ -53,11 +60,11 @@ export default function NavBar() {
           J Merrill One
         </Link>
 
-        {/* Links + Controls */}
+        {/* Navigation */}
         <nav className="flex items-center gap-6 text-sm">
 
-          {/* Main links */}
-          {mainLinks.map(({ href, label }) => {
+          {/* Primary division links */}
+          {primaryLinks.map(({ href, label }) => {
             const isActive = pathname === href;
 
             return (
@@ -76,7 +83,7 @@ export default function NavBar() {
             );
           })}
 
-          {/* More dropdown */}
+          {/* Utility dropdown */}
           <Menu as="div" className="relative inline-block text-left">
             <Menu.Button className="inline-flex items-center gap-1 font-medium text-jm1-slate hover:text-jm1-brand transition-colors">
               More
@@ -92,9 +99,9 @@ export default function NavBar() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Menu.Items className="absolute right-0 z-50 mt-2 w-44 origin-top-right rounded-md bg-card shadow-lg ring-1 ring-black/5 focus:outline-none">
+              <Menu.Items className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-card shadow-lg ring-1 ring-black/5 focus:outline-none">
                 <div className="py-1">
-                  {moreLinks.map(({ href, label }) => (
+                  {utilityLinks.map(({ href, label }) => (
                     <Menu.Item key={href}>
                       {({ active }) => (
                         <Link

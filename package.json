@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "node .next/standalone/server.js",
     "lint": "next lint"
@@ -13,6 +13,7 @@
     "@fluentui/react-components": "^9.72.8",
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
+    "@microsoft/applicationinsights-web": "^3.3.10",
     "@microsoft/microsoft-graph-client": "^3.0.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@vercel/og": "^0.7.2",

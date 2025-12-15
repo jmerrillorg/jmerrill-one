@@ -23,4 +23,12 @@ export const brands = [
     description:
       "Merging purpose with innovation — community programs, labs, and digital empowerment to drive change.",
   },
-] as const;
+  {
+    key: "productions",
+    name: "Productions",
+    domain: "https://jmerrill.productions",
+    label: "jmerrill.productions",
+    description:
+      "Media, storytelling, and digital production — bringing ideas to life through film, audio, and immersive content.",
+  },
+];

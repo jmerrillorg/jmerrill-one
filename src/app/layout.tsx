@@ -4,12 +4,14 @@ import type { ReactNode } from "react";
 import { Inter, Geist_Mono } from "next/font/google";
 
 import "@/styles/globals.css";
-import Navbar from "@/components/Navbar"; // ✅ exact casing
+import "@/lib/appInsights"; // ✅ Phase 5: Telemetry bootstrap (safe side-effect import)
+
+import Navbar from "@/components/Navbar"; // exact casing
 import Footer from "@/components/Footer";
 import { siteMetadata } from "@/lib/seo";
 
 // -------------------------
-// Fonts
+// Fonts (Canonical)
 // -------------------------
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +26,7 @@ const geistMono = Geist_Mono({
 });
 
 // -------------------------
-// Metadata
+// Metadata (Canonical)
 // -------------------------
 export const metadata: Metadata = siteMetadata;
 
@@ -37,16 +39,25 @@ interface RootLayoutProps {
 // -------------------------
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground transition-colors`}
+        className={[
+          inter.variable,
+          geistMono.variable,
+          "font-sans antialiased",
+          "bg-background text-foreground",
+          "transition-colors",
+        ].join(" ")}
       >
+        {/* Global Navigation */}
         <Navbar />
 
+        {/* Page Content */}
         <main className="min-h-screen flex flex-col">
           {children}
         </main>
 
+        {/* Global Footer */}
         <Footer />
       </body>
     </html>
