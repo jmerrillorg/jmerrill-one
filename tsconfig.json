@@ -15,13 +15,13 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx", // ✅ Use "react" for JSX inside .ts files (like route.ts)
+    "jsx": "react-jsx",
     "incremental": true,
-    "baseUrl": ".", // ✅ Root of project
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*"
-      ] // ✅ Clean path alias for all of src
+      ]
     },
     "plugins": [
       {
@@ -31,10 +31,9 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts",
-    "postcss.config.js",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
