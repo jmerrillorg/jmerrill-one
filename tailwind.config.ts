@@ -8,71 +8,48 @@ const config: Config = {
 
   theme: {
     extend: {
-      /* --------------------------------------------------
-       * Core semantic tokens (existing – preserved)
-       * -------------------------------------------------- */
+      /* ==================================================
+       * Core Semantic Tokens (aligned with globals.css)
+       * ================================================== */
       colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
 
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--primary)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "var(--secondary)",
           "20": "rgba(163, 196, 220, 0.2)",
           "50": "rgba(163, 196, 220, 0.5)",
           "90": "rgba(163, 196, 220, 0.9)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "var(--accent)",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
         },
 
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
 
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
-        },
-
-        /* --------------------------------------------------
-         * JM1 Canon Brand Tokens (NEW – Phase 2)
-         * -------------------------------------------------- */
+        /* ==================================================
+         * JM1 Canon Brand Tokens
+         * ================================================== */
         jm1: {
-          ink: "#0F172A",     // primary text
-          slate: "#334155",   // secondary text
-          mist: "#E5E7EB",    // borders / dividers
-          brand: "#2563EB",   // links / accents
-          accent: "#F97316",  // CTAs / highlights
+          ink: "#0F172A",
+          slate: "#334155",
+          mist: "#E5E7EB",
+          brand: "#2563EB",
+          accent: "#F97316",
         },
 
-        /* --------------------------------------------------
-         * Division-level brand colors (existing – preserved)
-         * -------------------------------------------------- */
+        /* ==================================================
+         * Division-Level Brand Colors
+         * ================================================== */
         publishing: "#1E90FF",
         financial: "#007F5C",
         foundation: "#93329E",
@@ -80,9 +57,9 @@ const config: Config = {
         appointments: "#2563EB",
       },
 
-      /* --------------------------------------------------
-       * Typography + layout extensions
-       * -------------------------------------------------- */
+      /* ==================================================
+       * Typography + Layout
+       * ================================================== */
       fontSize: {
         hero: ["2.75rem", { lineHeight: "1.1" }],
       },
@@ -96,9 +73,9 @@ const config: Config = {
   },
 
   plugins: [
-    /* --------------------------------------------------
-     * Utility extensions (existing + aligned)
-     * -------------------------------------------------- */
+    /* ==================================================
+     * JM1 Utility Extensions (Safe + Minimal)
+     * ================================================== */
     plugin(({ addUtilities, theme }) => {
       const brandColors = [
         "publishing",
@@ -121,17 +98,18 @@ const config: Config = {
       });
 
       brandColors.forEach((name) => {
-        const color = theme(`colors.${name}`) as string;
-        if (color) {
-          addUtilities({
-            [`.text-${name}`]: { color },
-            [`.bg-${name}`]: { backgroundColor: color },
-            [`.border-${name}`]: { borderColor: color },
-            [`.hover\\:bg-${name}\\/90:hover`]: {
-              backgroundColor: `${color}E6`,
-            },
-          });
-        }
+        const color = theme(`colors.${name}`) as string | undefined;
+
+        if (!color) return;
+
+        addUtilities({
+          [`.text-${name}`]: { color },
+          [`.bg-${name}`]: { backgroundColor: color },
+          [`.border-${name}`]: { borderColor: color },
+          [`.hover\\:bg-${name}\\/90:hover`]: {
+            backgroundColor: `${color}E6`,
+          },
+        });
       });
     }),
 
