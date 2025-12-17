@@ -1,10 +1,30 @@
 export default function Header() {
   return (
-    <header style={{ padding: "24px 32px" }}>
-      <div style={{ maxWidth: 960, margin: "0 auto" }}>
-        <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em" }}>
+    <header
+      className="
+        border-b
+        border-border
+        bg-background
+      "
+    >
+      <div
+        className="
+          mx-auto
+          max-w-screen-md
+          px-8
+          py-6
+        "
+      >
+        <h1
+          className="
+            text-2xl
+            font-semibold
+            tracking-tight
+            text-foreground
+          "
+        >
           J Merrill One
-        </div>
+        </h1>
       </div>
     </header>
   );

@@ -1,40 +1,39 @@
-import { brands } from "@/data/brands";
+import DivisionCard from '@/components/DivisionCard';
 
 export default function BrandGrid() {
   return (
-    <section className="px-6 py-10">
-      <div className="mx-auto max-w-5xl space-y-10">
-        {brands.map((b) => (
-          <div
-            key={b.key}
-            className="border-b border-jm1-mist pb-8 last:border-0"
-          >
-            <h2 className="text-xl font-semibold mb-2">{b.name}</h2>
+    <section className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <DivisionCard
+        title="Publishing"
+        subtitle="jmerrill.pub"
+        description="Helping authors help themselves — full-service publishing, audiobooks, branding, and legacy strategy."
+        href="/publishing"
+        color="publishing"
+      />
 
-            <a
-              href={b.domain}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-sm mb-3"
-            >
-              {b.label}
-            </a>
+      <DivisionCard
+        title="Financial"
+        subtitle="jmerrill.financial"
+        description="Advanced planning, estate strategy, and final expense guidance — with clarity and compassion."
+        href="/financial"
+        color="financial"
+      />
 
-            <p className="text-jm1-slate max-w-3xl mb-3">
-              {b.description}
-            </p>
+      <DivisionCard
+        title="Foundation"
+        subtitle="jmerrill.foundation"
+        description="Community programs, innovation labs, and digital empowerment initiatives that drive change."
+        href="/foundation"
+        color="foundation"
+      />
 
-            <a
-              href={b.domain}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-jm1-accent font-medium"
-            >
-              Visit site →
-            </a>
-          </div>
-        ))}
-      </div>
+      <DivisionCard
+        title="Productions"
+        subtitle="jmerrill.productions"
+        description="Media, storytelling, and digital production — bringing ideas to life through film, audio, and immersive content."
+        href="/productions"
+        color="productions"
+      />
     </section>
   );
 }

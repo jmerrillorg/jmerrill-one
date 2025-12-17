@@ -14,18 +14,21 @@ export const metadata: Metadata = {
 // -------------------------
 // Foundation Division Page
 // Phase 10.5 — Journey Persistence (Server-safe)
+// Step 5 — Subtle Division Accent Enabled
 // -------------------------
 //
 // Canon Rules Enforced:
 // • Server Component only
 // • No sessionStorage / localStorage access
 // • No journey reads on the server
-// • Journey reset is explicit and client-controlled
+// • Journey reset is explicit and user-controlled
+// • Visual identity via Foundation brand accent
 //
 // -------------------------
 export default function FoundationPage() {
   return (
     <DivisionShell
+      division="foundation"
       title={
         <div className="flex items-center justify-between gap-3">
           <span>J Merrill Foundation</span>

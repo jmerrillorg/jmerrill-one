@@ -10,20 +10,20 @@ import ThemeToggle from './ThemeToggle';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
-// -------------------------
-// Primary JM1 divisions
-// -------------------------
+/* --------------------------------------------------
+   Primary JM1 divisions (route → brand mapping)
+-------------------------------------------------- */
 const primaryLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/publishing', label: 'Publishing' },
-  { href: '/financial', label: 'Financial' },
-  { href: '/foundation', label: 'Foundation' },
-  { href: '/productions', label: 'Productions' },
-];
+  { href: '/', label: 'Home', brand: 'jm1' },
+  { href: '/publishing', label: 'Publishing', brand: 'publishing' },
+  { href: '/financial', label: 'Financial', brand: 'financial' },
+  { href: '/foundation', label: 'Foundation', brand: 'foundation' },
+  { href: '/productions', label: 'Productions', brand: 'productions' },
+] as const;
 
-// -------------------------
-// Secondary / utility links
-// -------------------------
+/* --------------------------------------------------
+   Secondary / utility links
+-------------------------------------------------- */
 const utilityLinks = [
   { href: '/about', label: 'About' },
   { href: '/appointments', label: 'Appointments' },
@@ -33,13 +33,11 @@ const utilityLinks = [
   { href: '/card/directory', label: 'Team Directory' },
 ];
 
-// -------------------------
-// JM1 Canon NavBar (Phase 3)
-// -------------------------
+/* --------------------------------------------------
+   JM1 Canon NavBar
+-------------------------------------------------- */
 export default function NavBar() {
   const pathname = usePathname();
-
-  // Prevent hydration mismatch (theme + client-only deps)
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -49,33 +47,49 @@ export default function NavBar() {
   if (!mounted) return null;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-jm1-mist bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header
+      className={clsx(
+        'sticky top-0 z-50 w-full border-b',
+        'bg-background/85 backdrop-blur',
+        'border-border'
+      )}
+    >
       <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
-
-        {/* Brand */}
+        {/* --------------------------------------------------
+           Brand
+        -------------------------------------------------- */}
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-jm1-ink hover:text-jm1-brand transition-colors"
+          className={clsx(
+            'text-lg font-semibold tracking-tight transition-colors',
+            'text-foreground hover:text-jm1-blue'
+          )}
         >
           J Merrill One
         </Link>
 
-        {/* Navigation */}
+        {/* --------------------------------------------------
+           Navigation
+        -------------------------------------------------- */}
         <nav className="flex items-center gap-6 text-sm">
-
           {/* Primary division links */}
-          {primaryLinks.map(({ href, label }) => {
-            const isActive = pathname === href;
+          {primaryLinks.map(({ href, label, brand }) => {
+            const isActive =
+              href === '/'
+                ? pathname === '/'
+                : pathname.startsWith(href);
 
             return (
               <Link
                 key={href}
                 href={href}
                 className={clsx(
-                  'transition-colors',
+                  'transition-colors font-medium',
                   isActive
-                    ? 'text-jm1-brand font-semibold'
-                    : 'text-jm1-slate hover:text-jm1-brand'
+                    ? brand === 'jm1'
+                      ? 'text-jm1-blue'
+                      : `text-${brand}-primary`
+                    : 'text-secondary hover:text-foreground'
                 )}
               >
                 {label}
@@ -83,9 +97,16 @@ export default function NavBar() {
             );
           })}
 
-          {/* Utility dropdown */}
+          {/* --------------------------------------------------
+             Utility dropdown
+          -------------------------------------------------- */}
           <Menu as="div" className="relative inline-block text-left">
-            <Menu.Button className="inline-flex items-center gap-1 font-medium text-jm1-slate hover:text-jm1-brand transition-colors">
+            <Menu.Button
+              className={clsx(
+                'inline-flex items-center gap-1 font-medium transition-colors',
+                'text-secondary hover:text-foreground'
+              )}
+            >
               More
               <ChevronDownIcon className="h-4 w-4" aria-hidden="true" />
             </Menu.Button>
@@ -99,7 +120,13 @@ export default function NavBar() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Menu.Items className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-card shadow-lg ring-1 ring-black/5 focus:outline-none">
+              <Menu.Items
+                className={clsx(
+                  'absolute right-0 z-50 mt-2 w-48 origin-top-right',
+                  'rounded-md bg-card shadow-lg',
+                  'ring-1 ring-border focus:outline-none'
+                )}
+              >
                 <div className="py-1">
                   {utilityLinks.map(({ href, label }) => (
                     <Menu.Item key={href}>
@@ -109,8 +136,8 @@ export default function NavBar() {
                           className={clsx(
                             'block px-4 py-2 text-sm transition-colors',
                             active
-                              ? 'bg-jm1-mist text-jm1-brand font-semibold'
-                              : 'text-jm1-slate hover:bg-jm1-mist/60'
+                              ? 'bg-border text-foreground font-medium'
+                              : 'text-secondary hover:bg-border/60'
                           )}
                         >
                           {label}

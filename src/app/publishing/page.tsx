@@ -14,23 +14,26 @@ export const metadata: Metadata = {
 // -------------------------
 // Publishing Division Page
 // Phase 10.5 — Journey Persistence (Server-safe)
+// Step 5 — Subtle Division Accent Enabled
 // -------------------------
 //
 // Canon Rules Enforced:
-// • This page is a Server Component
-// • No access to sessionStorage / localStorage
-// • Journey logic is client-only and optional
-// • Reset is explicit, user-controlled, and reversible
+// • Server Component only
+// • No sessionStorage / localStorage access
+// • No journey reads on the server
+// • Journey reset is explicit and user-controlled
+// • Visual identity via Publishing brand accent
 //
 // -------------------------
 export default function PublishingPage() {
   return (
     <DivisionShell
+      division="publishing"
       title={
         <div className="flex items-center justify-between gap-3">
           <span>J Merrill Publishing</span>
 
-          {/* Canon: Client-only control to clear persisted journey */}
+          {/* Canon: optional user-controlled journey reset */}
           <JourneyResetButton />
         </div>
       }

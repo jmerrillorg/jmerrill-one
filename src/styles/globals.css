@@ -2,63 +2,184 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ======================================================
+   JM1 MASTER COLOR REGISTRY v1
+   Canonical Global Variables
+   ====================================================== */
+
 :root {
-  --background: 0 0% 100%; /* white */
-  --foreground: 0 0% 7%; /* #111111 */
-  --primary: 210 100% 56%; /* Dodger Blue (#1E90FF) */
-  --secondary: 289 49% 41%; /* Royal Purple (#93329E) */
-  --accent: 30 95% 54%; /* Orange (#F97316) */
+  /* ----------------------------------
+     Core JM1 (Umbrella Brand)
+     ---------------------------------- */
+  --jm1-blue: #004CFF;
+  --jm1-black: #000000;
+  --jm1-white: #FFFFFF;
+
+  --jm1-slate: #1A1F36;
+  --jm1-silver: #D9DCE3;
+  --jm1-electric-sky: #2D8BFF;
+
+  --jm1-gold: #F5C542;
+
+  /* ----------------------------------
+     Semantic UI Tokens (Tailwind-bound)
+     ---------------------------------- */
+  --background: #f9fafb;
+  --foreground: #262626;
+
+  --primary: var(--jm1-blue);
+  --secondary: var(--jm1-slate);
+  --accent: var(--jm1-gold);
+
+  --card: #ffffff;
+  --card-foreground: #262626;
+
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #2563eb;
+
+  --radius: 0.75rem;
+
+  /* ----------------------------------
+     Typography
+     ---------------------------------- */
+  --font-geist-sans: "Geist", system-ui, sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+
+  /* ----------------------------------
+     Division Brand Variables
+     ---------------------------------- */
+
+  /* Publishing */
+  --publishing-primary: #7A1BFF;
+  --publishing-accent: #A56BFF;
+
+  /* Financial */
+  --financial-primary: #0A9E4A;
+  --financial-accent: #D4AF37;
+
+  /* Foundation */
+  --foundation-primary: #007F7F;
+  --foundation-accent: #F0C674;
+
+  /* Productions */
+  --productions-primary: #FF2D2D;
+  --productions-accent: #FFA73B;
 }
 
-/* === Base === */
+/* ======================================================
+   Dark Mode — Canonical
+   ====================================================== */
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #f9fafb;
+
+  /* FIX: secondary was too dim */
+  --secondary: #cbd5e1;
+
+  --primary: #60a5fa;
+  --accent: #111827;
+
+  --card: rgba(17, 24, 39, 0.85);
+  --card-foreground: #f9fafb;
+
+  --border: #1f2937;
+  --input: #1f2937;
+  --ring: #60a5fa;
+}
+
+/* ======================================================
+   Base Layer — Tailwind-aligned defaults
+   ====================================================== */
+
 @layer base {
   html {
-    scroll-behavior: smooth;
+    @apply antialiased;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-primary;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans);
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
   }
 
   a {
-    @apply text-accent hover:underline;
+    color: var(--primary);
+    text-underline-offset: 4px;
   }
 
-  strong {
-    @apply text-primary font-semibold;
-  }
-
-  code {
-    @apply px-1 py-0.5 rounded bg-secondary/20 text-sm font-mono;
+  a:hover {
+    text-decoration: underline;
   }
 }
 
-/* === Components === */
-@layer components {
-  .btn-primary {
-    @apply inline-block px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition;
-  }
+/* ======================================================
+   Utility Helpers (Safe, Explicit)
+   ====================================================== */
 
-  .btn-secondary {
-    @apply inline-block px-4 py-2 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/80 transition;
-  }
-
-  .badge-accent {
-    @apply inline-flex items-center px-2 py-1 bg-accent text-white text-xs rounded-full;
-  }
-
-  .card {
-    @apply bg-white shadow-md rounded-2xl p-6 border border-secondary/20;
-  }
+/* Backgrounds */
+.bg-background {
+  background-color: var(--background);
 }
 
-/* === Utilities === */
-@layer utilities {
-  .text-shadow {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  }
+.bg-card {
+  background-color: var(--card);
+}
+
+/* Text */
+.text-foreground {
+  color: var(--foreground);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+/* Fonts */
+.font-geist {
+  font-family: var(--font-geist-sans);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
+}
+
+/* ======================================================
+   Division Utility Hooks (Optional Use)
+   ====================================================== */
+
+.text-publishing {
+  color: var(--publishing-primary);
+}
+
+.text-financial {
+  color: var(--financial-primary);
+}
+
+.text-foundation {
+  color: var(--foundation-primary);
+}
+
+.text-productions {
+  color: var(--productions-primary);
+}
+
+.bg-publishing {
+  background-color: var(--publishing-primary);
+}
+
+.bg-financial {
+  background-color: var(--financial-primary);
+}
+
+.bg-foundation {
+  background-color: var(--foundation-primary);
+}
+
+.bg-productions {
+  background-color: var(--productions-primary);
 }

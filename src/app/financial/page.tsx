@@ -14,18 +14,22 @@ export const metadata: Metadata = {
 // -------------------------
 // Financial Division Page
 // Phase 10.5 — Journey Persistence (Server-safe)
+// Step 5 — Subtle Division Accent Enabled
 // -------------------------
 //
 // Canon Rules Enforced:
 // • Server Component only
 // • No JourneyBadge (client-only)
 // • No sessionStorage / localStorage access
+// • No journey reads on the server
 // • Journey reset is explicit and user-controlled
+// • Visual identity via Financial brand accent
 //
 // -------------------------
 export default function FinancialPage() {
   return (
     <DivisionShell
+      division="financial"
       title={
         <div className="flex items-center justify-between gap-3">
           <span>J Merrill Financial</span>

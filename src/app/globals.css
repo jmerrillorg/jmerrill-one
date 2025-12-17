@@ -6,51 +6,47 @@
    J Merrill One — Global Theme Variables (Canonical)
    ====================================================== */
 
-/* ---------- Light Mode (Default) ---------- */
 :root {
-  /* Core surfaces */
   --background: #f9fafb;
   --foreground: #262626;
+  --primary: #1e90ff;
+  --secondary: #334155;
   --accent: #ffffff;
 
-  /* Brand & emphasis */
-  --primary: #1e90ff;       /* JM1 Blue */
-  --secondary: #334155;     /* Slate text / headings */
-  --ring: #2563eb;
-
-  /* UI primitives */
   --card: #ffffff;
   --card-foreground: #262626;
+
   --border: #e5e7eb;
   --input: #e5e7eb;
+  --ring: #2563eb;
 
-  /* Radius */
   --radius: 0.75rem;
 
-  /* Fonts (must match layout.tsx variables) */
-  --font-inter: var(--font-inter);
-  --font-geist-mono: var(--font-geist-mono);
-}
-
-/* ---------- Dark Mode ---------- */
-/* Canon rule: class-based dark mode ONLY */
-html.dark {
-  --background: #0a0a0a;
-  --foreground: #f3f4f6;
-  --accent: #1f2937;
-
-  --primary: #60a5fa;
-  --secondary: #d1d5db;
-  --ring: #60a5fa;
-
-  --card: #111827;
-  --card-foreground: #f3f4f6;
-  --border: #1f2937;
-  --input: #1f2937;
+  --font-geist-sans: "Geist", system-ui, sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
 }
 
 /* ======================================================
-   Base Layer — Tailwind-Aligned Defaults
+   Dark Mode (class-based, canonical)
+   ====================================================== */
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #f3f4f6;
+  --secondary: #d1d5db;
+  --primary: #60a5fa;
+  --accent: #1f2937;
+
+  --card: #111827;
+  --card-foreground: #f3f4f6;
+
+  --border: #1f2937;
+  --input: #1f2937;
+  --ring: #60a5fa;
+}
+
+/* ======================================================
+   Base Layer — Tailwind-aligned defaults
    ====================================================== */
 
 @layer base {
@@ -61,29 +57,12 @@ html.dark {
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-inter), system-ui, sans-serif;
-    transition:
-      background-color 0.25s ease,
-      color 0.25s ease;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--foreground);
-    @apply font-semibold tracking-tight;
-  }
-
-  p {
-    @apply leading-relaxed;
+    font-family: var(--font-geist-sans);
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   a {
-    color: var(--primary);
-    @apply underline-offset-4;
+    @apply text-jm1-brand underline-offset-4;
   }
 
   a:hover {
@@ -92,15 +71,11 @@ html.dark {
 }
 
 /* ======================================================
-   Utility Helpers (Minimal, Non-Conflicting)
+   Utility Helpers (Tailwind-Safe Only)
    ====================================================== */
 
 .bg-background {
   background-color: var(--background);
-}
-
-.bg-accent {
-  background-color: var(--accent);
 }
 
 .text-foreground {
@@ -111,18 +86,14 @@ html.dark {
   color: var(--secondary);
 }
 
-.text-primary {
-  color: var(--primary);
+.bg-accent {
+  background-color: var(--accent);
 }
 
-.border-default {
-  border-color: var(--border);
-}
-
-.font-inter {
-  font-family: var(--font-inter), system-ui, sans-serif;
+.font-geist {
+  font-family: var(--font-geist-sans);
 }
 
 .font-geist-mono {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-geist-mono);
 }

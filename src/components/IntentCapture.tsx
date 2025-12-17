@@ -149,9 +149,6 @@ export default function IntentCapture() {
       setConfidence(resolvedConfidence);
       setNeedsClarification(primaryConfidence < 0.4);
 
-      // -------------------------
-      // Phase 10 — Journey Computation
-      // -------------------------
       const computedJourney = computeJourney({
         primary: resolvedPrimary,
         confidence: resolvedConfidence,
@@ -181,36 +178,10 @@ export default function IntentCapture() {
         },
       });
 
-      // -------------------------
-      // Phase 9.1 — Auto Redirect
-      // -------------------------
       if (primaryConfidence >= 0.85) {
         setAutoRedirect(true);
-
-        appInsights?.trackEvent({
-          name: 'JM1.IntentAutoRedirect',
-          properties: {
-            primary: resolvedPrimary,
-            confidence: primaryConfidence,
-          },
-        });
-
         setTimeout(() => proceed(resolvedPrimary), 1200);
       }
-
-      // -------------------------
-      // Telemetry
-      // -------------------------
-      appInsights?.trackEvent({
-        name: 'JM1.IntentRouted',
-        properties: {
-          intent,
-          primary: resolvedPrimary,
-          confidence: resolvedConfidence,
-          clientSessionId,
-          correlationId,
-        },
-      });
     } catch (err) {
       console.error('Intent submission failed', err);
       setPrimary('unknown');
@@ -224,139 +195,49 @@ export default function IntentCapture() {
   // Navigation
   // -------------------------
   function proceed(target: Division) {
-    appInsights?.trackEvent({
-      name: 'JM1.IntentOverride',
-      properties: {
-        recommended: primary,
-        chosen: target,
-      },
-    });
-
     router.push(target !== 'unknown' ? `/${target}` : '/contact');
   }
 
   // -------------------------
-  // Phase 6.5 — Clarification
+  // Clarification
   // -------------------------
   if (needsClarification) {
     return (
-      <section className="mt-16 max-w-xl rounded-lg border bg-card p-6">
-        <h2 className="mb-4 text-xl font-semibold text-primary">
+      <div className="flex max-w-xl flex-col gap-4">
+        <h2 className="text-xl font-semibold text-primary">
           Help us point you in the right direction
         </h2>
 
-        <div className="flex flex-col gap-3">
-          {clarificationOptions.map((opt) => (
-            <button
-              key={opt.key}
-              onClick={() => proceed(opt.key)}
-              className="rounded-md border px-4 py-2 text-left text-sm hover:bg-muted/50"
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
-      </section>
+        {clarificationOptions.map((opt) => (
+          <button
+            key={opt.key}
+            onClick={() => proceed(opt.key)}
+            className="rounded-md border px-4 py-2 text-left text-sm hover:bg-muted/50"
+          >
+            {opt.label}
+          </button>
+        ))}
+      </div>
     );
   }
 
   // -------------------------
-  // Phase 10 — Journey UI (highest priority)
+  // Journey UI (highest priority)
   // -------------------------
   if (journey) {
-    return (
-      <JourneyCard
-        journey={journey}
-        onPrimary={() =>
-          appInsights?.trackEvent({
-            name: 'JM1.JourneyPrimaryCTA',
-            properties: {
-              journeyId: journey.journeyId,
-              variant: journey.variant,
-            },
-          })
-        }
-        onSecondary={(href) =>
-          appInsights?.trackEvent({
-            name: 'JM1.JourneySecondaryCTA',
-            properties: {
-              journeyId: journey.journeyId,
-              variant: journey.variant,
-              href,
-            },
-          })
-        }
-      />
-    );
+    return <JourneyCard journey={journey} />;
   }
 
   // -------------------------
-  // Phase 9.2 — Ranked Fallback
-  // -------------------------
-  if (primary) {
-    const ranked = Object.entries(confidence)
-      .filter(([_, score]) => score > 0)
-      .sort((a, b) => b[1] - a[1]) as [Division, number][];
-
-    return (
-      <section className="mt-16 max-w-xl rounded-lg border bg-card p-6">
-        <h2 className="text-xl font-semibold text-primary mb-1">
-          We recommend {divisionLabels[primary]}
-        </h2>
-
-        <p className="text-xs italic text-muted-foreground mb-4">
-          {explanationMap[primary]}
-        </p>
-
-        {autoRedirect && (
-          <p className="mb-4 text-xs text-muted-foreground">
-            Redirecting you automatically…
-          </p>
-        )}
-
-        <div className="flex flex-col gap-2 mb-6">
-          {ranked.map(([div, score]) => (
-            <button
-              key={div}
-              onClick={() => proceed(div)}
-              className="rounded-md border px-4 py-3 text-left hover:bg-muted/50"
-            >
-              <div className="flex justify-between">
-                <span>{divisionLabels[div]}</span>
-                <span className="text-xs text-muted-foreground">
-                  {Math.round(score * 100)}%
-                </span>
-              </div>
-            </button>
-          ))}
-        </div>
-
-        <button
-          onClick={() => {
-            setPrimary(null);
-            setConfidence(EMPTY_CONFIDENCE);
-            setJourney(null);
-            setAutoRedirect(false);
-            sessionStorage.removeItem('jm1:lastJourney');
-          }}
-          className="rounded-md border px-6 py-2 text-sm hover:bg-muted/50"
-        >
-          Go back
-        </button>
-      </section>
-    );
-  }
-
-  // -------------------------
-  // Initial Form
+  // Initial Form (layout-neutral)
   // -------------------------
   return (
-    <section className="mt-16 border-t pt-10">
-      <h2 className="mb-4 text-xl font-semibold text-primary">
+    <div className="flex max-w-xl flex-col gap-4">
+      <h2 className="text-xl font-semibold text-primary">
         Not sure where to start?
       </h2>
 
-      <form onSubmit={handleSubmit} className="max-w-xl flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           value={intent}
           onChange={(e) => setIntent(e.target.value)}
@@ -371,6 +252,6 @@ export default function IntentCapture() {
           {loading ? 'Reviewing…' : 'Get Recommendation'}
         </button>
       </form>
-    </section>
+    </div>
   );
 }
