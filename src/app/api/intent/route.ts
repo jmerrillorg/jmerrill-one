@@ -1,58 +1,99 @@
 import { NextResponse } from 'next/server';
 
-type Division =
-  | 'publishing'
-  | 'financial'
-  | 'foundation'
-  | 'productions'
-  | 'unknown';
-
-function classifyIntent(intent: string): {
-  recommendation: Division;
-  confidence: number;
-} {
-  const text = intent.toLowerCase();
-
-  const rules: Record<Division, string[]> = {
-    publishing: ['book', 'publish', 'author', 'manuscript'],
-    financial: ['estate', 'planning', 'pre-need', 'insurance', 'funeral'],
-    foundation: ['nonprofit', 'donation', 'community', 'grant'],
-    productions: ['video', 'media', 'podcast', 'production'],
-    unknown: [],
-  };
-
-  let bestMatch: Division = 'unknown';
-  let highestScore = 0;
-
-  for (const [division, keywords] of Object.entries(rules)) {
-    const score = keywords.filter((k) => text.includes(k)).length;
-    if (score > highestScore) {
-      highestScore = score;
-      bestMatch = division as Division;
-    }
-  }
-
-  return {
-    recommendation: bestMatch,
-    confidence: Math.min(highestScore / 3, 1), // normalize 0–1
-  };
+interface IntentRequestBody {
+  intent: string;
+  clientSessionId: string;
+  correlationId: string;
+  pageUrl: string;
+  userAgent: string;
 }
 
 export async function POST(req: Request) {
-  const { intent } = await req.json();
+  try {
+    // -------------------------
+    // Parse & validate request body
+    // -------------------------
+    const body = (await req.json()) as Partial<IntentRequestBody>;
 
-  const { recommendation, confidence } = classifyIntent(intent);
+    const {
+      intent,
+      clientSessionId,
+      correlationId,
+      pageUrl,
+      userAgent,
+    } = body;
 
-  // Telemetry (console now, App Insights next)
-  console.log('[JM1 INTENT]', {
-    intent,
-    recommendation,
-    confidence,
-    timestamp: new Date().toISOString(),
-  });
+    if (typeof intent !== 'string' || intent.trim() === '') {
+      throw new Error('Invalid intent');
+    }
 
-  return NextResponse.json({
-    recommendation,
-    confidence,
-  });
+    if (
+      typeof clientSessionId !== 'string' ||
+      typeof correlationId !== 'string' ||
+      typeof pageUrl !== 'string' ||
+      typeof userAgent !== 'string'
+    ) {
+      throw new Error('Invalid telemetry payload');
+    }
+
+    const flowUrl = process.env.POWER_AUTOMATE_INTENT_URL;
+
+    if (!flowUrl) {
+      throw new Error('POWER_AUTOMATE_INTENT_URL not set');
+    }
+
+    // -------------------------
+    // Forward payload to Power Automate
+    // -------------------------
+    const res = await fetch(flowUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        intent,
+        clientSessionId,
+        correlationId,
+        pageUrl,
+        userAgent,
+      }),
+    });
+
+    if (!res.ok) {
+      throw new Error(`Flow failed: ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    // -------------------------
+    // Normalize response for UI
+    // -------------------------
+    return NextResponse.json({
+      primary:
+        typeof data?.primary === 'string'
+          ? data.primary
+          : 'unknown',
+
+      secondary:
+        Array.isArray(data?.secondary)
+          ? data.secondary
+          : [],
+
+      confidence:
+        typeof data?.confidence === 'object' && data.confidence !== null
+          ? data.confidence
+          : {},
+    });
+  } catch (err) {
+    console.error('Intent routing error:', err);
+
+    return NextResponse.json(
+      {
+        primary: 'unknown',
+        secondary: [],
+        confidence: {},
+      },
+      { status: 500 }
+    );
+  }
 }
