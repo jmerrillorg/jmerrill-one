@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Jackie Smith Jr.
+N:Smith Jr.;Jackie;;;
+TITLE:Founder & Chief Executive Officer
+ORG:J Merrill One
+TEL;TYPE=WORK,VOICE:+16149656057
+EMAIL;TYPE=WORK:jackie@jmerrill.one
+URL;TYPE=WORK:https://jmerrill.one
+ADR;TYPE=WORK:;;Columbus;OH;;;US
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/company/jmerrillone
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/jmerrillone/
+NOTE:Founder & CEO of J Merrill One — a unified enterprise platform spanning publishing, financial strategy, community impact, and media production. What people build should last.
+END:VCARD
