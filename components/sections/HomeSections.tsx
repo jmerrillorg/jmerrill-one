@@ -22,13 +22,13 @@ export function HeroSection() {
           <span style={{ width:"32px",height:"1px",background:"#F4B400",display:"inline-block" }} />{canon.hero.eyebrow}
         </div>
         <h1 className="jm1-h1">
-          What people<br /><em>build should</em><br /><span className="ul">last.</span>
+          What you<br /><em>build should</em><br /><span className="ul">last.</span>
         </h1>
         <p className="jm1-bridge">{canon.hero.bridge}</p>
         <p className="jm1-hero-body">{canon.hero.body}</p>
         <div style={{ display:"flex",gap:"0.75rem",flexWrap:"wrap" as const,marginBottom:"3.5rem" }}>
-          <Link href="/contact" className="jm1-btn-fill">{canon.hero.cta1}</Link>
-          <Link href="/operating-model" className="jm1-btn-ghost">{canon.hero.cta2}</Link>
+          <Link href="/divisions/financial" className="jm1-btn-fill">{canon.hero.cta1}</Link>
+          <Link href="/why-we-exist" className="jm1-btn-ghost">{canon.hero.cta2}</Link>
         </div>
         <div style={{ display:"flex",gap:"2.75rem",paddingTop:"2.5rem",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
           {canon.hero.stats.map(s=>(
@@ -108,7 +108,7 @@ export function BridgeSection() {
       <p style={{ fontSize:"14px",color:"#4A5568",lineHeight:1.7,maxWidth:"520px",marginBottom:"3rem" }}>{canon.bridge.sub}</p>
       <div className="jm1-bridge-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href={`/divisions/${d.id}`} style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={`https://${d.domain}`} style={{ textDecoration:"none" }}>
             <div className="jm1-bc">
               <div className="jm1-bc-bar" style={{ background:d.accent }} />
               <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",textTransform:"uppercase",color:d.accent }}>{d.label}</span>
@@ -153,7 +153,7 @@ export function DivisionsSection() {
       <p className="jm1-sp">{canon.divisions.sub}</p>
       <div className="jm1-brand-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href={`/divisions/${d.id}`} style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={`https://${d.domain}`} style={{ textDecoration:"none" }}>
             <div className="jm1-b-tile">
               <div className="jm1-b-bar" style={{ background:d.accent }} />
               <span className="jm1-b-n">{d.num}</span>
@@ -238,7 +238,7 @@ export function EntrySection() {
       <p className="jm1-sp">{canon.entry.sub}</p>
       <div className="jm1-entry-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href="/contact" style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={`https://${d.domain}`} style={{ textDecoration:"none" }}>
             <div className="jm1-e-card">
               <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",color:"#F4B400",textTransform:"uppercase",marginBottom:"0.75rem" }}>{d.label}</div>
               <div className="jm1-e-title">{d.entryLabel}</div>

@@ -21,7 +21,7 @@ export default function Footer() {
               <ul style={{ listStyle:"none", display:"flex", flexDirection:"column", gap:"0.55rem" }}>
                 {col.links.map(([label, href]) => (
                   <li key={label}>
-                    <Link href={`/${href}`} className="jm1-f-link">{label}</Link>
+                    <Link href={href} className="jm1-f-link">{label}</Link>
                   </li>
                 ))}
               </ul>

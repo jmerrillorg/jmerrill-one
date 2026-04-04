@@ -5,6 +5,7 @@
  */
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import StoryBlock from "@/components/StoryBlock";
 import {
   HeroSection,
   TickerSection,
@@ -27,6 +28,12 @@ export default function Home() {
       {/* 03 */ } <TickerSection />
       {/* 04 */ } <WhySection />
       {/* 05 */ } <BridgeSection />
+                  <StoryBlock
+                    quote="After 45 years of serving others, I finally have a plan that protects my family. One conversation. One week. Everything organized."
+                    attribution="Estate planning client, Columbus OH"
+                    ctaText="Protect your family →"
+                    ctaHref="https://jmerrill.financial"
+                  />
       {/* 06 */ } <SystemDefSection />
       {/* 07 */ } <DivisionsSection />
       {/* 08 */ } <StatementSection />

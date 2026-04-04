@@ -15,22 +15,23 @@ export const canon = {
     wordmark:    "J Merrill",
     wordmarkSup: "ONE",
     links: ["Why We Exist", "Divisions", "Operating Model", "Contact"],
-    cta: "Enter the System",
+    cta: "Start Here",
   },
 
   // ── Hero — WHY-first per Canon v1.1 governance rule ─────────────────────
   hero: {
     eyebrow:   "Enterprise Platform · Columbus, OH",
-    headline:  ["What people", "build should", "last."],
+    headline:  ["What you", "build should", "last."],
     heEmphasis: "build should",   // italic word
-    bridge:    "The system behind the legacy — built for the people we serve, structured to carry them forward.",
+    bridge:    "Most people never build the system to protect it. J Merrill One does that — for your family, your words, your legacy, and your community.",
     body:      "J Merrill One is the system that structures, protects, and carries forward what people build — across publishing, financial strategy, community impact, and media production.",
-    cta1:      "Find Your Path",       // v1.1 update
-    cta2:      "See the Operating Model",
+    cta1:      "Protect Your Family",
+    cta2:      "Start Your Legacy",
     stats: [
-      { value: "125+", label: "Intellectual Assets Distributed" },
+      { value: "125+", label: "Authors published and owning their work" },
       { value: "4",    label: "Integrated Operating Divisions" },
       { value: "01",   label: "Unified Enterprise System" },
+      { value: "75",   label: "Families served last Thanksgiving — 150 is the goal" },
     ],
   },
 
@@ -147,9 +148,9 @@ export const canon = {
   footer: {
     tagline: "What people build should last.\nOne system. Four divisions.\nIn service of legacy.",
     cols: [
-      { head: "Divisions",  links: [["Publishing","publishing"],["Financial","financial"],["Foundation","foundation"],["Productions","productions"]] },
-      { head: "Enterprise", links: [["Why We Exist","why-we-exist"],["Operating Model","operating-model"],["Ecosystem","ecosystem"],["Contact","contact"]] },
-      { head: "Connect",    links: [["Contact","contact"],["Appointments","contact"],["Partnership","contact"],["Vendor Portal","contact"]] },
+      { head: "Divisions",  links: [["Publishing","https://jmerrill.pub"],["Financial","https://jmerrill.financial"],["Foundation","https://jmerrill.foundation"],["Productions","https://jmerrill.productions"]] },
+      { head: "Enterprise", links: [["Why We Exist","/why-we-exist"],["Operating Model","/operating-model"],["Ecosystem","/ecosystem"],["Contact","/contact"]] },
+      { head: "Connect",    links: [["Contact","/contact"],["Appointments","https://jmerrill.financial"],["Partnership","/contact?type=partnership"],["Vendor Portal","/contact?type=vendor"]] },
     ],
     copy:  "© 2026 J Merrill One. All rights reserved. Headquartered in Columbus, OH.",
     legal: ["Privacy","Terms","Legal"],

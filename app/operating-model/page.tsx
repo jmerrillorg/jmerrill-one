@@ -39,6 +39,8 @@ export default function OperatingModelPage() {
 
       <section className="jm1-sec" style={{ background:"#fff",borderBottom:"1px solid rgba(0,44,84,0.09)" }}>
         <div className="jm1-kicker">Operating Model</div>
+        <p style={{ fontFamily:"'DM Mono',monospace", fontSize:"10px", letterSpacing:"0.18em", textTransform:"uppercase", color:"#F4B400", marginBottom:"1.5rem" }}>Built for people. Governed for permanence.</p>
+        <p style={{ fontSize:"15px", color:"#4A5568", lineHeight:1.8, maxWidth:"620px", marginBottom:"2rem" }}>Every system at J Merrill One exists because a person needed something to last. The architecture below is how we keep that promise — at scale, across every division, for every person we serve.</p>
         <h1 className="jm1-sh" style={{ fontSize:"clamp(48px,6vw,80px)",lineHeight:1.03,letterSpacing:"-0.02em",marginBottom:"1rem" }}>The architecture<br /><em>that runs it all.</em></h1>
         <p className="jm1-bridge" style={{ marginBottom:"0",marginTop:"0.5rem" }}>We built the infrastructure because what people build should last — and lasting things require systems built to carry them.</p>
         <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,maxWidth:"580px",marginTop:"1rem" }}>J Merrill One operates on a three-layer infrastructure. Every division inherits this model — it is not rebuilt per brand. This creates enterprise-grade capability at a fraction of the typical cost and complexity.</p>
