@@ -53,11 +53,13 @@ export function HeroSection() {
           </div>
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"1px",background:"rgba(0,44,84,0.09)" }}>
             {divisions.map(d=>(
-              <div key={d.id} style={{ background:"#fff",padding:"1rem 1.25rem",display:"flex",flexDirection:"column" as const,gap:"3px" }}>
-                <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"8px",letterSpacing:"0.14em",textTransform:"uppercase",fontWeight:500,color:d.accent }}>{d.label}</span>
-                <span style={{ fontSize:"12px",fontWeight:600,color:"#05111F" }}>{d.fullName}</span>
-                <span style={{ fontSize:"10px",color:"#4A5568" }}>{d.why.split(" ").slice(0,4).join(" ")}…</span>
-              </div>
+              <Link key={d.id} href={`/divisions/${d.id}`} style={{ textDecoration:"none" }}>
+                <div style={{ background:"#fff",padding:"1rem 1.25rem",display:"flex",flexDirection:"column" as const,gap:"3px",cursor:"pointer",transition:"background 0.15s" }} onMouseEnter={e=>(e.currentTarget.style.background="#F7F8FA")} onMouseLeave={e=>(e.currentTarget.style.background="#fff")}>
+                  <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"8px",letterSpacing:"0.14em",textTransform:"uppercase",fontWeight:500,color:d.accent }}>{d.label}</span>
+                  <span style={{ fontSize:"12px",fontWeight:600,color:"#05111F" }}>{d.fullName}</span>
+                  <span style={{ fontSize:"10px",color:"#4A5568" }}>{d.why.split(" ").slice(0,4).join(" ")}…</span>
+                </div>
+              </Link>
             ))}
           </div>
           <div style={{ padding:"0.85rem 1.5rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.12em",color:"#BDC5CE",textTransform:"uppercase",textAlign:"center" }}>Governed · Connected · Unified</div>
@@ -106,13 +108,15 @@ export function BridgeSection() {
       <p style={{ fontSize:"14px",color:"#4A5568",lineHeight:1.7,maxWidth:"520px",marginBottom:"3rem" }}>{canon.bridge.sub}</p>
       <div className="jm1-bridge-grid">
         {divisions.map(d=>(
-          <div key={d.id} className="jm1-bc">
-            <div className="jm1-bc-bar" style={{ background:d.accent }} />
-            <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",textTransform:"uppercase",color:d.accent }}>{d.label}</span>
-            <div className="jm1-bc-title">{d.humanTitle}</div>
-            <p className="jm1-bc-body">{d.humanBody}</p>
-            <span className="jm1-bc-link">{d.ctaLabel} →</span>
-          </div>
+          <Link key={d.id} href={`/divisions/${d.id}`} style={{ textDecoration:"none" }}>
+            <div className="jm1-bc">
+              <div className="jm1-bc-bar" style={{ background:d.accent }} />
+              <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",textTransform:"uppercase",color:d.accent }}>{d.label}</span>
+              <div className="jm1-bc-title">{d.humanTitle}</div>
+              <p className="jm1-bc-body">{d.humanBody}</p>
+              <span className="jm1-bc-link">{d.ctaLabel} →</span>
+            </div>
+          </Link>
         ))}
       </div>
     </section>

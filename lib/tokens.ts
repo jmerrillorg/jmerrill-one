@@ -99,7 +99,7 @@ export const divisions = [
     label:      "Productions",
     fullName:   "J Merrill Productions",
     accent:     colors.pro,
-    domain:     "productions.jmerrill.one",
+    domain:     "jmerrill.productions",
     why:        "What you create should reach further than you can alone.",
     tagline:    "Message, mission, movement — amplified.",
     desc:       "Media, storytelling, and content production that amplifies message, mission, and movement across every format and platform.",

@@ -1,15 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { canon } from "@/content/canon";
-
-const NAV_SVG = (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-    <path d="M4 4 Q4 12 12 20 Q20 12 20 4" stroke="#002C54" strokeWidth="1.5" fill="none"/>
-    <path d="M12 4 L12 20" stroke="#A3C4DC" strokeWidth="1" opacity="0.5"/>
-    <path d="M8 6 Q12 10 16 6" stroke="#F4B400" strokeWidth="1.2" fill="none"/>
-  </svg>
-);
 
 const navLinks = [
   { label: "Why We Exist",    href: "/why-we-exist" },
@@ -26,7 +19,9 @@ export default function Nav() {
       <nav className="jm1-nav">
         {/* Wordmark */}
         <div style={{ display:"flex", alignItems:"center", gap:"10px" }}>
-          <Link href="/" className="jm1-nav-mark">{NAV_SVG}</Link>
+          <Link href="/" className="jm1-nav-mark">
+            <Image src="/web-app-manifest-512x512.png" alt="J Merrill One" width={32} height={32} priority />
+          </Link>
           <Link href="/" className="jm1-nav-wm">
             {canon.nav.wordmark}<sup>{canon.nav.wordmarkSup}</sup>
           </Link>

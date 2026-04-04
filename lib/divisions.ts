@@ -136,7 +136,7 @@ export const divisions: Division[] = [
     label:    "Productions",
     fullName: "J Merrill Productions",
     accent:   "#FF6F00",
-    domain:   "productions.jmerrill.one",
+    domain:   "jmerrill.productions",
     parentLine: "A J Merrill One Company",
     why:      "What you create should reach further than you can alone.",
     tagline:  "Message, mission, movement — amplified.",
