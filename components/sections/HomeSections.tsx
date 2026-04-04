@@ -3,8 +3,6 @@ import Link from "next/link";
 import { canon } from "@/content/canon";
 import { divisions } from "@/lib/tokens";
 
-const NAV_SVG = <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 4 Q4 12 12 20 Q20 12 20 4" stroke="#002C54" strokeWidth="1.5" fill="none"/><path d="M12 4 L12 20" stroke="#A3C4DC" strokeWidth="1" opacity="0.5"/><path d="M8 6 Q12 10 16 6" stroke="#F4B400" strokeWidth="1.2" fill="none"/></svg>;
-
 // ── Kicker helper
 function K({ text, color="#F4B400", mb="1rem" }: { text:string; color?:string; mb?:string }) {
   return (
@@ -84,7 +82,7 @@ export function WhySection() {
     <section className="jm1-why">
       <div style={{ maxWidth:"920px" }}>
         <K text={canon.why.kicker} mb="1.5rem" />
-        <h2 className="jm1-why-h">What people build<br /><em>should last.</em></h2>
+        <h2 className="jm1-why-h">Ideas die. Families go unprotected.<br /><em>Too many legacies die with the people who built them.</em></h2>
         <p className="jm1-why-stmt">{canon.why.statement}</p>
         <div className="jm1-why-pillars">
           {divisions.map(d=>(
