@@ -12,6 +12,10 @@ function K({ text, color="#F4B400", mb="1rem" }: { text:string; color?:string; m
   );
 }
 
+function divisionHref(id: string, domain: string) {
+  return id === "productions" ? "/contact?division=productions" : `https://${domain}`;
+}
+
 export function HeroSection() {
   return (
     <section className="jm1-hero">
@@ -51,7 +55,7 @@ export function HeroSection() {
           </div>
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"1px",background:"rgba(0,44,84,0.09)" }}>
             {divisions.map(d=>(
-              <Link key={d.id} href={`/divisions/${d.id}`} style={{ textDecoration:"none" }}>
+              <Link key={d.id} href={divisionHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
                 <div style={{ background:"#fff",padding:"1rem 1.25rem",display:"flex",flexDirection:"column" as const,gap:"3px",cursor:"pointer",transition:"background 0.15s" }} onMouseEnter={e=>(e.currentTarget.style.background="#F7F8FA")} onMouseLeave={e=>(e.currentTarget.style.background="#fff")}>
                   <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"8px",letterSpacing:"0.14em",textTransform:"uppercase",fontWeight:500,color:d.accent }}>{d.label}</span>
                   <span style={{ fontSize:"12px",fontWeight:600,color:"#05111F" }}>{d.fullName}</span>
@@ -106,7 +110,7 @@ export function BridgeSection() {
       <p style={{ fontSize:"14px",color:"#4A5568",lineHeight:1.7,maxWidth:"520px",marginBottom:"3rem" }}>{canon.bridge.sub}</p>
       <div className="jm1-bridge-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href={`https://${d.domain}`} style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={divisionHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
             <div className="jm1-bc">
               <div className="jm1-bc-bar" style={{ background:d.accent }} />
               <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",textTransform:"uppercase",color:d.accent }}>{d.label}</span>
@@ -127,6 +131,7 @@ export function SystemDefSection() {
       <K text={canon.sysdef.kicker} />
       <h2 className="jm1-sh">{canon.sysdef.headline[0]}<br /><em>{canon.sysdef.headline[1]}</em><br />{canon.sysdef.headline[2]}</h2>
       <div className="jm1-sysdef-frame">
+        <p className="jm1-sysdef-body">People come to us at real moments — when a manuscript is finally done, when a parent dies without a will, when a community need becomes impossible to ignore, when a message outgrows the person carrying it. What they find is a system designed for exactly that moment.</p>
         <p className="jm1-sysdef-title">J Merrill One is <em>not a company<br />with multiple services.</em></p>
         <p className="jm1-sysdef-body">{canon.sysdef.body}</p>
         <div className="jm1-sysdef-pillars">
@@ -236,7 +241,7 @@ export function EntrySection() {
       <p className="jm1-sp">{canon.entry.sub}</p>
       <div className="jm1-entry-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href={`https://${d.domain}`} style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={divisionHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
             <div className="jm1-e-card">
               <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",color:"#F4B400",textTransform:"uppercase",marginBottom:"0.75rem" }}>{d.label}</div>
               <div className="jm1-e-title">{d.entryLabel}</div>

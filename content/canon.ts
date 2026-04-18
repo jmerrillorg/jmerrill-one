@@ -130,8 +130,9 @@ export const canon = {
     headline: ["Operational at", "enterprise scale."],
     sub:      "Built with the rigor of public institutions. Operated with the precision of modern technology. In service of real people and real outcomes.",
     stats: [
-      { value: "125+", label: "Intellectual assets\ndistributed" },
-      { value: "4",    label: "Integrated operating\ndivisions" },
+      { value: "125+", label: "Authors published\nand owning their work" },
+      { value: "4",    label: "Divisions. One\nsystem. Infinite leverage." },
+      { value: "75",   label: "Families served last Thanksgiving\n— 150 is the goal" },
     ],
     badges: [
       "GPO Registered Vendor",
@@ -150,7 +151,7 @@ export const canon = {
     cols: [
       { head: "Divisions",  links: [["Publishing","https://jmerrill.pub"],["Financial","https://jmerrill.financial"],["Foundation","https://jmerrill.foundation"],["Productions","https://jmerrill.productions"]] },
       { head: "Enterprise", links: [["Why We Exist","/why-we-exist"],["Operating Model","/operating-model"],["Ecosystem","/ecosystem"],["Contact","/contact"]] },
-      { head: "Connect",    links: [["Contact","/contact"],["Appointments","https://jmerrill.financial"],["Partnership","/contact?type=partnership"],["Vendor Portal","/contact?type=vendor"]] },
+      { head: "Connect",    links: [["Contact","/contact"],["Bookings","https://jmerrill.financial"],["Partnership","/contact?type=partnership"],["Vendor Portal","/contact?type=vendor"]] },
     ],
     copy:  "© 2026 J Merrill One. All rights reserved. Headquartered in Columbus, OH.",
     legal: ["Privacy","Terms","Legal"],
