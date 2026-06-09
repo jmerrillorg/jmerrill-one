@@ -1,9 +1,36 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { divisions as divTokens } from "@/lib/tokens";
 import { divisions, getDivision } from "@/lib/divisions";
+import { getDivisionInquiryHref, getDivisionPublicHref, isInquiryLedDivision } from "@/lib/division-links";
+
+const divisionMetadata: Record<string, string> = {
+  publishing: "J Merrill Publishing helps authors protect ownership, publish with clarity, and carry their words forward.",
+  financial: "J Merrill Financial helps families get protected with clear planning, steady guidance, and a non-intimidating process.",
+  foundation: "J Merrill Foundation helps donors, volunteers, and partners turn generosity into practical, lasting community impact.",
+  productions: "J Merrill Productions helps messages travel further through guided, inquiry-led video, audio, and content support.",
+};
+
+const serviceBridges: Record<string, { headline: string; body: string }> = {
+  publishing: {
+    headline: "Guidance before publishing decisions.",
+    body: "Authors should not have to decode the publishing process alone. Before any service decision, we help you understand your options, protect your rights, and move forward with clarity.",
+  },
+  financial: {
+    headline: "Peace of mind before paperwork.",
+    body: "Family protection can feel intimidating when the documents are unfamiliar or overdue. We begin with clarity, care, and a process designed to help loved ones feel more secure, not more overwhelmed.",
+  },
+  foundation: {
+    headline: "Trust before programs and giving paths.",
+    body: "Generosity works best when people can see how their time, partnership, or support creates practical help that lasts. We want donors, volunteers, and community partners to understand the path before they choose it.",
+  },
+  productions: {
+    headline: "The first step is the conversation.",
+    body: "Before choosing a package, we want to understand your message, audience, and what you need the work to do. Productions on J Merrill One starts with inquiry so the right creative path can be shaped with care.",
+  },
+};
 
 export async function generateStaticParams() {
   return divisions.map(d => ({ division: d.id }));
@@ -13,13 +40,17 @@ export async function generateMetadata({ params }: { params: Promise<{ division:
   const { division: divId } = await params;
   const d = getDivision(divId);
   if (!d) return { title: "Not Found" };
-  return { title: `${d.fullName} — J Merrill One`, description: `${d.why} ${d.fullName} is part of the J Merrill One enterprise system.` };
+  return { title: `${d.fullName} — J Merrill One`, description: divisionMetadata[d.id] ?? d.why };
 }
 
 export default async function DivisionPage({ params }: { params: Promise<{ division: string }> }) {
   const { division: divId } = await params;
   const d = getDivision(divId);
   if (!d) notFound();
+  const isInquiryLed = isInquiryLedDivision(d.id);
+  const contactHref = getDivisionInquiryHref(d.id);
+  const publicHref = getDivisionPublicHref(d.id, d.domain);
+  const serviceBridge = serviceBridges[d.id];
 
   return (
     <>
@@ -44,25 +75,38 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
             <p style={{ fontFamily:"'Instrument Serif',serif",fontStyle:"italic",fontSize:"15px",color:"#4A5568",lineHeight:1.75,maxWidth:"500px",marginBottom:"1.25rem",borderLeft:`2px solid ${d.accent}`,paddingLeft:"1rem" }}>{d.heroBridge}</p>
             <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.75,maxWidth:"500px",marginBottom:"2.5rem" }}>{d.heroBody}</p>
             <div className="div-btn-row">
-              <a href="/contact" style={{ background:d.accent,color:"#fff",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none",border:`1px solid ${d.accent}` }}>{d.cta}</a>
-              <a href="/contact" style={{ background:"transparent",color:"#002C54",border:"1px solid rgba(0,44,84,0.25)",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>{d.ctaBook}</a>
+              <Link href={contactHref} style={{ background:d.accent,color:"#fff",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none",border:`1px solid ${d.accent}` }}>{d.cta}</Link>
+              <Link href={contactHref} style={{ background:"transparent",color:"#002C54",border:"1px solid rgba(0,44,84,0.25)",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>{isInquiryLed ? "Tell Us About Your Project" : d.ctaBook}</Link>
             </div>
           </div>
           <div style={{ border:"1px solid rgba(0,44,84,0.09)",background:"#F7F8FA",padding:"2.5rem",display:"flex",flexDirection:"column",gap:"1.5rem" }}>
             <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.2em",color:d.accent,textTransform:"uppercase" }}>Division Identity</div>
             <div><div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"rgba(0,44,84,0.4)",textTransform:"uppercase",marginBottom:"0.5rem" }}>Our WHY</div><div style={{ fontFamily:"'Instrument Serif',serif",fontSize:"19px",color:"#05111F",fontStyle:"italic",lineHeight:1.35 }}>{d.why}</div></div>
             <div><div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"rgba(0,44,84,0.4)",textTransform:"uppercase",marginBottom:"0.5rem" }}>Brand Truth</div><div style={{ fontSize:"14px",color:"#4A5568",lineHeight:1.6 }}>{d.tagline}</div></div>
-            <div><div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"rgba(0,44,84,0.4)",textTransform:"uppercase",marginBottom:"0.5rem" }}>Domain</div><a href={`https://${d.domain}`} target="_blank" rel="noopener noreferrer" style={{ fontFamily:"'DM Mono',monospace",fontSize:"12px",color:d.accent,textDecoration:"none" }}>{d.domain} →</a></div>
-            <div><div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"rgba(0,44,84,0.4)",textTransform:"uppercase",marginBottom:"0.5rem" }}>Parent System</div><a href="/" style={{ fontSize:"13px",color:"#4A5568",textDecoration:"none" }}>One of four divisions of J Merrill One</a></div>
+            <div>
+              <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"rgba(0,44,84,0.4)",textTransform:"uppercase",marginBottom:"0.5rem" }}>{isInquiryLed ? "Start Here" : "Domain"}</div>
+              {isInquiryLed ? (
+                <Link href={contactHref} style={{ fontFamily:"'DM Mono',monospace",fontSize:"12px",color:d.accent,textDecoration:"none" }}>Start with J Merrill One →</Link>
+              ) : (
+                <a href={publicHref} target="_blank" rel="noopener noreferrer" style={{ fontFamily:"'DM Mono',monospace",fontSize:"12px",color:d.accent,textDecoration:"none" }}>{d.domain} →</a>
+              )}
+            </div>
+            <div><div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"rgba(0,44,84,0.4)",textTransform:"uppercase",marginBottom:"0.5rem" }}>Parent System</div><Link href="/" style={{ fontSize:"13px",color:"#4A5568",textDecoration:"none" }}>One of four divisions of J Merrill One</Link></div>
           </div>
         </div>
       </section>
 
+      <section className="jm1-sec-sm" style={{ background:"#fff",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
+        <div className="jm1-kicker">Before You Choose a Service</div>
+        <h2 className="jm1-sh" style={{ fontSize:"clamp(28px,3.2vw,40px)",marginBottom:"1rem" }}>{serviceBridge.headline}</h2>
+        <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,maxWidth:"720px" }}>{serviceBridge.body}</p>
+      </section>
+
       {/* Services */}
       <section className="jm1-sec" style={{ background:"#F7F8FA",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
-        <div style={{ display:"flex",alignItems:"center",gap:"0.6rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.24em",color:d.accent,textTransform:"uppercase",marginBottom:"1rem" }}><span style={{ display:"inline-block",width:"18px",height:"1px",background:d.accent }} />Services &amp; Pricing</div>
+        <div style={{ display:"flex",alignItems:"center",gap:"0.6rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.24em",color:d.accent,textTransform:"uppercase",marginBottom:"1rem" }}><span style={{ display:"inline-block",width:"18px",height:"1px",background:d.accent }} />{isInquiryLed ? "Ways We Can Help" : "Services & Pricing"}</div>
         <h2 className="jm1-sh">What we offer.</h2>
-        <p className="jm1-sp">Every service is designed to give you access to professional-grade outcomes without unnecessary complexity or cost.</p>
+        <p className="jm1-sp">{isInquiryLed ? "Every engagement starts with a conversation so the right creative support can be scoped with clarity." : "Every service is designed to give you access to professional-grade outcomes without unnecessary complexity or cost."}</p>
         <div className="div-services-grid">
           {d.services.map(s=>(
             <div key={s.sku} style={{ background:"#fff",padding:"1.75rem",display:"flex",flexDirection:"column",gap:"0.6rem",cursor:"pointer",transition:"background 0.2s" }}>
@@ -74,8 +118,8 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
           ))}
         </div>
         <div style={{ display:"flex",gap:"0.75rem",marginTop:"2rem" }}>
-          <a href="/contact" style={{ background:d.accent,color:"#fff",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>Start a Conversation</a>
-          <a href="/contact" style={{ background:"transparent",color:"#002C54",border:"1px solid rgba(0,44,84,0.25)",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>View Full Catalog</a>
+          <Link href={contactHref} style={{ background:d.accent,color:"#fff",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>{isInquiryLed ? "Start the Conversation" : "Start a Conversation"}</Link>
+          <Link href={contactHref} style={{ background:"transparent",color:"#002C54",border:"1px solid rgba(0,44,84,0.25)",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>{isInquiryLed ? "Tell Us About Your Project" : "View Full Catalog"}</Link>
         </div>
       </section>
 
@@ -83,8 +127,8 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
       <section className="jm1-sec jm1-auth">
         <div className="jm1-auth-inner">
           <div>
-            <div style={{ display:"flex",alignItems:"center",gap:"0.6rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.24em",color:d.accent,textTransform:"uppercase",marginBottom:"1rem" }}><span style={{ display:"inline-block",width:"18px",height:"1px",background:d.accent }} />Proof of System</div>
-            <h2 style={{ fontFamily:"'Instrument Serif',serif",fontSize:"clamp(32px,3.8vw,52px)",fontWeight:400,lineHeight:1.12,color:"#fff",marginBottom:"0.75rem",overflow:"visible" }}>Operational at<br /><em style={{ fontStyle:"italic",color:d.accent }}>enterprise scale.</em></h2>
+            <div style={{ display:"flex",alignItems:"center",gap:"0.6rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.24em",color:d.accent,textTransform:"uppercase",marginBottom:"1rem" }}><span style={{ display:"inline-block",width:"18px",height:"1px",background:d.accent }} />Why People Trust This Work</div>
+            <h2 style={{ fontFamily:"'Instrument Serif',serif",fontSize:"clamp(32px,3.8vw,52px)",fontWeight:400,lineHeight:1.12,color:"#fff",marginBottom:"0.75rem",overflow:"visible" }}>Built to serve<br /><em style={{ fontStyle:"italic",color:d.accent }}>real people well.</em></h2>
             <p style={{ fontSize:"14px",color:"rgba(163,196,220,0.8)",lineHeight:1.75,maxWidth:"500px" }}>Built with the rigor of public institutions. Operated with the precision of modern technology. In service of real people and real outcomes.</p>
             <div style={{ display:"flex",gap:"4rem",marginTop:"3rem" }}>
               {d.stats.map(([val,label])=>(
@@ -96,7 +140,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
             </div>
           </div>
           <div style={{ display:"flex",flexDirection:"column",gap:"0.6rem",paddingTop:"0.5rem" }}>
-            {[...d.badges,"Part of J Merrill One enterprise system","Microsoft Power Platform ecosystem"].map(b=>(
+            {[...d.badges,"Part of the J Merrill One family of organizations","Microsoft Power Platform ecosystem"].map(b=>(
               <div key={b} className="jm1-badge"><div style={{ width:"6px",height:"6px",borderRadius:"50%",background:"#F4B400",flexShrink:0 }} />{b}</div>
             ))}
           </div>
@@ -131,8 +175,8 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
       <div className="div-cta-band" style={{ background:d.accent, padding:"4.5rem 2.5rem" }}>
         <div style={{ fontFamily:"'Instrument Serif',serif",fontSize:"clamp(28px,3.2vw,44px)",fontWeight:400,lineHeight:1.22,color:"#fff",maxWidth:"580px" }}>{d.heroHeadline[0].replace(".","")}<br /><em>Let&apos;s talk.</em></div>
         <div className="div-btn-row">
-          <a href="/contact" style={{ background:"#fff",color:d.accent,padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>Find Your Path</a>
-          <a href="/" style={{ background:"transparent",color:"#fff",border:"1px solid rgba(255,255,255,0.4)",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>Back to J Merrill One</a>
+          <Link href={contactHref} style={{ background:"#fff",color:d.accent,padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>{isInquiryLed ? "Tell Us About Your Project" : "Find Your Path"}</Link>
+          <Link href="/" style={{ background:"transparent",color:"#fff",border:"1px solid rgba(255,255,255,0.4)",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>Back to J Merrill One</Link>
         </div>
       </div>
       <Footer />

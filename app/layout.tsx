@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "J Merrill One — The System Behind the Legacy",
-  description: "J Merrill One is the system that structures, protects, and carries forward what people build — across publishing, financial strategy, community impact, and media production.",
+  title: "J Merrill One — What You Build Should Last",
+  description: "J Merrill One helps people protect what they build by guiding authors, families, partners, donors, and community members to the right path.",
   openGraph: {
     title: "J Merrill One",
-    description: "What people build should last.",
+    description: "Clear paths for publishing, family protection, community impact, and message amplification.",
     url: "https://jmerrill.one",
     siteName: "J Merrill One",
     locale: "en_US",
