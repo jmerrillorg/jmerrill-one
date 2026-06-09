@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Jackie Smith Jr. — J Merrill One",
   description: "Founder & CEO, J Merrill One. Enterprise platform spanning publishing, financial strategy, community impact, and media production.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: "Jackie Smith Jr. — J Merrill One",
     description: "Founder & CEO · J Merrill One",
