@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Operating Model — J Merrill One",
-  description: "The three-layer infrastructure that powers J Merrill One.",
+  description: "See how J Merrill One stays consistent, accountable, and coordinated across every division for the people it serves.",
 };
 
 const opCards = [
@@ -40,16 +40,16 @@ export default function OperatingModelPage() {
       <section className="jm1-sec" style={{ background:"#fff",borderBottom:"1px solid rgba(0,44,84,0.09)" }}>
         <div className="jm1-kicker">Operating Model</div>
         <p style={{ fontFamily:"'DM Mono',monospace", fontSize:"10px", letterSpacing:"0.18em", textTransform:"uppercase", color:"#F4B400", marginBottom:"1.5rem" }}>Built for people. Governed for permanence.</p>
-        <p style={{ fontSize:"15px", color:"#4A5568", lineHeight:1.8, maxWidth:"620px", marginBottom:"2rem" }}>Every system at J Merrill One exists because a person needed something to last. The architecture below is how we keep that promise — at scale, across every division, for every person we serve.</p>
-        <h1 className="jm1-sh" style={{ fontSize:"clamp(48px,6vw,80px)",lineHeight:1.03,letterSpacing:"-0.02em",marginBottom:"1rem" }}>The architecture<br /><em>that runs it all.</em></h1>
-        <p className="jm1-bridge" style={{ marginBottom:"0",marginTop:"0.5rem" }}>We built the infrastructure because what people build should last — and lasting things require systems built to carry them.</p>
-        <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,maxWidth:"580px",marginTop:"1rem" }}>J Merrill One operates on a three-layer infrastructure. Every division inherits this model — it is not rebuilt per brand. This creates enterprise-grade capability at a fraction of the typical cost and complexity.</p>
+        <p style={{ fontSize:"15px", color:"#4A5568", lineHeight:1.8, maxWidth:"680px", marginBottom:"2rem" }}>Every system at J Merrill One exists because a person needed something to last. This page is for clients, partners, donors, and stakeholders who want to understand how JM1 stays coordinated behind the scenes.</p>
+        <h1 className="jm1-sh" style={{ fontSize:"clamp(48px,6vw,80px)",lineHeight:1.03,letterSpacing:"-0.02em",marginBottom:"1rem" }}>How J Merrill One<br /><em>stays consistent.</em></h1>
+        <p className="jm1-bridge" style={{ marginBottom:"0",marginTop:"0.5rem" }}>The operating model matters because people should not have to start over every time a need moves from one division to another.</p>
+        <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,maxWidth:"680px",marginTop:"1rem" }}>JM1 uses one shared model so communication, accountability, and follow-through stay aligned across publishing, financial planning, community impact, and productions. The technical pieces support that promise; they are not the reason the promise exists.</p>
       </section>
 
       <section className="jm1-sec" style={{ background:"#F7F8FA",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
-        <div className="jm1-kicker">Infrastructure Layers</div>
-        <h2 className="jm1-sh">Three layers.<br /><em>One unified system.</em></h2>
-        <p className="jm1-sp">The three pillars give every division intelligence, governance, and automation that would otherwise require separate enterprise-grade investments.</p>
+        <div className="jm1-kicker">How the Model Supports People</div>
+        <h2 className="jm1-sh">Three shared layers.<br /><em>One coordinated experience.</em></h2>
+        <p className="jm1-sp">These layers help JM1 stay organized, responsive, and consistent so the people we serve experience clearer handoffs and better follow-through.</p>
         <div className="jm1-op-grid">
           {opCards.map((c,i)=>(
             <div key={c.icon} className="jm1-op-card">
@@ -67,7 +67,7 @@ export default function OperatingModelPage() {
       <section className="jm1-sec" style={{ background:"#fff",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
         <div className="jm1-kicker">Governance Model</div>
         <h2 className="jm1-sh">Centrally governed.<br /><em>Divisionally executed.</em></h2>
-        <p className="jm1-sp">JM1 controls what creates leverage across all divisions. Divisions control what creates conversion within their domain.</p>
+        <p className="jm1-sp">JM1 holds the shared standards so people encounter one level of care, clarity, and accountability. Each division still has room to serve its own audience well.</p>
         <div className="opmodel-gov-grid">
           <div style={{ background:"#002C54",padding:"3rem" }}>
             <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"#F4B400",textTransform:"uppercase",marginBottom:"1.5rem" }}>JM1 Controls</div>
@@ -83,7 +83,7 @@ export default function OperatingModelPage() {
       <section className="jm1-sec" style={{ background:"#F7F8FA",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
         <div className="jm1-kicker">Technology Stack</div>
         <h2 className="jm1-sh">Microsoft-native.<br /><em>Azure-powered.</em></h2>
-        <p className="jm1-sp">The JM1 technology stack is locked at the parent level per Canon v1 Section 09.</p>
+        <p className="jm1-sp">These tools matter because they help JM1 keep records cleaner, handoffs smoother, and follow-through more reliable across every division.</p>
         <div className="opmodel-tech-grid">
           {techStack.map(([tag,color,label,val])=>(
             <div key={label} style={{ background:"#fff",border:"1px solid rgba(0,44,84,0.09)",padding:"1.25rem 1.5rem",display:"flex",alignItems:"center",gap:"1rem" }}>
@@ -97,7 +97,7 @@ export default function OperatingModelPage() {
       <section className="jm1-sec jm1-why" style={{ paddingTop:"5.5rem" }}>
         <div className="jm1-kicker" style={{ color:"#F4B400" }}><span style={{ display:"inline-block",width:"18px",height:"1px",background:"#F4B400" }} />AI Roadmap</div>
         <h2 className="jm1-sh" style={{ color:"#fff" }}>Leading the industry.<br /><em>By design.</em></h2>
-        <p style={{ fontSize:"15px",color:"rgba(163,196,220,0.8)",lineHeight:1.8,maxWidth:"580px",marginBottom:"3.5rem" }}>J Merrill One is not adopting AI tools. We are building an AI-orchestrated enterprise — where every workflow, every division, and every client interaction is powered by intelligent automation.</p>
+        <p style={{ fontSize:"15px",color:"rgba(163,196,220,0.8)",lineHeight:1.8,maxWidth:"620px",marginBottom:"3.5rem" }}>AI is part of how JM1 improves follow-through, not the reason JM1 exists. As the platform matures, automation supports faster routing, cleaner handoffs, and better decision support across divisions.</p>
         <div className="opmodel-ai-grid">
           {aiPhases.map(p=>(
             <div key={p.phase} style={{ background:"rgba(255,255,255,0.03)",border:"0.5px solid rgba(163,196,220,0.1)",padding:"2.5rem",display:"flex",flexDirection:"column",gap:"1rem" }}>

@@ -149,7 +149,7 @@ export const canon = {
   footer: {
     tagline: "What people build should last.\nOne system. Four divisions.\nIn service of legacy.",
     cols: [
-      { head: "Divisions",  links: [["Publishing","https://jmerrill.pub"],["Financial","https://jmerrill.financial"],["Foundation","https://jmerrill.foundation"],["Productions","https://jmerrill.productions"]] },
+      { head: "Divisions",  links: [["Publishing","https://jmerrill.pub"],["Financial","https://jmerrill.financial"],["Foundation","https://jmerrill.foundation"],["Productions","/contact?division=productions"]] },
       { head: "Enterprise", links: [["Why We Exist","/why-we-exist"],["Operating Model","/operating-model"],["Ecosystem","/ecosystem"],["Contact","/contact"]] },
       { head: "Connect",    links: [["Contact","/contact"],["Bookings","https://jmerrill.financial"],["Partnership","/contact?type=partnership"],["Vendor Portal","/contact?type=vendor"]] },
     ],

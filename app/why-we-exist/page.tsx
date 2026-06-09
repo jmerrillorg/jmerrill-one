@@ -1,11 +1,13 @@
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { divisions } from "@/lib/tokens";
+import { getDivisionPublicHref, isInquiryLedDivision } from "@/lib/division-links";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Why We Exist — J Merrill One",
-  description: "What people build should last. The principled belief that drives J Merrill One.",
+  description: "Learn why J Merrill One exists and how it helps people protect what they build, care for family, serve community, and carry legacy forward.",
 };
 
 const darkAccents: Record<string,string> = { pub:"#4DAEFF", fin:"#2EC98A", fnd:"#C87FD4", pro:"#FF9140" };
@@ -29,7 +31,7 @@ export default function WhyWeExistPage() {
         </div>
         <h1 className="jm1-why-h">What people build<br /><em>should last.</em></h1>
         <p className="jm1-why-stmt">
-          Ideas. Families. Wealth. Communities. Too often, they don't.<br />
+          Ideas. Families. Wealth. Communities. Too often, they don&apos;t.<br />
           J Merrill One exists to change that — by building the system that structures, protects, and carries them forward.
         </p>
       </section>
@@ -43,10 +45,10 @@ export default function WhyWeExistPage() {
             </div>
             <h2 className="jm1-sh">A system advanced enough<br /><em>to serve people better<br />than anyone else.</em></h2>
             <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginTop:"1rem" }}>
-              J Merrill One was built on a simple truth: the people who create, earn, build, and give deserve a system that protects what they're working toward — not just while they're working, but for the generations that follow.
+              J Merrill One was built on a simple truth: the people who create, earn, build, and give deserve a system that protects what they&apos;re working toward — not just while they&apos;re working, but for the generations that follow.
             </p>
             <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginTop:"1rem" }}>
-              We don't begin with architecture. We begin with the people the architecture is for.
+              We don&apos;t begin with architecture. We begin with the people the architecture is for.
             </p>
           </div>
           <div style={{ display:"flex",flexDirection:"column",gap:"1rem" }}>
@@ -82,7 +84,9 @@ export default function WhyWeExistPage() {
               <div>
                 <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"#F4B400",textTransform:"uppercase",marginBottom:"0.75rem" }}>What It Protects</div>
                 <p style={{ fontSize:"13px",color:"rgba(255,255,255,0.65)",lineHeight:1.7 }}>{d.humanBody}</p>
-                <a href={`https://${d.domain}`} style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.12em",color:"#BDC5CE",textTransform:"uppercase",marginTop:"1rem",display:"block" }}>{d.domain} →</a>
+                <Link href={getDivisionPublicHref(d.id, d.domain)} style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.12em",color:"#BDC5CE",textTransform:"uppercase",marginTop:"1rem",display:"block",textDecoration:"none" }}>
+                  {isInquiryLedDivision(d.id) ? "Start with J Merrill One →" : `${d.domain} →`}
+                </Link>
               </div>
             </div>
           ))}
@@ -99,7 +103,7 @@ export default function WhyWeExistPage() {
         </div>
         <div>
           <p style={{ fontSize:"13px",color:"rgba(163,196,220,0.65)",lineHeight:1.75,maxWidth:"280px" }}>Every system, every workflow, and every tool at J Merrill One is engineered to protect what people build — and carry it forward for the people they love.</p>
-          <a href="/ecosystem" className="jm1-btn-ghost" style={{ marginTop:"1.5rem",display:"inline-block",color:"rgba(163,196,220,0.8)",borderColor:"rgba(163,196,220,0.3)" }}>Explore the Ecosystem →</a>
+          <Link href="/ecosystem" className="jm1-btn-ghost" style={{ marginTop:"1.5rem",display:"inline-block",color:"rgba(163,196,220,0.8)",borderColor:"rgba(163,196,220,0.3)" }}>Explore the Ecosystem →</Link>
         </div>
       </div>
       <Footer />

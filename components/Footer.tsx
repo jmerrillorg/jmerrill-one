@@ -32,13 +32,6 @@ export default function Footer() {
           <span style={{ fontFamily:"'DM Mono',monospace", fontSize:"9px", letterSpacing:"0.08em", color:"rgba(163,196,220,0.25)" }}>
             {canon.footer.copy}
           </span>
-          <div style={{ display:"flex", gap:"1.5rem" }}>
-            {canon.footer.legal.map((item) => (
-              <Link key={item} href="#" style={{ fontSize:"11px", color:"rgba(163,196,220,0.25)", textDecoration:"none" }}>
-                {item}
-              </Link>
-            ))}
-          </div>
         </div>
       </footer>
     </>

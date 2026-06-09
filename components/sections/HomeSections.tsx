@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { canon } from "@/content/canon";
 import { divisions } from "@/lib/tokens";
+import { getDivisionPublicHref, isInquiryLedDivision } from "@/lib/division-links";
 
 // ── Kicker helper
 function K({ text, color="#F4B400", mb="1rem" }: { text:string; color?:string; mb?:string }) {
@@ -10,10 +11,6 @@ function K({ text, color="#F4B400", mb="1rem" }: { text:string; color?:string; m
       <span style={{ display:"inline-block",width:"18px",height:"1px",background:color }} />{text}
     </div>
   );
-}
-
-function divisionHref(id: string, domain: string) {
-  return id === "productions" ? "/contact?division=productions" : `https://${domain}`;
 }
 
 export function HeroSection() {
@@ -55,7 +52,7 @@ export function HeroSection() {
           </div>
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"1px",background:"rgba(0,44,84,0.09)" }}>
             {divisions.map(d=>(
-              <Link key={d.id} href={divisionHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
+              <Link key={d.id} href={getDivisionPublicHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
                 <div style={{ background:"#fff",padding:"1rem 1.25rem",display:"flex",flexDirection:"column" as const,gap:"3px",cursor:"pointer",transition:"background 0.15s" }} onMouseEnter={e=>(e.currentTarget.style.background="#F7F8FA")} onMouseLeave={e=>(e.currentTarget.style.background="#fff")}>
                   <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"8px",letterSpacing:"0.14em",textTransform:"uppercase",fontWeight:500,color:d.accent }}>{d.label}</span>
                   <span style={{ fontSize:"12px",fontWeight:600,color:"#05111F" }}>{d.fullName}</span>
@@ -110,7 +107,7 @@ export function BridgeSection() {
       <p style={{ fontSize:"14px",color:"#4A5568",lineHeight:1.7,maxWidth:"520px",marginBottom:"3rem" }}>{canon.bridge.sub}</p>
       <div className="jm1-bridge-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href={divisionHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={getDivisionPublicHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
             <div className="jm1-bc">
               <div className="jm1-bc-bar" style={{ background:d.accent }} />
               <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",textTransform:"uppercase",color:d.accent }}>{d.label}</span>
@@ -156,14 +153,14 @@ export function DivisionsSection() {
       <p className="jm1-sp">{canon.divisions.sub}</p>
       <div className="jm1-brand-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href={`https://${d.domain}`} style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={getDivisionPublicHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
             <div className="jm1-b-tile">
               <div className="jm1-b-bar" style={{ background:d.accent }} />
               <span className="jm1-b-n">{d.num}</span>
               <span className="jm1-b-tag" style={{ color:d.accent }}>{d.label}</span>
               <div className="jm1-b-name" style={{ whiteSpace:"pre-line" }}>{"J Merrill\n"+d.label}</div>
               <p className="jm1-b-desc">{d.desc}</p>
-              <span className="jm1-b-link">{d.domain} →</span>
+              <span className="jm1-b-link">{isInquiryLedDivision(d.id) ? "Start with JM1 →" : `${d.domain} →`}</span>
             </div>
           </Link>
         ))}
@@ -241,7 +238,7 @@ export function EntrySection() {
       <p className="jm1-sp">{canon.entry.sub}</p>
       <div className="jm1-entry-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href={divisionHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={getDivisionPublicHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
             <div className="jm1-e-card">
               <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",color:"#F4B400",textTransform:"uppercase",marginBottom:"0.75rem" }}>{d.label}</div>
               <div className="jm1-e-title">{d.entryLabel}</div>
