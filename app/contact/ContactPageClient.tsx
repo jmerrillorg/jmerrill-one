@@ -9,6 +9,15 @@ import { canon } from "@/content/canon";
 
 type Intent = "publishing" | "financial" | "foundation" | "productions" | null;
 
+type IntakeResponse = {
+  success: boolean;
+  status?: string;
+  code?: string;
+  message?: string;
+  correlationId?: string;
+  fallbackEmail?: string;
+};
+
 const S = {
   label: { fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.12em",textTransform:"uppercase" as const,color:"#4A5568",display:"block",marginBottom:"6px" },
   input: { border:"1px solid rgba(0,44,84,0.15)",padding:"0.85rem 1rem",fontFamily:"'Syne',sans-serif",fontSize:"14px",color:"#05111F",outline:"none",width:"100%",background:"#fff" },
@@ -18,6 +27,10 @@ export default function ContactPageClient() {
   const [intent, setIntent] = useState<Intent>(null);
   const [submitted, setSubmitted] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [fallbackEmail, setFallbackEmail] = useState("");
+  const [receiptId, setReceiptId] = useState("");
   const formRef = useRef<HTMLDivElement>(null);
   const selectedDiv = divisions.find(d => d.id === intent);
 
@@ -26,8 +39,12 @@ export default function ContactPageClient() {
     setTimeout(() => formRef.current?.scrollIntoView({ behavior:"smooth", block:"start" }), 100);
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitting(true);
+    setSubmitError("");
+    setFallbackEmail("");
+
     const fd = new FormData(e.currentTarget);
     const firstName = fd.get("firstName") as string;
     const lastName  = fd.get("lastName") as string;
@@ -35,22 +52,46 @@ export default function ContactPageClient() {
     const phone     = fd.get("phone") as string;
     const message   = fd.get("message") as string;
     const source    = fd.get("source") as string;
-    /*
-    INTEGRATION CHECKPOINT — CHAD
-    Phase 2: replace with Power Automate fetch():
-      fetch("POWER_AUTOMATE_HTTP_TRIGGER_URL", {
-        method:"POST", headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({ intent,firstName,lastName,email,phone,message,source,submittedAt:new Date().toISOString() })
-      }).then(()=>{ setSubmittedName(firstName); setSubmitted(true); });
-    Routing: publishing→JMP, financial→FIN, foundation→JMF, productions→JMPROD
-    */
-    const routes = canon.intake.emailRoutes as Record<string,string>;
-    const to = intent ? (routes[intent] ?? routes.fallback) : routes.fallback;
-    const subj = `JM1 Intake — ${selectedDiv?.label??""} — ${firstName} ${lastName}`;
-    const body = [`Division: ${selectedDiv?.label??""}`,`Name: ${firstName} ${lastName}`,`Email: ${email}`,`Phone: ${phone||"Not provided"}`,`Source: ${source||"Not provided"}`,"","Message:",message].join("\n");
-    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
-    setSubmittedName(firstName);
-    setSubmitted(true);
+    const consent = fd.get("consent") === "on";
+    const companyWebsite = fd.get("companyWebsite") as string;
+    const correlationId = globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+    try {
+      const response = await fetch("/api/intake", {
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body:JSON.stringify({
+          intent: intent ?? "general",
+          firstName,
+          lastName,
+          email,
+          phone,
+          message,
+          source,
+          consent,
+          companyWebsite,
+          sourceUrl: window.location.href,
+          submittedAt:new Date().toISOString(),
+          correlationId,
+        }),
+      });
+      const result = (await response.json()) as IntakeResponse;
+
+      if (!response.ok || !result.success) {
+        setSubmitError(result.message || "JM1 could not receive this request securely.");
+        setFallbackEmail(result.fallbackEmail || ((canon.intake.emailRoutes as Record<string,string>)[intent ?? "fallback"] ?? canon.intake.emailRoutes.fallback));
+        return;
+      }
+
+      setSubmittedName(firstName);
+      setReceiptId(result.correlationId || correlationId);
+      setSubmitted(true);
+    } catch {
+      setSubmitError("JM1 could not receive this request securely.");
+      setFallbackEmail((canon.intake.emailRoutes as Record<string,string>)[intent ?? "fallback"] ?? canon.intake.emailRoutes.fallback);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -105,14 +146,16 @@ export default function ContactPageClient() {
 
           {submitted ? (
             <div style={{ border:"1px solid rgba(0,44,84,0.09)",padding:"4rem 3rem",textAlign:"center",maxWidth:"560px" }}>
-              <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.22em",textTransform:"uppercase",color:selectedDiv?.accent,marginBottom:"1.5rem" }}>Message Sent</div>
+              <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.22em",textTransform:"uppercase",color:selectedDiv?.accent,marginBottom:"1.5rem" }}>Request Received</div>
               <div style={{ fontFamily:"'Instrument Serif',serif",fontSize:"36px",color:"#05111F",marginBottom:"1rem" }}>Thank you, {submittedName}.</div>
-              <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginBottom:"2rem" }}>Your message is on its way to the right team. Someone will follow up shortly.</p>
+              <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginBottom:"1rem" }}>Your request has been received and routed to the {selectedDiv?.label} team. Someone will follow up shortly.</p>
+              {receiptId && <p style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.08em",textTransform:"uppercase",color:"#A3C4DC",marginBottom:"2rem" }}>Receipt {receiptId}</p>}
               <Link href="/" style={{ background:selectedDiv?.accent,color:"#fff",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",textDecoration:"none",display:"inline-block" }}>Return to J Merrill One</Link>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ maxWidth:"720px" }}>
               <input type="hidden" name="intent" value={intent} />
+              <input type="text" name="companyWebsite" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display:"none" }} />
               <div className="contact-form-grid-2">
                 <div><label style={S.label}>First Name *</label><input name="firstName" required placeholder="First name" style={S.input} /></div>
                 <div><label style={S.label}>Last Name *</label><input name="lastName" required placeholder="Last name" style={S.input} /></div>
@@ -137,11 +180,21 @@ export default function ContactPageClient() {
                   <option>Other</option>
                 </select>
               </div>
-              <button type="submit" style={{ width:"100%",padding:"1.1rem",fontFamily:"'Syne',sans-serif",fontSize:"12px",fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",background:selectedDiv?.accent??"#002C54",color:"#fff",border:"none",cursor:"pointer" }}>
-                Send My Request
+              <label style={{ display:"flex",gap:"0.75rem",alignItems:"flex-start",fontSize:"12px",color:"#4A5568",lineHeight:1.6,marginBottom:"1.25rem" }}>
+                <input name="consent" type="checkbox" required style={{ marginTop:"0.15rem" }} />
+                <span>I understand JM1 may use this information to respond to this request.</span>
+              </label>
+              {submitError && (
+                <div role="alert" style={{ border:"1px solid rgba(185,28,28,0.25)",background:"#FFF5F5",color:"#7F1D1D",fontSize:"13px",lineHeight:1.6,padding:"1rem",marginBottom:"1rem" }}>
+                  <strong style={{ display:"block",marginBottom:"0.35rem" }}>{submitError}</strong>
+                  {fallbackEmail && <a href={`mailto:${fallbackEmail}`} style={{ color:"#7F1D1D",textDecoration:"underline" }}>Email {fallbackEmail}</a>}
+                </div>
+              )}
+              <button type="submit" disabled={submitting} style={{ width:"100%",padding:"1.1rem",fontFamily:"'Syne',sans-serif",fontSize:"12px",fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",background:selectedDiv?.accent??"#002C54",color:"#fff",border:"none",cursor:submitting?"wait":"pointer",opacity:submitting?0.7:1 }}>
+                {submitting ? "Submitting..." : "Send My Request"}
               </button>
               <p style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.08em",textTransform:"uppercase",color:"#BDC5CE",textAlign:"center",marginTop:"0.75rem" }}>
-                Your message goes straight to the {selectedDiv?.label} team — {(canon.intake.emailRoutes as Record<string,string>)[intent]}
+                Secure intake routes to the {selectedDiv?.label} team
               </p>
             </form>
           )}

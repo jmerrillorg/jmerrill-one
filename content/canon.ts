@@ -158,8 +158,8 @@ export const canon = {
   },
 
   // ── Intake form routing — v1.1 ───────────────────────────────────────────
-  // Phase 1: mailto routing per division inbox
-  // Phase 2: replace with Power Automate HTTP trigger (see contact page comment)
+  // Primary submit path: /api/intake writes governed intake records to Dataverse.
+  // Email routes remain a visible fallback only when governed intake is unavailable.
   intake: {
     emailRoutes: {
       publishing:  "publishing@jmerrill.one",
