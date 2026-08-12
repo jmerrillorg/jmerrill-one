@@ -1,7 +1,6 @@
 /**
  * JM1 Homepage
- * Section order: Canon v1 Section 03 — Homepage Architecture (LOCKED)
- * Governance: No section additions without full architectural review (Canon v1 Section 10)
+ * HFWEB-01: Human-First public content architecture.
  */
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -15,9 +14,9 @@ import {
   DivisionsSection,
   StatementSection,
   FlowSection,
-  OperatingModelSection,
   EntrySection,
   AuthoritySection,
+  ProofSection,
 } from "@/components/sections/HomeSections";
 
 export default function Home() {
@@ -38,7 +37,7 @@ export default function Home() {
       {/* 07 */ } <DivisionsSection />
       {/* 08 */ } <StatementSection />
       {/* 09 */ } <FlowSection />
-      {/* 10 */ } <OperatingModelSection />
+      {/* 10 */ } <ProofSection />
       {/* 11 */ } <EntrySection />
       {/* 12 */ } <AuthoritySection />
       {/* 13+14 */ } <Footer />

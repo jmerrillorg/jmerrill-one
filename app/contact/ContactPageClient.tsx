@@ -78,7 +78,7 @@ export default function ContactPageClient() {
       const result = (await response.json()) as IntakeResponse;
 
       if (!response.ok || !result.success) {
-        setSubmitError(result.message || "JM1 could not receive this request securely.");
+        setSubmitError(result.message || "JM1 could not receive this request right now.");
         setFallbackEmail(result.fallbackEmail || ((canon.intake.emailRoutes as Record<string,string>)[intent ?? "fallback"] ?? canon.intake.emailRoutes.fallback));
         return;
       }
@@ -87,7 +87,7 @@ export default function ContactPageClient() {
       setReceiptId(result.correlationId || correlationId);
       setSubmitted(true);
     } catch {
-      setSubmitError("JM1 could not receive this request securely.");
+      setSubmitError("JM1 could not receive this request right now.");
       setFallbackEmail((canon.intake.emailRoutes as Record<string,string>)[intent ?? "fallback"] ?? canon.intake.emailRoutes.fallback);
     } finally {
       setSubmitting(false);
@@ -117,7 +117,7 @@ export default function ContactPageClient() {
         <div className="jm1-kicker">Step 1 — Choose Your Path</div>
         <h2 className="jm1-sh">What brings you<br /><em>to J Merrill One?</em></h2>
         <p style={{ fontSize:"14px",color:"#4A5568",lineHeight:1.75,maxWidth:"540px",marginBottom:"2.5rem" }}>
-          Select what best matches what you&apos;re working toward. We&apos;ll use that to route your message to the right division.
+          Select what best matches what you&apos;re working toward. We&apos;ll make sure your message reaches the right team.
         </p>
         <div className="contact-intent-grid">
           {divisions.map(d => (
@@ -139,7 +139,7 @@ export default function ContactPageClient() {
             Share a little about your situation, and we&apos;ll make sure it reaches the team best equipped to help you move forward.
           </p>
           <div style={{ display:"flex",alignItems:"center",gap:"0.75rem",padding:"0.75rem 1.25rem",border:"1px solid rgba(0,44,84,0.09)",background:"#F7F8FA",marginBottom:"2rem",width:"fit-content" }}>
-            <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",textTransform:"uppercase",letterSpacing:"0.12em",color:"#999" }}>Routing to:</span>
+            <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",textTransform:"uppercase",letterSpacing:"0.12em",color:"#999" }}>Going to:</span>
             <strong style={{ color:"#002C54",fontSize:"13px" }}>{selectedDiv?.label}</strong>
             <span style={{ fontSize:"13px",color:"#4A5568" }}>— {selectedDiv?.why}</span>
           </div>
@@ -148,7 +148,7 @@ export default function ContactPageClient() {
             <div style={{ border:"1px solid rgba(0,44,84,0.09)",padding:"4rem 3rem",textAlign:"center",maxWidth:"560px" }}>
               <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.22em",textTransform:"uppercase",color:selectedDiv?.accent,marginBottom:"1.5rem" }}>Request Received</div>
               <div style={{ fontFamily:"'Instrument Serif',serif",fontSize:"36px",color:"#05111F",marginBottom:"1rem" }}>Thank you, {submittedName}.</div>
-              <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginBottom:"1rem" }}>Your request has been received and routed to the {selectedDiv?.label} team. Someone will follow up shortly.</p>
+              <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginBottom:"1rem" }}>Your request has been received by the {selectedDiv?.label} team. Someone will follow up shortly.</p>
               {receiptId && <p style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.08em",textTransform:"uppercase",color:"#A3C4DC",marginBottom:"2rem" }}>Receipt {receiptId}</p>}
               <Link href="/" style={{ background:selectedDiv?.accent,color:"#fff",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",textDecoration:"none",display:"inline-block" }}>Return to J Merrill One</Link>
             </div>
@@ -194,7 +194,7 @@ export default function ContactPageClient() {
                 {submitting ? "Submitting..." : "Send My Request"}
               </button>
               <p style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.08em",textTransform:"uppercase",color:"#BDC5CE",textAlign:"center",marginTop:"0.75rem" }}>
-                Secure intake routes to the {selectedDiv?.label} team
+                Your request goes to the {selectedDiv?.label} team
               </p>
             </form>
           )}

@@ -91,7 +91,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
                 <a href={publicHref} target="_blank" rel="noopener noreferrer" style={{ fontFamily:"'DM Mono',monospace",fontSize:"12px",color:d.accent,textDecoration:"none" }}>{d.domain} →</a>
               )}
             </div>
-            <div><div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"rgba(0,44,84,0.4)",textTransform:"uppercase",marginBottom:"0.5rem" }}>Parent System</div><Link href="/" style={{ fontSize:"13px",color:"#4A5568",textDecoration:"none" }}>One of four divisions of J Merrill One</Link></div>
+            <div><div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"rgba(0,44,84,0.4)",textTransform:"uppercase",marginBottom:"0.5rem" }}>J Merrill One</div><Link href="/" style={{ fontSize:"13px",color:"#4A5568",textDecoration:"none" }}>One of four J Merrill One companies</Link></div>
           </div>
         </div>
       </section>
@@ -129,7 +129,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
           <div>
             <div style={{ display:"flex",alignItems:"center",gap:"0.6rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.24em",color:d.accent,textTransform:"uppercase",marginBottom:"1rem" }}><span style={{ display:"inline-block",width:"18px",height:"1px",background:d.accent }} />Why People Trust This Work</div>
             <h2 style={{ fontFamily:"'Instrument Serif',serif",fontSize:"clamp(32px,3.8vw,52px)",fontWeight:400,lineHeight:1.12,color:"#fff",marginBottom:"0.75rem",overflow:"visible" }}>Built to serve<br /><em style={{ fontStyle:"italic",color:d.accent }}>real people well.</em></h2>
-            <p style={{ fontSize:"14px",color:"rgba(163,196,220,0.8)",lineHeight:1.75,maxWidth:"500px" }}>Built with the rigor of public institutions. Operated with the precision of modern technology. In service of real people and real outcomes.</p>
+            <p style={{ fontSize:"14px",color:"rgba(163,196,220,0.8)",lineHeight:1.75,maxWidth:"500px" }}>Trusted proof begins with the people served: authors published, families protected, communities helped, and messages carried further.</p>
             <div style={{ display:"flex",gap:"4rem",marginTop:"3rem" }}>
               {d.stats.map(([val,label])=>(
                 <div key={label} style={{ display:"flex",flexDirection:"column" }}>
@@ -140,7 +140,7 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
             </div>
           </div>
           <div style={{ display:"flex",flexDirection:"column",gap:"0.6rem",paddingTop:"0.5rem" }}>
-            {[...d.badges,"Part of the J Merrill One family of organizations","Microsoft Power Platform ecosystem"].map(b=>(
+            {[...d.badges,"Part of the J Merrill One family of organizations"].map(b=>(
               <div key={b} className="jm1-badge"><div style={{ width:"6px",height:"6px",borderRadius:"50%",background:"#F4B400",flexShrink:0 }} />{b}</div>
             ))}
           </div>
@@ -151,15 +151,15 @@ export default async function DivisionPage({ params }: { params: Promise<{ divis
       <section className="jm1-sec" style={{ background:"#F7F8FA",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
         <div className="div-cross-grid">
           <div>
-            <div className="jm1-kicker">Cross-Division Connection</div>
-            <h2 className="jm1-sh">The system works<br /><em>together.</em></h2>
+            <div className="jm1-kicker">Connected Next Steps</div>
+            <h2 className="jm1-sh">One need can lead<br /><em>to the next conversation.</em></h2>
             <p style={{ fontSize:"14px",color:"#4A5568",lineHeight:1.75,marginBottom:"2rem" }}>{d.crossDiv.why}</p>
             <a href={d.crossDiv.href} style={{ background:"transparent",color:"#002C54",border:"1px solid rgba(0,44,84,0.25)",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",display:"inline-block",textDecoration:"none" }}>Explore {d.crossDiv.label} →</a>
           </div>
           <div style={{ border:"1px solid rgba(0,44,84,0.09)",background:"#fff",padding:"2.5rem" }}>
-            <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"#F4B400",textTransform:"uppercase",marginBottom:"1rem" }}>How the System Routes</div>
+            <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.14em",color:"#F4B400",textTransform:"uppercase",marginBottom:"1rem" }}>How the Next Step Can Work</div>
             <div style={{ display:"flex",flexDirection:"column",gap:"0.75rem" }}>
-              {[{color:d.accent,label:d.label,text:`A client enters the ${d.label} division`},{color:"transparent",label:"↓",text:"JM1 cross-division intelligence"},{color:"#F4B400",label:d.crossDiv.label,text:`Opportunity routed to ${d.crossDiv.label}`},{color:"transparent",label:"↓",text:"Dataverse + Power Automate"},{color:"#002C54",label:"JM1",text:"Full lifetime value tracked in one record"}].map((step,i)=>(
+              {[{color:d.accent,label:d.label,text:`A person starts with ${d.label}`},{color:"transparent",label:"↓",text:"The next need becomes clear"},{color:"#F4B400",label:d.crossDiv.label,text:`A thoughtful introduction to ${d.crossDiv.label}`},{color:"transparent",label:"↓",text:"The conversation continues with context"},{color:"#002C54",label:"JM1",text:"One relationship, clearer follow-through"}].map((step,i)=>(
                 step.label === "↓"
                   ? <div key={i} style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",color:"#BDC5CE",textTransform:"uppercase",padding:"0 1rem" }}>{step.label} {step.text}</div>
                   : <div key={i} style={{ display:"flex",alignItems:"center",gap:"0.75rem",fontSize:"13px",color:"#4A5568",padding:"0.85rem 1rem",background:"#F7F8FA",border:"1px solid rgba(0,44,84,0.09)" }}>

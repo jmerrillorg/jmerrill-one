@@ -1,0 +1,37 @@
+{
+  "package": "HFWEB-01",
+  "name": "JM1 Human-First Public Web Realignment",
+  "date": "2026-08-12",
+  "classification": "HFWEB-01 COMPLETE",
+  "public_site_purpose": "Explain why JM1 exists, help visitors find the right company, show real proof, and move visitors to a clear next action.",
+  "navigation": {
+    "before": ["Why We Exist", "Divisions", "Operating Model", "Contact", "Start Here"],
+    "after": ["Why We Exist", "Divisions", "Contact", "Start Here"],
+    "removed_from_primary_nav": ["/operating-model"],
+    "footer_secondary": ["/operating-model", "/ecosystem"]
+  },
+  "routes_changed": ["/", "/why-we-exist", "/divisions/[division]", "/contact", "/operating-model", "/ecosystem", "/card/jackie"],
+  "routes_retained": ["/", "/why-we-exist", "/divisions/[division]", "/contact", "/operating-model", "/ecosystem", "/card/jackie"],
+  "routes_redirected_or_retired": [],
+  "bp09_regression_status": "PASS - backend route unchanged; local GET /api/intake returned 405 and malformed POST returned 400",
+  "validation": {
+    "npm_ci": "PASS - completed with existing audit vulnerabilities reported",
+    "tsc": "PASS",
+    "lint": "PASS - one existing Next font warning in app/layout.tsx",
+    "build": "PASS",
+    "diff_check": "PASS",
+    "api_intake": "PASS - GET 405; malformed POST 400; no production record submitted",
+    "route_smoke": "PASS - local 200 responses for primary, secondary, division, contact, and card routes",
+    "mobile_navigation": "PASS - primary nav source contains Why We Exist, Divisions, Contact, Start Here; Operating Model removed"
+  },
+  "deployment": {
+    "status": "PENDING",
+    "production_smoke": "PENDING"
+  },
+  "standards_status": {
+    "JM1_Public_Tree_Model_v1": "CANON-CANDIDATE - PENDING FOUNDER & CEO APPROVAL",
+    "JM1_Public_Brand_Content_Standard_v1": "CANON-CANDIDATE - PENDING FOUNDER & CEO APPROVAL"
+  },
+  "secondary_content_disposition": "No HFWEB-01-blocking public content backlog remains; fuller procurement packet may be future work.",
+  "next_package_recommendation": "Managed Environments + DLP + Pipelines foundation hardening before expanding Journeys, Customer Voice, Sales Sequence proof, Unified Routing utilization, Microsoft optimizations, ADR-011 recovery, Publishing Diagnostic, or enterprise intelligence."
+}

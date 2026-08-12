@@ -5,7 +5,7 @@ import { divisions } from "@/lib/tokens";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Ecosystem — J Merrill One",
+  title: "How Our Companies Connect — J Merrill One",
   description: "Find the right J Merrill One path for publishing, family protection, community impact, or message amplification.",
 };
 
@@ -21,8 +21,8 @@ export default function EcosystemPage() {
       <Nav />
       <div className="jm1-ticker">
         <div className="jm1-ticker-inner">
-          {["Publishing","Financial Planning","Community Impact","Media Production","AI Orchestration","Microsoft-Native","GPO Registered","SAM.gov Active","Legacy by Design","Columbus, OH",
-            "Publishing","Financial Planning","Community Impact","Media Production","AI Orchestration","Microsoft-Native","GPO Registered","SAM.gov Active","Legacy by Design","Columbus, OH"
+          {["Publishing","Financial Planning","Community Impact","Media Production","GPO Registered","SAM.gov Active","Legacy by Design","Columbus, OH",
+            "Publishing","Financial Planning","Community Impact","Media Production","GPO Registered","SAM.gov Active","Legacy by Design","Columbus, OH"
           ].map((t,i)=><span key={i}>{i%2===0?<b>{t}</b>:t}{" · "}</span>)}
         </div>
       </div>
@@ -33,15 +33,15 @@ export default function EcosystemPage() {
           <span style={{ display:"inline-block",width:"18px",height:"1px",background:"#F4B400" }} />Find the Right JM1 Path
         </div>
         <h1 className="jm1-sh" style={{ fontSize:"clamp(48px,6vw,80px)",lineHeight:1.03,letterSpacing:"-0.02em",marginBottom:"1rem" }}>Find the right path.<br /><em>Start with the need.</em></h1>
-        <p className="jm1-bridge" style={{ marginBottom:"0",marginTop:"0.5rem",fontSize:"16px" }}>Whether you are publishing a book, protecting your family, supporting community impact, or amplifying a message, J Merrill One helps route you to the right division.</p>
+        <p className="jm1-bridge" style={{ marginBottom:"0",marginTop:"0.5rem",fontSize:"16px" }}>Whether you are publishing a book, protecting your family, supporting community impact, or amplifying a message, J Merrill One helps your request reach the right team.</p>
         <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,maxWidth:"640px",marginTop:"1rem" }}>This page is here to make the JM1 family easier to understand. You do not need to decode the structure first. Start with what you are trying to move forward, and we will help you find the right next step.</p>
       </section>
 
       {/* Divisions */}
       <section className="jm1-sec" style={{ background:"#F7F8FA",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
         <div className="jm1-kicker">Choose the Best Path</div>
-        <h2 className="jm1-sh">Four divisions.<br /><em>Clear next steps.</em></h2>
-        <p className="jm1-sp">Each division exists to serve a different kind of need, but every path begins with the same goal: helping people move forward with clarity, trust, and care.</p>
+        <h2 className="jm1-sh">Four companies.<br /><em>Clear next steps.</em></h2>
+        <p className="jm1-sp">Each company exists to serve a different kind of need, but every path begins with the same goal: helping people move forward with clarity, trust, and care.</p>
         <div style={{ border:"1px solid rgba(0,44,84,0.09)" }}>
           {divisions.map(d=>(
             <Link key={d.id} href={`/divisions/${d.id}`} style={{ textDecoration:"none",display:"block" }}>
@@ -77,7 +77,7 @@ export default function EcosystemPage() {
       <div className="jm1-statement">
         <div>
           <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.22em",color:"rgba(163,196,220,0.5)",textTransform:"uppercase",marginBottom:"1.5rem",display:"flex",alignItems:"center",gap:"0.6rem" }}>
-            <span style={{ display:"inline-block",width:"16px",height:"1px",background:"#F4B400" }} />Why the Ecosystem Exists
+            <span style={{ display:"inline-block",width:"16px",height:"1px",background:"#F4B400" }} />Why the Connection Exists
           </div>
           <div className="jm1-st-text">One enterprise.<br /><em>Four clear paths.<br />Coordinated care.</em></div>
         </div>

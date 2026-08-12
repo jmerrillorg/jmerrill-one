@@ -7,7 +7,6 @@ import { canon } from "@/content/canon";
 const navLinks = [
   { label: "Why We Exist",    href: "/why-we-exist" },
   { label: "Divisions",       href: "/#divisions" },
-  { label: "Operating Model", href: "/operating-model" },
   { label: "Contact",         href: "/contact" },
 ];
 

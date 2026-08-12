@@ -1,0 +1,103 @@
+{
+  "package": "HFWEB-01",
+  "date": "2026-08-12",
+  "baseline_commit": "2badddc2d4d67f0e5f08385dd13a55e7a4e7beee",
+  "scope": "public site routes excluding app/api/intake backend implementation",
+  "routes": [
+    {
+      "route": "/",
+      "purpose": "Parent front door and path finder",
+      "primary_audience": "General visitors, authors, families, donors, productions prospects",
+      "current_headline": "What you build should last.",
+      "current_cta": "Start Here",
+      "human_first_score": 5,
+      "why_first_score": 5,
+      "technical_language_density": "low",
+      "duplication": "low",
+      "classification": "KEEP - REWRITE",
+      "recommended_action": "Rebuilt around Why, needs, four companies, proof, and contact"
+    },
+    {
+      "route": "/why-we-exist",
+      "purpose": "Explain JM1 purpose",
+      "primary_audience": "All public audiences",
+      "current_headline": "What people build should last.",
+      "current_cta": "Start Here",
+      "human_first_score": 5,
+      "why_first_score": 5,
+      "technical_language_density": "low",
+      "duplication": "low",
+      "classification": "KEEP - REWRITE",
+      "recommended_action": "Rewritten as least technical page"
+    },
+    {
+      "route": "/divisions/[division]",
+      "purpose": "Parent-level bridge to division sites or inquiry",
+      "primary_audience": "Division-specific prospects",
+      "current_headline": "Division-specific canonical headline",
+      "current_cta": "Division-specific contact or consultation CTA",
+      "human_first_score": 5,
+      "why_first_score": 4,
+      "technical_language_density": "low",
+      "duplication": "medium",
+      "classification": "KEEP - MINOR CLEANUP",
+      "recommended_action": "Human need first, services second, proof and next-step connection retained"
+    },
+    {
+      "route": "/contact",
+      "purpose": "Governed public intake",
+      "primary_audience": "All prospects",
+      "current_headline": "What are you trying to move forward?",
+      "current_cta": "Send My Request",
+      "human_first_score": 5,
+      "why_first_score": 4,
+      "technical_language_density": "low",
+      "duplication": "low",
+      "classification": "KEEP - MINOR CLEANUP",
+      "recommended_action": "Preserve BP-09 submit path and remove visible routing/intake jargon"
+    },
+    {
+      "route": "/operating-model",
+      "purpose": "Secondary enterprise/partner reference",
+      "primary_audience": "Partners, vendors, procurement, due diligence",
+      "current_headline": "How J Merrill One stays consistent.",
+      "current_cta": "Footer-only secondary access",
+      "human_first_score": 4,
+      "why_first_score": 3,
+      "technical_language_density": "medium",
+      "duplication": "medium",
+      "classification": "MOVE TO SECONDARY ENTERPRISE SURFACE",
+      "recommended_action": "Remove from primary nav; retain footer partner placement"
+    },
+    {
+      "route": "/ecosystem",
+      "purpose": "Explain how companies connect",
+      "primary_audience": "General visitors and secondary pathfinding",
+      "current_headline": "Find the right path. Start with the need.",
+      "current_cta": "Tell Us What You Need",
+      "human_first_score": 5,
+      "why_first_score": 4,
+      "technical_language_density": "low",
+      "duplication": "medium",
+      "classification": "KEEP - REWRITE",
+      "recommended_action": "Retain as How Our Companies Connect"
+    },
+    {
+      "route": "/card/jackie",
+      "purpose": "Noindex digital card",
+      "primary_audience": "Direct recipients",
+      "current_headline": "Jackie Smith Jr.",
+      "current_cta": "Contact actions",
+      "human_first_score": 4,
+      "why_first_score": 3,
+      "technical_language_density": "low",
+      "duplication": "low",
+      "classification": "KEEP - MINOR CLEANUP",
+      "recommended_action": "Replace system tagline with four companies/one commitment"
+    }
+  ],
+  "navigation_after": ["Why We Exist", "Divisions", "Contact", "Start Here"],
+  "routes_removed_from_primary_navigation": ["/operating-model"],
+  "routes_retained": ["/", "/why-we-exist", "/divisions/[division]", "/contact", "/operating-model", "/ecosystem", "/card/jackie"],
+  "routes_retired_or_redirected": []
+}

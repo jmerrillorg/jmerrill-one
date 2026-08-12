@@ -26,8 +26,8 @@ export function HeroSection() {
         <p className="jm1-bridge">{canon.hero.bridge}</p>
         <p className="jm1-hero-body">{canon.hero.body}</p>
         <div style={{ display:"flex",gap:"0.75rem",flexWrap:"wrap" as const,marginBottom:"3.5rem" }}>
-          <Link href="/divisions/financial" className="jm1-btn-fill">{canon.hero.cta1}</Link>
-          <Link href="/why-we-exist" className="jm1-btn-ghost">{canon.hero.cta2}</Link>
+          <Link href="/contact" className="jm1-btn-fill">{canon.hero.cta1}</Link>
+          <Link href="#divisions" className="jm1-btn-ghost">{canon.hero.cta2}</Link>
         </div>
         <div style={{ display:"flex",gap:"2.75rem",paddingTop:"2.5rem",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
           {canon.hero.stats.map(s=>(
@@ -41,13 +41,13 @@ export function HeroSection() {
       <div style={{ display:"flex",alignItems:"center",justifyContent:"center" }}>
         <div style={{ width:"100%",maxWidth:"360px",border:"1px solid rgba(0,44,84,0.09)",background:"#F7F8FA" }}>
           <div style={{ padding:"1rem 1.5rem",borderBottom:"1px solid rgba(0,44,84,0.09)",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
-            <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.2em",color:"#F4B400",textTransform:"uppercase" }}>JM1 System Architecture</span>
+            <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.2em",color:"#F4B400",textTransform:"uppercase" }}>Find Your Path</span>
             <div style={{ display:"flex",gap:"5px" }}>{[0,1,2].map(i=><span key={i} style={{ width:"6px",height:"6px",borderRadius:"50%",background:"rgba(0,44,84,0.09)" }} />)}</div>
           </div>
           <div style={{ padding:"2rem 1.5rem",borderBottom:"1px solid rgba(0,44,84,0.09)",display:"flex",justifyContent:"center" }}>
             <div style={{ width:"80px",height:"80px",border:"1px solid #F4B400",display:"flex",flexDirection:"column" as const,alignItems:"center",justifyContent:"center",background:"#fff",gap:"3px" }}>
               <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"8px",letterSpacing:"0.14em",color:"#F4B400",textTransform:"uppercase" }}>JM1</span>
-              <span style={{ fontFamily:"'Instrument Serif',serif",fontSize:"16px",color:"#05111F" }}>Control</span>
+              <span style={{ fontFamily:"'Instrument Serif',serif",fontSize:"16px",color:"#05111F" }}>Care</span>
             </div>
           </div>
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:"1px",background:"rgba(0,44,84,0.09)" }}>
@@ -61,7 +61,7 @@ export function HeroSection() {
               </Link>
             ))}
           </div>
-          <div style={{ padding:"0.85rem 1.5rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.12em",color:"#BDC5CE",textTransform:"uppercase",textAlign:"center" }}>Governed · Connected · Unified</div>
+          <div style={{ padding:"0.85rem 1.5rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.12em",color:"#BDC5CE",textTransform:"uppercase",textAlign:"center" }}>Publish · Protect · Give · Amplify</div>
         </div>
       </div>
     </section>
@@ -128,8 +128,8 @@ export function SystemDefSection() {
       <K text={canon.sysdef.kicker} />
       <h2 className="jm1-sh">{canon.sysdef.headline[0]}<br /><em>{canon.sysdef.headline[1]}</em><br />{canon.sysdef.headline[2]}</h2>
       <div className="jm1-sysdef-frame">
-        <p className="jm1-sysdef-body">People come to us at real moments — when a manuscript is finally done, when a parent dies without a will, when a community need becomes impossible to ignore, when a message outgrows the person carrying it. What they find is a system designed for exactly that moment.</p>
-        <p className="jm1-sysdef-title">J Merrill One is <em>not a company<br />with multiple services.</em></p>
+        <p className="jm1-sysdef-body">People come to us at real moments — when a manuscript is finally done, when a parent dies without a will, when a community need becomes impossible to ignore, when a message outgrows the person carrying it.</p>
+        <p className="jm1-sysdef-title">{canon.sysdef.title}</p>
         <p className="jm1-sysdef-body">{canon.sysdef.body}</p>
         <div className="jm1-sysdef-pillars">
           {canon.sysdef.layers.map(l=>(
@@ -176,7 +176,7 @@ export function StatementSection() {
         <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.22em",color:"rgba(163,196,220,0.5)",textTransform:"uppercase",marginBottom:"1.5rem",display:"flex",alignItems:"center",gap:"0.6rem" }}>
           <span style={{ display:"inline-block",width:"16px",height:"1px",background:"#F4B400" }} />{canon.statement.pre}
         </div>
-        <div className="jm1-st-text">{canon.statement.line1}<br />We are building <em>the infrastructure<br />for generational legacy.</em></div>
+        <div className="jm1-st-text">{canon.statement.line1}<br /><em>{canon.statement.line2}</em></div>
       </div>
       <p style={{ fontSize:"13px",color:"rgba(163,196,220,0.65)",lineHeight:1.75,maxWidth:"280px" }}>{canon.statement.sub}</p>
     </div>
@@ -196,33 +196,7 @@ export function FlowSection() {
             <div className="jm1-f-idx">{s.num} ——</div>
             <div className="jm1-f-head">{s.head}</div>
             <p className="jm1-f-body">{s.body}</p>
-            {s.brand && <div className="jm1-f-brand">↑ {s.brand}</div>}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-export function OperatingModelSection() {
-  return (
-    <section className="jm1-sec" style={{ background:"#fff",borderTop:"1px solid rgba(0,44,84,0.09)" }}>
-      <K text={canon.opmodel.kicker} />
-      <h2 className="jm1-sh">{canon.opmodel.headline[0]}<br /><em>{canon.opmodel.headline[1]}</em></h2>
-      <p className="jm1-sp">{canon.opmodel.sub}</p>
-      <div className="jm1-op-grid">
-        {canon.opmodel.cards.map(c=>(
-          <div key={c.icon} className="jm1-op-card">
-            <div className="jm1-op-icon">{c.icon}</div>
-            <div className="jm1-op-name" style={{ whiteSpace:"pre-line" }}>{c.name}</div>
-            <p className="jm1-op-desc">{c.desc}</p>
-            <div style={{ display:"flex",flexDirection:"column" as const,gap:"0.5rem" }}>
-              {c.items.map(item=>(
-                <div key={item} style={{ display:"flex",alignItems:"center",gap:"0.6rem",fontSize:"12px",color:"#4A5568" }}>
-                  <span className="jm1-op-dot" />{item}
-                </div>
-              ))}
-            </div>
+            {s.brand && <div className="jm1-f-brand">{s.brand}</div>}
           </div>
         ))}
       </div>
@@ -238,7 +212,7 @@ export function EntrySection() {
       <p className="jm1-sp">{canon.entry.sub}</p>
       <div className="jm1-entry-grid">
         {divisions.map(d=>(
-          <Link key={d.id} href={getDivisionPublicHref(d.id, d.domain)} style={{ textDecoration:"none" }}>
+          <Link key={d.id} href={isInquiryLedDivision(d.id) ? "/contact?division=productions" : "/contact"} style={{ textDecoration:"none" }}>
             <div className="jm1-e-card">
               <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.18em",color:"#F4B400",textTransform:"uppercase",marginBottom:"0.75rem" }}>{d.label}</div>
               <div className="jm1-e-title">{d.entryLabel}</div>

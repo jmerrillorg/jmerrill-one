@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Jackie Smith Jr. — J Merrill One",
-  description: "Founder & CEO, J Merrill One. Enterprise platform spanning publishing, financial strategy, community impact, and media production.",
+  description: "Founder & CEO, J Merrill One. Four companies serving publishing, financial strategy, community impact, and media production.",
   robots: {
     index: false,
     follow: false,
@@ -300,7 +300,7 @@ export default function JackieCard() {
               Jackie Smith<span className="name-suffix">Jr.</span>
             </h1>
             <div className="card-title-line">J Merrill One</div>
-            <div className="card-company">One system. Four divisions.</div>
+            <div className="card-company">Four companies. One commitment.</div>
 
             <div className="card-rule" />
 

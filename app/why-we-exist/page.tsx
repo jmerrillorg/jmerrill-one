@@ -32,7 +32,7 @@ export default function WhyWeExistPage() {
         <h1 className="jm1-why-h">What people build<br /><em>should last.</em></h1>
         <p className="jm1-why-stmt">
           Ideas. Families. Wealth. Communities. Too often, they don&apos;t.<br />
-          J Merrill One exists to change that — by building the system that structures, protects, and carries them forward.
+          J Merrill One exists to change that — by helping people protect what matters and carry it forward.
         </p>
       </section>
 
@@ -43,16 +43,16 @@ export default function WhyWeExistPage() {
             <div style={{ display:"flex",alignItems:"center",gap:"0.6rem",fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.24em",color:"#F4B400",textTransform:"uppercase",marginBottom:"1rem" }}>
               <span style={{ display:"inline-block",width:"18px",height:"1px",background:"#F4B400" }} />The Belief
             </div>
-            <h2 className="jm1-sh">A system advanced enough<br /><em>to serve people better<br />than anyone else.</em></h2>
+            <h2 className="jm1-sh">Care thoughtful enough<br /><em>to meet people where<br />life actually happens.</em></h2>
             <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginTop:"1rem" }}>
-              J Merrill One was built on a simple truth: the people who create, earn, build, and give deserve a system that protects what they&apos;re working toward — not just while they&apos;re working, but for the generations that follow.
+              J Merrill One was built on a simple truth: the people who create, earn, build, and give deserve support that protects what they&apos;re working toward — not just while they&apos;re working, but for the generations that follow.
             </p>
             <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginTop:"1rem" }}>
-              We don&apos;t begin with architecture. We begin with the people the architecture is for.
+              We begin with people: authors, families, donors, partners, and leaders who need the next step to feel clear.
             </p>
           </div>
           <div style={{ display:"flex",flexDirection:"column",gap:"1rem" }}>
-            {[["125+","Works published and distributed","Ideas that now exist permanently in the world."],["4","Integrated operating divisions","Each one serving a distinct human need."],["01","Unified operating system","One architecture behind every interaction."]].map(([val,label,sub])=>(
+            {[["125+","Works published and distributed","Ideas that now exist permanently in the world."],["4","J Merrill One companies","Each one serving a distinct human need."],["01","Shared commitment","One promise behind every interaction: what people build should last."]].map(([val,label,sub])=>(
               <div key={label} style={{ border:"1px solid rgba(0,44,84,0.09)",padding:"1.5rem 2rem",display:"flex",gap:"1.5rem",alignItems:"flex-start",background:"#fff" }}>
                 <span style={{ fontFamily:"'Instrument Serif',serif",fontSize:"52px",color:"#F4B400",lineHeight:1,flexShrink:0 }}>{val}</span>
                 <div><div style={{ fontSize:"14px",fontWeight:600,color:"#05111F",marginBottom:"4px" }}>{label}</div><div style={{ fontSize:"12px",color:"#4A5568",fontStyle:"italic" }}>{sub}</div></div>
@@ -97,13 +97,13 @@ export default function WhyWeExistPage() {
       <div className="jm1-statement">
         <div>
           <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.22em",color:"rgba(163,196,220,0.5)",textTransform:"uppercase",marginBottom:"1.5rem",display:"flex",alignItems:"center",gap:"0.6rem" }}>
-            <span style={{ display:"inline-block",width:"16px",height:"1px",background:"#F4B400" }} />Enterprise Position
+            <span style={{ display:"inline-block",width:"16px",height:"1px",background:"#F4B400" }} />Human Position
           </div>
-          <div className="jm1-st-text">We are not building a company.<br />We are building <em>the infrastructure<br />for generational legacy.</em></div>
+          <div className="jm1-st-text">We are not building a company.<br /><em>We are helping what people build carry forward.</em></div>
         </div>
         <div>
-          <p style={{ fontSize:"13px",color:"rgba(163,196,220,0.65)",lineHeight:1.75,maxWidth:"280px" }}>Every system, every workflow, and every tool at J Merrill One is engineered to protect what people build — and carry it forward for the people they love.</p>
-          <Link href="/ecosystem" className="jm1-btn-ghost" style={{ marginTop:"1.5rem",display:"inline-block",color:"rgba(163,196,220,0.8)",borderColor:"rgba(163,196,220,0.3)" }}>Explore the Ecosystem →</Link>
+          <p style={{ fontSize:"13px",color:"rgba(163,196,220,0.65)",lineHeight:1.75,maxWidth:"280px" }}>Every division exists to protect what people build and carry it forward for the people they love.</p>
+          <Link href="/contact" className="jm1-btn-ghost" style={{ marginTop:"1.5rem",display:"inline-block",color:"rgba(163,196,220,0.8)",borderColor:"rgba(163,196,220,0.3)" }}>Start Here →</Link>
         </div>
       </div>
       <Footer />

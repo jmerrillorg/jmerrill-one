@@ -84,7 +84,7 @@ export const divisions = [
     domain:     "jmerrill.foundation",
     why:        "What you give should not be temporary.",
     tagline:    "Impact that outlasts the moment.",
-    desc:       "Community impact, charitable infrastructure, and nonprofit operations designed for generosity that compounds over generations.",
+    desc:       "Community impact and nonprofit work designed for generosity that compounds over generations.",
     humanTitle: "Your generosity can outlast the moment.",
     // Governance note: meal programs referenced as representative example only — not centerpiece
     humanBody:  "75 families fed last Thanksgiving. The goal this year is 150. Volunteer, donate, or partner with us.",
@@ -102,7 +102,7 @@ export const divisions = [
     domain:     "jmerrill.productions",
     why:        "What you create should reach further than you can alone.",
     tagline:    "Message, mission, movement — amplified.",
-    desc:       "Media, storytelling, and content production that amplifies message, mission, and movement across every format and platform.",
+    desc:       "Media, storytelling, and content production that helps message, mission, and movement reach further.",
     humanTitle: "Your message needs to reach further.",
     humanBody:  "Your story is ready. Video, audio, and content production that carries it to the people who need to hear it — and beyond.",
     entryLabel: "I need to bring my message to life",
