@@ -6,7 +6,7 @@ HFWEB-01 realigned the JM1 public site around `Human-First. Why-First. Period.`
 
 ## Classification
 
-HFWEB-01 = COMPLETE, pending production deployment evidence.
+HFWEB-01 = COMPLETE.
 
 ## Changes
 
@@ -38,6 +38,8 @@ No backend intake route or API semantics were modified. `/api/intake` remains th
 - Local route smoke: PASS for `/`, `/why-we-exist`, `/contact`, `/operating-model`, `/ecosystem`, all four division routes, and `/card/jackie`.
 - BP-09 API smoke: PASS; GET `/api/intake` returns 405 and malformed POST returns 400 without creating a production record.
 - Contact content smoke: PASS; no visible `/api/intake`, Dataverse, Power Platform, or Azure Static Web Apps terms in rendered contact HTML.
+- Deployment: PASS; GitHub Actions run `31602658556` deployed commit `b1393c4872d8935204a7cab433bffea213add857` through Azure Static Web Apps.
+- Production smoke: PASS for homepage, Why We Exist, Contact, Operating Model, Ecosystem, all four division routes, primary nav removal of Operating Model, contact backend-term removal, and `/api/intake` 405/400 guard behavior.
 
 ## Next-Package Gate
 

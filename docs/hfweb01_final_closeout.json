@@ -25,8 +25,8 @@
     "mobile_navigation": "PASS - primary nav source contains Why We Exist, Divisions, Contact, Start Here; Operating Model removed"
   },
   "deployment": {
-    "status": "PENDING",
-    "production_smoke": "PENDING"
+    "status": "PASS - GitHub Actions run 31602658556 deployed commit b1393c4872d8935204a7cab433bffea213add857 through Azure Static Web Apps",
+    "production_smoke": "PASS - live 200 responses for homepage, Why We Exist, Contact, Operating Model, Ecosystem, and all division routes; Operating Model absent from homepage nav; contact exposes no backend terms; /api/intake GET 405 and malformed POST 400"
   },
   "standards_status": {
     "JM1_Public_Tree_Model_v1": "CANON-CANDIDATE - PENDING FOUNDER & CEO APPROVAL",
