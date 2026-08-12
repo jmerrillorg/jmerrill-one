@@ -1,0 +1,27 @@
+{
+  "strategy": "DEV -> TEST/UAT -> PROD",
+  "canonical_environments": {
+    "DEV": "JM1-Enterprise-Dev",
+    "TEST/UAT": "JM1-Test",
+    "PROD": "JM1-Core"
+  },
+  "restricted_environments": {
+    "DEFAULT - RESTRICT": "JM1-CRM-Core",
+    "SANDBOX - OTHER": "JM1-Dev",
+    "PROD - LEGACY/VERIFY": "One Dynamics Environment"
+  },
+  "allowed_work": {
+    "DEV": ["unmanaged development", "maker experimentation within JM1 scope", "solution export preparation"],
+    "TEST/UAT": ["managed solution validation", "connection-reference resolution", "environment-variable validation", "regression testing"],
+    "PROD": ["managed imports where supported", "governed emergency fixes only with reconciliation"]
+  },
+  "prohibited_work": {
+    "PROD": ["casual maker edits", "untracked direct flow edits", "new workload activation without deployment evidence"],
+    "DEFAULT - RESTRICT": ["new enterprise workloads", "production integrations"]
+  },
+  "data_usage_expectations": "DEV uses nonproduction or minimized data. TEST/UAT uses representative nonproduction validation data. PROD contains live operational data.",
+  "solution_movement": "Unmanaged in DEV; managed to TEST/UAT and PROD where supported. Existing unmanaged production solutions become migration candidates.",
+  "production_change_policy": "Jackie may authorize and execute changes, but evidence is required.",
+  "emergency_change_policy": "Emergency PROD fixes require timestamped record, reason, validation, rollback note, and post-emergency reconciliation.",
+  "test_data_policy": "No unnecessary production client actions solely to prove deployment mechanics."
+}

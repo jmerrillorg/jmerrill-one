@@ -1,0 +1,11 @@
+{
+  "status": "DEFINED",
+  "rules": [
+    "No casual maker edits directly in PROD.",
+    "Jackie can authorize and execute production changes, but evidence is mandatory.",
+    "Emergency fixes require reason, timestamp, actor, validation, rollback note, and post-emergency reconciliation.",
+    "Source of truth remains repository, exported solution, or approved artifact store.",
+    "Secrets are not stored in source.",
+    "Production service identities use least privilege."
+  ]
+}

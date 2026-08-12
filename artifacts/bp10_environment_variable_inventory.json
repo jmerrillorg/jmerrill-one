@@ -1,0 +1,23 @@
+{
+  "status": "PARTIAL - REPOSITORY AND PACKAGE EVIDENCE ONLY",
+  "website_runtime_variables_inferred_from_code": [
+    "DATAVERSE_WEB_API_BASE_URL",
+    "DATAVERSE_RESOURCE_URL",
+    "DATAVERSE_URL",
+    "DATAVERSE_TENANT_ID",
+    "AZURE_TENANT_ID",
+    "DATAVERSE_CLIENT_ID",
+    "DATAVERSE_CLIENT_SECRET"
+  ],
+  "local_observable_values": {
+    "DATAVERSE_RESOURCE_URL": "https://jm1hq.crm.dynamics.com",
+    "DATAVERSE_WEB_API_BASE_URL": "https://jm1hq.crm.dynamics.com/api/data/v9.2",
+    "secrets": "not exposed"
+  },
+  "dataverse_solution_environment_variables": "ADMIN ACTION REQUIRED - PAC solution list does not expose component-level environment variables.",
+  "classification": {
+    "DATAVERSE_CLIENT_SECRET": "SECRET - USE APPROVED SECRET STORE",
+    "tenant/client IDs and Dataverse URLs": "MIGRATE/KEEP AS ENVIRONMENT VARIABLES",
+    "hardcoded alternatives": "No public website hardcoded secret values found in repo."
+  }
+}

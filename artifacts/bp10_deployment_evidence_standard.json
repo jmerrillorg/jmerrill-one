@@ -1,0 +1,6 @@
+{
+  "status": "DEFINED",
+  "required_fields": ["change_package", "version", "source_commit", "source_environment", "target_environment", "deployment_timestamp", "actor", "pipeline_or_run_id", "validation_result", "rollback_state"],
+  "automation_principle": "Use automatically available GitHub/PAC/Pipeline evidence where possible; avoid duplicate manual paperwork.",
+  "production_minimum": "No production change is complete until validation and rollback status are recorded."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "TARGET MODEL DEFINED - NOT APPLIED",
+  "business_trusted": ["Dataverse", "Office 365 Outlook", "Teams", "SharePoint", "approved Dynamics connectors", "approved Azure/Microsoft services", "Microsoft Forms where owned", "Copilot Studio with agent governance"],
+  "non_business_limited": ["Excel Online Business", "OneDrive for Business unless explicitly justified", "webcontents/HTTP-like endpoints pending exception", "Azure Function endpoints pending exception"],
+  "blocked": ["consumer OneDrive", "unapproved third-party SaaS", "social/consumer messaging connectors", "unapproved generative AI connectors", "generic HTTP without endpoint/auth/logging exception"],
+  "special_treatment": {
+    "HTTP": "No generic HTTP as uncontrolled DLP bypass.",
+    "HTTP_with_Entra_ID": "Allowed only with approved endpoint, least privilege identity, logging, and owner.",
+    "custom_connectors": "Allowed only after connector inventory, endpoint restriction, owner, and evidence.",
+    "generative_ai": "Requires ADR-011/agent governance compatibility review."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "package_id": "BP-10",
+  "package_name": "Managed Environments, DLP & Pipelines Foundation Hardening",
+  "purpose": "Establish the governed Power Platform operating boundary and deployment pathway for JM1 before additional Microsoft-native workloads are operationalized.",
+  "environment_scope": ["JM1-Enterprise-Dev", "JM1-Test", "JM1-Core", "JM1-CRM-Core", "JM1-Dev", "One Dynamics Environment"],
+  "governance_scope": ["Managed Environments", "DLP", "connector governance", "DEV/TEST/PROD strategy", "solution deployment", "environment variables", "connection references", "maker sharing controls", "rollback", "release evidence"],
+  "deployment_scope": "Power Platform solution deployment model; no production proof forced while pipelines are unavailable.",
+  "solution_scope": "Current JM1 Dataverse solutions observed through PAC.",
+  "exclusions": ["Journeys", "Customer Voice", "Sales Sequences", "Unified Routing operationalization", "Digital Messaging", "Voice", "Power BI/Fabric", "ADR-011 recovery", "Publishing Diagnostic", "new agent wave"],
+  "tenant_admin_boundaries": "No destructive or tenant-wide DLP/Managed Environment changes without full impact proof.",
+  "validation_gates": ["read-only PAC/BAP inventory", "website/API BP-09 smoke", "artifact completeness", "git diff hygiene"],
+  "rollback_principles": "Use managed solution prior version where available; otherwise use source-controlled export/import, Git revert/redeploy for website dependencies, and documented emergency reconciliation.",
+  "closeout_criteria": "Architecture finalized; admin/pipeline/DLP holds documented; next package gated."
+}

@@ -1,0 +1,9 @@
+{
+  "status": "ADMIN ACTION REQUIRED",
+  "evidence": "pac admin list-groups returned no environment groups.",
+  "target_group": "JM1 Enterprise",
+  "target_members": ["JM1-Enterprise-Dev", "JM1-Test", "JM1-Core"],
+  "excluded_until_review": ["JM1-CRM-Core", "JM1-Dev", "One Dynamics Environment"],
+  "rationale": "Group the governed lifecycle without applying restrictions that could break production workloads.",
+  "no_change_applied": true
+}

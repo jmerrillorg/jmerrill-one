@@ -1,0 +1,8 @@
+{
+  "classification": "READY WITH EXCLUSIONS",
+  "recommended_next_package": "BP-08 semantic reconciliation / migration closeout",
+  "reason": "BP-10 found a usable DEV/TEST/PROD path but DLP/Pipelines/Managed Environment admin holds remain. The next safest value is data/semantic reconciliation that does not require activating new customer channels or new agents.",
+  "explicitly_considered": ["BP-08 semantic reconciliation / migration", "Customer Insights Journeys", "Customer Voice", "Sales Sequences", "Unified Routing operational utilization", "Foundation Microsoft optimization", "Productions Microsoft optimization", "ADR-011 canon recovery / Publishing Diagnostic", "enterprise analytics / Power BI", "cross-division relationship activation"],
+  "excluded_until_bp10_holds_clear": ["Journeys", "Customer Voice", "Sales Sequences", "Unified Routing operational utilization", "Digital Messaging", "Voice", "Power BI/Fabric", "new agent wave"],
+  "authorization_required": "Jackie approval required before starting BP-08 semantic reconciliation / migration closeout."
+}

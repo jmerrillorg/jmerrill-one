@@ -1,0 +1,11 @@
+{
+  "status": "ADMIN ACTION REQUIRED",
+  "evidence": [
+    "PowerShell Get-AdminDlpPolicy failed because Microsoft.PowerApps.AuthModule attempted to load System.Windows.Forms on macOS.",
+    "PAC 1.49.4 exposes no DLP inventory command.",
+    "BAP DLP REST endpoint probes returned 404 for guessed paths."
+  ],
+  "captured_policy_count": null,
+  "risk": "Current DLP state cannot be verified from this session; no DLP changes were applied.",
+  "required_admin_action": "Use Power Platform admin center or working Windows/PowerShell admin session to export all data policies, connector groups, HTTP/custom connector handling, endpoint restrictions, and affected environments."
+}

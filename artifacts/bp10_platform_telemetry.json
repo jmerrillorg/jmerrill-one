@@ -1,0 +1,12 @@
+{
+  "status": "ADMIN ACTION REQUIRED",
+  "observed": {
+    "tenant_admin_digest_disabled": false,
+    "canvas_app_insights_enabled": true,
+    "tenant_capacity_report_for_environment_admins": false,
+    "tenant_licensing_report_for_environment_admins": false,
+    "tenant_summary_report_for_environment_admins": false
+  },
+  "target": ["Managed Environment usage insights", "flow failures", "app usage", "connector usage", "capacity visibility", "audit logs", "Application Insights where appropriate"],
+  "not_built": "No Power BI/Fabric dashboard created per BP-10 exclusion."
+}

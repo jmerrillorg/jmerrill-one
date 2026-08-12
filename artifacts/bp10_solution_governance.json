@@ -1,0 +1,13 @@
+{
+  "status": "DEFINED",
+  "naming_convention": "JM1_<Domain>_<Capability> or JM1<Domain><Capability> with publisher JM1/JMerrillOne/domain publisher.",
+  "publisher_convention": "JM1 for enterprise core, JMPublishing/JMFinancial/JMFoundation/JM1Editorial for division-owned solutions.",
+  "semantic_versioning": "major.minor.patch.build; increment patch/build for deployment proof and minor for functional additions.",
+  "managed_expectation": "Unmanaged in DEV; managed in TEST/UAT and PROD where supported.",
+  "production_import_rule": "No new production unmanaged import unless documented exception.",
+  "source_control_rule": "Solution exports and deployment evidence stored in repository or approved artifact store.",
+  "connection_reference_rule": "All solution flows must use connection references; production references must avoid personal accounts where service/shared mailbox identity is available.",
+  "environment_variable_rule": "Environment-specific URLs, IDs, feature flags, and non-secret config use environment variables; secrets use approved secret store.",
+  "deployment_evidence_rule": "Capture package, version, actor, source, target, timestamp, validation, and rollback.",
+  "rollback_rule": "Use prior managed solution version where available; otherwise restore from exported solution/source-controlled state."
+}

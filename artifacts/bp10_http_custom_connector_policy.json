@@ -1,0 +1,10 @@
+{
+  "status": "DEFINED - CANON-CANDIDATE VIA GOVERNANCE STANDARD",
+  "core_rule": "Generic HTTP must not become an uncontrolled escape hatch around DLP.",
+  "approved_use_cases": ["JM1-owned Azure Function/API endpoints", "service-principal authenticated Dataverse/Azure calls", "webhook patterns with explicit endpoint allowlist and logging"],
+  "prohibited_use_cases": ["consumer endpoints", "unlogged data export", "cross-tenant calls without exception", "secrets in URL/body/source", "generic HTTP mixed with Dataverse without review"],
+  "authentication_requirements": ["Microsoft Entra ID or approved secret handling", "least privilege identity", "no personal secrets for production"],
+  "endpoint_restrictions": "Use DLP endpoint filtering where available; otherwise document connector-specific allowlist.",
+  "exception_process": "Founder & CEO may approve, but exception record must include endpoint, data class, owner, logging, rollback, and review date.",
+  "bp09_preservation": "Website /api/intake Dataverse service-principal path remains governed and unchanged."
+}

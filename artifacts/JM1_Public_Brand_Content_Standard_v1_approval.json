@@ -1,0 +1,14 @@
+{
+  "standard": "JM1_Public_Brand_Content_Standard_v1",
+  "approval_status": "CANON - v1.0",
+  "approval_authority": "Founder & CEO",
+  "current_role_holder": "Jackie Smith Jr.",
+  "effective_timestamp_utc": "2026-08-12T14:00:00Z",
+  "source_hfweb01_evidence": [
+    "docs/JM1_Public_Brand_Content_Standard_v1.md",
+    "docs/hfweb01_final_closeout.json",
+    "commit 14d1aa7c2bcd033d02cca121aaf14d5852bf08a9"
+  ],
+  "scope": "Human-first, why-first public brand/content governance for JM1 public surfaces.",
+  "change_control_rule": "Founder & CEO approval required for doctrine/status change; content implementations must preserve Human-First and Why-First hierarchy."
+}

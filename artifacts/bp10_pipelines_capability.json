@@ -1,0 +1,7 @@
+{
+  "status": "PREREQUISITE MISSING",
+  "evidence": "pac pipeline list returned: Resource not found for the segment 'deploymentpipelines'.",
+  "interpretation": "Power Platform Pipelines are not configured/available in the current active environment surface.",
+  "required_admin_actions": ["install/configure Power Platform Pipelines app if entitled", "designate pipeline host environment", "assign DEV/TEST/PROD deployment stages", "grant deployment permissions"],
+  "classification": "AVAILABLE STATUS UNKNOWN - ADMIN ACTION REQUIRED"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PARTIAL - PAC CONNECTION LIST CAPTURED",
+  "findings": [
+    "JM1-Core has active Dataverse, Office 365, Teams, SharePoint, Forms, Copilot Studio, Excel, OneDrive for Business, custom JM1 Functions, and webcontents/Azure Function connections.",
+    "JM1-Core has one consumer OneDrive connection in Error state: shared-onedrive-d5f2925b-7277-4ee3-83c4-4a17309de480.",
+    "JM1-Core includes personal and shared mailbox identities: jm1-admin@jmerrill.one, jackie@jmerrill.one, scheduling@jmerrill.one, publishing@jmerrill.one, foundation@jmerrill.one, financial@jmerrill.one.",
+    "JM1-Test and JM1-Enterprise-Dev returned no connections from PAC, so deployment proof requiring connection-reference resolution is not currently ready."
+  ],
+  "production_readiness": "HARDENING REQUIRED",
+  "required_actions": ["remove or block consumer OneDrive connection", "map each production flow to connection reference and owner", "replace personal production connections where service/shared mailbox identity is appropriate", "create TEST connection references before pipeline proof"]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS WITH LIMITED SCOPE",
+  "bp09": {
+    "jmerrill_one_contact": "PASS - live route previously smoke tested after HFWEB-01; no BP-10 code change to intake.",
+    "api_intake": "PASS - GET /api/intake returns 405; malformed POST returns 400; no production client record submitted.",
+    "dataverse_service_principal_path": "NOT EXERCISED - avoiding unnecessary production records; environment variables still target JM1-Core."
+  },
+  "power_platform_workloads": {
+    "agent_registry_lifecycle": "NOT EXECUTED - no DLP/Managed Environment changes applied.",
+    "execution_log_writer": "NOT EXECUTED - no DLP/Managed Environment changes applied.",
+    "active_agents": "NOT EXECUTED - no DLP/Managed Environment changes applied.",
+    "agent_exception_handler_plugin": "NOT EXECUTED - no plugin/schema changes applied.",
+    "copilot_studio": "NOT EXECUTED - connector observed, no configuration changes applied."
+  },
+  "rationale": "No tenant enforcement change was applied, so bounded regression avoided unnecessary production actions."
+}

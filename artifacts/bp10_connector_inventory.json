@@ -1,0 +1,18 @@
+{
+  "status": "PARTIAL - PAC CONNECTION INVENTORY CAPTURED",
+  "connectors_observed": [
+    {"connector": "Microsoft Dataverse", "api_ids": ["shared_commondataserviceforapps", "shared_commondataservice"], "recommended_classification": "Business / Trusted", "risk": "Enterprise data core; must not mix with untrusted external connectors."},
+    {"connector": "Office 365 Outlook", "api_ids": ["shared_office365"], "recommended_classification": "Business / Trusted", "risk": "Email and calendar data; service/shared mailbox connections require owner review."},
+    {"connector": "Microsoft Teams", "api_ids": ["shared_teams"], "recommended_classification": "Business / Trusted", "risk": "Internal collaboration data."},
+    {"connector": "SharePoint", "api_ids": ["shared_sharepointonline"], "recommended_classification": "Business / Trusted", "risk": "Document and list data."},
+    {"connector": "OneDrive for Business", "api_ids": ["shared_onedriveforbusiness"], "recommended_classification": "Business / Trusted with restrictions", "risk": "Personal storage risk; prefer SharePoint for governed records."},
+    {"connector": "OneDrive consumer", "api_ids": ["shared_onedrive"], "recommended_classification": "Blocked", "risk": "Consumer storage; one error-state connection observed in JM1-Core."},
+    {"connector": "Microsoft Forms", "api_ids": ["shared_microsoftforms"], "recommended_classification": "Business / Trusted", "risk": "Form response intake; ensure ownership."},
+    {"connector": "Excel Online Business", "api_ids": ["shared_excelonlinebusiness"], "recommended_classification": "Non-Business / Limited", "risk": "Spreadsheet data drift; not production source of truth."},
+    {"connector": "Copilot Studio", "api_ids": ["shared_microsoftcopilotstudio"], "recommended_classification": "Business / Trusted with AI review", "risk": "Agent actions and AI governance apply."},
+    {"connector": "Web Contents / HTTP-like endpoint", "api_ids": ["shared_webcontents"], "recommended_classification": "Limited / Exception Required", "risk": "HTTP escape hatch; observed Azure Function endpoints."},
+    {"connector": "Custom JM1 Functions", "api_ids": ["shared_jm1-2ded-2dfunctions-20-2d-201-5ff04db4ad723319-593f05781931fa88"], "recommended_classification": "Business / Trusted by explicit exception", "risk": "Custom connector must be endpoint-restricted and logged."}
+  ],
+  "environments_with_connections": ["JM1-Core", "JM1-CRM-Core", "One Dynamics Environment"],
+  "no_change_applied": true
+}

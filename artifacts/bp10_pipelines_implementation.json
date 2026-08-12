@@ -1,0 +1,9 @@
+{
+  "status": "NOT CONFIGURED - PIPELINE PREREQUISITE MISSING",
+  "target_pipeline": "JM1 Enterprise DEV -> TEST -> PROD",
+  "source": "JM1-Enterprise-Dev",
+  "target_test": "JM1-Test",
+  "target_prod": "JM1-Core",
+  "blocked_by": ["deploymentpipelines table/API not available to PAC", "pipeline host environment not configured", "TEST connection references not ready"],
+  "no_change_applied": true
+}

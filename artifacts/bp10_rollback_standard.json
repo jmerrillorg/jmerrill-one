@@ -1,0 +1,10 @@
+{
+  "status": "DEFINED",
+  "solution_deployment": "Prefer prior managed solution version rollback; keep exported packages.",
+  "flow_change": "Restore prior solution version or documented prior flow definition; disable only with impact note.",
+  "plugin_change": "Rollback to prior assembly/step version and validate server-side behavior.",
+  "app_release": "Rollback managed app version or restore prior app package.",
+  "website_dependency": "Git revert/redeploy plus API smoke.",
+  "environment_variables": "Restore prior value from evidence record; secrets remain redacted.",
+  "connection_references": "Restore prior connection binding or approved replacement owner."
+}

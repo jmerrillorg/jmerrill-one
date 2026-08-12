@@ -1,0 +1,14 @@
+{
+  "status": "CAPTURED BY PAC",
+  "summary": {
+    "JM1-Core": {"classification": "PRODUCTION GOVERNED + UNMANAGED RISK", "solution_count": 31, "jm1_unmanaged_count": 22, "managed_examples": ["JM1PrecoaCalendarSync", "JM1PublishingCommercialCatalog", "Business Central integrations"]},
+    "JM1-Test": {"classification": "TEST/UAT", "solution_count": 4, "managed_jm1_solutions": ["JM1_EnterpriseFoundation", "JM1_Publishing"]},
+    "JM1-Enterprise-Dev": {"classification": "DEV", "solution_count": 3, "jm1_solutions": ["JM1PublishingSales"]},
+    "JM1-CRM-Core": {"classification": "DEFAULT - RESTRICT", "solution_count": 4, "jm1_solutions": ["JM1CRMCore", "JM1CRMCoreAutomations"]},
+    "JM1-Dev": {"classification": "SANDBOX - OTHER", "solution_count": 6, "jm1_solutions": ["JM1_EnterpriseFoundation", "JM1_PAM_AssetRegistry", "JM1_Publishing", "JM1PublishingCommercialCatalog"]},
+    "One Dynamics Environment": {"classification": "PROD - LEGACY/VERIFY", "solution_count": 12, "jm1_unmanaged_count": 8}
+  },
+  "production_unmanaged_risk": true,
+  "migration_candidates": ["JM1CoreGovernance", "JM1CorePlatform", "JM1_EnterpriseFoundation", "JM1_Core", "JM1_Financial", "JM1_Foundation", "JM1_Publishing", "JM1PublishingCommandSuite", "JM1PublishingSales", "JM1SecurityCompliance"],
+  "raw_evidence": "PAC solution inventories captured during BP-10 execution; full command output available in Codex thread."
+}

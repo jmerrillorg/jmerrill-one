@@ -1,0 +1,22 @@
+{
+  "status": "DEFINED - TENANT HARDENING REQUIRED",
+  "observed_tenant_settings": {
+    "disableEnvironmentCreationByNonAdminUsers": false,
+    "disableTrialEnvironmentCreationByNonAdminUsers": false,
+    "disableDeveloperEnvironmentCreationByNonAdminUsers": false,
+    "disablePortalsCreationByNonAdminUsers": false,
+    "disableShareWithEveryone": true,
+    "disableConnectionSharingWithEveryone": false,
+    "enableGuestsToMake": false,
+    "disableFlowRunResubmission": true
+  },
+  "target_rules": {
+    "makers": "Founder & CEO / authorized JM1 admin identities only for production-impacting work.",
+    "default_environment": "Restrict to personal productivity; no enterprise workload growth.",
+    "production_direct_edit": "No casual direct edits; emergency edits require evidence and reconciliation.",
+    "sharing": "No Everyone sharing; disable broad connection sharing; use named users/groups only.",
+    "service_connections": "Production workloads prefer service/application/shared mailbox identities over personal accounts.",
+    "orphaned_resources": "Assign owner and recovery process."
+  },
+  "recommended_admin_changes": ["disable non-admin environment creation", "disable trial/developer environment creation by non-admin users", "disable connection sharing with everyone", "enable default environment routing after strategy review"]
+}

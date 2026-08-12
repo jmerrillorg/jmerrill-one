@@ -1,0 +1,22 @@
+{
+  "status": "ADMIN ACTION REQUIRED",
+  "reason": "PAC supports set-governance-config but does not expose current Managed Environment read status in this session; PowerShell admin module failed on macOS System.Windows.Forms dependency.",
+  "recommended_target": {
+    "JM1-Enterprise-Dev": "ENABLE + CONFIGURE",
+    "JM1-Test": "ENABLE + CONFIGURE",
+    "JM1-Core": "ENABLE + CONFIGURE after impact review",
+    "JM1-CRM-Core": "DEFAULT - RESTRICT",
+    "JM1-Dev": "SANDBOX - OTHER; decide retire or keep restricted",
+    "One Dynamics Environment": "VERIFY ROLE before enabling or changing"
+  },
+  "safe_configuration_model": {
+    "protection_level": "Standard",
+    "usage_insights": "Include for governed environments",
+    "maker_welcome": "Link to JM1 Power Platform Governance Standard once canonized",
+    "sharing_limits": "Disable group sharing; cap direct sharing",
+    "solution_checker": "warn in DEV/TEST; block in PROD after exception review",
+    "weekly_digest": "Enabled for admin visibility",
+    "app_governance": "Use where entitlement permits"
+  },
+  "no_change_applied": true
+}

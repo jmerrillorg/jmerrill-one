@@ -1,0 +1,11 @@
+{
+  "gaps": [
+    {"issue": "DLP inventory not accessible from current macOS PowerShell/PAC surface", "environment": "tenant", "classification": "ADMIN ACTION REQUIRED", "risk": "Cannot safely apply DLP hardening without impact analysis", "exact_action": "Export DLP policies from admin center or working Windows PowerShell admin session", "owner": "Jackie", "priority": "P0"},
+    {"issue": "Power Platform Pipelines unavailable to PAC", "environment": "tenant/JM1-Core", "classification": "ADMIN ACTION REQUIRED", "risk": "Deployment proof blocked", "exact_action": "Configure pipeline host app/environment and stages", "owner": "Jackie", "priority": "P0"},
+    {"issue": "Managed Environment read state unknown", "environment": "DEV/TEST/PROD", "classification": "ADMIN ACTION REQUIRED", "risk": "Governance controls may not be active", "exact_action": "Verify/enable Managed Environments for JM1-Enterprise-Dev, JM1-Test, JM1-Core", "owner": "Jackie", "priority": "P0"},
+    {"issue": "No environment group configured", "environment": "tenant", "classification": "ADMIN ACTION REQUIRED", "risk": "Lifecycle governance not grouped", "exact_action": "Create JM1 Enterprise group and add DEV/TEST/PROD", "owner": "Jackie", "priority": "P1"},
+    {"issue": "Production contains many unmanaged JM1 solutions", "environment": "JM1-Core", "classification": "DEFERRED", "risk": "Rollback/deployment reproducibility risk", "exact_action": "Migrate production JM1 solutions to managed downstream deployment path", "owner": "Jackie", "priority": "P1"},
+    {"issue": "Consumer OneDrive connection in Error state", "environment": "JM1-Core", "classification": "CLOSED MODEL / REMEDIATION REQUIRED", "risk": "Consumer connector should be blocked/removed", "exact_action": "Remove or block shared_onedrive connection after confirming no dependency", "owner": "Jackie", "priority": "P1"},
+    {"issue": "Non-admin environment creation remains allowed", "environment": "tenant", "classification": "ADMIN ACTION REQUIRED", "risk": "Uncontrolled environment growth", "exact_action": "Disable non-admin environment/trial/developer creation unless explicit exception", "owner": "Jackie", "priority": "P1"}
+  ]
+}
