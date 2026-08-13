@@ -1,0 +1,43 @@
+{
+  "status": "CURRENT STATE AFTER CV-01B",
+  "portfolio": [
+    {
+      "owner": "J Merrill One",
+      "experience": "Enterprise Experience",
+      "repository": "J Merrill One",
+      "survey_url": "https://nam.dcv.ms/VgtHZSLCDw"
+    },
+    {
+      "owner": "J Merrill Publishing",
+      "experience": "Author Experience",
+      "repository": "J Merrill Publishing"
+    },
+    {
+      "owner": "J Merrill Financial",
+      "experience": "Client Experience",
+      "repository": "J Merrill Financial"
+    },
+    {
+      "owner": "J Merrill Foundation",
+      "experiences": [
+        "Donor Experience",
+        "Volunteer Experience",
+        "Participant / Program Experience",
+        "Sponsor / Partner Experience"
+      ],
+      "repository": "J Merrill Foundation"
+    },
+    {
+      "owner": "J Merrill Productions",
+      "experience": "Project Experience",
+      "repository": "J Merrill Productions"
+    },
+    {
+      "owner": "Jackie Smith Jr. Founder Brand",
+      "experience": "Coaching Experience",
+      "repository": "Jackie Smith Jr. personal-brand repository",
+      "status": "FUTURE"
+    }
+  ],
+  "division_rollout_state": "Division handoffs remain valid and independent of CV-01B parent-company correction."
+}

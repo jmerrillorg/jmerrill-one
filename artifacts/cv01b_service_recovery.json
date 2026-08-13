@@ -1,0 +1,18 @@
+{
+  "status": "DEFINED",
+  "pattern": [
+    "Customer Voice response",
+    "Low score / serious concern",
+    "J Merrill One review",
+    "Determine responsible context",
+    "Human follow-up",
+    "Case only if tracked service-resolution semantics fit"
+  ],
+  "do_not": [
+    "automatically create a Case for every low score",
+    "automatically send a defensive response",
+    "automatically forward sensitive feedback across divisions",
+    "automatically cross-sell"
+  ],
+  "automation": "Deferred; not required for public link launch."
+}

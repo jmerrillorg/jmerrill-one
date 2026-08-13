@@ -1,0 +1,22 @@
+{
+  "status": "CANON-CANDIDATE CONTEXT RULE",
+  "rule": "The website where the person selects Share Your Experience establishes the default feedback context.",
+  "context_mapping": {
+    "jmerrill.one": "J Merrill One Enterprise Experience",
+    "Publishing site": "Publishing Author Experience",
+    "Financial site": "Financial Client Experience",
+    "Foundation site": "appropriate Foundation feedback experience",
+    "Productions site": "Productions Project Experience"
+  },
+  "prohibited_public_questions": [
+    "Which internal JM1 system/workstream handled your request?"
+  ],
+  "prohibited_public_terms": [
+    "Dataverse",
+    "Customer Voice",
+    "routing",
+    "governance",
+    "architecture"
+  ],
+  "human_first_rule": "Do not make the visitor understand JM1 internal architecture before giving feedback."
+}

@@ -1,0 +1,41 @@
+{
+  "classification": "CV-01B READY - COMPLETE HUMAN PRODUCTION RELEASE",
+  "target_repository": "J Merrill One",
+  "target_scope": "J Merrill One parent-company Enterprise Experience feedback",
+  "omission_corrected": "J Merrill One now has its own parent-company Customer Voice feedback path.",
+  "customer_voice": {
+    "environment": "JM1-Enterprise-Dev",
+    "project_name": "New project (2)",
+    "intended_project_label": "J Merrill One - Enterprise Experience",
+    "project_id": "21a69f30-7525-41df-9969-92babb9eba41",
+    "survey_name": "Survey 1",
+    "survey_title": "J Merrill One - Enterprise Experience",
+    "survey_id": "bd129fda-c796-f111-8076-002248046419",
+    "survey_url": "https://nam.dcv.ms/VgtHZSLCDw"
+  },
+  "question_architecture": [
+    "Overall satisfaction",
+    "Felt heard and understood",
+    "Clarity of where to go",
+    "Communication quality",
+    "Ease of working with J Merrill One",
+    "Recommendation likelihood",
+    "Experience context",
+    "Open-ended improvement feedback",
+    "Testimonial contact permission"
+  ],
+  "anonymous_response_behavior": "Generic public Customer Voice link accepts responses without manufacturing a Contact.",
+  "testimonial_permission": "Captured explicitly; no testimonial reuse is implied without selected permission.",
+  "service_recovery_model": "Feedback is captured for review; no new automation, duplicate case model, or duplicate identity flow was introduced.",
+  "website_placement": "Sitewide footer link labeled Share Your Experience.",
+  "contact_page_decision": "Footer only; /contact remains the primary intake path.",
+  "human_first_validation": "PASS",
+  "nonproduction_survey_validation": "PASS",
+  "website_regression": "PASS",
+  "deployment_result": "PENDING",
+  "production_smoke_result": "PENDING",
+  "enterprise_feedback_portfolio": "Updated current-state portfolio recorded in artifacts/cv01b_enterprise_feedback_portfolio.json.",
+  "repository_routing_result": "PASS - parent-company feedback survey is owned by J Merrill One.",
+  "division_rollout_state": "Unaffected; division feedback rollout remains independent.",
+  "exact_next_action": "Complete production release of the footer link, then continue division feedback rollout."
+}

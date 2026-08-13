@@ -1,0 +1,14 @@
+{
+  "status": "IMPLEMENTED",
+  "question": "May we contact you about using part of your feedback as a testimonial?",
+  "options": [
+    "Yes, you may contact me",
+    "No"
+  ],
+  "rules": [
+    "Feedback submission does not authorize publication.",
+    "Yes is permission to contact only.",
+    "Do not automatically expose positive feedback publicly."
+  ],
+  "validation": "Scenario B retained Yes, you may contact me in Dataverse question responses."
+}

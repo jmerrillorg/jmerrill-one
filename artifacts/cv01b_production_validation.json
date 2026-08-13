@@ -1,0 +1,14 @@
+{
+  "status": "PENDING",
+  "validated_at": "2026-08-13",
+  "target_site": "https://www.jmerrill.one",
+  "checks": {
+    "home_page_status": "PENDING",
+    "home_footer_feedback_link_present": "PENDING",
+    "contact_page_status": "PENDING",
+    "contact_footer_feedback_link_present": "PENDING",
+    "intake_api_get_guard": "PENDING",
+    "customer_voice_direct_link": "PASS - 200"
+  },
+  "production_smoke_result": "PENDING DEPLOYMENT"
+}

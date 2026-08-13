@@ -1,0 +1,22 @@
+{
+  "survey": "J Merrill One - Enterprise Experience",
+  "target_repository": "J Merrill One",
+  "purpose": [
+    "overall JM1 experience",
+    "jmerrill.one website",
+    "Start Here/contact experience",
+    "ease of finding the right company",
+    "communication from One",
+    "cross-division continuity",
+    "enterprise/partner interaction",
+    "experiences involving multiple divisions",
+    "feedback where division ownership is unclear"
+  ],
+  "not_intended_for": [
+    "replacing division surveys",
+    "division-owned website implementation",
+    "technical routing diagnosis",
+    "collecting regulated or sensitive division details"
+  ],
+  "ownership": "One owns parent-company feedback context and shared governance; divisions continue owning division feedback implementation."
+}

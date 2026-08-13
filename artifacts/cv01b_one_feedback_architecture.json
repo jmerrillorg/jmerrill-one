@@ -1,0 +1,18 @@
+{
+  "package_id": "CV-01B",
+  "status": "CURRENT ACTIVE ARCHITECTURE",
+  "correction": "Adds parent-company J Merrill One Enterprise Experience to the active Customer Voice portfolio.",
+  "active_customer_voice_experiences": [
+    "J Merrill One - Enterprise Experience",
+    "J Merrill Publishing - Author Experience",
+    "J Merrill Financial - Client Experience",
+    "J Merrill Foundation - audience-appropriate Community Experience surveys",
+    "J Merrill Productions - Project Experience"
+  ],
+  "future_only": [
+    "Jackie Smith Jr. - Coaching Experience"
+  ],
+  "founder_brand_status": "DEFINED - NOT ACTIVATED",
+  "principle": "Where the person is when they choose Share Your Experience determines the feedback context.",
+  "historical_evidence_rule": "CV-01 and CV-01A evidence remains historical; CV-01B supersedes current active portfolio only."
+}

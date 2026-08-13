@@ -1,0 +1,15 @@
+{
+  "status": "PENDING",
+  "validated_at": "2026-08-13",
+  "deployment_authority": "Standard release authority available through repository workflow",
+  "target_branch": "main",
+  "target_site": "https://www.jmerrill.one",
+  "change_scope": [
+    "Add Share Your Experience footer link to J Merrill One",
+    "Record CV-01B Customer Voice evidence artifacts",
+    "Update repository routing register for the parent-company feedback survey"
+  ],
+  "workflow": ".github/workflows/azure-static-web-apps.yml",
+  "deployment_result": "PENDING COMMIT AND PUSH",
+  "human_action_required": "None unless repository push or Azure Static Web Apps deployment fails."
+}

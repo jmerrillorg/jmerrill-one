@@ -1,0 +1,44 @@
+{
+  "result": "PASS",
+  "survey_url": "https://nam.dcv.ms/VgtHZSLCDw",
+  "survey_id": "bd129fda-c796-f111-8076-002248046419",
+  "scenarios": [
+    {
+      "scenario": "A - One experience",
+      "context": "J Merrill One",
+      "testimonial": "No",
+      "ui_submission": "PASS",
+      "dataverse_context_retained": "PASS"
+    },
+    {
+      "scenario": "B - Cross-division experience",
+      "context": "More than one",
+      "testimonial": "Yes, you may contact me",
+      "ui_submission": "PASS",
+      "dataverse_context_retained": "PASS"
+    },
+    {
+      "scenario": "C - Unsure",
+      "context": "I'm not sure",
+      "testimonial": "No",
+      "ui_submission": "PASS",
+      "dataverse_context_retained": "PASS"
+    }
+  ],
+  "response_ids": [
+    "f5c6a469-c896-f111-8076-0022480b3175",
+    "1405db71-c896-f111-8076-0022480b3175",
+    "e0702a7b-c896-f111-8076-0022480b3175"
+  ],
+  "checks": {
+    "survey_accessible": "PASS",
+    "responses_accepted": "PASS",
+    "stored_in_dataverse": "PASS",
+    "selected_context_retained": "PASS",
+    "anonymous_behavior": "PASS",
+    "contact_manufactured": "NO",
+    "duplicate_identity": "NO",
+    "testimonial_preference_retained": "PASS",
+    "unintended_automation": "NONE OBSERVED"
+  }
+}

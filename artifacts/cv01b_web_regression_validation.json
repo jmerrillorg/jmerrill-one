@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "validated_at": "2026-08-13",
+  "local_base_url": "http://127.0.0.1:3018",
+  "checks": {
+    "home_page_status": 200,
+    "home_footer_feedback_link_present": "PASS",
+    "home_footer_feedback_url": "https://nam.dcv.ms/VgtHZSLCDw",
+    "contact_page_status": 200,
+    "contact_page_feedback_link_present_in_footer": "PASS",
+    "contact_page_body_left_uncluttered": "PASS",
+    "intake_api_get_guard": "PASS - 405",
+    "customer_voice_direct_link": "PASS - 200"
+  },
+  "human_first_language": {
+    "public_link_text": "Share Your Experience",
+    "prohibited_platform_terms_publicly_exposed": "NO"
+  },
+  "notes": "Regression validation confirms the Customer Voice route is available through the sitewide footer without changing navigation, contact intake, or API behavior."
+}

@@ -1,0 +1,66 @@
+{
+  "status": "IMPLEMENTED",
+  "survey_id": "bd129fda-c796-f111-8076-002248046419",
+  "questions": [
+    {
+      "number": 1,
+      "type": "rating",
+      "text": "Overall, how satisfied were you with your experience with J Merrill One?"
+    },
+    {
+      "number": 2,
+      "type": "choice",
+      "text": "Did you feel heard and understood?",
+      "options": ["Yes", "No"]
+    },
+    {
+      "number": 3,
+      "type": "rating",
+      "text": "Was it clear where to go for what you needed?"
+    },
+    {
+      "number": 4,
+      "type": "rating",
+      "text": "How would you rate our communication?"
+    },
+    {
+      "number": 5,
+      "type": "rating",
+      "text": "How easy was it to work with us?"
+    },
+    {
+      "number": 6,
+      "type": "rating",
+      "text": "How likely are you to recommend J Merrill One?"
+    },
+    {
+      "number": 7,
+      "type": "choice",
+      "text": "Which part of J Merrill best describes your experience?",
+      "options": [
+        "J Merrill One",
+        "J Merrill Publishing",
+        "J Merrill Financial",
+        "J Merrill Foundation",
+        "J Merrill Productions",
+        "More than one",
+        "I'm not sure"
+      ],
+      "note": "Context for analysis only; respondent is not redirected."
+    },
+    {
+      "number": 8,
+      "type": "text",
+      "text": "What could we do better or what else would you like us to know?",
+      "note": "Consolidated improvement and open feedback to keep the survey concise."
+    },
+    {
+      "number": 9,
+      "type": "choice",
+      "text": "May we contact you about using part of your feedback as a testimonial?",
+      "options": ["Yes, you may contact me", "No"],
+      "note": "Permission to contact only, not publication approval."
+    }
+  ],
+  "human_first_result": "PASS - concise, plain-language, no internal routing/system terminology."
+}

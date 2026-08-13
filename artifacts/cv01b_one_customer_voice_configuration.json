@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "project_name": "New project (2)",
+  "intended_project_label": "J Merrill One - Enterprise Experience",
+  "project_id": "21a69f30-7525-41df-9969-92babb9eba41",
+  "survey_name": "Survey 1",
+  "survey_title": "J Merrill One - Enterprise Experience",
+  "survey_id": "bd129fda-c796-f111-8076-002248046419",
+  "environment": "JM1-Enterprise-Dev",
+  "owner": "JM1 Admin",
+  "state": "Saved and accepting responses",
+  "public_access_configuration": {
+    "type": "generic public direct link",
+    "url": "https://nam.dcv.ms/VgtHZSLCDw",
+    "customer_voice_note": "This is a generic link that won't track personal information."
+  },
+  "production_website_target": "Share Your Experience footer link on jmerrill.one"
+}

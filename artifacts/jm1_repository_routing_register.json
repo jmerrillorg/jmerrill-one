@@ -47,6 +47,10 @@
       "authoritative_repository": "J Merrill One"
     },
     {
+      "scope": "J Merrill One Enterprise Experience Customer Voice survey",
+      "authoritative_repository": "J Merrill One"
+    },
+    {
       "scope": "Division Customer Voice surveys",
       "authoritative_repository": "respective division repository"
     }

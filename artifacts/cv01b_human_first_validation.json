@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "public_link_text": "Share Your Experience",
+  "prohibited_terms_publicly_exposed": {
+    "Customer Voice": "NO",
+    "Survey Portal": "NO",
+    "Feedback System": "NO",
+    "Experience Management": "NO",
+    "Enterprise Feedback": "NO",
+    "Submit CX Response": "NO"
+  },
+  "principles": [
+    "Human-First",
+    "Why-First",
+    "Period"
+  ],
+  "notes": "Customer Voice remains the root system; the visitor sees only the human action."
+}
