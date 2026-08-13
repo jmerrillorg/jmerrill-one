@@ -1,0 +1,32 @@
+{
+  "status": "DEFINED",
+  "classifications": {
+    "JOURNEYS": [
+      "nurture",
+      "recurring stewardship",
+      "lifecycle sequences",
+      "event campaigns"
+    ],
+    "POWER_AUTOMATE": [
+      "bounded operational workflow",
+      "internal notification",
+      "deterministic record-triggered automation",
+      "system integration"
+    ],
+    "OUTLOOK_HUMAN": [
+      "personal correspondence",
+      "consequential relationship communication"
+    ],
+    "CUSTOMER_SERVICE": [
+      "service-resolution communication",
+      "case/status/service issue communications"
+    ],
+    "CUSTOMER_VOICE": [
+      "survey invitation/feedback collection where Customer Voice owns survey"
+    ],
+    "FUTURE_DIGITAL_MESSAGING": [
+      "future real-time messaging channels, not MNA-01"
+    ]
+  },
+  "rule": "Do not migrate existing production communications merely because Journeys becomes available."
+}

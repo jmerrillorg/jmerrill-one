@@ -1,0 +1,15 @@
+{
+  "status": "DEFINED",
+  "distinctions": {
+    "operational_transactional": "Communication necessary to fulfill a requested service/relationship.",
+    "marketing_nurture": "Communication intended to cultivate, promote, solicit, or maintain engagement beyond the immediate transaction."
+  },
+  "rules": [
+    "Website intake is not blanket marketing consent.",
+    "Consent must capture purpose/topic where applicable, channel, source, timestamp, opt-out, and suppression.",
+    "Do not invent consent.",
+    "Operational communications may use transactional purpose only where semantics fit.",
+    "Marketing/nurture Journey entry requires appropriate consent evidence."
+  ],
+  "dataverse_interaction": "Journeys consent entities/purposes are Microsoft-native consent store; Contact remains enterprise identity."
+}

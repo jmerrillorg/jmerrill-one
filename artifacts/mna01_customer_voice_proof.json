@@ -1,0 +1,14 @@
+{
+  "result": "BLOCKED - ADMIN",
+  "reason": "Customer Voice project/survey configuration not completed in governed nonproduction; no synthetic survey or response created.",
+  "tests": {
+    "survey_exists": "BLOCKED",
+    "recipient_access": "BLOCKED",
+    "response_submitted": "BLOCKED",
+    "response_reaches_dataverse": "BLOCKED",
+    "contact_identity_association": "BLOCKED",
+    "foundation_context_association": "BLOCKED",
+    "privacy_exposure": "NOT TESTED",
+    "custom_platform_required": "NO - contract says Customer Voice owns survey platform"
+  }
+}

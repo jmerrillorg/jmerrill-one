@@ -1,0 +1,15 @@
+{
+  "status": "DEFINED",
+  "preferred_proof": "Foundation volunteer onboarding or post-event/impact follow-up",
+  "privacy_reason": "Avoid sensitive recipient/assistance communications for first proof.",
+  "pattern": [
+    "Foundation relationship/event",
+    "Dataverse trigger",
+    "Journey",
+    "consent/compliance evaluation",
+    "controlled communication",
+    "response/interaction evidence",
+    "exit condition"
+  ],
+  "repository_boundary": "Foundation trigger/event/domain mapping belongs in Foundation repository."
+}

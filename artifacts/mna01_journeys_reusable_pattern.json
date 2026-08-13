@@ -1,0 +1,18 @@
+{
+  "status": "DEFINED - PROOF PENDING",
+  "pattern": [
+    "domain event/relationship evidence",
+    "consent/compliance check",
+    "Journey audience/trigger",
+    "message/branch/exit criteria",
+    "interaction evidence",
+    "domain-owned follow-up where consequential"
+  ],
+  "division_guidance": {
+    "Publishing": "author onboarding and lifecycle updates after consent/design",
+    "Financial": "administrative/nurture only after privacy/compliance review; no advisory automation",
+    "Foundation": "volunteer onboarding and event/impact follow-up first",
+    "Productions": "client/project lifecycle updates after division design"
+  },
+  "do_not_implement_other_divisions": true
+}

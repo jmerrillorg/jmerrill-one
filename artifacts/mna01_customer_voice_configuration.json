@@ -1,0 +1,14 @@
+{
+  "classification": "ADMIN ACTION REQUIRED",
+  "configuration_result": "Not configured by Cody; project/survey capability requires Customer Voice admin/UI setup in governed nonproduction.",
+  "target_environment": "JM1-Enterprise-Dev preferred unless Microsoft capability requires another nonproduction target.",
+  "established": {
+    "required_roles": false,
+    "dataverse_integration": "solution/entity sets present in PROD; DEV footprint present",
+    "project_survey_capability": false,
+    "response_storage": "entity sets present in PROD; proof not executed",
+    "approved_connector_path": "requires DLP/admin confirmation",
+    "test_recipient_strategy": "synthetic/test recipient only"
+  },
+  "no_prod_configuration": true
+}

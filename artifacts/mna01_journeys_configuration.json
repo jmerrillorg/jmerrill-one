@@ -1,0 +1,8 @@
+{
+  "classification": "ADMIN ACTION REQUIRED",
+  "configuration_result": "No Journeys configuration applied; sending/compliance setup requires admin UI and may require domain verification.",
+  "bounded_proof_only": true,
+  "production_marketing_activated": false,
+  "license_purchase": false,
+  "exact_action": "Configure nonproduction Journeys environment, sender/domain if required, compliance profile, purpose/topic, security roles, and synthetic test audience."
+}

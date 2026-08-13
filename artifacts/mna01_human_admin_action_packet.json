@@ -1,0 +1,53 @@
+{
+  "status": "ADMIN ACTIONS REQUIRED",
+  "actions": [
+    {
+      "id": "MNA01-HA-001",
+      "capability": "Customer Voice",
+      "surface": "Customer Voice / Power Platform Admin Center",
+      "environment": "JM1-Enterprise-Dev preferred, or Microsoft-supported nonproduction target",
+      "current_state": "Customer Voice solution footprint exists in DEV/PROD; no configured survey project/proof accessible from this session.",
+      "required_state": "Configure Customer Voice project capability in governed nonproduction and confirm survey author permissions/Dataverse response storage.",
+      "why": "Required before Foundation post-program/event feedback proof.",
+      "cost": "No additional spend identified from current evidence.",
+      "purchase_required": false,
+      "validation": "Controlled synthetic survey can be created, answered, and response appears in Dataverse."
+    },
+    {
+      "id": "MNA01-HA-002",
+      "capability": "Customer Insights - Journeys",
+      "surface": "Customer Insights - Journeys admin/setup",
+      "environment": "JM1-Enterprise-Dev preferred, or Microsoft-supported nonproduction target",
+      "current_state": "Journeys/Marketing solution footprint exists in DEV/PROD; sending/compliance setup not proven.",
+      "required_state": "Complete nonproduction Journeys setup: real-time journey availability, sender/domain if required, compliance profile, purpose/topic, and role assignment.",
+      "why": "Required before Foundation volunteer onboarding or post-event journey proof.",
+      "cost": "No additional spend identified from current evidence; stop if Microsoft prompts for purchase/capacity.",
+      "purchase_required": false,
+      "validation": "Synthetic Contact can enter controlled Journey without production communication."
+    },
+    {
+      "id": "MNA01-HA-003",
+      "capability": "BP-12 dependency",
+      "surface": "Power Platform Admin Center / DLP",
+      "environment": "JM1 tenant / governed environments",
+      "current_state": "Actual DLP export remains human-admin action from BP-12.",
+      "required_state": "Export/confirm DLP allows Customer Voice/Journeys required Microsoft connectors while preserving blocked consumer/generic paths.",
+      "why": "Needed before production rollout, not to define enterprise pattern.",
+      "cost": "None for export.",
+      "purchase_required": false,
+      "validation": "DLP impact artifact can be updated from actual policy evidence."
+    },
+    {
+      "id": "MNA01-HA-004",
+      "capability": "Foundation handoff",
+      "surface": "J Merrill Foundation repository",
+      "environment": "Foundation implementation repo/process",
+      "current_state": "Enterprise contracts/patterns created in One; Foundation-owned proof implementation not created in One.",
+      "required_state": "Create Foundation-owned survey/journey implementation artifacts following MNA-01 contracts.",
+      "why": "Repository boundary keeps Foundation donor/volunteer/recipient/program implementation out of One.",
+      "cost": "None identified.",
+      "purchase_required": false,
+      "validation": "Foundation repo references One enterprise pattern and stores Foundation-specific domain mapping."
+    }
+  ]
+}

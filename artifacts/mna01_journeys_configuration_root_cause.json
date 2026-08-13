@@ -1,0 +1,16 @@
+{
+  "status": "RESOLVED TO EXACT ADMIN SETUP GAPS",
+  "classification": "ENTITLED - ADMIN ACTION REQUIRED",
+  "installed_or_not": "Marketing/Journeys managed solutions present in JM1-Core and JM1-Enterprise-Dev; absent in JM1-Test.",
+  "environment_provisioning": "DEV/PROD footprints exist; proof target not fully configured for Journey authoring/sending.",
+  "real_time_journeys_availability": "not proven usable; requires admin UI validation.",
+  "license_assignment": "no additional spend evidence; app templates visible/not disabled.",
+  "capacity": "no capacity shortfall detected by current tools; stop if admin UI requests purchase.",
+  "sending_setup": "missing/unproven",
+  "domain_sender_configuration": "missing/unproven",
+  "consent_center_compliance_profile": "consent/purpose/topic entity sets present in PROD; proof compliance profile not configured.",
+  "required_security_roles": "missing/unproven",
+  "required_connection_setup": "missing/unproven in DEV/TEST",
+  "tenant_admin_action": "Complete nonproduction Journeys setup before proof.",
+  "environment_limitations": "JM1-Test lacks solution footprint; use DEV or provision TEST intentionally."
+}

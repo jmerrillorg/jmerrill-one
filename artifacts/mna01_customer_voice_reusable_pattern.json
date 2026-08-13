@@ -1,0 +1,30 @@
+{
+  "status": "DEFINED - PROOF PENDING",
+  "pattern": [
+    "division context selects Customer Voice survey",
+    "survey response stored in Microsoft-native response store",
+    "response linked to Contact only where identity evidence permits",
+    "domain system stores business context/reference",
+    "follow-up decision governed by domain owner and JM1 governance"
+  ],
+  "future_uses": {
+    "Publishing": [
+      "onboarding feedback",
+      "editorial-stage feedback",
+      "post-release experience"
+    ],
+    "Financial": [
+      "administrative/post-service feedback where appropriate"
+    ],
+    "Foundation": [
+      "donor",
+      "volunteer",
+      "participant",
+      "event/program feedback"
+    ],
+    "Productions": [
+      "client/project feedback"
+    ]
+  },
+  "do_not_implement_now": true
+}

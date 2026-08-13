@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "matrix": [
+    {
+      "capability": "Customer Voice",
+      "Publishing": "READY TO ADOPT after division design",
+      "Financial": "PRIVACY/COMPLIANCE REVIEW REQUIRED",
+      "Foundation": "REQUIRES DIVISION DESIGN / initial proof",
+      "Productions": "READY TO ADOPT after division design"
+    },
+    {
+      "capability": "Journeys",
+      "Publishing": "REQUIRES DIVISION DESIGN",
+      "Financial": "PRIVACY/COMPLIANCE REVIEW REQUIRED",
+      "Foundation": "REQUIRES DIVISION DESIGN / initial proof",
+      "Productions": "REQUIRES DIVISION DESIGN"
+    }
+  ]
+}

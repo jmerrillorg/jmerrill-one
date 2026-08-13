@@ -1,0 +1,21 @@
+{
+  "status": "DEFINED",
+  "journeys_may_own": [
+    "nurture",
+    "onboarding sequences",
+    "lifecycle communications",
+    "event reminders",
+    "donor stewardship",
+    "volunteer onboarding",
+    "impact updates",
+    "campaign communications"
+  ],
+  "journeys_should_not_automatically_own": [
+    "sensitive assistance communications",
+    "regulated/advisory communications",
+    "service-resolution communication better owned by Customer Service",
+    "one-off human correspondence",
+    "communications requiring explicit Founder/HITL judgment"
+  ],
+  "rule": "Do not build a custom journey/nurture engine where Customer Insights Journeys correctly fits."
+}

@@ -1,0 +1,15 @@
+{
+  "standard_name": "JM1_Foundation_Microsoft_Operating_Standard_v1",
+  "owner": "J Merrill Foundation",
+  "status": "CANON v1.0",
+  "approval_authority": "Jackie Merrill / Founder & CEO",
+  "effective_date": "2026-08-13T02:25:00Z",
+  "upstream_jm1_standards": [
+    "JM1 Power Platform Governance Standard v1.0",
+    "JM1 Enterprise Semantic Reconciliation Standard v1.0",
+    "JM1 Microsoft-First Architecture Standard v1.0",
+    "JM1 Website Intake Standard v1.0"
+  ],
+  "foundation_repository_authority": "Authoritative standard document remains in the J Merrill Foundation repository. One records only enterprise reference/approval metadata.",
+  "not_duplicated_in_one": true
+}

@@ -1,0 +1,54 @@
+{
+  "package_id": "MNA-01",
+  "package_name": "Microsoft-Native Capability Activation Wave 1",
+  "explicit_rule": "MNA-01 IS CAPABILITY ACTIVATION, NOT DOMAIN REDESIGN.",
+  "target_repository": "J Merrill One",
+  "capability_scope": [
+    "Customer Voice",
+    "Customer Insights - Journeys",
+    "direct BP-12 prerequisites required for those capabilities only"
+  ],
+  "enterprise_ownership": "One owns shared Microsoft capability governance, reusable patterns, tenant capability evidence, and cross-division boundaries.",
+  "foundation_proof_scope": "J Merrill Foundation is initial proof/use case only; Foundation domain implementation belongs in the Foundation repo.",
+  "admin_prerequisites": [
+    "Managed Environment state",
+    "Customer Voice/Journeys app configuration",
+    "DLP confirmation before production",
+    "security roles",
+    "sender/compliance setup for Journeys"
+  ],
+  "security_privacy_boundaries": [
+    "no duplicate Contact identity",
+    "no second consent model",
+    "no duplicate response store",
+    "no cross-division privacy shortcut",
+    "no consequential follow-up without governance"
+  ],
+  "configuration_boundaries": [
+    "configure nonproduction first",
+    "no production donor/recipient communication",
+    "no purchase/licensing spend",
+    "no Sales Sequences/Unified Routing/Digital Messaging/Voice/Power BI/new agents"
+  ],
+  "reusable_patterns": [
+    "Customer Voice enterprise survey/feedback pattern",
+    "Journeys lifecycle/nurture pattern",
+    "Journeys vs Power Automate ownership boundary"
+  ],
+  "exclusions": [
+    "Foundation-owned domain implementation",
+    "custom survey platform",
+    "custom journey engine",
+    "broad BP-12 admin reopening",
+    "new agents",
+    "ADR-011 invention"
+  ],
+  "validation_gates": [
+    "tenant capability state captured",
+    "BP-12 direct dependency gate completed",
+    "no duplicate compliance PASS",
+    "regression PASS",
+    "Foundation handoff created"
+  ],
+  "closeout_criteria": "Executable enterprise contracts and tenant evidence completed; admin-only configuration and Foundation implementation handoff isolated."
+}

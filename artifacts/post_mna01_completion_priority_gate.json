@@ -1,0 +1,37 @@
+{
+  "status": "READY WITH EXCLUSIONS",
+  "ranking": [
+    {
+      "rank": 1,
+      "candidate": "J Merrill Productions Microsoft Optimization",
+      "readiness": "READY WITH EXCLUSIONS",
+      "why": "Highest v1 completion value not blocked by Customer Voice/Journeys admin proof if scoped to Productions Microsoft optimization and public-link correction/patterns."
+    },
+    {
+      "rank": 2,
+      "candidate": "Remaining Microsoft-native capability activation - Sales Sequences / Unified Routing operationalization",
+      "readiness": "HOLD",
+      "why": "Do not start until MNA-01 admin holds and production communication governance are resolved."
+    },
+    {
+      "rank": 3,
+      "candidate": "AI / canon closure",
+      "readiness": "HOLD",
+      "why": "ADR-011 prompt/skill payloads, Publishing Diagnostic, External Council canon still blocked."
+    },
+    {
+      "rank": 4,
+      "candidate": "Enterprise Intelligence / Power BI",
+      "readiness": "HOLD",
+      "why": "Power BI/Fabric excluded and should wait for data/capability governance readiness."
+    },
+    {
+      "rank": 5,
+      "candidate": "BP-12 human-admin closure",
+      "readiness": "READY AS ADMIN TASK",
+      "why": "Can be handled in parallel by Jackie/admin surface without blocking bounded nondependent repo work."
+    }
+  ],
+  "recommended_next_package": "J Merrill Productions Microsoft Optimization - bounded completion wave with MNA-01 exclusions",
+  "exact_enterprise_recommendation": "Authorize Productions optimization next, while Customer Voice/Journeys admin setup and Foundation proof remain handoff/admin actions."
+}

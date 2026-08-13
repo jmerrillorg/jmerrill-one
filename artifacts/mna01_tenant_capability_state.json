@@ -1,0 +1,41 @@
+{
+  "captured_at_utc": "2026-08-13T02:25:00Z",
+  "evidence": [
+    "PAC application list",
+    "PAC admin list-app-templates",
+    "PAC solution/application query against JM1-Core, JM1-Enterprise-Dev, JM1-Test",
+    "Dataverse solution and workflow read-only queries",
+    "Dataverse Customer Voice/Journeys entity-set probes",
+    "PAC connection list",
+    "BP-09 production-safe HTTP regression"
+  ],
+  "customer_voice": {
+    "classification": "ENTITLED - ADMIN ACTION REQUIRED",
+    "installed_or_provisioned": "Managed solution MicrosoftFormsPro/Dynamics 365 Customer Voice present in JM1-Core and JM1-Enterprise-Dev; absent in JM1-Test.",
+    "environment_availability": {
+      "JM1-Core": "solution present; response/survey entity sets reachable; no survey records found",
+      "JM1-Enterprise-Dev": "solution present by managed solutions; no connection listed",
+      "JM1-Test": "no Customer Voice solution footprint found"
+    },
+    "licensing_entitlement": "Application template Dynamics 365 Customer Voice visible and not disabled; no additional spend evidence captured.",
+    "survey_project_capability": "Entity sets msfp_surveies, msfp_surveyresponses, msfp_questionresponses reachable in JM1-Core; records empty.",
+    "response_storage": "Dataverse Customer Voice response entities present in PROD; proof response not created.",
+    "power_automate_integration": "Customer Voice/Survey workflows visible in PROD and DEV solution footprint.",
+    "dynamics_integration": "Customer Voice managed components installed in Dataverse environments.",
+    "security_roles": "Requires admin/project-role setup; not modified in MNA-01.",
+    "environment_limitations": "Proof should be in governed nonproduction; JM1-Test lacks solution footprint, JM1-Enterprise-Dev has footprint but Customer Voice project configuration not proven."
+  },
+  "customer_insights_journeys": {
+    "classification": "ENTITLED - ADMIN ACTION REQUIRED",
+    "application_state": "Dynamics Marketing/Journeys managed solution footprint present in JM1-Core and JM1-Enterprise-Dev; absent in JM1-Test.",
+    "real_time_journeys_availability": "Not proven usable by API; managed Journeys/Marketing components and workflows present.",
+    "environment_binding": "PROD and DEV have Marketing/Journeys solution components; TEST lacks footprint.",
+    "licensing_entitlement": "D365 SMB Marketing app template visible and not disabled; no purchase executed.",
+    "sending_configuration": "Not proven. Sender/domain/compliance setup remains admin action.",
+    "compliance_consent_setup": "msdynmkt_purposes, msdynmkt_topics, and msdynmkt_contactpointconsents entity sets reachable in JM1-Core; default Transactional purpose observed; no MNA consent records created.",
+    "channel_availability": "Email editor/channel/marketing components present; no broad production channel activation.",
+    "trigger_support": "Dataverse integration/workflows present; no test Journey trigger configured.",
+    "security_roles": "Requires admin setup/role assignment; not modified."
+  },
+  "overall": "ENTITLED - ADMIN ACTION REQUIRED"
+}

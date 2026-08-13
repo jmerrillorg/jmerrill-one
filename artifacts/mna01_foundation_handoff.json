@@ -1,0 +1,23 @@
+{
+  "status": "FOUNDATION REPOSITORY FOLLOW-UP REQUIRED",
+  "target_repository": "J Merrill Foundation",
+  "items": [
+    {
+      "capability": "Customer Voice",
+      "enterprise_pattern": "mna01_customer_voice_enterprise_contract.json + mna01_customer_voice_reusable_pattern.json",
+      "foundation_implementation_requirement": "Create Foundation post-program/event feedback survey and map response to Foundation program/context without duplicate Contact identity.",
+      "target_foundation_artifact_process": "FND Customer Voice proof/configuration artifact in Foundation repo",
+      "dependency": "Customer Voice admin setup in governed nonproduction",
+      "priority": "P0"
+    },
+    {
+      "capability": "Customer Insights - Journeys",
+      "enterprise_pattern": "mna01_journeys_enterprise_contract.json + mna01_fnd_journey_proof_contract.json",
+      "foundation_implementation_requirement": "Create Foundation volunteer onboarding or post-event/impact follow-up proof using consent/compliance model.",
+      "target_foundation_artifact_process": "FND Journey proof/configuration artifact in Foundation repo",
+      "dependency": "Journeys admin setup, sender/compliance, synthetic audience",
+      "priority": "P0"
+    }
+  ],
+  "one_repo_boundary_preserved": true
+}

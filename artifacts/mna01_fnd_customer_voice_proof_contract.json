@@ -1,0 +1,14 @@
+{
+  "status": "DEFINED",
+  "preferred_proof": "Foundation post-program/event feedback",
+  "question": "Can Foundation collect structured feedback using Customer Voice and associate the response with enterprise identity/program context without a custom survey system?",
+  "enterprise_integration_contract": [
+    "Foundation context",
+    "Customer Voice survey",
+    "response",
+    "Dataverse",
+    "Foundation relationship/program reference",
+    "governed follow-up if needed"
+  ],
+  "repository_boundary": "Foundation context/program/reference implementation belongs in Foundation repository."
+}

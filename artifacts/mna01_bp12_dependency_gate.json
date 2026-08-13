@@ -1,0 +1,40 @@
+{
+  "status": "COMPLETE",
+  "dependencies": [
+    {
+      "dependency": "Managed Environment state",
+      "result": "REQUIRED NOW",
+      "evidence": "BP-12 closed canonical DEV/TEST/PROD Managed Environment Standard."
+    },
+    {
+      "dependency": "DLP actual export",
+      "result": "RECOMMENDED LATER",
+      "evidence": "Required before production rollout; not required to define contracts; remains human admin action."
+    },
+    {
+      "dependency": "environment group",
+      "result": "NOT REQUIRED",
+      "evidence": "Not required for MNA-01 pattern definition or nonproduction proof."
+    },
+    {
+      "dependency": "required connectors",
+      "result": "REQUIRED NOW",
+      "evidence": "Dataverse/Forms/Office connectors visible in PROD; DEV/TEST connections not configured."
+    },
+    {
+      "dependency": "connection references",
+      "result": "RECOMMENDED LATER",
+      "evidence": "Required for governed deployment/pipeline proof, not for capability contract."
+    },
+    {
+      "dependency": "security roles",
+      "result": "BLOCKING",
+      "evidence": "Customer Voice/Journeys proof requires human/admin configuration and role assignment."
+    },
+    {
+      "dependency": "environment settings/sender domain/compliance",
+      "result": "BLOCKING",
+      "evidence": "Journeys proof requires admin setup before communication."
+    }
+  ]
+}

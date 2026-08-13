@@ -1,0 +1,15 @@
+{
+  "result": "BLOCKED - ADMIN",
+  "reason": "Journeys nonproduction setup, sender/compliance/security roles, and synthetic audience are not configured/proven.",
+  "validated": {
+    "dataverse_trigger": "BLOCKED",
+    "audience": "BLOCKED",
+    "consent": "BLOCKED",
+    "branch_condition": "BLOCKED",
+    "controlled_message": "BLOCKED",
+    "exit_criteria": "BLOCKED",
+    "interaction_evidence": "BLOCKED",
+    "no_duplicate_power_automate_nurture_engine": "PASS - no custom engine built",
+    "no_unintended_production_communication": "PASS - no communication sent"
+  }
+}

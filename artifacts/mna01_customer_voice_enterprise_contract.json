@@ -1,0 +1,24 @@
+{
+  "status": "DEFINED",
+  "customer_voice_owns": [
+    "surveys",
+    "response collection",
+    "structured feedback",
+    "native response analytics",
+    "Dataverse-linked survey responses"
+  ],
+  "domain_systems_own": [
+    "business meaning of interaction",
+    "participant/client/donor relationship",
+    "program/service context",
+    "consequential follow-up decisions"
+  ],
+  "jm1_governance_owns": [
+    "privacy",
+    "access",
+    "approved use",
+    "cross-division boundaries",
+    "consequential automation"
+  ],
+  "rule": "Do not build a custom survey platform when Customer Voice correctly fits the requirement."
+}
