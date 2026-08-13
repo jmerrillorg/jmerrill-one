@@ -1,0 +1,38 @@
+{
+  "package": "BP-12A",
+  "status": "RECONCILED AT INVENTORY LEVEL",
+  "production_unmanaged_count": 23,
+  "classifications": {
+    "READY_FOR_MANAGED_TRANSITION": [],
+    "SOURCE_RECONCILIATION_REQUIRED": [
+      "JMerrillOne",
+      "JM1CoreGovernance",
+      "JM1CorePlatform",
+      "JM1DistributionCommandCenter",
+      "JM1EditorialAutomations",
+      "JM1EditorialAICommandCenter",
+      "JM1_EnterpriseFoundation",
+      "JM1FoundationCore",
+      "JM1_PAM_AssetRegistry",
+      "JM1_PAM_BaselinePrerequisites",
+      "JM1ProductionCommandCenter",
+      "JM1PublishingSales",
+      "JM1PublishingCommandSuite",
+      "JM1SecurityCompliance",
+      "JM1_Wave1_CoreActivation",
+      "JM1_BaseOps",
+      "JM1_Core",
+      "JM1_Financial",
+      "JM1_Foundation",
+      "JM1_Publishing",
+      "JM1_Publishing_Core"
+    ],
+    "LEGACY_RETAIN_TEMPORARILY": [
+      "JM1_BR_Template_Temp",
+      "Quarantine"
+    ],
+    "JUSTIFIED_EXCEPTION": [],
+    "UNKNOWN_SOURCE": []
+  },
+  "action_taken": "No production mass-conversion performed."
+}

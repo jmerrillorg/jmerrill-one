@@ -1,0 +1,16 @@
+{
+  "package": "BP-12A",
+  "status": "ACTIVE PROTECTION RECORDED",
+  "rule": "BP-12A may observe Customer Insights - Journeys provisioning but must not interfere with it.",
+  "prohibited_actions": [
+    "restart Customer Insights installation",
+    "retry DEV",
+    "uninstall",
+    "cancel",
+    "modify Customer Insights solutions",
+    "change Journeys-related environment settings",
+    "manipulate Customer Insights application packages"
+  ],
+  "observed_only": true,
+  "interference_result": "No Customer Insights installation was restarted, retried, uninstalled, canceled, or modified by BP-12A."
+}

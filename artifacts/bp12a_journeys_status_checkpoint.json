@@ -1,0 +1,22 @@
+{
+  "package": "BP-12A",
+  "status": "OBSERVED ONLY",
+  "checkpoint_result": {
+    "JM1-Enterprise-Dev": {
+      "solution_layer": "MicrosoftDynamics_Marketing and DynamicsMKT solutions present",
+      "app_module_visibility": "No Customer Insights/Journeys app module found in Dataverse appmodules probe",
+      "topics": 0,
+      "journey_records": 0,
+      "classification": "INSTALLED AT SOLUTION LAYER; JRN-01 APP/SETUP VALIDATION STILL REQUIRED"
+    },
+    "JM1-Test": {
+      "solution_layer": "CustomerInsightsCustomerCard only; no DynamicsMKT/Journeys solution footprint found",
+      "classification": "NOT INSTALLED"
+    },
+    "JM1-Core": {
+      "solution_layer": "DynamicsMKT/Journeys solutions present",
+      "classification": "SOLUTION LAYER PRESENT; JRN-01 APP/SETUP VALIDATION STILL REQUIRED"
+    }
+  },
+  "interference": "None"
+}

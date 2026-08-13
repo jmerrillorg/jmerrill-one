@@ -1,0 +1,13 @@
+{
+  "package": "BP-12A",
+  "status": "NOT MUTATED - SAFE HARDENING DESIGN RECORDED",
+  "reason": "Actual state has zero DLP policies, but current production connections include approved HTTP/custom connector, OneDrive for Business, and Excel exceptions. A broad tenant DLP mutation could break production without endpoint-specific exception policy proof.",
+  "implemented_changes": [],
+  "safe_next_hardening": [
+    "Create a JM1 production DLP policy with Microsoft enterprise connectors in Business.",
+    "Place uncontrolled consumer/third-party connectors in Blocked.",
+    "Define explicit HTTP/custom connector endpoint exceptions for jm1-ed-functions before enforcement.",
+    "Retain documented migration-candidate exceptions until replacements are proven."
+  ],
+  "regression_required_after_future_change": true
+}

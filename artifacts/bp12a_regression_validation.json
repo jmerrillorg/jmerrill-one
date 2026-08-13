@@ -1,0 +1,26 @@
+{
+  "package": "BP-12A",
+  "status": "PASS - NO BP-12A CAUSED REGRESSION FOUND",
+  "basis": [
+    "No DLP policy mutation was applied.",
+    "No production solution conversion or import was performed.",
+    "No Customer Voice configuration was modified.",
+    "No Journeys installation was interfered with.",
+    "Tenant environment-creation hardening affects non-admin creation only and preserves admin authority."
+  ],
+  "critical_capabilities": {
+    "jmerrill.one": "NO CHANGE",
+    "/api/intake": "NO CHANGE",
+    "Customer Voice": "NO CHANGE",
+    "Execution Log": "NO CHANGE",
+    "Agent Registry": "NO CHANGE",
+    "Governance Policy": "NO CHANGE",
+    "Publishing Triage": "NO CHANGE",
+    "Core Scheduling": "NO CHANGE",
+    "Financial Follow-Up": "NO CHANGE",
+    "Dynamics Sales": "NO CHANGE",
+    "Customer Service": "NO CHANGE",
+    "Copilot Studio": "NO CHANGE",
+    "SharePoint/Outlook dependencies": "NO CHANGE"
+  }
+}

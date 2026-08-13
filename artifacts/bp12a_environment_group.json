@@ -1,0 +1,21 @@
+{
+  "package": "BP-12A",
+  "target_group": "JM1 Enterprise",
+  "status": "MICROSOFT BLOCKER - GROUP NOT CONFIGURED",
+  "evidence": [
+    "pac admin list-groups returned no environment groups.",
+    "pac admin add-group can add environments only to an existing group; no CLI create-group command is exposed.",
+    "Computer Use UI path required a fresh InPrivate login and was not used to enter credentials."
+  ],
+  "desired_membership": [
+    "JM1-Enterprise-Dev",
+    "JM1-Test",
+    "JM1-Core"
+  ],
+  "unrelated_legacy_environments_excluded": [
+    "JM1-Dev",
+    "JM1-CRM-Core",
+    "One Dynamics Environment"
+  ],
+  "classification": "ADMIN ACTION REQUIRED"
+}

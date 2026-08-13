@@ -1,0 +1,22 @@
+{
+  "package": "BP-12A",
+  "classification": "ACTUAL STATE CAPTURED",
+  "capture_method": "Power Platform BAP admin API: /providers/Microsoft.BusinessAppPlatform/scopes/admin/apiPolicies",
+  "api_versions_checked": [
+    "2024-05-01",
+    "2023-06-01",
+    "2020-10-01",
+    "2016-11-01"
+  ],
+  "captured_policy_count": 0,
+  "policies": [],
+  "tenant_level_policies": [],
+  "environment_scoped_policies": [],
+  "business_connectors": [],
+  "non_business_connectors": [],
+  "blocked_connectors": [],
+  "http_treatment": "No DLP policy currently controls HTTP.",
+  "custom_connector_treatment": "No DLP policy currently controls custom connectors.",
+  "policy_precedence_conflicts": "None, because no DLP policies are configured.",
+  "powershell_limitation": "Installed PowerApps PowerShell module still fails interactive auth on macOS because System.Windows.Forms cannot be loaded."
+}

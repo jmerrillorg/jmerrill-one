@@ -1,0 +1,21 @@
+{
+  "package": "BP-12A",
+  "classification": "EXCEPTION STILL REQUIRED",
+  "connector_workloads": [
+    {
+      "connector": "HTTP/webcontents",
+      "endpoint": "https://jm1-ed-functions-hbhmh0e7dyaffybn.eastus-01.azurewebsites.net",
+      "purpose": "JM1-owned Azure Function integration",
+      "status": "Connected",
+      "recommendation": "Retain with documented endpoint/auth/logging exception until Microsoft-native replacement is proven."
+    },
+    {
+      "connector": "JM1 Functions custom connector",
+      "endpoint": "JM1-owned function connector",
+      "purpose": "JM1 production integration",
+      "status": "Connected",
+      "recommendation": "Retain as bounded service-identity exception."
+    }
+  ],
+  "removed": false
+}

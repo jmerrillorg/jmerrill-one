@@ -1,0 +1,35 @@
+{
+  "package": "BP-12A",
+  "final_classification": "BP-12A COMPLETE - PLATFORM ADMIN DEBT REDUCED; JRN-01 STILL WAITING ON MICROSOFT",
+  "starting_admin_debt": "Reconciled",
+  "dlp_actual_state": "ACTUAL STATE CAPTURED - zero DLP policies",
+  "dlp_hardening": "Not mutated; safe design recorded because production exceptions exist",
+  "environment_group": "ADMIN ACTION REQUIRED - no group exists and no create surface available via PAC",
+  "environment_creation_control": "CONFIGURED - disableEnvironmentCreationByNonAdminUsers true",
+  "default_environment": "Reviewed; JM1 CRM Core assets are migration candidates",
+  "pipelines_state": "AVAILABLE - PREREQUISITE REQUIRED",
+  "pipeline_configuration": "Not configured; deploymentpipelines surface absent",
+  "dev_test_proof": "Blocked",
+  "test_prod_readiness": "HOLD",
+  "unmanaged_solutions": "23 production unmanaged JM1 solutions reconciled; no mass conversion",
+  "managed_transition": "No transition performed",
+  "production_drift": "KNOWN CONTROLLED DRIFT",
+  "http_custom_connector": "EXCEPTION STILL REQUIRED",
+  "connection_references": "Captured; PROD 23 connected, DEV/TEST none",
+  "deployment_rollback": "Manual path validated; pipeline proof blocked",
+  "regression": "PASS - no BP-12A caused regression found",
+  "journeys_provisioning_checkpoint": "DEV solution layer installed but app/setup validation still required; TEST not installed; PROD solution layer present",
+  "remaining_human_admin_actions": [
+    "Create/configure JM1 Enterprise environment group if Microsoft UI/API permits.",
+    "Resolve Power Platform Pipelines host/stage setup.",
+    "Create exception-safe DLP policy after HTTP/custom connector exceptions are formalized.",
+    "Resume JRN-01 app setup/sender/compliance proof once DEV Customer Insights app is usable."
+  ],
+  "remaining_platform_debt": [
+    "DEV->TEST pipeline proof",
+    "TEST->PROD readiness",
+    "managed transition of production unmanaged solutions",
+    "OneDrive/Excel migration candidates",
+    "production drift remediation backlog"
+  ]
+}

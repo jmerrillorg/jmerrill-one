@@ -1,0 +1,25 @@
+{
+  "package": "BP-12A",
+  "environment": "JM1-CRM-Core",
+  "status": "REVIEWED",
+  "solutions": [
+    {
+      "unique_name": "JM1CRMCoreAutomations",
+      "classification": "ENTERPRISE WORKLOAD - MIGRATION CANDIDATE"
+    },
+    {
+      "unique_name": "JM1CRMCore",
+      "classification": "ENTERPRISE WORKLOAD - MIGRATION CANDIDATE"
+    },
+    {
+      "unique_name": "Default",
+      "classification": "SYSTEM DEFAULT"
+    },
+    {
+      "unique_name": "Cr4dd57",
+      "classification": "SYSTEM DEFAULT"
+    }
+  ],
+  "action_taken": "No broad migration performed.",
+  "rule": "Default environment should not be the destination for governed enterprise workloads when JM1 governed environments exist."
+}

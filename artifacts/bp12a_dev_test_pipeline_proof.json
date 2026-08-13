@@ -1,0 +1,7 @@
+{
+  "package": "BP-12A",
+  "status": "BLOCKED",
+  "required_result": "PASS",
+  "blocker": "Power Platform Pipelines host/stages unavailable; DEV and TEST also have no listed connections for connection-reference proof.",
+  "prod_deployment_attempted": false
+}

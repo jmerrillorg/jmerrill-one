@@ -1,0 +1,13 @@
+{
+  "package": "BP-12A",
+  "status": "MANUAL PROCESS VALIDATED; PIPELINE PROOF BLOCKED",
+  "pipeline_rollback_proof": "BLOCKED",
+  "manual_deployment_path": {
+    "source": "validated DEV unmanaged solution",
+    "target": "TEST first, PROD only after Founder release authority",
+    "version": "explicit semantic/versioned solution export",
+    "authority": "Founder & CEO release approval for PROD",
+    "validation": "target component presence, connection references, environment variables, smoke/regression",
+    "rollback": "import prior managed version or restore approved backup; no destructive PROD rollback testing"
+  }
+}

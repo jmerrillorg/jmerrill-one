@@ -1,0 +1,30 @@
+{
+  "package": "BP-12A",
+  "status": "CAPTURED",
+  "prod_connection_count": 23,
+  "dev_connection_count": 0,
+  "test_connection_count": 0,
+  "default_environment_connection_count": 1,
+  "prod_summary": {
+    "HEALTHY": 23,
+    "BROKEN": 0,
+    "ORPHANED": 0,
+    "APPROVED_DELEGATED_USER": [
+      "SharePoint",
+      "Office 365 Outlook",
+      "Teams",
+      "Microsoft Forms",
+      "Copilot Studio"
+    ],
+    "SERVICE_IDENTITY": [
+      "JM1 Functions custom connector",
+      "Dataverse - JM1 Publishing"
+    ],
+    "MIGRATION_CANDIDATE": [
+      "HTTP/webcontents",
+      "Excel Online Business",
+      "OneDrive for Business"
+    ]
+  },
+  "credentials_rotated": false
+}

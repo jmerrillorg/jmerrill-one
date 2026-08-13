@@ -1,0 +1,7 @@
+{
+  "package": "BP-12A",
+  "classification": "HOLD",
+  "reason": "PROD cannot be treated as a valid pipeline target until pipeline host/stages, connection-reference strategy, environment-variable strategy, release evidence, rollback, and Founder release authority are configured and proven.",
+  "prod_registered_as_target": false,
+  "meaningless_prod_artifact_deployed": false
+}

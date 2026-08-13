@@ -1,0 +1,32 @@
+{
+  "package": "BP-12A",
+  "status": "RECONCILED",
+  "source_artifacts": [
+    "bp12_final_closeout.json",
+    "bp12_dlp_actual_state.json",
+    "bp12_pipelines_root_cause.json",
+    "bp12_unmanaged_prod_solution_inventory.json",
+    "bp12_connection_reference_closeout.json",
+    "bp10_dlp_target_model.json",
+    "bp10_connector_inventory.json",
+    "bp10_http_custom_connector_policy.json"
+  ],
+  "debt_register": {
+    "dlp_actual_state_export": "OPEN AT START - closed by BP-12A API export",
+    "dlp_impact_hardening": "OPEN AT START - impact classified; mutation held pending exception-safe policy design",
+    "environment_group": "OPEN AT START - still blocked by creation surface/access; no group existed",
+    "tenant_environment_creation_setting": "OPEN AT START - closed by BP-12A",
+    "pipelines": "OPEN AT START - app catalog available; host/stage/pipeline surface still absent",
+    "dev_test_proof": "BLOCKED AT START - still blocked by pipelines and TEST connection references",
+    "test_prod_readiness": "HOLD AT START - remains hold",
+    "unmanaged_production_solutions": "23 unmanaged JM1 production solutions inventoried at start",
+    "known_production_drift": "KNOWN / DOCUMENTED DRIFT at start",
+    "http_custom_connector_exception": "OPEN AT START - still required",
+    "deployment_rollback_proof": "BLOCKED AT START - manual process validated by evidence artifact",
+    "managed_environments": "CLOSED - not reopened",
+    "consumer_onedrive": "CLOSED - not reopened",
+    "customer_voice": "CLOSED - not reopened",
+    "enterprise_identity": "CLOSED - not reopened",
+    "website_intake": "CLOSED - regression only"
+  }
+}

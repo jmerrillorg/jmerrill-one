@@ -1,0 +1,56 @@
+{
+  "package": "BP-12A",
+  "status": "COMPLETE",
+  "actual_state": "No DLP policies configured",
+  "impact_summary": {
+    "safe_to_harden": [
+      "consumer OneDrive and unapproved consumer connectors",
+      "unapproved third-party SaaS connectors",
+      "unapproved generative AI connectors",
+      "generic HTTP where no approved endpoint/auth/logging exception exists"
+    ],
+    "required_production_exception": [
+      "JM1 Functions custom connector",
+      "HTTP/webcontents to jm1-ed-functions Azure Function endpoint",
+      "OneDrive for Business migration-candidate connections until replacement is proven",
+      "Excel Online Business migration-candidate connection until replacement is proven"
+    ],
+    "no_change_required": [
+      "Dataverse",
+      "Dynamics",
+      "SharePoint",
+      "Office 365 Outlook",
+      "Teams",
+      "Microsoft Forms for governed Customer Voice/feedback context",
+      "Copilot Studio under agent governance"
+    ],
+    "remediate_first": [
+      "Create endpoint-specific HTTP/custom connector exception records before enforcing a tenant DLP policy.",
+      "Confirm OneDrive for Business and Excel production dependencies before blocking or moving them."
+    ]
+  },
+  "workload_evaluation": {
+    "BP-09 website intake": "NO CHANGE REQUIRED",
+    "Customer Voice": "NO CHANGE REQUIRED",
+    "Publishing feedback": "NO CHANGE REQUIRED",
+    "Financial feedback": "NO CHANGE REQUIRED",
+    "Foundation feedback": "NO CHANGE REQUIRED",
+    "Productions feedback": "NO CHANGE REQUIRED",
+    "Execution Log Writer": "NO CHANGE REQUIRED",
+    "Agent Registry lifecycle": "NO CHANGE REQUIRED",
+    "verification": "NO CHANGE REQUIRED",
+    "Governance Policy Enforcement": "NO CHANGE REQUIRED",
+    "Agent Exception Handler": "NO CHANGE REQUIRED",
+    "Publishing Triage": "REQUIRED PRODUCTION EXCEPTION",
+    "Core Scheduling": "NO CHANGE REQUIRED",
+    "Financial Follow-Up": "NO CHANGE REQUIRED",
+    "Dynamics Sales": "NO CHANGE REQUIRED",
+    "Customer Service": "NO CHANGE REQUIRED",
+    "Copilot Studio": "NO CHANGE REQUIRED",
+    "SharePoint": "NO CHANGE REQUIRED",
+    "Outlook": "NO CHANGE REQUIRED",
+    "Teams": "NO CHANGE REQUIRED",
+    "Azure integrations": "REQUIRED PRODUCTION EXCEPTION",
+    "approved HTTP/custom connector usage": "REQUIRED PRODUCTION EXCEPTION"
+  }
+}

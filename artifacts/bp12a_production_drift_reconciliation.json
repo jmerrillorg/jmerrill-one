@@ -1,0 +1,15 @@
+{
+  "package": "BP-12A",
+  "classification": "KNOWN CONTROLLED DRIFT",
+  "evidence": [
+    "23 unmanaged JM1 production solutions remain.",
+    "DEV/TEST pipeline promotion is not yet available.",
+    "Direct PROD overwrite was not performed.",
+    "No plugin version mismatch or form/view overwrite was attempted."
+  ],
+  "remediation_backlog": [
+    "Map each production unmanaged solution to source DEV solution.",
+    "Reconcile environment variables and connection references.",
+    "Move low-risk shared solutions through managed DEV->TEST proof first."
+  ]
+}

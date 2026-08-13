@@ -1,0 +1,16 @@
+{
+  "package": "BP-12A",
+  "classification": "AVAILABLE - PREREQUISITE REQUIRED",
+  "evidence": [
+    "PAC exposes pac pipeline list/deploy commands.",
+    "Power Platform Pipelines appears in the application catalog as msdyn_AppDeploymentAnchor.",
+    "pac pipeline list returns Resource not found for segment 'deploymentpipelines' in DEV, TEST, and PROD.",
+    "Power Platform Environment Settings and StageSolutionUpload solutions are present, but pipeline records are absent.",
+    "Attempted supported install of msdyn_AppDeploymentAnchor into JM1-Enterprise-Dev; local CLI polling was stopped after more than 15 minutes with no terminal success/failure, no async admin operation remained, and deploymentpipelines remained absent."
+  ],
+  "host_configured": false,
+  "pipeline_records_available": false,
+  "dev_test_prod_pipeline_available": false,
+  "licensing_or_purchase_prompt_seen": false,
+  "root_cause": "Pipelines entitlement/application is visible, but the supported host/stage/pipeline Dataverse surface is not configured or not provisioned."
+}

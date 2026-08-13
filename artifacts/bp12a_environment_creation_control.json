@@ -1,0 +1,15 @@
+{
+  "package": "BP-12A",
+  "status": "CONFIGURED",
+  "setting": "disableEnvironmentCreationByNonAdminUsers",
+  "starting_value": false,
+  "configured_value": true,
+  "desired_canonical_value": true,
+  "effect": "Prevents non-admin users from creating tenant environments while preserving Founder/Admin authority.",
+  "related_settings_confirmed": {
+    "disableTrialEnvironmentCreationByNonAdminUsers": true,
+    "powerPlatform.governance.disableDeveloperEnvironmentCreationByNonAdminUsers": true,
+    "disableTeamsEnvironmentCreationByNonAdminUsers": true
+  },
+  "command": "pac admin update-tenant-settings --setting-name disableEnvironmentCreationByNonAdminUsers --setting-value true"
+}

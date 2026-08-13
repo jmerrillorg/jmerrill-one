@@ -1,0 +1,10 @@
+{
+  "package": "BP-12A",
+  "status": "NOT CONFIGURED",
+  "reason": "deploymentpipelines table/surface remains unavailable after app-catalog inspection and supported install attempt.",
+  "target_architecture": "JM1-Enterprise-Dev -> JM1-Test -> JM1-Core",
+  "host": "Not configured",
+  "stages": [],
+  "permissions": "Not configured",
+  "solution_expectations": "Managed deployment path remains required before production promotion."
+}
