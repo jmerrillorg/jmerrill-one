@@ -1,6 +1,6 @@
 # CV-01B Final Closeout
 
-Classification: CV-01B READY - COMPLETE HUMAN PRODUCTION RELEASE
+Classification: CV-01B COMPLETE — LIVE; CONTINUE DIVISION FEEDBACK ROLLOUT
 
 Target repository: J Merrill One
 
@@ -22,6 +22,8 @@ No division survey, division repository, contact identity model, consent model, 
 
 ## Release State
 
-Production deployment and production smoke validation are pending commit and release through the repository workflow.
+Production deployment succeeded through Azure Static Web Apps workflow run `31664902654` for commit `597222f113592b4341443d1bf8356d69fc2b7457`.
 
-Exact next action: complete production release of the footer link, then continue division feedback rollout.
+Production smoke validation passed for homepage footer, contact-page footer, intake GET guard, and the Customer Voice direct link.
+
+Exact next action: continue division feedback rollout using the established Customer Voice standard and repository routing boundaries.

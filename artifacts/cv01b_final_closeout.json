@@ -1,5 +1,5 @@
 {
-  "classification": "CV-01B READY - COMPLETE HUMAN PRODUCTION RELEASE",
+  "classification": "CV-01B COMPLETE — LIVE; CONTINUE DIVISION FEEDBACK ROLLOUT",
   "target_repository": "J Merrill One",
   "target_scope": "J Merrill One parent-company Enterprise Experience feedback",
   "omission_corrected": "J Merrill One now has its own parent-company Customer Voice feedback path.",
@@ -32,10 +32,10 @@
   "human_first_validation": "PASS",
   "nonproduction_survey_validation": "PASS",
   "website_regression": "PASS",
-  "deployment_result": "PENDING",
-  "production_smoke_result": "PENDING",
+  "deployment_result": "PASS - Azure Static Web Apps workflow run 31664902654",
+  "production_smoke_result": "PASS",
   "enterprise_feedback_portfolio": "Updated current-state portfolio recorded in artifacts/cv01b_enterprise_feedback_portfolio.json.",
   "repository_routing_result": "PASS - parent-company feedback survey is owned by J Merrill One.",
   "division_rollout_state": "Unaffected; division feedback rollout remains independent.",
-  "exact_next_action": "Complete production release of the footer link, then continue division feedback rollout."
+  "exact_next_action": "Continue division feedback rollout using the established Customer Voice standard and repository routing boundaries."
 }

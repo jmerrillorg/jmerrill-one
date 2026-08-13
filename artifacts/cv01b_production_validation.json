@@ -1,14 +1,16 @@
 {
-  "status": "PENDING",
+  "status": "COMPLETE",
   "validated_at": "2026-08-13",
   "target_site": "https://www.jmerrill.one",
   "checks": {
-    "home_page_status": "PENDING",
-    "home_footer_feedback_link_present": "PENDING",
-    "contact_page_status": "PENDING",
-    "contact_footer_feedback_link_present": "PENDING",
-    "intake_api_get_guard": "PENDING",
+    "home_page_status": 200,
+    "home_footer_feedback_link_present": "PASS",
+    "home_footer_feedback_url": "https://nam.dcv.ms/VgtHZSLCDw",
+    "contact_page_status": 200,
+    "contact_footer_feedback_link_present": "PASS",
+    "contact_footer_feedback_url": "https://nam.dcv.ms/VgtHZSLCDw",
+    "intake_api_get_guard": "PASS - 405",
     "customer_voice_direct_link": "PASS - 200"
   },
-  "production_smoke_result": "PENDING DEPLOYMENT"
+  "production_smoke_result": "PASS"
 }
