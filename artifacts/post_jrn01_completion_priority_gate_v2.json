@@ -1,0 +1,23 @@
+{
+  "package": "POST-JRN-01",
+  "status": "HOLD",
+  "reason": "JRN-01 is not complete because Microsoft installation is still in progress for DEV/PROD and failed in TEST.",
+  "next_completion_wave_ranking": [
+    {
+      "rank": 1,
+      "candidate": "JRN-01 installation completion and proof rerun",
+      "recommendation": "Resume immediately after Microsoft shows DEV/PROD installed and TEST failure is remediated or explicitly exempted."
+    },
+    {
+      "rank": 2,
+      "candidate": "Sales Sequences",
+      "recommendation": "Defer until the first Journey is live and consent boundaries are proven."
+    },
+    {
+      "rank": 3,
+      "candidate": "Executive Intelligence / reporting visibility",
+      "recommendation": "Defer until live communication telemetry exists."
+    }
+  ],
+  "exact_recommendation": "Do not authorize a new completion wave until JRN-01 reaches live activation or Jackie makes an explicit exclusion decision."
+}

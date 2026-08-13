@@ -1,0 +1,20 @@
+{
+  "package": "JRN-01",
+  "status": "BACKLOG HELD UNTIL FIRST JOURNEY LIVE",
+  "journeys_backlog_after_unblock": [
+    "Complete DEV and PROD installation monitoring.",
+    "Remediate TEST installation failure.",
+    "Configure jmerrill.one sender/domain.",
+    "Configure Foundation Volunteer Communications purpose and Volunteer Onboarding / Follow-Up topic.",
+    "Run controlled DEV proof.",
+    "Run suppression/failure proof.",
+    "Run controlled production send.",
+    "Activate prospective Foundation volunteer onboarding trigger going forward."
+  ],
+  "future_enhancement_backlog": [
+    "Publishing inquiry nurture/onboarding/release communication",
+    "Financial safe lifecycle/operational communication only",
+    "Foundation donor stewardship, sponsor/event communications, additional volunteer communication",
+    "Productions inquiry nurture, proposal follow-up, post-project relationship"
+  ]
+}

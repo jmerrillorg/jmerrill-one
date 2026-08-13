@@ -1,0 +1,10 @@
+{
+  "package": "JRN-01",
+  "status": "PASS",
+  "customer_voice_state": "ACTIVE ENTERPRISE CAPABILITY - PRODUCTION",
+  "validation": [
+    "No Customer Voice surveys were modified.",
+    "No Customer Voice production configuration was reopened.",
+    "No Journeys integration was created that changes Customer Voice behavior."
+  ]
+}

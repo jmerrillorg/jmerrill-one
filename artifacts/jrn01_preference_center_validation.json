@@ -1,0 +1,10 @@
+{
+  "package": "JRN-01",
+  "status": "NOT VALIDATED - APP INSTALLATION NOT COMPLETE",
+  "recipient_experience_requirements": [
+    "Explain why the recipient received the message.",
+    "Provide a clear opt-out or preference path where applicable.",
+    "Avoid internal Microsoft/Dynamics terminology."
+  ],
+  "classification": "BLOCKED BY MICROSOFT INSTALLATION STATE"
+}

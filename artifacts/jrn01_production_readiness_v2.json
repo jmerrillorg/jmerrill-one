@@ -1,0 +1,19 @@
+{
+  "package": "JRN-01",
+  "environment": "JM1-Core",
+  "status": "NOT READY",
+  "readiness_checks": {
+    "sender_validated": "NO",
+    "domain_validated": "NO",
+    "compliance_profile_valid": "NO",
+    "preference_center_valid": "NO",
+    "purpose_topic_valid": "NO",
+    "dev_proof_passed": "NO",
+    "suppression_proof_passed": "NO",
+    "controlled_production_audience_available": "NO",
+    "journey_deactivation_stop_path_known": "NO",
+    "no_purchase_required": "NO PURCHASE PROMPT SEEN"
+  },
+  "reason": "Production Customer Insights - Journeys installation is in progress and proof gates cannot run.",
+  "classification": "PRODUCTION HOLD"
+}

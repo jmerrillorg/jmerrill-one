@@ -1,0 +1,37 @@
+{
+  "package": "JRN-01",
+  "evidence_timestamp": "2026-08-13T10:56:29Z",
+  "target_repository": "J Merrill One",
+  "computer_use_surface": "Microsoft Edge / Power Platform admin center / Dynamics 365 Customer Insights provisioning page",
+  "visible_microsoft_state": {
+    "trials_available": {
+      "customer_insights_journeys": "0/0",
+      "customer_insights_data": "0/0"
+    },
+    "JM1-Enterprise-Dev": {
+      "environment_type": "Sandbox",
+      "customer_insights_journeys": "Installing",
+      "customer_insights_data": "Not Installed",
+      "action_taken": "Install started",
+      "purchase_prompt_seen": false
+    },
+    "JM1-Test": {
+      "environment_type": "Sandbox",
+      "customer_insights_journeys": "Installation Failed",
+      "customer_insights_data": "Not Installed",
+      "action_taken": "Install attempted, then Diagnose opened",
+      "microsoft_diagnosis": "The installation did not succeed. Please check documentation to ensure all settings meet prerequisites and conditions, external plug-ins are disabled, there are valid licenses and appropriate user permissions, and then try again.",
+      "purchase_prompt_seen": false
+    },
+    "JM1-Core": {
+      "environment_type": "Production",
+      "customer_insights_journeys": "Installing",
+      "customer_insights_data": "Not Installed",
+      "action_taken": "Install started",
+      "purchase_prompt_seen": false
+    }
+  },
+  "installation_notice": "Microsoft stated there is no way to cancel and reverse an installation mid-cycle and that Asset library and Forms may transfer customer data outside the selected Azure geographic location via Azure CDN; JRN-01 proof avoids those features unless separately approved.",
+  "overall_state": "INSTALLATION IN PROGRESS / TEST INSTALL FAILED",
+  "classification": "JRN-01 EXTERNAL ADMIN ACTION STILL REQUIRED"
+}

@@ -1,0 +1,17 @@
+{
+  "artifact": "JM1_Customer_Insights_Journeys_Operating_Standard_v1",
+  "approval": "Founder & CEO approval",
+  "approved_by": "Jackie Smith Jr.",
+  "current_role_holder": "Founder & CEO",
+  "effective_timestamp": "2026-08-13T10:56:29Z",
+  "promoted_status": "CANON - v1.0",
+  "jrn01_evidence": [
+    "JRN-01 established Customer Insights - Journeys as the Microsoft-native lifecycle communication capability.",
+    "Power Platform Admin Center was used under Jackie authorization to start Journeys installation for JM1-Enterprise-Dev and JM1-Core.",
+    "JM1-Test installation failed in Microsoft provisioning and requires external admin remediation.",
+    "No purchase, capacity, or trial-to-paid prompt was accepted.",
+    "Production activation was held because app installation was not complete and proof gates could not run."
+  ],
+  "scope": "Enterprise-wide Customer Insights - Journeys operating standard for lifecycle, nurture, onboarding, event, stewardship, sender/domain, consent/compliance, Power Automate boundary, production readiness, and cross-division reuse.",
+  "change_control_rule": "Future changes require Founder & CEO approval and must be recorded as a governed JM1 enterprise standard revision in J Merrill One."
+}

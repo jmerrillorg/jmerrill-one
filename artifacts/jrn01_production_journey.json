@@ -1,0 +1,12 @@
+{
+  "package": "JRN-01",
+  "status": "NOT CREATED",
+  "production_journey_id": null,
+  "journey_name": "Foundation Volunteer Follow-Up / Onboarding",
+  "environment": "JM1-Core",
+  "sender": null,
+  "compliance_profile": null,
+  "purpose_topic": null,
+  "activation_timestamp": null,
+  "reason": "Production app installation remained in Microsoft Installing state; production journey creation is blocked."
+}

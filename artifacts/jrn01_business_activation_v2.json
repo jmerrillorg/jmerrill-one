@@ -1,0 +1,7 @@
+{
+  "package": "JRN-01",
+  "status": "NOT LIVE",
+  "live_foundation_volunteer_activation": false,
+  "reason": "Controlled production send did not run because Customer Insights installation is not complete.",
+  "future_activation_rule": "After DEV proof and production controlled send pass, activate only for new qualifying Foundation volunteer onboarding triggers going forward; do not mass-enroll historical Foundation Contacts."
+}

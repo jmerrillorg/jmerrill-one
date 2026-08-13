@@ -1,0 +1,10 @@
+{
+  "package": "JRN-01",
+  "environment": "JM1-Test",
+  "status": "INSTALLATION FAILED",
+  "visible_microsoft_state": "Retry | Diagnose",
+  "diagnosis": "The installation did not succeed. Please check documentation to ensure all settings meet prerequisites and conditions, external plug-ins are disabled, there are valid licenses and appropriate user permissions, and then try again.",
+  "purchase_or_capacity_prompt_seen": false,
+  "recommended_next_action": "Jackie or Microsoft tenant admin should review Customer Insights installation prerequisites, solution health, plug-ins, licensing, and permissions for JM1-Test before retrying.",
+  "classification": "TEST JOURNEYS INSTALL BLOCKED"
+}

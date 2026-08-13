@@ -1,0 +1,16 @@
+{
+  "package": "JRN-01",
+  "environment": "JM1-Core",
+  "status": "INSTALLATION IN PROGRESS",
+  "admin_actions_completed": [
+    "Opened Customer Insights provisioning manager.",
+    "Started Customer Insights - Journeys installation for JM1-Core."
+  ],
+  "blocked_setup_items": [
+    "Production Journeys app usability cannot be verified until Microsoft installation completes.",
+    "Production sender/domain readiness cannot be configured or verified until app installation completes.",
+    "Production compliance profile and purpose/topic cannot be configured or verified until app installation completes."
+  ],
+  "purchase_or_capacity_prompt_seen": false,
+  "classification": "WAITING ON MICROSOFT INSTALLATION"
+}

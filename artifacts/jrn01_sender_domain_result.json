@@ -1,0 +1,12 @@
+{
+  "package": "JRN-01",
+  "status": "NOT CONFIGURED - APP INSTALLATION NOT COMPLETE",
+  "approved_domain": "jmerrill.one",
+  "sender": "Existing Jackie-controlled sender on jmerrill.one",
+  "environment_results": {
+    "JM1-Enterprise-Dev": "Blocked until Customer Insights - Journeys installation completes.",
+    "JM1-Core": "Blocked until Customer Insights - Journeys installation completes."
+  },
+  "dns_or_external_dependency": "Unknown until the sender/domain configuration screen is available.",
+  "purchase_or_capacity_prompt_seen": false
+}

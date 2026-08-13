@@ -1,0 +1,18 @@
+{
+  "package": "JRN-01",
+  "environment": "JM1-Enterprise-Dev",
+  "status": "INSTALLATION IN PROGRESS",
+  "admin_actions_completed": [
+    "Opened Dynamics 365 apps management from Power Platform Admin Center.",
+    "Opened Customer Insights provisioning manager.",
+    "Started Customer Insights - Journeys installation for JM1-Enterprise-Dev."
+  ],
+  "blocked_setup_items": [
+    "Journeys app usability cannot be verified until Microsoft installation completes.",
+    "Email channel cannot be configured until app installation completes.",
+    "Sender/domain cannot be configured until app installation completes.",
+    "Compliance profile, preference center, purpose, and topic cannot be configured until the app surface is available."
+  ],
+  "purchase_or_capacity_prompt_seen": false,
+  "classification": "WAITING ON MICROSOFT INSTALLATION"
+}

@@ -1,0 +1,25 @@
+{
+  "package": "JRN-01",
+  "status": "PARTIAL",
+  "operator": "jm1-admin@jmerrill.one",
+  "verified_existing_roles": {
+    "JM1-Enterprise-Dev": [
+      "Basic User",
+      "Sales Enterprise app access",
+      "System Administrator"
+    ],
+    "JM1-Core": [
+      "Environment Maker",
+      "Sales Enterprise app access",
+      "System Administrator",
+      "Viva Sales"
+    ],
+    "JM1-Test": [
+      "Basic User",
+      "System Administrator"
+    ]
+  },
+  "role_changes_made": [],
+  "reason_no_role_assignment": "Journeys installation did not complete, and TEST installation failed; no additional Customer Insights role assignment was proven necessary or safe.",
+  "classification": "VERIFY AGAIN AFTER INSTALLATION COMPLETES"
+}

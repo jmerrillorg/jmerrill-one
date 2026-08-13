@@ -1,0 +1,15 @@
+{
+  "package": "JRN-01",
+  "status": "HANDOFF PREPARED; NOT LIVE",
+  "foundation_repository": "J Merrill Foundation",
+  "handoff_required_after_enterprise_unblock": [
+    "live journey purpose",
+    "trigger contract",
+    "audience rules",
+    "content ownership",
+    "consent requirement",
+    "live status",
+    "maintenance responsibility"
+  ],
+  "current_result": "No Foundation repository implementation was changed because the enterprise Journeys capability is not live yet."
+}

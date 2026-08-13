@@ -1,0 +1,11 @@
+{
+  "package": "JRN-01",
+  "status": "NOT CONFIGURED - APP INSTALLATION NOT COMPLETE",
+  "intended_profile": "Foundation Volunteer Communications",
+  "purpose": "Foundation Volunteer Communications",
+  "topic": "Volunteer Onboarding / Follow-Up",
+  "preference_center": "Required before proof",
+  "unsubscribe_behavior": "Required before proof",
+  "channel_consent": "Required before proof",
+  "classification": "BLOCKED BY MICROSOFT INSTALLATION STATE"
+}

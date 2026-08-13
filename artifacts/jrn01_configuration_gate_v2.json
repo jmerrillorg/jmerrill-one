@@ -1,0 +1,23 @@
+{
+  "package": "JRN-01",
+  "status": "NOT READY FOR CONTROLLED PROOF",
+  "dev_gate": {
+    "journeys_app_usable": "NO - INSTALLING",
+    "email_channel_ready": "NO",
+    "sender_ready": "NO",
+    "compliance_profile_ready": "NO",
+    "preference_center_ready": "NO",
+    "purpose_ready": "NO",
+    "volunteer_onboarding_topic_ready": "NO",
+    "classification": "WAITING ON MICROSOFT INSTALLATION"
+  },
+  "test_gate": {
+    "application_footprint_status": "INSTALLATION FAILED",
+    "diagnosis": "Prerequisites/conditions, external plug-ins, valid licenses, or user permissions must be checked."
+  },
+  "prod_gate": {
+    "base_journeys_configuration_ready": "NO - INSTALLING"
+  },
+  "purchase_or_capacity_prompt_seen": false,
+  "classification": "JRN-01 EXTERNAL ADMIN ACTION STILL REQUIRED"
+}

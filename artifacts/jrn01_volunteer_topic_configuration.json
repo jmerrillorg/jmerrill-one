@@ -1,0 +1,13 @@
+{
+  "package": "JRN-01",
+  "status": "NOT CONFIGURED - APP INSTALLATION NOT COMPLETE",
+  "intended_topic": "Volunteer Onboarding / Follow-Up",
+  "division_context": "J Merrill Foundation",
+  "exclusions": [
+    "Publishing marketing",
+    "Financial outreach",
+    "Productions solicitation",
+    "unrelated Foundation donor solicitation"
+  ],
+  "classification": "BLOCKED BY MICROSOFT INSTALLATION STATE"
+}

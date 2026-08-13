@@ -1,0 +1,9 @@
+{
+  "package": "JRN-01",
+  "environment": "JM1-Enterprise-Dev",
+  "status": "NOT EXECUTED",
+  "dev_journey_id": null,
+  "reason": "Customer Insights - Journeys app installation remained in Microsoft Installing state; controlled proof cannot be built or sent until installation completes and sender/compliance setup is available.",
+  "required_result": "PASS after installation completion",
+  "classification": "BLOCKED BY MICROSOFT INSTALLATION STATE"
+}

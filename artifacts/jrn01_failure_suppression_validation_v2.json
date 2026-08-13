@@ -1,0 +1,13 @@
+{
+  "package": "JRN-01",
+  "status": "NOT EXECUTED",
+  "reason": "No journey, sender, purpose/topic, or consent configuration can be built until Microsoft installation completes.",
+  "required_validations": [
+    "no consent where required",
+    "opted-out recipient",
+    "invalid email",
+    "duplicate trigger",
+    "cross-division inappropriate Contact"
+  ],
+  "classification": "BLOCKED BY MICROSOFT INSTALLATION STATE"
+}

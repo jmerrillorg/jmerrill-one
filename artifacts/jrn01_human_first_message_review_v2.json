@@ -1,0 +1,12 @@
+{
+  "package": "JRN-01",
+  "status": "NOT EXECUTED - MESSAGE NOT BUILT",
+  "requirements_confirmed_for_future_message": [
+    "sounds like Foundation",
+    "explains why the recipient is receiving it",
+    "is concise",
+    "has a clear next step",
+    "does not mention Dynamics, Customer Insights, automation, segments, Dataverse, or journey logic"
+  ],
+  "classification": "BLOCKED BY MICROSOFT INSTALLATION STATE"
+}
