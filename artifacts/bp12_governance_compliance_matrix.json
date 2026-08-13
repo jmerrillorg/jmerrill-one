@@ -1,0 +1,61 @@
+{
+  "status": "COMPLETE",
+  "controls": [
+    {
+      "control": "environment strategy",
+      "classification": "COMPLIANT"
+    },
+    {
+      "control": "Managed Environments",
+      "classification": "COMPLIANT"
+    },
+    {
+      "control": "environment groups",
+      "classification": "ADMIN ACTION REQUIRED"
+    },
+    {
+      "control": "DLP",
+      "classification": "ADMIN ACTION REQUIRED"
+    },
+    {
+      "control": "HTTP/custom connectors",
+      "classification": "COMPLIANT WITH EXCEPTION"
+    },
+    {
+      "control": "maker controls",
+      "classification": "COMPLIANT WITH EXCEPTION"
+    },
+    {
+      "control": "solution governance",
+      "classification": "COMPLIANT WITH EXCEPTION"
+    },
+    {
+      "control": "environment variables",
+      "classification": "COMPLIANT WITH EXCEPTION"
+    },
+    {
+      "control": "connection references",
+      "classification": "COMPLIANT WITH EXCEPTION"
+    },
+    {
+      "control": "Pipelines",
+      "classification": "ADMIN ACTION REQUIRED"
+    },
+    {
+      "control": "deployment evidence",
+      "classification": "COMPLIANT WITH EXCEPTION"
+    },
+    {
+      "control": "rollback",
+      "classification": "ADMIN ACTION REQUIRED"
+    },
+    {
+      "control": "telemetry",
+      "classification": "COMPLIANT WITH EXCEPTION"
+    },
+    {
+      "control": "production direct-change policy",
+      "classification": "COMPLIANT WITH EXCEPTION"
+    }
+  ]
+}

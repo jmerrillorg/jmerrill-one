@@ -1,0 +1,18 @@
+{
+  "status": "CANONICAL OPERATING MODEL DOCUMENTED",
+  "rule": "Founder & CEO is current enterprise architecture, platform administration, security-governance, release, and exception authority unless a future role is explicitly delegated.",
+  "jackie_may_be": [
+    "approver",
+    "administrator",
+    "release authority",
+    "operator"
+  ],
+  "still_required": [
+    "evidence",
+    "least privilege",
+    "bounded destructive changes",
+    "rollback",
+    "canon compliance"
+  ],
+  "not_required": "Artificial approval committees or segregation-of-duties bureaucracy for its own sake."
+}

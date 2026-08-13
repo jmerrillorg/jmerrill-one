@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE WITH EXCEPTIONS",
+  "patterns": [
+    {
+      "name": "DATAVERSE_RESOURCE_URL / DATAVERSE_WEB_API_BASE_URL",
+      "classification": "ENVIRONMENT VARIABLE",
+      "evidence": "repository BP-09 route and Azure app settings"
+    },
+    {
+      "name": "DATAVERSE_CLIENT_SECRET / SHAREPOINT_CLIENT_SECRET / AUTH_SECRET / STRIPE keys",
+      "classification": "SECRET STORE",
+      "evidence": "app setting names only; values not read or recorded"
+    },
+    {
+      "name": "APPLICATIONINSIGHTS_CONNECTION_STRING / APPINSIGHTS_INSTRUMENTATIONKEY",
+      "classification": "ENVIRONMENT VARIABLE / Azure monitored setting"
+    },
+    {
+      "name": "KEY_VAULT_URI",
+      "classification": "STATIC CONFIG to secret store"
+    },
+    {
+      "name": "JM1_RELEASE_SHA / JM1_RELEASE_ID / JM1_SLOT_ENVIRONMENT",
+      "classification": "STATIC CONFIG / deployment evidence"
+    },
+    {
+      "name": "hardcoded production URLs in source",
+      "classification": "REMEDIATE ONLY IF FOUND IN ACTIVE COMPONENT",
+      "evidence": "current Productions canonical public link already jmerrill.productions"
+    }
+  ],
+  "secrets_exposed": false
+}

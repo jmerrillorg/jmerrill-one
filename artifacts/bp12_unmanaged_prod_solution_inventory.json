@@ -1,0 +1,197 @@
+{
+  "status": "COMPLETE",
+  "environment": "JM1-Core",
+  "unmanaged_jm1_solution_count": 23,
+  "solutions": [
+    {
+      "unique_name": "JMerrillOne",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_BR_Template_Temp",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "review/legacy risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1CoreGovernance",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1CorePlatform",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1DistributionCommandCenter",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1EditorialAutomations",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1EditorialAICommandCenter",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_EnterpriseFoundation",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1FoundationCore",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_PAM_AssetRegistry",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_PAM_BaselinePrerequisites",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1ProductionCommandCenter",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1PublishingSales",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1PublishingCommandSuite",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1SecurityCompliance",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_Wave1_CoreActivation",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_BaseOps",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_Core",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_Financial",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_Foundation",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_Publishing",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "JM1_Publishing_Core",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "MIGRATE TO GOVERNED MANAGED DEPLOYMENT",
+      "risk": "production drift and unmanaged direct-edit risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    },
+    {
+      "unique_name": "Quarantine",
+      "managed": false,
+      "version": "1.0.0.0 where listed by PAC unless system/default exception",
+      "classification": "LEGACY",
+      "risk": "review/legacy risk",
+      "actively_edited_in_prod": "UNKNOWN - requires solution history/component review"
+    }
+  ],
+  "system_default_unmanaged_excluded": [
+    "Default",
+    "Active",
+    "Basic",
+    "Common Data Services Default Solution"
+  ]
+}

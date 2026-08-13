@@ -1,0 +1,115 @@
+{
+  "captured_at_utc": "2026-08-13T01:55:00Z",
+  "evidence": [
+    "PAC admin list/env list",
+    "Business App Platform admin environments API",
+    "PAC connection list",
+    "Power Apps admin apps/connections API",
+    "Power Automate flows API",
+    "PAC solution list across six environments",
+    "PAC tenant settings read/update",
+    "Azure webapp/static webapp/resource inventory",
+    "Production-safe HTTP regression checks",
+    "Dataverse WhoAmI DEV/TEST/PROD"
+  ],
+  "canonical_path": "JM1-Enterprise-Dev -> JM1-Test -> JM1-Core",
+  "environments": [
+    {
+      "role": "DEV",
+      "name": "JM1-Enterprise-Dev",
+      "id": "6535a04d-307a-e6f1-bb79-5eaeb5121c1b",
+      "type": "Sandbox",
+      "region": "westus",
+      "dataverse": true,
+      "url": "https://jm1enterprisedev.crm.dynamics.com/",
+      "managed_before": "Basic",
+      "managed_after": "Standard",
+      "environment_group": null,
+      "security_group": null,
+      "deployment_role": "source DEV"
+    },
+    {
+      "role": "TEST",
+      "name": "JM1-Test",
+      "id": "251b8f38-5cea-e329-b9b2-3d34ba47dd1e",
+      "type": "Sandbox",
+      "region": "westus",
+      "dataverse": true,
+      "url": "https://jm1test.crm.dynamics.com/",
+      "managed_before": "Basic",
+      "managed_after": "Standard",
+      "environment_group": null,
+      "security_group": null,
+      "deployment_role": "validation TEST"
+    },
+    {
+      "role": "PROD",
+      "name": "JM1-Core",
+      "id": "dc4b2a13-3dbb-e0d1-95b8-f0e7d3a26e10",
+      "type": "Production",
+      "region": "eastus",
+      "dataverse": true,
+      "url": "https://jm1hq.crm.dynamics.com/",
+      "managed_before": "Standard",
+      "managed_after": "Standard",
+      "environment_group": null,
+      "security_group": null,
+      "deployment_role": "production"
+    },
+    {
+      "role": "DEFAULT - RESTRICT",
+      "name": "JM1-CRM-Core",
+      "id": "Default-352d075e-8e17-4169-9f8e-22e6946ce66d",
+      "type": "Default",
+      "region": "westus",
+      "dataverse": true,
+      "url": "https://jm1crm.crm.dynamics.com/",
+      "managed_before": "Basic",
+      "managed_after": "Basic",
+      "environment_group": null,
+      "security_group": null,
+      "deployment_role": "default environment, not growth target"
+    },
+    {
+      "role": "SANDBOX - OTHER",
+      "name": "JM1-Dev",
+      "id": "a4d2d3cf-af53-e38c-970b-c6e19f4da917",
+      "type": "Sandbox",
+      "region": "westus",
+      "dataverse": true,
+      "url": "https://org52409ff2.crm.dynamics.com/",
+      "managed_before": "Basic",
+      "managed_after": "Basic",
+      "environment_group": null,
+      "security_group": null,
+      "deployment_role": "legacy sandbox"
+    },
+    {
+      "role": "PROD - LEGACY/VERIFY",
+      "name": "One Dynamics Environment",
+      "id": "27b55584-b27f-ea62-84ef-435278eaba1b",
+      "type": "Production",
+      "region": "eastus",
+      "dataverse": true,
+      "url": "https://jmerrillone.crm.dynamics.com/",
+      "managed_before": "Basic",
+      "managed_after": "Basic",
+      "environment_group": null,
+      "security_group": null,
+      "deployment_role": "legacy/parallel production candidate"
+    }
+  ],
+  "dev": {
+    "name": "JM1-Enterprise-Dev",
+    "id": "6535a04d-307a-e6f1-bb79-5eaeb5121c1b"
+  },
+  "test": {
+    "name": "JM1-Test",
+    "id": "251b8f38-5cea-e329-b9b2-3d34ba47dd1e"
+  },
+  "prod": {
+    "name": "JM1-Core",
+    "id": "dc4b2a13-3dbb-e0d1-95b8-f0e7d3a26e10"
+  },
+  "mapping_changed": false
+}

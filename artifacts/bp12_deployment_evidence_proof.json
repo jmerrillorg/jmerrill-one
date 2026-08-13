@@ -1,0 +1,16 @@
+{
+  "status": "PROCEDURE DEFINED - PIPELINE PROOF BLOCKED",
+  "pipeline_run_id": null,
+  "reason": "DEV->TEST pipeline proof blocked by absent pipeline records.",
+  "evidence_model": [
+    "solution/package",
+    "version",
+    "source environment",
+    "target environment",
+    "initiating authority",
+    "deployment timestamp",
+    "pipeline/deployment run ID",
+    "source commit where applicable",
+    "validation result"
+  ]
+}

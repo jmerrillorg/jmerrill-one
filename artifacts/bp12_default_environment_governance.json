@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE WITH HUMAN ACTION",
+  "default_environment": "JM1-CRM-Core",
+  "current_state": "Default environment exists with Dataverse and JM1 CRM Core automations/solutions; not canonical growth target.",
+  "settings": {
+    "enableDefaultEnvironmentRouting": false,
+    "environmentRoutingAllMakers": false,
+    "disableShareWithEveryone": true,
+    "disableConnectionSharingWithEveryone": true
+  },
+  "target_principle": "Enterprise JM1 workloads belong in governed JM1 environments, not the tenant default environment.",
+  "remaining_action": "Enable routing only after JM1 Enterprise environment group exists and target environment is selected."
+}

@@ -1,0 +1,85 @@
+{
+  "status": "COMPLETE",
+  "scorecard": [
+    {
+      "area": "environment strategy",
+      "score": "COMPLETE"
+    },
+    {
+      "area": "Managed Environments",
+      "score": "COMPLETE"
+    },
+    {
+      "area": "environment group",
+      "score": "HUMAN ADMIN ACTION REQUIRED"
+    },
+    {
+      "area": "DLP",
+      "score": "HUMAN ADMIN ACTION REQUIRED"
+    },
+    {
+      "area": "HTTP/custom connectors",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "default environment",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "maker controls",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "solution governance",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "environment variables",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "connection references",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "production identities",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "Pipelines",
+      "score": "HUMAN ADMIN ACTION REQUIRED"
+    },
+    {
+      "area": "DEV -> TEST proof",
+      "score": "DEFERRED"
+    },
+    {
+      "area": "TEST -> PROD readiness",
+      "score": "DEFERRED"
+    },
+    {
+      "area": "rollback",
+      "score": "DEFERRED"
+    },
+    {
+      "area": "telemetry",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "unmanaged production solutions",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "consumer OneDrive",
+      "score": "COMPLETE"
+    },
+    {
+      "area": "deployment evidence",
+      "score": "COMPLETE WITH EXCEPTION"
+    },
+    {
+      "area": "nonproduction data governance",
+      "score": "COMPLETE"
+    }
+  ]
+}

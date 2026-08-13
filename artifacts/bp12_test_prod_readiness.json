@@ -1,0 +1,15 @@
+{
+  "classification": "HOLD",
+  "ready_items": [
+    "Canonical PROD exists",
+    "PROD Managed Environment Standard",
+    "production validation route exists"
+  ],
+  "missing_items": [
+    "Pipeline target stage",
+    "PROD environment variable strategy validated through pipeline",
+    "connection reference strategy validated through pipeline",
+    "release evidence from pipeline",
+    "rollback proof via pipeline"
+  ]
+}

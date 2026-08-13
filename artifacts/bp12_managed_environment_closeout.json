@@ -1,0 +1,45 @@
+{
+  "status": "CLOSED FOR CANONICAL DEV/TEST/PROD",
+  "changes_applied": [
+    {
+      "environment": "JM1-Enterprise-Dev",
+      "from": "Basic",
+      "to": "Standard",
+      "command": "pac admin set-governance-config --protection-level Standard --include-insights --solution-checker-mode warn"
+    },
+    {
+      "environment": "JM1-Test",
+      "from": "Basic",
+      "to": "Standard",
+      "command": "pac admin set-governance-config --protection-level Standard --include-insights --solution-checker-mode warn"
+    }
+  ],
+  "already_configured": [
+    {
+      "environment": "JM1-Core",
+      "state": "Standard"
+    }
+  ],
+  "not_changed": [
+    {
+      "environment": "JM1-CRM-Core",
+      "reason": "Default environment; restrict/route after environment group/default governance decision."
+    },
+    {
+      "environment": "JM1-Dev",
+      "reason": "Legacy sandbox; decide retire or keep restricted."
+    },
+    {
+      "environment": "One Dynamics Environment",
+      "reason": "Legacy/parallel production candidate; verify role first."
+    }
+  ],
+  "classification_by_environment": {
+    "JM1-Enterprise-Dev": "MANAGED - CONFIGURED",
+    "JM1-Test": "MANAGED - CONFIGURED",
+    "JM1-Core": "MANAGED - CONFIGURED",
+    "JM1-CRM-Core": "ADMIN ACTION REQUIRED",
+    "JM1-Dev": "ADMIN ACTION REQUIRED",
+    "One Dynamics Environment": "ADMIN ACTION REQUIRED"
+  }
+}

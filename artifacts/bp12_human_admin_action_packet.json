@@ -1,0 +1,49 @@
+{
+  "status": "HUMAN ADMIN ACTIONS REMAIN",
+  "actions": [
+    {
+      "id": "BP12-HA-001",
+      "surface": "Power Platform Admin Center",
+      "page": "Environment groups",
+      "current_state": "No environment groups visible; environmentGroupId null.",
+      "desired_state": "Create JM1 Enterprise and add JM1-Enterprise-Dev, JM1-Test, JM1-Core.",
+      "why": "Required for grouped governance/default routing.",
+      "risk": "Low if only canonical environments are added.",
+      "downtime_expected": false,
+      "validation": "BAP environmentGroupId populated or PAC list-groups shows JM1 Enterprise."
+    },
+    {
+      "id": "BP12-HA-002",
+      "surface": "Power Platform Admin Center / Data policies",
+      "page": "DLP policies export",
+      "current_state": "DLP policy export not accessible from PAC/API in this session.",
+      "desired_state": "Export actual policies, connector groups, environment scopes, HTTP/custom connector handling, endpoint filtering.",
+      "why": "DLP hardening cannot be applied blindly.",
+      "risk": "None for export.",
+      "downtime_expected": false,
+      "validation": "bp12_dlp_actual_state can be updated to ACTUAL STATE CAPTURED."
+    },
+    {
+      "id": "BP12-HA-003",
+      "surface": "Power Platform Admin Center / Pipelines",
+      "page": "Pipelines host/stage setup",
+      "current_state": "pac pipeline list returns deploymentpipelines not found.",
+      "desired_state": "Configure host and stages for JM1-Enterprise-Dev -> JM1-Test -> JM1-Core.",
+      "why": "Required for DEV->TEST proof and TEST->PROD readiness.",
+      "risk": "Low if no production deployment is run during setup.",
+      "downtime_expected": false,
+      "validation": "pac pipeline list returns pipeline/stages."
+    },
+    {
+      "id": "BP12-HA-004",
+      "surface": "Power Platform Admin Center / Tenant settings",
+      "page": "Environment creation settings",
+      "current_state": "disableEnvironmentCreationByNonAdminUsers still false after PAC update attempt.",
+      "desired_state": "Disable non-admin production/sandbox environment creation or confirm desired exception.",
+      "why": "Prevents accidental environment sprawl.",
+      "risk": "May affect non-admin makers; single-person enterprise should be low risk.",
+      "downtime_expected": false,
+      "validation": "pac admin list-tenant-settings shows true."
+    }
+  ]
+}

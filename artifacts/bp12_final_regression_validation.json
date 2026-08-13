@@ -1,0 +1,11 @@
+{
+  "result": "PASS WITH DOCUMENTED NON-BLOCKING EXCEPTIONS",
+  "same_as": "bp12_regression_validation.json",
+  "bp12_caused_regressions": 0,
+  "post_changes": [
+    "Managed Environment DEV/TEST enabled",
+    "tenant maker settings partially hardened",
+    "consumer OneDrive removed"
+  ],
+  "validated_after_changes": true
+}

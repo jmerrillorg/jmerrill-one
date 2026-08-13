@@ -1,0 +1,15 @@
+{
+  "classification": "KNOWN / DOCUMENTED DRIFT",
+  "evidence": [
+    "JM1-Core contains 23 unmanaged JM1/non-system solutions.",
+    "JM1-Test contains managed JM1_EnterpriseFoundation and JM1_Publishing while PROD contains many unmanaged equivalents.",
+    "Source-controlled repository primarily covers public website; Dataverse solution source-of-truth is not complete here."
+  ],
+  "drift_risk": [
+    "direct PROD edits",
+    "unmanaged form/view changes",
+    "component changes not represented upstream",
+    "connection-reference drift"
+  ],
+  "action": "Do not overwrite blindly; reconcile source-of-truth first."
+}

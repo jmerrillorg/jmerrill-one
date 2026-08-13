@@ -1,0 +1,6 @@
+{
+  "result": "BLOCKED - ADMIN",
+  "reason": "No configured pipeline/stage exists, so DEV -> TEST proof cannot run.",
+  "non_destructive_test_solution": null,
+  "production_impact": "none"
+}

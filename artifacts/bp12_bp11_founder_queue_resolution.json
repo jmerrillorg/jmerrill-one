@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE - FOUNDER DECISION STILL REQUIRED FOR BOTH ITEMS",
+  "items": [
+    {
+      "id": "BP11-FD-001",
+      "source": "11 Contacts with duplicate placeholder email payload.email",
+      "candidate_canonical_record": null,
+      "confidence": "HIGH that records are historical test data; insufficient authority for merge/deactivation without explicit Founder cleanup decision",
+      "recommended_disposition": "FOUNDER DECISION REQUIRED - approve historical test cleanup path after dependency proof",
+      "action_taken": "NONE"
+    },
+    {
+      "id": "BP11-FD-002",
+      "source": "34 unlinked Leads from BP-11 visible set",
+      "candidate_canonical_record": null,
+      "confidence": "MIXED - many synthetic/test, some may be real; BP-08 register still absent",
+      "recommended_disposition": "FOUNDER DECISION REQUIRED - classify real linkage candidates versus synthetic/test retention cleanup",
+      "action_taken": "NONE"
+    }
+  ],
+  "bp12_blocking": false
+}

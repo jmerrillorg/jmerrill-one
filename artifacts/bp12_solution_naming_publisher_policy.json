@@ -1,0 +1,12 @@
+{
+  "status": "DEFINED",
+  "preferred_publisher": "JM1 enterprise publisher for new enterprise solutions",
+  "legacy_publisher_treatment": "Retain existing prefixes/publishers where renaming would create schema risk.",
+  "solution_naming": {
+    "display_name": "JM1 <Division/Capability> <Purpose>",
+    "unique_name": "JM1_<DivisionOrCapability>_<Purpose>",
+    "versioning": "semantic-ish package version with deployment evidence",
+    "division_vs_parent": "Parent/core owns shared governance; divisions own bounded domain solutions."
+  },
+  "do_not_do": "Do not force cosmetic schema prefix migration."
+}

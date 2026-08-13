@@ -1,0 +1,5 @@
+{
+  "classification": "BLOCKED",
+  "reason": "No harmless pipeline deployment proof exists yet; rollback demonstration must follow pipeline setup.",
+  "procedure": "Use harmless TEST component or prior managed solution version; do not perform destructive rollback."
+}

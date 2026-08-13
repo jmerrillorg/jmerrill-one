@@ -1,0 +1,37 @@
+{
+  "package_id": "BP-12",
+  "package_name": "Power Platform Administration & Deployment Closeout",
+  "purpose": "Close remaining Power Platform administrative and deployment debt before substantial Microsoft-native workload expansion.",
+  "explicit_scope_rule": "BP-12 IS ADMINISTRATION / DEPLOYMENT CLOSEOUT, NOT NEW BUSINESS-CAPABILITY DEVELOPMENT.",
+  "authority_order": [
+    "JM1 Power Platform Governance Standard v1.0 CANON",
+    "JM1 Enterprise Semantic Reconciliation Standard v1.0 CANON",
+    "BP-10 closeout evidence",
+    "BP-11 closeout evidence",
+    "live tenant/admin evidence",
+    "BP-12 authorization"
+  ],
+  "tenant_scope": "JM1 tenant 352d075e-8e17-4169-9f8e-22e6946ce66d",
+  "environment_scope": "JM1-Enterprise-Dev -> JM1-Test -> JM1-Core, plus default/legacy environments for governance",
+  "dlp_scope": "DLP actual state/export, connector grouping, HTTP/custom connector treatment, and production impact",
+  "pipeline_scope": "Power Platform Pipelines root cause, prerequisites, DEV->TEST proof if available, TEST->PROD readiness",
+  "maker_governance_scope": "tenant maker creation/sharing settings and default environment governance",
+  "solution_governance_scope": "unmanaged production inventory and transition plan",
+  "exclusions": [
+    "new business capability implementation",
+    "Journeys/Voice/Power BI/new agents",
+    "BP-08 semantic redesign",
+    "BP-09 redesign",
+    "destructive production action without proof",
+    "license purchase"
+  ],
+  "validation_gates": [
+    "Managed Environment state verified",
+    "tenant settings after-state captured",
+    "consumer OneDrive dependency/removal proof",
+    "BP-09 regression PASS",
+    "Dataverse WhoAmI DEV/TEST/PROD PASS",
+    "human admin actions consolidated"
+  ],
+  "closeout_criteria": "All executable admin/configuration work completed; remaining work isolated to bounded human admin/capability actions."
+}

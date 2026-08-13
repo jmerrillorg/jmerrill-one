@@ -1,0 +1,22 @@
+# BP-12 Platform Admin Closeout Scorecard
+
+- environment strategy: COMPLETE
+- Managed Environments: COMPLETE
+- environment group: HUMAN ADMIN ACTION REQUIRED
+- DLP: HUMAN ADMIN ACTION REQUIRED
+- HTTP/custom connectors: COMPLETE WITH EXCEPTION
+- default environment: COMPLETE WITH EXCEPTION
+- maker controls: COMPLETE WITH EXCEPTION
+- solution governance: COMPLETE WITH EXCEPTION
+- environment variables: COMPLETE WITH EXCEPTION
+- connection references: COMPLETE WITH EXCEPTION
+- production identities: COMPLETE WITH EXCEPTION
+- Pipelines: HUMAN ADMIN ACTION REQUIRED
+- DEV -> TEST proof: DEFERRED
+- TEST -> PROD readiness: DEFERRED
+- rollback: DEFERRED
+- telemetry: COMPLETE WITH EXCEPTION
+- unmanaged production solutions: COMPLETE WITH EXCEPTION
+- consumer OneDrive: COMPLETE
+- deployment evidence: COMPLETE WITH EXCEPTION
+- nonproduction data governance: COMPLETE

@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETE",
+  "exceptions": [
+    {
+      "issue": "Managed Environment unknown/admin state",
+      "classification": "CLOSED IN BP-12",
+      "evidence": "DEV/TEST/PROD now Standard."
+    },
+    {
+      "issue": "DLP unknown/admin state",
+      "classification": "REMAINS - HUMAN ADMIN ACTION",
+      "evidence": "Actual DLP export still required."
+    },
+    {
+      "issue": "Pipelines hold",
+      "classification": "REMAINS - HUMAN ADMIN ACTION",
+      "evidence": "Pipelines command exists but pipeline records absent."
+    },
+    {
+      "issue": "consumer OneDrive",
+      "classification": "CLOSED IN BP-12",
+      "evidence": "Unreferenced unauthenticated consumer connection removed."
+    },
+    {
+      "issue": "environment group absence",
+      "classification": "REMAINS - HUMAN ADMIN ACTION",
+      "evidence": "No group creation API/CLI available."
+    },
+    {
+      "issue": "unmanaged production solutions",
+      "classification": "MIGRATION BACKLOG",
+      "evidence": "Inventory and transition plan created."
+    },
+    {
+      "issue": "maker/environment creation controls",
+      "classification": "CLOSED PARTIAL / REMAINS HUMAN ADMIN ACTION",
+      "evidence": "Trial/developer/Teams/connection sharing closed; production/sandbox env creation flag still false."
+    },
+    {
+      "issue": "telemetry",
+      "classification": "CLOSED WITH DOCUMENTED EXCEPTION",
+      "evidence": "Admin visibility improved; DLP/pipeline visibility pending."
+    }
+  ]
+}

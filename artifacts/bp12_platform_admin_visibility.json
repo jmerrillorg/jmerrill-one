@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE WITH EXCEPTION",
+  "verified": [
+    "Managed Environment state visible via BAP API",
+    "tenant settings visible via PAC",
+    "connections visible via PAC and Power Apps admin API",
+    "flows visible via Power Automate API",
+    "apps visible via Power Apps admin API",
+    "Azure App Insights/action groups/alerts/resources visible",
+    "website HTTP smoke visible"
+  ],
+  "not_built": "No Power BI/Fabric dashboard built per guardrail.",
+  "remaining": [
+    "DLP export visibility",
+    "Pipelines run visibility after pipeline setup",
+    "Managed Environment group visibility after group creation"
+  ]
+}

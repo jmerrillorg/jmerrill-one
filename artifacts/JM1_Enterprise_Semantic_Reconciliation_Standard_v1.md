@@ -1,6 +1,6 @@
 # JM1 Enterprise Semantic Reconciliation Standard v1
 
-Status: CANON-CANDIDATE - PENDING FOUNDER & CEO APPROVAL
+Status: CANON - v1.0
 
 ## Purpose
 

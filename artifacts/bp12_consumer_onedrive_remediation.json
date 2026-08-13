@@ -1,0 +1,11 @@
+{
+  "final_state": "REMOVED - OBSOLETE",
+  "action_taken": "Deleted consumer OneDrive connection using Power Apps admin REST API after PAC delete was not sufficient for this connector type.",
+  "connection_id": "shared-onedrive-d5f2925b-7277-4ee3-83c4-4a17309de480",
+  "verification": [
+    "pac connection list no longer lists shared_onedrive.",
+    "Power Apps admin API shared_onedrive connections returns empty value array.",
+    "BP-09 website/API regression passed after removal."
+  ],
+  "replacement_required": false
+}

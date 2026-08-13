@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED - ADMIN",
+  "configured": false,
+  "reason": "No deployment pipeline records are visible; cannot configure pipeline through PAC without host/prerequisite setup.",
+  "single_person_release_behavior": "Jackie may be authority and operator; evidence remains required; redundant self-approval is not required."
+}

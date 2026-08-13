@@ -1,0 +1,14 @@
+{
+  "classification": "UNREFERENCED / OBSOLETE",
+  "connection_id": "shared-onedrive-d5f2925b-7277-4ee3-83c4-4a17309de480",
+  "connector_identity": "shared_onedrive consumer OneDrive",
+  "owner": "jm1-admin@jmerrill.one",
+  "status_before": "Error - Unauthenticated token",
+  "created_time": "2026-03-30T07:49:18.1662257Z",
+  "flows_scanned": 51,
+  "apps_scanned": 6,
+  "flow_references_found": 0,
+  "app_references_found": 0,
+  "solution_dependency_status": "No flow/app references found by supported APIs; solution component dependency view for connections not exposed, but connection is unauthenticated, unshared, and obsolete.",
+  "obsolete": true
+}

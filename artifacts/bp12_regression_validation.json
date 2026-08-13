@@ -1,0 +1,21 @@
+{
+  "result": "PASS WITH DOCUMENTED NON-BLOCKING EXCEPTIONS",
+  "website": {
+    "home": "PASS HTTP 200",
+    "contact": "PASS HTTP 200",
+    "api_get": "PASS HTTP 405",
+    "malformed_post": "PASS HTTP 400"
+  },
+  "dataverse": {
+    "JM1-Enterprise-Dev WhoAmI": "PASS",
+    "JM1-Test WhoAmI": "PASS",
+    "JM1-Core WhoAmI": "PASS"
+  },
+  "bp09_identity_path": "PASS by repository inspection and safe API behavior",
+  "execution_log_writer": "PASS - not modified; Dataverse access remains healthy",
+  "governance": "PASS - no schema/policy layer changes applied",
+  "agents": "PASS - no agent configuration changed",
+  "plugin": "PASS - no plug-in changed",
+  "copilot_studio": "PASS WITH OBSERVABILITY LIMIT - connection still listed connected",
+  "bp12_caused_regressions": 0
+}

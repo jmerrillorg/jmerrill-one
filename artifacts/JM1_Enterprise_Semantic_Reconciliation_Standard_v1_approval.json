@@ -1,0 +1,22 @@
+{
+  "artifact": "JM1_Enterprise_Semantic_Reconciliation_Standard_v1",
+  "approval_authority": "Founder & CEO",
+  "current_role_holder": "Jackie Merrill / JM1 Founder & CEO",
+  "ruling": "PROMOTE TO CANON - v1.0",
+  "effective_timestamp": "2026-08-13T01:55:00Z",
+  "bp11_evidence": [
+    "bp11_final_closeout.json",
+    "bp11_reconciliation_validation.json",
+    "bp11_record_integrity_summary.json",
+    "bp11_referential_integrity_validation.json",
+    "bp11_privacy_security_validation.json",
+    "bp11_remaining_manual_reconciliation.json"
+  ],
+  "scope": "Enterprise semantic reconciliation for identity, organizations, leads, opportunities, cases, relationships, referrals, source attribution, domain-record preservation, duplicate governance, and legacy retention.",
+  "exceptions": [
+    "BP-11 Founder review queue remains bounded to 2 items.",
+    "No automatic merge of ambiguous or historical test records.",
+    "DLP/platform admin holds remain governed by BP-12 artifacts."
+  ],
+  "change_control_rule": "Substantive semantic changes require Founder & CEO approval, source-controlled artifact update, and package evidence."
+}

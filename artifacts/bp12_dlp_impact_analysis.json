@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETE AGAINST TARGET MODEL - ACTUAL POLICY EXPORT MISSING",
+  "workloads": [
+    {
+      "workload": "BP-09 website intake",
+      "classification": "SAFE TO APPLY if Dataverse/Azure endpoint exception retained"
+    },
+    {
+      "workload": "Execution Log Writer",
+      "classification": "SAFE TO APPLY if Dataverse trusted"
+    },
+    {
+      "workload": "Agent Registry lifecycle",
+      "classification": "SAFE TO APPLY if Dataverse trusted"
+    },
+    {
+      "workload": "verification flow",
+      "classification": "SAFE TO APPLY if Dataverse/Outlook trusted"
+    },
+    {
+      "workload": "Publishing Triage",
+      "classification": "SAFE TO APPLY if Dataverse/Outlook/SharePoint/custom JM1 Functions allowed"
+    },
+    {
+      "workload": "Core Scheduling",
+      "classification": "SAFE TO APPLY if Outlook/Teams/Dataverse trusted"
+    },
+    {
+      "workload": "Financial Follow-Up",
+      "classification": "SAFE TO APPLY if Outlook/Dataverse trusted"
+    },
+    {
+      "workload": "Agent Exception Handler",
+      "classification": "SAFE TO APPLY if Dataverse/plugin path unaffected"
+    },
+    {
+      "workload": "Copilot Studio",
+      "classification": "PRODUCTION EXCEPTION REQUIRED if active connector policy would block governed Copilot Studio"
+    },
+    {
+      "workload": "HTTP/webcontents",
+      "classification": "PRODUCTION EXCEPTION REQUIRED - approved JM1 Azure Function endpoint only"
+    },
+    {
+      "workload": "consumer OneDrive",
+      "classification": "NOT NEEDED - obsolete connection removed"
+    }
+  ]
+}

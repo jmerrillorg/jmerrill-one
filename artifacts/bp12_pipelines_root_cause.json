@@ -1,0 +1,12 @@
+{
+  "classification": "AVAILABLE - ADMIN ACTION REQUIRED",
+  "pac_version": "1.49.4+g406813e (.NET 10.0.9)",
+  "evidence": [
+    "pac pipeline command exists with list/deploy.",
+    "pac pipeline list in JM1-Core returns Resource not found for segment deploymentpipelines.",
+    "Canonical DEV/TEST/PROD environments are now Managed Environment Standard.",
+    "No pipeline host/stages are visible to PAC."
+  ],
+  "root_cause": "Power Platform Pipelines capability/tooling exists, but pipeline host/stage configuration is absent or not exposed in JM1-Core.",
+  "not_proof_of_unavailability": "The CLI error alone is not treated as no entitlement."
+}

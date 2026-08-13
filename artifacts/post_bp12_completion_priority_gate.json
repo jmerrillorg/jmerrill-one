@@ -1,0 +1,47 @@
+{
+  "status": "READY WITH EXCLUSIONS",
+  "ranking": [
+    {
+      "rank": 1,
+      "candidate": "Foundation Microsoft Optimization",
+      "readiness": "READY WITH EXCLUSIONS",
+      "why": "High v1 completion value, can improve division operations without DLP/pipeline-dependent channel expansion.",
+      "exclusions": [
+        "new channels",
+        "Power BI",
+        "new agents",
+        "DLP/pipeline-dependent deployment proof"
+      ]
+    },
+    {
+      "rank": 2,
+      "candidate": "Productions Microsoft Optimization",
+      "readiness": "READY WITH EXCLUSIONS",
+      "why": "Public-link correction is already canon; workflow can mature without inventing mature pipeline.",
+      "exclusions": [
+        "mature production pipeline invention",
+        "new channels"
+      ]
+    },
+    {
+      "rank": 3,
+      "candidate": "AI / Canon Closure",
+      "readiness": "HOLD",
+      "why": "ADR-011 payloads, Publishing Diagnostic, and External Council canon remain blocked by canon inputs."
+    },
+    {
+      "rank": 4,
+      "candidate": "Microsoft Native Capability Activation",
+      "readiness": "HOLD",
+      "why": "Journeys, Customer Voice, Sales Sequences, Unified Routing require DLP/licensing/admin readiness."
+    },
+    {
+      "rank": 5,
+      "candidate": "Enterprise Intelligence",
+      "readiness": "HOLD",
+      "why": "Power BI/Fabric and relationship intelligence should wait for DLP/pipeline/data governance closure."
+    }
+  ],
+  "recommended_next_package": "Foundation Microsoft Optimization - bounded v1 completion wave with BP-12 exclusions",
+  "exact_enterprise_recommendation": "Authorize the next completion wave with explicit exclusions for DLP mutation, pipeline-dependent deployment, Journeys/Voice/Power BI/new agents, and unresolved ADR-011/External Council canon."
+}

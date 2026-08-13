@@ -1,0 +1,12 @@
+{
+  "status": "DEFINED",
+  "canonical_nonprod_rule": "Use synthetic/test data outside PROD unless a specific governed use case requires otherwise.",
+  "rules": [
+    "Do not casually copy sensitive production Financial/domain data into DEV/TEST.",
+    "Use masked/synthetic data for validation.",
+    "Controlled production validation records must be clearly named and retained/cleaned under evidence.",
+    "Secrets remain environment-specific and out of source control.",
+    "Production exports/backups require authorization and retention evidence."
+  ],
+  "validation": "DEV/TEST Dataverse WhoAmI passed; no production data copy performed."
+}

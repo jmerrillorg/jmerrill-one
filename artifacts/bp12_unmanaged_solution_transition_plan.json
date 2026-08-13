@@ -1,0 +1,43 @@
+{
+  "status": "MIGRATION BACKLOG",
+  "priorities": {
+    "P0": [
+      "JM1CoreGovernance",
+      "JM1CorePlatform",
+      "JM1_EnterpriseFoundation",
+      "JM1_BaseOps",
+      "JM1_Core"
+    ],
+    "P1": [
+      "JM1_Publishing",
+      "JM1_Publishing_Core",
+      "JM1PublishingSales",
+      "JM1PublishingCommandSuite",
+      "JM1_Financial",
+      "JM1_Foundation",
+      "JM1FoundationCore"
+    ],
+    "P2": [
+      "JMerrillOne",
+      "JM1EditorialAutomations",
+      "JM1EditorialAICommandCenter",
+      "JM1DistributionCommandCenter",
+      "JM1ProductionCommandCenter",
+      "JM1SecurityCompliance",
+      "JM1_PAM_AssetRegistry",
+      "JM1_PAM_BaselinePrerequisites",
+      "JM1_BR_Template_Temp",
+      "Quarantine"
+    ]
+  },
+  "transition_steps": [
+    "establish DEV/source-of-truth",
+    "export/reconcile PROD drift",
+    "validate dependencies",
+    "prepare managed downstream deployment",
+    "test in JM1-Test",
+    "schedule governed production transition",
+    "preserve rollback"
+  ],
+  "mass_conversion_executed": false
+}

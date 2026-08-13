@@ -1,0 +1,27 @@
+{
+  "status": "HUMAN ADMIN ACTION REQUIRED",
+  "actions_applied": [],
+  "reason": "Actual DLP policy export was not obtainable through available supported tooling, so policy mutation would be blind.",
+  "required_policy_intent": {
+    "business": [
+      "Dataverse",
+      "Outlook",
+      "Teams",
+      "SharePoint",
+      "approved Dynamics",
+      "approved Azure/Microsoft services",
+      "governed Copilot Studio"
+    ],
+    "limited": [
+      "Excel Online Business",
+      "OneDrive for Business where justified",
+      "approved HTTP/custom connector exceptions"
+    ],
+    "blocked": [
+      "consumer OneDrive",
+      "unapproved SaaS",
+      "generic HTTP without endpoint/auth/logging exception",
+      "consumer services"
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "status": "COMPLETE WITH DOCUMENTED EXCEPTIONS",
+  "prod_connection_count_after_onedrive_removal": 23,
+  "connections": [
+    {
+      "id": "b5214dbe55c54b6aa5ea2e2ea107aed9",
+      "connector": "SharePoint Online",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "dc26b1545e0546e29e4bbaafe9694d29",
+      "connector": "HTTP/webcontents to jm1-ed-functions",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "MIGRATION CANDIDATE - HTTP exception"
+    },
+    {
+      "id": "3593faee063645b0886e9b212d0e7221",
+      "connector": "Dataverse",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "SERVICE IDENTITY PREFERRED / APPROVED DELEGATED USER CURRENT"
+    },
+    {
+      "id": "cba4c1e3524c4c6bafb39b502cb32bad",
+      "connector": "JM1 Functions custom connector",
+      "owner": "jm1-ed-functions - 1",
+      "status": "Connected",
+      "classification": "SERVICE IDENTITY"
+    },
+    {
+      "id": "shared-excelonlinebu-2927ca85-657f-4f8f-b05c-05233cc99866",
+      "connector": "Excel Online Business",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "MIGRATION CANDIDATE"
+    },
+    {
+      "id": "shared-office365-b49c7acf-75bf-4f03-bd7e-2d93ab492dc4",
+      "connector": "Office 365 Outlook",
+      "owner": "jackie@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-commondataser-0b7ce98e-a2b9-498b-8fba-f0720875eda4",
+      "connector": "Dataverse",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "SERVICE IDENTITY PREFERRED / APPROVED DELEGATED USER CURRENT"
+    },
+    {
+      "id": "shared-teams-2666fb52-0566-425e-8b8a-3d729e7884c3",
+      "connector": "Teams",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "22920c49ecf34380b92a22b2b02d0808",
+      "connector": "Office 365 Outlook",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "1222a9498a2c4364acdc9eb9e654721c",
+      "connector": "Office 365 Outlook",
+      "owner": "scheduling@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-commondataser-067b960e-f7dc-4719-9eec-cb1fe4a8f48a",
+      "connector": "Dataverse",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "SERVICE IDENTITY PREFERRED / APPROVED DELEGATED USER CURRENT"
+    },
+    {
+      "id": "shared-sharepointonl-f4b25a55-5337-437f-9047-8c03c1bd6604",
+      "connector": "SharePoint Online",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-office365-20d98fc5-fdc6-4e62-bc60-c37fab3bf554",
+      "connector": "Office 365 Outlook",
+      "owner": "publishing@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-office365-c1791395-7e09-47fd-b4f2-03243d0efe13",
+      "connector": "Office 365 Outlook",
+      "owner": "scheduling@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-microsoftcopi-a6456303-b667-44d6-bd82-bd9dd6fa6aa9",
+      "connector": "Copilot Studio",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-office365-73f55858-0d3f-4ebb-afd8-f67a3b619e25",
+      "connector": "Office 365 Outlook",
+      "owner": "publishing@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-commondataser-f4094dba-b461-4a85-890b-5a54e466ed67",
+      "connector": "Dataverse - JM1 Publishing",
+      "owner": "Microsoft Dataverse - JM1 Publishing",
+      "status": "Connected",
+      "classification": "SERVICE IDENTITY"
+    },
+    {
+      "id": "eb2616daf286466baf2f7e203e7d0c80",
+      "connector": "OneDrive for Business",
+      "owner": "OneDrive for Business",
+      "status": "Connected",
+      "classification": "DOCUMENTED EXCEPTION / MIGRATION CANDIDATE"
+    },
+    {
+      "id": "shared-office365-c6719736-c069-4fe9-8928-2edc8a8f2e66",
+      "connector": "Office 365 Outlook",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-onedriveforbu-65b204be-65ab-4905-8958-89da1f0cf2ae",
+      "connector": "OneDrive for Business",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "DOCUMENTED EXCEPTION / MIGRATION CANDIDATE"
+    },
+    {
+      "id": "shared-microsoftform-b9012865-0a31-466a-90eb-7e098110c8b7",
+      "connector": "Microsoft Forms",
+      "owner": "jm1-admin@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-office365-68abca82-ed69-4296-b9d6-4e06787bf4eb",
+      "connector": "Office 365 Outlook",
+      "owner": "foundation@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    },
+    {
+      "id": "shared-office365-1e9ce87d-950b-43f0-a265-99f68a62fbca",
+      "connector": "Office 365 Outlook",
+      "owner": "financial@jmerrill.one",
+      "status": "Connected",
+      "classification": "APPROVED DELEGATED USER"
+    }
+  ],
+  "broken_connections_after_removal": 0,
+  "consumer_onedrive_removed": true,
+  "test_dev_connections": "PAC lists no connections for JM1-Enterprise-Dev or JM1-Test; pipeline proof will require TEST connection reference setup."
+}

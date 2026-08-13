@@ -1,0 +1,18 @@
+{
+  "status": "HUMAN ADMIN ACTION REQUIRED",
+  "pipeline_host": null,
+  "pipeline_id": null,
+  "stages": [],
+  "target_path": "JM1-Enterprise-Dev -> JM1-Test -> JM1-Core",
+  "prerequisites_met": [
+    "DEV/TEST/PROD environments exist",
+    "DEV/TEST/PROD are Managed Environment Standard after BP-12"
+  ],
+  "prerequisites_missing": [
+    "Pipelines host app/environment selection",
+    "deployment pipeline records/stages",
+    "environment assignments",
+    "deployment permissions/identity",
+    "connection references in TEST/PROD strategy"
+  ]
+}

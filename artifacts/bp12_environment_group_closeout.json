@@ -1,0 +1,11 @@
+{
+  "status": "HUMAN ADMIN ACTION REQUIRED",
+  "target_group": "JM1 Enterprise",
+  "evidence": [
+    "pac admin list-groups returned no groups.",
+    "BAP environmentGroupId is null for all observed environments.",
+    "PAC exposes add-group but no group creation command in this version; BAP environmentGroups endpoint returned 404."
+  ],
+  "action_taken": "NONE",
+  "required_action": "Create JM1 Enterprise environment group in Power Platform Admin Center and add JM1-Enterprise-Dev, JM1-Test, JM1-Core."
+}

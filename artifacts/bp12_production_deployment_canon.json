@@ -1,0 +1,22 @@
+{
+  "status": "DEFINED",
+  "normal_deployment": [
+    "source-controlled change",
+    "DEV implementation",
+    "validation",
+    "governed solution/package",
+    "TEST deployment",
+    "validation",
+    "PROD deployment",
+    "production smoke validation",
+    "deployment evidence"
+  ],
+  "emergency_deployment": [
+    "Founder & CEO authorization",
+    "minimal bounded change",
+    "evidence captured",
+    "production validation",
+    "source/DEV reconciliation afterward"
+  ],
+  "website_exception": "jmerrill.one GitHub/Azure deployment path remains separate where appropriate; governed release is the principle, not one deployment technology for every workload."
+}

@@ -1,0 +1,53 @@
+{
+  "status": "PARTIALLY CLOSED - HUMAN VALIDATION REQUIRED",
+  "changes_applied": [
+    {
+      "setting": "disableTrialEnvironmentCreationByNonAdminUsers",
+      "desired": true,
+      "result": "CLOSED IN BP-12"
+    },
+    {
+      "setting": "powerPlatform.governance.disableDeveloperEnvironmentCreationByNonAdminUsers",
+      "desired": true,
+      "result": "CLOSED IN BP-12"
+    },
+    {
+      "setting": "disableTeamsEnvironmentCreationByNonAdminUsers",
+      "desired": true,
+      "result": "CLOSED IN BP-12"
+    },
+    {
+      "setting": "powerPlatform.powerApps.disableConnectionSharingWithEveryone",
+      "desired": true,
+      "result": "CLOSED IN BP-12"
+    }
+  ],
+  "attempted_not_closed": [
+    {
+      "setting": "disableEnvironmentCreationByNonAdminUsers",
+      "desired": true,
+      "observed_after": false,
+      "result": "REMAINS - HUMAN ADMIN ACTION"
+    }
+  ],
+  "already_compliant": [
+    {
+      "setting": "powerPlatform.powerApps.disableShareWithEveryone",
+      "observed": true
+    },
+    {
+      "setting": "powerPlatform.powerApps.enableGuestsToMake",
+      "observed": false
+    }
+  ],
+  "not_changed": [
+    {
+      "setting": "enableDefaultEnvironmentRouting",
+      "reason": "No JM1 Enterprise environment group exists yet."
+    },
+    {
+      "setting": "disablePortalsCreationByNonAdminUsers",
+      "reason": "Not changed without portal-impact review."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "status": "HUMAN ADMIN EXPORT REQUIRED",
+  "captured_policy_count": null,
+  "evidence": [
+    "PAC 1.49.4 has no DLP inventory command.",
+    "Prior macOS PowerShell DLP export path is not repeated because it failed on System.Windows.Forms.",
+    "BAP/PowerApps admin API DLP policy endpoint probes returned 404 or invalid endpoint/version responses."
+  ],
+  "not_claimed": "No DLP policy state is claimed configured without export evidence."
+}
