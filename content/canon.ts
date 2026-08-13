@@ -148,7 +148,7 @@ export const canon = {
     tagline: "What people build should last.\nFour companies. One commitment.\nIn service of legacy.",
     cols: [
       { head: "Divisions",  links: [["Publishing","https://jmerrill.pub"],["Financial","https://jmerrill.financial"],["Foundation","https://jmerrill.foundation"],["Productions","/contact?division=productions"]] },
-      { head: "J Merrill One", links: [["Why We Exist","/why-we-exist"],["Contact","/contact"],["Start Here","/contact"],["Share Your Experience","https://nam.dcv.ms/VgtHZSLCDw"]] },
+      { head: "J Merrill One", links: [["Why We Exist","/why-we-exist"],["Contact","/contact"],["Start Here","/contact"],["Share Your Experience","https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUN0tLNjlCME02UFpZM0tWS1VXOEtJVE1HTy4u"]] },
       { head: "Enterprise / Partners", links: [["How We Work","/operating-model"],["How Our Companies Connect","/ecosystem"]] },
     ],
     copy:  "© 2026 J Merrill One. All rights reserved. Headquartered in Columbus, OH.",

@@ -1,0 +1,11 @@
+{
+  "status": "CANON-CANDIDATE",
+  "recorded_at": "2026-08-13T04:15:10.581Z",
+  "doctrine": [
+    "Configured is not operational until a public user can complete the production experience.",
+    "Repository boundary is an ownership boundary, not an execution barrier.",
+    "Existing rollout approval permits approved Customer Voice survey creation, website URL binding, standard deployment, and controlled validation.",
+    "DEV validation is a gate; production operation is the destination.",
+    "Only genuine credentials, licensing, destructive-action, privacy/security, technical, or semantic blockers stop the affected stream."
+  ]
+}

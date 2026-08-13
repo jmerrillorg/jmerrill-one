@@ -1,0 +1,13 @@
+{
+  "status": "EXECUTED",
+  "recorded_at": "2026-08-13T04:15:10.581Z",
+  "source_evidence": [
+    "Microsoft Customer Voice projects are connected to a selected environment and survey responses are stored in that same environment.",
+    "Customer Voice supports creating projects in the selected environment and copying projects across environments; CV-02 used fresh production-connected JM1-Core project creation rather than custom migration tooling."
+  ],
+  "production_environment": "JM1-Core",
+  "production_environment_url": "https://jm1hq.crm.dynamics.com/",
+  "strategy": "Create/configure production Customer Voice projects directly in JM1-Core, capture Customer Voice-hosted anonymous public URLs, bind production websites, submit controlled public responses, verify Dataverse response storage.",
+  "journeys_dependency": "NONE",
+  "pipelines_dependency": "NONE"
+}

@@ -1,0 +1,120 @@
+{
+  "updated_at": "2026-08-13T04:15:10.581Z",
+  "rows": [
+    {
+      "experience": "J Merrill One",
+      "repository": "J Merrill One",
+      "target": "Enterprise Experience",
+      "project_id": "98297cf5-bc51-42d5-93b7-49e29a29bbf3",
+      "survey_id": "95dbd70d-cb96-f111-8076-000d3a14673b",
+      "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUN0tLNjlCME02UFpZM0tWS1VXOEtJVE1HTy4u",
+      "states": {
+        "survey_created": "PASS",
+        "survey_published": "PASS",
+        "public_url_captured": "PASS",
+        "website_bound": "PASS",
+        "build_validated": "PENDING",
+        "deployed": "PENDING",
+        "public_link_validated": "PASS",
+        "controlled_response_submitted": "PASS",
+        "dataverse_response_verified": "PASS",
+        "live": "PENDING DEPLOYMENT"
+      },
+      "controlled_response_ids": [
+        "099300c6-cc96-f111-8076-6045bdd69435"
+      ]
+    },
+    {
+      "experience": "J Merrill Publishing",
+      "repository": "J Merrill Publishing",
+      "target": "Author Experience",
+      "project_id": "e9d9a1ae-286e-49e8-8981-d04ea0aa5ebc",
+      "survey_id": "fe494eb2-cb96-f111-8076-000d3a14673b",
+      "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUQUNJUFFGQldJTkVVQzdSU1RSN1RCMjFRNi4u",
+      "states": {
+        "survey_created": "PASS",
+        "survey_published": "PASS",
+        "public_url_captured": "PASS",
+        "website_bound": "PASS",
+        "build_validated": "PENDING",
+        "deployed": "PENDING",
+        "public_link_validated": "PASS",
+        "controlled_response_submitted": "PASS",
+        "dataverse_response_verified": "PASS",
+        "live": "PENDING DEPLOYMENT"
+      },
+      "controlled_response_ids": [
+        "573a7bd6-cc96-f111-8075-000d3a117063"
+      ]
+    },
+    {
+      "experience": "J Merrill Financial",
+      "repository": "J Merrill Financial",
+      "target": "Client Experience",
+      "project_id": "245ba814-52c5-4624-bf58-d3878f49c729",
+      "survey_id": "423742e9-cb96-f111-8076-6045bdd69678",
+      "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUQUoyQzhIWDk0QTNFVEE3Qks1WDMzODFWVi4u",
+      "states": {
+        "survey_created": "PASS",
+        "survey_published": "PASS",
+        "public_url_captured": "PASS",
+        "website_bound": "PASS",
+        "build_validated": "PENDING",
+        "deployed": "PENDING",
+        "public_link_validated": "PASS",
+        "controlled_response_submitted": "PASS",
+        "dataverse_response_verified": "PASS",
+        "live": "PENDING DEPLOYMENT"
+      },
+      "controlled_response_ids": [
+        "15f8a5e2-cc96-f111-8075-000d3a117063"
+      ]
+    },
+    {
+      "experience": "J Merrill Foundation",
+      "repository": "J Merrill Foundation",
+      "target": "Initial approved Foundation feedback experience",
+      "project_id": "87409139-b99d-4d2a-a40c-de4ca108faaf",
+      "survey_id": "0ae75320-cc96-f111-8076-7c1e525b15c2",
+      "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUMUJOS0NSTVk2WjdVT0ZIRkhCMzdJUE9HRi4u",
+      "states": {
+        "survey_created": "PASS",
+        "survey_published": "PASS",
+        "public_url_captured": "PASS",
+        "website_bound": "PASS",
+        "build_validated": "PENDING",
+        "deployed": "PENDING",
+        "public_link_validated": "PASS",
+        "controlled_response_submitted": "PASS",
+        "dataverse_response_verified": "PASS",
+        "live": "PENDING DEPLOYMENT"
+      },
+      "controlled_response_ids": [
+        "e26fbced-cc96-f111-8076-000d3a14673b"
+      ]
+    },
+    {
+      "experience": "J Merrill Productions",
+      "repository": "J Merrill Productions",
+      "target": "Project Experience",
+      "project_id": "afcb61da-a257-422d-8cf9-330447ef8de1",
+      "survey_id": "d737b050-cc96-f111-8075-000d3a117063",
+      "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUM0NISFJISEpZMTYwRlZZN1ZEWEpNNkNVRi4u",
+      "states": {
+        "survey_created": "PASS",
+        "survey_published": "PASS",
+        "public_url_captured": "PASS",
+        "website_bound": "PASS",
+        "build_validated": "PENDING",
+        "deployed": "PENDING",
+        "public_link_validated": "PASS",
+        "controlled_response_submitted": "PASS",
+        "dataverse_response_verified": "PASS",
+        "live": "PENDING DEPLOYMENT"
+      },
+      "controlled_response_ids": [
+        "4bdf15f4-cc96-f111-8076-00224820105b"
+      ]
+    }
+  ]
+}

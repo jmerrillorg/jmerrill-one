@@ -1,0 +1,27 @@
+{
+  "status": "ACTIVE ENTERPRISE CAPABILITY - PENDING WEBSITE DEPLOYMENT VALIDATION",
+  "updated_at": "2026-08-13T04:15:10.581Z",
+  "portfolio": {
+    "J Merrill One": {
+      "Enterprise Experience": "PENDING DEPLOYMENT"
+    },
+    "J Merrill Publishing": {
+      "Author Experience": "PENDING DEPLOYMENT"
+    },
+    "J Merrill Financial": {
+      "Client Experience": "PENDING DEPLOYMENT"
+    },
+    "J Merrill Foundation": {
+      "Initial approved Foundation feedback experience": "PENDING DEPLOYMENT",
+      "Donor Experience": "PHASED - NON-BLOCKING",
+      "Participant Experience": "PHASED - NON-BLOCKING",
+      "Sponsor & Partner Experience": "PHASED - NON-BLOCKING"
+    },
+    "J Merrill Productions": {
+      "Project Experience": "PENDING DEPLOYMENT"
+    },
+    "Jackie Smith Jr.": {
+      "Coaching Experience": "FUTURE / NOT ACTIVATED"
+    }
+  }
+}
