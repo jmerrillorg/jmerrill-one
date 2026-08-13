@@ -1,0 +1,36 @@
+{
+  "package": "JRN-01",
+  "status": "DEFINED",
+  "matrix": [
+    {
+      "division": "J Merrill Foundation",
+      "first_pattern": "Volunteer Follow-Up / Onboarding",
+      "reuse_state": "FIRST PROOF CANDIDATE",
+      "constraints": "Foundation owns content/audience; no sensitive recipient assistance content in first proof."
+    },
+    {
+      "division": "J Merrill Publishing",
+      "first_pattern": "Publishing Inquiry / Author Nurture",
+      "reuse_state": "BACKLOG",
+      "constraints": "Requires author/prospect consent and Publishing content owner."
+    },
+    {
+      "division": "J Merrill Productions",
+      "first_pattern": "Productions Inquiry Follow-Up",
+      "reuse_state": "BACKLOG",
+      "constraints": "Requires inquiry context and Productions content owner."
+    },
+    {
+      "division": "J Merrill Financial",
+      "first_pattern": "Client/prospect communications",
+      "reuse_state": "EXCLUDED FROM INITIAL ACTIVATION",
+      "constraints": "Regulated/advisory sensitivity; requires separate compliance decision."
+    },
+    {
+      "division": "J Merrill One",
+      "first_pattern": "Enterprise general nurture",
+      "reuse_state": "BACKLOG",
+      "constraints": "Must not become blanket enterprise marketing without purpose/topic governance."
+    }
+  ]
+}

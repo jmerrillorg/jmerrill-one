@@ -1,0 +1,28 @@
+{
+  "package": "JRN-01",
+  "status": "HUMAN APPROVAL REQUIRED",
+  "model": {
+    "primary_enterprise_domain": "jmerrill.one",
+    "proof_sender": "Existing Jackie-controlled sender on jmerrill.one",
+    "excluded_without_approval": [
+      "new unverified mailboxes",
+      "external purchased sending domains",
+      "financial advisory or sensitive assistance senders",
+      "division sender domains not explicitly approved for the journey"
+    ],
+    "future_division_domains": [
+      "jmerrill.foundation",
+      "jmerrill.pub",
+      "jmerrill.productions"
+    ],
+    "future_domain_rule": "Division sender domains may be used only after the domain, mailbox, compliance profile, and business owner are explicitly approved."
+  },
+  "required_before_send": [
+    "Domain authentication complete",
+    "Sender address validated",
+    "Compliance profile selected",
+    "Preference center or opt-out path available",
+    "Suppression behavior tested"
+  ],
+  "classification": "SENDER/DOMAIN SETUP REQUIRED"
+}

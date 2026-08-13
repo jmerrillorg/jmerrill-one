@@ -1,0 +1,12 @@
+{
+  "package": "JRN-01",
+  "target_environment": "JM1-Test",
+  "status": "BLOCKED - JOURNEYS FOOTPRINT ABSENT",
+  "evidence": [
+    "Dataverse access is available.",
+    "Journey, consent, compliance, and segment metadata required for Customer Insights - Journeys was not available.",
+    "DynamicsMKT/Journeys solution footprint was not found in TEST."
+  ],
+  "required_remediation": "Install/provision Customer Insights - Journeys / SMB Marketing in JM1-Test or approve an alternate governed validation route.",
+  "classification": "HUMAN ADMIN ACTION REQUIRED"
+}

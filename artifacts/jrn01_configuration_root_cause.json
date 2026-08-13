@@ -1,0 +1,27 @@
+{
+  "package": "JRN-01",
+  "root_cause": "Customer Insights Journeys is partially installed at the solution/backend layer in JM1-Enterprise-Dev and JM1-Core, but not fully operationalized for authoring, sender/domain, consent topic, journey execution, or TEST validation.",
+  "observations": [
+    "JM1-Enterprise-Dev and JM1-Core contain DynamicsMKT and msdyn_segment solutions.",
+    "JM1-Test does not contain the DynamicsMKT/Journeys footprint needed for TEST validation.",
+    "No Journeys records were found in the probed journey entity set.",
+    "No email channel/sender instances were found in the probed channel instance entity sets.",
+    "No topics or contact-point consent records were found.",
+    "Compliance settings and preference center records exist, but no JM1-specific lifecycle communication proof exists.",
+    "PAC application install exists, but application installation/provisioning is an admin tenant action and may surface licensing/capacity prompts."
+  ],
+  "safe_actions_completed_by_codex": [
+    "Verified tenant/environment inventory.",
+    "Verified solution footprint by environment.",
+    "Verified Dataverse metadata/table availability.",
+    "Defined reusable journey contract and operating standard.",
+    "Prepared admin action packet and division handoff."
+  ],
+  "unsafe_or_blocked_actions": [
+    "Creating internal Customer Insights Journeys sender/channel/journey records directly through Dataverse without supported canonical payloads.",
+    "Authenticating a sender domain or mailbox without Jackie/DNS/mailbox authority.",
+    "Installing Journeys into TEST if Microsoft presents a purchase/capacity prompt.",
+    "Sending a production communication before sender/domain, compliance, and suppression behavior are configured and proven."
+  ],
+  "classification": "HUMAN SETUP REQUIRED"
+}

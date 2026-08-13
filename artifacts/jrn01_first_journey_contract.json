@@ -1,0 +1,39 @@
+{
+  "package": "JRN-01",
+  "contract_name": "Foundation Volunteer Follow-Up / Onboarding Journey Contract v1",
+  "status": "READY FOR BUILD AFTER HUMAN SETUP",
+  "journey_type": "Lifecycle onboarding/follow-up",
+  "entry_trigger": "Controlled eligible volunteer contact added to an approved volunteer onboarding segment or trigger after consent/compliance validation.",
+  "audience": {
+    "proof": "Single controlled test contact approved by Jackie",
+    "future": "Foundation-owned prospective or active volunteer contacts only after Foundation repository handoff"
+  },
+  "exclusions": [
+    "suppressed contacts",
+    "unsubscribed contacts where opt-out applies",
+    "contacts without operational relationship context",
+    "sensitive assistance recipients",
+    "financial prospects"
+  ],
+  "minimum_message_sequence": [
+    {
+      "step": "initial_follow_up",
+      "channel": "email",
+      "purpose": "volunteer onboarding/follow-up",
+      "content_owner": "J Merrill Foundation",
+      "enterprise_controls_owner": "J Merrill One"
+    }
+  ],
+  "failure_behavior": [
+    "Do not retry indefinitely.",
+    "Suppress sends when compliance/preference/sender validation fails.",
+    "Record failure evidence before production activation."
+  ],
+  "reporting": [
+    "send status",
+    "delivery/suppression result",
+    "journey entry count",
+    "journey exit count",
+    "failure reason where available"
+  ]
+}

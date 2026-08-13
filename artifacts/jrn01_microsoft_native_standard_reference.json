@@ -1,0 +1,12 @@
+{
+  "package": "JRN-01",
+  "standard": "JM1_Microsoft_Native_Capability_Activation_Standard_v1",
+  "status_confirmed": "CANON - v1.0",
+  "reference_result": "Confirmed without rewriting the canonical standard.",
+  "jrn01_alignment": [
+    "Microsoft-native Journeys capability was evaluated before any custom nurture implementation.",
+    "No Power Automate custom journey engine was created.",
+    "No duplicate consent, response, or Contact model was created.",
+    "Production activation was held because production criteria are not satisfied."
+  ]
+}

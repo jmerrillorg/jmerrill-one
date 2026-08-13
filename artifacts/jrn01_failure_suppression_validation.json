@@ -1,0 +1,17 @@
+{
+  "package": "JRN-01",
+  "status": "NOT EXECUTED - HUMAN SETUP REQUIRED",
+  "required_validations": [
+    "suppressed contact does not enter or send",
+    "unsubscribed contact does not receive applicable email",
+    "missing sender blocks send",
+    "missing compliance profile blocks send",
+    "journey failure is visible in reporting"
+  ],
+  "current_evidence": {
+    "sender_channel_instances": "ABSENT",
+    "contact_point_consent_records": "ABSENT",
+    "topics": "ABSENT"
+  },
+  "classification": "SUPPRESSION PROOF REQUIRED BEFORE LIVE"
+}

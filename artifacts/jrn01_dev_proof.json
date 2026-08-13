@@ -1,0 +1,13 @@
+{
+  "package": "JRN-01",
+  "target_environment": "JM1-Enterprise-Dev",
+  "status": "NOT EXECUTED - HUMAN SETUP REQUIRED",
+  "required_before_proof": [
+    "Journeys authoring surface accessible",
+    "Sender/domain configured",
+    "Compliance profile and preference center usable",
+    "Purpose/topic available",
+    "Controlled test contact approved"
+  ],
+  "proof_result": "BLOCKED"
+}

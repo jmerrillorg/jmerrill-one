@@ -1,0 +1,19 @@
+{
+  "package": "JRN-01",
+  "target_environment": "JM1-Core",
+  "status": "NOT READY FOR LIVE SEND",
+  "readiness_checks": {
+    "dataverse_access": "PASS",
+    "journeys_solution_footprint": "PASS",
+    "journeys_authoring_surface": "NOT PROVEN",
+    "sender_domain": "FAIL - NOT CONFIGURED/PROVEN",
+    "email_channel_instance": "FAIL - ABSENT",
+    "compliance_profile": "PARTIAL - SETTINGS PRESENT, PROOF REQUIRED",
+    "preference_center": "PARTIAL - PRESENT, PROOF REQUIRED",
+    "purpose_topic": "FAIL - TOPIC ABSENT",
+    "suppression_validation": "NOT EXECUTED",
+    "controlled_dev_send": "NOT EXECUTED",
+    "test_validation": "BLOCKED"
+  },
+  "classification": "PRODUCTION HOLD"
+}

@@ -1,0 +1,22 @@
+{
+  "package": "JRN-01",
+  "name": "Customer Insights Journeys Production Activation",
+  "target_repository": "J Merrill One",
+  "repository_scope": "Enterprise Customer Insights Journeys activation, lifecycle-communication governance, consent/compliance architecture, tenant configuration evidence, reusable journey patterns, and cross-division deployment standards.",
+  "completion_requirement": "Customer Insights Journeys must be configured, proven, and production-ready with at least one bounded real JM1 lifecycle communication live before JRN-01 can be called complete.",
+  "assessment_only_forbidden": true,
+  "implementation_gate": {
+    "status": "HUMAN_SETUP_REQUIRED",
+    "reason": "Tenant evidence shows backend Journeys solution footprint in DEV and PROD but no usable production sender/domain/channel, no journey records, no topic/consent execution proof, no TEST footprint, and no safe supported API path for Cody to create internal Journeys configuration records."
+  },
+  "allowed_stop_conditions": [
+    "Paid license or capacity purchase prompt",
+    "Unavailable tenant authority",
+    "Sender/domain action requiring Jackie or DNS/mailbox ownership",
+    "Compliance/privacy defect",
+    "Destructive production change",
+    "Semantic decision outside current canon"
+  ],
+  "stop_condition_invoked": "Sender/domain and Journeys app setup requiring Jackie/admin action",
+  "final_classification": "JRN-01 HUMAN SETUP REQUIRED - JACKIE ACTION PACKET READY"
+}

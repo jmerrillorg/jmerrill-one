@@ -1,0 +1,94 @@
+{
+  "package": "JRN-01",
+  "evidence_timestamp": "2026-08-13",
+  "inspection_methods": [
+    "pac admin list --json",
+    "pac solution list --includeSystemSolutions",
+    "Dataverse Web API metadata and table probes using current Azure CLI tenant identity",
+    "Power Platform Admin Center non-mutating environment visibility check"
+  ],
+  "tenant": {
+    "tenant_id": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+    "admin_identity": "jm1-admin@jmerrill.one"
+  },
+  "environments": {
+    "JM1-Enterprise-Dev": {
+      "environment_type": "Sandbox",
+      "url": "https://jm1enterprisedev.crm.dynamics.com/",
+      "dataverse_access": "READY",
+      "customer_insights_journeys_solution_footprint": "PRESENT",
+      "journeys_metadata_match_count": 95,
+      "key_solution_evidence": [
+        "DynamicsMKT_BaseSolution present",
+        "DynamicsMKT_Consent present",
+        "DynamicsMKT_EmailEditor present",
+        "DynamicsMKT_FeatureConfiguration present",
+        "DynamicsMKT_SharedMarketingControls present",
+        "msdyn_segment present"
+      ],
+      "model_driven_app_surface": "NOT PROVEN",
+      "configuration_record": "PRESENT",
+      "compliance_settings": "PRESENT",
+      "preference_center": "PRESENT",
+      "consent_center_configuration": "ABSENT",
+      "purposes": "PRESENT",
+      "topics": "ABSENT",
+      "segments": "PRESENT",
+      "journey_records": "ABSENT",
+      "email_channel_instances": "ABSENT",
+      "contact_point_consent_records": "ABSENT",
+      "current_user_roles": [
+        "Basic User",
+        "Sales Enterprise app access",
+        "System Administrator"
+      ],
+      "classification": "CONFIGURATION REQUIRED"
+    },
+    "JM1-Test": {
+      "environment_type": "Sandbox",
+      "url": "https://jm1test.crm.dynamics.com/",
+      "dataverse_access": "READY",
+      "customer_insights_journeys_solution_footprint": "ABSENT",
+      "journeys_metadata_match_count": 8,
+      "journey_records": "NOT AVAILABLE",
+      "compliance_settings": "NOT AVAILABLE",
+      "email_channel_instances": "NOT AVAILABLE",
+      "classification": "HUMAN ADMIN ACTION REQUIRED"
+    },
+    "JM1-Core": {
+      "environment_type": "Production",
+      "url": "https://jm1hq.crm.dynamics.com/",
+      "dataverse_access": "READY",
+      "customer_insights_journeys_solution_footprint": "PRESENT",
+      "journeys_metadata_match_count": 100,
+      "key_solution_evidence": [
+        "DynamicsMKT_BaseSolution present",
+        "DynamicsMKT_Consent present",
+        "DynamicsMKT_EmailEditor present",
+        "DynamicsMKT_SendOptimization present",
+        "DynamicsMKT_FeatureConfiguration present",
+        "DynamicsMKT_SharedMarketingControls present",
+        "msdyn_segment present"
+      ],
+      "model_driven_app_surface": "NOT PROVEN",
+      "configuration_record": "PRESENT",
+      "compliance_settings": "PRESENT",
+      "preference_center": "PRESENT",
+      "consent_center_configuration": "ABSENT",
+      "purposes": "PRESENT",
+      "topics": "ABSENT",
+      "segments": "PRESENT",
+      "journey_records": "ABSENT",
+      "email_channel_instances": "ABSENT",
+      "contact_point_consent_records": "ABSENT",
+      "current_user_roles": [
+        "Environment Maker",
+        "Sales Enterprise app access",
+        "System Administrator",
+        "Viva Sales"
+      ],
+      "classification": "PRODUCTION SENDER AND JOURNEY SETUP REQUIRED"
+    }
+  },
+  "overall_tenant_state": "PARTIALLY PROVISIONED; NOT JOURNEYS-LIVE"
+}

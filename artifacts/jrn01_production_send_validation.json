@@ -1,0 +1,11 @@
+{
+  "package": "JRN-01",
+  "status": "NOT EXECUTED",
+  "controlled_send_result": "BLOCKED",
+  "blocked_by": [
+    "No production sender/domain proof.",
+    "No email channel instance.",
+    "No production journey.",
+    "No completed DEV suppression proof."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "package": "JRN-01",
+  "target_environment": "JM1-Enterprise-Dev",
+  "status": "NOT BUILT - HUMAN SETUP REQUIRED",
+  "blocked_by": [
+    "No email sender/channel instance found.",
+    "No topic found for volunteer onboarding.",
+    "Journeys authoring app surface not proven.",
+    "No safe supported payload available for Cody to create internal Journeys records directly."
+  ],
+  "ready_build_plan_after_setup": [
+    "Create or select approved volunteer onboarding topic/purpose.",
+    "Create controlled proof segment or trigger for one approved test contact.",
+    "Create one-email volunteer follow-up journey.",
+    "Run controlled DEV proof and capture send/suppression evidence.",
+    "Do not promote until suppression and compliance behavior are validated."
+  ]
+}

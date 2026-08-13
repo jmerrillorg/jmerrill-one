@@ -1,0 +1,14 @@
+{
+  "package": "JRN-01",
+  "status": "REPORTING REQUIREMENTS DEFINED; LIVE DATA NOT AVAILABLE",
+  "required_visibility": [
+    "journey status",
+    "audience/entry count",
+    "send count",
+    "delivery result",
+    "suppression/opt-out result",
+    "failure reason",
+    "production activation timestamp"
+  ],
+  "current_result": "No live journey or send telemetry exists for JRN-01."
+}

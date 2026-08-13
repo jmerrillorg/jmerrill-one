@@ -1,0 +1,17 @@
+{
+  "package": "JRN-01",
+  "status": "BOUNDARY DEFINED",
+  "customer_voice_owns": [
+    "survey creation",
+    "feedback response collection",
+    "response analytics",
+    "Dataverse-linked feedback response records"
+  ],
+  "journeys_owns": [
+    "lifecycle communication orchestration",
+    "nurture and onboarding sequences",
+    "event or stewardship communication flows"
+  ],
+  "integration_rule": "Customer Voice feedback may trigger or inform a Journey only through governed Dataverse context and applicable consent/purpose rules.",
+  "regression_result": "No CV-01/CV-02 implementation or standard was changed by JRN-01."
+}

@@ -1,0 +1,12 @@
+{
+  "package": "JRN-01",
+  "status": "PASS",
+  "validated_no_duplicates": [
+    "No duplicate Contact identity created.",
+    "No second consent model created.",
+    "No duplicate response storage created.",
+    "No custom survey platform created.",
+    "No custom nurture engine created in Power Automate.",
+    "No new agents created."
+  ]
+}

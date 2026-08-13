@@ -1,0 +1,30 @@
+{
+  "package": "JRN-01",
+  "selected_use_case": "Foundation Volunteer Follow-Up / Onboarding",
+  "selection_status": "SELECTED FOR FIRST JOURNEYS PROOF",
+  "rationale": [
+    "Lifecycle/onboarding communication fits Customer Insights - Journeys ownership.",
+    "Lower sensitivity than Financial use cases.",
+    "Can be constrained to a controlled proof contact before Foundation rollout.",
+    "Creates a reusable enterprise pattern for division lifecycle journeys."
+  ],
+  "excluded_candidates": [
+    {
+      "candidate": "Publishing Inquiry / Author Nurture",
+      "reason": "Valid later candidate, but first proof should use the lower-sensitivity Foundation lifecycle pattern."
+    },
+    {
+      "candidate": "Productions Inquiry Follow-Up",
+      "reason": "Valid later candidate after sender/domain and first proof are live."
+    },
+    {
+      "candidate": "J Merrill One general nurture",
+      "reason": "Too broad for first bounded proof."
+    },
+    {
+      "candidate": "Financial",
+      "reason": "Excluded for first proof due to advisory/regulatory sensitivity."
+    }
+  ],
+  "repository_boundary": "One owns the enterprise journey contract and standard. Foundation owns division-specific audience, content, and operating rollout."
+}

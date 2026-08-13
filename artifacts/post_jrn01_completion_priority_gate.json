@@ -1,0 +1,28 @@
+{
+  "package": "POST-JRN-01",
+  "status": "HOLD UNTIL JRN-01 HUMAN SETUP IS COMPLETE",
+  "reason": "JRN-01 did not reach live Journeys activation; next completion wave must not be authorized as if Journeys is live.",
+  "candidate_ranking_after_jrn01_completion": [
+    {
+      "rank": 1,
+      "candidate": "Customer Insights Journeys live production proof rerun",
+      "recommendation": "Authorize immediately after Jackie completes the human admin action packet."
+    },
+    {
+      "rank": 2,
+      "candidate": "Sales Sequences",
+      "recommendation": "Consider only after Journeys live proof and consent boundary are validated."
+    },
+    {
+      "rank": 3,
+      "candidate": "Executive Intelligence / Reporting visibility",
+      "recommendation": "Defer until communication telemetry exists."
+    },
+    {
+      "rank": 4,
+      "candidate": "Unified Routing / Digital Messaging / Voice",
+      "recommendation": "Excluded from current authorization."
+    }
+  ],
+  "exact_recommendation": "Do not authorize the next completion wave until the JRN-01 admin setup packet is completed or explicitly excluded by Jackie."
+}

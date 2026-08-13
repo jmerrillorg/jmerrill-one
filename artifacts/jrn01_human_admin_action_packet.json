@@ -1,0 +1,43 @@
+{
+  "package": "JRN-01",
+  "status": "READY FOR JACKIE ACTION",
+  "required_actor": "Jackie Smith Jr. or delegated Microsoft tenant admin with sender/domain authority",
+  "actions": [
+    {
+      "id": "JRN01-ADMIN-001",
+      "action": "Open Power Platform Admin Center and confirm/install Customer Insights - Journeys / SMB Marketing application where required.",
+      "target_environment": "JM1-Test",
+      "guardrail": "Stop if Microsoft presents a paid license, capacity purchase, or irreversible change prompt."
+    },
+    {
+      "id": "JRN01-ADMIN-002",
+      "action": "Open Customer Insights - Journeys in JM1-Enterprise-Dev and JM1-Core and complete setup if prompted.",
+      "target_environment": "JM1-Enterprise-Dev and JM1-Core",
+      "guardrail": "Do not create broad marketing campaigns or import external audiences."
+    },
+    {
+      "id": "JRN01-ADMIN-003",
+      "action": "Configure an approved controlled sender/domain for lifecycle proof.",
+      "recommended_domain": "jmerrill.one",
+      "recommended_sender": "An existing Jackie-controlled mailbox or approved no-reply sender on jmerrill.one",
+      "guardrail": "Do not invent a mailbox. Use only a mailbox/domain Jackie controls and approves."
+    },
+    {
+      "id": "JRN01-ADMIN-004",
+      "action": "Confirm or create a compliance profile, preference center, operational purpose, and volunteer onboarding topic suitable for a controlled lifecycle communication proof.",
+      "guardrail": "Do not treat Contact existence or website intake as blanket marketing consent."
+    },
+    {
+      "id": "JRN01-ADMIN-005",
+      "action": "After setup, authorize Cody to rerun JRN-01 validation and build the bounded first journey."
+    }
+  ],
+  "post_action_validation_required": [
+    "Journeys app authoring surface accessible",
+    "Sender/domain authenticated",
+    "Compliance profile and preference center usable",
+    "Purpose/topic selectable",
+    "Suppression/unsubscribe behavior available",
+    "DEV controlled send proven before production activation"
+  ]
+}

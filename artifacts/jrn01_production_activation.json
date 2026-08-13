@@ -1,0 +1,8 @@
+{
+  "package": "JRN-01",
+  "target_environment": "JM1-Core",
+  "status": "NOT ACTIVATED",
+  "production_journey_id": null,
+  "reason": "A production Customer Insights - Journeys send cannot be activated until sender/domain, compliance, purpose/topic, DEV proof, suppression proof, and production readiness checks pass.",
+  "classification": "HUMAN SETUP REQUIRED"
+}

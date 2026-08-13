@@ -1,0 +1,22 @@
+{
+  "package": "JRN-01",
+  "status": "BOUNDARY DEFINED",
+  "journeys_owns": [
+    "lifecycle communications",
+    "nurture/onboarding sequences",
+    "campaign and stewardship messaging",
+    "send/suppression/preference-aware communication orchestration",
+    "journey reporting for communication execution"
+  ],
+  "power_automate_owns": [
+    "deterministic record-triggered internal workflow",
+    "internal notification",
+    "data synchronization",
+    "bounded operational task creation",
+    "system integration"
+  ],
+  "forbidden_substitution": [
+    "Do not use Power Automate as a custom nurture engine when Customer Insights - Journeys fits.",
+    "Do not build duplicate response, consent, or campaign storage outside the Microsoft-native capability."
+  ]
+}

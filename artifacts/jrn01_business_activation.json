@@ -1,0 +1,8 @@
+{
+  "package": "JRN-01",
+  "status": "NOT LIVE",
+  "business_use_case": "Foundation Volunteer Follow-Up / Onboarding",
+  "activation_result": "BLOCKED_PENDING_HUMAN_SETUP",
+  "business_owner_boundary": "Foundation owns content and audience rollout after One proves the enterprise Journeys pattern.",
+  "next_business_action": "Jackie completes Microsoft admin setup, then Cody reruns controlled DEV proof and production activation."
+}

@@ -1,0 +1,30 @@
+{
+  "package": "JRN-01",
+  "status": "MODEL DEFINED; IMPLEMENTATION BLOCKED PENDING JOURNEYS SETUP",
+  "principles": [
+    "Contact identity is not marketing consent.",
+    "Website intake is not blanket journey consent.",
+    "Operational lifecycle communications must be tied to the relationship purpose and current context.",
+    "Commercial nurture requires appropriate opt-in, preference, or lawful basis evidence.",
+    "Suppression and opt-out must be honored across journey entry and send execution."
+  ],
+  "first_use_case_consent_model": {
+    "use_case": "Foundation Volunteer Follow-Up / Onboarding",
+    "purpose_type": "Operational lifecycle communication",
+    "topic": "Volunteer onboarding/follow-up",
+    "entry_basis": "Controlled approved test contact first; future Foundation audience only after Foundation handoff and consent validation.",
+    "required_controls": [
+      "suppression exclusion",
+      "preference or unsubscribe path",
+      "no sensitive recipient assistance content",
+      "no financial advisory content"
+    ]
+  },
+  "dataverse_evidence": {
+    "purposes_present_in_dev_and_prod": true,
+    "topics_present": false,
+    "contact_point_consent_records_present": false,
+    "preference_center_present_in_dev_and_prod": true
+  },
+  "classification": "COMPLIANCE SETUP REQUIRED BEFORE LIVE SEND"
+}

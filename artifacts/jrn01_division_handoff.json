@@ -1,0 +1,22 @@
+{
+  "package": "JRN-01",
+  "status": "PREPARED; NOT RELEASED FOR DIVISION IMPLEMENTATION",
+  "foundation_handoff": {
+    "required": true,
+    "repository": "J Merrill Foundation",
+    "trigger": "After JRN-01 enterprise Journeys setup and controlled proof pass.",
+    "handoff_scope": [
+      "Foundation-specific volunteer audience definition",
+      "Foundation-owned message content",
+      "Foundation volunteer operating process",
+      "Foundation rollout monitoring"
+    ]
+  },
+  "one_retained_scope": [
+    "enterprise journey standard",
+    "sender/domain governance pattern",
+    "consent/compliance model",
+    "cross-division reuse matrix",
+    "production readiness gate"
+  ]
+}
