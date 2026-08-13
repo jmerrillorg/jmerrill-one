@@ -1,0 +1,38 @@
+{
+  "final_classification": "HUMAN ADMIN ACTION REQUIRED",
+  "target_nonproduction_environment": {
+    "name": "JM1-Enterprise-Dev",
+    "url": "https://jm1enterprisedev.crm.dynamics.com/",
+    "environment_id": "6535a04d-307a-e6f1-bb79-5eaeb5121c1b"
+  },
+  "evidence": {
+    "pac_auth_user": "jm1-admin@jmerrill.one",
+    "pac_env_select_dev": "PASS",
+    "dev_solution_list": "Customer Voice managed solution not present; observed only Default, Common Data Services Default Solution, and JM1PublishingSales.",
+    "test_solution_list": "Customer Voice managed solution not present; observed Default/Common Data Services plus managed JM1 Enterprise Foundation and JM1 Publishing.",
+    "prod_solution_list": "No Customer Voice solution exposed by PAC solution list; production mutation avoided.",
+    "application_catalog": "Dynamics 365 Customer Voice / MicrosoftFormsPro is visible in application catalog for DEV/TEST.",
+    "pac_fetch_limitation": "PAC env fetch returned System.Xml.XmlException before useful table proof; not used as proof of configuration."
+  },
+  "verified_items": {
+    "customer_voice_entitlement": "AVAILABLE IN APPLICATION CATALOG",
+    "environment_availability": "JM1-Enterprise-Dev, JM1-Test, and JM1-Core visible to jm1-admin.",
+    "customer_voice_provisioning": "NOT PROVISIONED IN DEV/TEST by solution inventory",
+    "dynamics_dataverse_environment_connection": "DEV/TEST/PROD Dataverse environments reachable by PAC",
+    "required_applications": "Customer Voice app must be installed/provisioned in JM1-Enterprise-Dev",
+    "required_roles": "Project Owner required for project creation; Survey Sender required for sending from Dynamics where used.",
+    "project_creation_permission": "BLOCKED until app and role are confirmed",
+    "survey_creation_permission": "BLOCKED until app and role are confirmed",
+    "response_entities_tables": "BLOCKED in nonproduction until app provisioning",
+    "invitation_capability": "BLOCKED until project/survey exist",
+    "power_automate_integration": "FUTURE - use Customer Voice and Dataverse connectors where automated invitations are needed",
+    "external_public_response_capability": "BLOCKED until survey link can be generated",
+    "website_embedding_link_capability": "BLOCKED until survey link can be generated"
+  },
+  "exact_blocking_action": "Install/provision Dynamics 365 Customer Voice in JM1-Enterprise-Dev and assign jm1-admin@jmerrill.one the Customer Voice Project Owner role before project/survey proof.",
+  "official_microsoft_basis": [
+    "Microsoft Learn: Connect Dynamics 365 Customer Voice with your environment - install Dynamics 365 Customer Voice app in the environment and assign Project Owner.",
+    "Microsoft Learn: Create a project - create project from Dynamics 365 Customer Voice All projects tab.",
+    "Microsoft Learn: Send a survey from Dynamics 365 - Survey Sender role is required where Dynamics sending is used."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "brand": "Jackie Smith Jr.",
+  "target_future_repository": "Jackie Smith Jr. personal-brand repository",
+  "target_survey": "Coaching Experience",
+  "status": "DEFINED - NOT ACTIVATED",
+  "activation_rule": "Do not activate until Founder Brand coaching service is formally launched and separately authorized.",
+  "dimensions": [
+    "felt heard",
+    "clarity gained",
+    "usefulness",
+    "accountability",
+    "progress toward stated goals",
+    "overall coaching experience",
+    "likelihood to recommend",
+    "open feedback"
+  ],
+  "guardrails": [
+    "Do not collect therapy or medical information.",
+    "Founder Brand is enterprise-integrated but is not a JM1 operating division."
+  ]
+}

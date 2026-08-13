@@ -1,0 +1,23 @@
+{
+  "division": "J Merrill Publishing",
+  "target_repository": "J Merrill Publishing",
+  "target_survey": "Author Experience",
+  "readiness": "READY FOR IMPLEMENTATION AFTER CUSTOMER VOICE ADMIN SETUP",
+  "dimensions": [
+    "onboarding",
+    "communication",
+    "clarity",
+    "editorial experience",
+    "production experience",
+    "feeling heard",
+    "overall experience",
+    "likelihood to recommend",
+    "open feedback"
+  ],
+  "guardrails": [
+    "Do not ask authors to disclose unnecessary sensitive information.",
+    "Do not change Publishing stage-gate canon.",
+    "Do not implement Publishing website changes in One."
+  ],
+  "handoff": "Publishing repository implements Author Experience survey, branding/questions, Share Your Experience link/button, and validation."
+}

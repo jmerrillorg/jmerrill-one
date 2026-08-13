@@ -1,0 +1,21 @@
+{
+  "status": "DEFINED",
+  "principle": "Feedback should feel like JM1 wants to listen, not like the client is completing administrative work.",
+  "shared_core_dimensions": [
+    "Overall satisfaction",
+    "Felt heard/understood",
+    "Communication",
+    "Clarity",
+    "Professionalism",
+    "Likelihood to recommend",
+    "Open feedback"
+  ],
+  "division_customizable_dimensions": "Allowed where tied to division experience and privacy-safe.",
+  "optional_questions": [
+    "May we contact you about using part of your feedback as a testimonial?",
+    "May we follow up with you about your experience?"
+  ],
+  "open_feedback_approach": "Include one open comment question; do not prompt for sensitive details.",
+  "metric_approach": "Use Customer Voice satisfaction metrics for overall satisfaction and recommendation where appropriate.",
+  "length_limit": "Keep v1 surveys short; do not create 30-question corporate questionnaires."
+}

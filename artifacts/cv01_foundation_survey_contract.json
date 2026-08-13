@@ -1,0 +1,35 @@
+{
+  "division": "J Merrill Foundation",
+  "target_repository": "J Merrill Foundation",
+  "readiness": "READY WITH MULTI-SURVEY PHASING AFTER CUSTOMER VOICE ADMIN SETUP",
+  "patterns": {
+    "Donor Experience": [
+      "giving experience",
+      "communication",
+      "understanding impact",
+      "stewardship"
+    ],
+    "Volunteer Experience": [
+      "preparation",
+      "communication",
+      "organization",
+      "experience",
+      "future participation"
+    ],
+    "Program/Event Participant Experience": [
+      "accessibility",
+      "organization",
+      "experience",
+      "usefulness/impact",
+      "suggestions"
+    ],
+    "Sponsor/Partner Experience": [
+      "communication",
+      "coordination",
+      "partnership value",
+      "future collaboration"
+    ]
+  },
+  "first_operational_proof_rule": "Use the lowest-risk/highest-value Foundation feedback pattern supported by FND-01; do not combine donors, volunteers, recipients, and sponsors into one semantically confused questionnaire.",
+  "handoff": "Foundation repository implements the initial approved survey, preserves donor/volunteer/participant/sponsor distinctions, adds Share Your Experience link/button, and validates."
+}

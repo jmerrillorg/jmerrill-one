@@ -1,0 +1,25 @@
+{
+  "division": "J Merrill Productions",
+  "target_repository": "J Merrill Productions",
+  "target_survey": "Project Experience",
+  "canonical_website": "https://jmerrill.productions/",
+  "readiness": "READY FOR IMPLEMENTATION AFTER CUSTOMER VOICE ADMIN SETUP",
+  "dimensions": [
+    "discovery/onboarding",
+    "communication",
+    "creative collaboration",
+    "professionalism",
+    "project organization",
+    "review/revision experience",
+    "delivery",
+    "final result satisfaction",
+    "likelihood to recommend",
+    "future project interest",
+    "open feedback"
+  ],
+  "guardrails": [
+    "Keep testimonial permission separate from satisfaction feedback.",
+    "Do not expose unreleased project information across divisions."
+  ],
+  "handoff": "Productions repository implements Project Experience survey, adds Share Your Experience link/button at https://jmerrill.productions/, and validates."
+}

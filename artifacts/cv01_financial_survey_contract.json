@@ -1,0 +1,27 @@
+{
+  "division": "J Merrill Financial",
+  "target_repository": "J Merrill Financial",
+  "target_survey": "Client Experience",
+  "readiness": "READY FOR IMPLEMENTATION AFTER CUSTOMER VOICE ADMIN SETUP",
+  "focus": "Service experience, not regulated outcomes.",
+  "dimensions": [
+    "felt heard",
+    "clarity of process",
+    "communication",
+    "professionalism",
+    "organization",
+    "responsiveness",
+    "overall experience",
+    "likelihood to recommend",
+    "open comments"
+  ],
+  "prohibited_questions": [
+    "whether legal advice was correct",
+    "whether investments performed",
+    "sensitive estate-plan details",
+    "beneficiaries",
+    "medical details",
+    "unnecessary financial information"
+  ],
+  "handoff": "Financial repository implements Client Experience survey, privacy/regulated-boundary validation, Share Your Experience link/button, and validation."
+}

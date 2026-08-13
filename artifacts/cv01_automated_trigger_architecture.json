@@ -1,0 +1,24 @@
+{
+  "status": "DEFINED - FUTURE",
+  "launch_rule": "Automation is not required before public feedback links launch.",
+  "owner": "Customer Voice invitation plus Power Automate/Dataverse trigger where appropriate.",
+  "trigger_points": {
+    "Publishing": [
+      "onboarding milestone",
+      "editorial completion",
+      "publication/release"
+    ],
+    "Financial": [
+      "appropriate service/engagement milestone"
+    ],
+    "Foundation": [
+      "event/program completion",
+      "volunteer milestone",
+      "donor stewardship point"
+    ],
+    "Productions": [
+      "project delivery/closeout"
+    ]
+  },
+  "guardrail": "Do not build a custom survey-send engine."
+}

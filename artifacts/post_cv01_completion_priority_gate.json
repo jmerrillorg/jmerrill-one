@@ -1,0 +1,48 @@
+{
+  "status": "NEXT WAVE HOLD UNTIL CUSTOMER VOICE ADMIN SETUP OR SELECT NONDEPENDENT PACKAGE",
+  "ranking": [
+    {
+      "rank": 1,
+      "candidate": "Customer Voice admin setup and nonproduction proof",
+      "readiness": "HUMAN ADMIN ACTION REQUIRED",
+      "why": "Client demand is active and division rollout cannot proceed until Customer Voice is actually proven."
+    },
+    {
+      "rank": 2,
+      "candidate": "Customer Voice Division Rollout",
+      "readiness": "HOLD",
+      "why": "Highest client-facing value after proof; must execute in division repositories."
+    },
+    {
+      "rank": 3,
+      "candidate": "Customer Insights Journeys Activation",
+      "readiness": "HOLD",
+      "why": "Separate Microsoft capability; not required for Customer Voice public feedback links."
+    },
+    {
+      "rank": 4,
+      "candidate": "Sales Sequences + Unified Routing Operationalization",
+      "readiness": "HOLD",
+      "why": "Only activate where demonstrated business value exists."
+    },
+    {
+      "rank": 5,
+      "candidate": "AI / Canon Closure",
+      "readiness": "HOLD",
+      "why": "ADR-011 prompt/skill payloads, Publishing Diagnostic, and External Council remain canon-gated."
+    },
+    {
+      "rank": 6,
+      "candidate": "Enterprise Intelligence / Power BI",
+      "readiness": "HOLD",
+      "why": "Wait until operational feedback data sources are stable."
+    },
+    {
+      "rank": 7,
+      "candidate": "BP-12 Human Admin Closure",
+      "readiness": "ADMIN BACKLOG",
+      "why": "DLP, environment group, Pipelines, tenant setting, and managed solution transition remain admin work."
+    }
+  ],
+  "exact_recommendation": "Complete Customer Voice admin setup/proof first; do not begin division rollout or Journeys until CV-01 proof passes."
+}

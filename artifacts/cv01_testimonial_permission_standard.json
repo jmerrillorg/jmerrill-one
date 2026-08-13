@@ -1,0 +1,14 @@
+{
+  "status": "DEFINED",
+  "principle": "Feedback collection, permission to contact about testimonial use, and actual testimonial publication authorization are separate.",
+  "optional_question": "May we contact you about using part of your feedback as a testimonial?",
+  "allowed_answers": [
+    "Yes, you may contact me",
+    "No"
+  ],
+  "rules": [
+    "Do not automatically publish positive feedback.",
+    "Do not treat survey submission as blanket publicity consent.",
+    "If testimonial usage later occurs, retain appropriate approval evidence."
+  ]
+}

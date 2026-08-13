@@ -1,0 +1,80 @@
+{
+  "classification": "HUMAN ADMIN ACTION REQUIRED",
+  "actions": [
+    {
+      "id": "CV01-ADMIN-001",
+      "surface": "Power Platform Admin Center / Microsoft Marketplace / Dynamics 365 apps",
+      "portal": "https://admin.powerplatform.microsoft.com/",
+      "navigation": [
+        "Open Power Platform Admin Center.",
+        "Select Environments.",
+        "Open JM1-Enterprise-Dev.",
+        "Open Resources > Dynamics 365 apps or the environment applications page.",
+        "Find Dynamics 365 Customer Voice / MicrosoftFormsPro.",
+        "Install or provision the app into JM1-Enterprise-Dev."
+      ],
+      "environment": "JM1-Enterprise-Dev",
+      "current_state": "Customer Voice is visible in the application catalog, but the managed solution is not present in the JM1-Enterprise-Dev solution inventory.",
+      "desired_state": "Dynamics 365 Customer Voice installed/provisioned in JM1-Enterprise-Dev.",
+      "button_or_action": "Install / Add / Provision Dynamics 365 Customer Voice.",
+      "permissions_required": "Power Platform environment admin or tenant admin with Dynamics app installation rights.",
+      "cost_displayed": "Unknown from CLI; if Microsoft displays new paid licensing or capacity, stop and do not purchase.",
+      "what_not_to_purchase": "Do not purchase new Customer Voice licensing/capacity during CV-01 without Founder decision.",
+      "validation_after_completion": "Run PAC solution list against JM1-Enterprise-Dev and confirm Customer Voice / MicrosoftFormsPro solution footprint appears."
+    },
+    {
+      "id": "CV01-ADMIN-002",
+      "surface": "Power Platform Admin Center / Dynamics 365 security roles",
+      "portal": "https://make.powerapps.com/",
+      "navigation": [
+        "Select JM1-Enterprise-Dev.",
+        "Open Settings > Users + permissions > Users.",
+        "Open jm1-admin@jmerrill.one.",
+        "Manage security roles.",
+        "Assign Customer Voice Project Owner role and Customer Voice add-on role where present.",
+        "Assign Survey Sender only where Dynamics sending proof is required."
+      ],
+      "environment": "JM1-Enterprise-Dev",
+      "current_state": "Customer Voice roles cannot be confirmed because the app is not provisioned in DEV.",
+      "desired_state": "jm1-admin can create a Customer Voice project and survey in JM1-Enterprise-Dev.",
+      "button_or_action": "Manage roles / Save.",
+      "permissions_required": "System Administrator or Environment Admin.",
+      "cost_displayed": "No cost should be required for role assignment.",
+      "what_not_to_purchase": "Do not add paid licenses unless Microsoft blocks role assignment and Founder approves.",
+      "validation_after_completion": "Sign in to Dynamics 365 Customer Voice, select JM1-Enterprise-Dev, create a blank test project, and confirm survey creation is available."
+    },
+    {
+      "id": "CV01-ADMIN-003",
+      "surface": "Dynamics 365 Customer Voice",
+      "portal": "https://customervoice.microsoft.com/",
+      "navigation": [
+        "Sign in as jm1-admin@jmerrill.one.",
+        "Confirm the active environment is JM1-Enterprise-Dev.",
+        "Open All projects.",
+        "Create a blank project named CV-01 Enterprise Feedback Proof.",
+        "Create a short controlled survey using the CV-01 core dimensions.",
+        "Generate a public test link or supported invitation link.",
+        "Submit one synthetic response.",
+        "Validate the response appears in Customer Voice and Dataverse."
+      ],
+      "environment": "JM1-Enterprise-Dev",
+      "current_state": "No project/survey proof exists.",
+      "desired_state": "One nonproduction Customer Voice project, one survey, one synthetic response, and Dataverse response storage proof.",
+      "button_or_action": "New project > Blank > Next > Create; add questions; Send or collect response link.",
+      "permissions_required": "Customer Voice Project Owner.",
+      "cost_displayed": "If new paid capacity/licensing is displayed, stop and classify licensing hold.",
+      "what_not_to_purchase": "Do not buy response capacity, licenses, add-ons, or paid trial upgrades without Founder approval.",
+      "validation_after_completion": "Record project name, survey name, response timestamp, Dataverse table evidence, Contact linkage behavior, duplicate behavior, and privacy result."
+    }
+  ],
+  "excluded_admin_work": [
+    "BP-12 DLP export",
+    "Pipelines",
+    "Journeys",
+    "Sales Sequences",
+    "Unified Routing",
+    "Digital Messaging",
+    "Voice",
+    "Power BI"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "package_id": "CV-01",
+  "package_name": "Enterprise Customer Feedback Activation",
+  "target_repository": "J Merrill One",
+  "explicit_statements": [
+    "CUSTOMER VOICE IS JM1'S DEFAULT MICROSOFT-NATIVE FEEDBACK PLATFORM WHERE SURVEY/FEEDBACK SEMANTICS FIT.",
+    "CV-01 IS ACTIVATION, NOT SURVEY-PLATFORM DESIGN."
+  ],
+  "enterprise_capability_ownership": "J Merrill One owns Customer Voice capability governance, tenant configuration evidence, shared survey standards, Dataverse integration boundaries, privacy/security rules, reusable patterns, and cross-division handoff contracts.",
+  "division_ownership": "Each division repository owns survey wording, website implementation, division branding, service recovery operations, and any division-specific business context.",
+  "environment_strategy": "Prefer JM1-Enterprise-Dev for nonproduction proof; use JM1-Test where Microsoft architecture requires; do not begin directly in JM1-Core unless tenant-level provisioning inherently applies.",
+  "survey_project_strategy": "Use distinct Customer Voice projects/surveys per division experience rather than one generic survey; Founder Brand coaching remains future-only.",
+  "identity_relationship": "Enterprise Contact is canonical; a person may have multiple governed division relationships.",
+  "response_storage": "Customer Voice/Dataverse owns survey response storage; do not create duplicate response tables.",
+  "privacy": "Response visibility follows business context and division sensitivity.",
+  "consent": "Survey response is not marketing consent and is not testimonial publication authorization.",
+  "website_presentation": "Use a human-facing Share Your Experience link/button, normally in footer or client resources.",
+  "automation": "Future invitations may use Customer Voice, Dataverse, and Power Automate triggers; automation is not required for public feedback links.",
+  "feedback_escalation": "Low/serious feedback routes to division review; Cases are created only where service-resolution semantics fit.",
+  "testimonial_permission": "Optional permission-to-contact about testimonial use is separate from feedback and publication authorization.",
+  "analytics": "Use native Customer Voice/Dynamics operational reporting first; Power BI is later.",
+  "exclusions": [
+    "custom survey platform",
+    "division website implementation in One",
+    "duplicate Contact or consent model",
+    "automatic testimonial publishing",
+    "Customer Insights Journeys dependency",
+    "Power BI/Fabric build",
+    "Founder Brand coaching activation"
+  ],
+  "validation_gates": [
+    "Customer Voice app provisioned in nonproduction",
+    "Project Owner/Survey Sender permissions verified",
+    "project and survey created",
+    "controlled response stored in Dataverse",
+    "Contact/division context linkage validated where supported",
+    "privacy/no-duplicate checks pass",
+    "regression passes"
+  ],
+  "production_activation_criteria": [
+    "nonproduction proof PASS",
+    "privacy and response storage validated",
+    "division contracts complete",
+    "website delivery pattern defined",
+    "no licensing/capacity purchase required without approval",
+    "rollback/disable path understood"
+  ]
+}

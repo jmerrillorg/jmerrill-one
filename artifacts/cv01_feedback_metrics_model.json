@@ -1,0 +1,15 @@
+{
+  "status": "DEFINED",
+  "shared_measures": [
+    "response count",
+    "response rate where invitations are tracked",
+    "overall satisfaction",
+    "recommendation/NPS-style measure where used",
+    "communication rating",
+    "clarity rating",
+    "recurring themes",
+    "service-recovery count"
+  ],
+  "historical_values": "NOT INVENTED",
+  "reporting": "Operational reporting may remain native Customer Voice/Dynamics. Power BI comes later."
+}

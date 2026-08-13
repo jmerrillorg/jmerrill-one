@@ -1,0 +1,54 @@
+{
+  "governing_rules": [
+    "Enterprise standards live in One. Division implementation lives with the division.",
+    "Founder Brand is enterprise-integrated but is not a JM1 operating division.",
+    "Do not duplicate authoritative artifacts across repositories.",
+    "Use enterprise reference records where cross-repository visibility is required."
+  ],
+  "routing": [
+    {
+      "scope": "Enterprise/shared JM1 governance",
+      "authoritative_repository": "J Merrill One"
+    },
+    {
+      "scope": "Microsoft shared capability activation",
+      "authoritative_repository": "J Merrill One"
+    },
+    {
+      "scope": "Publishing implementation",
+      "authoritative_repository": "J Merrill Publishing"
+    },
+    {
+      "scope": "Financial implementation",
+      "authoritative_repository": "J Merrill Financial"
+    },
+    {
+      "scope": "Foundation implementation",
+      "authoritative_repository": "J Merrill Foundation"
+    },
+    {
+      "scope": "Productions implementation",
+      "authoritative_repository": "J Merrill Productions"
+    },
+    {
+      "scope": "Founder Brand implementation",
+      "authoritative_repository": "Jackie Smith Jr. personal-brand repository"
+    },
+    {
+      "scope": "Foundation operating canon",
+      "authoritative_repository": "J Merrill Foundation"
+    },
+    {
+      "scope": "Productions operating canon",
+      "authoritative_repository": "J Merrill Productions"
+    },
+    {
+      "scope": "Shared Customer Voice standard",
+      "authoritative_repository": "J Merrill One"
+    },
+    {
+      "scope": "Division Customer Voice surveys",
+      "authoritative_repository": "respective division repository"
+    }
+  ]
+}

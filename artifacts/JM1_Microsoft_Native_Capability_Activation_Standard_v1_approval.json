@@ -1,0 +1,15 @@
+{
+  "artifact": "JM1_Microsoft_Native_Capability_Activation_Standard_v1",
+  "approval": "Founder & CEO approval",
+  "approved_by": "Jackie Smith Jr.",
+  "effective_timestamp": "2026-08-13T02:54:55Z",
+  "promoted_status": "CANON - v1.0",
+  "mna01_evidence": [
+    "MNA-01 final classification recorded Microsoft-native capability activation governance.",
+    "Customer Voice was selected as the Microsoft-native feedback platform.",
+    "Privacy/no-duplicate architecture passed at contract level.",
+    "Human admin holds were separated from independent enterprise-standard work."
+  ],
+  "scope": "Enterprise-wide Microsoft-native capability activation standards for Customer Voice, Customer Insights Journeys, Power Automate boundaries, privacy, consent, proof, and production criteria.",
+  "change_control_rule": "Future changes require Founder & CEO approval and must be recorded as a governed JM1 enterprise standard revision in J Merrill One."
+}

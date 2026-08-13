@@ -1,0 +1,32 @@
+{
+  "architecture": [
+    "Enterprise Contact",
+    "Division Relationship",
+    "Division Feedback Context",
+    "Customer Voice",
+    "Survey Response",
+    "Dataverse",
+    "Division Context / Follow-Up"
+  ],
+  "customer_voice_owns": [
+    "survey",
+    "invitation where used",
+    "response",
+    "native satisfaction metrics"
+  ],
+  "division_domain_system_owns": [
+    "why feedback was requested",
+    "client/author/donor/project/program context",
+    "consequential response",
+    "service recovery",
+    "testimonial usage"
+  ],
+  "jm1_owns": [
+    "platform governance",
+    "privacy standard",
+    "enterprise metrics vocabulary",
+    "reusable survey baseline",
+    "capability administration"
+  ],
+  "no_duplicate_rule": "Do not create duplicate Contacts, consent models, or response stores."
+}

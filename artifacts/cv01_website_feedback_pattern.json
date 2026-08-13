@@ -1,0 +1,11 @@
+{
+  "status": "DEFINED",
+  "public_label": "Share Your Experience",
+  "preferred_pattern": "direct link/button",
+  "placement": "Footer or appropriate Client Resources area; not primary navigation.",
+  "alternatives": {
+    "pop_up": "Allowed only where division UX and Customer Voice support it cleanly.",
+    "inline_embed": "Allowed only where accessibility, mobile layout, and privacy expectations are validated."
+  },
+  "default_reason": "A link/button is simple, accessible, low-risk, and avoids exposing Microsoft/Customer Voice implementation jargon."
+}

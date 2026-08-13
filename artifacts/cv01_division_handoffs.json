@@ -1,0 +1,25 @@
+{
+  "handoffs": [
+    {
+      "division": "J Merrill Publishing",
+      "target_repository": "J Merrill Publishing",
+      "scope": "Implement Author Experience survey, division branding/questions, Share Your Experience website link/button, validation, and Publishing canon preservation."
+    },
+    {
+      "division": "J Merrill Financial",
+      "target_repository": "J Merrill Financial",
+      "scope": "Implement Client Experience survey, regulated-boundary validation, Share Your Experience website link/button, and validation."
+    },
+    {
+      "division": "J Merrill Foundation",
+      "target_repository": "J Merrill Foundation",
+      "scope": "Implement initial approved feedback survey, preserve donor/volunteer/recipient/sponsor distinctions, add Share Your Experience website link/button, and validate."
+    },
+    {
+      "division": "J Merrill Productions",
+      "target_repository": "J Merrill Productions",
+      "scope": "Implement Project Experience survey, add Share Your Experience website link/button, validate, and use https://jmerrill.productions/."
+    }
+  ],
+  "routing_rule": "Do not execute cross-repository division changes from One unless repository governance explicitly supports it."
+}

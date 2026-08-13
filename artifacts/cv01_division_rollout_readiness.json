@@ -1,0 +1,45 @@
+{
+  "overall_status": "HOLD UNTIL CUSTOMER VOICE NONPRODUCTION PROOF PASSES",
+  "divisions": [
+    {
+      "division": "J Merrill Publishing",
+      "target_repository": "J Merrill Publishing",
+      "target_survey": "Author Experience",
+      "website_action": "Share Your Experience",
+      "classification": "HOLD",
+      "reason": "Customer Voice proof blocked by human admin setup."
+    },
+    {
+      "division": "J Merrill Financial",
+      "target_repository": "J Merrill Financial",
+      "target_survey": "Client Experience",
+      "website_action": "Share Your Experience",
+      "classification": "HOLD",
+      "guardrail": "No unnecessary estate, beneficiary, medical, legal, or financial details in feedback questions.",
+      "reason": "Customer Voice proof blocked by human admin setup."
+    },
+    {
+      "division": "J Merrill Foundation",
+      "target_repository": "J Merrill Foundation",
+      "target_survey": "Initial lowest-risk FND-01-supported feedback pattern",
+      "website_action": "Share Your Experience",
+      "classification": "HOLD",
+      "reason": "Customer Voice proof blocked by human admin setup; Foundation requires multi-survey phasing."
+    },
+    {
+      "division": "J Merrill Productions",
+      "target_repository": "J Merrill Productions",
+      "target_survey": "Project Experience",
+      "canonical_website": "https://jmerrill.productions/",
+      "website_action": "Share Your Experience",
+      "classification": "HOLD",
+      "reason": "Customer Voice proof blocked by human admin setup."
+    },
+    {
+      "division": "Jackie Smith Jr. Founder Brand",
+      "target_future_repository": "Jackie Smith Jr. personal-brand repository",
+      "target_survey": "Coaching Experience",
+      "classification": "FUTURE - WAIT FOR COACHING LAUNCH"
+    }
+  ]
+}

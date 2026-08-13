@@ -1,0 +1,19 @@
+{
+  "artifact": "JM1_Productions_Microsoft_Operating_Standard_v1",
+  "owner": "J Merrill Productions",
+  "status": "CANON v1.0",
+  "repository_authority": "J Merrill Productions",
+  "effective_date": "2026-08-13",
+  "one_repository_record_type": "enterprise reference only",
+  "upstream_jm1_standards": [
+    "JM1_Microsoft_Native_Capability_Activation_Standard_v1",
+    "JM1_Power_Platform_Governance_Standard_v1",
+    "JM1_Enterprise_Semantic_Reconciliation_Standard_v1"
+  ],
+  "enterprise_dependencies": [
+    "Enterprise Contact identity remains canonical.",
+    "Division-owned Productions implementation remains in the J Merrill Productions repository.",
+    "Shared Customer Voice capability activation and feedback governance live in J Merrill One."
+  ],
+  "duplication_rule": "Do not copy the authoritative Productions operating standard into One; use this reference for cross-repository visibility."
+}

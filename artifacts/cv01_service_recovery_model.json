@@ -1,0 +1,15 @@
+{
+  "status": "DEFINED",
+  "pattern": [
+    "Customer Voice response",
+    "threshold/flag for low satisfaction or serious concern",
+    "appropriate division review",
+    "Case only when service-resolution semantics fit",
+    "human follow-up"
+  ],
+  "rules": [
+    "Feedback should not disappear into analytics.",
+    "Do not automatically send defensive or consequential responses.",
+    "Do not create a Case for every low score."
+  ]
+}

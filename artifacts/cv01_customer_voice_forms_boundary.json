@@ -1,0 +1,19 @@
+{
+  "status": "DEFINED",
+  "customer_voice_use": [
+    "customer/client/author/donor/participant experience",
+    "structured satisfaction feedback",
+    "relationship-linked feedback",
+    "survey metrics"
+  ],
+  "microsoft_forms_use": [
+    "internal data collection",
+    "simple registrations where appropriate",
+    "questionnaires not requiring Customer Voice relationship/feedback semantics",
+    "operational forms where Forms is the better primitive"
+  ],
+  "rules": [
+    "Do not migrate every Microsoft Form into Customer Voice.",
+    "Do not use Microsoft Forms as the default customer-experience platform when Customer Voice is operational."
+  ]
+}

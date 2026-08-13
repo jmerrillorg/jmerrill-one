@@ -1,6 +1,8 @@
 # JM1 Microsoft Native Capability Activation Standard v1
 
-Status: CANON-CANDIDATE - PENDING FOUNDER & CEO APPROVAL
+Status: CANON - v1.0
+
+Founder & CEO approval recorded by CV-01 on 2026-08-13T02:54:55Z.
 
 ## Purpose
 

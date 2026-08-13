@@ -1,0 +1,6 @@
+{
+  "status": "DEFINED",
+  "customer_voice_owns": "Feedback collection, survey projects, responses, and feedback metrics.",
+  "journeys_may_later_own": "Automated survey invitation orchestration where lifecycle communication semantics and consent support it.",
+  "rule": "Customer Voice activation does not depend on Customer Insights Journeys."
+}

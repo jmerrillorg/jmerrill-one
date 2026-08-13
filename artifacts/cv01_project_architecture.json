@@ -1,0 +1,13 @@
+{
+  "status": "DEFINED - PROOF BLOCKED BY HUMAN ADMIN",
+  "approved_target_projects": [
+    "J Merrill Publishing - Author Experience",
+    "J Merrill Financial - Client Experience",
+    "J Merrill Foundation - Community Experience",
+    "J Merrill Productions - Project Experience"
+  ],
+  "future_project": "Jackie Smith Jr. - Coaching Experience",
+  "future_project_status": "DEFINED - NOT ACTIVATED",
+  "rationale": "Separate projects/surveys preserve division context and avoid one generic public survey. No Microsoft-native constraint was proven that requires collapsing divisions into one project.",
+  "nonproduction_proof_project": "CV-01 Enterprise Feedback Proof after Customer Voice is provisioned in JM1-Enterprise-Dev"
+}

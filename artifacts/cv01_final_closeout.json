@@ -1,0 +1,68 @@
+{
+  "package_id": "CV-01",
+  "final_classification": "CV-01 COMPLETE WITH HUMAN ADMIN HOLD",
+  "return_classification": "CV-01 COMPLETE WITH HUMAN ADMIN HOLD — COMPLETE CUSTOMER VOICE ADMIN SETUP",
+  "target_repository": "J Merrill One",
+  "customer_voice_tenant_state": {
+    "entitlement": "AVAILABLE IN APPLICATION CATALOG",
+    "provisioning": "NOT PROVISIONED IN JM1-Enterprise-Dev/TEST by solution inventory",
+    "environment": "JM1-Enterprise-Dev target; JM1-Test and JM1-Core inspected",
+    "dataverse_connection": "DEV/TEST/PROD reachable by PAC",
+    "required_roles": "Project Owner; Survey Sender where Dynamics sending is used",
+    "response_storage_state": "BLOCKED - nonproduction response storage not proven",
+    "external_public_response_capability": "BLOCKED until survey link can be generated"
+  },
+  "admin_setup": {
+    "configuration_completed": "NO - exact human admin action isolated",
+    "remaining_admin_actions": [
+      "Install/provision Dynamics 365 Customer Voice in JM1-Enterprise-Dev.",
+      "Assign Customer Voice Project Owner permissions to jm1-admin@jmerrill.one.",
+      "Create controlled proof project/survey and submit synthetic response."
+    ],
+    "licensing_capacity_decisions": "No additional spend identified; stop if Microsoft prompts for purchase/capacity.",
+    "additional_spend_required": "NOT INDICATED"
+  },
+  "project_architecture": {
+    "J Merrill Publishing": "Author Experience",
+    "J Merrill Financial": "Client Experience",
+    "J Merrill Foundation": "Community Experience",
+    "J Merrill Productions": "Project Experience",
+    "Jackie Smith Jr.": "Coaching Experience - future/not activated"
+  },
+  "enterprise_question_standard": "Shared core defined with division customization and short Human-First survey principle.",
+  "publishing_contract": "READY AFTER ADMIN SETUP - handoff to J Merrill Publishing.",
+  "financial_contract": "READY AFTER ADMIN SETUP - privacy-bounded handoff to J Merrill Financial.",
+  "foundation_contract": "READY WITH MULTI-SURVEY PHASING AFTER ADMIN SETUP - handoff to J Merrill Foundation.",
+  "productions_contract": "READY AFTER ADMIN SETUP - handoff to J Merrill Productions using https://jmerrill.productions/.",
+  "founder_brand_future_contract": "DEFINED - NOT ACTIVATED",
+  "testimonial_permission": "Feedback collection, permission to contact about testimonial use, and publication authorization remain separate.",
+  "privacy": "PASS - contract level; live role proof blocked by human admin.",
+  "nonproduction_proof": "BLOCKED - HUMAN ADMIN",
+  "website_pattern": "Share Your Experience link/button by default.",
+  "division_handoffs": "Created for Publishing, Financial, Foundation, and Productions.",
+  "automation_architecture": "Future Customer Voice invitation plus Power Automate/Dataverse triggers; not prerequisite for public links.",
+  "service_recovery": "Threshold/flag to division review; Case only where service-resolution semantics fit.",
+  "metrics": "Shared feedback metric model defined; no historical values invented.",
+  "forms_boundary": "Microsoft Forms remains valid for operational/non-feedback-semantics forms.",
+  "journeys_boundary": "Customer Voice activation does not depend on Customer Insights Journeys.",
+  "regression": "PASS",
+  "customer_feedback_standard_status": "CANON-CANDIDATE - PENDING FOUNDER & CEO APPROVAL",
+  "remaining_holds": {
+    "human_admin": [
+      "Customer Voice app provisioning in JM1-Enterprise-Dev",
+      "Customer Voice Project Owner role assignment",
+      "controlled project/survey/response proof"
+    ],
+    "licensing_capacity": "None identified; stop if Microsoft displays purchase/capacity prompt.",
+    "division_implementation": [
+      "Publishing survey/site link",
+      "Financial survey/site link",
+      "Foundation phased survey/site link",
+      "Productions survey/site link"
+    ],
+    "future_automation": "Survey invitation triggers",
+    "future_analytics": "Power BI/Fabric"
+  },
+  "next_completion_wave": "Customer Voice admin setup and nonproduction proof first; division rollout after proof.",
+  "exact_enterprise_recommendation": "Complete the Customer Voice admin setup in JM1-Enterprise-Dev, then rerun the CV-01 proof and authorize division feedback rollout only after Dataverse response storage and privacy proof pass."
+}
