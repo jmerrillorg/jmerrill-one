@@ -1,7 +1,10 @@
 {
-  "classification": "CV-02 IN PROGRESS - DEPLOYMENT VALIDATION PENDING",
-  "updated_at": "2026-08-13T04:15:10.581Z",
-  "customer_voice_status": "CONFIGURED AND PROVEN IN JM1-Core",
+  "classification": "CV-02 COMPLETE — ENTERPRISE FEEDBACK LIVE",
+  "updated_at": "2026-08-13T04:38:18Z",
+  "target_repository": "J Merrill One",
+  "customer_voice_status": "CONFIGURED, PROVEN, AND LIVE IN JM1-Core",
+  "doctrine_recorded": "Customer Voice is the enterprise-native feedback platform; websites provide human-facing entry points only.",
+  "strategy": "One reusable enterprise feedback pattern, implemented across the parent company and four active divisions with privacy-minimized surveys and Dataverse evidence.",
   "assets": [
     {
       "key": "one",
@@ -10,6 +13,11 @@
       "survey_id": "95dbd70d-cb96-f111-8076-000d3a14673b",
       "survey_name": "J Merrill One — Share Your Experience",
       "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUN0tLNjlCME02UFpZM0tWS1VXOEtJVE1HTy4u",
+      "production_website_url": "https://www.jmerrill.one/",
+      "share_location": "site footer",
+      "deployment_commit": "34a29bfa7f53875bd41bc63d0d4d046800f0c435",
+      "deployment_run": "https://github.com/jmerrillorg/jmerrill-one/actions/runs/31666549624",
+      "live_state": "LIVE",
       "controlled_response_ids": [
         "099300c6-cc96-f111-8076-6045bdd69435"
       ],
@@ -24,6 +32,11 @@
       "survey_id": "fe494eb2-cb96-f111-8076-000d3a14673b",
       "survey_name": "J Merrill Publishing — Share Your Experience",
       "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUQUNJUFFGQldJTkVVQzdSU1RSN1RCMjFRNi4u",
+      "production_website_url": "https://jmerrill.pub/",
+      "share_location": "site footer, publishing page CTA, contact page CTA, author journey CTA, legacy /experience redirect",
+      "deployment_commit": "b2302c87ff85be2fd5c95b0d96b9fff3b58bdb39",
+      "deployment_run": "https://github.com/jmerrillorg/jmerrill-pub/actions/runs/31667145113",
+      "live_state": "LIVE",
       "controlled_response_ids": [
         "573a7bd6-cc96-f111-8075-000d3a117063"
       ],
@@ -38,6 +51,11 @@
       "survey_id": "423742e9-cb96-f111-8076-6045bdd69678",
       "survey_name": "J Merrill Financial — Share Your Experience",
       "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUQUoyQzhIWDk0QTNFVEE3Qks1WDMzODFWVi4u",
+      "production_website_url": "https://jmerrill.financial/",
+      "share_location": "site footer",
+      "deployment_commit": "134575ff7a5edc7af28d2b362af0b9fb65a1da69",
+      "deployment_run": "https://github.com/jmerrillorg/jmerrill-financial/actions/runs/31666549426",
+      "live_state": "LIVE",
       "controlled_response_ids": [
         "15f8a5e2-cc96-f111-8075-000d3a117063"
       ],
@@ -52,6 +70,11 @@
       "survey_id": "0ae75320-cc96-f111-8076-7c1e525b15c2",
       "survey_name": "J Merrill Foundation — Share Your Experience",
       "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUMUJOS0NSTVk2WjdVT0ZIRkhCMzdJUE9HRi4u",
+      "production_website_url": "https://jmerrill.foundation/share-your-experience",
+      "share_location": "Share Your Experience page Phase 1 feedback path",
+      "deployment_commit": "c01ffd68b7a34b844c714dc2f889b4c7214ad8f9",
+      "deployment_run": "https://github.com/jmerrillorg/jmerrillfoundation/actions/runs/31666910841",
+      "live_state": "LIVE",
       "controlled_response_ids": [
         "e26fbced-cc96-f111-8076-000d3a14673b"
       ],
@@ -66,6 +89,11 @@
       "survey_id": "d737b050-cc96-f111-8075-000d3a117063",
       "survey_name": "J Merrill Productions — Share Your Experience",
       "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUM0NISFJISEpZMTYwRlZZN1ZEWEpNNkNVRi4u",
+      "production_website_url": "https://jmerrill.productions/",
+      "share_location": "site footer and contact page",
+      "deployment_commit": "44d3f689642a107e1879abe5c19ba7c486108eca",
+      "deployment_run": "https://github.com/jmerrillorg/jmerrill-productions/actions/runs/31666549491",
+      "live_state": "LIVE",
       "controlled_response_ids": [
         "4bdf15f4-cc96-f111-8076-00224820105b"
       ],
@@ -78,10 +106,34 @@
     "anonymous_response": "PASS",
     "controlled_contacts_created": 0,
     "financial_sensitive_prompt_excluded": "PASS",
-    "foundation_sensitive_prompt_excluded": "PASS"
+    "foundation_sensitive_prompt_excluded": "PASS",
+    "public_platform_jargon_excluded": "PASS"
   },
   "testimonial_permission": "Follow-up permission only; no publication automation.",
   "service_recovery": "Human/division review; no automatic cases or consequential responses.",
+  "repository_evidence": {
+    "one_artifacts": [
+      "artifacts/cv02_operational_completion_doctrine.json",
+      "artifacts/cv02_customer_voice_production_strategy.json",
+      "artifacts/cv02_rollout_matrix.json",
+      "artifacts/cv02_enterprise_feedback_portfolio.json",
+      "artifacts/cv02_production_website_validation.json",
+      "artifacts/generated/cv02-production-customer-voice-assets.json",
+      "artifacts/generated/cv02-dataverse-response-validation.json"
+    ],
+    "division_evidence_artifact": "artifacts/cv02_customer_voice_evidence.json"
+  },
+  "foundation_backlog": [
+    "Donor Experience",
+    "Participant Experience",
+    "Sponsor & Partner Experience"
+  ],
   "founder_brand": "FUTURE / NOT ACTIVATED",
-  "next_action": "Complete production website builds, deployments, public smoke tests, then update closeout to final classification."
+  "remaining_blockers": [],
+  "next_completion_wave_ranking": [
+    "Foundation donor/participant/sponsor feedback expansion after Foundation authorization",
+    "Founder Brand feedback activation after Founder Brand operating surface exists",
+    "Customer Voice reporting/dashboard layer after response volume exists"
+  ],
+  "recommendation": "AUTHORIZE NEXT COMPLETION WAVE"
 }

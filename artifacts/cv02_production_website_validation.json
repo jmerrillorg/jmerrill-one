@@ -1,0 +1,54 @@
+{
+  "updated_at": "2026-08-13T04:38:18Z",
+  "result": "PASS",
+  "checks": [
+    {
+      "site": "J Merrill One",
+      "url": "https://www.jmerrill.one/",
+      "http_status": 200,
+      "share_your_experience_visible": true,
+      "canonical_survey_href_present": true,
+      "public_platform_jargon_count": 0
+    },
+    {
+      "site": "J Merrill Publishing",
+      "url": "https://jmerrill.pub/",
+      "http_status": 200,
+      "release": "b2302c87ff85be2fd5c95b0d96b9fff3b58bdb39",
+      "share_your_experience_visible": true,
+      "canonical_survey_href_present": true,
+      "public_platform_jargon_count": 0
+    },
+    {
+      "site": "J Merrill Financial",
+      "url": "https://jmerrill.financial/",
+      "http_status": 200,
+      "share_your_experience_visible": true,
+      "canonical_survey_href_present": true,
+      "public_platform_jargon_count": 0
+    },
+    {
+      "site": "J Merrill Foundation",
+      "url": "https://jmerrill.foundation/share-your-experience",
+      "http_status": 200,
+      "share_your_experience_visible": true,
+      "canonical_survey_href_present": true,
+      "public_platform_jargon_count": 0
+    },
+    {
+      "site": "J Merrill Productions",
+      "url": "https://jmerrill.productions/",
+      "http_status": 200,
+      "share_your_experience_visible": true,
+      "canonical_survey_href_present": true,
+      "public_platform_jargon_count": 0
+    }
+  ],
+  "survey_url_checks": {
+    "J Merrill One": 200,
+    "J Merrill Publishing": 200,
+    "J Merrill Financial": 200,
+    "J Merrill Foundation": 200,
+    "J Merrill Productions": 200
+  }
+}
