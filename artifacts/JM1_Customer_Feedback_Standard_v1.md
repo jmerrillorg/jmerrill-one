@@ -1,6 +1,8 @@
 # JM1 Customer Feedback Standard v1
 
-Status: CANON-CANDIDATE - PENDING FOUNDER & CEO APPROVAL
+Status: CANON - v1.0
+
+Founder & CEO approval recorded by CV-01A on 2026-08-13T03:16:56Z.
 
 ## Purpose
 

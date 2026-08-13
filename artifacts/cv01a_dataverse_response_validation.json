@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "environment": "JM1-Enterprise-Dev",
+  "parent_response": {
+    "table": "msfp_surveyresponse",
+    "activityid": "2a0e7230-c596-f111-8076-0022480b3175",
+    "createdon": "2026-08-13T03:15:00Z",
+    "survey": "Survey 1",
+    "response_url": "https://customervoice.microsoft.com/Pages/ResponsePreviewPage.aspx?FormId=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUMzdLQkw3Skc1WVdaTDhNRUdOUlRXNEJCSy4u&ResponseId=1"
+  },
+  "question_response_count": 6,
+  "question_response_ids": [
+    "480e7230-c596-f111-8076-0022480b3175",
+    "490e7230-c596-f111-8076-0022480b3175",
+    "4a0e7230-c596-f111-8076-0022480b3175",
+    "4b0e7230-c596-f111-8076-0022480b3175",
+    "4c0e7230-c596-f111-8076-0022480b3175",
+    "4d0e7230-c596-f111-8076-0022480b3175"
+  ],
+  "survey_linkage": "PASS",
+  "project_linkage": "PASS through survey/project query",
+  "question_responses": "PASS",
+  "satisfaction_recommendation_fields": "Ratings stored as question responses; satisfaction metrics table accessible but no metric configured in proof.",
+  "respondent_contact_association": "Anonymous direct link; no Contact lookup created.",
+  "duplicate_contact": "PASS - no Contact created",
+  "custom_survey_table_created": "NO"
+}

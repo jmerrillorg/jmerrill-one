@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "environment": "JM1-Enterprise-Dev",
+  "roles_evaluated": [
+    {
+      "role_name": "Customer Voice - Add on",
+      "role_id": "90bb098b-d3b6-ea11-a812-000d3a31eec8",
+      "state": "AVAILABLE IN DEV"
+    },
+    {
+      "role_name": "Project Owner",
+      "state": "EFFECTIVE FOR CURRENT OPERATOR",
+      "validation": "Customer Voice UI permission check on JM1-Enterprise-Dev returned Permission granted and project creation succeeded."
+    },
+    {
+      "role_name": "Survey Sender",
+      "state": "NOT REQUIRED FOR DIRECT LINK PROOF",
+      "validation": "No email invitation was sent during CV-01A."
+    }
+  ],
+  "user_or_application": "jm1-admin@jmerrill.one / JM1 Admin",
+  "scope": "Controlled nonproduction Customer Voice project/survey proof.",
+  "system_administrator_grant": "NOT GRANTED BY CV-01A"
+}

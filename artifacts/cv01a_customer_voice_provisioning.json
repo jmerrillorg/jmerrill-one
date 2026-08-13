@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "action": "pac application install --environment https://jm1enterprisedev.crm.dynamics.com/ --application-name MicrosoftFormsPro",
+  "operation_id": "4c01a56a-f683-4d29-93a1-c4c92d965e3f",
+  "environment": "JM1-Enterprise-Dev",
+  "output_summary": "PAC reported MicrosoftFormsPro already installed and proceeded with update; final result: Application successfully installed.",
+  "production_provisioning": "NOT PERFORMED",
+  "licensing_capacity_prompt": "NONE OBSERVED",
+  "purchase_action": "NONE"
+}

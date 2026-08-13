@@ -1,0 +1,50 @@
+{
+  "classification": "PASS",
+  "environment": "JM1-Enterprise-Dev",
+  "tables": [
+    {
+      "purpose": "projects",
+      "logical_name": "msfp_project",
+      "entity_set": "msfp_projects",
+      "result": "PASS - one proof project returned"
+    },
+    {
+      "purpose": "surveys",
+      "logical_name": "msfp_survey",
+      "entity_set": "msfp_surveys",
+      "result": "PASS - one proof survey returned"
+    },
+    {
+      "purpose": "questions",
+      "logical_name": "msfp_question",
+      "entity_set": "msfp_questions",
+      "result": "PASS - six questions returned"
+    },
+    {
+      "purpose": "invitations",
+      "logical_name": "msfp_surveyinvite",
+      "entity_set": "msfp_surveyinvites",
+      "result": "PASS - table accessible, no invitation rows because direct link proof was used"
+    },
+    {
+      "purpose": "responses",
+      "logical_name": "msfp_surveyresponse",
+      "entity_set": "msfp_surveyresponses",
+      "primary_id_attribute": "activityid",
+      "result": "PASS - parent response returned"
+    },
+    {
+      "purpose": "response details",
+      "logical_name": "msfp_questionresponse",
+      "entity_set": "msfp_questionresponses",
+      "result": "PASS - six question response rows returned"
+    },
+    {
+      "purpose": "satisfaction metrics",
+      "logical_name": "msfp_satisfactionmetric",
+      "entity_set": "msfp_satisfactionmetrics",
+      "result": "PASS - table accessible, no metrics configured for proof"
+    }
+  ],
+  "source": "Microsoft Learn Customer Voice entity reference plus PAC FetchXML probes in JM1-Enterprise-Dev."
+}

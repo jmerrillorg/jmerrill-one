@@ -1,0 +1,8 @@
+{
+  "classification": "DESIGN VALID - AUTOMATION DEFERRED",
+  "proof_basis": "Dataverse question response rows are available for threshold/flag evaluation.",
+  "future_pattern": "Low satisfaction score -> review required -> appropriate division review -> Case only where service-resolution semantics fit -> human follow-up.",
+  "case_created": "NO",
+  "automatic_consequential_response_sent": "NO",
+  "automation_required_for_launch": "NO"
+}

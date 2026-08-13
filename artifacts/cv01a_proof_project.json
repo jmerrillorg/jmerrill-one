@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "project_id": "a4617b07-77f0-4815-85e9-cb3d7a00e97a",
+  "project_name": "New project",
+  "intended_label": "JM1 Customer Voice - DEV Proof",
+  "environment": "JM1-Enterprise-Dev",
+  "owner": "JM1 Admin",
+  "created_timestamp": "2026-08-13T03:11:00Z",
+  "note": "Customer Voice UI created the project with default project label New project; the proof survey itself is explicitly titled JM1 Customer Voice - DEV Proof."
+}

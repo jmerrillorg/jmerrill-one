@@ -1,0 +1,10 @@
+{
+  "classification": "STANDARD VALID - IMPLEMENT AT DIVISION LEVEL",
+  "reason": "The technical proof intentionally stayed short and did not include testimonial permission. CV-01 standard already separates feedback, permission to contact, and publication authorization.",
+  "approved_question": "May we contact you about using part of your feedback as a testimonial?",
+  "allowed_options": [
+    "Yes",
+    "No"
+  ],
+  "publication_rule": "Yes means permission to contact only, not final publication approval."
+}

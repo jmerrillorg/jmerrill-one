@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "survey_id": "3706e7c2-c496-f111-8076-002248046419",
+  "project_id": "a4617b07-77f0-4815-85e9-cb3d7a00e97a",
+  "survey_name": "Survey 1",
+  "survey_title": "JM1 Customer Voice - DEV Proof",
+  "state": "Saved",
+  "response_setting": "Generic public direct link",
+  "public_external_configuration": "PASS - direct link https://nam.dcv.ms/3rdg8z01Hl opened without authentication.",
+  "questions": [
+    "Overall, how satisfied were you with your experience?",
+    "Did you feel heard and understood?",
+    "How would you rate communication?",
+    "How clear was the process?",
+    "How likely would you be to recommend us?",
+    "What could we do better?"
+  ],
+  "division_sensitive_questions": "NONE",
+  "testimonial_permission_included": "NO - standard remains valid for division implementation"
+}

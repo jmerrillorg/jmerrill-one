@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "approved_pattern": "Share Your Experience -> Customer Voice survey",
+  "validated_mechanism": "direct survey URL",
+  "survey_url": "https://nam.dcv.ms/3rdg8z01Hl",
+  "preferred_v1": "direct link/button",
+  "embed": "Not needed for v1 proof",
+  "technical_branding": "Customer Voice footer remains present on the hosted response page; division websites should use human-facing Share Your Experience copy."
+}

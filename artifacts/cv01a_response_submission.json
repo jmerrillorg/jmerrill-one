@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "response_id": "2a0e7230-c596-f111-8076-0022480b3175",
+  "timestamp": "2026-08-13T03:15:00Z",
+  "survey_id": "3706e7c2-c496-f111-8076-002248046419",
+  "project_id": "a4617b07-77f0-4815-85e9-cb3d7a00e97a",
+  "respondent_contact_relationship": "Anonymous/generic direct link; no Contact association.",
+  "known_answers": {
+    "overall_satisfaction": "5",
+    "felt_heard_understood": "Option 1",
+    "communication": "5",
+    "clarity": "5",
+    "recommendation": "5",
+    "open_feedback": "CV-01A controlled synthetic response. No real client data. The experience was clear and easy to access."
+  },
+  "ui_confirmation": "Customer Voice response page displayed Your response was submitted."
+}

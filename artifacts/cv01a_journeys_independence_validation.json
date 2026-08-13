@@ -1,0 +1,6 @@
+{
+  "result": "CUSTOMER VOICE DOES NOT REQUIRE JOURNEYS FOR PUBLIC FEEDBACK LINKS",
+  "evidence": "Customer Voice direct public link opened and accepted a response without Customer Insights Journeys configuration.",
+  "journeys_started": "NO",
+  "future_use": "Journeys may later orchestrate invitations where lifecycle communication semantics fit."
+}

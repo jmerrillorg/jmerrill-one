@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "access_method": "direct public survey link",
+  "survey_url": "https://nam.dcv.ms/3rdg8z01Hl",
+  "resolved_response_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUMzdLQkw3Skc1WVdaTDhNRUdOUlRXNEJCSy4u",
+  "authentication_required": "NO",
+  "external_public_behavior": "PASS - response page opened from direct link.",
+  "website_pattern_support": "PASS - supports Share Your Experience button/link.",
+  "personal_tracking": "Generic link does not track personal information."
+}

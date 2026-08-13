@@ -1,0 +1,14 @@
+{
+  "artifact": "JM1_Customer_Feedback_Standard_v1",
+  "approval": "Founder & CEO approval",
+  "approved_by": "Jackie Smith Jr.",
+  "effective_timestamp": "2026-08-13T03:16:56Z",
+  "promoted_status": "CANON - v1.0",
+  "cv01_evidence": [
+    "CV-01 established Customer Voice as JM1's default Microsoft-native feedback platform where survey/feedback semantics fit.",
+    "CV-01 defined enterprise project architecture, question standard, privacy model, testimonial permission boundary, Forms boundary, Journeys boundary, and division handoff contracts.",
+    "CV-01A provisioned/updated MicrosoftFormsPro in JM1-Enterprise-Dev, created a controlled project/survey, submitted one synthetic response, and validated Dataverse response storage."
+  ],
+  "scope": "Enterprise Customer Voice feedback standard, public feedback link pattern, division survey ownership, privacy/access boundaries, service recovery, metrics, Forms/Journeys boundaries, and repository routing.",
+  "change_control_rule": "Future substantive revisions require Founder & CEO approval and a governed standard revision in J Merrill One."
+}
