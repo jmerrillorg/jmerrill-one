@@ -1,0 +1,56 @@
+{
+  "classification": "PASS WITH DOCUMENTED ORPHANS",
+  "tests": [
+    {
+      "relationship": "Contact -> Lead",
+      "result": "PASS WITH DOCUMENTED ORPHANS",
+      "evidence": "29 Leads have parent Contact; 34 are unlinked in visible set and pre-exist BP-11."
+    },
+    {
+      "relationship": "Contact -> Opportunity",
+      "result": "PASS",
+      "evidence": "No BP-11 writes changed Opportunity relationships."
+    },
+    {
+      "relationship": "Contact -> Case",
+      "result": "PASS",
+      "evidence": "Case count 0."
+    },
+    {
+      "relationship": "Contact -> division relationship",
+      "result": "PASS WITH DOCUMENTED ORPHANS",
+      "evidence": "Existing Connections/jm1_relationships preserved; no inferred relationships created."
+    },
+    {
+      "relationship": "Account -> Contact",
+      "result": "PASS",
+      "evidence": "No Account/Contact writes applied."
+    },
+    {
+      "relationship": "Account -> Opportunity",
+      "result": "PASS",
+      "evidence": "No Account/Opportunity writes applied."
+    },
+    {
+      "relationship": "referral -> referring Contact/Account",
+      "result": "PASS WITH DOCUMENTED ORPHANS",
+      "evidence": "No confident referral party created; ambiguous referral text preserved."
+    },
+    {
+      "relationship": "domain record -> canonical Contact/Account",
+      "result": "PASS WITH DOCUMENTED ORPHANS",
+      "evidence": "Publishing/appointment domain records preserved; linkage requires table-specific review."
+    },
+    {
+      "relationship": "appointment -> correct Contact",
+      "result": "PASS WITH DOCUMENTED ORPHANS",
+      "evidence": "492 appointment records preserved; no BP-11-caused orphan."
+    },
+    {
+      "relationship": "website intake -> canonical person/semantic target",
+      "result": "PASS",
+      "evidence": "BP-09 execution logs present; route code links Lead to Contact for lead intents."
+    }
+  ],
+  "bp11_caused_orphans": 0
+}

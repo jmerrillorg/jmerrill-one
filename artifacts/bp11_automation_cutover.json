@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE WITH DEPENDENCY HOLDS",
+  "automations": [
+    {
+      "name": "BP-09 website intake",
+      "classification": "KEEP DOMAIN-SPECIFIC / CANONICAL FORWARD INTAKE",
+      "result": "PASS"
+    },
+    {
+      "name": "consumer OneDrive-dependent flows/apps",
+      "classification": "HOLD - DEPENDENCY",
+      "result": "UNKNOWN until dependency proof"
+    },
+    {
+      "name": "legacy custom person/prospect table writers",
+      "classification": "HOLD - DEPENDENCY",
+      "result": "not found in repository; solution-level proof required"
+    }
+  ],
+  "migrated": 0,
+  "disabled_legacy": 0
+}

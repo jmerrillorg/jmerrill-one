@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE - NO SAFE WRITE REQUIRED",
+  "canonical_rule": "Organization/entity = Account",
+  "accounts": 2,
+  "duplicate_account_groups": 0,
+  "organization_sources_reviewed": [
+    "Account",
+    "Lead parent account references",
+    "Opportunity customer/parent account references",
+    "visible custom jm1_accountses table"
+  ],
+  "results": [
+    {
+      "source": "jm1_accountses",
+      "count": 0,
+      "action_taken": "NO WRITE REQUIRED"
+    },
+    {
+      "source": "Lead parent Account",
+      "count": 0,
+      "action_taken": "NO WRITE REQUIRED"
+    },
+    {
+      "source": "Account exact-name duplicates",
+      "count": 0,
+      "action_taken": "NO WRITE REQUIRED"
+    }
+  ],
+  "organizations_reconciled_to_account": 0,
+  "accounts_created": 0,
+  "accounts_merged": 0
+}

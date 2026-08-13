@@ -1,0 +1,18 @@
+{
+  "status": "FOUNDER REVIEW QUEUE REMAINS",
+  "decision_count": 2,
+  "decisions": [
+    {
+      "id": "BP11-FD-001",
+      "question": "Approve cleanup path for 11 payload.email duplicate historical test Contacts after dependency proof?",
+      "recommended_action": "Approve deactivation/merge only after no production references are proven.",
+      "risk": "Could alter historical references if executed prematurely."
+    },
+    {
+      "id": "BP11-FD-002",
+      "question": "Classify 34 unlinked Leads into synthetic/test retention cleanup versus real Contact linkage?",
+      "recommended_action": "Review with BP-08 register/source evidence; link real records, retain/deactivate test records under approved cleanup.",
+      "risk": "Automatic creation/linkage may duplicate identities or elevate test artifacts."
+    }
+  ]
+}

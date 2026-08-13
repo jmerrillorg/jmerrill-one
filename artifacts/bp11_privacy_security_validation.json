@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "basis": "No identity merge, security role, owner, business unit, field-level security, form, or app exposure change was applied.",
+  "financial": "PASS - no planning/advice/beneficiary/Financial notes broadened.",
+  "publishing": "PASS - no manuscript/editorial/contract/production notes broadened.",
+  "foundation": "PASS - no donor/recipient/program-sensitive exposure broadened.",
+  "productions": "PASS - no client/project-sensitive material broadened.",
+  "remaining_admin_validation": "Deep tenant/app security review remains BP-10/admin backlog; not a BP-11 regression."
+}

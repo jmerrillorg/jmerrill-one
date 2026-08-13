@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETE WITH REVIEW QUEUE",
+  "canonical_rule": "Natural person = Contact",
+  "inventory": {
+    "contacts": "5000 visible via Dataverse API count/page scan",
+    "empty_custom_person_tables": [
+      "jm1_author",
+      "jm1_authorprofile",
+      "jm1_authorintakesubmission",
+      "jm1_contactpoint",
+      "jm1_personrole"
+    ],
+    "domain_person_bearing_tables": [
+      "jm1_publishingintake",
+      "jm1_appointment",
+      "lead"
+    ]
+  },
+  "results": [
+    {
+      "source": "Contacts exact-email duplicate group payload.email",
+      "confidence": "HIGH - TEST DATA",
+      "recommended_action": "Founder/dependency review before deactivation or merge",
+      "action_taken": "NONE - historical/dependency proof unavailable",
+      "records": 11
+    },
+    {
+      "source": "Leads with parent Contact",
+      "count": 29,
+      "confidence": "HIGH",
+      "recommended_action": "retain existing Contact linkage",
+      "action_taken": "NO WRITE REQUIRED"
+    },
+    {
+      "source": "Leads without parent Contact",
+      "count": 34,
+      "confidence": "REVIEW REQUIRED",
+      "recommended_action": "do not create Contacts automatically without source register/table-specific evidence",
+      "action_taken": "DEFERRED"
+    }
+  ],
+  "people_reconciled_to_contact": 29,
+  "contacts_created": 0,
+  "contacts_merged": 0
+}

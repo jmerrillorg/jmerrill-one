@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE WITH PRESERVATION",
+  "source_values_normalized": 0,
+  "vocabulary": [
+    "website",
+    "referral",
+    "phone",
+    "email",
+    "social",
+    "event",
+    "funeral-home partner",
+    "returning client",
+    "author referral",
+    "donor referral",
+    "direct outreach",
+    "campaign/journey",
+    "other"
+  ],
+  "evidence": "BP-09 preserves submitted source/sourceUrl in execution log detail; no broad source overwrite performed.",
+  "action_taken": "Preserved original source detail; no unknown values guessed."
+}

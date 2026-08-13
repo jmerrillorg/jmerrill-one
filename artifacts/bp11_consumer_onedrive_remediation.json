@@ -1,0 +1,20 @@
+{
+  "status": "UNKNOWN - DO NOT DELETE UNTIL DEPENDENCIES ARE PROVEN",
+  "connection_id": "shared-onedrive-d5f2925b-7277-4ee3-83c4-4a17309de480",
+  "connector_type": "/providers/Microsoft.PowerApps/apis/shared_onedrive",
+  "display_name": "OneDrive",
+  "owner": "not exposed by PAC connection list; connection name only",
+  "connection_status": "Error",
+  "replacement_candidates": [
+    "OneDrive for Business",
+    "SharePoint"
+  ],
+  "evidence": [
+    "PAC connection list shows consumer OneDrive in Error state.",
+    "PAC connection list also shows OneDrive for Business connected.",
+    "Dependency mapping from flows/apps is not available from current execution surface."
+  ],
+  "action_taken": "NONE",
+  "delete_authorized": false,
+  "required_next_action": "Use Power Platform admin/solution dependency view to prove no flows/apps reference the connection, then remove or replace with SharePoint/OneDrive for Business."
+}

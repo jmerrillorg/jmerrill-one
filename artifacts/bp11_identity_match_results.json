@@ -1,0 +1,54 @@
+{
+  "status": "COMPLETE",
+  "matching_rules": {
+    "high_confidence": [
+      "exact normalized email",
+      "exact normalized phone with supporting name",
+      "exact canonical external ID"
+    ],
+    "medium_confidence": [
+      "name + address",
+      "name + organization",
+      "partial contact overlap"
+    ],
+    "ambiguous": [
+      "conflicting or incomplete evidence"
+    ]
+  },
+  "candidates": [
+    {
+      "source_record": "Contact duplicate email group payload.email",
+      "target": "No canonical survivor selected",
+      "matching_evidence": [
+        "same invalid placeholder email",
+        "same placeholder full name"
+      ],
+      "confidence": "HIGH - HISTORICAL TEST DATA",
+      "recommended_action": "deactivate/merge only after dependency proof and Founder approval of test-data cleanup",
+      "action_taken": "NONE",
+      "review_requirement": "FOUNDER IDENTITY REVIEW REQUIRED"
+    },
+    {
+      "source_record": "Leads with parentcontactid",
+      "target": "existing Contact",
+      "matching_evidence": [
+        "native parentcontactid"
+      ],
+      "confidence": "HIGH",
+      "recommended_action": "retain link",
+      "action_taken": "NO WRITE REQUIRED",
+      "review_requirement": "none"
+    },
+    {
+      "source_record": "Leads without parentcontactid",
+      "target": "unknown Contact candidate",
+      "matching_evidence": [
+        "email/name only; many are synthetic/test"
+      ],
+      "confidence": "MEDIUM OR AMBIGUOUS",
+      "recommended_action": "do not auto-create/merge; queue or classify historical test data",
+      "action_taken": "NONE",
+      "review_requirement": "Founder/domain review"
+    }
+  ]
+}

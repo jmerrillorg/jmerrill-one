@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "check": "/contact production route",
+      "result": "PASS",
+      "evidence": "https://jmerrill.one/contact redirects to https://www.jmerrill.one/contact and returns HTTP 200."
+    },
+    {
+      "check": "/api/intake GET guard",
+      "result": "PASS",
+      "evidence": "GET returns HTTP 405; no read/write side effect."
+    },
+    {
+      "check": "malformed POST guard",
+      "result": "PASS",
+      "evidence": "POST malformed payload returns HTTP 400 INVALID_JSON."
+    },
+    {
+      "check": "repository intake path",
+      "result": "PASS",
+      "evidence": "app/api/intake/route.ts finds Contact by email, creates Contact if missing, creates Lead only for publishing/financial/productions, and writes jm1_executionlog with sourceentity website_intake."
+    },
+    {
+      "check": "duplicate email behavior",
+      "result": "PASS",
+      "evidence": "Multiple Contact matches return identity_resolution_required and execution log, not an arbitrary merge or duplicate write."
+    }
+  ],
+  "required_before_destructive_migration": "PASS",
+  "legacy_forward_write_detected": false
+}

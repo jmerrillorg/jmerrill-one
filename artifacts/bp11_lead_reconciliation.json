@@ -1,0 +1,29 @@
+{
+  "status": "COMPLETE WITH HISTORICAL/FOUNDER REVIEW BACKLOG",
+  "canonical_meaning": "Unqualified prospective relationship or engagement",
+  "lead_count": 63,
+  "with_parent_contact": 29,
+  "with_parent_account": 0,
+  "synthetic_or_test": 52,
+  "actions": [
+    {
+      "classification": "KEEP AS LEAD",
+      "count": 11,
+      "criteria": "non-test visible Leads with prospect semantics; most already linked to Contact",
+      "action_taken": "NO WRITE REQUIRED"
+    },
+    {
+      "classification": "HISTORICAL - RETAIN / REVIEW TEST CLEANUP",
+      "count": 52,
+      "criteria": "synthetic/test/preview/example.invalid/cutover/smoke evidence",
+      "action_taken": "NO WRITE APPLIED"
+    },
+    {
+      "classification": "LINK TO EXISTING CONTACT - CANDIDATE",
+      "count": 34,
+      "criteria": "unlinked Leads require exact BP-08/source evidence before link",
+      "action_taken": "DEFERRED"
+    }
+  ],
+  "leads_reconciled": 29
+}

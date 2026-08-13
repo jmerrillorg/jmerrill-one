@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE",
+  "canonical_meaning": "Qualified commercial/funding engagement with meaningful pipeline progression",
+  "opportunity_count": 3,
+  "names": [
+    "Publishing Intake - The Intentional Leader",
+    "Publishing Intake — Establishing Glory: The Library",
+    "JMP-INT-202607-YEUSKK — GATE-W1 Synthetic Recommendation Manuscript 20260729"
+  ],
+  "synthetic_or_test": 1,
+  "actions": [
+    {
+      "classification": "KEEP AS OPPORTUNITY",
+      "count": 2,
+      "reason": "Publishing pipeline semantics visible from names; no contradictory evidence."
+    },
+    {
+      "classification": "HISTORICAL TEST/SYNTHETIC REVIEW",
+      "count": 1,
+      "reason": "Synthetic recommendation manuscript opportunity; retain until cleanup approval."
+    }
+  ],
+  "opportunities_created": 0,
+  "opportunities_merged": 0
+}

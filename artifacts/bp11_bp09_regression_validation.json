@@ -1,0 +1,46 @@
+{
+  "required_result": "PASS",
+  "result": "PASS",
+  "checks": [
+    {
+      "check": "/contact",
+      "result": "PASS",
+      "evidence": "HTTP 301 to www then HTTP 200."
+    },
+    {
+      "check": "/api/intake GET",
+      "result": "PASS",
+      "evidence": "HTTP 405."
+    },
+    {
+      "check": "malformed POST",
+      "result": "PASS",
+      "evidence": "HTTP 400 INVALID_JSON."
+    },
+    {
+      "check": "Contact reuse logic",
+      "result": "PASS",
+      "evidence": "Repository uses email lookup before create."
+    },
+    {
+      "check": "identity resolution logic",
+      "result": "PASS",
+      "evidence": "Multiple Contact matches return identity_resolution_required."
+    },
+    {
+      "check": "semantic disposition",
+      "result": "PASS",
+      "evidence": "Lead created only for publishing/financial/productions; general stays contact_review."
+    },
+    {
+      "check": "idempotency",
+      "result": "PASS",
+      "evidence": "Execution log correlation lookup returns idempotent replay."
+    },
+    {
+      "check": "retired legacy writes",
+      "result": "PASS",
+      "evidence": "Repository route writes Contact, Lead, jm1_executionlog only."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "CANON-CANDIDATE RULESET",
+  "rules": {
+    "Contact": [
+      "primary email normalized when present",
+      "no division-specific duplicate identity",
+      "phone normalized where present",
+      "placeholder/test emails flagged"
+    ],
+    "Account": [
+      "organization name required",
+      "domain/identifier where useful",
+      "no duplicate institutional identity"
+    ],
+    "Lead": [
+      "source preserved",
+      "division/business context captured",
+      "qualification state maintained",
+      "parent Contact linked when evidence permits"
+    ],
+    "Opportunity": [
+      "division/business context",
+      "Contact/Account/customer relationship where applicable",
+      "stage aligned to pipeline meaning",
+      "not created for ordinary domain workflow"
+    ],
+    "Case": [
+      "customer/contact",
+      "service issue context",
+      "owner/status"
+    ],
+    "Relationship": [
+      "type from approved relationship catalog",
+      "supporting evidence required",
+      "no consequential cross-sell trigger by relationship alone"
+    ],
+    "Referral": [
+      "relational referral only when party is confidently resolved",
+      "original source text retained"
+    ],
+    "ExecutionEvidence": [
+      "source entity/id",
+      "action type/status",
+      "correlation/idempotency evidence"
+    ]
+  },
+  "implementation": "Documented as BP-11 standard; enforcement implementation deferred to future package where safe."
+}

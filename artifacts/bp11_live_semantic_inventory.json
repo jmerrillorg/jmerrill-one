@@ -1,0 +1,220 @@
+{
+  "timestamp": "2026-08-13T01:03:34Z",
+  "environment": "JM1-Core",
+  "dataverse": "https://jm1hq.crm.dynamics.com",
+  "basis": [
+    "Dataverse Web API v9.2 read-only inventory",
+    "PAC solution list",
+    "PAC connection list",
+    "repository inspection of app/api/intake/route.ts",
+    "production-safe HTTP checks for /contact and /api/intake"
+  ],
+  "counts": {
+    "contacts": "5000 visible via Dataverse API count/page scan",
+    "accounts": 2,
+    "leads": 63,
+    "opportunities": 3,
+    "cases": 0,
+    "connections": 66,
+    "jm1_publishingintakes": 30,
+    "jm1_relationships": 3,
+    "jm1_relationship_catalog": 5,
+    "jm1_appointments": 492,
+    "jm1_executionlogs": "5000 visible via Dataverse API count/page scan",
+    "jm1_executionevents": 2643,
+    "jm1_authors": 0,
+    "jm1_authorintakesubmissions": 0,
+    "jm1_authorprofiles": 0,
+    "jm1_contactpoints": 0,
+    "jm1_personroles": 0,
+    "jm1_accountses": 0
+  },
+  "tables": [
+    {
+      "logical_name": "contact",
+      "record_count": "5000 visible via Dataverse API count/page scan",
+      "semantic_purpose": "Natural-person identity",
+      "canonical_equivalent": "Contact",
+      "identity_linkage": "canonical owner",
+      "duplicate_risk": "1 duplicate email group visible; many records without email require cautious matching",
+      "active_workflows": [
+        "BP-09 website intake find/create by email"
+      ],
+      "dependencies": [
+        "Leads",
+        "Opportunities",
+        "Connections",
+        "domain records",
+        "execution evidence"
+      ],
+      "classification": "CANONICAL NATIVE",
+      "migration_recommendation": "retain as enterprise identity owner; review duplicates"
+    },
+    {
+      "logical_name": "account",
+      "record_count": 2,
+      "semantic_purpose": "Organization/entity identity",
+      "canonical_equivalent": "Account",
+      "identity_linkage": "canonical owner",
+      "duplicate_risk": "none found by exact name in visible set",
+      "active_workflows": [],
+      "dependencies": [
+        "Opportunities",
+        "Contacts"
+      ],
+      "classification": "CANONICAL NATIVE",
+      "migration_recommendation": "retain; expand only from proven organization identities"
+    },
+    {
+      "logical_name": "lead",
+      "record_count": 63,
+      "semantic_purpose": "Unqualified prospective relationship/engagement",
+      "canonical_equivalent": "Lead",
+      "identity_linkage": "29 have parent Contact; 34 unlinked in visible set",
+      "duplicate_risk": "synthetic/test concentration; repeated author/test subjects",
+      "active_workflows": [
+        "BP-09 creates Lead for publishing, financial, productions intents"
+      ],
+      "dependencies": [
+        "Contact",
+        "source attribution",
+        "execution log"
+      ],
+      "classification": "CANONICAL NATIVE",
+      "migration_recommendation": "retain; review synthetic/test and unlinked leads"
+    },
+    {
+      "logical_name": "opportunity",
+      "record_count": 3,
+      "semantic_purpose": "Qualified commercial/funding pipeline",
+      "canonical_equivalent": "Opportunity",
+      "identity_linkage": "native customer/contact/account relationships",
+      "duplicate_risk": "low; one synthetic/test pipeline visible",
+      "active_workflows": [],
+      "dependencies": [
+        "Publishing sales process"
+      ],
+      "classification": "CANONICAL NATIVE",
+      "migration_recommendation": "retain only where pipeline semantics fit"
+    },
+    {
+      "logical_name": "incident",
+      "record_count": 0,
+      "semantic_purpose": "Service/support issue",
+      "canonical_equivalent": "Case",
+      "identity_linkage": "native customer relationship",
+      "duplicate_risk": "none",
+      "active_workflows": [],
+      "dependencies": [],
+      "classification": "CANONICAL NATIVE",
+      "migration_recommendation": "no migration required"
+    },
+    {
+      "logical_name": "connection",
+      "record_count": 66,
+      "semantic_purpose": "relationship evidence",
+      "canonical_equivalent": "Normalized relationship model",
+      "identity_linkage": "record1/record2 references",
+      "duplicate_risk": "review required for relationship meaning",
+      "active_workflows": [],
+      "dependencies": [
+        "Contacts",
+        "Accounts"
+      ],
+      "classification": "RELATIONSHIP SOURCE",
+      "migration_recommendation": "preserve and normalize only with supporting evidence"
+    },
+    {
+      "logical_name": "jm1_relationship",
+      "record_count": 3,
+      "semantic_purpose": "JM1 relationship structure",
+      "canonical_equivalent": "Normalized relationship model",
+      "identity_linkage": "custom relationship evidence",
+      "duplicate_risk": "low volume; semantic review required",
+      "active_workflows": [],
+      "dependencies": [
+        "relationship catalog"
+      ],
+      "classification": "CANONICAL DOMAIN",
+      "migration_recommendation": "retain as governed relationship evidence"
+    },
+    {
+      "logical_name": "jm1_jm1relationshipcatalog",
+      "record_count": 5,
+      "semantic_purpose": "relationship taxonomy/catalog",
+      "canonical_equivalent": "Relationship catalog",
+      "identity_linkage": "not identity record",
+      "duplicate_risk": "none",
+      "active_workflows": [],
+      "dependencies": [
+        "jm1_relationship"
+      ],
+      "classification": "CANONICAL DOMAIN",
+      "migration_recommendation": "retain"
+    },
+    {
+      "logical_name": "jm1_publishingintake",
+      "record_count": 30,
+      "semantic_purpose": "Publishing domain intake/submission evidence",
+      "canonical_equivalent": "Domain record linked to Contact/Lead where evidence permits",
+      "identity_linkage": "domain linkage requires table-specific review",
+      "duplicate_risk": "review required",
+      "active_workflows": [
+        "Publishing intake/sales processes"
+      ],
+      "dependencies": [
+        "Lead",
+        "Contact",
+        "Execution log"
+      ],
+      "classification": "CANONICAL DOMAIN",
+      "migration_recommendation": "preserve; do not convert title/submission workflow into Opportunity/Case"
+    },
+    {
+      "logical_name": "jm1_appointment",
+      "record_count": 492,
+      "semantic_purpose": "appointment/scheduling domain records",
+      "canonical_equivalent": "Microsoft-native scheduling/domain relationship",
+      "identity_linkage": "appointment participants require table-specific review",
+      "duplicate_risk": "not person identity by itself",
+      "active_workflows": [
+        "Core scheduling"
+      ],
+      "dependencies": [
+        "Outlook/scheduling flows"
+      ],
+      "classification": "CANONICAL DOMAIN",
+      "migration_recommendation": "preserve; validate Contact linkage when applicable"
+    },
+    {
+      "logical_name": "jm1_executionlog",
+      "record_count": "5000 visible via Dataverse API count/page scan",
+      "semantic_purpose": "execution evidence",
+      "canonical_equivalent": "JM1 Execution Log",
+      "identity_linkage": "source entity/id evidence",
+      "duplicate_risk": "none for identity",
+      "active_workflows": [
+        "BP-09",
+        "agents",
+        "governance"
+      ],
+      "dependencies": [
+        "execution evidence standard"
+      ],
+      "classification": "CANONICAL DOMAIN",
+      "migration_recommendation": "retain immutable evidence"
+    },
+    {
+      "logical_name": "jm1_author/jm1_authorprofile/jm1_authorintakesubmission/jm1_contactpoint/jm1_personrole/jm1_accounts",
+      "record_count": 0,
+      "semantic_purpose": "custom person/prospect structures",
+      "canonical_equivalent": "Contact/Lead/relationship where live records exist",
+      "identity_linkage": "none live",
+      "duplicate_risk": "none live",
+      "active_workflows": [],
+      "dependencies": [],
+      "classification": "HISTORICAL",
+      "migration_recommendation": "retain schema historical; prevent new writes if active entry points exist"
+    }
+  ]
+}

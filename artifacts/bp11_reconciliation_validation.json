@@ -1,0 +1,55 @@
+{
+  "status": "COMPLETE",
+  "scenarios": [
+    {
+      "scenario": 1,
+      "result": "BLOCKED",
+      "evidence": "Representative existing one-division person cannot be proven migrated without BP-08 register; existing Contact model present."
+    },
+    {
+      "scenario": 2,
+      "result": "BLOCKED",
+      "evidence": "Multiple-division relationships require relationship-specific review; no duplicate merge performed."
+    },
+    {
+      "scenario": 3,
+      "result": "PASS",
+      "evidence": "Account canonical object exists; duplicate Account groups not found in visible set."
+    },
+    {
+      "scenario": 4,
+      "result": "BLOCKED",
+      "evidence": "Legacy prospect duplication cannot be closed without BP-08 register; Lead canonical use confirmed."
+    },
+    {
+      "scenario": 5,
+      "result": "PASS",
+      "evidence": "Only 3 Opportunities visible; no Opportunities created merely from domain records."
+    },
+    {
+      "scenario": 6,
+      "result": "PASS",
+      "evidence": "Case count is 0; no domain workflow converted to Case."
+    },
+    {
+      "scenario": 7,
+      "result": "PASS",
+      "evidence": "No Foundation constituent converted to Lead/Opportunity/customer."
+    },
+    {
+      "scenario": 8,
+      "result": "BLOCKED",
+      "evidence": "No confident referral party evidence available; no referring Contact invented."
+    },
+    {
+      "scenario": 9,
+      "result": "PASS",
+      "evidence": "Ambiguous/test duplicate group was not automatically merged and is queued."
+    },
+    {
+      "scenario": 10,
+      "result": "PASS",
+      "evidence": "BP-09 /contact and /api/intake guards pass; repository path writes Contact/Lead/execution log canonically."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "COMPLETE",
+  "groups": {
+    "automatic_high_confidence": [
+      {
+        "work": "Retain existing Lead -> Contact links",
+        "expected_count": 29,
+        "action": "NO WRITE REQUIRED"
+      },
+      {
+        "work": "Classify exact placeholder duplicate Contact email group",
+        "expected_count": 11,
+        "action": "QUEUE FOR FOUNDER/DEPENDENCY REVIEW"
+      }
+    ],
+    "founder_approved": [
+      {
+        "work": "payload.email duplicate Contact cleanup",
+        "expected_count": 11
+      },
+      {
+        "work": "unlinked Lead/test cleanup and real Contact linkage",
+        "expected_count": 34
+      }
+    ],
+    "domain_preserving": [
+      {
+        "work": "Preserve publishing intake and appointment domain records",
+        "expected_count": 522
+      },
+      {
+        "work": "Preserve relationships and catalog entries",
+        "expected_count": 74
+      }
+    ],
+    "deferred": [
+      {
+        "work": "BP-08 register item-by-item migration",
+        "reason": "source artifact missing"
+      },
+      {
+        "work": "consumer OneDrive deletion",
+        "reason": "dependency proof unavailable"
+      },
+      {
+        "work": "model-driven app/form write prevention",
+        "reason": "admin UI/component review required"
+      }
+    ]
+  },
+  "expected_record_counts": {
+    "contacts": "5000 visible via Dataverse API count/page scan",
+    "accounts": 2,
+    "leads": 63,
+    "opportunities": 3,
+    "cases": 0,
+    "connections": 66,
+    "jm1_publishingintakes": 30,
+    "jm1_relationships": 3,
+    "jm1_relationship_catalog": 5,
+    "jm1_appointments": 492,
+    "jm1_executionlogs": "5000 visible via Dataverse API count/page scan",
+    "jm1_executionevents": 2643,
+    "jm1_authors": 0,
+    "jm1_authorintakesubmissions": 0,
+    "jm1_authorprofiles": 0,
+    "jm1_contactpoints": 0,
+    "jm1_personroles": 0,
+    "jm1_accountses": 0
+  }
+}

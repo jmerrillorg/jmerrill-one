@@ -1,0 +1,24 @@
+{
+  "artifact": "JM1_Power_Platform_Governance_Standard_v1",
+  "approval_authority": "Founder & CEO",
+  "current_role_holder": "Jackie Merrill / JM1 Founder & CEO",
+  "ruling": "PROMOTE TO CANON - v1.0",
+  "effective_timestamp": "2026-08-13T01:03:34Z",
+  "bp10_evidence": [
+    "bp10_final_closeout.json",
+    "bp10_environment_inventory.json",
+    "bp10_connection_reference_inventory.json",
+    "bp10_dlp_target_model.json",
+    "bp10_production_change_policy.json",
+    "bp10_rollback_standard.json"
+  ],
+  "scope": "Power Platform environment, DLP, connector, maker, solution, pipeline, deployment evidence, rollback, telemetry, and exception governance for JM1.",
+  "documented_exceptions": [
+    "Managed Environment verification remains admin action required.",
+    "DLP export/impact analysis remains admin action required.",
+    "Pipeline setup remains blocked by prerequisite/tenant configuration.",
+    "Consumer OneDrive error connection remains pending dependency proof.",
+    "Production unmanaged solutions remain migration candidates."
+  ],
+  "change_control_requirement": "Substantive changes require Founder & CEO approval, source-controlled artifact update, evidence capture, and BP/package closeout reference."
+}

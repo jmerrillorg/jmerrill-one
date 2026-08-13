@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE WITH FOUNDER REVIEW QUEUE",
+  "duplicate_email_groups_visible": 1,
+  "classification_counts": {
+    "AUTO-RESOLVABLE - HIGH CONFIDENCE": 0,
+    "FOUNDER REVIEW": 1,
+    "NOT DUPLICATE": 0,
+    "HISTORICAL TEST DATA": 1
+  },
+  "groups": [
+    {
+      "email": "payload.email",
+      "record_count": 11,
+      "names": [
+        "payload.firstName payload.lastName"
+      ],
+      "classification": "HISTORICAL TEST DATA + FOUNDER REVIEW",
+      "recommended_action": "Retain until dependency proof; then approve deactivation/merge cleanup as historical test data.",
+      "action_taken": "NONE"
+    }
+  ],
+  "contacts_merged": 0,
+  "records_deactivated": 0,
+  "history_preserved": true
+}

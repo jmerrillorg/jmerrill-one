@@ -1,0 +1,61 @@
+{
+  "status": "COMPLETE",
+  "matrix": [
+    [
+      "Natural-person identity",
+      "Contact"
+    ],
+    [
+      "Organization identity",
+      "Account"
+    ],
+    [
+      "Unqualified prospect",
+      "Lead"
+    ],
+    [
+      "Qualified commercial/funding pipeline",
+      "Opportunity"
+    ],
+    [
+      "Service/support issue",
+      "Case"
+    ],
+    [
+      "Division relationship",
+      "Normalized relationship model"
+    ],
+    [
+      "Referral",
+      "Relational referral model"
+    ],
+    [
+      "Publishing title/submission",
+      "Publishing domain model"
+    ],
+    [
+      "Financial planning engagement",
+      "Financial domain model"
+    ],
+    [
+      "Foundation program participation",
+      "Foundation domain model"
+    ],
+    [
+      "Productions project",
+      "Productions domain model"
+    ],
+    [
+      "Appointment",
+      "Microsoft-native scheduling/domain relationship"
+    ],
+    [
+      "Governance",
+      "JM1 governance layer"
+    ],
+    [
+      "Execution evidence",
+      "JM1 Execution Log"
+    ]
+  ]
+}

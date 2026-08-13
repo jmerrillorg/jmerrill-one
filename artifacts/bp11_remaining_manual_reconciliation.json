@@ -1,0 +1,27 @@
+{
+  "status": "MANUAL REVIEW REMAINS",
+  "founder_identity_decisions": 2,
+  "actual_ambiguous_merge_relationship_decisions": [
+    "payload.email duplicate historical test Contact cleanup",
+    "unlinked Lead real-vs-test classification and Contact linkage"
+  ],
+  "missing_evidence": [
+    "BP-08 semantic migration register",
+    "component-level flow/app dependency proof",
+    "model-driven app/form/BPF internals"
+  ],
+  "cannot_determine_canonical_target": [
+    "34 unlinked Leads",
+    "legacy custom schema retirement state without solution dependency review"
+  ],
+  "domain_owner_review": [
+    "Publishing synthetic/test retention",
+    "relationship type normalization from Connections/jm1_relationships",
+    "appointment participant linkage"
+  ],
+  "historical_only": [
+    "empty custom person/prospect tables",
+    "execution logs/events",
+    "publishing intakes and appointments pending linkage review"
+  ]
+}

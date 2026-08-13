@@ -1,0 +1,21 @@
+{
+  "result": "RELATIONSHIP AWARENESS WITHOUT AUTOMATIC CONSEQUENTIAL CROSS-SELL",
+  "status": "PASS",
+  "examples": [
+    {
+      "case": "Publishing author also Financial prospect",
+      "result": "PASS",
+      "evidence": "No automation or outreach created."
+    },
+    {
+      "case": "Financial client with Publishing interest",
+      "result": "PASS",
+      "evidence": "No title/publishing solicitation created."
+    },
+    {
+      "case": "Foundation donor with Productions relationship",
+      "result": "PASS",
+      "evidence": "No commercial outreach created."
+    }
+  ]
+}

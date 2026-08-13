@@ -1,6 +1,6 @@
 # JM1 Power Platform Governance Standard v1
 
-Status: CANON-CANDIDATE — PENDING FOUNDER & CEO APPROVAL
+Status: CANON — v1.0
 
 ## Authority
 

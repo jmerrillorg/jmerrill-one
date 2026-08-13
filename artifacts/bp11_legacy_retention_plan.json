@@ -1,0 +1,40 @@
+{
+  "status": "COMPLETE",
+  "retention_rules": [
+    "Do not delete historical evidence.",
+    "Retain empty legacy/custom schemas as historical until dependency review proves retirement.",
+    "Prevent new writes where practical after dependency proof."
+  ],
+  "structures": [
+    {
+      "structure": "jm1_author/jm1_authorprofile/jm1_authorintakesubmission/jm1_contactpoint/jm1_personrole/jm1_accountses",
+      "count": 0,
+      "classification": "RETAIN - HISTORICAL READ ONLY",
+      "delete_authorized": false
+    },
+    {
+      "structure": "payload.email duplicate Contacts",
+      "count": 11,
+      "classification": "DELETE NOT AUTHORIZED / REVIEW DEACTIVATION AFTER PROOF",
+      "delete_authorized": false
+    },
+    {
+      "structure": "synthetic/test Leads",
+      "count": 52,
+      "classification": "RETAIN - HISTORICAL / REVIEW CLEANUP",
+      "delete_authorized": false
+    },
+    {
+      "structure": "jm1_publishingintake",
+      "count": 30,
+      "classification": "RETAIN - DOMAIN RECORD",
+      "delete_authorized": false
+    },
+    {
+      "structure": "jm1_appointment",
+      "count": 492,
+      "classification": "RETAIN - DOMAIN/SCHEDULING RECORD",
+      "delete_authorized": false
+    }
+  ]
+}

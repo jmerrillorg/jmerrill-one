@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE WITH SOURCE ARTIFACT EXCEPTION",
+  "bp08_register": "artifacts/bp08_semantic_migration_register.json",
+  "bp08_register_status": "MISSING IN CURRENT WORKTREE",
+  "classification": "UNKNOWN FOR PRIOR REGISTER ITEMS",
+  "live_scope_status": "EXPANDED FROM LIVE DATAVERSE INVENTORY",
+  "rules": [
+    "Do not infer prior register contents.",
+    "Use live inventory and BP-09 behavior for current-state evidence.",
+    "Do not change BP-08 semantic canon."
+  ],
+  "items": [],
+  "exception": "Prior BP-08 migration items cannot be classified STILL PRESENT/RESOLVED/SUPERSEDED/EXPANDED/NO LONGER APPLICABLE without the canonical register artifact."
+}

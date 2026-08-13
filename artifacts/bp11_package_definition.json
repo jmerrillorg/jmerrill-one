@@ -1,0 +1,67 @@
+{
+  "package_id": "BP-11",
+  "package_name": "Enterprise Semantic Reconciliation & Migration Closeout",
+  "purpose": "Bring existing JM1 CRM/Dataverse identity, prospect, relationship, referral, service, and pipeline data into alignment with the canonical BP-08 enterprise semantic model.",
+  "canonical_target_model": [
+    "Natural person = Contact",
+    "Organization/entity = Account",
+    "Unqualified prospective relationship/engagement = Lead",
+    "Qualified commercial/funding pipeline = Opportunity",
+    "Service/support issue requiring tracked resolution = Case",
+    "Division relationships = normalized relationship model",
+    "Domain records remain domain-specific and link to canonical identity where evidence permits"
+  ],
+  "environments": [
+    "JM1-Core production/core Dataverse",
+    "Repository evidence for public web/BP-09"
+  ],
+  "data_scope": [
+    "Contacts",
+    "Accounts",
+    "Leads",
+    "Opportunities",
+    "Cases",
+    "Connections/relationships",
+    "Publishing intakes",
+    "Appointments",
+    "Execution logs/events",
+    "custom person/prospect structures",
+    "Power Platform connections"
+  ],
+  "migration_rules": [
+    "Migration follows canonical meaning; canonical meaning does not change to make migration easier.",
+    "Preserve legitimate domain records; remove semantic duplication, not business history.",
+    "High-confidence matching may be reconciled only when canon and dependency proof permit.",
+    "Medium-confidence and ambiguous matches require Founder review."
+  ],
+  "archive_retention_rules": [
+    "No historical deletion under BP-11.",
+    "Legacy structures are retained read-only/historical unless a safe supported retirement path is proven."
+  ],
+  "identity_rules": [
+    "One person, one enterprise Contact.",
+    "Multiple division relationships are represented as governed relationships, not duplicate Contacts."
+  ],
+  "ambiguity_rules": [
+    "No mass merge.",
+    "No automatic merge for medium-confidence matches.",
+    "Founder & CEO remains reconciliation authority for ambiguous identities."
+  ],
+  "rollback_strategy": "No live data writes were applied in this BP-11 execution; rollback is not required. Future write batches must capture before/after evidence and use supported Dataverse mechanisms.",
+  "exclusions": [
+    "BP-08 canon changes",
+    "new enterprise intake table",
+    "Publishing Diagnostic activation",
+    "ADR-011 content invention",
+    "Council assignments",
+    "Journeys/Voice/Power BI/next-package implementation"
+  ],
+  "validation_gates": [
+    "BP-09 forward-state PASS",
+    "referential integrity no BP-11-caused orphan",
+    "security/privacy no broadening",
+    "relationship awareness without automatic consequential cross-sell",
+    "artifact completeness"
+  ],
+  "closeout_criteria": "Deterministic evidence classified, unsafe writes deferred with reason, forward-state protected, manual queue bounded, and next package gated."
+}

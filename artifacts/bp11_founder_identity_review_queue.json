@@ -1,0 +1,22 @@
+{
+  "status": "FOUNDER IDENTITY REVIEW REQUIRED",
+  "queue_count": 2,
+  "items": [
+    {
+      "id": "BP11-FIRQ-001",
+      "type": "historical test Contact duplicate cleanup",
+      "records": 11,
+      "evidence": "duplicate email payload.email, name payload.firstName payload.lastName",
+      "recommended_decision": "Approve historical test-data deactivation/merge only after dependency proof confirms no production references.",
+      "risk": "Merging/deactivation without dependency proof could alter historical evidence or break references."
+    },
+    {
+      "id": "BP11-FIRQ-002",
+      "type": "unlinked Lead identity review",
+      "records": 34,
+      "evidence": "Lead records without parent Contact; many synthetic/preview/example.invalid/cutover records",
+      "recommended_decision": "Classify synthetic/test records for retention cleanup and real records for Contact linkage after BP-08 register/table evidence is available.",
+      "risk": "Automatic Contact creation could create duplicates or convert test artifacts into real identities."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE WITH HISTORICAL/FOUNDER REVIEW BACKLOG",
+  "publishing_intakes": 30,
+  "leads": 63,
+  "opportunities": 3,
+  "result": "Publishing submission/title records remain domain-specific; Lead and Opportunity used only where canonical semantics are already present.",
+  "actions": [
+    "No title stage changed.",
+    "No author approval reinterpreted.",
+    "No publishing domain workflow converted to Case.",
+    "Synthetic/test publishing records queued for retention review."
+  ]
+}

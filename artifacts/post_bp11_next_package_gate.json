@@ -1,0 +1,98 @@
+{
+  "status": "READY WITH EXCLUSIONS",
+  "recommendation": "NEXT PACKAGE DEFINITION REQUIRED",
+  "recommended_priority": "Power Platform dependency/admin closeout before channel expansion; if unavailable, authorize bounded Foundation or Productions Microsoft optimization with no Journeys/Voice/Power BI/new-agent expansion.",
+  "candidates": [
+    {
+      "candidate": "Power Platform admin/dependency closeout",
+      "business_value": "High - unlocks safe DLP, pipelines, dependency cleanup, OneDrive removal, and legacy write prevention",
+      "dependency_state": "requires tenant/admin capability",
+      "microsoft_capability": "Power Platform admin center, DLP, Pipelines, solution dependencies",
+      "licensing_admin_constraint": "ADMIN REQUIRED",
+      "current_readiness": "READY WITH EXCLUSIONS",
+      "recommended_priority": "P0"
+    },
+    {
+      "candidate": "Foundation Microsoft optimization",
+      "business_value": "Medium-high - division maturity without changing enterprise canon",
+      "dependency_state": "can proceed if scoped away from tenant holds and sensitive data broadening",
+      "microsoft_capability": "Dataverse/Outlook/Teams/SharePoint",
+      "licensing_admin_constraint": "moderate",
+      "current_readiness": "READY WITH EXCLUSIONS",
+      "recommended_priority": "P1"
+    },
+    {
+      "candidate": "Productions Microsoft optimization",
+      "business_value": "Medium - operational maturity for inquiry-led workflow",
+      "dependency_state": "can proceed if scoped away from mature pipeline invention",
+      "microsoft_capability": "Dataverse/Outlook/Teams/SharePoint",
+      "licensing_admin_constraint": "moderate",
+      "current_readiness": "READY WITH EXCLUSIONS",
+      "recommended_priority": "P1"
+    },
+    {
+      "candidate": "Customer Insights Journeys",
+      "business_value": "High later",
+      "dependency_state": "blocked by licensing/admin/cross-sell governance",
+      "microsoft_capability": "Customer Insights Journeys",
+      "licensing_admin_constraint": "LICENSING/ADMIN",
+      "current_readiness": "HOLD",
+      "recommended_priority": "later"
+    },
+    {
+      "candidate": "Customer Voice",
+      "business_value": "Medium",
+      "dependency_state": "requires capability/admin proof",
+      "microsoft_capability": "Customer Voice",
+      "licensing_admin_constraint": "LICENSING/ADMIN",
+      "current_readiness": "HOLD",
+      "recommended_priority": "later"
+    },
+    {
+      "candidate": "Sales Sequences",
+      "business_value": "Medium",
+      "dependency_state": "requires Sales capability proof and relationship intelligence controls",
+      "microsoft_capability": "Dynamics Sales",
+      "licensing_admin_constraint": "LICENSING/ADMIN",
+      "current_readiness": "HOLD",
+      "recommended_priority": "later"
+    },
+    {
+      "candidate": "Unified Routing operationalization",
+      "business_value": "Medium",
+      "dependency_state": "requires service/channel decisions",
+      "microsoft_capability": "Customer Service",
+      "licensing_admin_constraint": "LICENSING/ADMIN",
+      "current_readiness": "HOLD",
+      "recommended_priority": "later"
+    },
+    {
+      "candidate": "ADR-011 prompt/skill recovery / Publishing Diagnostic",
+      "business_value": "High for AI quality",
+      "dependency_state": "blocked by canon payloads and diagnostic assignment",
+      "microsoft_capability": "Copilot/agent governance",
+      "licensing_admin_constraint": "canon hold",
+      "current_readiness": "HOLD",
+      "recommended_priority": "later"
+    },
+    {
+      "candidate": "Power BI executive intelligence",
+      "business_value": "High later",
+      "dependency_state": "blocked by semantic reconciliation exceptions/admin/Fabric readiness",
+      "microsoft_capability": "Power BI/Fabric",
+      "licensing_admin_constraint": "LICENSING/ADMIN",
+      "current_readiness": "HOLD",
+      "recommended_priority": "later"
+    },
+    {
+      "candidate": "cross-division relationship intelligence",
+      "business_value": "High later",
+      "dependency_state": "blocked by relationship normalization and cross-sell governance controls",
+      "microsoft_capability": "Dataverse/analytics",
+      "licensing_admin_constraint": "governance/design",
+      "current_readiness": "HOLD",
+      "recommended_priority": "later"
+    }
+  ],
+  "do_not_implement_next_package": true
+}
