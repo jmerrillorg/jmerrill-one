@@ -1,0 +1,33 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-14T22:42:00Z",
+  "status": "REFERENCE CAPTURED",
+  "resource": {
+    "name": "app-jm1-pub-prod",
+    "resourceGroup": "rg-jm1-pub-prod-appsvc",
+    "hostType": "Azure App Service",
+    "runtime": "NODE|24-lts",
+    "startupCommand": "node server.js",
+    "httpsOnly": true,
+    "http2": true,
+    "alwaysOn": true,
+    "healthCheckPath": "/api/health",
+    "identity": "SystemAssigned",
+    "clientAffinityEnabled": false,
+    "customDomains": ["jmerrill.pub", "www.jmerrill.pub"]
+  },
+  "deploymentPattern": {
+    "repository": "jmerrillorg/jmerrill-pub",
+    "workflow": ".github/workflows/azure-app-service-publishing.yml",
+    "workflowName": "Publishing App Service CI/CD",
+    "authentication": "GitHub Actions OIDC",
+    "artifact": "Next standalone App Service artifact",
+    "promotion": "Deploy to staging slot, validate, then swap staging to production",
+    "latestObservedSuccess": {
+      "runId": 31727901428,
+      "updatedAt": "2026-08-13T17:58:22Z",
+      "headSha": "603f9cb62da43a52bc4ab16cd37a4a0556bc705c"
+    }
+  },
+  "reuseBoundary": "Reuse hosting and deployment mechanics only. Do not copy Publishing business settings to other brands."
+}

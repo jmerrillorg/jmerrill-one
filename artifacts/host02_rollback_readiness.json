@@ -1,0 +1,6 @@
+{
+  "package": "HOST-02",
+  "status": "ROLLBACK INFRASTRUCTURE STILL PRIMARY",
+  "rollbackState": "SWA remains live for five sites; no rollback action required because no cutover occurred.",
+  "rollbackWindowStarted": false
+}

@@ -1,0 +1,30 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-14T22:42:00Z",
+  "status": "APP SERVICE PLAN CAPACITY DECISION REQUIRED",
+  "plan": {
+    "name": "asp-jm1-web-prod-linux",
+    "resourceGroup": "rg-jm1-web-prod-appsvc",
+    "region": "Central US",
+    "sku": "S1",
+    "tier": "Standard",
+    "capacity": 1,
+    "os": "Linux",
+    "apps": [
+      "app-jm1-one-prod",
+      "app-jm1-fin-prod",
+      "app-jm1-foundation-prod",
+      "app-jm1-productions-prod",
+      "app-jm1-jackiesmithjr-prod"
+    ]
+  },
+  "observedUtilization": {
+    "windowUtc": "2026-08-14T21:27:00Z/2026-08-14T22:22:00Z",
+    "cpuAverageRangePercent": "55.4-75.0",
+    "memoryAverageRangePercent": "77.2-79.4",
+    "trafficState": "No scoped public production traffic is currently routed to these five App Services."
+  },
+  "capacityResult": "Current S1 plan is already hot before public cutover. Moving five production sites into this plan without resize/scale decision is not technically appropriate.",
+  "allowedWorkRemaining": "Continue non-cutover preparation, workflow design, runtime audit, and remediation planning.",
+  "blockedWork": "Public DNS/custom-domain cutover and production traffic migration."
+}

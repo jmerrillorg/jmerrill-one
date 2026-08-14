@@ -1,0 +1,7 @@
+{
+  "package": "HOST-02",
+  "status": "NOT EXECUTED",
+  "reason": "No target App Service passed default-host validation and shared plan capacity is not cleared.",
+  "dnsChangesMade": false,
+  "productionDomainsRemainOn": "HOST-01 live state"
+}

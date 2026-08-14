@@ -1,0 +1,6 @@
+{
+  "package": "HOST-02",
+  "status": "NOT EXECUTED",
+  "reason": "SWA deployment freeze is allowed only after App Service cutover and validation. No site reached that state.",
+  "workflowChangesMade": false
+}

@@ -1,0 +1,10 @@
+{
+  "brand": "Jackie Smith Jr.",
+  "classification": "JM1 FOUNDER BRAND",
+  "status": "NOT CUT OVER",
+  "target": "app-jm1-jackiesmithjr-prod",
+  "requiredFinalState": "JACKIE SMITH JR. = APP SERVICE — LIVE",
+  "currentState": "SWA remains live",
+  "blockers": ["APP SERVICE PLAN CAPACITY DECISION REQUIRED", "Target App Service default host returns HTTP 503"],
+  "coachingActivation": "NOT LAUNCHED"
+}

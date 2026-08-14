@@ -1,0 +1,13 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-14T22:42:00Z",
+  "classification": "HOST-02 REMEDIATION REQUIRED",
+  "matrix": [
+    {"brand": "J Merrill One", "targetHost": "Azure App Service", "actualHostAfterHost02": "Azure Static Web Apps", "targetResource": "app-jm1-one-prod", "state": "NOT CUT OVER"},
+    {"brand": "J Merrill Publishing", "targetHost": "Azure App Service", "actualHostAfterHost02": "Azure App Service", "targetResource": "app-jm1-pub-prod", "state": "ALREADY LIVE"},
+    {"brand": "J Merrill Financial", "targetHost": "Azure App Service", "actualHostAfterHost02": "Azure Static Web Apps", "targetResource": "app-jm1-fin-prod", "state": "BLOCKED"},
+    {"brand": "J Merrill Foundation", "targetHost": "Azure App Service", "actualHostAfterHost02": "Azure Static Web Apps", "targetResource": "app-jm1-foundation-prod", "state": "NOT CUT OVER"},
+    {"brand": "J Merrill Productions", "targetHost": "Azure App Service", "actualHostAfterHost02": "Azure Static Web Apps", "targetResource": "app-jm1-productions-prod", "state": "NOT CUT OVER"},
+    {"brand": "Jackie Smith Jr.", "targetHost": "Azure App Service", "actualHostAfterHost02": "Azure Static Web Apps", "targetResource": "app-jm1-jackiesmithjr-prod", "state": "BLOCKED"}
+  ]
+}

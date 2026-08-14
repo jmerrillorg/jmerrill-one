@@ -1,0 +1,6 @@
+{
+  "package": "HOST-02",
+  "status": "NOT APPLICABLE",
+  "reason": "No cutover occurred.",
+  "preCutoverCapacityResult": "APP SERVICE PLAN CAPACITY DECISION REQUIRED"
+}

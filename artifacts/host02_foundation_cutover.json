@@ -1,0 +1,8 @@
+{
+  "brand": "J Merrill Foundation",
+  "status": "NOT CUT OVER",
+  "target": "app-jm1-foundation-prod",
+  "requiredFinalState": "J MERRILL FOUNDATION = APP SERVICE — LIVE",
+  "currentState": "SWA remains live",
+  "blockers": ["APP SERVICE PLAN CAPACITY DECISION REQUIRED", "Foundation production settings missing by name on App Service", "Default host serves placeholder"]
+}

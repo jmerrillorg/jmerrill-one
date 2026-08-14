@@ -1,0 +1,9 @@
+{
+  "package": "HOST-02",
+  "brand": "J Merrill Publishing",
+  "status": "REFERENCE VALIDATED",
+  "resource": "app-jm1-pub-prod",
+  "publicDomain": "https://jmerrill.pub/",
+  "state": "APP SERVICE — LIVE",
+  "boundedRegression": "HOST-01/HOST-02 evidence confirms custom-domain binding, App Service workflow, and live HTTP 200. Publishing was not changed."
+}

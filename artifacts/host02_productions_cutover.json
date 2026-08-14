@@ -1,0 +1,9 @@
+{
+  "brand": "J Merrill Productions",
+  "status": "NOT CUT OVER",
+  "target": "app-jm1-productions-prod",
+  "requiredFinalState": "J MERRILL PRODUCTIONS = APP SERVICE — LIVE",
+  "currentState": "SWA remains live",
+  "blockers": ["APP SERVICE PLAN CAPACITY DECISION REQUIRED", "Default host serves placeholder", "www.jmerrill.productions non-canonical DNS anomaly unresolved"],
+  "wwwCanonicalizationResult": "NOT CHANGED — DNS changes blocked before cutover"
+}

@@ -1,0 +1,10 @@
+{
+  "package": "HOST-02",
+  "status": "PARTIAL",
+  "evidence": {
+    "planMetricsCaptured": true,
+    "siteRequestMetricsCaptured": true,
+    "logTailCaptured": false
+  },
+  "result": "Monitoring is sufficient to identify pre-cutover capacity risk. Full post-cutover monitoring cannot run until migration resumes."
+}
