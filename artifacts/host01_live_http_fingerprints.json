@@ -1,0 +1,85 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "method": "curl -L response headers plus TLS certificate inspection; supporting evidence only.",
+  "sites": [
+    {
+      "url": "https://www.jmerrill.one/",
+      "status": 200,
+      "redirects": 0,
+      "finalUrl": "https://www.jmerrill.one/",
+      "remoteIp": "52.252.74.253",
+      "headersOfInterest": ["cache-control: s-maxage=31536000", "x-ms-nextjs-render: cache", "x-nextjs-cache: HIT", "x-powered-by: Next.js"],
+      "tlsSubject": "CN=www.jmerrill.one",
+      "tlsIssuer": "GeoTrust TLS RSA CA G1",
+      "tlsNotBefore": "2026-07-17T00:00:00Z",
+      "tlsNotAfter": "2027-01-17T23:59:59Z",
+      "fingerprintConclusion": "Supports Static Web Apps live hosting."
+    },
+    {
+      "url": "https://jmerrill.pub/",
+      "status": 200,
+      "redirects": 0,
+      "finalUrl": "https://jmerrill.pub/",
+      "remoteIp": "40.122.114.229",
+      "headersOfInterest": ["cache-control: private, no-cache, no-store, max-age=0, must-revalidate", "x-jm1-division: publishing-01", "x-powered-by: Next.js"],
+      "tlsSubject": "CN=jmerrill.pub",
+      "tlsIssuer": "GeoTrust TLS RSA CA G1",
+      "tlsNotBefore": "2026-07-28T00:00:00Z",
+      "tlsNotAfter": "2027-01-28T23:59:59Z",
+      "fingerprintConclusion": "Supports App Service live hosting with dynamic Next runtime."
+    },
+    {
+      "url": "https://jmerrill.financial/",
+      "status": 200,
+      "redirects": 0,
+      "finalUrl": "https://jmerrill.financial/",
+      "remoteIp": "52.252.74.253",
+      "headersOfInterest": ["content-type: text/html", "cache-control: public, must-revalidate, max-age=30", "last-modified: Thu, 13 Aug 2026 04:19:02 GMT"],
+      "tlsSubject": "CN=jmerrill.financial",
+      "tlsIssuer": "GeoTrust TLS RSA CA G1",
+      "tlsNotBefore": "2026-07-09T00:00:00Z",
+      "tlsNotAfter": "2027-01-09T23:59:59Z",
+      "fingerprintConclusion": "Supports Static Web Apps live hosting."
+    },
+    {
+      "url": "https://jmerrill.foundation/",
+      "status": 200,
+      "redirects": 0,
+      "finalUrl": "https://jmerrill.foundation/",
+      "remoteIp": "20.75.109.112",
+      "headersOfInterest": ["content-type: text/html", "cache-control: public, must-revalidate, max-age=30", "last-modified: Thu, 13 Aug 2026 04:25:37 GMT"],
+      "tlsSubject": "CN=jmerrill.foundation",
+      "tlsIssuer": "GeoTrust TLS RSA CA G1",
+      "tlsNotBefore": "2026-07-16T00:00:00Z",
+      "tlsNotAfter": "2027-01-16T23:59:59Z",
+      "fingerprintConclusion": "Supports Static Web Apps live hosting."
+    },
+    {
+      "url": "https://jmerrill.productions/",
+      "status": 200,
+      "redirects": 0,
+      "finalUrl": "https://jmerrill.productions/",
+      "remoteIp": "172.169.198.52",
+      "headersOfInterest": ["cache-control: s-maxage=31536000, stale-while-revalidate", "x-ms-nextjs-render: cache", "x-nextjs-cache: HIT", "x-powered-by: Next.js"],
+      "tlsSubject": "CN=jmerrill.productions",
+      "tlsIssuer": "GeoTrust TLS RSA CA G1",
+      "tlsNotBefore": "2026-08-11T00:00:00Z",
+      "tlsNotAfter": "2027-02-11T23:59:59Z",
+      "fingerprintConclusion": "Supports Static Web Apps live hosting."
+    },
+    {
+      "url": "https://jackiesmithjr.com/",
+      "status": 200,
+      "redirects": 0,
+      "finalUrl": "https://jackiesmithjr.com/",
+      "remoteIp": "64.236.125.137",
+      "headersOfInterest": ["content-type: text/html", "cache-control: public, must-revalidate, max-age=30", "last-modified: Sun, 02 Aug 2026 12:34:56 GMT"],
+      "tlsSubject": "CN=jackiesmithjr.com",
+      "tlsIssuer": "GeoTrust TLS RSA CA G1",
+      "tlsNotBefore": "2026-08-12T00:00:00Z",
+      "tlsNotAfter": "2027-02-12T23:59:59Z",
+      "fingerprintConclusion": "Supports Static Web Apps live hosting."
+    }
+  ]
+}

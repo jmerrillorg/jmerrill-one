@@ -1,0 +1,15 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "notFullFinOpsReview": true,
+  "signals": [
+    {"resource": "jmerrill-one Static Web App", "sku": "Standard", "role": "LIVE", "duplicationConcern": "Live SWA plus non-live App Service exists for the same brand."},
+    {"resource": "jmerrill-financial Static Web App", "sku": "Standard", "role": "LIVE", "duplicationConcern": "Live SWA plus non-live App Service exists for the same brand."},
+    {"resource": "foundation-main Static Web App", "sku": "Free", "role": "LIVE", "duplicationConcern": "Live free SWA plus non-live App Service exists for the same brand."},
+    {"resource": "jmerrill-productions Static Web App", "sku": "Free", "role": "LIVE", "duplicationConcern": "Live free SWA plus non-live App Service exists for the same brand."},
+    {"resource": "jackiesmithjr Static Web App", "sku": "Free", "role": "LIVE", "duplicationConcern": "Live free SWA plus non-live App Service exists for the same brand."},
+    {"resource": "app-jm1-pub-prod", "sku": "App Service Standard S1 dedicated plan asp-jm1-pub-prod-linux", "role": "LIVE", "duplicationConcern": "No duplicate SWA found for Publishing in scoped inventory."},
+    {"resource": "asp-jm1-web-prod-linux", "sku": "App Service Standard S1 shared by five non-live web apps", "role": "TRANSITION/LEGACY", "duplicationConcern": "Potentially avoidable cost if all five hosted brands remain on SWA and no rollback/runtime dependency remains."}
+  ],
+  "conclusion": "The obvious duplication signal is the Standard S1 plan hosting five non-live App Services while the corresponding production sites remain live on SWA."
+}

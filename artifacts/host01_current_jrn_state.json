@@ -1,0 +1,22 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "source": "artifacts/bp12a_journeys_status_checkpoint.json",
+  "modifiedByHost01": false,
+  "environments": {
+    "JM1-Enterprise-Dev": {
+      "state": "MicrosoftDynamics_Marketing and DynamicsMKT solution layers present; no Customer Insights/Journeys app module found in prior Dataverse appmodules probe; topics 0; journey records 0.",
+      "classification": "INSTALLED AT SOLUTION LAYER; JRN-01 APP/SETUP VALIDATION STILL REQUIRED"
+    },
+    "JM1-Test": {
+      "state": "CustomerInsightsCustomerCard only; no DynamicsMKT/Journeys solution footprint found.",
+      "classification": "NOT INSTALLED"
+    },
+    "JM1-Core": {
+      "state": "DynamicsMKT/Journeys solution layers present.",
+      "classification": "SOLUTION LAYER PRESENT; JRN-01 APP/SETUP VALIDATION STILL REQUIRED"
+    }
+  },
+  "jrn01ReadyToResume": false,
+  "conclusion": "Do not resume JRN-01 from HOST-01. DEV is not classified ready to resume because app/setup validation remains required."
+}

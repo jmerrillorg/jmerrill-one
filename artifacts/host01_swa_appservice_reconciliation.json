@@ -1,0 +1,13 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "brands": [
+    {"brand": "J Merrill One", "swaExists": true, "appServiceExists": true, "servingProduction": "jmerrill-one Static Web App", "otherResource": "app-jm1-one-prod", "otherReceivesRecentDeployments": false, "otherReferencedByDns": false, "otherReferencedByCurrentGitHubActions": false, "otherContainsProductionOnlySettingsOrSecrets": "UNKNOWN", "notes": "App Service has setting names and Key Vault/App Insights references but no public binding or current workflow."},
+    {"brand": "J Merrill Publishing", "swaExists": false, "appServiceExists": true, "servingProduction": "app-jm1-pub-prod App Service", "otherResource": null, "otherReceivesRecentDeployments": false, "otherReferencedByDns": false, "otherReferencedByCurrentGitHubActions": false, "otherContainsProductionOnlySettingsOrSecrets": "NO"},
+    {"brand": "J Merrill Financial", "swaExists": true, "appServiceExists": true, "servingProduction": "jmerrill-financial Static Web App", "otherResource": "app-jm1-fin-prod", "otherReceivesRecentDeployments": "NO CURRENT WORKFLOW; historical slot swap observed 2026-07-30", "otherReferencedByDns": false, "otherReferencedByCurrentGitHubActions": false, "otherContainsProductionOnlySettingsOrSecrets": "UNKNOWN", "notes": "SWA received successful production deployment on 2026-08-14."},
+    {"brand": "J Merrill Foundation", "swaExists": true, "appServiceExists": true, "servingProduction": "foundation-main Static Web App", "otherResource": "app-jm1-foundation-prod", "otherReceivesRecentDeployments": false, "otherReferencedByDns": false, "otherReferencedByCurrentGitHubActions": false, "otherContainsProductionOnlySettingsOrSecrets": "UNKNOWN"},
+    {"brand": "J Merrill Productions", "swaExists": true, "appServiceExists": true, "servingProduction": "jmerrill-productions Static Web App", "otherResource": "app-jm1-productions-prod", "otherReceivesRecentDeployments": "NO CURRENT WORKFLOW; historical slot swap observed 2026-08-03", "otherReferencedByDns": false, "otherReferencedByCurrentGitHubActions": false, "otherContainsProductionOnlySettingsOrSecrets": "UNKNOWN"},
+    {"brand": "Jackie Smith Jr.", "swaExists": true, "appServiceExists": true, "servingProduction": "jackiesmithjr Static Web App", "otherResource": "app-jm1-jackiesmithjr-prod", "otherReceivesRecentDeployments": false, "otherReferencedByDns": false, "otherReferencedByCurrentGitHubActions": false, "otherContainsProductionOnlySettingsOrSecrets": "UNKNOWN"}
+  ],
+  "conclusion": "The tenant is mixed: Publishing is production App Service; the other scoped public sites are production Static Web Apps with non-live App Service transition resources."
+}

@@ -1,0 +1,14 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "classification": "HOST-01 COMPLETE — MIXED HOSTING VERIFIED",
+  "sites": [
+    {"brand": "J Merrill One", "publicDomain": "https://www.jmerrill.one/", "actualLiveHostType": "STATIC WEB APPS — LIVE", "azureResource": "jmerrill-one", "resourceGroup": "jmerrill-one", "primaryEvidence": ["SWA custom-domain binding", "DNS CNAME to lively-flower-04d9c640f.6.azurestaticapps.net", "GitHub SWA workflow latest success 2026-08-13T12:10:53Z"]},
+    {"brand": "J Merrill Publishing", "publicDomain": "https://jmerrill.pub/", "actualLiveHostType": "APP SERVICE — LIVE", "azureResource": "app-jm1-pub-prod", "resourceGroup": "rg-jm1-pub-prod-appsvc", "primaryEvidence": ["App Service custom-domain binding for jmerrill.pub", "DNS points to app-jm1-pub-prod/App Service IP", "Publishing App Service CI/CD latest success 2026-08-13T17:58:22Z"]},
+    {"brand": "J Merrill Financial", "publicDomain": "https://jmerrill.financial/", "actualLiveHostType": "STATIC WEB APPS — LIVE", "azureResource": "jmerrill-financial", "resourceGroup": "jmerrill-financial_group", "primaryEvidence": ["SWA custom-domain binding", "DNS/SWA IP evidence", "SWA environment lastUpdatedOn 2026-08-14T22:12:22Z"]},
+    {"brand": "J Merrill Foundation", "publicDomain": "https://jmerrill.foundation/", "actualLiveHostType": "STATIC WEB APPS — LIVE", "azureResource": "foundation-main", "resourceGroup": "jm1-core-services", "primaryEvidence": ["SWA custom-domain binding", "DNS/SWA IP evidence", "SWA environment lastUpdatedOn 2026-08-13T04:25:37Z"]},
+    {"brand": "J Merrill Productions", "publicDomain": "https://jmerrill.productions/", "actualLiveHostType": "STATIC WEB APPS — LIVE", "azureResource": "jmerrill-productions", "resourceGroup": "jmerrill-productions-rg", "primaryEvidence": ["SWA custom-domain binding for canonical apex", "DNS/SWA IP evidence", "SWA workflow latest success 2026-08-13T04:21:45Z"]},
+    {"brand": "Jackie Smith Jr.", "publicDomain": "https://jackiesmithjr.com/", "actualLiveHostType": "STATIC WEB APPS — LIVE", "azureResource": "jackiesmithjr", "resourceGroup": "jm1-core-services", "primaryEvidence": ["SWA custom-domain binding", "DNS/SWA IP evidence", "SWA environment lastUpdatedOn 2026-08-02T12:34:56Z"]}
+  ],
+  "originalQuestionAnswer": "NO — MIXED HOSTING REMAINS"
+}

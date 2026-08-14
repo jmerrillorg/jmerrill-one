@@ -1,0 +1,13 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "pattern": "Pattern B — Mixed hosting: some App Service, some Static Web Apps",
+  "evidence": [
+    "Publishing production hostnames are bound to app-jm1-pub-prod App Service and its GitHub workflow deploys standalone Next output to App Service with staging slot promotion.",
+    "J Merrill One, Financial, Foundation, Productions, and Jackie production hostnames are bound to Static Web Apps and their current production workflows use Azure/static-web-apps-deploy@v1.",
+    "No Azure Front Door, Traffic Manager, or Application Gateway resources were found for the scoped public sites."
+  ],
+  "frontDoorOrEdgePattern": "None observed",
+  "recommendedArchitectureAtHost01": "KEEP CURRENT MIXED HOSTING; RETAIN SWA WHERE TECHNICALLY APPROPRIATE; retain Publishing on App Service because it has dynamic/runtime and integration requirements.",
+  "doNotForceUniformity": true
+}

@@ -1,0 +1,29 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "bindingEvidenceWeight": "LOAD-BEARING",
+  "staticWebAppBindings": [
+    {"resource": "jmerrill-one", "resourceGroup": "jmerrill-one", "hostnames": ["www.jmerrill.one", "jmerrill.one"], "sslState": "Managed by Static Web Apps"},
+    {"resource": "jmerrill-financial", "resourceGroup": "jmerrill-financial_group", "hostnames": ["jmerrill.financial", "www.jmerrill.financial"], "sslState": "Managed by Static Web Apps"},
+    {"resource": "foundation-main", "resourceGroup": "jm1-core-services", "hostnames": ["www.jmerrill.foundation", "jmerrill.foundation"], "sslState": "Managed by Static Web Apps"},
+    {"resource": "jmerrill-productions", "resourceGroup": "jmerrill-productions-rg", "hostnames": ["jmerrill.productions"], "sslState": "Managed by Static Web Apps"},
+    {"resource": "jackiesmithjr", "resourceGroup": "jm1-core-services", "hostnames": ["jackiesmithjr.com"], "sslState": "Managed by Static Web Apps"}
+  ],
+  "appServiceBindings": [
+    {
+      "resource": "app-jm1-pub-prod",
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "hostnames": [
+        {"hostname": "jmerrill.pub", "sslState": "SniEnabled"},
+        {"hostname": "www.jmerrill.pub", "sslState": "SniEnabled"}
+      ],
+      "defaultHostname": "app-jm1-pub-prod.azurewebsites.net"
+    },
+    {"resource": "app-jm1-one-prod", "resourceGroup": "rg-jm1-web-prod-appsvc", "hostnames": [], "defaultHostname": "app-jm1-one-prod.azurewebsites.net"},
+    {"resource": "app-jm1-fin-prod", "resourceGroup": "rg-jm1-web-prod-appsvc", "hostnames": [], "defaultHostname": "app-jm1-fin-prod.azurewebsites.net"},
+    {"resource": "app-jm1-foundation-prod", "resourceGroup": "rg-jm1-web-prod-appsvc", "hostnames": [], "defaultHostname": "app-jm1-foundation-prod.azurewebsites.net"},
+    {"resource": "app-jm1-productions-prod", "resourceGroup": "rg-jm1-web-prod-appsvc", "hostnames": [], "defaultHostname": "app-jm1-productions-prod.azurewebsites.net"},
+    {"resource": "app-jm1-jackiesmithjr-prod", "resourceGroup": "rg-jm1-web-prod-appsvc", "hostnames": [], "defaultHostname": "app-jm1-jackiesmithjr-prod.azurewebsites.net"}
+  ],
+  "conclusion": "Only Publishing production hostnames are bound to App Service. One, Financial, Foundation, Productions, and Jackie production hostnames are bound to Static Web Apps."
+}

@@ -1,0 +1,104 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "method": "External DNS dig queries for A, AAAA, CNAME, and TXT; Azure DNS record-set inspection used only as supporting inventory.",
+  "records": [
+    {
+      "requestedHostname": "www.jmerrill.one",
+      "aChain": ["lively-flower-04d9c640f.6.azurestaticapps.net", "azurestaticapps6.trafficmanager.net", "msha-slice-6-*.azurewebsites.net", "52.252.74.253"],
+      "cname": "lively-flower-04d9c640f.6.azurestaticapps.net",
+      "azureServiceIndicator": "Azure Static Web Apps",
+      "redirectTarget": null,
+      "dnsConclusion": "Points to jmerrill-one Static Web App, not app-jm1-one-prod.azurewebsites.net."
+    },
+    {
+      "requestedHostname": "jmerrill.one",
+      "aRecords": ["52.252.23.178"],
+      "cname": null,
+      "txt": ["v=spf1 include:spf.protection.outlook.com -all", "openai-domain-verification=dv-5G98z9HlblwaXHJUVkeRpP8L"],
+      "azureServiceIndicator": "Azure Static Web Apps apex custom domain",
+      "redirectTarget": null,
+      "dnsConclusion": "Apex IP aligns with Azure Static Web Apps binding; no App Service CNAME observed."
+    },
+    {
+      "requestedHostname": "jmerrill.pub",
+      "aRecords": ["40.122.114.229"],
+      "cname": null,
+      "azureServiceIndicator": "Azure App Service",
+      "redirectTarget": null,
+      "dnsConclusion": "Apex resolves to the same IP observed on app-jm1-pub-prod and the App Service custom-domain binding."
+    },
+    {
+      "requestedHostname": "www.jmerrill.pub",
+      "aChain": ["app-jm1-pub-prod.azurewebsites.net", "waws-prod-dm1-129.sip.azurewebsites.windows.net", "40.122.114.229"],
+      "cname": "app-jm1-pub-prod.azurewebsites.net",
+      "azureServiceIndicator": "Azure App Service",
+      "redirectTarget": null,
+      "dnsConclusion": "Points to app-jm1-pub-prod App Service."
+    },
+    {
+      "requestedHostname": "jmerrill.financial",
+      "aRecords": ["52.252.74.253"],
+      "cname": null,
+      "azureServiceIndicator": "Azure Static Web Apps apex custom domain",
+      "redirectTarget": null,
+      "dnsConclusion": "Apex aligns with Static Web Apps; no App Service custom hostname observed."
+    },
+    {
+      "requestedHostname": "www.jmerrill.financial",
+      "aChain": ["polite-glacier-0334b1d0f.6.azurestaticapps.net", "azurestaticapps6.trafficmanager.net", "52.252.23.178"],
+      "cname": "polite-glacier-0334b1d0f.6.azurestaticapps.net",
+      "azureServiceIndicator": "Azure Static Web Apps",
+      "redirectTarget": null,
+      "dnsConclusion": "Points to jmerrill-financial Static Web App."
+    },
+    {
+      "requestedHostname": "jmerrill.foundation",
+      "aRecords": ["20.75.109.112"],
+      "cname": null,
+      "azureServiceIndicator": "Azure Static Web Apps apex custom domain",
+      "redirectTarget": null,
+      "dnsConclusion": "Apex aligns with Static Web Apps; no App Service custom hostname observed."
+    },
+    {
+      "requestedHostname": "www.jmerrill.foundation",
+      "aChain": ["mango-beach-09911520f.1.azurestaticapps.net", "azurestaticapps1.trafficmanager.net", "20.84.237.30"],
+      "cname": "mango-beach-09911520f.1.azurestaticapps.net",
+      "azureServiceIndicator": "Azure Static Web Apps",
+      "redirectTarget": null,
+      "dnsConclusion": "Points to foundation-main Static Web App."
+    },
+    {
+      "requestedHostname": "jmerrill.productions",
+      "aRecords": ["172.169.198.52"],
+      "cname": null,
+      "azureServiceIndicator": "Azure Static Web Apps apex custom domain",
+      "redirectTarget": null,
+      "dnsConclusion": "Canonical Productions URL aligns with the jmerrill-productions Static Web App binding."
+    },
+    {
+      "requestedHostname": "www.jmerrill.productions",
+      "aChain": ["victorious-stone-0672d8210.6.azurestaticapps.net", "azurestaticapps6.trafficmanager.net", "172.170.119.25"],
+      "cname": "victorious-stone-0672d8210.6.azurestaticapps.net",
+      "azureServiceIndicator": "Azure Static Web Apps",
+      "redirectTarget": null,
+      "dnsConclusion": "Non-canonical www hostname points to an SWA hostname not returned in the scoped Azure SWA inventory; recorded as a DNS anomaly, not part of the canonical Productions URL."
+    },
+    {
+      "requestedHostname": "jackiesmithjr.com",
+      "aRecords": ["64.236.125.137"],
+      "cname": null,
+      "azureServiceIndicator": "Azure Static Web Apps apex custom domain",
+      "redirectTarget": null,
+      "dnsConclusion": "Apex aligns with jackiesmithjr Static Web App; no App Service custom hostname observed."
+    },
+    {
+      "requestedHostname": "www.jackiesmithjr.com",
+      "aRecords": [],
+      "cname": null,
+      "azureServiceIndicator": "No public DNS record observed",
+      "redirectTarget": null,
+      "dnsConclusion": "No www record observed; scoped production URL is the apex."
+    }
+  ]
+}
