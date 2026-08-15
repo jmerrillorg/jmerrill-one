@@ -1,0 +1,80 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "plan": {
+    "name": "asp-jm1-web-prod-linux",
+    "resourceGroup": "rg-jm1-web-prod-appsvc",
+    "sku": "S1",
+    "workerCount": 1,
+    "attachedApps": [
+      "app-jm1-one-prod",
+      "app-jm1-fin-prod",
+      "app-jm1-foundation-prod",
+      "app-jm1-productions-prod",
+      "app-jm1-jackiesmithjr-prod"
+    ]
+  },
+  "preOptimizationPlanMetrics": {
+    "windowUtc": "2026-08-15T00:45:00Z/2026-08-15T01:40:00Z",
+    "cpuAverageRangePercent": "47.0-68.4",
+    "memoryAverageRangePercent": "77.2-79.8"
+  },
+  "postOptimizationPlanMetrics": {
+    "windowUtc": "2026-08-15T00:49:00Z/2026-08-15T01:44:00Z",
+    "cpuAverageRangePercent": "47.0-73.8",
+    "memoryAverageRangePercent": "77.8-79.0"
+  },
+  "appContributions": [
+    {
+      "app": "app-jm1-one-prod",
+      "servingProductionTraffic": false,
+      "requestContribution": "1 Always On/platform request per 5-minute interval before optimization",
+      "cpuContribution": "CpuTime approximately 0.09-0.16 total per 5-minute interval",
+      "memoryContribution": "MemoryWorkingSet approximately 13-14 MB",
+      "processState": "Running placeholder",
+      "unhealthyOrRestarting": false,
+      "optimizationCandidate": "Always On waste while placeholder"
+    },
+    {
+      "app": "app-jm1-fin-prod",
+      "servingProductionTraffic": false,
+      "requestContribution": "1 Always On/platform request per 5-minute interval before optimization",
+      "cpuContribution": "CpuTime approximately 0.11-0.16 total per 5-minute interval",
+      "memoryContribution": "MemoryWorkingSet approximately 13-14 MB",
+      "processState": "Running placeholder",
+      "unhealthyOrRestarting": false,
+      "optimizationCandidate": "Always On waste while placeholder"
+    },
+    {
+      "app": "app-jm1-foundation-prod",
+      "servingProductionTraffic": false,
+      "requestContribution": "1 Always On/platform request per 5-minute interval before optimization",
+      "cpuContribution": "CpuTime approximately 0.10-0.17 total per 5-minute interval",
+      "memoryContribution": "MemoryWorkingSet approximately 13-14 MB",
+      "processState": "Running placeholder",
+      "unhealthyOrRestarting": false,
+      "optimizationCandidate": "Always On waste while placeholder"
+    },
+    {
+      "app": "app-jm1-productions-prod",
+      "servingProductionTraffic": false,
+      "requestContribution": "1 Always On/platform request per 5-minute interval before optimization",
+      "cpuContribution": "CpuTime approximately 0.10-0.18 total per 5-minute interval",
+      "memoryContribution": "MemoryWorkingSet approximately 13-14 MB",
+      "processState": "Running placeholder",
+      "unhealthyOrRestarting": false,
+      "optimizationCandidate": "Always On waste while placeholder"
+    },
+    {
+      "app": "app-jm1-jackiesmithjr-prod",
+      "servingProductionTraffic": false,
+      "requestContribution": "No request metric in sampled window; default host manually returned 503",
+      "cpuContribution": "0 in sampled metrics",
+      "memoryContribution": "0 in sampled metrics",
+      "processState": "Target unhealthy/default host 503",
+      "unhealthyOrRestarting": "UNKNOWN",
+      "optimizationCandidate": "Requires runtime remediation before migration"
+    }
+  ],
+  "rootCauseConclusion": "The five placeholder apps were not the dominant source of the plan-level memory pressure. Memory stayed near 78-79% after Always On was disabled. The shared S1 plan lacks sufficient pre-cutover headroom for adding five production sites."
+}

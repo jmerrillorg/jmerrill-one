@@ -1,0 +1,60 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "repository": "jmerrillorg/jmerrill-financial",
+  "status": "INVENTORY COMPLETE",
+  "runtime": "SWA-managed Azure Functions-style Node/CommonJS api folder",
+  "endpoints": [
+    {
+      "route": "/api/intake",
+      "methods": ["POST", "OPTIONS"],
+      "classification": "SWA MANAGED FUNCTION",
+      "handler": "api/intake/index.js",
+      "runtime": "api/shared/pilotRuntime.js",
+      "dependencies": ["DATAVERSE_URL", "AZURE_TENANT_ID", "JMF_PUBLIC_INTAKE_CLIENT_ID", "JMF_PUBLIC_INTAKE_CLIENT_SECRET", "JMF_PILOT_* settings"],
+      "purpose": "Controlled pilot public intake, Dataverse contact/engagement/intake chain, idempotency."
+    },
+    {
+      "route": "/api/feedback",
+      "methods": ["POST", "OPTIONS"],
+      "classification": "SWA MANAGED FUNCTION",
+      "handler": "api/feedback/index.js",
+      "runtime": "api/shared/feedbackRuntime.js",
+      "dependencies": ["DATAVERSE_URL", "AZURE_TENANT_ID", "JMF_PUBLIC_INTAKE_CLIENT_ID", "JMF_PUBLIC_INTAKE_CLIENT_SECRET", "JMF_CLIENT_EXPERIENCE_* or JMF_PILOT_* settings"],
+      "purpose": "Financial Client Experience Customer Voice response validation, sensitive-detail rejection, Dataverse survey response creation, idempotency."
+    },
+    {
+      "route": "/api/pilot/disclosure/{action?}",
+      "methods": ["GET", "POST", "OPTIONS"],
+      "classification": "SWA MANAGED FUNCTION",
+      "handler": "api/pilot-disclosure/index.js",
+      "runtime": "api/shared/humanActionRuntime.js",
+      "dependencies": ["JMF_PILOT_ACTION_TOKEN_SECRET", "JMF_PILOT_ALLOWED_IDENTITIES", "DATAVERSE_URL", "service identity settings"],
+      "purpose": "Pilot disclosure view/action handling."
+    },
+    {
+      "route": "/api/pilot/advisor-review/{action?}",
+      "methods": ["GET", "POST", "OPTIONS"],
+      "classification": "SWA MANAGED FUNCTION",
+      "handler": "api/pilot-advisor-review/index.js",
+      "runtime": "api/shared/humanActionRuntime.js",
+      "dependencies": ["JMF_PILOT_ADVISOR_ACTION_SECRET", "JMF_PILOT_ACTION_TOKEN_SECRET", "DATAVERSE_URL", "service identity settings"],
+      "purpose": "Advisor review completion/action handling."
+    },
+    {
+      "route": "/api/pilot/session/{action?}",
+      "methods": ["GET", "POST", "OPTIONS"],
+      "classification": "SWA MANAGED FUNCTION",
+      "handler": "api/pilot-session/index.js",
+      "runtime": "api/shared/humanActionRuntime.js",
+      "dependencies": ["JMF_PILOT_ACTION_CONTEXTS", "JMF_PILOT_ACTION_TOKEN_SECRET", "DATAVERSE_URL", "service identity settings"],
+      "purpose": "Advisor/session workspace state and actions."
+    }
+  ],
+  "swaSpecificConfig": {
+    "staticwebappConfig": "staticwebapp.config.json",
+    "apiRuntime": "node:20",
+    "routes": ["/api/intake", "/api/feedback", "/api/pilot/disclosure/*", "/api/pilot/advisor-review/*", "/api/pilot/session/*"]
+  },
+  "conclusion": "Financial cannot be safely marked App Service live until these API routes are available through the target architecture and pass privacy/pilot regression."
+}

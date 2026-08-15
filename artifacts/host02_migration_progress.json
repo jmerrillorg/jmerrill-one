@@ -1,0 +1,14 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "progress": "1 OF 6",
+  "liveOnAppService": ["J Merrill Publishing"],
+  "notYetLiveOnAppService": [
+    "J Merrill One",
+    "J Merrill Financial",
+    "J Merrill Foundation",
+    "J Merrill Productions",
+    "Jackie Smith Jr."
+  ],
+  "doNotMisclassify": "Existence of target App Services does not equal completed migration."
+}

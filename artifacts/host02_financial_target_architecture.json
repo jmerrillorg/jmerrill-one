@@ -1,0 +1,18 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "status": "TARGET ARCHITECTURE DECISION PACKET",
+  "selectedPattern": "Pattern B — App Service + Azure Function App",
+  "reason": "The actual Financial runtime is already implemented as Azure Functions-compatible HTTP handlers with function.json triggers. Retaining that model as an intentional Azure Function App backend preserves behavior with less rewrite risk than porting five sensitive pilot/privacy endpoints into Next.js route handlers.",
+  "requirements": [
+    "Financial frontend served by app-jm1-fin-prod App Service",
+    "Financial API handlers hosted on an intentional Azure Function App or equivalent Microsoft-native functions backend",
+    "App Service rewrites/proxy or frontend API base configuration must route /api/* calls without preserving SWA as a hidden permanent backend",
+    "Secrets remain server-side in App Service/Function App settings",
+    "Dataverse service identity behavior preserved",
+    "Customer Voice feedback privacy rejection preserved",
+    "Advisor/pilot routes preserved"
+  ],
+  "implementationStatus": "NOT IMPLEMENTED",
+  "blocker": "Capacity purchase decision must be resolved before production cutover; separate Function App creation may also have recurring-cost/architecture approval implications."
+}

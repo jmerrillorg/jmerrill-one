@@ -1,0 +1,44 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "status": "WASTE REMEDIATION COMPLETED; CAPACITY STILL CONSTRAINED",
+  "changesMade": [
+    {
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "app": "app-jm1-one-prod",
+      "change": "alwaysOn true -> false",
+      "reason": "Non-live placeholder app should not be warmed as production while migration target is not serving the real app."
+    },
+    {
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "app": "app-jm1-fin-prod",
+      "change": "alwaysOn true -> false",
+      "reason": "Non-live placeholder app should not be warmed as production while migration target is not serving the real app."
+    },
+    {
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "app": "app-jm1-foundation-prod",
+      "change": "alwaysOn true -> false",
+      "reason": "Non-live placeholder app should not be warmed as production while migration target is not serving the real app."
+    },
+    {
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "app": "app-jm1-productions-prod",
+      "change": "alwaysOn true -> false",
+      "reason": "Non-live placeholder app should not be warmed as production while migration target is not serving the real app."
+    },
+    {
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "app": "app-jm1-jackiesmithjr-prod",
+      "change": "alwaysOn true -> false",
+      "reason": "Non-live unhealthy target should not be warmed until the 503/runtime issue is remediated."
+    }
+  ],
+  "postOptimizationObservedState": {
+    "allFiveTargetAppsAlwaysOn": false,
+    "memoryAverageRangePercent": "77.8-79.0",
+    "cpuAverageRangePercent": "47.0-73.8"
+  },
+  "migrationImpact": "Always On must be re-enabled for each app after the real application is deployed and before public cutover.",
+  "conclusion": "Optimization removed avoidable placeholder warmup, but did not create enough headroom to safely cut over production traffic on the current S1 single-worker plan."
+}
