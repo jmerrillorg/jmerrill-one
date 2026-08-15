@@ -1,6 +1,6 @@
 {
   "package": "HOST-02",
-  "generated_utc": "2026-08-15T01:50:00Z",
+  "generated_utc": "2026-08-15T02:38:15Z",
   "progress": "1 OF 6",
   "liveOnAppService": ["J Merrill Publishing"],
   "notYetLiveOnAppService": [
@@ -10,5 +10,11 @@
     "J Merrill Productions",
     "Jackie Smith Jr."
   ],
-  "doNotMisclassify": "Existence of target App Services does not equal completed migration."
+  "doNotMisclassify": "Existence of target App Services or successful staging deployment record does not equal completed migration.",
+  "continuation_after_founder_capacity_approval": {
+    "approved_capacity_action": "asp-jm1-web-prod-linux scaled from 1 S1 worker to 2 S1 workers.",
+    "current_gate": "HOST-02 REMEDIATION REQUIRED",
+    "blocking_site": "J Merrill One",
+    "blocking_reason": "App Service staging default host failed route and /api/intake validation after deployment."
+  }
 }

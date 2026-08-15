@@ -1,0 +1,29 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_capacity_postscale_baseline",
+  "generated_utc": "2026-08-15T02:38:15Z",
+  "target_repository": "J Merrill One",
+  "app_service_plan": {
+    "resource_group": "rg-jm1-web-prod-appsvc",
+    "name": "asp-jm1-web-prod-linux",
+    "sku": "S1",
+    "worker_count": 2
+  },
+  "baseline_window_utc": {
+    "initial_post_scale_samples": "2026-08-15T01:19:00Z through 2026-08-15T02:14:00Z",
+    "deployment_pressure_samples": "2026-08-15T02:07:00Z through 2026-08-15T02:32:00Z"
+  },
+  "metrics_summary": {
+    "initial_post_scale_cpu_average_range_percent": "34.4-73.2",
+    "initial_post_scale_memory_average_range_percent": "76.8-78.8",
+    "deployment_pressure_cpu_average_range_percent": "34.4-89.6",
+    "deployment_pressure_memory_average_range_percent": "76.625-79.3"
+  },
+  "classification": "CAPACITY STILL UNSAFE",
+  "rationale": [
+    "The approved 2-worker S1 posture is active.",
+    "Memory remained near 77-79% after scale-out.",
+    "CPU returned to high utilization during One staging deployment and restart attempts.",
+    "HOST-02 should not continue with broad live migration while the next site target remains unhealthy and the shared plan shows pressure during deployment activity."
+  ]
+}
