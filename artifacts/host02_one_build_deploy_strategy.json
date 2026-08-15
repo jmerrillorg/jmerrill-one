@@ -1,0 +1,18 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_build_deploy_strategy",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "selected_strategy": "Strategy A — prebuilt Next.js standalone artifact deployed to App Service",
+  "reference_alignment": "Matches Publishing conceptually: standalone artifact, app-root server.js, node server.js startup, no Oryx runtime build.",
+  "effective_staging_settings": {
+    "SCM_DO_BUILD_DURING_DEPLOYMENT": "false",
+    "ENABLE_ORYX_BUILD": "false",
+    "WEBSITE_RUN_FROM_PACKAGE": "REMOVED for extracted Kudu config-zip remediation",
+    "startup_command": "node server.js"
+  },
+  "rejected_strategy": {
+    "strategy": "Strategy B / mixed source deploy with Oryx",
+    "reason": "Previous source deploy and OneDeploy attempts mixed Oryx behavior with standalone expectations and did not produce a healthy runtime."
+  },
+  "status": "CANON-CANDIDATE FOR ONE; BLOCKED BY STALE KUDU DEPLOYMENT LOCK"
+}

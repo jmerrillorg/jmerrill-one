@@ -1,0 +1,19 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_runtime_remediation_actions",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "actions_completed": [
+    "Added /api/health route for App Service warmup and health validation.",
+    "Added scripts/package-appservice.mjs to package .next/standalone as an App Service root-level artifact.",
+    "Added /divisions page because HOST-02 default-host validation requires /divisions to return 200.",
+    "Set staging runtime to NODE|24-lts to align with Publishing reference.",
+    "Set staging startup command to node server.js.",
+    "Set staging health check path to /api/health.",
+    "Copied existing SWA Dataverse identity setting values to App Service staging without recording secrets.",
+    "Deleted custom HOSTNAME app setting after proving it caused startup/default-host failure.",
+    "Removed WEBSITE_RUN_FROM_PACKAGE for extracted Kudu config-zip remediation after Kudu returned 409 requiring the setting to be removed."
+  ],
+  "root_cause": "The custom HOSTNAME=0.0.0.0 app setting was a startup defect: removing it restored responses on the corrected artifact. Downloaded logs also showed a second active defect: worker/artifact inconsistency where one worker could not find /home/site/wwwroot/server.js after deployment.",
+  "remaining_blocker": "A stale Kudu temporary deployment record plus worker/artifact inconsistency prevented clean redeployment of the newest package containing /divisions.",
+  "classification": "PARTIAL PASS — PLATFORM DEPLOYMENT LOCK REMAINS"
+}

@@ -1,0 +1,43 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_runtime_remediation_start",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "site": "J Merrill One",
+  "target_app_service": {
+    "resource_group": "rg-jm1-web-prod-appsvc",
+    "name": "app-jm1-one-prod",
+    "slot": "staging",
+    "default_host": "https://app-jm1-one-prod-staging.azurewebsites.net"
+  },
+  "starting_state": {
+    "migration_progress": "1 OF 6",
+    "capacity_status": "Founder-approved scale-out complete: asp-jm1-web-prod-linux = 2 S1 workers",
+    "publishing_reference": "J Merrill Publishing remains App Service live and unchanged",
+    "last_successful_deployment_before_continuation": "8e2df741-4f59-4892-b7a4-11e41bc86831",
+    "failing_routes": [
+      "/ timed out",
+      "/why-we-exist timed out",
+      "/divisions timed out or 404 depending artifact",
+      "/contact returned 503",
+      "/api/intake timed out"
+    ]
+  },
+  "startup_configuration_at_reopen": {
+    "linux_fx_version": "NODE|22-lts",
+    "startup_command": "bash startup.sh",
+    "always_on": true,
+    "health_check_path": "/"
+  },
+  "app_settings_parity_at_reopen": {
+    "dataverse_names_on_staging": "MISSING",
+    "swa_source_settings": "jmerrill-one Static Web App contains DATAVERSE_* names used by BP-09 intake",
+    "secret_values_recorded": false
+  },
+  "deployment_artifact_state_at_reopen": {
+    "previous_methods": [
+      "macOS-built standalone zip via OneDeploy",
+      "source zip with Azure build settings enabled"
+    ],
+    "previous_result": "Deployment records completed, but runtime did not serve default-host routes."
+  }
+}

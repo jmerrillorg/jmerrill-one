@@ -1,0 +1,15 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_dataverse_identity_validation",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "identity_source": "Existing jmerrill-one Static Web App BP-09 Dataverse service identity settings",
+  "target_runtime_settings": "Copied to app-jm1-one-prod staging slot",
+  "secret_values_recorded": false,
+  "token_acquisition": "PASS",
+  "dataverse_reachability": "PASS",
+  "validation_evidence": {
+    "token_http_status": 200,
+    "whoami_http_status": 200
+  },
+  "classification": "PASS"
+}

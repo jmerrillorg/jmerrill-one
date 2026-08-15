@@ -1,0 +1,30 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_deployment_artifact_validation",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "required_files": {
+    "root_server_js": "PRESENT in package",
+    "package_json": "PRESENT in standalone package",
+    "node_modules": "PRESENT in standalone package",
+    ".next": "PRESENT in standalone package",
+    ".next/static": "COPIED into standalone package",
+    "public": "COPIED into standalone package",
+    "api_health_route": "PRESENT after remediation",
+    "api_intake_route": "PRESENT"
+  },
+  "local_build_result": "PASS",
+  "local_routes_built": [
+    "/",
+    "/api/health",
+    "/api/intake",
+    "/contact",
+    "/divisions",
+    "/divisions/[division]",
+    "/why-we-exist"
+  ],
+  "classification": "PASS WITH DEPLOYMENT LOCK HOLD",
+  "notes": [
+    "The corrected artifact is valid and deployable by Kudu config-zip.",
+    "The latest package containing /divisions could not be cleanly redeployed because Kudu reported an active deployment lock."
+  ]
+}
