@@ -1,0 +1,19 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_production_default_host_validation",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "target": "https://app-jm1-one-prod.azurewebsites.net",
+  "repeated_validation": {
+    "passes": 20,
+    "expected_statuses": {
+      "/api/health": 200,
+      "/": 200,
+      "/why-we-exist": 200,
+      "/divisions": 200,
+      "/contact": 200,
+      "GET /api/intake": 405
+    },
+    "result": "PASS"
+  },
+  "classification": "PASS"
+}

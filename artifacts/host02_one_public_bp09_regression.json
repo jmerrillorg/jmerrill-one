@@ -1,0 +1,27 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_public_bp09_regression",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "target": "https://www.jmerrill.one/api/intake",
+  "test_correlation": "HOST02-ONE-WWW-CUTOVER-20260815T115349Z",
+  "test_email": "host02-one-www-cutover-20260815T115349Z@jmerrill.one",
+  "first_post": {
+    "http_status": 202,
+    "status": "accepted"
+  },
+  "replay": {
+    "http_status": 202,
+    "idempotentReplay": true
+  },
+  "malformed_post": {
+    "http_status": 400,
+    "code": "MISSING_REQUIRED_FIELDS"
+  },
+  "dataverse_counts": {
+    "contact_count_for_email": 1,
+    "lead_count_for_email": 1,
+    "execution_log_count_for_correlation": 1
+  },
+  "secrets_recorded": false,
+  "classification": "PASS"
+}

@@ -1,0 +1,19 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_runtime_config_v3",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "staging_runtime": {
+    "linux_fx_version": "NODE|24-lts",
+    "startup_command": "node server.js",
+    "health_check_path": "/api/health",
+    "hostname_override": "ABSENT"
+  },
+  "production_runtime": {
+    "linux_fx_version": "NODE|24-lts",
+    "startup_command": "node server.js",
+    "health_check_path": "/api/health",
+    "hostname_override": "ABSENT",
+    "status": "PASS"
+  },
+  "classification": "PASS"
+}

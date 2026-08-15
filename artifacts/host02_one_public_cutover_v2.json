@@ -1,0 +1,33 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_public_cutover_v2",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "public_hostname": "www.jmerrill.one",
+  "dns": {
+    "before": "lively-flower-04d9c640f.6.azurestaticapps.net",
+    "after": "app-jm1-one-prod.azurewebsites.net",
+    "verification_record": "asuid.www.jmerrill.one"
+  },
+  "static_web_app": {
+    "www_custom_domain_removed": true,
+    "remaining_custom_domains": ["jmerrill.one"],
+    "deletion_performed": false
+  },
+  "app_service": {
+    "hostname_binding": "www.jmerrill.one",
+    "hostname_status": "Verified",
+    "target_resource": "app-jm1-one-prod"
+  },
+  "public_validation": {
+    "passes": 20,
+    "routes": {
+      "/api/health": 200,
+      "/": 200,
+      "/why-we-exist": 200,
+      "/divisions": 200,
+      "/contact": 200,
+      "GET /api/intake": 405
+    }
+  },
+  "classification": "PASS"
+}

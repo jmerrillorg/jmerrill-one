@@ -1,0 +1,15 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_precutover_gate_v3",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "staging_app_service_pre_cutover": "READY",
+  "production_slot_promotion": "PASS",
+  "cleared_operation": {
+    "operation_name": "SwapSiteSlots",
+    "operation_id": "cae870af-6734-443b-b503-bff8656c37e2",
+    "created_time_utc": "2026-08-15T11:20:16Z",
+    "completed_time_utc": "2026-08-15T11:32:36.149000Z"
+  },
+  "no_new_jackie_approval_required": true,
+  "classification": "PASS"
+}

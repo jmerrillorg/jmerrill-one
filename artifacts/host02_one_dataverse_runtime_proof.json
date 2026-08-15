@@ -1,0 +1,15 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_dataverse_runtime_proof",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "token_acquisition": "PASS",
+  "whoami": "PASS",
+  "app_service_write_path": "PASS",
+  "evidence": [
+    "Staging App Service /api/intake accepted controlled POST with HTTP 202.",
+    "Replay returned idempotent behavior.",
+    "Dataverse query returned one Contact, one Lead, one Execution Log for the test correlation/email."
+  ],
+  "secrets_recorded": false,
+  "classification": "PASS"
+}

@@ -1,0 +1,26 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_kudu_state",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "stale_temp_deployment": {
+    "id": "temp-423edf3a",
+    "status": 3,
+    "active": false,
+    "start_time": "2026-08-15T09:53:43.3326563Z",
+    "end_time": "2026-08-15T10:41:48.5180434Z",
+    "classification": "CLEARED / TERMINAL FAILED"
+  },
+  "active_staging_deployment_after_remediation": {
+    "id": "e5c0fefd-5010-4747-acf1-1f6feec4b0c9",
+    "status": 4,
+    "active": true,
+    "deployment_path": "ZipDeploy. Extract zip",
+    "end_time": "2026-08-15T11:11:47.9533973Z"
+  },
+  "source_build_state": {
+    "SCM_DO_BUILD_DURING_DEPLOYMENT": "false",
+    "ENABLE_ORYX_BUILD": "false",
+    "WEBSITE_RUN_FROM_PACKAGE": "absent for extracted zip deployment"
+  },
+  "supported_remediation_path": "Use Kudu config-zip extracted deployment with prebuilt standalone artifact; avoid OneDeploy/Oryx for this deployment."
+}
