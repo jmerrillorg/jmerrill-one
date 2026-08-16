@@ -1,0 +1,19 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "final deployment proof + retirement prep"
+  },
+  "captured_at_utc": "2026-08-16T08:18:44.647Z",
+  "secrets_recorded": false,
+  "classification": "RIGHT-SIZED",
+  "window": "Approx. two-hour Azure Monitor sample after remote workflow proof",
+  "cpu": {
+    "average_range": "4.4-6.2%",
+    "maximum_range": "8-9%"
+  },
+  "memory": {
+    "average_range": "25.0-25.2%",
+    "maximum_range": "25-26%"
+  },
+  "capacity_change": "NONE"
+}

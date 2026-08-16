@@ -1,0 +1,137 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "final deployment proof + retirement prep"
+  },
+  "captured_at_utc": "2026-08-16T08:18:44.647Z",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "checks": [
+    {
+      "label": "One health",
+      "url": "https://jmerrill.one/api/health",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "One homepage",
+      "url": "https://jmerrill.one/",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "One intake safe GET",
+      "url": "https://jmerrill.one/api/intake",
+      "expected_status": 405,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Publishing health",
+      "url": "https://jmerrill.pub/api/health",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Publishing homepage",
+      "url": "https://jmerrill.pub/",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Publishing Author Experience",
+      "url": "https://jmerrill.pub/experience",
+      "expected_status": 307,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Financial health",
+      "url": "https://jmerrill.financial/api/health",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Financial homepage",
+      "url": "https://jmerrill.financial/",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Financial experience",
+      "url": "https://jmerrill.financial/experience",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Foundation health",
+      "url": "https://jmerrill.foundation/api/health",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Foundation homepage",
+      "url": "https://jmerrill.foundation/",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Foundation feedback",
+      "url": "https://jmerrill.foundation/share-your-experience",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Productions health",
+      "url": "https://jmerrill.productions/api/health",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Productions homepage",
+      "url": "https://jmerrill.productions/",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Productions contact",
+      "url": "https://jmerrill.productions/contact",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Jackie health",
+      "url": "https://jackiesmithjr.com/api/health",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Jackie homepage",
+      "url": "https://jackiesmithjr.com/",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    },
+    {
+      "label": "Jackie archive",
+      "url": "https://jackiesmithjr.com/archive",
+      "expected_status": 200,
+      "result": "PASS",
+      "tls": "PASS"
+    }
+  ]
+}

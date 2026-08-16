@@ -1,0 +1,83 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "final deployment proof + retirement prep"
+  },
+  "captured_at_utc": "2026-08-16T08:18:44.647Z",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "commits": [
+    {
+      "repo": "jmerrillorg/jmerrill-one",
+      "branch": "codex/host02-appservice-migration-gate",
+      "commit": "b67414f664cce398f1af1c6c536f77a989ad5081",
+      "pr": 3,
+      "merge_sha": "459338dac6918893e4fa65b245740dd351d911ed",
+      "push": "PASS"
+    },
+    {
+      "repo": "jmerrillorg/jmerrill-pub",
+      "branch": "codex/host02-publishing-premium-finalization",
+      "commit": "5edfe2399714703c74bf3f7d8280e4e6b1fe2e73",
+      "pr": 515,
+      "merge_sha": "b8497062a51f0818c27af2b7b30c1d02e407a201",
+      "push": "PASS"
+    },
+    {
+      "repo": "jmerrillorg/jmerrill-financial",
+      "branch": "codex/host02-financial-appservice-cutover",
+      "commits": [
+        "12f26f72bdb47496f3372214edbc495bb87b7451",
+        "6c37fbc",
+        "80cbe4e"
+      ],
+      "prs": [
+        13,
+        14,
+        15
+      ],
+      "merge_sha": "2904ba48179ae222ee9fb1cc9cd6226f16590576",
+      "push": "PASS"
+    },
+    {
+      "repo": "jmerrillorg/jmerrillfoundation",
+      "branch": "codex/host02-foundation-appservice-cutover",
+      "commits": [
+        "6f24e7ee031197564aef701271b5370ff63c784f",
+        "5757ebf",
+        "df4e109"
+      ],
+      "prs": [
+        5,
+        6,
+        7
+      ],
+      "merge_sha": "1ab920e89209bf4922d421c5963d54152c22cf2c",
+      "push": "PASS"
+    },
+    {
+      "repo": "jmerrillorg/jmerrill-productions",
+      "branch": "codex/host02-productions-appservice-cutover",
+      "commits": [
+        "2f6c4dfee6c12beb5be1eb93ff548175a7923efe",
+        "39cbb71",
+        "0064259"
+      ],
+      "prs": [
+        1,
+        2,
+        3
+      ],
+      "merge_sha": "52fc139b0a9bd2147262ff1f73128898e585b672",
+      "push": "PASS"
+    },
+    {
+      "repo": "jmerrillorg/jackiesmithjr",
+      "branch": "codex/host02-jackie-final-cutover",
+      "commit": "9534d09ac39bd9b41918ed182c4a72bf7ceddca3",
+      "pr": 1,
+      "merge_sha": "ce945557666657852064c5b7d69913339b4e9a83",
+      "push": "PASS"
+    }
+  ]
+}

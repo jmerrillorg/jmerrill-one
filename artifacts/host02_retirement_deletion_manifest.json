@@ -1,0 +1,200 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "final deployment proof + retirement prep"
+  },
+  "captured_at_utc": "2026-08-16T08:18:44.647Z",
+  "secrets_recorded": false,
+  "classification": "FOUNDER CONFIRMATION REQUIRED BEFORE DELETE",
+  "groups": {
+    "A_superseded_app_services": [
+      {
+        "name": "app-jm1-one-prod",
+        "type": "Microsoft.Web/sites",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-one-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "app-jm1-fin-prod",
+        "type": "Microsoft.Web/sites",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-fin-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "app-jm1-foundation-prod",
+        "type": "Microsoft.Web/sites",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-foundation-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "app-jm1-productions-prod",
+        "type": "Microsoft.Web/sites",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-productions-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "app-jm1-jackiesmithjr-prod",
+        "type": "Microsoft.Web/sites",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-jackiesmithjr-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "app-jm1-pub-prod",
+        "type": "Microsoft.Web/sites",
+        "resource_group": "rg-jm1-pub-prod-appsvc",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-pub-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      }
+    ],
+    "B_superseded_app_service_plans": [
+      {
+        "name": "asp-jm1-web-prod-linux",
+        "type": "Microsoft.Web/serverfarms",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "asp-jm1-web-prod-premium",
+        "dependency_audit_result": "READY TO DELETE AFTER ATTACHED OLD APPS ARE REMOVED",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes duplicate paid S1 plan after attached old apps are deleted",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "asp-jm1-pub-prod-linux",
+        "type": "Microsoft.Web/serverfarms",
+        "resource_group": "rg-jm1-pub-prod-appsvc",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "asp-jm1-web-prod-premium",
+        "dependency_audit_result": "READY TO DELETE AFTER ATTACHED OLD APPS ARE REMOVED",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes duplicate paid S1 plan after attached old apps are deleted",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      }
+    ],
+    "C_superseded_static_web_apps": [
+      {
+        "name": "jmerrill-one",
+        "type": "Microsoft.Web/staticSites",
+        "resource_group": "jmerrill-one",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-one-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "jmerrill-financial",
+        "type": "Microsoft.Web/staticSites",
+        "resource_group": "jmerrill-financial_group",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-fin-prod-v2 + func-jm1-fin-prod",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "foundation-main",
+        "type": "Microsoft.Web/staticSites",
+        "resource_group": "jm1-core-services",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-foundation-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "jmerrill-productions",
+        "type": "Microsoft.Web/staticSites",
+        "resource_group": "jmerrill-productions-rg",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-productions-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      },
+      {
+        "name": "jackiesmithjr",
+        "type": "Microsoft.Web/staticSites",
+        "resource_group": "jm1-core-services",
+        "reason": "Superseded by validated HOST-02 Premium estate",
+        "replacement_resource": "app-jm1-jackiesmithjr-prod-v2",
+        "dependency_audit_result": "READY TO DELETE",
+        "dns_result": "NO ACTIVE DNS",
+        "custom_domain_result": "NO CUSTOM DOMAIN",
+        "deployment_result": "NO NORMAL DEPLOYMENT",
+        "traffic_result": "NO PRODUCTION TRAFFIC",
+        "cost_implication": "Removes obsolete transition resource",
+        "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+      }
+    ],
+    "D_other_transition_resources": []
+  }
+}

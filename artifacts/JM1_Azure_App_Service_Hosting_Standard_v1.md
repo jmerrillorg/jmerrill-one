@@ -22,6 +22,9 @@ Current reference implementation:
 - Financial frontend on App Service with Azure Functions backend preserved
 - completed-estate capacity classification: `P1MV3 x1 = ACCEPTABLE — MONITOR`
 - superseded App Services, old plans, and SWAs retained only for bounded rollback pending deletion confirmation
+- GitHub Actions deployment uses Azure OIDC, not publish profiles, for the proven Premium workflows
+- post-deployment health validation is performed through public `/api/health` routes and representative business routes
+- Azure CLI startup tracking is not the readiness authority for Linux ZIP deploys; explicit health probes own readiness
 
 Final production app matrix:
 
@@ -33,5 +36,13 @@ Final production app matrix:
 - Jackie Smith Jr.: `app-jm1-jackiesmithjr-prod-v2`
 
 Repository ownership remains per brand repository. J Merrill One owns enterprise orchestration evidence and standards. Jackie Smith Jr. is classified as a JM1 Founder Brand, not an operating division.
+
+Final HOST-02 evidence:
+
+- Six remote Premium App Service deployment workflows completed successfully on `main`.
+- OIDC variables and environment-scoped federated credentials were configured for the six authorized repositories.
+- `asp-jm1-web-prod-premium` remained at `P1mv3 x 1`; no capacity increase was made.
+- Final observed P1mv3 telemetry supported `RIGHT-SIZED` for the sampled post-proof window.
+- Superseded App Services, S1 plans, and SWAs are retirement-ready only after Founder deletion confirmation against the HOST-02 deletion manifest.
 
 Future Node major changes require compatibility testing, build validation, production regression, and an explicit runtime baseline update. Future hosting exceptions remain allowed when supported by architecture evidence. This standard does not claim App Service must be used forever regardless of future architecture.
