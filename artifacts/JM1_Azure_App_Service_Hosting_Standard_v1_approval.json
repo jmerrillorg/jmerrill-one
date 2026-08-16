@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-08-16T11:44:03.759Z",
+  "standard": "JM1_Azure_App_Service_Hosting_Standard_v1",
+  "prior_status": "CANON-CANDIDATE — IMPLEMENTATION PROVEN — READY FOR FOUNDER APPROVAL",
+  "promoted_status": "CANON — v1.0",
+  "founder_approval": "APPROVED",
+  "implementation_evidence": [
+    "host02_final_premium_inventory.json",
+    "host02_final_node24_validation.json",
+    "host02_final_deployment_target_validation.json",
+    "host02_postretirement_public_smoke.json",
+    "host02_retirement_postdelete_inventory.json"
+  ],
+  "final_architecture": "Six public properties consolidated on asp-jm1-web-prod-premium P1mv3 x1 with Financial Functions backend retained.",
+  "effective_date": "2026-08-16",
+  "node24_baseline": "NODE|24-lts",
+  "p1mv3_plan": "asp-jm1-web-prod-premium",
+  "six_site_consolidation": [
+    "app-jm1-one-prod-v2",
+    "app-jm1-pub-prod-v2",
+    "app-jm1-fin-prod-v2",
+    "app-jm1-foundation-prod-v2",
+    "app-jm1-productions-prod-v2",
+    "app-jm1-jackiesmithjr-prod-v2"
+  ],
+  "financial_functions_boundary": "func-jm1-fin-prod remains backend outside shared web App Service plan.",
+  "deployment_standard": "GitHub Actions with Azure OIDC to v2 App Services.",
+  "health_telemetry_standard": "Post-deployment public health probes and Azure Monitor telemetry.",
+  "retirement_rule": "Superseded rollback hosts are deleted only after Founder-approved manifest and final safety check.",
+  "capacity_review_rule": "Do not exceed P1mv3 x1 without explicit capacity decision; monitor after clean estate."
+}

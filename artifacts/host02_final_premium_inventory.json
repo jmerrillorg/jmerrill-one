@@ -1,0 +1,94 @@
+{
+  "created_at": "2026-08-16T11:41:57.941Z",
+  "resource_group": "rg-jm1-web-prod-premium",
+  "plan": {
+    "name": "asp-jm1-web-prod-premium",
+    "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+    "sku": {
+      "capacity": 1,
+      "family": "Pmv3",
+      "name": "P1mv3",
+      "size": "P1mv3",
+      "tier": "PremiumMV3"
+    },
+    "kind": "linux",
+    "number_of_workers": 1
+  },
+  "apps": [
+    {
+      "name": "app-jm1-productions-prod-v2",
+      "state": "Running",
+      "defaultHostName": "app-jm1-productions-prod-v2.azurewebsites.net",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "hostNames": [
+        "www.jmerrill.productions",
+        "jmerrill.productions",
+        "app-jm1-productions-prod-v2.azurewebsites.net"
+      ]
+    },
+    {
+      "name": "app-jm1-fin-prod-v2",
+      "state": "Running",
+      "defaultHostName": "app-jm1-fin-prod-v2.azurewebsites.net",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "hostNames": [
+        "www.jmerrill.financial",
+        "jmerrill.financial",
+        "app-jm1-fin-prod-v2.azurewebsites.net"
+      ]
+    },
+    {
+      "name": "app-jm1-foundation-prod-v2",
+      "state": "Running",
+      "defaultHostName": "app-jm1-foundation-prod-v2.azurewebsites.net",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "hostNames": [
+        "www.jmerrill.foundation",
+        "jmerrill.foundation",
+        "app-jm1-foundation-prod-v2.azurewebsites.net"
+      ]
+    },
+    {
+      "name": "app-jm1-pub-prod-v2",
+      "state": "Running",
+      "defaultHostName": "app-jm1-pub-prod-v2.azurewebsites.net",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "hostNames": [
+        "www.jmerrill.pub",
+        "jmerrill.pub",
+        "app-jm1-pub-prod-v2.azurewebsites.net"
+      ]
+    },
+    {
+      "name": "app-jm1-one-prod-v2",
+      "state": "Running",
+      "defaultHostName": "app-jm1-one-prod-v2.azurewebsites.net",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "hostNames": [
+        "jmerrill.one",
+        "www.jmerrill.one",
+        "app-jm1-one-prod-v2.azurewebsites.net"
+      ]
+    },
+    {
+      "name": "app-jm1-jackiesmithjr-prod-v2",
+      "state": "Running",
+      "defaultHostName": "app-jm1-jackiesmithjr-prod-v2.azurewebsites.net",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "hostNames": [
+        "jackiesmithjr.com",
+        "app-jm1-jackiesmithjr-prod-v2.azurewebsites.net"
+      ]
+    }
+  ],
+  "required_apps": [
+    "app-jm1-one-prod-v2",
+    "app-jm1-pub-prod-v2",
+    "app-jm1-fin-prod-v2",
+    "app-jm1-foundation-prod-v2",
+    "app-jm1-productions-prod-v2",
+    "app-jm1-jackiesmithjr-prod-v2"
+  ],
+  "result": "PASS",
+  "updated_at": "2026-08-16T11:47:53.271Z"
+}

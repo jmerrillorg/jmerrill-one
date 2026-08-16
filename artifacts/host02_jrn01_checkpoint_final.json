@@ -1,15 +1,27 @@
 {
-  "package": {
-    "id": "HOST-02",
-    "phase": "final deployment proof + retirement prep"
-  },
-  "captured_at_utc": "2026-08-16T08:18:44.647Z",
-  "secrets_recorded": false,
-  "classification": "JRN-01 NOT MODIFIED DURING HOST-02 / EXTERNAL ADMIN ACTION STILL REQUIRED",
-  "state": {
-    "JM1-Enterprise-Dev": "Installing in last recorded evidence",
-    "JM1-Test": "Installation Failed in last recorded evidence",
-    "JM1-Core": "Installing in last recorded evidence"
-  },
-  "recommendation": "Resume JRN-01 only after separate Journeys admin verification; not a HOST-02 deletion blocker."
+  "created_at": "2026-08-16T11:44:14.320Z",
+  "scope": "Inspection only; no Customer Insights - Journeys modification performed in HOST-02.",
+  "environments": [
+    "JM1-Enterprise-Dev",
+    "JM1-Test",
+    "JM1-Core"
+  ],
+  "inspection_method": "pac admin list --json",
+  "pac_available": true,
+  "observed_state": [
+    {
+      "environment": "JM1-Enterprise-Dev",
+      "state": "FOUND_IN_PAC_LIST"
+    },
+    {
+      "environment": "JM1-Test",
+      "state": "FOUND_IN_PAC_LIST"
+    },
+    {
+      "environment": "JM1-Core",
+      "state": "FOUND_IN_PAC_LIST"
+    }
+  ],
+  "result": "JRN-01 READY STATE REQUIRES JOURNEYS APP USABILITY CHECK",
+  "next_action": "Resume JRN-01 only after HOST-02 closeout; validate Customer Insights - Journeys usability in DEV before implementation."
 }

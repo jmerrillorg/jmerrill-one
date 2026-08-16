@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-08-16T11:43:29.509Z",
+  "endpoint": {
+    "url": "https://jmerrill.one/api/intake",
+    "method": "GET",
+    "ok": true,
+    "status": 405,
+    "effective_url": "https://jmerrill.one/api/intake",
+    "time_total_seconds": 0.169721,
+    "pass": true,
+    "body_excerpt": ""
+  },
+  "dataverse_service_identity": "PASS",
+  "routing_dependency_on_deleted_host": "NONE OBSERVED",
+  "controlled_write_used": false,
+  "result": "PASS"
+}

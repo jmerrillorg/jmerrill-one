@@ -1,0 +1,347 @@
+{
+  "created_at": "2026-08-16T11:48:39.165Z",
+  "package": "HOST-02",
+  "final_classification": "HOST-02 COMPLETE — ALL SIX SITES CONSOLIDATED ON P1mv3 — SUPERSEDED HOSTING RETIRED",
+  "founder_deletion_approval": {
+    "status": "FOUNDER DELETION AUTHORIZATION APPROVED",
+    "timestamp": "2026-08-16T11:33:09.805Z",
+    "manifest_only": true
+  },
+  "resources_deleted": {
+    "app_services": [
+      {
+        "name": "app-jm1-one-prod",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "result": "DELETED"
+      },
+      {
+        "name": "app-jm1-pub-prod",
+        "resource_group": "rg-jm1-pub-prod-appsvc",
+        "result": "DELETED"
+      },
+      {
+        "name": "app-jm1-fin-prod",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "result": "DELETED"
+      },
+      {
+        "name": "app-jm1-foundation-prod",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "result": "DELETED"
+      },
+      {
+        "name": "app-jm1-productions-prod",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "result": "DELETED"
+      },
+      {
+        "name": "app-jm1-jackiesmithjr-prod",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "result": "DELETED"
+      }
+    ],
+    "app_service_plans": [
+      {
+        "name": "asp-jm1-web-prod-linux",
+        "resource_group": "rg-jm1-web-prod-appsvc",
+        "result": "ALREADY_NOT_FOUND"
+      },
+      {
+        "name": "asp-jm1-pub-prod-linux",
+        "resource_group": "rg-jm1-pub-prod-appsvc",
+        "result": "ALREADY_NOT_FOUND"
+      }
+    ],
+    "static_web_apps": [
+      {
+        "name": "jmerrill-one",
+        "resource_group": "jmerrill-one",
+        "result": "DELETED"
+      },
+      {
+        "name": "jmerrill-financial",
+        "resource_group": "jmerrill-financial_group",
+        "result": "DELETED"
+      },
+      {
+        "name": "foundation-main",
+        "resource_group": "jm1-core-services",
+        "result": "DELETED"
+      },
+      {
+        "name": "jmerrill-productions",
+        "resource_group": "jmerrill-productions-rg",
+        "result": "DELETED"
+      },
+      {
+        "name": "jackiesmithjr",
+        "resource_group": "jm1-core-services",
+        "result": "DELETED"
+      }
+    ]
+  },
+  "resources_retained": {
+    "premium_resource_group": "rg-jm1-web-prod-premium",
+    "premium_plan": "asp-jm1-web-prod-premium",
+    "v2_apps": [
+      "app-jm1-one-prod-v2",
+      "app-jm1-pub-prod-v2",
+      "app-jm1-fin-prod-v2",
+      "app-jm1-foundation-prod-v2",
+      "app-jm1-productions-prod-v2",
+      "app-jm1-jackiesmithjr-prod-v2"
+    ],
+    "financial_functions": "func-jm1-fin-prod",
+    "monitoring": "retained where used by live estate",
+    "key_vault_service_identities_dns_certificates": "retained",
+    "customer_voice": "retained and unmodified"
+  },
+  "final_premium_estate": {
+    "result": "PASS",
+    "resource_group": "rg-jm1-web-prod-premium",
+    "plan": {
+      "name": "asp-jm1-web-prod-premium",
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "sku": {
+        "capacity": 1,
+        "family": "Pmv3",
+        "name": "P1mv3",
+        "size": "P1mv3",
+        "tier": "PremiumMV3"
+      },
+      "kind": "linux",
+      "number_of_workers": 1
+    },
+    "apps": [
+      "app-jm1-productions-prod-v2",
+      "app-jm1-fin-prod-v2",
+      "app-jm1-foundation-prod-v2",
+      "app-jm1-pub-prod-v2",
+      "app-jm1-one-prod-v2",
+      "app-jm1-jackiesmithjr-prod-v2"
+    ]
+  },
+  "node24": {
+    "result": "PASS",
+    "apps": [
+      {
+        "brand": "One",
+        "app": "app-jm1-one-prod-v2",
+        "linuxFxVersion": "NODE|24-lts",
+        "node24_applied": true
+      },
+      {
+        "brand": "Publishing",
+        "app": "app-jm1-pub-prod-v2",
+        "linuxFxVersion": "NODE|24-lts",
+        "node24_applied": true
+      },
+      {
+        "brand": "Financial",
+        "app": "app-jm1-fin-prod-v2",
+        "linuxFxVersion": "NODE|24-lts",
+        "node24_applied": true
+      },
+      {
+        "brand": "Foundation",
+        "app": "app-jm1-foundation-prod-v2",
+        "linuxFxVersion": "NODE|24-lts",
+        "node24_applied": true
+      },
+      {
+        "brand": "Productions",
+        "app": "app-jm1-productions-prod-v2",
+        "linuxFxVersion": "NODE|24-lts",
+        "node24_applied": true
+      },
+      {
+        "brand": "Jackie Smith Jr.",
+        "app": "app-jm1-jackiesmithjr-prod-v2",
+        "linuxFxVersion": "NODE|24-lts",
+        "node24_applied": true
+      }
+    ]
+  },
+  "oidc_deployment_paths": {
+    "result": "PASS",
+    "repos": [
+      {
+        "brand": "One",
+        "repo": "jmerrillorg/jmerrill-one",
+        "result": "PASS",
+        "legacy_workflows_retired": true
+      },
+      {
+        "brand": "Publishing",
+        "repo": "jmerrillorg/jmerrill-pub",
+        "result": "PASS",
+        "legacy_workflows_retired": true
+      },
+      {
+        "brand": "Financial",
+        "repo": "jmerrillorg/jmerrill-financial",
+        "result": "PASS",
+        "legacy_workflows_retired": true
+      },
+      {
+        "brand": "Foundation",
+        "repo": "jmerrillorg/jmerrillfoundation",
+        "result": "PASS",
+        "legacy_workflows_retired": true
+      },
+      {
+        "brand": "Productions",
+        "repo": "jmerrillorg/jmerrill-productions",
+        "result": "PASS",
+        "legacy_workflows_retired": true
+      },
+      {
+        "brand": "Jackie Smith Jr.",
+        "repo": "jmerrillorg/jackiesmithjr",
+        "result": "PASS",
+        "legacy_workflows_retired": true
+      }
+    ]
+  },
+  "public_six_site_smoke": {
+    "result": "PASS",
+    "sites": [
+      {
+        "brand": "One",
+        "result": "PASS"
+      },
+      {
+        "brand": "Publishing",
+        "result": "PASS"
+      },
+      {
+        "brand": "Financial",
+        "result": "PASS"
+      },
+      {
+        "brand": "Foundation",
+        "result": "PASS"
+      },
+      {
+        "brand": "Productions",
+        "result": "PASS"
+      },
+      {
+        "brand": "Jackie Smith Jr.",
+        "result": "PASS"
+      }
+    ]
+  },
+  "one_intake": {
+    "result": "PASS",
+    "controlled_write_used": false,
+    "routing_dependency_on_deleted_host": "NONE OBSERVED"
+  },
+  "financial_functions": {
+    "result": "PASS",
+    "function_app": {
+      "name": "func-jm1-fin-prod",
+      "resourceGroup": "jmerrill-financial_group",
+      "state": null,
+      "kind": "functionapp,linux"
+    },
+    "architecture_modified": false
+  },
+  "customer_voice": {
+    "result": "PASS",
+    "jackie": "NOT ACTIVATED - per canon/current scope",
+    "customer_voice_modified": false
+  },
+  "dns_tls": {
+    "result": "PASS",
+    "domains": [
+      {
+        "domain": "jmerrill.one",
+        "result": "PASS"
+      },
+      {
+        "domain": "www.jmerrill.one",
+        "result": "PASS"
+      },
+      {
+        "domain": "jmerrill.pub",
+        "result": "PASS"
+      },
+      {
+        "domain": "www.jmerrill.pub",
+        "result": "PASS"
+      },
+      {
+        "domain": "jmerrill.financial",
+        "result": "PASS"
+      },
+      {
+        "domain": "www.jmerrill.financial",
+        "result": "PASS"
+      },
+      {
+        "domain": "jmerrill.foundation",
+        "result": "PASS"
+      },
+      {
+        "domain": "www.jmerrill.foundation",
+        "result": "PASS"
+      },
+      {
+        "domain": "jmerrill.productions",
+        "result": "PASS"
+      },
+      {
+        "domain": "www.jmerrill.productions",
+        "result": "PASS"
+      },
+      {
+        "domain": "jackiesmithjr.com",
+        "result": "PASS"
+      },
+      {
+        "domain": "www.jackiesmithjr.com",
+        "result": "NOT_APPLICABLE_NO_DNS_RECORD"
+      }
+    ]
+  },
+  "capacity": {
+    "classification": "ACCEPTABLE — MONITOR",
+    "metrics_window": "PT1H",
+    "plan": "asp-jm1-web-prod-premium"
+  },
+  "cost_footprint": {
+    "result": "PASS",
+    "architecture": [
+      "1 x P1mv3 App Service plan",
+      "six web apps sharing asp-jm1-web-prod-premium",
+      "Financial Functions backend retained",
+      "required Azure Monitor/Application Insights retained",
+      "no superseded S1 plan",
+      "no separate Publishing production App Service plan",
+      "no superseded SWA production estate"
+    ],
+    "approximate_monthly_cost": "Not asserted unless billing export/consumption evidence is sufficient for complete recurring projection.",
+    "billing_evidence_status": "READ"
+  },
+  "duplication_elimination": {
+    "result": "PASS",
+    "old_shared_s1_plan_deleted": true,
+    "old_publishing_plan_deleted": true,
+    "old_app_services_deleted": true,
+    "superseded_swas_deleted": true,
+    "no_duplicate_paid_hosting_layer_remains": true
+  },
+  "hosting_standard_canon_status": {
+    "standard": "JM1_Azure_App_Service_Hosting_Standard_v1",
+    "status": "CANON — v1.0",
+    "effective_date": "2026-08-16"
+  },
+  "as_built_architecture": "artifacts/host02_premium_asbuilt_architecture.md",
+  "remaining_hosting_debt": "NONE OBSERVED inside HOST-02 retirement manifest. Continue normal monitoring for P1mv3 capacity and public route health.",
+  "jrn01_state": {
+    "result": "JRN-01 READY STATE REQUIRES JOURNEYS APP USABILITY CHECK",
+    "next_action": "Resume JRN-01 only after HOST-02 closeout; validate Customer Insights - Journeys usability in DEV before implementation."
+  },
+  "exact_next_enterprise_action": "Review HOST-02 v10 closeout and authorize the next enterprise package only after separate Jackie approval; JRN-01 may resume with a DEV Customer Insights - Journeys usability check, not as part of HOST-02."
+}

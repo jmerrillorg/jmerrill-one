@@ -1,6 +1,6 @@
 # HOST-02 Premium As-Built Architecture
 
-Classification: HOST-02 COMPLETE — ALL SIX SITES CONSOLIDATED ON P1mv3; RETIREMENT CONFIRMATION REQUIRED
+Classification: HOST-02 COMPLETE — ALL SIX SITES CONSOLIDATED ON P1mv3 — SUPERSEDED HOSTING RETIRED
 
 ```text
 GitHub repositories
@@ -31,4 +31,4 @@ Required integrations
   +-- Azure Monitor / Application Insights
 ```
 
-Old App Services, S1 plans, and SWAs are retained only for bounded rollback/retirement pending explicit Founder deletion confirmation.
+Old App Services, S1 plans, and SWAs from the Founder-approved HOST-02 retirement manifest are deleted and no longer part of the current-state production architecture.

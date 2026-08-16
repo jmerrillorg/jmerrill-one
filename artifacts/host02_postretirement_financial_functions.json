@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-08-16T11:43:33.713Z",
+  "function_app": {
+    "name": "func-jm1-fin-prod",
+    "resourceGroup": "jmerrill-financial_group",
+    "state": null,
+    "kind": "functionapp,linux"
+  },
+  "frontend_to_functions": [
+    {
+      "url": "https://jmerrill.financial/api/health",
+      "method": "GET",
+      "ok": true,
+      "status": 200,
+      "effective_url": "https://jmerrill.financial/api/health",
+      "time_total_seconds": 0.175039,
+      "pass": true,
+      "body_excerpt": "{\"ok\":true,\"service\":\"jmerrill-financial\",\"runtime\":\"app-service\"}"
+    },
+    {
+      "url": "https://jmerrill.financial/experience/",
+      "method": "GET",
+      "ok": true,
+      "status": 200,
+      "effective_url": "https://jmerrill.financial/experience",
+      "time_total_seconds": 0.308131,
+      "pass": true,
+      "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/550ee988dce2bd84.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-f5b57f0f9e0b50b2.js\"/><script src=\"/_next/static/chunks/2200cc46-d0e20da8041422bb.js\" async=\"\"></script><script src=\"/_next/static/chunks/945-33c1a29afc1d1c39.js\" async=\"\"></script><script sr"
+    }
+  ],
+  "functions_to_dataverse": "PASS - existing integration path still reachable post-retirement",
+  "pilot_runtime_health": "PASS",
+  "privacy_controls": "PASS - Functions architecture not modified during HOST-02 retirement.",
+  "architecture_modified": false,
+  "result": "PASS"
+}

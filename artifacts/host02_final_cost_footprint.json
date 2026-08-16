@@ -1,0 +1,281 @@
+{
+  "created_at": "2026-08-16T11:44:03.758Z",
+  "architecture": [
+    "1 x P1mv3 App Service plan",
+    "six web apps sharing asp-jm1-web-prod-premium",
+    "Financial Functions backend retained",
+    "required Azure Monitor/Application Insights retained",
+    "no superseded S1 plan",
+    "no separate Publishing production App Service plan",
+    "no superseded SWA production estate"
+  ],
+  "billing_evidence_query": [
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-premium/providers/microsoft.web/serverfarms/asp-jm1-web-prod-premium",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-web-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-web-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    },
+    {
+      "currency": null,
+      "instanceName": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourcegroups/rg-jm1-pub-prod-appsvc/providers/microsoft.web/serverfarms/asp-jm1-pub-prod-linux",
+      "meterName": null,
+      "pretaxCost": "None",
+      "usageEnd": null,
+      "usageStart": null
+    }
+  ],
+  "billing_evidence_status": "READ",
+  "approximate_monthly_cost": "Not asserted unless billing export/consumption evidence is sufficient for complete recurring projection.",
+  "result": "PASS"
+}

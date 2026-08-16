@@ -1,0 +1,93 @@
+{
+  "created_at": "2026-08-16T11:39:58.605Z",
+  "appServices": [
+    {
+      "name": "app-jm1-one-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "replacement": "app-jm1-one-prod-v2",
+      "replacementDomain": "https://jmerrill.one/api/health",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "app-jm1-pub-prod",
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "replacement": "app-jm1-pub-prod-v2",
+      "replacementDomain": "https://jmerrill.pub/api/health",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "app-jm1-fin-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "replacement": "app-jm1-fin-prod-v2",
+      "replacementDomain": "https://jmerrill.financial/api/health",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "app-jm1-foundation-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "replacement": "app-jm1-foundation-prod-v2",
+      "replacementDomain": "https://jmerrill.foundation/api/health",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "app-jm1-productions-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "replacement": "app-jm1-productions-prod-v2",
+      "replacementDomain": "https://jmerrill.productions/api/health",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "app-jm1-jackiesmithjr-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "replacement": "app-jm1-jackiesmithjr-prod-v2",
+      "replacementDomain": "https://jackiesmithjr.com/api/health",
+      "verification": "NOT_FOUND / DELETED"
+    }
+  ],
+  "plans": [
+    {
+      "name": "asp-jm1-web-prod-linux",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "asp-jm1-pub-prod-linux",
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "verification": "NOT_FOUND / DELETED"
+    }
+  ],
+  "staticWebApps": [
+    {
+      "name": "jmerrill-one",
+      "resourceGroup": "jmerrill-one",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "jmerrill-financial",
+      "resourceGroup": "jmerrill-financial_group",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "foundation-main",
+      "resourceGroup": "jm1-core-services",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "jmerrill-productions",
+      "resourceGroup": "jmerrill-productions-rg",
+      "verification": "NOT_FOUND / DELETED"
+    },
+    {
+      "name": "jackiesmithjr",
+      "resourceGroup": "jm1-core-services",
+      "verification": "NOT_FOUND / DELETED"
+    }
+  ],
+  "no_unintended_resources_deleted": "PASS - deletion executor iterated only explicit Founder-approved manifest entries.",
+  "summary": {
+    "old_app_services_gone": true,
+    "old_plans_gone": true,
+    "old_swas_gone": true,
+    "result": "PASS"
+  }
+}
