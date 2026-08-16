@@ -1,0 +1,30 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_capacity_scaleout_evidence",
+  "generated_utc": "2026-08-15T02:38:15Z",
+  "target_repository": "J Merrill One",
+  "founder_capacity_decision": {
+    "approved_action": "Scale asp-jm1-web-prod-linux from 1 S1 worker to 2 S1 workers only.",
+    "prohibited_without_additional_decision": [
+      "additional workers beyond 2",
+      "SKU scale-up",
+      "additional App Service plans",
+      "new paid capacity purchases"
+    ]
+  },
+  "app_service_plan": {
+    "resource_group": "rg-jm1-web-prod-appsvc",
+    "name": "asp-jm1-web-prod-linux",
+    "sku": "S1",
+    "tier": "Standard",
+    "worker_count_before": 1,
+    "worker_count_after": 2,
+    "observed_capacity_after": 2
+  },
+  "execution_result": "PASS",
+  "notes": [
+    "Scale-out was applied to the existing S1 plan only.",
+    "No SKU change was performed.",
+    "No worker count above 2 was configured."
+  ]
+}

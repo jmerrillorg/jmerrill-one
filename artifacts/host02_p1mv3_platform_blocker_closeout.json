@@ -1,0 +1,73 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Final Capacity Remediation + Jackie Smith Jr. Cutover",
+    "target_repository": "J Merrill One"
+  },
+  "final_classification": "HOST-02 REMEDIATION REQUIRED",
+  "remediation_reason": "Founder-approved P1mv3 target cannot be applied to the existing production App Service Plan/resource group, and the attempted replacement-plan reassignment path returned an Azure Conflict.",
+  "founder_capacity_authorization": {
+    "approved": true,
+    "approved_target": "P1mv3",
+    "approved_workers": 1,
+    "not_authorized": [
+      "second P1mv3 worker",
+      "P2/P2mv3",
+      "additional paid capacity without new Founder decision",
+      "non-approved SKU substitution"
+    ]
+  },
+  "evidence": {
+    "prechange_baseline": "artifacts/host02_p1mv3_prechange_baseline.json",
+    "scale_evidence": "artifacts/host02_p1mv3_scale_evidence.json",
+    "post_failed_attempt_smoke": "artifacts/host02_post_failed_p1mv3_smoke.json"
+  },
+  "azure_results": {
+    "existing_plan": {
+      "name": "asp-jm1-web-prod-linux",
+      "resource_group": "rg-jm1-web-prod-appsvc",
+      "state_after_attempt": "UNCHANGED",
+      "sku_after_attempt": "S1",
+      "workers_after_attempt": 2
+    },
+    "in_place_scale": {
+      "result": "FAILED",
+      "azure_error_summary": "The pricing tier PremiumMV3 is not allowed in this resource group."
+    },
+    "same_resource_group_replacement_plan": {
+      "result": "FAILED",
+      "azure_error_summary": "Linux Worker and MV3 Series Worker features are not available in rg-jm1-web-prod-appsvc."
+    },
+    "different_resource_group_replacement_plan": {
+      "result": "CREATED FOR COMPATIBILITY TEST, THEN DELETED AFTER REASSIGNMENT FAILED",
+      "name": "asp-jm1-web-prod-p1mv3",
+      "resource_group": "rg-jm1-web-prod-p1mv3",
+      "sku": "P1mv3",
+      "workers": 1
+    },
+    "app_reassignment_to_replacement_plan": {
+      "tested_app": "app-jm1-jackiesmithjr-prod",
+      "result": "FAILED",
+      "azure_error_summary": "Operation returned an invalid status Conflict."
+    }
+  },
+  "production_impact": {
+    "five_live_public_sites": "SMOKE PASS AFTER FAILED P1MV3 ATTEMPT",
+    "jackie_default_host": "TIMEOUT / EXISTING REMEDIATION SURFACE",
+    "p1mv3_replacement_resources": "DELETED TO AVOID STRAY PAID CAPACITY"
+  },
+  "current_host02_progress": {
+    "completed": 5,
+    "total": 6,
+    "state": "5 OF 6 — JACKIE SMITH JR. NOT CUT OVER"
+  },
+  "required_next_decision": {
+    "classification": "MATERIAL ARCHITECTURE / PLATFORM REMEDIATION DECISION REQUIRED",
+    "options": [
+      "Authorize a parallel replacement App Service architecture on a P1mv3-capable resource group, with new App Services and production domain cutovers.",
+      "Authorize an Azure-supported alternate SKU on the existing production resource group.",
+      "Escalate to Azure support or perform a resource-group/stamp migration plan before retrying P1mv3."
+    ],
+    "implementation_rule": "Do not continue Jackie production cutover until the P1mv3 platform remediation path is explicitly selected."
+  }
+}

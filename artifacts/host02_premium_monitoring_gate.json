@@ -1,0 +1,21 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Premium v3 production baseline + six-site redeployment continuation"
+  },
+  "captured_at_utc": "2026-08-16T03:48:27.285Z",
+  "resource_group": "rg-jm1-web-prod-premium",
+  "app_service_plan": "asp-jm1-web-prod-premium",
+  "sku": "P1mv3",
+  "workers": 1,
+  "runtime": "Linux + NODE|24-lts",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "controls": [
+    "health endpoint",
+    "App Service Health Check",
+    "Application Insights setting/component reuse",
+    "HTTP/deployment logs",
+    "known rollback path"
+  ]
+}

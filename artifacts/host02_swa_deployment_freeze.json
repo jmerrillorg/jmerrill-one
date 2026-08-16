@@ -1,0 +1,12 @@
+{
+  "package": "HOST-02",
+  "status": "PARTIAL EXECUTED FOR J MERRILL ONE",
+  "reason": "J Merrill One cut over to App Service and passed public validation; the superseded Static Web Apps deployment workflow was frozen to manual rollback dispatch only.",
+  "workflowChangesMade": true,
+  "githubWorkflowState": "disabled_manually",
+  "githubWorkflowId": "249647544",
+  "workflow": ".github/workflows/azure-static-web-apps.yml",
+  "freezeScope": "J Merrill One repository only",
+  "remainingSwaState": "jmerrill-one Static Web App still exists with apex custom domain; www.jmerrill.one was removed from SWA and moved to App Service.",
+  "rollbackUse": "Manual workflow_dispatch with rollback_reason input only."
+}

@@ -1,0 +1,19 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "READY",
+  "jackie_reapproval_required": false,
+  "gates": {
+    "functions_proof": "PASS",
+    "functions_security": "PASS",
+    "app_service_frontend": "PASS",
+    "app_settings": "PASS",
+    "default_host": "PASS",
+    "pilot_tests": "PASS",
+    "privacy": "PASS",
+    "dataverse": "PASS",
+    "customer_voice": "PASS"
+  },
+  "cutover_authorization": "Proceed directly under existing HOST-02 authorization unless Azure blocks custom domain/TLS."
+}

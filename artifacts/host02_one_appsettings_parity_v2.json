@@ -1,0 +1,22 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_appsettings_parity_v2",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "source": "jmerrill-one Static Web App production app settings",
+  "target": "app-jm1-one-prod staging slot",
+  "secret_values_recorded": false,
+  "settings": [
+    {"name": "DATAVERSE_WEB_API_BASE_URL", "result": "PRESENT"},
+    {"name": "DATAVERSE_RESOURCE_URL", "result": "PRESENT"},
+    {"name": "DATAVERSE_TENANT_ID", "result": "PRESENT"},
+    {"name": "DATAVERSE_CLIENT_ID", "result": "PRESENT"},
+    {"name": "DATAVERSE_CLIENT_SECRET", "result": "PRESENT"},
+    {"name": "AZURE_GRAPH_ENDPOINT", "result": "PRESENT"},
+    {"name": "AZURE_GRAPH_SCOPE", "result": "PRESENT"},
+    {"name": "CLIENT_ID", "result": "PRESENT"},
+    {"name": "CLIENT_SECRET", "result": "PRESENT"},
+    {"name": "TENANT_ID", "result": "PRESENT"},
+    {"name": "Customer Voice survey URL", "result": "NOT REQUIRED", "reason": "The One public Customer Voice URL is canonical site content in content/canon.ts, not a runtime app setting."}
+  ],
+  "classification": "PASS"
+}

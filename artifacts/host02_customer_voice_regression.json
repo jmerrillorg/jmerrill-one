@@ -1,0 +1,6 @@
+{
+  "package": "HOST-02",
+  "status": "NOT EXECUTED",
+  "reason": "No App Service public cutover occurred. Existing SWA/App Service production sites were not changed.",
+  "risk": "Customer Voice regression must run after each default-host validation and public cutover."
+}

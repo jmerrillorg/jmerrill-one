@@ -1,0 +1,35 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "continuation": true,
+  "startingClassification": "HOST-02 REMEDIATION REQUIRED",
+  "targetState": "ALL SIX PUBLIC PROPERTIES = APP SERVICE — LIVE",
+  "sourceArtifactsRead": [
+    "artifacts/host01_final_hosting_matrix.json",
+    "artifacts/host02_final_hosting_matrix.json",
+    "artifacts/host02_appservice_plan_capacity.json",
+    "artifacts/host02_runtime_audit.json",
+    "artifacts/host02_appsettings_parity.json",
+    "artifacts/host02_final_closeout.json",
+    "artifacts/JM1_Azure_App_Service_Hosting_Standard_v1.md"
+  ],
+  "remediationClasses": [
+    {
+      "class": "App Service Plan capacity",
+      "startingFinding": "asp-jm1-web-prod-linux S1 was already around 55-75% CPU and 77-79% memory before five migrated sites carried production traffic."
+    },
+    {
+      "class": "Financial API/runtime architecture",
+      "startingFinding": "Financial live SWA uses Azure Functions-style api/ handlers for intake, feedback, and pilot routes."
+    },
+    {
+      "class": "Target App Services serving placeholders/503 rather than applications",
+      "startingFinding": "One, Financial, Foundation, and Productions returned placeholder JSON; Jackie Smith Jr. returned HTTP 503."
+    },
+    {
+      "class": "Per-site deployment/configuration/cutover work",
+      "startingFinding": "Five non-Publishing sites still required App Service deployment workflows, default-host validation, domain/TLS transfer, public smoke, SWA freeze, and rollback evidence."
+    }
+  ],
+  "migrationProgressAtStart": "1 OF 6 LIVE ON APP SERVICE"
+}

@@ -1,0 +1,23 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_worker_artifact_state",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "staging_workers": [
+    {
+      "worker": "lw0sdlwk000H3Q",
+      "deployment_version": "e5c0fefd-5010-4747-acf1-1f6feec4b0c9",
+      "node_patch": "NODE-24.18.0",
+      "startup": "Next.js 16.2.0 Ready",
+      "result": "PASS"
+    },
+    {
+      "worker": "lw1sdlwk001165",
+      "deployment_version": "e5c0fefd-5010-4747-acf1-1f6feec4b0c9",
+      "node_patch": "NODE-24.18.0",
+      "startup": "Next.js 16.2.0 Ready",
+      "result": "PASS"
+    }
+  ],
+  "pre_remediation_inconsistency": "Prior logs showed one worker missing /home/site/wwwroot/server.js.",
+  "post_remediation_classification": "PASS — BOTH STAGING WORKERS COHERENT"
+}

@@ -1,0 +1,8 @@
+{
+  "brand": "J Merrill One",
+  "status": "NOT CUT OVER",
+  "target": "app-jm1-one-prod",
+  "requiredFinalState": "J MERRILL ONE = APP SERVICE — LIVE",
+  "currentState": "SWA remains live",
+  "blockers": ["APP SERVICE PLAN CAPACITY DECISION REQUIRED", "Default host serves placeholder", "App Service deployment workflow not yet activated"]
+}

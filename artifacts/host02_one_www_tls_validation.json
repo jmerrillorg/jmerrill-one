@@ -1,0 +1,23 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_www_tls_validation",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "hostname": "www.jmerrill.one",
+  "managed_certificate": {
+    "name": "www-jmerrill-one-managed",
+    "subject": "www.jmerrill.one",
+    "thumbprint": "FE75FA510D550A4143B1F7256E7C400961DE3A99",
+    "issue_date": "2026-08-15T00:00:00Z",
+    "expiration_date": "2027-02-15T23:59:59Z"
+  },
+  "binding": {
+    "ssl_state": "SniEnabled",
+    "host_name_type": "Verified"
+  },
+  "public_tls_probe": {
+    "initial_state": "SWA edge propagation served msha certificate and 404 responses.",
+    "final_state": "Public TLS served certificate subject www.jmerrill.one and /api/health returned 200.",
+    "settled_utc": "2026-08-15T11:53:32Z"
+  },
+  "classification": "PASS"
+}

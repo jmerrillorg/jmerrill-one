@@ -1,0 +1,14 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-14T22:42:00Z",
+  "status": "NOT EXECUTED — BLOCKED BEFORE WORKFLOW CUTOVER",
+  "reason": "Shared App Service plan capacity decision and Financial API architecture blocker must be resolved before production deployment workflows are activated.",
+  "recommendedWorkflowPattern": "Publishing reference: GitHub Actions OIDC, build standalone/static App Service artifact, deploy to staging/default host, validate, then promote.",
+  "sites": [
+    {"brand": "J Merrill One", "oldWorkflow": ".github/workflows/azure-static-web-apps.yml", "newWorkflow": "NOT CREATED", "target": "app-jm1-one-prod", "firstSuccessfulAppServiceRunId": null},
+    {"brand": "J Merrill Financial", "oldWorkflow": ".github/workflows/azure-static-web-apps.yml", "newWorkflow": "BLOCKED", "target": "app-jm1-fin-prod", "firstSuccessfulAppServiceRunId": null},
+    {"brand": "J Merrill Foundation", "oldWorkflow": ".github/workflows/azure-static-web-apps.yml", "newWorkflow": "NOT CREATED", "target": "app-jm1-foundation-prod", "firstSuccessfulAppServiceRunId": null},
+    {"brand": "J Merrill Productions", "oldWorkflow": ".github/workflows/azure-static-web-apps.yml", "newWorkflow": "NOT CREATED", "target": "app-jm1-productions-prod", "firstSuccessfulAppServiceRunId": null},
+    {"brand": "Jackie Smith Jr.", "oldWorkflow": ".github/workflows/azure-static-web-apps-victorious-sea-06433150f.yml", "newWorkflow": "BLOCKED", "target": "app-jm1-jackiesmithjr-prod", "firstSuccessfulAppServiceRunId": null}
+  ]
+}

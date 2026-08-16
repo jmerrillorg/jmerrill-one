@@ -1,0 +1,13 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "sites": [
+    {"brand": "J Merrill One", "repo": "jmerrillorg/jmerrill-one", "framework": "Next.js 16", "workflowBuild": "next build then Azure/static-web-apps-deploy", "requiresServerRuntime": "NOT PROVEN", "staticHostingAdequacy": "CURRENTLY ADEQUATE", "notes": "Live SWA response includes Next cache/render headers; no App Service production binding exists."},
+    {"brand": "J Merrill Publishing", "repo": "jmerrillorg/jmerrill-pub", "framework": "Next.js 14", "workflowBuild": "Next standalone App Service artifact", "requiresServerRuntime": "YES", "runtimeSignals": ["NextAuth/Auth secrets", "Dataverse settings", "SharePoint settings", "Stripe settings", "Azure Storage settings", "diagnostic runner settings"], "staticHostingAdequacy": "NOT ADEQUATE FOR CURRENT PRODUCTION WORKFLOW"},
+    {"brand": "J Merrill Financial", "repo": "jmerrillorg/jmerrill-financial", "framework": "Next.js 14", "workflowBuild": "Build static export and deploy prebuilt static site/API via SWA action", "requiresServerRuntime": "NOT PROVEN", "staticHostingAdequacy": "CURRENTLY ADEQUATE"},
+    {"brand": "J Merrill Foundation", "repo": "jmerrillorg/jmerrillfoundation", "framework": "Next.js 14", "workflowBuild": "Build Next.js site and deploy to SWA", "requiresServerRuntime": "NOT PROVEN", "staticHostingAdequacy": "CURRENTLY ADEQUATE"},
+    {"brand": "J Merrill Productions", "repo": "jmerrillorg/jmerrill-productions", "framework": "Next.js 14", "workflowBuild": "Build and deploy to SWA", "requiresServerRuntime": "NOT PROVEN", "staticHostingAdequacy": "CURRENTLY ADEQUATE"},
+    {"brand": "Jackie Smith Jr.", "repo": "jmerrillorg/jackiesmithjr", "framework": "Next.js 15 with MDX/content dependencies", "workflowBuild": "Build static export and deploy to SWA", "requiresServerRuntime": "NOT PROVEN", "staticHostingAdequacy": "CURRENTLY ADEQUATE"}
+  ],
+  "conclusion": "Do not recommend migration solely for consistency. Only Publishing has proven App Service runtime needs in HOST-01 evidence."
+}

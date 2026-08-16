@@ -1,0 +1,32 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 23 Productions Premium cutover"
+  },
+  "captured_at_utc": "2026-08-16T03:19:22Z",
+  "domains": [
+    "jmerrill.productions",
+    "www.jmerrill.productions"
+  ],
+  "old_app": "app-jm1-productions-prod",
+  "new_app": "app-jm1-productions-prod-v2",
+  "dns": {
+    "apex_a": "20.118.48.17",
+    "www_cname": "app-jm1-productions-prod-v2.azurewebsites.net"
+  },
+  "certificates": {
+    "apex": "36FD0313374CC6968CF1457AB3884D315AB5BED9",
+    "www": "D06D57CF55E38848C18A9DBA5A0826198BB8956C"
+  },
+  "validation": {
+    "apex": {
+      "https_status": "200",
+      "ssl_verify_result": "0"
+    },
+    "www": {
+      "https_status": "200",
+      "ssl_verify_result": "0"
+    }
+  },
+  "classification": "PASS"
+}

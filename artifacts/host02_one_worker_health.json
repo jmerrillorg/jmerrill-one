@@ -1,0 +1,22 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_worker_health",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "app_service_plan": {
+    "name": "asp-jm1-web-prod-linux",
+    "sku": "S1",
+    "workers": 2
+  },
+  "latest_plan_metrics": {
+    "window_utc": "2026-08-15T09:33:00Z through 2026-08-15T09:58:00Z",
+    "cpu_average_percent_range": "41.3-96.5",
+    "memory_average_percent_range": "73.9-79.4"
+  },
+  "classification": "CAPACITY PRESSURE OBSERVED",
+  "notes": [
+    "The approved 2-worker plan remained active.",
+    "CPU reached 90%+ during deployment/runtime remediation activity.",
+    "Memory remained near 74-79%.",
+    "No additional capacity was added."
+  ]
+}

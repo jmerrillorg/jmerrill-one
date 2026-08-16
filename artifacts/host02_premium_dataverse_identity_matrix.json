@@ -1,0 +1,46 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Premium v3 production baseline + six-site redeployment continuation"
+  },
+  "captured_at_utc": "2026-08-16T03:48:27.285Z",
+  "resource_group": "rg-jm1-web-prod-premium",
+  "app_service_plan": "asp-jm1-web-prod-premium",
+  "sku": "P1mv3",
+  "workers": 1,
+  "runtime": "Linux + NODE|24-lts",
+  "secrets_recorded": false,
+  "classification": "PASS / N/A",
+  "apps": [
+    {
+      "brand": "J Merrill One",
+      "requirement": "REQUIRED - One intake",
+      "result": "PASS - existing service principal/app settings preserved; runtime proof artifacts recorded"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "requirement": "REQUIRED - Publishing runtime integrations",
+      "result": "PASS - existing service principal/app settings preserved; runtime proof artifacts recorded"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "requirement": "REQUIRED - Functions backend",
+      "result": "PASS - existing service principal/app settings preserved; runtime proof artifacts recorded"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "requirement": "NOT REQUIRED",
+      "result": "N/A"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "requirement": "NOT REQUIRED",
+      "result": "N/A"
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "requirement": "NOT REQUIRED",
+      "result": "N/A"
+    }
+  ]
+}

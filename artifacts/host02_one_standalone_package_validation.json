@@ -1,0 +1,23 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_standalone_package_validation",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "package": "/tmp/jm1-one-appservice-1786792246.zip",
+  "local_extracted_runtime_validation": {
+    "/api/health": 200,
+    "/": 200,
+    "/why-we-exist": 200,
+    "/divisions": 200,
+    "/contact": 200,
+    "GET /api/intake": 405,
+    "malformed POST /api/intake": 400
+  },
+  "required_contents": {
+    "server.js": "PRESENT",
+    ".next/static": "PRESENT",
+    "public": "PRESENT",
+    "standalone node_modules": "PRESENT",
+    "Next route manifests": "PRESENT"
+  },
+  "classification": "PASS"
+}

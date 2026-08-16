@@ -1,0 +1,40 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Node24 build validation"
+  },
+  "captured_at_utc": "2026-08-16T02:31:27Z",
+  "node_runtime": "v24.19.0",
+  "npm_runtime": "11.12.1",
+  "results": {
+    "one": {
+      "lint": "PASS_WITH_WARNING",
+      "build": "PASS",
+      "package": "PASS"
+    },
+    "publishing": {
+      "typecheck": "PASS",
+      "build": "PASS",
+      "package": "PASS_AFTER_RELEASE_SHA_ENV"
+    },
+    "financial": {
+      "build": "PASS",
+      "test_pilot": "PASS",
+      "package": "PASS"
+    },
+    "foundation": {
+      "build": "PASS",
+      "package": "PASS"
+    },
+    "productions": {
+      "build": "PASS",
+      "package": "PASS"
+    },
+    "jackie": {
+      "build": "PASS",
+      "package": "PASS"
+    }
+  },
+  "note": "All six repositories were build/package validated under Node v24.19.0; One lint passed with one pre-existing font warning.",
+  "classification": "PASS"
+}

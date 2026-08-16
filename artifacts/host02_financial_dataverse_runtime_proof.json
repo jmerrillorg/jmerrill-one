@@ -1,0 +1,40 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "runtime_path": "Financial App Service -> Next server proxy -> Azure Functions -> Dataverse",
+  "authentication": {
+    "method": "Microsoft Entra client credentials in Azure Functions",
+    "secret_values_recorded": false,
+    "frontend_secret_exposure": false
+  },
+  "read_write_operations": [
+    {
+      "operation": "public intake lead create",
+      "status": "200 ACCEPTED",
+      "dataverse_record_created": true,
+      "idempotent_replay": "200 REPLAYED"
+    },
+    {
+      "operation": "Customer Voice feedback survey response create",
+      "status": "200 RECORDED",
+      "dataverse_record_created": true,
+      "question_response_count": 6,
+      "idempotent_replay": "200 REPLAYED"
+    },
+    {
+      "operation": "advisor packet tokenized read",
+      "status": 200,
+      "active_blockers": 2,
+      "ready": false
+    }
+  ],
+  "failure_behavior": [
+    "Malformed intake JSON returns 400 MALFORMED_JSON.",
+    "Unauthenticated advisor session returns 403 ADVISOR_SESSION_AUTH_REQUIRED.",
+    "Forged EasyAuth principal header returns 403 through App Service proxy.",
+    "Sensitive feedback returns 400 SENSITIVE_DETAIL_NOT_ACCEPTED."
+  ],
+  "least_privilege_role_expansion": "NO BROAD ROLE CREATED"
+}

@@ -1,0 +1,93 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Premium v3 production baseline + six-site redeployment continuation"
+  },
+  "captured_at_utc": "2026-08-16T03:48:27.285Z",
+  "resource_group": "rg-jm1-web-prod-premium",
+  "app_service_plan": "asp-jm1-web-prod-premium",
+  "sku": "P1mv3",
+  "workers": 1,
+  "runtime": "Linux + NODE|24-lts",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "domains": [
+    {
+      "hostname": "jmerrill.one",
+      "target_app": "app-jm1-one-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "www.jmerrill.one",
+      "target_app": "app-jm1-one-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "jmerrill.pub",
+      "target_app": "app-jm1-pub-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "www.jmerrill.pub",
+      "target_app": "app-jm1-pub-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "jmerrill.financial",
+      "target_app": "app-jm1-fin-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "www.jmerrill.financial",
+      "target_app": "app-jm1-fin-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "jmerrill.foundation",
+      "target_app": "app-jm1-foundation-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "www.jmerrill.foundation",
+      "target_app": "app-jm1-foundation-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "jmerrill.productions",
+      "target_app": "app-jm1-productions-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "www.jmerrill.productions",
+      "target_app": "app-jm1-productions-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    },
+    {
+      "hostname": "jackiesmithjr.com",
+      "target_app": "app-jm1-jackiesmithjr-prod-v2",
+      "current_host": "Premium App Service v2",
+      "dns_target": "App Service custom domain binding",
+      "result": "PASS"
+    }
+  ]
+}

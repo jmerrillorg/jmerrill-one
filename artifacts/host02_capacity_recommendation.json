@@ -1,0 +1,39 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "decision": "APP SERVICE CAPACITY PURCHASE DECISION REQUIRED",
+  "currentPlan": {
+    "name": "asp-jm1-web-prod-linux",
+    "sku": "S1",
+    "workers": 1,
+    "observedMeter": "Azure App Service Standard Plan - Linux S1 App",
+    "observedUnitPriceUsd": 0.095,
+    "estimatedMonthlyCostUsdAt730Hours": 69.35
+  },
+  "recommendedTarget": {
+    "option": "Scale out asp-jm1-web-prod-linux from 1 to 2 S1 workers before production cutover",
+    "estimatedIncrementalCostUsdAt730Hours": 69.35,
+    "estimatedTotalPlanCostUsdAt730Hours": 138.7,
+    "why": "Two workers are the simplest supported change that preserves the existing plan/SKU, doubles aggregate CPU and memory headroom, and avoids moving five production sites into a single worker already near 80% memory before public traffic."
+  },
+  "alternatives": [
+    {
+      "option": "Scale up to a larger single worker",
+      "status": "POSSIBLE",
+      "tradeoff": "Could add per-worker capacity but does not add worker redundancy; exact cost not observed in the successful pricing query."
+    },
+    {
+      "option": "Split workloads across multiple plans",
+      "status": "POSSIBLE BUT MORE COMPLEX",
+      "tradeoff": "May isolate properties, but adds operational complexity and should be chosen only if telemetry later proves shared-plan contention."
+    }
+  ],
+  "blockedActionUntilDecision": "Do not perform public DNS/custom-domain cutover for the five non-Publishing sites.",
+  "safePrepContinued": [
+    "HOST-02 start state preserved",
+    "Capacity root cause diagnosed",
+    "Placeholder warmup waste remediated",
+    "Financial API runtime inventoried",
+    "Financial target architecture decision packet prepared"
+  ]
+}

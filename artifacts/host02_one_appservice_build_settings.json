@@ -1,0 +1,14 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_appservice_build_settings",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "staging_settings": {
+    "SCM_DO_BUILD_DURING_DEPLOYMENT": "false",
+    "ENABLE_ORYX_BUILD": "false",
+    "WEBSITE_RUN_FROM_PACKAGE": "ABSENT",
+    "WEBSITE_NODE_DEFAULT_VERSION": "~24",
+    "HOSTNAME": "ABSENT"
+  },
+  "deployment_log_evidence": "Deployment e5c0fefd reported `ZipDeploy. Extract zip`, `Rsync completed to /home/site/wwwroot`, and no Oryx build.",
+  "classification": "PASS"
+}

@@ -1,0 +1,25 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_domain_tls_preparation_v2",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "current_public_hosting": {
+    "apex": "jmerrill.one A 52.252.23.178",
+    "www": "www.jmerrill.one CNAME app-jm1-one-prod.azurewebsites.net",
+    "swa_custom_domains": ["jmerrill.one"]
+  },
+  "app_service_state": {
+    "default_host": "app-jm1-one-prod.azurewebsites.net",
+    "custom_domains": ["www.jmerrill.one"],
+    "https_only": true,
+    "custom_domain_verification_id": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE",
+    "ssl_state": "SniEnabled",
+    "certificate_thumbprint": "FE75FA510D550A4143B1F7256E7C400961DE3A99"
+  },
+  "dns_zone": {
+    "zone": "jmerrill.one",
+    "resource_group": "jm1-core-services",
+    "asuid_value_matches_existing_dev_hq_records": true
+  },
+  "cutover_preparation_result": "PASS",
+  "reason": "Production App Service was remediated and validated; www DNS, App Service hostname binding, and managed TLS cutover completed."
+}

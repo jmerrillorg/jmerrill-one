@@ -1,0 +1,63 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_final_closeout_v5",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "final_classification": "HOST-02 ONE CUTOVER COMPLETE — MIGRATION PROGRESS 2 OF 6",
+  "progress": "2 OF 6",
+  "one_staging_status": "APP SERVICE DEFAULT HOST — VALIDATED",
+  "one_production_default_host_status": "PASS",
+  "one_public_www_status": "PASS",
+  "one_intake_status": "PASS",
+  "one_customer_voice_status": "PASS",
+  "one_cutover_status": "COMPLETE",
+  "production_cutover": {
+    "status": "PASS",
+    "slot_swap_operation": "cae870af-6734-443b-b503-bff8656c37e2",
+    "slot_swap_completed_utc": "2026-08-15T11:32:36.149000Z",
+    "production_runtime": "NODE|24-lts",
+    "startup_command": "node server.js",
+    "health_check_path": "/api/health",
+    "production_default_host": "https://app-jm1-one-prod.azurewebsites.net"
+  },
+  "dns_cutover": {
+    "status": "PASS",
+    "www_cname": "app-jm1-one-prod.azurewebsites.net",
+    "verification_txt": "asuid.www.jmerrill.one",
+    "apex_state": "UNCHANGED IN DNS; jmerrill.one remains bound to the Static Web App.",
+    "dns_changed": true
+  },
+  "tls_cutover": {
+    "status": "PASS",
+    "hostname": "www.jmerrill.one",
+    "ssl_state": "SniEnabled",
+    "certificate_subject": "www.jmerrill.one",
+    "certificate_thumbprint": "FE75FA510D550A4143B1F7256E7C400961DE3A99"
+  },
+  "static_web_app_state": {
+    "status": "SUPERSEDED FOR WWW; RETAINED FOR APEX/ROLLBACK",
+    "custom_domains_after_cutover": ["jmerrill.one"],
+    "www_removed_from_swa": true,
+    "workflow_freeze_performed": true,
+    "github_workflow_state": "disabled_manually",
+    "github_workflow_id": "249647544",
+    "deletion_performed": false
+  },
+  "validation_summary": {
+    "production_default_host_routes": "20 repeated passes: /api/health 200, / 200, /why-we-exist 200, /divisions 200, /contact 200, GET /api/intake 405.",
+    "public_www_routes": "20 repeated passes: /api/health 200, / 200, /why-we-exist 200, /divisions 200, /contact 200, GET /api/intake 405.",
+    "bp09_public_intake": "POST 202, replay 202 idempotentReplay=true, malformed POST 400, Dataverse Contact 1, Lead 1, Execution Log 1.",
+    "customer_voice": "Customer Voice survey HTTP 200, 48620 bytes.",
+    "secrets_recorded": false
+  },
+  "remaining_scope": {
+    "host02_progress": "2 OF 6",
+    "remaining_sites": [
+      "J Merrill Financial",
+      "J Merrill Foundation",
+      "J Merrill Productions",
+      "Jackie Smith Jr."
+    ],
+    "next_gate": "Authorize next HOST-02 site continuation from the updated dependency and hosting matrix."
+  },
+  "no_new_jackie_approval_required_for_one_cutover": true
+}

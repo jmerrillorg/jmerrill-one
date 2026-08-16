@@ -1,0 +1,25 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_precutover_intake_proof_v3",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "target": "https://app-jm1-one-prod-staging.azurewebsites.net/api/intake",
+  "test_correlation": "HOST02-ONE-PRECUTOVER-20260815T111848Z",
+  "first_post": {
+    "http_status": 202,
+    "status": "accepted"
+  },
+  "replay": {
+    "http_status": 202,
+    "idempotent_replay": true
+  },
+  "malformed_post": {
+    "http_status": 400
+  },
+  "dataverse_counts": {
+    "contact_count_for_test_email": 1,
+    "lead_count_for_test_email": 1,
+    "execution_log_count_for_correlation": 1
+  },
+  "secrets_recorded": false,
+  "classification": "PASS"
+}

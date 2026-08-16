@@ -1,0 +1,6 @@
+{
+  "package": "HOST-02",
+  "status": "NOT READY",
+  "reason": "SWA resources remain production hosts for five sites.",
+  "classification": "RETAIN TEMPORARILY — STILL PRIMARY"
+}

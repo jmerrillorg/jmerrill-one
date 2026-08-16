@@ -1,0 +1,57 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-14T22:42:00Z",
+  "status": "RUNTIME AUDIT COMPLETE",
+  "sites": [
+    {
+      "brand": "J Merrill One",
+      "repository": "jmerrillorg/jmerrill-one",
+      "nextVersion": "16.2.0",
+      "currentOutputMode": "default Next build deployed to SWA .next",
+      "serverRuntimeEvidence": ["app/api/intake/route.ts exports runtime=nodejs", "app/api/intake/route.ts exports dynamic=force-dynamic"],
+      "apiSurface": ["/api/intake"],
+      "classification": "APP SERVICE CONFIG CHANGE REQUIRED",
+      "reason": "Requires standalone App Service artifact and Dataverse setting parity before default-host validation."
+    },
+    {
+      "brand": "J Merrill Financial",
+      "repository": "jmerrillorg/jmerrill-financial",
+      "nextVersion": "^14.2.0",
+      "currentOutputMode": "output: export",
+      "serverRuntimeEvidence": ["Azure Static Web Apps api/ folder with function.json handlers"],
+      "apiSurface": ["/api/intake", "/api/feedback", "/api/pilot/disclosure/*", "/api/pilot/advisor-review/*", "/api/pilot/session/*"],
+      "classification": "BLOCKED",
+      "reason": "Current production APIs are SWA Functions. Moving only the static site to App Service would break Financial intake, Customer Voice feedback, and pilot governance routes unless those functions are ported or separately hosted under a canonical architecture decision."
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "repository": "jmerrillorg/jmerrillfoundation",
+      "nextVersion": "14.2.3",
+      "currentOutputMode": "output: export",
+      "serverRuntimeEvidence": [],
+      "apiSurface": [],
+      "classification": "APP SERVICE CONFIG CHANGE REQUIRED",
+      "reason": "Static export can be hosted on App Service, but target default host is still placeholder and app settings/survey links must be validated before cutover."
+    },
+    {
+      "brand": "J Merrill Productions",
+      "repository": "jmerrillorg/jmerrill-productions",
+      "nextVersion": "14.2.29",
+      "currentOutputMode": "default Next build deployed to SWA .next",
+      "serverRuntimeEvidence": [],
+      "apiSurface": [],
+      "classification": "APP SERVICE CONFIG CHANGE REQUIRED",
+      "reason": "Needs App Service artifact workflow and default-host validation; HOST-01 www DNS anomaly remains unresolved."
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "repository": "jmerrillorg/jackiesmithjr",
+      "nextVersion": "15.5.15",
+      "currentOutputMode": "output: export",
+      "serverRuntimeEvidence": ["app/feed.xml/route.ts is force-static"],
+      "apiSurface": [],
+      "classification": "BLOCKED",
+      "reason": "Target App Service default host returns 503 before migration; App Service target must be remediated before deployment/cutover."
+    }
+  ]
+}

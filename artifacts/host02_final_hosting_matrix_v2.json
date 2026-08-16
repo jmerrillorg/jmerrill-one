@@ -1,0 +1,13 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "classification": "HOST-02 ONE CUTOVER COMPLETE — MIGRATION PROGRESS 2 OF 6",
+  "matrix": [
+    {"brand": "J Merrill One", "publicDomain": "https://www.jmerrill.one/", "finalHost": "Azure App Service", "targetAppServiceResource": "app-jm1-one-prod", "status": "LIVE"},
+    {"brand": "J Merrill Publishing", "publicDomain": "https://jmerrill.pub/", "finalHost": "Azure App Service", "targetAppServiceResource": "app-jm1-pub-prod", "status": "LIVE"},
+    {"brand": "J Merrill Financial", "publicDomain": "https://jmerrill.financial/", "finalHost": "Azure Static Web Apps", "targetAppServiceResource": "app-jm1-fin-prod", "status": "PENDING CAPACITY + API BACKEND IMPLEMENTATION"},
+    {"brand": "J Merrill Foundation", "publicDomain": "https://jmerrill.foundation/", "finalHost": "Azure Static Web Apps", "targetAppServiceResource": "app-jm1-foundation-prod", "status": "PENDING CAPACITY DECISION"},
+    {"brand": "J Merrill Productions", "publicDomain": "https://jmerrill.productions/", "finalHost": "Azure Static Web Apps", "targetAppServiceResource": "app-jm1-productions-prod", "status": "PENDING CAPACITY DECISION"},
+    {"brand": "Jackie Smith Jr.", "publicDomain": "https://jackiesmithjr.com/", "finalHost": "Azure Static Web Apps", "targetAppServiceResource": "app-jm1-jackiesmithjr-prod", "status": "PENDING CAPACITY + 503 REMEDIATION"}
+  ]
+}

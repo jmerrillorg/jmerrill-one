@@ -1,0 +1,18 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_kudu_cleanup",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "cleanup_actions": [
+    "Waited for temp-423edf3a to leave active state.",
+    "Verified temp-423edf3a ended with status 3 and active=false.",
+    "Removed WEBSITE_RUN_FROM_PACKAGE for extracted config-zip deployment mode.",
+    "Avoided arbitrary deletion of Kudu data."
+  ],
+  "result": "STALE DEPLOYMENT STATE CLEARED",
+  "new_platform_hold": {
+    "operation_name": "SwapSiteSlots",
+    "operation_id": "cae870af-6734-443b-b503-bff8656c37e2",
+    "created_time_utc": "2026-08-15T11:20:16Z",
+    "effect": "Production slot config/deploy writes return Conflict."
+  }
+}

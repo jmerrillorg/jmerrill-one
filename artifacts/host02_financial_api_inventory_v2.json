@@ -1,0 +1,78 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "production_critical_unknown_count": 0,
+  "endpoints": [
+    {
+      "route": "/api/intake",
+      "source_file": "api/intake/index.js",
+      "target_runtime": "STANDALONE AZURE FUNCTION",
+      "trigger": "HTTP POST/OPTIONS",
+      "caller": "components/IntakeForm.tsx",
+      "authentication": "anonymous public endpoint with server-side pilot allow-list validation",
+      "dataverse_dependency": "lead create/replay through service identity",
+      "external_dependency": "Microsoft Entra token endpoint",
+      "privacy_sensitivity": "controlled public intake summary; no sensitive test data used",
+      "production_criticality": "HIGH",
+      "classification": "STANDALONE AZURE FUNCTION"
+    },
+    {
+      "route": "/api/feedback",
+      "source_file": "api/feedback/index.js",
+      "target_runtime": "STANDALONE AZURE FUNCTION",
+      "trigger": "HTTP POST/OPTIONS",
+      "caller": "components/ClientExperienceSurvey.tsx",
+      "authentication": "anonymous public endpoint with privacy validation and idempotency",
+      "dataverse_dependency": "Customer Voice surveyresponse and questionresponse write/replay",
+      "external_dependency": "Microsoft Entra token endpoint",
+      "privacy_sensitivity": "privacy hard-gated feedback; sensitive detail rejected",
+      "production_criticality": "HIGH",
+      "classification": "STANDALONE AZURE FUNCTION"
+    },
+    {
+      "route": "/api/pilot/session/{action?}",
+      "source_file": "api/pilot-session/index.js",
+      "target_runtime": "STANDALONE AZURE FUNCTION",
+      "trigger": "HTTP GET/POST/OPTIONS",
+      "caller": "components/AdvisorSessionWorkspace.tsx",
+      "authentication": "purpose-bound token or server-trusted EasyAuth principal; App Service proxy strips forged principal headers",
+      "dataverse_dependency": "optional governed mutation when enabled",
+      "external_dependency": "none beyond Dataverse for enabled mutations",
+      "privacy_sensitivity": "pilot state; internal identifiers hidden from advisor UI",
+      "production_criticality": "HIGH",
+      "classification": "STANDALONE AZURE FUNCTION"
+    },
+    {
+      "route": "/api/pilot/disclosure/{action?}",
+      "source_file": "api/pilot-disclosure/index.js",
+      "target_runtime": "STANDALONE AZURE FUNCTION",
+      "trigger": "HTTP GET/POST/OPTIONS",
+      "caller": "components/PilotClientDisclosure.tsx",
+      "authentication": "purpose-bound action token",
+      "dataverse_dependency": "optional governed disclosure acknowledgment mutation when enabled",
+      "external_dependency": "SharePoint disclosure source link only",
+      "privacy_sensitivity": "pilot disclosure content and action state",
+      "production_criticality": "MEDIUM",
+      "classification": "STANDALONE AZURE FUNCTION"
+    },
+    {
+      "route": "/api/pilot/advisor-review/{action?}",
+      "source_file": "api/pilot-advisor-review/index.js",
+      "target_runtime": "STANDALONE AZURE FUNCTION",
+      "trigger": "HTTP GET/POST/OPTIONS",
+      "caller": "components/PilotAdvisorReview.tsx",
+      "authentication": "purpose-bound action token",
+      "dataverse_dependency": "optional governed advisor review mutation when enabled",
+      "external_dependency": "none beyond Dataverse for enabled mutations",
+      "privacy_sensitivity": "advisor review packet",
+      "production_criticality": "MEDIUM",
+      "classification": "STANDALONE AZURE FUNCTION"
+    }
+  ],
+  "frontend_proxy": {
+    "source_file": "app/api/[...path]/route.ts",
+    "classification": "NEXT.JS SERVER ROUTE",
+    "behavior": "Proxies App Service /api/* calls to func-jm1-fin-prod; strips inbound EasyAuth principal headers and hop-by-hop headers."
+  }
+}

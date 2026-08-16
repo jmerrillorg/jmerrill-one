@@ -1,0 +1,7 @@
+{
+  "brand": "J Merrill Foundation",
+  "target": "app-jm1-foundation-prod",
+  "result": "FAIL",
+  "evidence": "Default hostname returns infrastructure placeholder JSON, not the Foundation public site.",
+  "cutoverAllowed": false
+}

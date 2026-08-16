@@ -1,0 +1,88 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_target_remediation_v2",
+  "generated_utc": "2026-08-15T02:38:15Z",
+  "target_repository": "J Merrill One",
+  "site": "J Merrill One",
+  "target_app_service": {
+    "resource_group": "rg-jm1-web-prod-appsvc",
+    "name": "app-jm1-one-prod",
+    "slot": "staging",
+    "default_host": "https://app-jm1-one-prod-staging.azurewebsites.net",
+    "linux_fx_version": "NODE|22-lts",
+    "startup_command": "bash startup.sh",
+    "always_on": true
+  },
+  "implementation_changes": [
+    {
+      "file": "next.config.ts",
+      "change": "Enabled Next.js standalone output for App Service runtime packaging."
+    },
+    {
+      "file": "startup.sh",
+      "change": "Added Azure Linux startup shim that copies public/static assets into the standalone folder and runs server.js, with npm start fallback."
+    }
+  ],
+  "deployment_attempts": [
+    {
+      "method": "macOS-built standalone zip",
+      "deployment_status": "Kudu/OneDeploy completed",
+      "evidence": "Deployment records ce70390b-9fd6-4a80-8ee6-46f7157a879b and 4fe349b3-a6d9-460e-9901-6d17d066118e completed with status 4.",
+      "result": "FAILED",
+      "failure_mode": "Initial placeholder response persisted, then staging default host became nonresponsive after clean deployment and restart."
+    },
+    {
+      "method": "source zip with Azure build settings enabled",
+      "deployment_status": "Kudu/OneDeploy completed",
+      "evidence": "Deployment record 8e2df741-4f59-4892-b7a4-11e41bc86831 completed with status 4.",
+      "result": "FAILED",
+      "failure_mode": "Staging default host remained unhealthy after restart."
+    }
+  ],
+  "validation": {
+    "default_host_routes": [
+      {
+        "route": "/",
+        "result": "FAIL",
+        "observed_status": "000",
+        "observed_behavior": "Timed out after 15 seconds with no bytes received."
+      },
+      {
+        "route": "/why-we-exist",
+        "result": "FAIL",
+        "observed_status": "000",
+        "observed_behavior": "Timed out after 15 seconds with no bytes received."
+      },
+      {
+        "route": "/divisions",
+        "result": "FAIL",
+        "observed_status": "000",
+        "observed_behavior": "Timed out after 15 seconds with no bytes received."
+      },
+      {
+        "route": "/contact",
+        "result": "FAIL",
+        "observed_status": "503",
+        "observed_behavior": "Service unavailable after restart."
+      },
+      {
+        "route": "/api/intake",
+        "result": "FAIL",
+        "observed_status": "000",
+        "observed_behavior": "Timed out after 15 seconds with no bytes received."
+      }
+    ],
+    "local_artifact_check": {
+      "result": "PASS",
+      "evidence": "The standalone package served the real One homepage locally before Azure deployment."
+    }
+  },
+  "cutover_result": "NOT PERFORMED",
+  "public_traffic_result": "UNCHANGED",
+  "classification": "REMEDIATION REQUIRED",
+  "required_next_remediation": [
+    "Diagnose App Service Linux startup/runtime failure for app-jm1-one-prod staging.",
+    "Confirm whether Oryx build output, startup working directory, or worker resource pressure is preventing the Next runtime from binding successfully.",
+    "Repeat default-host proof for / and /api/intake before any custom-domain or DNS cutover."
+  ]
+}

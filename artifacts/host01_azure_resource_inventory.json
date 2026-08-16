@@ -1,0 +1,189 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "scope": "Enterprise Azure hosting verification for six public JM1/Founder Brand sites",
+  "subscription": {
+    "id": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+    "name": "JM1 – Nonprofit Core (2025 Grant)",
+    "tenantId": "352d075e-8e17-4169-9f8e-22e6946ce66d"
+  },
+  "edge_or_routing_resources": {
+    "frontDoorProfiles": [],
+    "trafficManagerProfiles": [],
+    "applicationGateways": [],
+    "result": "No Azure Front Door, Traffic Manager, or Application Gateway resources found in the subscription inventory for the scoped public sites."
+  },
+  "staticWebApps": [
+    {
+      "brand": "J Merrill One",
+      "resourceType": "Microsoft.Web/staticSites",
+      "name": "jmerrill-one",
+      "resourceGroup": "jmerrill-one",
+      "region": "East US 2",
+      "status": "Ready",
+      "defaultHostname": "lively-flower-04d9c640f.6.azurestaticapps.net",
+      "customDomains": ["www.jmerrill.one", "jmerrill.one"],
+      "sku": "Standard",
+      "tier": "Standard",
+      "repository": "https://github.com/jmerrillorg/jmerrill-one",
+      "branch": "main"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "resourceType": "Microsoft.Web/staticSites",
+      "name": "jmerrill-financial",
+      "resourceGroup": "jmerrill-financial_group",
+      "region": "East US 2",
+      "status": "Ready",
+      "defaultHostname": "polite-glacier-0334b1d0f.6.azurestaticapps.net",
+      "customDomains": ["jmerrill.financial", "www.jmerrill.financial"],
+      "sku": "Standard",
+      "tier": "Standard",
+      "repository": "https://github.com/jmerrillorg/jmerrill-financial",
+      "branch": "main"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "resourceType": "Microsoft.Web/staticSites",
+      "name": "foundation-main",
+      "resourceGroup": "jm1-core-services",
+      "region": "East US 2",
+      "status": "Ready",
+      "defaultHostname": "mango-beach-09911520f.1.azurestaticapps.net",
+      "customDomains": ["www.jmerrill.foundation", "jmerrill.foundation"],
+      "sku": "Free",
+      "tier": "Free",
+      "repository": "https://github.com/jmerrillorg/jmerrillfoundation",
+      "branch": "main"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "resourceType": "Microsoft.Web/staticSites",
+      "name": "jmerrill-productions",
+      "resourceGroup": "jmerrill-productions-rg",
+      "region": "Central US",
+      "status": "Ready",
+      "defaultHostname": "lemon-stone-014fed310.7.azurestaticapps.net",
+      "customDomains": ["jmerrill.productions"],
+      "sku": "Free",
+      "tier": "Free",
+      "repository": "https://github.com/jmerrillorg/jmerrill-productions",
+      "branch": "main"
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "resourceType": "Microsoft.Web/staticSites",
+      "name": "jackiesmithjr",
+      "resourceGroup": "jm1-core-services",
+      "region": "East US 2",
+      "status": "Ready",
+      "defaultHostname": "victorious-sea-06433150f.7.azurestaticapps.net",
+      "customDomains": ["jackiesmithjr.com"],
+      "sku": "Free",
+      "tier": "Free",
+      "repository": "https://github.com/jmerrillorg/jackiesmithjr",
+      "branch": "main"
+    }
+  ],
+  "appServices": [
+    {
+      "brand": "J Merrill Publishing",
+      "resourceType": "Microsoft.Web/sites",
+      "name": "app-jm1-pub-prod",
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "region": "Central US",
+      "status": "Running",
+      "defaultHostname": "app-jm1-pub-prod.azurewebsites.net",
+      "customDomains": ["jmerrill.pub", "www.jmerrill.pub"],
+      "sku": "Standard",
+      "appServicePlan": "asp-jm1-pub-prod-linux",
+      "runtime": "NODE|24-lts",
+      "slotSwapStatus": "Latest observed production swap from staging at 2026-08-13T16:22:58.591000+00:00"
+    },
+    {
+      "brand": "J Merrill One",
+      "resourceType": "Microsoft.Web/sites",
+      "name": "app-jm1-one-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "region": "Central US",
+      "status": "Running",
+      "defaultHostname": "app-jm1-one-prod.azurewebsites.net",
+      "customDomains": [],
+      "sku": "Standard",
+      "appServicePlan": "asp-jm1-web-prod-linux",
+      "runtime": "NODE|22-lts"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "resourceType": "Microsoft.Web/sites",
+      "name": "app-jm1-fin-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "region": "Central US",
+      "status": "Running",
+      "defaultHostname": "app-jm1-fin-prod.azurewebsites.net",
+      "customDomains": [],
+      "sku": "Standard",
+      "appServicePlan": "asp-jm1-web-prod-linux",
+      "runtime": "NODE|22-lts",
+      "slotSwapStatus": "Latest observed production swap from staging at 2026-07-30T15:21:36.528000+00:00"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "resourceType": "Microsoft.Web/sites",
+      "name": "app-jm1-foundation-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "region": "Central US",
+      "status": "Running",
+      "defaultHostname": "app-jm1-foundation-prod.azurewebsites.net",
+      "customDomains": [],
+      "sku": "Standard",
+      "appServicePlan": "asp-jm1-web-prod-linux",
+      "runtime": "NODE|22-lts"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "resourceType": "Microsoft.Web/sites",
+      "name": "app-jm1-productions-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "region": "Central US",
+      "status": "Running",
+      "defaultHostname": "app-jm1-productions-prod.azurewebsites.net",
+      "customDomains": [],
+      "sku": "Standard",
+      "appServicePlan": "asp-jm1-web-prod-linux",
+      "runtime": "NODE|22-lts",
+      "slotSwapStatus": "Latest observed production swap from staging at 2026-08-03T01:23:20.682000+00:00"
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "resourceType": "Microsoft.Web/sites",
+      "name": "app-jm1-jackiesmithjr-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "region": "Central US",
+      "status": "Running",
+      "defaultHostname": "app-jm1-jackiesmithjr-prod.azurewebsites.net",
+      "customDomains": [],
+      "sku": "Standard",
+      "appServicePlan": "asp-jm1-web-prod-linux",
+      "runtime": "NODE|20-lts"
+    }
+  ],
+  "appServicePlans": [
+    {
+      "name": "asp-jm1-pub-prod-linux",
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "sku": "S1",
+      "tier": "Standard",
+      "capacity": 1,
+      "numberOfSites": 1
+    },
+    {
+      "name": "asp-jm1-web-prod-linux",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "sku": "S1",
+      "tier": "Standard",
+      "capacity": 1,
+      "numberOfSites": 5
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_default_host_validation_v2",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "target": "https://app-jm1-one-prod-staging.azurewebsites.net",
+  "best_passing_probe_after_hostname_removal": [
+    {"route": "/api/health", "status": 200, "result": "PASS"},
+    {"route": "/", "status": 200, "result": "PASS"},
+    {"route": "/why-we-exist", "status": 200, "result": "PASS"},
+    {"route": "/contact", "status": 200, "result": "PASS"},
+    {"route": "/api/intake", "status": 405, "result": "PASS FOR SAFE UNSUPPORTED GET"}
+  ],
+  "remaining_route_gap": {
+    "route": "/divisions",
+    "observed_status_before_code_fix": 404,
+    "remediation": "Added app/divisions/page.tsx and local build verified route generation.",
+    "post_remediation_deployment": "BLOCKED BY STALE KUDU DEPLOYMENT LOCK"
+  },
+  "current_probe_during_lock": [
+    {"route": "/api/health", "status": "000 timeout", "result": "FAIL"},
+    {"route": "/", "status": 503, "result": "FAIL"}
+  ],
+  "classification": "FAIL — KUDU DEPLOYMENT LOCK / REDEPLOY REQUIRED"
+}

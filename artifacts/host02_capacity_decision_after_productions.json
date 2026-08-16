@@ -1,0 +1,106 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Enterprise Azure App Service Migration",
+    "target_repository": "J Merrill One",
+    "record_type": "cross_repository_capacity_decision"
+  },
+  "classification": "HOST-02 CAPACITY DECISION REQUIRED — PRODUCTION TELEMETRY ATTACHED",
+  "progress": {
+    "completed": 5,
+    "total": 6,
+    "state": "5 OF 6 APP SERVICE MIGRATIONS LIVE — JACKIE SMITH JR. HELD BY CAPACITY GATE"
+  },
+  "completed_properties": [
+    {
+      "property": "J Merrill Publishing",
+      "status": "APP SERVICE — LIVE — VALIDATED"
+    },
+    {
+      "property": "J Merrill One",
+      "status": "APP SERVICE — LIVE — VALIDATED"
+    },
+    {
+      "property": "J Merrill Financial",
+      "status": "APP SERVICE — LIVE — VALIDATED",
+      "evidence_repository": "J Merrill Financial",
+      "closeout_artifact": "artifacts/host02_financial_closeout.json"
+    },
+    {
+      "property": "J Merrill Foundation",
+      "status": "APP SERVICE — LIVE — VALIDATED",
+      "evidence_repository": "J Merrill Foundation",
+      "closeout_artifact": "artifacts/host02_foundation_appservice_closeout.json"
+    },
+    {
+      "property": "J Merrill Productions",
+      "status": "APP SERVICE — LIVE — VALIDATED",
+      "evidence_repository": "J Merrill Productions",
+      "closeout_artifact": "artifacts/host02_productions_appservice_closeout.json"
+    }
+  ],
+  "held_property": {
+    "property": "Jackie Smith Jr.",
+    "status": "NOT STARTED",
+    "hold_reason": "Shared App Service Plan telemetry after Productions cutover showed sustained CPU saturation on the approved two-worker S1 ceiling."
+  },
+  "capacity_guardrail": {
+    "plan": "asp-jm1-web-prod-linux",
+    "sku": "S1",
+    "workers": 2,
+    "approved_worker_ceiling": 2,
+    "decision_basis": "Actual production telemetry after adding Productions to the shared plan.",
+    "recent_cpu_percent_buckets": [
+      91.3,
+      71.0,
+      54.5,
+      65.0,
+      96.142857,
+      99.666667,
+      99.6,
+      99.4
+    ],
+    "recent_memory_percent_buckets": [
+      84.9,
+      88.5,
+      88.7,
+      89.0,
+      83.375,
+      81.6667,
+      80.9,
+      80.6
+    ],
+    "observed_runtime_symptoms": [
+      "Default-host and public-route convergence included intermittent route timeouts during Productions cutover.",
+      "Post-cutover Productions media validation showed elevated video response latency.",
+      "HTTP 5xx telemetry remained zero in the latest checked bucket."
+    ]
+  },
+  "domain_cutover_summary": {
+    "financial": {
+      "domain": "jmerrill.financial",
+      "www": "www.jmerrill.financial",
+      "result": "LIVE ON APP SERVICE WITH STRICT TLS"
+    },
+    "foundation": {
+      "domain": "jmerrill.foundation",
+      "www": "www.jmerrill.foundation",
+      "result": "LIVE ON APP SERVICE WITH STRICT TLS"
+    },
+    "productions": {
+      "domain": "jmerrill.productions",
+      "www": "www.jmerrill.productions",
+      "result": "LIVE ON APP SERVICE WITH STRICT TLS"
+    }
+  },
+  "static_web_app_supersession": {
+    "financial": "RETAINED AS ROLLBACK ONLY",
+    "foundation": "RETAINED AS ROLLBACK ONLY",
+    "productions": "RETAINED AS ROLLBACK ONLY"
+  },
+  "next_action_required": {
+    "decision_owner": "Jackie / Founder",
+    "required_decision": "Approve capacity adjustment, explicitly accept monitored continuation on saturated two-worker S1, or defer Jackie Smith Jr. cutover.",
+    "implementation_rule": "Do not start Jackie Smith Jr. HOST-02 migration until the capacity decision is recorded."
+  }
+}

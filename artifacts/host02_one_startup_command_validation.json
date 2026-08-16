@@ -1,0 +1,20 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_startup_command_validation",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "publishing_reference": {
+    "resource_group": "rg-jm1-pub-prod-appsvc",
+    "name": "app-jm1-pub-prod",
+    "linux_fx_version": "NODE|24-lts",
+    "startup_command": "node server.js",
+    "health_check_path": "/api/health"
+  },
+  "one_corrected_configuration": {
+    "linux_fx_version": "NODE|24-lts",
+    "startup_command": "node server.js",
+    "health_check_path": "/api/health",
+    "custom_hostname_app_setting": "REMOVED"
+  },
+  "validation_result": "PASS",
+  "evidence": "After removing HOSTNAME and using node server.js, staging returned 200 for /api/health and public routes from the corrected artifact."
+}

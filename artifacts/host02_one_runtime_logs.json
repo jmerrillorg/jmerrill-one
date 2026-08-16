@@ -1,0 +1,70 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_runtime_logs",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "inspection_methods": [
+    "az webapp log deployment list",
+    "az webapp log deployment show",
+    "az webapp log tail",
+    "az webapp log download",
+    "az webapp ssh",
+    "Azure Monitor site and plan metrics",
+    "HTTP default-host probes"
+  ],
+  "findings": [
+    {
+      "class": "startup_binding",
+      "evidence": "Removing the custom HOSTNAME=0.0.0.0 app setting caused /api/health, /, /why-we-exist, /contact, and /api/intake GET to begin responding from the staging default host.",
+      "result": "ROOT CAUSE FOUND"
+    },
+    {
+      "class": "deployment_strategy_conflict",
+      "evidence": "OneDeploy attempt 9cfafb99-d74c-4112-9a83-4e85bc3d5722 ran Oryx even though SCM_DO_BUILD_DURING_DEPLOYMENT=false and ENABLE_ORYX_BUILD=false were set.",
+      "result": "OneDeploy path rejected for current remediation"
+    },
+    {
+      "class": "kudu_lock",
+      "evidence": "A temporary Kudu deployment record temp-423edf3a remained active with status 0 across repeated polls after an interrupted config-zip deployment.",
+      "result": "CURRENT BLOCKER"
+    },
+    {
+      "class": "worker_artifact_inconsistency",
+      "evidence": "Downloaded container logs showed repeated `Error: Cannot find module '/home/site/wwwroot/server.js'` on worker lw1sdlwk001165 while the corrected artifact had previously served routes from another worker after HOSTNAME removal.",
+      "result": "CURRENT BLOCKER"
+    },
+    {
+      "class": "oryx_platform_error",
+      "evidence": "Downloaded Kudu logs showed OneDeploy invoked Oryx and failed with `ERROR: Could not find cached tarball for nodejs 24.18.0`.",
+      "result": "ROOT CAUSE FOR ONEDEPLOY FAILURE"
+    },
+    {
+      "class": "platform_diagnostics",
+      "evidence": "Log streaming and interactive SSH were unreliable while the slot was unhealthy. Log download eventually succeeded and provided deployment/container evidence.",
+      "result": "PASS AFTER DELAY"
+    }
+  ],
+  "latest_deployment_records": [
+    {
+      "id": "e2faa835-0aed-45e9-b713-33384cfcb762",
+      "status": 4,
+      "message": "Created via a push deployment",
+      "end_time": "2026-08-15T09:46:51.5376808Z"
+    },
+    {
+      "id": "temp-423edf3a",
+      "status": 0,
+      "message": "N/A",
+      "start_time": "2026-08-15T09:53:43.3326563Z",
+      "end_time": null
+    }
+  ],
+  "downloaded_log_evidence": {
+    "download_path": "/tmp/one-logs-1786787404.zip",
+    "key_messages": [
+      "Deployment e2faa835 completed by Push-Deployer at 2026-08-15T09:46:51Z.",
+      "Deployment e2faa835 log says `Run from package`.",
+      "Container log on worker lw1sdlwk001165 says `Cannot find module '/home/site/wwwroot/server.js'`.",
+      "OneDeploy Oryx log says `ERROR: Could not find cached tarball for nodejs 24.18.0`."
+    ]
+  }
+}

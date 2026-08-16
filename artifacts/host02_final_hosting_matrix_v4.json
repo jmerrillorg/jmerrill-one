@@ -1,0 +1,70 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Final hosting matrix v4"
+  },
+  "captured_at_utc": "2026-08-16T03:34:01Z",
+  "classification": "PASS",
+  "plan": {
+    "name": "asp-jm1-web-prod-premium",
+    "resource_group": "rg-jm1-web-prod-premium",
+    "sku": "P1mv3",
+    "workers": 1,
+    "node_runtime": "NODE|24-lts"
+  },
+  "sites": [
+    {
+      "brand": "J Merrill One",
+      "app": "app-jm1-one-prod-v2",
+      "domains": [
+        "jmerrill.one",
+        "www.jmerrill.one"
+      ],
+      "state": "APP SERVICE — LIVE — SAME P1mv3 PLAN — VALIDATED"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "app": "app-jm1-pub-prod-v2",
+      "domains": [
+        "jmerrill.pub",
+        "www.jmerrill.pub"
+      ],
+      "state": "APP SERVICE — LIVE — SAME P1mv3 PLAN — VALIDATED"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "app": "app-jm1-fin-prod-v2",
+      "domains": [
+        "jmerrill.financial",
+        "www.jmerrill.financial"
+      ],
+      "state": "APP SERVICE — LIVE — SAME P1mv3 PLAN — VALIDATED"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "app": "app-jm1-foundation-prod-v2",
+      "domains": [
+        "jmerrill.foundation",
+        "www.jmerrill.foundation"
+      ],
+      "state": "APP SERVICE — LIVE — SAME P1mv3 PLAN — VALIDATED"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "app": "app-jm1-productions-prod-v2",
+      "domains": [
+        "jmerrill.productions",
+        "www.jmerrill.productions"
+      ],
+      "state": "APP SERVICE — LIVE — SAME P1mv3 PLAN — VALIDATED"
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "app": "app-jm1-jackiesmithjr-prod-v2",
+      "domains": [
+        "jackiesmithjr.com"
+      ],
+      "state": "APP SERVICE — LIVE — SAME P1mv3 PLAN — VALIDATED"
+    }
+  ]
+}

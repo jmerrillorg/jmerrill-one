@@ -1,0 +1,31 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PREPARED",
+  "production_domain": "https://jmerrill.financial/",
+  "www_domain": "https://www.jmerrill.financial/",
+  "current_dns": {
+    "apex_a": "52.252.74.253",
+    "www_cname": "polite-glacier-0334b1d0f.6.azurestaticapps.net"
+  },
+  "target_app_service": {
+    "name": "app-jm1-fin-prod",
+    "resource_group": "rg-jm1-web-prod-appsvc",
+    "default_hostname": "app-jm1-fin-prod.azurewebsites.net",
+    "custom_domain_verification_id": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE",
+    "inbound_ip": "13.89.172.3"
+  },
+  "required_dns_transition": [
+    "Add/confirm asuid TXT verification records for apex and www.",
+    "Move apex A from SWA IP 52.252.74.253 to App Service IP 13.89.172.3.",
+    "Move www CNAME from SWA default host to app-jm1-fin-prod.azurewebsites.net.",
+    "Bind App Service managed TLS certificates after hostname validation."
+  ],
+  "rollback_sequence": [
+    "Restore apex A to 52.252.74.253.",
+    "Restore www CNAME to polite-glacier-0334b1d0f.6.azurestaticapps.net.",
+    "Keep SWA resource until rollback window and dependency checks complete."
+  ],
+  "do_not_detach_swa_prematurely": true
+}

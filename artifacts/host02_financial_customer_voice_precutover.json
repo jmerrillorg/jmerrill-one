@@ -1,0 +1,12 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "default_host_experience_route": "https://app-jm1-fin-prod.azurewebsites.net/experience",
+  "default_host_experience_status": 200,
+  "existing_customer_voice_public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUQUoyQzhIWDk0QTNFVEE3Qks1WDMzODFWVi4u",
+  "customer_voice_public_url_status": 200,
+  "recreated_customer_voice": false,
+  "result": "PASS"
+}

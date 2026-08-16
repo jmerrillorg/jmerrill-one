@@ -1,0 +1,263 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Premium pre-cutover capacity"
+  },
+  "captured_at_utc": "2026-08-16T02:37:51Z",
+  "plan": "asp-jm1-web-prod-premium",
+  "sku": "P1mv3",
+  "workers": 1,
+  "apps": [
+    {
+      "hostNames": [
+        "app-jm1-productions-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-productions-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "app-jm1-fin-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-fin-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "app-jm1-foundation-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-foundation-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "app-jm1-pub-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-pub-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "app-jm1-one-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-one-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "app-jm1-jackiesmithjr-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-jackiesmithjr-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    }
+  ],
+  "metrics": {
+    "cost": 177,
+    "interval": "PT5M",
+    "namespace": "Microsoft.Web/serverfarms",
+    "resourceregion": "centralus",
+    "timespan": "2026-08-16T01:37:49Z/2026-08-16T02:37:49Z",
+    "value": [
+      {
+        "displayDescription": "The average CPU used across all instances of the plan.",
+        "errorCode": "Success",
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium/providers/Microsoft.Insights/metrics/CpuPercentage",
+        "name": {
+          "localizedValue": "CPU Percentage",
+          "value": "CpuPercentage"
+        },
+        "resourceGroup": "rg-jm1-web-prod-premium",
+        "timeseries": [
+          {
+            "data": [
+              {
+                "timeStamp": "2026-08-16T01:37:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T01:42:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T01:47:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T01:52:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T01:57:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T02:02:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T02:07:00Z"
+              },
+              {
+                "average": 35.0,
+                "timeStamp": "2026-08-16T02:12:00Z"
+              },
+              {
+                "average": 48.6,
+                "timeStamp": "2026-08-16T02:17:00Z"
+              },
+              {
+                "average": 24.6,
+                "timeStamp": "2026-08-16T02:22:00Z"
+              },
+              {
+                "average": 25.6,
+                "timeStamp": "2026-08-16T02:27:00Z"
+              },
+              {
+                "average": 44.8,
+                "timeStamp": "2026-08-16T02:32:00Z"
+              }
+            ],
+            "metadatavalues": []
+          }
+        ],
+        "type": "Microsoft.Insights/metrics",
+        "unit": "Percent"
+      },
+      {
+        "displayDescription": "The average memory used across all instances of the plan.",
+        "errorCode": "Success",
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium/providers/Microsoft.Insights/metrics/MemoryPercentage",
+        "name": {
+          "localizedValue": "Memory Percentage",
+          "value": "MemoryPercentage"
+        },
+        "resourceGroup": "rg-jm1-web-prod-premium",
+        "timeseries": [
+          {
+            "data": [
+              {
+                "timeStamp": "2026-08-16T01:37:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T01:42:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T01:47:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T01:52:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T01:57:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T02:02:00Z"
+              },
+              {
+                "timeStamp": "2026-08-16T02:07:00Z"
+              },
+              {
+                "average": 12.666666666666666,
+                "timeStamp": "2026-08-16T02:12:00Z"
+              },
+              {
+                "average": 15.6,
+                "timeStamp": "2026-08-16T02:17:00Z"
+              },
+              {
+                "average": 17.6,
+                "timeStamp": "2026-08-16T02:22:00Z"
+              },
+              {
+                "average": 17.6,
+                "timeStamp": "2026-08-16T02:27:00Z"
+              },
+              {
+                "average": 20.4,
+                "timeStamp": "2026-08-16T02:32:00Z"
+              }
+            ],
+            "metadatavalues": []
+          }
+        ],
+        "type": "Microsoft.Insights/metrics",
+        "unit": "Percent"
+      },
+      {
+        "displayDescription": "The average number of HTTP requests that had to sit on the queue before being fulfilled. A high or increasing HTTP Queue length is a symptom of a plan under heavy load.",
+        "errorCode": "Success",
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium/providers/Microsoft.Insights/metrics/HttpQueueLength",
+        "name": {
+          "localizedValue": "Http Queue Length",
+          "value": "HttpQueueLength"
+        },
+        "resourceGroup": "rg-jm1-web-prod-premium",
+        "timeseries": [
+          {
+            "data": [
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T01:37:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T01:42:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T01:47:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T01:52:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T01:57:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T02:02:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T02:07:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T02:12:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T02:17:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T02:22:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T02:27:00Z"
+              },
+              {
+                "average": 0.0,
+                "timeStamp": "2026-08-16T02:32:00Z"
+              }
+            ],
+            "metadatavalues": []
+          }
+        ],
+        "type": "Microsoft.Insights/metrics",
+        "unit": "Count"
+      }
+    ]
+  },
+  "classification": "SAFE FOR CONTROLLED CUTOVER"
+}

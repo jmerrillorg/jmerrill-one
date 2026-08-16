@@ -1,0 +1,6 @@
+{
+  "package": "HOST-02",
+  "status": "NOT EXECUTED",
+  "swaResourcesRetired": [],
+  "reason": "Destructive retirement is prohibited before successful App Service cutover, validation, and rollback window completion."
+}

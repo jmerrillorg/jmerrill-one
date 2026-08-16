@@ -1,0 +1,19 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_swa_workflow_freeze",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "workflow": ".github/workflows/azure-static-web-apps.yml",
+  "before": {
+    "automatic_triggers": ["push to main", "pull_request to main"],
+    "deployment_target": "Azure Static Web Apps"
+  },
+  "after": {
+    "automatic_triggers": [],
+    "manual_trigger": "workflow_dispatch",
+    "required_input": "rollback_reason",
+    "close_pull_request_job": "disabled",
+    "github_workflow_state": "disabled_manually",
+    "github_workflow_id": "249647544"
+  },
+  "classification": "PASS"
+}

@@ -1,0 +1,56 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "starting_progress": "2 OF 6",
+  "current_target": "J MERRILL FINANCIAL",
+  "live_swa_resource": {
+    "name": "jmerrill-financial",
+    "resource_group": "jmerrill-financial_group",
+    "default_hostname": "polite-glacier-0334b1d0f.6.azurestaticapps.net",
+    "custom_domains": [
+      "jmerrill.financial",
+      "www.jmerrill.financial"
+    ],
+    "status": "LIVE BEFORE HOST-02 FINANCIAL CUTOVER"
+  },
+  "target_app_service": {
+    "name": "app-jm1-fin-prod",
+    "resource_group": "rg-jm1-web-prod-appsvc",
+    "default_hostname": "app-jm1-fin-prod.azurewebsites.net",
+    "app_service_plan": "asp-jm1-web-prod-linux",
+    "plan_capacity": "2 S1 workers"
+  },
+  "approved_target_architecture": "Azure App Service frontend + intentional Azure Functions backend",
+  "api_endpoints": [
+    "/api/intake",
+    "/api/feedback",
+    "/api/pilot/disclosure/{action?}",
+    "/api/pilot/advisor-review/{action?}",
+    "/api/pilot/session/{action?}"
+  ],
+  "functions_dependency": "Existing SWA-managed API routes require first-class Azure Functions backend before SWA supersession.",
+  "environment_variables": {
+    "swa_setting_count": 6,
+    "app_service_setting_names_captured": true,
+    "function_setting_names_captured": true,
+    "secret_values_recorded": false
+  },
+  "service_identities": {
+    "dataverse_client_credentials": "PRESENT IN FUNCTION APP SETTINGS",
+    "managed_identity": "NOT CONFIGURED ON func-jm1-fin-prod",
+    "secrets_recorded": false
+  },
+  "current_public_domain": "https://jmerrill.financial/",
+  "customer_voice_path": {
+    "site_route": "/experience",
+    "public_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUQUoyQzhIWDk0QTNFVEE3Qks1WDMzODFWVi4u"
+  },
+  "pilot_runtime_dependencies": [
+    "Dataverse",
+    "JMF pilot allow-list settings",
+    "JMF action token secret",
+    "JMF advisor action secret",
+    "Customer Voice Dataverse tables"
+  ]
+}

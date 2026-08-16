@@ -1,0 +1,16 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_node_runtime",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "repo": {
+    "next_version": "16.2.0",
+    "package_manager": "npm",
+    "package_lock_present": true,
+    "package_json_engines": "NOT PRESENT",
+    "local_build_node_version": "v26.0.0"
+  },
+  "app_service_before": "NODE|22-lts",
+  "app_service_after": "NODE|24-lts",
+  "publishing_reference": "NODE|24-lts",
+  "classification": "PASS"
+}

@@ -1,0 +1,17 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 8",
+    "name": "Premium deployment strategy"
+  },
+  "captured_at_utc": "2026-08-16T02:19:55Z",
+  "strategy": {
+    "default": "prebuilt runnable artifact deployed to App Service",
+    "nextjs": "standalone output packaged as zip to avoid Oryx rebuild drift",
+    "publishing": "existing App Service packaging mechanics reused via package:appservice",
+    "financial": "frontend redeployed; Azure Functions backend remains intentional and separate",
+    "jackie": "converted from SWA static export to standalone App Service runtime; coaching not launched"
+  },
+  "cutover_rule": "default-host validation before any public domain transfer; domains moved one at a time",
+  "classification": "PASS"
+}

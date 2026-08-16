@@ -1,0 +1,32 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "recommendation": "KEEP CURRENT MIXED HOSTING",
+  "secondaryRecommendations": [
+    "RETAIN SWA WHERE TECHNICALLY APPROPRIATE",
+    "RETAIN APP SERVICE FOR PUBLISHING",
+    "DO NOT MIGRATE OR RETIRE DURING HOST-01",
+    "ASSESS RETIREMENT OF NON-LIVE APP SERVICE TRANSITION RESOURCES AFTER FOUNDER AUTHORIZATION"
+  ],
+  "rationale": [
+    "Only Publishing is proven live on App Service and has observed server/runtime, Dataverse, SharePoint, Stripe, auth, storage, and diagnostics settings.",
+    "The other five scoped public sites are live on Static Web Apps, still receive current SWA deployments, and do not have proven App Service runtime requirements in HOST-01 evidence.",
+    "Uniform hosting would add risk and work without evidence that the static-hosted sites require it.",
+    "The strongest cost/duplication signal is the shared Standard S1 App Service plan carrying five non-live transition resources."
+  ],
+  "eventualRetirementCandidates": [
+    "app-jm1-one-prod",
+    "app-jm1-fin-prod",
+    "app-jm1-foundation-prod",
+    "app-jm1-productions-prod",
+    "app-jm1-jackiesmithjr-prod"
+  ],
+  "preRetirementRequirements": [
+    "Founder approval",
+    "Confirm no rollback dependency",
+    "Confirm no production-only Key Vault/App Insights/settings dependency",
+    "Confirm no non-canonical DNS dependency",
+    "Confirm no hidden workflow or deployment center dependency"
+  ],
+  "exactNextInfrastructureAction": "Authorize a non-destructive HOST-02 retirement-readiness assessment for non-live App Service transition resources; do not migrate, delete, stop, re-point DNS, or modify production hosting without separate Founder approval."
+}

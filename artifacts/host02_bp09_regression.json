@@ -1,0 +1,8 @@
+{
+  "package": "HOST-02",
+  "brand": "J Merrill One",
+  "status": "NOT EXECUTED",
+  "requiredResult": "PASS before One cutover",
+  "reason": "One target App Service is still placeholder and public DNS was not moved.",
+  "productionProtection": "Existing SWA /contact and /api/intake were not changed by HOST-02."
+}

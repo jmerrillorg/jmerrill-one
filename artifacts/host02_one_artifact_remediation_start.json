@@ -1,0 +1,20 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_artifact_remediation_start",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "target": "app-jm1-one-prod staging",
+  "current_deployment_state_at_start": {
+    "stale_temp_deployment": "temp-423edf3a",
+    "stale_temp_status_at_start": "ACTIVE/STATUS 0 in prior evidence; rechecked as terminal failed during this continuation",
+    "active_successful_deployment_at_start": "e2faa835-0aed-45e9-b713-33384cfcb762"
+  },
+  "app_service_plan": {
+    "name": "asp-jm1-web-prod-linux",
+    "worker_count": 2,
+    "sku": "S1"
+  },
+  "startup_command": "node server.js",
+  "runtime_stack": "NODE|24-lts on staging; production slot remained NODE|22-lts until blocked by SwapSiteSlots operation",
+  "wwwroot_state": "Prior worker inconsistency showed one worker missing /home/site/wwwroot/server.js; remediation targeted coherent extracted zip deployment.",
+  "latest_deployment_result": "Staging coherent deployment e5c0fefd-5010-4747-acf1-1f6feec4b0c9 succeeded."
+}

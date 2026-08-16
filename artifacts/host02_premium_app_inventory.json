@@ -1,0 +1,73 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 6",
+    "name": "Premium app inventory"
+  },
+  "captured_at_utc": "2026-08-16T02:18:06Z",
+  "app_service_plan": "asp-jm1-web-prod-premium",
+  "resource_group": "rg-jm1-web-prod-premium",
+  "apps": [
+    {
+      "defaultHostName": "app-jm1-productions-prod-v2.azurewebsites.net",
+      "hostNames": [
+        "app-jm1-productions-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-productions-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "defaultHostName": "app-jm1-fin-prod-v2.azurewebsites.net",
+      "hostNames": [
+        "app-jm1-fin-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-fin-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "defaultHostName": "app-jm1-foundation-prod-v2.azurewebsites.net",
+      "hostNames": [
+        "app-jm1-foundation-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-foundation-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "defaultHostName": "app-jm1-pub-prod-v2.azurewebsites.net",
+      "hostNames": [
+        "app-jm1-pub-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-pub-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "defaultHostName": "app-jm1-one-prod-v2.azurewebsites.net",
+      "hostNames": [
+        "app-jm1-one-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-one-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    },
+    {
+      "defaultHostName": "app-jm1-jackiesmithjr-prod-v2.azurewebsites.net",
+      "hostNames": [
+        "app-jm1-jackiesmithjr-prod-v2.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-jackiesmithjr-prod-v2",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+      "state": "Running"
+    }
+  ],
+  "classification": "PASS"
+}

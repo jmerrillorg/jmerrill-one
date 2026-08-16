@@ -1,0 +1,20 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_coherent_deployment",
+  "generated_utc": "2026-08-15T11:58:00Z",
+  "commit_sha": "0a980ba",
+  "artifact_path": "/tmp/jm1-one-appservice-1786792246.zip",
+  "deployment": {
+    "id": "e5c0fefd-5010-4747-acf1-1f6feec4b0c9",
+    "target": "app-jm1-one-prod staging",
+    "mechanism": "Kudu config-zip extracted deployment",
+    "status": 4,
+    "result": "PASS"
+  },
+  "production_promotion": {
+    "attempt": "slot swap staging to production",
+    "operation_id": "cae870af-6734-443b-b503-bff8656c37e2",
+    "completed_utc": "2026-08-15T11:32:36.149000Z",
+    "result": "PASS"
+  }
+}

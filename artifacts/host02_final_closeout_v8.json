@@ -1,0 +1,35 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Final closeout v8"
+  },
+  "captured_at_utc": "2026-08-16T03:34:01Z",
+  "final_classification": "HOST-02 COMPLETE — ALL SIX SITES CONSOLIDATED ON P1mv3; RETIREMENT CONFIRMATION REQUIRED",
+  "founder_premium_remediation_approval": "RECORDED",
+  "azure_premium_limitation": "Existing S1 webspace/resource group could not host PremiumMV3; new Premium-capable resource group and plan created.",
+  "new_resource_group": "rg-jm1-web-prod-premium",
+  "new_plan": "asp-jm1-web-prod-premium",
+  "sku": "P1mv3",
+  "workers": 1,
+  "node_runtime": "NODE|24-lts",
+  "migration_progress": "6 OF 6",
+  "sites": {
+    "one": "LIVE VALIDATED",
+    "publishing": "LIVE VALIDATED",
+    "financial": "LIVE VALIDATED",
+    "foundation": "LIVE VALIDATED",
+    "productions": "LIVE VALIDATED",
+    "jackie": "LIVE VALIDATED"
+  },
+  "financial_functions_state": "PRESERVED",
+  "customer_voice_regression": "PASS",
+  "one_intake_regression": "SAFE GET 405; public regression PASS",
+  "final_capacity": "P1MV3 x1 = ACCEPTABLE — MONITOR",
+  "domains_tls": "PASS",
+  "deployment_workflow_state": "TARGETS RECORDED; WORKFLOW FILE FINALIZATION PENDING COMMIT",
+  "old_host_freeze_state": "SUPERSEDED — ROLLBACK ONLY",
+  "retirement_readiness": "FOUNDER DELETION CONFIRMATION REQUIRED",
+  "hosting_standard_status": "CANON-CANDIDATE — IMPLEMENTATION PROVEN — READY FOR FOUNDER APPROVAL",
+  "jrn01_state": "NOT MODIFIED DURING HOST-02",
+  "exact_enterprise_recommendation": "Approve bounded deletion/retirement of superseded App Services, old plans, and SWAs after rollback observation; monitor P1mv3 x1 capacity."
+}

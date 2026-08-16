@@ -1,0 +1,14 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "result": "FAIL",
+  "capacity": "NOT SAFE FOR CONTROLLED CUTOVER — APP SERVICE CAPACITY PURCHASE DECISION REQUIRED",
+  "one": "NOT READY",
+  "financial": "NOT READY",
+  "foundation": "NOT READY",
+  "productions": "NOT READY",
+  "jackie": "NOT READY",
+  "publishing": "PASS — already live reference",
+  "domainCutoverAllowed": false,
+  "reason": "Capacity headroom is insufficient after waste remediation; target applications are not yet default-host validated."
+}

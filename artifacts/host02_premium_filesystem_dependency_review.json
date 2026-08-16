@@ -1,0 +1,129 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Premium v3 production baseline + six-site redeployment continuation"
+  },
+  "captured_at_utc": "2026-08-16T03:48:27.285Z",
+  "resource_group": "rg-jm1-web-prod-premium",
+  "app_service_plan": "asp-jm1-web-prod-premium",
+  "sku": "P1mv3",
+  "workers": 1,
+  "runtime": "Linux + NODE|24-lts",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "apps": [
+    {
+      "brand": "J Merrill One",
+      "app": "app-jm1-one-prod-v2",
+      "runtime": "NODE|24-lts",
+      "startup_command": "node server.js",
+      "health_check": "/api/health",
+      "managed_identity": "NOT REQUIRED / none configured",
+      "dataverse": "REQUIRED - One intake",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "Enterprise Experience URL preserved",
+      "public_domains": [
+        "jmerrill.one",
+        "www.jmerrill.one"
+      ],
+      "workflow": "/.github/workflows/azure-app-service-premium.yml",
+      "result": "PASS",
+      "storage_classification": "STATELESS - SAFE / TEMPORARY ONLY",
+      "persistent_local_dependency": "NO"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "app": "app-jm1-pub-prod-v2",
+      "runtime": "NODE|24-lts",
+      "startup_command": "node server.js",
+      "health_check": "/api/health",
+      "managed_identity": "NOT REQUIRED / none configured",
+      "dataverse": "REQUIRED - Publishing runtime integrations",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "Author Experience URL preserved",
+      "public_domains": [
+        "jmerrill.pub",
+        "www.jmerrill.pub"
+      ],
+      "workflow": "host02-repos/jmerrill-pub/.github/workflows/azure-app-service-premium.yml",
+      "result": "PASS",
+      "storage_classification": "STATELESS - SAFE / TEMPORARY ONLY",
+      "persistent_local_dependency": "NO"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "app": "app-jm1-fin-prod-v2",
+      "runtime": "NODE|24-lts",
+      "startup_command": "node server.js",
+      "health_check": "/api/health",
+      "managed_identity": "NOT REQUIRED / none configured",
+      "dataverse": "REQUIRED - Functions backend",
+      "functions": "func-jm1-fin-prod preserved on Linux Consumption",
+      "customer_voice": "Client Experience URL preserved",
+      "public_domains": [
+        "jmerrill.financial",
+        "www.jmerrill.financial"
+      ],
+      "workflow": "host02-repos/jmerrill-financial/.github/workflows/azure-app-service-premium.yml",
+      "result": "PASS",
+      "storage_classification": "STATELESS - SAFE / TEMPORARY ONLY",
+      "persistent_local_dependency": "NO"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "app": "app-jm1-foundation-prod-v2",
+      "runtime": "NODE|24-lts",
+      "startup_command": "node server.js",
+      "health_check": "/api/health",
+      "managed_identity": "NOT REQUIRED / none configured",
+      "dataverse": "NOT REQUIRED",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "Program/Volunteer Experience URL preserved",
+      "public_domains": [
+        "jmerrill.foundation",
+        "www.jmerrill.foundation"
+      ],
+      "workflow": "host02-repos/jmerrillfoundation/.github/workflows/azure-app-service-premium.yml",
+      "result": "PASS",
+      "storage_classification": "STATELESS - SAFE / TEMPORARY ONLY",
+      "persistent_local_dependency": "NO"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "app": "app-jm1-productions-prod-v2",
+      "runtime": "NODE|24-lts",
+      "startup_command": "node server.js",
+      "health_check": "/api/health",
+      "managed_identity": "NOT REQUIRED / none configured",
+      "dataverse": "NOT REQUIRED",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "Project Experience URL preserved",
+      "public_domains": [
+        "jmerrill.productions",
+        "www.jmerrill.productions"
+      ],
+      "workflow": "host02-repos/jmerrill-productions/.github/workflows/azure-app-service-premium.yml",
+      "result": "PASS",
+      "storage_classification": "STATELESS - SAFE / TEMPORARY ONLY",
+      "persistent_local_dependency": "NO"
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "app": "app-jm1-jackiesmithjr-prod-v2",
+      "runtime": "NODE|24-lts",
+      "startup_command": "node server.js",
+      "health_check": "/api/health",
+      "managed_identity": "NOT REQUIRED / none configured",
+      "dataverse": "NOT REQUIRED",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "NOT ACTIVATED",
+      "public_domains": [
+        "jackiesmithjr.com"
+      ],
+      "workflow": "host02-repos/jackiesmithjr/.github/workflows/azure-app-service-premium.yml",
+      "result": "PASS",
+      "storage_classification": "STATELESS - SAFE / TEMPORARY ONLY",
+      "persistent_local_dependency": "NO"
+    }
+  ]
+}

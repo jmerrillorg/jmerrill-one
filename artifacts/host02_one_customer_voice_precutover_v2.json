@@ -1,0 +1,11 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_customer_voice_precutover_v2",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "link_source": "content/canon.ts footer Share Your Experience",
+  "survey_url": "https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=XgctNReOaUGfjiLmlGzmbWLYUJckILxClwf4SzJd-xlUN0tLNjlCME02UFpZM0tWS1VXOEtJVE1HTy4u",
+  "http_status": 200,
+  "response_bytes": 48620,
+  "new_survey_created": false,
+  "classification": "PASS"
+}

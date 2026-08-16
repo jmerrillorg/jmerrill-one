@@ -1,0 +1,7 @@
+{
+  "brand": "J Merrill Financial",
+  "target": "app-jm1-fin-prod",
+  "result": "FAIL",
+  "evidence": "Default hostname returns infrastructure placeholder JSON; Financial SWA Functions API architecture is not hosted on target App Service.",
+  "cutoverAllowed": false
+}

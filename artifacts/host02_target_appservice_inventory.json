@@ -1,0 +1,78 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-14T22:42:00Z",
+  "status": "TARGETS INVENTORIED",
+  "targets": [
+    {
+      "brand": "J Merrill One",
+      "resource": "app-jm1-one-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "runtime": "NODE|22-lts",
+      "startupCommand": "node server.js",
+      "httpsOnly": true,
+      "http2": true,
+      "alwaysOn": true,
+      "healthCheckPath": "/",
+      "identity": "SystemAssigned",
+      "customDomains": [],
+      "defaultHostBehavior": "HTTP 200 JSON placeholder: Infrastructure Ready. Production traffic has not migrated."
+    },
+    {
+      "brand": "J Merrill Financial",
+      "resource": "app-jm1-fin-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "runtime": "NODE|22-lts",
+      "startupCommand": "node server.js",
+      "httpsOnly": true,
+      "http2": true,
+      "alwaysOn": true,
+      "healthCheckPath": "/",
+      "identity": "SystemAssigned",
+      "customDomains": [],
+      "defaultHostBehavior": "HTTP 200 JSON placeholder: Infrastructure Ready. Production traffic has not migrated."
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "resource": "app-jm1-foundation-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "runtime": "NODE|22-lts",
+      "startupCommand": "node server.js",
+      "httpsOnly": true,
+      "http2": true,
+      "alwaysOn": true,
+      "healthCheckPath": "/",
+      "identity": "SystemAssigned",
+      "customDomains": [],
+      "defaultHostBehavior": "HTTP 200 JSON placeholder: Infrastructure Ready. Production traffic has not migrated."
+    },
+    {
+      "brand": "J Merrill Productions",
+      "resource": "app-jm1-productions-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "runtime": "NODE|22-lts",
+      "startupCommand": "node server.js",
+      "httpsOnly": true,
+      "http2": true,
+      "alwaysOn": true,
+      "healthCheckPath": "/",
+      "identity": "SystemAssigned",
+      "customDomains": [],
+      "defaultHostBehavior": "HTTP 200 JSON placeholder: Infrastructure Ready. Production traffic has not migrated."
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "resource": "app-jm1-jackiesmithjr-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "runtime": "NODE|20-lts",
+      "startupCommand": "node server.js",
+      "httpsOnly": true,
+      "http2": true,
+      "alwaysOn": true,
+      "healthCheckPath": "/",
+      "identity": "SystemAssigned",
+      "customDomains": [],
+      "defaultHostBehavior": "HTTP 503 Service Unavailable"
+    }
+  ],
+  "secretHandling": "Only app setting names were inspected. Secret values were not recorded."
+}

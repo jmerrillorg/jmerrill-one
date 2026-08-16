@@ -1,0 +1,15 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Premium v3 production baseline + six-site redeployment continuation"
+  },
+  "captured_at_utc": "2026-08-16T03:48:27.285Z",
+  "resource_group": "rg-jm1-web-prod-premium",
+  "app_service_plan": "asp-jm1-web-prod-premium",
+  "sku": "P1mv3",
+  "workers": 1,
+  "runtime": "Linux + NODE|24-lts",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "rule": "Write validations use controlled migration evidence identities/correlation IDs; do not use real client/author/donor/participant data where synthetic proof is sufficient."
+}

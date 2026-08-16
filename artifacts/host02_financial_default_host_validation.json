@@ -1,0 +1,67 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "default_host": "https://app-jm1-fin-prod.azurewebsites.net",
+  "route_validation": [
+    {
+      "route": "/api/health",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "route": "/services",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "route": "/experience",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "route": "/intake",
+      "status": 200,
+      "result": "PASS"
+    },
+    {
+      "route": "/pilot/session",
+      "status": 200,
+      "result": "PASS"
+    }
+  ],
+  "contact_surface": {
+    "canonical_route": "/intake",
+    "contact_page_route": "/contact",
+    "contact_page_status": 404,
+    "classification": "NO /contact ROUTE EXISTS IN CURRENT FINANCIAL REPO; /intake IS THE LIVE CONTACT SURFACE"
+  },
+  "api_validation": {
+    "options_intake": 204,
+    "options_feedback": 204,
+    "session_unauthorized": "403 ADVISOR_SESSION_AUTH_REQUIRED",
+    "session_forged_header": "403 ADVISOR_SESSION_AUTH_REQUIRED",
+    "intake_valid": "200 ACCEPTED",
+    "intake_replay": "200 REPLAYED",
+    "feedback_valid": "200 RECORDED",
+    "feedback_replay": "200 REPLAYED",
+    "feedback_sensitive": "400 SENSITIVE_DETAIL_NOT_ACCEPTED",
+    "advisor_packet_tokenized": "200 PASS",
+    "advisor_session_tokenized": "200 PASS"
+  },
+  "customer_voice": {
+    "experience_route_status": 200,
+    "public_survey_url_status": 200,
+    "result": "PASS"
+  },
+  "static_assets": "PASS",
+  "placeholder_json": false,
+  "timeouts_after_corrected_deployment": false,
+  "cors_errors_observed": false
+}

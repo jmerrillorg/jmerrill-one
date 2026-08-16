@@ -1,17 +1,16 @@
 name: Deploy JM1 Web to Azure Static Web Apps
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      rollback_reason:
+        description: "Required governed rollback reason after HOST-02 App Service cutover."
+        required: true
+        type: string
 
 jobs:
   build_and_deploy:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     name: Build and Deploy
     steps:
@@ -44,7 +43,7 @@ jobs:
           skip_app_build: true
 
   close_pull_request:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    if: false
     runs-on: ubuntu-latest
     name: Close Pull Request
     steps:

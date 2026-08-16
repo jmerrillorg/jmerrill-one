@@ -1,0 +1,227 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Premium default-host validation"
+  },
+  "captured_at_utc": "2026-08-16T02:37:51Z",
+  "checks": [
+    {
+      "label": "one_health",
+      "app": "app-jm1-one-prod-v2",
+      "path": "/api/health",
+      "url": "https://app-jm1-one-prod-v2.azurewebsites.net/api/health",
+      "http_code": "200",
+      "time_total_seconds": "0.197068",
+      "pass": true
+    },
+    {
+      "label": "one_home",
+      "app": "app-jm1-one-prod-v2",
+      "path": "/",
+      "url": "https://app-jm1-one-prod-v2.azurewebsites.net/",
+      "http_code": "200",
+      "time_total_seconds": "0.472983",
+      "pass": true
+    },
+    {
+      "label": "one_why",
+      "app": "app-jm1-one-prod-v2",
+      "path": "/why-we-exist",
+      "url": "https://app-jm1-one-prod-v2.azurewebsites.net/why-we-exist",
+      "http_code": "200",
+      "time_total_seconds": "0.431448",
+      "pass": true
+    },
+    {
+      "label": "one_divisions",
+      "app": "app-jm1-one-prod-v2",
+      "path": "/divisions",
+      "url": "https://app-jm1-one-prod-v2.azurewebsites.net/divisions",
+      "http_code": "200",
+      "time_total_seconds": "0.319131",
+      "pass": true
+    },
+    {
+      "label": "one_contact",
+      "app": "app-jm1-one-prod-v2",
+      "path": "/contact",
+      "url": "https://app-jm1-one-prod-v2.azurewebsites.net/contact",
+      "http_code": "200",
+      "time_total_seconds": "0.297970",
+      "pass": true
+    },
+    {
+      "label": "one_intake_safe_get",
+      "app": "app-jm1-one-prod-v2",
+      "path": "/api/intake",
+      "url": "https://app-jm1-one-prod-v2.azurewebsites.net/api/intake",
+      "http_code": "405",
+      "time_total_seconds": "0.164678",
+      "pass": true
+    },
+    {
+      "label": "publishing_health",
+      "app": "app-jm1-pub-prod-v2",
+      "path": "/api/health",
+      "url": "https://app-jm1-pub-prod-v2.azurewebsites.net/api/health",
+      "http_code": "200",
+      "time_total_seconds": "0.168234",
+      "pass": true
+    },
+    {
+      "label": "publishing_home",
+      "app": "app-jm1-pub-prod-v2",
+      "path": "/",
+      "url": "https://app-jm1-pub-prod-v2.azurewebsites.net/",
+      "http_code": "200",
+      "time_total_seconds": "0.917972",
+      "pass": true
+    },
+    {
+      "label": "publishing_author_experience",
+      "app": "app-jm1-pub-prod-v2",
+      "path": "/experience",
+      "url": "https://app-jm1-pub-prod-v2.azurewebsites.net/experience",
+      "http_code": "307",
+      "time_total_seconds": "0.319603",
+      "pass": true
+    },
+    {
+      "label": "financial_health",
+      "app": "app-jm1-fin-prod-v2",
+      "path": "/api/health",
+      "url": "https://app-jm1-fin-prod-v2.azurewebsites.net/api/health",
+      "http_code": "200",
+      "time_total_seconds": "0.182560",
+      "pass": true
+    },
+    {
+      "label": "financial_home",
+      "app": "app-jm1-fin-prod-v2",
+      "path": "/",
+      "url": "https://app-jm1-fin-prod-v2.azurewebsites.net/",
+      "http_code": "200",
+      "time_total_seconds": "0.702370",
+      "pass": true
+    },
+    {
+      "label": "financial_experience",
+      "app": "app-jm1-fin-prod-v2",
+      "path": "/experience",
+      "url": "https://app-jm1-fin-prod-v2.azurewebsites.net/experience",
+      "http_code": "200",
+      "time_total_seconds": "0.249008",
+      "pass": true
+    },
+    {
+      "label": "foundation_health",
+      "app": "app-jm1-foundation-prod-v2",
+      "path": "/api/health",
+      "url": "https://app-jm1-foundation-prod-v2.azurewebsites.net/api/health",
+      "http_code": "200",
+      "time_total_seconds": "0.144640",
+      "pass": true
+    },
+    {
+      "label": "foundation_home",
+      "app": "app-jm1-foundation-prod-v2",
+      "path": "/",
+      "url": "https://app-jm1-foundation-prod-v2.azurewebsites.net/",
+      "http_code": "200",
+      "time_total_seconds": "0.579162",
+      "pass": true
+    },
+    {
+      "label": "foundation_programs",
+      "app": "app-jm1-foundation-prod-v2",
+      "path": "/programs",
+      "url": "https://app-jm1-foundation-prod-v2.azurewebsites.net/programs",
+      "http_code": "200",
+      "time_total_seconds": "0.478883",
+      "pass": true
+    },
+    {
+      "label": "foundation_volunteer",
+      "app": "app-jm1-foundation-prod-v2",
+      "path": "/volunteer",
+      "url": "https://app-jm1-foundation-prod-v2.azurewebsites.net/volunteer",
+      "http_code": "200",
+      "time_total_seconds": "0.476646",
+      "pass": true
+    },
+    {
+      "label": "foundation_feedback",
+      "app": "app-jm1-foundation-prod-v2",
+      "path": "/share-your-experience",
+      "url": "https://app-jm1-foundation-prod-v2.azurewebsites.net/share-your-experience",
+      "http_code": "200",
+      "time_total_seconds": "0.391865",
+      "pass": true
+    },
+    {
+      "label": "productions_health",
+      "app": "app-jm1-productions-prod-v2",
+      "path": "/api/health",
+      "url": "https://app-jm1-productions-prod-v2.azurewebsites.net/api/health",
+      "http_code": "200",
+      "time_total_seconds": "0.209904",
+      "pass": true
+    },
+    {
+      "label": "productions_home",
+      "app": "app-jm1-productions-prod-v2",
+      "path": "/",
+      "url": "https://app-jm1-productions-prod-v2.azurewebsites.net/",
+      "http_code": "200",
+      "time_total_seconds": "0.470968",
+      "pass": true
+    },
+    {
+      "label": "productions_contact",
+      "app": "app-jm1-productions-prod-v2",
+      "path": "/contact",
+      "url": "https://app-jm1-productions-prod-v2.azurewebsites.net/contact",
+      "http_code": "200",
+      "time_total_seconds": "0.234326",
+      "pass": true
+    },
+    {
+      "label": "jackie_health",
+      "app": "app-jm1-jackiesmithjr-prod-v2",
+      "path": "/api/health",
+      "url": "https://app-jm1-jackiesmithjr-prod-v2.azurewebsites.net/api/health",
+      "http_code": "200",
+      "time_total_seconds": "0.241291",
+      "pass": true
+    },
+    {
+      "label": "jackie_home",
+      "app": "app-jm1-jackiesmithjr-prod-v2",
+      "path": "/",
+      "url": "https://app-jm1-jackiesmithjr-prod-v2.azurewebsites.net/",
+      "http_code": "200",
+      "time_total_seconds": "0.477918",
+      "pass": true
+    },
+    {
+      "label": "jackie_archive",
+      "app": "app-jm1-jackiesmithjr-prod-v2",
+      "path": "/archive",
+      "url": "https://app-jm1-jackiesmithjr-prod-v2.azurewebsites.net/archive",
+      "http_code": "200",
+      "time_total_seconds": "0.579358",
+      "pass": true
+    },
+    {
+      "label": "jackie_contact",
+      "app": "app-jm1-jackiesmithjr-prod-v2",
+      "path": "/contact",
+      "url": "https://app-jm1-jackiesmithjr-prod-v2.azurewebsites.net/contact",
+      "http_code": "200",
+      "time_total_seconds": "0.330263",
+      "pass": true
+    }
+  ],
+  "classification": "PASS",
+  "safe_get_note": "One /api/intake GET returned 405 Method Not Allowed; classified as safe GET behavior because the endpoint does not accept unsafe GET intake writes."
+}

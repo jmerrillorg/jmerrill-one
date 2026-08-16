@@ -1,0 +1,13 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_deployment_strategy_v2",
+  "generated_utc": "2026-08-15T11:30:07Z",
+  "classification": "PREBUILT STANDALONE ARTIFACT — NO ORYX BUILD REQUIRED",
+  "package_script": "scripts/package-appservice.mjs",
+  "deployment_mechanism": "az webapp deployment source config-zip",
+  "app_service_behavior": "ZipDeploy extracted package to /home/site/wwwroot; Kudu optimized node_modules but did not run Oryx source build.",
+  "rejected_paths": [
+    "OneDeploy source/zip path that invoked Oryx and failed on Node 24.18.0 cache",
+    "Mixed source deploy plus standalone startup expectation"
+  ]
+}

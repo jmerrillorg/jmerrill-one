@@ -1,0 +1,28 @@
+{
+  "package": "HOST-02",
+  "artifact": "host02_one_redeployment_evidence",
+  "generated_utc": "2026-08-15T10:03:10Z",
+  "repo_commit_at_start": "72d67579682ce589fdea713561387df4178bbfaf",
+  "deployment_attempts": [
+    {
+      "id": "9cfafb99-d74c-4112-9a83-4e85bc3d5722",
+      "method": "az webapp deploy / OneDeploy",
+      "result": "FAILED",
+      "evidence": "Deployment status 3; deployment log showed Oryx build was invoked despite prebuilt-artifact settings."
+    },
+    {
+      "id": "e2faa835-0aed-45e9-b713-33384cfcb762",
+      "method": "az webapp deployment source config-zip",
+      "result": "PASS",
+      "evidence": "Push-Deployer completed with status 4 at 2026-08-15T09:46:51.5376808Z; downloaded deployment log identified the path as Run from package."
+    },
+    {
+      "id": "temp-423edf3a",
+      "method": "az webapp deployment source config-zip",
+      "result": "BLOCKED",
+      "evidence": "Temporary deployment record remained active with status 0; subsequent config-zip attempts returned 409."
+    }
+  ],
+  "github_workflow": "Not yet activated for One App Service; current repo has only Azure Static Web Apps workflow. App Service workflow remains required after staging deployment lock clears.",
+  "classification": "BLOCKED BY STALE KUDU DEPLOYMENT LOCK AND WORKER ARTIFACT INCONSISTENCY"
+}

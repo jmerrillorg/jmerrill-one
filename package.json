@@ -2,11 +2,16 @@
   "name": "jm1-web",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11 <12"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "package:appservice": "node scripts/package-appservice.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

@@ -1,0 +1,8 @@
+{
+  "brand": "J Merrill Financial",
+  "status": "NOT CUT OVER",
+  "target": "app-jm1-fin-prod",
+  "requiredFinalState": "J MERRILL FINANCIAL = APP SERVICE — LIVE",
+  "currentState": "SWA remains live",
+  "blockers": ["APP SERVICE PLAN CAPACITY DECISION REQUIRED", "Financial SWA Functions API architecture not migrated", "App Service app settings missing Financial production API names", "Default host serves placeholder"]
+}

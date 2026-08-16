@@ -1,0 +1,7 @@
+{
+  "brand": "Jackie Smith Jr.",
+  "target": "app-jm1-jackiesmithjr-prod",
+  "result": "FAIL",
+  "evidence": "Default hostname returns HTTP 503.",
+  "cutoverAllowed": false
+}

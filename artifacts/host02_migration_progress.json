@@ -1,0 +1,28 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T02:38:15Z",
+  "progress": "2 OF 6",
+  "liveOnAppService": ["J Merrill Publishing", "J Merrill One"],
+  "notYetLiveOnAppService": [
+    "J Merrill Financial",
+    "J Merrill Foundation",
+    "J Merrill Productions",
+    "Jackie Smith Jr."
+  ],
+  "doNotMisclassify": "Existence of target App Services or successful staging deployment record does not equal completed migration.",
+  "continuation_after_founder_capacity_approval": {
+    "approved_capacity_action": "asp-jm1-web-prod-linux scaled from 1 S1 worker to 2 S1 workers.",
+    "current_gate": "HOST-02 ONE CUTOVER COMPLETE",
+    "blocking_site": "J Merrill One",
+    "blocking_reason": "None for J Merrill One. Azure SwapSiteSlots operation cae870af-6734-443b-b503-bff8656c37e2 cleared and production cutover completed."
+  },
+  "one_app_service_remediation_v5": {
+    "staging_default_host": "PASS",
+    "two_worker_consistency": "PASS",
+    "bp09_intake_proof": "PASS",
+    "customer_voice_precutover": "PASS",
+    "production_cutover": "PASS",
+    "dns_tls_cutover": "PASS",
+    "swa_state": "WWW DOMAIN REMOVED; SWA WORKFLOW FROZEN FOR GOVERNED ROLLBACK ONLY"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "package": "HOST-02",
+  "generated_utc": "2026-08-15T01:50:00Z",
+  "status": "NOT FINAL — CAPACITY DECISION REQUIRED BEFORE LIVE MIGRATION",
+  "intendedArchitecture": "App Service frontend plus intentional Azure Functions backend, not SWA-as-hidden-backend",
+  "finalizationCondition": "Create/configure supported Functions backend or equivalent approved API host, connect App Service frontend, validate Financial API proof, then cut over public domain."
+}

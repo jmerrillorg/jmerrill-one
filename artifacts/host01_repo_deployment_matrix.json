@@ -1,0 +1,74 @@
+{
+  "package": "HOST-01",
+  "generated_utc": "2026-08-14T22:20:00Z",
+  "sites": [
+    {
+      "brand": "J Merrill One",
+      "repo": "https://github.com/jmerrillorg/jmerrill-one",
+      "branch": "main",
+      "productionWorkflow": ".github/workflows/azure-static-web-apps.yml",
+      "workflowName": "Deploy JM1 Web to Azure Static Web Apps",
+      "deploymentAction": "Azure/static-web-apps-deploy@v1",
+      "targetsSwa": true,
+      "targetsAppService": false,
+      "latestSuccessfulProductionRun": {"id": 31698620048, "updatedAt": "2026-08-13T12:10:53Z", "headSha": "5eff8799ea7e212ed492c49259ce529db2137310"}
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "repo": "https://github.com/jmerrillorg/jmerrill-pub",
+      "branch": "main",
+      "productionWorkflow": ".github/workflows/azure-app-service-publishing.yml",
+      "workflowName": "Publishing App Service CI/CD",
+      "deploymentAction": "az webapp deploy plus az webapp deployment slot swap",
+      "targetsSwa": false,
+      "targetsAppService": true,
+      "targetVariables": ["JM1_PUB_APP_SERVICE_RESOURCE_GROUP", "JM1_PUB_APP_SERVICE_NAME", "staging"],
+      "latestSuccessfulProductionRun": {"id": 31727901428, "updatedAt": "2026-08-13T17:58:22Z", "headSha": "603f9cb62da43a52bc4ab16cd37a4a0556bc705c"}
+    },
+    {
+      "brand": "J Merrill Financial",
+      "repo": "https://github.com/jmerrillorg/jmerrill-financial",
+      "branch": "main",
+      "productionWorkflow": ".github/workflows/azure-static-web-apps.yml",
+      "workflowName": "Azure Static Web Apps CI/CD",
+      "deploymentAction": "Azure/static-web-apps-deploy@v1",
+      "targetsSwa": true,
+      "targetsAppService": false,
+      "latestSuccessfulProductionRun": {"id": 31845568877, "updatedAt": "2026-08-14T22:12:38Z", "headSha": "1754bb940efdbd0484a6e7731167d7dca3f15525"}
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "repo": "https://github.com/jmerrillorg/jmerrillfoundation",
+      "branch": "main",
+      "productionWorkflow": ".github/workflows/azure-static-web-apps.yml",
+      "workflowName": "Deploy jmerrill.foundation",
+      "deploymentAction": "Azure/static-web-apps-deploy@v1",
+      "targetsSwa": true,
+      "targetsAppService": false,
+      "latestSuccessfulProductionRun": {"id": 31666910841, "updatedAt": "2026-08-13T04:25:41Z", "headSha": "c01ffd68b7a34b844c714dc2f889b4c7214ad8f9"}
+    },
+    {
+      "brand": "J Merrill Productions",
+      "repo": "https://github.com/jmerrillorg/jmerrill-productions",
+      "branch": "main",
+      "productionWorkflow": ".github/workflows/azure-static-web-apps.yml",
+      "workflowName": "Deploy J Merrill Productions",
+      "deploymentAction": "Azure/static-web-apps-deploy@v1",
+      "targetsSwa": true,
+      "targetsAppService": false,
+      "latestSuccessfulProductionRun": {"id": 31666549491, "updatedAt": "2026-08-13T04:21:45Z", "headSha": "44d3f689642a107e1879abe5c19ba7c486108eca"}
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "repo": "https://github.com/jmerrillorg/jackiesmithjr",
+      "branch": "main",
+      "productionWorkflow": ".github/workflows/azure-static-web-apps-victorious-sea-06433150f.yml",
+      "workflowName": "Azure Static Web Apps CI/CD",
+      "deploymentAction": "Azure/static-web-apps-deploy@v1",
+      "targetsSwa": true,
+      "targetsAppService": false,
+      "latestSuccessfulProductionRun": {"id": 30748052613, "updatedAt": "2026-08-02T12:35:11Z", "headSha": "07a39230d2f1b9e84c010c3e08360cb2a082cdcc"}
+    }
+  ],
+  "conclusion": "Production workflows match the live-host classification: five SWA workflows and one App Service workflow."
+}

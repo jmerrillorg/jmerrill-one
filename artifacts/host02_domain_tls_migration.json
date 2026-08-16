@@ -1,0 +1,8 @@
+{
+  "package": "HOST-02",
+  "status": "NOT EXECUTED",
+  "reason": "Pre-cutover validation failed and capacity decision is required.",
+  "domainChangesMade": false,
+  "tlsChangesMade": false,
+  "swaBindingsRemoved": false
+}

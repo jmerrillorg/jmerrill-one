@@ -1,0 +1,17 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Deployment workflow finalization"
+  },
+  "captured_at_utc": "2026-08-16T03:34:01Z",
+  "classification": "ROLLBACK WORKFLOWS PENDING FINAL REPOSITORY COMMIT",
+  "target_workflows": {
+    "one": "app-jm1-one-prod-v2",
+    "publishing": "app-jm1-pub-prod-v2",
+    "financial": "app-jm1-fin-prod-v2",
+    "foundation": "app-jm1-foundation-prod-v2",
+    "productions": "app-jm1-productions-prod-v2",
+    "jackie": "app-jm1-jackiesmithjr-prod-v2"
+  },
+  "note": "Runtime and hosting cutover are complete; repository workflow files still require final App Service target updates before old deployment paths are permanently disabled."
+}

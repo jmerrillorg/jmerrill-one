@@ -1,0 +1,22 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Cost reconciliation"
+  },
+  "captured_at_utc": "2026-08-16T03:34:01Z",
+  "before": [
+    "2 x S1 shared plan",
+    "separate Publishing App Service plan",
+    "SWA rollback/live remnants"
+  ],
+  "after": [
+    "1 x P1mv3 shared Premium plan hosting six App Services",
+    "old resources pending deletion confirmation"
+  ],
+  "approved_cost_basis": {
+    "old_estimate": "approximately $138.70/month for 2 x S1",
+    "new_estimate": "approximately $148.92/month for 1 x P1mv3",
+    "incremental_delta": "approximately +$10.22/month before retirement effects"
+  },
+  "classification": "RECORDED — BILLING EXPORT NOT QUERIED"
+}
