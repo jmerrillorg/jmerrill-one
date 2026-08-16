@@ -1,0 +1,26 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 19",
+    "name": "One Premium cutover"
+  },
+  "captured_at_utc": "2026-08-16T02:46:23Z",
+  "domain": "www.jmerrill.one",
+  "old_app": "app-jm1-one-prod",
+  "new_app": "app-jm1-one-prod-v2",
+  "dns": {
+    "www_cname": "app-jm1-one-prod-v2.azurewebsites.net",
+    "asuid_www": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE"
+  },
+  "certificate": {
+    "thumbprint": "F4FD77B2A87AAF85F42140520F35BEB9BEF42894",
+    "subject": "www.jmerrill.one"
+  },
+  "validation": {
+    "https_status": "200",
+    "ssl_verify_result": "0",
+    "remote_ip": "20.118.48.17"
+  },
+  "apex_note": "jmerrill.one apex remains for final apex/SWA retirement phase; www production traffic moved to Premium v2.",
+  "classification": "PASS"
+}

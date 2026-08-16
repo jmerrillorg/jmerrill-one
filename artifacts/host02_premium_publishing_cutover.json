@@ -1,0 +1,35 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 20",
+    "name": "Publishing Premium cutover"
+  },
+  "captured_at_utc": "2026-08-16T02:54:46Z",
+  "domains": [
+    "jmerrill.pub",
+    "www.jmerrill.pub"
+  ],
+  "old_app": "app-jm1-pub-prod",
+  "new_app": "app-jm1-pub-prod-v2",
+  "dns": {
+    "apex_a": "20.118.48.17",
+    "www_cname": "app-jm1-pub-prod-v2.azurewebsites.net",
+    "asuid": "Premium verification id",
+    "asuid_www": "Premium verification id"
+  },
+  "certificates": {
+    "apex": "20B4A6249F72B1A1733B6C50014FAD0FD3272285",
+    "www": "A0A4F8BA98089D82E02448FE472C22C2305BF929"
+  },
+  "validation": {
+    "apex": {
+      "https_status": "200",
+      "ssl_verify_result": "0"
+    },
+    "www": {
+      "https_status": "200",
+      "ssl_verify_result": "0"
+    }
+  },
+  "classification": "PASS"
+}

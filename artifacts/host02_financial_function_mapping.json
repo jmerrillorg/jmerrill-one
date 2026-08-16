@@ -1,0 +1,47 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "mappings": [
+    {
+      "current_swa_endpoint": "https://polite-glacier-0334b1d0f.6.azurestaticapps.net/api/intake",
+      "target_azure_function": "https://func-jm1-fin-prod.azurewebsites.net/api/intake",
+      "client_route": "/api/intake",
+      "proxy_behavior": "App Service Next route forwards POST/OPTIONS."
+    },
+    {
+      "current_swa_endpoint": "https://polite-glacier-0334b1d0f.6.azurestaticapps.net/api/feedback",
+      "target_azure_function": "https://func-jm1-fin-prod.azurewebsites.net/api/feedback",
+      "client_route": "/api/feedback",
+      "proxy_behavior": "App Service Next route forwards POST/OPTIONS."
+    },
+    {
+      "current_swa_endpoint": "https://polite-glacier-0334b1d0f.6.azurestaticapps.net/api/pilot/session/{action?}",
+      "target_azure_function": "https://func-jm1-fin-prod.azurewebsites.net/api/pilot/session/{action?}",
+      "client_route": "/api/pilot/session/{action?}",
+      "proxy_behavior": "App Service Next route forwards GET/POST/OPTIONS and strips forged EasyAuth headers."
+    },
+    {
+      "current_swa_endpoint": "https://polite-glacier-0334b1d0f.6.azurestaticapps.net/api/pilot/disclosure/{action?}",
+      "target_azure_function": "https://func-jm1-fin-prod.azurewebsites.net/api/pilot/disclosure/{action?}",
+      "client_route": "/api/pilot/disclosure/{action?}",
+      "proxy_behavior": "App Service Next route forwards GET/POST/OPTIONS."
+    },
+    {
+      "current_swa_endpoint": "https://polite-glacier-0334b1d0f.6.azurestaticapps.net/api/pilot/advisor-review/{action?}",
+      "target_azure_function": "https://func-jm1-fin-prod.azurewebsites.net/api/pilot/advisor-review/{action?}",
+      "client_route": "/api/pilot/advisor-review/{action?}",
+      "proxy_behavior": "App Service Next route forwards GET/POST/OPTIONS."
+    }
+  ],
+  "semantics_preserved": [
+    "request schemas",
+    "response schemas",
+    "error semantics",
+    "Dataverse behavior",
+    "privacy filtering",
+    "idempotency",
+    "authorization"
+  ]
+}

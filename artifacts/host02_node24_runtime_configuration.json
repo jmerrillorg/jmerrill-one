@@ -1,0 +1,65 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Node24 runtime configuration"
+  },
+  "captured_at_utc": "2026-08-16T02:26:56Z",
+  "exact_runtime_identifier": "NODE|24-lts",
+  "apps": [
+    {
+      "app": "app-jm1-one-prod-v2",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "previous_runtime": "NODE|22-lts",
+      "new_runtime": "NODE|24-lts",
+      "startup": "node server.js",
+      "operation_result": "PASS",
+      "timestamp_utc": "2026-08-16T02:26:56Z"
+    },
+    {
+      "app": "app-jm1-pub-prod-v2",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "previous_runtime": "NODE|22-lts",
+      "new_runtime": "NODE|24-lts",
+      "startup": "node server.js",
+      "operation_result": "PASS",
+      "timestamp_utc": "2026-08-16T02:26:56Z"
+    },
+    {
+      "app": "app-jm1-fin-prod-v2",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "previous_runtime": "NODE|22-lts",
+      "new_runtime": "NODE|24-lts",
+      "startup": "node server.js",
+      "operation_result": "PASS",
+      "timestamp_utc": "2026-08-16T02:26:56Z"
+    },
+    {
+      "app": "app-jm1-foundation-prod-v2",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "previous_runtime": "NODE|22-lts",
+      "new_runtime": "NODE|24-lts",
+      "startup": "node server.js",
+      "operation_result": "PASS",
+      "timestamp_utc": "2026-08-16T02:26:56Z"
+    },
+    {
+      "app": "app-jm1-productions-prod-v2",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "previous_runtime": "NODE|22-lts",
+      "new_runtime": "NODE|24-lts",
+      "startup": "node server.js",
+      "operation_result": "PASS",
+      "timestamp_utc": "2026-08-16T02:26:56Z"
+    },
+    {
+      "app": "app-jm1-jackiesmithjr-prod-v2",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "previous_runtime": "NODE|22-lts",
+      "new_runtime": "NODE|24-lts",
+      "startup": "node server.js",
+      "operation_result": "PASS",
+      "timestamp_utc": "2026-08-16T02:26:56Z"
+    }
+  ],
+  "classification": "PASS"
+}

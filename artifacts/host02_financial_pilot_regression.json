@@ -1,0 +1,30 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "commands": [
+    {
+      "command": "pnpm test:pilot",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm test:advisor-session",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm test:human-actions",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm build",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm package:appservice",
+      "result": "PASS"
+    }
+  ],
+  "real_pilot_actions_mutated": false,
+  "secret_values_recorded": false
+}

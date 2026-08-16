@@ -1,0 +1,40 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Node24 startup validation"
+  },
+  "captured_at_utc": "2026-08-16T02:31:43Z",
+  "startup_strategy": {
+    "command": "node server.js",
+    "port": "App Service PORT environment variable consumed by Next standalone server",
+    "hostname": "default standalone behavior; no custom HOSTNAME=0.0.0.0 override introduced",
+    "artifact_required": ".next/standalone/server.js packaged at zip root"
+  },
+  "apps": {
+    "one": {
+      "server_artifact": "PASS",
+      "startup": "node server.js"
+    },
+    "publishing": {
+      "server_artifact": "PASS",
+      "startup": "node server.js"
+    },
+    "financial": {
+      "server_artifact": "PASS",
+      "startup": "node server.js"
+    },
+    "foundation": {
+      "server_artifact": "PASS",
+      "startup": "node server.js"
+    },
+    "productions": {
+      "server_artifact": "PASS",
+      "startup": "node server.js"
+    },
+    "jackie": {
+      "server_artifact": "PASS",
+      "startup": "node server.js"
+    }
+  },
+  "classification": "PASS"
+}

@@ -1,0 +1,1115 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 2",
+    "name": "Pre-Premium estate preservation"
+  },
+  "captured_at_utc": "2026-08-16T02:12:31Z",
+  "publishing": {
+    "app": "app-jm1-pub-prod",
+    "plan": {
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-pub-prod-linux",
+      "kind": "linux",
+      "location": "Central US",
+      "name": "asp-jm1-pub-prod-linux",
+      "properties": {
+        "adminRuntimeSiteName": null,
+        "adminSiteName": null,
+        "asyncScalingEnabled": false,
+        "computeMode": "Dedicated",
+        "createdTime": "2026-07-27T18:52:41.24",
+        "currentNumberOfWorkers": 1,
+        "currentNumberOfZonesUtilized": 1,
+        "currentWorkerSize": "Small",
+        "currentWorkerSizeId": 0,
+        "elasticScaleEnabled": false,
+        "eligibleLogCategories": "",
+        "existingServerFarmIds": null,
+        "freeOfferExpirationTime": null,
+        "geoRegion": "Central US",
+        "hostingEnvironment": null,
+        "hostingEnvironmentId": null,
+        "hostingEnvironmentProfile": null,
+        "hyperV": false,
+        "isCustomMode": false,
+        "isSpot": false,
+        "isXenon": false,
+        "kind": "linux",
+        "kubeEnvironmentProfile": null,
+        "maximumElasticWorkerCount": 1,
+        "maximumNumberOfWorkers": 10,
+        "maximumNumberOfZones": 1,
+        "mdmId": "waws-prod-dm1-129_58136",
+        "migrateToVMSS": null,
+        "name": "asp-jm1-pub-prod-linux",
+        "numberOfSites": 1,
+        "numberOfWorkers": 1,
+        "perSiteScaling": false,
+        "planName": "VirtualDedicatedPlan",
+        "powerState": "Running",
+        "provisioningState": "Succeeded",
+        "reserved": true,
+        "resourceGroup": "rg-jm1-pub-prod-appsvc",
+        "serverFarmId": 58136,
+        "siteMode": null,
+        "spotExpirationTime": null,
+        "status": "Ready",
+        "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+        "tags": {
+          "environment": "prod",
+          "managedBy": "bicep",
+          "owner": "J Merrill One",
+          "program": "JM1-INFRA-006",
+          "system": "jmerrill-pub"
+        },
+        "targetWorkerCount": 0,
+        "targetWorkerSizeId": 0,
+        "targetWorkerSku": "",
+        "vnetConnectionsMax": 2,
+        "vnetConnectionsUsed": 0,
+        "webSiteId": null,
+        "webSpace": "rg-jm1-pub-prod-appsvc-CentralUSwebspace-Linux",
+        "workerSize": "Small",
+        "workerSizeId": 0,
+        "workerTierName": null,
+        "zoneRedundant": false
+      },
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "sku": {
+        "capacity": 1,
+        "family": "S",
+        "name": "S1",
+        "size": "S1",
+        "tier": "Standard"
+      },
+      "tags": {
+        "environment": "prod",
+        "managedBy": "bicep",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "system": "jmerrill-pub"
+      },
+      "type": "Microsoft.Web/serverfarms"
+    },
+    "production_domains": [
+      "jmerrill.pub",
+      "www.jmerrill.pub"
+    ]
+  },
+  "existing_shared_plan": {
+    "name": "asp-jm1-web-prod-linux",
+    "plan": {
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "kind": "linux",
+      "location": "Central US",
+      "name": "asp-jm1-web-prod-linux",
+      "properties": {
+        "adminRuntimeSiteName": null,
+        "adminSiteName": null,
+        "asyncScalingEnabled": false,
+        "computeMode": "Dedicated",
+        "createdTime": "2026-07-30T01:08:19.28",
+        "currentNumberOfWorkers": 2,
+        "currentNumberOfZonesUtilized": 1,
+        "currentWorkerSize": "Small",
+        "currentWorkerSizeId": 0,
+        "elasticScaleEnabled": false,
+        "eligibleLogCategories": "",
+        "existingServerFarmIds": null,
+        "freeOfferExpirationTime": null,
+        "geoRegion": "Central US",
+        "hostingEnvironment": null,
+        "hostingEnvironmentId": null,
+        "hostingEnvironmentProfile": null,
+        "hyperV": false,
+        "isCustomMode": false,
+        "isSpot": false,
+        "isXenon": false,
+        "kind": "linux",
+        "kubeEnvironmentProfile": null,
+        "maximumElasticWorkerCount": 2,
+        "maximumNumberOfWorkers": 10,
+        "maximumNumberOfZones": 1,
+        "mdmId": "waws-prod-dm1-159_55013",
+        "migrateToVMSS": null,
+        "name": "asp-jm1-web-prod-linux",
+        "numberOfSites": 5,
+        "numberOfWorkers": 2,
+        "perSiteScaling": false,
+        "planName": "VirtualDedicatedPlan",
+        "powerState": "Running",
+        "provisioningState": "Succeeded",
+        "reserved": true,
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "serverFarmId": 55013,
+        "siteMode": null,
+        "spotExpirationTime": null,
+        "status": "Ready",
+        "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+        "tags": {
+          "environment": "prod",
+          "gate": "GATE-W3",
+          "managedBy": "codex",
+          "owner": "J Merrill One",
+          "program": "JM1-INFRA-006",
+          "topology": "OptionB"
+        },
+        "targetWorkerCount": 0,
+        "targetWorkerSizeId": 0,
+        "targetWorkerSku": "",
+        "vnetConnectionsMax": 2,
+        "vnetConnectionsUsed": 0,
+        "webSiteId": null,
+        "webSpace": "rg-jm1-web-prod-appsvc-CentralUSwebspace-Linux",
+        "workerSize": "Small",
+        "workerSizeId": 0,
+        "workerTierName": null,
+        "zoneRedundant": false
+      },
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "sku": {
+        "capacity": 2,
+        "family": "S",
+        "name": "S1",
+        "size": "S1",
+        "tier": "Standard"
+      },
+      "tags": {
+        "environment": "prod",
+        "gate": "GATE-W3",
+        "managedBy": "codex",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "topology": "OptionB"
+      },
+      "type": "Microsoft.Web/serverfarms"
+    },
+    "production_apps": [
+      "app-jm1-one-prod",
+      "app-jm1-fin-prod",
+      "app-jm1-foundation-prod",
+      "app-jm1-productions-prod"
+    ],
+    "non_live_target_apps": [
+      "app-jm1-jackiesmithjr-prod"
+    ]
+  },
+  "webapps": [
+    {
+      "hostNames": [
+        "www.jmerrill.pub",
+        "jmerrill.pub",
+        "app-jm1-pub-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-pub-prod",
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-pub-prod-linux",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "www.jmerrill.foundation",
+        "jmerrill.foundation",
+        "app-jm1-foundation-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-foundation-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "app-jm1-jackiesmithjr-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-jackiesmithjr-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "www.jmerrill.financial",
+        "jmerrill.financial",
+        "app-jm1-fin-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-fin-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "www.jmerrill.productions",
+        "jmerrill.productions",
+        "app-jm1-productions-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-productions-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "www.jmerrill.one",
+        "app-jm1-one-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "name": "app-jm1-one-prod",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "state": "Running"
+    }
+  ],
+  "static_web_apps": [
+    {
+      "customDomains": [
+        "jmerrill.productions"
+      ],
+      "defaultHostname": "lemon-stone-014fed310.7.azurestaticapps.net",
+      "name": "jmerrill-productions",
+      "repositoryUrl": "https://github.com/jmerrillorg/jmerrill-productions",
+      "resourceGroup": "jmerrill-productions-rg"
+    },
+    {
+      "customDomains": [
+        "book.jmerrill.financial"
+      ],
+      "defaultHostname": "delightful-sand-0b94b130f.7.azurestaticapps.net",
+      "name": "jm1-book-redirector",
+      "repositoryUrl": "https://github.com/jmerrillorg/jm1-book-redirector",
+      "resourceGroup": "jm1-core-services"
+    },
+    {
+      "customDomains": [
+        "jmerrill.one"
+      ],
+      "defaultHostname": "lively-flower-04d9c640f.6.azurestaticapps.net",
+      "name": "jmerrill-one",
+      "repositoryUrl": "https://github.com/jmerrillorg/jmerrill-one",
+      "resourceGroup": "jmerrill-one"
+    },
+    {
+      "customDomains": [
+        "jmerrill.org",
+        "www.jmerrill.org"
+      ],
+      "defaultHostname": "lively-plant-03a66a30f.2.azurestaticapps.net",
+      "name": "org-to-foundation-redirect",
+      "repositoryUrl": "https://github.com/jmerrillorg/org-to-foundation-redirect",
+      "resourceGroup": "jm1-core-services"
+    },
+    {
+      "customDomains": [
+        "www.jmerrill.foundation",
+        "jmerrill.foundation"
+      ],
+      "defaultHostname": "mango-beach-09911520f.1.azurestaticapps.net",
+      "name": "foundation-main",
+      "repositoryUrl": "https://github.com/jmerrillorg/jmerrillfoundation",
+      "resourceGroup": "jm1-core-services"
+    },
+    {
+      "customDomains": [
+        "jmerrill.financial",
+        "www.jmerrill.financial"
+      ],
+      "defaultHostname": "polite-glacier-0334b1d0f.6.azurestaticapps.net",
+      "name": "jmerrill-financial",
+      "repositoryUrl": "https://github.com/jmerrillorg/jmerrill-financial",
+      "resourceGroup": "jmerrill-financial_group"
+    },
+    {
+      "customDomains": [],
+      "defaultHostname": "purple-ocean-086ebc20f.2.azurestaticapps.net",
+      "name": "aic-public",
+      "repositoryUrl": null,
+      "resourceGroup": "agape-international-cathedral-rg"
+    },
+    {
+      "customDomains": [
+        "jackiesmithjr.com"
+      ],
+      "defaultHostname": "victorious-sea-06433150f.7.azurestaticapps.net",
+      "name": "jackiesmithjr",
+      "repositoryUrl": "https://github.com/jmerrillorg/jackiesmithjr",
+      "resourceGroup": "jm1-core-services"
+    }
+  ],
+  "app_setting_names": {
+    "one": [
+      {
+        "name": "WEBSITE_NODE_DEFAULT_VERSION",
+        "slotSetting": false
+      },
+      {
+        "name": "NODE_ENV",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_DOMAIN",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_KEY",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_MIGRATION_STATE",
+        "slotSetting": false
+      },
+      {
+        "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+        "slotSetting": false
+      },
+      {
+        "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+        "slotSetting": false
+      },
+      {
+        "name": "KEY_VAULT_URI",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_SLOT_ENVIRONMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "ENABLE_ORYX_BUILD",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_SHA",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_WEB_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_SKIP_NODE_MODULES_TAR",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_PATH",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_STATUSES",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_WEB_API_BASE_URL",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_RESOURCE_URL",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_TENANT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_CLIENT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_CLIENT_SECRET",
+        "slotSetting": false
+      },
+      {
+        "name": "AZURE_GRAPH_ENDPOINT",
+        "slotSetting": false
+      },
+      {
+        "name": "AZURE_GRAPH_SCOPE",
+        "slotSetting": false
+      },
+      {
+        "name": "CLIENT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "CLIENT_SECRET",
+        "slotSetting": false
+      },
+      {
+        "name": "TENANT_ID",
+        "slotSetting": false
+      }
+    ],
+    "publishing": [
+      {
+        "name": "NODE_ENV",
+        "slotSetting": false
+      },
+      {
+        "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "ENABLE_ORYX_BUILD",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_RUN_FROM_PACKAGE",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_SKIP_NODE_MODULES_TAR",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_NODE_DEFAULT_VERSION",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_ENVIRONMENT",
+        "slotSetting": true
+      },
+      {
+        "name": "JM1_RELEASE_SHA",
+        "slotSetting": true
+      },
+      {
+        "name": "NEXTAUTH_URL",
+        "slotSetting": true
+      },
+      {
+        "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_ENVIRONMENT_URL",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_RESOURCE_URL",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_WEB_API_BASE_URL",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_PUBLISHING_INTAKE_ENTITY_SET",
+        "slotSetting": false
+      },
+      {
+        "name": "JOIN_WORKSPACE_SITE_HOSTNAME",
+        "slotSetting": false
+      },
+      {
+        "name": "JOIN_WORKSPACE_SITE_PATH",
+        "slotSetting": false
+      },
+      {
+        "name": "JOIN_WORKSPACE_DRIVE_NAME",
+        "slotSetting": false
+      },
+      {
+        "name": "JOIN_WORKSPACE_INQUIRY_ROOT",
+        "slotSetting": false
+      },
+      {
+        "name": "INTAKE_ALLOWED_ORIGINS",
+        "slotSetting": true
+      },
+      {
+        "name": "INTAKE_RATE_LIMIT_ENABLED",
+        "slotSetting": false
+      },
+      {
+        "name": "INTAKE_DEADLETTER_QUEUE_NAME",
+        "slotSetting": true
+      },
+      {
+        "name": "JM1_STRIPE_MODE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_STRIPE_CONNECT_ENABLED",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_STRIPE_COMMISSIONING_PAYMENT_ENABLED",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_DIAGNOSTIC_RUNNER_URL",
+        "slotSetting": true
+      },
+      {
+        "name": "WEBSITE_WARMUP_PATH",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_STATUSES",
+        "slotSetting": false
+      },
+      {
+        "name": "AUTHOR_OPERATING_CENTER_CLIENT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "AUTHOR_OPERATING_CENTER_TENANT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "AUTHOR_OPERATING_CENTER_AUTH_MODE",
+        "slotSetting": false
+      },
+      {
+        "name": "AUTHOR_OPERATING_CENTER_ISSUER",
+        "slotSetting": false
+      },
+      {
+        "name": "PUBLISHER_OPERATING_CENTER_CLIENT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "PUBLISHER_OPERATING_CENTER_TENANT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "PUBLISHER_OPERATING_CENTER_ALLOWED_EMAILS",
+        "slotSetting": false
+      },
+      {
+        "name": "PUBLISHER_OPERATING_CENTER_ALLOWED_OBJECT_IDS",
+        "slotSetting": false
+      },
+      {
+        "name": "AUTHOR_PORTAL_ACCESS_REGISTRY_JSON",
+        "slotSetting": true
+      },
+      {
+        "name": "AUTHOR_PORTAL_MASTER_ACCESS_CODE",
+        "slotSetting": true
+      },
+      {
+        "name": "AUTHOR_PORTAL_ACCESS_CODE_PEPPER",
+        "slotSetting": true
+      },
+      {
+        "name": "AUTHOR_PORTAL_SESSION_SECRET",
+        "slotSetting": true
+      },
+      {
+        "name": "AUTH_SECRET",
+        "slotSetting": true
+      },
+      {
+        "name": "NEXTAUTH_SECRET",
+        "slotSetting": true
+      },
+      {
+        "name": "DATAVERSE_TENANT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_CLIENT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "DATAVERSE_CLIENT_SECRET",
+        "slotSetting": false
+      },
+      {
+        "name": "SHAREPOINT_TENANT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "SHAREPOINT_CLIENT_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "SHAREPOINT_CLIENT_SECRET",
+        "slotSetting": false
+      },
+      {
+        "name": "TURNSTILE_SITE_KEY",
+        "slotSetting": true
+      },
+      {
+        "name": "NEXT_PUBLIC_TURNSTILE_SITE_KEY",
+        "slotSetting": true
+      },
+      {
+        "name": "TURNSTILE_SECRET_KEY",
+        "slotSetting": true
+      },
+      {
+        "name": "AZURE_STORAGE_CONNECTION_STRING",
+        "slotSetting": true
+      },
+      {
+        "name": "JM1_JOIN_INTERNAL_NOTIFICATION_RELAY_URL",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_JOIN_INTERNAL_NOTIFICATION_RELAY_KEY",
+        "slotSetting": false
+      },
+      {
+        "name": "STRIPE_CONNECT_SECRET_KEY",
+        "slotSetting": true
+      },
+      {
+        "name": "STRIPE_CHECKOUT_SECRET_KEY",
+        "slotSetting": true
+      },
+      {
+        "name": "STRIPE_WEBHOOK_SECRET",
+        "slotSetting": true
+      },
+      {
+        "name": "JM1_ORCHESTRATION_WORKER_KEY",
+        "slotSetting": true
+      },
+      {
+        "name": "JM1_DIAGNOSTIC_RUNNER_KEY",
+        "slotSetting": true
+      },
+      {
+        "name": "AUTHOR_OPERATING_CENTER_CLIENT_SECRET",
+        "slotSetting": false
+      },
+      {
+        "name": "PUBLISHER_OPERATING_CENTER_CLIENT_SECRET",
+        "slotSetting": false
+      }
+    ],
+    "financial": [
+      {
+        "name": "WEBSITE_NODE_DEFAULT_VERSION",
+        "slotSetting": false
+      },
+      {
+        "name": "NODE_ENV",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_DOMAIN",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_KEY",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_MIGRATION_STATE",
+        "slotSetting": false
+      },
+      {
+        "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+        "slotSetting": false
+      },
+      {
+        "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+        "slotSetting": false
+      },
+      {
+        "name": "KEY_VAULT_URI",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_SLOT_ENVIRONMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "ENABLE_ORYX_BUILD",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_RUN_FROM_PACKAGE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_SHA",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_WEB_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_SKIP_NODE_MODULES_TAR",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_PATH",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_STATUSES",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_HTTPLOGGING_RETENTION_DAYS",
+        "slotSetting": false
+      },
+      {
+        "name": "JMF_FUNCTIONS_BASE_URL",
+        "slotSetting": false
+      }
+    ],
+    "foundation": [
+      {
+        "name": "WEBSITE_NODE_DEFAULT_VERSION",
+        "slotSetting": false
+      },
+      {
+        "name": "NODE_ENV",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_DOMAIN",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_KEY",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_MIGRATION_STATE",
+        "slotSetting": false
+      },
+      {
+        "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+        "slotSetting": false
+      },
+      {
+        "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+        "slotSetting": false
+      },
+      {
+        "name": "KEY_VAULT_URI",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_SLOT_ENVIRONMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "ENABLE_ORYX_BUILD",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_RUN_FROM_PACKAGE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_SHA",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_WEB_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_SKIP_NODE_MODULES_TAR",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_PATH",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_STATUSES",
+        "slotSetting": false
+      }
+    ],
+    "productions": [
+      {
+        "name": "WEBSITE_NODE_DEFAULT_VERSION",
+        "slotSetting": false
+      },
+      {
+        "name": "NODE_ENV",
+        "slotSetting": true
+      },
+      {
+        "name": "JM1_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_DOMAIN",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_KEY",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_MIGRATION_STATE",
+        "slotSetting": false
+      },
+      {
+        "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+        "slotSetting": false
+      },
+      {
+        "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+        "slotSetting": false
+      },
+      {
+        "name": "KEY_VAULT_URI",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_SLOT_ENVIRONMENT",
+        "slotSetting": true
+      },
+      {
+        "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "ENABLE_ORYX_BUILD",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_RUN_FROM_PACKAGE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_SHA",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_WEB_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_SKIP_NODE_MODULES_TAR",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_PATH",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_STATUSES",
+        "slotSetting": false
+      }
+    ],
+    "jackie": [
+      {
+        "name": "WEBSITE_NODE_DEFAULT_VERSION",
+        "slotSetting": false
+      },
+      {
+        "name": "NODE_ENV",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_DOMAIN",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_PROPERTY_KEY",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_MIGRATION_STATE",
+        "slotSetting": false
+      },
+      {
+        "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+        "slotSetting": false
+      },
+      {
+        "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+        "slotSetting": false
+      },
+      {
+        "name": "KEY_VAULT_URI",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_ID",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_SLOT_ENVIRONMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+        "slotSetting": false
+      },
+      {
+        "name": "ENABLE_ORYX_BUILD",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_RUN_FROM_PACKAGE",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_RELEASE_SHA",
+        "slotSetting": false
+      },
+      {
+        "name": "JM1_WEB_GATE",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_SKIP_NODE_MODULES_TAR",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_PATH",
+        "slotSetting": false
+      },
+      {
+        "name": "WEBSITE_WARMUP_STATUSES",
+        "slotSetting": false
+      }
+    ]
+  },
+  "deployment_sources": {
+    "one": {
+      "branch": null,
+      "deploymentRollbackEnabled": false,
+      "gitHubActionConfiguration": null,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod/sourcecontrols/web",
+      "isGitHubAction": false,
+      "isManualIntegration": false,
+      "isMercurial": false,
+      "kind": null,
+      "name": "app-jm1-one-prod",
+      "repoUrl": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "systemData": null,
+      "type": "Microsoft.Web/sites/sourcecontrols"
+    },
+    "publishing": {
+      "branch": null,
+      "deploymentRollbackEnabled": false,
+      "gitHubActionConfiguration": null,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod/sourcecontrols/web",
+      "isGitHubAction": false,
+      "isManualIntegration": false,
+      "isMercurial": false,
+      "kind": null,
+      "name": "app-jm1-pub-prod",
+      "repoUrl": null,
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "systemData": null,
+      "type": "Microsoft.Web/sites/sourcecontrols"
+    },
+    "financial": {
+      "branch": null,
+      "deploymentRollbackEnabled": false,
+      "gitHubActionConfiguration": null,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod/sourcecontrols/web",
+      "isGitHubAction": false,
+      "isManualIntegration": false,
+      "isMercurial": false,
+      "kind": null,
+      "name": "app-jm1-fin-prod",
+      "repoUrl": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "systemData": null,
+      "type": "Microsoft.Web/sites/sourcecontrols"
+    },
+    "foundation": {
+      "branch": null,
+      "deploymentRollbackEnabled": false,
+      "gitHubActionConfiguration": null,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod/sourcecontrols/web",
+      "isGitHubAction": false,
+      "isManualIntegration": false,
+      "isMercurial": false,
+      "kind": null,
+      "name": "app-jm1-foundation-prod",
+      "repoUrl": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "systemData": null,
+      "type": "Microsoft.Web/sites/sourcecontrols"
+    },
+    "productions": {
+      "branch": null,
+      "deploymentRollbackEnabled": false,
+      "gitHubActionConfiguration": null,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod/sourcecontrols/web",
+      "isGitHubAction": false,
+      "isManualIntegration": false,
+      "isMercurial": false,
+      "kind": null,
+      "name": "app-jm1-productions-prod",
+      "repoUrl": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "systemData": null,
+      "type": "Microsoft.Web/sites/sourcecontrols"
+    },
+    "jackie": {
+      "branch": null,
+      "deploymentRollbackEnabled": false,
+      "gitHubActionConfiguration": null,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod/sourcecontrols/web",
+      "isGitHubAction": false,
+      "isManualIntegration": false,
+      "isMercurial": false,
+      "kind": null,
+      "name": "app-jm1-jackiesmithjr-prod",
+      "repoUrl": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "systemData": null,
+      "type": "Microsoft.Web/sites/sourcecontrols"
+    }
+  },
+  "note": "Secret values omitted; only setting names and slot flags captured.",
+  "classification": "CURRENT PRODUCTION ESTATE PRESERVED"
+}

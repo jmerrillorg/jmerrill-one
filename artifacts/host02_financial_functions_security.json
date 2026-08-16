@@ -1,0 +1,28 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "least_privilege": {
+    "function_app_managed_identity": "NOT CONFIGURED",
+    "dataverse_authentication": "client credentials copied securely from existing SWA app settings to Function App",
+    "dataverse_role_expansion": "NO BROAD SYSTEM ADMINISTRATOR ROLE CREATED",
+    "key_vault_references": "none observed in migrated SWA setting set",
+    "api_keys_or_function_keys": "not used by browser-facing routes; runtime authorization remains application-level",
+    "secret_values_recorded": false
+  },
+  "cors": {
+    "allowed_origins": [
+      "https://jmerrill.financial",
+      "https://www.jmerrill.financial",
+      "https://app-jm1-fin-prod.azurewebsites.net",
+      "http://localhost:3000"
+    ],
+    "wildcard_origin": false
+  },
+  "public_vs_server_only": {
+    "browser_exposed_secret_values": false,
+    "frontend_backend_url_setting": "JMF_FUNCTIONS_BASE_URL is server-side App Service setting only",
+    "forged_easyauth_header_result": "403 ADVISOR_SESSION_AUTH_REQUIRED through App Service proxy"
+  }
+}

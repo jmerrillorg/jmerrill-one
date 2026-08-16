@@ -1,0 +1,29 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Premium v3 Consolidation"
+  },
+  "artifact": "host02_premium_redeployment_approval",
+  "captured_at_utc": "2026-08-16T02:11:23Z",
+  "founder_ceo_approval": "APPROVED",
+  "reason": "Existing deployment stamp/resource group does not support PremiumMV3 in-place resize or same-resource-group PremiumMV3 plan creation.",
+  "approved_architecture": "Create a new P1mv3-capable production resource group and one-worker Linux App Service Plan, redeploy all six public properties into new App Services on that plan, validate, cut over one at a time, and retain old resources only for bounded rollback.",
+  "included_properties": [
+    "J Merrill One",
+    "J Merrill Publishing",
+    "J Merrill Financial",
+    "J Merrill Foundation",
+    "J Merrill Productions",
+    "Jackie Smith Jr."
+  ],
+  "approved_capacity": {
+    "sku": "P1mv3",
+    "workers": 1
+  },
+  "spend_limit": [
+    "No second Premium worker without new Founder approval",
+    "No P2/P2mv3 without new Founder approval"
+  ],
+  "final_target": "one consolidated production App Service estate",
+  "classification": "FOUNDER PREMIUM REMEDIATION APPROVAL RECORDED"
+}

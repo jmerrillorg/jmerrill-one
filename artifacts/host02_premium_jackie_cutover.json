@@ -1,0 +1,27 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 24 Jackie Smith Jr. Premium cutover"
+  },
+  "captured_at_utc": "2026-08-16T03:25:55Z",
+  "domain": "jackiesmithjr.com",
+  "old_host": "SWA jackiesmithjr",
+  "new_app": "app-jm1-jackiesmithjr-prod-v2",
+  "dns": {
+    "apex_a": "20.118.48.17",
+    "asuid": "Premium verification id"
+  },
+  "certificate": {
+    "thumbprint": "AC8EBB1D44C840CE29D133DD0EF3F6ED242B03FD"
+  },
+  "validation": {
+    "homepage_https_status": "200",
+    "ssl_verify_result": "0",
+    "archive_status": "200"
+  },
+  "scope_guardrails": {
+    "coaching": "NOT ACTIVATED",
+    "customer_voice": "NOT ACTIVATED"
+  },
+  "classification": "PASS"
+}

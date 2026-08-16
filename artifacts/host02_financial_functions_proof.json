@@ -1,0 +1,104 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "direct_function_host": "https://func-jm1-fin-prod.azurewebsites.net",
+  "proofs": [
+    {
+      "name": "intake_options",
+      "method": "OPTIONS",
+      "route": "/api/intake",
+      "status": 204,
+      "result": "PASS"
+    },
+    {
+      "name": "feedback_options",
+      "method": "OPTIONS",
+      "route": "/api/feedback",
+      "status": 204,
+      "result": "PASS"
+    },
+    {
+      "name": "session_unauthorized",
+      "method": "GET",
+      "route": "/api/pilot/session/context",
+      "status": 403,
+      "code": "ADVISOR_SESSION_AUTH_REQUIRED",
+      "result": "PASS"
+    },
+    {
+      "name": "intake_malformed",
+      "method": "POST",
+      "route": "/api/intake",
+      "status": 400,
+      "code": "MALFORMED_JSON",
+      "result": "PASS"
+    },
+    {
+      "name": "intake_valid_phone_only",
+      "method": "POST",
+      "route": "/api/intake",
+      "status": 200,
+      "response_status": "ACCEPTED",
+      "records": {
+        "lead": true
+      },
+      "correlation_id": "HOST02-FIN-FUNC-INTAKE-PHONE-20260815123014",
+      "result": "PASS"
+    },
+    {
+      "name": "intake_replay",
+      "method": "POST",
+      "route": "/api/intake",
+      "status": 200,
+      "response_status": "REPLAYED",
+      "records": {
+        "lead": true
+      },
+      "correlation_id": "HOST02-FIN-FUNC-INTAKE-PHONE-20260815123014",
+      "result": "PASS"
+    },
+    {
+      "name": "feedback_valid",
+      "method": "POST",
+      "route": "/api/feedback",
+      "status": 200,
+      "response_status": "RECORDED",
+      "records": {
+        "surveyResponse": true,
+        "questionResponses": 6
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "feedback_replay",
+      "method": "POST",
+      "route": "/api/feedback",
+      "status": 200,
+      "response_status": "REPLAYED",
+      "records": {
+        "questionResponses": 0
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "feedback_sensitive",
+      "method": "POST",
+      "route": "/api/feedback",
+      "status": 400,
+      "code": "SENSITIVE_DETAIL_NOT_ACCEPTED",
+      "result": "PASS"
+    },
+    {
+      "name": "advisor_packet_tokenized",
+      "method": "GET",
+      "route": "/api/pilot/advisor-review/packet",
+      "status": 200,
+      "active_blockers": 2,
+      "ready": false,
+      "result": "PASS"
+    }
+  ],
+  "secret_values_recorded": false
+}

@@ -1,0 +1,4938 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 1",
+    "name": "P1mv3 pre-change baseline"
+  },
+  "captured_at_utc": "2026-08-15T20:10:22Z",
+  "target_plan": {
+    "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+    "kind": "linux",
+    "location": "Central US",
+    "name": "asp-jm1-web-prod-linux",
+    "properties": {
+      "adminRuntimeSiteName": null,
+      "adminSiteName": null,
+      "asyncScalingEnabled": false,
+      "computeMode": "Dedicated",
+      "createdTime": "2026-07-30T01:08:19.28",
+      "currentNumberOfWorkers": 2,
+      "currentNumberOfZonesUtilized": 1,
+      "currentWorkerSize": "Small",
+      "currentWorkerSizeId": 0,
+      "elasticScaleEnabled": false,
+      "eligibleLogCategories": "",
+      "existingServerFarmIds": null,
+      "freeOfferExpirationTime": null,
+      "geoRegion": "Central US",
+      "hostingEnvironment": null,
+      "hostingEnvironmentId": null,
+      "hostingEnvironmentProfile": null,
+      "hyperV": false,
+      "isCustomMode": false,
+      "isSpot": false,
+      "isXenon": false,
+      "kind": "linux",
+      "kubeEnvironmentProfile": null,
+      "maximumElasticWorkerCount": 2,
+      "maximumNumberOfWorkers": 10,
+      "maximumNumberOfZones": 1,
+      "mdmId": "waws-prod-dm1-159_55013",
+      "migrateToVMSS": null,
+      "name": "asp-jm1-web-prod-linux",
+      "numberOfSites": 5,
+      "numberOfWorkers": 2,
+      "perSiteScaling": false,
+      "planName": "VirtualDedicatedPlan",
+      "powerState": "Running",
+      "provisioningState": "Succeeded",
+      "reserved": true,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "serverFarmId": 55013,
+      "siteMode": null,
+      "spotExpirationTime": null,
+      "status": "Ready",
+      "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+      "tags": {
+        "environment": "prod",
+        "gate": "GATE-W3",
+        "managedBy": "codex",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "topology": "OptionB"
+      },
+      "targetWorkerCount": 0,
+      "targetWorkerSizeId": 0,
+      "targetWorkerSku": "",
+      "vnetConnectionsMax": 2,
+      "vnetConnectionsUsed": 0,
+      "webSiteId": null,
+      "webSpace": "rg-jm1-web-prod-appsvc-CentralUSwebspace-Linux",
+      "workerSize": "Small",
+      "workerSizeId": 0,
+      "workerTierName": null,
+      "zoneRedundant": false
+    },
+    "resourceGroup": "rg-jm1-web-prod-appsvc",
+    "sku": {
+      "capacity": 2,
+      "family": "S",
+      "name": "S1",
+      "size": "S1",
+      "tier": "Standard"
+    },
+    "tags": {
+      "environment": "prod",
+      "gate": "GATE-W3",
+      "managedBy": "codex",
+      "owner": "J Merrill One",
+      "program": "JM1-INFRA-006",
+      "topology": "OptionB"
+    },
+    "type": "Microsoft.Web/serverfarms"
+  },
+  "target_plan_metrics": {
+    "average": {
+      "cost": 177,
+      "interval": "PT5M",
+      "namespace": "Microsoft.Web/serverfarms",
+      "resourceregion": "centralus",
+      "timespan": "2026-08-15T19:09:54Z/2026-08-15T20:09:54Z",
+      "value": [
+        {
+          "displayDescription": "The average CPU used across all instances of the plan.",
+          "errorCode": "Success",
+          "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux/providers/Microsoft.Insights/metrics/CpuPercentage",
+          "name": {
+            "localizedValue": "CPU Percentage",
+            "value": "CpuPercentage"
+          },
+          "resourceGroup": "rg-jm1-web-prod-appsvc",
+          "timeseries": [
+            {
+              "data": [
+                {
+                  "average": 72.4,
+                  "timeStamp": "2026-08-15T19:09:00Z"
+                },
+                {
+                  "average": 71.9,
+                  "timeStamp": "2026-08-15T19:14:00Z"
+                },
+                {
+                  "average": 79.6,
+                  "timeStamp": "2026-08-15T19:19:00Z"
+                },
+                {
+                  "average": 71.1,
+                  "timeStamp": "2026-08-15T19:24:00Z"
+                },
+                {
+                  "average": 72.5,
+                  "timeStamp": "2026-08-15T19:29:00Z"
+                },
+                {
+                  "average": 71.9,
+                  "timeStamp": "2026-08-15T19:34:00Z"
+                },
+                {
+                  "average": 71.3,
+                  "timeStamp": "2026-08-15T19:39:00Z"
+                },
+                {
+                  "average": 72.2,
+                  "timeStamp": "2026-08-15T19:44:00Z"
+                },
+                {
+                  "average": 78.1,
+                  "timeStamp": "2026-08-15T19:49:00Z"
+                },
+                {
+                  "average": 72.1,
+                  "timeStamp": "2026-08-15T19:54:00Z"
+                },
+                {
+                  "average": 73.1,
+                  "timeStamp": "2026-08-15T19:59:00Z"
+                },
+                {
+                  "average": 71.0,
+                  "timeStamp": "2026-08-15T20:04:00Z"
+                }
+              ],
+              "metadatavalues": []
+            }
+          ],
+          "type": "Microsoft.Insights/metrics",
+          "unit": "Percent"
+        },
+        {
+          "displayDescription": "The average memory used across all instances of the plan.",
+          "errorCode": "Success",
+          "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux/providers/Microsoft.Insights/metrics/MemoryPercentage",
+          "name": {
+            "localizedValue": "Memory Percentage",
+            "value": "MemoryPercentage"
+          },
+          "resourceGroup": "rg-jm1-web-prod-appsvc",
+          "timeseries": [
+            {
+              "data": [
+                {
+                  "average": 79.4,
+                  "timeStamp": "2026-08-15T19:09:00Z"
+                },
+                {
+                  "average": 80.0,
+                  "timeStamp": "2026-08-15T19:14:00Z"
+                },
+                {
+                  "average": 80.2,
+                  "timeStamp": "2026-08-15T19:19:00Z"
+                },
+                {
+                  "average": 80.8,
+                  "timeStamp": "2026-08-15T19:24:00Z"
+                },
+                {
+                  "average": 80.2,
+                  "timeStamp": "2026-08-15T19:29:00Z"
+                },
+                {
+                  "average": 79.0,
+                  "timeStamp": "2026-08-15T19:34:00Z"
+                },
+                {
+                  "average": 80.3,
+                  "timeStamp": "2026-08-15T19:39:00Z"
+                },
+                {
+                  "average": 79.5,
+                  "timeStamp": "2026-08-15T19:44:00Z"
+                },
+                {
+                  "average": 80.0,
+                  "timeStamp": "2026-08-15T19:49:00Z"
+                },
+                {
+                  "average": 80.4,
+                  "timeStamp": "2026-08-15T19:54:00Z"
+                },
+                {
+                  "average": 81.4,
+                  "timeStamp": "2026-08-15T19:59:00Z"
+                },
+                {
+                  "average": 80.4,
+                  "timeStamp": "2026-08-15T20:04:00Z"
+                }
+              ],
+              "metadatavalues": []
+            }
+          ],
+          "type": "Microsoft.Insights/metrics",
+          "unit": "Percent"
+        },
+        {
+          "displayDescription": "The average number of HTTP requests that had to sit on the queue before being fulfilled. A high or increasing HTTP Queue length is a symptom of a plan under heavy load.",
+          "errorCode": "Success",
+          "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux/providers/Microsoft.Insights/metrics/HttpQueueLength",
+          "name": {
+            "localizedValue": "Http Queue Length",
+            "value": "HttpQueueLength"
+          },
+          "resourceGroup": "rg-jm1-web-prod-appsvc",
+          "timeseries": [
+            {
+              "data": [
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:09:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:14:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:19:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:24:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:29:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:34:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:39:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:44:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:49:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:54:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T19:59:00Z"
+                },
+                {
+                  "average": 0.0,
+                  "timeStamp": "2026-08-15T20:04:00Z"
+                }
+              ],
+              "metadatavalues": []
+            }
+          ],
+          "type": "Microsoft.Insights/metrics",
+          "unit": "Count"
+        }
+      ]
+    },
+    "maximum": {
+      "cost": 177,
+      "interval": "PT5M",
+      "namespace": "Microsoft.Web/serverfarms",
+      "resourceregion": "centralus",
+      "timespan": "2026-08-15T19:09:55Z/2026-08-15T20:09:55Z",
+      "value": [
+        {
+          "displayDescription": "The average CPU used across all instances of the plan.",
+          "errorCode": "Success",
+          "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux/providers/Microsoft.Insights/metrics/CpuPercentage",
+          "name": {
+            "localizedValue": "CPU Percentage",
+            "value": "CpuPercentage"
+          },
+          "resourceGroup": "rg-jm1-web-prod-appsvc",
+          "timeseries": [
+            {
+              "data": [
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:09:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:14:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:19:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:24:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:29:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:34:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:39:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:44:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:49:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:54:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T19:59:00Z"
+                },
+                {
+                  "maximum": 100.0,
+                  "timeStamp": "2026-08-15T20:04:00Z"
+                }
+              ],
+              "metadatavalues": []
+            }
+          ],
+          "type": "Microsoft.Insights/metrics",
+          "unit": "Percent"
+        },
+        {
+          "displayDescription": "The average memory used across all instances of the plan.",
+          "errorCode": "Success",
+          "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux/providers/Microsoft.Insights/metrics/MemoryPercentage",
+          "name": {
+            "localizedValue": "Memory Percentage",
+            "value": "MemoryPercentage"
+          },
+          "resourceGroup": "rg-jm1-web-prod-appsvc",
+          "timeseries": [
+            {
+              "data": [
+                {
+                  "maximum": 84.0,
+                  "timeStamp": "2026-08-15T19:09:00Z"
+                },
+                {
+                  "maximum": 84.0,
+                  "timeStamp": "2026-08-15T19:14:00Z"
+                },
+                {
+                  "maximum": 84.0,
+                  "timeStamp": "2026-08-15T19:19:00Z"
+                },
+                {
+                  "maximum": 84.0,
+                  "timeStamp": "2026-08-15T19:24:00Z"
+                },
+                {
+                  "maximum": 83.0,
+                  "timeStamp": "2026-08-15T19:29:00Z"
+                },
+                {
+                  "maximum": 84.0,
+                  "timeStamp": "2026-08-15T19:34:00Z"
+                },
+                {
+                  "maximum": 85.0,
+                  "timeStamp": "2026-08-15T19:39:00Z"
+                },
+                {
+                  "maximum": 85.0,
+                  "timeStamp": "2026-08-15T19:44:00Z"
+                },
+                {
+                  "maximum": 84.0,
+                  "timeStamp": "2026-08-15T19:49:00Z"
+                },
+                {
+                  "maximum": 84.0,
+                  "timeStamp": "2026-08-15T19:54:00Z"
+                },
+                {
+                  "maximum": 86.0,
+                  "timeStamp": "2026-08-15T19:59:00Z"
+                },
+                {
+                  "maximum": 85.0,
+                  "timeStamp": "2026-08-15T20:04:00Z"
+                }
+              ],
+              "metadatavalues": []
+            }
+          ],
+          "type": "Microsoft.Insights/metrics",
+          "unit": "Percent"
+        },
+        {
+          "displayDescription": "The average number of HTTP requests that had to sit on the queue before being fulfilled. A high or increasing HTTP Queue length is a symptom of a plan under heavy load.",
+          "errorCode": "Success",
+          "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux/providers/Microsoft.Insights/metrics/HttpQueueLength",
+          "name": {
+            "localizedValue": "Http Queue Length",
+            "value": "HttpQueueLength"
+          },
+          "resourceGroup": "rg-jm1-web-prod-appsvc",
+          "timeseries": [
+            {
+              "data": [
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:09:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:14:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:19:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:24:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:29:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:34:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:39:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:44:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:49:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:54:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T19:59:00Z"
+                },
+                {
+                  "maximum": 0.0,
+                  "timeStamp": "2026-08-15T20:04:00Z"
+                }
+              ],
+              "metadatavalues": []
+            }
+          ],
+          "type": "Microsoft.Insights/metrics",
+          "unit": "Count"
+        }
+      ]
+    }
+  },
+  "shared_plan_apps": [
+    {
+      "hostNames": [
+        "www.jmerrill.foundation",
+        "jmerrill.foundation",
+        "app-jm1-foundation-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "kind": "app,linux",
+      "name": "app-jm1-foundation-prod",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "app-jm1-jackiesmithjr-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "kind": "app,linux",
+      "name": "app-jm1-jackiesmithjr-prod",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "www.jmerrill.financial",
+        "jmerrill.financial",
+        "app-jm1-fin-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "kind": "app,linux",
+      "name": "app-jm1-fin-prod",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "www.jmerrill.productions",
+        "jmerrill.productions",
+        "app-jm1-productions-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "kind": "app,linux",
+      "name": "app-jm1-productions-prod",
+      "state": "Running"
+    },
+    {
+      "hostNames": [
+        "www.jmerrill.one",
+        "app-jm1-one-prod.azurewebsites.net"
+      ],
+      "httpsOnly": true,
+      "kind": "app,linux",
+      "name": "app-jm1-one-prod",
+      "state": "Running"
+    }
+  ],
+  "publishing_separate_plan": {
+    "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-pub-prod-linux",
+    "kind": "linux",
+    "location": "Central US",
+    "name": "asp-jm1-pub-prod-linux",
+    "properties": {
+      "adminRuntimeSiteName": null,
+      "adminSiteName": null,
+      "asyncScalingEnabled": false,
+      "computeMode": "Dedicated",
+      "createdTime": "2026-07-27T18:52:41.24",
+      "currentNumberOfWorkers": 1,
+      "currentNumberOfZonesUtilized": 1,
+      "currentWorkerSize": "Small",
+      "currentWorkerSizeId": 0,
+      "elasticScaleEnabled": false,
+      "eligibleLogCategories": "",
+      "existingServerFarmIds": null,
+      "freeOfferExpirationTime": null,
+      "geoRegion": "Central US",
+      "hostingEnvironment": null,
+      "hostingEnvironmentId": null,
+      "hostingEnvironmentProfile": null,
+      "hyperV": false,
+      "isCustomMode": false,
+      "isSpot": false,
+      "isXenon": false,
+      "kind": "linux",
+      "kubeEnvironmentProfile": null,
+      "maximumElasticWorkerCount": 1,
+      "maximumNumberOfWorkers": 10,
+      "maximumNumberOfZones": 1,
+      "mdmId": "waws-prod-dm1-129_58136",
+      "migrateToVMSS": null,
+      "name": "asp-jm1-pub-prod-linux",
+      "numberOfSites": 1,
+      "numberOfWorkers": 1,
+      "perSiteScaling": false,
+      "planName": "VirtualDedicatedPlan",
+      "powerState": "Running",
+      "provisioningState": "Succeeded",
+      "reserved": true,
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "serverFarmId": 58136,
+      "siteMode": null,
+      "spotExpirationTime": null,
+      "status": "Ready",
+      "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+      "tags": {
+        "environment": "prod",
+        "managedBy": "bicep",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "system": "jmerrill-pub"
+      },
+      "targetWorkerCount": 0,
+      "targetWorkerSizeId": 0,
+      "targetWorkerSku": "",
+      "vnetConnectionsMax": 2,
+      "vnetConnectionsUsed": 0,
+      "webSiteId": null,
+      "webSpace": "rg-jm1-pub-prod-appsvc-CentralUSwebspace-Linux",
+      "workerSize": "Small",
+      "workerSizeId": 0,
+      "workerTierName": null,
+      "zoneRedundant": false
+    },
+    "resourceGroup": "rg-jm1-pub-prod-appsvc",
+    "sku": {
+      "capacity": 1,
+      "family": "S",
+      "name": "S1",
+      "size": "S1",
+      "tier": "Standard"
+    },
+    "tags": {
+      "environment": "prod",
+      "managedBy": "bicep",
+      "owner": "J Merrill One",
+      "program": "JM1-INFRA-006",
+      "system": "jmerrill-pub"
+    },
+    "type": "Microsoft.Web/serverfarms"
+  },
+  "app_details": {
+    "one": {
+      "autoGeneratedDomainNameLabelScope": null,
+      "availabilityState": "Normal",
+      "clientAffinityEnabled": true,
+      "clientAffinityPartitioningEnabled": null,
+      "clientAffinityProxyEnabled": false,
+      "clientCertEnabled": false,
+      "clientCertExclusionPaths": null,
+      "clientCertMode": "Required",
+      "cloningInfo": null,
+      "containerSize": 0,
+      "customDomainVerificationId": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE",
+      "dailyMemoryTimeQuota": 0,
+      "daprConfig": null,
+      "defaultHostName": "app-jm1-one-prod.azurewebsites.net",
+      "dnsConfiguration": {
+        "dnsAltServer": null,
+        "dnsLegacySortOrder": null,
+        "dnsMaxCacheTimeout": null,
+        "dnsRetryAttemptCount": null,
+        "dnsRetryAttemptTimeout": null,
+        "dnsServers": null
+      },
+      "enabled": true,
+      "enabledHostNames": [
+        "www.jmerrill.one",
+        "app-jm1-one-prod.azurewebsites.net",
+        "app-jm1-one-prod.scm.azurewebsites.net"
+      ],
+      "endToEndEncryptionEnabled": false,
+      "extendedLocation": null,
+      "functionAppConfig": null,
+      "hostNameSslStates": [
+        {
+          "hostType": "Standard",
+          "name": "app-jm1-one-prod.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Repository",
+          "name": "app-jm1-one-prod.scm.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "www.jmerrill.one",
+          "sslState": "SniEnabled",
+          "thumbprint": "FE75FA510D550A4143B1F7256E7C400961DE3A99",
+          "toUpdate": null,
+          "virtualIp": null
+        }
+      ],
+      "hostNames": [
+        "www.jmerrill.one",
+        "app-jm1-one-prod.azurewebsites.net"
+      ],
+      "hostNamesDisabled": false,
+      "hostingEnvironmentProfile": null,
+      "httpsOnly": true,
+      "hyperV": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod",
+      "identity": {
+        "principalId": "fb03e1ca-2cfb-4a8e-b58a-858723f73fbc",
+        "tenantId": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+        "type": "SystemAssigned",
+        "userAssignedIdentities": null
+      },
+      "inProgressOperationId": null,
+      "ipMode": "IPv4",
+      "isDefaultContainer": null,
+      "isXenon": false,
+      "keyVaultReferenceIdentity": "SystemAssigned",
+      "kind": "app,linux",
+      "lastModifiedTimeUtc": "2026-08-15T11:44:13.456666",
+      "location": "Central US",
+      "managedEnvironmentId": null,
+      "maxNumberOfWorkers": null,
+      "name": "app-jm1-one-prod",
+      "outboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,13.89.172.3",
+      "outboundVnetRouting": {
+        "allTraffic": false,
+        "applicationTraffic": false,
+        "backupRestoreTraffic": false,
+        "contentShareTraffic": false,
+        "imagePullTraffic": false
+      },
+      "possibleOutboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,104.208.36.234,104.43.202.37,104.208.35.64,104.43.196.83,104.43.201.174,20.83.2.253,20.83.3.146,20.83.3.184,20.83.3.189,20.83.3.230,20.83.4.4,20.83.5.2,20.83.5.28,20.83.5.66,20.83.5.146,20.83.5.181,20.83.5.216,13.89.172.3",
+      "publicNetworkAccess": "Enabled",
+      "redundancyMode": "None",
+      "repositorySiteName": "app-jm1-one-prod",
+      "reserved": true,
+      "resourceConfig": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmSiteAlsoStopped": false,
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "siteConfig": {
+        "acrUseManagedIdentityCreds": false,
+        "acrUserManagedIdentityId": null,
+        "alwaysOn": false,
+        "apiDefinition": null,
+        "apiManagementConfig": null,
+        "appCommandLine": "node server.js",
+        "appSettings": null,
+        "autoHealEnabled": false,
+        "autoHealRules": null,
+        "autoSwapSlotName": null,
+        "azureStorageAccounts": {},
+        "connectionStrings": null,
+        "cors": null,
+        "defaultDocuments": [
+          "Default.htm",
+          "Default.html",
+          "Default.asp",
+          "index.htm",
+          "index.html",
+          "iisstart.htm",
+          "default.aspx",
+          "index.php",
+          "hostingstart.html"
+        ],
+        "detailedErrorLoggingEnabled": false,
+        "documentRoot": null,
+        "elasticWebAppScaleLimit": 0,
+        "experiments": {
+          "rampUpRules": []
+        },
+        "ftpsState": "Disabled",
+        "functionAppScaleLimit": null,
+        "functionsRuntimeScaleMonitoringEnabled": false,
+        "handlerMappings": null,
+        "healthCheckPath": "/api/health",
+        "http20Enabled": true,
+        "http20ProxyFlag": 0,
+        "httpLoggingEnabled": false,
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod/config/web",
+        "ipSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "ipSecurityRestrictionsDefaultAction": null,
+        "javaContainer": null,
+        "javaContainerVersion": null,
+        "javaVersion": null,
+        "keyVaultReferenceIdentity": null,
+        "kind": null,
+        "limits": null,
+        "linuxFxVersion": "NODE|24-lts",
+        "loadBalancing": "LeastRequests",
+        "localMySqlEnabled": false,
+        "logsDirectorySizeLimit": 35,
+        "machineKey": null,
+        "managedPipelineMode": "Integrated",
+        "managedServiceIdentityId": 19577,
+        "metadata": null,
+        "minTlsCipherSuite": null,
+        "minTlsVersion": "1.2",
+        "minimumElasticInstanceCount": 1,
+        "name": "app-jm1-one-prod",
+        "netFrameworkVersion": "v4.0",
+        "nodeVersion": "",
+        "numberOfWorkers": 1,
+        "phpVersion": "",
+        "powerShellVersion": "",
+        "preWarmedInstanceCount": 0,
+        "publicNetworkAccess": "Enabled",
+        "publishingUsername": "REDACTED",
+        "push": null,
+        "pythonVersion": "",
+        "remoteDebuggingEnabled": false,
+        "remoteDebuggingVersion": "VS2022",
+        "requestTracingEnabled": false,
+        "requestTracingExpirationTime": null,
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "scmIpSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "scmIpSecurityRestrictionsDefaultAction": null,
+        "scmIpSecurityRestrictionsUseMain": false,
+        "scmMinTlsVersion": "1.2",
+        "scmType": "None",
+        "systemData": null,
+        "tracingOptions": null,
+        "type": "Microsoft.Web/sites/config",
+        "use32BitWorkerProcess": true,
+        "virtualApplications": [
+          {
+            "physicalPath": "site\\wwwroot",
+            "preloadEnabled": false,
+            "virtualDirectories": null,
+            "virtualPath": "/"
+          }
+        ],
+        "vnetName": "",
+        "vnetPrivatePortsCount": 0,
+        "vnetRouteAllEnabled": false,
+        "webSocketsEnabled": false,
+        "websiteTimeZone": null,
+        "windowsFxVersion": null,
+        "xManagedServiceIdentityId": null
+      },
+      "sku": "Standard",
+      "slotSwapStatus": {
+        "destinationSlotName": "Production",
+        "sourceSlotName": "staging",
+        "timestampUtc": "2026-08-15T11:32:36.149000+00:00"
+      },
+      "sshEnabled": null,
+      "state": "Running",
+      "storageAccountRequired": false,
+      "suspendedTill": null,
+      "systemData": null,
+      "tags": {
+        "environment": "prod",
+        "gate": "GATE-W3",
+        "hidden-link: /app-insights-resource-id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/microsoft.insights/components/appi-jm1-one-prod",
+        "managedBy": "codex",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "property": "corporate",
+        "topology": "OptionB"
+      },
+      "targetSwapSlot": null,
+      "trafficManagerHostNames": null,
+      "type": "Microsoft.Web/sites",
+      "usageState": "Normal",
+      "virtualNetworkSubnetId": null,
+      "workloadProfileName": null
+    },
+    "financial": {
+      "autoGeneratedDomainNameLabelScope": null,
+      "availabilityState": "Normal",
+      "clientAffinityEnabled": true,
+      "clientAffinityPartitioningEnabled": null,
+      "clientAffinityProxyEnabled": false,
+      "clientCertEnabled": false,
+      "clientCertExclusionPaths": null,
+      "clientCertMode": "Required",
+      "cloningInfo": null,
+      "containerSize": 0,
+      "customDomainVerificationId": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE",
+      "dailyMemoryTimeQuota": 0,
+      "daprConfig": null,
+      "defaultHostName": "app-jm1-fin-prod.azurewebsites.net",
+      "dnsConfiguration": {
+        "dnsAltServer": null,
+        "dnsLegacySortOrder": null,
+        "dnsMaxCacheTimeout": null,
+        "dnsRetryAttemptCount": null,
+        "dnsRetryAttemptTimeout": null,
+        "dnsServers": null
+      },
+      "enabled": true,
+      "enabledHostNames": [
+        "jmerrill.financial",
+        "www.jmerrill.financial",
+        "app-jm1-fin-prod.azurewebsites.net",
+        "app-jm1-fin-prod.scm.azurewebsites.net"
+      ],
+      "endToEndEncryptionEnabled": false,
+      "extendedLocation": null,
+      "functionAppConfig": null,
+      "hostNameSslStates": [
+        {
+          "hostType": "Standard",
+          "name": "app-jm1-fin-prod.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Repository",
+          "name": "app-jm1-fin-prod.scm.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "jmerrill.financial",
+          "sslState": "SniEnabled",
+          "thumbprint": "7DB82D81276D3D8DF3244DB094DAE0EE416FDA66",
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "www.jmerrill.financial",
+          "sslState": "SniEnabled",
+          "thumbprint": "C036496605FD7061E097EB9156719F76B6F2F300",
+          "toUpdate": null,
+          "virtualIp": null
+        }
+      ],
+      "hostNames": [
+        "www.jmerrill.financial",
+        "jmerrill.financial",
+        "app-jm1-fin-prod.azurewebsites.net"
+      ],
+      "hostNamesDisabled": false,
+      "hostingEnvironmentProfile": null,
+      "httpsOnly": true,
+      "hyperV": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod",
+      "identity": {
+        "principalId": "8d99ef1e-d165-4728-93dc-44fde2a29c86",
+        "tenantId": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+        "type": "SystemAssigned",
+        "userAssignedIdentities": null
+      },
+      "inProgressOperationId": null,
+      "ipMode": "IPv4",
+      "isDefaultContainer": null,
+      "isXenon": false,
+      "keyVaultReferenceIdentity": "SystemAssigned",
+      "kind": "app,linux",
+      "lastModifiedTimeUtc": "2026-08-15T13:07:00.576666",
+      "location": "Central US",
+      "managedEnvironmentId": null,
+      "maxNumberOfWorkers": null,
+      "name": "app-jm1-fin-prod",
+      "outboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,13.89.172.3",
+      "outboundVnetRouting": {
+        "allTraffic": false,
+        "applicationTraffic": false,
+        "backupRestoreTraffic": false,
+        "contentShareTraffic": false,
+        "imagePullTraffic": false
+      },
+      "possibleOutboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,104.208.36.234,104.43.202.37,104.208.35.64,104.43.196.83,104.43.201.174,20.83.2.253,20.83.3.146,20.83.3.184,20.83.3.189,20.83.3.230,20.83.4.4,20.83.5.2,20.83.5.28,20.83.5.66,20.83.5.146,20.83.5.181,20.83.5.216,13.89.172.3",
+      "publicNetworkAccess": "Enabled",
+      "redundancyMode": "None",
+      "repositorySiteName": "app-jm1-fin-prod",
+      "reserved": true,
+      "resourceConfig": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmSiteAlsoStopped": false,
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "siteConfig": {
+        "acrUseManagedIdentityCreds": false,
+        "acrUserManagedIdentityId": null,
+        "alwaysOn": false,
+        "apiDefinition": null,
+        "apiManagementConfig": null,
+        "appCommandLine": "node server.js",
+        "appSettings": null,
+        "autoHealEnabled": false,
+        "autoHealRules": null,
+        "autoSwapSlotName": null,
+        "azureStorageAccounts": {},
+        "connectionStrings": null,
+        "cors": null,
+        "defaultDocuments": [
+          "Default.htm",
+          "Default.html",
+          "Default.asp",
+          "index.htm",
+          "index.html",
+          "iisstart.htm",
+          "default.aspx",
+          "index.php",
+          "hostingstart.html"
+        ],
+        "detailedErrorLoggingEnabled": false,
+        "documentRoot": null,
+        "elasticWebAppScaleLimit": 0,
+        "experiments": {
+          "rampUpRules": []
+        },
+        "ftpsState": "Disabled",
+        "functionAppScaleLimit": null,
+        "functionsRuntimeScaleMonitoringEnabled": false,
+        "handlerMappings": null,
+        "healthCheckPath": "/api/health",
+        "http20Enabled": true,
+        "http20ProxyFlag": 0,
+        "httpLoggingEnabled": true,
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod/config/web",
+        "ipSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "ipSecurityRestrictionsDefaultAction": null,
+        "javaContainer": null,
+        "javaContainerVersion": null,
+        "javaVersion": null,
+        "keyVaultReferenceIdentity": null,
+        "kind": null,
+        "limits": null,
+        "linuxFxVersion": "NODE|24-lts",
+        "loadBalancing": "LeastRequests",
+        "localMySqlEnabled": false,
+        "logsDirectorySizeLimit": 100,
+        "machineKey": null,
+        "managedPipelineMode": "Integrated",
+        "managedServiceIdentityId": 19574,
+        "metadata": null,
+        "minTlsCipherSuite": null,
+        "minTlsVersion": "1.2",
+        "minimumElasticInstanceCount": 1,
+        "name": "app-jm1-fin-prod",
+        "netFrameworkVersion": "v4.0",
+        "nodeVersion": "",
+        "numberOfWorkers": 1,
+        "phpVersion": "",
+        "powerShellVersion": "",
+        "preWarmedInstanceCount": 0,
+        "publicNetworkAccess": "Enabled",
+        "publishingUsername": "REDACTED",
+        "push": null,
+        "pythonVersion": "",
+        "remoteDebuggingEnabled": false,
+        "remoteDebuggingVersion": "VS2022",
+        "requestTracingEnabled": false,
+        "requestTracingExpirationTime": null,
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "scmIpSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "scmIpSecurityRestrictionsDefaultAction": null,
+        "scmIpSecurityRestrictionsUseMain": false,
+        "scmMinTlsVersion": "1.2",
+        "scmType": "None",
+        "systemData": null,
+        "tracingOptions": null,
+        "type": "Microsoft.Web/sites/config",
+        "use32BitWorkerProcess": true,
+        "virtualApplications": [
+          {
+            "physicalPath": "site\\wwwroot",
+            "preloadEnabled": false,
+            "virtualDirectories": null,
+            "virtualPath": "/"
+          }
+        ],
+        "vnetName": "",
+        "vnetPrivatePortsCount": 0,
+        "vnetRouteAllEnabled": false,
+        "webSocketsEnabled": false,
+        "websiteTimeZone": null,
+        "windowsFxVersion": null,
+        "xManagedServiceIdentityId": null
+      },
+      "sku": "Standard",
+      "slotSwapStatus": {
+        "destinationSlotName": "Production",
+        "sourceSlotName": "staging",
+        "timestampUtc": "2026-07-30T15:21:36.528000+00:00"
+      },
+      "sshEnabled": null,
+      "state": "Running",
+      "storageAccountRequired": false,
+      "suspendedTill": null,
+      "systemData": null,
+      "tags": {
+        "environment": "prod",
+        "gate": "GATE-W3",
+        "managedBy": "codex",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "property": "financial",
+        "topology": "OptionB"
+      },
+      "targetSwapSlot": null,
+      "trafficManagerHostNames": null,
+      "type": "Microsoft.Web/sites",
+      "usageState": "Normal",
+      "virtualNetworkSubnetId": null,
+      "workloadProfileName": null
+    },
+    "foundation": {
+      "autoGeneratedDomainNameLabelScope": null,
+      "availabilityState": "Normal",
+      "clientAffinityEnabled": true,
+      "clientAffinityPartitioningEnabled": null,
+      "clientAffinityProxyEnabled": false,
+      "clientCertEnabled": false,
+      "clientCertExclusionPaths": null,
+      "clientCertMode": "Required",
+      "cloningInfo": null,
+      "containerSize": 0,
+      "customDomainVerificationId": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE",
+      "dailyMemoryTimeQuota": 0,
+      "daprConfig": null,
+      "defaultHostName": "app-jm1-foundation-prod.azurewebsites.net",
+      "dnsConfiguration": {
+        "dnsAltServer": null,
+        "dnsLegacySortOrder": null,
+        "dnsMaxCacheTimeout": null,
+        "dnsRetryAttemptCount": null,
+        "dnsRetryAttemptTimeout": null,
+        "dnsServers": null
+      },
+      "enabled": true,
+      "enabledHostNames": [
+        "jmerrill.foundation",
+        "www.jmerrill.foundation",
+        "app-jm1-foundation-prod.azurewebsites.net",
+        "app-jm1-foundation-prod.scm.azurewebsites.net"
+      ],
+      "endToEndEncryptionEnabled": false,
+      "extendedLocation": null,
+      "functionAppConfig": null,
+      "hostNameSslStates": [
+        {
+          "hostType": "Standard",
+          "name": "app-jm1-foundation-prod.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Repository",
+          "name": "app-jm1-foundation-prod.scm.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "jmerrill.foundation",
+          "sslState": "SniEnabled",
+          "thumbprint": "FABF1B9D45C8D3E12E550A286908B85582FBCB92",
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "www.jmerrill.foundation",
+          "sslState": "SniEnabled",
+          "thumbprint": "C2BD947EA2F3111F4E369D7B1091D1721A4C9D13",
+          "toUpdate": null,
+          "virtualIp": null
+        }
+      ],
+      "hostNames": [
+        "www.jmerrill.foundation",
+        "jmerrill.foundation",
+        "app-jm1-foundation-prod.azurewebsites.net"
+      ],
+      "hostNamesDisabled": false,
+      "hostingEnvironmentProfile": null,
+      "httpsOnly": true,
+      "hyperV": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod",
+      "identity": {
+        "principalId": "bce2f733-31ea-4b84-ba43-3290e75db9c6",
+        "tenantId": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+        "type": "SystemAssigned",
+        "userAssignedIdentities": null
+      },
+      "inProgressOperationId": null,
+      "ipMode": "IPv4",
+      "isDefaultContainer": null,
+      "isXenon": false,
+      "keyVaultReferenceIdentity": "SystemAssigned",
+      "kind": "app,linux",
+      "lastModifiedTimeUtc": "2026-08-15T13:37:32.860000",
+      "location": "Central US",
+      "managedEnvironmentId": null,
+      "maxNumberOfWorkers": null,
+      "name": "app-jm1-foundation-prod",
+      "outboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,13.89.172.3",
+      "outboundVnetRouting": {
+        "allTraffic": false,
+        "applicationTraffic": false,
+        "backupRestoreTraffic": false,
+        "contentShareTraffic": false,
+        "imagePullTraffic": false
+      },
+      "possibleOutboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,104.208.36.234,104.43.202.37,104.208.35.64,104.43.196.83,104.43.201.174,20.83.2.253,20.83.3.146,20.83.3.184,20.83.3.189,20.83.3.230,20.83.4.4,20.83.5.2,20.83.5.28,20.83.5.66,20.83.5.146,20.83.5.181,20.83.5.216,13.89.172.3",
+      "publicNetworkAccess": "Enabled",
+      "redundancyMode": "None",
+      "repositorySiteName": "app-jm1-foundation-prod",
+      "reserved": true,
+      "resourceConfig": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmSiteAlsoStopped": false,
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "siteConfig": {
+        "acrUseManagedIdentityCreds": false,
+        "acrUserManagedIdentityId": null,
+        "alwaysOn": false,
+        "apiDefinition": null,
+        "apiManagementConfig": null,
+        "appCommandLine": "node server.js",
+        "appSettings": null,
+        "autoHealEnabled": false,
+        "autoHealRules": null,
+        "autoSwapSlotName": null,
+        "azureStorageAccounts": {},
+        "connectionStrings": null,
+        "cors": null,
+        "defaultDocuments": [
+          "Default.htm",
+          "Default.html",
+          "Default.asp",
+          "index.htm",
+          "index.html",
+          "iisstart.htm",
+          "default.aspx",
+          "index.php",
+          "hostingstart.html"
+        ],
+        "detailedErrorLoggingEnabled": false,
+        "documentRoot": null,
+        "elasticWebAppScaleLimit": 0,
+        "experiments": {
+          "rampUpRules": []
+        },
+        "ftpsState": "Disabled",
+        "functionAppScaleLimit": null,
+        "functionsRuntimeScaleMonitoringEnabled": false,
+        "handlerMappings": null,
+        "healthCheckPath": "/api/health",
+        "http20Enabled": true,
+        "http20ProxyFlag": 0,
+        "httpLoggingEnabled": false,
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod/config/web",
+        "ipSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "ipSecurityRestrictionsDefaultAction": null,
+        "javaContainer": null,
+        "javaContainerVersion": null,
+        "javaVersion": null,
+        "keyVaultReferenceIdentity": null,
+        "kind": null,
+        "limits": null,
+        "linuxFxVersion": "NODE|22-lts",
+        "loadBalancing": "LeastRequests",
+        "localMySqlEnabled": false,
+        "logsDirectorySizeLimit": 35,
+        "machineKey": null,
+        "managedPipelineMode": "Integrated",
+        "managedServiceIdentityId": 19579,
+        "metadata": null,
+        "minTlsCipherSuite": null,
+        "minTlsVersion": "1.2",
+        "minimumElasticInstanceCount": 1,
+        "name": "app-jm1-foundation-prod",
+        "netFrameworkVersion": "v4.0",
+        "nodeVersion": "",
+        "numberOfWorkers": 1,
+        "phpVersion": "",
+        "powerShellVersion": "",
+        "preWarmedInstanceCount": 0,
+        "publicNetworkAccess": "Enabled",
+        "publishingUsername": "REDACTED",
+        "push": null,
+        "pythonVersion": "",
+        "remoteDebuggingEnabled": false,
+        "remoteDebuggingVersion": "VS2022",
+        "requestTracingEnabled": false,
+        "requestTracingExpirationTime": null,
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "scmIpSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "scmIpSecurityRestrictionsDefaultAction": null,
+        "scmIpSecurityRestrictionsUseMain": false,
+        "scmMinTlsVersion": "1.2",
+        "scmType": "None",
+        "systemData": null,
+        "tracingOptions": null,
+        "type": "Microsoft.Web/sites/config",
+        "use32BitWorkerProcess": true,
+        "virtualApplications": [
+          {
+            "physicalPath": "site\\wwwroot",
+            "preloadEnabled": false,
+            "virtualDirectories": null,
+            "virtualPath": "/"
+          }
+        ],
+        "vnetName": "",
+        "vnetPrivatePortsCount": 0,
+        "vnetRouteAllEnabled": false,
+        "webSocketsEnabled": false,
+        "websiteTimeZone": null,
+        "windowsFxVersion": null,
+        "xManagedServiceIdentityId": null
+      },
+      "sku": "Standard",
+      "slotSwapStatus": null,
+      "sshEnabled": null,
+      "state": "Running",
+      "storageAccountRequired": false,
+      "suspendedTill": null,
+      "systemData": null,
+      "tags": {
+        "environment": "prod",
+        "gate": "GATE-W3",
+        "managedBy": "codex",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "property": "foundation",
+        "topology": "OptionB"
+      },
+      "targetSwapSlot": null,
+      "trafficManagerHostNames": null,
+      "type": "Microsoft.Web/sites",
+      "usageState": "Normal",
+      "virtualNetworkSubnetId": null,
+      "workloadProfileName": null
+    },
+    "productions": {
+      "autoGeneratedDomainNameLabelScope": null,
+      "availabilityState": "Normal",
+      "clientAffinityEnabled": true,
+      "clientAffinityPartitioningEnabled": null,
+      "clientAffinityProxyEnabled": false,
+      "clientCertEnabled": false,
+      "clientCertExclusionPaths": null,
+      "clientCertMode": "Required",
+      "cloningInfo": null,
+      "containerSize": 0,
+      "customDomainVerificationId": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE",
+      "dailyMemoryTimeQuota": 0,
+      "daprConfig": null,
+      "defaultHostName": "app-jm1-productions-prod.azurewebsites.net",
+      "dnsConfiguration": {
+        "dnsAltServer": null,
+        "dnsLegacySortOrder": null,
+        "dnsMaxCacheTimeout": null,
+        "dnsRetryAttemptCount": null,
+        "dnsRetryAttemptTimeout": null,
+        "dnsServers": null
+      },
+      "enabled": true,
+      "enabledHostNames": [
+        "jmerrill.productions",
+        "www.jmerrill.productions",
+        "app-jm1-productions-prod.azurewebsites.net",
+        "app-jm1-productions-prod.scm.azurewebsites.net"
+      ],
+      "endToEndEncryptionEnabled": false,
+      "extendedLocation": null,
+      "functionAppConfig": null,
+      "hostNameSslStates": [
+        {
+          "hostType": "Standard",
+          "name": "app-jm1-productions-prod.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Repository",
+          "name": "app-jm1-productions-prod.scm.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "jmerrill.productions",
+          "sslState": "SniEnabled",
+          "thumbprint": "9B6225F4121F7DC9DD2C46085D2DD489CDBB8387",
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "www.jmerrill.productions",
+          "sslState": "SniEnabled",
+          "thumbprint": "DB7C62F77B9379117BFD7615F43C59C3819751B9",
+          "toUpdate": null,
+          "virtualIp": null
+        }
+      ],
+      "hostNames": [
+        "www.jmerrill.productions",
+        "jmerrill.productions",
+        "app-jm1-productions-prod.azurewebsites.net"
+      ],
+      "hostNamesDisabled": false,
+      "hostingEnvironmentProfile": null,
+      "httpsOnly": true,
+      "hyperV": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod",
+      "identity": {
+        "principalId": "d342229f-1a3e-4169-9b14-695fd305b313",
+        "tenantId": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+        "type": "SystemAssigned",
+        "userAssignedIdentities": null
+      },
+      "inProgressOperationId": null,
+      "ipMode": "IPv4",
+      "isDefaultContainer": null,
+      "isXenon": false,
+      "keyVaultReferenceIdentity": "SystemAssigned",
+      "kind": "app,linux",
+      "lastModifiedTimeUtc": "2026-08-15T14:02:20.216666",
+      "location": "Central US",
+      "managedEnvironmentId": null,
+      "maxNumberOfWorkers": null,
+      "name": "app-jm1-productions-prod",
+      "outboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,13.89.172.3",
+      "outboundVnetRouting": {
+        "allTraffic": false,
+        "applicationTraffic": false,
+        "backupRestoreTraffic": false,
+        "contentShareTraffic": false,
+        "imagePullTraffic": false
+      },
+      "possibleOutboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,104.208.36.234,104.43.202.37,104.208.35.64,104.43.196.83,104.43.201.174,20.83.2.253,20.83.3.146,20.83.3.184,20.83.3.189,20.83.3.230,20.83.4.4,20.83.5.2,20.83.5.28,20.83.5.66,20.83.5.146,20.83.5.181,20.83.5.216,13.89.172.3",
+      "publicNetworkAccess": "Enabled",
+      "redundancyMode": "None",
+      "repositorySiteName": "app-jm1-productions-prod",
+      "reserved": true,
+      "resourceConfig": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmSiteAlsoStopped": false,
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "siteConfig": {
+        "acrUseManagedIdentityCreds": false,
+        "acrUserManagedIdentityId": null,
+        "alwaysOn": false,
+        "apiDefinition": null,
+        "apiManagementConfig": null,
+        "appCommandLine": "node server.js",
+        "appSettings": null,
+        "autoHealEnabled": false,
+        "autoHealRules": null,
+        "autoSwapSlotName": null,
+        "azureStorageAccounts": {},
+        "connectionStrings": null,
+        "cors": null,
+        "defaultDocuments": [
+          "Default.htm",
+          "Default.html",
+          "Default.asp",
+          "index.htm",
+          "index.html",
+          "iisstart.htm",
+          "default.aspx",
+          "index.php",
+          "hostingstart.html"
+        ],
+        "detailedErrorLoggingEnabled": false,
+        "documentRoot": null,
+        "elasticWebAppScaleLimit": 0,
+        "experiments": {
+          "rampUpRules": []
+        },
+        "ftpsState": "Disabled",
+        "functionAppScaleLimit": null,
+        "functionsRuntimeScaleMonitoringEnabled": false,
+        "handlerMappings": null,
+        "healthCheckPath": "/api/health",
+        "http20Enabled": true,
+        "http20ProxyFlag": 0,
+        "httpLoggingEnabled": false,
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod/config/web",
+        "ipSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "ipSecurityRestrictionsDefaultAction": null,
+        "javaContainer": null,
+        "javaContainerVersion": null,
+        "javaVersion": null,
+        "keyVaultReferenceIdentity": null,
+        "kind": null,
+        "limits": null,
+        "linuxFxVersion": "NODE|22-lts",
+        "loadBalancing": "LeastRequests",
+        "localMySqlEnabled": false,
+        "logsDirectorySizeLimit": 35,
+        "machineKey": null,
+        "managedPipelineMode": "Integrated",
+        "managedServiceIdentityId": 19581,
+        "metadata": null,
+        "minTlsCipherSuite": null,
+        "minTlsVersion": "1.2",
+        "minimumElasticInstanceCount": 1,
+        "name": "app-jm1-productions-prod",
+        "netFrameworkVersion": "v4.0",
+        "nodeVersion": "",
+        "numberOfWorkers": 1,
+        "phpVersion": "",
+        "powerShellVersion": "",
+        "preWarmedInstanceCount": 0,
+        "publicNetworkAccess": "Enabled",
+        "publishingUsername": "REDACTED",
+        "push": null,
+        "pythonVersion": "",
+        "remoteDebuggingEnabled": false,
+        "remoteDebuggingVersion": "VS2022",
+        "requestTracingEnabled": false,
+        "requestTracingExpirationTime": null,
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "scmIpSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "scmIpSecurityRestrictionsDefaultAction": null,
+        "scmIpSecurityRestrictionsUseMain": false,
+        "scmMinTlsVersion": "1.2",
+        "scmType": "None",
+        "systemData": null,
+        "tracingOptions": null,
+        "type": "Microsoft.Web/sites/config",
+        "use32BitWorkerProcess": true,
+        "virtualApplications": [
+          {
+            "physicalPath": "site\\wwwroot",
+            "preloadEnabled": false,
+            "virtualDirectories": null,
+            "virtualPath": "/"
+          }
+        ],
+        "vnetName": "",
+        "vnetPrivatePortsCount": 0,
+        "vnetRouteAllEnabled": false,
+        "webSocketsEnabled": false,
+        "websiteTimeZone": null,
+        "windowsFxVersion": null,
+        "xManagedServiceIdentityId": null
+      },
+      "sku": "Standard",
+      "slotSwapStatus": {
+        "destinationSlotName": "Production",
+        "sourceSlotName": "staging",
+        "timestampUtc": "2026-08-03T01:23:20.682000+00:00"
+      },
+      "sshEnabled": null,
+      "state": "Running",
+      "storageAccountRequired": false,
+      "suspendedTill": null,
+      "systemData": null,
+      "tags": {
+        "environment": "prod",
+        "gate": "GATE-W3",
+        "hidden-link: /app-insights-resource-id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/microsoft.insights/components/appi-jm1-productions-prod",
+        "managedBy": "codex",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "property": "productions",
+        "topology": "OptionB"
+      },
+      "targetSwapSlot": null,
+      "trafficManagerHostNames": null,
+      "type": "Microsoft.Web/sites",
+      "usageState": "Normal",
+      "virtualNetworkSubnetId": null,
+      "workloadProfileName": null
+    },
+    "jackie_target": {
+      "autoGeneratedDomainNameLabelScope": null,
+      "availabilityState": "Normal",
+      "clientAffinityEnabled": true,
+      "clientAffinityPartitioningEnabled": null,
+      "clientAffinityProxyEnabled": false,
+      "clientCertEnabled": false,
+      "clientCertExclusionPaths": null,
+      "clientCertMode": "Required",
+      "cloningInfo": null,
+      "containerSize": 0,
+      "customDomainVerificationId": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE",
+      "dailyMemoryTimeQuota": 0,
+      "daprConfig": null,
+      "defaultHostName": "app-jm1-jackiesmithjr-prod.azurewebsites.net",
+      "dnsConfiguration": {
+        "dnsAltServer": null,
+        "dnsLegacySortOrder": null,
+        "dnsMaxCacheTimeout": null,
+        "dnsRetryAttemptCount": null,
+        "dnsRetryAttemptTimeout": null,
+        "dnsServers": null
+      },
+      "enabled": true,
+      "enabledHostNames": [
+        "app-jm1-jackiesmithjr-prod.azurewebsites.net",
+        "app-jm1-jackiesmithjr-prod.scm.azurewebsites.net"
+      ],
+      "endToEndEncryptionEnabled": false,
+      "extendedLocation": null,
+      "functionAppConfig": null,
+      "hostNameSslStates": [
+        {
+          "hostType": "Standard",
+          "name": "app-jm1-jackiesmithjr-prod.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Repository",
+          "name": "app-jm1-jackiesmithjr-prod.scm.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        }
+      ],
+      "hostNames": [
+        "app-jm1-jackiesmithjr-prod.azurewebsites.net"
+      ],
+      "hostNamesDisabled": false,
+      "hostingEnvironmentProfile": null,
+      "httpsOnly": true,
+      "hyperV": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod",
+      "identity": {
+        "principalId": "c0b59b05-9dac-48f4-9014-0774dd7c942d",
+        "tenantId": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+        "type": "SystemAssigned",
+        "userAssignedIdentities": null
+      },
+      "inProgressOperationId": null,
+      "ipMode": "IPv4",
+      "isDefaultContainer": null,
+      "isXenon": false,
+      "keyVaultReferenceIdentity": "SystemAssigned",
+      "kind": "app,linux",
+      "lastModifiedTimeUtc": "2026-08-15T01:45:54.383333",
+      "location": "Central US",
+      "managedEnvironmentId": null,
+      "maxNumberOfWorkers": null,
+      "name": "app-jm1-jackiesmithjr-prod",
+      "outboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,13.89.172.3",
+      "outboundVnetRouting": {
+        "allTraffic": false,
+        "applicationTraffic": false,
+        "backupRestoreTraffic": false,
+        "contentShareTraffic": false,
+        "imagePullTraffic": false
+      },
+      "possibleOutboundIpAddresses": "104.43.201.250,104.208.37.158,104.208.34.190,104.208.36.42,104.208.36.234,104.43.202.37,104.208.35.64,104.43.196.83,104.43.201.174,20.83.2.253,20.83.3.146,20.83.3.184,20.83.3.189,20.83.3.230,20.83.4.4,20.83.5.2,20.83.5.28,20.83.5.66,20.83.5.146,20.83.5.181,20.83.5.216,13.89.172.3",
+      "publicNetworkAccess": "Enabled",
+      "redundancyMode": "None",
+      "repositorySiteName": "app-jm1-jackiesmithjr-prod",
+      "reserved": true,
+      "resourceConfig": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmSiteAlsoStopped": false,
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-linux",
+      "siteConfig": {
+        "acrUseManagedIdentityCreds": false,
+        "acrUserManagedIdentityId": null,
+        "alwaysOn": false,
+        "apiDefinition": null,
+        "apiManagementConfig": null,
+        "appCommandLine": "node server.js",
+        "appSettings": null,
+        "autoHealEnabled": false,
+        "autoHealRules": null,
+        "autoSwapSlotName": null,
+        "azureStorageAccounts": {},
+        "connectionStrings": null,
+        "cors": null,
+        "defaultDocuments": [
+          "Default.htm",
+          "Default.html",
+          "Default.asp",
+          "index.htm",
+          "index.html",
+          "iisstart.htm",
+          "default.aspx",
+          "index.php",
+          "hostingstart.html"
+        ],
+        "detailedErrorLoggingEnabled": false,
+        "documentRoot": null,
+        "elasticWebAppScaleLimit": 0,
+        "experiments": {
+          "rampUpRules": []
+        },
+        "ftpsState": "Disabled",
+        "functionAppScaleLimit": null,
+        "functionsRuntimeScaleMonitoringEnabled": false,
+        "handlerMappings": null,
+        "healthCheckPath": "/",
+        "http20Enabled": true,
+        "http20ProxyFlag": 0,
+        "httpLoggingEnabled": false,
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod/config/web",
+        "ipSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "ipSecurityRestrictionsDefaultAction": null,
+        "javaContainer": null,
+        "javaContainerVersion": null,
+        "javaVersion": null,
+        "keyVaultReferenceIdentity": null,
+        "kind": null,
+        "limits": null,
+        "linuxFxVersion": "NODE|20-lts",
+        "loadBalancing": "LeastRequests",
+        "localMySqlEnabled": false,
+        "logsDirectorySizeLimit": 35,
+        "machineKey": null,
+        "managedPipelineMode": "Integrated",
+        "managedServiceIdentityId": 19583,
+        "metadata": null,
+        "minTlsCipherSuite": null,
+        "minTlsVersion": "1.2",
+        "minimumElasticInstanceCount": 1,
+        "name": "app-jm1-jackiesmithjr-prod",
+        "netFrameworkVersion": "v4.0",
+        "nodeVersion": "",
+        "numberOfWorkers": 1,
+        "phpVersion": "",
+        "powerShellVersion": "",
+        "preWarmedInstanceCount": 0,
+        "publicNetworkAccess": "Enabled",
+        "publishingUsername": "REDACTED",
+        "push": null,
+        "pythonVersion": "",
+        "remoteDebuggingEnabled": false,
+        "remoteDebuggingVersion": "VS2022",
+        "requestTracingEnabled": false,
+        "requestTracingExpirationTime": null,
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "scmIpSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "scmIpSecurityRestrictionsDefaultAction": null,
+        "scmIpSecurityRestrictionsUseMain": false,
+        "scmMinTlsVersion": "1.2",
+        "scmType": "None",
+        "systemData": null,
+        "tracingOptions": null,
+        "type": "Microsoft.Web/sites/config",
+        "use32BitWorkerProcess": true,
+        "virtualApplications": [
+          {
+            "physicalPath": "site\\wwwroot",
+            "preloadEnabled": false,
+            "virtualDirectories": null,
+            "virtualPath": "/"
+          }
+        ],
+        "vnetName": "",
+        "vnetPrivatePortsCount": 0,
+        "vnetRouteAllEnabled": false,
+        "webSocketsEnabled": false,
+        "websiteTimeZone": null,
+        "windowsFxVersion": null,
+        "xManagedServiceIdentityId": null
+      },
+      "sku": "Standard",
+      "slotSwapStatus": null,
+      "sshEnabled": null,
+      "state": "Running",
+      "storageAccountRequired": false,
+      "suspendedTill": null,
+      "systemData": null,
+      "tags": {
+        "environment": "prod",
+        "gate": "GATE-W3",
+        "managedBy": "codex",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "property": "personal",
+        "topology": "OptionB"
+      },
+      "targetSwapSlot": null,
+      "trafficManagerHostNames": null,
+      "type": "Microsoft.Web/sites",
+      "usageState": "Normal",
+      "virtualNetworkSubnetId": null,
+      "workloadProfileName": null
+    },
+    "publishing": {
+      "autoGeneratedDomainNameLabelScope": null,
+      "availabilityState": "Normal",
+      "clientAffinityEnabled": false,
+      "clientAffinityPartitioningEnabled": null,
+      "clientAffinityProxyEnabled": false,
+      "clientCertEnabled": false,
+      "clientCertExclusionPaths": null,
+      "clientCertMode": "Required",
+      "cloningInfo": null,
+      "containerSize": 0,
+      "customDomainVerificationId": "701529A206930C771AC498089963DA8EA3F98018EDE1C3CFB2ADD346DCEF23AE",
+      "dailyMemoryTimeQuota": 0,
+      "daprConfig": null,
+      "defaultHostName": "app-jm1-pub-prod.azurewebsites.net",
+      "dnsConfiguration": {
+        "dnsAltServer": null,
+        "dnsLegacySortOrder": null,
+        "dnsMaxCacheTimeout": null,
+        "dnsRetryAttemptCount": null,
+        "dnsRetryAttemptTimeout": null,
+        "dnsServers": null
+      },
+      "enabled": true,
+      "enabledHostNames": [
+        "jmerrill.pub",
+        "www.jmerrill.pub",
+        "app-jm1-pub-prod.azurewebsites.net",
+        "app-jm1-pub-prod.scm.azurewebsites.net"
+      ],
+      "endToEndEncryptionEnabled": false,
+      "extendedLocation": null,
+      "functionAppConfig": null,
+      "hostNameSslStates": [
+        {
+          "hostType": "Standard",
+          "name": "app-jm1-pub-prod.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Repository",
+          "name": "app-jm1-pub-prod.scm.azurewebsites.net",
+          "sslState": "Disabled",
+          "thumbprint": null,
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "jmerrill.pub",
+          "sslState": "SniEnabled",
+          "thumbprint": "F22F8B44A0E25E8264DD4E200B322062BAF8B2AE",
+          "toUpdate": null,
+          "virtualIp": null
+        },
+        {
+          "hostType": "Standard",
+          "name": "www.jmerrill.pub",
+          "sslState": "SniEnabled",
+          "thumbprint": "A19F3830D9A89D156F753078894D1E01989D3E62",
+          "toUpdate": null,
+          "virtualIp": null
+        }
+      ],
+      "hostNames": [
+        "www.jmerrill.pub",
+        "jmerrill.pub",
+        "app-jm1-pub-prod.azurewebsites.net"
+      ],
+      "hostNamesDisabled": false,
+      "hostingEnvironmentProfile": null,
+      "httpsOnly": true,
+      "hyperV": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod",
+      "identity": {
+        "principalId": "3b468411-65a4-4371-84bd-921acb133fb5",
+        "tenantId": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+        "type": "SystemAssigned",
+        "userAssignedIdentities": null
+      },
+      "inProgressOperationId": null,
+      "ipMode": "IPv4",
+      "isDefaultContainer": null,
+      "isXenon": false,
+      "keyVaultReferenceIdentity": "SystemAssigned",
+      "kind": "app,linux",
+      "lastModifiedTimeUtc": "2026-08-15T16:44:05.136666",
+      "location": "Central US",
+      "managedEnvironmentId": null,
+      "maxNumberOfWorkers": null,
+      "name": "app-jm1-pub-prod",
+      "outboundIpAddresses": "40.113.234.66,23.99.222.236,23.99.210.196,40.113.247.163,40.122.114.229",
+      "outboundVnetRouting": {
+        "allTraffic": false,
+        "applicationTraffic": false,
+        "backupRestoreTraffic": false,
+        "contentShareTraffic": false,
+        "imagePullTraffic": false
+      },
+      "possibleOutboundIpAddresses": "40.113.234.66,23.99.222.236,23.99.210.196,40.113.247.163,40.113.236.255,23.99.209.120,23.99.213.137,40.113.238.109,40.113.224.116,20.80.112.97,20.80.113.33,20.80.113.51,20.80.113.52,20.80.113.76,20.80.113.92,52.154.203.9,52.154.254.8,52.158.172.22,52.158.172.35,52.158.172.120,52.158.173.174,40.122.114.229",
+      "publicNetworkAccess": "Enabled",
+      "redundancyMode": "None",
+      "repositorySiteName": "app-jm1-pub-prod",
+      "reserved": true,
+      "resourceConfig": null,
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "scmSiteAlsoStopped": false,
+      "serverFarmId": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/serverfarms/asp-jm1-pub-prod-linux",
+      "siteConfig": {
+        "acrUseManagedIdentityCreds": false,
+        "acrUserManagedIdentityId": null,
+        "alwaysOn": true,
+        "apiDefinition": null,
+        "apiManagementConfig": null,
+        "appCommandLine": "node server.js",
+        "appSettings": null,
+        "autoHealEnabled": false,
+        "autoHealRules": null,
+        "autoSwapSlotName": null,
+        "azureStorageAccounts": {},
+        "connectionStrings": null,
+        "cors": null,
+        "defaultDocuments": [
+          "Default.htm",
+          "Default.html",
+          "Default.asp",
+          "index.htm",
+          "index.html",
+          "iisstart.htm",
+          "default.aspx",
+          "index.php",
+          "hostingstart.html"
+        ],
+        "detailedErrorLoggingEnabled": false,
+        "documentRoot": null,
+        "elasticWebAppScaleLimit": 0,
+        "experiments": {
+          "rampUpRules": []
+        },
+        "ftpsState": "Disabled",
+        "functionAppScaleLimit": null,
+        "functionsRuntimeScaleMonitoringEnabled": false,
+        "handlerMappings": null,
+        "healthCheckPath": "/api/health",
+        "http20Enabled": true,
+        "http20ProxyFlag": 0,
+        "httpLoggingEnabled": false,
+        "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod/config/web",
+        "ipSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "ipSecurityRestrictionsDefaultAction": null,
+        "javaContainer": null,
+        "javaContainerVersion": null,
+        "javaVersion": null,
+        "keyVaultReferenceIdentity": null,
+        "kind": null,
+        "limits": null,
+        "linuxFxVersion": "NODE|24-lts",
+        "loadBalancing": "LeastRequests",
+        "localMySqlEnabled": false,
+        "logsDirectorySizeLimit": 35,
+        "machineKey": null,
+        "managedPipelineMode": "Integrated",
+        "managedServiceIdentityId": 20438,
+        "metadata": null,
+        "minTlsCipherSuite": null,
+        "minTlsVersion": "1.2",
+        "minimumElasticInstanceCount": 1,
+        "name": "app-jm1-pub-prod",
+        "netFrameworkVersion": "v4.0",
+        "nodeVersion": "",
+        "numberOfWorkers": 1,
+        "phpVersion": "",
+        "powerShellVersion": "",
+        "preWarmedInstanceCount": 0,
+        "publicNetworkAccess": null,
+        "publishingUsername": "$app-jm1-pub-prod",
+        "push": null,
+        "pythonVersion": "",
+        "remoteDebuggingEnabled": false,
+        "remoteDebuggingVersion": "VS2022",
+        "requestTracingEnabled": false,
+        "requestTracingExpirationTime": null,
+        "resourceGroup": "rg-jm1-pub-prod-appsvc",
+        "scmIpSecurityRestrictions": [
+          {
+            "action": "Allow",
+            "description": "Allow all access",
+            "headers": null,
+            "ipAddress": "Any",
+            "name": "Allow all",
+            "priority": 2147483647,
+            "subnetMask": null,
+            "subnetTrafficTag": null,
+            "tag": null,
+            "vnetSubnetResourceId": null,
+            "vnetTrafficTag": null
+          }
+        ],
+        "scmIpSecurityRestrictionsDefaultAction": null,
+        "scmIpSecurityRestrictionsUseMain": false,
+        "scmMinTlsVersion": "1.2",
+        "scmType": "None",
+        "systemData": null,
+        "tracingOptions": null,
+        "type": "Microsoft.Web/sites/config",
+        "use32BitWorkerProcess": true,
+        "virtualApplications": [
+          {
+            "physicalPath": "site\\wwwroot",
+            "preloadEnabled": true,
+            "virtualDirectories": null,
+            "virtualPath": "/"
+          }
+        ],
+        "vnetName": "",
+        "vnetPrivatePortsCount": 0,
+        "vnetRouteAllEnabled": false,
+        "webSocketsEnabled": false,
+        "websiteTimeZone": null,
+        "windowsFxVersion": null,
+        "xManagedServiceIdentityId": null
+      },
+      "sku": "Standard",
+      "slotSwapStatus": {
+        "destinationSlotName": "Production",
+        "sourceSlotName": "staging",
+        "timestampUtc": "2026-08-15T12:47:19.465000+00:00"
+      },
+      "sshEnabled": null,
+      "state": "Running",
+      "storageAccountRequired": false,
+      "suspendedTill": null,
+      "systemData": null,
+      "tags": {
+        "environment": "prod",
+        "hidden-link: /app-insights-resource-id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/microsoft.insights/components/appi-jm1-pub-prod",
+        "managedBy": "bicep",
+        "owner": "J Merrill One",
+        "program": "JM1-INFRA-006",
+        "system": "jmerrill-pub"
+      },
+      "targetSwapSlot": null,
+      "trafficManagerHostNames": null,
+      "type": "Microsoft.Web/sites",
+      "usageState": "Normal",
+      "virtualNetworkSubnetId": null,
+      "workloadProfileName": null
+    }
+  },
+  "app_configs": {
+    "one": {
+      "acrUseManagedIdentityCreds": false,
+      "acrUserManagedIdentityId": null,
+      "alwaysOn": false,
+      "apiDefinition": null,
+      "apiManagementConfig": null,
+      "appCommandLine": "node server.js",
+      "appSettings": null,
+      "autoHealEnabled": false,
+      "autoHealRules": null,
+      "autoSwapSlotName": null,
+      "azureStorageAccounts": {},
+      "connectionStrings": null,
+      "cors": null,
+      "defaultDocuments": [
+        "Default.htm",
+        "Default.html",
+        "Default.asp",
+        "index.htm",
+        "index.html",
+        "iisstart.htm",
+        "default.aspx",
+        "index.php",
+        "hostingstart.html"
+      ],
+      "detailedErrorLoggingEnabled": false,
+      "documentRoot": null,
+      "elasticWebAppScaleLimit": 0,
+      "experiments": {
+        "rampUpRules": []
+      },
+      "ftpsState": "Disabled",
+      "functionAppScaleLimit": null,
+      "functionsRuntimeScaleMonitoringEnabled": false,
+      "handlerMappings": null,
+      "healthCheckPath": "/api/health",
+      "http20Enabled": true,
+      "http20ProxyFlag": 0,
+      "httpLoggingEnabled": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod/config/web",
+      "ipSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "ipSecurityRestrictionsDefaultAction": null,
+      "javaContainer": null,
+      "javaContainerVersion": null,
+      "javaVersion": null,
+      "keyVaultReferenceIdentity": null,
+      "kind": null,
+      "limits": null,
+      "linuxFxVersion": "NODE|24-lts",
+      "loadBalancing": "LeastRequests",
+      "localMySqlEnabled": false,
+      "logsDirectorySizeLimit": 35,
+      "machineKey": null,
+      "managedPipelineMode": "Integrated",
+      "managedServiceIdentityId": 19577,
+      "metadata": null,
+      "minTlsCipherSuite": null,
+      "minTlsVersion": "1.2",
+      "minimumElasticInstanceCount": 1,
+      "name": "app-jm1-one-prod",
+      "netFrameworkVersion": "v4.0",
+      "nodeVersion": "",
+      "numberOfWorkers": 1,
+      "phpVersion": "",
+      "powerShellVersion": "",
+      "preWarmedInstanceCount": 0,
+      "publicNetworkAccess": "Enabled",
+      "publishingUsername": "REDACTED",
+      "push": null,
+      "pythonVersion": "",
+      "remoteDebuggingEnabled": false,
+      "remoteDebuggingVersion": "VS2022",
+      "requestTracingEnabled": false,
+      "requestTracingExpirationTime": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmIpSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "scmIpSecurityRestrictionsDefaultAction": null,
+      "scmIpSecurityRestrictionsUseMain": false,
+      "scmMinTlsVersion": "1.2",
+      "scmType": "None",
+      "systemData": null,
+      "tracingOptions": null,
+      "type": "Microsoft.Web/sites/config",
+      "use32BitWorkerProcess": true,
+      "virtualApplications": [
+        {
+          "physicalPath": "site\\wwwroot",
+          "preloadEnabled": false,
+          "virtualDirectories": null,
+          "virtualPath": "/"
+        }
+      ],
+      "vnetName": "",
+      "vnetPrivatePortsCount": 0,
+      "vnetRouteAllEnabled": false,
+      "webSocketsEnabled": false,
+      "websiteTimeZone": null,
+      "windowsFxVersion": null,
+      "xManagedServiceIdentityId": null
+    },
+    "financial": {
+      "acrUseManagedIdentityCreds": false,
+      "acrUserManagedIdentityId": null,
+      "alwaysOn": false,
+      "apiDefinition": null,
+      "apiManagementConfig": null,
+      "appCommandLine": "node server.js",
+      "appSettings": null,
+      "autoHealEnabled": false,
+      "autoHealRules": null,
+      "autoSwapSlotName": null,
+      "azureStorageAccounts": {},
+      "connectionStrings": null,
+      "cors": null,
+      "defaultDocuments": [
+        "Default.htm",
+        "Default.html",
+        "Default.asp",
+        "index.htm",
+        "index.html",
+        "iisstart.htm",
+        "default.aspx",
+        "index.php",
+        "hostingstart.html"
+      ],
+      "detailedErrorLoggingEnabled": false,
+      "documentRoot": null,
+      "elasticWebAppScaleLimit": 0,
+      "experiments": {
+        "rampUpRules": []
+      },
+      "ftpsState": "Disabled",
+      "functionAppScaleLimit": null,
+      "functionsRuntimeScaleMonitoringEnabled": false,
+      "handlerMappings": null,
+      "healthCheckPath": "/api/health",
+      "http20Enabled": true,
+      "http20ProxyFlag": 0,
+      "httpLoggingEnabled": true,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod/config/web",
+      "ipSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "ipSecurityRestrictionsDefaultAction": null,
+      "javaContainer": null,
+      "javaContainerVersion": null,
+      "javaVersion": null,
+      "keyVaultReferenceIdentity": null,
+      "kind": null,
+      "limits": null,
+      "linuxFxVersion": "NODE|24-lts",
+      "loadBalancing": "LeastRequests",
+      "localMySqlEnabled": false,
+      "logsDirectorySizeLimit": 100,
+      "machineKey": null,
+      "managedPipelineMode": "Integrated",
+      "managedServiceIdentityId": 19574,
+      "metadata": null,
+      "minTlsCipherSuite": null,
+      "minTlsVersion": "1.2",
+      "minimumElasticInstanceCount": 1,
+      "name": "app-jm1-fin-prod",
+      "netFrameworkVersion": "v4.0",
+      "nodeVersion": "",
+      "numberOfWorkers": 1,
+      "phpVersion": "",
+      "powerShellVersion": "",
+      "preWarmedInstanceCount": 0,
+      "publicNetworkAccess": "Enabled",
+      "publishingUsername": "REDACTED",
+      "push": null,
+      "pythonVersion": "",
+      "remoteDebuggingEnabled": false,
+      "remoteDebuggingVersion": "VS2022",
+      "requestTracingEnabled": false,
+      "requestTracingExpirationTime": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmIpSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "scmIpSecurityRestrictionsDefaultAction": null,
+      "scmIpSecurityRestrictionsUseMain": false,
+      "scmMinTlsVersion": "1.2",
+      "scmType": "None",
+      "systemData": null,
+      "tracingOptions": null,
+      "type": "Microsoft.Web/sites/config",
+      "use32BitWorkerProcess": true,
+      "virtualApplications": [
+        {
+          "physicalPath": "site\\wwwroot",
+          "preloadEnabled": false,
+          "virtualDirectories": null,
+          "virtualPath": "/"
+        }
+      ],
+      "vnetName": "",
+      "vnetPrivatePortsCount": 0,
+      "vnetRouteAllEnabled": false,
+      "webSocketsEnabled": false,
+      "websiteTimeZone": null,
+      "windowsFxVersion": null,
+      "xManagedServiceIdentityId": null
+    },
+    "foundation": {
+      "acrUseManagedIdentityCreds": false,
+      "acrUserManagedIdentityId": null,
+      "alwaysOn": false,
+      "apiDefinition": null,
+      "apiManagementConfig": null,
+      "appCommandLine": "node server.js",
+      "appSettings": null,
+      "autoHealEnabled": false,
+      "autoHealRules": null,
+      "autoSwapSlotName": null,
+      "azureStorageAccounts": {},
+      "connectionStrings": null,
+      "cors": null,
+      "defaultDocuments": [
+        "Default.htm",
+        "Default.html",
+        "Default.asp",
+        "index.htm",
+        "index.html",
+        "iisstart.htm",
+        "default.aspx",
+        "index.php",
+        "hostingstart.html"
+      ],
+      "detailedErrorLoggingEnabled": false,
+      "documentRoot": null,
+      "elasticWebAppScaleLimit": 0,
+      "experiments": {
+        "rampUpRules": []
+      },
+      "ftpsState": "Disabled",
+      "functionAppScaleLimit": null,
+      "functionsRuntimeScaleMonitoringEnabled": false,
+      "handlerMappings": null,
+      "healthCheckPath": "/api/health",
+      "http20Enabled": true,
+      "http20ProxyFlag": 0,
+      "httpLoggingEnabled": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod/config/web",
+      "ipSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "ipSecurityRestrictionsDefaultAction": null,
+      "javaContainer": null,
+      "javaContainerVersion": null,
+      "javaVersion": null,
+      "keyVaultReferenceIdentity": null,
+      "kind": null,
+      "limits": null,
+      "linuxFxVersion": "NODE|22-lts",
+      "loadBalancing": "LeastRequests",
+      "localMySqlEnabled": false,
+      "logsDirectorySizeLimit": 35,
+      "machineKey": null,
+      "managedPipelineMode": "Integrated",
+      "managedServiceIdentityId": 19579,
+      "metadata": null,
+      "minTlsCipherSuite": null,
+      "minTlsVersion": "1.2",
+      "minimumElasticInstanceCount": 1,
+      "name": "app-jm1-foundation-prod",
+      "netFrameworkVersion": "v4.0",
+      "nodeVersion": "",
+      "numberOfWorkers": 1,
+      "phpVersion": "",
+      "powerShellVersion": "",
+      "preWarmedInstanceCount": 0,
+      "publicNetworkAccess": "Enabled",
+      "publishingUsername": "REDACTED",
+      "push": null,
+      "pythonVersion": "",
+      "remoteDebuggingEnabled": false,
+      "remoteDebuggingVersion": "VS2022",
+      "requestTracingEnabled": false,
+      "requestTracingExpirationTime": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmIpSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "scmIpSecurityRestrictionsDefaultAction": null,
+      "scmIpSecurityRestrictionsUseMain": false,
+      "scmMinTlsVersion": "1.2",
+      "scmType": "None",
+      "systemData": null,
+      "tracingOptions": null,
+      "type": "Microsoft.Web/sites/config",
+      "use32BitWorkerProcess": true,
+      "virtualApplications": [
+        {
+          "physicalPath": "site\\wwwroot",
+          "preloadEnabled": false,
+          "virtualDirectories": null,
+          "virtualPath": "/"
+        }
+      ],
+      "vnetName": "",
+      "vnetPrivatePortsCount": 0,
+      "vnetRouteAllEnabled": false,
+      "webSocketsEnabled": false,
+      "websiteTimeZone": null,
+      "windowsFxVersion": null,
+      "xManagedServiceIdentityId": null
+    },
+    "productions": {
+      "acrUseManagedIdentityCreds": false,
+      "acrUserManagedIdentityId": null,
+      "alwaysOn": false,
+      "apiDefinition": null,
+      "apiManagementConfig": null,
+      "appCommandLine": "node server.js",
+      "appSettings": null,
+      "autoHealEnabled": false,
+      "autoHealRules": null,
+      "autoSwapSlotName": null,
+      "azureStorageAccounts": {},
+      "connectionStrings": null,
+      "cors": null,
+      "defaultDocuments": [
+        "Default.htm",
+        "Default.html",
+        "Default.asp",
+        "index.htm",
+        "index.html",
+        "iisstart.htm",
+        "default.aspx",
+        "index.php",
+        "hostingstart.html"
+      ],
+      "detailedErrorLoggingEnabled": false,
+      "documentRoot": null,
+      "elasticWebAppScaleLimit": 0,
+      "experiments": {
+        "rampUpRules": []
+      },
+      "ftpsState": "Disabled",
+      "functionAppScaleLimit": null,
+      "functionsRuntimeScaleMonitoringEnabled": false,
+      "handlerMappings": null,
+      "healthCheckPath": "/api/health",
+      "http20Enabled": true,
+      "http20ProxyFlag": 0,
+      "httpLoggingEnabled": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod/config/web",
+      "ipSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "ipSecurityRestrictionsDefaultAction": null,
+      "javaContainer": null,
+      "javaContainerVersion": null,
+      "javaVersion": null,
+      "keyVaultReferenceIdentity": null,
+      "kind": null,
+      "limits": null,
+      "linuxFxVersion": "NODE|22-lts",
+      "loadBalancing": "LeastRequests",
+      "localMySqlEnabled": false,
+      "logsDirectorySizeLimit": 35,
+      "machineKey": null,
+      "managedPipelineMode": "Integrated",
+      "managedServiceIdentityId": 19581,
+      "metadata": null,
+      "minTlsCipherSuite": null,
+      "minTlsVersion": "1.2",
+      "minimumElasticInstanceCount": 1,
+      "name": "app-jm1-productions-prod",
+      "netFrameworkVersion": "v4.0",
+      "nodeVersion": "",
+      "numberOfWorkers": 1,
+      "phpVersion": "",
+      "powerShellVersion": "",
+      "preWarmedInstanceCount": 0,
+      "publicNetworkAccess": "Enabled",
+      "publishingUsername": "REDACTED",
+      "push": null,
+      "pythonVersion": "",
+      "remoteDebuggingEnabled": false,
+      "remoteDebuggingVersion": "VS2022",
+      "requestTracingEnabled": false,
+      "requestTracingExpirationTime": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmIpSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "scmIpSecurityRestrictionsDefaultAction": null,
+      "scmIpSecurityRestrictionsUseMain": false,
+      "scmMinTlsVersion": "1.2",
+      "scmType": "None",
+      "systemData": null,
+      "tracingOptions": null,
+      "type": "Microsoft.Web/sites/config",
+      "use32BitWorkerProcess": true,
+      "virtualApplications": [
+        {
+          "physicalPath": "site\\wwwroot",
+          "preloadEnabled": false,
+          "virtualDirectories": null,
+          "virtualPath": "/"
+        }
+      ],
+      "vnetName": "",
+      "vnetPrivatePortsCount": 0,
+      "vnetRouteAllEnabled": false,
+      "webSocketsEnabled": false,
+      "websiteTimeZone": null,
+      "windowsFxVersion": null,
+      "xManagedServiceIdentityId": null
+    },
+    "jackie_target": {
+      "acrUseManagedIdentityCreds": false,
+      "acrUserManagedIdentityId": null,
+      "alwaysOn": false,
+      "apiDefinition": null,
+      "apiManagementConfig": null,
+      "appCommandLine": "node server.js",
+      "appSettings": null,
+      "autoHealEnabled": false,
+      "autoHealRules": null,
+      "autoSwapSlotName": null,
+      "azureStorageAccounts": {},
+      "connectionStrings": null,
+      "cors": null,
+      "defaultDocuments": [
+        "Default.htm",
+        "Default.html",
+        "Default.asp",
+        "index.htm",
+        "index.html",
+        "iisstart.htm",
+        "default.aspx",
+        "index.php",
+        "hostingstart.html"
+      ],
+      "detailedErrorLoggingEnabled": false,
+      "documentRoot": null,
+      "elasticWebAppScaleLimit": 0,
+      "experiments": {
+        "rampUpRules": []
+      },
+      "ftpsState": "Disabled",
+      "functionAppScaleLimit": null,
+      "functionsRuntimeScaleMonitoringEnabled": false,
+      "handlerMappings": null,
+      "healthCheckPath": "/",
+      "http20Enabled": true,
+      "http20ProxyFlag": 0,
+      "httpLoggingEnabled": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod/config/web",
+      "ipSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "ipSecurityRestrictionsDefaultAction": null,
+      "javaContainer": null,
+      "javaContainerVersion": null,
+      "javaVersion": null,
+      "keyVaultReferenceIdentity": null,
+      "kind": null,
+      "limits": null,
+      "linuxFxVersion": "NODE|20-lts",
+      "loadBalancing": "LeastRequests",
+      "localMySqlEnabled": false,
+      "logsDirectorySizeLimit": 35,
+      "machineKey": null,
+      "managedPipelineMode": "Integrated",
+      "managedServiceIdentityId": 19583,
+      "metadata": null,
+      "minTlsCipherSuite": null,
+      "minTlsVersion": "1.2",
+      "minimumElasticInstanceCount": 1,
+      "name": "app-jm1-jackiesmithjr-prod",
+      "netFrameworkVersion": "v4.0",
+      "nodeVersion": "",
+      "numberOfWorkers": 1,
+      "phpVersion": "",
+      "powerShellVersion": "",
+      "preWarmedInstanceCount": 0,
+      "publicNetworkAccess": "Enabled",
+      "publishingUsername": "REDACTED",
+      "push": null,
+      "pythonVersion": "",
+      "remoteDebuggingEnabled": false,
+      "remoteDebuggingVersion": "VS2022",
+      "requestTracingEnabled": false,
+      "requestTracingExpirationTime": null,
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "scmIpSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "scmIpSecurityRestrictionsDefaultAction": null,
+      "scmIpSecurityRestrictionsUseMain": false,
+      "scmMinTlsVersion": "1.2",
+      "scmType": "None",
+      "systemData": null,
+      "tracingOptions": null,
+      "type": "Microsoft.Web/sites/config",
+      "use32BitWorkerProcess": true,
+      "virtualApplications": [
+        {
+          "physicalPath": "site\\wwwroot",
+          "preloadEnabled": false,
+          "virtualDirectories": null,
+          "virtualPath": "/"
+        }
+      ],
+      "vnetName": "",
+      "vnetPrivatePortsCount": 0,
+      "vnetRouteAllEnabled": false,
+      "webSocketsEnabled": false,
+      "websiteTimeZone": null,
+      "windowsFxVersion": null,
+      "xManagedServiceIdentityId": null
+    },
+    "publishing": {
+      "acrUseManagedIdentityCreds": false,
+      "acrUserManagedIdentityId": null,
+      "alwaysOn": true,
+      "apiDefinition": null,
+      "apiManagementConfig": null,
+      "appCommandLine": "node server.js",
+      "appSettings": null,
+      "autoHealEnabled": false,
+      "autoHealRules": null,
+      "autoSwapSlotName": null,
+      "azureStorageAccounts": {},
+      "connectionStrings": null,
+      "cors": null,
+      "defaultDocuments": [
+        "Default.htm",
+        "Default.html",
+        "Default.asp",
+        "index.htm",
+        "index.html",
+        "iisstart.htm",
+        "default.aspx",
+        "index.php",
+        "hostingstart.html"
+      ],
+      "detailedErrorLoggingEnabled": false,
+      "documentRoot": null,
+      "elasticWebAppScaleLimit": 0,
+      "experiments": {
+        "rampUpRules": []
+      },
+      "ftpsState": "Disabled",
+      "functionAppScaleLimit": null,
+      "functionsRuntimeScaleMonitoringEnabled": false,
+      "handlerMappings": null,
+      "healthCheckPath": "/api/health",
+      "http20Enabled": true,
+      "http20ProxyFlag": 0,
+      "httpLoggingEnabled": false,
+      "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod/config/web",
+      "ipSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "ipSecurityRestrictionsDefaultAction": null,
+      "javaContainer": null,
+      "javaContainerVersion": null,
+      "javaVersion": null,
+      "keyVaultReferenceIdentity": null,
+      "kind": null,
+      "limits": null,
+      "linuxFxVersion": "NODE|24-lts",
+      "loadBalancing": "LeastRequests",
+      "localMySqlEnabled": false,
+      "logsDirectorySizeLimit": 35,
+      "machineKey": null,
+      "managedPipelineMode": "Integrated",
+      "managedServiceIdentityId": 20438,
+      "metadata": null,
+      "minTlsCipherSuite": null,
+      "minTlsVersion": "1.2",
+      "minimumElasticInstanceCount": 1,
+      "name": "app-jm1-pub-prod",
+      "netFrameworkVersion": "v4.0",
+      "nodeVersion": "",
+      "numberOfWorkers": 1,
+      "phpVersion": "",
+      "powerShellVersion": "",
+      "preWarmedInstanceCount": 0,
+      "publicNetworkAccess": null,
+      "publishingUsername": "$app-jm1-pub-prod",
+      "push": null,
+      "pythonVersion": "",
+      "remoteDebuggingEnabled": false,
+      "remoteDebuggingVersion": "VS2022",
+      "requestTracingEnabled": false,
+      "requestTracingExpirationTime": null,
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "scmIpSecurityRestrictions": [
+        {
+          "action": "Allow",
+          "description": "Allow all access",
+          "headers": null,
+          "ipAddress": "Any",
+          "name": "Allow all",
+          "priority": 2147483647,
+          "subnetMask": null,
+          "subnetTrafficTag": null,
+          "tag": null,
+          "vnetSubnetResourceId": null,
+          "vnetTrafficTag": null
+        }
+      ],
+      "scmIpSecurityRestrictionsDefaultAction": null,
+      "scmIpSecurityRestrictionsUseMain": false,
+      "scmMinTlsVersion": "1.2",
+      "scmType": "None",
+      "systemData": null,
+      "tracingOptions": null,
+      "type": "Microsoft.Web/sites/config",
+      "use32BitWorkerProcess": true,
+      "virtualApplications": [
+        {
+          "physicalPath": "site\\wwwroot",
+          "preloadEnabled": true,
+          "virtualDirectories": null,
+          "virtualPath": "/"
+        }
+      ],
+      "vnetName": "",
+      "vnetPrivatePortsCount": 0,
+      "vnetRouteAllEnabled": false,
+      "webSocketsEnabled": false,
+      "websiteTimeZone": null,
+      "windowsFxVersion": null,
+      "xManagedServiceIdentityId": null
+    }
+  },
+  "app_metrics": {
+    "average": {
+      "one": {
+        "cost": 295,
+        "interval": "PT5M",
+        "namespace": "Microsoft.Web/sites",
+        "resourceregion": "centralus",
+        "timespan": "2026-08-15T19:10:03Z/2026-08-15T20:10:03Z",
+        "value": [
+          {
+            "displayDescription": "The total number of requests regardless of their resulting HTTP status code. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod/providers/Microsoft.Insights/metrics/Requests",
+            "name": {
+              "localizedValue": "Requests",
+              "value": "Requests"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The count of requests resulting in an HTTP status code >= 500 but < 600. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod/providers/Microsoft.Insights/metrics/Http5xx",
+            "name": {
+              "localizedValue": "Http Server Errors",
+              "value": "Http5xx"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The average time taken for the app to serve requests, in seconds. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod/providers/Microsoft.Insights/metrics/AverageResponseTime",
+            "name": {
+              "localizedValue": "Average Response Time (deprecated)",
+              "value": "AverageResponseTime"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.26,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.1615,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Seconds"
+          },
+          {
+            "displayDescription": "Health check status. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod/providers/Microsoft.Insights/metrics/HealthCheckStatus",
+            "name": {
+              "localizedValue": "Health check status",
+              "value": "HealthCheckStatus"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The number of instances on which this app is running.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-one-prod/providers/Microsoft.Insights/metrics/InstanceCount",
+            "name": {
+              "localizedValue": "Automatic Scaling Instance Count",
+              "value": "InstanceCount"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          }
+        ]
+      },
+      "financial": {
+        "cost": 295,
+        "interval": "PT5M",
+        "namespace": "Microsoft.Web/sites",
+        "resourceregion": "centralus",
+        "timespan": "2026-08-15T19:10:07Z/2026-08-15T20:10:07Z",
+        "value": [
+          {
+            "displayDescription": "The total number of requests regardless of their resulting HTTP status code. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod/providers/Microsoft.Insights/metrics/Requests",
+            "name": {
+              "localizedValue": "Requests",
+              "value": "Requests"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 22.333333333333332,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 4.5,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The count of requests resulting in an HTTP status code >= 500 but < 600. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod/providers/Microsoft.Insights/metrics/Http5xx",
+            "name": {
+              "localizedValue": "Http Server Errors",
+              "value": "Http5xx"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The average time taken for the app to serve requests, in seconds. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod/providers/Microsoft.Insights/metrics/AverageResponseTime",
+            "name": {
+              "localizedValue": "Average Response Time (deprecated)",
+              "value": "AverageResponseTime"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.448,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.493,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 4.428,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.04,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.118,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.084,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.055,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.04,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.571,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 1.809358208955224,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.232,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.3307777777777778,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Seconds"
+          },
+          {
+            "displayDescription": "Health check status. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod/providers/Microsoft.Insights/metrics/HealthCheckStatus",
+            "name": {
+              "localizedValue": "Health check status",
+              "value": "HealthCheckStatus"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The number of instances on which this app is running.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-fin-prod/providers/Microsoft.Insights/metrics/InstanceCount",
+            "name": {
+              "localizedValue": "Automatic Scaling Instance Count",
+              "value": "InstanceCount"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          }
+        ]
+      },
+      "foundation": {
+        "cost": 295,
+        "interval": "PT5M",
+        "namespace": "Microsoft.Web/sites",
+        "resourceregion": "centralus",
+        "timespan": "2026-08-15T19:10:12Z/2026-08-15T20:10:12Z",
+        "value": [
+          {
+            "displayDescription": "The total number of requests regardless of their resulting HTTP status code. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod/providers/Microsoft.Insights/metrics/Requests",
+            "name": {
+              "localizedValue": "Requests",
+              "value": "Requests"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 1.3333333333333333,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 13.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 73.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 1.3333333333333333,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The count of requests resulting in an HTTP status code >= 500 but < 600. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod/providers/Microsoft.Insights/metrics/Http5xx",
+            "name": {
+              "localizedValue": "Http Server Errors",
+              "value": "Http5xx"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The average time taken for the app to serve requests, in seconds. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod/providers/Microsoft.Insights/metrics/AverageResponseTime",
+            "name": {
+              "localizedValue": "Average Response Time (deprecated)",
+              "value": "AverageResponseTime"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.23975,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.3873461538461539,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.089,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.361,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.12084931506849315,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.3805,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.056,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.042,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Seconds"
+          },
+          {
+            "displayDescription": "Health check status. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod/providers/Microsoft.Insights/metrics/HealthCheckStatus",
+            "name": {
+              "localizedValue": "Health check status",
+              "value": "HealthCheckStatus"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The number of instances on which this app is running.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-foundation-prod/providers/Microsoft.Insights/metrics/InstanceCount",
+            "name": {
+              "localizedValue": "Automatic Scaling Instance Count",
+              "value": "InstanceCount"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          }
+        ]
+      },
+      "productions": {
+        "cost": 295,
+        "interval": "PT5M",
+        "namespace": "Microsoft.Web/sites",
+        "resourceregion": "centralus",
+        "timespan": "2026-08-15T19:10:17Z/2026-08-15T20:10:17Z",
+        "value": [
+          {
+            "displayDescription": "The total number of requests regardless of their resulting HTTP status code. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod/providers/Microsoft.Insights/metrics/Requests",
+            "name": {
+              "localizedValue": "Requests",
+              "value": "Requests"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 17.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The count of requests resulting in an HTTP status code >= 500 but < 600. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod/providers/Microsoft.Insights/metrics/Http5xx",
+            "name": {
+              "localizedValue": "Http Server Errors",
+              "value": "Http5xx"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The average time taken for the app to serve requests, in seconds. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod/providers/Microsoft.Insights/metrics/AverageResponseTime",
+            "name": {
+              "localizedValue": "Average Response Time (deprecated)",
+              "value": "AverageResponseTime"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.765,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.18358823529411766,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.068,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.181,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Seconds"
+          },
+          {
+            "displayDescription": "Health check status. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod/providers/Microsoft.Insights/metrics/HealthCheckStatus",
+            "name": {
+              "localizedValue": "Health check status",
+              "value": "HealthCheckStatus"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 50.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The number of instances on which this app is running.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-productions-prod/providers/Microsoft.Insights/metrics/InstanceCount",
+            "name": {
+              "localizedValue": "Automatic Scaling Instance Count",
+              "value": "InstanceCount"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          }
+        ]
+      },
+      "jackie_target": {
+        "cost": 295,
+        "interval": "PT5M",
+        "namespace": "Microsoft.Web/sites",
+        "resourceregion": "centralus",
+        "timespan": "2026-08-15T19:10:21Z/2026-08-15T20:10:21Z",
+        "value": [
+          {
+            "displayDescription": "The total number of requests regardless of their resulting HTTP status code. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod/providers/Microsoft.Insights/metrics/Requests",
+            "name": {
+              "localizedValue": "Requests",
+              "value": "Requests"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The count of requests resulting in an HTTP status code >= 500 but < 600. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod/providers/Microsoft.Insights/metrics/Http5xx",
+            "name": {
+              "localizedValue": "Http Server Errors",
+              "value": "Http5xx"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The average time taken for the app to serve requests, in seconds. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod/providers/Microsoft.Insights/metrics/AverageResponseTime",
+            "name": {
+              "localizedValue": "Average Response Time (deprecated)",
+              "value": "AverageResponseTime"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Seconds"
+          },
+          {
+            "displayDescription": "Health check status. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod/providers/Microsoft.Insights/metrics/HealthCheckStatus",
+            "name": {
+              "localizedValue": "Health check status",
+              "value": "HealthCheckStatus"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The number of instances on which this app is running.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-jackiesmithjr-prod/providers/Microsoft.Insights/metrics/InstanceCount",
+            "name": {
+              "localizedValue": "Automatic Scaling Instance Count",
+              "value": "InstanceCount"
+            },
+            "resourceGroup": "rg-jm1-web-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          }
+        ]
+      },
+      "publishing": {
+        "cost": 295,
+        "interval": "PT5M",
+        "namespace": "Microsoft.Web/sites",
+        "resourceregion": "centralus",
+        "timespan": "2026-08-15T19:10:22Z/2026-08-15T20:10:22Z",
+        "value": [
+          {
+            "displayDescription": "The total number of requests regardless of their resulting HTTP status code. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod/providers/Microsoft.Insights/metrics/Requests",
+            "name": {
+              "localizedValue": "Requests",
+              "value": "Requests"
+            },
+            "resourceGroup": "rg-jm1-pub-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 1.5,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 19.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 1.3333333333333333,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 1.6,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 1.25,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 2.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 1.5,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 1.3333333333333333,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 1.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The count of requests resulting in an HTTP status code >= 500 but < 600. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod/providers/Microsoft.Insights/metrics/Http5xx",
+            "name": {
+              "localizedValue": "Http Server Errors",
+              "value": "Http5xx"
+            },
+            "resourceGroup": "rg-jm1-pub-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The average time taken for the app to serve requests, in seconds. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod/providers/Microsoft.Insights/metrics/AverageResponseTime",
+            "name": {
+              "localizedValue": "Average Response Time (deprecated)",
+              "value": "AverageResponseTime"
+            },
+            "resourceGroup": "rg-jm1-pub-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 0.11966666666666667,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 0.03471929824561403,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 0.17,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 0.11575,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 0.1805,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 0.07840000000000001,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 0.2585,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 0.514,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 0.10566666666666667,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 0.487,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 0.16025,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 0.718,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Seconds"
+          },
+          {
+            "displayDescription": "Health check status. For WebApps and FunctionApps.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod/providers/Microsoft.Insights/metrics/HealthCheckStatus",
+            "name": {
+              "localizedValue": "Health check status",
+              "value": "HealthCheckStatus"
+            },
+            "resourceGroup": "rg-jm1-pub-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "average": 100.0,
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          },
+          {
+            "displayDescription": "The number of instances on which this app is running.",
+            "errorCode": "Success",
+            "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-pub-prod-appsvc/providers/Microsoft.Web/sites/app-jm1-pub-prod/providers/Microsoft.Insights/metrics/InstanceCount",
+            "name": {
+              "localizedValue": "Automatic Scaling Instance Count",
+              "value": "InstanceCount"
+            },
+            "resourceGroup": "rg-jm1-pub-prod-appsvc",
+            "timeseries": [
+              {
+                "data": [
+                  {
+                    "timeStamp": "2026-08-15T19:10:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:15:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:20:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:25:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:30:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:35:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:40:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:45:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:50:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T19:55:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:00:00Z"
+                  },
+                  {
+                    "timeStamp": "2026-08-15T20:05:00Z"
+                  }
+                ],
+                "metadatavalues": []
+              }
+            ],
+            "type": "Microsoft.Insights/metrics",
+            "unit": "Count"
+          }
+        ]
+      }
+    }
+  },
+  "discovered_topology_note": "Publishing is App Service live, but resides on asp-jm1-pub-prod-linux rather than asp-jm1-web-prod-linux. Target plan currently contains One, Financial, Foundation, Productions, and the Jackie target App Service.",
+  "classification": "PRECHANGE BASELINE CAPTURED",
+  "note": "Secrets and app setting values are not included."
+}

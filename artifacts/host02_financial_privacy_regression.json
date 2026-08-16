@@ -1,0 +1,29 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "architecture": "Financial App Service -> Azure Functions -> Dataverse",
+  "normal_client_experience_submission": {
+    "route": "/api/feedback",
+    "status": 200,
+    "response_status": "RECORDED",
+    "survey_response": true,
+    "question_responses": 6,
+    "result": "PASS"
+  },
+  "sensitive_detail_submission": {
+    "route": "/api/feedback",
+    "status": 400,
+    "code": "SENSITIVE_DETAIL_NOT_ACCEPTED",
+    "stored_sensitive_response_rows": 0,
+    "result": "PASS"
+  },
+  "non_exposure_checks": {
+    "estate_plan_details": "NOT EXPOSED",
+    "medical_information": "NOT EXPOSED",
+    "beneficiary_data": "NOT EXPOSED",
+    "account_information": "NOT EXPOSED",
+    "service_credentials": "NOT EXPOSED"
+  }
+}

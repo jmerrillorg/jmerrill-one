@@ -1,0 +1,181 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 27 Full six-site regression"
+  },
+  "captured_at_utc": "2026-08-16T03:33:17Z",
+  "checks": [
+    {
+      "label": "one_apex",
+      "url": "https://jmerrill.one/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.468372",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "one_www",
+      "url": "https://www.jmerrill.one/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.491491",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "one_contact",
+      "url": "https://www.jmerrill.one/contact",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.252899",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "publishing_apex",
+      "url": "https://jmerrill.pub/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.755709",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "publishing_www",
+      "url": "https://www.jmerrill.pub/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.938595",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "publishing_author_experience",
+      "url": "https://jmerrill.pub/experience",
+      "http_code": "307",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.333838",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "financial_apex",
+      "url": "https://jmerrill.financial/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.746982",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "financial_www",
+      "url": "https://www.jmerrill.financial/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.647395",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "financial_experience",
+      "url": "https://jmerrill.financial/experience",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.270009",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "financial_health",
+      "url": "https://jmerrill.financial/api/health",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.155899",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "foundation_apex",
+      "url": "https://jmerrill.foundation/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.512416",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "foundation_www",
+      "url": "https://www.jmerrill.foundation/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.486992",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "foundation_programs",
+      "url": "https://jmerrill.foundation/programs",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.389179",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "foundation_feedback",
+      "url": "https://jmerrill.foundation/share-your-experience",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.361655",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "productions_apex",
+      "url": "https://jmerrill.productions/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.397544",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "productions_www",
+      "url": "https://www.jmerrill.productions/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.391671",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "productions_contact",
+      "url": "https://jmerrill.productions/contact",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.239123",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "jackie_apex",
+      "url": "https://jackiesmithjr.com/",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.289380",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    },
+    {
+      "label": "jackie_archive",
+      "url": "https://jackiesmithjr.com/archive",
+      "http_code": "200",
+      "ssl_verify_result": "0",
+      "time_total_seconds": "0.535683",
+      "remote_ip": "20.118.48.17",
+      "pass": true
+    }
+  ],
+  "classification": "PASS"
+}

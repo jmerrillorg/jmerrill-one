@@ -1,0 +1,137 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "final deployment proof + retirement prep"
+  },
+  "captured_at_utc": "2026-08-16T07:53:24.448Z",
+  "classification": "START STATE RECORDED",
+  "premium": {
+    "resource_group": "rg-jm1-web-prod-premium",
+    "plan": "asp-jm1-web-prod-premium",
+    "sku": "P1mv3 x 1",
+    "apps": [
+      {
+        "name": "app-jm1-productions-prod-v2",
+        "state": "Running",
+        "hostNames": [
+          "www.jmerrill.productions",
+          "jmerrill.productions",
+          "app-jm1-productions-prod-v2.azurewebsites.net"
+        ],
+        "httpsOnly": true
+      },
+      {
+        "name": "app-jm1-fin-prod-v2",
+        "state": "Running",
+        "hostNames": [
+          "www.jmerrill.financial",
+          "jmerrill.financial",
+          "app-jm1-fin-prod-v2.azurewebsites.net"
+        ],
+        "httpsOnly": true
+      },
+      {
+        "name": "app-jm1-foundation-prod-v2",
+        "state": "Running",
+        "hostNames": [
+          "www.jmerrill.foundation",
+          "jmerrill.foundation",
+          "app-jm1-foundation-prod-v2.azurewebsites.net"
+        ],
+        "httpsOnly": true
+      },
+      {
+        "name": "app-jm1-pub-prod-v2",
+        "state": "Running",
+        "hostNames": [
+          "www.jmerrill.pub",
+          "jmerrill.pub",
+          "app-jm1-pub-prod-v2.azurewebsites.net"
+        ],
+        "httpsOnly": true
+      },
+      {
+        "name": "app-jm1-one-prod-v2",
+        "state": "Running",
+        "hostNames": [
+          "jmerrill.one",
+          "www.jmerrill.one",
+          "app-jm1-one-prod-v2.azurewebsites.net"
+        ],
+        "httpsOnly": true
+      },
+      {
+        "name": "app-jm1-jackiesmithjr-prod-v2",
+        "state": "Running",
+        "hostNames": [
+          "jackiesmithjr.com",
+          "app-jm1-jackiesmithjr-prod-v2.azurewebsites.net"
+        ],
+        "httpsOnly": true
+      }
+    ]
+  },
+  "old_app_services": [
+    {
+      "name": "app-jm1-foundation-prod",
+      "state": "Running",
+      "hostNames": [
+        "app-jm1-foundation-prod.azurewebsites.net"
+      ],
+      "resourceGroup": "rg-jm1-web-prod-appsvc"
+    },
+    {
+      "name": "app-jm1-jackiesmithjr-prod",
+      "state": "Running",
+      "hostNames": [
+        "app-jm1-jackiesmithjr-prod.azurewebsites.net"
+      ],
+      "resourceGroup": "rg-jm1-web-prod-appsvc"
+    },
+    {
+      "name": "app-jm1-fin-prod",
+      "state": "Running",
+      "hostNames": [
+        "app-jm1-fin-prod.azurewebsites.net"
+      ],
+      "resourceGroup": "rg-jm1-web-prod-appsvc"
+    },
+    {
+      "name": "app-jm1-productions-prod",
+      "state": "Running",
+      "hostNames": [
+        "app-jm1-productions-prod.azurewebsites.net"
+      ],
+      "resourceGroup": "rg-jm1-web-prod-appsvc"
+    },
+    {
+      "name": "app-jm1-one-prod",
+      "state": "Running",
+      "hostNames": [
+        "app-jm1-one-prod.azurewebsites.net"
+      ],
+      "resourceGroup": "rg-jm1-web-prod-appsvc"
+    },
+    {
+      "name": "app-jm1-pub-prod",
+      "state": "Running",
+      "hostNames": [
+        "app-jm1-pub-prod.azurewebsites.net"
+      ],
+      "resourceGroup": "rg-jm1-pub-prod-appsvc"
+    }
+  ],
+  "old_app_service_plans": [
+    "asp-jm1-web-prod-linux",
+    "asp-jm1-pub-prod-linux"
+  ],
+  "old_swas": [
+    "jmerrill-one",
+    "jmerrill-financial",
+    "foundation-main",
+    "jmerrill-productions",
+    "jackiesmithjr"
+  ],
+  "rollback_state": "ACTIVE OBSERVATION / OLD RESOURCES NOT DELETED",
+  "hosting_standard_status": "CANON-CANDIDATE — IMPLEMENTATION PROVEN — READY FOR FOUNDER APPROVAL"
+}

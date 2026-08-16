@@ -1,0 +1,40 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "app_service": {
+    "name": "app-jm1-fin-prod",
+    "resource_group": "rg-jm1-web-prod-appsvc",
+    "region": "Central US",
+    "default_hostname": "app-jm1-fin-prod.azurewebsites.net",
+    "plan": "asp-jm1-web-prod-linux",
+    "runtime": "NODE|24-lts",
+    "startup_command": "node server.js",
+    "health_check_path": "/api/health",
+    "https_only": true
+  },
+  "deployment": {
+    "source_commit": "0d4d6107eac0880529aedae22682b89985b43191",
+    "artifact": "dist/jmerrill-financial-appservice.zip",
+    "successful_deployment_id": "4a5837b7-01ee-4cb3-ac65-f79455097327",
+    "package_script": "pnpm package:appservice",
+    "build_script": "pnpm build"
+  },
+  "runtime_configuration": {
+    "next_output": "standalone",
+    "trailing_slash": false,
+    "api_backend_setting": "JMF_FUNCTIONS_BASE_URL",
+    "api_backend": "https://func-jm1-fin-prod.azurewebsites.net",
+    "customer_voice_url_preserved": true,
+    "logging": "Application Insights app settings present"
+  },
+  "startup_evidence": {
+    "worker_success_logs": [
+      "2026_08_15_lw0sdlwk000H3Q_success.log",
+      "2026_08_15_lw1sdlwk001165_success.log"
+    ],
+    "running_deployment_version": "4a5837b7-01ee-4cb3-ac65-f79455097327",
+    "notes": "Earlier failed package lacked standalone server.js; corrected package started successfully on both workers."
+  }
+}

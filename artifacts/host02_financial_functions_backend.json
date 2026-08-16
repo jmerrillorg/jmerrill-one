@@ -1,0 +1,36 @@
+{
+  "package": "HOST-02",
+  "target_repository": "J Merrill Financial",
+  "recorded_at_utc": "2026-08-15T12:56:00Z",
+  "classification": "PASS",
+  "function_app": {
+    "name": "func-jm1-fin-prod",
+    "resource_group": "jmerrill-financial_group",
+    "region": "East US 2",
+    "runtime": "Node|22",
+    "hosting_plan_type": "Linux Consumption",
+    "server_farm": "EastUS2LinuxDynamicPlan",
+    "default_hostname": "func-jm1-fin-prod.azurewebsites.net",
+    "https_only": true,
+    "identity": "none",
+    "endpoint_architecture": "App Service frontend proxies /api/* to Azure Functions backend."
+  },
+  "storage": {
+    "name": "jm1finfuncp02",
+    "resource_group": "jmerrill-financial_group",
+    "region": "eastus2",
+    "sku": "Standard_LRS",
+    "kind": "StorageV2",
+    "https_only": true,
+    "minimum_tls": "TLS1_2"
+  },
+  "capacity_decision": "No dedicated or premium capacity purchased; Linux Consumption was used.",
+  "platform_notes": [
+    "Node 20 creation was rejected by Azure as end-of-life.",
+    "Node 24 Function sync was not stable in this region/runtime path.",
+    "Node 22 publish succeeded and discovered all five functions."
+  ],
+  "logging": "Application Insights connection string present.",
+  "cors": "Allowed origins include production apex, www, App Service default host, and localhost development origin.",
+  "security": "Function routes remain anonymous where current SWA API was anonymous; runtime validates schemas, pilot allow-list, signed action tokens, and advisor authorization."
+}

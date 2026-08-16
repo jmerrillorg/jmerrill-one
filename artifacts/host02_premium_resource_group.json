@@ -1,0 +1,28 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 3",
+    "name": "Premium production resource group"
+  },
+  "captured_at_utc": "2026-08-16T02:13:01Z",
+  "resource_group": {
+    "id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium",
+    "location": "centralus",
+    "managedBy": null,
+    "name": "rg-jm1-web-prod-premium",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": {
+      "costCenter": "JM1-Web",
+      "environment": "prod",
+      "lastVerified": "2026-08-16",
+      "managedBy": "codex",
+      "owner": "J Merrill One",
+      "program": "HOST-02",
+      "topology": "PremiumConsolidated"
+    },
+    "type": "Microsoft.Resources/resourceGroups"
+  },
+  "classification": "PASS"
+}

@@ -1,0 +1,33 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Phase 21 Financial Premium cutover"
+  },
+  "captured_at_utc": "2026-08-16T03:02:57Z",
+  "domains": [
+    "jmerrill.financial",
+    "www.jmerrill.financial"
+  ],
+  "old_app": "app-jm1-fin-prod",
+  "new_app": "app-jm1-fin-prod-v2",
+  "dns": {
+    "apex_a": "20.118.48.17",
+    "www_cname": "app-jm1-fin-prod-v2.azurewebsites.net"
+  },
+  "certificates": {
+    "apex": "98E1D6557301645B69765F009B6783BE898F7359",
+    "www": "F5530B90D63281E97A3BA477BF6D9AB53DD4E2DD"
+  },
+  "validation": {
+    "apex": {
+      "https_status": "200",
+      "ssl_verify_result": "0"
+    },
+    "www": {
+      "https_status": "200",
+      "ssl_verify_result": "0"
+    }
+  },
+  "functions_backend": "PRESERVED",
+  "classification": "PASS"
+}

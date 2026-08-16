@@ -1,0 +1,64 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "name": "Premium v3 production baseline + six-site redeployment continuation"
+  },
+  "captured_at_utc": "2026-08-16T03:48:27.285Z",
+  "resource_group": "rg-jm1-web-prod-premium",
+  "app_service_plan": "asp-jm1-web-prod-premium",
+  "sku": "P1mv3",
+  "workers": 1,
+  "runtime": "Linux + NODE|24-lts",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "apps": [
+    {
+      "brand": "J Merrill One",
+      "dataverse": "REQUIRED - One intake",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "Enterprise Experience URL preserved",
+      "classification": "UNCHANGED or PRESERVED",
+      "result": "PASS"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "dataverse": "REQUIRED - Publishing runtime integrations",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "Author Experience URL preserved",
+      "classification": "UNCHANGED or PRESERVED",
+      "result": "PASS"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "dataverse": "REQUIRED - Functions backend",
+      "functions": "func-jm1-fin-prod preserved on Linux Consumption",
+      "customer_voice": "Client Experience URL preserved",
+      "classification": "UNCHANGED or PRESERVED",
+      "result": "PASS"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "dataverse": "NOT REQUIRED",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "Program/Volunteer Experience URL preserved",
+      "classification": "UNCHANGED or PRESERVED",
+      "result": "PASS"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "dataverse": "NOT REQUIRED",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "Project Experience URL preserved",
+      "classification": "UNCHANGED or PRESERVED",
+      "result": "PASS"
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "dataverse": "NOT REQUIRED",
+      "functions": "NOT REQUIRED",
+      "customer_voice": "NOT ACTIVATED",
+      "classification": "UNCHANGED or PRESERVED",
+      "result": "PASS"
+    }
+  ]
+}

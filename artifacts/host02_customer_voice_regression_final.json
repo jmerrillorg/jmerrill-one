@@ -1,0 +1,9 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Customer Voice regression final"
+  },
+  "captured_at_utc": "2026-08-16T03:34:01Z",
+  "classification": "PASS",
+  "note": "Public feedback entry routes remained reachable in six-site regression; Jackie Founder Brand Customer Voice remains not activated."
+}

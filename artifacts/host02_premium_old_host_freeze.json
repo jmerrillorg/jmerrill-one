@@ -1,0 +1,29 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "Old hosting freeze and retirement readiness"
+  },
+  "captured_at_utc": "2026-08-16T03:34:01Z",
+  "classification": "HOST-02 RETIREMENT READY — FOUNDER DELETION CONFIRMATION REQUIRED",
+  "old_app_services": [
+    "app-jm1-one-prod",
+    "app-jm1-pub-prod",
+    "app-jm1-fin-prod",
+    "app-jm1-foundation-prod",
+    "app-jm1-productions-prod",
+    "app-jm1-jackiesmithjr-prod"
+  ],
+  "old_plans": [
+    "asp-jm1-web-prod-linux",
+    "asp-jm1-pub-prod-linux"
+  ],
+  "old_swas": [
+    "jmerrill-one",
+    "jmerrill-financial",
+    "foundation-main",
+    "jmerrill-productions",
+    "jackiesmithjr"
+  ],
+  "readiness": "No public production domains intentionally remain on superseded hosting; destructive deletion not performed without explicit Founder deletion confirmation.",
+  "rollback_window": "BOUNDED ROLLBACK WINDOW ACTIVE"
+}
