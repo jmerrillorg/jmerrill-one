@@ -1,0 +1,100 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "final deployment proof + retirement prep"
+  },
+  "captured_at_utc": "2026-08-16T08:18:44.647Z",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "proofs": [
+    {
+      "site": "One",
+      "repo": "jmerrillorg/jmerrill-one",
+      "app": "app-jm1-one-prod-v2",
+      "run": 31935157778,
+      "sha": "459338dac6918893e4fa65b245740dd351d911ed",
+      "url": "https://github.com/jmerrillorg/jmerrill-one/actions/runs/31935157778",
+      "github_oidc": "PASS",
+      "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "deployment": "PASS",
+      "publish_profile_dependency": "NO",
+      "fallback_to_old_host": "NO"
+    },
+    {
+      "site": "Publishing",
+      "repo": "jmerrillorg/jmerrill-pub",
+      "app": "app-jm1-pub-prod-v2",
+      "run": 31935160674,
+      "sha": "b8497062a51f0818c27af2b7b30c1d02e407a201",
+      "url": "https://github.com/jmerrillorg/jmerrill-pub/actions/runs/31935160674",
+      "github_oidc": "PASS",
+      "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "deployment": "PASS",
+      "publish_profile_dependency": "NO",
+      "fallback_to_old_host": "NO"
+    },
+    {
+      "site": "Financial",
+      "repo": "jmerrillorg/jmerrill-financial",
+      "app": "app-jm1-fin-prod-v2",
+      "run": 31935883295,
+      "sha": "2904ba48179ae222ee9fb1cc9cd6226f16590576",
+      "url": "https://github.com/jmerrillorg/jmerrill-financial/actions/runs/31935883295",
+      "github_oidc": "PASS",
+      "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "deployment": "PASS",
+      "publish_profile_dependency": "NO",
+      "fallback_to_old_host": "NO"
+    },
+    {
+      "site": "Foundation",
+      "repo": "jmerrillorg/jmerrillfoundation",
+      "app": "app-jm1-foundation-prod-v2",
+      "run": 31935883113,
+      "sha": "1ab920e89209bf4922d421c5963d54152c22cf2c",
+      "url": "https://github.com/jmerrillorg/jmerrillfoundation/actions/runs/31935883113",
+      "github_oidc": "PASS",
+      "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "deployment": "PASS",
+      "publish_profile_dependency": "NO",
+      "fallback_to_old_host": "NO"
+    },
+    {
+      "site": "Productions",
+      "repo": "jmerrillorg/jmerrill-productions",
+      "app": "app-jm1-productions-prod-v2",
+      "run": 31935883372,
+      "sha": "52fc139b0a9bd2147262ff1f73128898e585b672",
+      "url": "https://github.com/jmerrillorg/jmerrill-productions/actions/runs/31935883372",
+      "github_oidc": "PASS",
+      "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "deployment": "PASS",
+      "publish_profile_dependency": "NO",
+      "fallback_to_old_host": "NO"
+    },
+    {
+      "site": "Jackie Smith Jr.",
+      "repo": "jmerrillorg/jackiesmithjr",
+      "app": "app-jm1-jackiesmithjr-prod-v2",
+      "run": 31935168591,
+      "sha": "ce945557666657852064c5b7d69913339b4e9a83",
+      "url": "https://github.com/jmerrillorg/jackiesmithjr/actions/runs/31935168591",
+      "github_oidc": "PASS",
+      "subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+      "resource_group": "rg-jm1-web-prod-premium",
+      "deployment": "PASS",
+      "publish_profile_dependency": "NO",
+      "fallback_to_old_host": "NO"
+    }
+  ],
+  "identity_changes": {
+    "github_variables": "AZURE_CLIENT_ID/AZURE_TENANT_ID/AZURE_SUBSCRIPTION_ID set for six repos",
+    "entra_federation": "Six repo:environment:production federated credentials added",
+    "role_assignment": "Website Contributor scoped to rg-jm1-web-prod-premium"
+  }
+}

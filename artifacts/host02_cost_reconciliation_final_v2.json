@@ -1,0 +1,16 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "final deployment proof + retirement prep"
+  },
+  "captured_at_utc": "2026-08-16T08:18:44.647Z",
+  "secrets_recorded": false,
+  "classification": "PASS - NO SAVINGS INVENTED",
+  "current_state": "1 x P1mv3 Premium plan serving six apps plus Financial Functions backend and monitoring resources",
+  "old_s1_plans": [
+    "asp-jm1-web-prod-linux currently attached to five old default-host-only apps",
+    "asp-jm1-pub-prod-linux currently attached to one old default-host-only app"
+  ],
+  "expected_after_deletion": "No duplicate paid S1 App Service production plans; six sites remain on the single P1mv3 plan",
+  "billing_meter_note": "Azure billing dollar evidence not exported in this run; cost implication recorded by SKU/resource retirement only."
+}

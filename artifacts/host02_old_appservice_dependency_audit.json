@@ -1,0 +1,95 @@
+{
+  "package": {
+    "id": "HOST-02",
+    "phase": "final deployment proof + retirement prep"
+  },
+  "captured_at_utc": "2026-08-16T08:18:44.647Z",
+  "secrets_recorded": false,
+  "classification": "PASS",
+  "apps": [
+    {
+      "name": "app-jm1-one-prod",
+      "type": "Microsoft.Web/sites",
+      "resource_group": "rg-jm1-web-prod-appsvc",
+      "reason": "Superseded by validated HOST-02 Premium estate",
+      "replacement_resource": "app-jm1-one-prod-v2",
+      "dependency_audit_result": "READY TO DELETE",
+      "dns_result": "NO ACTIVE DNS",
+      "custom_domain_result": "NO CUSTOM DOMAIN",
+      "deployment_result": "NO NORMAL DEPLOYMENT",
+      "traffic_result": "NO PRODUCTION TRAFFIC",
+      "cost_implication": "Removes obsolete transition resource",
+      "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+    },
+    {
+      "name": "app-jm1-fin-prod",
+      "type": "Microsoft.Web/sites",
+      "resource_group": "rg-jm1-web-prod-appsvc",
+      "reason": "Superseded by validated HOST-02 Premium estate",
+      "replacement_resource": "app-jm1-fin-prod-v2",
+      "dependency_audit_result": "READY TO DELETE",
+      "dns_result": "NO ACTIVE DNS",
+      "custom_domain_result": "NO CUSTOM DOMAIN",
+      "deployment_result": "NO NORMAL DEPLOYMENT",
+      "traffic_result": "NO PRODUCTION TRAFFIC",
+      "cost_implication": "Removes obsolete transition resource",
+      "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+    },
+    {
+      "name": "app-jm1-foundation-prod",
+      "type": "Microsoft.Web/sites",
+      "resource_group": "rg-jm1-web-prod-appsvc",
+      "reason": "Superseded by validated HOST-02 Premium estate",
+      "replacement_resource": "app-jm1-foundation-prod-v2",
+      "dependency_audit_result": "READY TO DELETE",
+      "dns_result": "NO ACTIVE DNS",
+      "custom_domain_result": "NO CUSTOM DOMAIN",
+      "deployment_result": "NO NORMAL DEPLOYMENT",
+      "traffic_result": "NO PRODUCTION TRAFFIC",
+      "cost_implication": "Removes obsolete transition resource",
+      "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+    },
+    {
+      "name": "app-jm1-productions-prod",
+      "type": "Microsoft.Web/sites",
+      "resource_group": "rg-jm1-web-prod-appsvc",
+      "reason": "Superseded by validated HOST-02 Premium estate",
+      "replacement_resource": "app-jm1-productions-prod-v2",
+      "dependency_audit_result": "READY TO DELETE",
+      "dns_result": "NO ACTIVE DNS",
+      "custom_domain_result": "NO CUSTOM DOMAIN",
+      "deployment_result": "NO NORMAL DEPLOYMENT",
+      "traffic_result": "NO PRODUCTION TRAFFIC",
+      "cost_implication": "Removes obsolete transition resource",
+      "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+    },
+    {
+      "name": "app-jm1-jackiesmithjr-prod",
+      "type": "Microsoft.Web/sites",
+      "resource_group": "rg-jm1-web-prod-appsvc",
+      "reason": "Superseded by validated HOST-02 Premium estate",
+      "replacement_resource": "app-jm1-jackiesmithjr-prod-v2",
+      "dependency_audit_result": "READY TO DELETE",
+      "dns_result": "NO ACTIVE DNS",
+      "custom_domain_result": "NO CUSTOM DOMAIN",
+      "deployment_result": "NO NORMAL DEPLOYMENT",
+      "traffic_result": "NO PRODUCTION TRAFFIC",
+      "cost_implication": "Removes obsolete transition resource",
+      "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+    },
+    {
+      "name": "app-jm1-pub-prod",
+      "type": "Microsoft.Web/sites",
+      "resource_group": "rg-jm1-pub-prod-appsvc",
+      "reason": "Superseded by validated HOST-02 Premium estate",
+      "replacement_resource": "app-jm1-pub-prod-v2",
+      "dependency_audit_result": "READY TO DELETE",
+      "dns_result": "NO ACTIVE DNS",
+      "custom_domain_result": "NO CUSTOM DOMAIN",
+      "deployment_result": "NO NORMAL DEPLOYMENT",
+      "traffic_result": "NO PRODUCTION TRAFFIC",
+      "cost_implication": "Removes obsolete transition resource",
+      "rollback_status": "NO ACTIVE ROLLBACK DEPENDENCY AFTER OBSERVATION"
+    }
+  ]
+}
