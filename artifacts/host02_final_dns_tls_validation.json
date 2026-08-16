@@ -1,0 +1,418 @@
+{
+  "created_at": "2026-08-16T11:45:49.997Z",
+  "domains": [
+    {
+      "domain": "jmerrill.one",
+      "optional": false,
+      "cname": null,
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://jmerrill.one/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.one/",
+        "time_total_seconds": 0.475996,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Fweb-app-manifest-512x512.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fweb-app-manifest-512x512.png&amp;w=64&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/135f_ondqo7~y.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/045g~0~zva_mv.js\"/><script src=\"/_next/static/chunks/0dgq26a5_oy.a.js\" async=\"\"></script><script src=\"/_next/static/chunks/0vkgb7xyv-nko.js\" async=\"\"></script><script src=\"/_next/static/chunks/0257pdz1-imal.js\" async=\"\"></script><script src=\"/_next/static/chunks/turbopack-0zpnfhr1gt6zd.js\" async=\"\"></script><script src=\"/_next/static/chunks/01xlw8hd842-c.js\" async=\"\"></script><script src=\"/_next/static/chunks/0d3shmwh5_nmn.js\" async=\"\"></script><script src=\"/_next/static/chunks/0uey6~rxkuh47.js\" async=\"\"></script><script src=\"/_next/static/chunks/0q.pp.g4ekyo-.js\" async=\"\"></script><link rel=\"preload\" href=\"https://fonts.googleapis.com"
+      },
+      "tls": {
+        "host": "jmerrill.one",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "jmerrill.one"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "www.jmerrill.one",
+      "optional": false,
+      "cname": [
+        "app-jm1-one-prod-v2.azurewebsites.net"
+      ],
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://www.jmerrill.one/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://www.jmerrill.one/",
+        "time_total_seconds": 0.613745,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Fweb-app-manifest-512x512.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fweb-app-manifest-512x512.png&amp;w=64&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/135f_ondqo7~y.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/045g~0~zva_mv.js\"/><script src=\"/_next/static/chunks/0dgq26a5_oy.a.js\" async=\"\"></script><script src=\"/_next/static/chunks/0vkgb7xyv-nko.js\" async=\"\"></script><script src=\"/_next/static/chunks/0257pdz1-imal.js\" async=\"\"></script><script src=\"/_next/static/chunks/turbopack-0zpnfhr1gt6zd.js\" async=\"\"></script><script src=\"/_next/static/chunks/01xlw8hd842-c.js\" async=\"\"></script><script src=\"/_next/static/chunks/0d3shmwh5_nmn.js\" async=\"\"></script><script src=\"/_next/static/chunks/0uey6~rxkuh47.js\" async=\"\"></script><script src=\"/_next/static/chunks/0q.pp.g4ekyo-.js\" async=\"\"></script><link rel=\"preload\" href=\"https://fonts.googleapis.com"
+      },
+      "tls": {
+        "host": "www.jmerrill.one",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "www.jmerrill.one"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "jmerrill.pub",
+      "optional": false,
+      "cname": null,
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://jmerrill.pub/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.pub/",
+        "time_total_seconds": 0.946005,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Flogo.jpg&amp;w=48&amp;q=75 1x, /_next/image?url=%2Flogo.jpg&amp;w=96&amp;q=75 2x\" fetchPriority=\"high\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Flogo.jpg&amp;w=256&amp;q=75 1x, /_next/image?url=%2Flogo.jpg&amp;w=640&amp;q=75 2x\" fetchPriority=\"high\"/><link rel=\"stylesheet\" href=\"/_next/static/css/546c9340cd41ba9b.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-a9a78e5936e4d970.js\"/><script src=\"/_next/static/chunks/fd9d1056-71ac27f956e1f29b.js\" async=\"\"></script><script src=\"/_next/static/chunks/2117-ebe4d9c10c5446df.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4fafa20ca0cceb3.js\" async=\"\"></script><script src=\"/_next/static/chunks/2972-7af9988f7bf43f1c.js\" async=\"\"></script><script src=\"/_next/static/chunks/5878-4aa38236fa388178.js\" async=\"\"></script><script src=\"/_next/static/chunks/7154-6f90af378d82d264.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-1b8771b4ff"
+      },
+      "tls": {
+        "host": "jmerrill.pub",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "jmerrill.pub"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "www.jmerrill.pub",
+      "optional": false,
+      "cname": [
+        "app-jm1-pub-prod-v2.azurewebsites.net"
+      ],
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://www.jmerrill.pub/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://www.jmerrill.pub/",
+        "time_total_seconds": 0.865369,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Flogo.jpg&amp;w=48&amp;q=75 1x, /_next/image?url=%2Flogo.jpg&amp;w=96&amp;q=75 2x\" fetchPriority=\"high\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Flogo.jpg&amp;w=256&amp;q=75 1x, /_next/image?url=%2Flogo.jpg&amp;w=640&amp;q=75 2x\" fetchPriority=\"high\"/><link rel=\"stylesheet\" href=\"/_next/static/css/546c9340cd41ba9b.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-a9a78e5936e4d970.js\"/><script src=\"/_next/static/chunks/fd9d1056-71ac27f956e1f29b.js\" async=\"\"></script><script src=\"/_next/static/chunks/2117-ebe4d9c10c5446df.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4fafa20ca0cceb3.js\" async=\"\"></script><script src=\"/_next/static/chunks/2972-7af9988f7bf43f1c.js\" async=\"\"></script><script src=\"/_next/static/chunks/5878-4aa38236fa388178.js\" async=\"\"></script><script src=\"/_next/static/chunks/7154-6f90af378d82d264.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-1b8771b4ff"
+      },
+      "tls": {
+        "host": "www.jmerrill.pub",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "www.jmerrill.pub"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "jmerrill.financial",
+      "optional": false,
+      "cname": null,
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://jmerrill.financial/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.financial/",
+        "time_total_seconds": 0.606352,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/550ee988dce2bd84.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-f5b57f0f9e0b50b2.js\"/><script src=\"/_next/static/chunks/2200cc46-d0e20da8041422bb.js\" async=\"\"></script><script src=\"/_next/static/chunks/945-33c1a29afc1d1c39.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-51dff64ac84aac4e.js\" async=\"\"></script><script src=\"/_next/static/chunks/498-0ddd1ae1485a8971.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/page-bbedfac3273b6e4e.js\" async=\"\"></script><script src=\"/_next/static/chunks/769-2c63f39f1cf70184.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-98a67195fb14fe5e.js\" async=\"\"></script><title>J Merrill Financial — Estate Readiness for Columbus Families</title><meta name=\"description\" content=\"J Merrill Financial helps Columbus families reduce confusion, organize important information, prepare essential documents, and plan next steps with clarity and care.\"/><meta property=\"og:title\" conte"
+      },
+      "tls": {
+        "host": "jmerrill.financial",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "jmerrill.financial"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "www.jmerrill.financial",
+      "optional": false,
+      "cname": [
+        "app-jm1-fin-prod-v2.azurewebsites.net"
+      ],
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://www.jmerrill.financial/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://www.jmerrill.financial/",
+        "time_total_seconds": 0.759004,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/550ee988dce2bd84.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-f5b57f0f9e0b50b2.js\"/><script src=\"/_next/static/chunks/2200cc46-d0e20da8041422bb.js\" async=\"\"></script><script src=\"/_next/static/chunks/945-33c1a29afc1d1c39.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-51dff64ac84aac4e.js\" async=\"\"></script><script src=\"/_next/static/chunks/498-0ddd1ae1485a8971.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/page-bbedfac3273b6e4e.js\" async=\"\"></script><script src=\"/_next/static/chunks/769-2c63f39f1cf70184.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-98a67195fb14fe5e.js\" async=\"\"></script><title>J Merrill Financial — Estate Readiness for Columbus Families</title><meta name=\"description\" content=\"J Merrill Financial helps Columbus families reduce confusion, organize important information, prepare essential documents, and plan next steps with clarity and care.\"/><meta property=\"og:title\" conte"
+      },
+      "tls": {
+        "host": "www.jmerrill.financial",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "www.jmerrill.financial"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "jmerrill.foundation",
+      "optional": false,
+      "cname": null,
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://jmerrill.foundation/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.foundation/",
+        "time_total_seconds": 0.525247,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/let-me-tell-you-about-it-cover.jpg\"/><link rel=\"stylesheet\" href=\"/_next/static/css/6b686d2dac06cd2d.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-6a2699e37ccf3367.js\"/><script src=\"/_next/static/chunks/e6e143be-09cc978d7655c1e5.js\" async=\"\"></script><script src=\"/_next/static/chunks/660-64c46ae3248a7c2c.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-12a1558cdf370ab6.js\" async=\"\"></script><script src=\"/_next/static/chunks/547-df761ae28cc18f65.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/page-d13318975eefc374.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-ae42c857b3a4f2d3.js\" async=\"\"></script><title>J Merrill Foundation Inc. — Literacy. Community. Transformation.</title><meta name=\"description\" content=\"J Merrill Foundation Inc. advances literacy, dignity, authorship, and community access across Columbus, Ohio by helping people tell their stories and build stronger futures.\"/><meta name=\"author\" c"
+      },
+      "tls": {
+        "host": "jmerrill.foundation",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "jmerrill.foundation"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "www.jmerrill.foundation",
+      "optional": false,
+      "cname": [
+        "app-jm1-foundation-prod-v2.azurewebsites.net"
+      ],
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://www.jmerrill.foundation/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://www.jmerrill.foundation/",
+        "time_total_seconds": 0.607313,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/let-me-tell-you-about-it-cover.jpg\"/><link rel=\"stylesheet\" href=\"/_next/static/css/6b686d2dac06cd2d.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-6a2699e37ccf3367.js\"/><script src=\"/_next/static/chunks/e6e143be-09cc978d7655c1e5.js\" async=\"\"></script><script src=\"/_next/static/chunks/660-64c46ae3248a7c2c.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-12a1558cdf370ab6.js\" async=\"\"></script><script src=\"/_next/static/chunks/547-df761ae28cc18f65.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/page-d13318975eefc374.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-ae42c857b3a4f2d3.js\" async=\"\"></script><title>J Merrill Foundation Inc. — Literacy. Community. Transformation.</title><meta name=\"description\" content=\"J Merrill Foundation Inc. advances literacy, dignity, authorship, and community access across Columbus, Ohio by helping people tell their stories and build stronger futures.\"/><meta name=\"author\" c"
+      },
+      "tls": {
+        "host": "www.jmerrill.foundation",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "www.jmerrill.foundation"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "jmerrill.productions",
+      "optional": false,
+      "cname": null,
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://jmerrill.productions/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.productions/",
+        "time_total_seconds": 0.350869,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/css/871f30e74fb5cefc.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-2be3342c444c116d.js\"/><script src=\"/_next/static/chunks/3e381281-b10723ea030a4535.js\" async=\"\"></script><script src=\"/_next/static/chunks/763-a6defc6f3c3cb1cb.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-58bfbafacc6f0356.js\" async=\"\"></script><script src=\"/_next/static/chunks/575-c634105e83af2ca1.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/page-d9ea1bd2b0a06746.js\" async=\"\"></script><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"/><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"anonymous\"/><meta name=\"theme-color\" content=\"#1A0F05\"/><title>J Merrill Productions</title><meta name=\"description\" content=\"J Merrill Productions is the media and content production division of J Merrill One, building clear, durable stories across film, audio, strategy, and live experienc"
+      },
+      "tls": {
+        "host": "jmerrill.productions",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "jmerrill.productions"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "www.jmerrill.productions",
+      "optional": false,
+      "cname": [
+        "app-jm1-productions-prod-v2.azurewebsites.net"
+      ],
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://www.jmerrill.productions/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://www.jmerrill.productions/",
+        "time_total_seconds": 0.460081,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/css/871f30e74fb5cefc.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-2be3342c444c116d.js\"/><script src=\"/_next/static/chunks/3e381281-b10723ea030a4535.js\" async=\"\"></script><script src=\"/_next/static/chunks/763-a6defc6f3c3cb1cb.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-58bfbafacc6f0356.js\" async=\"\"></script><script src=\"/_next/static/chunks/575-c634105e83af2ca1.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/page-d9ea1bd2b0a06746.js\" async=\"\"></script><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"/><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"anonymous\"/><meta name=\"theme-color\" content=\"#1A0F05\"/><title>J Merrill Productions</title><meta name=\"description\" content=\"J Merrill Productions is the media and content production division of J Merrill One, building clear, durable stories across film, audio, strategy, and live experienc"
+      },
+      "tls": {
+        "host": "www.jmerrill.productions",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "www.jmerrill.productions"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "jackiesmithjr.com",
+      "optional": false,
+      "cname": null,
+      "a_records": [
+        "20.118.48.17"
+      ],
+      "https_probe": {
+        "url": "https://jackiesmithjr.com/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jackiesmithjr.com/",
+        "time_total_seconds": 0.382215,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><!--tALptCZfcEUsY_QrYQ0Qu--><html lang=\"en\" class=\"__variable_1f5468 __variable_c1a642 __variable_9ef920\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/media/0e96d314a90a6138-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/8a1d8947e5852e30-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/9cc5b37ab1350db7-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/b7ea2ab4a8ad1f81-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/_next/static/media/e6099e249fd938cc-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" as=\"image\" href=\"/signature-navy.png\"/><link rel=\"preload\" as=\"image\" href=\"/legacy-hero.png\"/><link rel=\"preload\" as=\"image\" href=\"/signature-white.png\"/><link rel=\"stylesheet\" href=\"/_next/static/css/deee1af5da2fc0cb.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-154a6996cfe0f933.js\"/><script src=\"/"
+      },
+      "tls": {
+        "host": "jackiesmithjr.com",
+        "tls_connected": true,
+        "authorized": true,
+        "authorization_error": null,
+        "valid_from": "Aug 16 00:00:00 2026 GMT",
+        "valid_to": "Feb 16 23:59:59 2027 GMT",
+        "subject": {
+          "CN": "jackiesmithjr.com"
+        },
+        "issuer": {
+          "C": "US",
+          "O": "DigiCert Inc",
+          "OU": "www.digicert.com",
+          "CN": "GeoTrust TLS RSA CA G1"
+        }
+      },
+      "references_deleted_swa_or_old_appservice": false,
+      "result": "PASS"
+    },
+    {
+      "domain": "www.jackiesmithjr.com",
+      "optional": true,
+      "result": "NOT_APPLICABLE_NO_DNS_RECORD",
+      "references_deleted_swa_or_old_appservice": false
+    }
+  ],
+  "result": "PASS"
+}

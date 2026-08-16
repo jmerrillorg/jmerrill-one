@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-08-16T11:43:45.467Z",
+  "plan": "asp-jm1-web-prod-premium",
+  "plan_resource_id": "/subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/rg-jm1-web-prod-premium/providers/Microsoft.Web/serverfarms/asp-jm1-web-prod-premium",
+  "metrics_window": "PT1H",
+  "metrics": null,
+  "restarts": "No capacity-changing action performed; app restart metric not separately exposed in this bounded CLI readback.",
+  "pre_consolidation_comparison": "Old S1 plans/SWAs removed; final estate is one P1mv3 x1 plus retained Financial Functions/monitoring.",
+  "classification": "ACCEPTABLE — MONITOR"
+}

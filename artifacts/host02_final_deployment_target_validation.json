@@ -1,0 +1,178 @@
+{
+  "created_at": "2026-08-16T11:47:03.538Z",
+  "required": "Authoritative production workflows target only v2 App Services; legacy old-target workflows must be disabled or removed.",
+  "repos": [
+    {
+      "brand": "One",
+      "repo": "jmerrillorg/jmerrill-one",
+      "expected_app_service": "app-jm1-one-prod-v2",
+      "workflows": [
+        {
+          "name": "Deploy JM1 One to Premium App Service",
+          "path": ".github/workflows/azure-app-service-premium.yml",
+          "state": "active",
+          "mentions_v2_target": true,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        },
+        {
+          "name": "Deploy JM1 Web to Azure Static Web Apps",
+          "path": ".github/workflows/azure-static-web-apps.yml",
+          "state": "disabled_manually",
+          "mentions_v2_target": false,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        }
+      ],
+      "legacy_workflows_retired": true,
+      "result": "PASS"
+    },
+    {
+      "brand": "Publishing",
+      "repo": "jmerrillorg/jmerrill-pub",
+      "expected_app_service": "app-jm1-pub-prod-v2",
+      "workflows": [
+        {
+          "name": "Deploy J Merrill Publishing to Premium App Service",
+          "path": ".github/workflows/azure-app-service-premium.yml",
+          "state": "active",
+          "mentions_v2_target": true,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        },
+        {
+          "name": "Publishing App Service CI/CD",
+          "path": ".github/workflows/azure-app-service-publishing.yml",
+          "state": "disabled_manually",
+          "mentions_v2_target": false,
+          "mentions_old_target": true,
+          "contains_publish_profile": false,
+          "content_read": true
+        },
+        {
+          "name": "Publishing Power Platform Solution Deploy",
+          "path": ".github/workflows/publishing-power-platform-solution-deploy.yml",
+          "state": "active",
+          "mentions_v2_target": false,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        }
+      ],
+      "legacy_workflows_retired": true,
+      "result": "PASS"
+    },
+    {
+      "brand": "Financial",
+      "repo": "jmerrillorg/jmerrill-financial",
+      "expected_app_service": "app-jm1-fin-prod-v2",
+      "workflows": [
+        {
+          "name": "Deploy J Merrill Financial to Premium App Service",
+          "path": ".github/workflows/azure-app-service-premium.yml",
+          "state": "active",
+          "mentions_v2_target": true,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        },
+        {
+          "name": "Azure Static Web Apps CI/CD",
+          "path": ".github/workflows/azure-static-web-apps.yml",
+          "state": "disabled_manually",
+          "mentions_v2_target": false,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        }
+      ],
+      "legacy_workflows_retired": true,
+      "result": "PASS"
+    },
+    {
+      "brand": "Foundation",
+      "repo": "jmerrillorg/jmerrillfoundation",
+      "expected_app_service": "app-jm1-foundation-prod-v2",
+      "workflows": [
+        {
+          "name": "Deploy J Merrill Foundation to Premium App Service",
+          "path": ".github/workflows/azure-app-service-premium.yml",
+          "state": "active",
+          "mentions_v2_target": true,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        },
+        {
+          "name": "Deploy jmerrill.foundation",
+          "path": ".github/workflows/azure-static-web-apps.yml",
+          "state": "disabled_manually",
+          "mentions_v2_target": false,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        }
+      ],
+      "legacy_workflows_retired": true,
+      "result": "PASS"
+    },
+    {
+      "brand": "Productions",
+      "repo": "jmerrillorg/jmerrill-productions",
+      "expected_app_service": "app-jm1-productions-prod-v2",
+      "workflows": [
+        {
+          "name": "Deploy J Merrill Productions to Premium App Service",
+          "path": ".github/workflows/azure-app-service-premium.yml",
+          "state": "active",
+          "mentions_v2_target": true,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        },
+        {
+          "name": "Deploy J Merrill Productions",
+          "path": ".github/workflows/azure-static-web-apps.yml",
+          "state": "disabled_manually",
+          "mentions_v2_target": false,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        }
+      ],
+      "legacy_workflows_retired": true,
+      "result": "PASS"
+    },
+    {
+      "brand": "Jackie Smith Jr.",
+      "repo": "jmerrillorg/jackiesmithjr",
+      "expected_app_service": "app-jm1-jackiesmithjr-prod-v2",
+      "workflows": [
+        {
+          "name": "Deploy Jackie Smith Jr. to Premium App Service",
+          "path": ".github/workflows/azure-app-service-premium.yml",
+          "state": "active",
+          "mentions_v2_target": true,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        },
+        {
+          "name": "Azure Static Web Apps CI/CD",
+          "path": ".github/workflows/azure-static-web-apps-victorious-sea-06433150f.yml",
+          "state": "active",
+          "mentions_v2_target": false,
+          "mentions_old_target": false,
+          "contains_publish_profile": false,
+          "content_read": true
+        }
+      ],
+      "legacy_workflows_retired": true,
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

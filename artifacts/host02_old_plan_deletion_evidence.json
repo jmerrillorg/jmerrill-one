@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-08-16T11:39:13.118Z",
+  "results": [
+    {
+      "name": "asp-jm1-web-prod-linux",
+      "resourceGroup": "rg-jm1-web-prod-appsvc",
+      "prior_attachment_state": [],
+      "sku": null,
+      "operation": "SKIPPED",
+      "result": "ALREADY_NOT_FOUND",
+      "timestamp": "2026-08-16T11:39:13.118Z"
+    },
+    {
+      "name": "asp-jm1-pub-prod-linux",
+      "resourceGroup": "rg-jm1-pub-prod-appsvc",
+      "prior_attachment_state": [],
+      "sku": null,
+      "operation": "SKIPPED",
+      "result": "ALREADY_NOT_FOUND",
+      "timestamp": "2026-08-16T11:39:13.118Z"
+    }
+  ],
+  "summary": {
+    "retired_or_not_found": 2,
+    "total": 2,
+    "result": "PASS"
+  },
+  "note": "Both old App Service Plans were not found by the explicit plan-deletion step and remained NOT FOUND / DELETED in post-delete inventory."
+}

@@ -1,0 +1,103 @@
+{
+  "package": "HOST-02",
+  "title": "Final Retirement Execution + Canon Closeout",
+  "status": "FOUNDER DELETION AUTHORIZATION APPROVED",
+  "approval_timestamp": "2026-08-16T11:33:09.805Z",
+  "approver": "Founder & CEO",
+  "evidence_basis": [
+    "host02_pre_retirement_closeout.json",
+    "host02_retirement_hard_gate.json",
+    "host02_retirement_deletion_manifest.json",
+    "host02_oidc_deployment_proof.json",
+    "host02_post_oidc_health_validation.json"
+  ],
+  "approved_resources": {
+    "appServices": [
+      {
+        "name": "app-jm1-one-prod",
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "replacement": "app-jm1-one-prod-v2",
+        "replacementDomain": "https://jmerrill.one/api/health"
+      },
+      {
+        "name": "app-jm1-pub-prod",
+        "resourceGroup": "rg-jm1-pub-prod-appsvc",
+        "replacement": "app-jm1-pub-prod-v2",
+        "replacementDomain": "https://jmerrill.pub/api/health"
+      },
+      {
+        "name": "app-jm1-fin-prod",
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "replacement": "app-jm1-fin-prod-v2",
+        "replacementDomain": "https://jmerrill.financial/api/health"
+      },
+      {
+        "name": "app-jm1-foundation-prod",
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "replacement": "app-jm1-foundation-prod-v2",
+        "replacementDomain": "https://jmerrill.foundation/api/health"
+      },
+      {
+        "name": "app-jm1-productions-prod",
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "replacement": "app-jm1-productions-prod-v2",
+        "replacementDomain": "https://jmerrill.productions/api/health"
+      },
+      {
+        "name": "app-jm1-jackiesmithjr-prod",
+        "resourceGroup": "rg-jm1-web-prod-appsvc",
+        "replacement": "app-jm1-jackiesmithjr-prod-v2",
+        "replacementDomain": "https://jackiesmithjr.com/api/health"
+      }
+    ],
+    "plans": [
+      {
+        "name": "asp-jm1-web-prod-linux",
+        "resourceGroup": "rg-jm1-web-prod-appsvc"
+      },
+      {
+        "name": "asp-jm1-pub-prod-linux",
+        "resourceGroup": "rg-jm1-pub-prod-appsvc"
+      }
+    ],
+    "staticWebApps": [
+      {
+        "name": "jmerrill-one",
+        "resourceGroup": "jmerrill-one"
+      },
+      {
+        "name": "jmerrill-financial",
+        "resourceGroup": "jmerrill-financial_group"
+      },
+      {
+        "name": "foundation-main",
+        "resourceGroup": "jm1-core-services"
+      },
+      {
+        "name": "jmerrill-productions",
+        "resourceGroup": "jmerrill-productions-rg"
+      },
+      {
+        "name": "jackiesmithjr",
+        "resourceGroup": "jm1-core-services"
+      }
+    ]
+  },
+  "prohibition": "No resource outside this exact manifest may be deleted under HOST-02 final retirement authorization.",
+  "replacement_estate": {
+    "resource_group": "rg-jm1-web-prod-premium",
+    "plan": "asp-jm1-web-prod-premium",
+    "sku": "P1mv3",
+    "workers": 1,
+    "apps": [
+      "app-jm1-one-prod-v2",
+      "app-jm1-pub-prod-v2",
+      "app-jm1-fin-prod-v2",
+      "app-jm1-foundation-prod-v2",
+      "app-jm1-productions-prod-v2",
+      "app-jm1-jackiesmithjr-prod-v2"
+    ]
+  },
+  "rollback_observation_result": "Rollback hold cleared by Founder deletion authorization after v2 public production validation.",
+  "dependency_gate_result": "APPROVED MANIFEST ONLY; independently safe candidates may be deleted; unsafe candidates must be skipped."
+}

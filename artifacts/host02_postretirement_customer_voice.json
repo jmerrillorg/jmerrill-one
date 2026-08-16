@@ -1,0 +1,94 @@
+{
+  "created_at": "2026-08-16T11:45:49.996Z",
+  "routes": [
+    {
+      "brand": "One",
+      "url": "https://jmerrill.one/contact",
+      "evidence": "contact route retained",
+      "probe": {
+        "url": "https://jmerrill.one/contact",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.one/contact",
+        "time_total_seconds": 0.252681,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" imageSrcSet=\"/_next/image?url=%2Fweb-app-manifest-512x512.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fweb-app-manifest-512x512.png&amp;w=64&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/135f_ondqo7~y.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/045g~0~zva_mv.js\"/><script src=\"/_next/static/chunks/0dgq26a5_oy.a.js\" async=\"\"></script><script src=\"/_next/static/chunks/0vkgb7xyv-nko.js\" async=\"\"></script><script src=\"/_next/static/chunks/0257pdz1-imal.js\" async=\"\"></script><script src=\"/_next/static/chunks/turbopack-0zpnfhr1gt6zd.js\" async=\"\"></script><script src=\"/_next/static/chunks/01xlw8hd842-c.js\" async=\"\"></script><script src=\"/_next/static/chunks/0d3shmwh5_nmn.js\" async=\"\"></script><script src=\"/_next/static/chunks/03.vdv06002sm.js\" async=\"\"></script><script src=\"/_next/static/chunks/0q.pp.g4ekyo-.js\" async=\"\"></script><link rel=\"preload\" href=\"https://fonts.googleapis.com"
+      },
+      "customer_voice_link_present": false,
+      "route_reachable": true,
+      "route_result": "PASS"
+    },
+    {
+      "brand": "Publishing",
+      "url": "https://jmerrill.pub/experience",
+      "evidence": "experience route retained",
+      "probe": {
+        "url": "https://jmerrill.pub/experience",
+        "ok": true,
+        "status": 307,
+        "effective_url": "https://jmerrill.pub/experience",
+        "time_total_seconds": 0.29761,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-a9a78e5936e4d970.js\"/><script src=\"/_next/static/chunks/fd9d1056-71ac27f956e1f29b.js\" async=\"\"></script><script src=\"/_next/static/chunks/2117-ebe4d9c10c5446df.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-e4fafa20ca0cceb3.js\" async=\"\"></script><title>Share Your Experience — J Merrill Publishing, Inc.</title><meta name=\"description\" content=\"Share privacy-minimized feedback about your author experience with J Merrill Publishing.\"/><meta name=\"author\" content=\"Jackie Smith, Jr.\"/><meta name=\"keywords\" content=\"full-service publisher,book publishing,self publishing,J Merrill Publishing,helping authors help themselves,book editing,book design,audiobook production,faith publishing,Christian publishing,Columbus Ohio publisher\"/><meta name=\"creator\" content=\"J Merrill Publishing, Inc.\"/><meta name=\"publisher\" content=\"J Merrill Publishing, Inc.\"/><meta name=\"robots\" content=\"index, follow\"/><meta property=\"og:title\" content=\"J Merrill Publishing, "
+      },
+      "customer_voice_link_present": true,
+      "route_reachable": true,
+      "route_result": "PASS"
+    },
+    {
+      "brand": "Financial",
+      "url": "https://jmerrill.financial/experience/",
+      "evidence": "experience route retained",
+      "probe": {
+        "url": "https://jmerrill.financial/experience/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.financial/experience",
+        "time_total_seconds": 0.309159,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/550ee988dce2bd84.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-f5b57f0f9e0b50b2.js\"/><script src=\"/_next/static/chunks/2200cc46-d0e20da8041422bb.js\" async=\"\"></script><script src=\"/_next/static/chunks/945-33c1a29afc1d1c39.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-51dff64ac84aac4e.js\" async=\"\"></script><script src=\"/_next/static/chunks/498-0ddd1ae1485a8971.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/experience/page-5e262f8c31021622.js\" async=\"\"></script><script src=\"/_next/static/chunks/769-2c63f39f1cf70184.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-98a67195fb14fe5e.js\" async=\"\"></script><title>Share Your Experience - J Merrill Financial — J Merrill Financial</title><meta name=\"description\" content=\"Share privacy-bounded feedback about your J Merrill Financial experience.\"/><meta property=\"og:title\" content=\"Share Your Experience - J Merrill Financial — J Merrill Financial\"/><met"
+      },
+      "customer_voice_link_present": true,
+      "route_reachable": true,
+      "route_result": "PASS"
+    },
+    {
+      "brand": "Foundation",
+      "url": "https://jmerrill.foundation/share-your-experience/",
+      "evidence": "share-your-experience route retained",
+      "probe": {
+        "url": "https://jmerrill.foundation/share-your-experience/",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.foundation/share-your-experience",
+        "time_total_seconds": 0.473155,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/6b686d2dac06cd2d.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-6a2699e37ccf3367.js\"/><script src=\"/_next/static/chunks/e6e143be-09cc978d7655c1e5.js\" async=\"\"></script><script src=\"/_next/static/chunks/660-64c46ae3248a7c2c.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-12a1558cdf370ab6.js\" async=\"\"></script><script src=\"/_next/static/chunks/547-df761ae28cc18f65.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-ae42c857b3a4f2d3.js\" async=\"\"></script><title>Share Your Experience | J Merrill Foundation Inc.</title><meta name=\"description\" content=\"Share feedback with J Merrill Foundation about a program, volunteer experience, donation experience, participant experience, or sponsor partnership.\"/><meta name=\"author\" content=\"J Merrill Foundation Inc.\"/><meta name=\"keywords\" content=\"literacy,Columbus Ohio,nonprofit,community,education,children,reading\"/><meta name=\"robots\" content=\"index, follow\"/><meta propert"
+      },
+      "customer_voice_link_present": true,
+      "route_reachable": true,
+      "route_result": "PASS"
+    },
+    {
+      "brand": "Productions",
+      "url": "https://jmerrill.productions/contact",
+      "evidence": "contact page exposes Customer Voice project experience link",
+      "probe": {
+        "url": "https://jmerrill.productions/contact",
+        "ok": true,
+        "status": 200,
+        "effective_url": "https://jmerrill.productions/contact",
+        "time_total_seconds": 0.249912,
+        "pass": true,
+        "body_excerpt": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/logo.png\"/><link rel=\"stylesheet\" href=\"/_next/static/css/871f30e74fb5cefc.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-2be3342c444c116d.js\"/><script src=\"/_next/static/chunks/3e381281-b10723ea030a4535.js\" async=\"\"></script><script src=\"/_next/static/chunks/763-a6defc6f3c3cb1cb.js\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-58bfbafacc6f0356.js\" async=\"\"></script><script src=\"/_next/static/chunks/575-c634105e83af2ca1.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/contact/page-5d04bccf9d94737a.js\" async=\"\"></script><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"/><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"anonymous\"/><meta name=\"theme-color\" content=\"#1A0F05\"/><title>Contact | J Merrill Productions</title><meta name=\"description\" content=\"Start a production conversation with J Merrill Productions.\"/><link rel=\"manifest\" href=\"/site.webmanifest\" crossorigin=\"use-credentials\"/><meta pr"
+      },
+      "customer_voice_link_present": false,
+      "route_reachable": true,
+      "route_result": "PASS"
+    }
+  ],
+  "jackie": "NOT ACTIVATED - per canon/current scope",
+  "customer_voice_modified": false,
+  "result": "PASS",
+  "validation_basis": "Public feedback entry routes remain reachable after retirement; Customer Voice configuration was not modified. One and Productions are recorded as route-level entry checks where direct Customer Voice link text is not exposed in static HTML probe."
+}
