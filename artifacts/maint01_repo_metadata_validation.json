@@ -1,0 +1,75 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS_WITH_EXCEPTIONS",
+  "repos": [
+    {
+      "repo": "jmerrill-one",
+      "purpose": "Enterprise/shared governance, shared platform standards, enterprise orchestration, One website.",
+      "canonical_url": "https://jmerrill.one",
+      "deployment_target": "app-jm1-one-prod-v2",
+      "runtime": "Node 24 where website runtime applies per HOST-02",
+      "owner": "jmerrillorg / domain owner",
+      "evidence_location": "repo-local artifacts/ for domain evidence; One only for enterprise orchestration",
+      "branch_policy": "main is production; codex/* for work branches",
+      "metadata_update": "none performed"
+    },
+    {
+      "repo": "jmerrill-pub",
+      "purpose": "Publishing-owned code, workflow, evidence, canon, artifacts.",
+      "canonical_url": "https://jmerrill.pub",
+      "deployment_target": "app-jm1-pub-prod-v2",
+      "runtime": "Node 24 where website runtime applies per HOST-02",
+      "owner": "jmerrillorg / domain owner",
+      "evidence_location": "repo-local artifacts/ for domain evidence; One only for enterprise orchestration",
+      "branch_policy": "main is production; codex/* for work branches",
+      "metadata_update": "none performed"
+    },
+    {
+      "repo": "jmerrill-financial",
+      "purpose": "Financial-owned code, evidence, governance, runtime, operations.",
+      "canonical_url": "https://jmerrill.financial",
+      "deployment_target": "app-jm1-fin-prod-v2 + func-jm1-fin-prod backend",
+      "runtime": "Node 24 where website runtime applies per HOST-02",
+      "owner": "jmerrillorg / domain owner",
+      "evidence_location": "repo-local artifacts/ for domain evidence; One only for enterprise orchestration",
+      "branch_policy": "main is production; codex/* for work branches",
+      "metadata_update": "none performed"
+    },
+    {
+      "repo": "jmerrillfoundation",
+      "purpose": "Foundation-owned code, evidence, domain artifacts.",
+      "canonical_url": "https://jmerrill.foundation",
+      "deployment_target": "app-jm1-foundation-prod-v2",
+      "runtime": "Node 24 where website runtime applies per HOST-02",
+      "owner": "jmerrillorg / domain owner",
+      "evidence_location": "repo-local artifacts/ for domain evidence; One only for enterprise orchestration",
+      "branch_policy": "main is production; codex/* for work branches",
+      "metadata_update": "none performed"
+    },
+    {
+      "repo": "jmerrill-productions",
+      "purpose": "Productions-owned code, evidence, domain artifacts.",
+      "canonical_url": "https://jmerrill.productions",
+      "deployment_target": "app-jm1-productions-prod-v2",
+      "runtime": "Node 24 where website runtime applies per HOST-02",
+      "owner": "jmerrillorg / domain owner",
+      "evidence_location": "repo-local artifacts/ for domain evidence; One only for enterprise orchestration",
+      "branch_policy": "main is production; codex/* for work branches",
+      "metadata_update": "none performed"
+    },
+    {
+      "repo": "jackiesmithjr",
+      "purpose": "Founder Brand-owned public site/content/artifacts.",
+      "canonical_url": "https://jackiesmithjr.com",
+      "deployment_target": "app-jm1-jackiesmithjr-prod-v2",
+      "runtime": "Node 24 where website runtime applies per HOST-02",
+      "owner": "jmerrillorg / domain owner",
+      "evidence_location": "repo-local artifacts/ for domain evidence; One only for enterprise orchestration",
+      "branch_policy": "main is production; codex/* for work branches",
+      "metadata_update": "none performed"
+    }
+  ],
+  "exceptions": [
+    "README/metadata not rewritten where repo-local readback was not fetched."
+  ]
+}

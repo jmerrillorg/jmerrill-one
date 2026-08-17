@@ -1,0 +1,183 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "UNKNOWN - EXCHANGE DISCOVERY REQUIRED",
+  "mailboxes": [
+    {
+      "address": "a0338273-c879-452f-b539-a300faacbb66@jmerrillfoundation.onmicrosoft.com",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "accounting@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "appointments@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "board@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "chosen2k7@gmail.com",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "contacts@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "LEGACY OR DISABLED - RETAIN PENDING PROOF"
+    },
+    {
+      "address": "donations@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "LEGACY OR DISABLED - RETAIN PENDING PROOF"
+    },
+    {
+      "address": "email@thechapelofpeace.com",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "financial@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "foundation@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "jackie@jmerrillfoundation.onmicrosoft.com",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "JMerrillFinancial@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "JMerrillFoundation@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "JMerrillPublishing@jmerrill.one",
+      "purpose": "human or guest / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "JMerrillPublishingBookings@jmerrill.one",
+      "purpose": "human or guest / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "no-reply@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "productions@jmerrill.one",
+      "purpose": "human or guest / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "publishing@jmerrill.one",
+      "purpose": "human or guest / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "ACTIVE OPERATIONAL"
+    },
+    {
+      "address": "voice-financial@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "LEGACY OR DISABLED - RETAIN PENDING PROOF"
+    },
+    {
+      "address": "voice-foundation@jmerrill.one",
+      "purpose": "organizational identity / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "LEGACY OR DISABLED - RETAIN PENDING PROOF"
+    },
+    {
+      "address": "voice-productions@jmerrill.one",
+      "purpose": "human or guest / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "LEGACY OR DISABLED - RETAIN PENDING PROOF"
+    },
+    {
+      "address": "voice-publishing@jmerrill.one",
+      "purpose": "human or guest / review",
+      "division": "inferred from address",
+      "delegates": "UNKNOWN",
+      "recent_mail_activity": "UNKNOWN",
+      "classification": "LEGACY OR DISABLED - RETAIN PENDING PROOF"
+    }
+  ],
+  "note": "Graph user inventory identifies mail-like identities but not true shared mailbox type/delegates/rules."
+}

@@ -1,0 +1,74 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS_WITH_REVIEW_ITEMS",
+  "worktrees": [
+    {
+      "raw": "worktree /Volumes/UsersExternal/Developer/jmerrill-one\nHEAD 3378dd791dee9efb2e0131ae4b3ce485c4d1017a\nbranch refs/heads/codex/why-first-targeted-cleanup-jmerrill-one",
+      "classification": "STALE - REVIEW"
+    },
+    {
+      "raw": "worktree /Users/jmerrillone/.codex/worktrees/2018/jmerrill-one\nHEAD 4fc12d5c21e2ab90d2e17edb8130709cd83db84e\nbranch refs/heads/codex/maint01-estate-rationalization",
+      "classification": "ACTIVE - RETAIN"
+    }
+  ],
+  "branches": [
+    {
+      "name": "codex/host01-hosting-verification",
+      "upstream": "origin/codex/host01-hosting-verification",
+      "date": "2026-08-14 18:18:03 -0400",
+      "sha": "25935b7",
+      "subject": "Add HOST-01 hosting verification closeout",
+      "classification": "ACTIVE - RETAIN"
+    },
+    {
+      "name": "codex/host02-appservice-migration-gate",
+      "upstream": "origin/codex/host02-appservice-migration-gate",
+      "date": "2026-08-16 04:19:11 -0400",
+      "sha": "7a4c371",
+      "subject": "Record HOST-02 final deployment proof and retirement manifest",
+      "classification": "ACTIVE - RETAIN"
+    },
+    {
+      "name": "codex/host02-final-retirement-closeout",
+      "upstream": "origin/codex/host02-final-retirement-closeout",
+      "date": "2026-08-16 07:49:40 -0400",
+      "sha": "4a72328",
+      "subject": "Close HOST-02 final retirement",
+      "classification": "ACTIVE - RETAIN"
+    },
+    {
+      "name": "codex/maint01-estate-rationalization",
+      "upstream": "origin/main",
+      "date": "2026-08-16 07:50:16 -0400",
+      "sha": "4fc12d5",
+      "subject": "Close HOST-02 final retirement (#5)",
+      "classification": "ACTIVE - RETAIN"
+    },
+    {
+      "name": "codex/why-first-audit-jmerrill-one",
+      "upstream": "origin/codex/why-first-audit-jmerrill-one",
+      "date": "2026-06-09 04:16:17 -0400",
+      "sha": "98b3bca",
+      "subject": "docs: add why-first audit for jmerrill.one",
+      "classification": "ACTIVE - RETAIN"
+    },
+    {
+      "name": "codex/why-first-targeted-cleanup-jmerrill-one",
+      "upstream": "origin/codex/why-first-targeted-cleanup-jmerrill-one",
+      "date": "2026-06-09 04:54:28 -0400",
+      "sha": "3378dd7",
+      "subject": "chore: lock in jackie governance decisions",
+      "classification": "ACTIVE - RETAIN"
+    },
+    {
+      "name": "main",
+      "upstream": "origin/main",
+      "date": "2026-08-13 08:07:50 -0400",
+      "sha": "5eff879",
+      "subject": "Close BP-12A admin debt pass",
+      "classification": "ACTIVE - RETAIN"
+    }
+  ],
+  "safe_removals_executed": [],
+  "notes": "No uncommitted worktrees or local branches were deleted. Generated dist cleanup is recorded separately."
+}
