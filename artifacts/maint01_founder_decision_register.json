@@ -1,0 +1,70 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "decisions": [
+    {
+      "current_state": [
+        "HQ/JMerrillOne",
+        "ImplementationHQ"
+      ],
+      "recommendation": "Choose one authoritative location; archive/reference the other.",
+      "consequence": "Determines future consolidation/retirement wave scope",
+      "cost_security_impact": "complexity/security reduction; no immediate destructive action",
+      "affected_objects": [
+        "HQ/JMerrillOne",
+        "ImplementationHQ"
+      ]
+    },
+    {
+      "current_state": [
+        "accounting@jmerrill.one",
+        "board@jmerrill.one",
+        "donations@jmerrill.one",
+        "grants@jmerrill.one",
+        "legal@jmerrill.one",
+        "media@jmerrill.one",
+        "preneeds@jmerrill.one",
+        "royalties@jmerrill.one",
+        "submissions@jmerrill.one",
+        "tech@jmerrill.one",
+        "volunteers@jmerrill.one",
+        "contacts@jmerrill.one"
+      ],
+      "recommendation": "Retain public/automation identities; decide internal operational aliases.",
+      "consequence": "Determines future consolidation/retirement wave scope",
+      "cost_security_impact": "complexity/security reduction; no immediate destructive action",
+      "affected_objects": [
+        "accounting@jmerrill.one",
+        "board@jmerrill.one",
+        "donations@jmerrill.one",
+        "grants@jmerrill.one",
+        "legal@jmerrill.one",
+        "media@jmerrill.one",
+        "preneeds@jmerrill.one",
+        "royalties@jmerrill.one",
+        "submissions@jmerrill.one",
+        "tech@jmerrill.one",
+        "volunteers@jmerrill.one",
+        "contacts@jmerrill.one"
+      ]
+    },
+    {
+      "current_state": [
+        "Voicemail",
+        "Marketing",
+        "Sales",
+        "Events",
+        "Projects"
+      ],
+      "recommendation": "Preserve until files/mailbox/planner reviewed, then archive if no collaboration need.",
+      "consequence": "Determines future consolidation/retirement wave scope",
+      "cost_security_impact": "complexity/security reduction; no immediate destructive action",
+      "affected_objects": [
+        "Voicemail",
+        "Marketing",
+        "Sales",
+        "Events",
+        "Projects"
+      ]
+    }
+  ]
+}

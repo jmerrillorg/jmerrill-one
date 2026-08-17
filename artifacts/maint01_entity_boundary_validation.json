@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE",
+  "objects": [
+    {
+      "object": "J Merrill One",
+      "classification": "ENTERPRISE SHARED"
+    },
+    {
+      "object": "J Merrill Publishing",
+      "classification": "DIVISION OWNED"
+    },
+    {
+      "object": "J Merrill Financial",
+      "classification": "DIVISION OWNED"
+    },
+    {
+      "object": "J Merrill Foundation",
+      "classification": "DIVISION OWNED"
+    },
+    {
+      "object": "J Merrill Productions",
+      "classification": "DIVISION OWNED"
+    },
+    {
+      "object": "Jackie Smith Jr.",
+      "classification": "FOUNDER BRAND"
+    }
+  ]
+}

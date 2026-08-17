@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "validations": [
+    "mail delivery",
+    "public contact paths",
+    "Bookings",
+    "Teams access",
+    "SharePoint content and links",
+    "Power Automate ownership",
+    "Dataverse app users",
+    "Dynamics apps",
+    "GitHub/OIDC deployment",
+    "App Service health",
+    "Functions health",
+    "Customer Voice public URLs",
+    "six websites smoke"
+  ]
+}

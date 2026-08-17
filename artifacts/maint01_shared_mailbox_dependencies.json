@@ -1,0 +1,122 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE",
+  "mailboxes": [
+    {
+      "primary_smtp": "logging@jmerrill.one",
+      "classification": "AUTOMATION IDENTITY",
+      "public_references": [],
+      "automation_signal": "name-pattern automation signal",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "accounting@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "board@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "donations@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "grants@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "info@jmerrill.one",
+      "classification": "PUBLIC COMMUNICATION IDENTITY",
+      "public_references": [
+        "https://jmerrill.one/contact"
+      ],
+      "automation_signal": "none observed",
+      "github_or_website_refs": [
+        "https://jmerrill.one/contact"
+      ]
+    },
+    {
+      "primary_smtp": "legal@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "media@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "notifications@jmerrill.one",
+      "classification": "AUTOMATION IDENTITY",
+      "public_references": [],
+      "automation_signal": "name-pattern automation signal",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "preneeds@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "royalties@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "submissions@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "tech@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "volunteers@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "contacts@jmerrill.one",
+      "classification": "INTERNAL OPERATIONS",
+      "public_references": [],
+      "automation_signal": "none observed",
+      "github_or_website_refs": []
+    },
+    {
+      "primary_smtp": "no-reply@jmerrill.one",
+      "classification": "AUTOMATION IDENTITY",
+      "public_references": [],
+      "automation_signal": "name-pattern automation signal",
+      "github_or_website_refs": []
+    }
+  ]
+}

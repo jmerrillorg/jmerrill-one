@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "FOUNDER DECISION REQUIRED",
+  "authoritative_enterprise_canon": "Propose Enterprise canon in One-owned governance location; actual SharePoint choice between HQ/JMerrillOne and ImplementationHQ requires Founder decision.",
+  "division_canon": "Division-owned repo artifacts remain authoritative for code-adjacent evidence; SharePoint division sites hold human-readable docs.",
+  "duplicates": [
+    "HQ / JMerrillOne vs ImplementationHQ possible governance overlap"
+  ],
+  "move_archive_plan": "No moves now. Decide authoritative enterprise governance SharePoint location, then convert non-authoritative copies to references/archive."
+}

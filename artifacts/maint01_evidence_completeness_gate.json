@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "domains": {
+    "GitHub": "COMPLETE",
+    "Repositories": "COMPLETE",
+    "SharePoint Sites": "COMPLETE WITH DOCUMENTED LIMITATION",
+    "SharePoint Libraries": "COMPLETE WITH DOCUMENTED LIMITATION",
+    "Teams": "COMPLETE",
+    "M365 Groups": "COMPLETE",
+    "Security Groups": "COMPLETE",
+    "Exchange Mailboxes": "COMPLETE",
+    "Mail-Enabled Groups": "COMPLETE",
+    "Users": "COMPLETE",
+    "Licensing": "COMPLETE WITH DOCUMENTED LIMITATION",
+    "Service Accounts": "COMPLETE",
+    "App Registrations": "COMPLETE",
+    "Service Principals": "COMPLETE",
+    "Dependencies": "BLOCKING"
+  },
+  "blocking_reason": "Standalone SharePoint inventory and usage reports remain unavailable, and no destructive actions meet hard gate. This blocks Founder-confirmable destructive cleanup, not non-destructive standards/plans."
+}

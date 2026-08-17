@@ -1,0 +1,745 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "users": 43,
+  "teams": 14,
+  "m365_groups": 26,
+  "sharepoint_sites": 16,
+  "libraries": 27,
+  "mailboxes": 16,
+  "app_registrations": 112,
+  "edges": {
+    "team_group_sharepoint": [
+      {
+        "team": "Publishing Team",
+        "group": "b650caa6-324c-4be1-b491-57ab1aee7c4e",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/publishing",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/publishing/Shared%20Documents",
+        "mailbox": "publishing-team@jmerrill.one"
+      },
+      {
+        "team": "Voicemail",
+        "group": "8876abb0-9a18-47ad-99ea-7381912a6785",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/voicemail",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/voicemail/Shared%20Documents",
+        "mailbox": "voicemail@jmerrill.pub"
+      },
+      {
+        "team": "Support",
+        "group": "5d87be95-7d8a-46bd-a9ce-13830496462f",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/support",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/support/Shared%20Documents",
+        "mailbox": "support@jmerrill.one"
+      },
+      {
+        "team": "Marketing",
+        "group": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/marketing",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/marketing/Shared%20Documents",
+        "mailbox": "marketing@jmerrill.one"
+      },
+      {
+        "team": "Sales",
+        "group": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/sales/Shared%20Documents",
+        "mailbox": "sales@jmerrill.one"
+      },
+      {
+        "team": "Events",
+        "group": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/events",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/events/Shared%20Documents",
+        "mailbox": "events@jmerrill.one"
+      },
+      {
+        "team": "Projects",
+        "group": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/projects/Shared%20Documents",
+        "mailbox": "projects@jmerrill.one"
+      },
+      {
+        "team": "Financial Team",
+        "group": "2bab67a1-48de-4bde-aaa9-8094e2314f25",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/financial",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/financial/Shared%20Documents",
+        "mailbox": "financial-team@jmerrill.one"
+      },
+      {
+        "team": "Productions Team",
+        "group": "69104c8b-a1dc-4943-a18d-0d823324a7ab",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/productions",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/productions/Shared%20Documents",
+        "mailbox": "productions-team@jmerrill.one"
+      },
+      {
+        "team": "Foundation Team",
+        "group": "46e10463-2d7a-44a6-a238-71829f3e8650",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div/Shared%20Documents",
+        "mailbox": "foundation-team@jmerrill.one"
+      },
+      {
+        "team": "HQ",
+        "group": "abcd0663-047e-4335-97dc-4836a3cf7600",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne/Shared%20Documents",
+        "mailbox": "JMerrillOne@jmerrill.one"
+      },
+      {
+        "team": "Implementation HQ",
+        "group": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ/Shared%20Documents",
+        "mailbox": "ImplementationHQ@jmerrill.one"
+      },
+      {
+        "team": "Agape International Cathedral",
+        "group": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC/Shared%20Documents",
+        "mailbox": "AgapeIC@jmerrill.one"
+      },
+      {
+        "team": "Security & Compliance",
+        "group": "67d9ef01-be93-42c6-a9d8-fa6c0597d936",
+        "site": "https://jmerrillfoundation.sharepoint.com/sites/security",
+        "drive": "https://jmerrillfoundation.sharepoint.com/sites/security/Shared%20Documents",
+        "mailbox": "security@jmerrill.one"
+      }
+    ],
+    "public_mailbox_refs": [
+      {
+        "mailbox": "info@jmerrill.one",
+        "refs": [
+          "https://jmerrill.one/contact"
+        ]
+      }
+    ],
+    "github_oidc_apps": [
+      {
+        "app": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+        "app_id": "d396d263-ceb3-49af-b8cc-d8e60c15f2ac",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/cfb11e9d-28a5-f37c-a7c9-c8ac9e5343c5",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/cfb11e9d-28a5-f37c-a7c9-c8ac9e5343c5"
+        ]
+      },
+      {
+        "app": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+        "app_id": "ea9e5801-044c-45de-9804-79bede3e2350",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/03995f80-5fdc-4dba-7e9b-ab3383b477e3",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/03995f80-5fdc-4dba-7e9b-ab3383b477e3"
+        ]
+      },
+      {
+        "app": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+        "app_id": "f5f88572-d57c-4d4c-bb0e-c4db0ebfa036",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/75b2d5fc-bf9e-37c6-4f88-ac22c5f765d4",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/75b2d5fc-bf9e-37c6-4f88-ac22c5f765d4"
+        ]
+      },
+      {
+        "app": "Site 1 bot (Microsoft Copilot Studio)",
+        "app_id": "3d69ef01-c168-4fde-b861-5faaad32e20b",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8373acce-0b3c-6e9b-37a9-5af40b8e022c",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8373acce-0b3c-6e9b-37a9-5af40b8e022c"
+        ]
+      },
+      {
+        "app": "JM1 Operations Copilot (Microsoft Copilot Studio)",
+        "app_id": "cfaabd68-eba8-47f3-8fee-6f29ea49a78a",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/2852e7c9-47c0-c56d-8a8b-92504ca19113",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/2852e7c9-47c0-c56d-8a8b-92504ca19113"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+        "app_id": "39102281-e5c2-4830-bc80-4705eabc5904",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8be557da-244c-b116-3678-b39f2224bfa9",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8be557da-244c-b116-3678-b39f2224bfa9"
+        ]
+      },
+      {
+        "app": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+        "app_id": "b53a6e98-b717-451d-a9c9-f602d105fd8d",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/d866119a-95e4-ab21-5cb4-53a9aa07f605",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/d866119a-95e4-ab21-5cb4-53a9aa07f605"
+        ]
+      },
+      {
+        "app": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+        "app_id": "b0de42f7-f76c-4a15-8bb1-fbc82fb304dc",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/c4c56768-48ec-4aff-c328-37ac4638370b",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/c4c56768-48ec-4aff-c328-37ac4638370b"
+        ]
+      },
+      {
+        "app": "Copilot in Dynamics 365 Sales (Microsoft Copilot Studio)",
+        "app_id": "8a52cdb4-a0e5-40bc-9960-f214e3a1d454",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/52c733a9-f30a-50b8-bd91-db2d8427e454",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/52c733a9-f30a-50b8-bd91-db2d8427e454"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+        "app_id": "f351b554-e1d1-446a-9592-6cdb9f422d6c",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/4350214b-fbaa-3e72-2bcf-64ce77a92daf",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/4350214b-fbaa-3e72-2bcf-64ce77a92daf"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+        "app_id": "32471baa-c4e8-4592-b3e3-e38312d81978",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/0c0bfafd-bb25-7534-c420-ce6819f69459",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/0c0bfafd-bb25-7534-c420-ce6819f69459"
+        ]
+      },
+      {
+        "app": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+        "app_id": "6078abb5-139d-46c3-9046-6d5b0a8cdd8c",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/cef8bd2d-a808-f34c-2fae-1837b7e85451",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/cef8bd2d-a808-f34c-2fae-1837b7e85451"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+        "app_id": "e08e2032-1ec8-4641-ba81-bf31fb507f52",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/42528262-6a25-e8ef-f82d-cd0bce583de9",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/42528262-6a25-e8ef-f82d-cd0bce583de9"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+        "app_id": "f925efcf-162e-476d-b490-d9a1cf687453",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/5b13d377-985b-b8f9-e107-284d5d061efc",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/5b13d377-985b-b8f9-e107-284d5d061efc"
+        ]
+      },
+      {
+        "app": "Customization Agent (Microsoft Copilot Studio)",
+        "app_id": "8df442ae-81d6-49c2-b6af-bb6a2eacba76",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/a537d5f1-5929-1f2f-03fa-ab0dc0ac5cb0",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/a537d5f1-5929-1f2f-03fa-ab0dc0ac5cb0"
+        ]
+      },
+      {
+        "app": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+        "app_id": "c5082d1d-bda3-4d0d-9560-da125dbb83b0",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/da011fc5-e97a-5d8c-19de-12f3bca65820",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/da011fc5-e97a-5d8c-19de-12f3bca65820"
+        ]
+      },
+      {
+        "app": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+        "app_id": "33f8e9f0-f982-4e88-98c4-97a44fcf8a1a",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/465003ca-e074-8c99-c618-3d8e4eb1bd23",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/465003ca-e074-8c99-c618-3d8e4eb1bd23"
+        ]
+      },
+      {
+        "app": "AIC Website GitHub Actions",
+        "app_id": "0fbf4a5c-b8ac-4572-aecd-128539a698d9",
+        "subjects": [
+          "repo:jmerrillorg/aic-online:ref:refs/heads/main"
+        ]
+      },
+      {
+        "app": "jm1-pub-github-actions-oidc",
+        "app_id": "97891ed1-6623-487c-b890-633bea440e22",
+        "subjects": [
+          "repo:jmerrillorg/jackiesmithjr:environment:production",
+          "repo:jmerrillorg/jmerrill-productions:environment:production",
+          "repo:jmerrillorg/jmerrillfoundation:environment:production",
+          "repo:jmerrillorg/jmerrill-financial:environment:production",
+          "repo:jmerrillorg/jmerrill-pub:environment:production",
+          "repo:jmerrillorg/jmerrill-one:environment:production",
+          "repo:jmerrillorg/jmerrill-pub:environment:jm1-power-platform-production",
+          "repo:jmerrillorg/jmerrill-pub:environment:jmerrill-pub-production",
+          "repo:jmerrillorg/jmerrill-pub:environment:jmerrill-pub-staging"
+        ]
+      },
+      {
+        "app": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+        "app_id": "2c316bc5-d30a-4bd3-a9ff-a6a5be715362",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/3113caf8-93aa-b639-04fe-979432ff569d",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/3113caf8-93aa-b639-04fe-979432ff569d"
+        ]
+      },
+      {
+        "app": "Customization Agent (Microsoft Copilot Studio)",
+        "app_id": "8d883f37-c6a2-4de5-b8df-7d7c52b44bb7",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/17201fb2-714d-c2c0-dc36-4e8cfad22ddc",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/17201fb2-714d-c2c0-dc36-4e8cfad22ddc"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+        "app_id": "cc0f90de-5451-45ee-bac2-401d67287c4a",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/68ad7b29-748a-b493-2ed5-88d24597562c",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/68ad7b29-748a-b493-2ed5-88d24597562c"
+        ]
+      },
+      {
+        "app": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+        "app_id": "80c16230-3536-4eda-a19c-6d4e4bc566b5",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/0d5ad8f7-2a0a-95e1-a33d-b7df7ca7dd8b",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/0d5ad8f7-2a0a-95e1-a33d-b7df7ca7dd8b"
+        ]
+      },
+      {
+        "app": "Agent (Microsoft Copilot Studio)",
+        "app_id": "276efa2c-67ce-4aea-8142-5ca3b2166209",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/a38ed9e2-b45f-4ab4-7f1c-026f730d182f",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/a38ed9e2-b45f-4ab4-7f1c-026f730d182f"
+        ]
+      },
+      {
+        "app": "Stakeholder Agent (Microsoft Copilot Studio)",
+        "app_id": "1b36bdf5-39b8-4376-b7b7-7872edfa094b",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/2f5d28ef-a6eb-6e4a-c97b-db9a190dc6e5",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/2f5d28ef-a6eb-6e4a-c97b-db9a190dc6e5"
+        ]
+      },
+      {
+        "app": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+        "app_id": "5f9fab8f-be53-41c0-93ba-a5de5a7264c3",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/3789f23c-bda7-bf4d-2612-6ba17d58d6b3",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/3789f23c-bda7-bf4d-2612-6ba17d58d6b3"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+        "app_id": "b7c6454b-f04f-4df7-841e-d8c9af4481e8",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/c9a822f2-e133-9b5a-97d7-d87676a21d81",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/c9a822f2-e133-9b5a-97d7-d87676a21d81"
+        ]
+      },
+      {
+        "app": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+        "app_id": "dcf1e4cf-6354-49ac-9ce2-d8c65776bb09",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6f440080-3449-85ff-bab3-819bea2f34ae",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6f440080-3449-85ff-bab3-819bea2f34ae"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+        "app_id": "cc446f3a-6d79-4840-b5dc-a373be459a8b",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6959e1d4-607b-0d9d-0bc1-be42e5cd6184",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6959e1d4-607b-0d9d-0bc1-be42e5cd6184"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+        "app_id": "c7728890-62ff-4f3a-8cb8-8f3965c109c3",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/e5e19206-d5fb-a7c0-5bef-48c7e57c446e",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/e5e19206-d5fb-a7c0-5bef-48c7e57c446e"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+        "app_id": "64af6dfb-4c1b-4081-bebc-635251b495f8",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/83469fd6-9e54-e74d-2834-c541f7b2cb1b",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/83469fd6-9e54-e74d-2834-c541f7b2cb1b"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+        "app_id": "71ef71ac-fa1b-480f-b70d-3d231f77477f",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6ff22a9b-a188-4f82-5ca9-7c6ed695871f",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6ff22a9b-a188-4f82-5ca9-7c6ed695871f"
+        ]
+      },
+      {
+        "app": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+        "app_id": "c24cf2eb-f3a8-43f1-a616-8c5299bbfd37",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/d8c8700b-e5ce-2f97-6455-b030680d2646",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/d8c8700b-e5ce-2f97-6455-b030680d2646"
+        ]
+      },
+      {
+        "app": "Stakeholder Agent (Microsoft Copilot Studio)",
+        "app_id": "57da823e-ecf4-4bfd-a378-180aed817778",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/ae76234a-cce4-143f-a3af-3df3d2e49363",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/ae76234a-cce4-143f-a3af-3df3d2e49363"
+        ]
+      },
+      {
+        "app": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+        "app_id": "1aa1e913-e480-4acd-b603-2f7e89c9aa89",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/1a62c64d-5a71-aba2-434f-fb0dafb88423",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/1a62c64d-5a71-aba2-434f-fb0dafb88423"
+        ]
+      },
+      {
+        "app": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+        "app_id": "cb3e6387-8607-43c0-bb9c-ace2d75b5af2",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/d0b6848d-55f0-f013-de11-46d839a4af21",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/d0b6848d-55f0-f013-de11-46d839a4af21"
+        ]
+      },
+      {
+        "app": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+        "app_id": "b83a1cff-d89b-4d99-9ccd-be0f248de273",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/77175b05-d15d-dbb1-56bc-a3f9ae0df2ad",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/77175b05-d15d-dbb1-56bc-a3f9ae0df2ad"
+        ]
+      },
+      {
+        "app": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+        "app_id": "f3c919ee-c77d-4a6d-80da-6ea30b35623b",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/47454836-9897-d9dd-20f9-43bca5ebc46b",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/47454836-9897-d9dd-20f9-43bca5ebc46b"
+        ]
+      },
+      {
+        "app": "J Merrill Publishing Inquiry bot (Microsoft Copilot Studio)",
+        "app_id": "d58c481d-b994-4145-8297-942109d17141",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6f2c6a61-49f1-deb9-fc8c-5a6477c8471b",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6f2c6a61-49f1-deb9-fc8c-5a6477c8471b"
+        ]
+      },
+      {
+        "app": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+        "app_id": "e4a6e8cf-531f-4d8d-a704-32ba64d6fc59",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/35802e95-c1a1-a2e8-2745-8f4e488779b8",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/35802e95-c1a1-a2e8-2745-8f4e488779b8"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+        "app_id": "ca71cf22-1dde-4c25-9697-b358e65e07d5",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/a760e5a7-b5aa-3735-36e3-80c4f51bc574",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/a760e5a7-b5aa-3735-36e3-80c4f51bc574"
+        ]
+      },
+      {
+        "app": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+        "app_id": "8f1ebb31-d7a7-4872-8e42-d49c296d5759",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/55c97b8a-8dc1-fd1f-eeba-57b76be80e9f",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/55c97b8a-8dc1-fd1f-eeba-57b76be80e9f"
+        ]
+      },
+      {
+        "app": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+        "app_id": "edc80b21-23b1-4de8-911a-994d579f9d95",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/9d1dd507-7de5-b498-4ea3-80251445777b",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/9d1dd507-7de5-b498-4ea3-80251445777b"
+        ]
+      },
+      {
+        "app": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+        "app_id": "829a7932-1824-471e-a71a-e1492f083745",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/e119a779-48bc-9b95-1a66-2211f6599cf5",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/e119a779-48bc-9b95-1a66-2211f6599cf5"
+        ]
+      },
+      {
+        "app": "JM1 Web Presence Agent (Microsoft Copilot Studio)",
+        "app_id": "8dbb2f4e-377e-4c0b-9c7e-b51b0a55502d",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/cd71e40a-0031-6387-c74d-35729af6b34f",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/cd71e40a-0031-6387-c74d-35729af6b34f"
+        ]
+      },
+      {
+        "app": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+        "app_id": "8be564e9-b96a-4173-b170-7f1da7c1477c",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/87d8d191-34ee-3048-eedb-ded6131f794b",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/87d8d191-34ee-3048-eedb-ded6131f794b"
+        ]
+      },
+      {
+        "app": "D365 Sales FIRE Agent - Rating Generator (Microsoft Copilot Studio)",
+        "app_id": "3d969589-8a0c-475b-960c-49554378adc2",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/e605f304-bcba-ed0b-8c37-733c271e7a58",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/e605f304-bcba-ed0b-8c37-733c271e7a58"
+        ]
+      },
+      {
+        "app": "Galicia (Preview) (Microsoft Copilot Studio)",
+        "app_id": "b1e71c43-6bbb-4624-af06-90db5214826e",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/72a43736-01dd-21b5-520f-a46773e6c2d2",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/72a43736-01dd-21b5-520f-a46773e6c2d2"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+        "app_id": "1ac38ad6-c894-4278-a701-a1560d916e49",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/18e362f5-0ff5-05ee-95e7-335cbaea7141",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/18e362f5-0ff5-05ee-95e7-335cbaea7141"
+        ]
+      },
+      {
+        "app": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+        "app_id": "552a8a2a-8fb5-4e95-be16-89cab14f926b",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/9715162f-d2cb-c4c7-656b-bb4d436f0f42",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/9715162f-d2cb-c4c7-656b-bb4d436f0f42"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+        "app_id": "7390d6aa-aafc-469d-9851-ecfdc11d88b3",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/0a25ea6b-058c-da4a-a720-09cac549db37",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/0a25ea6b-058c-da4a-a720-09cac549db37"
+        ]
+      },
+      {
+        "app": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+        "app_id": "a4bfc093-a5d1-4949-b4c7-0fbc065bf041",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/f10d8158-beda-d2de-3a54-4792c2e3d95f",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/f10d8158-beda-d2de-3a54-4792c2e3d95f"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+        "app_id": "2d502402-6d3c-48c9-97c6-946f036629e7",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/73139b22-e8fd-145e-aeb1-814bedbb0f00",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/73139b22-e8fd-145e-aeb1-814bedbb0f00"
+        ]
+      },
+      {
+        "app": "Case Processing Agent (Microsoft Copilot Studio)",
+        "app_id": "29032ff7-338a-4f12-b99e-f8d72a04a6a9",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/be7c6d0c-e4e4-6c78-27a5-20af8f0128ac",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/be7c6d0c-e4e4-6c78-27a5-20af8f0128ac"
+        ]
+      },
+      {
+        "app": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+        "app_id": "91902eb7-eb43-4315-9b65-0b35fbd44b6d",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8c0f3058-1bb1-981e-1c87-2fbfad24ade3",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8c0f3058-1bb1-981e-1c87-2fbfad24ade3"
+        ]
+      },
+      {
+        "app": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+        "app_id": "1601c074-0566-458f-bc46-ec10b9fcadbe",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/17a071c1-0a6e-a59f-a86d-6b2863894bcd",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/17a071c1-0a6e-a59f-a86d-6b2863894bcd"
+        ]
+      },
+      {
+        "app": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+        "app_id": "f3c5e97b-8c4c-4991-b389-2084c46f4d78",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/91805da9-0358-cf78-cc6b-32885173465e",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/91805da9-0358-cf78-cc6b-32885173465e"
+        ]
+      },
+      {
+        "app": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+        "app_id": "67ee1148-cef4-454a-a9ff-132a907f11a2",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8b13e85d-92fa-c996-2381-c2ff10b565c3",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8b13e85d-92fa-c996-2381-c2ff10b565c3"
+        ]
+      },
+      {
+        "app": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+        "app_id": "93b14ed8-ab0f-4bef-b3f8-2561c3fbec62",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/63e590c7-2582-36b4-c423-3d20f87922aa",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/63e590c7-2582-36b4-c423-3d20f87922aa"
+        ]
+      },
+      {
+        "app": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+        "app_id": "2fcd0f2e-59bb-4581-a27b-6cf1387beafb",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/78413d97-dccd-7f6d-21ff-66a68ae25f28",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/78413d97-dccd-7f6d-21ff-66a68ae25f28"
+        ]
+      },
+      {
+        "app": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+        "app_id": "bc65334d-45f9-4be2-8b06-a0231c687720",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8b9f3bb2-f8a7-e0a7-7b3d-2be2353395ba",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8b9f3bb2-f8a7-e0a7-7b3d-2be2353395ba"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+        "app_id": "d4870154-1dff-4952-a414-5bbba8eb0e19",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/c940677f-5185-19ff-0169-f4af118ab908",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/c940677f-5185-19ff-0169-f4af118ab908"
+        ]
+      },
+      {
+        "app": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+        "app_id": "b20ecd76-41d8-410d-a811-f1dc285bad6b",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/f3e98765-1fe5-865b-50cc-d7b062b50c0c",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/f3e98765-1fe5-865b-50cc-d7b062b50c0c"
+        ]
+      },
+      {
+        "app": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+        "app_id": "e7247177-976d-4176-ac4f-7a726e77fe13",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/22dffe3f-0324-d5a1-4752-bd17bfd74df0",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/22dffe3f-0324-d5a1-4752-bd17bfd74df0"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+        "app_id": "0b9c2e3f-f4fb-421c-a1aa-0d47133d0bfd",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/a054df40-dc0c-6505-a31d-667e8b6e5b61",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/a054df40-dc0c-6505-a31d-667e8b6e5b61"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+        "app_id": "f8950092-88d4-4c64-b46e-ea2f084a6009",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6f999dac-5fa3-46dc-bd5e-e1a6a1fd5353",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6f999dac-5fa3-46dc-bd5e-e1a6a1fd5353"
+        ]
+      },
+      {
+        "app": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+        "app_id": "828377be-db77-416d-8fd6-591eacac8ff6",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/2c647473-ab8a-5e5d-5fce-5823ebb0feb5",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/2c647473-ab8a-5e5d-5fce-5823ebb0feb5"
+        ]
+      },
+      {
+        "app": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+        "app_id": "a030d5c4-3c49-40f5-b7ff-988e9363f24c",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/d282f446-d6a4-97ba-ec71-785e4245c37d",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/d282f446-d6a4-97ba-ec71-785e4245c37d"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+        "app_id": "2f460f4a-bce8-4929-b365-71cb7c493bcf",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/ce6be1a9-36e4-1d16-3382-e12ae4fa7e38",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/ce6be1a9-36e4-1d16-3382-e12ae4fa7e38"
+        ]
+      },
+      {
+        "app": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+        "app_id": "84942a9f-9131-4deb-ae98-62a077ea5939",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8ee85698-b1fd-ad14-a7ce-4e016ede0a26",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8ee85698-b1fd-ad14-a7ce-4e016ede0a26"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+        "app_id": "eb04b1b5-495b-4796-bbaa-577be58d2161",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/3c02f5c0-058a-fb08-195d-f0686a048ca3",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/3c02f5c0-058a-fb08-195d-f0686a048ca3"
+        ]
+      },
+      {
+        "app": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+        "app_id": "4ab8c956-0f80-4574-8ca1-731f59acf76d",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/3e67c416-0e71-8937-55a1-a7ba2aebe652",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/3e67c416-0e71-8937-55a1-a7ba2aebe652"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+        "app_id": "18296216-0fad-4ed4-a906-205b2c1779aa",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/c7de8b61-1b65-684b-8064-1e03507a8a42",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/c7de8b61-1b65-684b-8064-1e03507a8a42"
+        ]
+      },
+      {
+        "app": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+        "app_id": "49868769-b78f-4f93-8bf5-973102092932",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/bd58031a-9f61-b82e-5386-798c26c65ee3",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/bd58031a-9f61-b82e-5386-798c26c65ee3"
+        ]
+      },
+      {
+        "app": "jm1-github-oidc-deployer",
+        "app_id": "9f5f8e13-b216-4776-aa99-1b4bcd63d315",
+        "subjects": [
+          "repo:jmerrillorg/aic-online:ref:refs/heads/main"
+        ]
+      },
+      {
+        "app": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+        "app_id": "3efda1b7-be89-40ab-8b59-bb805f1e3651",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/f77e96d8-d740-cd60-be62-50d7c116f3e0",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/f77e96d8-d740-cd60-be62-50d7c116f3e0"
+        ]
+      },
+      {
+        "app": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+        "app_id": "f91685fd-74a7-4525-b6c0-61e6cac4c3ae",
+        "subjects": [
+          "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/f5140f12-8c27-e17c-51b3-bd7d996ef610",
+          "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/f5140f12-8c27-e17c-51b3-bd7d996ef610"
+        ]
+      }
+    ]
+  },
+  "limitation": "Standalone SharePoint sites and usage reports remain blocked; no high-confidence destructive SharePoint actions proposed."
+}

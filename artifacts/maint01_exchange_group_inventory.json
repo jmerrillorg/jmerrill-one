@@ -1,0 +1,132 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE",
+  "distribution_groups": [
+    {
+      "DisplayName": "JM1 Publishing Mail Read Scope",
+      "PrimarySmtpAddress": "jm1-publishing-mail-read-scope@jmerrillfoundation.onmicrosoft.com",
+      "EmailAddresses": [
+        "SMTP:jm1-publishing-mail-read-scope@jmerrillfoundation.onmicrosoft.com"
+      ],
+      "RecipientTypeDetails": "MailUniversalSecurityGroup",
+      "ManagedBy": [
+        "9750d862-2024-42bc-9707-f84b325dfb19"
+      ],
+      "WhenCreated": "2026-06-21T06:42:25-04:00",
+      "HiddenFromAddressListsEnabled": false,
+      "MemberJoinRestriction": "Closed",
+      "MemberDepartRestriction": "Closed",
+      "RequireSenderAuthenticationEnabled": true
+    }
+  ],
+  "mail_enabled_recipients": [
+    {
+      "displayName": "Agape International Cathedral",
+      "primarySmtpAddress": "AgapeIC@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec"
+    },
+    {
+      "displayName": "Deprecated - All Company",
+      "primarySmtpAddress": "AllCompany.49360240640.zmaasxan@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "64a52997-c497-4a26-8aca-84190f416f46"
+    },
+    {
+      "displayName": "Bid & Contract Command Center",
+      "primarySmtpAddress": "BidContractCommandCenter@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "ae4267f8-a0d2-46fd-a828-dde093900788"
+    },
+    {
+      "displayName": "Events",
+      "primarySmtpAddress": "events@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad"
+    },
+    {
+      "displayName": "Financial Team",
+      "primarySmtpAddress": "financial-team@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "2bab67a1-48de-4bde-aaa9-8094e2314f25"
+    },
+    {
+      "displayName": "Foundation Team",
+      "primarySmtpAddress": "foundation-team@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "46e10463-2d7a-44a6-a238-71829f3e8650"
+    },
+    {
+      "displayName": "Implementation HQ",
+      "primarySmtpAddress": "ImplementationHQ@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a"
+    },
+    {
+      "displayName": "JM1 Publishing Mail Read Scope",
+      "primarySmtpAddress": "jm1-publishing-mail-read-scope@jmerrillfoundation.onmicrosoft.com",
+      "recipientTypeDetails": "MailUniversalSecurityGroup",
+      "externalDirectoryObjectId": "47b91fad-a641-471a-b77f-71e39fc2627e"
+    },
+    {
+      "displayName": "HQ",
+      "primarySmtpAddress": "JMerrillOne@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "abcd0663-047e-4335-97dc-4836a3cf7600"
+    },
+    {
+      "displayName": "Marketing",
+      "primarySmtpAddress": "marketing@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b"
+    },
+    {
+      "displayName": "Marlan Gary Coordination",
+      "primarySmtpAddress": "MarlanGaryCoordination@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "f86d0f6a-2f2b-4b3b-83a6-db3cbb42a7bf"
+    },
+    {
+      "displayName": "Productions Team",
+      "primarySmtpAddress": "productions-team@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "69104c8b-a1dc-4943-a18d-0d823324a7ab"
+    },
+    {
+      "displayName": "Projects",
+      "primarySmtpAddress": "projects@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "1d17efe8-bc55-49f8-83a5-54706b47ea33"
+    },
+    {
+      "displayName": "Publishing Team",
+      "primarySmtpAddress": "publishing-team@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "b650caa6-324c-4be1-b491-57ab1aee7c4e"
+    },
+    {
+      "displayName": "Sales",
+      "primarySmtpAddress": "sales@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "768e418f-d252-4f5f-96a0-8b6d2c18b962"
+    },
+    {
+      "displayName": "Security & Compliance",
+      "primarySmtpAddress": "security@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "67d9ef01-be93-42c6-a9d8-fa6c0597d936"
+    },
+    {
+      "displayName": "Support",
+      "primarySmtpAddress": "support@jmerrill.one",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "5d87be95-7d8a-46bd-a9ce-13830496462f"
+    },
+    {
+      "displayName": "Voicemail",
+      "primarySmtpAddress": "voicemail@jmerrill.pub",
+      "recipientTypeDetails": "GroupMailbox",
+      "externalDirectoryObjectId": "8876abb0-9a18-47ad-99ea-7381912a6785"
+    }
+  ]
+}
