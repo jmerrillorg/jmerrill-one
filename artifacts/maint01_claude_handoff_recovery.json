@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Evidence that Claude Code's local MAINT-01 v3 commit was successfully recovered into the governed repository",
+  "claude_commit": "636888ccf8fb8b2591e4a475dc1f6a27a286df55",
+  "claude_branch": "claude/loving-planck-1cfoo2",
+  "cody_base_commit": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+  "cody_branch": "codex/maint01-estate-rationalization",
+  "merge_commit": "a60e8d9",
+  "merge_strategy": "git merge (ort strategy) — clean, no conflicts",
+  "recovery_result": "SUCCESS",
+
+  "commit_verification": {
+    "exists": true,
+    "reachable": true,
+    "author_email": "noreply@anthropic.com",
+    "committer_email": "noreply@anthropic.com",
+    "author_name": "Claude",
+    "commit_date": "2026-08-17",
+    "working_tree": "CLEAN after merge"
+  },
+
+  "artifact_count": {
+    "total_files_in_claude_commit": 116,
+    "maint01_json_artifacts": 116,
+    "non_maint01_files": 0,
+    "editorial_or_unrelated_files": "NONE — editorial diagnostic not present",
+    "v3_key_artifacts_confirmed": [
+      "maint01_sharepoint_inventory_v3.json",
+      "maint01_sharepoint_usage_v2.json",
+      "maint01_sharepoint_standalone_delta.json",
+      "maint01_sharepoint_standalone_preservation.json",
+      "maint01_canon_repository_reconciliation_v2.json",
+      "maint01_repo_sharepoint_alignment_matrix_v3.json",
+      "maint01_sharepoint_target_architecture_v3.md",
+      "maint01_disposition_matrix_v3.json",
+      "maint01_retirement_manifest_v3.json",
+      "maint01_retirement_manifest_v3.md",
+      "maint01_retirement_hard_gate_v2.json",
+      "maint01_sharepoint_preservation_map_v2.json",
+      "maint01_founder_decision_register_v2.json",
+      "maint01_evidence_completeness_gate_v2.json",
+      "maint01_final_scorecard_v3.json",
+      "maint01_final_closeout_v3.json",
+      "maint01_final_closeout_v3.md"
+    ]
+  },
+
+  "lineage": {
+    "merge_base_with_cody": "4fc12d5c21e2ab90d2e17edb8130709cd83db84e (Close HOST-02 final retirement #5)",
+    "relationship": "Claude's commit and Cody's commits diverged from the same main-branch base. Claude's commit contains all 116 MAINT-01 artifacts (Cody's originals + 17 new v3 artifacts). Merge was clean.",
+    "no_conflict": true
+  },
+
+  "push_blocker": {
+    "status": "GitHub App write access was 403 during Claude's session",
+    "resolution": "Cody integration merges Claude's work into codex/maint01-estate-rationalization for push via Cody's working GitHub authorization"
+  }
+}

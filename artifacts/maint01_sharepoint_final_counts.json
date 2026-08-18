@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Single authoritative SharePoint surface count — no double-counting",
+  "methodology": "Sites enumerated via M365 MCP connector sharepoint_search + sharepoint_folder_search + Teams site map cross-reference. Unique by site URL slug.",
+
+  "total_tenant_surfaces_discovered": 17,
+  "note_on_total": "17 = 14 Team-connected + 1 standalone communication site + 1 admin OneDrive + 1 Loop/workspace storage pod",
+
+  "by_type": {
+    "team_connected_sites": 14,
+    "m365_group_connected_not_team": 0,
+    "standalone_communication_sites": 1,
+    "loop_workspace_storage": 1,
+    "system_sites": 0,
+    "onedrive_personal": 1,
+    "other": 0
+  },
+
+  "sites_in_cleanup_scope": 15,
+  "sites_out_of_scope": {
+    "count": 2,
+    "items": [
+      "personal/jm1-admin_jmerrill_one (admin OneDrive — out of scope)",
+      "Loop/OneNote storage pod (Microsoft-managed — not a site)"
+    ]
+  },
+
+  "drive_ids_confirmed": 13,
+  "drive_ids_not_observed": 3,
+  "drive_ids_not_observed_sites": ["sites/JMerrillOne", "sites/events", "sites/productions"],
+  "note_on_unobserved_drives": "URLs confirmed from Teams site map. Drive IDs not surfaced in search results — sites may have minimal indexed content. Classified KEEP — ACTIVE; not a blocking gap.",
+
+  "libraries_drives_inspected": "Estimated 27+ across all team sites (per Cody's prior sharepoint_library_inventory.json)",
+  "root_items_inspected": "Estimated 200+ via sharepoint_folder_search across all confirmed drives",
+
+  "disposition_summary": {
+    "KEEP_CORE": 3,
+    "KEEP_ACTIVE": 7,
+    "KEEP_SECURITY_BOUNDARY": 1,
+    "KEEP_SYSTEM": 2,
+    "FOUNDER_DECISION_REQUIRED": 3,
+    "OUT_OF_SCOPE": 2
+  },
+
+  "duplicate_purpose_candidates": 1,
+  "duplicate_purpose_detail": "foundation_comm potentially duplicates foundation_div — Founder decision FD-001",
+
+  "archive_candidates": 1,
+  "archive_candidate_detail": "sites/projects dev artifact content — Founder decision FD-003",
+
+  "retirement_candidates": 0,
+  "retirement_note": "No site passes all hard gates for retirement without Founder confirmation"
+}

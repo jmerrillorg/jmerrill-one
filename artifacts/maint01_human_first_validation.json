@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Human-first validation — ensure cleanup does not create work for external stakeholders",
+
+  "checks": [
+    {
+      "check": "Will this create extra work for clients/authors/donors/partners?",
+      "wave_4_mailbox": "Only if an active mailbox is retired. Forwarding grace period (90 days) and clear external communications mitigate this.",
+      "wave_5_teams": "No external stakeholder impact — Teams archival is internal.",
+      "wave_6_sharepoint": "foundation_comm has no confirmed external audience. sites/projects dev artifacts have no external audience. No external impact expected.",
+      "overall": "LOW RISK — all proposed changes are internal operational consolidations"
+    },
+    {
+      "check": "Will public contact addresses change?",
+      "answer": "Only if FD-005 retires a mailbox. Grace period and alias forwarding must be in place first. board@, donations@, grants@ — recommended KEEP-CORE — should never change public contact info without a separate communications plan.",
+      "mitigation": "Never retire a public-facing mailbox without a 90-day forwarding grace period and external notification"
+    },
+    {
+      "check": "Will people lose access to a collaboration space they actually use?",
+      "answer": "Sales Team: Only if Jackie confirms it is not actively used. Voicemail Team: Only if routing can be safely decoupled. Projects Team: Only if coordination has moved to GitHub.",
+      "mitigation": "Founder confirmation (FD-004, FD-006) is the safety gate"
+    },
+    {
+      "check": "Can JM1 perform the migration internally without asking outsiders to act?",
+      "answer": "YES — all proposed actions are internal tenant operations. No external parties need to change anything.",
+      "note": "Donor/grantor contact addresses (donations@, grants@) are retained by recommendation — no ask of outsiders"
+    },
+    {
+      "check": "Is an internal cleanup being shifted onto an external person?",
+      "answer": "NO — all six Founder decisions are internal operational choices. No external party is asked to update their contact information, re-send information, or change behavior."
+    }
+  ]
+}

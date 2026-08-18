@@ -1,0 +1,185 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Authoritative SharePoint surface classification — resolves all narrative ambiguity from Claude's session",
+  "classification_schema": [
+    "TEAM-CONNECTED",
+    "M365-GROUP-CONNECTED",
+    "STANDALONE COMMUNICATION SITE",
+    "LOOP / WORKSPACE STORAGE",
+    "SYSTEM SITE",
+    "ONEDRIVE / PERSONAL",
+    "OTHER — EXPLAIN"
+  ],
+
+  "narrative_reconciliation": {
+    "issue": "Claude's session narrative mentioned foundation_div, projects, support, foundation_comm as 'newly surfaced' in some context, then summarized 14 Team sites + 2 additional standalone discoveries. This is consistent when read correctly: all 14 Team sites had null titles in Cody's v2 inventory (site identities confirmed but titles/URLs null). Claude's enumeration populated those identities. foundation_comm is the only net-new surface that is standalone (non-Team). The Loop storage pod is not a navigable site.",
+    "resolution": "14 Team-connected sites + 1 standalone communication site + 1 admin OneDrive (out of scope) + 1 Loop/workspace storage pod (Microsoft-managed). No double-counting."
+  },
+
+  "sites": [
+    {
+      "site": "sites/ImplementationHQ",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Implementation HQ",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed (was null)",
+      "disposition": "KEEP — CORE"
+    },
+    {
+      "site": "sites/publishing",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Publishing Team",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed",
+      "disposition": "KEEP — CORE"
+    },
+    {
+      "site": "sites/financial",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Financial Team",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed",
+      "disposition": "KEEP — CORE"
+    },
+    {
+      "site": "sites/foundation_div",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Foundation Team",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed — NOT a standalone site",
+      "note": "foundation_div is the Team-connected operational site for the Foundation division. It appeared in Claude's narrative when enumerating all sites, not as a standalone discovery.",
+      "disposition": "KEEP — ACTIVE"
+    },
+    {
+      "site": "sites/AgapeIC",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Agape International Cathedral",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed",
+      "disposition": "KEEP — ACTIVE"
+    },
+    {
+      "site": "sites/security",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Security & Compliance",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed",
+      "disposition": "KEEP — SECURITY BOUNDARY"
+    },
+    {
+      "site": "sites/marketing",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Marketing",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed",
+      "disposition": "KEEP — ACTIVE"
+    },
+    {
+      "site": "sites/sales",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Sales",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed",
+      "disposition": "FOUNDER DECISION (FD-004)"
+    },
+    {
+      "site": "sites/support",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Support",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed — NOT a standalone site",
+      "note": "support appeared in Claude's session narrative when enumerating all 14 Team-connected sites. It is a standard Team site, not a standalone discovery.",
+      "disposition": "KEEP — ACTIVE"
+    },
+    {
+      "site": "sites/JMerrillOne",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "HQ",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "URL confirmed; drive ID not independently observed in search results",
+      "disposition": "KEEP — ACTIVE"
+    },
+    {
+      "site": "sites/events",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Events",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "URL confirmed from Teams map; drive ID not observed",
+      "disposition": "KEEP — ACTIVE"
+    },
+    {
+      "site": "sites/productions",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Productions Team",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "URL confirmed from Teams map; drive ID not observed",
+      "disposition": "KEEP — ACTIVE"
+    },
+    {
+      "site": "sites/voicemail",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Voicemail",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed",
+      "disposition": "FOUNDER DECISION (FD-004)"
+    },
+    {
+      "site": "sites/projects",
+      "final_classification": "TEAM-CONNECTED",
+      "group_connected": true,
+      "team": "Projects",
+      "previously_in_cody_inventory": true,
+      "newly_identified_by_claude": "Title/URL/drive confirmed; large legacy dev artifact store identified",
+      "note": "projects is a Team-connected site, not standalone. It appeared in Claude's narrative as a cleanup candidate due to legacy dev artifact content.",
+      "disposition": "FOUNDER DECISION (FD-003/FD-006)"
+    },
+    {
+      "site": "sites/foundation_comm",
+      "final_classification": "STANDALONE COMMUNICATION SITE",
+      "group_connected": false,
+      "team": null,
+      "previously_in_cody_inventory": false,
+      "newly_identified_by_claude": "NET-NEW DISCOVERY — only genuinely standalone non-OneDrive site found",
+      "note": "This is the one site Claude's session added to the cleanup scope that was not previously known.",
+      "disposition": "FOUNDER DECISION (FD-001)"
+    },
+    {
+      "site": "personal/jm1-admin_jmerrill_one",
+      "final_classification": "ONEDRIVE / PERSONAL",
+      "group_connected": false,
+      "team": null,
+      "previously_in_cody_inventory": false,
+      "newly_identified_by_claude": "Surfaced during M365 connector search; out of scope",
+      "disposition": "KEEP — OUT OF SCOPE for site cleanup"
+    },
+    {
+      "surface": "Loop/OneNote content storage pod",
+      "final_classification": "LOOP / WORKSPACE STORAGE",
+      "drive_id": "b!Z059LBWqakyIZKp_Cms5Z5MPJRPpCkJBugVpF3fyHLGlLdNwwyVSQYgpJMLE213U",
+      "associated_with": "ImplementationHQ OneNote/Loop",
+      "note": "Not a navigable SharePoint site. Microsoft-managed Loop/OneNote content storage. Surfaced via drive enumeration. Does not count as a standalone site.",
+      "disposition": "KEEP — MICROSOFT-MANAGED, OUT OF SCOPE"
+    }
+  ],
+
+  "specifically_requested_classifications": {
+    "foundation_div": "TEAM-CONNECTED (Foundation Team site) — NOT standalone. Operational division document store.",
+    "projects": "TEAM-CONNECTED (Projects Team site) — NOT standalone. Large legacy dev artifact store; Founder decision required on content cleanup.",
+    "foundation_comm": "STANDALONE COMMUNICATION SITE — the only net-new discovery. No Team/Group backing. Founder decision required.",
+    "support": "TEAM-CONNECTED (Support Team site) — NOT standalone. Appeared in enumeration narrative only.",
+    "loop_storage": "LOOP / WORKSPACE STORAGE — Microsoft-managed. Not a site candidate for cleanup or enumeration. Associated with ImplementationHQ."
+  }
+}

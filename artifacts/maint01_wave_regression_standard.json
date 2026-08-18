@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Regression verification standard — what to test after each cleanup wave to confirm no breakage",
+  "principle": "A wave is not complete until functional tests pass, not merely when admin commands succeed",
+
+  "identity": ["All active user sign-ins succeed", "Admin account access confirmed", "Service account automation functional", "No new MFA lockouts"],
+  "mail": ["External email delivers to all public-facing addresses", "Outbound automation email sends from no-reply@/notifications@", "Delegate access for shared mailboxes unchanged", "Any new aliases route correctly", "Bookings confirmations deliver"],
+  "collaboration": ["Teams channel access for all active Teams", "SharePoint libraries accessible to owners", "Planner tasks visible", "OneNote notebooks accessible"],
+  "automation": ["Power Automate flows trigger on schedule", "Dataverse create/read/update operations succeed", "Dynamics workflows complete", "Customer Voice form submissions route correctly"],
+  "web": ["App Service (HOST-02) HTTP 200 on health endpoint", "GitHub Actions workflows succeed on next trigger", "One intake form submits successfully", "Financial Functions API responds", "Public websites return correct content"],
+  "financial_data_safety": ["Pre-need Outlook calendar sync confirms appointments present", "No appointments duplicated or dropped after mailbox changes"]
+}

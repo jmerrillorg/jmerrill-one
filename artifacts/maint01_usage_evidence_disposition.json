@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Determine whether missing formal SharePoint usage reports prevent safe MAINT-01 classification",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+
+  "limitation": {
+    "what": "Microsoft SharePoint usage reports (page views, active file counts, storage bytes, unique visitors) remain unavailable — API returned 403 during both Cody's and Claude's sessions",
+    "why_403": "SharePoint admin report permissions not delegated to jm1-admin@jmerrill.one service account, or tenant usage reporting is restricted",
+    "proxy_used": "Last-modified timestamps from M365 connector search results used as activity proxy"
+  },
+
+  "safety_analysis": {
+    "does_missing_metric_create_data_loss_risk": false,
+    "reasoning": [
+      "No site is proposed for deletion solely on low activity — MAINT-01 rules explicitly prohibit this",
+      "Site purpose is known for all 14 Team-connected sites (each has a confirmed Team/Group/owner)",
+      "Site ownership is known for all Team-connected sites (Team owner = site owner)",
+      "Content/dependencies are known at folder level for all confirmed sites",
+      "foundation_comm has a documented uncertainty (no owner confirmed) — handled via Founder decision FD-001, not bypassed",
+      "Preservation maps exist for all consolidation candidates",
+      "All destructive actions still require full hard-gate certification before execution",
+      "Activity alone is never used as deletion proof under MAINT-01 rules"
+    ],
+    "conclusion": "Usage telemetry is a convenience metric for prioritization, not a safety gate. Its absence does not threaten cleanup correctness."
+  },
+
+  "per_site_usage_evidence": {
+    "ACTIVE_proxy_evidence": ["ImplementationHQ (Jul 2026)", "publishing (Aug 2026)", "financial (Aug 2026)"],
+    "LOW_ACTIVITY_proxy_evidence": ["marketing (Apr 2026)", "sales (Sep 2025)", "support (Apr 2025)", "security (Nov 2025)", "AgapeIC (Apr 2026)", "foundation_div (Apr 2026)", "projects (Jan 2026)", "foundation_comm (Sep 2025)"],
+    "INACTIVE_proxy_evidence": ["voicemail (Mar 2025)"],
+    "UNKNOWN_proxy_evidence": ["JMerrillOne (no indexed content)", "events (no indexed content)", "productions (no indexed content)"]
+  },
+
+  "classification_supported": true,
+  "classification": "COMPLETE WITH DOCUMENTED LIMITATION — does not reopen MAINT-01"
+}
