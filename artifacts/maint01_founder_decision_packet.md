@@ -89,21 +89,27 @@ Read this document. Reply with the six approval phrases at the bottom. Cody exec
 
 ## FD-005 — Seven Shared Mailboxes
 
-**Decision:** Classify each of 7 shared mailboxes: KEEP-CORE, KEEP-ALIAS, or RETIRE.
+**Decision:** Classify each of 7 shared mailboxes: KEEP-CORE, KEEP-ALIAS, CONSOLIDATE, or RETIRE.
 
-**Confirmed KEEP (9 of 16 already classified):** info@, hello@, press@, events@, legal@, finance@, it@, hr@, bookkeeping@
+**Already confirmed KEEP (9 of 16):** logging@, info@, notifications@, no-reply@, legal@, preneeds@, royalties@, submissions@, tech@
 
-**Pending classification (7):**
+**Pending classification (7 — all named below):**
 
-| Mailbox | Recommendation | Reasoning |
-|---------|---------------|-----------|
-| board@jmerrill.one | KEEP-CORE | Governance-critical |
-| donations@jmerrill.one | KEEP-CORE | Revenue-critical |
-| grants@jmerrill.one | KEEP-CORE | Revenue-critical |
-| contacts@jmerrill.one | CONSOLIDATE → info@ | Overlaps with info@ |
-| *(3 others per Jackie)* | Per Jackie | Need Jackie classification |
+| Mailbox | Items | Forwarding | Recommendation | Reasoning |
+|---------|-------|-----------|---------------|-----------|
+| accounting@jmerrill.one | 1617 | None | **KEEP-CORE** | Active billing/finance identity; 1617 items; aliases billing@, finance@ |
+| board@jmerrill.one | 18 | foundation@ | **KEEP-CORE** | Governance-critical board identity |
+| donations@jmerrill.one | 53 | foundation@ | **KEEP-CORE** | Revenue-critical donations intake |
+| grants@jmerrill.one | 794 | foundation@ | **KEEP-CORE** | 794 items; active grants administration; revenue-critical |
+| media@jmerrill.one | 54 | publishing@ | **KEEP-ALIAS** | Public-facing media/PR; aliases events@, social@, pr@ |
+| volunteers@jmerrill.one | 18 | foundation@ | **KEEP-ALIAS** | Foundation volunteer intake; low volume |
+| contacts@jmerrill.one | 6 | None | **CONSOLIDATE into info@** | 6 items; no forwarding; overlapping purpose with info@ |
 
-**Approval phrase:** `APPROVE FD-005 — board@ KEEP-CORE, donations@ KEEP-CORE, grants@ KEEP-CORE, contacts@ CONSOLIDATE into info@` *(add classification for remaining 3)*
+**Approval phrase (recommended dispositions):**
+`APPROVE FD-005 — accounting@ KEEP-CORE, board@ KEEP-CORE, donations@ KEEP-CORE, grants@ KEEP-CORE, media@ KEEP-ALIAS, volunteers@ KEEP-ALIAS, contacts@ CONSOLIDATE into info@`
+
+*(Override any mailbox by naming it with a different disposition in your reply)*
+
 
 ---
 
