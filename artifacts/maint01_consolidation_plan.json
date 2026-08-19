@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "waves": [
+    {
+      "wave": "A",
+      "name": "Zero-Risk Metadata Cleanup",
+      "actions": [
+        "ownership labels",
+        "documentation",
+        "stale references",
+        "repo metadata"
+      ],
+      "status": "can execute after review"
+    },
+    {
+      "wave": "B",
+      "name": "Licensing Cleanup",
+      "actions": [
+        "dependency-cleared removable licenses only"
+      ],
+      "status": "requires Founder approval and dependency proof"
+    },
+    {
+      "wave": "C",
+      "name": "Service Account Modernization",
+      "actions": [
+        "migrate human-style workload identities"
+      ],
+      "status": "requires migration plan"
+    },
+    {
+      "wave": "D",
+      "name": "Mailbox Consolidation",
+      "actions": [
+        "archive/convert/retire proven duplicates"
+      ],
+      "status": "requires preservation map"
+    },
+    {
+      "wave": "E",
+      "name": "Teams / Group Consolidation",
+      "actions": [
+        "archive/retire only after SharePoint/Planner resolution"
+      ],
+      "status": "requires Founder approval"
+    },
+    {
+      "wave": "F",
+      "name": "SharePoint Consolidation",
+      "actions": [
+        "move/archive duplicate document locations"
+      ],
+      "status": "requires canon decision"
+    },
+    {
+      "wave": "G",
+      "name": "App Identity Retirement",
+      "actions": [
+        "remove proven orphaned registrations/service principals"
+      ],
+      "status": "requires workload proof"
+    }
+  ]
+}

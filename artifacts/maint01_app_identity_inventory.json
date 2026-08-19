@@ -1,0 +1,1713 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS_WITH_LIMITATIONS",
+  "applications": [
+    {
+      "display_name": "JM1-Bookings-AppPublic",
+      "app_id": "734157cd-6fe0-47cf-87aa-0eb05b57be9a",
+      "created": "2025-09-19T12:57:56Z",
+      "password_credentials": [
+        {
+          "displayName": "Bookings",
+          "endDateTime": "2026-03-18T12:58:26.339Z",
+          "keyId": "72af1c4a-dddf-4f40-825f-91b1abe5446e"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "JUSTIFIED - RETAIN"
+    },
+    {
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "app_id": "d396d263-ceb3-49af-b8cc-d8e60c15f2ac",
+      "created": "2025-02-27T05:41:52Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "app_id": "ea9e5801-044c-45de-9804-79bede3e2350",
+      "created": "2026-01-31T10:10:21Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+      "app_id": "f5f88572-d57c-4d4c-bb0e-c4db0ebfa036",
+      "created": "2026-01-31T10:09:56Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1-WEB-INTAKE-API",
+      "app_id": "0cf06f51-cee9-45ee-9da0-9924b63579ef",
+      "created": "2026-08-12T11:40:05Z",
+      "password_credentials": [
+        {
+          "displayName": "bp09-static-web-app",
+          "endDateTime": "2027-08-12T11:40:07Z",
+          "keyId": "3515d2b8-017a-40fb-8ef2-dbfc4ba4c2ac"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "JUSTIFIED - RETAIN"
+    },
+    {
+      "display_name": "Site 1 bot (Microsoft Copilot Studio)",
+      "app_id": "3d69ef01-c168-4fde-b861-5faaad32e20b",
+      "created": "2025-04-21T01:19:57Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 Operations Copilot (Microsoft Copilot Studio)",
+      "app_id": "cfaabd68-eba8-47f3-8fee-6f29ea49a78a",
+      "created": "2025-11-25T12:08:36Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "app_id": "39102281-e5c2-4830-bc80-4705eabc5904",
+      "created": "2025-06-09T08:37:37Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Microsoft Bookings",
+      "app_id": "425e62c0-70e3-4922-90f0-38600e9c4bde",
+      "created": "2025-02-25T12:44:00Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "JUSTIFIED - RETAIN"
+    },
+    {
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "app_id": "b53a6e98-b717-451d-a9c9-f602d105fd8d",
+      "created": "2025-09-20T07:41:22Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "app_id": "b0de42f7-f76c-4a15-8bb1-fbc82fb304dc",
+      "created": "2025-02-24T08:41:27Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Copilot in Dynamics 365 Sales (Microsoft Copilot Studio)",
+      "app_id": "8a52cdb4-a0e5-40bc-9960-f214e3a1d454",
+      "created": "2025-11-09T08:33:45Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "app_id": "f351b554-e1d1-446a-9592-6cdb9f422d6c",
+      "created": "2025-08-02T05:31:10Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+      "app_id": "32471baa-c4e8-4592-b3e3-e38312d81978",
+      "created": "2025-11-04T02:07:27Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JMF Financial Advisor Workspace App Service Auth",
+      "app_id": "350b2859-f4ba-47b6-b2ae-6576424f5bd1",
+      "created": "2026-08-16T11:39:47Z",
+      "password_credentials": [
+        {
+          "displayName": "appservice-easyauth-2026-08-16",
+          "endDateTime": "2028-08-16T11:39:50Z",
+          "keyId": "07262887-4ca7-4a94-97a7-81e11def2ee3"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "app_id": "6078abb5-139d-46c3-9046-6d5b0a8cdd8c",
+      "created": "2025-11-17T07:00:15Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+      "app_id": "e08e2032-1ec8-4641-ba81-bf31fb507f52",
+      "created": "2025-08-27T07:23:47Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "app_id": "f925efcf-162e-476d-b490-d9a1cf687453",
+      "created": "2025-11-04T02:07:27Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "PowerPlatform-JM1-Core",
+      "app_id": "4a684eb6-7cfe-4c3a-8d09-3e1b362171ad",
+      "created": "2026-08-11T18:36:04Z",
+      "password_credentials": [
+        {
+          "displayName": "jmf-public-intake-production",
+          "endDateTime": "2027-08-11T18:58:00Z",
+          "keyId": "be5bf7c9-b521-4718-b1bd-8d1c15227e6a"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customization Agent (Microsoft Copilot Studio)",
+      "app_id": "8df442ae-81d6-49c2-b6af-bb6a2eacba76",
+      "created": "2025-11-04T02:07:26Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "app_id": "c5082d1d-bda3-4d0d-9560-da125dbb83b0",
+      "created": "2025-04-23T09:07:15Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "app_id": "33f8e9f0-f982-4e88-98c4-97a44fcf8a1a",
+      "created": "2026-01-21T07:15:09Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "jm1-kv-audit",
+      "app_id": "85d56cc8-b453-46eb-ae83-18ae66357fb3",
+      "created": "2025-11-06T12:17:08Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "AIC Website GitHub Actions",
+      "app_id": "0fbf4a5c-b8ac-4572-aecd-128539a698d9",
+      "created": "2026-04-05T12:04:56Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "jm1-pub-github-actions-oidc",
+      "app_id": "97891ed1-6623-487c-b890-633bea440e22",
+      "created": "2026-07-29T12:53:14Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "JUSTIFIED - RETAIN"
+    },
+    {
+      "display_name": "JM1 Publisher Operating Center",
+      "app_id": "7bd27a68-fda7-4330-9198-d493f2a0a5ef",
+      "created": "2026-07-15T08:07:20Z",
+      "password_credentials": [
+        {
+          "displayName": "jmerrill-pub-20260715",
+          "endDateTime": "2027-07-15T08:07:24Z",
+          "keyId": "4afb2f1a-28d7-4d38-b30d-097fbce863f3"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "app_id": "2c316bc5-d30a-4bd3-a9ff-a6a5be715362",
+      "created": "2025-11-29T01:04:42Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customization Agent (Microsoft Copilot Studio)",
+      "app_id": "8d883f37-c6a2-4de5-b8df-7d7c52b44bb7",
+      "created": "2025-11-04T03:20:50Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "app_id": "cc0f90de-5451-45ee-bac2-401d67287c4a",
+      "created": "2025-11-21T08:38:59Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1-INFRA-PAM-Automation",
+      "app_id": "1e60cddf-dd28-4933-a927-dbc03bb89737",
+      "created": "2026-07-08T01:58:02Z",
+      "password_credentials": [
+        {
+          "displayName": "INFRA-002-PAM-KeyVault",
+          "endDateTime": "2027-07-08T01:58:24Z",
+          "keyId": "e468a292-3600-4b27-8d4c-39b20b4fb0b7"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+      "app_id": "80c16230-3536-4eda-a19c-6d4e4bc566b5",
+      "created": "2025-08-13T06:44:51Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Agent (Microsoft Copilot Studio)",
+      "app_id": "276efa2c-67ce-4aea-8142-5ca3b2166209",
+      "created": "2025-12-15T11:43:51Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "github-aic-deploy",
+      "app_id": "746b3307-1432-4ff8-ac36-e82fc1c9c021",
+      "created": "2025-10-05T00:26:02Z",
+      "password_credentials": [
+        {
+          "displayName": "GitHub Actions key",
+          "endDateTime": "2026-04-03T00:29:15.648Z",
+          "keyId": "560a805a-cd08-4c01-852f-150f8090b8e1"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Stakeholder Agent (Microsoft Copilot Studio)",
+      "app_id": "1b36bdf5-39b8-4376-b7b7-7872edfa094b",
+      "created": "2025-11-04T02:09:57Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "app_id": "5f9fab8f-be53-41c0-93ba-a5de5a7264c3",
+      "created": "2026-01-31T10:10:18Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "app_id": "b7c6454b-f04f-4df7-841e-d8c9af4481e8",
+      "created": "2025-11-21T06:44:05Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "app_id": "dcf1e4cf-6354-49ac-9ce2-d8c65776bb09",
+      "created": "2026-01-31T09:47:54Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+      "app_id": "cc446f3a-6d79-4840-b5dc-a373be459a8b",
+      "created": "2025-11-04T02:07:28Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "app_id": "c7728890-62ff-4f3a-8cb8-8f3965c109c3",
+      "created": "2025-05-26T07:03:31Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Portals-J Merrill Publishing Inquiry",
+      "app_id": "cea336f7-119c-4cc2-a195-0616a571f400",
+      "created": "2025-03-02T09:44:00Z",
+      "password_credentials": [],
+      "key_credentials": [
+        {
+          "displayName": "CN=b88190b0-3394-4f3c-b1b6-1511863cfe73",
+          "endDateTime": "2026-02-28T04:00:51Z",
+          "keyId": "644887dc-8036-4c69-a9a6-7423a2860565"
+        }
+      ],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1-PUB-INTAKE-WEBAPI",
+      "app_id": "71ec4dd0-d261-4ffc-9f5a-626d885ecc85",
+      "created": "2026-06-11T07:55:16Z",
+      "password_credentials": [
+        {
+          "displayName": "JM1-PRIME CAP-009 writeback 2026-07-15",
+          "endDateTime": "2027-07-15T05:44:03Z",
+          "keyId": "cc059b72-5646-44dc-a98a-b56fee48695e"
+        },
+        {
+          "displayName": "jmerrill-pub-intake-api",
+          "endDateTime": "2027-06-11T08:14:20Z",
+          "keyId": "ce1df541-1a1d-4853-a8c1-1c60e3ca3826"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "app_id": "64af6dfb-4c1b-4081-bebc-635251b495f8",
+      "created": "2025-11-04T02:07:28Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "app_id": "71ef71ac-fa1b-480f-b70d-3d231f77477f",
+      "created": "2025-11-04T02:07:27Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "app_id": "c24cf2eb-f3a8-43f1-a616-8c5299bbfd37",
+      "created": "2025-11-29T01:09:10Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Bookings API",
+      "app_id": "8b78083f-b445-402d-9a37-d2c429e183eb",
+      "created": "2025-09-25T18:56:30Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "JUSTIFIED - RETAIN"
+    },
+    {
+      "display_name": "Stakeholder Agent (Microsoft Copilot Studio)",
+      "app_id": "57da823e-ecf4-4bfd-a378-180aed817778",
+      "created": "2025-08-27T07:23:34Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 - Author Portal W-9 ",
+      "app_id": "d6cfd112-cc56-4431-8897-a43394d17251",
+      "created": "2025-04-22T14:16:51Z",
+      "password_credentials": [
+        {
+          "displayName": "jmerrill-pub-author-operating-center-prod",
+          "endDateTime": "2027-07-12T00:06:45Z",
+          "keyId": "54debc51-0ea7-4193-bab2-e4527c1ea9b3"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "app_id": "1aa1e913-e480-4acd-b603-2f7e89c9aa89",
+      "created": "2025-11-29T01:04:42Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1-Dataverse-ServicePrincipal",
+      "app_id": "abaed7aa-944f-4c41-8947-bf1bb6b9b111",
+      "created": "2025-11-08T18:51:06Z",
+      "password_credentials": [
+        {
+          "displayName": "JM1 Dataverse-ServicePrincipal Key",
+          "endDateTime": "2026-06-07T12:09:24.701Z",
+          "keyId": "906b217d-20aa-4c14-a285-5f5015f2ceab"
+        },
+        {
+          "displayName": "Dataverse Access Key",
+          "endDateTime": "2026-11-08T18:51:37.245Z",
+          "keyId": "469dd743-604a-49ca-b463-2fa2b7db13df"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "app_id": "cb3e6387-8607-43c0-bb9c-ace2d75b5af2",
+      "created": "2025-03-13T06:23:22Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Microsoft Dynamics Office Add-in",
+      "app_id": "01008d41-c09d-42cb-8631-ebef5cf8ae49",
+      "created": "2025-02-20T16:37:56Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "app_id": "b83a1cff-d89b-4d99-9ccd-be0f248de273",
+      "created": "2025-11-18T04:48:51Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 PnP Scaffold",
+      "app_id": "1f88a277-760e-4140-b8ed-b184b2032ab6",
+      "created": "2026-04-20T06:27:18Z",
+      "password_credentials": [
+        {
+          "displayName": "JM1 Scaffold Key",
+          "endDateTime": "2028-04-19T06:43:01.618Z",
+          "keyId": "9248d36d-59df-4411-a8e1-77589a136f0d"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "app_id": "f3c919ee-c77d-4a6d-80da-6ea30b35623b",
+      "created": "2026-02-28T04:36:46Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "jm1-publishing-intake-api",
+      "app_id": "d8da73f7-c356-44ee-a312-a6d3096d5081",
+      "created": "2025-11-24T11:28:14Z",
+      "password_credentials": [
+        {
+          "displayName": "codex-catalog-prod-2026-07-08b",
+          "endDateTime": "2027-07-08T06:23:54Z",
+          "keyId": "2b4d70ab-c828-47ee-99eb-33ac2b15cf0f"
+        },
+        {
+          "displayName": "codex-catalog-prod-2026-07-08",
+          "endDateTime": "2027-07-08T06:23:39Z",
+          "keyId": "7736caae-9f47-423e-8145-82a8142cc9f0"
+        },
+        {
+          "displayName": "jm1-publishing-intake",
+          "endDateTime": "2026-05-23T10:34:29.331Z",
+          "keyId": "eb62f629-a371-4b31-b651-7e21d0e35d6d"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "J Merrill Publishing Inquiry bot (Microsoft Copilot Studio)",
+      "app_id": "d58c481d-b994-4145-8297-942109d17141",
+      "created": "2025-03-02T09:44:59Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "app_id": "e4a6e8cf-531f-4d8d-a704-32ba64d6fc59",
+      "created": "2026-02-11T09:25:11Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+      "app_id": "ca71cf22-1dde-4c25-9697-b358e65e07d5",
+      "created": "2025-11-04T02:05:26Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "app_id": "8f1ebb31-d7a7-4872-8e42-d49c296d5759",
+      "created": "2025-06-15T07:31:04Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1-Bookings-AppPublic",
+      "app_id": "d4e38a4f-50cf-44ae-90d4-1928312298a8",
+      "created": "2025-09-22T11:47:00Z",
+      "password_credentials": [
+        {
+          "displayName": "Bookings",
+          "endDateTime": "2026-03-21T11:50:07.452Z",
+          "keyId": "ea8bb1f9-a58f-41d2-9af9-d027a71b576b"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "JUSTIFIED - RETAIN"
+    },
+    {
+      "display_name": "github-deploy-aic",
+      "app_id": "11f925d2-bdf6-40a0-baeb-511fe71b24ec",
+      "created": "2025-10-05T00:49:29Z",
+      "password_credentials": [
+        {
+          "displayName": "rbac",
+          "endDateTime": "2026-10-05T00:49:28Z",
+          "keyId": "5e2d7f56-9925-4970-89be-84eafb630370"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "app_id": "edc80b21-23b1-4de8-911a-994d579f9d95",
+      "created": "2025-02-24T08:39:46Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "app_id": "829a7932-1824-471e-a71a-e1492f083745",
+      "created": "2025-03-27T11:37:09Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 Web Presence Agent (Microsoft Copilot Studio)",
+      "app_id": "8dbb2f4e-377e-4c0b-9c7e-b51b0a55502d",
+      "created": "2025-12-14T14:37:13Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "app_id": "8be564e9-b96a-4173-b170-7f1da7c1477c",
+      "created": "2025-03-13T06:26:45Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "J Merrill One HQ – Power BI",
+      "app_id": "c6605cb7-6058-41b8-a080-d2412600f81c",
+      "created": "2025-10-12T03:57:13Z",
+      "password_credentials": [
+        {
+          "displayName": "J Merrill One HQ – Power BI Service",
+          "endDateTime": "2026-04-10T03:58:58.342Z",
+          "keyId": "2d961c3d-63f3-4e13-a560-24342d7b7a32"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales FIRE Agent - Rating Generator (Microsoft Copilot Studio)",
+      "app_id": "3d969589-8a0c-475b-960c-49554378adc2",
+      "created": "2025-07-06T07:18:53Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Galicia (Preview) (Microsoft Copilot Studio)",
+      "app_id": "b1e71c43-6bbb-4624-af06-90db5214826e",
+      "created": "2026-04-01T12:28:13Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "app_id": "1ac38ad6-c894-4278-a701-a1560d916e49",
+      "created": "2025-11-04T02:07:27Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "app_id": "552a8a2a-8fb5-4e95-be16-89cab14f926b",
+      "created": "2026-01-31T09:54:44Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "app_id": "7390d6aa-aafc-469d-9851-ecfdc11d88b3",
+      "created": "2025-05-26T07:03:31Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "app_id": "a4bfc093-a5d1-4949-b4c7-0fbc065bf041",
+      "created": "2026-02-13T05:42:05Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+      "app_id": "2d502402-6d3c-48c9-97c6-946f036629e7",
+      "created": "2025-06-09T08:34:16Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Case Processing Agent (Microsoft Copilot Studio)",
+      "app_id": "29032ff7-338a-4f12-b99e-f8d72a04a6a9",
+      "created": "2025-09-20T07:39:43Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+      "app_id": "91902eb7-eb43-4315-9b65-0b35fbd44b6d",
+      "created": "2026-01-31T09:54:18Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "app_id": "1601c074-0566-458f-bc46-ec10b9fcadbe",
+      "created": "2025-11-03T05:44:33Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+      "app_id": "f3c5e97b-8c4c-4991-b389-2084c46f4d78",
+      "created": "2026-01-31T10:11:09Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "app_id": "67ee1148-cef4-454a-a9ff-132a907f11a2",
+      "created": "2025-02-25T05:05:02Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+      "app_id": "93b14ed8-ab0f-4bef-b3f8-2561c3fbec62",
+      "created": "2026-01-31T09:55:31Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "app_id": "2fcd0f2e-59bb-4581-a27b-6cf1387beafb",
+      "created": "2026-01-21T06:10:52Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "app_id": "bc65334d-45f9-4be2-8b06-a0231c687720",
+      "created": "2025-04-09T02:41:59Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "app_id": "d4870154-1dff-4952-a414-5bbba8eb0e19",
+      "created": "2025-11-04T02:07:27Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "app_id": "b20ecd76-41d8-410d-a811-f1dc285bad6b",
+      "created": "2025-09-23T04:29:41Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 Author Operating Center",
+      "app_id": "dc3a84fb-4b32-480a-a5ae-381e16e6622c",
+      "created": "2026-07-12T00:06:45Z",
+      "password_credentials": [
+        {
+          "displayName": "jm1-author-operating-center-prod",
+          "endDateTime": "2027-07-12T00:07:32Z",
+          "keyId": "f0350e3e-085e-4fe7-aa51-84374badd743"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "app_id": "e7247177-976d-4176-ac4f-7a726e77fe13",
+      "created": "2026-03-04T06:08:52Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+      "app_id": "0b9c2e3f-f4fb-421c-a1aa-0d47133d0bfd",
+      "created": "2025-08-02T05:30:57Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "app_id": "f8950092-88d4-4c64-b46e-ea2f084a6009",
+      "created": "2025-05-26T07:03:31Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "app_id": "828377be-db77-416d-8fd6-591eacac8ff6",
+      "created": "2026-02-13T05:42:05Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "jm1-hq-app-sp",
+      "app_id": "aaabfafa-635f-444b-b4a5-e684edf831c0",
+      "created": "2025-11-03T18:01:52Z",
+      "password_credentials": [
+        {
+          "displayName": "rbac",
+          "endDateTime": "2026-11-03T18:01:51Z",
+          "keyId": "8cbba58b-5367-4858-99df-f8529478d827"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "app_id": "a030d5c4-3c49-40f5-b7ff-988e9363f24c",
+      "created": "2025-02-23T07:35:20Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "JM1 â€“ BC SharePoint Integration",
+      "app_id": "38e16af0-bde0-4e99-9ab1-c6b1052502bb",
+      "created": "2025-04-24T11:45:15Z",
+      "password_credentials": [
+        {
+          "displayName": "BC to SharePoint Access",
+          "endDateTime": "2025-10-21T11:46:46.813Z",
+          "keyId": "abfba5bf-eac0-462f-a302-970b7256326f"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+      "app_id": "2f460f4a-bce8-4929-b365-71cb7c493bcf",
+      "created": "2025-08-27T07:10:13Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "jm1-ed-functions",
+      "app_id": "7502ba5f-d187-4ba7-a185-cf9022c0b79e",
+      "created": "2025-10-29T09:12:07Z",
+      "password_credentials": [
+        {
+          "displayName": "JM1 Power Platform Connector 2",
+          "endDateTime": "2027-10-30T11:14:14.725Z",
+          "keyId": "b2f8769e-83bc-47cb-a957-3ce1de9f312f"
+        },
+        {
+          "displayName": "JM1 Power Platform Connector",
+          "endDateTime": "2027-10-29T12:47:43.176Z",
+          "keyId": "0c545ccf-d23a-444b-9470-12c3e821c1e1"
+        },
+        {
+          "displayName": "Generated by App Service",
+          "endDateTime": "2026-04-27T11:30:23.734Z",
+          "keyId": "ebc033b8-767c-4d9e-adf4-44e0af76219b"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+      "app_id": "84942a9f-9131-4deb-ae98-62a077ea5939",
+      "created": "2025-11-03T05:44:12Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "J Merrill Foundation Integration",
+      "app_id": "8d0ccfbb-fce3-4821-b1cb-79b599d9a6e4",
+      "created": "2025-04-10T17:16:12Z",
+      "password_credentials": [
+        {
+          "displayName": "Service API Key",
+          "endDateTime": "2025-10-07T17:36:20.811Z",
+          "keyId": "e6b052a1-0cbb-4889-8961-70b6daeec646"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+      "app_id": "eb04b1b5-495b-4796-bbaa-577be58d2161",
+      "created": "2025-11-04T02:09:59Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "app_id": "4ab8c956-0f80-4574-8ca1-731f59acf76d",
+      "created": "2025-02-25T05:56:59Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+      "app_id": "18296216-0fad-4ed4-a906-205b2c1779aa",
+      "created": "2025-05-26T07:03:31Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "app_id": "49868769-b78f-4f93-8bf5-973102092932",
+      "created": "2026-02-11T07:40:18Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "Bookings",
+      "app_id": "c1ec1c83-5a40-44f8-8896-e1273f2f5a0d",
+      "created": "2025-02-25T12:24:22Z",
+      "password_credentials": [
+        {
+          "displayName": "NewBookingsCert",
+          "endDateTime": "2026-03-18T17:15:15.978Z",
+          "keyId": "31609184-5f75-4e41-b317-5c7b5872fb4a"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "JUSTIFIED - RETAIN"
+    },
+    {
+      "display_name": "JM1 Graph Directory",
+      "app_id": "4b3d919a-677a-4bf4-b2a3-ff5e21348b30",
+      "created": "2025-07-10T13:14:45Z",
+      "password_credentials": [
+        {
+          "displayName": "DirectoryTeamAccess",
+          "endDateTime": "2026-01-06T15:38:54.417Z",
+          "keyId": "5d7af079-e126-4058-8da5-a04c53f320c7"
+        }
+      ],
+      "key_credentials": [],
+      "stale_credential": true,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "jm1-github-oidc-deployer",
+      "app_id": "9f5f8e13-b216-4776-aa99-1b4bcd63d315",
+      "created": "2025-10-17T19:35:32Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+      "app_id": "3efda1b7-be89-40ab-8b59-bb805f1e3651",
+      "created": "2025-11-04T02:07:27Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    },
+    {
+      "display_name": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "app_id": "f91685fd-74a7-4525-b6c0-61e6cac4c3ae",
+      "created": "2025-08-13T06:46:13Z",
+      "password_credentials": [],
+      "key_credentials": [],
+      "stale_credential": false,
+      "classification": "UNKNOWN - REVIEW"
+    }
+  ],
+  "service_principals_relevant_count": 304,
+  "service_principals_sample": [
+    {
+      "display_name": "Azure Monitor Control Service",
+      "app_id": "e933bd07-d2ee-4f1d-933c-3752b819567b",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "app_id": "67ee1148-cef4-454a-a9ff-132a907f11a2",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Storage",
+      "app_id": "e406a681-f3d4-42a8-90b6-c2b029497af1",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "app_id": "5f9fab8f-be53-41c0-93ba-a5de5a7264c3",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "jm1-kv-audit",
+      "app_id": "85d56cc8-b453-46eb-ae83-18ae66357fb3",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Resource Manager",
+      "app_id": "797f4846-ba00-4fd7-ba43-dac1f8f63013",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure SQL Virtual Network to Network Resource Provider",
+      "app_id": "76cd24bf-a9fc-4344-b1dc-908275de6d6d",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "app_id": "d4870154-1dff-4952-a414-5bbba8eb0e19",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft Azure Alerts Management",
+      "app_id": "161a339d-b9f5-41c5-8856-6a6669acac64",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Customization Agent (Microsoft Copilot Studio)",
+      "app_id": "8d883f37-c6a2-4de5-b8df-7d7c52b44bb7",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Dynamics 365 collaboration with Microsoft Teams",
+      "app_id": "a8adde6c-aeb4-4fd6-9d8f-c2dfdecac60a",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "app_id": "bc65334d-45f9-4be2-8b06-a0231c687720",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "app_id": "ea9e5801-044c-45de-9804-79bede3e2350",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Case Enrichment Onboarding Agent (Microsoft Copilot Studio)",
+      "app_id": "09ac69cb-f2bb-4f14-86d9-34b857aed1b3",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "Power Platform API",
+      "app_id": "8578e004-a5c6-46e7-913e-12f58912df43",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft.Azure.DomainRegistration",
+      "app_id": "ea2f600a-4980-45b7-89bf-d34da487bda1",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Virtual Desktop",
+      "app_id": "9cdead84-a844-4324-93f2-b2e6bb768d07",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Windows Azure Application Insights",
+      "app_id": "11c174dc-1945-4a9a-a36b-c79a0f246b9b",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft Dynamics ERP Microservices CDS",
+      "app_id": "703e2651-d3fc-48f5-942c-74274233dba8",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Cost Management Scheduled Actions",
+      "app_id": "6b3368c6-61d2-4a72-854c-42d1c4e71fed",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Virtual Desktop ARM Provider",
+      "app_id": "50e95039-b200-4007-bc97-8d5790743a63",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "One Outlook Web",
+      "app_id": "9199bf20-a13f-4107-85dc-02114787ef48",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft Azure App Service",
+      "app_id": "abfa0a7c-a6b6-4736-8310-5855508787cd",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Power Platform Connector Management Service - PROD",
+      "app_id": "59534ab2-0027-4a45-b9ec-61d1b6b871c9",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Agent (Microsoft Copilot Studio)",
+      "app_id": "276efa2c-67ce-4aea-8142-5ca3b2166209",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure ContainerApps Auth",
+      "app_id": "6104ad52-755e-428b-9fb5-5fdf4d2c4d53",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "SQL Copilot PPE",
+      "app_id": "0fc12b9a-5463-4b87-8f10-765fecb39990",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Knowledge Agent - External Sources (Microsoft Copilot Studio)",
+      "app_id": "11d0acfc-5b4f-4ad6-b60d-66e11cbc9be9",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "Sales Qualification Agent Config Assistant (Microsoft Copilot Studio)",
+      "app_id": "133be3d0-29b5-4b91-b18f-64ad4b9c6970",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "Journey Creation Agent (Microsoft Copilot Studio)",
+      "app_id": "15bc30a9-6c95-44d9-ac5b-23f845246ce1",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Search Management",
+      "app_id": "408992c7-2af6-4ff1-92e3-65b73d2b5092",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Logic Apps",
+      "app_id": "7cd684f4-8a78-49b0-91ec-6a35d38739ba",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Context Cache RP Prod Identity",
+      "app_id": "89b757f8-1e01-4f41-8c72-75e191b11b8c",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Sales Close Agent (Microsoft Copilot Studio)",
+      "app_id": "1a4bbe59-bc34-4fbd-b043-8accc8015d5c",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "CustomerServiceKnowledgeHarvestDedupe (Microsoft Copilot Studio)",
+      "app_id": "1a77e767-5991-4913-90b9-78e6e6842c1d",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "app_id": "6078abb5-139d-46c3-9046-6d5b0a8cdd8c",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "AIC Website GitHub Actions",
+      "app_id": "0fbf4a5c-b8ac-4572-aecd-128539a698d9",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "app_id": "f8950092-88d4-4c64-b46e-ea2f084a6009",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales FIRE Agent - Rating Generator (Microsoft Copilot Studio)",
+      "app_id": "3d969589-8a0c-475b-960c-49554378adc2",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "github-deploy-aic",
+      "app_id": "11f925d2-bdf6-40a0-baeb-511fe71b24ec",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "app_id": "c7728890-62ff-4f3a-8cb8-8f3965c109c3",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "AzureDnsFrontendApp",
+      "app_id": "a0be0c72-870e-46f0-9c49-c98333a996f7",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Knowledge Agent - External Sources (Microsoft Copilot Studio)",
+      "app_id": "213c5c43-d148-4d02-b2e1-68c1c019ce05",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "jm1pub-foundry/projects/proj-stage0-diagnostic",
+      "app_id": "bd922402-a3bb-49bf-ba50-606281b591f4",
+      "type": "ManagedIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Portal RP",
+      "app_id": "5b3b270a-b9ad-46e7-9bbb-a866897c4dc7",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "app_id": "b0de42f7-f76c-4a15-8bb1-fbc82fb304dc",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "app_id": "b83a1cff-d89b-4d99-9ccd-be0f248de273",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "JM1 Web Presence Agent (Microsoft Copilot Studio)",
+      "app_id": "8dbb2f4e-377e-4c0b-9c7e-b51b0a55502d",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "ais-jm1-foundry",
+      "app_id": "0acaa791-33ca-4c88-8259-1931d97bebcb",
+      "type": "ManagedIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure RBAC Data Plane",
+      "app_id": "5861f7fb-5582-4c1a-83c0-fc5ffdb531a6",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Service Operations Agent (Microsoft Copilot Studio)",
+      "app_id": "2788b245-acde-41e4-9052-3429a15be0a3",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "commerce-copilot-firstpartyappid",
+      "app_id": "a2e5d98b-c0e5-4191-b4ae-f6aa7e469ede",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "app_id": "1ac38ad6-c894-4278-a701-a1560d916e49",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Windows Azure Active Directory",
+      "app_id": "00000002-0000-0000-c000-000000000000",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "app_id": "a4bfc093-a5d1-4949-b4c7-0fbc065bf041",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Machine Learning",
+      "app_id": "0736f41a-0425-4b46-bdb5-1563eff02385",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "JM1 - Author Portal W-9 ",
+      "app_id": "d6cfd112-cc56-4431-8897-a43394d17251",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "app_id": "b7c6454b-f04f-4df7-841e-d8c9af4481e8",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Reserved Instance Application",
+      "app_id": "4d0ad6c7-f6c3-46d8-ab0d-1406d5e6c86b",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "app_id": "b20ecd76-41d8-410d-a811-f1dc285bad6b",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft.Azure.SyncFabric",
+      "app_id": "00000014-0000-0000-c000-000000000000",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Customization Agent (Microsoft Copilot Studio)",
+      "app_id": "8df442ae-81d6-49c2-b6af-bb6a2eacba76",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "app_id": "c5082d1d-bda3-4d0d-9560-da125dbb83b0",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Bastion",
+      "app_id": "79d7fb34-4bef-4417-8184-ff713af7a679",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "app_id": "2c316bc5-d30a-4bd3-a9ff-a6a5be715362",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft Dataverse Connector",
+      "app_id": "02d637f4-6bed-46c2-aa72-274c8c5e0782",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Container Apps Arc - Data Plane",
+      "app_id": "409eb69a-5e20-4e1e-a8bf-c23300057950",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "app_id": "1601c074-0566-458f-bc46-ec10b9fcadbe",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "IC3 Gateway TestClone",
+      "app_id": "55bdc56c-2b15-4538-aa37-d0c008c8c430",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "app_id": "cb3e6387-8607-43c0-bb9c-ace2d75b5af2",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "AzureAutomation",
+      "app_id": "fc75330b-179d-49af-87dd-3b1acf6827fa",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Sales Profiler Agent (Microsoft Copilot Studio)",
+      "app_id": "32d27f88-7b66-481e-93cc-0317d735586a",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "OneDrive Web",
+      "app_id": "33be1cef-03fb-444b-8fd3-08ca1b4d803f",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft Dynamics Office Add-in",
+      "app_id": "01008d41-c09d-42cb-8631-ebef5cf8ae49",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft Azure Vnet Verifier",
+      "app_id": "6e02f8e9-db9b-4eb5-aa5a-7c8968375f68",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure AD Identity Protection",
+      "app_id": "fc68d9e5-1f76-45ef-99aa-214805418498",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Key Vault",
+      "app_id": "cfa8b339-82a2-471a-a3c9-0fc0be7a4093",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Virtual Desktop Client",
+      "app_id": "a85cf173-4192-42f8-81fa-777a763e6e2c",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "app_id": "f925efcf-162e-476d-b490-d9a1cf687453",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "App Service",
+      "app_id": "7ab7862c-4c57-491e-8a45-d52a7e023983",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Cost Management XCloud",
+      "app_id": "3184af01-7a88-49e0-8b55-8ecdce0aa950",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft Azure Signup Portal",
+      "app_id": "8e0e8db5-b713-4e91-98e6-470fed0aa4c2",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "CustomerServiceKnowledgeHarvestDedupe (Microsoft Copilot Studio)",
+      "app_id": "3bee3369-2cfc-49e0-96fd-f55b5fa9e0b5",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure SQL Database",
+      "app_id": "022907d3-0f1b-48f7-badc-1ba6abab6d66",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "app_id": "e4a6e8cf-531f-4d8d-a704-32ba64d6fc59",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "JM1 AI Verify — Claude Foundry Test Agent (Microsoft Copilot Studio)",
+      "app_id": "415c1b78-5859-4155-b697-69f1e493ce7d",
+      "type": "ServiceIdentity",
+      "enabled": true
+    },
+    {
+      "display_name": "OneNote",
+      "app_id": "2d4d3d8e-2be3-4bef-9f87-7875a61c29de",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "jm1-publishing-intake-api",
+      "app_id": "d8da73f7-c356-44ee-a312-a6d3096d5081",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure DNS",
+      "app_id": "19947cfd-0303-466c-ac3c-fcc19a7a1570",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Microsoft Dynamics 365 Supply Chain Visibility",
+      "app_id": "d6037e40-282c-493d-8f63-f255e36c6ef4",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure ESTS Service",
+      "app_id": "00000001-0000-0000-c000-000000000000",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "app_id": "e7247177-976d-4176-ac4f-7a726e77fe13",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Communication Services",
+      "app_id": "1fd5118e-2576-4263-8130-9503064c837a",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Cosmos DB Virtual Network To Network Resource Provider",
+      "app_id": "57c0fc58-a83a-41d0-8ae9-08952659bdfd",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Multi-Factor Auth Connector",
+      "app_id": "1f5530b3-261a-47a9-b357-ded261e17918",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "AzureSupportCenter",
+      "app_id": "37182072-3c9c-4f6a-a4b3-b3f91cacffce",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Files",
+      "app_id": "69dda2a9-33ca-4ed0-83fb-a9b7b8973ff4",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Signup Api",
+      "app_id": "3829f069-1c33-45dd-84ab-2465f4282677",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "app_id": "33f8e9f0-f982-4e88-98c4-97a44fcf8a1a",
+      "type": "Application",
+      "enabled": true
+    },
+    {
+      "display_name": "Azure Purview",
+      "app_id": "73c2949e-da2d-457a-9607-fcc665198967",
+      "type": "Application",
+      "enabled": true
+    }
+  ]
+}

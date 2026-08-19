@@ -1,0 +1,91 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "immediate_savings": [],
+  "savings_after_migration": [
+    {
+      "upn": "a0338273-c879-452f-b539-a300faacbb66@jmerrillfoundation.onmicrosoft.com",
+      "license_count": 5,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "appointments@jmerrill.one",
+      "license_count": 2,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "financial@jmerrill.one",
+      "license_count": 4,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "foundation@jmerrill.one",
+      "license_count": 4,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "iCloud@jmerrill.one",
+      "license_count": 1,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "info@jmerrill.one",
+      "license_count": 3,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "marla@jmerrill.one",
+      "license_count": 1,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "productions@jmerrill.one",
+      "license_count": 4,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "publishing@jmerrill.one",
+      "license_count": 4,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "scheduling@jmerrill.one",
+      "license_count": 2,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "voice-financial@jmerrill.one",
+      "license_count": 1,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "voice-foundation@jmerrill.one",
+      "license_count": 1,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "voice-main-inbound@jmerrill.one",
+      "license_count": 1,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "voice-productions@jmerrill.one",
+      "license_count": 1,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "voice-publishing@jmerrill.one",
+      "license_count": 1,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    },
+    {
+      "upn": "voicebridge@jmerrill.one",
+      "license_count": 1,
+      "condition": "after mailbox/OneDrive/Power Platform/workload migration proof"
+    }
+  ],
+  "no_direct_cost_complexity_reduction": [
+    "HQ/JMerrillOne vs ImplementationHQ",
+    "Deprecated - All Company"
+  ]
+}

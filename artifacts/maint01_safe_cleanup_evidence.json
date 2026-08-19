@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS",
+  "actions": [
+    {
+      "object": "dist/app-jm1-one-prod-v2.zip",
+      "type": "local generated build artifact",
+      "action": "moved directory dist to /tmp/jm1-maint01-cleanup/dist-20260817T0117Z",
+      "rollback": "move directory back to repo root as dist",
+      "risk": "low; rebuildable generated App Service zip"
+    }
+  ],
+  "not_executed": [
+    "No users/mailboxes/Teams/groups/sites/repos/licenses/app identities deleted.",
+    "No uncommitted worktrees deleted."
+  ]
+}

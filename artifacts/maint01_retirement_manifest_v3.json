@@ -1,0 +1,160 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "result": "MAINT-01 COMPLETE — ESTATE RATIONALIZED; FOUNDER CLEANUP CONFIRMATION REQUIRED",
+  "summary": "SharePoint standalone evidence is now complete. No object passes all retirement hard gates without Founder confirmation. High-confidence destructive retirement list remains empty per MAINT-01 rules.",
+
+  "section_1_high_confidence_retirement": [],
+  "section_1_note": "No object meets every hard gate (owner identified, purpose understood, activity reviewed, dependencies mapped, data retention addressed, automation cleared, permissions cleared, public references cleared, replacement identified, rollback understood). Founder confirmation is required before any destructive action.",
+
+  "section_2_consolidate_migrate_first": [
+    {
+      "object": "sites/foundation_comm",
+      "type": "SharePoint standalone communication site",
+      "proposed_action": "FOUNDER DECISION — if confirmed as orphan/duplicate: migrate Programs & Events content to sites/foundation_div, then retire the standalone site",
+      "risk": "Loss of public-facing Foundation communication site if purpose is external-facing and not captured elsewhere",
+      "replacement": "sites/foundation_div (Foundation Team site)",
+      "hard_gate_status": {
+        "owner_identified": false,
+        "purpose_understood": false,
+        "activity_reviewed": "PARTIAL",
+        "dependencies_mapped": false,
+        "data_retention_addressed": false,
+        "automation_dependencies_cleared": false,
+        "permission_dependencies_cleared": false,
+        "public_references_cleared": false,
+        "replacement_identified": "CONDITIONAL — foundation_div if consolidating",
+        "rollback_understood": false,
+        "team_checked": "N/A",
+        "group_checked": "N/A",
+        "sharepoint_checked": "PARTIAL",
+        "mailbox_checked": "N/A",
+        "planner_apps_checked": false
+      },
+      "gates_passed": 0,
+      "gates_required": 10,
+      "safe_to_retire_now": false
+    },
+    {
+      "object": "Deprecated - All Company",
+      "type": "M365 Group",
+      "proposed_action": "ASSESS group mailbox and SharePoint site for retention content; retire if no active data",
+      "risk": "Group mailbox/site data loss",
+      "replacement": "All Users security group or no replacement needed",
+      "hard_gate_status": {
+        "owner_identified": false,
+        "purpose_understood": "PARTIAL — deprecated naming implies intent to retire",
+        "activity_reviewed": false,
+        "dependencies_mapped": false,
+        "data_retention_addressed": false,
+        "automation_dependencies_cleared": false,
+        "permission_dependencies_cleared": false,
+        "public_references_cleared": false,
+        "replacement_identified": "PARTIAL",
+        "rollback_understood": false
+      },
+      "gates_passed": 0,
+      "gates_required": 10,
+      "safe_to_retire_now": false
+    },
+    {
+      "object": "sites/projects (dev artifact content)",
+      "type": "SharePoint site content (not site itself initially)",
+      "proposed_action": "FOUNDER DECISION — archive or remove dev build artifacts (JS bundles, repo mirrors) from SharePoint; source of truth is GitHub; keep Team shell if Projects Team collaboration continues",
+      "risk": "Loss of archived dev snapshots; acceptable if GitHub is authoritative",
+      "replacement": "GitHub repositories (already authoritative)",
+      "hard_gate_status": {
+        "owner_identified": false,
+        "purpose_understood": "PARTIAL",
+        "activity_reviewed": "PARTIAL — last activity January 2026",
+        "dependencies_mapped": false,
+        "data_retention_addressed": false,
+        "automation_dependencies_cleared": false,
+        "permission_dependencies_cleared": false,
+        "public_references_cleared": false,
+        "replacement_identified": "GitHub",
+        "rollback_understood": false
+      },
+      "gates_passed": 0,
+      "gates_required": 10,
+      "safe_to_retire_now": false
+    }
+  ],
+
+  "section_3_founder_decision_required": [
+    {
+      "decision": "foundation_comm — standalone vs. retain for public communications",
+      "affected_objects": ["sites/foundation_comm"],
+      "current_state": "Standalone communication site, no Team/Group, last active September 2025, Programs & Events content",
+      "recommendation": "If public-facing: retain and document purpose. If duplicate of foundation_div: migrate content and retire.",
+      "consequence": "If retained with unclear purpose: canon confusion. If incorrectly retired: loss of public Foundation identity.",
+      "cost_security_impact": "Low — standalone site with no automation confirmed"
+    },
+    {
+      "decision": "Enterprise canon location — ImplementationHQ vs. publishing/JM1 Shared Services dual presence",
+      "affected_objects": ["sites/ImplementationHQ/Architecture/00_CANON", "sites/publishing/JM1 Shared Services/Enterprise Governance"],
+      "current_state": "PROGRAM-004 evidence and governance docs exist in both locations",
+      "recommendation": "ImplementationHQ is the authoritative enterprise canon. Publishing site's Enterprise Governance becomes a reference copy with a clear pointer.",
+      "consequence": "Without resolution: editors and automation may write to the wrong location",
+      "cost_security_impact": "None — this is a governance/documentation decision, not a deletion"
+    },
+    {
+      "decision": "sites/projects dev artifact cleanup",
+      "affected_objects": ["sites/projects (Shared Documents content — JS bundles, repo mirrors)"],
+      "current_state": "Large Team-connected site with stale dev build artifacts, last updated January 2026",
+      "recommendation": "Archive or remove SharePoint-hosted dev artifacts; GitHub is authoritative. Retain the Projects Team shell if collaboration continues.",
+      "consequence": "If retained indefinitely: storage waste and confusion about which artifacts are canonical",
+      "cost_security_impact": "Low — build artifacts only, no sensitive business content confirmed"
+    },
+    {
+      "decision": "Sales Team — confirm active collaboration need",
+      "affected_objects": ["teams/Sales", "sites/sales"],
+      "current_state": "Low activity (last September 2025); pricing sheets only",
+      "recommendation": "Confirm whether Sales Team is actively used for collaboration or if pricing docs can live in a shared library",
+      "consequence": "If Sales Team is empty: removal would free a license slot; if active: retain",
+      "cost_security_impact": "Minor — one Team/Group/site if retired"
+    },
+    {
+      "decision": "Voicemail Team — confirm functional dependency",
+      "affected_objects": ["teams/Voicemail", "sites/voicemail"],
+      "current_state": "Inactive document site (last March 2025); voicemail routing may be the only function",
+      "recommendation": "Confirm if voicemail routing depends on the Team identity or if it can be decoupled. If decoupled, archive the Team.",
+      "consequence": "If routing depends on Team: must retain. If independent: Team and site can archive.",
+      "cost_security_impact": "Minor — one Team/Group/site if retired"
+    },
+    {
+      "decision": "Core shared mailbox set — confirm each is operationally active",
+      "affected_objects": ["accounting@", "board@", "donations@", "grants@", "media@", "volunteers@", "contacts@"],
+      "current_state": "All exist; usage evidence not available (usage reports 403). Legal, preneeds, royalties, submissions, tech already classified KEEP — CORE.",
+      "recommendation": "Jackie reviews each: confirm which receive external mail, which are automation targets, and which are internal aliases with no distinct need.",
+      "consequence": "Unused mailboxes consume identity slots and may confuse external parties",
+      "cost_security_impact": "Low per mailbox; shared mailboxes are unlicensed by default"
+    }
+  ],
+
+  "section_4_retain": [
+    { "object": "sites/ImplementationHQ", "reason": "KEEP — CORE: enterprise governance" },
+    { "object": "sites/publishing", "reason": "KEEP — CORE: primary publishing store" },
+    { "object": "sites/financial", "reason": "KEEP — CORE: sensitive client records" },
+    { "object": "sites/foundation_div", "reason": "KEEP — ACTIVE: Foundation operations" },
+    { "object": "sites/AgapeIC", "reason": "KEEP — ACTIVE: ministry" },
+    { "object": "sites/security", "reason": "KEEP — SECURITY BOUNDARY" },
+    { "object": "sites/marketing", "reason": "KEEP — ACTIVE: brand assets" },
+    { "object": "sites/support", "reason": "KEEP — ACTIVE: support function" },
+    { "object": "sites/JMerrillOne", "reason": "KEEP — ACTIVE: HQ Team" },
+    { "object": "sites/events", "reason": "KEEP — ACTIVE: Events Team" },
+    { "object": "sites/productions", "reason": "KEEP — ACTIVE: Productions entity" },
+    { "object": "sites/voicemail", "reason": "KEEP — SYSTEM: functional dependency pending confirmation" },
+    { "object": "logging@jmerrill.one", "reason": "AUTOMATION IDENTITY" },
+    { "object": "info@jmerrill.one", "reason": "PUBLIC COMMUNICATION" },
+    { "object": "notifications@jmerrill.one", "reason": "AUTOMATION IDENTITY" },
+    { "object": "no-reply@jmerrill.one", "reason": "AUTOMATION IDENTITY" },
+    { "object": "legal@jmerrill.one", "reason": "LEGAL IDENTITY — retain always" },
+    { "object": "preneeds@jmerrill.one", "reason": "OPERATIONAL — active pre-need intake" },
+    { "object": "royalties@jmerrill.one", "reason": "PUBLISHING CRITICAL" },
+    { "object": "submissions@jmerrill.one", "reason": "PUBLISHING CRITICAL" },
+    { "object": "tech@jmerrill.one", "reason": "TECHNICAL OPERATIONS" },
+    { "object": "All 112 app registrations", "reason": "KEEP — SYSTEM: Copilot Studio agents, OIDC federated identities; no retirement candidates without full dependency audit" }
+  ],
+
+  "section_5_blocked_unknown": []
+}

@@ -1,0 +1,5 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "rule": "Security groups are authorization constructs and may remain valid with one current human member when they protect division/access/role boundaries.",
+  "guidance": "Do not collapse durable role-based authorization into direct Jackie-only permission without a reason."
+}
