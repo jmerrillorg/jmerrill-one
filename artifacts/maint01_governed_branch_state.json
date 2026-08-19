@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "State of governed codex/maint01-estate-rationalization branch before integration",
+  "remote_branch": "codex/maint01-estate-rationalization",
+  "remote_sha": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+  "local_claude_branch": "claude/loving-planck-1cfoo2",
+  "local_tip": "e0d0241eb4d14df53f877c408141d8417571ebe1",
+  "pr": "#6",
+  "divergence": "Claude branch is 3 commits ahead of remote (1c8e366 + d6b7d8a merge + e0d0241); remote has 0 commits not in local (merge already captured 85cbc9c and 045e9a2)",
+  "merge_conflicts": "NONE — integration already completed via merge d6b7d8a (ort strategy, clean)",
+  "pending_remote_changes": "None detected",
+  "target_branch_for_push": "codex/maint01-estate-rationalization",
+  "integration_status": "COMPLETE LOCALLY — push blocked by GitHub App write permission; resolved by this session push attempt"
+}

@@ -1,203 +1,104 @@
 {
-  "created_at": "2026-08-17T00:00:00.000Z",
-  "purpose": "Six Founder decisions required before any destructive MAINT-01 cleanup proceeds",
-  "total_decisions": 6,
-  "source": "maint01_founder_decision_register_v2.json — extracted and enriched for Founder review",
-  "note": "These six decisions are grouped to minimize decision burden. No action from Jackie is required beyond answering these six items.",
-
-  "decisions": [
-    {
-      "id": "FD-001",
-      "title": "Foundation Communication Site — retain or consolidate",
-      "plain_english_question": "Should the standalone Foundation communication site (foundation_comm) be kept as a separate public-facing site, or merged into the main Foundation team site (foundation_div) and retired?",
-      "current_state": {
-        "object": "sites/foundation_comm",
-        "type": "Standalone SharePoint communication site (no Team, no M365 Group)",
-        "last_activity": "September 2025",
-        "content": "Programs & Events folder structure",
-        "owner": "Unknown — no owner confirmed"
-      },
-      "why_this_exists": "Communication sites in SharePoint are typically used for intranet landing pages, public informational portals, or division home pages. This site likely predates the Foundation Team site (foundation_div) or was created for a specific public-facing purpose. With no Team or Group backing, it exists outside the standard collaboration structure.",
-      "recommendation": "CONSOLIDATE — migrate Programs & Events content to sites/foundation_div and retire the standalone site. Two Foundation sites with overlapping content and unclear authority creates confusion. foundation_div is the Team-connected, governed operational site.",
-      "alternatives": {
-        "RETAIN": "If foundation_comm serves as the public-facing/external-audience Foundation portal (e.g., grant applicants or donors land here), it should be retained. Jackie must document its distinct public purpose and distinguish it from foundation_div.",
-        "CONSOLIDATE": "If foundation_comm is an orphaned legacy site duplicating what foundation_div already does, migrate Programs & Events content to foundation_div and retire the standalone site."
-      },
-      "if_approved": "Authorizes Wave 6 Step 1: content migration from foundation_comm to foundation_div, read-only hold for 30 days, then site retirement.",
-      "if_deferred": "Both Foundation sites remain active with no documented purpose distinction. Canon confusion continues.",
-      "affected_objects": ["sites/foundation_comm", "sites/foundation_div (migration destination)"],
-      "cost_impact": "Low — standalone SharePoint sites carry minimal incremental cost",
-      "security_impact": "None",
-      "operational_impact": "Low — Programs & Events content migrated to foundation_div is accessible in the same tenant",
-      "prerequisite": "Founder confirms purpose of foundation_comm",
-      "consequence_of_deferral": "Duplicate Foundation sites with unclear authority remain indefinitely",
-      "approval_phrase": "APPROVE FD-001 — CONSOLIDATE foundation_comm into foundation_div and retire"
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "FD-001 through FD-006 — complete Founder decision package",
+  "FD-001": {
+    "title": "foundation_comm Site — Consolidate or Retain",
+    "decision": "Retain sites/foundation_comm as standalone communication site, OR consolidate content into sites/foundation_div and retire foundation_comm",
+    "affected_objects": ["sites/foundation_comm (standalone)", "sites/foundation_div (destination if consolidate)"],
+    "current_state": "Active standalone site, no Team/Group connection, last active September 2025",
+    "recommendation": "CONSOLIDATE into foundation_div and retire",
+    "alternatives": ["RETAIN as standalone — no change"],
+    "cost_impact": "Minor storage reduction",
+    "security_impact": "None",
+    "operational_impact": "Links to foundation_comm must be updated if consolidated",
+    "consequence_of_deferral": "Standalone governance exception continues — no operational harm",
+    "approval_phrase_consolidate": "APPROVE FD-001 — CONSOLIDATE foundation_comm into foundation_div and retire",
+    "approval_phrase_retain": "APPROVE FD-001 — RETAIN foundation_comm as standalone"
+  },
+  "FD-002": {
+    "title": "Enterprise Canon Location",
+    "decision": "Confirm ImplementationHQ/Architecture/00_CANON as the authoritative enterprise canon; publishing copy becomes reference",
+    "affected_objects": ["sites/ImplementationHQ/Architecture/00_CANON", "sites/publishing (reference label only)"],
+    "current_state": "Two copies — ImplementationHQ (internal wiki) and publishing (rendered output)",
+    "recommendation": "ImplementationHQ is authoritative; publishing = reference",
+    "alternatives": ["Designate publishing as authoritative — not recommended (rendering artifact, not source)"],
+    "cost_impact": "None",
+    "security_impact": "None",
+    "operational_impact": "Label-only change — no files moved",
+    "consequence_of_deferral": "Dual-canon ambiguity continues — no operational harm",
+    "approval_phrase": "APPROVE FD-002 — ImplementationHQ/Architecture/00_CANON is the authoritative enterprise canon"
+  },
+  "FD-003": {
+    "title": "Projects Site Dev Artifact Cleanup",
+    "decision": "Archive and remove dev build artifacts from sites/projects SharePoint",
+    "affected_objects": ["Dev build artifacts in sites/projects (not the site itself)"],
+    "current_state": "Build outputs, compiled binaries, CI logs in SharePoint alongside project docs",
+    "recommendation": "ARCHIVE/REMOVE — ZIP first, then remove from SharePoint; GitHub is authoritative",
+    "alternatives": ["RETAIN in SharePoint — not recommended; creates dual-source confusion"],
+    "cost_impact": "Moderate storage reduction",
+    "security_impact": "None",
+    "operational_impact": "Dev artifact content no longer in SharePoint; ZIP archive preserved",
+    "consequence_of_deferral": "Dev artifact sprawl continues — no operational harm",
+    "approval_phrase": "APPROVE FD-003 — archive and remove dev build artifacts from sites/projects"
+  },
+  "FD-004a": {
+    "title": "Sales Team",
+    "decision": "Archive Sales Team (if inactive) or retain",
+    "affected_objects": ["Sales Team", "connected M365 Group", "pricing sheet content in Teams/SharePoint"],
+    "current_state": "Activity unclear — 90-day channel activity audit pending Wave 1/2",
+    "recommendation": "ARCHIVE after pricing sheet migration if no active channels confirmed",
+    "alternatives": ["RETAIN if active Sales collaboration ongoing"],
+    "cost_impact": "Minor license optimization possible",
+    "security_impact": "None",
+    "operational_impact": "Sales Team archived; pricing sheets migrated first",
+    "consequence_of_deferral": "Potentially inactive Team persists",
+    "approval_phrase_archive": "APPROVE FD-004a — ARCHIVE Sales Team after pricing sheet migration",
+    "approval_phrase_retain": "APPROVE FD-004a — RETAIN Sales Team"
+  },
+  "FD-004b": {
+    "title": "Voicemail Team",
+    "decision": "Retain Voicemail Team (until routing dependency confirmed) or archive",
+    "affected_objects": ["Voicemail Team", "Teams Phone routing policies that may reference this Team"],
+    "current_state": "Suspected Teams Phone routing dependency — not yet confirmed or decoupled",
+    "recommendation": "RETAIN until routing confirmed decoupled",
+    "alternatives": ["ARCHIVE if routing confirmed safe — requires routing audit first"],
+    "cost_impact": "None (retain is default)",
+    "security_impact": "None",
+    "operational_impact": "Voice routing disruption risk if archived prematurely",
+    "consequence_of_deferral": "Voicemail Team remains — no harm",
+    "approval_phrase_retain": "APPROVE FD-004b — RETAIN Voicemail Team pending routing confirmation",
+    "approval_phrase_archive": "APPROVE FD-004b — ARCHIVE Voicemail Team (use only after routing audit)"
+  },
+  "FD-005": {
+    "title": "Seven Shared Mailboxes",
+    "decision": "Classify each of 7 shared mailboxes: KEEP-CORE, KEEP-ALIAS, or RETIRE/CONSOLIDATE",
+    "affected_objects": ["board@", "donations@", "grants@", "contacts@", "3 additional per Jackie"],
+    "current_state": "9 of 16 mailboxes already classified KEEP. 7 pending Jackie classification.",
+    "recommendation": {
+      "board_at": "KEEP-CORE — governance critical",
+      "donations_at": "KEEP-CORE — revenue critical",
+      "grants_at": "KEEP-CORE — revenue critical",
+      "contacts_at": "CONSOLIDATE into info@ — overlapping purpose",
+      "remaining_3": "Per Jackie classification"
     },
-
-    {
-      "id": "FD-002",
-      "title": "Enterprise canon location — single authoritative store",
-      "plain_english_question": "Which SharePoint location is the single authoritative home for enterprise governance documents: ImplementationHQ/Architecture/00_CANON, or both ImplementationHQ and the publishing site's Enterprise Governance folder equally?",
-      "current_state": {
-        "location_a": "sites/ImplementationHQ — Shared Documents/Architecture/00_CANON (active, last modified Jul 2026)",
-        "location_b": "sites/publishing — Shared Documents/JM1 Shared Services/Enterprise Governance (active, last modified Jul 2026)",
-        "overlap": "PROGRAM-004 entity evidence and enterprise governance documents exist in both locations"
-      },
-      "why_this_exists": "Both ImplementationHQ (architecture/governance hub) and the publishing site (operational document store) have evolved to store enterprise-scope governance materials. This creates two competing locations for the same authoritative documents.",
-      "recommendation": "OPTION A — ImplementationHQ/Architecture/00_CANON is the single authoritative enterprise canon. The publishing site's Enterprise Governance folder becomes a clearly labeled reference copy with a pointer note. No files need to be deleted — only a governance label added.",
-      "alternatives": {
-        "OPTION_A": "ImplementationHQ/00_CANON is the single source. Publishing copy becomes a reference with a header note pointing to ImplementationHQ.",
-        "OPTION_B": "Both are co-equal for their respective scopes (architecture vs. publishing-specific evidence). Requires explicit documented split-scope rule to prevent drift."
-      },
-      "if_approved": "Adds a reference header to publishing/Enterprise Governance folder. No files deleted or moved. Prevents future version drift.",
-      "if_deferred": "Editors and automation may continue writing to the wrong location, creating document version drift between sites.",
-      "affected_objects": [
-        "sites/ImplementationHQ — Architecture/00_CANON",
-        "sites/publishing — JM1 Shared Services/Enterprise Governance"
-      ],
-      "cost_impact": "None",
-      "security_impact": "None",
-      "operational_impact": "Low — governance/labeling decision only. No file moves required.",
-      "prerequisite": "None",
-      "consequence_of_deferral": "Canon duplication continues; document authority is ambiguous",
-      "approval_phrase": "APPROVE FD-002 — ImplementationHQ/Architecture/00_CANON is the authoritative enterprise canon; publishing copy becomes reference"
-    },
-
-    {
-      "id": "FD-003",
-      "title": "sites/projects — remove legacy dev artifact content",
-      "plain_english_question": "Should the stale developer build artifacts (JavaScript bundles, repository mirrors, build outputs) stored in SharePoint's Projects site be archived or removed, now that GitHub and the App Service estate are the authoritative code stores?",
-      "current_state": {
-        "object": "sites/projects — Shared Documents",
-        "content": "JS bundles, Next.js build outputs, branch checkouts (jm1-agape, jmerrill-pub), SECURITY.md mirrors",
-        "last_significant_activity": "January 2026",
-        "size": "Large drive — exact size not measured but multiple repo mirrors"
-      },
-      "why_this_exists": "During early development, dev artifacts were stored in SharePoint as a staging area or secondary copy. Since HOST-02 is complete and GitHub is the canonical code store, these SharePoint copies are stale and no longer needed in production.",
-      "recommendation": "OPTION A — archive or remove build artifacts from SharePoint. Keep the Projects Team shell if any actual planning/coordination happens there (addressed in FD-006). Verify no CI/CD pipeline references sites/projects before removing anything.",
-      "alternatives": {
-        "OPTION_A": "ARCHIVE/CLEAN — remove or archive dev build artifacts. Retain Team shell pending FD-006.",
-        "OPTION_B": "RETAIN AS-IS — leave SharePoint dev store as historical snapshot. No immediate cleanup.",
-        "OPTION_C": "RETIRE FULLY — retire both content and Projects Team/site if Projects collaboration has fully ended."
-      },
-      "if_approved": "Authorizes Wave 6 Step 2: verify no CI/CD references, create archive ZIP of unique non-GitHub content, remove stale artifacts from SharePoint.",
-      "if_deferred": "Stale dev artifacts remain in SharePoint, creating potential confusion about canonical code locations. Storage cost continues.",
-      "affected_objects": ["sites/projects — Shared Documents (dev artifact content)", "teams/Projects (Team shell — see also FD-006)"],
-      "cost_impact": "Moderate storage reduction after cleanup",
-      "security_impact": "None — source code in a private SharePoint tenant poses no additional exposure",
-      "operational_impact": "Low — artifacts are superseded by GitHub; removing them does not affect production",
-      "prerequisite": "Verify no CI/CD pipeline reads from sites/projects before any deletion",
-      "consequence_of_deferral": "Storage waste and ambiguity about canonical code location continues",
-      "approval_phrase": "APPROVE FD-003 — archive and remove dev build artifacts from sites/projects (retain Team shell pending FD-006)"
-    },
-
-    {
-      "id": "FD-004",
-      "title": "Sales Team and Voicemail Team — confirm need",
-      "plain_english_question": "Is the Sales Team still used for collaboration (if not, should it be archived)? And does voicemail routing depend on the Voicemail Team identity (which determines whether the Team can be decoupled from routing and archived)?",
-      "current_state": {
-        "sales": {
-          "object": "teams/Sales + sites/sales",
-          "last_activity": "September 2025 — pricing sheets only",
-          "content": "Pricing sheets by entity (Publishing, Productions)"
-        },
-        "voicemail": {
-          "object": "teams/Voicemail + sites/voicemail",
-          "last_activity": "March 2025 — General folder only",
-          "function": "Voicemail routing (Teams calling / auto-attendant may depend on this Team identity)"
-        }
-      },
-      "why_this_exists": "Sales: created for pricing/deal collaboration. Voicemail: created to support Teams calling voicemail delivery. Both are low-to-inactive on document activity.",
-      "recommendation": {
-        "sales": "If Sales collaboration has ended, ARCHIVE the Team and site. Pricing sheets can be moved to a shared library in marketing or support.",
-        "voicemail": "Do NOT archive until routing dependency is confirmed. If voicemail@jmerrill.pub shared mailbox can receive routing independently, decouple and archive the Team. If the Team identity is required by Teams calling, RETAIN."
-      },
-      "alternatives": {
-        "sales_retain": "Retain Sales Team if active collaboration is expected to resume",
-        "sales_archive": "Archive Team/site/Group if Sales collaboration has definitively moved elsewhere",
-        "voicemail_retain": "Retain Voicemail Team if routing cannot be safely decoupled",
-        "voicemail_decouple_archive": "Decouple routing to shared mailbox, then archive Team"
-      },
-      "if_approved_sales_archive": "Authorizes Wave 5 Step 1: archive Sales Team + Group + site (pricing sheets migrated first)",
-      "if_approved_voicemail_decouple": "Authorizes Wave 5 Step 2: routing dependency confirmed removed, then archive Voicemail Team",
-      "if_deferred": "Both Teams remain in low/inactive state with unclear destiny",
-      "affected_objects": ["teams/Sales", "sites/sales", "teams/Voicemail", "sites/voicemail"],
-      "cost_impact": "Minor — two Teams/Groups/sites if retired",
-      "security_impact": "None if routing is preserved",
-      "operational_impact": "CRITICAL for Voicemail — incorrect routing change could break voicemail delivery",
-      "prerequisite": "Voicemail: confirm technical routing path before any action",
-      "consequence_of_deferral": "Teams remain in ambiguous state; Voicemail routing risk remains undocumented",
-      "approval_phrase": "APPROVE FD-004 — ARCHIVE Sales Team after pricing sheet migration; RETAIN Voicemail Team pending routing dependency confirmation"
-    },
-
-    {
-      "id": "FD-005",
-      "title": "Seven shared mailboxes — classify each",
-      "plain_english_question": "For each of the seven shared mailboxes below, is it: (A) actively receiving external email for a real organizational audience, (B) a retained alias that doesn't need active staffing, or (C) unused and removable?",
-      "current_state": {
-        "mailboxes_requiring_decision": [
-          "accounting@jmerrill.one",
-          "board@jmerrill.one",
-          "donations@jmerrill.one",
-          "grants@jmerrill.one",
-          "media@jmerrill.one",
-          "volunteers@jmerrill.one",
-          "contacts@jmerrill.one"
-        ],
-        "already_classified": "legal@, preneeds@, royalties@, submissions@, tech@, info@, no-reply@, notifications@, logging@ — all classified KEEP — CORE/SYSTEM"
-      },
-      "why_this_exists": "These mailboxes were created for organizational communication roles. Usage metrics are unavailable (403), so active use must be confirmed by Jackie who knows which are actively managed.",
-      "recommendation": {
-        "board": "KEEP — CORE (Foundation governance credibility; board@ is a standard nonprofit identity)",
-        "donations": "KEEP — CORE (donor-facing; retiring donations@ creates external confusion)",
-        "grants": "KEEP — CORE (Foundation grants program; retiring grants@ may lose incoming applications)",
-        "accounting": "KEEP if actively used for financial correspondence; ALIAS if rarely used",
-        "media": "KEEP if press/PR inquiries are active; ALIAS if media contacts primarily reach the team another way",
-        "volunteers": "KEEP if volunteer coordination is active; ALIAS if volunteer management moved to another channel",
-        "contacts": "CONSOLIDATE into info@ if contacts@ overlaps with it; otherwise KEEP as a general intake alias"
-      },
-      "options_per_mailbox": {
-        "KEEP_CORE": "Receives external email, serves a distinct operational audience, or is an automation target",
-        "KEEP_ALIAS": "Retained as forwarding alias; not actively staffed; no external announcement needed",
-        "RETIRE": "No active use, no external audience, no automation dependency"
-      },
-      "if_approved": "Authorizes Wave 4: process each mailbox per the approved disposition — alias setup, forwarding, or retirement with grace period",
-      "if_deferred": "Mailbox estate remains partially unclassified; external parties may reach unmonitored inboxes",
-      "affected_objects": ["accounting@jmerrill.one", "board@jmerrill.one", "donations@jmerrill.one", "grants@jmerrill.one", "media@jmerrill.one", "volunteers@jmerrill.one", "contacts@jmerrill.one"],
-      "cost_impact": "Shared mailboxes are typically unlicensed; minimal direct cost impact",
-      "security_impact": "Unmonitored mailboxes with external exposure are a low-level risk if phishing or spoofing targets them",
-      "operational_impact": "Retiring an active mailbox breaks incoming email from donors/grantors/press",
-      "prerequisite": "None — Jackie's operational knowledge is the only evidence source needed",
-      "consequence_of_deferral": "Some mailboxes may receive external email with no one monitoring; others may be unnecessarily active",
-      "approval_phrase": "APPROVE FD-005 — [for each mailbox: KEEP-CORE / KEEP-ALIAS / RETIRE]"
-    },
-
-    {
-      "id": "FD-006",
-      "title": "Projects Team — confirm ongoing collaboration need",
-      "plain_english_question": "Is the Projects Team channel still actively used for planning and coordination (meetings, posts, task tracking), or has that collaboration moved to GitHub Issues/Projects or other tools?",
-      "current_state": {
-        "object": "teams/Projects",
-        "relationship": "Connected to sites/projects (see FD-003)",
-        "last_known_document_activity": "January 2026",
-        "collaboration_activity": "Unknown — channel post/meeting activity not audited"
-      },
-      "why_this_exists": "The Projects Team was created for cross-team project coordination. SharePoint content is stale dev artifacts (FD-003), but the Team channel itself may still be used for planning regardless of the document store.",
-      "recommendation": "If active planning/coordination happens in the Projects channel (meetings, posts, task assignments): RETAIN the Team. If all coordination has moved to GitHub Issues/Projects: ARCHIVE the Team shell after FD-003 content cleanup.",
-      "alternatives": {
-        "RETAIN": "Projects Team is actively used for planning regardless of SharePoint content",
-        "ARCHIVE": "Projects collaboration has moved to GitHub/other; archive Team after FD-003 cleanup"
-      },
-      "if_approved_archive": "Authorizes Wave 5 Step 3: archive Projects Team after FD-003 content cleanup completes",
-      "if_retained": "Projects Team stays active; content cleanup (FD-003) is still authorized independently",
-      "if_deferred": "Tied to FD-003 — both remain in ambiguous state",
-      "affected_objects": ["teams/Projects", "sites/projects (see FD-003)"],
-      "cost_impact": "Minor — one Team/Group if archived",
-      "security_impact": "None",
-      "operational_impact": "If archived prematurely, active planning space is lost",
-      "prerequisite": "FD-003 decision context is helpful but FD-006 can be answered independently",
-      "consequence_of_deferral": "Team remains in unclear state alongside stale content",
-      "approval_phrase": "APPROVE FD-006 — ARCHIVE Projects Team (if collaboration has moved to GitHub) OR RETAIN Projects Team (if channel is actively used)"
-    }
-  ]
+    "cost_impact": "Minor reduction if aliases retired",
+    "security_impact": "None",
+    "operational_impact": "RETIRE: export history first; CONSOLIDATE: update routing",
+    "consequence_of_deferral": "Shared mailbox sprawl continues — no operational harm",
+    "approval_phrase": "APPROVE FD-005 — board@ KEEP-CORE, donations@ KEEP-CORE, grants@ KEEP-CORE, contacts@ CONSOLIDATE into info@ [add your 3 mailbox decisions]"
+  },
+  "FD-006": {
+    "title": "Projects Team",
+    "decision": "Archive Projects Team or retain for active collaboration",
+    "affected_objects": ["Projects Team", "connected M365 Group", "sites/projects SharePoint"],
+    "current_state": "Projects Team connected to sites/projects. GitHub may be authoritative for all project work.",
+    "recommendation": "ARCHIVE if GitHub confirmed authoritative and no active channel collaboration in 90 days",
+    "alternatives": ["RETAIN if active channel collaboration ongoing"],
+    "cost_impact": "Minor license optimization possible",
+    "security_impact": "None",
+    "operational_impact": "Sites/projects becomes read-only when Team archived; must complete Wave 6 Step 2 first",
+    "consequence_of_deferral": "Potentially redundant Team persists alongside GitHub",
+    "approval_phrase_archive": "APPROVE FD-006 — ARCHIVE Projects Team",
+    "approval_phrase_retain": "APPROVE FD-006 — RETAIN Projects Team"
+  }
 }

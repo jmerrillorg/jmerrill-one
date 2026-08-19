@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "Validate content of three Claude commits before integration",
+  "result": "PASS",
+  "commit_1c8e366": {
+    "expected": "SharePoint discovery, standalone site evidence, v3 SharePoint artifacts, no destructive changes",
+    "files_changed": 116,
+    "all_files_maint01_prefixed": true,
+    "contains_sharepoint_inventory_v3": true,
+    "contains_sharepoint_standalone_delta": true,
+    "contains_sharepoint_usage_v2": true,
+    "contains_founder_decision_register_v2": true,
+    "contains_evidence_completeness_gate_v2": true,
+    "destructive_changes": false,
+    "validation": "PASS"
+  },
+  "commit_d6b7d8a": {
+    "expected": "Merge preserving Cody MAINT-01 lineage, no unrelated content",
+    "type": "merge",
+    "parents": ["1c8e366 (Claude SharePoint discovery)", "85cbc9c (Cody MAINT-01 continuation)"],
+    "strategy": "ort (clean, no conflicts)",
+    "unrelated_content": false,
+    "cody_lineage_preserved": true,
+    "validation": "PASS"
+  },
+  "commit_e0d0241": {
+    "expected": "Recovery validation, SharePoint reconciliation, Founder decision packet, cleanup waves, final closeout artifacts",
+    "files_changed": 43,
+    "all_files_maint01_prefixed": true,
+    "contains_founder_decision_packet": true,
+    "contains_cleanup_execution_waves": true,
+    "contains_final_closeout_v4": true,
+    "contains_sharepoint_site_classification_final": true,
+    "contains_founder_confirmable_manifest": true,
+    "contains_pr6_executive_summary": true,
+    "unrelated_publishing_files": false,
+    "validation": "PASS"
+  },
+  "combined": {
+    "total_maint01_files": 159,
+    "non_maint01_files": 0,
+    "secrets_detected": false,
+    "mailbox_content": false,
+    "destructive_actions": false
+  }
+}
