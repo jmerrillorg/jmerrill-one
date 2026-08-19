@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_prepush_validation_final",
+  "generated": "2026-08-19",
+  "result": "PASS",
+  "checks": {
+    "json_parse_all_maint01_artifacts": "PASS — 162 files, 0 failures",
+    "git_diff_check": "PASS — no whitespace errors",
+    "secret_credential_scan": "PASS — no passwords, tokens, API keys, or client secrets",
+    "no_mailbox_contents": "PASS — no raw mail data in any artifact",
+    "no_unrelated_files": "PASS — all changes are MAINT-01 artifacts",
+    "all_commits_signed": "PASS — 5 commits, all gpgsig=1, all noreply@anthropic.com",
+    "no_force_push_required": "PASS — fast-forward from 85cbc9c to 34f9501"
+  }
+}
