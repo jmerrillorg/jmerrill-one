@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_final_local_recovery",
+  "generated": "2026-08-19",
+  "result": "PASS",
+  "method": "DIRECT LOCAL ACCESS — same container environment",
+  "repo_path": "/home/user/jmerrill-one",
+  "branch": "claude/loving-planck-1cfoo2",
+  "authoritative_tip": "6f6e4bc",
+  "current_tip": "6f6e4bc",
+  "working_tree_clean": true,
+  "no_bundle_required": true,
+  "note": "Claude and Cody share the same container; /home/user/jmerrill-one is directly accessible"
+}
