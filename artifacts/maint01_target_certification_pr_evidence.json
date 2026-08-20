@@ -4,6 +4,10 @@
   "created_at": "2026-08-20T11:45:00Z",
   "target_branch": "codex/maint01-estate-rationalization",
   "target_pr": 6,
-  "status": "PENDING_COMMIT_AND_PUSH",
-  "result": "PENDING"
+  "head_sha_after_push": "c2456c9fe39586fab788b4905cfefdc6f508f1b2",
+  "pr_state": "OPEN",
+  "merge_state": "CLEAN",
+  "pr_url": "https://github.com/jmerrillorg/jmerrill-one/pull/6",
+  "status": "COMMITTED_AND_PUSHED",
+  "result": "PASS"
 }
