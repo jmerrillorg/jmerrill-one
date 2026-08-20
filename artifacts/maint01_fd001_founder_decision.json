@@ -1,0 +1,23 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-001",
+  "recorded_at": "2026-08-20T13:08:00Z",
+  "founder_authorization": "Delete chosen2k7 only if final live dependency check confirms no active Team, Group, SharePoint, application, ownership, or current business relationship dependency.",
+  "delete_candidate": {
+    "upn": "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+    "mail": "chosen2k7@gmail.com",
+    "status": "DELETE CANDIDATE"
+  },
+  "retain": [
+    {
+      "upn": "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "mail": "email@thechapelofpeace.com",
+      "reason": "PendingAcceptance alone is insufficient evidence for deletion; domain indicates potentially legitimate organizational/church relationship."
+    },
+    {
+      "upn": "lisataye_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "mail": "lisataye@gmail.com",
+      "reason": "Accepted guest; no current evidence supports retirement."
+    }
+  ]
+}

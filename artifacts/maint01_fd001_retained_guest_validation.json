@@ -1,0 +1,34 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-001",
+  "checked_at": "2026-08-20T13:08:00Z",
+  "result": "PASS",
+  "retained_guests": [
+    {
+      "id": "d7cf8239-ea31-47a4-b731-27534bed4bc0",
+      "displayName": "email",
+      "upn": "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "mail": "email@thechapelofpeace.com",
+      "userType": "Guest",
+      "accountEnabled": true,
+      "createdDateTime": "2026-05-04T12:41:57Z",
+      "externalUserState": "PendingAcceptance",
+      "disposition": "RETAIN pending relationship confirmation"
+    },
+    {
+      "id": "5db6067e-4b30-4dba-9816-e1bcea805f5d",
+      "displayName": "lisataye",
+      "upn": "lisataye_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "mail": "lisataye@gmail.com",
+      "userType": "Guest",
+      "accountEnabled": true,
+      "createdDateTime": "2026-08-17T07:26:13Z",
+      "externalUserState": "Accepted",
+      "disposition": "RETAIN"
+    }
+  ],
+  "tenant_guest_list_after_delete": [
+    "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+    "lisataye_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com"
+  ]
+}
