@@ -1,0 +1,172 @@
+{
+  "created_at": "2026-08-17T02:09:38.856Z",
+  "package": "MAINT-01 continuation",
+  "source_branch": "",
+  "source_files": {
+    "maint01_repo_inventory.json": {
+      "exists": true,
+      "result": "PASS",
+      "keys": [
+        "created_at",
+        "result",
+        "repos"
+      ],
+      "summary": {
+        "repos": 19
+      }
+    },
+    "maint01_repo_ownership_matrix.json": {
+      "exists": true,
+      "result": "PASS",
+      "keys": [
+        "created_at",
+        "result",
+        "matrix",
+        "exceptions"
+      ],
+      "summary": {}
+    },
+    "maint01_m365_user_inventory.json": {
+      "exists": true,
+      "result": "PASS_WITH_LIMITATIONS",
+      "keys": [
+        "created_at",
+        "result",
+        "users",
+        "limitations"
+      ],
+      "summary": {
+        "users": 43
+      }
+    },
+    "maint01_m365_group_inventory.json": {
+      "exists": true,
+      "result": "PASS_WITH_LIMITATIONS",
+      "keys": [
+        "created_at",
+        "result",
+        "groups"
+      ],
+      "summary": {
+        "groups": 17
+      }
+    },
+    "maint01_security_group_inventory.json": {
+      "exists": true,
+      "result": "PASS_WITH_LIMITATIONS",
+      "keys": [
+        "created_at",
+        "result",
+        "groups"
+      ],
+      "summary": {
+        "groups": 9
+      }
+    },
+    "maint01_app_identity_inventory.json": {
+      "exists": true,
+      "result": "PASS_WITH_LIMITATIONS",
+      "keys": [
+        "created_at",
+        "result",
+        "applications",
+        "service_principals_relevant_count",
+        "service_principals_sample"
+      ],
+      "summary": {}
+    },
+    "maint01_disposition_matrix.json": {
+      "exists": true,
+      "result": "PARTIAL - DEPENDENCY DISCOVERY INCOMPLETE",
+      "keys": [
+        "created_at",
+        "result",
+        "objects"
+      ],
+      "summary": {}
+    },
+    "maint01_collaboration_dependency_graph.json": {
+      "exists": true,
+      "result": "PARTIAL - SHAREPOINT/TEAMS DETAILS BLOCKED",
+      "keys": [
+        "created_at",
+        "result",
+        "graph",
+        "hard_gate"
+      ],
+      "summary": {}
+    },
+    "maint01_retirement_manifest.json": {
+      "exists": true,
+      "result": "FOUNDER_CONFIRMATION_REQUIRED_AFTER DISCOVERY",
+      "keys": [
+        "created_at",
+        "result",
+        "candidates"
+      ],
+      "summary": {
+        "candidates": 3
+      }
+    },
+    "maint01_final_scorecard.json": {
+      "exists": true,
+      "result": "MAINT-01 REMEDIATION REQUIRED",
+      "keys": [
+        "created_at",
+        "repos_inventoried",
+        "stale_worktrees_removed",
+        "sharepoint_sites_inventoried",
+        "duplicate_libraries_found",
+        "users_inventoried",
+        "licenses_reviewed",
+        "shared_mailboxes_inventoried",
+        "teams_inventoried",
+        "m365_groups_inventoried",
+        "security_groups_inventoried",
+        "service_accounts_inventoried",
+        "app_identities_inventoried",
+        "safe_cleanup_completed",
+        "retirement_candidates",
+        "cost_impact",
+        "security_impact",
+        "unresolved_decisions",
+        "final_classification"
+      ],
+      "summary": {}
+    },
+    "maint01_final_closeout.json": {
+      "exists": true,
+      "result": "MAINT-01 REMEDIATION REQUIRED",
+      "keys": [
+        "created_at",
+        "final_classification",
+        "recovered_deferred_work",
+        "repository_estate",
+        "sharepoint_estate",
+        "canon_alignment",
+        "users",
+        "licensing",
+        "shared_mailboxes",
+        "teams",
+        "m365_groups",
+        "security_groups",
+        "service_accounts",
+        "app_identities",
+        "dependency_graph",
+        "safe_cleanup_completed",
+        "retirement_manifest",
+        "sharepoint_target_architecture",
+        "repo_target_architecture",
+        "m365_target_architecture",
+        "cost_impact",
+        "security_impact",
+        "remaining_human_decisions",
+        "jrn01_status",
+        "recommended_next_maintenance_action"
+      ],
+      "summary": {
+        "users": 31
+      }
+    }
+  }
+}

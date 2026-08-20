@@ -1,0 +1,172 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_execution_target_certification",
+  "created_at": "2026-08-20T11:25:00Z",
+  "target_repository": "J Merrill One",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "target_pr": 6,
+  "governed_head_at_start": "5e7dfb37e57d5716406ceef275f774f3f6237624",
+  "result": "FAIL",
+  "failure_reason": "Authoritative MAINT-01 artifacts do not identify the exact object IDs/accounts for the narrower approved mutation counts. Current read-only Microsoft Graph verification exposes multiple possible candidates for several destructive actions.",
+  "read_only_graph_context": {
+    "tenant": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+    "admin_context": "jm1-admin@jmerrill.one",
+    "users_seen": 44,
+    "groups_seen": 26,
+    "applications_seen": 112
+  },
+  "fd001_stale_guest": {
+    "required_count": 1,
+    "authoritative_target": "NOT CERTIFIED",
+    "graph_guest_candidates": [
+      {
+        "display_name": "chosen2k7",
+        "upn": "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+        "object_id": "60468cde-ddf5-4f49-997e-dc19d9e405ac",
+        "current_state": "enabled guest, zero licenses"
+      },
+      {
+        "display_name": "email",
+        "upn": "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+        "object_id": "d7cf8239-ea31-47a4-b731-27534bed4bc0",
+        "current_state": "enabled guest, zero licenses"
+      },
+      {
+        "display_name": "lisataye",
+        "upn": "lisataye_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+        "object_id": "5db6067e-4b30-4dba-9816-e1bcea805f5d",
+        "current_state": "enabled guest, zero licenses"
+      }
+    ],
+    "approved_action": "Delete 1 stale guest",
+    "dependency_artifact_source": "maint01_cece_to_cody_handoff.json and maint01_founder_decisions_final_validation.json name count only; no exact stale guest ID found."
+  },
+  "fd002_license_assignments": {
+    "required_count": 4,
+    "authoritative_targets": "NOT CERTIFIED",
+    "graph_disabled_licensed_candidates": [
+      {
+        "display_name": "JM1-Voice Financial",
+        "upn": "voice-financial@jmerrill.one",
+        "object_id": "f74e11a5-2ea6-4040-b7df-2975e71cb690",
+        "assigned_license_count": 1
+      },
+      {
+        "display_name": "JM1-Voice Foundation",
+        "upn": "voice-foundation@jmerrill.one",
+        "object_id": "31c29f77-40be-48d9-b40e-7a7474387810",
+        "assigned_license_count": 1
+      },
+      {
+        "display_name": "JM1-Voice Main Inbound",
+        "upn": "voice-main-inbound@jmerrill.one",
+        "object_id": "8adf4f22-f0f0-4415-b9c3-8b890fab2e59",
+        "assigned_license_count": 1
+      },
+      {
+        "display_name": "JM1-Voice Productions",
+        "upn": "voice-productions@jmerrill.one",
+        "object_id": "25cc94bc-1669-4cb9-93b9-ae5c90bf48ec",
+        "assigned_license_count": 1
+      },
+      {
+        "display_name": "JM1-Voice Publishing",
+        "upn": "voice-publishing@jmerrill.one",
+        "object_id": "2acdbbd5-df66-459d-8277-f91f55e97f0e",
+        "assigned_license_count": 1
+      },
+      {
+        "display_name": "JM1 Voice Bridge",
+        "upn": "voicebridge@jmerrill.one",
+        "object_id": "48badbfb-3a92-4fad-8a87-d50447c65f52",
+        "assigned_license_count": 1
+      }
+    ],
+    "approved_action": "Unassign 4 orphaned Premium licenses",
+    "dependency_artifact_source": "maint01_final_cost_complexity_impact.json states four recoverable licenses, but license final disposition artifacts also state no line-item removals identified without audit."
+  },
+  "fd003_inactive_internal_users": {
+    "required_count": 2,
+    "authoritative_targets": "NOT CERTIFIED",
+    "approved_action": "Disable sign-in for 2 inactive internal accounts",
+    "dependency_artifact_source": "maint01_fd003_execution.json and handoff artifacts name count only; no exact two user object IDs found."
+  },
+  "fd004_teams_groups": {
+    "required_count": 3,
+    "authoritative_targets": "NOT CERTIFIED",
+    "candidate_universe_from_evidence": [
+      {
+        "team": "Sales",
+        "group_id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+        "current_evidence_state": "archive only after pricing sheet migration"
+      },
+      {
+        "team": "Voicemail",
+        "group_id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+        "current_evidence_state": "retain by default until routing dependency confirmed"
+      },
+      {
+        "team": "Projects",
+        "group_id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+        "current_evidence_state": "archive only after SharePoint dev artifact cleanup"
+      },
+      {
+        "team": "Marketing",
+        "group_id": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+        "current_evidence_state": "one-person organizational container, retained in final disposition"
+      },
+      {
+        "team": "Events",
+        "group_id": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+        "current_evidence_state": "one-person organizational container, retained in final disposition"
+      }
+    ],
+    "approved_action": "Archive 3 inactive Teams/M365 Groups",
+    "dependency_artifact_source": "maint01_wave5_teams_groups.json identifies Sales, Voicemail, and Projects as conditional candidates, but prerequisites are not complete and later final disposition retains Marketing/Events."
+  },
+  "fd005_mailboxes": {
+    "required_count": 7,
+    "authoritative_targets": "PARTIALLY CERTIFIED",
+    "mailbox_dispositions": [
+      "accounting@jmerrill.one KEEP-CORE",
+      "board@jmerrill.one KEEP-CORE",
+      "donations@jmerrill.one KEEP-CORE",
+      "grants@jmerrill.one KEEP-CORE",
+      "media@jmerrill.one KEEP-ALIAS",
+      "volunteers@jmerrill.one KEEP-ALIAS",
+      "contacts@jmerrill.one CONSOLIDATE into info@"
+    ],
+    "mutation_status": "NOT EXECUTED",
+    "reason": "contacts@ consolidation requires dependency verification across public contact paths, Bookings, Power Automate, Dynamics, Customer Voice, and Forms before changing routing."
+  },
+  "fd006_app_registrations": {
+    "required_count": 2,
+    "authoritative_targets": "NOT CERTIFIED",
+    "graph_retirement_candidate_universe_from_artifacts": [
+      {
+        "display_name": "github-aic-deploy",
+        "application_object_id": "4ba6f665-6e75-45f3-8011-c36ccee3fdb1",
+        "service_principal_id": "9553fc9e-ad2d-4f87-8e87-fb282db171b3"
+      },
+      {
+        "display_name": "Portals-Site 1",
+        "application_object_id": "722f9d01-ddfe-4563-85df-c6a837e68874",
+        "service_principal_id": "a492d337-4ac7-4d7a-8607-190c13e49e4f"
+      },
+      {
+        "display_name": "BusinessCentralSharePoint",
+        "application_object_id": "7569a45d-0dcf-4424-b007-b1c38cf9070f",
+        "service_principal_id": "56fb4087-3719-42e3-aa78-2ad43a918461"
+      },
+      {
+        "display_name": "BusinessCentralAPI",
+        "application_object_id": "f942c040-53d8-43a1-ad68-b5bf178bcee7",
+        "service_principal_id": "09a74afb-92d2-4ef3-a288-c79f471d4af1"
+      }
+    ],
+    "approved_action": "Delete 2 expired app registrations only if dependency certification proves both unused/orphaned",
+    "dependency_artifact_source": "maint01_app_identity_inventory_v2.json contains four retirement_candidate=true objects, while FD-006 approval count is two."
+  },
+  "mutation_gate": "BLOCKED",
+  "mutation_summary": "No Microsoft tenant mutations executed."
+}

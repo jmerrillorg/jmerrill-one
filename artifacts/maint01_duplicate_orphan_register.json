@@ -1,0 +1,474 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS_WITH_BLOCKERS",
+  "repositories": [
+    {
+      "object": "jm1-one",
+      "evidence": "Possible legacy duplicate of jmerrill-one; requires Founder review before archive/delete.",
+      "dependency": "No deletion without exact manifest.",
+      "proposed_disposition": "ARCHIVE OR RETIRE AFTER REVIEW",
+      "risk": "history/redirect dependency"
+    },
+    {
+      "object": "jm-productions-redirect",
+      "evidence": "redirect/legacy support",
+      "dependency": "Archived already; retain unless legal/redirect evidence says otherwise.",
+      "proposed_disposition": "ARCHIVE OR RETIRE AFTER REVIEW",
+      "risk": "history/redirect dependency"
+    },
+    {
+      "object": "jm-www-redirect",
+      "evidence": "redirect/legacy support",
+      "dependency": "No deletion without exact manifest.",
+      "proposed_disposition": "ARCHIVE OR RETIRE AFTER REVIEW",
+      "risk": "history/redirect dependency"
+    },
+    {
+      "object": "jm-redirect-foundation",
+      "evidence": "redirect/legacy support",
+      "dependency": "No deletion without exact manifest.",
+      "proposed_disposition": "ARCHIVE OR RETIRE AFTER REVIEW",
+      "risk": "history/redirect dependency"
+    }
+  ],
+  "sharepoint": [
+    {
+      "object": "SharePoint canon/governance libraries",
+      "evidence": "Enumeration blocked",
+      "dependency": "Unknown",
+      "proposed_disposition": "UNKNOWN",
+      "risk": "Cannot consolidate blindly"
+    }
+  ],
+  "users": [
+    {
+      "object": "a0338273-c879-452f-b539-a300faacbb66@jmerrillfoundation.onmicrosoft.com",
+      "evidence": "LICENSE REVIEW",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "accounting@jmerrill.one",
+      "evidence": "SERVICE ACCOUNT",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "appointments@jmerrill.one",
+      "evidence": "LICENSE REVIEW",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "board@jmerrill.one",
+      "evidence": "SERVICE ACCOUNT",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "contacts@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "donation@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "financial@jmerrill.one",
+      "evidence": "LICENSE REVIEW",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "foundation@jmerrill.one",
+      "evidence": "LICENSE REVIEW",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "grants@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "jackie@jmerrillfoundation.onmicrosoft.com",
+      "evidence": "LICENSE REVIEW",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "JMerrillFinancial@jmerrill.one",
+      "evidence": "SERVICE ACCOUNT",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "JMerrillFoundation@jmerrill.one",
+      "evidence": "SERVICE ACCOUNT",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "JMerrillPublishing@jmerrill.one",
+      "evidence": "SERVICE ACCOUNT",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "JMerrillPublishingBookings@jmerrill.one",
+      "evidence": "SERVICE ACCOUNT",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "logging@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "media@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "no-reply@jmerrillfoundation.onmicrosoft.com",
+      "evidence": "SERVICE ACCOUNT",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "notifications@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "preneeds@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "productions@jmerrill.one",
+      "evidence": "LICENSE REVIEW",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "publishing@jmerrill.one",
+      "evidence": "LICENSE REVIEW",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "royalties@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "submissions@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "tech@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "voice-financial@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "voice-foundation@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "voice-main-inbound@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "voice-productions@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "voice-publishing@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "voicebridge@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    },
+    {
+      "object": "volunteers@jmerrill.one",
+      "evidence": "DISABLED - RETAIN",
+      "dependency": "Do not delete without mailbox/OneDrive/group/dependency proof.",
+      "proposed_disposition": "REVIEW",
+      "risk": "mailbox/OneDrive/workload breakage"
+    }
+  ],
+  "mailboxes": [],
+  "teams": [
+    {
+      "object": "Projects",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Financial Team",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Foundation Team",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Support",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Marketing",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Security & Compliance",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Productions Team",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Agape International Cathedral",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Sales",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Voicemail",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Events",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "HQ",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Publishing Team",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Marlan Gary Coordination",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    },
+    {
+      "object": "Implementation HQ",
+      "evidence": "Team-backed M365 group exists",
+      "dependency": "SharePoint/Planner/channels unknown",
+      "proposed_disposition": "REVIEW",
+      "risk": "collaboration/data loss"
+    }
+  ],
+  "m365_groups": [
+    {
+      "object": "Deprecated - All Company",
+      "evidence": "Deprecated name",
+      "dependency": "mailbox/SharePoint unknown",
+      "proposed_disposition": "RETIREMENT CANDIDATE",
+      "risk": "retention/content"
+    }
+  ],
+  "security_groups": [],
+  "service_accounts": [],
+  "app_identities": [
+    {
+      "object": "JM1-Bookings-AppPublic",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "github-aic-deploy",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "JM1-Dataverse-ServicePrincipal",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "jm1-publishing-intake-api",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "JM1-Bookings-AppPublic",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "github-deploy-aic",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "J Merrill One HQ – Power BI",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "jm1-hq-app-sp",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "JM1 â€“ BC SharePoint Integration",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "jm1-ed-functions",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "J Merrill Foundation Integration",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "Bookings",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    },
+    {
+      "object": "JM1 Graph Directory",
+      "evidence": "credential expired or near expiration",
+      "dependency": "app/workload unknown",
+      "proposed_disposition": "ROTATE OR RETIRE CREDENTIAL",
+      "risk": "workload outage"
+    }
+  ]
+}

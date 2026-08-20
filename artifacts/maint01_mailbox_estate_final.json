@@ -1,0 +1,23 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_mailbox_estate_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "cleanup_executed": false,
+  "shared_mailboxes_from_landed_evidence": 16,
+  "fd005_final_disposition": {
+    "KEEP_CORE": [
+      "accounting@jmerrill.one",
+      "board@jmerrill.one",
+      "donations@jmerrill.one",
+      "grants@jmerrill.one"
+    ],
+    "KEEP_ALIAS": [
+      "media@jmerrill.one",
+      "volunteers@jmerrill.one"
+    ],
+    "CONSOLIDATE_PENDING": [
+      "contacts@jmerrill.one into info@jmerrill.one"
+    ]
+  },
+  "status": "UNCHANGED - contacts@ consolidation not executed"
+}

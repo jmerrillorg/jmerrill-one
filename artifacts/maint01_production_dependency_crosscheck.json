@@ -1,0 +1,174 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE",
+  "public_website_email_references": [
+    {
+      "url": "https://jmerrill.one/contact",
+      "emails": [
+        "info@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.pub/",
+      "emails": [
+        "jmerrillpublishing@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.pub/contact",
+      "emails": [
+        "jmerrillpublishing@jmerrill.one",
+        "publishing@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.pub/experience",
+      "emails": [
+        "jmerrillpublishing@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.pub/experience/",
+      "emails": [
+        "jmerrillpublishing@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.pub/share-your-experience/",
+      "emails": [
+        "jmerrillpublishing@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.pub/archive",
+      "emails": [
+        "jmerrillpublishing@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.financial/",
+      "emails": [
+        "jmerrillfinancial@jmerrill.one",
+        "financial@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.financial/contact",
+      "emails": [
+        "jmerrillfinancial@jmerrill.one",
+        "financial@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.financial/experience",
+      "emails": [
+        "jmerrillfinancial@jmerrill.one",
+        "financial@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.financial/experience/",
+      "emails": [
+        "jmerrillfinancial@jmerrill.one",
+        "financial@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.financial/share-your-experience/",
+      "emails": [
+        "jmerrillfinancial@jmerrill.one",
+        "financial@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.financial/archive",
+      "emails": [
+        "jmerrillfinancial@jmerrill.one",
+        "financial@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.foundation/",
+      "emails": [
+        "foundation@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.foundation/contact",
+      "emails": [
+        "foundation@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.foundation/experience",
+      "emails": [
+        "foundation@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.foundation/experience/",
+      "emails": [
+        "foundation@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.foundation/share-your-experience/",
+      "emails": [
+        "foundation@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.foundation/archive",
+      "emails": [
+        "foundation@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jmerrill.productions/contact",
+      "emails": [
+        "productions@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jackiesmithjr.com/",
+      "emails": [
+        "jackie@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jackiesmithjr.com/contact",
+      "emails": [
+        "jackie@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jackiesmithjr.com/experience",
+      "emails": [
+        "jackie@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jackiesmithjr.com/experience/",
+      "emails": [
+        "jackie@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jackiesmithjr.com/share-your-experience/",
+      "emails": [
+        "jackie@jmerrill.one"
+      ]
+    },
+    {
+      "url": "https://jackiesmithjr.com/archive",
+      "emails": [
+        "jackie@jmerrill.one"
+      ]
+    }
+  ],
+  "github_reference_scan": "rg scan captured in execution; curated dependencies retained in mailbox/app artifacts",
+  "azure_app_services": "HOST-02 v2 deployment/OIDC identities retained",
+  "financial_functions": "No deletion proposed",
+  "customer_voice": "Public Customer Voice URLs retained; no JRN-01 modification",
+  "decision": "Publicly referenced mailboxes retained."
+}

@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Library/content preservation check for newly discovered standalone sites",
+  "sites_reviewed": [
+    {
+      "site": "sites/foundation_comm",
+      "title": "Foundation Communication Site",
+      "url": "https://jmerrillfoundation.sharepoint.com/sites/foundation_comm",
+      "libraries_observed": [
+        {
+          "name": "Shared Documents",
+          "content_observed": ["04 Programs & Events folder"],
+          "content_category": "Foundation programs and events documentation",
+          "last_modified": "2025-09-11",
+          "estimated_volume": "Low — folder structure only confirmed, individual files not enumerated"
+        }
+      ],
+      "owner": "UNKNOWN — no owner confirmed from search results",
+      "retention_significance": "LOW — no retention-specific content identified (no legal, financial, or personnel records observed)",
+      "canon_governance_relevance": "POSSIBLE — may contain Foundation program records; requires Founder review",
+      "active_operational_role": "UNCERTAIN — no active updates since September 2025; no Team or Group dependency",
+      "target_if_migrated": "sites/foundation_div (Foundation Team) — Programs & Events content would consolidate there",
+      "preservation_action_required": "FOUNDER DECISION — before any consolidation or retirement:",
+      "preservation_checklist": {
+        "content_inventoried": "PARTIAL — folder structure confirmed; file-level audit not completed",
+        "owner_identified": false,
+        "retention_reviewed": false,
+        "migration_target_confirmed": false,
+        "permissions_reviewed": false,
+        "canon_references_checked": false,
+        "team_checked": "N/A — no Team",
+        "group_checked": "N/A — no Group",
+        "mailbox_checked": "N/A — communication site",
+        "automation_dependencies_checked": false
+      },
+      "safe_to_retire_now": false,
+      "reason": "Owner unconfirmed, file-level audit incomplete, Founder decision pending"
+    }
+  ]
+}

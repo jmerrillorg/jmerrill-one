@@ -1,0 +1,63 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-005",
+  "artifact": "maint01_fd005_prechange_snapshot",
+  "captured_before_execution": true,
+  "snapshot_time": "2026-08-20T00:00:00-04:00",
+  "exchange_connection": "Connected as jm1-admin@jmerrill.one",
+  "contacts_mailbox_before": {
+    "exchange_object_id": "e06bcf6c-bf0a-477a-93c6-efbaac7c930d",
+    "mailbox_recipient_type": "SharedMailbox",
+    "primary_smtp": "contacts@jmerrill.one",
+    "aliases": [
+      "contacts@jmerrillfoundation.onmicrosoft.com",
+      "contacts@jmerrill.one"
+    ],
+    "forwarding": null,
+    "deliver_to_mailbox_and_forward": false,
+    "delegates": [
+      "appointments@jmerrill.one",
+      "jackie@jmerrill.one",
+      "publishing@jmerrill.one",
+      "financial@jmerrill.one",
+      "foundation@jmerrill.one",
+      "jm1-admin@jmerrill.one",
+      "scheduling@jmerrill.one"
+    ],
+    "inbox_rules": []
+  },
+  "info_mailbox_before": {
+    "exchange_object_id": "f4094597-9b48-43b6-b238-4dc0cd308b0c",
+    "mailbox_recipient_type": "SharedMailbox",
+    "primary_smtp": "info@jmerrill.one",
+    "aliases": [
+      "info@jmerrill.productions",
+      "info@jmerrill.org",
+      "info@jmerrill.financial",
+      "info@jmerrill.pub",
+      "info5978@jmerrillfoundation.onmicrosoft.com",
+      "info@jmerrill.one"
+    ],
+    "forwarding": "appointments@jmerrill.one",
+    "deliver_to_mailbox_and_forward": true,
+    "delegates": [
+      "appointments@jmerrill.one"
+    ],
+    "inbox_rules": []
+  },
+  "dependency_snapshot": {
+    "public_website_references": {
+      "contacts@jmerrill.one": [],
+      "info@jmerrill.one": [
+        "content/canon.ts",
+        "app/contact/ContactPageClient.tsx"
+      ]
+    },
+    "bookings_references": "No contacts@ dependency found in landed evidence",
+    "power_automate_references": "No contacts@ dependency found in landed evidence",
+    "dynamics_references": "No contacts@ dependency found in landed evidence",
+    "customer_voice_references": "No contacts@ dependency found in landed evidence",
+    "forms_contact_references": "No contacts@ dependency found in landed evidence"
+  }
+}
+

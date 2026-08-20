@@ -1,0 +1,55 @@
+{
+  "package": "MAINT-01",
+  "version": "v2",
+  "generated_at": "2026-08-20T13:08:00Z",
+  "rows": [
+    {
+      "domain": "FD-001 Guests",
+      "object": "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "final_disposition": "DELETED",
+      "evidence": "SAFE TO DELETE certification and post-delete ResourceNotFound verification"
+    },
+    {
+      "domain": "FD-001 Guests",
+      "object": "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "final_disposition": "RETAIN",
+      "evidence": "Guest still resolves; potential legitimate relationship"
+    },
+    {
+      "domain": "FD-001 Guests",
+      "object": "lisataye_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "final_disposition": "RETAIN",
+      "evidence": "Guest still resolves; Accepted state"
+    },
+    {
+      "domain": "FD-004 Teams",
+      "object": "Sales Team",
+      "final_disposition": "ARCHIVE READY - BACKLOG",
+      "evidence": "Preservation plan/readiness final artifacts"
+    },
+    {
+      "domain": "FD-004 Teams",
+      "object": "Projects Team",
+      "final_disposition": "ARCHIVE READY - BACKLOG",
+      "evidence": "Preservation map/GitHub authority/build artifact disposition artifacts"
+    },
+    {
+      "domain": "FD-004 Teams",
+      "object": "Voicemail Team",
+      "final_disposition": "KEEP - PAUSED VOICE PROJECT / REACTIVATION PLANNED",
+      "evidence": "Voice preservation validation"
+    },
+    {
+      "domain": "FD-005 Mail",
+      "object": "contacts@jmerrill.one",
+      "final_disposition": "COMPLETE - FORWARD TO info@ AND DELIVER LOCALLY",
+      "evidence": "Exchange postpass validation"
+    },
+    {
+      "domain": "FD-006 Apps",
+      "object": "github-aic-deploy / BusinessCentralAPI / Portals-Site 1 / BusinessCentralSharePoint",
+      "final_disposition": "RETAIN/REVIEW",
+      "evidence": "Live display-name reconciliation and FD-006 final disposition"
+    }
+  ]
+}

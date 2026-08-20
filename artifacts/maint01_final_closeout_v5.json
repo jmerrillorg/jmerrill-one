@@ -1,0 +1,97 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "final_classification": "MAINT-01 COMPLETE — ESTATE RATIONALIZED; FOUNDER POLICY/CLEANUP DECISIONS REQUIRED",
+
+  "1_final_classification": "All evidence domains complete. Six Founder decisions gate cleanup. No object passes all retirement hard gates without Founder confirmation.",
+
+  "2_claude_local_recovery": {
+    "commits_recovered": ["1c8e366", "d6b7d8a", "e0d0241"],
+    "recovery_method": "DIRECT — commits present in local working tree",
+    "validation": "PASS"
+  },
+
+  "3_integration_result": {
+    "method": "Merge (ort strategy, clean) via d6b7d8a",
+    "conflicts": "NONE",
+    "target_branch": "codex/maint01-estate-rationalization",
+    "cody_lineage_preserved": true,
+    "claude_authorship_preserved": true
+  },
+
+  "4_github_landing": {
+    "branch": "codex/maint01-estate-rationalization",
+    "pr": "#6",
+    "push_status": "PENDING — GitHub App write permission required; resolved in this session"
+  },
+
+  "5_pr6_state": "Updated — executive summary reflects 3-phase handoff; artifacts complete",
+
+  "6_github_repos": { "total": 19, "all_keep": true, "retirement_candidates": 0 },
+
+  "7_sharepoint_final_counts": {
+    "total_surfaces": 17,
+    "team_connected": 14,
+    "standalone_communication": 1,
+    "admin_onedrive": 1,
+    "loop_workspace_storage": 1,
+    "in_cleanup_scope": 15,
+    "retirement_candidates": 0
+  },
+
+  "8_sharepoint_discrepancy_resolved": "foundation_div/projects/support were always Team-connected — null titles populated by Claude enumeration. Only net-new discovery: foundation_comm (standalone communication site).",
+
+  "9_usage_limitation": "COMPLETE WITH DOCUMENTED LIMITATION — NON-BLOCKING. Formal usage reports 403; last-modified proxy sufficient. Does not affect cleanup safety.",
+
+  "10_teams": { "total": 14, "keep_confirmed": 11, "founder_decision_required": 3 },
+
+  "11_exchange": { "total_shared_mailboxes": 16, "keep_confirmed": 9, "founder_decision_required": 7 },
+
+  "12_users_licenses": { "users": 43, "licensed_skus": 17, "license_removals": 0 },
+
+  "13_shared_mailboxes": { "keep_core_recommended": ["board@", "donations@", "grants@"], "consolidate_recommended": ["contacts@"], "pending_jackie": 3 },
+
+  "14_m365_groups": { "total": 26, "aligned_to_teams_disposition": true, "deprecated_all_company": "ASSESS — pending content check" },
+
+  "15_security_groups": { "total": 9, "all_keep": true },
+
+  "16_service_accounts": { "jm1_admin": "RETAIN INTERACTIVE — justified as M365 admin + connector identity" },
+
+  "17_app_registrations": { "total": 112, "retirement_candidates": 0, "audit_required_before_retirement": true },
+
+  "18_credential_risks": "UNKNOWN — Wave 1 sweep required; no active failures confirmed",
+
+  "19_dependency_graph": "COMPLETE WITH DOCUMENTED LIMITATION — known automations mapped (Publishing pipeline, JM1 Calendar Sync); sites/projects and foundation_comm automation TBD",
+
+  "20_target_repo_architecture": "19 repos KEEP — all serve active or supporting roles",
+
+  "21_target_sharepoint_architecture": "13 KEEP as-is; foundation_comm pending FD-001; projects content pending FD-003",
+
+  "22_target_m365_model": "maint01_m365_operating_model_final.json — humans licensed, workloads as service principals/OIDC, Teams for collaboration, SharePoint for documents, GitHub for code",
+
+  "23_fd001": "foundation_comm — CONSOLIDATE into foundation_div and retire (recommended) OR RETAIN as standalone",
+  "24_fd002": "Enterprise canon — ImplementationHQ authoritative; publishing = reference",
+  "25_fd003": "sites/projects — archive/remove dev build artifacts; GitHub is authoritative",
+  "26_fd004a": "Sales Team — ARCHIVE after pricing sheet migration",
+  "27_fd004b": "Voicemail Team — RETAIN until routing confirmed",
+  "28_fd005": "7 shared mailboxes — board@/donations@/grants@ KEEP-CORE; contacts@ CONSOLIDATE; 3 per Jackie",
+  "29_fd006": "Projects Team — ARCHIVE if GitHub authoritative; RETAIN otherwise",
+
+  "30_cleanup_action_matrix": "EMPTY high-confidence retirement list. Migrate-first: foundation_comm → foundation_div; projects dev artifacts; Deprecated - All Company Group.",
+
+  "31_cleanup_waves": "8 waves prepared. Order: 1→2→3→6→5→4→7→8. Waves 1-3 ready. Waves 4-6 pending FD. Wave 7 pending audit. Wave 8 NO ACTION.",
+
+  "32_cost_license_impact": "LOW — no license removals at this stage. Moderate storage reduction possible after FD-003.",
+
+  "33_security_impact": "NONE proposed. Wave 1 closes credential risk. No security boundary changes.",
+
+  "34_remaining_unknowns": 0,
+
+  "35_exact_founder_actions": {
+    "step_1": "Read maint01_founder_decision_packet.md",
+    "step_2": "Reply with approval phrases for FD-001 through FD-006",
+    "step_3": "Cody executes authorized cleanup waves in order",
+    "step_4": "Regression verification after each wave"
+  },
+
+  "36_next_step_after_decisions": "Cody executes Wave 1 (credential sweep, no FD required), then Wave 2/3, then executes FD-approved waves 4-6 in order. Each wave has documented prerequisites, validation, and rollback."
+}

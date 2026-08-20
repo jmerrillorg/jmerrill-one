@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_final_cost_complexity_impact",
+  "generated": "2026-08-19",
+  "cleanup_executed": false,
+  "savings_realized": "NONE — cleanup deferred pending admin Graph API access",
+  "projected_on_execution": {
+    "FD-002_license_removal": "4 Premium licenses recoverable; actual savings depend on SKU/subscription pricing",
+    "FD-001_guest_removal": "Security surface reduction — 1 fewer external identity",
+    "FD-003_account_disable": "Security surface reduction — 2 fewer active sign-in paths",
+    "FD-004_teams_archive": "Complexity reduction — 3 Teams moved to read-only; no further governance overhead",
+    "FD-005_contacts_consolidation": "Operational simplification — 1 fewer active mailbox to manage",
+    "FD-006_app_reg_cleanup": "Security surface reduction — conditional on dependency certification"
+  },
+  "note": "Do not invent dollar values. Pricing requires tenant-specific license agreement data."
+}

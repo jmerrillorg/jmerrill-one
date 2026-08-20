@@ -1,0 +1,76 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Settle duplicate canon/governance locations using complete tenant site inventory",
+  "status": "FOUNDER DECISION REQUIRED on canon location; all other items resolved",
+
+  "enterprise_canon": {
+    "candidates": [
+      {
+        "location": "sites/ImplementationHQ — Shared Documents/Architecture/00_CANON",
+        "drive_id": "b!8C-33D_sXUePF2rt6UP1EiXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+        "evidence": "Active (last modified 2026-07-22). Contains entity canon sub-folders: Financial/Events, Foundation, etc. Housed within ImplementationHQ, the enterprise architecture site.",
+        "activity": "ACTIVE",
+        "recommendation": "AUTHORITATIVE ENTERPRISE CANON"
+      },
+      {
+        "location": "sites/publishing — Shared Documents/JM1 Shared Services/Enterprise Governance",
+        "drive_id": "b!mA37NWi8UEKdDYwH1o5AJNWKIBAoAPBIn_pxeBKSSDVm9PH59uWnQpr1oD4m79se",
+        "evidence": "Active (last modified 2026-07-25). Contains PROGRAM-004 entity evidence, enterprise governance docs. Housed within Publishing site.",
+        "activity": "ACTIVE",
+        "recommendation": "REFERENCE COPY — consolidate into ImplementationHQ canon or formalize as enterprise-shared library with clear pointer from ImplementationHQ"
+      }
+    ],
+    "resolution": "FOUNDER DECISION REQUIRED",
+    "decision_question": "Which SharePoint location is the single authoritative enterprise canon store: ImplementationHQ/Architecture/00_CANON or ImplementationHQ as the site itself? The Publishing site's Enterprise Governance folder should become a reference copy or be merged.",
+    "risk_if_unresolved": "Canon duplication — editors and automation may reference different versions of the same governance document"
+  },
+
+  "implementation_hq_duplication": {
+    "locations": [
+      "sites/ImplementationHQ — Team SharePoint (Implementation HQ Team)",
+      "sites/JMerrillOne — Team SharePoint (HQ Team)"
+    ],
+    "resolution": "CONFIRMED DISTINCT — ImplementationHQ is the enterprise architecture/governance site; JMerrillOne is the HQ Team's operational collaboration space. Both are Team-connected and serve different purposes. No consolidation needed.",
+    "action": "KEEP BOTH — document distinct purpose in target architecture"
+  },
+
+  "division_canon": {
+    "publishing": {
+      "authoritative_location": "sites/publishing",
+      "notes": "Clear and active. No duplication."
+    },
+    "financial": {
+      "authoritative_location": "sites/financial",
+      "notes": "Clear and active. No duplication."
+    },
+    "foundation": {
+      "authoritative_location": "sites/foundation_div (Foundation Team)",
+      "secondary": "sites/foundation_comm (standalone communication site)",
+      "resolution": "FOUNDER DECISION REQUIRED — determine if foundation_comm is the public-facing communication site (retain with distinct purpose) or an orphaned duplicate (consolidate into foundation_div)",
+      "action": "FOUNDER DECISION"
+    },
+    "productions": {
+      "authoritative_location": "sites/productions (Productions Team)",
+      "notes": "Drive not indexed; content not confirmed. Likely thin collaboration shell."
+    },
+    "agape": {
+      "authoritative_location": "sites/AgapeIC (Agape International Cathedral Team)",
+      "notes": "Clear ministry collaboration site."
+    }
+  },
+
+  "governance_programs": {
+    "PROGRAM-002": "Confirmed in ImplementationHQ/JM1 Enterprise Architecture/01_Programs — ACTIVE, enterprise adoption complete",
+    "PROGRAM-004": "Confirmed in both ImplementationHQ and publishing/JM1 Shared Services — reference copy situation, see enterprise canon decision above",
+    "ADRs": "Confirmed in ImplementationHQ architecture/governance folders — authoritative location"
+  },
+
+  "archive_locations": {
+    "confirmed": [
+      "sites/ImplementationHQ — Architecture/99_ARCHIVE",
+      "sites/publishing — 07_Archive",
+      "sites/foundation_div — 07_Archive"
+    ],
+    "action": "KEEP — archive folders are appropriate in-place"
+  }
+}

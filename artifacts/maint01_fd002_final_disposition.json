@@ -1,0 +1,17 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-002",
+  "final_disposition": "CLOSED - NO CERTIFIED REMOVALS",
+  "safe_license_removals": 0,
+  "protected_apparent_candidates": [
+    "voice-financial@jmerrill.one",
+    "voice-foundation@jmerrill.one",
+    "voice-main-inbound@jmerrill.one",
+    "voice-productions@jmerrill.one",
+    "voice-publishing@jmerrill.one",
+    "voicebridge@jmerrill.one"
+  ],
+  "required_wording": "Original count-based removal target is superseded by current certified evidence. The apparent candidates are intentional Teams Voice workload identities and are retained.",
+  "replacement_target_search": "NOT PERFORMED - obsolete count-based approval superseded by current certified evidence"
+}
+

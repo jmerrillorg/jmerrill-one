@@ -1,0 +1,178 @@
+{
+  "package": "MAINT-01",
+  "team": "Projects",
+  "result": "PASS",
+  "root_content": [
+    {
+      "name": "00_Operations",
+      "classification": "OPERATIONAL MATERIAL",
+      "destination": "Retain in governed Projects SharePoint records.",
+      "childCount": 1,
+      "size": 37
+    },
+    {
+      "name": "01_Programs-Services",
+      "classification": "ACTIVE BUSINESS RECORD",
+      "destination": "Retain in governed Projects/Programs records.",
+      "childCount": 4,
+      "size": 201
+    },
+    {
+      "name": "02_People",
+      "classification": "ACTIVE BUSINESS RECORD",
+      "destination": "Retain in governed People/Projects records; no duplicate Contact identity created.",
+      "childCount": 1,
+      "size": 33
+    },
+    {
+      "name": "03_Marketing",
+      "classification": "OPERATIONAL MATERIAL",
+      "destination": "Retain in governed marketing/project records.",
+      "childCount": 1,
+      "size": 36
+    },
+    {
+      "name": "04_Financials",
+      "classification": "ACTIVE BUSINESS RECORD",
+      "destination": "Retain in governed financial/project records.",
+      "childCount": 1,
+      "size": 37
+    },
+    {
+      "name": "05_Legal-Compliance",
+      "classification": "ACTIVE BUSINESS RECORD",
+      "destination": "Retain in governed legal/compliance records.",
+      "childCount": 1,
+      "size": 43
+    },
+    {
+      "name": "06_Media-Assets",
+      "classification": "OPERATIONAL MATERIAL",
+      "destination": "Retain in governed media/project records.",
+      "childCount": 1,
+      "size": 39
+    },
+    {
+      "name": "07_Archive",
+      "classification": "OPERATIONAL MATERIAL",
+      "destination": "Retain as historical archive evidence.",
+      "childCount": 3,
+      "size": 117
+    },
+    {
+      "name": "08_Templates",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "destination": "Retain as reusable template/reference material.",
+      "childCount": 1,
+      "size": 36
+    },
+    {
+      "name": "General",
+      "classification": "TEMPORARY",
+      "destination": "Empty Teams channel folder; no preservation move required.",
+      "childCount": 0,
+      "size": 0
+    },
+    {
+      "name": "projects",
+      "classification": "OPERATIONAL MATERIAL",
+      "destination": "Separate business/reference content from duplicated build/repository artifacts before destructive cleanup.",
+      "childCount": 12,
+      "size": 7658638685
+    },
+    {
+      "name": "JM1_Migration_1_0_0_1_managed.zip",
+      "classification": "DUPLICATE",
+      "destination": "Retain only if deployment package is not already represented in governed source/release evidence; otherwise eligible for later archive/delete approval.",
+      "childCount": null,
+      "size": 137371
+    }
+  ],
+  "projects_folder_content": [
+    {
+      "name": "Archive",
+      "classification": "OPERATIONAL MATERIAL",
+      "disposition": "Retain during archive execution.",
+      "childCount": 1,
+      "size": 4960
+    },
+    {
+      "name": "Automation",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "disposition": "Verify against GitHub authority; retain unique automation evidence before archive execution.",
+      "childCount": 3,
+      "size": 1501187169
+    },
+    {
+      "name": "Brands",
+      "classification": "ACTIVE BUSINESS RECORD",
+      "disposition": "Retain brand assets unless separately superseded in governed asset library.",
+      "childCount": 6,
+      "size": 4989331836
+    },
+    {
+      "name": "Diagnostics",
+      "classification": "TEMPORARY",
+      "disposition": "Eligible for later cleanup if empty and not required for evidence.",
+      "childCount": 0,
+      "size": 0
+    },
+    {
+      "name": "Docs",
+      "classification": "UNKNOWN",
+      "disposition": "Empty in live listing; retain until confirmed no unique documentation.",
+      "childCount": 0,
+      "size": 0
+    },
+    {
+      "name": "Infrastructure",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "disposition": "Verify against GitHub authority before any move/delete.",
+      "childCount": 3,
+      "size": 0
+    },
+    {
+      "name": "JM1-Core",
+      "classification": "DUPLICATE",
+      "disposition": "Likely repo mirror/build content; GitHub is authoritative, but retain until manifest confirms no unique files.",
+      "childCount": 7,
+      "size": 2797
+    },
+    {
+      "name": "JM1-Implementation-HQ",
+      "classification": "DUPLICATE",
+      "disposition": "Likely repo mirror/build content; GitHub is authoritative, but retain until manifest confirms no unique files.",
+      "childCount": 1,
+      "size": 1168104078
+    },
+    {
+      "name": "logs",
+      "classification": "OPERATIONAL MATERIAL",
+      "disposition": "Retain as execution evidence until superseded by governed artifacts.",
+      "childCount": 1,
+      "size": 3503
+    },
+    {
+      "name": "publishSettings.txt",
+      "classification": "TEMPORARY",
+      "disposition": "Potential sensitive deployment artifact; preserve evidence and queue for secure cleanup approval.",
+      "childCount": null,
+      "size": 0
+    },
+    {
+      "name": "reset-live-sites.sh",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "disposition": "Compare against GitHub before archive/delete.",
+      "childCount": null,
+      "size": 1918
+    },
+    {
+      "name": "sync-live-sites.sh",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "disposition": "Compare against GitHub before archive/delete.",
+      "childCount": null,
+      "size": 2424
+    }
+  ],
+  "no_content_deleted_or_moved": true
+}

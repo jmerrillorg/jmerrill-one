@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-08-20T10:24:36.700Z",
+  "package": "MAINT-01",
+  "phase": "Phase 1 - Recover Claude final local branch",
+  "result": "FAIL",
+  "required_source": {
+    "repo": "/home/user/jmerrill-one",
+    "branch": "claude/loving-planck-1cfoo2",
+    "tip": "a38d8b4"
+  },
+  "current_cody_branch": "codex/maint01-estate-rationalization",
+  "current_cody_head": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+  "source_checks": [
+    {
+      "path": "/home/user/jmerrill-one",
+      "exists": false
+    },
+    {
+      "path": "/Users/jmerrillone/Developer/jmerrill-one",
+      "exists": true,
+      "head": "3378dd7",
+      "has_a38d8b4": false
+    },
+    {
+      "path": "/Volumes/UsersExternal/Developer/jmerrill-one",
+      "exists": true,
+      "head": "3378dd7",
+      "has_a38d8b4": false
+    },
+    {
+      "path": "/tmp or /private/tmp bundle search",
+      "exists": false,
+      "has_bundle": false
+    }
+  ],
+  "origin_advertised_reference": null,
+  "bundle_search_result": "No bundle/export matching a38d8b4 or jmerrill-one was found under /tmp, /private/tmp, or Downloads.",
+  "failure_reason": "Claude authoritative source path is not mounted in this Cody environment, and commit a38d8b4 is not present in local object storage, known Mac-side clones, origin, or local bundle search.",
+  "required_next_action": "Provide a Git bundle or mounted/accessible repository containing a38d8b4, or push claude/loving-planck-1cfoo2 to an authorized remote branch reachable by Cody."
+}

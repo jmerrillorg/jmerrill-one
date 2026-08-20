@@ -1,0 +1,45 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_disposition_matrix_target_certified",
+  "created_at": "2026-08-20T11:45:00Z",
+  "classifications": {
+    "KEEP - PAUSED VOICE PROJECT": [
+      "JM1 Teams Phone / Voice initiative",
+      "Voicemail Team"
+    ],
+    "KEEP - REQUIRED RESOURCE ACCOUNT": [
+      "voice-financial@jmerrill.one",
+      "voice-foundation@jmerrill.one",
+      "voice-main-inbound@jmerrill.one",
+      "voice-productions@jmerrill.one",
+      "voice-publishing@jmerrill.one",
+      "voicebridge@jmerrill.one"
+    ],
+    "KEEP - SECURED PHONE NUMBER": [
+      "Productions number",
+      "Main Inbound number",
+      "Financial number",
+      "Publishing number",
+      "Foundation number",
+      "JM1 Info number"
+    ],
+    "KEEP - ACTIVE DEPENDENCY": [
+      "github-aic-deploy",
+      "BusinessCentralAPI"
+    ],
+    "CERTIFIED CLEANUP TARGET": [
+      "FD-005 contacts@ consolidation plan"
+    ],
+    "RETAIN - INSUFFICIENT EVIDENCE": [
+      "FD-001 guest candidates",
+      "FD-002 non-voice license removal candidates",
+      "FD-003 inactive internal user candidates",
+      "FD-004 Sales pending migration",
+      "FD-004 Projects pending SharePoint cleanup",
+      "FD-006 Portals-Site 1",
+      "FD-006 BusinessCentralSharePoint"
+    ]
+  },
+  "voice_project_resources_classified_as_inactive_user": false,
+  "mutation_executed": false
+}

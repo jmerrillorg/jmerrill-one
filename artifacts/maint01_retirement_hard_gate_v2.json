@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Hard gate evaluation for all retirement/consolidation candidates",
+  "standard": "Every destructive action requires ALL gates PASSED before execution",
+  "candidates": [
+    {
+      "object": "sites/foundation_comm",
+      "gates": {
+        "OWNER_IDENTIFIED": "FAIL — no owner confirmed",
+        "PURPOSE_UNDERSTOOD": "FAIL — public comms vs. orphan not determined",
+        "ACTIVITY_REVIEWED": "PARTIAL — last activity Sept 2025 confirmed; file-level audit incomplete",
+        "DEPENDENCIES_MAPPED": "FAIL — no automation/permission audit done",
+        "DATA_RETENTION_ADDRESSED": "FAIL",
+        "AUTOMATION_DEPENDENCIES_CLEARED": "FAIL",
+        "PERMISSION_DEPENDENCIES_CLEARED": "FAIL",
+        "PUBLIC_REFERENCES_CLEARED": "FAIL",
+        "REPLACEMENT_IDENTIFIED_OR_NA": "CONDITIONAL — foundation_div if retiring",
+        "ROLLBACK_RECOVERY_UNDERSTOOD": "FAIL",
+        "TEAM_CHECKED": "N/A",
+        "GROUP_CHECKED": "N/A",
+        "SHAREPOINT_CHECKED": "PARTIAL",
+        "MAILBOX_CHECKED": "N/A",
+        "PLANNER_APPS_CHECKED": "N/A"
+      },
+      "all_gates_passed": false,
+      "may_proceed": false
+    },
+    {
+      "object": "Deprecated - All Company (M365 Group)",
+      "gates": {
+        "OWNER_IDENTIFIED": "FAIL",
+        "PURPOSE_UNDERSTOOD": "PARTIAL",
+        "ACTIVITY_REVIEWED": "FAIL",
+        "DEPENDENCIES_MAPPED": "FAIL",
+        "DATA_RETENTION_ADDRESSED": "FAIL",
+        "AUTOMATION_DEPENDENCIES_CLEARED": "FAIL",
+        "PERMISSION_DEPENDENCIES_CLEARED": "FAIL",
+        "PUBLIC_REFERENCES_CLEARED": "FAIL",
+        "REPLACEMENT_IDENTIFIED_OR_NA": "PARTIAL",
+        "ROLLBACK_RECOVERY_UNDERSTOOD": "FAIL",
+        "TEAM_CHECKED": "FAIL",
+        "GROUP_CHECKED": "FAIL",
+        "SHAREPOINT_CHECKED": "FAIL",
+        "MAILBOX_CHECKED": "FAIL",
+        "PLANNER_APPS_CHECKED": "FAIL"
+      },
+      "all_gates_passed": false,
+      "may_proceed": false
+    },
+    {
+      "object": "sites/projects — dev artifact content",
+      "gates": {
+        "OWNER_IDENTIFIED": "FAIL",
+        "PURPOSE_UNDERSTOOD": "PARTIAL — dev archive",
+        "ACTIVITY_REVIEWED": "PARTIAL — last Jan 2026",
+        "DEPENDENCIES_MAPPED": "FAIL — automation/CI dependency unclear",
+        "DATA_RETENTION_ADDRESSED": "FAIL",
+        "AUTOMATION_DEPENDENCIES_CLEARED": "FAIL",
+        "PERMISSION_DEPENDENCIES_CLEARED": "FAIL",
+        "PUBLIC_REFERENCES_CLEARED": "N/A",
+        "REPLACEMENT_IDENTIFIED_OR_NA": "GitHub repositories",
+        "ROLLBACK_RECOVERY_UNDERSTOOD": "FAIL",
+        "TEAM_CHECKED": "PARTIAL",
+        "GROUP_CHECKED": "PARTIAL",
+        "SHAREPOINT_CHECKED": "PARTIAL",
+        "MAILBOX_CHECKED": "N/A",
+        "PLANNER_APPS_CHECKED": "FAIL"
+      },
+      "all_gates_passed": false,
+      "may_proceed": false
+    }
+  ]
+}

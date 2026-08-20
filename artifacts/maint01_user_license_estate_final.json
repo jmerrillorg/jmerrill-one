@@ -1,0 +1,11 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_user_license_estate_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "cleanup_executed": false,
+  "graph_users_seen": 44,
+  "guest_users_seen": 3,
+  "disabled_licensed_members_seen": 6,
+  "license_removals_executed": 0,
+  "status": "UNCHANGED - target certification blocked"
+}

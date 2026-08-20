@@ -1,0 +1,76 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "NO TEAM DELETION AUTHORIZED",
+  "maps": [
+    {
+      "team": "Voicemail",
+      "group": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/voicemail",
+      "files": "https://jmerrillfoundation.sharepoint.com/sites/voicemail/Shared%20Documents",
+      "channels": [
+        "General"
+      ],
+      "planner": [],
+      "apps_tabs": "not expanded",
+      "meeting_dependency": "unknown",
+      "guest_external_members": [],
+      "archival_destination": "TBD"
+    },
+    {
+      "team": "Marketing",
+      "group": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/marketing",
+      "files": "https://jmerrillfoundation.sharepoint.com/sites/marketing/Shared%20Documents",
+      "channels": [
+        "General"
+      ],
+      "planner": [],
+      "apps_tabs": "not expanded",
+      "meeting_dependency": "unknown",
+      "guest_external_members": [],
+      "archival_destination": "TBD"
+    },
+    {
+      "team": "Sales",
+      "group": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+      "files": "https://jmerrillfoundation.sharepoint.com/sites/sales/Shared%20Documents",
+      "channels": [
+        "General"
+      ],
+      "planner": [],
+      "apps_tabs": "not expanded",
+      "meeting_dependency": "unknown",
+      "guest_external_members": [],
+      "archival_destination": "TBD"
+    },
+    {
+      "team": "Events",
+      "group": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/events",
+      "files": "https://jmerrillfoundation.sharepoint.com/sites/events/Shared%20Documents",
+      "channels": [
+        "General"
+      ],
+      "planner": [],
+      "apps_tabs": "not expanded",
+      "meeting_dependency": "unknown",
+      "guest_external_members": [],
+      "archival_destination": "TBD"
+    },
+    {
+      "team": "Projects",
+      "group": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+      "files": "https://jmerrillfoundation.sharepoint.com/sites/projects/Shared%20Documents",
+      "channels": [
+        "General"
+      ],
+      "planner": [],
+      "apps_tabs": "not expanded",
+      "meeting_dependency": "unknown",
+      "guest_external_members": [],
+      "archival_destination": "TBD"
+    }
+  ]
+}

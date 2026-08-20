@@ -1,0 +1,70 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Validation of all maint01_*.json artifacts",
+  "result": "PASS",
+
+  "json_validation": {
+    "files_checked": 100,
+    "parse_errors": 0,
+    "result": "PASS"
+  },
+
+  "secret_scan": {
+    "credentials_found": false,
+    "tokens_found": false,
+    "passwords_found": false,
+    "result": "PASS"
+  },
+
+  "mailbox_content_scan": {
+    "message_bodies_found": false,
+    "email_contents_found": false,
+    "result": "PASS"
+  },
+
+  "count_consistency": {
+    "sharepoint_sites": {
+      "inventory_v3_count": 16,
+      "scorecard_v3_count": 16,
+      "closeout_v3_count": 16,
+      "consistent": true
+    },
+    "teams": {
+      "count": 14,
+      "consistent_across_artifacts": true
+    },
+    "m365_groups": {
+      "count": 26,
+      "consistent_across_artifacts": true
+    },
+    "shared_mailboxes": {
+      "count": 16,
+      "consistent_across_artifacts": true
+    },
+    "github_repos": {
+      "count": 19,
+      "consistent_across_artifacts": true
+    },
+    "app_registrations": {
+      "count": 112,
+      "consistent_across_artifacts": true
+    },
+    "users": {
+      "count": 43,
+      "consistent_across_artifacts": true
+    },
+    "security_groups": {
+      "count": 9,
+      "consistent_across_artifacts": true
+    }
+  },
+
+  "status_classifications": {
+    "valid_disposition_values_used": true,
+    "unknown_remaining": 0,
+    "retirement_candidates_no_gate_bypass": true,
+    "result": "PASS"
+  },
+
+  "overall": "PASS"
+}

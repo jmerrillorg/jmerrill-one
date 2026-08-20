@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "REVIEW_REQUIRED",
+  "findings": [
+    {
+      "type": "Teams scope",
+      "finding": "Teams listing forbidden; owner/member/guest/channel risk cannot be fully assessed.",
+      "severity": "HIGH"
+    },
+    {
+      "type": "SharePoint scope",
+      "finding": "Site enumeration denied; orphaned owner/content risk cannot be fully assessed.",
+      "severity": "HIGH"
+    },
+    {
+      "type": "App credentials",
+      "finding": "App registrations include password credentials; expired/near-expiration review needed.",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "Security groups",
+      "finding": "Role-based groups exist and should not be collapsed solely due one-person enterprise reality.",
+      "severity": "LOW"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_pr6_governed_validation",
+  "generated": "2026-08-19",
+  "pr_number": 6,
+  "target_branch": "codex/maint01-estate-rationalization",
+  "source_branch": "claude/loving-planck-1cfoo2",
+  "local_tip": "6f6e4bc",
+  "all_commits_signed": true,
+  "full_lineage_cody_claude_cody": true,
+  "merge_commit_96d123e": "incorporates Cody governed SHA 85cbc9c",
+  "founder_decision_packet_present": true,
+  "cleanup_wave_artifacts_present": true,
+  "final_closeout_v6_present": true,
+  "no_unrelated_files": true,
+  "push_status": "BLOCKED — push required before PR #6 reflects current state",
+  "result": "READY LOCAL — PUSH REQUIRED"
+}

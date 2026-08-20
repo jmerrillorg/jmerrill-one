@@ -1,0 +1,81 @@
+{
+  "package": "MAINT-01",
+  "team": "Projects",
+  "classification": "NOT ARCHIVE READY - PREREQUISITES REMAIN",
+  "mutation_executed": false,
+  "team_id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+  "m365_group_id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+  "mail": "projects@jmerrill.one",
+  "sharepoint_site": {
+    "url": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+    "display_name": "Projects",
+    "last_modified": "2026-08-17T07:15:42Z"
+  },
+  "document_libraries": [
+    {
+      "name": "Documents",
+      "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/Shared%20Documents",
+      "last_modified": "2026-04-20T07:21:12Z",
+      "used_bytes": 7897697399
+    },
+    { "name": "Quote", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/quote" },
+    { "name": "Task", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/task" },
+    { "name": "Appointment", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/appointment" },
+    { "name": "Lead", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/lead" },
+    { "name": "Invoice", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/invoice" },
+    { "name": "Contact", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/contact" },
+    { "name": "Phone Call", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/phonecall" },
+    { "name": "Opportunity", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/opportunity" },
+    { "name": "Product", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/product" },
+    { "name": "Account", "url": "https://jmerrillfoundation.sharepoint.com/sites/projects/account" }
+  ],
+  "root_items_requiring_preservation_review": [
+    "00_Operations",
+    "01_Programs-Services",
+    "02_People",
+    "03_Marketing",
+    "04_Financials",
+    "05_Legal-Compliance",
+    "06_Media-Assets",
+    "07_Archive",
+    "08_Templates",
+    "General",
+    "projects",
+    "JM1_Migration_1_0_0_1_managed.zip"
+  ],
+  "dev_build_artifacts": [
+    "projects folder - childCount 12, size 7658638685 bytes",
+    "JM1_Migration_1_0_0_1_managed.zip - size 137371 bytes"
+  ],
+  "github_authoritative_source_relationship": "Not certified complete. GitHub may be authoritative for source code, but SharePoint still contains dev/build/archive artifacts that require disposition before team archive.",
+  "planner": [],
+  "group_mailbox": "projects@jmerrill.one",
+  "channels": [
+    {
+      "name": "General",
+      "id": "19:UsHfAKQMei6nNmat2Eh8FvxLd-hpm938y-jUDVrjQwQ1@thread.tacv2",
+      "email": "projects@jmerrill.one",
+      "is_archived": false
+    }
+  ],
+  "apps_tabs": [
+    "Notes",
+    "Files"
+  ],
+  "owners": [
+    "jackie@jmerrill.one",
+    "jm1-admin@jmerrill.one"
+  ],
+  "members": [
+    "jackie@jmerrill.one",
+    "jm1-admin@jmerrill.one"
+  ],
+  "guests": [],
+  "last_activity_where_available": {
+    "sharepoint_drive_last_modified": "2026-04-20T07:21:12Z",
+    "site_last_modified": "2026-08-17T07:15:42Z",
+    "teams_message_activity": "Not available from current Graph query set"
+  },
+  "archive_gate": "DO NOT ARCHIVE solely because GitHub exists. Complete content/archive preservation first."
+}
+

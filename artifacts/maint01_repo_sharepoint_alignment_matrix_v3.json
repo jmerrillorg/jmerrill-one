@@ -1,0 +1,68 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Repo-to-SharePoint alignment matrix updated with confirmed site inventory",
+  "entities": [
+    {
+      "entity": "J Merrill One (enterprise)",
+      "github_repos": ["jmerrill-one", "jm1-infra", "jm1-admin-scripts"],
+      "sharepoint_sites": ["sites/ImplementationHQ", "sites/JMerrillOne"],
+      "authoritative_doc_store": "sites/ImplementationHQ",
+      "canon_library": "Shared Documents/Architecture/00_CANON",
+      "alignment_status": "ALIGNED",
+      "notes": "ImplementationHQ is the correct enterprise architecture/governance site. JMerrillOne (HQ Team) is the operational collaboration space. GitHub repos cover infra and admin automation."
+    },
+    {
+      "entity": "J Merrill Publishing",
+      "github_repos": ["jmerrill-pub", "jmp-editorial-api", "jmp-automation", "jmp-author-portal"],
+      "sharepoint_sites": ["sites/publishing"],
+      "authoritative_doc_store": "sites/publishing",
+      "canon_library": "Shared Documents (root structure with numbered folders)",
+      "alignment_status": "ALIGNED",
+      "notes": "Publishing site is the clear operational document store. GitHub repos cover the automation pipeline. Strong alignment — automation writes to SharePoint and reads from GitHub."
+    },
+    {
+      "entity": "JM Merrill Financial",
+      "github_repos": ["jm1-financial"],
+      "sharepoint_sites": ["sites/financial"],
+      "authoritative_doc_store": "sites/financial",
+      "canon_library": "Shared Documents",
+      "alignment_status": "ALIGNED",
+      "notes": "Financial site contains client-sensitive pre-need records. Must not be commingled with other entities. Repo and site are entity-scoped correctly."
+    },
+    {
+      "entity": "JM Merrill Foundation",
+      "github_repos": ["jmerrill-foundation", "jm1-agape"],
+      "sharepoint_sites": ["sites/foundation_div", "sites/foundation_comm", "sites/AgapeIC"],
+      "authoritative_doc_store": "sites/foundation_div",
+      "canon_library": "Shared Documents",
+      "alignment_status": "PARTIAL — FOUNDER DECISION REQUIRED",
+      "notes": "foundation_div is the Team-connected operational site. foundation_comm is a standalone communication site whose purpose is unclear. AgapeIC is a distinct ministry site. Repos cover Foundation and Agape brand builds. Founder must decide if foundation_comm is public-facing (keep, distinct purpose) or orphaned (consolidate)."
+    },
+    {
+      "entity": "J Merrill Productions",
+      "github_repos": ["jmerrill-productions"],
+      "sharepoint_sites": ["sites/productions"],
+      "authoritative_doc_store": "sites/productions",
+      "canon_library": "Shared Documents (not indexed — content unknown)",
+      "alignment_status": "UNKNOWN — drive not indexed",
+      "notes": "Productions Team site confirmed from Teams map. No indexed content found. May be a thin collaboration shell. Repo exists."
+    },
+    {
+      "entity": "Jackie Smith Jr. (Founder Brand)",
+      "github_repos": [],
+      "sharepoint_sites": ["sites/publishing (author files)", "personal/jm1-admin_jmerrill_one (admin OneDrive)"],
+      "authoritative_doc_store": "sites/publishing (per ADR-008 attribution)",
+      "canon_library": "Shared Documents/02_Active-Pipeline (active titles)",
+      "alignment_status": "ALIGNED",
+      "notes": "Founder-authored titles (Establishing Glory, The Long Watch) are in the publishing pipeline. No separate Founder-branded SharePoint site exists or is needed."
+    },
+    {
+      "entity": "Shared Services / Operations",
+      "github_repos": [],
+      "sharepoint_sites": ["sites/marketing", "sites/sales", "sites/support", "sites/voicemail", "sites/events", "sites/security", "sites/projects"],
+      "authoritative_doc_store": "Per-Team site",
+      "alignment_status": "MIXED",
+      "notes": "Marketing and Sales are Low Activity. Support and Security are Low Activity but required. Voicemail is Inactive. Events is UNKNOWN. Projects contains legacy dev artifacts (FOUNDER DECISION on cleanup). Voicemail and marketing/sales Founder decisions flagged."
+    }
+  ]
+}

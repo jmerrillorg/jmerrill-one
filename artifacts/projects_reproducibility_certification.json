@@ -1,0 +1,155 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "candidates": [
+    {
+      "path": "/sites/projects/Shared Documents/projects/Archive",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Automation",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Brands",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Diagnostics",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "POSSIBLY - empty folder only",
+      "governed_release_or_evidence_record": false,
+      "operational_process_consumes_sharepoint_copy": "NOT FOUND IN TARGETED REPO SEARCH",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Docs",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": false,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Infrastructure",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Core",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Implementation-HQ",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/logs",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/publishSettings.txt",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/reset-live-sites.sh",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/sync-live-sites.sh",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/JM1_Migration_1_0_0_1_managed.zip",
+      "exact_repository": "jmerrillorg/jmerrill-one where applicable; not proven for SharePoint copy",
+      "branch_or_commit_relationship": "NOT PROVEN except parent evidence commit 3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+      "build_config_source_exists": "NOT PROVEN for SharePoint copy",
+      "required_source_files_exist": "NOT PROVEN for SharePoint copy",
+      "artifact_reasonably_recreatable": "NOT PROVEN",
+      "governed_release_or_evidence_record": true,
+      "operational_process_consumes_sharepoint_copy": "UNKNOWN/RETAIN",
+      "classification": "NOT PROVEN — RETAIN"
+    }
+  ]
+}

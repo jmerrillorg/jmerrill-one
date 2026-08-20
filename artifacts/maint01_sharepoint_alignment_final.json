@@ -1,0 +1,83 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Final SharePoint target alignment — entity to authoritative site to repo to app",
+
+  "enterprise": {
+    "entity": "J Merrill One (enterprise)",
+    "authoritative_sharepoint_site": "sites/ImplementationHQ",
+    "canon_library": "Shared Documents/Architecture/00_CANON",
+    "owning_repos": ["jmerrill-one", "jm1-infra", "jm1-admin-scripts"],
+    "operational_site": "sites/JMerrillOne (HQ Team collaboration)",
+    "dataverse_domain": "N/A — enterprise admin",
+    "status": "ALIGNED"
+  },
+
+  "publishing": {
+    "entity": "J Merrill Publishing",
+    "authoritative_sharepoint_site": "sites/publishing",
+    "canon_library": "Shared Documents (numbered folder structure)",
+    "owning_repos": ["jmerrill-pub", "jmp-editorial-api", "jmp-automation", "jmp-author-portal"],
+    "website": "jmerrill.pub",
+    "dataverse_domain": "Publishing pipeline entities",
+    "status": "ALIGNED"
+  },
+
+  "financial": {
+    "entity": "JM Merrill Financial",
+    "authoritative_sharepoint_site": "sites/financial",
+    "canon_library": "Shared Documents",
+    "owning_repos": ["jm1-financial"],
+    "dataverse_domain": "Pre-need / appointment entities (jm1_appointments, jm1_preneed)",
+    "sensitivity": "HIGH — contains client records; must remain entity-isolated",
+    "status": "ALIGNED"
+  },
+
+  "foundation": {
+    "entity": "JM Merrill Foundation",
+    "authoritative_sharepoint_site": "sites/foundation_div",
+    "canon_library": "Shared Documents",
+    "secondary_site": "sites/foundation_comm (FOUNDER DECISION FD-001 — retain or consolidate)",
+    "ministry_site": "sites/AgapeIC",
+    "owning_repos": ["jmerrill-foundation", "jm1-agape"],
+    "status": "PARTIAL — FD-001 required to resolve foundation_comm"
+  },
+
+  "productions": {
+    "entity": "J Merrill Productions",
+    "authoritative_sharepoint_site": "sites/productions",
+    "canon_library": "Shared Documents (drive not indexed — content unknown)",
+    "owning_repos": ["jmerrill-productions"],
+    "status": "ALIGNED (drive unconfirmed but site confirmed)"
+  },
+
+  "enterprise_canon_location": {
+    "authoritative": "sites/ImplementationHQ — Shared Documents/Architecture/00_CANON",
+    "reference_copy": "sites/publishing — JM1 Shared Services/Enterprise Governance",
+    "resolution": "FOUNDER DECISION FD-002 — confirm ImplementationHQ is authoritative; publishing copy becomes reference"
+  },
+
+  "shared_services": {
+    "sites": ["sites/marketing", "sites/sales", "sites/support", "sites/events", "sites/security"],
+    "status": "KEEP — ACTIVE or KEEP — SECURITY BOUNDARY",
+    "sales_note": "FOUNDER DECISION FD-004 required"
+  },
+
+  "system": {
+    "sites": ["sites/voicemail"],
+    "status": "KEEP — SYSTEM pending FD-004 Voicemail routing confirmation"
+  },
+
+  "standalone_requiring_consolidation": {
+    "sites": ["sites/foundation_comm"],
+    "action": "FOUNDER DECISION FD-001 — retain or consolidate"
+  },
+
+  "sites_requiring_content_archive": {
+    "sites": ["sites/projects (dev artifact content)"],
+    "action": "FOUNDER DECISION FD-003 — archive dev artifacts"
+  },
+
+  "retirement_candidates": 0,
+  "content_not_yet_moved": true,
+  "note": "No SharePoint content is moved, deleted, or archived by this artifact. All actions await Founder decisions."
+}

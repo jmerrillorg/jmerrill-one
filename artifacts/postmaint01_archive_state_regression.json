@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "sales": {
+    "teamId": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+    "isArchived": true,
+    "groupMail": "sales@jmerrill.one",
+    "sharePoint": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+    "preserved_content_count": 6
+  },
+  "projects": {
+    "teamId": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+    "isArchived": true,
+    "groupMail": "projects@jmerrill.one",
+    "sharePoint": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+    "preserved_candidate_count": 13
+  }
+}

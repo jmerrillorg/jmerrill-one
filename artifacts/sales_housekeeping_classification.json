@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "folders": [
+    {
+      "path": "/sites/sales/Shared Documents/01 Lead Tracking",
+      "classification": "ACTIVE REFERENCE",
+      "rationale": "active/historical business record",
+      "inactivity_alone_used_for_deletion": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/02 Client Proposals",
+      "classification": "GOVERNED BUSINESS RECORD",
+      "rationale": "business record",
+      "inactivity_alone_used_for_deletion": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/03 Pricing Sheets",
+      "classification": "GOVERNED BUSINESS RECORD",
+      "rationale": "pricing/reference retention",
+      "inactivity_alone_used_for_deletion": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/04 Sales Reports",
+      "classification": "HISTORICAL / ARCHIVE",
+      "rationale": "report/history retention",
+      "inactivity_alone_used_for_deletion": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/05 Archive",
+      "classification": "HISTORICAL / ARCHIVE",
+      "rationale": "archive evidence",
+      "inactivity_alone_used_for_deletion": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/General",
+      "classification": "TEMPORARY",
+      "rationale": "low; channel/system folder context",
+      "inactivity_alone_used_for_deletion": false
+    }
+  ]
+}

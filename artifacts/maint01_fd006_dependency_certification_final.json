@@ -1,0 +1,18 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd006_dependency_certification_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "fd": "FD-006",
+  "approval": "APPROVE FD-006 — delete 2 expired app registrations ONLY IF dependency certification proves both are unused/orphaned",
+  "certification_status": "FAILED_TARGET_SELECTION",
+  "result": "BLOCKED",
+  "reason": "FD-006 approval count is two, but landed app identity evidence exposes four retirement_candidate=true registrations. The exact two approved candidates are not identified.",
+  "candidate_universe": [
+    "github-aic-deploy",
+    "Portals-Site 1",
+    "BusinessCentralSharePoint",
+    "BusinessCentralAPI"
+  ],
+  "dependency_certification": "NOT COMPLETED",
+  "action_rule": "Do not delete app registrations solely due expired credentials or ambiguous candidate lists."
+}
