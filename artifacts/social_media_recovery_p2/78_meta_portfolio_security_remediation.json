@@ -1,23 +1,12 @@
 {
   "status": "FOUNDER AUTHENTICATION ACTION REQUIRED",
+  "updated_at": "2026-08-20T20:49:30.184Z",
   "mutation_performed": false,
-  "updated_at": "2026-08-20T19:46:46.941Z",
   "current_audit_evidence": {
     "two_factor_required_for": "No one",
     "passkeys_required_for": "No one"
   },
-  "result": "NOT ENABLED - recovery/MFA safety not verified",
-  "exact_human_admin_action": "Jackie must confirm recovery access and MFA/passkey readiness, then authorize portfolio 2FA/passkey policy enablement.",
-  "evidence": {
-    "financialInstagramPublicDom": "/tmp/social_p2_ig_public_dom.txt",
-    "financialInstagramBusinessSettingsDom": "/tmp/social_p2_fin_ig_after_pair_dom.txt",
-    "financialPageSettingsDom": "/tmp/social_p2_fin_page_settings_dom2.txt",
-    "publishingBioDom": "/tmp/social_p2_pub_bio_fix_dom.txt",
-    "publishingWebsiteDom": "/tmp/social_p2_pub_website_dom.txt",
-    "productionsFacebookPublicBeforeDom": "/tmp/social_p2_prod_public_fb_dom.txt",
-    "productionsFacebookBioAfterDom": "/tmp/social_p2_prod_bio_update_dom.txt",
-    "productionsFacebookLinksDom": "/tmp/social_p2_prod_links_dom.txt",
-    "productionsInstagramDom": "/tmp/social_p2_prod_ig_dom.txt",
-    "securityCenterDom": "/tmp/social_p2_security_dom.txt"
-  }
+  "founder_recovery_readiness": "FOUNDER ACTION REQUIRED",
+  "result": "NOT ENABLED - recovery/MFA safety not proven",
+  "exact_human_admin_action": "Recovery email/phone/backup mechanisms were not safely provable from the current browser session without exposing or changing sensitive account recovery settings."
 }

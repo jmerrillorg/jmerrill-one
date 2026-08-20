@@ -1,5 +1,5 @@
 {
-  "status": "RIGHTS CHECK REQUIRED - PROFILE DEFECT PASS",
+  "status": "RIGHTS CHECK REQUIRED - PROFILE PASS",
   "rules": [
     "Check book covers",
     "author photos",
@@ -78,20 +78,17 @@
       "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     }
   ],
-  "updated_at": "2026-08-20T19:46:46.941Z",
+  "updated_at": "2026-08-20T20:49:30.184Z",
   "profile_defect_result": {
-    "page_name": "J Merrill Publishing Inc",
-    "page_id": "307480763084670",
-    "before_live_state": {
-      "forbidden_forex_trader_copy_present": false,
-      "observed_bio": "We are helping authors help themselves!! If you have a desire to be published but, don’t know where to go, you’ve found the right place!",
-      "observed_website": "http://www.JMerrill.pub/"
+    "status": "PASS - PROFILE INTEGRITY RESTORED",
+    "facebook": {
+      "bio": "Hybrid publishing support from manuscript readiness to launch.",
+      "website": "https://jmerrill.pub/",
+      "forex_trader_defect": "ABSENT"
     },
-    "after_live_state": {
-      "bio_observed": "Hybrid publishing support from manuscript readiness to launch.",
-      "website_observed": "https://jmerrill.pub/",
-      "forbidden_forex_trader_copy_present": false
-    },
-    "result": "PASS - PROFILE DEFECT REMEDIATED"
+    "evidence": {
+      "bio": "/tmp/social_p2_pub_bio_fix_dom.txt",
+      "website": "/tmp/social_p2_pub_website_dom.txt"
+    }
   }
 }

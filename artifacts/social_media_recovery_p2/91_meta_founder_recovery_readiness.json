@@ -1,0 +1,14 @@
+{
+  "status": "FOUNDER ACTION REQUIRED",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "checks": {
+    "mfa_or_passkey_configured": "NOT PROVEN",
+    "recovery_email_accessible": "NOT PROVEN",
+    "recovery_phone_accessible": "NOT PROVEN",
+    "backup_recovery_mechanism": "NOT PROVEN",
+    "trusted_authenticated_session": "PASS - current Meta session active"
+  },
+  "secret_codes_recorded": false,
+  "classification": "FOUNDER ACTION REQUIRED",
+  "exact_action": "Jackie must verify MFA/passkey and account recovery methods before portfolio-wide 2FA/passkey enforcement."
+}

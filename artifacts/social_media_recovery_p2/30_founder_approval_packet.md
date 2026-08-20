@@ -1,33 +1,31 @@
 # SOCIAL RECOVERY P2 Founder Approval Packet
 
-Updated: 2026-08-20T19:46:46.941Z
+Updated: 2026-08-20T20:49:30.184Z
 
 ## Current Gate
 
 SOCIAL RECOVERY P2 REMEDIATION REQUIRED
 
-The first 7-day batch is not ready for approval or scheduling. A PASS-only batch does not exist yet.
+A Founder scheduling approval phrase is not available yet because the first-week batch is not PASS-only.
 
-## Financial Canonical Page
+## Completed
 
-- Page: J Merrill Financial
-- Business Suite asset ID: 1270611542802820
-- Public profile ID: 61593286063626
-- Public URL: https://www.facebook.com/profile.php?id=61593286063626
-- Bio: Advanced planning for life, legacy, and the people who matter most.
-- Category: Financial service
-- Website: https://jmerrill.financial/
-- Founder context: estate planning and advanced/funeral planning are both in scope; funeral planning is an insurance product. Do not force a second Meta category when Meta preserves only Financial service.
+- Financial Facebook: J Merrill Financial / 61593286063626 / PASS.
+- Financial Instagram: @jmerrillfin / 17841438473100276 / access PASS / bio PASS.
+- Legacy Financial Instagram: @jmerrillfinancial / DO NOT USE.
+- Publishing profile: PASS.
+- Productions Facebook: bio PASS; URL PASS.
 
-## Profile Remediation Result
+## Holds
 
-- Publishing: PASS. Forex/trader defect absent; profile bio and website corrected.
-- Productions Facebook bio: PASS. Spotlight wording removed.
-- Productions Instagram: HOLD. Spotlight wording remains.
-- Productions Facebook website link: HOLD. Live link still points to jmerrill.pub.
+- Financial FB/IG pairing is not verified in connected-assets after the Meta confirmation flow.
+- @jmerrillfin website field is disabled/no public website visible.
+- Productions Instagram still says Formerly J Merrill Spotlight.
+- Meta security requires Jackie recovery/MFA verification before enforcement.
+- Creative/rights/compliance/privacy proof remains incomplete.
 
 ## Approval Phrase Not Yet Available
 
 APPROVE SOCIAL RECOVERY P2 FIRST 7-DAY BATCH — schedule all PASS posts using certified Meta assets
 
-Use this only after the remaining holds produce a PASS-only batch.
+Use only after the remaining holds produce a PASS-only batch.

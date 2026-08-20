@@ -1,5 +1,5 @@
 {
-  "status": "PASS WITH CATEGORY CONTEXT",
+  "status": "PASS - FINANCIAL FACEBOOK PROFILE CONFIGURED",
   "required_result": "PROFILE CONFIGURED",
   "mutation_performed": true,
   "exact_live_values": {
@@ -18,8 +18,8 @@
     "No investment performance claim",
     "No inappropriate public HQ street address"
   ],
-  "founder_context_preserved": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Insurance Broker is canonically justifiable if Meta allows an additional accurate category, but live Meta currently displays Financial service after remediation.",
-  "updated_at": "2026-08-20T19:07:11.251Z",
+  "founder_context_preserved": "Advanced planning, estate planning, and funeral/pre-need planning remain in scope; funeral/pre-need planning may involve an insurance product. Do not force Insurance Broker as a second Meta category if Meta retains only Financial service.",
+  "updated_at": "2026-08-20T20:49:30.184Z",
   "live_financial_canonical_activation": {
     "page": {
       "page_name": "J Merrill Financial",
@@ -48,5 +48,16 @@
       "name": "J Merrill One",
       "id": "846921439784613"
     }
+  },
+  "service_scope": [
+    "advanced planning",
+    "estate planning",
+    "funeral/pre-need planning",
+    "insurance-product context where applicable"
+  ],
+  "instagram_canonical_update": {
+    "handle": "@jmerrillfin",
+    "instagram_id": "17841438473100276",
+    "pairing": "HOLD"
   }
 }

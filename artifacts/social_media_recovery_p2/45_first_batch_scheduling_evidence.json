@@ -1,13 +1,13 @@
 {
   "result": "NOT SCHEDULED",
-  "updated_at": "2026-08-20T19:46:46.941Z",
-  "reason": "No PASS-only first-week batch exists. Scheduling withheld per guardrails.",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "reason": "Founder approval not available; PASS-only batch does not exist.",
   "records": [],
   "blockers": [
-    "Financial IG access/pairing",
-    "Productions IG/link profile holds",
-    "Meta security Founder authentication action",
-    "rights/compliance/privacy/creative approval",
-    "Founder first-batch approval"
+    "Financial J Merrill Financial + @jmerrillfin pairing not verified",
+    "Productions Instagram Spotlight wording remains",
+    "Founder recovery/MFA readiness not proven; portfolio 2FA not enabled",
+    "Creative/rights/compliance/privacy proof incomplete",
+    "Founder launch approval not available"
   ]
 }

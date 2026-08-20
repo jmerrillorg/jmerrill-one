@@ -1,0 +1,18 @@
+{
+  "status": "HOLD - PRODUCTIONS INSTAGRAM REMAINS",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "facebook": {
+    "bio": "PASS",
+    "website": "PASS",
+    "canonical_identity": "PASS"
+  },
+  "instagram": {
+    "spotlight_wording": "HOLD",
+    "editable_in_session": false
+  },
+  "result": "Facebook profile gate pass; final Productions profile gate blocked by Instagram Spotlight wording.",
+  "evidence": {
+    "ig": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
+    "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
+  }
+}

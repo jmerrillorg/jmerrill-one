@@ -1,0 +1,27 @@
+{
+  "status": "HOLD - FINANCIAL IG PAIRING NOT VERIFIED",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "financial_destinations": {
+    "facebook": {
+      "name": "J Merrill Financial",
+      "profile_id": "61593286063626",
+      "result": "PASS"
+    },
+    "instagram": {
+      "handle": "@jmerrillfin",
+      "instagram_id": "17841438473100276",
+      "result": "HOLD - pair not verified"
+    }
+  },
+  "prohibited_destinations": {
+    "legacy_instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "status": "LEGACY / HOLD - DO NOT USE FOR ACTIVE OPERATIONS"
+    },
+    "legacy_facebook": {
+      "status": "LEGACY / RESTRICTED - RETAIN TEMPORARILY / DO NOT PUBLISH"
+    }
+  },
+  "result": "No active launch item should schedule until pair is verified."
+}

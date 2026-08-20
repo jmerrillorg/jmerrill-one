@@ -1,24 +1,21 @@
 {
-  "status": "PASS - PROFILE DEFECT REMEDIATED",
+  "status": "PASS - PROFILE INTEGRITY RESTORED",
   "required_result": "PASS",
   "mutation_performed": true,
-  "updated_at": "2026-08-20T19:46:46.941Z",
+  "updated_at": "2026-08-20T20:49:30.184Z",
   "before_state_evidence": "Live edit dialog did not show forex/trader wording; existing bio was legacy author-help copy and website was http://www.JMerrill.pub/.",
   "result": "REMEDIATED",
   "remediation": {
-    "page_name": "J Merrill Publishing Inc",
-    "page_id": "307480763084670",
-    "before_live_state": {
-      "forbidden_forex_trader_copy_present": false,
-      "observed_bio": "We are helping authors help themselves!! If you have a desire to be published but, don’t know where to go, you’ve found the right place!",
-      "observed_website": "http://www.JMerrill.pub/"
+    "status": "PASS - PROFILE INTEGRITY RESTORED",
+    "facebook": {
+      "bio": "Hybrid publishing support from manuscript readiness to launch.",
+      "website": "https://jmerrill.pub/",
+      "forex_trader_defect": "ABSENT"
     },
-    "after_live_state": {
-      "bio_observed": "Hybrid publishing support from manuscript readiness to launch.",
-      "website_observed": "https://jmerrill.pub/",
-      "forbidden_forex_trader_copy_present": false
-    },
-    "result": "PASS - PROFILE DEFECT REMEDIATED"
+    "evidence": {
+      "bio": "/tmp/social_p2_pub_bio_fix_dom.txt",
+      "website": "/tmp/social_p2_pub_website_dom.txt"
+    }
   },
   "evidence": {
     "financialInstagramPublicDom": "/tmp/social_p2_ig_public_dom.txt",
@@ -31,5 +28,6 @@
     "productionsFacebookLinksDom": "/tmp/social_p2_prod_links_dom.txt",
     "productionsInstagramDom": "/tmp/social_p2_prod_ig_dom.txt",
     "securityCenterDom": "/tmp/social_p2_security_dom.txt"
-  }
+  },
+  "final": "PASS - PROFILE INTEGRITY RESTORED"
 }

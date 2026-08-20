@@ -1,8 +1,8 @@
 {
-  "result": "PARTIAL PASS - PROFILE REMEDIATION WITH LIVE HOLDS",
+  "status": "HOLD - PAIRING ATTEMPTED BUT NOT VERIFIED",
+  "required_result": "PAIRED - VERIFIED",
   "updated_at": "2026-08-20T20:49:30.184Z",
-  "status": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-  "financial_facebook": {
+  "facebook_page": {
     "name": "J Merrill Financial",
     "business_suite_asset_id": "1270611542802820",
     "public_profile_id": "61593286063626",
@@ -10,10 +10,9 @@
     "website": "https://jmerrill.financial/",
     "category": "Financial service",
     "bio": "Advanced planning for life, legacy, and the people who matter most.",
-    "status": "CANONICAL",
-    "result": "PASS"
+    "status": "CANONICAL"
   },
-  "financial_instagram": {
+  "instagram": {
     "handle": "@jmerrillfin",
     "instagram_id": "17841438473100276",
     "status": "CANONICAL - ACTIVE / NEW FINANCIAL INSTAGRAM",
@@ -38,42 +37,27 @@
       "no_hq_street_address": true
     },
     "pairing": "NOT PAIRED - verification after connection flow still showed no connected assets",
-    "scheduling_eligibility": "BLOCKED - FB/IG pair not verified",
-    "result": "PARTIAL - access pass; bio pass; website/pairing hold"
+    "scheduling_eligibility": "BLOCKED - FB/IG pair not verified"
   },
-  "publishing": {
-    "status": "PASS - PROFILE INTEGRITY RESTORED",
-    "facebook": {
-      "bio": "Hybrid publishing support from manuscript readiness to launch.",
-      "website": "https://jmerrill.pub/",
-      "forex_trader_defect": "ABSENT"
-    },
-    "evidence": {
-      "bio": "/tmp/social_p2_pub_bio_fix_dom.txt",
-      "website": "/tmp/social_p2_pub_website_dom.txt"
-    }
+  "before_state": {
+    "page_connected_assets": "You do not have any connected assets",
+    "instagram_connected_assets": "You do not have any connected assets"
   },
-  "productions": {
-    "status": "PARTIAL - FACEBOOK PASS / INSTAGRAM HOLD",
-    "facebook": {
-      "page_id": "108290338098880",
-      "bio": "Video, audio, live media, and storytelling for clients, campaigns, authors, and JM1 communications.",
-      "bio_result": "PASS - no Spotlight wording visible",
-      "website": "https://jmerrill.productions/",
-      "website_result": "PASS - corrected from jmerrill.pub"
-    },
-    "instagram": {
-      "handle": "@jmerrillprod",
-      "instagram_id": "17841467582710441",
-      "spotlight_state": "HOLD - public bio still contains Formerly J Merrill Spotlight; Edit profile not exposed in this session"
-    },
-    "evidence": {
-      "ig": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
-      "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
-    }
+  "attempted_flow": [
+    "Page Connected assets > Connect assets > Instagram account",
+    "Confirm your connection to get more features",
+    "Confirm Your Facebook Page and Instagram connection > Confirm connection",
+    "Choose Instagram message settings > Continue"
+  ],
+  "after_state": {
+    "page_connected_assets": "Still shows You do not have any connected assets",
+    "instagram_connected_assets": "Still shows You do not have any connected assets"
   },
-  "one": "SHORT FACTUAL RECHECK NOT MUTATED - no stale division-specific defect recorded in this pass",
-  "foundation": "SHORT FACTUAL/PRIVACY RECHECK NOT MUTATED - no sensitive participant/donor facts recorded in this pass",
+  "business_portfolio": {
+    "name": "J Merrill One",
+    "id": "846921439784613"
+  },
+  "scheduling_eligibility": "BLOCKED - pair not verified",
   "evidence": {
     "jmerrillfinBusinessSettings": "/tmp/social_p2_clean_ig_accounts_dom.txt",
     "jmerrillfinConnectedBefore": "/tmp/social_p2_clean_jmerrillfin_connected_dom.txt",

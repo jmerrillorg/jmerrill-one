@@ -1,75 +1,13 @@
 {
-  "status": "PASS WITH DOCUMENTED FOLLOW-UP",
-  "captured_at": "2026-08-20T13:35:00Z",
+  "status": "FOUNDER AUTHENTICATION ACTION REQUIRED",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "result": "SECURITY HARDENING HELD",
   "checks": {
-    "jackie_control_visible": "PASS - Jackie Smith (you) info@jmerrill.one shows Full access Everything and Active",
-    "backup_admin": "PASS - Security Center reports Backup admin added",
-    "two_factor": "FOUNDER AUTHENTICATION ACTION REQUIRED - not changed in this pass",
-    "passkeys": "REMEDIATION - Who is required to turn on Passkeys: No one",
-    "unexplained_high_level_admins": "REMEDIATION - Page access review flags and partner inconsistencies require human admin review",
-    "partner_access": "REMEDIATION - Publishing partner row inconsistency requires reconciliation",
-    "system_users": "PASS - no system users visible",
-    "exposed_credentials": "PASS - none observed or captured",
-    "compromised_ownership_structure": "PASS WITH REMEDIATION - owned by J Merrill One, but Financial IG access assignment defect and Page review-needed flags remain",
-    "financial_page_control": "PASS - J Merrill Financial Page editable in Jackie Edge session"
+    "jackie_session": "PASS - authenticated session active",
+    "two_factor_required_for": "No one",
+    "passkeys_required_for": "No one",
+    "founder_recovery_readiness": "NOT PROVEN",
+    "exposed_credentials": "PASS - none captured"
   },
-  "updated_at": "2026-08-20T19:07:11.251Z",
-  "result": "PASS WITH DOCUMENTED FOLLOW-UP",
-  "post_closeout_financial_replacement_continuation": {
-    "updated_at": "2026-08-20T13:49:26.063Z",
-    "result": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-    "blockers": [
-      "Authenticated Meta/Facebook UI could not be safely operated from this Codex execution surface: browser control binding returned no readable page state/output.",
-      "No purpose-built Meta/Facebook connector is available in this tool environment.",
-      "Creating a Facebook Page, assigning Instagram access, pairing assets, editing public profiles, and enabling portfolio security are live admin actions that cannot be invented or evidenced from repository files."
-    ],
-    "new_financial_page": {
-      "page_name": "J Merrill Financial, LLC",
-      "classification": "CANONICAL FINANCIAL FACEBOOK PAGE",
-      "page_id": null,
-      "url": null,
-      "owner": "J Merrill One",
-      "business_portfolio_id": "846921439784613",
-      "creation_result": "NOT EXECUTED - authenticated Meta browser/admin operation unavailable in this execution surface",
-      "required_human_admin_action": "Create the Page in Jackie-controlled Meta/Facebook session, add it to J Merrill One Business Portfolio, then pair existing @jmerrillfinancial Instagram."
-    },
-    "financial_instagram": {
-      "handle": "@jmerrillfinancial",
-      "instagram_id": "17841475196277020",
-      "meta_selected_asset_id": "676716152193798",
-      "classification": "RETAIN — CANONICAL FINANCIAL INSTAGRAM",
-      "current_access_evidence": "0 full access people, 0 partial access people, 0 partners in Business Portfolio evidence captured 2026-08-20T13:35:00Z",
-      "current_pairing": "NOT CONNECTED",
-      "scheduling_eligibility": "BLOCKED - authorized user access and canonical Facebook Page pairing required"
-    }
-  },
-  "live_financial_canonical_activation": {
-    "page": {
-      "page_name": "J Merrill Financial",
-      "instructed_correction": "User corrected canonical Page name from instruction text to J Merrill Financial.",
-      "business_suite_asset_id": "1270611542802820",
-      "facebook_public_profile_id": "61593286063626",
-      "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
-      "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
-      "classification": "CANONICAL — J MERRILL FINANCIAL FACEBOOK",
-      "followers_observed": 0,
-      "category_observed": "Financial service",
-      "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Insurance Broker is canonically justifiable if Meta allows an additional accurate category, but live Meta currently displays Financial service after remediation.",
-      "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
-      "website_observed": "https://jmerrill.financial/",
-      "hq_street_address_exposed": false
-    },
-    "instagram": {
-      "handle": "@jmerrillfinancial",
-      "instagram_id": "17841475196277020",
-      "meta_selected_asset_id": "676716152193798",
-      "status": "CANONICAL_IG_RETAINED",
-      "pairing_result": "NOT PAIRED — LIVE CONNECT INSTAGRAM LINK DID NOT OPEN AN ACTIONABLE DIALOG IN EDGE CONTROL",
-      "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
-    },
-    "business_portfolio": {
-      "name": "J Merrill One",
-      "id": "846921439784613"
-    }
-  }
+  "required_next_action": "Verify Jackie MFA/passkey and recovery methods, then authorize portfolio 2FA enforcement."
 }

@@ -1,28 +1,25 @@
 {
-  "status": "LIVE_META_AUDIT_PARTIAL_REMEDIATION - HOLDS_REMAIN",
-  "updated_at": "2026-08-20T19:47:32.087Z",
+  "status": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "brands": {
+    "J Merrill One": "READY WITH CONTENT APPROVAL",
+    "J Merrill Publishing": "READY WITH RIGHTS/CONTENT APPROVAL",
+    "J Merrill Financial": "HOLD - CLEAN FB/IG PAIRING NOT VERIFIED",
+    "J Merrill Foundation": "READY WITH PRIVACY/CONTENT APPROVAL",
+    "J Merrill Productions": "HOLD - INSTAGRAM PROFILE DEFECT REMAINS"
+  },
   "resolved": {
-    "business_portfolio_ownership": "RESOLVED",
-    "page_ids": "RESOLVED - canonical Financial Facebook Page exists in portfolio as J Merrill Financial / 1270611542802820",
-    "instagram_ids": "RESOLVED",
-    "pairings": "PARTIAL - all existing pairings known; Financial IG pairing not verified",
-    "control": "PARTIAL - Financial IG access request remains pending; Assign people disabled",
-    "security_baseline": "HOLD - Founder authentication action required",
-    "live_profile_state": "RESOLVED WITH CORRECTION HOLDS",
-    "financial_facebook": "PASS - canonical Page configured",
-    "financial_instagram": "HOLD - access/pairing not verified",
-    "publishing_profile": "PASS - forex/trader defect absent and canonical profile copy/website saved",
-    "productions_facebook_bio": "PASS - Spotlight wording removed",
-    "productions_instagram_bio": "HOLD - Spotlight wording remains",
-    "productions_facebook_link": "HOLD - live link still points to jmerrill.pub"
+    "financial_instagram_access": "PASS",
+    "financial_instagram_profile_bio": "PASS",
+    "publishing_profile": "PASS",
+    "productions_facebook_bio": "PASS",
+    "productions_facebook_url": "PASS"
   },
   "remaining_holds": [
-    "Financial Instagram access/pairing pending",
-    "Productions Instagram bio still contains legacy Spotlight wording",
-    "Productions Facebook link still points to jmerrill.pub",
-    "Portfolio MFA/passkey enablement requires Founder recovery/MFA verification",
-    "First-batch rights/compliance/privacy/creative approvals remain",
-    "No first-week posts scheduled"
+    "Financial clean FB/IG pair not verified",
+    "Productions Instagram Spotlight wording remains",
+    "Founder recovery/MFA readiness not proven",
+    "Creative/rights/compliance/privacy proof incomplete"
   ],
   "result": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED"
 }

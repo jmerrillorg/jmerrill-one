@@ -1,0 +1,16 @@
+{
+  "status": "HOLD - NOT SCHEDULING ELIGIBLE",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "facebook_target": {
+    "name": "J Merrill Financial",
+    "profile_id": "61593286063626",
+    "status": "AVAILABLE"
+  },
+  "instagram_target": {
+    "handle": "@jmerrillfin",
+    "instagram_id": "17841438473100276",
+    "status": "ACCESS PASS BUT PAIRING NOT VERIFIED"
+  },
+  "result": "BLOCKED UNTIL J Merrill Financial + @jmerrillfin pair is verified in Meta connected assets and planner target selector",
+  "non_publishing_inspection": "Not run to avoid relying on an unverified pair."
+}

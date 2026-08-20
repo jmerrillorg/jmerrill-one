@@ -1,11 +1,11 @@
 {
   "status": "HOLD - PASS-ONLY BATCH NOT AVAILABLE",
-  "updated_at": "2026-08-20T19:46:46.941Z",
+  "updated_at": "2026-08-20T20:49:30.184Z",
   "summary": {
     "pass": 0,
-    "revise": 7,
+    "revise": 5,
     "remove_from_batch": 0,
-    "founder_decision_required": 7
+    "founder_decision_required": 9
   },
   "posts": [
     {
@@ -13,7 +13,7 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Publishing profile defect is remediated; rights/creative and Founder approval still required.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -21,7 +21,7 @@
       "brand": "J Merrill Foundation",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Text copy privacy gate can pass, but creative/likeness/privacy review and Founder approval still required.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -29,7 +29,7 @@
       "brand": "J Merrill One",
       "platform": "Instagram",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Founder approval and creative/brand proof still required; not scheduled.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -37,7 +37,7 @@
       "brand": "J Merrill Financial",
       "platform": "Instagram",
       "result": "REVISE",
-      "reason": "Financial Instagram access/pairing remains pending; planning/insurance compliance review still required.",
+      "reason": "Route to @jmerrillfin is recorded, but clean FB/IG pair is not verified; compliance review also required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -45,15 +45,15 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Publishing profile defect is remediated; rights/creative and Founder approval still required.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
       "SocialContentId": "SRP2-006",
       "brand": "J Merrill Productions",
       "platform": "Facebook",
-      "result": "REVISE",
-      "reason": "Productions Facebook bio is remediated, but live Facebook link still points to jmerrill.pub; rights/creative review still required.",
+      "result": "FOUNDER DECISION REQUIRED",
+      "reason": "Productions Facebook profile pass; rights/creative proof and Founder approval still required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -61,7 +61,7 @@
       "brand": "J Merrill Financial",
       "platform": "Instagram",
       "result": "REVISE",
-      "reason": "Financial Instagram access/pairing remains pending; planning/insurance compliance review still required.",
+      "reason": "Route to @jmerrillfin is recorded, but clean FB/IG pair is not verified; compliance review also required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -69,7 +69,7 @@
       "brand": "J Merrill Foundation",
       "platform": "Instagram",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Text copy privacy gate can pass, but creative/likeness/privacy review and Founder approval still required.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -77,7 +77,7 @@
       "brand": "J Merrill One",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Founder approval and creative/brand proof still required; not scheduled.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -85,7 +85,7 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Publishing profile defect is remediated; rights/creative and Founder approval still required.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -93,7 +93,7 @@
       "brand": "J Merrill Financial",
       "platform": "Instagram",
       "result": "REVISE",
-      "reason": "Financial Instagram access/pairing remains pending; planning/insurance compliance review still required.",
+      "reason": "Route to @jmerrillfin is recorded, but clean FB/IG pair is not verified; compliance review also required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -101,7 +101,7 @@
       "brand": "J Merrill Productions",
       "platform": "Instagram",
       "result": "REVISE",
-      "reason": "Productions Instagram still contains legacy Spotlight wording; rights/creative review still required.",
+      "reason": "Productions Instagram still contains legacy Spotlight wording.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -109,7 +109,7 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Publishing profile defect is remediated; rights/creative and Founder approval still required.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -117,50 +117,48 @@
       "brand": "J Merrill Foundation",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Text copy privacy gate can pass, but creative/likeness/privacy review and Founder approval still required.",
+      "reason": "Content/creative/rights/founder approval remains required.",
       "scheduling_state": "NOT SCHEDULED"
     }
   ],
   "scheduling_authorized": false,
   "live_financial_canonical_activation": {
     "page": {
-      "page_name": "J Merrill Financial",
+      "name": "J Merrill Financial",
       "business_suite_asset_id": "1270611542802820",
-      "facebook_public_profile_id": "61593286063626",
-      "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
+      "public_profile_id": "61593286063626",
       "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
-      "classification": "CANONICAL - J MERRILL FINANCIAL FACEBOOK",
-      "followers_observed": 0,
-      "category_observed": "Financial service",
-      "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Do not force a second category when Meta retains only Financial service; reflect full scope in compliant About/service copy.",
-      "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
-      "website_observed": "https://jmerrill.financial/",
-      "hq_street_address_exposed": false
+      "website": "https://jmerrill.financial/",
+      "category": "Financial service",
+      "bio": "Advanced planning for life, legacy, and the people who matter most.",
+      "status": "CANONICAL"
     },
     "instagram": {
-      "handle": "@jmerrillfinancial",
-      "instagram_id": "17841475196277020",
-      "meta_selected_asset_id": "676716152193798",
-      "public_profile_observed": {
-        "display_name": "J Merrill Financial, LLC.",
-        "followers_observed": 12,
-        "website_observed": "jmerrill.financial",
-        "professional_dashboard_visible": true
+      "handle": "@jmerrillfin",
+      "instagram_id": "17841438473100276",
+      "status": "CANONICAL - ACTIVE / NEW FINANCIAL INSTAGRAM",
+      "display_name": "J Merrill Financial, LLC",
+      "business_portfolio": {
+        "name": "J Merrill One",
+        "id": "846921439784613"
       },
-      "business_settings_state": {
-        "owned_by": "J Merrill Financial, LLC",
-        "access_request_state": "Request Sent - Your request for access is pending",
-        "requests_page_state": "No requests need review; Sent tab showed no sent requests",
-        "assign_people_button": "DISABLED",
-        "assign_partner_button": "DISABLED",
-        "connect_assets_button": "ENABLED"
+      "assigned_people": [
+        {
+          "identity": "J Merrill Financial LLC",
+          "access_level": "Full access",
+          "selected_user_id": "61593415808532"
+        }
+      ],
+      "professional_account_type": "Professional account visible; exact subtype not exposed in captured Meta DOM",
+      "profile": {
+        "bio": "Advanced planning for life, legacy, and the people who matter most.",
+        "website": "HOLD - Instagram Website field disabled in live edit surface; no public website visible after bio update",
+        "followers": 0,
+        "posts": 0,
+        "no_hq_street_address": true
       },
-      "pairing_attempt": {
-        "result": "ATTEMPTED - NOT VERIFIED",
-        "observed_flow": "Page-side Connect assets allowed Instagram account selection, Confirm connection, then Continue through Instagram message settings.",
-        "after_state": "Instagram settings still showed Request Sent/pending access and Connect assets remained enabled; no verified paired-state evidence was visible."
-      },
-      "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
+      "pairing": "NOT PAIRED - verification after connection flow still showed no connected assets",
+      "scheduling_eligibility": "BLOCKED - FB/IG pair not verified"
     },
     "business_portfolio": {
       "name": "J Merrill One",
@@ -168,5 +166,6 @@
     }
   },
   "financial_facebook_ready": true,
-  "financial_ig_pairing_ready": false
+  "financial_ig_pairing_ready": false,
+  "financial_ig_access_ready": true
 }
