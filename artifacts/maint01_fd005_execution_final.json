@@ -1,0 +1,22 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd005_execution_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "fd": "FD-005",
+  "approval": "APPROVE FD-005 — accounting@ KEEP-CORE, board@ KEEP-CORE, donations@ KEEP-CORE, grants@ KEEP-CORE, media@ KEEP-ALIAS, volunteers@ KEEP-ALIAS, contacts@ CONSOLIDATE into info@",
+  "execution_status": "NOT EXECUTED",
+  "result": "BLOCKED",
+  "retained_without_mutation": [
+    "accounting@jmerrill.one",
+    "board@jmerrill.one",
+    "donations@jmerrill.one",
+    "grants@jmerrill.one",
+    "media@jmerrill.one",
+    "volunteers@jmerrill.one"
+  ],
+  "contacts_consolidation": {
+    "status": "NOT EXECUTED",
+    "blocker": "Dependency verification for aliases, forwarding, delegates, rules, public website references, Bookings, Power Automate, Dynamics, Customer Voice, and Forms/contact endpoints was not certified."
+  },
+  "post_state": "UNCHANGED"
+}

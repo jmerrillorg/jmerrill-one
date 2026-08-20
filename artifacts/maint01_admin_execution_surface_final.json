@@ -1,0 +1,28 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_admin_execution_surface_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "result": "PASS_WITH_TARGET_CERTIFICATION_BLOCKER",
+  "authenticated_context": {
+    "azure_cli": "AVAILABLE",
+    "azure_cli_user": "jm1-admin@jmerrill.one",
+    "tenant_id": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+    "subscription": "JM1 – Nonprofit Core (2025 Grant)"
+  },
+  "local_modules": {
+    "powershell": "AVAILABLE",
+    "microsoft_graph": "AVAILABLE",
+    "exchange_online_management": "AVAILABLE",
+    "microsoft_teams_module": "NOT INSTALLED/NOT CONFIRMED"
+  },
+  "fd_classification": {
+    "FD-001": "POWERSHELL / AZURE CLI GRAPH AVAILABLE - BLOCKED BY TARGET CERTIFICATION",
+    "FD-002": "POWERSHELL / AZURE CLI GRAPH AVAILABLE - BLOCKED BY TARGET CERTIFICATION",
+    "FD-003": "POWERSHELL / AZURE CLI GRAPH AVAILABLE - BLOCKED BY TARGET CERTIFICATION",
+    "FD-005": "EXCHANGE POWERSHELL AVAILABLE - BLOCKED BY DEPENDENCY CERTIFICATION FOR CONTACTS ROUTING",
+    "FD-004": "GRAPH TEAMS ARCHIVE SURFACE AVAILABLE - BLOCKED BY TARGET/PREREQUISITE CERTIFICATION",
+    "FD-006": "POWERSHELL / AZURE CLI GRAPH AVAILABLE - BLOCKED BY TARGET CERTIFICATION"
+  },
+  "admin_surface_blocker": false,
+  "target_certification_blocker": true
+}

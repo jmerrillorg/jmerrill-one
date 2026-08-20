@@ -1,0 +1,15 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_disposition_matrix_postexecution",
+  "created_at": "2026-08-20T11:25:00Z",
+  "cleanup_executed": false,
+  "disposition_summary": {
+    "FD-001": "BLOCKED - exact stale guest not certified",
+    "FD-002": "BLOCKED - exact four license assignments not certified",
+    "FD-003": "BLOCKED - exact two inactive internal accounts not certified",
+    "FD-005": "BLOCKED - contacts@ dependency certification not complete; keep mailboxes unchanged",
+    "FD-004": "BLOCKED - exact three Teams/Groups and prerequisites not certified",
+    "FD-006": "BLOCKED - exact two app registrations not certified"
+  },
+  "tenant_mutations": "NONE"
+}
