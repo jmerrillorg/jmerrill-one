@@ -1,0 +1,44 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_mail_regression_post_fd005",
+  "result": "PASS",
+  "regression_type": "Exchange configuration and routing validation after FD-005",
+  "tested_mailboxes": [
+    "info@jmerrill.one",
+    "contacts@jmerrill.one",
+    "accounting@jmerrill.one",
+    "board@jmerrill.one",
+    "donations@jmerrill.one",
+    "grants@jmerrill.one",
+    "media@jmerrill.one",
+    "volunteers@jmerrill.one"
+  ],
+  "info_mailbox_result": {
+    "exists": true,
+    "primary_smtp": "info@jmerrill.one",
+    "recipient_type": "SharedMailbox",
+    "forwarding_smtp_address": "smtp:appointments@jmerrill.one",
+    "deliver_to_mailbox_and_forward": true,
+    "public_website_reference": "app/contact/ContactPageClient.tsx and content/canon.ts reference info@jmerrill.one"
+  },
+  "contacts_mailbox_result": {
+    "exists": true,
+    "primary_smtp": "contacts@jmerrill.one",
+    "recipient_type": "SharedMailbox",
+    "forwarding_smtp_address": "smtp:info@jmerrill.one",
+    "deliver_to_mailbox_and_forward": true,
+    "aliases_preserved": true,
+    "delegates_preserved": true,
+    "inbox_rules": []
+  },
+  "retained_mailboxes_result": {
+    "accounting@jmerrill.one": "KEEP-CORE - no FD-005 mutation",
+    "board@jmerrill.one": "KEEP-CORE - no FD-005 mutation",
+    "donations@jmerrill.one": "KEEP-CORE - no FD-005 mutation",
+    "grants@jmerrill.one": "KEEP-CORE - no FD-005 mutation",
+    "media@jmerrill.one": "KEEP-ALIAS - no FD-005 mutation",
+    "volunteers@jmerrill.one": "KEEP-ALIAS - no FD-005 mutation"
+  },
+  "continuity_result": "contacts@ continues to accept inbound mail as the primary SMTP of the retained shared mailbox and now forwards a copy to info@."
+}
+
