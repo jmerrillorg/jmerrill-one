@@ -1,10 +1,10 @@
 {
-  "status": "PARTIAL PASS - FACEBOOK REMEDIATED / INSTAGRAM HOLD",
+  "status": "PARTIAL PASS - FACEBOOK PASS / INSTAGRAM MANUAL ACTION REQUIRED",
   "required_result": "PASS",
   "mutation_performed": true,
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "before_state_evidence": "Facebook bio/URL and Instagram Spotlight defects were checked live.",
-  "result": "Facebook bio PASS; Facebook URL PASS; Instagram Spotlight HOLD",
+  "result": "Facebook bio PASS; Facebook URL PASS; Instagram Spotlight wording requires account verification/manual Jackie action.",
   "remediation": {
     "status": "PARTIAL - FACEBOOK PASS / INSTAGRAM HOLD",
     "facebook": {
@@ -23,5 +23,6 @@
       "ig": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
       "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
     }
-  }
+  },
+  "instagram_founder_action_artifact": "96_productions_instagram_founder_action.json"
 }

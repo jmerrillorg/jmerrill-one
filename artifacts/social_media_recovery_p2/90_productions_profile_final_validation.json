@@ -1,18 +1,18 @@
 {
-  "status": "HOLD - PRODUCTIONS INSTAGRAM REMAINS",
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "updated_at": "2026-08-20T23:48:05.244Z",
+  "status": "HOLD - MANUAL JACKIE ACTION REQUIRED FOR INSTAGRAM",
   "facebook": {
-    "bio": "PASS",
-    "website": "PASS",
-    "canonical_identity": "PASS"
+    "website": "PASS - https://jmerrill.productions/",
+    "bio": "PASS - no obsolete Spotlight identity visible"
   },
   "instagram": {
-    "spotlight_wording": "HOLD",
-    "editable_in_session": false
+    "spotlight_wording": "HOLD - Business Suite still displays Formerly J Merrill Spotlight",
+    "edit_state": "Requires Instagram verification to edit from Meta Business Suite",
+    "founder_action": "96_productions_instagram_founder_action.json"
   },
-  "result": "Facebook profile gate pass; final Productions profile gate blocked by Instagram Spotlight wording.",
+  "canonical_brand_identity": "PARTIAL - Facebook current; Instagram not yet remediated",
   "evidence": {
-    "ig": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
-    "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
+    "facebook": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt",
+    "instagram": "/tmp/p2_prod_ig_edit_bsuite.dom.txt"
   }
 }

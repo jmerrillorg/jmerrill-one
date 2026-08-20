@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-20T20:49:30.184Z",
+  "generated_at": "2026-08-20T23:48:05.244Z",
   "target_repository": "J Merrill One",
-  "package": "SOCIAL RECOVERY P2 - CLEAN FINANCIAL PAIR + LAUNCH READINESS",
+  "package": "SOCIAL RECOVERY P2 - FINAL BLOCKER RESOLUTION + FOUNDER DECISION PACKET",
   "branch": "codex/social-recovery-p2",
   "head": "FINAL_BRANCH_HEAD_REPORTED_IN_PR_COMMENT_AND_FINAL_RESPONSE",
   "pr": {
@@ -11,5 +11,5 @@
     "merge_state": "OPEN"
   },
   "classification": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-  "note": "Continuation records @jmerrillfin canonical decision, live ID/access verification, pairing hold after attempted Meta flow, Productions Facebook URL pass, Productions Instagram hold, security hold, and no PASS-only batch."
+  "note": "Final blocker pass records multisurface Financial pairing diagnostic, exact manual actions, revision execution, Founder decision packet, and remaining blocker register."
 }

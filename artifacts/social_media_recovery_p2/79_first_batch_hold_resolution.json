@@ -1,11 +1,12 @@
 {
-  "status": "HOLD - PASS-ONLY BATCH NOT AVAILABLE",
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "status": "HOLD - TECHNICAL/MANUAL ACTIONS AND FOUNDER DECISIONS REMAIN",
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "summary": {
     "pass": 0,
-    "revise": 5,
+    "revise": 0,
     "remove_from_batch": 0,
-    "founder_decision_required": 9
+    "founder_decision_required": 9,
+    "technical_or_manual_action": 5
   },
   "posts": [
     {
@@ -13,7 +14,7 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -21,7 +22,7 @@
       "brand": "J Merrill Foundation",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -29,15 +30,15 @@
       "brand": "J Merrill One",
       "platform": "Instagram",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
       "SocialContentId": "SRP2-004",
       "brand": "J Merrill Financial",
       "platform": "Instagram",
-      "result": "REVISE",
-      "reason": "Route to @jmerrillfin is recorded, but clean FB/IG pair is not verified; compliance review also required.",
+      "result": "TECHNICAL HOLD",
+      "reason": "Financial Instagram @jmerrillfin is not selectable until pairing completes.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -45,7 +46,7 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -53,15 +54,15 @@
       "brand": "J Merrill Productions",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Productions Facebook profile pass; rights/creative proof and Founder approval still required.",
+      "reason": "Profile revision complete; Founder content/creative decision remains.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
       "SocialContentId": "SRP2-007",
       "brand": "J Merrill Financial",
       "platform": "Instagram",
-      "result": "REVISE",
-      "reason": "Route to @jmerrillfin is recorded, but clean FB/IG pair is not verified; compliance review also required.",
+      "result": "TECHNICAL HOLD",
+      "reason": "Financial Instagram @jmerrillfin is not selectable until pairing completes.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -69,7 +70,7 @@
       "brand": "J Merrill Foundation",
       "platform": "Instagram",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -77,7 +78,7 @@
       "brand": "J Merrill One",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -85,23 +86,23 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
       "SocialContentId": "SRP2-011",
       "brand": "J Merrill Financial",
       "platform": "Instagram",
-      "result": "REVISE",
-      "reason": "Route to @jmerrillfin is recorded, but clean FB/IG pair is not verified; compliance review also required.",
+      "result": "TECHNICAL HOLD",
+      "reason": "Financial Instagram @jmerrillfin is not selectable until pairing completes.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
       "SocialContentId": "SRP2-012",
       "brand": "J Merrill Productions",
       "platform": "Instagram",
-      "result": "REVISE",
-      "reason": "Productions Instagram still contains legacy Spotlight wording.",
+      "result": "MANUAL JACKIE ACTION REQUIRED",
+      "reason": "Productions Instagram requires account verification/edit to remove Spotlight wording.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -109,7 +110,7 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {
@@ -117,7 +118,7 @@
       "brand": "J Merrill Foundation",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Content/creative/rights/founder approval remains required.",
+      "reason": "See 98 Founder decision packet.",
       "scheduling_state": "NOT SCHEDULED"
     }
   ],

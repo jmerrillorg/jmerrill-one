@@ -1,5 +1,5 @@
 {
-  "status": "BUILT_NOT_APPROVED_NOT_SCHEDULED - CLEAN FINANCIAL PAIRING HOLD",
+  "status": "BUILT_NOT_APPROVED_NOT_SCHEDULED - TECHNICAL/MANUAL/FOUNDER DECISIONS REMAIN",
   "posts": [
     {
       "SocialContentId": "SRP2-001",
@@ -16,7 +16,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Rights check for author/book assets.",
-      "approval_state": "HOLD - PUBLISHING RIGHTS/CREATIVE REVIEW REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-001"
@@ -36,7 +36,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Privacy review required; no sensitive participant data.",
-      "approval_state": "HOLD - FOUNDATION PRIVACY/CREATIVE REVIEW REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-002"
@@ -56,7 +56,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Brand review.",
-      "approval_state": "HOLD - FOUNDER/FUNCTIONAL APPROVAL REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-003"
@@ -76,7 +76,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "HOLD - FINANCIAL CLEAN FB/IG PAIRING NOT VERIFIED",
+      "approval_state": "TECHNICAL HOLD - FINANCIAL INSTAGRAM NOT SELECTABLE",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-004",
@@ -105,7 +105,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Rights check for author/book assets.",
-      "approval_state": "HOLD - PUBLISHING RIGHTS/CREATIVE REVIEW REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-005"
@@ -125,7 +125,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Rights check for project/talent/client assets.",
-      "approval_state": "HOLD - PRODUCTIONS RIGHTS/CREATIVE REVIEW + FACEBOOK LINK HOLD",
+      "approval_state": "FOUNDER DECISION REQUIRED - PROFILE REVISION COMPLETE",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-006"
@@ -145,7 +145,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "HOLD - FINANCIAL CLEAN FB/IG PAIRING NOT VERIFIED",
+      "approval_state": "TECHNICAL HOLD - FINANCIAL INSTAGRAM NOT SELECTABLE",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-007",
@@ -174,7 +174,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Privacy review required; no sensitive participant data.",
-      "approval_state": "HOLD - FOUNDATION PRIVACY/CREATIVE REVIEW REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-008"
@@ -194,7 +194,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Brand review.",
-      "approval_state": "HOLD - FOUNDER/FUNCTIONAL APPROVAL REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-009"
@@ -214,7 +214,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Rights check for author/book assets.",
-      "approval_state": "HOLD - PUBLISHING RIGHTS/CREATIVE REVIEW REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-010"
@@ -234,7 +234,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "HOLD - FINANCIAL CLEAN FB/IG PAIRING NOT VERIFIED",
+      "approval_state": "TECHNICAL HOLD - FINANCIAL INSTAGRAM NOT SELECTABLE",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-011",
@@ -263,7 +263,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Rights check for project/talent/client assets.",
-      "approval_state": "HOLD - PRODUCTIONS IG PROFILE + RIGHTS/CREATIVE REVIEW REQUIRED",
+      "approval_state": "MANUAL JACKIE ACTION REQUIRED - PRODUCTIONS IG PROFILE",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-012"
@@ -283,7 +283,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Rights check for author/book assets.",
-      "approval_state": "HOLD - PUBLISHING RIGHTS/CREATIVE REVIEW REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-013"
@@ -303,18 +303,20 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Privacy review required; no sensitive participant data.",
-      "approval_state": "HOLD - FOUNDATION PRIVACY/CREATIVE REVIEW REQUIRED",
+      "approval_state": "FOUNDER DECISION REQUIRED",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-014"
     }
   ],
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "financial_replacement_note": "Use @jmerrillfin / 17841438473100276 for future Financial Instagram routing. Do not use @jmerrillfinancial. Scheduling remains blocked until J Merrill Financial Facebook + @jmerrillfin connected-assets pair verifies.",
   "hold_summary": {
     "pass_posts": 0,
-    "scheduling_ready_posts": 0,
-    "total_posts": 14,
-    "reason": "No PASS-only first-week batch because Financial clean pair is not verified, Productions IG remains held, security Founder action is required, and creative/rights gates remain."
+    "revise_posts": 0,
+    "remove_from_batch": 0,
+    "founder_decision_required": 9,
+    "technical_or_manual_blocked_posts": 5,
+    "reason": "Five revision items were resolved or given exact technical/manual actions; nine content decisions are enumerated in 98."
   }
 }

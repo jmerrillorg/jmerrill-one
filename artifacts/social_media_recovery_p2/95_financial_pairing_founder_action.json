@@ -1,0 +1,20 @@
+{
+  "updated_at": "2026-08-20T23:48:05.244Z",
+  "status": "MANUAL JACKIE ACTION REQUIRED",
+  "reason": "Meta exposes the Financial Instagram target as disabled in composer and continues to show Connect Instagram/confirmation surfaces after automated confirmation attempts.",
+  "steps": [
+    "Open Meta Business Suite for business portfolio J Merrill One / 846921439784613.",
+    "Select business asset J Merrill Financial / profile ID 61593286063626.",
+    "Click Connect Instagram or the disabled Instagram Profile / Connect Instagram option in the Create post destination selector.",
+    "When Meta asks to confirm the Facebook Page and Instagram connection, authenticate as the account that owns @jmerrillfin if prompted.",
+    "Choose @jmerrillfin / IG ID 17841438473100276.",
+    "Confirm the connection to J Merrill Financial.",
+    "Return to Business Settings > Pages > J Merrill Financial > Connected assets and verify @jmerrillfin appears.",
+    "Open Create post and verify both J Merrill Financial and @jmerrillfin are selectable."
+  ],
+  "do_not_use": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "status": "LEGACY / HOLD - DO NOT USE"
+  }
+}

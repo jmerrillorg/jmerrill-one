@@ -1,0 +1,36 @@
+{
+  "updated_at": "2026-08-20T23:48:05.244Z",
+  "status": "CURRENT BLOCKERS CLASSIFIED",
+  "blockers": [
+    {
+      "id": "P2-BLK-001",
+      "type": "TECHNICAL",
+      "name": "Financial FB/IG pairing not complete",
+      "evidence": "Composer Instagram Profile option disabled; connected-assets empty."
+    },
+    {
+      "id": "P2-BLK-002",
+      "type": "MANUAL JACKIE ACTION",
+      "name": "Financial pairing requires Founder/Meta interaction",
+      "evidence": "95_financial_pairing_founder_action.json"
+    },
+    {
+      "id": "P2-BLK-003",
+      "type": "MANUAL JACKIE ACTION",
+      "name": "Productions Instagram requires verification/edit",
+      "evidence": "96_productions_instagram_founder_action.json"
+    },
+    {
+      "id": "P2-BLK-004",
+      "type": "FOUNDER POLICY/CONTENT DECISION",
+      "name": "Nine first-week content decisions",
+      "evidence": "98_first_batch_founder_decision_packet.md"
+    },
+    {
+      "id": "P2-BLK-005",
+      "type": "FOLLOW-UP / NON-BLOCKING",
+      "name": "Portfolio 2FA/passkey hardening",
+      "evidence": "56_meta_security_baseline.json"
+    }
+  ]
+}

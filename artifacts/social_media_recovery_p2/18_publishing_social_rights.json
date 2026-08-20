@@ -1,5 +1,5 @@
 {
-  "status": "RIGHTS CHECK REQUIRED - PROFILE PASS",
+  "status": "RIGHTS PASS IF TEXT-ONLY/OWNED CREATIVE - FOUNDER CONTENT DECISION REQUIRED",
   "rules": [
     "Check book covers",
     "author photos",
@@ -11,74 +11,74 @@
   "publishing_posts": [
     {
       "SocialContentId": "SRP2-001",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-005",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-010",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-013",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-015",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-019",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-024",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-027",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-029",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-033",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-038",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-041",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-043",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-047",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-052",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-055",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     },
     {
       "SocialContentId": "SRP2-057",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     }
   ],
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "profile_defect_result": {
     "status": "PASS - PROFILE INTEGRITY RESTORED",
     "facebook": {
@@ -90,5 +90,6 @@
       "bio": "/tmp/social_p2_pub_bio_fix_dom.txt",
       "website": "/tmp/social_p2_pub_website_dom.txt"
     }
-  }
+  },
+  "analysis": "First-week Publishing copy uses no covers, author photos, excerpts, testimonials, narrator/media assets, or release graphics. Rights hold clears if executed with owned/text-only branded creative."
 }

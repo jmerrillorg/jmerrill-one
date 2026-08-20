@@ -1,5 +1,5 @@
 {
-  "status": "PASS_WITH_REVIEW_REQUIRED - PAIRING HOLD",
+  "status": "COMPLIANCE COPY PASS - TECHNICAL PAIRING HOLD",
   "rules": [
     "No legal advice",
     "No tax advice",
@@ -10,71 +10,72 @@
   "financial_posts": [
     {
       "SocialContentId": "SRP2-004",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-007",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-011",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-018",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-021",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-025",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-032",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-035",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-039",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-046",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-049",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-053",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-060",
-      "classification": "PLANNING EDUCATION - ESTATE + ADVANCED/FUNERAL PLANNING SCOPE",
-      "publish": "REVIEW REQUIRED - CLEAN PAIRING HOLD"
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     }
   ],
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "scope_confirmation": "Advanced planning, estate planning, and funeral/pre-need planning are in scope; funeral/pre-need planning may involve an insurance product. Copy must avoid legal advice, attorney implication, guarantees, investment claims, and sensitive client data.",
-  "asset_gate": "HOLD - clean @jmerrillfin pair not verified"
+  "asset_gate": "TECHNICAL HOLD - @jmerrillfin not selectable until pairing completes",
+  "classification_summary": "Financial launch copy is GENERAL/PLANNING EDUCATION; no legal advice, attorney implication, guarantee, investment claim, or sensitive client data detected. Funeral/pre-need planning remains in scope but is not directly claimed in these first-week posts."
 }

@@ -1,33 +1,23 @@
 {
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "classification": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-  "updated_at": "2026-08-20T20:49:30.184Z",
-  "new_financial_fb": "PASS",
-  "new_financial_ig": {
-    "handle": "@jmerrillfin",
-    "instagram_id": "17841438473100276",
-    "access": "PASS",
-    "bio": "PASS",
-    "website": "HOLD",
-    "pairing": "HOLD"
+  "financial_pairing": "TECHNICAL/MANUAL HOLD",
+  "financial_scheduling": "FACEBOOK ONLY",
+  "productions_instagram": "MANUAL JACKIE ACTION REQUIRED",
+  "meta_security": "FOLLOW-UP / NON-BLOCKING HARDENING",
+  "five_revisions": {
+    "converted_to_pass": 0,
+    "converted_to_founder_decision": 1,
+    "manual_jackie_action": 1,
+    "technical_hold": 3
   },
-  "legacy_asset_disposition": {
-    "facebook": {
-      "status": "LEGACY / RESTRICTED - RETAIN TEMPORARILY / DO NOT PUBLISH"
-    },
-    "instagram": {
-      "handle": "@jmerrillfinancial",
-      "instagram_id": "17841475196277020",
-      "status": "LEGACY / HOLD - DO NOT USE FOR ACTIVE OPERATIONS"
-    }
+  "founder_decisions": 9,
+  "batch_gate": {
+    "pass": 0,
+    "revise": 0,
+    "remove": 0,
+    "founder_decision_required": 9,
+    "technical_or_manual_action": 5
   },
-  "publishing_profile": "PASS",
-  "productions_profile": {
-    "facebook_bio": "PASS",
-    "facebook_url": "PASS",
-    "instagram": "HOLD"
-  },
-  "meta_security": "FOUNDER ACTION REQUIRED",
-  "pass_post_count": 0,
-  "revised_or_hold_count": 14,
-  "founder_approval_readiness": "NOT READY - PASS-ONLY BATCH NOT AVAILABLE"
+  "pr": "#7"
 }

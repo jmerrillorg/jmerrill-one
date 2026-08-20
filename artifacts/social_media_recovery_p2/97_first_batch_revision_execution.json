@@ -1,0 +1,52 @@
+{
+  "updated_at": "2026-08-20T23:48:05.244Z",
+  "status": "COMPLETE - ROUTINE REVISIONS RESOLVED OR ESCALATED WITH EXACT ACTION",
+  "items": [
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "Financial",
+      "original_issue": "Instagram destination and compliance wording",
+      "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
+      "authority": "Existing Financial canon and compliance guardrails",
+      "resulting_status": "TECHNICAL HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "Financial",
+      "original_issue": "Instagram destination and compliance wording",
+      "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
+      "authority": "Existing Financial canon and compliance guardrails",
+      "resulting_status": "TECHNICAL HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "Financial",
+      "original_issue": "Instagram destination and compliance wording",
+      "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
+      "authority": "Existing Financial canon and compliance guardrails",
+      "resulting_status": "TECHNICAL HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "Productions",
+      "original_issue": "Facebook profile URL/link hold",
+      "revision": "Resolved: Productions Facebook website now shows jmerrill.productions and bio has no Spotlight wording. Remaining launch approval is rights/creative/content, not profile correction.",
+      "authority": "Factual profile remediation evidence",
+      "resulting_status": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "Productions",
+      "original_issue": "Instagram profile obsolete Spotlight wording",
+      "revision": "Not safely editable by Codex; Business Suite requires Instagram verification. Exact Jackie action recorded in 96.",
+      "authority": "Live Meta Business Suite evidence",
+      "resulting_status": "MANUAL JACKIE ACTION REQUIRED"
+    }
+  ],
+  "summary": {
+    "converted_to_pass": 0,
+    "converted_to_founder_decision": 1,
+    "manual_jackie_action": 1,
+    "technical_hold": 3
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "status": "HOLD - PAIRING ATTEMPTED BUT NOT VERIFIED",
+  "status": "PAIRING BLOCKED BY META - MANUAL JACKIE ACTION REQUIRED",
   "required_result": "PAIRED - VERIFIED",
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "facebook_page": {
     "name": "J Merrill Financial",
     "business_suite_asset_id": "1270611542802820",
@@ -57,7 +57,7 @@
     "name": "J Merrill One",
     "id": "846921439784613"
   },
-  "scheduling_eligibility": "BLOCKED - pair not verified",
+  "scheduling_eligibility": "FACEBOOK ONLY",
   "evidence": {
     "jmerrillfinBusinessSettings": "/tmp/social_p2_clean_ig_accounts_dom.txt",
     "jmerrillfinConnectedBefore": "/tmp/social_p2_clean_jmerrillfin_connected_dom.txt",
@@ -75,5 +75,9 @@
     "publishingBio": "/tmp/social_p2_pub_bio_fix_dom.txt",
     "publishingWebsite": "/tmp/social_p2_pub_website_dom.txt",
     "securityCenter": "/tmp/social_p2_security_dom.txt"
-  }
+  },
+  "truth": "NOT PAIRED",
+  "diagnostic_artifact": "93_financial_pairing_multisurface_diagnostic.json",
+  "truth_artifact": "94_financial_pairing_truth_certification.json",
+  "founder_action_artifact": "95_financial_pairing_founder_action.json"
 }

@@ -1,5 +1,5 @@
 {
-  "status": "RIGHTS CHECK REQUIRED - PRODUCTIONS IG PROFILE HOLD",
+  "status": "FACEBOOK RIGHTS PASS IF TEXT-ONLY/OWNED CREATIVE; INSTAGRAM PROFILE MANUAL ACTION REQUIRED",
   "rules": [
     "Check project images",
     "client work",
@@ -11,46 +11,46 @@
   "productions_posts": [
     {
       "SocialContentId": "SRP2-006",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
-      "profile_gate": "FACEBOOK BIO PASS; FACEBOOK LINK HOLD"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
     },
     {
       "SocialContentId": "SRP2-012",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
-      "profile_gate": "INSTAGRAM BIO HOLD"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "MANUAL JACKIE ACTION REQUIRED - Instagram Spotlight wording"
     },
     {
       "SocialContentId": "SRP2-020",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
-      "profile_gate": "INSTAGRAM BIO HOLD"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
     },
     {
       "SocialContentId": "SRP2-026",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
-      "profile_gate": "INSTAGRAM BIO HOLD"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
     },
     {
       "SocialContentId": "SRP2-034",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
-      "profile_gate": "INSTAGRAM BIO HOLD"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
     },
     {
       "SocialContentId": "SRP2-040",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
-      "profile_gate": "INSTAGRAM BIO HOLD"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
     },
     {
       "SocialContentId": "SRP2-048",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
-      "profile_gate": "INSTAGRAM BIO HOLD"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
     },
     {
       "SocialContentId": "SRP2-054",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
-      "profile_gate": "INSTAGRAM BIO HOLD"
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
     }
   ],
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "profile_defect_result": {
     "status": "PARTIAL - FACEBOOK PASS / INSTAGRAM HOLD",
     "facebook": {
@@ -69,5 +69,6 @@
       "ig": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
       "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
     }
-  }
+  },
+  "analysis": "First-week Productions copy uses no project imagery, talent likeness, client materials, copyrighted media, or portfolio assets. Use owned/text-only creative unless specific rights proof exists."
 }

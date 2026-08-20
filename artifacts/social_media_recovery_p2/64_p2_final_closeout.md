@@ -1,29 +1,29 @@
-# SOCIAL RECOVERY P2 Final Closeout
+# SOCIAL RECOVERY P2 Final Blocker Closeout
 
-Updated: 2026-08-20T20:49:30.184Z
+Updated: 2026-08-20T23:48:05.244Z
 
 ## Classification
 
 SOCIAL RECOVERY P2 REMEDIATION REQUIRED
 
-## Completed Live
+## Financial Pairing
 
-- Recorded @jmerrillfin as the canonical active Financial Instagram.
-- Verified @jmerrillfin immutable ID: 17841438473100276.
-- Verified @jmerrillfin Full access assignment to J Merrill Financial LLC in J Merrill One portfolio.
-- Updated @jmerrillfin bio to: Advanced planning for life, legacy, and the people who matter most.
-- Preserved @jmerrillfinancial as legacy/hold; no deletion or ownership disruption.
-- Publishing profile remains PASS.
-- Productions Facebook bio and website are PASS; website now shows jmerrill.productions.
+Multisurface diagnostic complete. Business Settings connected-assets tabs are empty on both Page and IG. Business Suite still shows Connect Instagram, and composer shows Facebook selectable but Instagram disabled. Truth: pairing blocked by Meta / manual Jackie action required.
 
-## Holds Remaining
+## Productions Instagram
 
-- J Merrill Financial Facebook + @jmerrillfin pairing is not verified; both connected-assets surfaces still show no connected assets after the Meta confirmation flow.
-- @jmerrillfin website field was disabled in Instagram edit profile; no public website visible.
-- @jmerrillprod still contains Formerly J Merrill Spotlight and no edit control was exposed in-session.
-- Jackie recovery/MFA readiness is not proven; portfolio 2FA/passkeys remain No one.
-- First 7-day batch is not PASS-only and was not scheduled or published.
+Business Suite confirms the stale bio and says the Instagram account must be verified before editing from Meta Business Suite. Exact Jackie action is recorded in 96_productions_instagram_founder_action.json.
 
-## Exact Next Action
+## Meta Security
 
-Complete/verify the J Merrill Financial Facebook + @jmerrillfin connected-assets pair in Meta, remove Productions Instagram Spotlight wording from @jmerrillprod, and verify Jackie recovery/MFA readiness before rebuilding a PASS-only first-week batch.
+Portfolio 2FA/passkey enforcement remains a hardening follow-up, not a content launch blocker, until Jackie recovery readiness is confirmed.
+
+## Batch Gate
+
+PASS: 0
+REVISE: 0
+REMOVE: 0
+FOUNDER DECISION REQUIRED: 9
+TECHNICAL OR MANUAL ACTION: 5
+
+Founder decision packet: 98_first_batch_founder_decision_packet.md

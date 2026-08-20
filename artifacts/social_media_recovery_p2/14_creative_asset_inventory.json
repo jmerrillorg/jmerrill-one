@@ -1,5 +1,5 @@
 {
-  "status": "CREATIVE PROOF INCOMPLETE - NO PASS-ONLY BATCH",
+  "status": "READY - GENERATED/BRANDED CREATIVE NEEDED FOR INCLUDED POSTS",
   "items": [
     {
       "brand": "J Merrill One",
@@ -152,5 +152,92 @@
       "note": "Use existing approved brand system; do not invent new social identity. Launch PASS requires actual approved creative or text-only owned graphic proof."
     }
   ],
-  "updated_at": "2026-08-20T20:49:30.184Z"
+  "updated_at": "2026-08-20T23:48:05.244Z",
+  "first_week_creative_rule": "No first-week post may be scheduled until it has owned/text-only branded creative or documented rights proof plus alt text.",
+  "post_readiness": [
+    {
+      "SocialContentId": "SRP2-001",
+      "brand": "J Merrill Publishing",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "brand": "J Merrill Foundation",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "brand": "J Merrill One",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "J Merrill Financial",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "brand": "J Merrill Publishing",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "J Merrill Productions",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "J Merrill Financial",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "brand": "J Merrill Foundation",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "brand": "J Merrill One",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "brand": "J Merrill Publishing",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "J Merrill Financial",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "J Merrill Productions",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "brand": "J Merrill Publishing",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "brand": "J Merrill Foundation",
+      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
+      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+    }
+  ]
 }

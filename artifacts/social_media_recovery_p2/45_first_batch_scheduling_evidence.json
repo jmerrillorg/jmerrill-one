@@ -1,13 +1,6 @@
 {
+  "updated_at": "2026-08-20T23:48:05.244Z",
   "result": "NOT SCHEDULED",
-  "updated_at": "2026-08-20T20:49:30.184Z",
-  "reason": "Founder approval not available; PASS-only batch does not exist.",
-  "records": [],
-  "blockers": [
-    "Financial J Merrill Financial + @jmerrillfin pairing not verified",
-    "Productions Instagram Spotlight wording remains",
-    "Founder recovery/MFA readiness not proven; portfolio 2FA not enabled",
-    "Creative/rights/compliance/privacy proof incomplete",
-    "Founder launch approval not available"
-  ]
+  "reason": "No PASS-only batch exists; Founder approval phrase not available.",
+  "records": []
 }
