@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "captured_scope": [
+    "Team state",
+    "owners",
+    "members",
+    "guests",
+    "channels",
+    "Group state",
+    "SharePoint state",
+    "Planner count",
+    "Group mailbox address",
+    "tabs/apps where available"
+  ],
+  "team": {
+    "id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+    "displayName": "Sales",
+    "isArchived": false,
+    "webUrl": "https://teams.microsoft.com/l/team/19%3aa50mnTihNcQAKY9Jdh2kBmRQVPWIqkQ887uStlB3CVc1%40thread.tacv2/conversations?groupId=768e418f-d252-4f5f-96a0-8b6d2c18b962&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d"
+  },
+  "group": {
+    "id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+    "displayName": "Sales",
+    "mail": "sales@jmerrill.one",
+    "groupTypes": [
+      "Unified"
+    ],
+    "resourceProvisioningOptions": [
+      "Team"
+    ],
+    "visibility": "Private",
+    "mailEnabled": true,
+    "securityEnabled": false,
+    "createdDateTime": "2025-04-05T12:29:32Z"
+  },
+  "owners": [
+    {
+      "displayName": "Jackie Smith, Jr.",
+      "userPrincipalName": "jackie@jmerrill.one",
+      "id": "9586f34b-b5f3-437b-bc64-3e44d2518427"
+    },
+    {
+      "displayName": "JM1 Admin",
+      "userPrincipalName": "jm1-admin@jmerrill.one",
+      "id": "9750d862-2024-42bc-9707-f84b325dfb19"
+    }
+  ],
+  "members": [
+    {
+      "displayName": "Jackie Smith, Jr.",
+      "userPrincipalName": "jackie@jmerrill.one",
+      "id": "9586f34b-b5f3-437b-bc64-3e44d2518427"
+    },
+    {
+      "displayName": "JM1 Admin",
+      "userPrincipalName": "jm1-admin@jmerrill.one",
+      "id": "9750d862-2024-42bc-9707-f84b325dfb19"
+    }
+  ],
+  "guests": [],
+  "channels": [
+    {
+      "displayName": "General",
+      "id": "19:a50mnTihNcQAKY9Jdh2kBmRQVPWIqkQ887uStlB3CVc1@thread.tacv2",
+      "membershipType": "standard",
+      "createdDateTime": "2025-04-05T12:29:38.53Z"
+    }
+  ],
+  "sharePoint": {
+    "id": "jmerrillfoundation.sharepoint.com,650ed071-373a-49b4-b6b4-35dddda994bd,763f8a5b-245c-4682-9ba9-b4a225499d75",
+    "url": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+    "displayName": "Sales",
+    "lastModifiedDateTime": "2026-08-17T07:15:42Z"
+  },
+  "planner": {
+    "count": 0
+  },
+  "groupMailbox": {
+    "mail": "sales@jmerrill.one",
+    "state": "preserved"
+  },
+  "appsTabs": {
+    "state": "NOT_BLOCKING",
+    "note": "General channel tab enumeration returned Microsoft Graph Gateway Timeout after archive; Team, channel, SharePoint, drive root, and pricing folders all resolved."
+  },
+  "preservationReferences": [
+    "03 Pricing Sheets",
+    "Financial Pricing",
+    "Foundation Pricing",
+    "One-Wide Pricing",
+    "Productions Pricing",
+    "Publishing Pricing"
+  ]
+}

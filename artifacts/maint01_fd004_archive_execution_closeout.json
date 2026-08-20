@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "fd004_final_state": {
+    "sales": "ARCHIVED — VALIDATED",
+    "projects": "ARCHIVED — VALIDATED",
+    "voicemail": "RETAIN — PAUSED VOICE PROJECT / REACTIVATION PLANNED"
+  },
+  "note": "Voicemail is an intentional retention decision, not incomplete cleanup."
+}

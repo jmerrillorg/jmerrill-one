@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "checks": {
+    "fd001": {
+      "staleGuestId": "60468cde-ddf5-4f49-997e-dc19d9e405ac",
+      "postArchiveResult": "404 ResourceNotFound",
+      "status": "PASS"
+    },
+    "fd002": {
+      "licenseCleanupPerformed": false,
+      "status": "PASS"
+    },
+    "fd003": {
+      "userDisableCleanupPerformed": false,
+      "status": "PASS"
+    },
+    "fd005": {
+      "mailbox": "contacts@jmerrill.one",
+      "displayName": "JM1 Shared Contacts",
+      "forwardingSmtpAddress": "smtp:info@jmerrill.one",
+      "deliverToMailboxAndForward": true,
+      "recipientTypeDetails": "SharedMailbox",
+      "status": "PASS"
+    },
+    "fd006": {
+      "appRegistrationsDeleted": false,
+      "preservedAppDisplayNames": [
+        "Portals-J Merrill Publishing Inquiry",
+        "Portals-Site 1",
+        "BusinessCentralAPI",
+        "BusinessCentralSharePoint",
+        "github-aic-deploy"
+      ],
+      "status": "PASS"
+    }
+  }
+}

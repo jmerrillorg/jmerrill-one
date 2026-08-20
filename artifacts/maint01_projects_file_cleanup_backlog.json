@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "BACKLOG_RECORDED",
+  "deletionPerformed": false,
+  "candidates": [
+    {
+      "path": "/sites/projects/Shared Documents/projects/Archive",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Automation",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Brands",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Diagnostics",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Docs",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Infrastructure",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Core",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Implementation-HQ",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/logs",
+      "contentType": "project/dev folder",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/publishSettings.txt",
+      "contentType": "build/dev file",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/reset-live-sites.sh",
+      "contentType": "build/dev file",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/sync-live-sites.sh",
+      "contentType": "build/dev file",
+      "authoritativeSource": "SharePoint/GitHub authority to be recertified before cleanup",
+      "reproducibilityEvidence": "candidate remains preserved; reproducibility must be certified in a separate bounded action",
+      "proposedAction": "review for possible cleanup after exact source-of-truth certification",
+      "risk": "data loss or source-of-truth confusion if deleted prematurely",
+      "approvalRequired": true
+    }
+  ]
+}
