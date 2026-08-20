@@ -1,35 +1,61 @@
 {
-  "status": "HOLD - ADMIN ACTION REQUIRED",
-  "updated_at": "2026-08-20T13:49:26.063Z",
+  "status": "PASS",
   "required_result": "PASS",
-  "requested_page": {
-    "page_name": "J Merrill Financial, LLC",
-    "classification": "CANONICAL FINANCIAL FACEBOOK PAGE",
-    "page_id": null,
-    "url": null,
-    "owner": "J Merrill One",
-    "business_portfolio_id": "846921439784613",
-    "creation_result": "NOT EXECUTED - authenticated Meta browser/admin operation unavailable in this execution surface",
-    "required_human_admin_action": "Create the Page in Jackie-controlled Meta/Facebook session, add it to J Merrill One Business Portfolio, then pair existing @jmerrillfinancial Instagram."
+  "mutation_performed": "Jackie-created Page continued/configured; Cody did not create a duplicate Page.",
+  "duplicate_page_created": false,
+  "actual_page": {
+    "page_name": "J Merrill Financial",
+    "instructed_correction": "User corrected canonical Page name from instruction text to J Merrill Financial.",
+    "business_suite_asset_id": "1270611542802820",
+    "facebook_public_profile_id": "61593286063626",
+    "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
+    "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+    "classification": "CANONICAL — J MERRILL FINANCIAL FACEBOOK",
+    "followers_observed": 0,
+    "category_observed": "Financial service",
+    "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Insurance Broker is canonically justifiable if Meta allows an additional accurate category, but live Meta currently displays Financial service after remediation.",
+    "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
+    "website_observed": "https://jmerrill.financial/",
+    "hq_street_address_exposed": false
   },
-  "mutation_performed": false,
-  "category_guidance": "Use current Meta category closest to financial planning / estate planning support without inaccurate regulated title.",
-  "canonical_profile_source": {
-    "source": "artifacts/social_media_recovery_p2/35_financial_profile_copy.md",
-    "website": "https://jmerrill.financial/",
-    "positioning": "advanced planning / estate-planning advisory and preparation support",
-    "prohibited_claims": [
-      "attorney/legal representation",
-      "guaranteed legal outcomes",
-      "investment performance",
-      "fiduciary/investment-adviser status unless approved",
-      "tax/legal advice"
-    ],
-    "public_copy_to_use": {
-      "short_bio": "Advanced planning and estate-readiness support for families and organizations.",
-      "about": "J Merrill Financial helps families and organizations get organized around advanced planning, estate readiness, executor preparation, digital assets, document organization, legacy planning, and ongoing review. Educational content is not legal advice, tax advice, investment advice, or legal representation.",
-      "cta": "Schedule a Planning Conversation",
-      "website": "https://jmerrill.financial/"
+  "creation_status": "LIVE IN META BUSINESS SUITE",
+  "business_portfolio_relationship": {
+    "name": "J Merrill One",
+    "id": "846921439784613"
+  },
+  "evidence": [
+    "Edge live Meta Business Suite DOM",
+    "Public Facebook profile DOM",
+    "Screenshot supplied by Jackie"
+  ],
+  "updated_at": "2026-08-20T19:07:11.251Z",
+  "live_financial_canonical_activation": {
+    "page": {
+      "page_name": "J Merrill Financial",
+      "instructed_correction": "User corrected canonical Page name from instruction text to J Merrill Financial.",
+      "business_suite_asset_id": "1270611542802820",
+      "facebook_public_profile_id": "61593286063626",
+      "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
+      "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+      "classification": "CANONICAL — J MERRILL FINANCIAL FACEBOOK",
+      "followers_observed": 0,
+      "category_observed": "Financial service",
+      "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Insurance Broker is canonically justifiable if Meta allows an additional accurate category, but live Meta currently displays Financial service after remediation.",
+      "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
+      "website_observed": "https://jmerrill.financial/",
+      "hq_street_address_exposed": false
+    },
+    "instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "meta_selected_asset_id": "676716152193798",
+      "status": "CANONICAL_IG_RETAINED",
+      "pairing_result": "NOT PAIRED — LIVE CONNECT INSTAGRAM LINK DID NOT OPEN AN ACTIONABLE DIALOG IN EDGE CONTROL",
+      "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
+    },
+    "business_portfolio": {
+      "name": "J Merrill One",
+      "id": "846921439784613"
     }
   }
 }

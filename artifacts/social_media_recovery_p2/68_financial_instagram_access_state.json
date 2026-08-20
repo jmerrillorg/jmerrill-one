@@ -1,6 +1,5 @@
 {
-  "status": "HOLD - ACCESS DEFECT CONFIRMED FROM PRIOR LIVE AUDIT",
-  "updated_at": "2026-08-20T13:49:26.063Z",
+  "status": "HOLD — IG ACCESS/PAIRING NOT VERIFIED IN THIS PASS",
   "business_portfolio": {
     "name": "J Merrill One",
     "id": "846921439784613"
@@ -9,27 +8,43 @@
     "handle": "@jmerrillfinancial",
     "instagram_id": "17841475196277020",
     "meta_selected_asset_id": "676716152193798",
-    "classification": "RETAIN — CANONICAL FINANCIAL INSTAGRAM",
-    "current_access_evidence": "0 full access people, 0 partial access people, 0 partners in Business Portfolio evidence captured 2026-08-20T13:35:00Z",
-    "current_pairing": "NOT CONNECTED",
-    "scheduling_eligibility": "BLOCKED - authorized user access and canonical Facebook Page pairing required",
-    "professional_account_type": "UNKNOWN - LIVE META REQUIRED",
-    "business_portfolio_association": {
+    "status": "CANONICAL_IG_RETAINED",
+    "pairing_result": "NOT PAIRED — LIVE CONNECT INSTAGRAM LINK DID NOT OPEN AN ACTIONABLE DIALOG IN EDGE CONTROL",
+    "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
+  },
+  "professional_account_state": "UNKNOWN — pairing/access surface did not open",
+  "assigned_people": "Prior P2 evidence showed 0 assigned people; not remediated/verified in this pass",
+  "current_page_pairing": "Connect Instagram link remains visible on canonical Page",
+  "restriction_state": "UNKNOWN — LIVE META REQUIRED",
+  "profile_website_contact_information": "UNKNOWN — LIVE META REQUIRED",
+  "updated_at": "2026-08-20T19:07:11.251Z",
+  "live_financial_canonical_activation": {
+    "page": {
+      "page_name": "J Merrill Financial",
+      "instructed_correction": "User corrected canonical Page name from instruction text to J Merrill Financial.",
+      "business_suite_asset_id": "1270611542802820",
+      "facebook_public_profile_id": "61593286063626",
+      "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
+      "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+      "classification": "CANONICAL — J MERRILL FINANCIAL FACEBOOK",
+      "followers_observed": 0,
+      "category_observed": "Financial service",
+      "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Insurance Broker is canonically justifiable if Meta allows an additional accurate category, but live Meta currently displays Financial service after remediation.",
+      "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
+      "website_observed": "https://jmerrill.financial/",
+      "hq_street_address_exposed": false
+    },
+    "instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "meta_selected_asset_id": "676716152193798",
+      "status": "CANONICAL_IG_RETAINED",
+      "pairing_result": "NOT PAIRED — LIVE CONNECT INSTAGRAM LINK DID NOT OPEN AN ACTIONABLE DIALOG IN EDGE CONTROL",
+      "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
+    },
+    "business_portfolio": {
       "name": "J Merrill One",
       "id": "846921439784613"
-    },
-    "assigned_people": {
-      "full_access": 0,
-      "partial_access": 0
-    },
-    "restriction_status": "UNKNOWN - LIVE META REQUIRED",
-    "ownership_access": "Owned by J Merrill One per prior inventory, but no assigned people in Business Portfolio",
-    "profile_state": {
-      "display_name": "J Merrill Financial, LLC.",
-      "bio": "Advance Planning & Financial Clarity. Licensed Brokerage | Insurance | Pre-Need. Columbus, OH | Book a Consult",
-      "website": "https://jmerrill.financial/",
-      "contact_information": "UNKNOWN - LIVE META REQUIRED"
     }
-  },
-  "required_remediation": "Assign Jackie/JM1 access before scheduling."
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "status": "BUILT_NOT_APPROVED_NOT_SCHEDULED - FINANCIAL REPLACEMENT HOLD",
+  "status": "BUILT_NOT_APPROVED_NOT_SCHEDULED - FINANCIAL FACEBOOK READY / IG PAIRING HOLD",
   "posts": [
     {
       "SocialContentId": "SRP2-001",
@@ -76,12 +76,13 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "HOLD - FINANCIAL CANONICAL ASSET NOT READY",
-      "scheduling_state": "NOT SCHEDULED - FINANCIAL PAGE/IG PAIRING HOLD",
+      "approval_state": "HOLD - FINANCIAL IG PAIRING/COMPLIANCE APPROVAL REQUIRED",
+      "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-004",
       "certified_destination": {
-        "facebook_page_id": null,
+        "facebook_page_id": "1270611542802820",
+        "facebook_public_profile_id": "61593286063626",
         "instagram_id": "17841475196277020",
         "use_old_financial_page": false
       }
@@ -141,12 +142,13 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "HOLD - FINANCIAL CANONICAL ASSET NOT READY",
-      "scheduling_state": "NOT SCHEDULED - FINANCIAL PAGE/IG PAIRING HOLD",
+      "approval_state": "HOLD - FINANCIAL IG PAIRING/COMPLIANCE APPROVAL REQUIRED",
+      "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-007",
       "certified_destination": {
-        "facebook_page_id": null,
+        "facebook_page_id": "1270611542802820",
+        "facebook_public_profile_id": "61593286063626",
         "instagram_id": "17841475196277020",
         "use_old_financial_page": false
       }
@@ -226,12 +228,13 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "HOLD - FINANCIAL CANONICAL ASSET NOT READY",
-      "scheduling_state": "NOT SCHEDULED - FINANCIAL PAGE/IG PAIRING HOLD",
+      "approval_state": "HOLD - FINANCIAL IG PAIRING/COMPLIANCE APPROVAL REQUIRED",
+      "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-011",
       "certified_destination": {
-        "facebook_page_id": null,
+        "facebook_page_id": "1270611542802820",
+        "facebook_public_profile_id": "61593286063626",
         "instagram_id": "17841475196277020",
         "use_old_financial_page": false
       }
@@ -297,6 +300,6 @@
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-014"
     }
   ],
-  "updated_at": "2026-08-20T13:49:26.063Z",
-  "financial_replacement_note": "Do not use old Financial Facebook Page IDs. Financial scheduling remains blocked until new J Merrill Financial, LLC Page is created, paired with @jmerrillfinancial, and certified."
+  "updated_at": "2026-08-20T19:07:11.251Z",
+  "financial_replacement_note": "Use canonical Facebook Page J Merrill Financial (business asset 1270611542802820 / public profile 61593286063626). Do not use the old flagged Financial Page. Financial IG scheduling remains blocked until @jmerrillfinancial pairing/access is verified."
 }

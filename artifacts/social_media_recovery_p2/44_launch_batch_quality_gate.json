@@ -1,29 +1,15 @@
 {
   "required_result": "PASS - SCHEDULING READY",
   "result": "HOLD - NOT SCHEDULING READY",
-  "updated_at": "2026-08-20T13:49:26.063Z",
-  "reason": "Financial replacement Page and IG pairing are not live; profile/security/rights/privacy/compliance holds remain.",
+  "updated_at": "2026-08-20T19:07:11.251Z",
+  "reason": "Financial Facebook is now canonical/configured, but Financial IG pairing/access and other functional holds remain.",
   "holds": [
-    "Financial Instagram @jmerrillfinancial has 0 people assigned in Business Portfolio; scheduling is blocked until authorized user access is assigned.",
-    "First 7-day batch remains PENDING FOUNDER/FUNCTIONAL APPROVAL in source artifact.",
-    "Rights/compliance/privacy reviews remain required for marked launch-batch posts.",
-    "Publishing Facebook bio contains unrelated forex/trader content and needs factual correction.",
-    "Productions Facebook/Instagram bios retain legacy Spotlight wording and need factual correction.",
-    "Portfolio security center shows two-factor authentication required for: No one; passkeys required for: No one.",
-    "Authenticated Meta/Facebook UI could not be safely operated from this Codex execution surface: browser control binding returned no readable page state/output.",
-    "No purpose-built Meta/Facebook connector is available in this tool environment.",
-    "Creating a Facebook Page, assigning Instagram access, pairing assets, editing public profiles, and enabling portfolio security are live admin actions that cannot be invented or evidenced from repository files.",
-    "In Jackie-controlled Meta session, capture old flagged Financial Page identifiers and dependency state.",
-    "Assign Jackie/JM1 full-control or equivalent access to @jmerrillfinancial, or document Meta dependency if Page pairing must exist first.",
-    "Create new Facebook Page named J Merrill Financial, LLC.",
-    "Add/control the new Page in J Merrill One Business Portfolio ID 846921439784613.",
-    "Configure canonical Financial profile from existing approved copy without HQ street address or regulated overclaiming.",
-    "Apply approved Financial visual assets only; do not invent new visuals.",
-    "Pair existing @jmerrillfinancial to the new Page.",
-    "Retain old flagged Page temporarily; do not delete/merge/remove it.",
-    "Correct Publishing forex/trader bio defect.",
-    "Correct Productions legacy Spotlight wording where stale.",
-    "Enable the strongest safe portfolio 2FA/passkey requirement only after Jackie recovery is verified."
+    "Financial Instagram pairing/access not verified",
+    "Financial compliance approval required",
+    "Publishing rights/profile defect hold",
+    "Foundation privacy hold",
+    "Productions rights/profile defect hold",
+    "Creative asset proof required"
   ],
   "posts": [
     {
@@ -278,6 +264,35 @@
       "current_access_evidence": "0 full access people, 0 partial access people, 0 partners in Business Portfolio evidence captured 2026-08-20T13:35:00Z",
       "current_pairing": "NOT CONNECTED",
       "scheduling_eligibility": "BLOCKED - authorized user access and canonical Facebook Page pairing required"
+    }
+  },
+  "live_financial_canonical_activation": {
+    "page": {
+      "page_name": "J Merrill Financial",
+      "instructed_correction": "User corrected canonical Page name from instruction text to J Merrill Financial.",
+      "business_suite_asset_id": "1270611542802820",
+      "facebook_public_profile_id": "61593286063626",
+      "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
+      "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+      "classification": "CANONICAL — J MERRILL FINANCIAL FACEBOOK",
+      "followers_observed": 0,
+      "category_observed": "Financial service",
+      "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Insurance Broker is canonically justifiable if Meta allows an additional accurate category, but live Meta currently displays Financial service after remediation.",
+      "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
+      "website_observed": "https://jmerrill.financial/",
+      "hq_street_address_exposed": false
+    },
+    "instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "meta_selected_asset_id": "676716152193798",
+      "status": "CANONICAL_IG_RETAINED",
+      "pairing_result": "NOT PAIRED — LIVE CONNECT INSTAGRAM LINK DID NOT OPEN AN ACTIONABLE DIALOG IN EDGE CONTROL",
+      "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
+    },
+    "business_portfolio": {
+      "name": "J Merrill One",
+      "id": "846921439784613"
     }
   }
 }

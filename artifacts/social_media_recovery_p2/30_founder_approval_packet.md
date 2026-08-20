@@ -1,42 +1,34 @@
 # SOCIAL RECOVERY P2 Founder Approval Packet
 
-Updated: 2026-08-20T13:49:26.063Z
+Updated: 2026-08-20T19:07:11.251Z
 
 ## Current Gate
 
 SOCIAL RECOVERY P2 REMEDIATION REQUIRED
 
-The first 7-day batch is not ready for approval or scheduling. The pass-only batch cannot be assembled until live Meta admin remediation is completed.
+Financial Facebook remediation partially succeeded: the canonical Page is live and configured as **J Merrill Financial**. The first 7-day batch is not ready for approval or scheduling until the remaining functional holds are closed.
 
-## Financial Replacement Decision
+## Financial Canonical Page
 
-- Old Financial Facebook Page: LEGACY / FLAGGED / RESTRICTED — DO NOT USE AS CANONICAL OPERATING PAGE. Do not delete it in this pass.
-- New canonical Facebook Page target: J Merrill Financial, LLC.
-- Existing Instagram: @jmerrillfinancial, Instagram ID 17841475196277020, retained as canonical.
-- Required pairing: J Merrill Financial, LLC Facebook Page ↔ @jmerrillfinancial.
+- Page: J Merrill Financial
+- Business Suite asset ID: 1270611542802820
+- Public profile ID: 61593286063626
+- Public URL: https://www.facebook.com/profile.php?id=61593286063626
+- Bio: Advanced planning for life, legacy, and the people who matter most.
+- Category: Financial service
+- Website: https://jmerrill.financial/
+- Founder context: estate planning and advanced/funeral planning are both in scope; funeral planning is an insurance product, so insurance category language may be appropriate when Meta permits it.
 
-## Live Admin Actions Required
+## Holds Remaining
 
-1. Capture old flagged Financial Page identifiers and dependency state.
-2. Assign Jackie/JM1 full-control or equivalent access to @jmerrillfinancial.
-3. Create J Merrill Financial, LLC Facebook Page and add it to Business Portfolio J Merrill One (846921439784613).
-4. Configure the Financial profile using existing approved copy and https://jmerrill.financial/.
-5. Pair existing @jmerrillfinancial to the new Page.
-6. Correct Publishing forex/trader profile language.
-7. Correct Productions legacy Spotlight wording.
-8. Enable the strongest safe portfolio 2FA/passkey requirement after Jackie recovery is verified.
-
-## Batch State
-
-- 14 posts remain built.
-- 0 posts are scheduling-approved.
-- Financial posts are held for canonical Page/IG pairing and compliance.
-- Foundation posts are held for privacy review.
-- Publishing and Productions posts are held for rights/profile correction.
-- No content was scheduled or published.
+- @jmerrillfinancial is not yet paired/verified with the new Page.
+- Publishing forex/trader profile defect remains.
+- Productions legacy Spotlight wording remains.
+- Portfolio 2FA/passkey requirement still requires Founder authentication/recovery verification.
+- First-batch rights/compliance/privacy/creative approvals remain.
 
 ## Approval Phrase Not Yet Available
 
 APPROVE SOCIAL RECOVERY P2 FIRST 7-DAY BATCH — schedule all PASS posts using certified Meta assets
 
-This phrase should only be used after the above remediation produces a PASS-only batch.
+Use this only after the remaining holds produce a PASS-only batch.
