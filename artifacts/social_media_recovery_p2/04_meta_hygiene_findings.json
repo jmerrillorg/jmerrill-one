@@ -1,0 +1,11 @@
+{
+  "status": "BLOCKED - AUTHENTICATED META ACCESS REQUIRED",
+  "findings": [
+    {
+      "classification": "FOUNDER DECISION REQUIRED",
+      "issue": "Meta asset ownership/admin inventory not inspectable in this session",
+      "risk": "Cannot safely edit, schedule, remove access, consolidate, or retire Meta assets without immutable IDs and current admin evidence."
+    }
+  ],
+  "no_deletions": true
+}

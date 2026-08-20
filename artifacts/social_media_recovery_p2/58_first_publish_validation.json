@@ -1,0 +1,14 @@
+{
+  "result": "NOT RUN",
+  "reason": "First posts not scheduled/published.",
+  "required_checks": [
+    "correct brand account",
+    "correct creative",
+    "copy not truncated",
+    "link works",
+    "UTM works",
+    "CTA works",
+    "accessibility met",
+    "no duplicate accidental publication"
+  ]
+}

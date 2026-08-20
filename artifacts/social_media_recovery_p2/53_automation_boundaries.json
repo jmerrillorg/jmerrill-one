@@ -1,0 +1,16 @@
+{
+  "automate": [
+    "reminders",
+    "status movement",
+    "UTM generation",
+    "reporting preparation",
+    "approval notifications"
+  ],
+  "do_not_automate": [
+    "publish unapproved posts",
+    "respond to sensitive comments",
+    "create consequential service cases automatically",
+    "make Financial compliance determinations",
+    "publish testimonials without authorization"
+  ]
+}

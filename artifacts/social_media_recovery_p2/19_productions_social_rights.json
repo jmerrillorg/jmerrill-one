@@ -1,0 +1,45 @@
+{
+  "status": "RIGHTS CHECK REQUIRED",
+  "rules": [
+    "Check project images",
+    "client work",
+    "behind-the-scenes",
+    "talent/likeness",
+    "copyrighted media",
+    "portfolio use"
+  ],
+  "productions_posts": [
+    {
+      "SocialContentId": "SRP2-006",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-020",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-026",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-034",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-040",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-048",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-054",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    }
+  ]
+}

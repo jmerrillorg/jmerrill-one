@@ -1,0 +1,12 @@
+{
+  "result": "NOT RUN",
+  "reason": "No factual profile corrections executed; authenticated access required.",
+  "required_checks": [
+    "canonical website",
+    "correct brand",
+    "no prohibited public HQ street address",
+    "correct CTA",
+    "correct public contact",
+    "no obsolete legacy wording"
+  ]
+}

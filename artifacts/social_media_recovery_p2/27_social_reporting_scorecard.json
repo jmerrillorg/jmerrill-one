@@ -1,0 +1,70 @@
+{
+  "metrics_by_brand": [
+    {
+      "brand": "J Merrill One",
+      "metrics": [
+        "reach",
+        "impressions",
+        "engagement rate",
+        "clicks",
+        "profile visits",
+        "follows",
+        "inquiries"
+      ],
+      "division_specific": "division referrals"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "metrics": [
+        "reach",
+        "impressions",
+        "engagement rate",
+        "clicks",
+        "profile visits",
+        "follows",
+        "inquiries"
+      ],
+      "division_specific": "author inquiries"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "metrics": [
+        "reach",
+        "impressions",
+        "engagement rate",
+        "clicks",
+        "profile visits",
+        "follows",
+        "inquiries"
+      ],
+      "division_specific": "appointment conversions"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "metrics": [
+        "reach",
+        "impressions",
+        "engagement rate",
+        "clicks",
+        "profile visits",
+        "follows",
+        "inquiries"
+      ],
+      "division_specific": "volunteer interest/donations"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "metrics": [
+        "reach",
+        "impressions",
+        "engagement rate",
+        "clicks",
+        "profile visits",
+        "follows",
+        "inquiries"
+      ],
+      "division_specific": "project inquiries"
+    }
+  ],
+  "rule": "Do not optimize around vanity metrics alone."
+}

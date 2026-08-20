@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED - AUTHENTICATED META ACCESS REQUIRED",
+  "checks": [
+    "Jackie/full control",
+    "MFA where observable",
+    "no unknown high-level admins",
+    "appropriate partner access",
+    "no exposed credentials",
+    "no unnecessary system users"
+  ],
+  "result": "NOT VERIFIED"
+}

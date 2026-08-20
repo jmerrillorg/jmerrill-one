@@ -1,0 +1,22 @@
+{
+  "standard": "Headquartered in Columbus, Ohio.",
+  "status": "PREPARED_NOT_EXECUTED",
+  "records": [
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook public snippet",
+      "before": "2323 W 5th St, Suite 120, Columbus, OH 43204-4899",
+      "after": "Headquartered in Columbus, Ohio.",
+      "authority": "FACTUAL CORRECTION - ALREADY GOVERNED",
+      "execution_status": "NOT EXECUTED - authenticated profile access required"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook public snippet",
+      "before": "2323 W 5th St, Suite 120, Columbus, OH 43204-4899",
+      "after": "Headquartered in Columbus, Ohio.",
+      "authority": "FACTUAL CORRECTION - ALREADY GOVERNED",
+      "execution_status": "NOT EXECUTED - authenticated profile access required"
+    }
+  ]
+}

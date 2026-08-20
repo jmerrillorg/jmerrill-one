@@ -1,0 +1,81 @@
+{
+  "status": "RIGHTS CHECK REQUIRED",
+  "rules": [
+    "Check book covers",
+    "author photos",
+    "excerpts",
+    "testimonials",
+    "narrator/media assets",
+    "release graphics"
+  ],
+  "publishing_posts": [
+    {
+      "SocialContentId": "SRP2-001",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-015",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-019",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-024",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-027",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-029",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-033",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-038",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-041",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-043",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-047",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-052",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-055",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    },
+    {
+      "SocialContentId": "SRP2-057",
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+    }
+  ]
+}

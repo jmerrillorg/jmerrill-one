@@ -1,0 +1,70 @@
+{
+  "status": "PARTIAL_PUBLIC_ONLY",
+  "assets": [
+    {
+      "brand": "J Merrill One",
+      "facebook_page": "https://www.facebook.com/JMerrillOne",
+      "facebook_page_id": "UNKNOWN - META ADMIN REQUIRED",
+      "instagram_account": "https://www.instagram.com/jmerrillone/",
+      "instagram_id": "UNKNOWN - META ADMIN REQUIRED",
+      "business_portfolio": "UNKNOWN - META ADMIN REQUIRED",
+      "owner": "UNKNOWN - META ADMIN REQUIRED",
+      "admin_full_control": "UNKNOWN - META ADMIN REQUIRED",
+      "website": "https://jmerrill.one/",
+      "cta": "Explore JM1",
+      "scheduling_surface": "Meta Business Suite after ownership verification"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "facebook_page": "https://www.facebook.com/jmerrillpub/",
+      "facebook_page_id": "UNKNOWN - META ADMIN REQUIRED",
+      "instagram_account": "UNVERIFIED_META_ADMIN_REQUIRED",
+      "instagram_id": "UNKNOWN - META ADMIN REQUIRED",
+      "business_portfolio": "UNKNOWN - META ADMIN REQUIRED",
+      "owner": "UNKNOWN - META ADMIN REQUIRED",
+      "admin_full_control": "UNKNOWN - META ADMIN REQUIRED",
+      "website": "https://jmerrill.pub/",
+      "cta": "Start a Publishing Inquiry",
+      "scheduling_surface": "Meta Business Suite after ownership verification"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "facebook_page": "UNVERIFIED_PUBLIC_URL",
+      "facebook_page_id": "UNKNOWN - META ADMIN REQUIRED",
+      "instagram_account": "UNVERIFIED_META_ADMIN_REQUIRED",
+      "instagram_id": "UNKNOWN - META ADMIN REQUIRED",
+      "business_portfolio": "UNKNOWN - META ADMIN REQUIRED",
+      "owner": "UNKNOWN - META ADMIN REQUIRED",
+      "admin_full_control": "UNKNOWN - META ADMIN REQUIRED",
+      "website": "https://jmerrill.financial/",
+      "cta": "Schedule a Planning Conversation",
+      "scheduling_surface": "Meta Business Suite after ownership verification"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "facebook_page": "https://www.facebook.com/JMerrillOrg/",
+      "facebook_page_id": "UNKNOWN - META ADMIN REQUIRED",
+      "instagram_account": "UNVERIFIED_META_ADMIN_REQUIRED",
+      "instagram_id": "UNKNOWN - META ADMIN REQUIRED",
+      "business_portfolio": "UNKNOWN - META ADMIN REQUIRED",
+      "owner": "UNKNOWN - META ADMIN REQUIRED",
+      "admin_full_control": "UNKNOWN - META ADMIN REQUIRED",
+      "website": "https://jmerrill.foundation/",
+      "cta": "Learn, Volunteer, or Give",
+      "scheduling_surface": "Meta Business Suite after ownership verification"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "facebook_page": "UNVERIFIED_PUBLIC_URL",
+      "facebook_page_id": "UNKNOWN - META ADMIN REQUIRED",
+      "instagram_account": "UNVERIFIED_META_ADMIN_REQUIRED",
+      "instagram_id": "UNKNOWN - META ADMIN REQUIRED",
+      "business_portfolio": "UNKNOWN - META ADMIN REQUIRED",
+      "owner": "UNKNOWN - META ADMIN REQUIRED",
+      "admin_full_control": "UNKNOWN - META ADMIN REQUIRED",
+      "website": "https://jmerrill.productions/",
+      "cta": "Work With Productions",
+      "scheduling_surface": "Meta Business Suite after ownership verification"
+    }
+  ]
+}

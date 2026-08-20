@@ -1,0 +1,20 @@
+{
+  "factual_corrections": [
+    "wrong URL",
+    "old/prohibited street address",
+    "obsolete brand name",
+    "clearly incorrect contact information"
+  ],
+  "positioning_changes": [
+    "rewritten bio",
+    "new category",
+    "new CTA",
+    "changed service framing"
+  ],
+  "visual_changes": [
+    "profile photo",
+    "cover image",
+    "branded graphics"
+  ],
+  "execution_rule": "Factual corrections prepared but not executed without live before-state evidence and admin access."
+}

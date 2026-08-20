@@ -1,0 +1,77 @@
+{
+  "status": "PASS_WITH_REVIEW_REQUIRED",
+  "rules": [
+    "No legal advice",
+    "No tax advice",
+    "No investment performance claims",
+    "No guarantees",
+    "No sensitive client facts"
+  ],
+  "financial_posts": [
+    {
+      "SocialContentId": "SRP2-004",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-018",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-021",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-025",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-032",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-035",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-039",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-046",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-049",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-053",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-060",
+      "classification": "PLANNING EDUCATION",
+      "publish": "REVIEW REQUIRED"
+    }
+  ]
+}

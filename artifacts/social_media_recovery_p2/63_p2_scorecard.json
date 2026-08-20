@@ -1,0 +1,24 @@
+{
+  "classification": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+  "meta_assets_inventoried": "NO - authenticated Meta access required",
+  "ownership_verified": "NO",
+  "access_defects": "UNKNOWN",
+  "profiles_audited": "PARTIAL_PUBLIC_ONLY",
+  "profiles_corrected": 0,
+  "profile_changes_pending_founder": 5,
+  "first_30_day_posts_built": 60,
+  "first_week_posts_approved": 0,
+  "first_week_posts_scheduled": 0,
+  "first_week_posts_published": 0,
+  "rights_compliance_privacy_pass": "PASS_WITH_REVIEW_HOLDS",
+  "inbound_routing_defined": true,
+  "performance_capture_ready": true,
+  "automation_mvp_selected": "DEFER Dataverse; SharePoint/JSON + Teams/manual Meta MVP",
+  "remaining_blockers": [
+    "Authenticated Meta Business Suite audit",
+    "Founder profile/copy approval",
+    "First batch approval",
+    "Rights/compliance/privacy reviews",
+    "Live scheduling evidence"
+  ]
+}

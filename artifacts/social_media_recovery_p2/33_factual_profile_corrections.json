@@ -1,0 +1,27 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "reason": "No authenticated before-state evidence; do not execute blind.",
+  "corrections": [
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "before": "Public snippet includes street address",
+      "after": "Headquartered in Columbus, Ohio.",
+      "verification_result": "PENDING"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "before": "Public snippet includes street address",
+      "after": "Headquartered in Columbus, Ohio.",
+      "verification_result": "PENDING"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "platform": "Facebook/Instagram",
+      "before": "P1-reported legacy Spotlight/wrong website",
+      "after": "J Merrill Productions; https://jmerrill.productions/",
+      "verification_result": "PENDING"
+    }
+  ]
+}

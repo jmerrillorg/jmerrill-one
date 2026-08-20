@@ -1,0 +1,16 @@
+{
+  "status": "READY_AFTER_PUBLISH",
+  "fields": [
+    "SocialContentId",
+    "post ID",
+    "publish time",
+    "reach",
+    "impressions",
+    "reactions",
+    "comments",
+    "shares",
+    "link clicks",
+    "profile actions"
+  ],
+  "rule": "Use native Meta export/API where available. Do not scrape metrics where native export/API is unavailable."
+}

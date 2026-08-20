@@ -1,0 +1,33 @@
+{
+  "status": "CANON-CANDIDATE",
+  "fields": [
+    "SocialContentId",
+    "Brand",
+    "Channel",
+    "ContentPillar",
+    "Campaign",
+    "Audience",
+    "Objective",
+    "DraftCopy",
+    "FinalCopy",
+    "CTA",
+    "DestinationUrl",
+    "CreativeAsset",
+    "RightsStatus",
+    "ComplianceStatus",
+    "ApprovalStatus",
+    "ScheduledDateTime",
+    "PublishedDateTime",
+    "PlatformPostId",
+    "PlatformUrl",
+    "UTMSource",
+    "UTMMedium",
+    "UTMCampaign",
+    "Impressions",
+    "Reach",
+    "Engagements",
+    "Clicks",
+    "Conversions",
+    "Notes"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "canonical_web_destination": "https://jmerrill.productions/",
+  "checks": [
+    "legacy Spotlight branding",
+    "wrong website",
+    "stale description",
+    "incorrect contact identity"
+  ],
+  "proposed_copy": {
+    "short": "Video, audio, interviews, live media, and storytelling for clients, campaigns, authors, community impact, and JM1 communications.",
+    "long": "J Merrill Productions creates and supports video, audio, interviews, live media, storytelling, campaign assets, launch media, and enterprise communications. The current canonical web destination is https://jmerrill.productions/. Legacy Spotlight references should be removed where still present.",
+    "cta": "Work With Productions",
+    "cat": "Media production / Video production service",
+    "contact": "Use jmerrill.productions contact path."
+  },
+  "authority": "FACTUAL CORRECTION for wrong website/legacy name; Founder approval for broader positioning copy."
+}
