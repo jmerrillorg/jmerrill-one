@@ -1,0 +1,14 @@
+{
+  "status": "HOLD - LIVE META ADMIN ACTION REQUIRED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "required_result": "PASS",
+  "mutation_performed": false,
+  "before_state_evidence": {
+    "source": "artifacts/social_media_recovery_p2/05_live_profile_audit.json",
+    "page_id": "307480763084670",
+    "defect": "Public bio contains unrelated forex/trader content",
+    "visible_bio_snippet": "Forex trading is about making money and having a good trader who trades for you. I can undoubtedly recommend this trader..."
+  },
+  "canonical_profile_source": "artifacts/social_media_recovery_p2/37_publishing_profile_copy.md",
+  "required_action": "Remove forex/trader language and restore current Publishing identity only."
+}

@@ -1,18 +1,34 @@
 # SOCIAL RECOVERY P2 Final Closeout
 
-Final classification: SOCIAL RECOVERY P2 REMEDIATION REQUIRED
+Updated: 2026-08-20T13:49:26.063Z
 
-Authenticated Meta Business Suite access is now working and the J Merrill One Business Portfolio was audited. The previous unknown-Meta-admin blocker is closed.
+## Classification
 
-The package is still not safe to activate because live defects remain:
+SOCIAL RECOVERY P2 REMEDIATION REQUIRED
 
-- Financial Instagram @jmerrillfinancial has 0 people assigned in the Business Portfolio.
-- Portfolio 2FA and passkey requirements are set to No one.
-- Foundation and AGAPE Pages show access review needs; AGAPE and Founder Brand are out of P2 scope.
-- Publishing Facebook has an unrelated forex/trader bio snippet.
-- Productions Facebook/Instagram still carry legacy Spotlight wording.
-- The 14-post first-week batch remains pending Founder/functional approval plus rights/compliance/privacy checks.
+## Reason
 
-No posts were scheduled or published. No Meta assets were created, deleted, or reassigned.
+The Financial replacement decision is recorded, but live Meta admin execution could not be safely completed from this Codex execution surface. The browser control binding returned no readable page state/output and no Meta connector is available.
 
-Exact next action: Jackie approves the Meta admin remediation and first-week content gate using the approval phrases in `30_founder_approval_packet.md`, after Financial access and marked review holds are resolved.
+## Completed in Repository
+
+- Recorded Financial Facebook replacement decision.
+- Preserved existing @jmerrillfinancial as canonical IG target.
+- Recorded old flagged Financial Page retention rule: do not delete, merge, or publish from it.
+- Created artifacts 66-80 with bounded live-admin holds and safe remediation path.
+- Updated inventory, asset map, hygiene, readiness, launch-batch, security, profile validation, scorecard, and closeout artifacts.
+
+## Not Executed Live
+
+- New J Merrill Financial, LLC Facebook Page creation.
+- New Page portfolio assignment.
+- Financial profile and visual configuration.
+- @jmerrillfinancial pairing.
+- Publishing forex/trader profile correction.
+- Productions Spotlight wording correction.
+- Portfolio-level 2FA/passkey requirement change.
+- First-batch scheduling or publishing.
+
+## Exact Next Action
+
+Jackie opens a usable authenticated Meta Business Suite/Facebook session for live admin remediation: create J Merrill Financial, LLC Page, assign Financial IG access, pair @jmerrillfinancial, correct Publishing/Productions profile defects, and safely enable portfolio MFA requirement.

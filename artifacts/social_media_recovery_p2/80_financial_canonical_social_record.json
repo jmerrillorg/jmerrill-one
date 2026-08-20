@@ -1,0 +1,26 @@
+{
+  "status": "CANONICAL RECORD PENDING LIVE META EXECUTION",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "facebook": {
+    "page_name": "J Merrill Financial, LLC",
+    "page_id": null,
+    "url": null,
+    "business_portfolio": {
+      "name": "J Merrill One",
+      "id": "846921439784613"
+    },
+    "status": "TARGET_CANONICAL_NOT_CREATED"
+  },
+  "instagram": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "paired_facebook_page": null,
+    "status": "CANONICAL_IG_RETAINED_ACCESS_BLOCKED"
+  },
+  "old_facebook_page": {
+    "page_id": null,
+    "url": null,
+    "status": "LEGACY / RESTRICTED — DO NOT USE; EXACT IDENTIFIERS LIVE META REQUIRED"
+  },
+  "authoritative_routing_state": "REMEDIATION REQUIRED"
+}

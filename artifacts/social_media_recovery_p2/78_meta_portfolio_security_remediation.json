@@ -1,0 +1,17 @@
+{
+  "status": "READY — FOUNDER AUTHENTICATION ACTION REQUIRED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "required_result": "PASS",
+  "mutation_performed": false,
+  "current_audit_evidence": {
+    "two_factor_required_for": "No one",
+    "passkeys_required_for": "No one",
+    "source": "artifacts/social_media_recovery_p2/56_meta_security_baseline.json"
+  },
+  "required_preconditions": [
+    "Confirm Jackie MFA/passkey functions",
+    "Confirm recovery methods",
+    "Confirm no legitimate admin lockout"
+  ],
+  "recommended_target": "Require two-factor authentication for people with access to J Merrill One Business Portfolio to the maximum safe Meta-supported level."
+}

@@ -1,0 +1,14 @@
+{
+  "status": "HOLD - ADMIN ACTION REQUIRED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "required_result": "PASS",
+  "before_state": "0 full access people, 0 partial access people, 0 partners in Business Portfolio evidence captured 2026-08-20T13:35:00Z",
+  "after_state": "NOT CHANGED",
+  "mutation_performed": false,
+  "reason": [
+    "Authenticated Meta/Facebook UI could not be safely operated from this Codex execution surface: browser control binding returned no readable page state/output.",
+    "No purpose-built Meta/Facebook connector is available in this tool environment.",
+    "Creating a Facebook Page, assigning Instagram access, pairing assets, editing public profiles, and enabling portfolio security are live admin actions that cannot be invented or evidenced from repository files."
+  ],
+  "safe_next_step": "Use Meta Business Settings to assign Jackie/JM1 Full Control or equivalent authorized access; do not add unknown people or remove legitimate control."
+}

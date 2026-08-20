@@ -1,0 +1,35 @@
+{
+  "status": "HOLD - ACCESS DEFECT CONFIRMED FROM PRIOR LIVE AUDIT",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "business_portfolio": {
+    "name": "J Merrill One",
+    "id": "846921439784613"
+  },
+  "instagram": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "meta_selected_asset_id": "676716152193798",
+    "classification": "RETAIN — CANONICAL FINANCIAL INSTAGRAM",
+    "current_access_evidence": "0 full access people, 0 partial access people, 0 partners in Business Portfolio evidence captured 2026-08-20T13:35:00Z",
+    "current_pairing": "NOT CONNECTED",
+    "scheduling_eligibility": "BLOCKED - authorized user access and canonical Facebook Page pairing required",
+    "professional_account_type": "UNKNOWN - LIVE META REQUIRED",
+    "business_portfolio_association": {
+      "name": "J Merrill One",
+      "id": "846921439784613"
+    },
+    "assigned_people": {
+      "full_access": 0,
+      "partial_access": 0
+    },
+    "restriction_status": "UNKNOWN - LIVE META REQUIRED",
+    "ownership_access": "Owned by J Merrill One per prior inventory, but no assigned people in Business Portfolio",
+    "profile_state": {
+      "display_name": "J Merrill Financial, LLC.",
+      "bio": "Advance Planning & Financial Clarity. Licensed Brokerage | Insurance | Pre-Need. Columbus, OH | Book a Consult",
+      "website": "https://jmerrill.financial/",
+      "contact_information": "UNKNOWN - LIVE META REQUIRED"
+    }
+  },
+  "required_remediation": "Assign Jackie/JM1 access before scheduling."
+}

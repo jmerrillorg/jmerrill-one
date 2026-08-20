@@ -1,47 +1,42 @@
 # SOCIAL RECOVERY P2 Founder Approval Packet
 
-Live Meta audit completed 2026-08-20T13:35:00Z. Only decisions Jackie needs to make are listed here. Obvious access/security remediations are in `55_meta_admin_remediation_packet.md`.
+Updated: 2026-08-20T13:49:26.063Z
 
-## First 7-Day Batch
+## Current Gate
 
-Approve the prepared 14-post proof batch only after rights/compliance/privacy checks are accepted.
+SOCIAL RECOVERY P2 REMEDIATION REQUIRED
 
-- 14 posts
-- 5 active brands
-- Dates: 2026-08-21 through 2026-08-27
-- Brand mix: Publishing 4, Foundation 3, Financial 3, One 2, Productions 2
-- Material holds: Financial compliance, Foundation privacy, Publishing/Productions rights, profile mismatch corrections
+The first 7-day batch is not ready for approval or scheduling. The pass-only batch cannot be assembled until live Meta admin remediation is completed.
 
-Approval phrase: `APPROVE SOCIAL RECOVERY P2 FIRST 7-DAY BATCH - schedule after Meta access/security remediation and marked rights/compliance/privacy checks pass`
+## Financial Replacement Decision
 
-## Profile Copy
+- Old Financial Facebook Page: LEGACY / FLAGGED / RESTRICTED — DO NOT USE AS CANONICAL OPERATING PAGE. Do not delete it in this pass.
+- New canonical Facebook Page target: J Merrill Financial, LLC.
+- Existing Instagram: @jmerrillfinancial, Instagram ID 17841475196277020, retained as canonical.
+- Required pairing: J Merrill Financial, LLC Facebook Page ↔ @jmerrillfinancial.
 
-### J Merrill One
-Current visible Facebook state: category/location sparse; no full canonical bio visible in captured About snapshot.
-Proposed copy: see `38_one_profile_copy.md`.
-Why change: create current enterprise positioning.
-Approval phrase: `APPROVE P2 PROFILE COPY - J MERRILL ONE`
+## Live Admin Actions Required
 
-### J Merrill Publishing
-Current visible Facebook state: unrelated forex/trader bio snippet.
-Proposed factual correction: remove unrelated copy and replace with approved canonical publishing copy.
-Why change: remove factual/brand defect.
-Approval phrase: `APPROVE P2 FACTUAL PROFILE CORRECTION - J MERRILL PUBLISHING`
+1. Capture old flagged Financial Page identifiers and dependency state.
+2. Assign Jackie/JM1 full-control or equivalent access to @jmerrillfinancial.
+3. Create J Merrill Financial, LLC Facebook Page and add it to Business Portfolio J Merrill One (846921439784613).
+4. Configure the Financial profile using existing approved copy and https://jmerrill.financial/.
+5. Pair existing @jmerrillfinancial to the new Page.
+6. Correct Publishing forex/trader profile language.
+7. Correct Productions legacy Spotlight wording.
+8. Enable the strongest safe portfolio 2FA/passkey requirement after Jackie recovery is verified.
 
-### J Merrill Financial
-Current live Meta state: Instagram @jmerrillfinancial has 0 assigned people in Business Portfolio.
-Proposed copy: see `35_financial_profile_copy.md`.
-Why change: activate compliant planning profile only after access and compliance review.
-Approval phrase: `APPROVE P2 FINANCIAL PROFILE COPY AFTER COMPLIANCE REVIEW`
+## Batch State
 
-### J Merrill Foundation
-Current visible Instagram URL: www.jmerrill.org.
-Proposed factual URL correction: https://jmerrill.foundation/.
-Why change: align to canonical Foundation web destination while preserving privacy constraints.
-Approval phrase: `APPROVE P2 FOUNDATION FACTUAL URL CORRECTION AFTER PRIVACY REVIEW`
+- 14 posts remain built.
+- 0 posts are scheduling-approved.
+- Financial posts are held for canonical Page/IG pairing and compliance.
+- Foundation posts are held for privacy review.
+- Publishing and Productions posts are held for rights/profile correction.
+- No content was scheduled or published.
 
-### J Merrill Productions
-Current visible Facebook/Instagram state: legacy Spotlight wording remains.
-Proposed factual correction: remove legacy Spotlight references and confirm https://jmerrill.productions/.
-Why change: remove obsolete brand identity.
-Approval phrase: `APPROVE P2 FACTUAL PROFILE CORRECTION - J MERRILL PRODUCTIONS`
+## Approval Phrase Not Yet Available
+
+APPROVE SOCIAL RECOVERY P2 FIRST 7-DAY BATCH — schedule all PASS posts using certified Meta assets
+
+This phrase should only be used after the above remediation produces a PASS-only batch.

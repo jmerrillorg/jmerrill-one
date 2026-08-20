@@ -1,0 +1,35 @@
+{
+  "status": "HOLD - ADMIN ACTION REQUIRED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "required_result": "PASS",
+  "requested_page": {
+    "page_name": "J Merrill Financial, LLC",
+    "classification": "CANONICAL FINANCIAL FACEBOOK PAGE",
+    "page_id": null,
+    "url": null,
+    "owner": "J Merrill One",
+    "business_portfolio_id": "846921439784613",
+    "creation_result": "NOT EXECUTED - authenticated Meta browser/admin operation unavailable in this execution surface",
+    "required_human_admin_action": "Create the Page in Jackie-controlled Meta/Facebook session, add it to J Merrill One Business Portfolio, then pair existing @jmerrillfinancial Instagram."
+  },
+  "mutation_performed": false,
+  "category_guidance": "Use current Meta category closest to financial planning / estate planning support without inaccurate regulated title.",
+  "canonical_profile_source": {
+    "source": "artifacts/social_media_recovery_p2/35_financial_profile_copy.md",
+    "website": "https://jmerrill.financial/",
+    "positioning": "advanced planning / estate-planning advisory and preparation support",
+    "prohibited_claims": [
+      "attorney/legal representation",
+      "guaranteed legal outcomes",
+      "investment performance",
+      "fiduciary/investment-adviser status unless approved",
+      "tax/legal advice"
+    ],
+    "public_copy_to_use": {
+      "short_bio": "Advanced planning and estate-readiness support for families and organizations.",
+      "about": "J Merrill Financial helps families and organizations get organized around advanced planning, estate readiness, executor preparation, digital assets, document organization, legacy planning, and ongoing review. Educational content is not legal advice, tax advice, investment advice, or legal representation.",
+      "cta": "Schedule a Planning Conversation",
+      "website": "https://jmerrill.financial/"
+    }
+  }
+}

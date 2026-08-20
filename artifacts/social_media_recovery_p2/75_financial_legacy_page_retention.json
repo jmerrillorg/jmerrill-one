@@ -1,0 +1,24 @@
+{
+  "status": "PASS - RETENTION DECISION RECORDED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "old_page": {
+    "classification": "LEGACY / FLAGGED / RESTRICTED — DO NOT USE AS CANONICAL OPERATING PAGE",
+    "deletion_authorized": false,
+    "page_name": "UNKNOWN - LIVE META REQUIRED",
+    "page_id": "UNKNOWN - LIVE META REQUIRED",
+    "url": "UNKNOWN - LIVE META REQUIRED",
+    "restriction_flag_state": "Founder direction states flagged/restricted; exact enforcement details require live Meta admin session capture",
+    "business_portfolio_relationship": "UNKNOWN - LIVE META REQUIRED",
+    "connected_instagram_relationship": "UNKNOWN - LIVE META REQUIRED",
+    "administrators_access": "UNKNOWN - LIVE META REQUIRED",
+    "controls_username_domain_ad_pixel_dependency": "UNKNOWN - LIVE META REQUIRED",
+    "retention_state": "LEGACY / RESTRICTED — RETAIN TEMPORARILY / DO NOT PUBLISH"
+  },
+  "reasons": [
+    "historical evidence",
+    "possible enforcement appeal/review",
+    "possible asset/handle dependency",
+    "rollback/reference"
+  ],
+  "deletion_merge_removal_performed": false
+}

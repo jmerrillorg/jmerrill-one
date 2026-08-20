@@ -1,0 +1,16 @@
+{
+  "status": "HOLD - PAGE NOT CREATED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "required_result": "PASS",
+  "business_portfolio": {
+    "name": "J Merrill One",
+    "id": "846921439784613"
+  },
+  "expected_controls": [
+    "Jackie/full-control access",
+    "J Merrill One ownership/control",
+    "no unknown administrator",
+    "no accidental partner ownership"
+  ],
+  "mutation_performed": false
+}

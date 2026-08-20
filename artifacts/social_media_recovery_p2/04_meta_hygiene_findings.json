@@ -1,5 +1,5 @@
 {
-  "status": "REMEDIATION REQUIRED",
+  "status": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
   "captured_at": "2026-08-20T13:35:00Z",
   "findings": [
     {
@@ -64,5 +64,35 @@
     "No Pages/accounts deleted",
     "No new assets created",
     "No posts scheduled"
-  ]
+  ],
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "result": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+  "post_closeout_financial_replacement_continuation": {
+    "updated_at": "2026-08-20T13:49:26.063Z",
+    "result": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+    "blockers": [
+      "Authenticated Meta/Facebook UI could not be safely operated from this Codex execution surface: browser control binding returned no readable page state/output.",
+      "No purpose-built Meta/Facebook connector is available in this tool environment.",
+      "Creating a Facebook Page, assigning Instagram access, pairing assets, editing public profiles, and enabling portfolio security are live admin actions that cannot be invented or evidenced from repository files."
+    ],
+    "new_financial_page": {
+      "page_name": "J Merrill Financial, LLC",
+      "classification": "CANONICAL FINANCIAL FACEBOOK PAGE",
+      "page_id": null,
+      "url": null,
+      "owner": "J Merrill One",
+      "business_portfolio_id": "846921439784613",
+      "creation_result": "NOT EXECUTED - authenticated Meta browser/admin operation unavailable in this execution surface",
+      "required_human_admin_action": "Create the Page in Jackie-controlled Meta/Facebook session, add it to J Merrill One Business Portfolio, then pair existing @jmerrillfinancial Instagram."
+    },
+    "financial_instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "meta_selected_asset_id": "676716152193798",
+      "classification": "RETAIN — CANONICAL FINANCIAL INSTAGRAM",
+      "current_access_evidence": "0 full access people, 0 partial access people, 0 partners in Business Portfolio evidence captured 2026-08-20T13:35:00Z",
+      "current_pairing": "NOT CONNECTED",
+      "scheduling_eligibility": "BLOCKED - authorized user access and canonical Facebook Page pairing required"
+    }
+  }
 }

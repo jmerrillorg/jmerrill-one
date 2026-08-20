@@ -1,7 +1,7 @@
 {
   "final_classification": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-  "updated_at": "2026-08-20T13:35:00Z",
-  "reason": "Authenticated Meta audit is now complete, but actual access/security/profile defects prevent safe operation and first-batch scheduling remains unapproved.",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "reason": "Live Meta admin execution remains required for Financial Page creation/pairing, access repair, profile corrections, and security hardening.",
   "five_brand_meta_asset_inventory": "COMPLETE WITH REMEDIATION HOLDS",
   "account_ownership_access": "KNOWN WITH DEFECTS",
   "security": "PASS WITH REMEDIATION",
@@ -32,5 +32,35 @@
     "Portfolio security center shows two-factor authentication required for: No one; passkeys required for: No one."
   ],
   "next_30_day_operating_recommendation": "Complete Meta admin remediation, approve factual profile corrections, approve first 7-day batch as one gate after marked reviews pass, then schedule the proof week.",
-  "exact_next_action": "Jackie approves Meta admin remediation and first-week content gate using the approval phrases in 30_founder_approval_packet.md after Financial/rights/privacy/compliance holds are resolved."
+  "exact_next_action": "Jackie opens a usable authenticated Meta Business Suite/Facebook session for live admin remediation: create J Merrill Financial, LLC Page, assign Financial IG access, pair @jmerrillfinancial, correct Publishing/Productions profile defects, and safely enable portfolio MFA requirement.",
+  "status": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+  "result": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+  "post_closeout_financial_replacement_continuation": {
+    "updated_at": "2026-08-20T13:49:26.063Z",
+    "result": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+    "blockers": [
+      "Authenticated Meta/Facebook UI could not be safely operated from this Codex execution surface: browser control binding returned no readable page state/output.",
+      "No purpose-built Meta/Facebook connector is available in this tool environment.",
+      "Creating a Facebook Page, assigning Instagram access, pairing assets, editing public profiles, and enabling portfolio security are live admin actions that cannot be invented or evidenced from repository files."
+    ],
+    "new_financial_page": {
+      "page_name": "J Merrill Financial, LLC",
+      "classification": "CANONICAL FINANCIAL FACEBOOK PAGE",
+      "page_id": null,
+      "url": null,
+      "owner": "J Merrill One",
+      "business_portfolio_id": "846921439784613",
+      "creation_result": "NOT EXECUTED - authenticated Meta browser/admin operation unavailable in this execution surface",
+      "required_human_admin_action": "Create the Page in Jackie-controlled Meta/Facebook session, add it to J Merrill One Business Portfolio, then pair existing @jmerrillfinancial Instagram."
+    },
+    "financial_instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "meta_selected_asset_id": "676716152193798",
+      "classification": "RETAIN — CANONICAL FINANCIAL INSTAGRAM",
+      "current_access_evidence": "0 full access people, 0 partial access people, 0 partners in Business Portfolio evidence captured 2026-08-20T13:35:00Z",
+      "current_pairing": "NOT CONNECTED",
+      "scheduling_eligibility": "BLOCKED - authorized user access and canonical Facebook Page pairing required"
+    }
+  }
 }

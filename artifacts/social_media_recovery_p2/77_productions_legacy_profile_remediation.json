@@ -1,0 +1,17 @@
+{
+  "status": "HOLD - LIVE META ADMIN ACTION REQUIRED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "required_result": "PASS",
+  "mutation_performed": false,
+  "before_state_evidence": {
+    "source": "artifacts/social_media_recovery_p2/34_productions_profile_remediation.json",
+    "facebook_page_id": "108290338098880",
+    "instagram_id": "17841467582710441",
+    "defects": [
+      "Formerly J Merrill Spotlight wording on Facebook",
+      "Formerly J Merrill Spotlight wording on Instagram"
+    ]
+  },
+  "canonical_site": "https://jmerrill.productions/",
+  "required_action": "Remove obsolete Spotlight wording; do not delete legacy accounts."
+}

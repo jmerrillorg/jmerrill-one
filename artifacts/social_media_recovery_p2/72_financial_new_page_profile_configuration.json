@@ -1,0 +1,26 @@
+{
+  "status": "HOLD - PAGE NOT CREATED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "required_result": "PROFILE CONFIGURATION PENDING",
+  "mutation_performed": false,
+  "canonical_profile_configuration": {
+    "source": "artifacts/social_media_recovery_p2/35_financial_profile_copy.md",
+    "website": "https://jmerrill.financial/",
+    "positioning": "advanced planning / estate-planning advisory and preparation support",
+    "prohibited_claims": [
+      "attorney/legal representation",
+      "guaranteed legal outcomes",
+      "investment performance",
+      "fiduciary/investment-adviser status unless approved",
+      "tax/legal advice"
+    ],
+    "public_copy_to_use": {
+      "short_bio": "Advanced planning and estate-readiness support for families and organizations.",
+      "about": "J Merrill Financial helps families and organizations get organized around advanced planning, estate readiness, executor preparation, digital assets, document organization, legacy planning, and ongoing review. Educational content is not legal advice, tax advice, investment advice, or legal representation.",
+      "cta": "Schedule a Planning Conversation",
+      "website": "https://jmerrill.financial/"
+    }
+  },
+  "hq_street_address_exposed": false,
+  "note": "No public copy applied because Page creation/configuration could not be performed without live Meta admin UI."
+}

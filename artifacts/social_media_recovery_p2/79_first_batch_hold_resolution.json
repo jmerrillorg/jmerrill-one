@@ -1,0 +1,125 @@
+{
+  "status": "HOLD - PASS-ONLY BATCH NOT AVAILABLE",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "summary": {
+    "pass": 0,
+    "revise": 9,
+    "remove_from_batch": 0,
+    "founder_decision_required": 5
+  },
+  "posts": [
+    {
+      "SocialContentId": "SRP2-001",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "result": "REVISE",
+      "reason": "Publishing profile defect and rights checks must be closed before scheduling.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "result": "FOUNDER DECISION REQUIRED",
+      "reason": "Privacy/likeness/donor/participant review still required.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "brand": "J Merrill One",
+      "platform": "Instagram",
+      "result": "FOUNDER DECISION REQUIRED",
+      "reason": "Functional gate can pass after creative/brand review and founder approval; not scheduled.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "result": "REVISE",
+      "reason": "Financial posts must target new canonical Facebook Page where applicable and existing IG only after access/pairing; compliance review still required.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "result": "REVISE",
+      "reason": "Publishing profile defect and rights checks must be closed before scheduling.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "J Merrill Productions",
+      "platform": "Facebook",
+      "result": "REVISE",
+      "reason": "Productions legacy profile wording and media/project/talent rights checks must be closed before scheduling.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "result": "REVISE",
+      "reason": "Financial posts must target new canonical Facebook Page where applicable and existing IG only after access/pairing; compliance review still required.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "result": "FOUNDER DECISION REQUIRED",
+      "reason": "Privacy/likeness/donor/participant review still required.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "brand": "J Merrill One",
+      "platform": "Facebook",
+      "result": "FOUNDER DECISION REQUIRED",
+      "reason": "Functional gate can pass after creative/brand review and founder approval; not scheduled.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "result": "REVISE",
+      "reason": "Publishing profile defect and rights checks must be closed before scheduling.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "result": "REVISE",
+      "reason": "Financial posts must target new canonical Facebook Page where applicable and existing IG only after access/pairing; compliance review still required.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "result": "REVISE",
+      "reason": "Productions legacy profile wording and media/project/talent rights checks must be closed before scheduling.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "result": "REVISE",
+      "reason": "Publishing profile defect and rights checks must be closed before scheduling.",
+      "scheduling_state": "NOT SCHEDULED"
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "result": "FOUNDER DECISION REQUIRED",
+      "reason": "Privacy/likeness/donor/participant review still required.",
+      "scheduling_state": "NOT SCHEDULED"
+    }
+  ],
+  "scheduling_authorized": false
+}
