@@ -1,14 +1,6 @@
 {
-  "result": "NOT RUN",
-  "reason": "First posts not scheduled/published.",
-  "required_checks": [
-    "correct brand account",
-    "correct creative",
-    "copy not truncated",
-    "link works",
-    "UTM works",
-    "CTA works",
-    "accessibility met",
-    "no duplicate accidental publication"
-  ]
+  "result": "NOT STARTED",
+  "updated_at": "2026-08-20T13:35:00Z",
+  "reason": "No first-batch posts were scheduled or published in this pass.",
+  "records": []
 }

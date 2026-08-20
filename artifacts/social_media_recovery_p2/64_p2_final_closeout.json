@@ -1,40 +1,36 @@
 {
   "final_classification": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-  "reason": "P2 readiness artifacts and content batch are complete, but authenticated Meta ownership/access audit, live profile corrections, scheduling, publishing, postchange validation, and 72-hour observation could not be executed in this session.",
-  "five_brand_meta_asset_inventory": "BLOCKED - authenticated Meta access required",
-  "account_ownership_access": "UNKNOWN",
-  "security": "UNKNOWN - Meta security baseline blocked",
-  "profile_audit": "PARTIAL_PUBLIC_ONLY",
-  "profile_remediation": "PREPARED_NOT_EXECUTED",
+  "updated_at": "2026-08-20T13:35:00Z",
+  "reason": "Authenticated Meta audit is now complete, but actual access/security/profile defects prevent safe operation and first-batch scheduling remains unapproved.",
+  "five_brand_meta_asset_inventory": "COMPLETE WITH REMEDIATION HOLDS",
+  "account_ownership_access": "KNOWN WITH DEFECTS",
+  "security": "PASS WITH REMEDIATION",
+  "profile_audit": "LIVE AUDIT COMPLETE WITH FACTUAL CORRECTION HOLDS",
+  "profile_remediation": "NOT EXECUTED - access/security/approval holds remain",
   "factual_corrections_executed": 0,
   "material_copy_approvals": "REQUIRED",
-  "thirty_day_calendar": "60 posts built",
-  "first_7_day_batch": "14 posts built",
+  "thirty_day_calendar": "60 posts built; remaining 23 days not scheduled",
+  "first_7_day_batch": "14 posts built; approval pending",
   "scheduling": "NOT SCHEDULED",
   "publishing": "NOT PUBLISHED",
   "observation_72_hour": "NOT STARTED",
-  "rights": "REVIEW REQUIRED",
+  "rights": "REVIEW REQUIRED for marked Publishing/Productions posts",
   "financial_compliance": "REVIEW REQUIRED",
   "foundation_privacy": "REVIEW REQUIRED",
   "inbound_routing": "DEFINED",
   "engagement_standard": "DEFINED",
   "microsoft_operating_architecture": "DEFINED",
-  "meta_execution_architecture": "DEFINED_WITH_ACCESS_HOLD",
+  "meta_execution_architecture": "LIVE AUDIT COMPLETE; execution held",
   "attribution": "DEFINED",
   "reporting": "DEFINED",
   "remaining_access_defects": [
-    "Meta Business Suite access unavailable to Codex session"
+    "Financial Instagram @jmerrillfinancial has 0 people assigned in Business Portfolio; scheduling is blocked until authorized user access is assigned.",
+    "First 7-day batch remains PENDING FOUNDER/FUNCTIONAL APPROVAL in source artifact.",
+    "Rights/compliance/privacy reviews remain required for marked launch-batch posts.",
+    "Publishing Facebook bio contains unrelated forex/trader content and needs factual correction.",
+    "Productions Facebook/Instagram bios retain legacy Spotlight wording and need factual correction.",
+    "Portfolio security center shows two-factor authentication required for: No one; passkeys required for: No one."
   ],
-  "remaining_profile_defects": [
-    "Address snippets for Publishing/Foundation require live correction",
-    "Productions legacy identity/wrong URL requires live confirmation/correction",
-    "Material bios/CTAs require Founder approval"
-  ],
-  "remaining_content_approvals": [
-    "First 7-day batch",
-    "30-day batch",
-    "rights/compliance/privacy"
-  ],
-  "next_30_day_operating_recommendation": "Complete authenticated Meta audit, execute factual profile corrections with evidence, approve/schedule first 7-day batch, observe 72 hours, then schedule remaining month.",
-  "exact_next_action": "Jackie opens/authenticates Meta Business Suite or provides access to inspect the J Merrill One portfolio; then execute the admin audit and factual profile corrections before scheduling the first 7-day launch batch."
+  "next_30_day_operating_recommendation": "Complete Meta admin remediation, approve factual profile corrections, approve first 7-day batch as one gate after marked reviews pass, then schedule the proof week.",
+  "exact_next_action": "Jackie approves Meta admin remediation and first-week content gate using the approval phrases in 30_founder_approval_packet.md after Financial/rights/privacy/compliance holds are resolved."
 }

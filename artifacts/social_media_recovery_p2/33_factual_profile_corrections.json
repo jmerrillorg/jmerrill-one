@@ -1,27 +1,39 @@
 {
-  "status": "PREPARED_NOT_EXECUTED",
-  "reason": "No authenticated before-state evidence; do not execute blind.",
+  "status": "NOT EXECUTED - SAFE OPERATION HOLDS REMAIN",
+  "captured_at": "2026-08-20T13:35:00Z",
+  "reason": "Authenticated audit found factual defects, but access/security review holds and unapproved profile copy prevent safe publication changes in this pass.",
   "corrections": [
     {
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
-      "before": "Public snippet includes street address",
-      "after": "Headquartered in Columbus, Ohio.",
-      "verification_result": "PENDING"
-    },
-    {
-      "brand": "J Merrill Foundation",
-      "platform": "Facebook",
-      "before": "Public snippet includes street address",
-      "after": "Headquartered in Columbus, Ohio.",
-      "verification_result": "PENDING"
+      "before": "Forex/trader bio snippet visible",
+      "after": "Replace with approved J Merrill Publishing factual/canonical bio",
+      "classification": "FACTUAL CORRECTION REQUIRED",
+      "execution_status": "HELD - admin/profile remediation approval and access review"
     },
     {
       "brand": "J Merrill Productions",
-      "platform": "Facebook/Instagram",
-      "before": "P1-reported legacy Spotlight/wrong website",
-      "after": "J Merrill Productions; https://jmerrill.productions/",
-      "verification_result": "PENDING"
+      "platform": "Facebook",
+      "before": "Formerly J Merrill Spotlight bio visible",
+      "after": "Remove legacy Spotlight wording; keep J Merrill Productions factual identity",
+      "classification": "FACTUAL CORRECTION REQUIRED",
+      "execution_status": "HELD - profile edit not executed in this pass"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "before": "Formerly J Merrill Spotlight wording visible",
+      "after": "Remove legacy Spotlight wording; keep J Merrill Productions factual identity",
+      "classification": "FACTUAL CORRECTION REQUIRED",
+      "execution_status": "HELD - profile edit not executed in this pass"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "before": "www.jmerrill.org visible",
+      "after": "https://jmerrill.foundation/",
+      "classification": "FACTUAL URL CORRECTION REQUIRED",
+      "execution_status": "HELD - privacy/profile approval"
     }
   ]
 }

@@ -2,6 +2,17 @@
 
 Final classification: SOCIAL RECOVERY P2 REMEDIATION REQUIRED
 
-The P2 readiness package is built: asset maps, profile packets, 30-day calendar, first 7-day batch, gates, standards, routing, attribution, reporting, MVP decision, and closeout. Live Meta admin audit and profile/scheduling execution were not completed because authenticated Meta Business Suite browser/admin access was unavailable in this session.
+Authenticated Meta Business Suite access is now working and the J Merrill One Business Portfolio was audited. The previous unknown-Meta-admin blocker is closed.
 
-Exact next action: Jackie opens/authenticates Meta Business Suite or provides an inspectable Jackie-controlled browser session; then execute the Meta asset audit, factual profile corrections, first-batch approval, and first 7-day scheduling.
+The package is still not safe to activate because live defects remain:
+
+- Financial Instagram @jmerrillfinancial has 0 people assigned in the Business Portfolio.
+- Portfolio 2FA and passkey requirements are set to No one.
+- Foundation and AGAPE Pages show access review needs; AGAPE and Founder Brand are out of P2 scope.
+- Publishing Facebook has an unrelated forex/trader bio snippet.
+- Productions Facebook/Instagram still carry legacy Spotlight wording.
+- The 14-post first-week batch remains pending Founder/functional approval plus rights/compliance/privacy checks.
+
+No posts were scheduled or published. No Meta assets were created, deleted, or reassigned.
+
+Exact next action: Jackie approves the Meta admin remediation and first-week content gate using the approval phrases in `30_founder_approval_packet.md`, after Financial access and marked review holds are resolved.

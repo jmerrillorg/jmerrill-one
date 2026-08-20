@@ -1,12 +1,15 @@
 {
-  "status": "BLOCKED - AUTHENTICATED META ACCESS REQUIRED",
-  "checks": [
-    "Jackie/full control",
-    "MFA where observable",
-    "no unknown high-level admins",
-    "appropriate partner access",
-    "no exposed credentials",
-    "no unnecessary system users"
-  ],
-  "result": "NOT VERIFIED"
+  "status": "PASS WITH REMEDIATION",
+  "captured_at": "2026-08-20T13:35:00Z",
+  "checks": {
+    "jackie_control_visible": "PASS - Jackie Smith (you) info@jmerrill.one shows Full access Everything and Active",
+    "backup_admin": "PASS - Security Center reports Backup admin added",
+    "two_factor": "REMEDIATION - Who is required to turn on two-factor authentication: No one",
+    "passkeys": "REMEDIATION - Who is required to turn on Passkeys: No one",
+    "unexplained_high_level_admins": "REMEDIATION - Page access review flags and partner inconsistencies require human admin review",
+    "partner_access": "REMEDIATION - Publishing partner row inconsistency requires reconciliation",
+    "system_users": "PASS - no system users visible",
+    "exposed_credentials": "PASS - none observed or captured",
+    "compromised_ownership_structure": "PASS WITH REMEDIATION - owned by J Merrill One, but Financial IG access assignment defect and Page review-needed flags remain"
+  }
 }

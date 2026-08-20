@@ -1,5 +1,6 @@
 {
   "result": "NOT STARTED",
-  "reason": "No first batch published yet.",
-  "observation_window": "72 hours after initial publication"
+  "updated_at": "2026-08-20T13:35:00Z",
+  "reason": "72-hour observation begins only after first scheduled publication.",
+  "metrics": []
 }

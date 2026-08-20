@@ -1,5 +1,6 @@
 {
   "result": "NOT SCHEDULED",
-  "reason": "Founder approval and authenticated Meta Business Suite ownership/access verification are required before scheduling.",
+  "updated_at": "2026-08-20T13:35:00Z",
+  "reason": "Do not schedule unapproved material. First 7-day batch approval is pending; Financial IG access assignment is zero; rights/compliance/privacy checks remain.",
   "records": []
 }

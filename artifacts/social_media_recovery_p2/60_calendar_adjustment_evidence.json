@@ -1,4 +1,6 @@
 {
-  "result": "NOT APPLICABLE YET",
-  "reason": "First-week proof not available; do not adjust based on zero live data."
+  "result": "NOT STARTED",
+  "updated_at": "2026-08-20T13:35:00Z",
+  "reason": "Remaining month remains READY / PENDING FIRST-WEEK PROOF; no strategy rewrite performed.",
+  "adjustments": []
 }

@@ -1,11 +1,68 @@
 {
-  "status": "BLOCKED - AUTHENTICATED META ACCESS REQUIRED",
+  "status": "REMEDIATION REQUIRED",
+  "captured_at": "2026-08-20T13:35:00Z",
   "findings": [
     {
-      "classification": "FOUNDER DECISION REQUIRED",
-      "issue": "Meta asset ownership/admin inventory not inspectable in this session",
-      "risk": "Cannot safely edit, schedule, remove access, consolidate, or retire Meta assets without immutable IDs and current admin evidence."
+      "severity": "HIGH",
+      "asset": "@jmerrillfinancial",
+      "defect": "0 full-control and 0 partial-access people assigned in Business Portfolio",
+      "risk": "Cannot safely schedule or operate Financial Instagram through P2 until access is assigned.",
+      "required_remediation": "Assign Jackie/JM1 authorized user with appropriate access; verify before scheduling Financial content.",
+      "destructive": false
+    },
+    {
+      "severity": "HIGH",
+      "asset": "J Merrill Publishing Inc Facebook Page",
+      "defect": "Public bio contains unrelated forex/trader content",
+      "risk": "Brand trust and possible prior compromise/content pollution signal.",
+      "required_remediation": "Replace with approved factual/canonical bio and review admin/post history.",
+      "destructive": false
+    },
+    {
+      "severity": "MEDIUM",
+      "asset": "J Merrill Productions Facebook and Instagram",
+      "defect": "Legacy Spotlight wording remains",
+      "risk": "Brand confusion and stale identity.",
+      "required_remediation": "Apply factual identity correction to remove legacy Spotlight wording and verify canonical website.",
+      "destructive": false
+    },
+    {
+      "severity": "MEDIUM",
+      "asset": "J Merrill Foundation Inc Facebook Page",
+      "defect": "Meta review-needed flag for people with access",
+      "risk": "Unmanaged access outside portfolio may exist.",
+      "required_remediation": "Review people not in portfolio; add/remove only after replacement control is proven.",
+      "destructive": true
+    },
+    {
+      "severity": "MEDIUM",
+      "asset": "J Merrill Publishing Inc Facebook Page",
+      "defect": "2 partners shown on Page row while partner detail says no assets assigned",
+      "risk": "Partner access inconsistency needs reconciliation.",
+      "required_remediation": "Inspect partner assignments before publishing/scheduling at scale.",
+      "destructive": false
+    },
+    {
+      "severity": "MEDIUM",
+      "asset": "Business Portfolio",
+      "defect": "2FA and passkeys required for no one",
+      "risk": "Weak portfolio security baseline.",
+      "required_remediation": "Founder/admin decision to require 2FA/passkeys for appropriate users.",
+      "destructive": false
+    },
+    {
+      "severity": "INFO",
+      "asset": "Founder Brand and AGAPE assets",
+      "defect": "Visible in portfolio but outside active P2 scope",
+      "risk": "Accidental activation/cross-posting if not excluded.",
+      "required_remediation": "Keep excluded from P2 scheduling.",
+      "destructive": false
     }
   ],
-  "no_deletions": true
+  "actions_taken": [
+    "No admins removed",
+    "No Pages/accounts deleted",
+    "No new assets created",
+    "No posts scheduled"
+  ]
 }
