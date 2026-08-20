@@ -1,5 +1,5 @@
 {
-  "status": "RIGHTS CHECK REQUIRED",
+  "status": "RIGHTS CHECK REQUIRED - PROFILE DEFECT PASS",
   "rules": [
     "Check book covers",
     "author photos",
@@ -11,71 +11,87 @@
   "publishing_posts": [
     {
       "SocialContentId": "SRP2-001",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-005",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-010",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-013",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-015",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-019",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-024",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-027",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-029",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-033",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-038",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-041",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-043",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-047",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-052",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-055",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     },
     {
       "SocialContentId": "SRP2-057",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic; Publishing profile defect no longer blocks scheduling"
     }
-  ]
+  ],
+  "updated_at": "2026-08-20T19:46:46.941Z",
+  "profile_defect_result": {
+    "page_name": "J Merrill Publishing Inc",
+    "page_id": "307480763084670",
+    "before_live_state": {
+      "forbidden_forex_trader_copy_present": false,
+      "observed_bio": "We are helping authors help themselves!! If you have a desire to be published but, don’t know where to go, you’ve found the right place!",
+      "observed_website": "http://www.JMerrill.pub/"
+    },
+    "after_live_state": {
+      "bio_observed": "Hybrid publishing support from manuscript readiness to launch.",
+      "website_observed": "https://jmerrill.pub/",
+      "forbidden_forex_trader_copy_present": false
+    },
+    "result": "PASS - PROFILE DEFECT REMEDIATED"
+  }
 }

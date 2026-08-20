@@ -1,37 +1,38 @@
 {
-  "status": "HOLD — NOT EXECUTED IN THIS PASS",
+  "status": "PARTIAL PASS - REMEDIATION HOLDS REMAIN",
   "required_result": "PASS",
-  "mutation_performed": false,
-  "before_state_evidence": "Existing P2 evidence indicates Productions legacy Spotlight wording remains until live profile correction is performed.",
-  "result": "NOT REMEDIATED",
-  "updated_at": "2026-08-20T19:07:11.251Z",
-  "live_financial_canonical_activation": {
-    "page": {
-      "page_name": "J Merrill Financial",
-      "instructed_correction": "User corrected canonical Page name from instruction text to J Merrill Financial.",
-      "business_suite_asset_id": "1270611542802820",
-      "facebook_public_profile_id": "61593286063626",
-      "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
-      "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
-      "classification": "CANONICAL — J MERRILL FINANCIAL FACEBOOK",
-      "followers_observed": 0,
-      "category_observed": "Financial service",
-      "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Insurance Broker is canonically justifiable if Meta allows an additional accurate category, but live Meta currently displays Financial service after remediation.",
-      "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
-      "website_observed": "https://jmerrill.financial/",
-      "hq_street_address_exposed": false
+  "mutation_performed": true,
+  "updated_at": "2026-08-20T19:46:46.941Z",
+  "before_state_evidence": "Public Facebook and Instagram profiles contained Formerly J Merrill Spotlight wording; Facebook link showed jmerrill.pub.",
+  "result": "FACEBOOK BIO REMEDIATED; INSTAGRAM BIO AND FACEBOOK LINK HOLD",
+  "remediation": {
+    "facebook": {
+      "page_name": "J Merrill Productions",
+      "page_id": "108290338098880",
+      "before_bio": "Discover J Merrill Productions! Formerly J Merrill Spotlight, we spotlight authors through engaging podcasts, live event streaming, and dynamic video production. Dive into the stories that shape us!",
+      "after_bio": "Video, audio, live media, and storytelling for clients, campaigns, authors, and JM1 communications.",
+      "bio_result": "PASS - FACEBOOK SPOTLIGHT WORDING REMOVED",
+      "website_before": "http://www.JMerrill.pub/",
+      "website_result": "HOLD - SAFE URL EDIT FIELD NOT EXPOSED; LIVE LINK STILL RESOLVES TO jmerrill.pub"
     },
     "instagram": {
-      "handle": "@jmerrillfinancial",
-      "instagram_id": "17841475196277020",
-      "meta_selected_asset_id": "676716152193798",
-      "status": "CANONICAL_IG_RETAINED",
-      "pairing_result": "NOT PAIRED — LIVE CONNECT INSTAGRAM LINK DID NOT OPEN AN ACTIONABLE DIALOG IN EDGE CONTROL",
-      "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
+      "handle": "@jmerrillprod",
+      "instagram_id": "17841467582710441",
+      "observed_bio": "Meet J Merrill Productions! Formerly J Merrill Spotlight, we bring stories to life through podcasts, live streams, and...",
+      "result": "HOLD - INSTAGRAM SPOTLIGHT WORDING REMAINS"
     },
-    "business_portfolio": {
-      "name": "J Merrill One",
-      "id": "846921439784613"
-    }
+    "overall_result": "PARTIAL PASS - FACEBOOK BIO REMEDIATED; INSTAGRAM BIO AND FACEBOOK LINK HOLD"
+  },
+  "evidence": {
+    "financialInstagramPublicDom": "/tmp/social_p2_ig_public_dom.txt",
+    "financialInstagramBusinessSettingsDom": "/tmp/social_p2_fin_ig_after_pair_dom.txt",
+    "financialPageSettingsDom": "/tmp/social_p2_fin_page_settings_dom2.txt",
+    "publishingBioDom": "/tmp/social_p2_pub_bio_fix_dom.txt",
+    "publishingWebsiteDom": "/tmp/social_p2_pub_website_dom.txt",
+    "productionsFacebookPublicBeforeDom": "/tmp/social_p2_prod_public_fb_dom.txt",
+    "productionsFacebookBioAfterDom": "/tmp/social_p2_prod_bio_update_dom.txt",
+    "productionsFacebookLinksDom": "/tmp/social_p2_prod_links_dom.txt",
+    "productionsInstagramDom": "/tmp/social_p2_prod_ig_dom.txt",
+    "securityCenterDom": "/tmp/social_p2_security_dom.txt"
   }
 }

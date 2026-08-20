@@ -1,15 +1,15 @@
 {
   "required_result": "PASS - SCHEDULING READY",
   "result": "HOLD - NOT SCHEDULING READY",
-  "updated_at": "2026-08-20T19:07:11.251Z",
-  "reason": "Financial Facebook is now canonical/configured, but Financial IG pairing/access and other functional holds remain.",
+  "updated_at": "2026-08-20T19:46:46.941Z",
+  "reason": "Live remediation improved Publishing and Productions Facebook bio, but Financial IG pairing/access, Productions IG/link, security, rights/privacy/compliance, creative proof, and Founder approval remain unresolved.",
   "holds": [
-    "Financial Instagram pairing/access not verified",
-    "Financial compliance approval required",
-    "Publishing rights/profile defect hold",
-    "Foundation privacy hold",
-    "Productions rights/profile defect hold",
-    "Creative asset proof required"
+    "Financial Instagram access/pairing pending after attempted connection",
+    "Productions Instagram bio still contains legacy Spotlight wording",
+    "Productions Facebook link still points to jmerrill.pub",
+    "Portfolio MFA/passkey enablement held pending Jackie recovery/MFA confirmation",
+    "Rights/compliance/privacy/creative proof required",
+    "Founder first-batch approval not available until PASS-only batch exists"
   ],
   "posts": [
     {
@@ -25,7 +25,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "PASS - profile defect remediated",
       "scheduling_ready": "NO"
     },
     {
@@ -73,7 +73,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "PASS for canonical FB Page; IG access/pairing HOLD",
       "scheduling_ready": "NO"
     },
     {
@@ -89,7 +89,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "PASS - profile defect remediated",
       "scheduling_ready": "NO"
     },
     {
@@ -105,7 +105,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "PARTIAL - Facebook bio pass; Facebook link hold",
       "scheduling_ready": "NO"
     },
     {
@@ -121,7 +121,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "PASS for canonical FB Page; IG access/pairing HOLD",
       "scheduling_ready": "NO"
     },
     {
@@ -169,7 +169,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "PASS - profile defect remediated",
       "scheduling_ready": "NO"
     },
     {
@@ -185,7 +185,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "PASS for canonical FB Page; IG access/pairing HOLD",
       "scheduling_ready": "NO"
     },
     {
@@ -201,7 +201,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "HOLD - Instagram Spotlight wording remains",
       "scheduling_ready": "NO"
     },
     {
@@ -217,7 +217,7 @@
       "privacy": "PASS_OR_NOT_APPLICABLE",
       "cta_url": "PASS - HTTP 200 verified for canonical domain",
       "utm": "PASS - campaign/content values present in batch artifact",
-      "profile_mismatch": "HOLD - see profile/hygiene findings",
+      "profile_mismatch": "PASS - profile defect remediated",
       "scheduling_ready": "NO"
     },
     {

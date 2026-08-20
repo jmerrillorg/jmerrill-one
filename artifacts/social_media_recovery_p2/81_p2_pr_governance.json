@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-08-20T19:08:15.591Z",
+  "generated_at": "2026-08-20T19:48:38.507Z",
   "target_repository": "J Merrill One",
-  "package": "SOCIAL RECOVERY P2 — FINANCIAL CANONICAL FACEBOOK ACTIVATION + META ESTATE REMEDIATION",
+  "package": "SOCIAL RECOVERY P2 - FINANCIAL IG PAIRING + PROFILE DEFECT REMEDIATION + META SECURITY + FIRST-BATCH HOLD RESOLUTION",
   "branch": "codex/social-recovery-p2",
-  "head": "b21c4dc",
   "pr": {
     "number": 7,
     "url": "https://github.com/jmerrillorg/jmerrill-one/pull/7",
@@ -11,5 +10,7 @@
     "merge_state": "OPEN"
   },
   "classification": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-  "note": "PR opened after live Financial Facebook canonical Page remediation evidence. Follow-up commit records PR governance."
+  "note": "Continuation commit records live Publishing remediation, Productions Facebook bio remediation, Financial IG pending access/pairing, Meta security hold, and first-batch hold state.",
+  "head": "FINAL_BRANCH_HEAD_REPORTED_IN_PR_COMMENT_AND_FINAL_RESPONSE",
+  "head_note": "A commit cannot embed its own final SHA without changing that SHA; use the pushed branch head and PR comment as authoritative head evidence."
 }

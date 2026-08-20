@@ -1,5 +1,5 @@
 {
-  "status": "RIGHTS CHECK REQUIRED",
+  "status": "RIGHTS CHECK REQUIRED - PROFILE DEFECT PARTIAL HOLD",
   "rules": [
     "Check project images",
     "client work",
@@ -11,35 +11,62 @@
   "productions_posts": [
     {
       "SocialContentId": "SRP2-006",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
+      "profile_gate": "FACEBOOK BIO PASS; FACEBOOK LINK HOLD"
     },
     {
       "SocialContentId": "SRP2-012",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
+      "profile_gate": "INSTAGRAM BIO HOLD"
     },
     {
       "SocialContentId": "SRP2-020",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
+      "profile_gate": "INSTAGRAM BIO HOLD"
     },
     {
       "SocialContentId": "SRP2-026",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
+      "profile_gate": "INSTAGRAM BIO HOLD"
     },
     {
       "SocialContentId": "SRP2-034",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
+      "profile_gate": "INSTAGRAM BIO HOLD"
     },
     {
       "SocialContentId": "SRP2-040",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
+      "profile_gate": "INSTAGRAM BIO HOLD"
     },
     {
       "SocialContentId": "SRP2-048",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
+      "profile_gate": "INSTAGRAM BIO HOLD"
     },
     {
       "SocialContentId": "SRP2-054",
-      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic"
+      "rights_gate": "REVIEW REQUIRED unless text-only/owned graphic",
+      "profile_gate": "INSTAGRAM BIO HOLD"
     }
-  ]
+  ],
+  "updated_at": "2026-08-20T19:46:46.941Z",
+  "profile_defect_result": {
+    "facebook": {
+      "page_name": "J Merrill Productions",
+      "page_id": "108290338098880",
+      "before_bio": "Discover J Merrill Productions! Formerly J Merrill Spotlight, we spotlight authors through engaging podcasts, live event streaming, and dynamic video production. Dive into the stories that shape us!",
+      "after_bio": "Video, audio, live media, and storytelling for clients, campaigns, authors, and JM1 communications.",
+      "bio_result": "PASS - FACEBOOK SPOTLIGHT WORDING REMOVED",
+      "website_before": "http://www.JMerrill.pub/",
+      "website_result": "HOLD - SAFE URL EDIT FIELD NOT EXPOSED; LIVE LINK STILL RESOLVES TO jmerrill.pub"
+    },
+    "instagram": {
+      "handle": "@jmerrillprod",
+      "instagram_id": "17841467582710441",
+      "observed_bio": "Meet J Merrill Productions! Formerly J Merrill Spotlight, we bring stories to life through podcasts, live streams, and...",
+      "result": "HOLD - INSTAGRAM SPOTLIGHT WORDING REMAINS"
+    },
+    "overall_result": "PARTIAL PASS - FACEBOOK BIO REMEDIATED; INSTAGRAM BIO AND FACEBOOK LINK HOLD"
+  }
 }

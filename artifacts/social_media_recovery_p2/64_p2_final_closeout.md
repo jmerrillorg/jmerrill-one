@@ -1,6 +1,6 @@
 # SOCIAL RECOVERY P2 Final Closeout
 
-Updated: 2026-08-20T19:07:11.251Z
+Updated: 2026-08-20T19:46:46.941Z
 
 ## Classification
 
@@ -8,20 +8,19 @@ SOCIAL RECOVERY P2 REMEDIATION REQUIRED
 
 ## Completed Live
 
-- Confirmed canonical Financial Facebook Page exists as J Merrill Financial.
-- Captured Business Suite asset ID 1270611542802820 and public profile ID 61593286063626.
-- Updated Financial bio to: Advanced planning for life, legacy, and the people who matter most.
-- Updated website to https://jmerrill.financial/.
-- Confirmed public Page displays J Merrill Financial, the corrected bio, Financial service, and website link.
+- Financial Facebook is canonical as J Merrill Financial, asset ID 1270611542802820, public profile ID 61593286063626.
+- Financial profile shows the compliant planning bio, https://jmerrill.financial/, Financial service category, and no HQ street address exposure.
+- Publishing profile defect is remediated: forex/trader wording is absent, bio is corrected, and website is https://jmerrill.pub/.
+- Productions Facebook bio is remediated; legacy Spotlight wording was removed from the Facebook bio.
 
 ## Holds Remaining
 
-- @jmerrillfinancial pairing/access is not verified; Connect Instagram did not open an actionable dialog in Edge control.
-- Publishing forex/trader defect not remediated in this pass.
-- Productions Spotlight wording not remediated in this pass.
-- Meta portfolio 2FA/passkey hardening not performed to avoid lockout without Founder MFA/recovery confirmation.
-- First 7-day batch remains not approved and not scheduled.
+- @jmerrillfinancial access/pairing remains pending and unverified after the connection attempt.
+- Productions Instagram still says Formerly J Merrill Spotlight.
+- Productions Facebook link still points to jmerrill.pub; safe URL edit field was not exposed in-session.
+- Meta 2FA/passkeys remain set to No one; enabling requires Jackie recovery/MFA verification first.
+- First 7-day batch is not PASS-only and was not scheduled or published.
 
 ## Exact Next Action
 
-Complete @jmerrillfinancial access/pairing to J Merrill Financial, then correct Publishing/Productions profile defects and safely remediate Meta portfolio MFA before requesting Founder first-batch approval.
+Jackie must resolve @jmerrillfinancial ownership/access and pairing, confirm recovery/MFA readiness for Meta security, and correct remaining Productions IG/link profile holds before first-batch Founder approval can be requested.
