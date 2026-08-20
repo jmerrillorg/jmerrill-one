@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "map": [
+    {
+      "path": "/sites/sales/Shared Documents/01 Lead Tracking",
+      "current_authoritative_location": "archived Sales SharePoint site",
+      "long_term_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not proven",
+      "new_site_required": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/02 Client Proposals",
+      "current_authoritative_location": "archived Sales SharePoint site",
+      "long_term_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not proven",
+      "new_site_required": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/03 Pricing Sheets",
+      "current_authoritative_location": "archived Sales SharePoint site pending any future enterprise pricing library",
+      "long_term_location": "Archived Sales SharePoint site unless/until an existing governed enterprise/division pricing library is explicitly certified",
+      "duplicate_signal": "possible enterprise reference candidate; not proven duplicate",
+      "new_site_required": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/04 Sales Reports",
+      "current_authoritative_location": "archived Sales SharePoint site",
+      "long_term_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not proven",
+      "new_site_required": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/05 Archive",
+      "current_authoritative_location": "archived Sales SharePoint site",
+      "long_term_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not applicable",
+      "new_site_required": false
+    },
+    {
+      "path": "/sites/sales/Shared Documents/General",
+      "current_authoritative_location": "archived Sales SharePoint site",
+      "long_term_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not applicable",
+      "new_site_required": false
+    }
+  ]
+}

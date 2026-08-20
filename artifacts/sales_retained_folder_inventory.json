@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "reviewed_count": 6,
+  "folders": [
+    {
+      "folder": "01 Lead Tracking",
+      "path": "/sites/sales/Shared Documents/01 Lead Tracking",
+      "purpose": "lead tracking records",
+      "owner": "Sales governance / J Merrill One",
+      "content_class": "sales business records",
+      "last_meaningful_use": "2025-09-11T13:08:13Z",
+      "authoritative_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not proven",
+      "retention_value": "active/historical business record"
+    },
+    {
+      "folder": "02 Client Proposals",
+      "path": "/sites/sales/Shared Documents/02 Client Proposals",
+      "purpose": "client proposal records",
+      "owner": "Sales governance / J Merrill One",
+      "content_class": "sales proposal records",
+      "last_meaningful_use": "2025-09-11T13:08:13Z",
+      "authoritative_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not proven",
+      "retention_value": "business record"
+    },
+    {
+      "folder": "03 Pricing Sheets",
+      "path": "/sites/sales/Shared Documents/03 Pricing Sheets",
+      "purpose": "division/enterprise pricing material",
+      "owner": "Sales governance / J Merrill One",
+      "content_class": "pricing materials",
+      "last_meaningful_use": "2025-09-11T13:08:13Z",
+      "authoritative_location": "archived Sales SharePoint site pending any future enterprise pricing library",
+      "duplicate_signal": "possible enterprise reference candidate; not proven duplicate",
+      "retention_value": "pricing/reference retention"
+    },
+    {
+      "folder": "04 Sales Reports",
+      "path": "/sites/sales/Shared Documents/04 Sales Reports",
+      "purpose": "sales reports",
+      "owner": "Sales governance / J Merrill One",
+      "content_class": "operational reports",
+      "last_meaningful_use": "2025-09-11T13:08:13Z",
+      "authoritative_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not proven",
+      "retention_value": "report/history retention"
+    },
+    {
+      "folder": "05 Archive",
+      "path": "/sites/sales/Shared Documents/05 Archive",
+      "purpose": "archive records",
+      "owner": "Sales governance / J Merrill One",
+      "content_class": "historical archive",
+      "last_meaningful_use": "2025-09-11T13:08:13Z",
+      "authoritative_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not applicable",
+      "retention_value": "archive evidence"
+    },
+    {
+      "folder": "General",
+      "path": "/sites/sales/Shared Documents/General",
+      "purpose": "Teams General channel folder",
+      "owner": "Sales Team",
+      "content_class": "empty channel folder",
+      "last_meaningful_use": "2025-04-05T12:31:42Z",
+      "authoritative_location": "archived Sales SharePoint site",
+      "duplicate_signal": "not applicable",
+      "retention_value": "low; channel/system folder context"
+    }
+  ]
+}
