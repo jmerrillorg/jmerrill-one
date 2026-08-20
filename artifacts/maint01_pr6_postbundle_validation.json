@@ -1,0 +1,18 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_pr6_postbundle_validation",
+  "created_at": "2026-08-20T10:37:41Z",
+  "target_repository": "J Merrill One",
+  "target_pr": 6,
+  "pr_url": "https://github.com/jmerrillorg/jmerrill-one/pull/6",
+  "head_branch": "codex/maint01-estate-rationalization",
+  "head_sha_before_blocker_evidence": "0e7e31ed6835d510b2b18cfb51f4d5656485646c",
+  "state_before_blocker_evidence": "OPEN",
+  "merge_state_before_blocker_evidence": "CLEAN",
+  "cece_bundle_history_included": false,
+  "founder_decision_packet_present": "NOT REVALIDATED - post-bundle validation blocked",
+  "cleanup_wave_artifacts_present": "NOT REVALIDATED - post-bundle validation blocked",
+  "no_unrelated_files": "NOT REVALIDATED - post-bundle validation blocked",
+  "result": "SKIPPED",
+  "reason": "PR #6 cannot be validated as post-bundle until the required CECE bundle is imported and integrated."
+}

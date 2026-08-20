@@ -1,0 +1,22 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_postbundle_validation",
+  "created_at": "2026-08-20T10:37:41Z",
+  "target_repository": "J Merrill One",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "required_prior_phases": [
+    "CECE bundle validation",
+    "CECE bundle import",
+    "lineage check",
+    "bundle integration"
+  ],
+  "maint01_json_artifact_count_before_bundle": 95,
+  "json_parse_all_maint01_artifacts": "NOT RUN - post-bundle state unavailable",
+  "git_diff_check": "NOT RUN - post-bundle state unavailable",
+  "secret_credential_scan": "NOT RUN - post-bundle state unavailable",
+  "mailbox_content_leakage_check": "NOT RUN - post-bundle state unavailable",
+  "unrelated_publishing_editorial_check": "NOT RUN - post-bundle state unavailable",
+  "git_status_check": "CURRENT BRANCH CLEAN BEFORE BLOCKER ARTIFACT CREATION",
+  "result": "SKIPPED",
+  "reason": "The required bundle was not found, so no post-bundle package state exists to validate."
+}

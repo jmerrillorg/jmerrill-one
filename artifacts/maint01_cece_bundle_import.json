@@ -1,0 +1,16 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_cece_bundle_import",
+  "created_at": "2026-08-20T10:37:41Z",
+  "target_repository": "J Merrill One",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "required_bundle": "maint01-cece-6afc680.bundle",
+  "expected_remote_ref": "refs/remotes/cece/maint01",
+  "expected_tip": "6afc680aa2b1c0a854617b00f7ea8de69617f0bc",
+  "fetch_command_status": "NOT RUN",
+  "reason": "Bundle validation failed because the required bundle file was not found.",
+  "imported_ref_exists": false,
+  "imported_ref_sha": null,
+  "result": "SKIPPED",
+  "dependency": "artifacts/maint01_cece_bundle_validation.json must be PASS before import."
+}

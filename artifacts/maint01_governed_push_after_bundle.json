@@ -1,0 +1,14 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_governed_push_after_bundle",
+  "created_at": "2026-08-20T10:37:41Z",
+  "target_repository": "J Merrill One",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "remote": "origin",
+  "pre_blocker_origin_sha": "0e7e31ed6835d510b2b18cfb51f4d5656485646c",
+  "pre_blocker_local_sha": "0e7e31ed6835d510b2b18cfb51f4d5656485646c",
+  "bundle_integrated": false,
+  "push_after_bundle_status": "NOT RUN",
+  "result": "SKIPPED",
+  "reason": "Package instruction requires CECE bundle integration before the governed post-bundle push."
+}

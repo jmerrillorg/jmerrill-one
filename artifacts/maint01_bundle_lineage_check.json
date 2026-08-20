@@ -1,0 +1,16 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_bundle_lineage_check",
+  "created_at": "2026-08-20T10:37:41Z",
+  "target_repository": "J Merrill One",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "current_governed_remote_sha": "0e7e31ed6835d510b2b18cfb51f4d5656485646c",
+  "current_local_sha": "0e7e31ed6835d510b2b18cfb51f4d5656485646c",
+  "cece_tip": "UNAVAILABLE - bundle not imported",
+  "expected_cece_tip": "6afc680aa2b1c0a854617b00f7ea8de69617f0bc",
+  "common_ancestor": null,
+  "fast_forward_possible": "UNKNOWN - bundle not imported",
+  "chosen_integration_method": "NONE - blocked before integration",
+  "result": "SKIPPED",
+  "reason": "Lineage cannot be computed without the imported CECE bundle ref."
+}
