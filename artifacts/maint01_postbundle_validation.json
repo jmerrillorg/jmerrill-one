@@ -1,22 +1,16 @@
 {
   "package": "MAINT-01",
   "artifact": "maint01_postbundle_validation",
-  "created_at": "2026-08-20T10:37:41Z",
+  "created_at": "2026-08-20T10:50:59Z",
   "target_repository": "J Merrill One",
   "target_branch": "codex/maint01-estate-rationalization",
-  "required_prior_phases": [
-    "CECE bundle validation",
-    "CECE bundle import",
-    "lineage check",
-    "bundle integration"
-  ],
-  "maint01_json_artifact_count_before_bundle": 95,
-  "json_parse_all_maint01_artifacts": "NOT RUN - post-bundle state unavailable",
-  "git_diff_check": "NOT RUN - post-bundle state unavailable",
-  "secret_credential_scan": "NOT RUN - post-bundle state unavailable",
-  "mailbox_content_leakage_check": "NOT RUN - post-bundle state unavailable",
-  "unrelated_publishing_editorial_check": "NOT RUN - post-bundle state unavailable",
-  "git_status_check": "CURRENT BRANCH CLEAN BEFORE BLOCKER ARTIFACT CREATION",
-  "result": "SKIPPED",
-  "reason": "The required bundle was not found, so no post-bundle package state exists to validate."
+  "merge_commit": "dfeae8a62896ced48ac9ef14a76ccbfa77209a2f",
+  "maint01_json_artifact_count_after_bundle": 215,
+  "json_parse_all_maint01_artifacts": "PASS - 216 artifacts/maint01_*.json files parsed successfully",
+  "git_diff_check": "PASS",
+  "secret_credential_scan": "PASS - no private keys, GitHub tokens, OpenAI API keys, or AWS access keys detected in MAINT-01 artifacts",
+  "mailbox_content_leakage_check": "PASS - no raw message header/body markers detected in MAINT-01 artifacts",
+  "unrelated_publishing_editorial_check": "PASS - branch delta contains only artifacts/maint01_* paths",
+  "git_status_check": "PASS - only MAINT-01 post-bundle evidence files modified before evidence commit",
+  "result": "PASS"
 }

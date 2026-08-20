@@ -1,32 +1,29 @@
 {
   "package": "MAINT-01",
   "artifact": "maint01_cece_bundle_validation",
-  "created_at": "2026-08-20T10:37:41Z",
+  "created_at": "2026-08-20T10:50:59Z",
   "target_repository": "J Merrill One",
   "target_branch": "codex/maint01-estate-rationalization",
   "target_pr": 6,
-  "required_bundle": {
-    "filename": "maint01-cece-6afc680.bundle",
+  "bundle": {
+    "path": "/Volumes/UsersExternal/_ACTIVE_WORK/maint01cece6afc680.bundle",
+    "provided_filename": "maint01cece6afc680.bundle",
+    "instruction_filename": "maint01-cece-6afc680.bundle",
+    "sha256": "a6ae584246d3fd049b51119ebfac561b28ed033a8f8f2656df45881eaacafbff",
+    "expected_sha256": "a6ae584246d3fd049b51119ebfac561b28ed033a8f8f2656df45881eaacafbff",
     "expected_branch": "refs/heads/claude/loving-planck-1cfoo2",
     "expected_tip": "6afc680aa2b1c0a854617b00f7ea8de69617f0bc"
   },
-  "search_result": "NOT FOUND",
-  "searched_locations": [
-    "/Users/jmerrillone/.codex/attachments",
-    "/Users/jmerrillone/Downloads",
-    "/tmp",
-    "/private/tmp",
-    "/Volumes/UsersExternal/Developer",
-    "/Users/jmerrillone excluding Library at maxdepth 4",
-    "/Users/jmerrillone/.codex/worktrees"
+  "file_exists": true,
+  "file_non_zero": true,
+  "git_bundle_verify": "PASS",
+  "advertised_heads": [
+    {
+      "sha": "6afc680aa2b1c0a854617b00f7ea8de69617f0bc",
+      "ref": "refs/heads/claude/loving-planck-1cfoo2"
+    }
   ],
-  "file_exists": false,
-  "file_non_zero": false,
-  "git_bundle_verify": "NOT RUN - bundle file absent",
-  "git_bundle_list_heads": "NOT RUN - bundle file absent",
-  "required_branch_advertised": "UNKNOWN - bundle file absent",
-  "required_tip_advertised": "UNKNOWN - bundle file absent",
-  "result": "FAIL",
-  "stop_rule": "Do not proceed if the bundle cannot be located and verified.",
-  "downstream_cleanup_authorization": "BLOCKED - approved Microsoft cleanup cannot run until import, integration, push, and PR validation phases pass."
+  "required_branch_advertised": true,
+  "required_tip_advertised": true,
+  "result": "PASS"
 }
