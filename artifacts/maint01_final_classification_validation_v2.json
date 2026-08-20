@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "Validate final MAINT-01 classification against all evidence",
+  "target_classification": "MAINT-01 COMPLETE — ESTATE RATIONALIZED; FOUNDER POLICY/CLEANUP DECISIONS REQUIRED",
+  "result": "PASS",
+  "conditions": {
+    "all_evidence_domains_complete": "PASS — 10 domains complete or complete with documented limitation",
+    "no_load_bearing_unknowns": "PASS — 0 blocking unknowns; 3 sites UNKNOWN activity but confirmed KEEP",
+    "founder_decisions_identified": "PASS — FD-001 through FD-006 fully specified",
+    "no_destructive_action_without_approval": "PASS — all cleanup gates on explicit FD approval",
+    "retirement_hard_gates_applied": "PASS — 0 objects pass all hard gates without Founder confirmation",
+    "artifact_suite_complete": "PASS — 159 MAINT-01 artifacts covering all domains",
+    "json_valid": "PASS — 143 JSON files, 0 parse errors",
+    "no_secrets": "PASS — no credentials or mailbox content in any artifact",
+    "git_clean": "PASS — working tree clean, diff --check clean",
+    "cody_lineage_preserved": "PASS — all Cody commits intact in merge history"
+  },
+  "use_remediation_required": false,
+  "remediation_required_condition": "Would apply only if an evidence gap materially prevents safe policy/classification decisions — none exists"
+}

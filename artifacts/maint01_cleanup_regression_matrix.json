@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Regression verification matrix — what to test after each cleanup wave",
+
+  "domains": {
+    "identity": ["Sign-in for all active users post-wave", "Admin access (jm1-admin) confirmed", "Service account functionality unchanged", "No MFA lockouts"],
+    "mail": ["Inbound delivery to all public-facing mailboxes", "Outbound from no-reply@ and notifications@", "Shared mailbox delegate access unchanged", "Aliases route correctly if changed", "Bookings confirmation emails deliver"],
+    "collaboration": ["Teams channel access for active teams", "SharePoint site access for document owners", "Planner tasks accessible", "OneNote notebooks accessible"],
+    "automation": ["Power Automate flows trigger and complete successfully", "Dataverse writes/reads from affected entities", "Dynamics 365 workflows unaffected", "Customer Voice forms route correctly"],
+    "web": ["App Service (HOST-02) responds and serves correct content", "GitHub Actions workflows complete without credential failure", "One intake form routes to correct destination", "Financial Functions respond", "Public websites accessible"],
+    "specific_to_waves": {
+      "Wave 4 mailbox": ["Test email to each changed mailbox from external address", "Confirm forwarding/alias routing", "Confirm Bookings still sends confirmations if mailbox is used by Bookings"],
+      "Wave 5 teams": ["Confirm voicemail delivery to voicemail@jmerrill.pub if Voicemail Team decoupled", "Confirm no active meeting or channel in archived Teams", "Confirm SharePoint site for archived Team is still readable"],
+      "Wave 6 sharepoint": ["Confirm foundation_comm content accessible in foundation_div if migrated", "Confirm no Power Automate flows broke after projects cleanup", "Confirm no GitHub Action broke after projects cleanup"]
+    }
+  },
+
+  "success_criteria": "Functional test passes for each applicable domain, not merely that the admin command returned success"
+}

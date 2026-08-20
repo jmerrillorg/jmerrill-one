@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_final_lineage_reconciliation",
+  "generated": "2026-08-19",
+  "origin_governed_sha": "85cbc9c",
+  "claude_tip": "6f6e4bc",
+  "common_ancestor": "85cbc9c",
+  "cody_lineage_incorporated": true,
+  "evidence": "96d123e is a merge commit with parents [efc50e4, 85cbc9c]. 85cbc9c is the tip of origin/codex/maint01-estate-rationalization. Full Cody history is contained within Claude branch via this merge.",
+  "fast_forward_possible": true,
+  "no_rebase_required": true,
+  "claude_commits_not_amended": true,
+  "integration_method": "Fast-forward codex/maint01-estate-rationalization to 6f6e4bc"
+}

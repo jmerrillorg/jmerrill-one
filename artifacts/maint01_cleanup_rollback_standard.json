@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Rollback standard — realistic recovery paths for each destructive action type",
+
+  "license_removal": {
+    "action": "License reassignment via M365 admin center",
+    "time_to_restore": "Minutes",
+    "limitations": "OneDrive data preserved for 30 days after license removal; Teams data preserved per retention policy"
+  },
+  "mailbox_change": {
+    "alias_restoration": "Alias can be re-added via Exchange admin center",
+    "forwarding_restoration": "Rule can be removed; original behavior restores immediately",
+    "mailbox_retirement": "Soft-deleted mailbox recoverable for 30 days in Exchange Online; after 30 days, permanent"
+  },
+  "teams_group_archive": {
+    "teams_unarchive": "Teams archive is reversible — unarchive via Teams admin center",
+    "group_soft_delete": "M365 Group soft-deleted — recoverable for 30 days",
+    "sharepoint_read_only": "SharePoint read-only is fully reversible; no data loss"
+  },
+  "sharepoint_content_deletion": {
+    "recycle_bin": "SharePoint first-stage recycle bin retains items for 93 days; second-stage recycle bin extends further",
+    "migration_destination": "foundation_div (destination for foundation_comm content) retains migrated content independent of source deletion",
+    "archive_zip": "sites/projects dev artifact ZIP is the rollback for SharePoint deletion of build artifacts"
+  },
+  "app_registration_retirement": {
+    "soft_delete": "Entra ID app registrations are soft-deleted — recoverable within 30 days",
+    "federated_credentials": "OIDC federated credentials can be re-added; GitHub Actions re-authenticates on next run",
+    "important": "Service principal permission grants (Azure RBAC, Dataverse roles) must be reassigned after recovery — document before retirement"
+  },
+  "repository_archive": {
+    "github_archive": "GitHub archive is fully reversible — unarchive via repo settings",
+    "permanent_delete": "NEVER delete remote repos. Archive only."
+  }
+}

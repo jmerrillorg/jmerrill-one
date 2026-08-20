@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Validate Claude's MAINT-01 final classification against required conditions",
+  "claimed_classification": "MAINT-01 COMPLETE — ESTATE RATIONALIZED; FOUNDER CLEANUP CONFIRMATION REQUIRED",
+  "result": "PASS — FOUNDER DECISION STAGE",
+
+  "required_conditions": {
+    "repository_evidence_complete": {
+      "status": "PASS",
+      "detail": "19 GitHub repos enumerated, all classified, ownership documented in alignment matrix v3"
+    },
+    "teams_evidence_complete": {
+      "status": "PASS",
+      "detail": "14 Teams fully mapped: channels, owners, members, M365 Group, SharePoint site, mailbox"
+    },
+    "exchange_evidence_complete": {
+      "status": "PASS",
+      "detail": "16 shared mailboxes, 1 distribution group, 18 mail-enabled recipients. No mailbox contents read. 7 require Founder usage confirmation."
+    },
+    "sharepoint_tenant_estate_complete": {
+      "status": "PASS",
+      "detail": "16 sites identified (14 Team-connected + 1 standalone + 1 OneDrive). All titles/URLs confirmed. 13/14 drive IDs confirmed. foundation_comm standalone discovery complete."
+    },
+    "dependency_graph_complete": {
+      "status": "PASS WITH DOCUMENTED LIMITATION",
+      "detail": "Known automations mapped (publishing pipeline, JM1 calendar sync). sites/projects and sites/foundation_comm automation dependencies UNKNOWN — flagged in preservation maps. Does not prevent safe classification."
+    },
+    "preservation_maps_exist": {
+      "status": "PASS",
+      "detail": "maint01_sharepoint_preservation_map_v2.json covers all consolidation candidates"
+    },
+    "retirement_manifest_certified": {
+      "status": "PASS",
+      "detail": "maint01_retirement_manifest_v3.json — Section 1 (high-confidence retirement) is empty. No object passes all hard gates."
+    },
+    "unresolved_unknowns_safe": {
+      "status": "PASS",
+      "detail": "0 blocking unknowns remain. 3 sites have unknown drive IDs but are classified KEEP — ACTIVE."
+    }
+  },
+
+  "recommended_classification": "MAINT-01 COMPLETE — ESTATE RATIONALIZED; FOUNDER POLICY/CLEANUP DECISIONS REQUIRED",
+  "note": "Preferred phrasing per instruction §51: 'FOUNDER POLICY/CLEANUP DECISIONS REQUIRED' is more precise than 'FOUNDER CLEANUP CONFIRMATION REQUIRED' because FD-001 through FD-006 include both policy decisions (canon location, purpose confirmation) and cleanup authorizations (archive, consolidate). Both phrasings are acceptable; v4 closeout uses the more precise form."
+}

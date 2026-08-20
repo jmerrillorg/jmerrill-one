@@ -1,0 +1,216 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "FD-001 through FD-006 \u2014 complete Founder decision package",
+  "FD-001": {
+    "title": "foundation_comm Site \u2014 Consolidate or Retain",
+    "decision": "Retain sites/foundation_comm as standalone communication site, OR consolidate content into sites/foundation_div and retire foundation_comm",
+    "affected_objects": [
+      "sites/foundation_comm (standalone)",
+      "sites/foundation_div (destination if consolidate)"
+    ],
+    "current_state": "Active standalone site, no Team/Group connection, last active September 2025",
+    "recommendation": "CONSOLIDATE into foundation_div and retire",
+    "alternatives": [
+      "RETAIN as standalone \u2014 no change"
+    ],
+    "cost_impact": "Minor storage reduction",
+    "security_impact": "None",
+    "operational_impact": "Links to foundation_comm must be updated if consolidated",
+    "consequence_of_deferral": "Standalone governance exception continues \u2014 no operational harm",
+    "approval_phrase_consolidate": "APPROVE FD-001 \u2014 CONSOLIDATE foundation_comm into foundation_div and retire",
+    "approval_phrase_retain": "APPROVE FD-001 \u2014 RETAIN foundation_comm as standalone"
+  },
+  "FD-002": {
+    "title": "Enterprise Canon Location",
+    "decision": "Confirm ImplementationHQ/Architecture/00_CANON as the authoritative enterprise canon; publishing copy becomes reference",
+    "affected_objects": [
+      "sites/ImplementationHQ/Architecture/00_CANON",
+      "sites/publishing (reference label only)"
+    ],
+    "current_state": "Two copies \u2014 ImplementationHQ (internal wiki) and publishing (rendered output)",
+    "recommendation": "ImplementationHQ is authoritative; publishing = reference",
+    "alternatives": [
+      "Designate publishing as authoritative \u2014 not recommended (rendering artifact, not source)"
+    ],
+    "cost_impact": "None",
+    "security_impact": "None",
+    "operational_impact": "Label-only change \u2014 no files moved",
+    "consequence_of_deferral": "Dual-canon ambiguity continues \u2014 no operational harm",
+    "approval_phrase": "APPROVE FD-002 \u2014 ImplementationHQ/Architecture/00_CANON is the authoritative enterprise canon"
+  },
+  "FD-003": {
+    "title": "Projects Site Dev Artifact Cleanup",
+    "decision": "Archive and remove dev build artifacts from sites/projects SharePoint",
+    "affected_objects": [
+      "Dev build artifacts in sites/projects (not the site itself)"
+    ],
+    "current_state": "Build outputs, compiled binaries, CI logs in SharePoint alongside project docs",
+    "recommendation": "ARCHIVE/REMOVE \u2014 ZIP first, then remove from SharePoint; GitHub is authoritative",
+    "alternatives": [
+      "RETAIN in SharePoint \u2014 not recommended; creates dual-source confusion"
+    ],
+    "cost_impact": "Moderate storage reduction",
+    "security_impact": "None",
+    "operational_impact": "Dev artifact content no longer in SharePoint; ZIP archive preserved",
+    "consequence_of_deferral": "Dev artifact sprawl continues \u2014 no operational harm",
+    "approval_phrase": "APPROVE FD-003 \u2014 archive and remove dev build artifacts from sites/projects"
+  },
+  "FD-004a": {
+    "title": "Sales Team",
+    "decision": "Archive Sales Team (if inactive) or retain",
+    "affected_objects": [
+      "Sales Team",
+      "connected M365 Group",
+      "pricing sheet content in Teams/SharePoint"
+    ],
+    "current_state": "Activity unclear \u2014 90-day channel activity audit pending Wave 1/2",
+    "recommendation": "ARCHIVE after pricing sheet migration if no active channels confirmed",
+    "alternatives": [
+      "RETAIN if active Sales collaboration ongoing"
+    ],
+    "cost_impact": "Minor license optimization possible",
+    "security_impact": "None",
+    "operational_impact": "Sales Team archived; pricing sheets migrated first",
+    "consequence_of_deferral": "Potentially inactive Team persists",
+    "approval_phrase_archive": "APPROVE FD-004a \u2014 ARCHIVE Sales Team after pricing sheet migration",
+    "approval_phrase_retain": "APPROVE FD-004a \u2014 RETAIN Sales Team"
+  },
+  "FD-004b": {
+    "title": "Voicemail Team",
+    "decision": "Retain Voicemail Team (until routing dependency confirmed) or archive",
+    "affected_objects": [
+      "Voicemail Team",
+      "Teams Phone routing policies that may reference this Team"
+    ],
+    "current_state": "Suspected Teams Phone routing dependency \u2014 not yet confirmed or decoupled",
+    "recommendation": "RETAIN until routing confirmed decoupled",
+    "alternatives": [
+      "ARCHIVE if routing confirmed safe \u2014 requires routing audit first"
+    ],
+    "cost_impact": "None (retain is default)",
+    "security_impact": "None",
+    "operational_impact": "Voice routing disruption risk if archived prematurely",
+    "consequence_of_deferral": "Voicemail Team remains \u2014 no harm",
+    "approval_phrase_retain": "APPROVE FD-004b \u2014 RETAIN Voicemail Team pending routing confirmation",
+    "approval_phrase_archive": "APPROVE FD-004b \u2014 ARCHIVE Voicemail Team (use only after routing audit)"
+  },
+  "FD-005": {
+    "title": "Seven Shared Mailboxes \u2014 Classification Required",
+    "decision": "Classify each of 7 shared mailboxes: KEEP-CORE, KEEP-ALIAS, CONSOLIDATE, or RETIRE",
+    "affected_objects": [
+      "accounting@jmerrill.one",
+      "board@jmerrill.one",
+      "donations@jmerrill.one",
+      "grants@jmerrill.one",
+      "media@jmerrill.one",
+      "volunteers@jmerrill.one",
+      "contacts@jmerrill.one"
+    ],
+    "current_state": "9 of 16 mailboxes already confirmed KEEP (logging@, info@, notifications@, no-reply@, legal@, preneeds@, royalties@, submissions@, tech@). These 7 require explicit Founder classification.",
+    "mailbox_detail": {
+      "accounting_at": {
+        "smtp": "accounting@jmerrill.one",
+        "aliases": [
+          "billing@jmerrill.one",
+          "finance@jmerrill.org",
+          "billing@jmerrill.pub"
+        ],
+        "item_count": 1617,
+        "forwarding": "None",
+        "recommendation": "KEEP-CORE \u2014 1617 items, active billing/finance identity, multiple critical aliases",
+        "approval_option": "accounting@ KEEP-CORE"
+      },
+      "board_at": {
+        "smtp": "board@jmerrill.one",
+        "aliases": [
+          "leadership@jmerrill.org",
+          "board@jmerrill.org"
+        ],
+        "item_count": 18,
+        "forwarding": "foundation@jmerrill.one",
+        "recommendation": "KEEP-CORE \u2014 governance-critical board identity",
+        "approval_option": "board@ KEEP-CORE"
+      },
+      "donations_at": {
+        "smtp": "donations@jmerrill.one",
+        "aliases": [
+          "donations@jmerrill.org",
+          "donation@jmerrill.one"
+        ],
+        "item_count": 53,
+        "forwarding": "foundation@jmerrill.one",
+        "recommendation": "KEEP-CORE \u2014 revenue-critical donations intake",
+        "approval_option": "donations@ KEEP-CORE"
+      },
+      "grants_at": {
+        "smtp": "grants@jmerrill.one",
+        "aliases": [
+          "grants@jmerrill.org",
+          "grants-team@jmerrill.org"
+        ],
+        "item_count": 794,
+        "forwarding": "foundation@jmerrill.one",
+        "recommendation": "KEEP-CORE \u2014 794 items, active grants administration, revenue-critical",
+        "approval_option": "grants@ KEEP-CORE"
+      },
+      "media_at": {
+        "smtp": "media@jmerrill.one",
+        "aliases": [
+          "events@jmerrill.pub",
+          "social@jmerrill.org",
+          "pr@jmerrill.pub"
+        ],
+        "item_count": 54,
+        "forwarding": "publishing@jmerrill.one",
+        "recommendation": "KEEP-ALIAS \u2014 public-facing media/PR identity; overlaps with publishing workflow",
+        "approval_option": "media@ KEEP-ALIAS"
+      },
+      "volunteers_at": {
+        "smtp": "volunteers@jmerrill.one",
+        "aliases": [
+          "volunteers@jmerrill.org",
+          "volunteers-team@jmerrill.org"
+        ],
+        "item_count": 18,
+        "forwarding": "foundation@jmerrill.one",
+        "recommendation": "KEEP-ALIAS \u2014 foundation volunteer intake; low volume but Foundation-facing",
+        "approval_option": "volunteers@ KEEP-ALIAS"
+      },
+      "contacts_at": {
+        "smtp": "contacts@jmerrill.one",
+        "aliases": [
+          "contacts@jmerrillfoundation.onmicrosoft.com"
+        ],
+        "item_count": 6,
+        "forwarding": "None",
+        "recommendation": "CONSOLIDATE into info@ \u2014 6 items, no forwarding, overlapping purpose with info@",
+        "approval_option": "contacts@ CONSOLIDATE into info@"
+      }
+    },
+    "cost_impact": "Minor \u2014 alias routing simplification only",
+    "security_impact": "None",
+    "operational_impact": "RETIRE/CONSOLIDATE: export history first; update external routing and documentation",
+    "consequence_of_deferral": "Shared mailbox sprawl continues \u2014 no operational harm",
+    "approval_phrase": "APPROVE FD-005 \u2014 accounting@ KEEP-CORE, board@ KEEP-CORE, donations@ KEEP-CORE, grants@ KEEP-CORE, media@ KEEP-ALIAS, volunteers@ KEEP-ALIAS, contacts@ CONSOLIDATE into info@"
+  },
+  "FD-006": {
+    "title": "Projects Team",
+    "decision": "Archive Projects Team or retain for active collaboration",
+    "affected_objects": [
+      "Projects Team",
+      "connected M365 Group",
+      "sites/projects SharePoint"
+    ],
+    "current_state": "Projects Team connected to sites/projects. GitHub may be authoritative for all project work.",
+    "recommendation": "ARCHIVE if GitHub confirmed authoritative and no active channel collaboration in 90 days",
+    "alternatives": [
+      "RETAIN if active channel collaboration ongoing"
+    ],
+    "cost_impact": "Minor license optimization possible",
+    "security_impact": "None",
+    "operational_impact": "Sites/projects becomes read-only when Team archived; must complete Wave 6 Step 2 first",
+    "consequence_of_deferral": "Potentially redundant Team persists alongside GitHub",
+    "approval_phrase_archive": "APPROVE FD-006 \u2014 ARCHIVE Projects Team",
+    "approval_phrase_retain": "APPROVE FD-006 \u2014 RETAIN Projects Team"
+  }
+}

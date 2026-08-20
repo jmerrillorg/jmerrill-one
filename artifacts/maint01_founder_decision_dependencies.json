@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Decision dependency graph — which FDs must precede which cleanup waves",
+
+  "decisions": {
+    "FD-001": {
+      "independent_of": ["FD-002", "FD-003", "FD-004", "FD-005", "FD-006"],
+      "enables": ["Wave 6 Step 1 — foundation_comm content migration and retirement"],
+      "blocking_if_deferred": false,
+      "note": "FD-001 can be answered independently. Its answer does not affect any other FD."
+    },
+    "FD-002": {
+      "independent_of": ["FD-001", "FD-003", "FD-004", "FD-005", "FD-006"],
+      "enables": ["Wave 6 Step 3 — enterprise canon governance label added to publishing copy"],
+      "blocking_if_deferred": false,
+      "note": "FD-002 is a documentation/labeling decision with no file movements. Independent of all other FDs."
+    },
+    "FD-003": {
+      "independent_of": ["FD-001", "FD-002", "FD-004", "FD-005"],
+      "related_to": ["FD-006"],
+      "enables": ["Wave 6 Step 2 — sites/projects dev artifact cleanup"],
+      "relationship_with_FD006": "FD-003 authorizes content cleanup; FD-006 authorizes Team shell archival. FD-003 can proceed first; FD-006 does not block FD-003.",
+      "blocking_if_deferred": false
+    },
+    "FD-004": {
+      "independent_of": ["FD-001", "FD-002", "FD-003", "FD-005", "FD-006"],
+      "enables": ["Wave 5 Step 1 — Sales Team archival", "Wave 5 Step 2 — Voicemail Team decoupling (conditional on routing confirmation)"],
+      "blocking_if_deferred": false,
+      "note": "FD-004 has two sub-parts (Sales and Voicemail) that are independent of each other. Sales can be answered without resolving Voicemail, and vice versa."
+    },
+    "FD-005": {
+      "independent_of": ["FD-001", "FD-002", "FD-003", "FD-004", "FD-006"],
+      "enables": ["Wave 4 — mailbox rationalization per classification"],
+      "blocking_if_deferred": false,
+      "note": "FD-005 is fully independent. Mailbox decisions do not affect any other cleanup wave gate."
+    },
+    "FD-006": {
+      "independent_of": ["FD-001", "FD-002", "FD-004", "FD-005"],
+      "related_to": ["FD-003"],
+      "enables": ["Wave 5 Step 3 — Projects Team archival (if approved)"],
+      "relationship_with_FD003": "FD-003 content cleanup should complete before FD-006 Team archival to avoid content loss.",
+      "blocking_if_deferred": false
+    }
+  },
+
+  "wave_gate_summary": {
+    "Wave 1": "No FD required — security credential review is independent",
+    "Wave 2": "No FD required — no license removals currently identified",
+    "Wave 3": "No FD required — service account review is independent",
+    "Wave 4": "Requires FD-005",
+    "Wave 5": "Requires FD-004 (Sales/Voicemail) and FD-006 (Projects Team)",
+    "Wave 6": "Requires FD-001 (foundation_comm), FD-002 (canon label), FD-003 (projects content)",
+    "Wave 7": "No FD required — app identity review is independent (no retirements identified yet)",
+    "Wave 8": "No FD required — no repo deletions proposed"
+  },
+
+  "parallel_decisions": "All six FDs can be answered simultaneously — none blocks another"
+}

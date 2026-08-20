@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_fd006_dependency_certification",
+  "generated": "2026-08-19",
+  "fd": "FD-006",
+  "approval": "CONDITIONAL — delete 2 expired app registrations ONLY IF dependency certification proves both are unused/orphaned",
+  "certification_status": "DEFERRED — M365 MCP connection unavailable in current session",
+  "m365_mcp_connected": false,
+  "reason": "Dependency certification requires Graph API to check App Service, Azure Functions, GitHub OIDC federation, Dataverse app-user mapping, Azure role assignments, API permissions, Power Platform, and service principal workloads for each of the 2 app registrations.",
+  "action_required": "Re-run in a session with active M365 MCP connection. Complete dependency certification first; delete only if both pass all checks."
+}

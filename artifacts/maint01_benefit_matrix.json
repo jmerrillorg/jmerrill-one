@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Cost/complexity benefit classification for each cleanup candidate",
+
+  "items": [
+    { "object": "sites/foundation_comm (consolidate)", "benefit": "DUPLICATION REMOVAL + CANON CLARITY", "cost_saving": "Low", "admin_reduction": "Moderate — one fewer site to govern", "security_reduction": "None" },
+    { "object": "Enterprise canon label (FD-002)", "benefit": "CANON CLARITY", "cost_saving": "None", "admin_reduction": "High — prevents version drift", "security_reduction": "None" },
+    { "object": "sites/projects dev content (FD-003)", "benefit": "DIRECT SERVICE SAVINGS (storage) + CANON CLARITY", "cost_saving": "Moderate storage reduction", "admin_reduction": "Moderate", "security_reduction": "None" },
+    { "object": "Sales Team (FD-004, if archived)", "benefit": "ADMINISTRATION REDUCTION", "cost_saving": "Minor — one Team/Group", "admin_reduction": "Low", "security_reduction": "None" },
+    { "object": "Voicemail Team (FD-004, if archived)", "benefit": "ADMINISTRATION REDUCTION", "cost_saving": "Minor — one Team/Group", "admin_reduction": "Low", "security_reduction": "None" },
+    { "object": "Shared mailboxes (FD-005, retired ones)", "benefit": "ADMINISTRATION REDUCTION + DUPLICATION REMOVAL", "cost_saving": "Minimal (shared mailboxes are unlicensed)", "admin_reduction": "Low per mailbox", "security_reduction": "Low — reduces unmonitored attack surface" },
+    { "object": "Projects Team (FD-006, if archived)", "benefit": "ADMINISTRATION REDUCTION", "cost_saving": "Minor", "admin_reduction": "Low", "security_reduction": "None" },
+    { "object": "All 11 confirmed Teams", "benefit": "NO MATERIAL BENEFIT — RETAIN", "cost_saving": "N/A", "admin_reduction": "N/A", "note": "These Teams serve active collaboration; retaining them is the correct outcome" },
+    { "object": "All 9 security groups", "benefit": "NO MATERIAL BENEFIT — RETAIN", "cost_saving": "N/A", "admin_reduction": "N/A", "note": "Security boundaries must be retained" },
+    { "object": "All 19 repos", "benefit": "NO MATERIAL BENEFIT — RETAIN", "cost_saving": "N/A", "admin_reduction": "N/A", "note": "All repos are active or supporting" }
+  ],
+
+  "conclusion": "MAINT-01 cleanup delivers modest but real benefits: canon clarity, storage reduction, reduced admin surface. The primary value is governance correctness, not deletion volume."
+}

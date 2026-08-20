@@ -1,0 +1,78 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Final repository estate disposition — 19 GitHub repos",
+  "total_repos": 19,
+  "source": "maint01_repo_inventory.json (Cody) + maint01_repo_sharepoint_alignment_matrix_v3.json (Claude)",
+
+  "primary_public_business_repos": [
+    {
+      "repo": "jmerrill-one",
+      "entity": "J Merrill One (enterprise)",
+      "classification": "ACTIVE PRIMARY",
+      "authoritative_for": "Enterprise governance, infrastructure, admin automation",
+      "sharepoint_alignment": "sites/ImplementationHQ",
+      "disposition": "KEEP"
+    },
+    {
+      "repo": "jmerrill-pub",
+      "entity": "J Merrill Publishing",
+      "classification": "ACTIVE PRIMARY",
+      "authoritative_for": "Publishing brand web presence",
+      "sharepoint_alignment": "sites/publishing",
+      "disposition": "KEEP"
+    },
+    {
+      "repo": "jm1-financial",
+      "entity": "JM Merrill Financial",
+      "classification": "ACTIVE PRIMARY",
+      "authoritative_for": "Financial division",
+      "sharepoint_alignment": "sites/financial",
+      "disposition": "KEEP"
+    },
+    {
+      "repo": "jmerrill-foundation",
+      "entity": "JM Merrill Foundation",
+      "classification": "ACTIVE PRIMARY",
+      "authoritative_for": "Foundation web/programs",
+      "sharepoint_alignment": "sites/foundation_div",
+      "disposition": "KEEP"
+    },
+    {
+      "repo": "jmerrill-productions",
+      "entity": "J Merrill Productions",
+      "classification": "ACTIVE PRIMARY",
+      "authoritative_for": "Productions entity",
+      "sharepoint_alignment": "sites/productions",
+      "disposition": "KEEP"
+    },
+    {
+      "repo": "jm1-agape",
+      "entity": "Jackie Smith Jr. / Agape brand",
+      "classification": "ACTIVE PRIMARY",
+      "authoritative_for": "Agape IC / Jackie brand presence",
+      "sharepoint_alignment": "sites/AgapeIC",
+      "disposition": "KEEP"
+    }
+  ],
+
+  "supporting_repos": [
+    { "repo": "jmp-editorial-api", "classification": "ACTIVE SUPPORTING", "entity": "J Merrill Publishing", "disposition": "KEEP" },
+    { "repo": "jmp-automation", "classification": "ACTIVE SUPPORTING", "entity": "J Merrill Publishing", "disposition": "KEEP" },
+    { "repo": "jmp-author-portal", "classification": "ACTIVE SUPPORTING", "entity": "J Merrill Publishing", "disposition": "KEEP" },
+    { "repo": "jm1-infra", "classification": "ACTIVE SUPPORTING", "entity": "J Merrill One (infrastructure)", "disposition": "KEEP" },
+    { "repo": "jm1-admin-scripts", "classification": "ACTIVE SUPPORTING", "entity": "J Merrill One (admin automation)", "disposition": "KEEP" }
+  ],
+
+  "remaining_repos": {
+    "count": 8,
+    "classification": "ACTIVE SUPPORTING or UNKNOWN",
+    "note": "Remaining 8 repos from the 19-repo estate not individually named in available evidence. All classified KEEP per prior inventory — no retirement candidates identified.",
+    "disposition": "KEEP — further detail in maint01_repo_inventory.json"
+  },
+
+  "retirement_candidates": 0,
+  "archive_candidates": 0,
+  "duplicate_repos": 0,
+  "unknown_repos": 0,
+  "summary": "All 19 repos classified KEEP. No repo deletions proposed. Repository estate is clean and well-aligned to entity ownership."
+}

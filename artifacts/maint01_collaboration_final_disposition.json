@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Final Teams and M365 Groups disposition — 14 Teams, 26 M365 Groups",
+  "total_teams": 14,
+  "total_m365_groups": 26,
+
+  "teams": [
+    { "team": "Publishing Team", "classification": "REAL COLLABORATION — RETAIN", "group": "Publishing", "sharepoint": "sites/publishing", "disposition": "KEEP" },
+    { "team": "Financial Team", "classification": "REAL COLLABORATION — RETAIN", "group": "Financial", "sharepoint": "sites/financial", "disposition": "KEEP" },
+    { "team": "Foundation Team", "classification": "REAL COLLABORATION — RETAIN", "group": "Foundation", "sharepoint": "sites/foundation_div", "disposition": "KEEP" },
+    { "team": "Agape International Cathedral", "classification": "EXTERNAL / MISSION COLLABORATION — RETAIN", "group": "AgapeIC", "sharepoint": "sites/AgapeIC", "disposition": "KEEP" },
+    { "team": "Implementation HQ", "classification": "REAL COLLABORATION — RETAIN", "group": "ImplementationHQ", "sharepoint": "sites/ImplementationHQ", "disposition": "KEEP" },
+    { "team": "HQ", "classification": "REAL COLLABORATION — RETAIN", "group": "JMerrillOne", "sharepoint": "sites/JMerrillOne", "disposition": "KEEP" },
+    { "team": "Security & Compliance", "classification": "REAL COLLABORATION — RETAIN", "group": "Security", "sharepoint": "sites/security", "disposition": "KEEP" },
+    { "team": "Marketing", "classification": "REAL COLLABORATION — RETAIN", "group": "Marketing", "sharepoint": "sites/marketing", "disposition": "KEEP" },
+    { "team": "Support", "classification": "REAL COLLABORATION — RETAIN", "group": "Support", "sharepoint": "sites/support", "disposition": "KEEP" },
+    { "team": "Productions Team", "classification": "REAL COLLABORATION — RETAIN", "group": "Productions", "sharepoint": "sites/productions", "disposition": "KEEP" },
+    { "team": "Events", "classification": "REAL COLLABORATION — RETAIN", "group": "Events", "sharepoint": "sites/events", "disposition": "KEEP" },
+    { "team": "Sales", "classification": "FOUNDER DECISION REQUIRED", "group": "Sales", "sharepoint": "sites/sales", "disposition": "PENDING FD-004", "recommendation": "ARCHIVE if collaboration has ended" },
+    { "team": "Voicemail", "classification": "FOUNDER DECISION REQUIRED", "group": "Voicemail", "sharepoint": "sites/voicemail", "disposition": "PENDING FD-004", "recommendation": "RETAIN until routing confirmed, then assess" },
+    { "team": "Projects", "classification": "FOUNDER DECISION REQUIRED", "group": "Projects", "sharepoint": "sites/projects", "disposition": "PENDING FD-006", "recommendation": "ARCHIVE if collaboration moved to GitHub" }
+  ],
+
+  "m365_groups_note": "26 M365 Groups total. 14 are Team-backing Groups (one per Team above). Remaining 12 include mail-enabled groups, Planner groups, and deprecated groups. 'Deprecated - All Company' flagged as consolidation candidate. All others retained.",
+  "deprecated_all_company": {
+    "group": "Deprecated - All Company",
+    "classification": "CONSOLIDATE",
+    "action": "Assess mailbox and SharePoint site for retention content; retire if no active data",
+    "status": "PENDING — not yet assessed at content level"
+  },
+
+  "summary": {
+    "KEEP_CONFIRMED": 11,
+    "FOUNDER_DECISION_REQUIRED": 3,
+    "CONSOLIDATE_CANDIDATES": 1,
+    "RETIRE_CANDIDATES": 0
+  }
+}

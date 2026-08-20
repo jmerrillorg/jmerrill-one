@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_final_claude_tip_validation",
+  "generated": "2026-08-19",
+  "result": "PASS",
+  "authoritative_tip": "6f6e4bc",
+  "all_commits_signed": true,
+  "all_commits_noreply_anthropic": true,
+  "signed_commits": ["efc50e4","96d123e","12e6298","91937c6","34f9501","32e3439","6f6e4bc"],
+  "artifact_count": 185,
+  "json_parse_failures": 0,
+  "secrets_detected": false,
+  "no_publishing_editorial_content": true,
+  "no_mailbox_contents": true,
+  "no_unrelated_files": true,
+  "fd001_through_fd006_present": true,
+  "fd005_all_7_mailboxes_named": true,
+  "cleanup_wave_artifacts_present": true,
+  "final_closeout_v6_present": true,
+  "evidence_completeness_gate_present": true,
+  "retirement_hard_gate_present": true
+}

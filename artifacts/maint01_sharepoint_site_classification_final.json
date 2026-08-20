@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "Definitive SharePoint site classification — resolves all prior narrative ambiguity",
+  "version": "FINAL v2 — all ambiguity resolved",
+  "classifications": {
+    "foundation_div": {
+      "type": "TEAM-CONNECTED",
+      "connected_to": "Foundation Division Team",
+      "url": "sites/foundation_div",
+      "note": "Was listed as potentially standalone in early enumeration narrative — CONFIRMED TEAM-CONNECTED"
+    },
+    "projects": {
+      "type": "TEAM-CONNECTED",
+      "connected_to": "Projects Team",
+      "url": "sites/projects",
+      "note": "Legacy dev artifact content present — pending FD-003. CONFIRMED TEAM-CONNECTED, not standalone."
+    },
+    "support": {
+      "type": "TEAM-CONNECTED",
+      "connected_to": "Support Team",
+      "url": "sites/support",
+      "note": "Appeared in enumeration narrative only — CONFIRMED TEAM-CONNECTED"
+    },
+    "foundation_comm": {
+      "type": "STANDALONE COMMUNICATION SITE",
+      "connected_to": null,
+      "url": "sites/foundation_comm",
+      "last_active": "September 2025",
+      "note": "ONLY net-new standalone discovery from Claude's SharePoint enumeration. No Team/Group connection. Pending FD-001."
+    },
+    "implementationhq": {
+      "type": "TEAM-CONNECTED",
+      "connected_to": "ImplementationHQ Team",
+      "url": "sites/ImplementationHQ",
+      "note": "Enterprise wiki/governance hub — KEEP"
+    },
+    "loop_workspace_storage": {
+      "type": "LOOP / WORKSPACE STORAGE",
+      "connected_to": "ImplementationHQ OneNote pod",
+      "note": "Microsoft-managed Loop/workspace storage — not a navigable site, not a cleanup candidate"
+    },
+    "jm1_admin_onedrive": {
+      "type": "PERSONAL ONEDRIVE",
+      "connected_to": "jm1-admin@jmerrill.one",
+      "note": "Admin personal OneDrive — out of scope for MAINT-01 site cleanup"
+    },
+    "all_other_team_connected_sites": {
+      "type": "TEAM-CONNECTED",
+      "count": 11,
+      "note": "All remaining 11 sites confirmed Team-connected via Teams map. All KEEP."
+    }
+  },
+  "summary": {
+    "total_team_connected": 14,
+    "standalone_communication": 1,
+    "loop_workspace_storage": 1,
+    "admin_onedrive": 1,
+    "total_surfaces": 17,
+    "in_cleanup_scope": 15,
+    "retirement_candidates": 0,
+    "founder_decisions_required": 1
+  },
+  "narrative_discrepancy_resolved": "foundation_div, projects, and support appeared as 'newly surfaced' in Claude's enumeration because their URLs/titles were null in Cody's prior Team-connected inventory. Claude's enumeration populated those identities. They were always Team-connected — not standalone. The only net-new discovery was foundation_comm."
+}

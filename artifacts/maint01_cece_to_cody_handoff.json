@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_cece_to_cody_handoff",
+  "generated": "2026-08-19",
+  "handoff_type": "CECE → CODY",
+  "source_repo": "/home/user/jmerrill-one",
+  "source_branch": "claude/loving-planck-1cfoo2",
+  "authoritative_tip": "a38d8b4",
+  "working_tree_clean": true,
+  "artifact_count": 198,
+  "json_validation": "PASS — 0 failures",
+  "classification": "MAINT-01 CLEANUP EXECUTION BLOCKED — MICROSOFT ADMIN TOOL ACCESS REQUIRED",
+  "target_governed_branch": "codex/maint01-estate-rationalization",
+  "target_pr": 6,
+  "cody_git_recovery": {
+    "preferred": "git remote add cece-local /home/user/jmerrill-one && git fetch cece-local claude/loving-planck-1cfoo2",
+    "expected_tip": "a38d8b4",
+    "fallback_bundle": "git -C /home/user/jmerrill-one bundle create /tmp/maint01-cece.bundle claude/loving-planck-1cfoo2"
+  },
+  "approved_actions": {
+    "FD-001": "Delete 1 certified stale guest — re-verify dependency immediately before deletion",
+    "FD-002": "Unassign 4 orphaned Premium licenses — do not delete users",
+    "FD-003": "Disable sign-in for 2 inactive internal accounts — do not delete",
+    "FD-004": "Archive 3 inactive Teams/M365 Groups — do not delete; preserve SP/Planner/content",
+    "FD-005": "accounting@ KEEP-CORE, board@ KEEP-CORE, donations@ KEEP-CORE, grants@ KEEP-CORE, media@ KEEP-ALIAS (preserve events@/social@/pr@), volunteers@ KEEP-ALIAS, contacts@ CONSOLIDATE into info@",
+    "FD-006": "CONDITIONAL — delete 2 expired app regs ONLY IF dependency certification proves unused/orphaned"
+  },
+  "not_authorized": [
+    "SharePoint site deletion",
+    "repo deletion or archival",
+    "broad app-registration cleanup beyond 2 FD-006 candidates",
+    "moving enterprise canon",
+    "retiring foundation_comm"
+  ],
+  "cece_stop_condition": "HANDOFF COMPLETE — Cece will not push, retry GitHub, amend commits, execute cleanup, or create MAINT-02"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_founder_decisions_final_validation",
+  "generated": "2026-08-19",
+  "result": "READY FOR FOUNDER APPROVAL",
+  "decisions": {
+    "FD-001": {
+      "title": "Guest User Cleanup",
+      "status": "PENDING",
+      "approval_phrase": "APPROVE FD-001 — delete 1 stale guest",
+      "affected_count": 1
+    },
+    "FD-002": {
+      "title": "License Reassignment — 4 Unassigned Premium Licenses",
+      "status": "PENDING",
+      "approval_phrase": "APPROVE FD-002 — unassign 4 orphaned licenses",
+      "affected_count": 4
+    },
+    "FD-003": {
+      "title": "Inactive Internal Users — Disable or Delete",
+      "status": "PENDING",
+      "approval_phrase": "APPROVE FD-003 — disable 2 inactive internal accounts",
+      "affected_count": 2
+    },
+    "FD-004": {
+      "title": "Teams and M365 Groups Archival",
+      "status": "PENDING",
+      "approval_phrase": "APPROVE FD-004 — archive 3 inactive Teams/Groups",
+      "affected_count": 3
+    },
+    "FD-005": {
+      "title": "Seven Shared Mailboxes — Classification Required",
+      "status": "PENDING",
+      "approval_phrase": "APPROVE FD-005 — accounting@ KEEP-CORE, board@ KEEP-CORE, donations@ KEEP-CORE, grants@ KEEP-CORE, media@ KEEP-ALIAS, volunteers@ KEEP-ALIAS, contacts@ CONSOLIDATE into info@",
+      "affected_count": 7,
+      "named_mailboxes": [
+        {"smtp": "accounting@jmerrill.one", "recommendation": "KEEP-CORE"},
+        {"smtp": "board@jmerrill.one", "recommendation": "KEEP-CORE"},
+        {"smtp": "donations@jmerrill.one", "recommendation": "KEEP-CORE"},
+        {"smtp": "grants@jmerrill.one", "recommendation": "KEEP-CORE"},
+        {"smtp": "media@jmerrill.one", "recommendation": "KEEP-ALIAS"},
+        {"smtp": "volunteers@jmerrill.one", "recommendation": "KEEP-ALIAS"},
+        {"smtp": "contacts@jmerrill.one", "recommendation": "CONSOLIDATE into info@"}
+      ]
+    },
+    "FD-006": {
+      "title": "App Registrations and Service Principals Cleanup",
+      "status": "PENDING",
+      "approval_phrase": "APPROVE FD-006 — delete 2 expired app registrations",
+      "affected_count": 2
+    }
+  },
+  "all_decisions_complete": true,
+  "destructive_authority": "NONE — no cleanup executed; awaiting Founder approval"
+}
