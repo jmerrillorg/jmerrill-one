@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-08-20T10:24:36.700Z",
+  "result": "NOT EXECUTED - LANDING GATE BLOCKED",
+  "rule": "LAND EVIDENCE FIRST -> EXECUTE APPROVED ADMIN CLEANUP -> REGRESS -> CLOSE MAINT-01",
+  "fd_classification": {
+    "FD-001": "NOT ATTEMPTED - exact certified stale guest object expected from Claude final evidence unavailable",
+    "FD-002": "NOT ATTEMPTED - exact four license assignments expected from Claude final evidence unavailable",
+    "FD-003": "NOT ATTEMPTED - exact two inactive accounts expected from Claude final evidence unavailable",
+    "FD-004": "NOT ATTEMPTED - exact three inactive Teams/Groups expected from Claude final evidence unavailable",
+    "FD-005": "NOT ATTEMPTED - contacts@ consolidation depends on final mailbox evidence package",
+    "FD-006": "NOT ATTEMPTED - exact two app registrations and dependency certification expected from Claude final evidence unavailable"
+  },
+  "known_available_surfaces": [
+    "Exchange Online PowerShell previously connected",
+    "Microsoft Graph users/groups/apps available",
+    "GitHub authorization available"
+  ],
+  "decision": "No Microsoft tenant mutation performed because governed GitHub landing/evidence recovery failed first."
+}
