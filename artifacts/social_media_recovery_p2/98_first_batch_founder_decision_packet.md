@@ -1,188 +1,158 @@
 # SOCIAL RECOVERY P2 Founder Decision Packet
 
-Updated: 2026-08-21T02:00:24.671Z
+Updated: 2026-08-21T07:43:29.457Z
 
 Decision count: 10
 
-Reconciliation: the prior packet listed nine Publishing/Foundation/One decisions while SRP2-006 was separately held as a Founder content/creative decision. SRP2-006 is now explicit as SOC-FD-010; technical/manual holds remain separate.
+Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 
 ## SOC-FD-001 — J Merrill Publishing / SRP2-001
 
 - Planned: 2026-08-21 on Facebook
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for Publishing public cadence and confirmation to use owned/text-only creative instead of unverified author/book assets.
-- Hold: RIGHTS
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Use text-only owned/branded creative unless specific author/book assets have rights proof.
-- Exact Jackie response: APPROVE SOC-FD-001
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-A manuscript does not become a book by accident.
+A manuscript is the beginning, not the finish line.
 
-This post gives authors one practical publishing checkpoint and a clear next step.
+Publishing turns pages into a book through careful stages: readiness, editing, design, production, and launch. Each step deserves attention because the work carries an author's name into the world.
 
 Start a Publishing Inquiry: https://jmerrill.pub/
 
 ## SOC-FD-002 — J Merrill Foundation / SRP2-002
 
 - Planned: 2026-08-21 on Facebook
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for Foundation public cadence and confirmation to use privacy-safe owned/text-only creative.
-- Hold: FOUNDATION PRIVACY
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Use privacy-safe text-only/owned creative with no participant, donor, minor, beneficiary, or testimonial details.
-- Exact Jackie response: APPROVE SOC-FD-002
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-Need becomes lighter when people know how to help.
+The J Merrill Foundation exists because people and communities deserve practical support before need becomes isolation.
 
-This post connects a real community need to a safe way to learn, volunteer, give, or partner.
+The work begins with listening, partnership, and steady action that strengthens what people can build together.
 
-Learn, Volunteer, or Give: https://jmerrill.foundation/
+Learn About the Foundation: https://jmerrill.foundation/
 
 ## SOC-FD-003 — J Merrill One / SRP2-003
 
 - Planned: 2026-08-22 on Instagram
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for umbrella JM1 public voice and cross-brand positioning.
-- Hold: FOUNDER VOICE
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Approve the umbrella JM1 voice with branded creative and no division-specific claims.
-- Exact Jackie response: APPROVE SOC-FD-003
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-Durable work begins with a clear reason.
+JM1 exists because real needs rarely fit into one lane.
 
-This post explains how JM1 connects its divisions around useful, human-first work.
+Publishing, planning, foundation work, and production all ask the same first question: what would be genuinely useful for the person or community in front of us?
 
 Explore JM1: https://jmerrill.one/
 
 ## SOC-FD-004 — J Merrill Publishing / SRP2-005
 
 - Planned: 2026-08-23 on Facebook
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for Publishing public cadence and confirmation to use owned/text-only creative instead of unverified author/book assets.
-- Hold: RIGHTS
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Use text-only owned/branded creative unless specific author/book assets have rights proof.
-- Exact Jackie response: APPROVE SOC-FD-004
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-A manuscript does not become a book by accident.
+An inquiry is a conversation, not a promise of publication.
 
-This post gives authors one practical publishing checkpoint and a clear next step.
+When an author reaches out to J Merrill Publishing, the first step is understanding the manuscript, the author's goals, and what kind of support may be appropriate. Clear fit comes before next steps.
 
-Start a Publishing Inquiry: https://jmerrill.pub/
+Learn more or start an inquiry: https://jmerrill.pub/
 
 ## SOC-FD-005 — J Merrill Foundation / SRP2-008
 
 - Planned: 2026-08-24 on Instagram
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for Foundation public cadence and confirmation to use privacy-safe owned/text-only creative.
-- Hold: FOUNDATION PRIVACY
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Use privacy-safe text-only/owned creative with no participant, donor, minor, beneficiary, or testimonial details.
-- Exact Jackie response: APPROVE SOC-FD-005
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-Need becomes lighter when people know how to help.
+Helping does not have to start with a grand gesture.
 
-This post connects a real community need to a safe way to learn, volunteer, give, or partner.
+It can begin with time, a useful introduction, a partnership idea, or a willingness to show up where the work is needed. The Foundation grows through participation.
 
-Learn, Volunteer, or Give: https://jmerrill.foundation/
+Get Involved: https://jmerrill.foundation/
 
 ## SOC-FD-006 — J Merrill One / SRP2-009
 
 - Planned: 2026-08-25 on Facebook
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for umbrella JM1 public voice and cross-brand positioning.
-- Hold: FOUNDER VOICE
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Approve the umbrella JM1 voice with branded creative and no division-specific claims.
-- Exact Jackie response: APPROVE SOC-FD-006
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-Durable work begins with a clear reason.
+One enterprise can carry more than one kind of work.
 
-This post explains how JM1 connects its divisions around useful, human-first work.
+J Merrill One connects Publishing, Financial, Foundation, and Productions so each brand can serve a distinct need while staying grounded in the same human-first purpose.
 
-Explore JM1: https://jmerrill.one/
+Explore the JM1 Brands: https://jmerrill.one/
 
 ## SOC-FD-007 — J Merrill Publishing / SRP2-010
 
 - Planned: 2026-08-25 on Facebook
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for Publishing public cadence and confirmation to use owned/text-only creative instead of unverified author/book assets.
-- Hold: RIGHTS
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Use text-only owned/branded creative unless specific author/book assets have rights proof.
-- Exact Jackie response: APPROVE SOC-FD-007
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-A manuscript does not become a book by accident.
+A stronger book is built with room for author decisions.
 
-This post gives authors one practical publishing checkpoint and a clear next step.
+J Merrill Publishing does not rush important stages just to move faster. The work advances with care, clarity, and author approval so the finished book reflects the person behind it.
 
-Start a Publishing Inquiry: https://jmerrill.pub/
+Talk With Publishing: https://jmerrill.pub/
 
 ## SOC-FD-008 — J Merrill Publishing / SRP2-013
 
 - Planned: 2026-08-27 on Facebook
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for Publishing public cadence and confirmation to use owned/text-only creative instead of unverified author/book assets.
-- Hold: RIGHTS
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Use text-only owned/branded creative unless specific author/book assets have rights proof.
-- Exact Jackie response: APPROVE SOC-FD-008
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-A manuscript does not become a book by accident.
+Some authors need help shaping the path before they are ready to share the title.
 
-This post gives authors one practical publishing checkpoint and a clear next step.
+That is part of the work: clarifying the manuscript, understanding the audience, and choosing the right publishing support before a public launch moment arrives.
 
-Start a Publishing Inquiry: https://jmerrill.pub/
+Explore Publishing Support: https://jmerrill.pub/
 
 ## SOC-FD-009 — J Merrill Foundation / SRP2-014
 
 - Planned: 2026-08-27 on Facebook
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence with useful public value
-- Issue: Founder approval needed for Foundation public cadence and confirmation to use privacy-safe owned/text-only creative.
-- Hold: FOUNDATION PRIVACY
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: Use privacy-safe text-only/owned creative with no participant, donor, minor, beneficiary, or testimonial details.
-- Exact Jackie response: APPROVE SOC-FD-009
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-Need becomes lighter when people know how to help.
+Support matters most when it becomes something people can use.
 
-This post connects a real community need to a safe way to learn, volunteer, give, or partner.
+A gift, a partnership, or a shared resource can help turn mission into practical care, stronger programs, and more room for people to move forward.
 
-Learn, Volunteer, or Give: https://jmerrill.foundation/
+Support the Mission: https://jmerrill.foundation/
 
 ## SOC-FD-010 — J Merrill Productions / SRP2-006
 
 - Planned: 2026-08-23 on Facebook
+- Status: FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED
 - What the post is trying to do: Recovery cadence for Productions with a practical explanation of production planning value.
-- Issue: Founder approval needed for Productions public voice and confirmation to use owned/text-only creative or rights-approved project/talent/client assets. The prior Facebook profile URL defect is resolved; this remaining hold is content/creative approval, not technical profile remediation.
-- Hold: PRODUCTIONS VOICE / RIGHTS
-- Cody recommendation: APPROVE WITH REVISION
-- Why Cody recommends it: The copy is useful, factual, and CTA-aligned; use owned/text-only creative unless specific Productions project, talent, client, or footage assets have rights proof.
-- Exact Jackie response: APPROVE SOC-FD-010
+- Implementation note: Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.
 
-Proposed copy:
+Revised copy:
 
-A useful story is built before the camera turns on.
+A useful story starts before anyone presses record.
 
-This post explains how planning, sound, visuals, and editing help a message become usable.
+Planning gives the message a purpose. Intention shapes the scenes, sound, and pacing. The creative process turns an idea into something people can actually follow.
 
 Work With Productions: https://jmerrill.productions/
 

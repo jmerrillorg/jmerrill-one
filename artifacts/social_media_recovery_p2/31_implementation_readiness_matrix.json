@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-08-21T02:00:24.671Z",
-  "status": "SOCIAL RECOVERY P2 FOUNDER DECISIONS REQUIRED — MANUAL META ACTIONS IDENTIFIED",
+  "updated_at": "2026-08-21T07:42:14.444Z",
+  "status": "SOCIAL RECOVERY P2 MANUAL META ACTIONS REQUIRED — FOUNDER CONTENT DECISIONS COMPLETE",
   "brands": {
-    "One": "READY WITH CONTENT APPROVAL",
-    "Publishing": "READY WITH CONTENT APPROVAL",
-    "Financial": "HOLD - PAIRING / INSTAGRAM COMPOSER BLOCKED",
-    "Foundation": "READY WITH CONTENT APPROVAL",
-    "Productions": "HOLD - INSTAGRAM PROFILE VERIFICATION REQUIRED"
+    "One": "READY - APPROVED FIRST-WEEK CONTENT",
+    "Publishing": "READY - DISTINCT COPY RIGHTS/CREATIVE PREPARED",
+    "Foundation": "READY - PRIVACY-SAFE DISTINCT COPY PREPARED",
+    "Financial": "TECHNICAL HOLD - IG PAIRING",
+    "Productions": "MANUAL HOLD - IG PROFILE CORRECTION"
   },
-  "notes": "Portfolio 2FA hardening is follow-up/non-launch-blocking unless Meta requires enforcement.",
+  "notes": "Founder content decisions are complete. Final scheduling approval is still not requested until Financial pairing and Productions IG correction are verified.",
   "note": "Target READY for all five brands remains gated on Jackie completing Financial pairing, Productions Instagram edit, and Founder decisions; no scheduling authorized."
 }

@@ -1,5 +1,5 @@
 {
-  "status": "FACEBOOK RIGHTS PASS IF TEXT-ONLY/OWNED CREATIVE; INSTAGRAM PROFILE MANUAL ACTION REQUIRED",
+  "status": "PASS FOR SRP2-006; INSTAGRAM PROFILE MANUAL ACTION REQUIRED FOR SRP2-012",
   "rules": [
     "Check project images",
     "client work",
@@ -11,13 +11,13 @@
   "productions_posts": [
     {
       "SocialContentId": "SRP2-006",
-      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "rights_gate": "PASS - owned/text-only branded creative; no project/client/talent/copyrighted media used",
       "profile_gate": "PASS for Facebook profile"
     },
     {
       "SocialContentId": "SRP2-012",
-      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
-      "profile_gate": "MANUAL JACKIE ACTION REQUIRED - Instagram Spotlight wording"
+      "rights_gate": "PASS - owned/text-only branded creative; no project/client/talent/copyrighted media used",
+      "profile_gate": "MANUAL PROFILE HOLD - Instagram Spotlight wording must be removed"
     },
     {
       "SocialContentId": "SRP2-020",
@@ -50,7 +50,7 @@
       "profile_gate": "PASS for Facebook profile"
     }
   ],
-  "updated_at": "2026-08-20T23:48:05.244Z",
+  "updated_at": "2026-08-21T07:43:29.457Z",
   "profile_defect_result": {
     "status": "PARTIAL - FACEBOOK PASS / INSTAGRAM HOLD",
     "facebook": {
@@ -70,5 +70,5 @@
       "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
     }
   },
-  "analysis": "First-week Productions copy uses no project imagery, talent likeness, client materials, copyrighted media, or portfolio assets. Use owned/text-only creative unless specific rights proof exists."
+  "analysis": "SRP2-006 uses rights-safe planning/process copy with no project photos, behind-the-scenes images, talent likeness, client material, copyrighted media, production volume claims, or unsupported slate claims. Use owned/text-only branded creative."
 }

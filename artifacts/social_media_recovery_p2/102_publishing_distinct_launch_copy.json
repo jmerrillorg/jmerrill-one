@@ -1,0 +1,46 @@
+{
+  "updated_at": "2026-08-21T07:43:29.457Z",
+  "status": "PASS",
+  "posts": [
+    {
+      "SocialContentId": "SRP2-001",
+      "final_proposed_copy": "A manuscript is the beginning, not the finish line.\n\nPublishing turns pages into a book through careful stages: readiness, editing, design, production, and launch. Each step deserves attention because the work carries an author's name into the world.\n\nStart a Publishing Inquiry: https://jmerrill.pub/",
+      "pillar": "Publishing journey",
+      "CTA": "Start a Publishing Inquiry",
+      "destination": "https://jmerrill.pub/",
+      "creative_brief": "Text-led branded graphic showing a simple manuscript-to-book path; no book covers, author photos, excerpts, testimonials, or third-party imagery.",
+      "rights_status": "PASS - use owned/text-only branded creative; no author/title/cover/excerpt/testimonial referenced.",
+      "accessibility_note": "Alt text should describe a manuscript-to-book pathway graphic and include the CTA."
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "final_proposed_copy": "An inquiry is a conversation, not a promise of publication.\n\nWhen an author reaches out to J Merrill Publishing, the first step is understanding the manuscript, the author's goals, and what kind of support may be appropriate. Clear fit comes before next steps.\n\nLearn more or start an inquiry: https://jmerrill.pub/",
+      "pillar": "Service education",
+      "CTA": "Learn more or start an inquiry",
+      "destination": "https://jmerrill.pub/",
+      "creative_brief": "Branded checklist-style text graphic: inquiry, review, fit, next steps. Do not imply acceptance or paid publication guarantee.",
+      "rights_status": "PASS - service education copy uses no author/title assets or protected materials.",
+      "accessibility_note": "Alt text should summarize the inquiry-review-fit-next steps sequence."
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "final_proposed_copy": "A stronger book is built with room for author decisions.\n\nJ Merrill Publishing does not rush important stages just to move faster. The work advances with care, clarity, and author approval so the finished book reflects the person behind it.\n\nTalk With Publishing: https://jmerrill.pub/",
+      "pillar": "Author-centered process",
+      "CTA": "Talk With Publishing",
+      "destination": "https://jmerrill.pub/",
+      "creative_brief": "Calm branded text graphic emphasizing care, clarity, author approval, and quality; no internal workflow jargon.",
+      "rights_status": "PASS - no protected third-party publishing assets referenced.",
+      "accessibility_note": "Alt text should state that publishing stages move with care, clarity, and author approval; CTA is Talk With Publishing."
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "final_proposed_copy": "Some authors need help shaping the path before they are ready to share the title.\n\nThat is part of the work: clarifying the manuscript, understanding the audience, and choosing the right publishing support before a public launch moment arrives.\n\nExplore Publishing Support: https://jmerrill.pub/",
+      "pillar": "Author journey / service spotlight",
+      "CTA": "Explore Publishing Support",
+      "destination": "https://jmerrill.pub/",
+      "creative_brief": "Service/author-journey branded text graphic; intentionally generic because no specific author/title rights evidence is being used.",
+      "rights_status": "PASS - generic service/author-journey version selected; no specific author, title, cover, excerpt, photo, or testimonial used.",
+      "accessibility_note": "Alt text should describe author-journey support without naming an author or title."
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "updated_at": "2026-08-21T07:43:29.457Z",
+  "status": "PROVISIONAL - MANUAL META ACTIONS REQUIRED BEFORE FINAL PASS-ONLY BATCH",
+  "pass_now": [
+    {
+      "SocialContentId": "SRP2-001",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "publish_date": "2026-08-21",
+      "preferred_time_window": "10:15 AM",
+      "post_copy": "A manuscript is the beginning, not the finish line.\n\nPublishing turns pages into a book through careful stages: readiness, editing, design, production, and launch. Each step deserves attention because the work carries an author's name into the world.\n\nStart a Publishing Inquiry: https://jmerrill.pub/",
+      "CTA": "Start a Publishing Inquiry",
+      "destination": "https://jmerrill.pub/"
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "publish_date": "2026-08-21",
+      "preferred_time_window": "1:15 PM",
+      "post_copy": "The J Merrill Foundation exists because people and communities deserve practical support before need becomes isolation.\n\nThe work begins with listening, partnership, and steady action that strengthens what people can build together.\n\nLearn About the Foundation: https://jmerrill.foundation/",
+      "CTA": "Learn About the Foundation",
+      "destination": "https://jmerrill.foundation/"
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "brand": "J Merrill One",
+      "platform": "Instagram",
+      "publish_date": "2026-08-22",
+      "preferred_time_window": "4:45 PM",
+      "post_copy": "JM1 exists because real needs rarely fit into one lane.\n\nPublishing, planning, foundation work, and production all ask the same first question: what would be genuinely useful for the person or community in front of us?\n\nExplore JM1: https://jmerrill.one/",
+      "CTA": "Explore JM1",
+      "destination": "https://jmerrill.one/"
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "publish_date": "2026-08-23",
+      "preferred_time_window": "10:15 AM",
+      "post_copy": "An inquiry is a conversation, not a promise of publication.\n\nWhen an author reaches out to J Merrill Publishing, the first step is understanding the manuscript, the author's goals, and what kind of support may be appropriate. Clear fit comes before next steps.\n\nLearn more or start an inquiry: https://jmerrill.pub/",
+      "CTA": "Learn more or start an inquiry",
+      "destination": "https://jmerrill.pub/"
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "J Merrill Productions",
+      "platform": "Facebook",
+      "publish_date": "2026-08-23",
+      "preferred_time_window": "3:30 PM",
+      "post_copy": "A useful story starts before anyone presses record.\n\nPlanning gives the message a purpose. Intention shapes the scenes, sound, and pacing. The creative process turns an idea into something people can actually follow.\n\nWork With Productions: https://jmerrill.productions/",
+      "CTA": "Work With Productions",
+      "destination": "https://jmerrill.productions/"
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "publish_date": "2026-08-24",
+      "preferred_time_window": "1:15 PM",
+      "post_copy": "Helping does not have to start with a grand gesture.\n\nIt can begin with time, a useful introduction, a partnership idea, or a willingness to show up where the work is needed. The Foundation grows through participation.\n\nGet Involved: https://jmerrill.foundation/",
+      "CTA": "Get Involved",
+      "destination": "https://jmerrill.foundation/"
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "brand": "J Merrill One",
+      "platform": "Facebook",
+      "publish_date": "2026-08-25",
+      "preferred_time_window": "4:45 PM",
+      "post_copy": "One enterprise can carry more than one kind of work.\n\nJ Merrill One connects Publishing, Financial, Foundation, and Productions so each brand can serve a distinct need while staying grounded in the same human-first purpose.\n\nExplore the JM1 Brands: https://jmerrill.one/",
+      "CTA": "Explore the JM1 Brands",
+      "destination": "https://jmerrill.one/"
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "publish_date": "2026-08-25",
+      "preferred_time_window": "10:15 AM",
+      "post_copy": "A stronger book is built with room for author decisions.\n\nJ Merrill Publishing does not rush important stages just to move faster. The work advances with care, clarity, and author approval so the finished book reflects the person behind it.\n\nStart a Publishing Inquiry: https://jmerrill.pub/",
+      "CTA": "Start a Publishing Inquiry",
+      "destination": "https://jmerrill.pub/"
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "publish_date": "2026-08-27",
+      "preferred_time_window": "10:15 AM",
+      "post_copy": "Some authors need help shaping the path before they are ready to share the title.\n\nThat is part of the work: clarifying the manuscript, understanding the audience, and choosing the right publishing support before a public launch moment arrives.\n\nExplore Publishing Support: https://jmerrill.pub/",
+      "CTA": "Explore Publishing Support",
+      "destination": "https://jmerrill.pub/"
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "publish_date": "2026-08-27",
+      "preferred_time_window": "1:15 PM",
+      "post_copy": "Support matters most when it becomes something people can use.\n\nA gift, a partnership, or a shared resource can help turn mission into practical care, stronger programs, and more room for people to move forward.\n\nSupport the Mission: https://jmerrill.foundation/",
+      "CTA": "Support the Mission",
+      "destination": "https://jmerrill.foundation/"
+    }
+  ],
+  "pass_after_financial_pairing": [
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "condition": "J Merrill Financial and @jmerrillfin both selectable in composer/Planner",
+      "post_copy": "Estate planning starts with a simple question: who should know what to do if you cannot speak for yourself?\n\nA clear plan can help families find documents, understand wishes, and avoid guessing in a difficult moment. This is education, not legal advice.\n\nSchedule a Planning Conversation: https://jmerrill.financial/",
+      "CTA": "Schedule a Planning Conversation",
+      "destination": "https://jmerrill.financial/"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "condition": "J Merrill Financial and @jmerrillfin both selectable in composer/Planner",
+      "post_copy": "Advanced planning is not only about assets. It is about the people who may have to make decisions when timing is hard.\n\nThe right conversation can connect family priorities, documents, insurance considerations, and next steps before pressure arrives. No guarantees or legal advice.\n\nStart a Planning Conversation: https://jmerrill.financial/",
+      "CTA": "Start a Planning Conversation",
+      "destination": "https://jmerrill.financial/"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "condition": "J Merrill Financial and @jmerrillfin both selectable in composer/Planner",
+      "post_copy": "Funeral and pre-need planning can be an act of care for the people who will have to make choices later.\n\nSome options may involve insurance products, so the conversation should stay clear, practical, and matched to the family's needs. No legal, tax, or investment advice.\n\nAsk About Advanced Planning: https://jmerrill.financial/",
+      "CTA": "Ask About Advanced Planning",
+      "destination": "https://jmerrill.financial/"
+    }
+  ],
+  "pass_after_productions_ig_fix": [
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "condition": "@jmerrillprod bio no longer contains Formerly J Merrill Spotlight",
+      "post_copy": "Before a story looks polished, it needs a reason to exist.\n\nProductions work is strongest when the message, audience, and format are clear before the edit begins. Planning protects the story from becoming noise.\n\nSee Productions: https://jmerrill.productions/",
+      "CTA": "See Productions",
+      "destination": "https://jmerrill.productions/"
+    }
+  ],
+  "scheduling_authorized": false
+}

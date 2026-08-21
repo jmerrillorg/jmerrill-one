@@ -1,5 +1,5 @@
 {
-  "status": "RIGHTS PASS IF TEXT-ONLY/OWNED CREATIVE - FOUNDER CONTENT DECISION REQUIRED",
+  "status": "PASS - FIRST-WEEK PUBLISHING RIGHTS CLEARED WITH OWNED/TEXT-ONLY CREATIVE",
   "rules": [
     "Check book covers",
     "author photos",
@@ -11,19 +11,19 @@
   "publishing_posts": [
     {
       "SocialContentId": "SRP2-001",
-      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+      "rights_gate": "PASS - owned/text-only branded creative; no third-party author/title assets used"
     },
     {
       "SocialContentId": "SRP2-005",
-      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+      "rights_gate": "PASS - owned/text-only branded creative; no third-party author/title assets used"
     },
     {
       "SocialContentId": "SRP2-010",
-      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+      "rights_gate": "PASS - owned/text-only branded creative; no third-party author/title assets used"
     },
     {
       "SocialContentId": "SRP2-013",
-      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+      "rights_gate": "PASS - owned/text-only branded creative; no third-party author/title assets used"
     },
     {
       "SocialContentId": "SRP2-015",
@@ -78,7 +78,7 @@
       "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
     }
   ],
-  "updated_at": "2026-08-20T23:48:05.244Z",
+  "updated_at": "2026-08-21T07:42:14.444Z",
   "profile_defect_result": {
     "status": "PASS - PROFILE INTEGRITY RESTORED",
     "facebook": {
@@ -91,5 +91,5 @@
       "website": "/tmp/social_p2_pub_website_dom.txt"
     }
   },
-  "analysis": "First-week Publishing copy uses no covers, author photos, excerpts, testimonials, narrator/media assets, or release graphics. Rights hold clears if executed with owned/text-only branded creative."
+  "analysis": "First-week Publishing copy is distinct and uses no specific author/title, covers, excerpts, photos, testimonials, narrator/media assets, or release graphics. SRP2-013 uses the generic service/author-journey version because no specific author/title rights evidence is being used."
 }

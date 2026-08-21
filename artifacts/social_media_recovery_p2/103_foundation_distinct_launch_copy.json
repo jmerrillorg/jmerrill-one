@@ -1,0 +1,33 @@
+{
+  "updated_at": "2026-08-21T07:42:14.444Z",
+  "status": "PASS",
+  "posts": [
+    {
+      "SocialContentId": "SRP2-002",
+      "final_proposed_copy": "The J Merrill Foundation exists because people and communities deserve practical support before need becomes isolation.\n\nThe work begins with listening, partnership, and steady action that strengthens what people can build together.\n\nLearn About the Foundation: https://jmerrill.foundation/",
+      "privacy_classification": "PASS - no beneficiary, donor, volunteer, minor, testimonial, or sensitive program details.",
+      "CTA": "Learn About the Foundation",
+      "destination": "https://jmerrill.foundation/",
+      "creative_brief": "Privacy-safe mission graphic using abstract/community-support shapes or text only; no identifiable people.",
+      "likeness_rights_requirement": "Use owned/text-only or abstract creative; identifiable people require explicit permission."
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "final_proposed_copy": "Helping does not have to start with a grand gesture.\n\nIt can begin with time, a useful introduction, a partnership idea, or a willingness to show up where the work is needed. The Foundation grows through participation.\n\nGet Involved: https://jmerrill.foundation/",
+      "privacy_classification": "PASS - invitation to participate; no identifiable beneficiaries, minors, donors, or testimonials.",
+      "CTA": "Get Involved",
+      "destination": "https://jmerrill.foundation/",
+      "creative_brief": "Privacy-safe participation graphic with icons for time, partnership, community, and support; no beneficiary imagery.",
+      "likeness_rights_requirement": "Use text/icon creative unless all pictured people have documented permission."
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "final_proposed_copy": "Support matters most when it becomes something people can use.\n\nA gift, a partnership, or a shared resource can help turn mission into practical care, stronger programs, and more room for people to move forward.\n\nSupport the Mission: https://jmerrill.foundation/",
+      "privacy_classification": "PASS - no invented impact numbers, donor disclosure, beneficiary identity, or testimonial.",
+      "CTA": "Support the Mission",
+      "destination": "https://jmerrill.foundation/",
+      "creative_brief": "Impact-oriented text graphic focused on mission and practical support; no statistics or identifiable stories.",
+      "likeness_rights_requirement": "Use owned/text-only creative; photos require documented likeness rights."
+    }
+  ]
+}

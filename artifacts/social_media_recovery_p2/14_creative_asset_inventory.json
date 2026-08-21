@@ -1,5 +1,5 @@
 {
-  "status": "READY - GENERATED/BRANDED CREATIVE NEEDED FOR INCLUDED POSTS",
+  "status": "PASS FOR PROVISIONAL FIRST-WEEK COPY - NEW BRANDED/TEXT CREATIVE REQUIRED",
   "items": [
     {
       "brand": "J Merrill One",
@@ -152,92 +152,120 @@
       "note": "Use existing approved brand system; do not invent new social identity. Launch PASS requires actual approved creative or text-only owned graphic proof."
     }
   ],
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "first_week_creative_rule": "No first-week post may be scheduled until it has owned/text-only branded creative or documented rights proof plus alt text.",
+  "updated_at": "2026-08-21T07:43:29.457Z",
+  "first_week_creative_rule": "Executable posts must use READY - NEW BRANDED CREATIVE, READY - TEXT/GRAPHIC, or READY - EXISTING. No RIGHTS HOLD, CREATIVE UNKNOWN, or TBD remains for the provisional first-week batch.",
   "post_readiness": [
     {
       "SocialContentId": "SRP2-001",
       "brand": "J Merrill Publishing",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Facebook",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Text-led branded graphic showing a simple manuscript-to-book path; no book covers, author photos, excerpts, testimonials, or third-party imagery."
     },
     {
       "SocialContentId": "SRP2-002",
       "brand": "J Merrill Foundation",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Facebook",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Privacy-safe mission graphic using abstract/community-support shapes or text only; no identifiable people."
     },
     {
       "SocialContentId": "SRP2-003",
       "brand": "J Merrill One",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Instagram",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Why-first JM1 branded graphic connecting human need to useful work; no division sales claims."
     },
     {
       "SocialContentId": "SRP2-004",
       "brand": "J Merrill Financial",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Instagram",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Creative/compliance prepared; scheduling still waits on Financial IG pairing.",
+      "creative_brief": "Financial branded text graphic focused on document readiness and trusted decision-makers; no client stories or sensitive facts."
     },
     {
       "SocialContentId": "SRP2-005",
       "brand": "J Merrill Publishing",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Facebook",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Branded checklist-style text graphic: inquiry, review, fit, next steps. Do not imply acceptance or paid publication guarantee."
     },
     {
       "SocialContentId": "SRP2-006",
       "brand": "J Merrill Productions",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Facebook",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Rights-safe branded production-planning graphic using text, storyboard shapes, or original abstract media elements; no client/talent/project imagery."
     },
     {
       "SocialContentId": "SRP2-007",
       "brand": "J Merrill Financial",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Instagram",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Creative/compliance prepared; scheduling still waits on Financial IG pairing.",
+      "creative_brief": "Financial branded text graphic showing family priorities, documents, insurance considerations, and next steps; no guarantees or client details."
     },
     {
       "SocialContentId": "SRP2-008",
       "brand": "J Merrill Foundation",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Instagram",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Privacy-safe participation graphic with icons for time, partnership, community, and support; no beneficiary imagery."
     },
     {
       "SocialContentId": "SRP2-009",
       "brand": "J Merrill One",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Facebook",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Five-brand enterprise map graphic listing J Merrill One, Publishing, Financial, Foundation, and Productions; do not activate Founder Brand."
     },
     {
       "SocialContentId": "SRP2-010",
       "brand": "J Merrill Publishing",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Facebook",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Calm branded text graphic emphasizing care, clarity, author approval, and quality; no internal workflow jargon."
     },
     {
       "SocialContentId": "SRP2-011",
       "brand": "J Merrill Financial",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Instagram",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Creative/compliance prepared; scheduling still waits on Financial IG pairing.",
+      "creative_brief": "Financial branded text graphic about pre-need planning as care for family decision-makers; note insurance-product context without claims or guarantees."
     },
     {
       "SocialContentId": "SRP2-012",
       "brand": "J Merrill Productions",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Instagram",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Creative/rights prepared; scheduling still waits on Productions IG profile correction.",
+      "creative_brief": "Rights-safe branded production-process graphic; no project, client, talent, or copyrighted media assets."
     },
     {
       "SocialContentId": "SRP2-013",
       "brand": "J Merrill Publishing",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Facebook",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Service/author-journey branded text graphic; intentionally generic because no specific author/title rights evidence is being used."
     },
     {
       "SocialContentId": "SRP2-014",
       "brand": "J Merrill Foundation",
-      "creative_status": "READY - GENERATED/BRANDED CREATIVE NEEDED",
-      "rights_note": "Use owned/text-only branded creative unless separate asset rights proof is supplied."
+      "platform": "Facebook",
+      "creative_status": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
+      "note": "Ready for provisional PASS batch; no scheduling authorized.",
+      "creative_brief": "Impact-oriented text graphic focused on mission and practical support; no statistics or identifiable stories."
     }
   ]
 }

@@ -1,35 +1,25 @@
-# SOCIAL RECOVERY P2 Manual Action + Founder Decision Closeout
+# SOCIAL RECOVERY P2 Founder Content Implementation Closeout
 
-Updated: 2026-08-21T02:00:24.671Z
+Updated: 2026-08-21T07:42:14.444Z
 
 ## Classification
 
-SOCIAL RECOVERY P2 FOUNDER DECISIONS REQUIRED — MANUAL META ACTIONS IDENTIFIED
+SOCIAL RECOVERY P2 MANUAL META ACTIONS REQUIRED — FOUNDER CONTENT DECISIONS COMPLETE
 
-## Financial Pairing
+## Founder Decisions
 
-Manual action identified. Current truth remains NOT PAIRED; composer eligibility remains FACEBOOK ONLY. Jackie must connect @jmerrillfin to J Merrill Financial in Meta Business Suite, then Cody can verify from connected assets and composer/Planner destinations.
-
-## Productions Instagram
-
-Manual action identified. @jmerrillprod still requires Jackie/Instagram verification before the obsolete phrase Formerly J Merrill Spotlight can be removed and recertified.
-
-## Founder Decision Count Reconciliation
-
-PASS. There are 10 actual Founder decisions. The prior nine-decision packet omitted SRP2-006, which remained separately held as a Productions content/creative decision after the Facebook profile defect was resolved. SRP2-006 is now SOC-FD-010.
-
-## Meta Security
-
-Portfolio 2FA/passkey enforcement remains a hardening follow-up, not a content launch blocker, unless Meta requires enforcement.
+10/10 IMPLEMENTED. Distinct first-week copy is rebuilt for Publishing, Foundation, J Merrill One, and Productions.
 
 ## Batch Gate
 
-PASS: 0
+PASS: 10
+TECHNICAL HOLD: 3
+MANUAL HOLD: 1
 REVISE: 0
-DROP: 0
-DEFER: 0
-FOUNDER DECISION REQUIRED: 10
-TECHNICAL OR MANUAL ACTION: 4
+FOUNDER DECISION: 0
 
-Founder decision packet: 98_first_batch_founder_decision_packet.md
-Reconciliation: 100_founder_decision_count_reconciliation.json
+## Manual Actions Remaining
+
+Financial pairing remains required for SRP2-004, SRP2-007, and SRP2-011. Productions Instagram profile correction remains required for SRP2-012.
+
+Provisional batch: 107_first_week_provisional_pass_batch.json

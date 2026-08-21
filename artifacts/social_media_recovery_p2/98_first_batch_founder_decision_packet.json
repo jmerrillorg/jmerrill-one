@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-21T02:00:24.671Z",
-  "status": "FOUNDER DECISIONS ENUMERATED - COUNT RECONCILED",
+  "updated_at": "2026-08-21T07:43:29.457Z",
+  "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED",
   "decision_count": 10,
   "decisions": [
     {
@@ -10,12 +10,13 @@
       "planned_post_date": "2026-08-21",
       "platform": "Facebook",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "A manuscript does not become a book by accident.\n\nThis post gives authors one practical publishing checkpoint and a clear next step.\n\nStart a Publishing Inquiry: https://jmerrill.pub/",
+      "proposed_copy": "A manuscript is the beginning, not the finish line.\n\nPublishing turns pages into a book through careful stages: readiness, editing, design, production, and launch. Each step deserves attention because the work carries an author's name into the world.\n\nStart a Publishing Inquiry: https://jmerrill.pub/",
       "exact_reason_held": "Founder approval needed for Publishing public cadence and confirmation to use owned/text-only creative instead of unverified author/book assets.",
       "hold_classification": "RIGHTS",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Use text-only owned/branded creative unless specific author/book assets have rights proof.",
-      "exact_founder_response": "APPROVE SOC-FD-001"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-002",
@@ -24,12 +25,13 @@
       "planned_post_date": "2026-08-21",
       "platform": "Facebook",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "Need becomes lighter when people know how to help.\n\nThis post connects a real community need to a safe way to learn, volunteer, give, or partner.\n\nLearn, Volunteer, or Give: https://jmerrill.foundation/",
+      "proposed_copy": "The J Merrill Foundation exists because people and communities deserve practical support before need becomes isolation.\n\nThe work begins with listening, partnership, and steady action that strengthens what people can build together.\n\nLearn About the Foundation: https://jmerrill.foundation/",
       "exact_reason_held": "Founder approval needed for Foundation public cadence and confirmation to use privacy-safe owned/text-only creative.",
       "hold_classification": "FOUNDATION PRIVACY",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Use privacy-safe text-only/owned creative with no participant, donor, minor, beneficiary, or testimonial details.",
-      "exact_founder_response": "APPROVE SOC-FD-002"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-003",
@@ -38,12 +40,13 @@
       "planned_post_date": "2026-08-22",
       "platform": "Instagram",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "Durable work begins with a clear reason.\n\nThis post explains how JM1 connects its divisions around useful, human-first work.\n\nExplore JM1: https://jmerrill.one/",
+      "proposed_copy": "JM1 exists because real needs rarely fit into one lane.\n\nPublishing, planning, foundation work, and production all ask the same first question: what would be genuinely useful for the person or community in front of us?\n\nExplore JM1: https://jmerrill.one/",
       "exact_reason_held": "Founder approval needed for umbrella JM1 public voice and cross-brand positioning.",
       "hold_classification": "FOUNDER VOICE",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Approve the umbrella JM1 voice with branded creative and no division-specific claims.",
-      "exact_founder_response": "APPROVE SOC-FD-003"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-004",
@@ -52,12 +55,13 @@
       "planned_post_date": "2026-08-23",
       "platform": "Facebook",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "A manuscript does not become a book by accident.\n\nThis post gives authors one practical publishing checkpoint and a clear next step.\n\nStart a Publishing Inquiry: https://jmerrill.pub/",
+      "proposed_copy": "An inquiry is a conversation, not a promise of publication.\n\nWhen an author reaches out to J Merrill Publishing, the first step is understanding the manuscript, the author's goals, and what kind of support may be appropriate. Clear fit comes before next steps.\n\nLearn more or start an inquiry: https://jmerrill.pub/",
       "exact_reason_held": "Founder approval needed for Publishing public cadence and confirmation to use owned/text-only creative instead of unverified author/book assets.",
       "hold_classification": "RIGHTS",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Use text-only owned/branded creative unless specific author/book assets have rights proof.",
-      "exact_founder_response": "APPROVE SOC-FD-004"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-005",
@@ -66,12 +70,13 @@
       "planned_post_date": "2026-08-24",
       "platform": "Instagram",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "Need becomes lighter when people know how to help.\n\nThis post connects a real community need to a safe way to learn, volunteer, give, or partner.\n\nLearn, Volunteer, or Give: https://jmerrill.foundation/",
+      "proposed_copy": "Helping does not have to start with a grand gesture.\n\nIt can begin with time, a useful introduction, a partnership idea, or a willingness to show up where the work is needed. The Foundation grows through participation.\n\nGet Involved: https://jmerrill.foundation/",
       "exact_reason_held": "Founder approval needed for Foundation public cadence and confirmation to use privacy-safe owned/text-only creative.",
       "hold_classification": "FOUNDATION PRIVACY",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Use privacy-safe text-only/owned creative with no participant, donor, minor, beneficiary, or testimonial details.",
-      "exact_founder_response": "APPROVE SOC-FD-005"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-006",
@@ -80,12 +85,13 @@
       "planned_post_date": "2026-08-25",
       "platform": "Facebook",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "Durable work begins with a clear reason.\n\nThis post explains how JM1 connects its divisions around useful, human-first work.\n\nExplore JM1: https://jmerrill.one/",
+      "proposed_copy": "One enterprise can carry more than one kind of work.\n\nJ Merrill One connects Publishing, Financial, Foundation, and Productions so each brand can serve a distinct need while staying grounded in the same human-first purpose.\n\nExplore the JM1 Brands: https://jmerrill.one/",
       "exact_reason_held": "Founder approval needed for umbrella JM1 public voice and cross-brand positioning.",
       "hold_classification": "FOUNDER VOICE",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Approve the umbrella JM1 voice with branded creative and no division-specific claims.",
-      "exact_founder_response": "APPROVE SOC-FD-006"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-007",
@@ -94,12 +100,13 @@
       "planned_post_date": "2026-08-25",
       "platform": "Facebook",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "A manuscript does not become a book by accident.\n\nThis post gives authors one practical publishing checkpoint and a clear next step.\n\nStart a Publishing Inquiry: https://jmerrill.pub/",
+      "proposed_copy": "A stronger book is built with room for author decisions.\n\nJ Merrill Publishing does not rush important stages just to move faster. The work advances with care, clarity, and author approval so the finished book reflects the person behind it.\n\nTalk With Publishing: https://jmerrill.pub/",
       "exact_reason_held": "Founder approval needed for Publishing public cadence and confirmation to use owned/text-only creative instead of unverified author/book assets.",
       "hold_classification": "RIGHTS",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Use text-only owned/branded creative unless specific author/book assets have rights proof.",
-      "exact_founder_response": "APPROVE SOC-FD-007"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-008",
@@ -108,12 +115,13 @@
       "planned_post_date": "2026-08-27",
       "platform": "Facebook",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "A manuscript does not become a book by accident.\n\nThis post gives authors one practical publishing checkpoint and a clear next step.\n\nStart a Publishing Inquiry: https://jmerrill.pub/",
+      "proposed_copy": "Some authors need help shaping the path before they are ready to share the title.\n\nThat is part of the work: clarifying the manuscript, understanding the audience, and choosing the right publishing support before a public launch moment arrives.\n\nExplore Publishing Support: https://jmerrill.pub/",
       "exact_reason_held": "Founder approval needed for Publishing public cadence and confirmation to use owned/text-only creative instead of unverified author/book assets.",
       "hold_classification": "RIGHTS",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Use text-only owned/branded creative unless specific author/book assets have rights proof.",
-      "exact_founder_response": "APPROVE SOC-FD-008"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-009",
@@ -122,12 +130,13 @@
       "planned_post_date": "2026-08-27",
       "platform": "Facebook",
       "what_it_accomplishes": "Recovery cadence with useful public value",
-      "proposed_copy": "Need becomes lighter when people know how to help.\n\nThis post connects a real community need to a safe way to learn, volunteer, give, or partner.\n\nLearn, Volunteer, or Give: https://jmerrill.foundation/",
+      "proposed_copy": "Support matters most when it becomes something people can use.\n\nA gift, a partnership, or a shared resource can help turn mission into practical care, stronger programs, and more room for people to move forward.\n\nSupport the Mission: https://jmerrill.foundation/",
       "exact_reason_held": "Founder approval needed for Foundation public cadence and confirmation to use privacy-safe owned/text-only creative.",
       "hold_classification": "FOUNDATION PRIVACY",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "Use privacy-safe text-only/owned creative with no participant, donor, minor, beneficiary, or testimonial details.",
-      "exact_founder_response": "APPROVE SOC-FD-009"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     },
     {
       "decision_number": "SOC-FD-010",
@@ -136,12 +145,13 @@
       "planned_post_date": "2026-08-23",
       "platform": "Facebook",
       "what_it_accomplishes": "Recovery cadence for Productions with a practical explanation of production planning value.",
-      "proposed_copy": "A useful story is built before the camera turns on.\n\nThis post explains how planning, sound, visuals, and editing help a message become usable.\n\nWork With Productions: https://jmerrill.productions/",
+      "proposed_copy": "A useful story starts before anyone presses record.\n\nPlanning gives the message a purpose. Intention shapes the scenes, sound, and pacing. The creative process turns an idea into something people can actually follow.\n\nWork With Productions: https://jmerrill.productions/",
       "exact_reason_held": "Founder approval needed for Productions public voice and confirmation to use owned/text-only creative or rights-approved project/talent/client assets. The prior Facebook profile URL defect is resolved; this remaining hold is content/creative approval, not technical profile remediation.",
       "hold_classification": "PRODUCTIONS VOICE / RIGHTS",
-      "recommendation": "APPROVE WITH REVISION",
-      "why": "The copy is useful, factual, and CTA-aligned; use owned/text-only creative unless specific Productions project, talent, client, or footage assets have rights proof.",
-      "exact_founder_response": "APPROVE SOC-FD-010"
+      "recommendation": "IMPLEMENTED",
+      "why": "Founder concept/policy approval applied with distinct rights-safe/privacy-safe copy and downstream gate preparation.",
+      "exact_founder_response": "ALREADY RESOLVED AT CONCEPT/POLICY LEVEL",
+      "status": "FOUNDER CONCEPT APPROVED — REVISION IMPLEMENTED"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "status": "PRIVACY COPY PASS - FOUNDER CONTENT/CREATIVE DECISION REQUIRED",
+  "status": "PASS - FIRST-WEEK FOUNDATION PRIVACY CLEARED WITH PRIVACY-SAFE CREATIVE",
   "rules": [
     "No unnecessary participant identification",
     "No sensitive beneficiary info",
@@ -9,15 +9,15 @@
   "foundation_posts": [
     {
       "SocialContentId": "SRP2-002",
-      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+      "privacy_gate": "PASS - privacy-safe copy and owned/text-only or abstract creative"
     },
     {
       "SocialContentId": "SRP2-008",
-      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+      "privacy_gate": "PASS - privacy-safe copy and owned/text-only or abstract creative"
     },
     {
       "SocialContentId": "SRP2-014",
-      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+      "privacy_gate": "PASS - privacy-safe copy and owned/text-only or abstract creative"
     },
     {
       "SocialContentId": "SRP2-016",
@@ -60,8 +60,8 @@
       "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
     }
   ],
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "copy_gate": "PASS for provided text-only public-value copy; no donor, recipient, volunteer, minor, or sensitive beneficiary facts observed in first-week copy.",
-  "creative_gate": "HOLD - rights/likeness proof still required before scheduling any Foundation post with imagery.",
-  "analysis": "First-week Foundation copy names no participants, minors, donors, beneficiaries, testimonials, or sensitive program information. Use privacy-safe owned/text-only creative."
+  "updated_at": "2026-08-21T07:42:14.444Z",
+  "copy_gate": "PASS - revised mission, participation, and impact copy contain no identifiable beneficiary, minor, donor, volunteer, testimonial, or sensitive program detail.",
+  "creative_gate": "PASS IF EXECUTED WITH OWNED/TEXT-ONLY OR ABSTRACT CREATIVE; photos require documented likeness rights.",
+  "analysis": "Foundation first-week posts are distinct and privacy-safe; no statistics or impact numbers invented."
 }

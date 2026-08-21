@@ -10,17 +10,17 @@
   "financial_posts": [
     {
       "SocialContentId": "SRP2-004",
-      "classification": "PLANNING EDUCATION",
+      "classification": "ESTATE PLANNING EDUCATION",
       "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-007",
-      "classification": "PLANNING EDUCATION",
+      "classification": "ADVANCED PLANNING EDUCATION",
       "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
       "SocialContentId": "SRP2-011",
-      "classification": "PLANNING EDUCATION",
+      "classification": "FUNERAL/PRE-NEED PLANNING EDUCATION - INSURANCE PRODUCT CONTEXT",
       "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     },
     {
@@ -74,8 +74,8 @@
       "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     }
   ],
-  "updated_at": "2026-08-20T23:48:05.244Z",
+  "updated_at": "2026-08-21T07:43:29.457Z",
   "scope_confirmation": "Advanced planning, estate planning, and funeral/pre-need planning are in scope; funeral/pre-need planning may involve an insurance product. Copy must avoid legal advice, attorney implication, guarantees, investment claims, and sensitive client data.",
-  "asset_gate": "TECHNICAL HOLD - @jmerrillfin not selectable until pairing completes",
-  "classification_summary": "Financial launch copy is GENERAL/PLANNING EDUCATION; no legal advice, attorney implication, guarantee, investment claim, or sensitive client data detected. Funeral/pre-need planning remains in scope but is not directly claimed in these first-week posts."
+  "asset_gate": "TECHNICAL HOLD - @jmerrillfin not selectable until Financial pairing completes",
+  "classification_summary": "Financial first-week copy is GENERAL/PLANNING EDUCATION across estate readiness, advanced planning, and funeral/pre-need planning. Funeral/pre-need planning may involve an insurance product; copy avoids legal advice, tax advice, investment performance claims, guarantees, attorney implication, and sensitive client facts. Final PASS still requires @jmerrillfin pairing."
 }
