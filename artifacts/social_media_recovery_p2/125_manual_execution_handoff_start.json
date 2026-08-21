@@ -1,0 +1,11 @@
+{
+  "updated_at": "2026-08-21T08:58:16.808Z",
+  "status": "MANUAL EXECUTION HANDOFF STARTED",
+  "approved_posts": 14,
+  "scheduled_posts": 0,
+  "published_posts": 0,
+  "source_batch": "109_first_week_executable_batch.json",
+  "frozen_batch": "112_first_week_execution_freeze.json",
+  "final_quality_gate": "110_first_week_final_quality_gate.json",
+  "founder_approval": "111_founder_first_batch_approval.json"
+}

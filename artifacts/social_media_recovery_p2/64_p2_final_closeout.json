@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-21T08:32:36.916Z",
-  "final_classification": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — PLATFORM SCHEDULING ACTION REQUIRED",
-  "reason": "Founder approval is granted and the batch is frozen with generated creative assets, but live scheduling/publishing could not be completed from Codex because Edge/Meta file upload was blocked before schedule submission.",
+  "updated_at": "2026-08-21T08:58:16.808Z",
+  "final_classification": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — MANUAL PLATFORM EXECUTION REQUIRED",
+  "reason": "Manual scheduling packet is prepared because Codex computer-use file upload is blocked. No scheduling has occurred yet; Jackie manual platform execution is required before verification and first-publish observation.",
   "scheduling": {
     "total_scheduled": 0,
     "business_suite_scheduled": 0,
@@ -25,5 +25,6 @@
     "attempted_post": "SRP2-003",
     "evidence": "/tmp/p2_edge_test_composer_status.txt"
   },
-  "security_follow_up": "Meta portfolio 2FA / Founder recovery readiness remains follow-up/non-launch-blocking."
+  "security_follow_up": "Meta portfolio 2FA / Founder recovery readiness remains follow-up/non-launch-blocking.",
+  "manual_execution_packet": "127_first_week_manual_scheduling_packet.md"
 }

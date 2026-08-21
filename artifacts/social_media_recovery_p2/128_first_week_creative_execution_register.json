@@ -1,0 +1,135 @@
+{
+  "updated_at": "2026-08-21T08:58:16.808Z",
+  "status": "PASS",
+  "all_files_locatable": true,
+  "missing_items": [],
+  "creative_count": 14,
+  "assets": [
+    {
+      "SocialContentId": "SRP2-001",
+      "filename": "SRP2-001_j_merrill_publishing_facebook.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-001_j_merrill_publishing_facebook.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-001_j_merrill_publishing_facebook.png",
+      "image_description": "J Merrill Publishing branded text graphic for SRP2-001: A manuscript is the beginning, not the finish line.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "filename": "SRP2-002_j_merrill_foundation_facebook.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-002_j_merrill_foundation_facebook.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-002_j_merrill_foundation_facebook.png",
+      "image_description": "J Merrill Foundation branded text graphic for SRP2-002: The J Merrill Foundation exists because people and communities deserve practical support before need becomes isolation.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-004",
+      "filename": "SRP2-004_j_merrill_financial_instagram.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-004_j_merrill_financial_instagram.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-004_j_merrill_financial_instagram.png",
+      "image_description": "J Merrill Financial branded text graphic for SRP2-004: Estate planning starts with a simple question: who should know what to do if you cannot speak for yourself?",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "filename": "SRP2-003_j_merrill_one_instagram.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-003_j_merrill_one_instagram.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-003_j_merrill_one_instagram.png",
+      "image_description": "J Merrill One branded text graphic for SRP2-003: JM1 exists because real needs rarely fit into one lane.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "filename": "SRP2-005_j_merrill_publishing_facebook.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-005_j_merrill_publishing_facebook.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-005_j_merrill_publishing_facebook.png",
+      "image_description": "J Merrill Publishing branded text graphic for SRP2-005: An inquiry is a conversation, not a promise of publication.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "filename": "SRP2-006_j_merrill_productions_facebook.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-006_j_merrill_productions_facebook.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-006_j_merrill_productions_facebook.png",
+      "image_description": "J Merrill Productions branded text graphic for SRP2-006: A useful story starts before anyone presses record.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "filename": "SRP2-007_j_merrill_financial_instagram.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-007_j_merrill_financial_instagram.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-007_j_merrill_financial_instagram.png",
+      "image_description": "J Merrill Financial branded text graphic for SRP2-007: Advanced planning is not only about assets. It is about the people who may have to make decisions when timing is hard.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "filename": "SRP2-008_j_merrill_foundation_instagram.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-008_j_merrill_foundation_instagram.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-008_j_merrill_foundation_instagram.png",
+      "image_description": "J Merrill Foundation branded text graphic for SRP2-008: Helping does not have to start with a grand gesture.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "filename": "SRP2-010_j_merrill_publishing_facebook.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-010_j_merrill_publishing_facebook.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-010_j_merrill_publishing_facebook.png",
+      "image_description": "J Merrill Publishing branded text graphic for SRP2-010: A stronger book is built with room for author decisions.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "filename": "SRP2-009_j_merrill_one_facebook.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-009_j_merrill_one_facebook.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-009_j_merrill_one_facebook.png",
+      "image_description": "J Merrill One branded text graphic for SRP2-009: One enterprise can carry more than one kind of work.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "filename": "SRP2-011_j_merrill_financial_instagram.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-011_j_merrill_financial_instagram.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-011_j_merrill_financial_instagram.png",
+      "image_description": "J Merrill Financial branded text graphic for SRP2-011: Funeral and pre-need planning can be an act of care for the people who will have to make choices later.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "filename": "SRP2-012_j_merrill_productions_instagram.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-012_j_merrill_productions_instagram.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-012_j_merrill_productions_instagram.png",
+      "image_description": "J Merrill Productions branded text graphic for SRP2-012: Before a story looks polished, it needs a reason to exist.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "filename": "SRP2-013_j_merrill_publishing_facebook.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-013_j_merrill_publishing_facebook.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-013_j_merrill_publishing_facebook.png",
+      "image_description": "J Merrill Publishing branded text graphic for SRP2-013: Some authors need help shaping the path before they are ready to share the title.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "filename": "SRP2-014_j_merrill_foundation_facebook.png",
+      "repository_path": "artifacts/social_media_recovery_p2/creative_assets/SRP2-014_j_merrill_foundation_facebook.png",
+      "local_export_path": "/Users/jmerrillone/.codex/worktrees/2018/jmerrill-one/artifacts/social_media_recovery_p2/creative_assets/SRP2-014_j_merrill_foundation_facebook.png",
+      "image_description": "J Merrill Foundation branded text graphic for SRP2-014: Support matters most when it becomes something people can use.",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "execution_status": "LOCATABLE"
+    }
+  ]
+}

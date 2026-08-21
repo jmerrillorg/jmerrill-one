@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-21T08:32:36.916Z",
-  "classification": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — PLATFORM SCHEDULING ACTION REQUIRED",
+  "updated_at": "2026-08-21T08:58:16.808Z",
+  "classification": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — MANUAL PLATFORM EXECUTION REQUIRED",
   "founder_approval": "GRANTED",
   "scheduled_count": 0,
   "published_count": 0,
@@ -12,12 +12,7 @@
   "compliance_privacy_incidents": 0,
   "first_week_baseline_performance": "NOT STARTED",
   "remaining_month_readiness": "FOUNDER REVIEW REQUIRED",
-  "platform_blocker": {
-    "status": "BLOCKED_IN_CODEX_EDGE_SESSION",
-    "blocker": "Edge Business Suite composer file upload denied by browser extension file chooser with Not allowed; creative could not be attached, so scheduling could not be verified.",
-    "attempted_surface": "Microsoft Edge / Meta Business Suite composer",
-    "attempted_post": "SRP2-003",
-    "evidence": "/tmp/p2_edge_test_composer_status.txt"
-  },
-  "security_follow_up": "META PORTFOLIO 2FA / FOUNDER RECOVERY READINESS — FOLLOW-UP"
+  "platform_blocker": "CODEX COMPUTER-USE FILE-UPLOAD LIMITATION — MANUAL PLATFORM EXECUTION REQUIRED",
+  "security_follow_up": "META PORTFOLIO 2FA / FOUNDER RECOVERY READINESS — FOLLOW-UP",
+  "manual_execution_packet": "127_first_week_manual_scheduling_packet.md"
 }
