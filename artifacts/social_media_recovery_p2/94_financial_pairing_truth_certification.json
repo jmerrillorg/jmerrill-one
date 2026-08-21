@@ -1,0 +1,36 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "NOT PAIRED — ACCEPTED OPERATING CONDITION",
+  "truth": "NOT PAIRED",
+  "basis": [
+    "Business Settings IG connected-assets empty",
+    "Business Settings Page connected-assets empty",
+    "Business Suite Page home still offers Connect Instagram",
+    "Composer selector disables Instagram Profile and says Connect Instagram"
+  ],
+  "facebook_page": {
+    "name": "J Merrill Financial",
+    "profile_id": "61593286063626",
+    "business_asset_id": "1270611542802820"
+  },
+  "instagram": {
+    "handle": "@jmerrillfin",
+    "instagram_id": "17841438473100276"
+  },
+  "scheduling_eligibility": "FACEBOOK ONLY",
+  "evidence": {
+    "surfaceA": "/tmp/p2_surface_a_fin_page_bsuite.dom.txt",
+    "surfaceB": "/tmp/p2_surface_b_ig_connected.dom.txt",
+    "surfaceC": "/tmp/p2_surface_c_page_connected.dom.txt",
+    "surfaceD": "/tmp/p2_surface_d_business_assets.dom.txt",
+    "composer": "/tmp/p2_financial_composer_selector.dom.txt",
+    "productionsBsuite": "/tmp/p2_prod_ig_edit_bsuite.dom.txt",
+    "productionsGoInstagram": "/tmp/p2_prod_ig_go_instagram.dom.txt"
+  },
+  "pairing_attempted": true,
+  "manual_attempt_result": "Can't confirm — The username you entered doesn't belong to the Instagram account connected to this Facebook Page. Please check your username.",
+  "founder_disposition": "Further pairing remediation terminated for SOCIAL RECOVERY P2.",
+  "adopted_execution_model": "INDEPENDENT FB/IG EXECUTION",
+  "remediation_required": false,
+  "technical_hold": false
+}

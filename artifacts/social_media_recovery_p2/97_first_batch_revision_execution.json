@@ -1,0 +1,61 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "PASS - ALL FIVE PREVIOUSLY HELD/REVISED ITEMS RECERTIFIED",
+  "items": [
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "Financial",
+      "original_issue": "Instagram destination and compliance wording",
+      "revision": "Founder platform-routing decision supersedes pairing requirement. Financial Instagram publishes via INSTAGRAM_NATIVE against @jmerrillfin / 17841438473100276. Compliance, creative, CTA, URL, and UTM pass.",
+      "authority": "Existing Financial canon and compliance guardrails",
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval.",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "Financial",
+      "original_issue": "Instagram destination and compliance wording",
+      "revision": "Founder platform-routing decision supersedes pairing requirement. Financial Instagram publishes via INSTAGRAM_NATIVE against @jmerrillfin / 17841438473100276. Compliance, creative, CTA, URL, and UTM pass.",
+      "authority": "Existing Financial canon and compliance guardrails",
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval.",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "Financial",
+      "original_issue": "Instagram destination and compliance wording",
+      "revision": "Founder platform-routing decision supersedes pairing requirement. Financial Instagram publishes via INSTAGRAM_NATIVE against @jmerrillfin / 17841438473100276. Compliance, creative, CTA, URL, and UTM pass.",
+      "authority": "Existing Financial canon and compliance guardrails",
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval.",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "Productions",
+      "original_issue": "Facebook profile URL/link hold",
+      "revision": "Resolved: Productions Facebook website now shows jmerrill.productions and bio has no Spotlight wording. Remaining launch approval is rights/creative/content, not profile correction.",
+      "authority": "Factual profile remediation evidence",
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval."
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "Productions",
+      "original_issue": "Instagram profile obsolete Spotlight wording",
+      "revision": "Founder reports Productions IG legacy Spotlight wording removed; rights/creative/CTA/destination/brand/copy recertified.",
+      "authority": "Live Meta Business Suite evidence",
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval.",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM"
+    }
+  ],
+  "summary": {
+    "converted_to_pass": 5,
+    "founder_decision_required": 0,
+    "manual_jackie_action": 0,
+    "technical_hold": 0
+  }
+}

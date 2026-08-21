@@ -1,0 +1,20 @@
+{
+  "status": "PASS - LEGACY ASSETS PRESERVED",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "legacy_facebook": {
+    "status": "LEGACY / RESTRICTED - RETAIN TEMPORARILY / DO NOT PUBLISH"
+  },
+  "legacy_instagram": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "status": "LEGACY / HOLD - DO NOT USE FOR ACTIVE OPERATIONS"
+  },
+  "actions": {
+    "deleted": false,
+    "merged": false,
+    "renamed": false,
+    "ownership_removed": false,
+    "disconnected": false
+  },
+  "note": "Legacy assets were not disturbed; only canonical records and future routing were updated."
+}

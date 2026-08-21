@@ -1,0 +1,20 @@
+{
+  "classes": [
+    "ROUTINE RESPONSE",
+    "DIVISION REVIEW",
+    "COMPLIANCE REVIEW",
+    "PRIVACY REVIEW",
+    "FOUNDER REVIEW",
+    "SERVICE RECOVERY",
+    "DO NOT RESPOND / SPAM"
+  ],
+  "examples": {
+    "ROUTINE RESPONSE": "Thank-you, basic public question, link request",
+    "DIVISION REVIEW": "Author, planning, volunteer, production inquiry",
+    "COMPLIANCE REVIEW": "Financial/legal/tax-like question",
+    "PRIVACY REVIEW": "Foundation participant/donor/minor detail",
+    "FOUNDER REVIEW": "Public controversy, major brand statement",
+    "SERVICE RECOVERY": "Legitimate complaint or service issue",
+    "DO NOT RESPOND / SPAM": "Abuse, scams, spam"
+  }
+}

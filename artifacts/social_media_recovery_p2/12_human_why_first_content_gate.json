@@ -1,0 +1,5 @@
+{
+  "result": "PASS_WITH_APPROVAL_HOLDS",
+  "rule": "Every post has a why, useful substance, CTA only where justified, and no algorithm/filler-only objective.",
+  "rejected": []
+}

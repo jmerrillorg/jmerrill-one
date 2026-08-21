@@ -1,0 +1,130 @@
+{
+  "required_result": "PASS - SCHEDULING READY",
+  "result": "PASS - SCHEDULING READY / NOT YET AUTHORIZED",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "reason": "All first-week posts pass. Scheduling/publishing still awaits final Founder approval phrase.",
+  "holds": [],
+  "posts": [
+    {
+      "SocialContentId": "SRP2-001",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "brand": "J Merrill One",
+      "platform": "Instagram",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM"
+    },
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "J Merrill Productions",
+      "platform": "Facebook",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM"
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "brand": "J Merrill One",
+      "platform": "Facebook",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM"
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "scheduling_ready": "YES",
+      "gate": "PASS",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    }
+  ],
+  "status": "SOCIAL RECOVERY P2 IMPLEMENTATION READY — FOUNDER FIRST-BATCH APPROVAL REQUIRED",
+  "summary": {
+    "pass": 14,
+    "hold": 0,
+    "technical_hold": 0,
+    "manual_hold": 0,
+    "revise": 0,
+    "founder_decision": 0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "brands": {
+    "J Merrill One": [
+      "Why JM1 exists",
+      "enterprise story",
+      "division highlights",
+      "leadership perspective",
+      "cross-brand milestones"
+    ],
+    "J Merrill Publishing": [
+      "author/title spotlight",
+      "publishing education",
+      "behind the book",
+      "release/launch",
+      "author journey",
+      "industry education"
+    ],
+    "J Merrill Financial": [
+      "advanced planning education",
+      "estate-planning education",
+      "family preparedness",
+      "legacy organization",
+      "planning misconceptions",
+      "appointment/service education"
+    ],
+    "J Merrill Foundation": [
+      "community impact",
+      "programs",
+      "volunteer opportunities",
+      "donor stewardship",
+      "partnerships",
+      "mission education"
+    ],
+    "J Merrill Productions": [
+      "project stories",
+      "production education",
+      "behind the scenes",
+      "creative process",
+      "portfolio/project highlights",
+      "industry insight"
+    ]
+  }
+}

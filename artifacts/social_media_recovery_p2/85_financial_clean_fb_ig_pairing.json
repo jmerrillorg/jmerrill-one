@@ -1,0 +1,85 @@
+{
+  "status": "NOT PAIRED — ACCEPTED OPERATING CONDITION",
+  "required_result": "SUPERSEDED - PAIRING NOT REQUIRED FOR P2",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "facebook_page": {
+    "name": "J Merrill Financial",
+    "business_suite_asset_id": "1270611542802820",
+    "public_profile_id": "61593286063626",
+    "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+    "website": "https://jmerrill.financial/",
+    "category": "Financial service",
+    "bio": "Advanced planning for life, legacy, and the people who matter most.",
+    "status": "CANONICAL"
+  },
+  "instagram": {
+    "handle": "@jmerrillfin",
+    "instagram_id": "17841438473100276",
+    "status": "CANONICAL - ACTIVE / NEW FINANCIAL INSTAGRAM",
+    "display_name": "J Merrill Financial, LLC",
+    "business_portfolio": {
+      "name": "J Merrill One",
+      "id": "846921439784613"
+    },
+    "assigned_people": [
+      {
+        "identity": "J Merrill Financial LLC",
+        "access_level": "Full access",
+        "selected_user_id": "61593415808532"
+      }
+    ],
+    "professional_account_type": "Professional account visible; exact subtype not exposed in captured Meta DOM",
+    "profile": {
+      "bio": "Advanced planning for life, legacy, and the people who matter most.",
+      "website": "HOLD - Instagram Website field disabled in live edit surface; no public website visible after bio update",
+      "followers": 0,
+      "posts": 0,
+      "no_hq_street_address": true
+    },
+    "pairing": "NOT PAIRED - ACCEPTED OPERATING CONDITION",
+    "scheduling_eligibility": "PASS - INSTAGRAM NATIVE"
+  },
+  "before_state": {
+    "page_connected_assets": "You do not have any connected assets",
+    "instagram_connected_assets": "You do not have any connected assets"
+  },
+  "attempted_flow": [
+    "Page Connected assets > Connect assets > Instagram account",
+    "Confirm your connection to get more features",
+    "Confirm Your Facebook Page and Instagram connection > Confirm connection",
+    "Choose Instagram message settings > Continue"
+  ],
+  "after_state": {
+    "page_connected_assets": "Still shows You do not have any connected assets",
+    "instagram_connected_assets": "Still shows You do not have any connected assets"
+  },
+  "business_portfolio": {
+    "name": "J Merrill One",
+    "id": "846921439784613"
+  },
+  "scheduling_eligibility": "PASS — DUAL EXECUTION SURFACES",
+  "evidence": {
+    "jmerrillfinBusinessSettings": "/tmp/social_p2_clean_ig_accounts_dom.txt",
+    "jmerrillfinConnectedBefore": "/tmp/social_p2_clean_jmerrillfin_connected_dom.txt",
+    "financialPageConnectedBefore": "/tmp/social_p2_clean_fin_page_connected_dom.txt",
+    "pairingConfirm": "/tmp/social_p2_clean_pair_after_continue_dom.txt",
+    "pairingMessage": "/tmp/social_p2_clean_pair_confirm_after_dom.txt",
+    "pairingPageVerify": "/tmp/social_p2_clean_pair_page_verify_dom.txt",
+    "pairingIgVerify": "/tmp/social_p2_clean_pair_ig_verify_dom.txt",
+    "jmerrillfinPublicBefore": "/tmp/social_p2_clean_jmerrillfin_public_dom.txt",
+    "jmerrillfinEdit": "/tmp/social_p2_clean_jmerrillfin_edit_dom.txt",
+    "jmerrillfinPublicAfterBio": "/tmp/social_p2_clean_jmerrillfin_public_after_bio_dom.txt",
+    "productionsIgBefore": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
+    "productionsFacebookLinksBefore": "/tmp/social_p2_clean_prod_fb_links_dom.txt",
+    "productionsFacebookUrlAfter": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt",
+    "publishingBio": "/tmp/social_p2_pub_bio_fix_dom.txt",
+    "publishingWebsite": "/tmp/social_p2_pub_website_dom.txt",
+    "securityCenter": "/tmp/social_p2_security_dom.txt"
+  },
+  "truth": "NOT PAIRED",
+  "diagnostic_artifact": "93_financial_pairing_multisurface_diagnostic.json",
+  "truth_artifact": "94_financial_pairing_truth_certification.json",
+  "founder_action_artifact": "95_financial_pairing_founder_action.json",
+  "founder_decision": "Stop Financial pairing remediation; adopt independent FB/IG execution.",
+  "accepted_operating_condition_artifact": "108_financial_independent_channel_execution_decision.json"
+}

@@ -1,0 +1,95 @@
+{
+  "result": "PARTIAL PASS - PROFILE REMEDIATION WITH LIVE HOLDS",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "status": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+  "financial_facebook": {
+    "name": "J Merrill Financial",
+    "business_suite_asset_id": "1270611542802820",
+    "public_profile_id": "61593286063626",
+    "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+    "website": "https://jmerrill.financial/",
+    "category": "Financial service",
+    "bio": "Advanced planning for life, legacy, and the people who matter most.",
+    "status": "CANONICAL",
+    "result": "PASS"
+  },
+  "financial_instagram": {
+    "handle": "@jmerrillfin",
+    "instagram_id": "17841438473100276",
+    "status": "CANONICAL - ACTIVE / NEW FINANCIAL INSTAGRAM",
+    "display_name": "J Merrill Financial, LLC",
+    "business_portfolio": {
+      "name": "J Merrill One",
+      "id": "846921439784613"
+    },
+    "assigned_people": [
+      {
+        "identity": "J Merrill Financial LLC",
+        "access_level": "Full access",
+        "selected_user_id": "61593415808532"
+      }
+    ],
+    "professional_account_type": "Professional account visible; exact subtype not exposed in captured Meta DOM",
+    "profile": {
+      "bio": "Advanced planning for life, legacy, and the people who matter most.",
+      "website": "HOLD - Instagram Website field disabled in live edit surface; no public website visible after bio update",
+      "followers": 0,
+      "posts": 0,
+      "no_hq_street_address": true
+    },
+    "pairing": "NOT PAIRED - verification after connection flow still showed no connected assets",
+    "scheduling_eligibility": "BLOCKED - FB/IG pair not verified",
+    "result": "PARTIAL - access pass; bio pass; website/pairing hold"
+  },
+  "publishing": {
+    "status": "PASS - PROFILE INTEGRITY RESTORED",
+    "facebook": {
+      "bio": "Hybrid publishing support from manuscript readiness to launch.",
+      "website": "https://jmerrill.pub/",
+      "forex_trader_defect": "ABSENT"
+    },
+    "evidence": {
+      "bio": "/tmp/social_p2_pub_bio_fix_dom.txt",
+      "website": "/tmp/social_p2_pub_website_dom.txt"
+    }
+  },
+  "productions": {
+    "status": "PARTIAL - FACEBOOK PASS / INSTAGRAM HOLD",
+    "facebook": {
+      "page_id": "108290338098880",
+      "bio": "Video, audio, live media, and storytelling for clients, campaigns, authors, and JM1 communications.",
+      "bio_result": "PASS - no Spotlight wording visible",
+      "website": "https://jmerrill.productions/",
+      "website_result": "PASS - corrected from jmerrill.pub"
+    },
+    "instagram": {
+      "handle": "@jmerrillprod",
+      "instagram_id": "17841467582710441",
+      "spotlight_state": "HOLD - public bio still contains Formerly J Merrill Spotlight; Edit profile not exposed in this session"
+    },
+    "evidence": {
+      "ig": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
+      "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
+    }
+  },
+  "one": "SHORT FACTUAL RECHECK NOT MUTATED - no stale division-specific defect recorded in this pass",
+  "foundation": "SHORT FACTUAL/PRIVACY RECHECK NOT MUTATED - no sensitive participant/donor facts recorded in this pass",
+  "evidence": {
+    "jmerrillfinBusinessSettings": "/tmp/social_p2_clean_ig_accounts_dom.txt",
+    "jmerrillfinConnectedBefore": "/tmp/social_p2_clean_jmerrillfin_connected_dom.txt",
+    "financialPageConnectedBefore": "/tmp/social_p2_clean_fin_page_connected_dom.txt",
+    "pairingConfirm": "/tmp/social_p2_clean_pair_after_continue_dom.txt",
+    "pairingMessage": "/tmp/social_p2_clean_pair_confirm_after_dom.txt",
+    "pairingPageVerify": "/tmp/social_p2_clean_pair_page_verify_dom.txt",
+    "pairingIgVerify": "/tmp/social_p2_clean_pair_ig_verify_dom.txt",
+    "jmerrillfinPublicBefore": "/tmp/social_p2_clean_jmerrillfin_public_dom.txt",
+    "jmerrillfinEdit": "/tmp/social_p2_clean_jmerrillfin_edit_dom.txt",
+    "jmerrillfinPublicAfterBio": "/tmp/social_p2_clean_jmerrillfin_public_after_bio_dom.txt",
+    "productionsIgBefore": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
+    "productionsFacebookLinksBefore": "/tmp/social_p2_clean_prod_fb_links_dom.txt",
+    "productionsFacebookUrlAfter": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt",
+    "publishingBio": "/tmp/social_p2_pub_bio_fix_dom.txt",
+    "publishingWebsite": "/tmp/social_p2_pub_website_dom.txt",
+    "securityCenter": "/tmp/social_p2_security_dom.txt"
+  }
+}

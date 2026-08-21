@@ -1,0 +1,12 @@
+{
+  "updated_at": "2026-08-21T08:58:16.808Z",
+  "status": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — MANUAL PLATFORM EXECUTION REQUIRED",
+  "brands": {
+    "One": "READY - SCHEDULING PENDING",
+    "Publishing": "READY - SCHEDULING PENDING",
+    "Financial": "READY — DUAL EXECUTION SURFACES / NATIVE QUEUE PREPARED",
+    "Foundation": "READY - SCHEDULING PENDING",
+    "Productions": "READY - SCHEDULING PENDING"
+  },
+  "notes": "Manual execution handoff is ready; live scheduling/publishing remains to be performed by Jackie in native surfaces."
+}

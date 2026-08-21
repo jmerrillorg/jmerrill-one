@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jmerrill.one/schemas/content_derivative.schema.json",
+  "title": "JM1 Content Derivative",
+  "type": "object",
+  "required": [
+    "ContentDerivativeId",
+    "ParentContentId",
+    "Platform",
+    "Format",
+    "Status",
+    "ApprovalStatus"
+  ],
+  "properties": {
+    "ContentDerivativeId": { "type": "string" },
+    "ParentContentId": { "type": "string" },
+    "Platform": { "type": "string", "enum": ["Facebook", "Instagram", "LinkedIn", "YouTube", "Email", "Website", "Other"] },
+    "Format": { "type": "string", "enum": ["Post", "Reel", "Story", "Carousel", "Article", "Short", "Email", "Graphic", "Video", "Other"] },
+    "Caption": { "type": ["string", "null"] },
+    "Headline": { "type": ["string", "null"] },
+    "Asset": { "type": ["string", "null"] },
+    "AspectRatio": { "type": ["string", "null"] },
+    "ScheduledDate": { "type": ["string", "null"], "format": "date-time" },
+    "PublishedDate": { "type": ["string", "null"], "format": "date-time" },
+    "PlatformPostId": { "type": ["string", "null"] },
+    "Status": { "type": "string", "enum": ["Draft", "Reviewed", "Scheduled", "Published", "Failed", "Retired"] },
+    "ApprovalStatus": { "type": "string", "enum": ["Pending", "Approved", "Rejected", "Revised"] },
+    "PerformanceData": { "type": ["object", "null"], "additionalProperties": true }
+  },
+  "additionalProperties": false
+}

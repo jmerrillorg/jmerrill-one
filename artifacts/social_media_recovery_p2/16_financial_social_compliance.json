@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "rules": [
+    "No legal advice",
+    "No tax advice",
+    "No investment performance claims",
+    "No guarantees",
+    "No sensitive client facts"
+  ],
+  "financial_posts": [
+    {
+      "SocialContentId": "SRP2-004",
+      "classification": "ESTATE PLANNING EDUCATION",
+      "publish": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "classification": "ADVANCED PLANNING EDUCATION",
+      "publish": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "classification": "FUNERAL/PRE-NEED PLANNING EDUCATION - INSURANCE PRODUCT CONTEXT",
+      "publish": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-018",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-021",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-025",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-032",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-035",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-039",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-046",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-049",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-053",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    },
+    {
+      "SocialContentId": "SRP2-060",
+      "classification": "PLANNING EDUCATION",
+      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+    }
+  ],
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "scope_confirmation": "Advanced planning, estate planning, and funeral/pre-need planning are in scope; funeral/pre-need planning may involve an insurance product. Copy must avoid legal advice, attorney implication, guarantees, investment claims, and sensitive client data.",
+  "asset_gate": "PASS - Financial IG uses INSTAGRAM_NATIVE execution; pairing is not required.",
+  "classification_summary": "Financial first-week copy is GENERAL/PLANNING EDUCATION across estate readiness, advanced planning, and funeral/pre-need planning. Funeral/pre-need planning may involve an insurance product; copy avoids legal advice, tax advice, investment performance claims, guarantees, attorney implication, and sensitive client facts. Financial IG publishes through native Instagram."
+}

@@ -1,0 +1,11 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "PORTFOLIO SECURITY HARDENING — FOLLOW-UP / NON-LAUNCH-BLOCKING",
+  "two_factor_required_for": "No one",
+  "passkeys_required_for": "No one",
+  "operational_security_state": "Current authenticated admin session and asset access are sufficient for controlled non-publishing setup work; portfolio-wide enforcement is a hardening follow-up unless Meta requires it.",
+  "launch_blocker": false,
+  "do_not_weaken_existing_security": true,
+  "founder_recovery_readiness": "FOUNDER ACTION REQUIRED",
+  "founder_checklist_artifact": "91_meta_founder_recovery_readiness.json"
+}

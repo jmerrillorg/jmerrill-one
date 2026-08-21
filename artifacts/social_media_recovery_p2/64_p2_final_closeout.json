@@ -1,0 +1,30 @@
+{
+  "updated_at": "2026-08-21T08:58:16.808Z",
+  "final_classification": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — MANUAL PLATFORM EXECUTION REQUIRED",
+  "reason": "Manual scheduling packet is prepared because Codex computer-use file upload is blocked. No scheduling has occurred yet; Jackie manual platform execution is required before verification and first-publish observation.",
+  "scheduling": {
+    "total_scheduled": 0,
+    "business_suite_scheduled": 0,
+    "financial_native_queue": 3
+  },
+  "publishing": {
+    "total_published": 0,
+    "success": 0,
+    "failures": 0
+  },
+  "batch_gate": {
+    "pass": 14,
+    "hold": 0,
+    "revise": 0,
+    "founder_decision_required": 0
+  },
+  "platform_blocker": {
+    "status": "BLOCKED_IN_CODEX_EDGE_SESSION",
+    "blocker": "Edge Business Suite composer file upload denied by browser extension file chooser with Not allowed; creative could not be attached, so scheduling could not be verified.",
+    "attempted_surface": "Microsoft Edge / Meta Business Suite composer",
+    "attempted_post": "SRP2-003",
+    "evidence": "/tmp/p2_edge_test_composer_status.txt"
+  },
+  "security_follow_up": "Meta portfolio 2FA / Founder recovery readiness remains follow-up/non-launch-blocking.",
+  "manual_execution_packet": "127_first_week_manual_scheduling_packet.md"
+}

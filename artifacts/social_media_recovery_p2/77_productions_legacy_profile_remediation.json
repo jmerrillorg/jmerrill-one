@@ -1,0 +1,24 @@
+{
+  "status": "PASS — LEGACY SPOTLIGHT WORDING REMOVED",
+  "required_result": "PASS",
+  "mutation_performed": true,
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "before_state_evidence": "Facebook bio/URL and Instagram Spotlight defects were checked live.",
+  "result": "Founder-provided current screenshot shows @jmerrillprod bio as: Meet J Merrill Productions! We bring stories to life through podcasts, live streams, and videos. Obsolete Formerly J Merrill Spotlight wording removed.",
+  "remediation": {
+    "status": "PASS",
+    "facebook": {
+      "page_id": "108290338098880",
+      "bio_result": "PASS - no Spotlight wording visible",
+      "website": "https://jmerrill.productions/",
+      "website_result": "PASS"
+    },
+    "instagram": {
+      "handle": "@jmerrillprod",
+      "instagram_id": "17841467582710441",
+      "bio": "Meet J Merrill Productions! We bring stories to life through podcasts, live streams, and videos.",
+      "spotlight_state": "PASS - legacy wording removed by Jackie"
+    }
+  },
+  "instagram_founder_action_artifact": "96_productions_instagram_founder_action.json"
+}

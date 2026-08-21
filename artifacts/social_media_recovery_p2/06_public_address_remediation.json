@@ -1,0 +1,10 @@
+{
+  "status": "NO_PUBLIC_STREET_ADDRESS_CHANGE_EXECUTED",
+  "captured_at": "2026-08-20T13:35:00Z",
+  "result": "PASS WITH INTERNAL NOTE",
+  "evidence": [
+    "Captured Facebook profile snapshots showed Columbus, Ohio or no public street address, not the HQ street address.",
+    "Meta Business Portfolio Business info contains internal legal address 434 Hillpine Drive, Columbus, Ohio 43207; this was not a public profile field and was not changed."
+  ],
+  "required_public_profile_location_framing": "Headquartered in Columbus, Ohio"
+}

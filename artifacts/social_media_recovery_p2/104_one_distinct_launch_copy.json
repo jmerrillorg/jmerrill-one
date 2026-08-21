@@ -1,0 +1,36 @@
+{
+  "updated_at": "2026-08-21T07:42:14.444Z",
+  "status": "PASS",
+  "active_enterprise_social_brands": [
+    "J Merrill One",
+    "J Merrill Publishing",
+    "J Merrill Financial",
+    "J Merrill Foundation",
+    "J Merrill Productions"
+  ],
+  "excluded_from_this_package": [
+    "Jackie Smith Jr. Founder Brand"
+  ],
+  "posts": [
+    {
+      "SocialContentId": "SRP2-003",
+      "final_proposed_copy": "JM1 exists because real needs rarely fit into one lane.\n\nPublishing, planning, foundation work, and production all ask the same first question: what would be genuinely useful for the person or community in front of us?\n\nExplore JM1: https://jmerrill.one/",
+      "pillar": "Why-first / enterprise purpose",
+      "purpose": "WHY JM1 EXISTS",
+      "CTA": "Explore JM1",
+      "destination": "https://jmerrill.one/",
+      "creative_brief": "Why-first JM1 branded graphic connecting human need to useful work; no division sales claims.",
+      "rights_status": "PASS - owned/text-only enterprise positioning creative."
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "final_proposed_copy": "One enterprise can carry more than one kind of work.\n\nJ Merrill One connects Publishing, Financial, Foundation, and Productions so each brand can serve a distinct need while staying grounded in the same human-first purpose.\n\nExplore the JM1 Brands: https://jmerrill.one/",
+      "pillar": "Enterprise / division story",
+      "purpose": "ONE ENTERPRISE, MULTIPLE BRANDS",
+      "CTA": "Explore the JM1 Brands",
+      "destination": "https://jmerrill.one/",
+      "creative_brief": "Five-brand enterprise map graphic listing J Merrill One, Publishing, Financial, Foundation, and Productions; do not activate Founder Brand.",
+      "rights_status": "PASS - owned/text-only brand architecture creative."
+    }
+  ]
+}

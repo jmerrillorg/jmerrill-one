@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "rules": [
+    "Check project images",
+    "client work",
+    "behind-the-scenes",
+    "talent/likeness",
+    "copyrighted media",
+    "portfolio use"
+  ],
+  "productions_posts": [
+    {
+      "SocialContentId": "SRP2-006",
+      "rights_gate": "PASS",
+      "profile_gate": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "rights_gate": "PASS",
+      "profile_gate": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-020",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
+    },
+    {
+      "SocialContentId": "SRP2-026",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
+    },
+    {
+      "SocialContentId": "SRP2-034",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
+    },
+    {
+      "SocialContentId": "SRP2-040",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
+    },
+    {
+      "SocialContentId": "SRP2-048",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
+    },
+    {
+      "SocialContentId": "SRP2-054",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise rights proof required",
+      "profile_gate": "PASS for Facebook profile"
+    }
+  ],
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "profile_defect_result": {
+    "status": "PARTIAL - FACEBOOK PASS / INSTAGRAM HOLD",
+    "facebook": {
+      "page_id": "108290338098880",
+      "bio": "Video, audio, live media, and storytelling for clients, campaigns, authors, and JM1 communications.",
+      "bio_result": "PASS - no Spotlight wording visible",
+      "website": "https://jmerrill.productions/",
+      "website_result": "PASS - corrected from jmerrill.pub"
+    },
+    "instagram": {
+      "handle": "@jmerrillprod",
+      "instagram_id": "17841467582710441",
+      "spotlight_state": "HOLD - public bio still contains Formerly J Merrill Spotlight; Edit profile not exposed in this session"
+    },
+    "evidence": {
+      "ig": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
+      "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
+    }
+  },
+  "analysis": "SRP2-006 and SRP2-012 use rights-safe planning/process copy with no project photos, behind-the-scenes images, talent likeness, client material, copyrighted media, production volume claims, or unsupported slate claims. Productions IG legacy wording is reported removed."
+}

@@ -1,0 +1,35 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "PASS - APPROVED DISTRIBUTION / NOT SCHEDULED",
+  "posts_by_brand": {
+    "J Merrill Publishing": 4,
+    "J Merrill Foundation": 3,
+    "J Merrill One": 2,
+    "J Merrill Financial": 3,
+    "J Merrill Productions": 2
+  },
+  "posts_by_platform": {
+    "Facebook": 8,
+    "Instagram": 6
+  },
+  "posts_by_day": {
+    "2026-08-21": 2,
+    "2026-08-22": 2,
+    "2026-08-23": 2,
+    "2026-08-24": 2,
+    "2026-08-25": 2,
+    "2026-08-26": 2,
+    "2026-08-27": 2
+  },
+  "posts_by_execution_surface": {
+    "META_BUSINESS_SUITE_FACEBOOK": 8,
+    "META_BUSINESS_SUITE_INSTAGRAM": 3,
+    "INSTAGRAM_NATIVE": 3
+  },
+  "checks": {
+    "no_brand_accidentally_over_clustered": true,
+    "no_same_content_duplication": true,
+    "no_financial_wrong_surface": true
+  },
+  "note": "Distribution is certified for the frozen batch. Live scheduling remains pending platform action."
+}
