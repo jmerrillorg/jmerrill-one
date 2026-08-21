@@ -1,8 +1,8 @@
 {
   "updated_at": "2026-08-21T08:16:52.055Z",
-  "status": "SUPERSEDED BY FINAL EXECUTABLE PASS-ONLY BATCH",
-  "superseded_by": "109_first_week_executable_batch.json",
-  "pass_now": [
+  "status": "PASS_ONLY - AWAITING FOUNDER FIRST-BATCH APPROVAL",
+  "pass_count": 14,
+  "posts": [
     {
       "SocialContentId": "SRP2-001",
       "brand": "J Merrill Publishing",
@@ -203,7 +203,5 @@
       "approval_status": "PASS"
     }
   ],
-  "pass_after_financial_pairing": [],
-  "pass_after_productions_ig_fix": [],
   "scheduling_authorized": false
 }

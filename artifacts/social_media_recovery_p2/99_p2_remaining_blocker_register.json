@@ -1,36 +1,16 @@
 {
-  "updated_at": "2026-08-21T07:42:14.444Z",
-  "status": "MANUAL META ACTIONS REMAIN - FOUNDER CONTENT DECISIONS COMPLETE",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "NO FIRST-BATCH OPERATIONAL BLOCKERS",
   "blockers": [
     {
-      "id": "P2-BLK-001",
-      "type": "TECHNICAL",
-      "name": "Financial FB/IG pairing not complete",
-      "evidence": "Composer Instagram Profile option disabled; connected-assets empty."
-    },
-    {
-      "id": "P2-BLK-002",
-      "type": "MANUAL JACKIE ACTION",
-      "name": "Financial pairing requires Founder/Meta interaction",
-      "evidence": "95_financial_pairing_founder_action.json"
-    },
-    {
-      "id": "P2-BLK-003",
-      "type": "MANUAL JACKIE ACTION",
-      "name": "Productions Instagram requires verification/edit",
-      "evidence": "96_productions_instagram_founder_action.json"
-    },
-    {
-      "id": "P2-BLK-005",
-      "type": "FOLLOW-UP / NON-BLOCKING",
-      "name": "Portfolio 2FA/passkey hardening",
-      "evidence": "56_meta_security_baseline.json"
+      "id": "P2-FU-001",
+      "type": "FOLLOW-UP / NON-LAUNCH-BLOCKING",
+      "name": "Meta portfolio 2FA/passkey hardening and founder recovery readiness",
+      "evidence": "56_meta_security_baseline.json and 91_meta_founder_recovery_readiness.json"
     }
   ],
   "summary": {
-    "founder_decision_required": 0,
-    "technical_hold_posts": 3,
-    "manual_hold_posts": 1,
+    "first_batch_operational_blockers": 0,
     "non_blocking_security_follow_up": true
   }
 }

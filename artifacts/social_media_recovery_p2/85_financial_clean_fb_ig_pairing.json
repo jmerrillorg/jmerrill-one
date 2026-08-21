@@ -1,7 +1,7 @@
 {
-  "status": "PAIRING BLOCKED BY META - MANUAL JACKIE ACTION REQUIRED",
-  "required_result": "PAIRED - VERIFIED",
-  "updated_at": "2026-08-20T23:48:05.244Z",
+  "status": "NOT PAIRED — ACCEPTED OPERATING CONDITION",
+  "required_result": "SUPERSEDED - PAIRING NOT REQUIRED FOR P2",
+  "updated_at": "2026-08-21T08:16:52.055Z",
   "facebook_page": {
     "name": "J Merrill Financial",
     "business_suite_asset_id": "1270611542802820",
@@ -36,8 +36,8 @@
       "posts": 0,
       "no_hq_street_address": true
     },
-    "pairing": "NOT PAIRED - verification after connection flow still showed no connected assets",
-    "scheduling_eligibility": "BLOCKED - FB/IG pair not verified"
+    "pairing": "NOT PAIRED - ACCEPTED OPERATING CONDITION",
+    "scheduling_eligibility": "PASS - INSTAGRAM NATIVE"
   },
   "before_state": {
     "page_connected_assets": "You do not have any connected assets",
@@ -57,7 +57,7 @@
     "name": "J Merrill One",
     "id": "846921439784613"
   },
-  "scheduling_eligibility": "FACEBOOK ONLY",
+  "scheduling_eligibility": "PASS — DUAL EXECUTION SURFACES",
   "evidence": {
     "jmerrillfinBusinessSettings": "/tmp/social_p2_clean_ig_accounts_dom.txt",
     "jmerrillfinConnectedBefore": "/tmp/social_p2_clean_jmerrillfin_connected_dom.txt",
@@ -79,5 +79,7 @@
   "truth": "NOT PAIRED",
   "diagnostic_artifact": "93_financial_pairing_multisurface_diagnostic.json",
   "truth_artifact": "94_financial_pairing_truth_certification.json",
-  "founder_action_artifact": "95_financial_pairing_founder_action.json"
+  "founder_action_artifact": "95_financial_pairing_founder_action.json",
+  "founder_decision": "Stop Financial pairing remediation; adopt independent FB/IG execution.",
+  "accepted_operating_condition_artifact": "108_financial_independent_channel_execution_decision.json"
 }

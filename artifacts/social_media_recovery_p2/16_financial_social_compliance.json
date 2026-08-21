@@ -1,5 +1,5 @@
 {
-  "status": "COMPLIANCE COPY PASS - TECHNICAL PAIRING HOLD",
+  "status": "PASS",
   "rules": [
     "No legal advice",
     "No tax advice",
@@ -11,17 +11,17 @@
     {
       "SocialContentId": "SRP2-004",
       "classification": "ESTATE PLANNING EDUCATION",
-      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+      "publish": "PASS"
     },
     {
       "SocialContentId": "SRP2-007",
       "classification": "ADVANCED PLANNING EDUCATION",
-      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+      "publish": "PASS"
     },
     {
       "SocialContentId": "SRP2-011",
       "classification": "FUNERAL/PRE-NEED PLANNING EDUCATION - INSURANCE PRODUCT CONTEXT",
-      "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
+      "publish": "PASS"
     },
     {
       "SocialContentId": "SRP2-018",
@@ -74,8 +74,8 @@
       "publish": "COPY PASS - TECHNICAL PAIRING HOLD"
     }
   ],
-  "updated_at": "2026-08-21T07:43:29.457Z",
+  "updated_at": "2026-08-21T08:16:52.055Z",
   "scope_confirmation": "Advanced planning, estate planning, and funeral/pre-need planning are in scope; funeral/pre-need planning may involve an insurance product. Copy must avoid legal advice, attorney implication, guarantees, investment claims, and sensitive client data.",
-  "asset_gate": "TECHNICAL HOLD - @jmerrillfin not selectable until Financial pairing completes",
-  "classification_summary": "Financial first-week copy is GENERAL/PLANNING EDUCATION across estate readiness, advanced planning, and funeral/pre-need planning. Funeral/pre-need planning may involve an insurance product; copy avoids legal advice, tax advice, investment performance claims, guarantees, attorney implication, and sensitive client facts. Final PASS still requires @jmerrillfin pairing."
+  "asset_gate": "PASS - Financial IG uses INSTAGRAM_NATIVE execution; pairing is not required.",
+  "classification_summary": "Financial first-week copy is GENERAL/PLANNING EDUCATION across estate readiness, advanced planning, and funeral/pre-need planning. Funeral/pre-need planning may involve an insurance product; copy avoids legal advice, tax advice, investment performance claims, guarantees, attorney implication, and sensitive client facts. Financial IG publishes through native Instagram."
 }

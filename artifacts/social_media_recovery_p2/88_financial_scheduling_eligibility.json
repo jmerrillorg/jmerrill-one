@@ -1,18 +1,29 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "status": "FACEBOOK ONLY",
-  "classification": "FACEBOOK ONLY",
-  "facebook_target": {
-    "name": "J Merrill Financial",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "PASS — DUAL EXECUTION SURFACES",
+  "classification": "PASS — DUAL EXECUTION SURFACES",
+  "facebook": {
+    "asset": "J Merrill Financial",
     "profile_id": "61593286063626",
-    "selectable": true
+    "eligibility": "PASS — META BUSINESS SUITE",
+    "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
   },
-  "instagram_target": {
-    "handle": "@jmerrillfin",
+  "instagram": {
+    "asset": "@jmerrillfin",
     "instagram_id": "17841438473100276",
-    "selectable": false,
-    "visible_state": "Instagram Profile option disabled; Connect Instagram link disabled in Post to selector"
+    "eligibility": "PASS — DIRECT INSTAGRAM EXECUTION",
+    "execution_surface": "INSTAGRAM_NATIVE"
   },
-  "evidence": "/tmp/p2_financial_composer_selector.dom.txt",
-  "result": "Operational composer test confirms Facebook-only until pairing completes."
+  "combined_business_suite_fb_ig_scheduling": "NOT AVAILABLE / NOT REQUIRED",
+  "overall_financial_social_execution": "PASS — DUAL EXECUTION SURFACES",
+  "prohibited": {
+    "legacy_facebook": {
+      "status": "LEGACY / RESTRICTED — DO NOT PUBLISH"
+    },
+    "legacy_instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "status": "LEGACY / HOLD — DO NOT USE"
+    }
+  }
 }

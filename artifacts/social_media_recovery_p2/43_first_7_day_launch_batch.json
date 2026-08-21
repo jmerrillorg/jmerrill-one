@@ -1,5 +1,5 @@
 {
-  "status": "PROVISIONAL_BATCH_BUILT_NOT_SCHEDULED - MANUAL META ACTIONS REMAIN",
+  "status": "PASS_ONLY_BATCH_BUILT_NOT_SCHEDULED - FOUNDER FIRST-BATCH APPROVAL REQUIRED",
   "posts": [
     {
       "SocialContentId": "SRP2-001",
@@ -16,10 +16,14 @@
       "creative_requirement": "Text-led branded graphic showing a simple manuscript-to-book path; no book covers, author photos, excerpts, testimonials, or third-party imagery.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - use owned/text-only branded creative; no author/title/cover/excerpt/testimonial referenced.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-001"
+      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-001",
+      "canonical_asset": "J Merrill Publishing Inc",
+      "canonical_asset_id": "307480763084670",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-002",
@@ -36,10 +40,14 @@
       "creative_requirement": "Privacy-safe mission graphic using abstract/community-support shapes or text only; no identifiable people.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - no beneficiary, donor, volunteer, minor, testimonial, or sensitive program details.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-002"
+      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-002",
+      "canonical_asset": "J Merrill Foundation Inc",
+      "canonical_asset_id": "103161111947922",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-003",
@@ -56,10 +64,14 @@
       "creative_requirement": "Why-first JM1 branded graphic connecting human need to useful work; no division sales claims.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - owned/text-only enterprise positioning creative.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-003"
+      "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-003",
+      "canonical_asset": "@jmerrillone",
+      "canonical_asset_id": "17841456905118441",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-004",
@@ -74,10 +86,10 @@
       "cta": "Schedule a Planning Conversation",
       "destination_url": "https://jmerrill.financial/",
       "creative_requirement": "Financial branded text graphic focused on document readiness and trusted decision-makers; no client stories or sensitive facts.",
-      "source_asset_requirement": "Rights-approved asset or text-only graphic.",
+      "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "PASS AFTER FINANCIAL PAIRING - CONTENT/COMPLIANCE PREPARED",
-      "scheduling_state": "NOT SCHEDULED - TECHNICAL HOLD",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-004",
       "certified_destination": {
@@ -89,7 +101,11 @@
       },
       "page_or_account": "@jmerrillfin",
       "scheduled_target": "17841438473100276",
-      "updated_for_duplicate_check": true
+      "updated_for_duplicate_check": true,
+      "canonical_asset": "@jmerrillfin",
+      "canonical_asset_id": "17841438473100276",
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-005",
@@ -106,10 +122,14 @@
       "creative_requirement": "Branded checklist-style text graphic: inquiry, review, fit, next steps. Do not imply acceptance or paid publication guarantee.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - service education copy uses no author/title assets or protected materials.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-005"
+      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-005",
+      "canonical_asset": "J Merrill Publishing Inc",
+      "canonical_asset_id": "307480763084670",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-006",
@@ -126,10 +146,14 @@
       "creative_requirement": "Rights-safe branded production-planning graphic using text, storyboard shapes, or original abstract media elements; no client/talent/project imagery.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - no active slate, celebrity/talent relationship, client work, copyrighted media, or production volume claim.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-006"
+      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-006",
+      "canonical_asset": "J Merrill Productions",
+      "canonical_asset_id": "108290338098880",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-007",
@@ -144,10 +168,10 @@
       "cta": "Start a Planning Conversation",
       "destination_url": "https://jmerrill.financial/",
       "creative_requirement": "Financial branded text graphic showing family priorities, documents, insurance considerations, and next steps; no guarantees or client details.",
-      "source_asset_requirement": "Rights-approved asset or text-only graphic.",
+      "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "PASS AFTER FINANCIAL PAIRING - CONTENT/COMPLIANCE PREPARED",
-      "scheduling_state": "NOT SCHEDULED - TECHNICAL HOLD",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-007",
       "certified_destination": {
@@ -159,7 +183,11 @@
       },
       "page_or_account": "@jmerrillfin",
       "scheduled_target": "17841438473100276",
-      "updated_for_duplicate_check": true
+      "updated_for_duplicate_check": true,
+      "canonical_asset": "@jmerrillfin",
+      "canonical_asset_id": "17841438473100276",
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-008",
@@ -176,10 +204,14 @@
       "creative_requirement": "Privacy-safe participation graphic with icons for time, partnership, community, and support; no beneficiary imagery.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - invitation to participate; no identifiable beneficiaries, minors, donors, or testimonials.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-008"
+      "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-008",
+      "canonical_asset": "@jmerrillorg",
+      "canonical_asset_id": "17841447598056093",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-009",
@@ -196,10 +228,14 @@
       "creative_requirement": "Five-brand enterprise map graphic listing J Merrill One, Publishing, Financial, Foundation, and Productions; do not activate Founder Brand.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - owned/text-only brand architecture creative.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-009"
+      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-009",
+      "canonical_asset": "J Merrill One",
+      "canonical_asset_id": "101196349506906",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-010",
@@ -216,11 +252,15 @@
       "creative_requirement": "Calm branded text graphic emphasizing care, clarity, author approval, and quality; no internal workflow jargon.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - no protected third-party publishing assets referenced.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-010",
-      "updated_for_duplicate_check": true
+      "updated_for_duplicate_check": true,
+      "canonical_asset": "J Merrill Publishing Inc",
+      "canonical_asset_id": "307480763084670",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-011",
@@ -235,10 +275,10 @@
       "cta": "Ask About Advanced Planning",
       "destination_url": "https://jmerrill.financial/",
       "creative_requirement": "Financial branded text graphic about pre-need planning as care for family decision-makers; note insurance-product context without claims or guarantees.",
-      "source_asset_requirement": "Rights-approved asset or text-only graphic.",
+      "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "Compliance review required; no legal/investment advice.",
-      "approval_state": "PASS AFTER FINANCIAL PAIRING - CONTENT/COMPLIANCE PREPARED",
-      "scheduling_state": "NOT SCHEDULED - TECHNICAL HOLD",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-011",
       "certified_destination": {
@@ -250,7 +290,11 @@
       },
       "page_or_account": "@jmerrillfin",
       "scheduled_target": "17841438473100276",
-      "updated_for_duplicate_check": true
+      "updated_for_duplicate_check": true,
+      "canonical_asset": "@jmerrillfin",
+      "canonical_asset_id": "17841438473100276",
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-012",
@@ -265,13 +309,17 @@
       "cta": "See Productions",
       "destination_url": "https://jmerrill.productions/",
       "creative_requirement": "Rights-safe branded production-process graphic; no project, client, talent, or copyrighted media assets.",
-      "source_asset_requirement": "Rights-approved asset or text-only graphic.",
+      "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "Rights check for project/talent/client assets.",
-      "approval_state": "PASS AFTER PRODUCTIONS IG FIX - CONTENT/RIGHTS PREPARED",
-      "scheduling_state": "NOT SCHEDULED - MANUAL PROFILE HOLD",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-012",
-      "updated_for_duplicate_check": true
+      "updated_for_duplicate_check": true,
+      "canonical_asset": "@jmerrillprod",
+      "canonical_asset_id": "17841467582710441",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-013",
@@ -288,10 +336,14 @@
       "creative_requirement": "Service/author-journey branded text graphic; intentionally generic because no specific author/title rights evidence is being used.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - generic service/author-journey version selected; no specific author, title, cover, excerpt, photo, or testimonial used.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-013"
+      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-013",
+      "canonical_asset": "J Merrill Publishing Inc",
+      "canonical_asset_id": "307480763084670",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     },
     {
       "SocialContentId": "SRP2-014",
@@ -308,21 +360,25 @@
       "creative_requirement": "Impact-oriented text graphic focused on mission and practical support; no statistics or identifiable stories.",
       "source_asset_requirement": "READY - NEW BRANDED CREATIVE / TEXT GRAPHIC",
       "compliance_requirement": "PASS - no invented impact numbers, donor disclosure, beneficiary identity, or testimonial.",
-      "approval_state": "PASS - FOUNDER CONCEPT APPROVED / REVISION IMPLEMENTED",
-      "scheduling_state": "NOT SCHEDULED",
+      "approval_state": "PASS",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL",
       "campaign_tag": "social-recovery-p2",
-      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-014"
+      "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-014",
+      "canonical_asset": "J Merrill Foundation Inc",
+      "canonical_asset_id": "103161111947922",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "accessibility_requirement": "Alt text required before scheduling/publishing."
     }
   ],
-  "updated_at": "2026-08-21T07:43:29.457Z",
+  "updated_at": "2026-08-21T08:16:52.055Z",
   "financial_replacement_note": "Use @jmerrillfin / 17841438473100276 for future Financial Instagram routing. Do not use @jmerrillfinancial. Scheduling remains blocked until J Merrill Financial Facebook + @jmerrillfin connected-assets pair verifies.",
   "hold_summary": {
-    "pass_posts": 10,
+    "pass_posts": 14,
+    "technical_hold_posts": 0,
+    "manual_hold_posts": 0,
     "revise_posts": 0,
-    "drop_posts": 0,
-    "defer_posts": 0,
     "founder_decision_required": 0,
-    "technical_hold_posts": 3,
-    "manual_hold_posts": 1
+    "drop_posts": 0,
+    "defer_posts": 0
   }
 }

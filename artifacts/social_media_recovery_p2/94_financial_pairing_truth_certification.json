@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "status": "PAIRING BLOCKED BY META - NOT PAIRED",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "NOT PAIRED — ACCEPTED OPERATING CONDITION",
   "truth": "NOT PAIRED",
   "basis": [
     "Business Settings IG connected-assets empty",
@@ -26,5 +26,11 @@
     "composer": "/tmp/p2_financial_composer_selector.dom.txt",
     "productionsBsuite": "/tmp/p2_prod_ig_edit_bsuite.dom.txt",
     "productionsGoInstagram": "/tmp/p2_prod_ig_go_instagram.dom.txt"
-  }
+  },
+  "pairing_attempted": true,
+  "manual_attempt_result": "Can't confirm — The username you entered doesn't belong to the Instagram account connected to this Facebook Page. Please check your username.",
+  "founder_disposition": "Further pairing remediation terminated for SOCIAL RECOVERY P2.",
+  "adopted_execution_model": "INDEPENDENT FB/IG EXECUTION",
+  "remediation_required": false,
+  "technical_hold": false
 }

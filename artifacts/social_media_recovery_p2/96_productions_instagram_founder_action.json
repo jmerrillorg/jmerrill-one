@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-21T02:00:24.671Z",
-  "status": "MANUAL JACKIE ACTION REQUIRED - READY FOR FOUNDER EXECUTION",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "COMPLETED BY JACKIE — READY FOR CERTIFICATION",
   "reason": "Meta/Instagram verification prevented Codex from exposing a safe editable profile control for @jmerrillprod.",
   "target": {
     "handle": "@jmerrillprod",
@@ -19,5 +19,6 @@
     "businessSuiteEdit": "/tmp/p2_prod_ig_edit_bsuite.dom.txt",
     "goInstagram": "/tmp/p2_prod_ig_go_instagram.dom.txt"
   },
-  "exact_action": "Remove only the obsolete phrase Formerly J Merrill Spotlight from @jmerrillprod."
+  "exact_action": "Remove only the obsolete phrase Formerly J Merrill Spotlight from @jmerrillprod.",
+  "result": "Founder reports obsolete Spotlight wording removed from @jmerrillprod."
 }

@@ -1,30 +1,14 @@
 {
-  "updated_at": "2026-08-21T07:42:14.444Z",
-  "final_classification": "SOCIAL RECOVERY P2 MANUAL META ACTIONS REQUIRED — FOUNDER CONTENT DECISIONS COMPLETE",
-  "reason": "Founder content decisions are implemented with distinct copy and downstream rights/privacy/creative gates prepared. Financial pairing and Productions Instagram profile correction remain manual Meta actions before final PASS-only scheduling approval.",
-  "financial_pairing": {
-    "diagnostic": "93_financial_pairing_multisurface_diagnostic.json",
-    "truth": "PAIRING BLOCKED BY META - NOT PAIRED",
-    "scheduling_eligibility": "FACEBOOK ONLY",
-    "founder_action": "95_financial_pairing_founder_action.json"
-  },
-  "productions_instagram": {
-    "result": "MANUAL JACKIE ACTION REQUIRED",
-    "founder_action": "96_productions_instagram_founder_action.json"
-  },
-  "meta_security": {
-    "recovery_readiness": "FOUNDER ACTION REQUIRED",
-    "launch_blocker": false,
-    "state": "SECURITY HARDENING FOLLOW-UP - NOT CONTENT LAUNCH BLOCKER"
-  },
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "final_classification": "SOCIAL RECOVERY P2 IMPLEMENTATION READY — FOUNDER FIRST-BATCH APPROVAL REQUIRED",
+  "reason": "Final first-week batch is PASS-only. Financial independent FB/IG execution is accepted and certified. Productions IG legacy wording is removed. No first-batch operational blockers remain. Scheduling/publishing awaits Founder approval.",
   "batch_gate": {
-    "pass": 10,
-    "technical_hold": 3,
-    "manual_hold": 1,
+    "pass": 14,
+    "hold": 0,
     "revise": 0,
     "founder_decision_required": 0
   },
-  "founder_packet": "98_first_batch_founder_decision_packet.md",
-  "reconciliation": "100_founder_decision_count_reconciliation.json",
-  "provisional_batch": "107_first_week_provisional_pass_batch.json"
+  "executable_batch": "109_first_week_executable_batch.json",
+  "final_quality_gate": "110_first_week_final_quality_gate.json",
+  "security_follow_up": "Portfolio 2FA/recovery readiness remains follow-up/non-launch-blocking."
 }

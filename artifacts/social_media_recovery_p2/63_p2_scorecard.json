@@ -1,23 +1,17 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "classification": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-  "financial_pairing": "TECHNICAL/MANUAL HOLD",
-  "financial_scheduling": "FACEBOOK ONLY",
-  "productions_instagram": "MANUAL JACKIE ACTION REQUIRED",
-  "meta_security": "FOLLOW-UP / NON-BLOCKING HARDENING",
-  "five_revisions": {
-    "converted_to_pass": 0,
-    "converted_to_founder_decision": 1,
-    "manual_jackie_action": 1,
-    "technical_hold": 3
-  },
-  "founder_decisions": 9,
-  "batch_gate": {
-    "pass": 0,
-    "revise": 0,
-    "remove": 0,
-    "founder_decision_required": 9,
-    "technical_or_manual_action": 5
-  },
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "classification": "SOCIAL RECOVERY P2 IMPLEMENTATION READY — FOUNDER FIRST-BATCH APPROVAL REQUIRED",
+  "financial_facebook": "CANONICAL - J Merrill Financial / 61593286063626",
+  "financial_instagram": "CANONICAL - @jmerrillfin / 17841438473100276",
+  "financial_pairing": "NOT REQUIRED - ACCEPTED OPERATING CONDITION",
+  "financial_execution_model": "DUAL EXECUTION SURFACES ACTIVE",
+  "publishing_profile": "PASS - profile corrected",
+  "productions_facebook": "PASS - website/bio corrected",
+  "productions_instagram": "PASS - legacy Spotlight wording removed by Jackie",
+  "founder_content_decisions": "10/10 IMPLEMENTED",
+  "first_week_pass_count": 14,
+  "technical_blockers": 0,
+  "manual_blockers": 0,
+  "security_follow_up": "PORTFOLIO SECURITY HARDENING / FOUNDER RECOVERY READINESS - NON-LAUNCH-BLOCKING",
   "pr": "#7"
 }

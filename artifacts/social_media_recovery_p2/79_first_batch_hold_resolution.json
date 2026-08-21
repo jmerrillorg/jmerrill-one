@@ -1,10 +1,11 @@
 {
-  "status": "SOCIAL RECOVERY P2 MANUAL META ACTIONS REQUIRED — FOUNDER CONTENT DECISIONS COMPLETE",
-  "updated_at": "2026-08-21T07:43:29.457Z",
+  "status": "SOCIAL RECOVERY P2 IMPLEMENTATION READY — FOUNDER FIRST-BATCH APPROVAL REQUIRED",
+  "updated_at": "2026-08-21T08:16:52.055Z",
   "summary": {
-    "pass": 10,
-    "technical_hold": 3,
-    "manual_hold": 1,
+    "pass": 14,
+    "hold": 0,
+    "technical_hold": 0,
+    "manual_hold": 0,
     "revise": 0,
     "founder_decision_required": 0,
     "drop": 0,
@@ -16,159 +17,113 @@
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-002",
       "brand": "J Merrill Foundation",
       "platform": "Facebook",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-003",
       "brand": "J Merrill One",
       "platform": "Instagram",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-004",
       "brand": "J Merrill Financial",
       "platform": "Instagram",
-      "result": "TECHNICAL HOLD",
-      "reason": "TECHNICAL HOLD - FINANCIAL IG PAIRING",
-      "scheduling_state": "NOT SCHEDULED"
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-005",
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-006",
       "brand": "J Merrill Productions",
       "platform": "Facebook",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-007",
       "brand": "J Merrill Financial",
       "platform": "Instagram",
-      "result": "TECHNICAL HOLD",
-      "reason": "TECHNICAL HOLD - FINANCIAL IG PAIRING",
-      "scheduling_state": "NOT SCHEDULED"
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-008",
       "brand": "J Merrill Foundation",
       "platform": "Instagram",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-009",
       "brand": "J Merrill One",
       "platform": "Facebook",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-010",
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-011",
       "brand": "J Merrill Financial",
       "platform": "Instagram",
-      "result": "TECHNICAL HOLD",
-      "reason": "TECHNICAL HOLD - FINANCIAL IG PAIRING",
-      "scheduling_state": "NOT SCHEDULED"
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-012",
       "brand": "J Merrill Productions",
       "platform": "Instagram",
-      "result": "MANUAL HOLD",
-      "reason": "MANUAL HOLD - PRODUCTIONS IG PROFILE CORRECTION",
-      "scheduling_state": "NOT SCHEDULED"
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-013",
       "brand": "J Merrill Publishing",
       "platform": "Facebook",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     },
     {
       "SocialContentId": "SRP2-014",
       "brand": "J Merrill Foundation",
       "platform": "Facebook",
       "result": "PASS",
-      "reason": "Founder content decision implemented; rights/privacy/creative gates prepared.",
-      "scheduling_state": "NOT SCHEDULED"
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
     }
   ],
-  "scheduling_authorized": false,
-  "live_financial_canonical_activation": {
-    "page": {
-      "name": "J Merrill Financial",
-      "business_suite_asset_id": "1270611542802820",
-      "public_profile_id": "61593286063626",
-      "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
-      "website": "https://jmerrill.financial/",
-      "category": "Financial service",
-      "bio": "Advanced planning for life, legacy, and the people who matter most.",
-      "status": "CANONICAL"
-    },
-    "instagram": {
-      "handle": "@jmerrillfin",
-      "instagram_id": "17841438473100276",
-      "status": "CANONICAL - ACTIVE / NEW FINANCIAL INSTAGRAM",
-      "display_name": "J Merrill Financial, LLC",
-      "business_portfolio": {
-        "name": "J Merrill One",
-        "id": "846921439784613"
-      },
-      "assigned_people": [
-        {
-          "identity": "J Merrill Financial LLC",
-          "access_level": "Full access",
-          "selected_user_id": "61593415808532"
-        }
-      ],
-      "professional_account_type": "Professional account visible; exact subtype not exposed in captured Meta DOM",
-      "profile": {
-        "bio": "Advanced planning for life, legacy, and the people who matter most.",
-        "website": "HOLD - Instagram Website field disabled in live edit surface; no public website visible after bio update",
-        "followers": 0,
-        "posts": 0,
-        "no_hq_street_address": true
-      },
-      "pairing": "NOT PAIRED - verification after connection flow still showed no connected assets",
-      "scheduling_eligibility": "BLOCKED - FB/IG pair not verified"
-    },
-    "business_portfolio": {
-      "name": "J Merrill One",
-      "id": "846921439784613"
-    }
-  },
-  "financial_facebook_ready": true,
-  "financial_ig_pairing_ready": false,
-  "financial_ig_access_ready": true
+  "scheduling_authorized": false
 }

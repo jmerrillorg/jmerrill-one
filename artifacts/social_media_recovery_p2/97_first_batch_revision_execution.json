@@ -1,33 +1,36 @@
 {
-  "updated_at": "2026-08-21T02:00:24.671Z",
-  "status": "COMPLETE - RECONCILED; MANUAL META ACTIONS STILL REQUIRED BEFORE RECERTIFICATION",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "PASS - ALL FIVE PREVIOUSLY HELD/REVISED ITEMS RECERTIFIED",
   "items": [
     {
       "SocialContentId": "SRP2-004",
       "brand": "Financial",
       "original_issue": "Instagram destination and compliance wording",
-      "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
+      "revision": "Founder platform-routing decision supersedes pairing requirement. Financial Instagram publishes via INSTAGRAM_NATIVE against @jmerrillfin / 17841438473100276. Compliance, creative, CTA, URL, and UTM pass.",
       "authority": "Existing Financial canon and compliance guardrails",
-      "resulting_status": "TECHNICAL HOLD - AWAITING FINANCIAL PAIRING",
-      "next_action": "After Jackie completes Financial pairing, recertify against correct canonical FB, @jmerrillfin, compliance, creative, CTA, URL, and UTM; target PASS or REVISE."
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval.",
+      "execution_surface": "INSTAGRAM_NATIVE"
     },
     {
       "SocialContentId": "SRP2-007",
       "brand": "Financial",
       "original_issue": "Instagram destination and compliance wording",
-      "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
+      "revision": "Founder platform-routing decision supersedes pairing requirement. Financial Instagram publishes via INSTAGRAM_NATIVE against @jmerrillfin / 17841438473100276. Compliance, creative, CTA, URL, and UTM pass.",
       "authority": "Existing Financial canon and compliance guardrails",
-      "resulting_status": "TECHNICAL HOLD - AWAITING FINANCIAL PAIRING",
-      "next_action": "After Jackie completes Financial pairing, recertify against correct canonical FB, @jmerrillfin, compliance, creative, CTA, URL, and UTM; target PASS or REVISE."
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval.",
+      "execution_surface": "INSTAGRAM_NATIVE"
     },
     {
       "SocialContentId": "SRP2-011",
       "brand": "Financial",
       "original_issue": "Instagram destination and compliance wording",
-      "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
+      "revision": "Founder platform-routing decision supersedes pairing requirement. Financial Instagram publishes via INSTAGRAM_NATIVE against @jmerrillfin / 17841438473100276. Compliance, creative, CTA, URL, and UTM pass.",
       "authority": "Existing Financial canon and compliance guardrails",
-      "resulting_status": "TECHNICAL HOLD - AWAITING FINANCIAL PAIRING",
-      "next_action": "After Jackie completes Financial pairing, recertify against correct canonical FB, @jmerrillfin, compliance, creative, CTA, URL, and UTM; target PASS or REVISE."
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval.",
+      "execution_surface": "INSTAGRAM_NATIVE"
     },
     {
       "SocialContentId": "SRP2-006",
@@ -35,24 +38,24 @@
       "original_issue": "Facebook profile URL/link hold",
       "revision": "Resolved: Productions Facebook website now shows jmerrill.productions and bio has no Spotlight wording. Remaining launch approval is rights/creative/content, not profile correction.",
       "authority": "Factual profile remediation evidence",
-      "resulting_status": "FOUNDER DECISION REQUIRED - SOC-FD-010",
-      "next_action": "Keep in Founder packet; do not treat as technical/manual."
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval."
     },
     {
       "SocialContentId": "SRP2-012",
       "brand": "Productions",
       "original_issue": "Instagram profile obsolete Spotlight wording",
-      "revision": "Not safely editable by Codex; Business Suite requires Instagram verification. Exact Jackie action recorded in 96.",
+      "revision": "Founder reports Productions IG legacy Spotlight wording removed; rights/creative/CTA/destination/brand/copy recertified.",
       "authority": "Live Meta Business Suite evidence",
-      "resulting_status": "MANUAL JACKIE ACTION REQUIRED - AWAITING PRODUCTIONS IG EDIT",
-      "next_action": "After Jackie removes Spotlight wording from @jmerrillprod, recertify; target PASS or REVISE."
+      "resulting_status": "PASS",
+      "next_action": "Await final Founder first-batch scheduling/publishing approval.",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM"
     }
   ],
   "summary": {
-    "converted_to_pass": 0,
-    "founder_decision_required": 1,
-    "manual_jackie_action": 1,
-    "technical_hold": 3,
-    "reconciliation": "SRP2-006 is SOC-FD-010; it is excluded from technical/manual blocked count."
+    "converted_to_pass": 5,
+    "founder_decision_required": 0,
+    "manual_jackie_action": 0,
+    "technical_hold": 0
   }
 }

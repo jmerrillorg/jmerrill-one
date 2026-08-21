@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-21T02:00:24.671Z",
-  "status": "MANUAL JACKIE ACTION REQUIRED - READY FOR FOUNDER EXECUTION",
-  "reason": "Financial pairing remains NOT PAIRED and composer eligibility remains FACEBOOK ONLY. Automation should not continue looping; Jackie must complete Meta authentication/confirmation if prompted.",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "SUPERSEDED — NO FURTHER P2 PAIRING ACTION",
+  "reason": "Founder terminated further Financial FB/IG pairing remediation after Meta manual attempt returned Can't confirm. Independent execution is adopted.",
   "steps": [
     "Open Meta Business Suite.",
     "Select J Merrill Financial.",
@@ -28,5 +28,6 @@
     "pairing": "NOT PAIRED",
     "composer_eligibility": "FACEBOOK ONLY"
   },
-  "stop_condition": "If Meta prompts for Instagram authentication, security verification, or Accounts Center confirmation, Jackie completes it directly. Do not request passwords or codes."
+  "stop_condition": "If Meta prompts for Instagram authentication, security verification, or Accounts Center confirmation, Jackie completes it directly. Do not request passwords or codes.",
+  "superseded_by": "108_financial_independent_channel_execution_decision.json"
 }

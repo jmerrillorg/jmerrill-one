@@ -1,6 +1,6 @@
 {
-  "status": "CANONICAL RECORD UPDATED - PAIRING HOLD",
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "status": "CANONICAL RECORD UPDATED - DUAL EXECUTION SURFACES ACTIVE",
+  "updated_at": "2026-08-21T08:16:52.055Z",
   "facebook": {
     "name": "J Merrill Financial",
     "business_suite_asset_id": "1270611542802820",
@@ -9,21 +9,23 @@
     "website": "https://jmerrill.financial/",
     "category": "Financial service",
     "bio": "Advanced planning for life, legacy, and the people who matter most.",
-    "status": "CANONICAL"
+    "status": "CANONICAL",
+    "execution": "META_BUSINESS_SUITE_FACEBOOK"
   },
   "instagram": {
     "handle": "@jmerrillfin",
     "instagram_id": "17841438473100276",
-    "status": "CANONICAL"
+    "status": "CANONICAL",
+    "execution": "INSTAGRAM_NATIVE"
   },
-  "pairing": "HOLD - ATTEMPTED BUT NOT VERIFIED",
+  "pairing": "NOT PAIRED — ACCEPTED OPERATING CONDITION",
   "legacy_facebook": {
-    "status": "LEGACY / RESTRICTED - RETAIN TEMPORARILY / DO NOT PUBLISH"
+    "status": "LEGACY / RESTRICTED — DO NOT PUBLISH"
   },
   "legacy_instagram": {
     "handle": "@jmerrillfinancial",
     "instagram_id": "17841475196277020",
-    "status": "LEGACY / HOLD - DO NOT USE FOR ACTIVE OPERATIONS"
+    "status": "LEGACY / HOLD — DO NOT USE"
   },
-  "authoritative_routing_state": "Future Financial routing uses @jmerrillfin, but scheduling remains blocked until pairing verification."
+  "authoritative_routing_state": "Financial Facebook uses Meta Business Suite. Financial Instagram @jmerrillfin uses native Instagram execution. Pairing is not required for SOCIAL RECOVERY P2 launch."
 }

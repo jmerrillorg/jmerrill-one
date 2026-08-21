@@ -1,5 +1,5 @@
 {
-  "status": "PASS FOR SRP2-006; INSTAGRAM PROFILE MANUAL ACTION REQUIRED FOR SRP2-012",
+  "status": "PASS",
   "rules": [
     "Check project images",
     "client work",
@@ -11,13 +11,13 @@
   "productions_posts": [
     {
       "SocialContentId": "SRP2-006",
-      "rights_gate": "PASS - owned/text-only branded creative; no project/client/talent/copyrighted media used",
-      "profile_gate": "PASS for Facebook profile"
+      "rights_gate": "PASS",
+      "profile_gate": "PASS"
     },
     {
       "SocialContentId": "SRP2-012",
-      "rights_gate": "PASS - owned/text-only branded creative; no project/client/talent/copyrighted media used",
-      "profile_gate": "MANUAL PROFILE HOLD - Instagram Spotlight wording must be removed"
+      "rights_gate": "PASS",
+      "profile_gate": "PASS"
     },
     {
       "SocialContentId": "SRP2-020",
@@ -50,7 +50,7 @@
       "profile_gate": "PASS for Facebook profile"
     }
   ],
-  "updated_at": "2026-08-21T07:43:29.457Z",
+  "updated_at": "2026-08-21T08:16:52.055Z",
   "profile_defect_result": {
     "status": "PARTIAL - FACEBOOK PASS / INSTAGRAM HOLD",
     "facebook": {
@@ -70,5 +70,5 @@
       "fb_url": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt"
     }
   },
-  "analysis": "SRP2-006 uses rights-safe planning/process copy with no project photos, behind-the-scenes images, talent likeness, client material, copyrighted media, production volume claims, or unsupported slate claims. Use owned/text-only branded creative."
+  "analysis": "SRP2-006 and SRP2-012 use rights-safe planning/process copy with no project photos, behind-the-scenes images, talent likeness, client material, copyrighted media, production volume claims, or unsupported slate claims. Productions IG legacy wording is reported removed."
 }
