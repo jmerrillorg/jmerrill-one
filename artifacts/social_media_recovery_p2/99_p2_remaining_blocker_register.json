@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "status": "CURRENT BLOCKERS CLASSIFIED",
+  "updated_at": "2026-08-21T02:00:24.671Z",
+  "status": "CURRENT BLOCKERS CLASSIFIED - MANUAL ACTIONS IDENTIFIED",
   "blockers": [
     {
       "id": "P2-BLK-001",
@@ -23,8 +23,8 @@
     {
       "id": "P2-BLK-004",
       "type": "FOUNDER POLICY/CONTENT DECISION",
-      "name": "Nine first-week content decisions",
-      "evidence": "98_first_batch_founder_decision_packet.md"
+      "name": "Ten first-week content decisions",
+      "evidence": "98_first_batch_founder_decision_packet.md and 100_founder_decision_count_reconciliation.json"
     },
     {
       "id": "P2-BLK-005",
@@ -32,5 +32,10 @@
       "name": "Portfolio 2FA/passkey hardening",
       "evidence": "56_meta_security_baseline.json"
     }
-  ]
+  ],
+  "summary": {
+    "founder_decision_required": 10,
+    "technical_or_manual_blocked_posts": 4,
+    "non_blocking_security_follow_up": true
+  }
 }

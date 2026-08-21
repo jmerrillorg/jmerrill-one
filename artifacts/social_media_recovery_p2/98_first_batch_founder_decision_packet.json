@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "status": "FOUNDER DECISIONS ENUMERATED",
-  "decision_count": 9,
+  "updated_at": "2026-08-21T02:00:24.671Z",
+  "status": "FOUNDER DECISIONS ENUMERATED - COUNT RECONCILED",
+  "decision_count": 10,
   "decisions": [
     {
       "decision_number": "SOC-FD-001",
@@ -128,6 +128,20 @@
       "recommendation": "APPROVE WITH REVISION",
       "why": "Use privacy-safe text-only/owned creative with no participant, donor, minor, beneficiary, or testimonial details.",
       "exact_founder_response": "APPROVE SOC-FD-009"
+    },
+    {
+      "decision_number": "SOC-FD-010",
+      "brand": "J Merrill Productions",
+      "SocialContentId": "SRP2-006",
+      "planned_post_date": "2026-08-23",
+      "platform": "Facebook",
+      "what_it_accomplishes": "Recovery cadence for Productions with a practical explanation of production planning value.",
+      "proposed_copy": "A useful story is built before the camera turns on.\n\nThis post explains how planning, sound, visuals, and editing help a message become usable.\n\nWork With Productions: https://jmerrill.productions/",
+      "exact_reason_held": "Founder approval needed for Productions public voice and confirmation to use owned/text-only creative or rights-approved project/talent/client assets. The prior Facebook profile URL defect is resolved; this remaining hold is content/creative approval, not technical profile remediation.",
+      "hold_classification": "PRODUCTIONS VOICE / RIGHTS",
+      "recommendation": "APPROVE WITH REVISION",
+      "why": "The copy is useful, factual, and CTA-aligned; use owned/text-only creative unless specific Productions project, talent, client, or footage assets have rights proof.",
+      "exact_founder_response": "APPROVE SOC-FD-010"
     }
   ]
 }

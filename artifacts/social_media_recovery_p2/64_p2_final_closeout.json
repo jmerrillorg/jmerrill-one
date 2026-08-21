@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "final_classification": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
-  "reason": "A real technical/manual blocker still prevents operation: Financial Instagram is not selectable in the composer and Meta still requires Connect Instagram; Productions Instagram requires account verification to remove Spotlight wording.",
+  "updated_at": "2026-08-21T02:00:24.671Z",
+  "final_classification": "SOCIAL RECOVERY P2 FOUNDER DECISIONS REQUIRED — MANUAL META ACTIONS IDENTIFIED",
+  "reason": "No further broad discovery is required. Two exact manual Meta actions and 10 explicit Founder content decisions remain before a PASS-only launch gate can be built.",
   "financial_pairing": {
     "diagnostic": "93_financial_pairing_multisurface_diagnostic.json",
     "truth": "PAIRING BLOCKED BY META - NOT PAIRED",
@@ -20,9 +20,10 @@
   "batch_gate": {
     "pass": 0,
     "revise": 0,
-    "remove": 0,
-    "founder_decision_required": 9,
-    "technical_or_manual_action": 5
+    "remove_from_batch": 0,
+    "founder_decision_required": 10,
+    "technical_or_manual_action": 4
   },
-  "founder_packet": "98_first_batch_founder_decision_packet.md"
+  "founder_packet": "98_first_batch_founder_decision_packet.md",
+  "reconciliation": "100_founder_decision_count_reconciliation.json"
 }

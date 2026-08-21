@@ -1,5 +1,5 @@
 {
-  "status": "BUILT_NOT_APPROVED_NOT_SCHEDULED - TECHNICAL/MANUAL/FOUNDER DECISIONS REMAIN",
+  "status": "BUILT_NOT_APPROVED_NOT_SCHEDULED - MANUAL META ACTIONS AND FOUNDER DECISIONS REMAIN",
   "posts": [
     {
       "SocialContentId": "SRP2-001",
@@ -125,7 +125,7 @@
       "creative_requirement": "Brand-safe static graphic or approved existing visual; alt text required.",
       "source_asset_requirement": "Rights-approved asset or text-only graphic.",
       "compliance_requirement": "Rights check for project/talent/client assets.",
-      "approval_state": "FOUNDER DECISION REQUIRED - PROFILE REVISION COMPLETE",
+      "approval_state": "FOUNDER DECISION REQUIRED - SOC-FD-010",
       "scheduling_state": "NOT SCHEDULED",
       "campaign_tag": "social-recovery-p2",
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-006"
@@ -309,14 +309,15 @@
       "attribution_requirement": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-014"
     }
   ],
-  "updated_at": "2026-08-20T23:48:05.244Z",
+  "updated_at": "2026-08-21T02:00:24.671Z",
   "financial_replacement_note": "Use @jmerrillfin / 17841438473100276 for future Financial Instagram routing. Do not use @jmerrillfinancial. Scheduling remains blocked until J Merrill Financial Facebook + @jmerrillfin connected-assets pair verifies.",
   "hold_summary": {
     "pass_posts": 0,
     "revise_posts": 0,
-    "remove_from_batch": 0,
-    "founder_decision_required": 9,
-    "technical_or_manual_blocked_posts": 5,
-    "reason": "Five revision items were resolved or given exact technical/manual actions; nine content decisions are enumerated in 98."
+    "drop_posts": 0,
+    "defer_posts": 0,
+    "founder_decision_required": 10,
+    "technical_or_manual_blocked_posts": 4,
+    "reconciliation": "SRP2-006 is a tenth Founder decision, not a technical/manual post."
   }
 }

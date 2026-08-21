@@ -1,12 +1,12 @@
 {
-  "status": "HOLD - TECHNICAL/MANUAL ACTIONS AND FOUNDER DECISIONS REMAIN",
-  "updated_at": "2026-08-20T23:48:05.244Z",
+  "status": "SOCIAL RECOVERY P2 FOUNDER DECISIONS REQUIRED — MANUAL META ACTIONS IDENTIFIED",
+  "updated_at": "2026-08-21T02:00:24.671Z",
   "summary": {
     "pass": 0,
     "revise": 0,
     "remove_from_batch": 0,
-    "founder_decision_required": 9,
-    "technical_or_manual_action": 5
+    "founder_decision_required": 10,
+    "technical_or_manual_action": 4
   },
   "posts": [
     {
@@ -54,7 +54,7 @@
       "brand": "J Merrill Productions",
       "platform": "Facebook",
       "result": "FOUNDER DECISION REQUIRED",
-      "reason": "Profile revision complete; Founder content/creative decision remains.",
+      "reason": "Profile revision complete; Founder content/creative decision now explicit as SOC-FD-010.",
       "scheduling_state": "NOT SCHEDULED"
     },
     {

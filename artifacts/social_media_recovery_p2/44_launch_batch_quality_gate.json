@@ -1,12 +1,12 @@
 {
   "required_result": "PASS - SCHEDULING READY",
   "result": "HOLD - NOT SCHEDULING READY",
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "reason": "Financial Instagram is disabled in composer, Productions Instagram requires verification/edit, and nine content decisions remain. Nothing scheduled.",
+  "updated_at": "2026-08-21T02:00:24.671Z",
+  "reason": "Manual Meta actions remain for Financial pairing and Productions Instagram, and 10 Founder content decisions remain. Nothing scheduled.",
   "holds": [
     "Financial pairing/manual action",
     "Productions Instagram manual action",
-    "Nine Founder content decisions",
+    "Ten Founder content decisions",
     "Owned/text-only creative or rights proof required before scheduling"
   ],
   "posts": [
@@ -50,7 +50,7 @@
       "brand": "J Merrill Productions",
       "platform": "Facebook",
       "scheduling_ready": "NO",
-      "gate": "FOUNDER DECISION REQUIRED - PROFILE REVISION COMPLETE"
+      "gate": "FOUNDER DECISION REQUIRED - SOC-FD-010"
     },
     {
       "SocialContentId": "SRP2-007",
@@ -109,12 +109,13 @@
       "gate": "FOUNDER DECISION REQUIRED"
     }
   ],
-  "status": "HOLD - NOT SCHEDULING READY",
+  "status": "SOCIAL RECOVERY P2 FOUNDER DECISIONS REQUIRED — MANUAL META ACTIONS IDENTIFIED",
   "summary": {
     "pass": 0,
     "revise": 0,
-    "remove": 0,
-    "founder_decision_required": 9,
-    "technical_or_manual_action": 5
+    "drop": 0,
+    "defer": 0,
+    "founder_decision_required": 10,
+    "technical_blocked": 4
   }
 }

@@ -1,6 +1,6 @@
 {
-  "status": "HOLD - FINANCIAL IG PAIRING NOT VERIFIED",
-  "updated_at": "2026-08-20T20:49:30.184Z",
+  "status": "HOLD - AWAITING MANUAL FINANCIAL PAIRING VERIFICATION",
+  "updated_at": "2026-08-21T02:00:24.671Z",
   "financial_destinations": {
     "facebook": {
       "name": "J Merrill Financial",
@@ -23,5 +23,22 @@
       "status": "LEGACY / RESTRICTED - RETAIN TEMPORARILY / DO NOT PUBLISH"
     }
   },
-  "result": "No active launch item should schedule until pair is verified."
+  "result": "No active launch item should schedule until pair is verified.",
+  "required_final_status": "PASS",
+  "financial_destination_truth": {
+    "facebook_required": {
+      "name": "J Merrill Financial",
+      "profile_id": "61593286063626"
+    },
+    "instagram_required": {
+      "handle": "@jmerrillfin",
+      "instagram_id": "17841438473100276"
+    },
+    "prohibited": [
+      "old Financial Facebook assets",
+      "@jmerrillfinancial"
+    ],
+    "current_composer_eligibility": "FACEBOOK ONLY"
+  },
+  "note": "No Financial PASS post may target legacy Financial assets. Certification can move to PASS only after both canonical Financial destinations are selectable in composer/Planner."
 }

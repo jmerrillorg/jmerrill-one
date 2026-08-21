@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "status": "COMPLETE - ROUTINE REVISIONS RESOLVED OR ESCALATED WITH EXACT ACTION",
+  "updated_at": "2026-08-21T02:00:24.671Z",
+  "status": "COMPLETE - RECONCILED; MANUAL META ACTIONS STILL REQUIRED BEFORE RECERTIFICATION",
   "items": [
     {
       "SocialContentId": "SRP2-004",
@@ -8,7 +8,8 @@
       "original_issue": "Instagram destination and compliance wording",
       "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
       "authority": "Existing Financial canon and compliance guardrails",
-      "resulting_status": "TECHNICAL HOLD"
+      "resulting_status": "TECHNICAL HOLD - AWAITING FINANCIAL PAIRING",
+      "next_action": "After Jackie completes Financial pairing, recertify against correct canonical FB, @jmerrillfin, compliance, creative, CTA, URL, and UTM; target PASS or REVISE."
     },
     {
       "SocialContentId": "SRP2-007",
@@ -16,7 +17,8 @@
       "original_issue": "Instagram destination and compliance wording",
       "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
       "authority": "Existing Financial canon and compliance guardrails",
-      "resulting_status": "TECHNICAL HOLD"
+      "resulting_status": "TECHNICAL HOLD - AWAITING FINANCIAL PAIRING",
+      "next_action": "After Jackie completes Financial pairing, recertify against correct canonical FB, @jmerrillfin, compliance, creative, CTA, URL, and UTM; target PASS or REVISE."
     },
     {
       "SocialContentId": "SRP2-011",
@@ -24,7 +26,8 @@
       "original_issue": "Instagram destination and compliance wording",
       "revision": "Destination already routed to @jmerrillfin / 17841438473100276; copy classified as planning education and avoids legal/investment advice. Operational blocker remains pairing/composer eligibility.",
       "authority": "Existing Financial canon and compliance guardrails",
-      "resulting_status": "TECHNICAL HOLD"
+      "resulting_status": "TECHNICAL HOLD - AWAITING FINANCIAL PAIRING",
+      "next_action": "After Jackie completes Financial pairing, recertify against correct canonical FB, @jmerrillfin, compliance, creative, CTA, URL, and UTM; target PASS or REVISE."
     },
     {
       "SocialContentId": "SRP2-006",
@@ -32,7 +35,8 @@
       "original_issue": "Facebook profile URL/link hold",
       "revision": "Resolved: Productions Facebook website now shows jmerrill.productions and bio has no Spotlight wording. Remaining launch approval is rights/creative/content, not profile correction.",
       "authority": "Factual profile remediation evidence",
-      "resulting_status": "FOUNDER DECISION REQUIRED"
+      "resulting_status": "FOUNDER DECISION REQUIRED - SOC-FD-010",
+      "next_action": "Keep in Founder packet; do not treat as technical/manual."
     },
     {
       "SocialContentId": "SRP2-012",
@@ -40,13 +44,15 @@
       "original_issue": "Instagram profile obsolete Spotlight wording",
       "revision": "Not safely editable by Codex; Business Suite requires Instagram verification. Exact Jackie action recorded in 96.",
       "authority": "Live Meta Business Suite evidence",
-      "resulting_status": "MANUAL JACKIE ACTION REQUIRED"
+      "resulting_status": "MANUAL JACKIE ACTION REQUIRED - AWAITING PRODUCTIONS IG EDIT",
+      "next_action": "After Jackie removes Spotlight wording from @jmerrillprod, recertify; target PASS or REVISE."
     }
   ],
   "summary": {
     "converted_to_pass": 0,
-    "converted_to_founder_decision": 1,
+    "founder_decision_required": 1,
     "manual_jackie_action": 1,
-    "technical_hold": 3
+    "technical_hold": 3,
+    "reconciliation": "SRP2-006 is SOC-FD-010; it is excluded from technical/manual blocked count."
   }
 }

@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
+  "updated_at": "2026-08-21T02:00:24.671Z",
   "status": "FOUNDER ACTION REQUIRED",
-  "classification": "FOUNDER ACTION REQUIRED",
+  "classification": "FOUNDER ACTION REQUIRED - FOLLOW-UP UNLESS META REQUIRES ENFORCEMENT",
   "checks": {
     "jackie_can_authenticate_to_facebook_meta": "NOT PROVEN BY CODEX; current session is authenticated but recovery safety was not verified",
     "mfa_enabled_on_primary_meta_identity": "NOT PROVEN",

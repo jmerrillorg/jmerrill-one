@@ -1,20 +1,32 @@
 {
-  "updated_at": "2026-08-20T23:48:05.244Z",
-  "status": "MANUAL JACKIE ACTION REQUIRED",
-  "reason": "Meta exposes the Financial Instagram target as disabled in composer and continues to show Connect Instagram/confirmation surfaces after automated confirmation attempts.",
+  "updated_at": "2026-08-21T02:00:24.671Z",
+  "status": "MANUAL JACKIE ACTION REQUIRED - READY FOR FOUNDER EXECUTION",
+  "reason": "Financial pairing remains NOT PAIRED and composer eligibility remains FACEBOOK ONLY. Automation should not continue looping; Jackie must complete Meta authentication/confirmation if prompted.",
   "steps": [
-    "Open Meta Business Suite for business portfolio J Merrill One / 846921439784613.",
-    "Select business asset J Merrill Financial / profile ID 61593286063626.",
-    "Click Connect Instagram or the disabled Instagram Profile / Connect Instagram option in the Create post destination selector.",
-    "When Meta asks to confirm the Facebook Page and Instagram connection, authenticate as the account that owns @jmerrillfin if prompted.",
-    "Choose @jmerrillfin / IG ID 17841438473100276.",
-    "Confirm the connection to J Merrill Financial.",
-    "Return to Business Settings > Pages > J Merrill Financial > Connected assets and verify @jmerrillfin appears.",
-    "Open Create post and verify both J Merrill Financial and @jmerrillfin are selectable."
+    "Open Meta Business Suite.",
+    "Select J Merrill Financial.",
+    "Open Settings / Linked accounts / Connect Instagram.",
+    "Select or authenticate @jmerrillfin.",
+    "Confirm the connection.",
+    "Return to Business Suite composer/Planner.",
+    "Verify both J Merrill Financial and @jmerrillfin appear as selectable destinations."
   ],
   "do_not_use": {
     "handle": "@jmerrillfinancial",
     "instagram_id": "17841475196277020",
     "status": "LEGACY / HOLD - DO NOT USE"
-  }
+  },
+  "current_certified_state": {
+    "facebook": {
+      "name": "J Merrill Financial",
+      "profile_id": "61593286063626"
+    },
+    "instagram": {
+      "handle": "@jmerrillfin",
+      "instagram_id": "17841438473100276"
+    },
+    "pairing": "NOT PAIRED",
+    "composer_eligibility": "FACEBOOK ONLY"
+  },
+  "stop_condition": "If Meta prompts for Instagram authentication, security verification, or Accounts Center confirmation, Jackie completes it directly. Do not request passwords or codes."
 }
