@@ -1,6 +1,13 @@
 {
-  "result": "NOT STARTED",
-  "updated_at": "2026-08-20T13:35:00Z",
-  "reason": "Remaining month remains READY / PENDING FIRST-WEEK PROOF; no strategy rewrite performed.",
-  "adjustments": []
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "PENDING FIRST-WEEK PROOF",
+  "allowed_adjustments": [
+    "time",
+    "format",
+    "CTA balance",
+    "platform mix",
+    "content pillar balance"
+  ],
+  "strategy_rebuild_authorized": false,
+  "records": []
 }

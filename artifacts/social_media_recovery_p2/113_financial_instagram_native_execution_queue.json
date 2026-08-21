@@ -1,0 +1,54 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "READY - MANUAL/NATIVE INSTAGRAM QUEUE PREPARED",
+  "account": "@jmerrillfin",
+  "instagram_id": "17841438473100276",
+  "execution_mode": "INSTAGRAM_NATIVE",
+  "items": [
+    {
+      "SocialContentId": "SRP2-004",
+      "final_copy": "Estate planning starts with a simple question: who should know what to do if you cannot speak for yourself?\n\nA clear plan can help families find documents, understand wishes, and avoid guessing in a difficult moment. This is education, not legal advice.\n\nSchedule a Planning Conversation: https://jmerrill.financial/",
+      "creative": "Financial branded text graphic focused on document readiness and trusted decision-makers; no client stories or sensitive facts.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-004_j_merrill_financial_instagram.png",
+      "scheduled_date": "2026-08-22",
+      "scheduled_time": "11:30 AM",
+      "CTA": "Schedule a Planning Conversation",
+      "destination": "https://jmerrill.financial/",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-004",
+      "instagram_handle": "@jmerrillfin",
+      "execution_mode": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "final_copy": "Advanced planning is not only about assets. It is about the people who may have to make decisions when timing is hard.\n\nThe right conversation can connect family priorities, documents, insurance considerations, and next steps before pressure arrives. No guarantees or legal advice.\n\nStart a Planning Conversation: https://jmerrill.financial/",
+      "creative": "Financial branded text graphic showing family priorities, documents, insurance considerations, and next steps; no guarantees or client details.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-007_j_merrill_financial_instagram.png",
+      "scheduled_date": "2026-08-24",
+      "scheduled_time": "11:30 AM",
+      "CTA": "Start a Planning Conversation",
+      "destination": "https://jmerrill.financial/",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-007",
+      "instagram_handle": "@jmerrillfin",
+      "execution_mode": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "final_copy": "Funeral and pre-need planning can be an act of care for the people who will have to make choices later.\n\nSome options may involve insurance products, so the conversation should stay clear, practical, and matched to the family's needs. No legal, tax, or investment advice.\n\nAsk About Advanced Planning: https://jmerrill.financial/",
+      "creative": "Financial branded text graphic about pre-need planning as care for family decision-makers; note insurance-product context without claims or guarantees.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-011_j_merrill_financial_instagram.png",
+      "scheduled_date": "2026-08-26",
+      "scheduled_time": "11:30 AM",
+      "CTA": "Ask About Advanced Planning",
+      "destination": "https://jmerrill.financial/",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-011",
+      "instagram_handle": "@jmerrillfin",
+      "execution_mode": "INSTAGRAM_NATIVE"
+    }
+  ],
+  "legacy_block": [
+    "@jmerrillfinancial",
+    "17841475196277020"
+  ],
+  "scheduled_in_instagram": false,
+  "manual_publish_queue": true
+}

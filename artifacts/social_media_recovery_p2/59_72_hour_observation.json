@@ -1,6 +1,9 @@
 {
-  "result": "NOT STARTED",
-  "updated_at": "2026-08-20T13:35:00Z",
-  "reason": "72-hour observation begins only after first scheduled publication.",
-  "metrics": []
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "result": "NOT STARTED - FIRST PUBLISH PENDING",
+  "successful_publishes": 0,
+  "failed_publishes": 0,
+  "metrics": [],
+  "financial_native_execution_burden": "PENDING",
+  "note": "72-hour observation begins after the first live publish."
 }

@@ -1,5 +1,5 @@
 {
-  "status": "READY_AFTER_PUBLISH",
+  "status": "READY_AFTER_PUBLISH - NO METRICS CAPTURED YET",
   "fields": [
     "SocialContentId",
     "post ID",
@@ -12,5 +12,7 @@
     "link clicks",
     "profile actions"
   ],
-  "rule": "Use native Meta export/API where available. Do not scrape metrics where native export/API is unavailable."
+  "rule": "Use native Meta export/API where available. Do not scrape metrics where native export/API is unavailable.",
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "no_fabrication": true
 }

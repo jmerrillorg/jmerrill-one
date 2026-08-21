@@ -1,6 +1,7 @@
 {
-  "result": "NOT APPLICABLE - NO POSTS SCHEDULED",
-  "updated_at": "2026-08-20T13:35:00Z",
-  "reason": "Scheduled-post validation cannot run until batch scheduling occurs after approval/access remediation.",
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "result": "NOT RUN - NO POSTS SCHEDULED",
+  "status": "PENDING_PLATFORM_SCHEDULING",
+  "reason": "Business Suite scheduling could not be completed because Edge file upload was blocked before schedule submission. No scheduled Meta items exist to validate from this run.",
   "records": []
 }

@@ -1,17 +1,23 @@
 {
-  "updated_at": "2026-08-21T08:16:52.055Z",
-  "classification": "SOCIAL RECOVERY P2 IMPLEMENTATION READY — FOUNDER FIRST-BATCH APPROVAL REQUIRED",
-  "financial_facebook": "CANONICAL - J Merrill Financial / 61593286063626",
-  "financial_instagram": "CANONICAL - @jmerrillfin / 17841438473100276",
-  "financial_pairing": "NOT REQUIRED - ACCEPTED OPERATING CONDITION",
-  "financial_execution_model": "DUAL EXECUTION SURFACES ACTIVE",
-  "publishing_profile": "PASS - profile corrected",
-  "productions_facebook": "PASS - website/bio corrected",
-  "productions_instagram": "PASS - legacy Spotlight wording removed by Jackie",
-  "founder_content_decisions": "10/10 IMPLEMENTED",
-  "first_week_pass_count": 14,
-  "technical_blockers": 0,
-  "manual_blockers": 0,
-  "security_follow_up": "PORTFOLIO SECURITY HARDENING / FOUNDER RECOVERY READINESS - NON-LAUNCH-BLOCKING",
-  "pr": "#7"
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "classification": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — PLATFORM SCHEDULING ACTION REQUIRED",
+  "founder_approval": "GRANTED",
+  "scheduled_count": 0,
+  "published_count": 0,
+  "publish_success_rate": null,
+  "financial_native_ig_execution_result": "QUEUE PREPARED - NOT SCHEDULED",
+  "public_post_validation_result": "NOT STARTED",
+  "engagement_response_readiness": "READY - LOG CREATED",
+  "inbound_routing_result": "PENDING - NO INQUIRIES",
+  "compliance_privacy_incidents": 0,
+  "first_week_baseline_performance": "NOT STARTED",
+  "remaining_month_readiness": "FOUNDER REVIEW REQUIRED",
+  "platform_blocker": {
+    "status": "BLOCKED_IN_CODEX_EDGE_SESSION",
+    "blocker": "Edge Business Suite composer file upload denied by browser extension file chooser with Not allowed; creative could not be attached, so scheduling could not be verified.",
+    "attempted_surface": "Microsoft Edge / Meta Business Suite composer",
+    "attempted_post": "SRP2-003",
+    "evidence": "/tmp/p2_edge_test_composer_status.txt"
+  },
+  "security_follow_up": "META PORTFOLIO 2FA / FOUNDER RECOVERY READINESS — FOLLOW-UP"
 }

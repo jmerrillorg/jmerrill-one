@@ -1,5 +1,5 @@
 {
-  "status": "READY",
+  "status": "READY - UPLOADABLE CREATIVE ASSETS GENERATED",
   "items": [
     {
       "brand": "J Merrill One",
@@ -152,7 +152,7 @@
       "note": "Use existing approved brand system; do not invent new social identity. Launch PASS requires actual approved creative or text-only owned graphic proof."
     }
   ],
-  "updated_at": "2026-08-21T08:16:52.055Z",
+  "updated_at": "2026-08-21T08:32:36.916Z",
   "first_week_creative_rule": "All first-week included posts are READY with new branded/text graphic creative. No legacy Financial imagery is used automatically.",
   "post_readiness": [
     {
@@ -162,7 +162,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
       "creative_brief": "Text-led branded graphic showing a simple manuscript-to-book path; no book covers, author photos, excerpts, testimonials, or third-party imagery.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-001_j_merrill_publishing_facebook.png"
     },
     {
       "SocialContentId": "SRP2-002",
@@ -171,7 +172,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
       "creative_brief": "Privacy-safe mission graphic using abstract/community-support shapes or text only; no identifiable people.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-002_j_merrill_foundation_facebook.png"
     },
     {
       "SocialContentId": "SRP2-003",
@@ -180,7 +182,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
       "creative_brief": "Why-first JM1 branded graphic connecting human need to useful work; no division sales claims.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-003_j_merrill_one_instagram.png"
     },
     {
       "SocialContentId": "SRP2-004",
@@ -189,7 +192,8 @@
       "creative_status": "READY",
       "execution_surface": "INSTAGRAM_NATIVE",
       "creative_brief": "Financial branded text graphic focused on document readiness and trusted decision-makers; no client stories or sensitive facts.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-004_j_merrill_financial_instagram.png"
     },
     {
       "SocialContentId": "SRP2-005",
@@ -198,7 +202,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
       "creative_brief": "Branded checklist-style text graphic: inquiry, review, fit, next steps. Do not imply acceptance or paid publication guarantee.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-005_j_merrill_publishing_facebook.png"
     },
     {
       "SocialContentId": "SRP2-006",
@@ -207,7 +212,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
       "creative_brief": "Rights-safe branded production-planning graphic using text, storyboard shapes, or original abstract media elements; no client/talent/project imagery.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-006_j_merrill_productions_facebook.png"
     },
     {
       "SocialContentId": "SRP2-007",
@@ -216,7 +222,8 @@
       "creative_status": "READY",
       "execution_surface": "INSTAGRAM_NATIVE",
       "creative_brief": "Financial branded text graphic showing family priorities, documents, insurance considerations, and next steps; no guarantees or client details.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-007_j_merrill_financial_instagram.png"
     },
     {
       "SocialContentId": "SRP2-008",
@@ -225,7 +232,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
       "creative_brief": "Privacy-safe participation graphic with icons for time, partnership, community, and support; no beneficiary imagery.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-008_j_merrill_foundation_instagram.png"
     },
     {
       "SocialContentId": "SRP2-009",
@@ -234,7 +242,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
       "creative_brief": "Five-brand enterprise map graphic listing J Merrill One, Publishing, Financial, Foundation, and Productions; do not activate Founder Brand.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-009_j_merrill_one_facebook.png"
     },
     {
       "SocialContentId": "SRP2-010",
@@ -243,7 +252,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
       "creative_brief": "Calm branded text graphic emphasizing care, clarity, author approval, and quality; no internal workflow jargon.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-010_j_merrill_publishing_facebook.png"
     },
     {
       "SocialContentId": "SRP2-011",
@@ -252,7 +262,8 @@
       "creative_status": "READY",
       "execution_surface": "INSTAGRAM_NATIVE",
       "creative_brief": "Financial branded text graphic about pre-need planning as care for family decision-makers; note insurance-product context without claims or guarantees.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-011_j_merrill_financial_instagram.png"
     },
     {
       "SocialContentId": "SRP2-012",
@@ -261,7 +272,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
       "creative_brief": "Rights-safe branded production-process graphic; no project, client, talent, or copyrighted media assets.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-012_j_merrill_productions_instagram.png"
     },
     {
       "SocialContentId": "SRP2-013",
@@ -270,7 +282,8 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
       "creative_brief": "Service/author-journey branded text graphic; intentionally generic because no specific author/title rights evidence is being used.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-013_j_merrill_publishing_facebook.png"
     },
     {
       "SocialContentId": "SRP2-014",
@@ -279,7 +292,9 @@
       "creative_status": "READY",
       "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
       "creative_brief": "Impact-oriented text graphic focused on mission and practical support; no statistics or identifiable stories.",
-      "accessibility_note": "Alt text required before scheduling/publishing."
+      "accessibility_note": "Alt text required before scheduling/publishing.",
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-014_j_merrill_foundation_facebook.png"
     }
-  ]
+  ],
+  "asset_manifest": "125_first_week_creative_asset_manifest.json"
 }

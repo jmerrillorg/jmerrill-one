@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-21T08:16:52.055Z",
+  "generated_at": "2026-08-21T08:32:36.916Z",
   "target_repository": "J Merrill One",
-  "package": "SOCIAL RECOVERY P2 - FOUNDER PLATFORM-ROUTING DECISION + PRODUCTIONS REMEDIATION CLOSEOUT + FINAL BATCH CERTIFICATION",
+  "package": "SOCIAL RECOVERY P2 - FIRST 7-DAY LAUNCH EXECUTION + VALIDATION + 72-HOUR OBSERVATION",
   "branch": "codex/social-recovery-p2",
   "head": "UPDATED_IN_PR_COMMENT_AND_FINAL_RESPONSE",
   "pr": {
@@ -10,6 +10,6 @@
     "title": "SOCIAL RECOVERY P2 — Meta estate remediation",
     "merge_state": "OPEN"
   },
-  "classification": "SOCIAL RECOVERY P2 IMPLEMENTATION READY — FOUNDER FIRST-BATCH APPROVAL REQUIRED",
-  "note": "Financial independent routing accepted, Productions IG correction closed, final destination certification and PASS-only executable first-week batch created."
+  "classification": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — PLATFORM SCHEDULING ACTION REQUIRED",
+  "note": "Founder approval recorded, batch frozen, creative assets generated, Financial native queue prepared, but live scheduling/publishing is pending due Edge/Meta file upload blocker."
 }

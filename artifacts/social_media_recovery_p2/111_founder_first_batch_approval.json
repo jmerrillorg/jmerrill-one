@@ -1,0 +1,13 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "APPROVED FOR SCHEDULING/PUBLISHING",
+  "approval_granted": true,
+  "approval_phrase": "APPROVE SOCIAL RECOVERY P2 FIRST 7-DAY BATCH — schedule/publish all PASS posts using their certified execution surfaces",
+  "approval_date_time": "2026-08-21T08:32:36.916Z",
+  "approved_batch_sources": [
+    "109_first_week_executable_batch.json",
+    "110_first_week_final_quality_gate.json"
+  ],
+  "approved_pass_count": 14,
+  "content_decisions_reopened": false
+}

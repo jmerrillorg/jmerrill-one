@@ -1,6 +1,7 @@
 {
-  "result": "NOT STARTED",
-  "updated_at": "2026-08-20T13:35:00Z",
-  "reason": "No first-batch posts were scheduled or published in this pass.",
-  "records": []
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "result": "NOT STARTED - NO POSTS PUBLISHED",
+  "status": "PENDING_FIRST_PUBLISH",
+  "records": [],
+  "reason": "No post was scheduled or published from Codex because Edge file upload was blocked before schedule submission."
 }

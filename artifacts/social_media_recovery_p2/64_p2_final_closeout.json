@@ -1,14 +1,29 @@
 {
-  "updated_at": "2026-08-21T08:16:52.055Z",
-  "final_classification": "SOCIAL RECOVERY P2 IMPLEMENTATION READY — FOUNDER FIRST-BATCH APPROVAL REQUIRED",
-  "reason": "Final first-week batch is PASS-only. Financial independent FB/IG execution is accepted and certified. Productions IG legacy wording is removed. No first-batch operational blockers remain. Scheduling/publishing awaits Founder approval.",
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "final_classification": "SOCIAL RECOVERY P2 LAUNCH IN PROGRESS — PLATFORM SCHEDULING ACTION REQUIRED",
+  "reason": "Founder approval is granted and the batch is frozen with generated creative assets, but live scheduling/publishing could not be completed from Codex because Edge/Meta file upload was blocked before schedule submission.",
+  "scheduling": {
+    "total_scheduled": 0,
+    "business_suite_scheduled": 0,
+    "financial_native_queue": 3
+  },
+  "publishing": {
+    "total_published": 0,
+    "success": 0,
+    "failures": 0
+  },
   "batch_gate": {
     "pass": 14,
     "hold": 0,
     "revise": 0,
     "founder_decision_required": 0
   },
-  "executable_batch": "109_first_week_executable_batch.json",
-  "final_quality_gate": "110_first_week_final_quality_gate.json",
-  "security_follow_up": "Portfolio 2FA/recovery readiness remains follow-up/non-launch-blocking."
+  "platform_blocker": {
+    "status": "BLOCKED_IN_CODEX_EDGE_SESSION",
+    "blocker": "Edge Business Suite composer file upload denied by browser extension file chooser with Not allowed; creative could not be attached, so scheduling could not be verified.",
+    "attempted_surface": "Microsoft Edge / Meta Business Suite composer",
+    "attempted_post": "SRP2-003",
+    "evidence": "/tmp/p2_edge_test_composer_status.txt"
+  },
+  "security_follow_up": "Meta portfolio 2FA / Founder recovery readiness remains follow-up/non-launch-blocking."
 }
