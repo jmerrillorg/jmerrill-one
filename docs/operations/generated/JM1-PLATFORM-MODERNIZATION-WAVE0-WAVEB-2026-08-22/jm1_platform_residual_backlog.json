@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-08-22T00:00:00-04:00",
+  "target_repository": "J Merrill One",
+  "branch": "codex/jm1-platform-waveb-functions",
+  "prior_wave0_artifacts": "docs/operations/generated/JM1-PLATFORM-MODERNIZATION-WAVE0-2026-08-22",
+  "azure_subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+  "azure_tenant": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+  "operator": "jm1-admin@jmerrill.one",
+  "backlog": [
+    {
+      "id": "W0-CRED-POWERBI",
+      "action": "REPAIR_OR_REPLACE_WITH_VALIDATED_POWERBI_IDENTITY",
+      "due": "2026-08-24"
+    },
+    {
+      "id": "W0-CRED-DV",
+      "action": "ZERO_DOWNTIME_ROTATION_THEN_RETIRE_SUPERSEDED_KEY_AFTER_CONSUMER_PROOF",
+      "due": "2026-10-15"
+    },
+    {
+      "id": "W0-CRED-AIC",
+      "action": "CERTIFY_ACTIVE_APP_ID_AND_CREATE_EXACT_FEDERATED_CREDENTIAL_OR_ROTATE_SECRET_BEFORE_2026_09_15",
+      "due": "2026-09-15"
+    },
+    {
+      "id": "W0-CRED-HQ",
+      "action": "CONSUMER_PROVE_OR_RETIRE; ROTATE_ONLY_IF_ACTIVE_CONSUMER_IS_FOUND",
+      "due": "2026-09-15"
+    },
+    {
+      "id": "WAVEB-B1",
+      "action": "Implement ACS Flex Node 24 in jmerrill-pub/source deployment path",
+      "due": "Founder authorization"
+    },
+    {
+      "id": "WAVEB-B2",
+      "action": "Financial repo Function Flex migration with privacy/Dataverse regression",
+      "due": "Financial handoff authorization"
+    },
+    {
+      "id": "WAVEB-B3",
+      "action": "Diagnostic dependency remediation, audit fix, workload profile, then Flex migration",
+      "due": "After dependency health pass"
+    }
+  ]
+}

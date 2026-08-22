@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-22T00:00:00-04:00",
+  "target_repository": "J Merrill One",
+  "branch": "codex/jm1-platform-waveb-functions",
+  "prior_wave0_artifacts": "docs/operations/generated/JM1-PLATFORM-MODERNIZATION-WAVE0-2026-08-22",
+  "azure_subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+  "azure_tenant": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+  "operator": "jm1-admin@jmerrill.one",
+  "evidence": [
+    "Azure CLI supports functionapp create with --flexconsumption-location and --runtime-version",
+    "Azure runtime list shows Node 24 for Linux Functions",
+    "Existing Flex plans are present for jm1-ed-functions and Foundation intake"
+  ],
+  "caveat": "No live Flex app created in this pass."
+}

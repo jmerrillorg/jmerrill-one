@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-08-22T00:00:00-04:00",
+  "target_repository": "J Merrill One",
+  "branch": "codex/jm1-platform-waveb-functions",
+  "prior_wave0_artifacts": "docs/operations/generated/JM1-PLATFORM-MODERNIZATION-WAVE0-2026-08-22",
+  "azure_subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+  "azure_tenant": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+  "operator": "jm1-admin@jmerrill.one",
+  "credential": {
+    "id": "W0-CRED-DV",
+    "priority": "P1",
+    "name": "JM1-Dataverse-ServicePrincipal",
+    "appId": "abaed7aa-944f-4c41-8947-bf1bb6b9b111",
+    "objectId": "737e00fc-5ea0-4baf-861b-5ff280ba1ace",
+    "spObjectId": "f3f30821-f738-4657-8078-63937abbecaf",
+    "keyId": "469dd743-604a-49ca-b463-2fa2b7db13df",
+    "expiredKeyId": "906b217d-20aa-4c14-a285-5f5015f2ceab",
+    "expires": "2026-11-08T18:51:37.245Z",
+    "state": "ACTIVE_EXPIRING_WITH_SUPERSEDED_EXPIRED_KEY",
+    "consumer": "Dataverse integrations across One/Publishing/Functions; diagnostic runner currently has DATAVERSE_CLIENT_SECRET setting names while also using managed-identity patterns in docs",
+    "liveEvidence": [
+      "App registration found with active 2026-11-08 key plus expired 2026-06-07 key",
+      "No Azure RBAC assignment read back for app/SP today",
+      "Required Microsoft Graph User.Read delegated permission present"
+    ],
+    "disposition": "ZERO_DOWNTIME_ROTATION_THEN_RETIRE_SUPERSEDED_KEY_AFTER_CONSUMER_PROOF",
+    "owner": "JM1 Platform / Dataverse integration owner",
+    "schedule": {
+      "pre_rotation_inventory": "2026-09-15",
+      "execution_window": "2026-09-22",
+      "observation": "2026-09-22 through 2026-09-29",
+      "latest_safe_completion": "2026-10-15"
+    },
+    "gateResult": "PASS_WITH_ROTATION_SCHEDULED"
+  },
+  "dependencies": {
+    "knownSettingNames": [
+      "DATAVERSE_CLIENT_SECRET",
+      "DATAVERSE_RESOURCE_URL",
+      "DATAVERSE_TENANT_ID",
+      "DATAVERSE_WEB_API_BASE_URL"
+    ],
+    "consumers": [
+      "One/Publishing/Functions references from prior Wave 0 evidence",
+      "func-jm1-diagnostic-ai-runner app settings"
+    ],
+    "azureRbacReadback": []
+  },
+  "classification": "ACTIVE EXPIRING - ZERO-DOWNTIME ROTATION REQUIRED"
+}

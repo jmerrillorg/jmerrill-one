@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-08-22T00:00:00-04:00",
+  "target_repository": "J Merrill One",
+  "branch": "codex/jm1-platform-waveb-functions",
+  "prior_wave0_artifacts": "docs/operations/generated/JM1-PLATFORM-MODERNIZATION-WAVE0-2026-08-22",
+  "azure_subscription": "9ee13245-2303-4010-8b6d-35f7cbcfdc0e",
+  "azure_tenant": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+  "operator": "jm1-admin@jmerrill.one",
+  "credential": {
+    "id": "W0-CRED-HQ",
+    "priority": "P1",
+    "name": "jm1-hq-app-sp",
+    "appId": "aaabfafa-635f-444b-b4a5-e684edf831c0",
+    "objectId": "e0a11faf-a0dd-40d6-807e-39969364489a",
+    "spObjectId": "8dff5969-7487-4bbe-8318-b59b9cdce77b",
+    "keyId": "8cbba58b-5367-4858-99df-f8529478d827",
+    "expires": "2026-11-03T18:01:51Z",
+    "state": "ACTIVE_EXPIRING_UNKNOWN_CONSUMER",
+    "consumer": "No repo/app-settings consumer found in One or checked publishing references; prior ledger suspected jm1-core-services but live RBAC readback is empty",
+    "liveEvidence": [
+      "App registration and SP found",
+      "No federated credentials found",
+      "No Azure RBAC assignment read back today",
+      "Repository search found no direct consumer reference beyond prior generated evidence"
+    ],
+    "disposition": "CONSUMER_PROVE_OR_RETIRE; ROTATE_ONLY_IF_ACTIVE_CONSUMER_IS_FOUND",
+    "owner": "JM1 Platform identity governance",
+    "schedule": {
+      "consumer_investigation": "2026-08-23",
+      "disposition_decision": "2026-08-26",
+      "rotate_or_retire_deadline": "2026-09-15"
+    },
+    "gateResult": "PASS_WITH_DISPOSITION_PATH"
+  },
+  "repoSearchResult": "No direct consumer reference found beyond generated Wave 0 evidence.",
+  "liveAzureRbacReadback": [],
+  "federatedCredentials": [],
+  "classification": "UNKNOWN CONSUMER - DISPOSITION PATH REQUIRED"
+}
