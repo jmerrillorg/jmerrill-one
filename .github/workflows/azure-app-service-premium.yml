@@ -48,6 +48,14 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
+      - name: Verify Node runtime baseline
+        run: |
+          node_major="$(node -p "process.versions.node.split('.')[0]")"
+          if [ "$node_major" != "24" ]; then
+            echo "Expected Node 24 for JM1 production build, got $(node -v)."
+            exit 1
+          fi
+
       - name: Install dependencies
         run: npm ci
 
