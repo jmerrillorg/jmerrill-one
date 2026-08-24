@@ -1,0 +1,99 @@
+{
+  "status": "FOUNDER_REVIEW_REQUIRED",
+  "public_address_standard": "Headquartered in Columbus, Ohio.",
+  "no_external_changes_made": true,
+  "brands": [
+    {
+      "brand": "J Merrill One",
+      "priority": "P1",
+      "profile_errors": [
+        "Dormant profile requires current governance review.",
+        "Public street address reportedly visible and should be reviewed against public address standard."
+      ],
+      "proposed_profile_positioning": "Enterprise authority, founder perspective, cross-division discovery, legacy, leadership, business-building, technology, and JM1 philosophy.",
+      "required_admin_evidence": [
+        "Meta Business Portfolio ownership",
+        "Facebook Page ID",
+        "Instagram account ID",
+        "admin/full-control assignments",
+        "partial-access assignments",
+        "connected ad accounts",
+        "pixels/datasets",
+        "domains",
+        "existing integrations"
+      ],
+      "implementation_status": "NOT_STARTED_PENDING_FOUNDER_APPROVAL"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "priority": "P1",
+      "profile_errors": [
+        "Profile language requires modernization.",
+        "Public street address appears visible on LinkedIn and should be reviewed against public address standard."
+      ],
+      "proposed_profile_positioning": "Author acquisition, author education, book launches, publishing expertise, and the JMP publishing experience.",
+      "required_admin_evidence": [
+        "Meta page/Instagram pairing",
+        "LinkedIn admin ownership",
+        "Page ID",
+        "Instagram account ID",
+        "connected ad accounts",
+        "pixels/datasets",
+        "domains"
+      ],
+      "implementation_status": "NOT_STARTED_PENDING_FOUNDER_APPROVAL"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "priority": "P1",
+      "profile_errors": [
+        "Current profile reportedly reads generically as a financial service.",
+        "Social presence does not reflect current planning-led business."
+      ],
+      "proposed_profile_positioning": "Estate readiness, legacy planning, executor preparation, document organization, and planning conversations with non-attorney controls.",
+      "required_admin_evidence": [
+        "Meta page/Instagram pairing",
+        "LinkedIn ownership if present",
+        "Page ID",
+        "Instagram account ID",
+        "compliance-approved CTA"
+      ],
+      "implementation_status": "NOT_STARTED_PENDING_FOUNDER_APPROVAL"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "priority": "P1",
+      "profile_errors": [
+        "Profile reportedly leads with IRS/tax-exempt language rather than mission and impact.",
+        "Public street address reportedly visible.",
+        "Operating-status language such as Closed now may not fit public participation profile."
+      ],
+      "proposed_profile_positioning": "Need, human story, action, people, impact, and invitation.",
+      "required_admin_evidence": [
+        "Meta page/Instagram pairing",
+        "Page ID",
+        "Instagram account ID",
+        "admin ownership",
+        "privacy-safe CTA destination"
+      ],
+      "implementation_status": "NOT_STARTED_PENDING_FOUNDER_APPROVAL"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "priority": "P1",
+      "profile_errors": [
+        "Profile still references former J Merrill Spotlight identity.",
+        "Website link reportedly points to Publishing domain."
+      ],
+      "proposed_profile_positioning": "External production business and internal JM1 media-amplification capability for video, audio, interviews, live media, storytelling, campaigns, launches, and enterprise communications.",
+      "required_admin_evidence": [
+        "Meta page/Instagram pairing",
+        "YouTube ownership if present",
+        "Page ID",
+        "Instagram account ID",
+        "canonical website URL"
+      ],
+      "implementation_status": "NOT_STARTED_PENDING_FOUNDER_APPROVAL"
+    }
+  ]
+}

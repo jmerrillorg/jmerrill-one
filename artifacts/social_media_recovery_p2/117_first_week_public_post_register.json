@@ -1,0 +1,13 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "NOT STARTED - NO PUBLIC POSTS CAPTURED",
+  "records": [],
+  "required_fields": [
+    "SocialContentId",
+    "platform",
+    "public post ID",
+    "public URL",
+    "published timestamp",
+    "execution surface"
+  ]
+}

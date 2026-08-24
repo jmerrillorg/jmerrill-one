@@ -1,0 +1,156 @@
+{
+  "status": "LIVE_META_MAP_UPDATED_WITH_FINANCIAL_PAGE_HOLD",
+  "captured_at": "2026-08-20T13:35:00Z",
+  "active_brands": [
+    {
+      "brand": "J Merrill One",
+      "facebook_page": "J Merrill One",
+      "facebook_page_url": "https://www.facebook.com/JMerrillOne",
+      "facebook_page_id": "101196349506906",
+      "instagram_account": "@jmerrillone",
+      "instagram_id": "17841456905118441",
+      "instagram_meta_selected_asset_id": "104609242492406",
+      "business_portfolio": "J Merrill One",
+      "business_portfolio_id": "846921439784613",
+      "owner_control": "Owned by J Merrill One; 1 full access person, 1 partial access person",
+      "pairing": "CONNECTED",
+      "website": "https://jmerrill.one/",
+      "cta": "Explore JM1",
+      "scheduling_status": "READY AFTER BATCH APPROVAL"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "facebook_page": "J Merrill Publishing Inc",
+      "facebook_page_url": "https://www.facebook.com/jmerrillpub/",
+      "facebook_page_id": "307480763084670",
+      "instagram_account": "@jmerrillpub",
+      "instagram_id": "17841410046020869",
+      "instagram_meta_selected_asset_id": "102246875862327",
+      "business_portfolio": "J Merrill One",
+      "business_portfolio_id": "846921439784613",
+      "owner_control": "Owned by J Merrill One; 1 full access person, 1 partial access person; 2 partners visible",
+      "pairing": "CONNECTED",
+      "website": "https://jmerrill.pub/",
+      "cta": "Start a Publishing Inquiry",
+      "scheduling_status": "HOLD - partner access review and profile factual correction"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "facebook_page": "J Merrill Financial",
+      "facebook_page_url": "https://www.facebook.com/profile.php?id=61593286063626",
+      "facebook_page_id": "1270611542802820",
+      "instagram_account": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "instagram_meta_selected_asset_id": "676716152193798",
+      "business_portfolio": "J Merrill One",
+      "business_portfolio_id": "846921439784613",
+      "owner_control": "Page editable in Jackie session; IG control not verified",
+      "pairing": "NOT CONNECTED",
+      "website": "https://jmerrill.financial/",
+      "cta": "Schedule a Planning Conversation",
+      "scheduling_status": "HOLD - IG pairing/access and content approval required",
+      "facebook_public_profile_id": "61593286063626"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "facebook_page": "J Merrill Foundation Inc",
+      "facebook_page_url": "https://www.facebook.com/JMerrillOrg/",
+      "facebook_page_id": "103161111947922",
+      "instagram_account": "@jmerrillorg",
+      "instagram_id": "17841447598056093",
+      "instagram_meta_selected_asset_id": "103339509083177",
+      "business_portfolio": "J Merrill One",
+      "business_portfolio_id": "846921439784613",
+      "owner_control": "Owned by J Merrill One; 1 full access person, 2 partial access people; review-needed flag visible",
+      "pairing": "CONNECTED",
+      "website": "https://jmerrill.foundation/",
+      "cta": "Learn, Volunteer, or Give",
+      "scheduling_status": "HOLD - access review and privacy approval"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "facebook_page": "J Merrill Productions",
+      "facebook_page_url": "https://www.facebook.com/JMerrillProd/",
+      "facebook_page_id": "108290338098880",
+      "instagram_account": "@jmerrillprod",
+      "instagram_id": "17841467582710441",
+      "instagram_meta_selected_asset_id": "334960843035948",
+      "business_portfolio": "J Merrill One",
+      "business_portfolio_id": "846921439784613",
+      "owner_control": "Owned by J Merrill One; 1 full access person, 1 partial access person",
+      "pairing": "CONNECTED",
+      "website": "https://jmerrill.productions/",
+      "cta": "Work With Productions",
+      "scheduling_status": "HOLD - factual legacy identity correction and rights approval"
+    }
+  ],
+  "out_of_scope_assets": {
+    "founder_brand": [
+      "Facebook Jackie Smith, Jr.",
+      "Instagram @mrjmerrill"
+    ],
+    "agape": [
+      "Facebook AGAPE International Cathedral",
+      "Instagram @agapeiclove"
+    ]
+  },
+  "updated_at": "2026-08-20T19:07:11.251Z",
+  "result": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+  "post_closeout_financial_replacement_continuation": {
+    "updated_at": "2026-08-20T13:49:26.063Z",
+    "result": "SOCIAL RECOVERY P2 REMEDIATION REQUIRED",
+    "blockers": [
+      "Authenticated Meta/Facebook UI could not be safely operated from this Codex execution surface: browser control binding returned no readable page state/output.",
+      "No purpose-built Meta/Facebook connector is available in this tool environment.",
+      "Creating a Facebook Page, assigning Instagram access, pairing assets, editing public profiles, and enabling portfolio security are live admin actions that cannot be invented or evidenced from repository files."
+    ],
+    "new_financial_page": {
+      "page_name": "J Merrill Financial, LLC",
+      "classification": "CANONICAL FINANCIAL FACEBOOK PAGE",
+      "page_id": null,
+      "url": null,
+      "owner": "J Merrill One",
+      "business_portfolio_id": "846921439784613",
+      "creation_result": "NOT EXECUTED - authenticated Meta browser/admin operation unavailable in this execution surface",
+      "required_human_admin_action": "Create the Page in Jackie-controlled Meta/Facebook session, add it to J Merrill One Business Portfolio, then pair existing @jmerrillfinancial Instagram."
+    },
+    "financial_instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "meta_selected_asset_id": "676716152193798",
+      "classification": "RETAIN — CANONICAL FINANCIAL INSTAGRAM",
+      "current_access_evidence": "0 full access people, 0 partial access people, 0 partners in Business Portfolio evidence captured 2026-08-20T13:35:00Z",
+      "current_pairing": "NOT CONNECTED",
+      "scheduling_eligibility": "BLOCKED - authorized user access and canonical Facebook Page pairing required"
+    }
+  },
+  "live_financial_canonical_activation": {
+    "page": {
+      "page_name": "J Merrill Financial",
+      "instructed_correction": "User corrected canonical Page name from instruction text to J Merrill Financial.",
+      "business_suite_asset_id": "1270611542802820",
+      "facebook_public_profile_id": "61593286063626",
+      "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
+      "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+      "classification": "CANONICAL — J MERRILL FINANCIAL FACEBOOK",
+      "followers_observed": 0,
+      "category_observed": "Financial service",
+      "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Insurance Broker is canonically justifiable if Meta allows an additional accurate category, but live Meta currently displays Financial service after remediation.",
+      "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
+      "website_observed": "https://jmerrill.financial/",
+      "hq_street_address_exposed": false
+    },
+    "instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "meta_selected_asset_id": "676716152193798",
+      "status": "CANONICAL_IG_RETAINED",
+      "pairing_result": "NOT PAIRED — LIVE CONNECT INSTAGRAM LINK DID NOT OPEN AN ACTIONABLE DIALOG IN EDGE CONTROL",
+      "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
+    },
+    "business_portfolio": {
+      "name": "J Merrill One",
+      "id": "846921439784613"
+    }
+  }
+}

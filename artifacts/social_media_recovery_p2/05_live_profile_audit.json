@@ -1,0 +1,137 @@
+{
+  "status": "LIVE_PROFILE_AUDIT_COMPLETE_WITH_CORRECTION_HOLDS",
+  "captured_at": "2026-08-20T13:35:00Z",
+  "profiles": [
+    {
+      "brand": "J Merrill One",
+      "platform": "Facebook",
+      "profile": "J Merrill One",
+      "page_id": "101196349506906",
+      "before_state": {
+        "followers": "116",
+        "following": "2",
+        "visible_location": "Columbus, Ohio",
+        "visible_about": "Category visible; no public street address found in captured profile snapshot",
+        "website": "not visible in captured public about snapshot",
+        "cta": "not visible in captured public about snapshot",
+        "profile_image": "visible",
+        "cover_image": "visible",
+        "linked_account_pairing": "@jmerrillone"
+      },
+      "factual_defects": []
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "profile": "J Merrill Publishing Inc",
+      "page_id": "307480763084670",
+      "before_state": {
+        "followers": "1.6K",
+        "following": "103",
+        "handle": "jmerrillpub",
+        "bio": "Forex trading is about making money and having a good trader who trades for you. I can undoubtedly recommend this trader...",
+        "profile_image": "visible",
+        "cover_image": "visible",
+        "linked_account_pairing": "@jmerrillpub"
+      },
+      "factual_defects": [
+        "Unrelated forex/trader bio content appears on brand Page"
+      ]
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "profile": "J Merrill Foundation Inc",
+      "page_id": "103161111947922",
+      "before_state": {
+        "followers": "443",
+        "following": "43",
+        "bio": "J Merrill Foundation, Inc. is registered under IRC Section 501(c)3 as a tax-exempt organization. EIN: 86-2677344",
+        "category": "Nonprofit organization",
+        "profile_image": "visible",
+        "cover_image": "visible",
+        "linked_account_pairing": "@jmerrillorg"
+      },
+      "factual_defects": [
+        "Public profile is fact-heavy and may need privacy/positioning approval; no street address visible in captured profile snapshot"
+      ]
+    },
+    {
+      "brand": "J Merrill Productions",
+      "platform": "Facebook",
+      "profile": "J Merrill Productions",
+      "page_id": "108290338098880",
+      "before_state": {
+        "followers": "300",
+        "following": "14",
+        "visible_location": "Columbus, Ohio",
+        "bio": "Discover J Merrill Productions! Formerly J Merrill Spotlight, we spotlight authors through engaging podcasts, live event streaming, and dynamic video production. Dive into the stories that shape us!",
+        "profile_image": "visible",
+        "cover_image": "visible",
+        "linked_account_pairing": "@jmerrillprod"
+      },
+      "factual_defects": [
+        "Legacy Spotlight identity remains in bio"
+      ]
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "Instagram",
+      "profile": "@jmerrillpub",
+      "instagram_id": "17841410046020869",
+      "before_state": {
+        "display_name": "J Merrill Publishing, Inc.",
+        "website": "www.jmerrill.pub",
+        "login_prompt": "Instagram details partly limited by public/login prompt"
+      },
+      "factual_defects": []
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "profile": "@jmerrillorg",
+      "instagram_id": "17841447598056093",
+      "before_state": {
+        "display_name": "J Merrill Foundation, Inc.",
+        "website": "www.jmerrill.org",
+        "login_prompt": "Instagram details partly limited by public/login prompt"
+      },
+      "factual_defects": [
+        "Website is legacy/non-canonical relative to P2 target https://jmerrill.foundation/"
+      ]
+    },
+    {
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "profile": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "before_state": {
+        "display_name": "J Merrill Financial, LLC.",
+        "bio": "Advance Planning & Financial Clarity. Licensed Brokerage | Insurance | Pre-Need. Columbus, OH | Book a Consult",
+        "website": "jmerrill.financial",
+        "login_prompt": "Instagram details partly limited by public/login prompt"
+      },
+      "factual_defects": [
+        "Business Portfolio access assignment is zero; content compliance review required before scheduling"
+      ]
+    },
+    {
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "profile": "@jmerrillprod",
+      "instagram_id": "17841467582710441",
+      "before_state": {
+        "display_name": "J Merrill Productions",
+        "bio": "Meet J Merrill Productions! Formerly J Merrill Spotlight, we bring stories to life through podcasts, live streams, and...",
+        "login_prompt": "Instagram details partly limited by public/login prompt"
+      },
+      "factual_defects": [
+        "Legacy Spotlight identity remains in bio"
+      ]
+    }
+  ],
+  "limitations": [
+    "Instagram public profile details were limited by login/profile chooser prompts in the browser; admin asset IDs/control were captured in Business Suite.",
+    "No public street address was visible in captured Facebook profile snapshots; portfolio legal address remains visible internally in Business info and was not changed."
+  ]
+}

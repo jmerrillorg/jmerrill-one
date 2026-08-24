@@ -1,0 +1,11 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "FOUNDER REVIEW REQUIRED",
+  "classification": "FOUNDER REVIEW REQUIRED",
+  "reason": "Remaining month should not be scheduled until first-week platform execution and proof window exist. Current blocker is live scheduling/publishing execution, not content readiness.",
+  "evidence": [
+    "111_founder_first_batch_approval.json",
+    "112_first_week_execution_freeze.json",
+    "45_first_batch_scheduling_evidence.json"
+  ]
+}

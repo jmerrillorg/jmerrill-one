@@ -1,0 +1,22 @@
+{
+  "result": "PASS WITH REMEDIATION HOLDS",
+  "updated_at": "2026-08-20T13:35:00Z",
+  "checks": {
+    "website_regression": "PASS - five canonical URLs returned HTTP 200",
+    "canonical_url_regression": "PASS - canonical domains verified; Foundation Instagram still shows old jmerrill.org and requires correction",
+    "customer_voice_regression": "PASS - no Customer Voice changes made",
+    "intake_scheduling_regression": "PASS - no intake/scheduling architecture changes made",
+    "brand_canon_regression": "PASS WITH HOLDS - Founder Brand/AGAPE excluded; Publishing/Productions profile defects documented",
+    "financial_compliance_defect": "HOLD - Financial content still requires compliance review; no Financial posts scheduled",
+    "foundation_privacy_defect": "HOLD - Foundation content still requires privacy review; no Foundation posts scheduled",
+    "rights_defect": "HOLD - Publishing/Productions rights checks remain; no posts scheduled",
+    "meta_ownership_access_regression": "PASS WITH REMEDIATION - live admin audit complete; access defects documented"
+  },
+  "no_prohibited_actions": [
+    "No Meta assets created",
+    "No admins removed",
+    "No Pages/accounts deleted",
+    "No unapproved material published",
+    "No Founder Brand activation"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "COMPLETED BY JACKIE — READY FOR CERTIFICATION",
+  "reason": "Meta/Instagram verification prevented Codex from exposing a safe editable profile control for @jmerrillprod.",
+  "target": {
+    "handle": "@jmerrillprod",
+    "instagram_id": "17841467582710441"
+  },
+  "obsolete_text": "Formerly J Merrill Spotlight",
+  "steps": [
+    "Open Instagram for @jmerrillprod.",
+    "Edit Profile.",
+    "Remove only the phrase: Formerly J Merrill Spotlight.",
+    "Preserve the rest of the current Productions identity unless another factual error is visible.",
+    "Save.",
+    "Return to Cody for verification."
+  ],
+  "evidence": {
+    "businessSuiteEdit": "/tmp/p2_prod_ig_edit_bsuite.dom.txt",
+    "goInstagram": "/tmp/p2_prod_ig_go_instagram.dom.txt"
+  },
+  "exact_action": "Remove only the obsolete phrase Formerly J Merrill Spotlight from @jmerrillprod.",
+  "result": "Founder reports obsolete Spotlight wording removed from @jmerrillprod."
+}

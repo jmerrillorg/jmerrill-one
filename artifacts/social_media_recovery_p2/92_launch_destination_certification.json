@@ -1,0 +1,228 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "PASS — NO LEGACY FINANCIAL DESTINATIONS",
+  "records": [
+    {
+      "SocialContentId": "SRP2-001",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "canonical_asset": "J Merrill Publishing Inc",
+      "asset_id": "307480763084670",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "destination_url": "https://jmerrill.pub/",
+      "CTA": "Start a Publishing Inquiry",
+      "scheduled_date": "2026-08-21",
+      "scheduled_time": "10:15 AM",
+      "UTM": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-001",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "canonical_asset": "J Merrill Foundation Inc",
+      "asset_id": "103161111947922",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "destination_url": "https://jmerrill.foundation/",
+      "CTA": "Learn About the Foundation",
+      "scheduled_date": "2026-08-21",
+      "scheduled_time": "1:15 PM",
+      "UTM": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-002",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "brand": "J Merrill One",
+      "platform": "Instagram",
+      "canonical_asset": "@jmerrillone",
+      "asset_id": "17841456905118441",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "destination_url": "https://jmerrill.one/",
+      "CTA": "Explore JM1",
+      "scheduled_date": "2026-08-22",
+      "scheduled_time": "4:45 PM",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-003",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "canonical_asset": "@jmerrillfin",
+      "asset_id": "17841438473100276",
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "destination_url": "https://jmerrill.financial/",
+      "CTA": "Schedule a Planning Conversation",
+      "scheduled_date": "2026-08-22",
+      "scheduled_time": "11:30 AM",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-004",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "canonical_asset": "J Merrill Publishing Inc",
+      "asset_id": "307480763084670",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "destination_url": "https://jmerrill.pub/",
+      "CTA": "Learn more or start an inquiry",
+      "scheduled_date": "2026-08-23",
+      "scheduled_time": "10:15 AM",
+      "UTM": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-005",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "J Merrill Productions",
+      "platform": "Facebook",
+      "canonical_asset": "J Merrill Productions",
+      "asset_id": "108290338098880",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "destination_url": "https://jmerrill.productions/",
+      "CTA": "Work With Productions",
+      "scheduled_date": "2026-08-23",
+      "scheduled_time": "3:30 PM",
+      "UTM": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-006",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "canonical_asset": "@jmerrillfin",
+      "asset_id": "17841438473100276",
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "destination_url": "https://jmerrill.financial/",
+      "CTA": "Start a Planning Conversation",
+      "scheduled_date": "2026-08-24",
+      "scheduled_time": "11:30 AM",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-007",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "canonical_asset": "@jmerrillorg",
+      "asset_id": "17841447598056093",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "destination_url": "https://jmerrill.foundation/",
+      "CTA": "Get Involved",
+      "scheduled_date": "2026-08-24",
+      "scheduled_time": "1:15 PM",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-008",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "brand": "J Merrill One",
+      "platform": "Facebook",
+      "canonical_asset": "J Merrill One",
+      "asset_id": "101196349506906",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "destination_url": "https://jmerrill.one/",
+      "CTA": "Explore the JM1 Brands",
+      "scheduled_date": "2026-08-25",
+      "scheduled_time": "4:45 PM",
+      "UTM": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-009",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "canonical_asset": "J Merrill Publishing Inc",
+      "asset_id": "307480763084670",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "destination_url": "https://jmerrill.pub/",
+      "CTA": "Talk With Publishing",
+      "scheduled_date": "2026-08-25",
+      "scheduled_time": "10:15 AM",
+      "UTM": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-010",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "canonical_asset": "@jmerrillfin",
+      "asset_id": "17841438473100276",
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "destination_url": "https://jmerrill.financial/",
+      "CTA": "Ask About Advanced Planning",
+      "scheduled_date": "2026-08-26",
+      "scheduled_time": "11:30 AM",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-011",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "canonical_asset": "@jmerrillprod",
+      "asset_id": "17841467582710441",
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "destination_url": "https://jmerrill.productions/",
+      "CTA": "See Productions",
+      "scheduled_date": "2026-08-26",
+      "scheduled_time": "3:30 PM",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-012",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "canonical_asset": "J Merrill Publishing Inc",
+      "asset_id": "307480763084670",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "destination_url": "https://jmerrill.pub/",
+      "CTA": "Explore Publishing Support",
+      "scheduled_date": "2026-08-27",
+      "scheduled_time": "10:15 AM",
+      "UTM": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-013",
+      "approval_status": "PASS"
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "canonical_asset": "J Merrill Foundation Inc",
+      "asset_id": "103161111947922",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "destination_url": "https://jmerrill.foundation/",
+      "CTA": "Support the Mission",
+      "scheduled_date": "2026-08-27",
+      "scheduled_time": "1:15 PM",
+      "UTM": "utm_source=facebook&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-014",
+      "approval_status": "PASS"
+    }
+  ],
+  "financial_routing": {
+    "facebook": {
+      "asset": "J Merrill Financial",
+      "asset_id": "61593286063626",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    "instagram": {
+      "asset": "@jmerrillfin",
+      "asset_id": "17841438473100276",
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "note": "MANUAL / NATIVE INSTAGRAM EXECUTION"
+    },
+    "pairing": "NOT PAIRED — ACCEPTED OPERATING CONDITION"
+  },
+  "prohibited_destinations": {
+    "legacy_facebook": {
+      "status": "LEGACY / RESTRICTED — DO NOT PUBLISH"
+    },
+    "legacy_instagram": {
+      "handle": "@jmerrillfinancial",
+      "instagram_id": "17841475196277020",
+      "status": "LEGACY / HOLD — DO NOT USE"
+    }
+  },
+  "result": "PASS - all first-week posts have certified execution surfaces and no legacy Financial destinations.",
+  "launch_execution_note": "Destination certification remains PASS; no scheduled platform records were created in this run."
+}

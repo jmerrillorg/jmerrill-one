@@ -1,0 +1,12 @@
+{
+  "status": "FOUNDER AUTHENTICATION ACTION REQUIRED",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "mutation_performed": false,
+  "current_audit_evidence": {
+    "two_factor_required_for": "No one",
+    "passkeys_required_for": "No one"
+  },
+  "founder_recovery_readiness": "FOUNDER ACTION REQUIRED",
+  "result": "NOT ENABLED - recovery/MFA safety not proven",
+  "exact_human_admin_action": "Recovery email/phone/backup mechanisms were not safely provable from the current browser session without exposing or changing sensitive account recovery settings."
+}

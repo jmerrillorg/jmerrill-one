@@ -1,0 +1,24 @@
+{
+  "status": "PASS - FUTURE ROUTING UPDATED WITH PAIRING HOLD",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "active_financial_facebook": {
+    "name": "J Merrill Financial",
+    "business_suite_asset_id": "1270611542802820",
+    "public_profile_id": "61593286063626",
+    "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+    "website": "https://jmerrill.financial/",
+    "category": "Financial service",
+    "bio": "Advanced planning for life, legacy, and the people who matter most.",
+    "status": "CANONICAL"
+  },
+  "active_financial_instagram": {
+    "handle": "@jmerrillfin",
+    "instagram_id": "17841438473100276"
+  },
+  "legacy_instagram": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "status": "LEGACY / HOLD - DO NOT USE FOR ACTIVE OPERATIONS"
+  },
+  "reconciliation_rule": "Current/future operational records must reference @jmerrillfin / 17841438473100276; historical evidence may retain @jmerrillfinancial."
+}

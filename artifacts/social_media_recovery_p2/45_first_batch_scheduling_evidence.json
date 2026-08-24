@@ -1,0 +1,157 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "result": "NOT SCHEDULED - PLATFORM ACTION REQUIRED",
+  "approval_recorded": true,
+  "business_suite_eligible_count": 11,
+  "financial_native_queue_count": 3,
+  "scheduled_count": 0,
+  "records": [
+    {
+      "SocialContentId": "SRP2-001",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "scheduled_timestamp": "2026-08-21 10:15 AM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "scheduled_timestamp": "2026-08-21 1:15 PM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "brand": "J Merrill One",
+      "platform": "Instagram",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "scheduled_timestamp": "2026-08-22 4:45 PM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "target_asset_id": null,
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "scheduled_timestamp": "2026-08-22 11:30 AM America/New_York",
+      "execution_result": "READY IN NATIVE QUEUE - NOT SCHEDULED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "scheduled_timestamp": "2026-08-23 10:15 AM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "J Merrill Productions",
+      "platform": "Facebook",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "scheduled_timestamp": "2026-08-23 3:30 PM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "target_asset_id": null,
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "scheduled_timestamp": "2026-08-24 11:30 AM America/New_York",
+      "execution_result": "READY IN NATIVE QUEUE - NOT SCHEDULED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "scheduled_timestamp": "2026-08-24 1:15 PM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "brand": "J Merrill One",
+      "platform": "Facebook",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "scheduled_timestamp": "2026-08-25 4:45 PM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "scheduled_timestamp": "2026-08-25 10:15 AM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "target_asset_id": null,
+      "execution_surface": "INSTAGRAM_NATIVE",
+      "scheduled_timestamp": "2026-08-26 11:30 AM America/New_York",
+      "execution_result": "READY IN NATIVE QUEUE - NOT SCHEDULED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_INSTAGRAM",
+      "scheduled_timestamp": "2026-08-26 3:30 PM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "scheduled_timestamp": "2026-08-27 10:15 AM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "target_asset_id": null,
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK",
+      "scheduled_timestamp": "2026-08-27 1:15 PM America/New_York",
+      "execution_result": "NOT SCHEDULED - EDGE FILE UPLOAD BLOCKED",
+      "platform_id": null
+    }
+  ],
+  "blocker": {
+    "status": "BLOCKED_IN_CODEX_EDGE_SESSION",
+    "blocker": "Edge Business Suite composer file upload denied by browser extension file chooser with Not allowed; creative could not be attached, so scheduling could not be verified.",
+    "attempted_surface": "Microsoft Edge / Meta Business Suite composer",
+    "attempted_post": "SRP2-003",
+    "evidence": "/tmp/p2_edge_test_composer_status.txt"
+  }
+}
