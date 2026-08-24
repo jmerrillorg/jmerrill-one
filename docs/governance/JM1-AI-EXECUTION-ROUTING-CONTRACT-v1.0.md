@@ -4,6 +4,7 @@
 **Authority:** jmerrillorg/jmerrill-one
 **Effective when:** Founder-approved and merged to main
 **Date drafted:** 2026-08-24
+**Amended:** 2026-08-24 — corrected orchestration and routing model per Founder direction
 
 ---
 
@@ -16,6 +17,9 @@ This contract is subordinate to:
 3. **Why-First** — purpose must be clear before execution begins
 4. **Approved JM1 Governance Canon** — any CANON (not CANON-CANDIDATE) document takes precedence
 5. **Microsoft-First** — where technology selection is implicated, M365 and Azure are the preferred platforms
+6. **Routed execution instructions** — agent-role routing sits beneath all of the above
+
+Agent-role routing does not outrank Founder Intent or any required human gate.
 
 This contract does not supersede any higher-order authority. Where conflict exists, defer to the higher-order authority and surface the conflict explicitly rather than resolving it silently.
 
@@ -23,7 +27,7 @@ This contract does not supersede any higher-order authority. Where conflict exis
 
 ## Purpose
 
-This contract governs how Jackie (Founder / Human Authority), Cody/CeCe (Reasoning and Diagnostic Authority), GitHub Copilot (Repo-Local Implementation Authority), and future execution agents interact across JM1.
+This contract governs how Jackie (Founder / Human Authority), Chad (Enterprise Orchestration and Routing Authority), Cody/CeCe (Specialist Engineering Executors), GitHub Copilot (Microsoft/GitHub-Native Implementation Executor), Claude (Strategic Analysis and Review Advisor), and future agents interact across JM1.
 
 This is an enterprise-wide governance document. It is not specific to any one JM1 brand, repository, program, or technology wave.
 
@@ -36,7 +40,7 @@ This is an enterprise-wide governance document. It is not specific to any one JM
 Jackie retains final authority for:
 
 - Founder Intent interpretation
-- Governance approval
+- Governance approval and canon promotion
 - Production authorization where required
 - Destructive actions (deletions, retirements, irreversible changes)
 - Exceptions to any rule in this contract
@@ -48,59 +52,139 @@ Jackie retains final authority for:
 
 Human authority must never be silently replaced by an agent. If an agent reaches a gate that requires Founder approval, it must stop, preserve state, and surface the gate clearly.
 
-### 1.2 Cody/CeCe — Reasoning and Diagnostic Authority
+### 1.2 Chad — ChatGPT
 
-Primary responsibilities:
+**Role: ENTERPRISE ORCHESTRATION / ROUTING / PROGRAM REASONING AUTHORITY**
 
-- Architecture and design
-- Complex incident diagnosis
-- Cross-system reasoning
-- Evidence reconciliation
-- Governance interpretation
-- Root-cause hierarchy
-- Execution-wave design
-- Acceptance criteria definition
-- Next-safest-action determination
-- Review of Copilot execution results
-- Cross-repository coordination
+Chad is the standing orchestration layer for Jackie across all JM1 programs.
 
-Primary operating sequence:
+Chad determines, based on the task:
 
-```
-DIAGNOSE → REASON → SPECIFY → REVIEW
-```
+- which AI should execute (routing)
+- which repository owns the work
+- task mode (read-only vs mutation)
+- production-mutation authority (YES / NO)
+- scope boundaries
+- required human gates
+- evidence expectations
+- stop conditions
+- next safest execution wave
 
-Cody/CeCe does not autonomously expand a bounded diagnostic into production mutation. A plausible theory is not mutation authority.
+Chad also reviews and reconciles evidence returned by specialist executors before recommending the next step to Jackie.
 
-### 1.3 GitHub Copilot — Repo-Local Implementation Authority
+Chad is not automatically the implementation agent. Chad selects the smallest capable route and routes accordingly.
 
-Primary responsibilities:
+### 1.3 Cody — OpenAI Codex
 
-- Bounded code implementation
-- Repo-local investigation
-- Tests, lint, typecheck, build
-- Worktree management
-- Git operations (branch, commit, push)
+**Role: SPECIALIST ENGINEERING EXECUTOR**
+
+Primary uses:
+
+- Complex repository engineering and implementation
+- Architecture-aware coding
+- Testing, lint, typecheck, build
+- Deep codebase remediation
+- Worktree and Git operations
+- Bounded CLI execution (when authorized)
 - PR preparation and review response
-- GitHub Actions workflow implementation
-- Explicitly authorized CLI operations (bounded, specified)
-- Implementation evidence collection
 
-Primary operating sequence:
+Cody reasons extensively within the bounded mission assigned by Chad. Cody does not independently replace Chad's enterprise routing and orchestration authority, and does not autonomously expand a bounded task without Chad's authorization.
 
-```
-RECEIVE SPECIFICATION → PREFLIGHT → IMPLEMENT → VALIDATE → REPORT
-```
+### 1.4 CeCe — Claude Code
 
-Copilot must not independently expand a bounded task into architecture redesign, cross-system remediation, or speculative production recovery. If the actual state no longer matches the specification, Copilot must stop, preserve evidence, and return to Cody/CeCe.
+**Role: SPECIALIST ENGINEERING / DIAGNOSTIC EXECUTOR**
 
-### 1.4 Future Agents
+Primary uses:
 
-This contract uses role terms — HUMAN_AUTHORITY, REASONING_AUTHORITY, IMPLEMENTATION_AUTHORITY — that permit additional future execution agents. Future agents may be mapped into one of these roles only through approved governance updates to this document. New agents are not granted any role by convention or convenience.
+- Deep runtime diagnostics and incident forensics
+- Repository analysis and evidence collection
+- Implementation and architecture-aware engineering
+- Testing, lint, typecheck, build
+- Worktree and Git operations
+- Bounded CLI execution (when authorized)
+- PR preparation and review response
+
+CeCe reasons extensively within the bounded mission assigned by Chad. CeCe does not independently replace Chad's enterprise routing and orchestration authority, and does not autonomously expand a bounded task without Chad's authorization.
+
+### 1.5 Copilot — GitHub Copilot / Microsoft Copilot
+
+**Role: MICROSOFT / GITHUB-NATIVE IMPLEMENTATION EXECUTOR**
+
+Primary uses:
+
+- Repo-local code implementation
+- GitHub Actions and workflow implementation
+- Microsoft ecosystem integration
+- Azure CLI operations (bounded, when authorized)
+- Testing, lint, typecheck, build
+- Worktree and Git operations
+- PR preparation and review response
+
+When "Copilot" is ambiguous in a routing instruction, the instruction must distinguish: GitHub Copilot, Microsoft Copilot, or Azure Copilot as appropriate.
+
+Copilot does not independently establish cross-enterprise architecture or override Chad's routing decision. If implementation reveals that the specified task no longer matches the actual state, Copilot must stop, preserve evidence, and return to Chad.
+
+### 1.6 Claude — Claude.ai
+
+**Role: STRATEGIC ANALYSIS / REVIEW / SECOND-OPINION ADVISOR**
+
+Claude.ai is distinct from CeCe / Claude Code.
+
+Appropriate uses:
+
+- Strategic analysis and architecture critique
+- Independent review and policy reasoning
+- Alternative-design analysis
+- Second-opinion review
+- Content and brand reasoning
+
+Claude.ai is not automatically an implementation authority and must not be collapsed into the CeCe / Claude Code executor role.
+
+### 1.7 Future Agents
+
+This contract uses abstract role terms — HUMAN_AUTHORITY, ORCHESTRATION_AUTHORITY, SPECIALIST_EXECUTOR, ADVISOR — that permit additional future agents. Future agents may be mapped into one of these roles only through approved governance updates to this document. New agents are not granted any role by convention or convenience.
 
 ---
 
-## 2. Instruction Metadata (Routing Header)
+## 2. Enterprise Routing Chain
+
+The normal routing model is:
+
+```
+HUMAN_AUTHORITY
+  → ORCHESTRATION_AUTHORITY
+    → SELECTED_SPECIALIST
+  → ORCHESTRATION_REVIEW
+→ HUMAN_GATE (if required)
+```
+
+In current JM1 role terms:
+
+```
+JACKIE
+  → CHAD (selects route, sets scope, sets gates)
+    → CODY / CECE / COPILOT / CLAUDE (bounded mission)
+  → CHAD (reviews evidence, reconciles, recommends next step)
+→ JACKIE (human gates where required)
+```
+
+This does not mean every task requires every agent. Chad selects the smallest capable route.
+
+**Routing examples:**
+
+| Task type | Route |
+|---|---|
+| Routine GitHub implementation | Jackie → Chad → Copilot → Chad |
+| Complex engineering | Jackie → Chad → Cody → Chad |
+| Deep runtime incident | Jackie → Chad → CeCe → Chad |
+| Architecture critique | Jackie → Chad → Claude → Chad |
+| Multi-agent escalation | Jackie → Chad → [Cody + CeCe] → Chad |
+
+Multi-agent escalation is permitted when justified. Bouncing between agents without a routing reason from Chad is not the operating model.
+
+---
+
+## 3. Instruction Metadata (Routing Header)
 
 Every executable JM1 instruction must identify at minimum:
 
@@ -112,18 +196,24 @@ REPO:
 When relevant, also include:
 
 ```
+WORKTYPE:
+MODE:
 WORKTREE:
 BRANCH:
+SOURCE_AUTHORITY:
+PRODUCTION_MUTATION_AUTHORIZED:
+HUMAN_GATE:
+MERGE_AUTHORIZED:
 AZURE_SUBSCRIPTION:
 RESOURCE_GROUP:
 TARGET_RESOURCE:
 ENVIRONMENT:
-PRODUCTION_MUTATION_AUTHORIZED:
+EXPECTED_EVIDENCE:
 ```
 
-The executing agent must not infer repository ownership when it can be stated explicitly.
+The executing agent must not infer repository ownership when it can be stated explicitly. This header formalizes Chad's routing decision for the executor.
 
-### 2.1 Multi-Repo Work
+### 3.1 Multi-Repo Work
 
 For work touching more than one repository:
 
@@ -135,9 +225,9 @@ For work touching more than one repository:
 
 ---
 
-## 3. Copilot Preflight Contract
+## 4. Agent Preflight Contract
 
-Before a material Copilot execution wave, verify and record only the fields relevant to that wave:
+Before a material execution wave, the assigned agent must verify and record only the fields relevant to that wave:
 
 ```
 REPO =
@@ -146,18 +236,20 @@ BRANCH =
 HEAD =
 ORIGIN_MAIN =
 WORKTREE_CLEAN =
-GITHUB_IDENTITY =
+AGENT_IDENTITY =
+GITHUB_WRITE_AVAILABLE =
 AZURE_AUTH_STATE =
 AZURE_SUBSCRIPTION =
 TARGET_RESOURCE =
 PRODUCTION_MUTATION_AUTHORIZED =
+MERGE_AUTHORIZED =
 ```
 
 Do not repeatedly rediscover unchanged facts during the same bounded wave. Record only changed authority or context state as the wave progresses.
 
 ---
 
-## 4. Evidence Ledger
+## 5. Evidence Ledger
 
 Three concepts are distinct and must not be conflated:
 
@@ -187,11 +279,11 @@ CURRENT_TOOL_ACCESS:
 ```
 FUNCTION_COUNT = UNKNOWN
 ```
-_(Do not translate blocked tool access into unknown production state unless a current readback is explicitly required.)_
+Do not translate blocked tool access into unknown production state unless a current readback is explicitly required.
 
 ---
 
-## 5. Standard Tool-Context States
+## 6. Standard Tool-Context States
 
 | State | Meaning |
 |---|---|
@@ -206,7 +298,7 @@ Tool state and production state are separate authorities. A blocked tool does no
 
 ---
 
-## 6. Terminal Execution Standard
+## 7. Terminal Execution Standard
 
 The following are prohibited for autonomous or shared-agent use:
 
@@ -237,7 +329,7 @@ FAILURE_CONDITION =
 
 ---
 
-## 7. Diagnosis / Remediation Separation
+## 8. Diagnosis / Remediation Separation
 
 The standard execution sequence is:
 
@@ -259,11 +351,11 @@ Dataverse mutations = 0
 external-service mutations = 0
 ```
 
-A plausible theory is not mutation authority. Every mutation requires an explicit authorization gate.
+A plausible theory is not mutation authority. Every mutation requires an explicit authorization gate. Chad must route mutation authority explicitly — executors do not self-authorize production changes.
 
 ---
 
-## 8. Stop-on-Surprise
+## 9. Stop-on-Surprise
 
 A materially unexpected state ends the current execution wave. The agent must return:
 
@@ -278,19 +370,20 @@ NEXT_SAFEST_ACTION =
 
 Examples of stop conditions:
 
-- Expected 30 Functions, observed 0
+- Expected function count not observed
 - Expected clean working tree, observed dirty
 - Expected commit SHA does not match HEAD
 - OIDC or authentication failure during deployment
 - Health probe returns 404 instead of 200
 - Ambiguous deployment completion (no confirmation, no error)
 - Source authority or worktree authority disagreement
+- Governance discrepancy between specification and actual document state
 
-Do not automatically launch a second repair wave after a surprise. Surface the state and wait for Cody/CeCe or Founder instruction.
+Do not automatically launch a second repair wave after a surprise. Surface the state to Chad; Chad recommends next step to Jackie where a human gate applies.
 
 ---
 
-## 9. Worktree Discipline
+## 10. Worktree Discipline
 
 One bounded task = one declared worktree.
 
@@ -305,11 +398,11 @@ Rules:
 
 **Normal source authority:** `origin/main`
 
-**Recovery authority:** an explicitly authorized recovery SHA or artifact, named in the instruction
+**Recovery authority:** an explicitly authorized recovery SHA or artifact, named in the routing instruction from Chad
 
 ---
 
-## 10. Mutation Ledger
+## 11. Mutation Ledger
 
 Every production-sensitive wave must return explicit mutation evidence.
 
@@ -359,9 +452,9 @@ Use YES / NO or counts as appropriate.
 
 ---
 
-## 11. Negative Proof
+## 12. Negative Proof
 
-Require explicit confirmation of important non-events. Examples:
+Require explicit confirmation of important non-events as part of commissioning evidence. Examples:
 
 ```
 manual_zip_used = 0
@@ -373,11 +466,9 @@ Dataverse_rows_deleted = 0
 commercial_state_mutated = 0
 ```
 
-Negative proof is part of commissioning evidence for every production wave.
-
 ---
 
-## 12. Incident Containment
+## 13. Incident Containment
 
 During active P0 recovery, do not mix unrelated modernization work into the recovery wave.
 
@@ -396,7 +487,7 @@ Capture deferred items in the relevant modernization ledger. Do not expand the i
 
 ---
 
-## 13. Commissioning Standard
+## 14. Commissioning Standard
 
 Deployment success is not commissioning.
 
@@ -416,33 +507,31 @@ A failed invariant means commissioning is incomplete. The capability is not comm
 
 ---
 
-## 14. AI Routing Decision Rule
+## 15. Routing Decision Rule
 
-**Route to REASONING_AUTHORITY (Cody/CeCe) when the question is:**
+**Route to ORCHESTRATION_AUTHORITY (Chad) when the question is:**
 
-- What happened?
-- Why did it happen?
-- What architecture should govern this?
-- What does conflicting evidence mean?
-- What is the safest next move?
-- What should the implementation contract be?
-- How should multiple repositories or systems coordinate?
+- Which AI should execute this?
+- Which repository owns this work?
+- What is the scope and mode of this task?
+- What human gates apply?
+- What evidence is expected?
+- What is the next safest execution wave?
+- How should multiple systems or repositories coordinate?
 
-**Route to IMPLEMENTATION_AUTHORITY (Copilot) when the task is:**
+**Route to SPECIALIST_EXECUTOR (Cody / CeCe / Copilot / Claude) when Chad has issued:**
 
-- Implement this defined change
-- Modify these exact files
-- Run these tests
-- Prepare this bounded PR
-- Inspect this repository
-- Execute this specifically authorized CLI operation
-- Verify implementation against defined acceptance criteria
+- A bounded implementation specification
+- A diagnostic mission with defined scope
+- A review task with defined output
+- A PR-preparation instruction
+- An explicitly authorized CLI operation
 
-**Stop-and-return rule:** If Copilot discovers that the specified implementation no longer matches the actual architecture or problem state, it must stop, preserve evidence, and return to Cody/CeCe. It must not autonomously redesign the execution wave.
+**Stop-and-return rule:** If any specialist executor discovers that the specified task no longer matches the actual state, it must stop, preserve evidence, and return to Chad. It must not autonomously redesign or expand the execution wave.
 
 ---
 
-## 15. Derived Repository Instructions
+## 16. Derived Repository Instructions
 
 Consuming repositories must not duplicate this contract.
 
@@ -464,7 +553,7 @@ Enterprise rules remain canonical here. Derived files do not override enterprise
 
 ---
 
-## 16. Validation Checklist
+## 17. Validation Checklist
 
 Before any PR against this document is opened:
 
@@ -475,17 +564,19 @@ Before any PR against this document is opened:
 - [ ] Why-First remains a hard gate
 - [ ] Founder Intent remains higher-order authority
 - [ ] Microsoft-First preserved where technology selection is implicated
+- [ ] Chad's orchestration/routing role is correctly defined
+- [ ] Cody/CeCe/Copilot are correctly scoped as specialist executors, not enterprise routing authorities
 - [ ] No Publishing production incident work was performed in this wave
 - [ ] No cross-brand artifact placement occurred
 
 ---
 
-## 17. Amendment Process
+## 18. Amendment Process
 
 Amendments to this contract require:
 
 1. A bounded PR with a clear rationale
-2. Cody/CeCe review for governance consistency
+2. Chad review for enterprise routing consistency
 3. Founder approval before merge
 4. Version increment (`v1.1`, `v2.0`, etc.) for any substantive change
 
