@@ -1,0 +1,18 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_bundle_integration_evidence",
+  "created_at": "2026-08-20T10:50:59Z",
+  "target_repository": "J Merrill One",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "imported_ref": "refs/remotes/cece/maint01",
+  "cece_tip": "6afc680aa2b1c0a854617b00f7ea8de69617f0bc",
+  "governed_branch_sha_before_merge": "7ad6da380677792256d3bf7e9b39059fb38c28d1",
+  "merge_commit": "dfeae8a62896ced48ac9ef14a76ccbfa77209a2f",
+  "merge_strategy": "ort",
+  "merge_method": "normal merge",
+  "merge_message": "Merge Cece MAINT-01 signed history into governed branch",
+  "conflicts": false,
+  "history_rewrite": false,
+  "cece_commits_rebased_squashed_or_amended": false,
+  "result": "PASS"
+}

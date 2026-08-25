@@ -1,0 +1,51 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Authoritative lineage of MAINT-01 evidence production from Cody through Claude Code and back to Cody",
+  "lineage": [
+    {
+      "phase": 1,
+      "agent": "Cody",
+      "branch": "codex/maint01-estate-rationalization",
+      "commits": ["045e9a2", "85cbc9c"],
+      "work": "Initial MAINT-01 discovery: Teams (14), M365 Groups (26), security groups (9), shared mailboxes (16), mail-enabled groups, users (43), licensing (17 SKUs), app registrations (112), service principals, GitHub repos (19), SharePoint site count (16 — all null titles)",
+      "blocker_encountered": "Graph /sites?search=* returned 403 — tenant-wide standalone SharePoint site enumeration blocked. Usage reports also 403.",
+      "artifacts": "maint01_teams_inventory.json, maint01_shared_mailbox_inventory.json, maint01_m365_group_inventory.json, maint01_app_identity_inventory.json, maint01_repo_inventory.json, maint01_collaboration_dependency_graph.json, and ~95 supporting artifacts",
+      "pr": "#6 (open)"
+    },
+    {
+      "phase": 2,
+      "agent": "Claude Code",
+      "branch": "claude/loving-planck-1cfoo2",
+      "commits": ["636888c"],
+      "work": "SharePoint standalone site enumeration using M365 MCP connector (jm1-admin@jmerrill.one). Discovered all 16 tenant sites including 1 standalone (foundation_comm). Classified all Team-connected sites. Identified 6 Founder decisions. Produced v3 final artifacts. Classification advanced to COMPLETE.",
+      "blocker_encountered": "GitHub App write 403 — could not push to remote",
+      "artifacts": [
+        "maint01_sharepoint_inventory_v3.json",
+        "maint01_sharepoint_usage_v2.json",
+        "maint01_sharepoint_standalone_delta.json",
+        "maint01_sharepoint_standalone_preservation.json",
+        "maint01_canon_repository_reconciliation_v2.json",
+        "maint01_repo_sharepoint_alignment_matrix_v3.json",
+        "maint01_sharepoint_target_architecture_v3.md",
+        "maint01_disposition_matrix_v3.json",
+        "maint01_retirement_manifest_v3.json",
+        "maint01_retirement_manifest_v3.md",
+        "maint01_retirement_hard_gate_v2.json",
+        "maint01_sharepoint_preservation_map_v2.json",
+        "maint01_founder_decision_register_v2.json",
+        "maint01_evidence_completeness_gate_v2.json",
+        "maint01_final_scorecard_v3.json",
+        "maint01_final_closeout_v3.json",
+        "maint01_final_closeout_v3.md"
+      ]
+    },
+    {
+      "phase": 3,
+      "agent": "Cody",
+      "branch": "codex/maint01-estate-rationalization",
+      "work": "Recover Claude's commit via merge (a60e8d9). Validate artifacts. Reconcile SharePoint classification. Produce Founder decision packet, cleanup waves, final closeout v4. Push to GitHub.",
+      "status": "IN PROGRESS — this session"
+    }
+  ],
+  "evidence_chain": "COMPLETE — all three phases traceable through git history"
+}

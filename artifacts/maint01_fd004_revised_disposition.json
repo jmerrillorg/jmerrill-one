@@ -1,0 +1,27 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-004",
+  "final_disposition": "PARTIAL - TWO ARCHIVE CANDIDATES REQUIRE PRESERVATION PREREQUISITES; VOICEMAIL RETAINED",
+  "targets": [
+    {
+      "name": "Sales Team",
+      "classification": "PREP-FIRST ARCHIVE CANDIDATE",
+      "status": "NOT ARCHIVE READY - PREREQUISITES REMAIN",
+      "blocking_prerequisite": "Pricing sheets/files requiring preservation must be explicitly retained or migrated before any archive."
+    },
+    {
+      "name": "Projects Team",
+      "classification": "PREP-FIRST ARCHIVE CANDIDATE",
+      "status": "NOT ARCHIVE READY - PREREQUISITES REMAIN",
+      "blocking_prerequisite": "Projects SharePoint content, dev/build artifacts, and GitHub authoritative-source relationship must be resolved before archive."
+    },
+    {
+      "name": "Voicemail Team",
+      "classification": "KEEP - PAUSED VOICE PROJECT",
+      "status": "RETAINED",
+      "reason": "Protected by Teams Voice preservation directive."
+    }
+  ],
+  "replacement_team_search": "NOT PERFORMED"
+}
+

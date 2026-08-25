@@ -1,0 +1,18 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_mail_regression_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "result": "NOT RUN",
+  "reason": "FD-005 contacts@ routing was not mutated because dependency certification did not pass.",
+  "mailboxes_in_scope": [
+    "info@jmerrill.one",
+    "contacts@jmerrill.one",
+    "accounting@jmerrill.one",
+    "board@jmerrill.one",
+    "donations@jmerrill.one",
+    "grants@jmerrill.one",
+    "media@jmerrill.one",
+    "volunteers@jmerrill.one"
+  ],
+  "post_state": "UNCHANGED"
+}

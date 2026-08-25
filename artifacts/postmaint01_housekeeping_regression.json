@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "checks": {
+    "sales_archived_state": true,
+    "projects_archived_state": true,
+    "sharePoint_availability": true,
+    "github_repositories_modified": false,
+    "voice_untouched": true,
+    "fd005_mail_routing_unchanged": {
+      "mailbox": "contacts@jmerrill.one",
+      "forwarding": "smtp:info@jmerrill.one",
+      "deliverToMailboxAndForward": true
+    },
+    "tenant_identities_unchanged": {
+      "staleGuestStillDeleted": true,
+      "protectedAppRegistrationsPresent": true,
+      "usersLicensesNoCleanupPerformed": true
+    }
+  }
+}

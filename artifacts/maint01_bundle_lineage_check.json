@@ -1,0 +1,15 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_bundle_lineage_check",
+  "created_at": "2026-08-20T10:50:59Z",
+  "target_repository": "J Merrill One",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "current_governed_remote_sha_before_merge": "7ad6da380677792256d3bf7e9b39059fb38c28d1",
+  "cece_tip": "6afc680aa2b1c0a854617b00f7ea8de69617f0bc",
+  "common_ancestor": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+  "fast_forward_possible": false,
+  "reason_fast_forward_not_used": "The governed branch contained Cody blocker evidence commits not present in the CECE bundle history.",
+  "chosen_integration_method": "normal merge",
+  "merge_message": "Merge Cece MAINT-01 signed history into governed branch",
+  "result": "PASS"
+}

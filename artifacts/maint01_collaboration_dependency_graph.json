@@ -1,0 +1,142 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PARTIAL - SHAREPOINT/TEAMS DETAILS BLOCKED",
+  "graph": [
+    {
+      "team": "Projects",
+      "m365_group": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "mail": "projects@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "projects@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Financial Team",
+      "m365_group": "2bab67a1-48de-4bde-aaa9-8094e2314f25",
+      "mail": "financial-team@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "financial-team@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Foundation Team",
+      "m365_group": "46e10463-2d7a-44a6-a238-71829f3e8650",
+      "mail": "foundation-team@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "foundation-team@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Support",
+      "m365_group": "5d87be95-7d8a-46bd-a9ce-13830496462f",
+      "mail": "support@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "support@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Marketing",
+      "m365_group": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "mail": "marketing@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "marketing@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Security & Compliance",
+      "m365_group": "67d9ef01-be93-42c6-a9d8-fa6c0597d936",
+      "mail": "security@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "security@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Productions Team",
+      "m365_group": "69104c8b-a1dc-4943-a18d-0d823324a7ab",
+      "mail": "productions-team@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "productions-team@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Agape International Cathedral",
+      "m365_group": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec",
+      "mail": "AgapeIC@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "AgapeIC@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Sales",
+      "m365_group": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "mail": "sales@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "sales@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Voicemail",
+      "m365_group": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "mail": "voicemail@jmerrill.pub",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "voicemail@jmerrill.pub",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Events",
+      "m365_group": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "mail": "events@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "events@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "HQ",
+      "m365_group": "abcd0663-047e-4335-97dc-4836a3cf7600",
+      "mail": "JMerrillOne@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "JMerrillOne@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Publishing Team",
+      "m365_group": "b650caa6-324c-4be1-b491-57ab1aee7c4e",
+      "mail": "publishing-team@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "publishing-team@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Marlan Gary Coordination",
+      "m365_group": "f86d0f6a-2f2b-4b3b-83a6-db3cbb42a7bf",
+      "mail": "MarlanGaryCoordination@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "MarlanGaryCoordination@jmerrill.one",
+      "apps": "UNKNOWN"
+    },
+    {
+      "team": "Implementation HQ",
+      "m365_group": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a",
+      "mail": "ImplementationHQ@jmerrill.one",
+      "sharepoint_site": "UNKNOWN - Sites enumeration denied",
+      "planner": "UNKNOWN",
+      "mailbox": "ImplementationHQ@jmerrill.one",
+      "apps": "UNKNOWN"
+    }
+  ],
+  "hard_gate": "Do not delete Teams or Groups until Team -> Group -> SharePoint -> Planner/mailbox/app dependency graph is complete."
+}

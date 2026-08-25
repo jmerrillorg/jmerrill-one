@@ -1,0 +1,12 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd002_execution_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "fd": "FD-002",
+  "approval": "APPROVE FD-002 — unassign 4 orphaned licenses",
+  "execution_status": "NOT EXECUTED",
+  "result": "BLOCKED",
+  "blocker": "Exact four license assignments are not certified. Graph currently shows six disabled licensed voice accounts; repo evidence also contains conflicting statements that no line-item license removals were identified without audit.",
+  "post_state": "UNCHANGED",
+  "validation_result": "NOT APPLICABLE - no license unassignment performed"
+}

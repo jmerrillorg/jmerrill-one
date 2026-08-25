@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "interactions": "READ-ONLY VALIDATION ONLY",
+  "voicemail": {
+    "teamId": "8876abb0-9a18-47ad-99ea-7381912a6785",
+    "isArchived": false
+  },
+  "voice_accounts": [
+    {
+      "upn": "voice-financial@jmerrill.one",
+      "license": "PHONESYSTEM_VIRTUALUSER",
+      "servicePlan": "MCOEV_VIRTUALUSER",
+      "mutation": "none"
+    },
+    {
+      "upn": "voice-foundation@jmerrill.one",
+      "license": "PHONESYSTEM_VIRTUALUSER",
+      "servicePlan": "MCOEV_VIRTUALUSER",
+      "mutation": "none"
+    },
+    {
+      "upn": "voice-main-inbound@jmerrill.one",
+      "license": "PHONESYSTEM_VIRTUALUSER",
+      "servicePlan": "MCOEV_VIRTUALUSER",
+      "mutation": "none"
+    },
+    {
+      "upn": "voice-productions@jmerrill.one",
+      "license": "PHONESYSTEM_VIRTUALUSER",
+      "servicePlan": "MCOEV_VIRTUALUSER",
+      "mutation": "none"
+    },
+    {
+      "upn": "voice-publishing@jmerrill.one",
+      "license": "PHONESYSTEM_VIRTUALUSER",
+      "servicePlan": "MCOEV_VIRTUALUSER",
+      "mutation": "none"
+    },
+    {
+      "upn": "voicebridge@jmerrill.one",
+      "license": "PHONESYSTEM_VIRTUALUSER",
+      "servicePlan": "MCOEV_VIRTUALUSER",
+      "mutation": "none"
+    }
+  ],
+  "teams_phone_numbers": "not modified",
+  "routing_call_queues_auto_attendants": "not modified"
+}

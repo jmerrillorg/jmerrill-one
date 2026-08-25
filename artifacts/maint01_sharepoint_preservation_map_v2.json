@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Preservation map for sites/libraries proposed for migration or consolidation",
+  "sites": [
+    {
+      "source": "sites/foundation_comm — Shared Documents",
+      "destination": "sites/foundation_div — Shared Documents (if consolidating)",
+      "content_staying": "N/A if retiring",
+      "content_moving": "Programs & Events folders and all contents",
+      "owner": "UNKNOWN — must be confirmed before migration",
+      "permissions": "UNKNOWN — must be reviewed before migration",
+      "retention": "UNKNOWN — no legal or financial records confirmed; review required",
+      "archive_requirement": "UNKNOWN",
+      "canon_references": "No known canon references to this site URL",
+      "automation_dependencies": "UNKNOWN — check if any Power Automate flows reference this site",
+      "validation_before_deletion": [
+        "Confirm owner",
+        "Enumerate all files (not just folder structure)",
+        "Confirm no automation references this site",
+        "Confirm no external links point to this site",
+        "Migrate all content to foundation_div",
+        "Verify content accessible in destination",
+        "Retain source site in read-only for 30 days before deletion"
+      ],
+      "status": "BLOCKED — Founder decision pending"
+    },
+    {
+      "source": "sites/projects — Shared Documents (dev artifacts only)",
+      "destination": "GitHub repositories (authoritative) / archive if historical record needed",
+      "content_staying": "Projects Team collaboration files (if any distinct from dev artifacts)",
+      "content_moving": "JS bundles, build artifacts, repo mirrors → GitHub or local archive",
+      "owner": "UNKNOWN — likely jm1-admin or dev team lead",
+      "permissions": "UNKNOWN",
+      "retention": "LOW — build artifacts are reproducible from source; historical snapshots may be archival value only",
+      "archive_requirement": "OPTIONAL — if Founder wants historical build snapshots",
+      "canon_references": "No known canon references to /sites/projects content URLs",
+      "automation_dependencies": "UNKNOWN — check CI/CD pipelines for references to SharePoint /sites/projects",
+      "validation_before_deletion": [
+        "Confirm no CI/CD references sites/projects",
+        "Confirm no Power Automate flows write to or read from sites/projects",
+        "Create archive ZIP of any unique files not in GitHub",
+        "Verify GitHub has all authoritative source",
+        "Remove artifacts only; retain Team shell if collaboration continues"
+      ],
+      "status": "BLOCKED — Founder decision pending"
+    }
+  ]
+}

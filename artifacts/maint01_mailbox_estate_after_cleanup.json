@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_mailbox_estate_after_cleanup",
+  "generated": "2026-08-19",
+  "note": "No cleanup executed this session. contacts@ consolidation pending. All other mailbox dispositions final.",
+  "cleanup_executed": false,
+  "mailbox_dispositions": {
+    "logging@jmerrill.one": "RETAIN \u2014 CORE",
+    "info@jmerrill.one": "RETAIN \u2014 CORE",
+    "notifications@jmerrill.one": "RETAIN \u2014 CORE",
+    "no-reply@jmerrill.one": "RETAIN \u2014 CORE",
+    "legal@jmerrill.one": "RETAIN \u2014 CORE",
+    "preneeds@jmerrill.one": "RETAIN \u2014 CORE",
+    "royalties@jmerrill.one": "RETAIN \u2014 CORE",
+    "submissions@jmerrill.one": "RETAIN \u2014 CORE",
+    "tech@jmerrill.one": "RETAIN \u2014 CORE",
+    "accounting@jmerrill.one": "RETAIN \u2014 CORE (FD-005 KEEP-CORE)",
+    "board@jmerrill.one": "RETAIN \u2014 CORE (FD-005 KEEP-CORE)",
+    "donations@jmerrill.one": "RETAIN \u2014 CORE (FD-005 KEEP-CORE)",
+    "grants@jmerrill.one": "RETAIN \u2014 CORE (FD-005 KEEP-CORE)",
+    "media@jmerrill.one": "RETAIN \u2014 ALIAS/ROUTING (FD-005 KEEP-ALIAS)",
+    "volunteers@jmerrill.one": "RETAIN \u2014 ALIAS/ROUTING (FD-005 KEEP-ALIAS)",
+    "contacts@jmerrill.one": "PENDING CONSOLIDATION into info@ (FD-005 \u2014 execution deferred)"
+  }
+}

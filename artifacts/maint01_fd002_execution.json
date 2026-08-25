@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_fd002_execution",
+  "generated": "2026-08-19",
+  "fd": "FD-002",
+  "approval": "APPROVE FD-002 — unassign 4 orphaned licenses",
+  "execution_status": "DEFERRED — M365 MCP connection unavailable in current session",
+  "m365_mcp_connected": false,
+  "reason": "Microsoft 365 MCP server disconnected during this session. License unassignment requires Graph API to verify assignments, confirm no active mailbox/OneDrive/Teams dependencies, then remove.",
+  "action_required": "Re-run in a session with active M365 MCP connection. Verify 4 exact orphaned licenses, confirm dependency state, then unassign."
+}

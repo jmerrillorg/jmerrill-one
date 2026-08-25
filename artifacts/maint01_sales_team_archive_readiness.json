@@ -1,0 +1,64 @@
+{
+  "package": "MAINT-01",
+  "team": "Sales",
+  "classification": "NOT ARCHIVE READY - PREREQUISITES REMAIN",
+  "mutation_executed": false,
+  "team_id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+  "m365_group_id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+  "mail": "sales@jmerrill.one",
+  "sharepoint_site": {
+    "url": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+    "display_name": "Sales",
+    "last_modified": "2026-08-17T07:15:42Z"
+  },
+  "document_libraries": [
+    {
+      "name": "Documents",
+      "url": "https://jmerrillfoundation.sharepoint.com/sites/sales/Shared%20Documents",
+      "last_modified": "2025-09-11T13:08:13Z",
+      "used_bytes": 1898066
+    }
+  ],
+  "root_items_requiring_preservation_review": [
+    "01 Lead Tracking",
+    "02 Client Proposals",
+    "03 Pricing Sheets",
+    "04 Sales Reports",
+    "05 Archive",
+    "General"
+  ],
+  "pricing_sheets_or_files_requiring_preservation": [
+    "03 Pricing Sheets folder - childCount 5"
+  ],
+  "planner": [],
+  "group_mailbox": "sales@jmerrill.one",
+  "channels": [
+    {
+      "name": "General",
+      "id": "19:a50mnTihNcQAKY9Jdh2kBmRQVPWIqkQ887uStlB3CVc1@thread.tacv2",
+      "email": "sales@jmerrill.one",
+      "is_archived": false
+    }
+  ],
+  "apps_tabs": [
+    "Notes",
+    "Files"
+  ],
+  "owners": [
+    "jackie@jmerrill.one",
+    "jm1-admin@jmerrill.one"
+  ],
+  "members": [
+    "jackie@jmerrill.one",
+    "jm1-admin@jmerrill.one"
+  ],
+  "guests": [],
+  "last_activity_where_available": {
+    "sharepoint_drive_last_modified": "2025-09-11T13:08:13Z",
+    "site_last_modified": "2026-08-17T07:15:42Z",
+    "teams_message_activity": "Not available from current Graph query set"
+  },
+  "business_dependency": "Sales pricing/materials and possible lead/proposal history remain in SharePoint; pricing preservation gate is incomplete.",
+  "archive_gate": "DO NOT ARCHIVE until pricing/materials preservation is completed and founder archive confirmation remains applicable."
+}
+

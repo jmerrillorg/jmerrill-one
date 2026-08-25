@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_postcleanup_security_regression",
+  "generated": "2026-08-19",
+  "result": "DEFERRED",
+  "reason": "No M365 admin cleanup executed. M365 MCP connection available but lacks user-management, license-assignment, Teams-archival, and app-registration APIs. Regression validation is a post-execution gate."
+}

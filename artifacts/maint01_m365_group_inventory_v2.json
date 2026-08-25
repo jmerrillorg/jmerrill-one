@@ -1,0 +1,597 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "groups": [
+    {
+      "id": "138a4df3-7e62-4102-b68c-3e077620f2e0",
+      "display_name": "All Users",
+      "mail": null,
+      "group_types": [
+        "DynamicMembership"
+      ],
+      "mail_enabled": false,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 0,
+      "member_count": 43,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "display_name": "Projects",
+      "mail": "projects@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,da5352c8-b294-42be-a973-f9772b9849dc,7431c5af-1fe6-49e9-83f4-802611c259e2",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+        "displayName": "Projects"
+      },
+      "drive": {
+        "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeJWS2xnZDUMRIMhnF7OrTpt",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "2bab67a1-48de-4bde-aaa9-8094e2314f25",
+      "display_name": "Financial Team",
+      "mail": "financial-team@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,7b33dd0e-533b-42cb-9052-e3f22d5bb24e,4cf9def7-fded-47b6-b73b-af760812be3d",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/financial",
+        "displayName": "Financial Team"
+      },
+      "drive": {
+        "id": "b!Dt0zeztTy0KQUuPyLVuyTvfe-Uzt_bZHtzuvdggSvj1vojmAl4qES7KBk3fdWazN",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/financial/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "2ce612c3-a7d5-4595-8bd7-8f9ad5603eea",
+      "display_name": "JM1-Foundation-Operators",
+      "mail": null,
+      "group_types": [],
+      "mail_enabled": false,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 0,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "37f7113b-c3e1-44c5-90c1-663e501baca1",
+      "display_name": "JM1-Publishing-Operators",
+      "mail": null,
+      "group_types": [],
+      "mail_enabled": false,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 0,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "46e10463-2d7a-44a6-a238-71829f3e8650",
+      "display_name": "Foundation Team",
+      "mail": "foundation-team@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,40e74769-0934-4275-8eb8-e2aa2966c2fb,6f929a6e-ecb5-4f01-8d0f-198cfc326323",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div",
+        "displayName": "Foundation Team"
+      },
+      "drive": {
+        "id": "b!aUfnQDQJdUKOuOKqKWbC-26akm-17AFPjQ8ZjPwyYyOw85OwOK4LRJyY8YnpHITN",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "47b91fad-a641-471a-b77f-71e39fc2627e",
+      "display_name": "JM1 Publishing Mail Read Scope",
+      "mail": "jm1-publishing-mail-read-scope@jmerrillfoundation.onmicrosoft.com",
+      "group_types": [],
+      "mail_enabled": true,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 0,
+      "member_count": 1,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "518fba14-1c6e-4ede-8b11-729e6b40f632",
+      "display_name": "JM1-Enterprise-Owners",
+      "mail": null,
+      "group_types": [],
+      "mail_enabled": false,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 0,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "5d87be95-7d8a-46bd-a9ce-13830496462f",
+      "display_name": "Support",
+      "mail": "support@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,96848a4d-d06d-4ed8-9c19-bc247a6c6a1d,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/support",
+        "displayName": "Support"
+      },
+      "drive": {
+        "id": "b!TYqElm3Q2E6cGbwkemxqHVuKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/support/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "64a52997-c497-4a26-8aca-84190f416f46",
+      "display_name": "Deprecated - All Company",
+      "mail": "AllCompany.49360240640.zmaasxan@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": false,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,b32726bf-9c33-41de-841a-b1945fb28c00,c2cebc8c-b1de-4636-a592-69ab7ecfedad",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/AllCompany.49360240640.zmaasxan",
+        "displayName": "All Company"
+      },
+      "drive": {
+        "id": "b!vyYnszOc3kGEGrGUX7KMAIy8zsLesTZGpZJpq37P7a3oYt8oBNgiTo9gHivGAFc0",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/AllCompany.49360240640.zmaasxan/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 4,
+      "member_count": 0,
+      "orphaned": false,
+      "classification": "RETIREMENT CANDIDATE"
+    },
+    {
+      "id": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "display_name": "Marketing",
+      "mail": "marketing@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,8b6fa220-e446-4e21-bed8-54a6f9ea0943,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/marketing",
+        "displayName": "Marketing"
+      },
+      "drive": {
+        "id": "b!IKJvi0bkIU6-2FSm-eoJQ1uKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/marketing/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "67d9ef01-be93-42c6-a9d8-fa6c0597d936",
+      "display_name": "Security & Compliance",
+      "mail": "security@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,e9969228-7830-4cdd-b44c-4a392b5bcb74,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/security",
+        "displayName": "Security & Compliance"
+      },
+      "drive": {
+        "id": "b!KJKW6TB43Uy0TEo5K1vLdCXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/security/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "69104c8b-a1dc-4943-a18d-0d823324a7ab",
+      "display_name": "Productions Team",
+      "mail": "productions-team@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,ba7ba85d-bd31-4951-b2a0-1df4adfbb3e1,6f929a6e-ecb5-4f01-8d0f-198cfc326323",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/productions",
+        "displayName": "Productions Team"
+      },
+      "drive": {
+        "id": "b!Xah7ujG9UUmyoB30rfuz4W6akm-17AFPjQ8ZjPwyYyOw85OwOK4LRJyY8YnpHITN",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/productions/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "6a134de6-79e6-4196-bed4-5f7feecc36d3",
+      "display_name": "JM1_BC_Admins",
+      "mail": null,
+      "group_types": [],
+      "mail_enabled": false,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 0,
+      "member_count": 0,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec",
+      "display_name": "Agape International Cathedral",
+      "mail": "AgapeIC@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,99f1230e-0535-4067-99cd-2f0b9d051c76,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC",
+        "displayName": "Agape International Cathedral"
+      },
+      "drive": {
+        "id": "b!DiPxmTUFZ0CZzS8LnQUcdiXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 1,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "display_name": "Sales",
+      "mail": "sales@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,650ed071-373a-49b4-b6b4-35dddda994bd,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+        "displayName": "Sales"
+      },
+      "drive": {
+        "id": "b!cdAOZTo3tEm2tDXd3amUvVuKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/sales/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "display_name": "Voicemail",
+      "mail": "voicemail@jmerrill.pub",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,d4392952-206a-4a01-acd0-3fca90f2a869,30361b9d-6a77-40e5-ac93-1e46db97607e",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/voicemail",
+        "displayName": "Voicemail"
+      },
+      "drive": {
+        "id": "b!Uik51GogAUqs0D_KkPKoaZ0bNjB3auVArJMeRtuXYH6JX5mqNvdEQaWtPweeIYDA",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/voicemail/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 4,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "display_name": "Events",
+      "mail": "events@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,af1365df-cf90-4c2c-b967-d1f3f8f54a77,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/events",
+        "displayName": "Events"
+      },
+      "drive": {
+        "id": "b!32UTr5DPLEy5Z9Hz-PVKd1uKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/events/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "abcd0663-047e-4335-97dc-4836a3cf7600",
+      "display_name": "HQ",
+      "mail": "JMerrillOne@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,207281c6-a555-4a6a-9180-d8deaf24baa0,2c1079de-b0a3-42b2-ac81-ac315a3c5b31",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne",
+        "displayName": "HQ"
+      },
+      "drive": {
+        "id": "b!xoFyIFWlakqRgNjeryS6oN55ECyjsLJCrIGsMVo8WzH0U8dOplfpSo17L_E7V6YI",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne/Shared%20Documents"
+      },
+      "planner_dependency": true,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "abf9b34d-65fe-4d2d-85c9-cd2b1b038a7c",
+      "display_name": "AI Assistant Admins",
+      "mail": null,
+      "group_types": [],
+      "mail_enabled": false,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "ae4267f8-a0d2-46fd-a828-dde093900788",
+      "display_name": "Bid & Contract Command Center",
+      "mail": "BidContractCommandCenter@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": false,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,9d1e6083-c9cf-4666-a259-118a6db949fc,a394d710-61e4-4c62-bdfa-e4dfc18de597",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/BidContractCommandCenter",
+        "displayName": "Bid & Contract Command Center"
+      },
+      "drive": {
+        "id": "b!g2Aenc_JZkaiWRGKbblJ_BDXlKPkYWJMvfrk38GN5ZfB0Fh-KNTfSrGupsmMuZ87",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/BidContractCommandCenter/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "SHAREPOINT DEPENDENCY"
+    },
+    {
+      "id": "b39c6b69-d85a-4c2b-b797-b9a07844fdff",
+      "display_name": "JM1-Financial-Operators",
+      "mail": null,
+      "group_types": [],
+      "mail_enabled": false,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 0,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "b650caa6-324c-4be1-b491-57ab1aee7c4e",
+      "display_name": "Publishing Team",
+      "mail": "publishing-team@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,35fb0d98-bc68-4250-9d0d-8c07d68e4024,10208ad5-0028-48f0-9ffa-717812924835",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/publishing",
+        "displayName": "Publishing Team"
+      },
+      "drive": {
+        "id": "b!mA37NWi8UEKdDYwH1o5AJNWKIBAoAPBIn_pxeBKSSDVm9PH59uWnQpr1oD4m79se",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/publishing/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "c3569d39-8a94-42b0-900c-b8712e45265c",
+      "display_name": "JM1-Productions-Operators",
+      "mail": null,
+      "group_types": [],
+      "mail_enabled": false,
+      "security_enabled": true,
+      "team_backed": false,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 0,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "AUTHORIZATION DEPENDENCY"
+    },
+    {
+      "id": "f86d0f6a-2f2b-4b3b-83a6-db3cbb42a7bf",
+      "display_name": "Marlan Gary Coordination",
+      "mail": "MarlanGaryCoordination@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": false,
+      "site": null,
+      "drive": null,
+      "planner_dependency": false,
+      "owner_count": 1,
+      "member_count": 3,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    },
+    {
+      "id": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a",
+      "display_name": "Implementation HQ",
+      "mail": "ImplementationHQ@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "mail_enabled": true,
+      "security_enabled": false,
+      "team_backed": true,
+      "sharepoint_backed": true,
+      "site": {
+        "id": "jmerrillfoundation.sharepoint.com,dcb72ff0-ec3f-475d-8f17-6aede943f512,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ",
+        "displayName": "Implementation HQ"
+      },
+      "drive": {
+        "id": "b!8C-33D_sXUePF2rt6UP1EiXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ/Shared%20Documents"
+      },
+      "planner_dependency": false,
+      "owner_count": 2,
+      "member_count": 2,
+      "orphaned": false,
+      "classification": "ACTIVE COLLABORATION"
+    }
+  ],
+  "limitation": "Planner unavailable for some security/mail groups; does not affect destructive Teams/M365 retirement because no high-confidence group deletion is proposed."
+}

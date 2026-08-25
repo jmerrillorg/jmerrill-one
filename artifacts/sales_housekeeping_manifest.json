@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "classification": "SALES RETAINED-FOLDER HOUSEKEEPING REVIEW COMPLETE — RETAIN / ARCHIVE IN PLACE",
+  "reviewed_count": 6,
+  "retain_count": 3,
+  "archive_in_place_count": 2,
+  "consolidate_move_candidate_count": 0,
+  "delete_candidate_count": 0,
+  "review_required_count": 1,
+  "folders": [
+    {
+      "path": "/sites/sales/Shared Documents/01 Lead Tracking",
+      "folder": "01 Lead Tracking",
+      "classification": "ACTIVE REFERENCE",
+      "proposed_action": "RETAIN",
+      "authoritative_location": "archived Sales SharePoint site",
+      "risk": "business record retention risk if moved/deleted unnecessarily",
+      "recovery_method": "retain in archived Sales SharePoint site"
+    },
+    {
+      "path": "/sites/sales/Shared Documents/02 Client Proposals",
+      "folder": "02 Client Proposals",
+      "classification": "GOVERNED BUSINESS RECORD",
+      "proposed_action": "RETAIN",
+      "authoritative_location": "archived Sales SharePoint site",
+      "risk": "business record retention risk if moved/deleted unnecessarily",
+      "recovery_method": "retain in archived Sales SharePoint site"
+    },
+    {
+      "path": "/sites/sales/Shared Documents/03 Pricing Sheets",
+      "folder": "03 Pricing Sheets",
+      "classification": "GOVERNED BUSINESS RECORD",
+      "proposed_action": "ARCHIVE IN PLACE",
+      "authoritative_location": "archived Sales SharePoint site pending any future enterprise pricing library",
+      "risk": "business record retention risk if moved/deleted unnecessarily",
+      "recovery_method": "retain in archived Sales SharePoint site"
+    },
+    {
+      "path": "/sites/sales/Shared Documents/04 Sales Reports",
+      "folder": "04 Sales Reports",
+      "classification": "HISTORICAL / ARCHIVE",
+      "proposed_action": "ARCHIVE IN PLACE",
+      "authoritative_location": "archived Sales SharePoint site",
+      "risk": "business record retention risk if moved/deleted unnecessarily",
+      "recovery_method": "retain in archived Sales SharePoint site"
+    },
+    {
+      "path": "/sites/sales/Shared Documents/05 Archive",
+      "folder": "05 Archive",
+      "classification": "HISTORICAL / ARCHIVE",
+      "proposed_action": "RETAIN",
+      "authoritative_location": "archived Sales SharePoint site",
+      "risk": "business record retention risk if moved/deleted unnecessarily",
+      "recovery_method": "retain in archived Sales SharePoint site"
+    },
+    {
+      "path": "/sites/sales/Shared Documents/General",
+      "folder": "General",
+      "classification": "TEMPORARY",
+      "proposed_action": "REVIEW REQUIRED",
+      "authoritative_location": "archived Sales SharePoint site",
+      "risk": "low, but channel/system folder deletion is unnecessary and not authorized",
+      "recovery_method": "retain in archived Sales SharePoint site"
+    }
+  ]
+}

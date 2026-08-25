@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "reviewed_count": 13,
+  "items": [
+    {
+      "path": "/sites/projects/Shared Documents/projects/Archive",
+      "item": "Archive",
+      "content_class": "archive/reference folder",
+      "source_of_truth_classification": "SHAREPOINT — AUTHORITATIVE BUSINESS RECORD",
+      "housekeeping_classification": "HISTORICAL EVIDENCE — RETAIN",
+      "proposed_action": "KEEP"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Automation",
+      "item": "Automation",
+      "content_class": "automation/dev artifact folder",
+      "source_of_truth_classification": "UNKNOWN — RETAIN",
+      "housekeeping_classification": "HISTORICAL EVIDENCE — RETAIN",
+      "proposed_action": "REVIEW"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Brands",
+      "item": "Brands",
+      "content_class": "brand/business asset folder",
+      "source_of_truth_classification": "SHAREPOINT — AUTHORITATIVE BUSINESS RECORD",
+      "housekeeping_classification": "SHAREPOINT — AUTHORITATIVE BUSINESS RECORD",
+      "proposed_action": "KEEP"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Diagnostics",
+      "item": "Diagnostics",
+      "content_class": "empty diagnostics folder",
+      "source_of_truth_classification": "GENERATED / REPRODUCIBLE",
+      "housekeeping_classification": "GENERATED / REPRODUCIBLE",
+      "proposed_action": "REVIEW"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Docs",
+      "item": "Docs",
+      "content_class": "empty docs folder",
+      "source_of_truth_classification": "UNKNOWN — RETAIN",
+      "housekeeping_classification": "UNKNOWN — RETAIN",
+      "proposed_action": "KEEP"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Infrastructure",
+      "item": "Infrastructure",
+      "content_class": "infrastructure/reference folder",
+      "source_of_truth_classification": "UNKNOWN — RETAIN",
+      "housekeeping_classification": "HISTORICAL EVIDENCE — RETAIN",
+      "proposed_action": "REVIEW"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Core",
+      "item": "JM1-Core",
+      "content_class": "duplicate technical copy candidate",
+      "source_of_truth_classification": "UNKNOWN — RETAIN",
+      "housekeeping_classification": "UNKNOWN — RETAIN",
+      "proposed_action": "KEEP"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Implementation-HQ",
+      "item": "JM1-Implementation-HQ",
+      "content_class": "duplicate technical copy/build artifact candidate",
+      "source_of_truth_classification": "UNKNOWN — RETAIN",
+      "housekeeping_classification": "UNKNOWN — RETAIN",
+      "proposed_action": "REVIEW"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/logs",
+      "item": "logs",
+      "content_class": "execution log folder",
+      "source_of_truth_classification": "SHAREPOINT — AUTHORITATIVE BUSINESS RECORD",
+      "housekeeping_classification": "HISTORICAL EVIDENCE — RETAIN",
+      "proposed_action": "KEEP"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/publishSettings.txt",
+      "item": "publishSettings.txt",
+      "content_class": "sensitive deployment artifact candidate",
+      "source_of_truth_classification": "UNKNOWN — RETAIN",
+      "housekeeping_classification": "HISTORICAL EVIDENCE — RETAIN",
+      "proposed_action": "REVIEW"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/reset-live-sites.sh",
+      "item": "reset-live-sites.sh",
+      "content_class": "deployment script candidate",
+      "source_of_truth_classification": "UNKNOWN — RETAIN",
+      "housekeeping_classification": "HISTORICAL EVIDENCE — RETAIN",
+      "proposed_action": "REVIEW"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/sync-live-sites.sh",
+      "item": "sync-live-sites.sh",
+      "content_class": "deployment script candidate",
+      "source_of_truth_classification": "UNKNOWN — RETAIN",
+      "housekeeping_classification": "HISTORICAL EVIDENCE — RETAIN",
+      "proposed_action": "REVIEW"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/JM1_Migration_1_0_0_1_managed.zip",
+      "item": "JM1_Migration_1_0_0_1_managed.zip",
+      "content_class": "managed solution/release package",
+      "source_of_truth_classification": "DATAVERSE / SYSTEM — AUTHORITATIVE",
+      "housekeeping_classification": "HISTORICAL EVIDENCE — RETAIN",
+      "proposed_action": "KEEP"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "Identify authoritative current vs historical evidence artifacts per family",
+  "version_families": {
+    "sharepoint_inventory": {
+      "authoritative_current": "maint01_sharepoint_inventory_v3.json",
+      "historical_evidence": ["maint01_sharepoint_inventory.json", "maint01_sharepoint_inventory_v2.json"]
+    },
+    "disposition_matrix": {
+      "authoritative_current": "maint01_disposition_matrix_v3.json",
+      "historical_evidence": ["maint01_disposition_matrix.json", "maint01_disposition_matrix_v2.json"]
+    },
+    "retirement_manifest": {
+      "authoritative_current": "maint01_retirement_manifest_v3.json / .md",
+      "historical_evidence": ["maint01_retirement_manifest.json/.md", "maint01_retirement_manifest_v2.json/.md"]
+    },
+    "retirement_hard_gate": {
+      "authoritative_current": "maint01_retirement_hard_gate_v2.json",
+      "historical_evidence": ["maint01_retirement_hard_gate.json"]
+    },
+    "evidence_completeness_gate": {
+      "authoritative_current": "maint01_evidence_completeness_gate_v2.json",
+      "historical_evidence": ["maint01_evidence_completeness_gate.json"]
+    },
+    "final_closeout": {
+      "authoritative_current": "maint01_final_closeout_v4.json / .md",
+      "historical_evidence": ["maint01_final_closeout.json/.md", "maint01_final_closeout_v2.json/.md", "maint01_final_closeout_v3.json/.md"]
+    },
+    "canon_repository_reconciliation": {
+      "authoritative_current": "maint01_canon_repository_reconciliation_v2.json",
+      "historical_evidence": ["maint01_canon_repository_reconciliation.json"]
+    },
+    "repo_sharepoint_alignment_matrix": {
+      "authoritative_current": "maint01_repo_sharepoint_alignment_matrix_v3.json",
+      "historical_evidence": ["maint01_repo_sharepoint_alignment_matrix.json", "maint01_repo_sharepoint_alignment_matrix_v2.json"]
+    },
+    "final_scorecard": {
+      "authoritative_current": "maint01_final_scorecard_v3.json",
+      "historical_evidence": ["maint01_final_scorecard.json", "maint01_final_scorecard_v2.json"]
+    },
+    "founder_decision_register": {
+      "authoritative_current": "maint01_founder_decision_register_v2.json",
+      "historical_evidence": ["maint01_founder_decision_register.json"]
+    },
+    "sharepoint_site_classification": {
+      "authoritative_current": "maint01_sharepoint_site_classification_final.json",
+      "historical_evidence": []
+    },
+    "founder_decision_packet": {
+      "authoritative_current": "maint01_founder_decision_packet.json / .md",
+      "historical_evidence": []
+    },
+    "cleanup_execution_waves": {
+      "authoritative_current": "maint01_cleanup_execution_waves.json / .md",
+      "historical_evidence": []
+    }
+  },
+  "rule": "Historical evidence artifacts are retained as-is for lineage. Authoritative current is the single source of truth for each domain. Do not delete historical artifacts."
+}

@@ -1,0 +1,20 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd003_target_certification",
+  "created_at": "2026-08-20T11:45:00Z",
+  "fd": "FD-003",
+  "classification": "FD-003 TARGET CERTIFICATION BLOCKED - NO EXACT SAFE HUMAN TARGETS CERTIFIED",
+  "approved_count": 2,
+  "safe_targets": [],
+  "excluded_voice_resource_accounts": [
+    "voice-financial@jmerrill.one",
+    "voice-foundation@jmerrill.one",
+    "voice-main-inbound@jmerrill.one",
+    "voice-productions@jmerrill.one",
+    "voice-publishing@jmerrill.one",
+    "voicebridge@jmerrill.one"
+  ],
+  "reason": "Teams Voice resource accounts are workload/resource identities, not inactive internal employees. The landed evidence does not identify exactly two human/internal accounts safe to disable.",
+  "last_sign_in_evidence": "UNAVAILABLE - Graph signInActivity query returned tenant licensing error Authentication_RequestFromNonPremiumTenantOrB2CTenant",
+  "ready_to_execute": false
+}

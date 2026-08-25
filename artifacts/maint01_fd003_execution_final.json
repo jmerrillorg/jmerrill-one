@@ -1,0 +1,12 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd003_execution_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "fd": "FD-003",
+  "approval": "APPROVE FD-003 — disable 2 inactive internal accounts",
+  "execution_status": "NOT EXECUTED",
+  "result": "BLOCKED",
+  "blocker": "Exact two inactive internal account object IDs are not certified by landed evidence.",
+  "post_state": "UNCHANGED",
+  "validation_result": "NOT APPLICABLE - no account disablement performed"
+}

@@ -1,0 +1,18 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-004",
+  "scope": "PREP-FIRST ONLY",
+  "status": "COMPLETE - NON-DESTRUCTIVE ARCHIVE PREREQUISITES RECORDED",
+  "included": [
+    "Sales Team preservation/readiness",
+    "Projects Team preservation/readiness"
+  ],
+  "excluded": [
+    "Voicemail archival",
+    "third Team substitution",
+    "file delete/move",
+    "SharePoint deletion",
+    "Team archival execution"
+  ],
+  "voicemail_state": "KEEP - PAUSED VOICE PROJECT / REACTIVATION PLANNED"
+}

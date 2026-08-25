@@ -1,0 +1,17 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-001",
+  "executed_at": "2026-08-20T13:08:00Z",
+  "result": "PASS",
+  "deleted_object": {
+    "id": "60468cde-ddf5-4f49-997e-dc19d9e405ac",
+    "upn": "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com"
+  },
+  "deletion_verification": {
+    "result": "PASS",
+    "graph_get_after_delete": "Request_ResourceNotFound",
+    "message": "Resource '60468cde-ddf5-4f49-997e-dc19d9e405ac' does not exist."
+  },
+  "no_related_active_object_removed": "PASS",
+  "no_other_guest_touched": "PASS"
+}

@@ -1,0 +1,20 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd002_target_certification",
+  "created_at": "2026-08-20T11:45:00Z",
+  "fd": "FD-002",
+  "classification": "FD-002 PARTIAL TARGET CERTIFICATION - FOUNDER APPROVAL COUNT EXCEEDS CURRENT SAFE TARGET SET",
+  "approved_count": 4,
+  "safe_targets": [],
+  "excluded_voice_resource_accounts": [
+    "voice-financial@jmerrill.one",
+    "voice-foundation@jmerrill.one",
+    "voice-main-inbound@jmerrill.one",
+    "voice-productions@jmerrill.one",
+    "voice-publishing@jmerrill.one",
+    "voicebridge@jmerrill.one"
+  ],
+  "reason": "All six disabled licensed voice identities are Teams Phone resource accounts licensed with PHONESYSTEM_VIRTUALUSER and are explicitly protected by Founder clarification. The original MAINT-01 evidence does not identify any other exact four license assignments certified safe to remove.",
+  "rule": "A Teams Phone resource account is not an orphaned licensed user merely because it is disabled for interactive sign-in.",
+  "ready_to_execute": false
+}

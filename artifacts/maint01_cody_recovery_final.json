@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_cody_recovery_final",
+  "generated": "2026-08-19",
+  "result": "PASS",
+  "recovery_method": "DIRECT LOCAL ACCESS — same container environment",
+  "repo_path": "/home/user/jmerrill-one",
+  "branch": "claude/loving-planck-1cfoo2",
+  "tip": "34f9501",
+  "working_tree_clean": true,
+  "commits_recovered": [
+    {"sha": "efc50e4", "gpgsig": true, "committer": "noreply@anthropic.com"},
+    {"sha": "96d123e", "gpgsig": true, "committer": "noreply@anthropic.com", "is_merge": true},
+    {"sha": "12e6298", "gpgsig": true, "committer": "noreply@anthropic.com"},
+    {"sha": "91937c6", "gpgsig": true, "committer": "noreply@anthropic.com"},
+    {"sha": "34f9501", "gpgsig": true, "committer": "noreply@anthropic.com"}
+  ],
+  "no_bundle_required": true
+}

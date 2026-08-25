@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Validate that Claude's commit 636888c contains only intended MAINT-01 work",
+  "result": "PASS",
+  "commit": "636888ccf8fb8b2591e4a475dc1f6a27a286df55",
+
+  "file_scope_check": {
+    "total_files": 116,
+    "all_in_artifacts_directory": true,
+    "all_prefixed_maint01": true,
+    "non_maint01_files": 0,
+    "editorial_diagnostic_present": false,
+    "editorial_diagnostic_note": "Claude mentioned JMP-STAGE0-EditorialDiagnostic-v1_1b-CANON.md was intended as a separate ADR-011-OI-004 errata change. It did not enter commit 636888c — confirmed by diff inspection.",
+    "unrelated_publishing_files": 0,
+    "host02_files": 0,
+    "jrn01_files": 0
+  },
+
+  "content_checks": {
+    "sharepoint_v3_inventory": "PRESENT — maint01_sharepoint_inventory_v3.json (16 sites)",
+    "standalone_site_discovery": "PRESENT — maint01_sharepoint_standalone_delta.json (foundation_comm)",
+    "usage_limitation_evidence": "PRESENT — maint01_sharepoint_usage_v2.json (limitation: 403 for formal reports; proxy used)",
+    "dependency_graph": "PRESENT — maint01_collaboration_dependency_graph_v2.json (in prior Cody commit; Claude's v3 did not alter it)",
+    "repo_sharepoint_alignment": "PRESENT — maint01_repo_sharepoint_alignment_matrix_v3.json",
+    "canon_reconciliation": "PRESENT — maint01_canon_repository_reconciliation_v2.json",
+    "target_architecture": "PRESENT — maint01_sharepoint_target_architecture_v3.md",
+    "disposition_matrix": "PRESENT — maint01_disposition_matrix_v3.json (180 objects, 0 UNKNOWN)",
+    "retirement_manifest": "PRESENT — maint01_retirement_manifest_v3.json + .md",
+    "founder_decision_register": "PRESENT — maint01_founder_decision_register_v2.json (FD-001 through FD-006)",
+    "evidence_completeness_gate": "PRESENT — maint01_evidence_completeness_gate_v2.json",
+    "final_scorecard": "PRESENT — maint01_final_scorecard_v3.json",
+    "final_closeout": "PRESENT — maint01_final_closeout_v3.json + .md"
+  },
+
+  "secret_credential_check": "PASS — no passwords, tokens, or secrets in any artifact",
+  "mailbox_content_check": "PASS — no mailbox message content read or recorded",
+  "json_validity": "PASS — 100 JSON files, 0 parse errors"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_fd004_execution",
+  "generated": "2026-08-19",
+  "fd": "FD-004",
+  "approval": "APPROVE FD-004 — archive 3 inactive Teams/Groups",
+  "execution_status": "DEFERRED — M365 MCP connection unavailable in current session",
+  "m365_mcp_connected": false,
+  "reason": "Microsoft 365 MCP server disconnected during this session. Teams archival requires Graph API to verify per-Team dependencies (SP site, Planner, apps, mailbox, guests) then set archived/read-only state.",
+  "action_required": "Re-run in a session with active M365 MCP connection. Validate preservation map for each Team, then archive (do not delete)."
+}

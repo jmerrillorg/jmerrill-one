@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-08-20T10:24:36.700Z",
+  "result": "BLOCKED",
+  "current_remote_branch": "origin/codex/maint01-estate-rationalization",
+  "current_local_branch": "codex/maint01-estate-rationalization",
+  "current_local_head": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+  "pr6": {
+    "headRefOid": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+    "mergeStateStatus": "CLEAN",
+    "state": "OPEN",
+    "url": "https://github.com/jmerrillorg/jmerrill-one/pull/6"
+  },
+  "claude_tip": "a38d8b4",
+  "common_ancestor": null,
+  "contains_cody_lineage": null,
+  "safest_integration_method": "Blocked until a38d8b4 is reachable. Do not reconstruct artifacts manually."
+}

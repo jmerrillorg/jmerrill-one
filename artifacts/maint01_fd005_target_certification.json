@@ -1,0 +1,34 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd005_target_certification",
+  "created_at": "2026-08-20T11:45:00Z",
+  "fd": "FD-005",
+  "classification": "FD-005 TARGET CERTIFICATION COMPLETE - EXECUTION HELD BY CERTIFICATION-PASS RULE",
+  "mailboxes": {
+    "contacts": {
+      "display_name": "JM1 Shared Contacts",
+      "primary_smtp": "contacts@jmerrill.one",
+      "recipient_type": "SharedMailbox",
+      "exchange_external_directory_object_id": "e06bcf6c-bf0a-477a-93c6-efbaac7c930d",
+      "aliases": ["contacts@jmerrillfoundation.onmicrosoft.com", "contacts@jmerrill.one"],
+      "forwarding": null,
+      "deliver_to_mailbox_and_forward": false,
+      "send_on_behalf": [],
+      "public_website_references": [],
+      "automation_signal": "none observed in landed evidence",
+      "safe_consolidation_plan": "Preserve contacts@ continuity by adding/routing contacts@ to info@ where Exchange recipient constraints permit; do not delete mailbox history during execution."
+    },
+    "info": {
+      "display_name": "JM1 Info",
+      "primary_smtp": "info@jmerrill.one",
+      "recipient_type": "SharedMailbox",
+      "exchange_external_directory_object_id": "f4094597-9b48-43b6-b238-4dc0cd308b0c",
+      "aliases": ["info@jmerrill.productions", "info@jmerrill.org", "info@jmerrill.financial", "info@jmerrill.pub", "info5978@jmerrillfoundation.onmicrosoft.com", "info@jmerrill.one"],
+      "forwarding": "appointments@jmerrill.one",
+      "deliver_to_mailbox_and_forward": true,
+      "public_website_references": ["https://jmerrill.one/contact"]
+    }
+  },
+  "bookings_power_automate_dynamics_customer_voice_forms": "No contacts@ dependency found in landed MAINT-01 evidence; execution should still avoid mailbox-content reads.",
+  "ready_to_execute_after_packet_approval": true
+}

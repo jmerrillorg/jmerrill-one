@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_pr6_final_validation_v3",
+  "generated": "2026-08-19",
+  "pr_number": 6,
+  "target_branch": "codex/maint01-estate-rationalization",
+  "source_branch": "claude/loving-planck-1cfoo2",
+  "local_tip": "32e3439",
+  "all_commits_signed": true,
+  "fd001_through_fd006_artifacts_present": true,
+  "fd005_all_7_mailboxes_named": true,
+  "cleanup_wave_artifacts_present": true,
+  "final_closeout_v5_present": true,
+  "cody_lineage_incorporated": true,
+  "merge_commit": "96d123e",
+  "json_parse_failures": 0,
+  "secrets_detected": false,
+  "no_unrelated_files": true,
+  "push_status": "BLOCKED — GitHub App lacks write permission",
+  "pr6_visible_on_github": false,
+  "action_required": "Cody must push to make PR #6 reflect current local state"
+}

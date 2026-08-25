@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-08-19T00:00:00.000Z",
+  "purpose": "Validate Claude final signed commit history",
+  "result": "PASS",
+  "final_claude_tip": "91937c6ea42cb770016e61d1a892efd7c641f7ce",
+  "commits": {
+    "efc50e4": {"message": "Complete MAINT-01 SharePoint standalone discovery and v3 artifact set", "author": "noreply@anthropic.com", "committer": "noreply@anthropic.com", "gpgsig": true, "files_changed": 116},
+    "96d123e": {"message": "Merge codex/maint01-estate-rationalization into claude/loving-planck-1cfoo2", "author": "noreply@anthropic.com", "committer": "noreply@anthropic.com", "gpgsig": true, "is_merge": true, "parents": ["efc50e4", "85cbc9c"]},
+    "12e6298": {"message": "MAINT-01 recovery, validation, reconciliation and Founder decision package", "author": "noreply@anthropic.com", "committer": "noreply@anthropic.com", "gpgsig": true, "files_changed": 43},
+    "91937c6": {"message": "Finalize MAINT-01 evidence and Founder decision package", "author": "noreply@anthropic.com", "committer": "noreply@anthropic.com", "gpgsig": true, "files_changed": 21}
+  },
+  "unexpected_fifth_lineage": false,
+  "do_not_amend": true
+}

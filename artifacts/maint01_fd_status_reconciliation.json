@@ -1,0 +1,33 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd_status_reconciliation",
+  "current_state": [
+    {
+      "fd": "FD-001",
+      "state": "FOUNDER TARGET CHOICE REQUIRED"
+    },
+    {
+      "fd": "FD-002",
+      "state": "CLOSED - NO ACTION"
+    },
+    {
+      "fd": "FD-003",
+      "state": "CLOSED - NO ACTION"
+    },
+    {
+      "fd": "FD-004",
+      "state": "PARTIAL - SALES/PROJECTS PREP-FIRST; VOICEMAIL RETAIN"
+    },
+    {
+      "fd": "FD-005",
+      "state": "CERTIFIED - CONTACTS CONSOLIDATION EXECUTED"
+    },
+    {
+      "fd": "FD-006",
+      "state": "CLOSED CURRENT DELETE WAVE - RETAIN/REVIEW"
+    }
+  ],
+  "count_based_approvals_superseded": true,
+  "rule": "Do not search for replacement targets solely to satisfy obsolete counts."
+}
+

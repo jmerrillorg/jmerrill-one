@@ -1,0 +1,6 @@
+{
+  "created_at": "2026-08-20T10:24:36.700Z",
+  "result": "NOT EXECUTED",
+  "reason": "Phase 1 recovery failed; no Claude commit integrated.",
+  "target_branch": "codex/maint01-estate-rationalization"
+}

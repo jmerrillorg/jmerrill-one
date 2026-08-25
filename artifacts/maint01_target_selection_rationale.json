@@ -1,0 +1,45 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_target_selection_rationale",
+  "created_at": "2026-08-20T11:45:00Z",
+  "result": "COMPLETE",
+  "fd001": {
+    "why_this_object": "No object selected; evidence does not uniquely identify the approved stale guest.",
+    "why_not_others": {
+      "chosen2k7": "PendingAcceptance but not uniquely identified by original evidence.",
+      "email": "PendingAcceptance but not uniquely identified by original evidence.",
+      "lisataye": "Accepted guest created 2026-08-17; not identified as stale by original evidence."
+    }
+  },
+  "fd002": {
+    "why_this_object": "No license assignment selected; no exact non-voice safe target is certified.",
+    "why_not_others": "All six disabled licensed voice accounts use PHONESYSTEM_VIRTUALUSER and are protected by Founder Teams Voice preservation directive."
+  },
+  "fd003": {
+    "why_this_object": "No internal user selected; no exact human/internal safe target is certified.",
+    "why_not_others": "Voice accounts are workload/resource identities; disabled shared mailbox accounts are retained mailbox identities, not inactive employees."
+  },
+  "fd004": {
+    "why_this_object": "No Team/Group selected for archival.",
+    "why_not_others": {
+      "Sales": "Not ready; pricing-sheet migration prerequisite not certified.",
+      "Voicemail": "Protected by Teams Voice preservation directive.",
+      "Projects": "Not ready; SharePoint dev artifact cleanup prerequisite not certified.",
+      "Marketing": "Retained by final disposition.",
+      "Events": "Retained by final disposition."
+    }
+  },
+  "fd005": {
+    "why_this_object": "contacts@ is the only FD-005 mailbox approved for consolidation and has an exact Exchange recipient object.",
+    "why_not_others": "accounting@, board@, donations@, grants@ are KEEP-CORE; media@ and volunteers@ are KEEP-ALIAS with existing forwarding preserved."
+  },
+  "fd006": {
+    "why_this_object": "No app selected for deletion.",
+    "why_not_others": {
+      "github-aic-deploy": "Azure Contributor role assignment proves active dependency.",
+      "BusinessCentralAPI": "Business Central API permissions prove named workload dependency.",
+      "Portals-Site 1": "Portal/Power Pages naming and credential require owner review.",
+      "BusinessCentralSharePoint": "Business Central to SharePoint permission set requires owner review."
+    }
+  }
+}

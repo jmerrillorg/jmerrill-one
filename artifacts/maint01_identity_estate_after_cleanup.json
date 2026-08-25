@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_identity_estate_after_cleanup",
+  "generated": "2026-08-19",
+  "note": "No cleanup executed this session (M365 MCP unavailable). Counts reflect pre-execution state from MAINT-01 discovery.",
+  "cleanup_executed": false,
+  "pending_actions": {
+    "FD-001": "Delete 1 stale guest (not yet executed)",
+    "FD-002": "Unassign 4 orphaned licenses (not yet executed)",
+    "FD-003": "Disable 2 inactive internal accounts (not yet executed)",
+    "FD-006": "Delete 2 expired app registrations pending dependency certification (not yet executed)"
+  },
+  "current_counts_pre_execution": {
+    "note": "See maint01_final_closeout_v5.json for authoritative discovery counts"
+  }
+}

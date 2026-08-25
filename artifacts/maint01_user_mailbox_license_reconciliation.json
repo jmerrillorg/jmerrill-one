@@ -1,0 +1,436 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "users": [
+    {
+      "upn": "a0338273-c879-452f-b539-a300faacbb66@jmerrillfoundation.onmicrosoft.com",
+      "display_name": "Jackie Smith",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 5,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "accounting@jmerrill.one",
+      "display_name": "JM1 Accounting",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "accounting@jmerrill.one",
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "admin@jmerrill.one",
+      "display_name": "Break Glass Admin",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": null,
+      "classification": "REAL HUMAN ACCOUNT",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "appointments@jmerrill.one",
+      "display_name": "JM1 Appointments",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 2,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "board@jmerrill.one",
+      "display_name": "JM1 Board",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "board@jmerrill.one",
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "display_name": "chosen2k7",
+      "enabled": true,
+      "user_type": "Guest",
+      "license_count": 0,
+      "mailbox_match": null,
+      "classification": "GUEST ACCOUNT",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "contacts@jmerrill.one",
+      "display_name": "JM1 Shared Contacts",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "contacts@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "donation@jmerrill.one",
+      "display_name": "JM1 Donations",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "donations@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "display_name": "email",
+      "enabled": true,
+      "user_type": "Guest",
+      "license_count": 0,
+      "mailbox_match": null,
+      "classification": "GUEST ACCOUNT",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "financial@jmerrill.one",
+      "display_name": "J Merrill Financial",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 4,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "foundation@jmerrill.one",
+      "display_name": "J Merrill Foundation",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 4,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "grants@jmerrill.one",
+      "display_name": "JM1 Grants",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "grants@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "iCloud@jmerrill.one",
+      "display_name": "iCloud",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "info@jmerrill.one",
+      "display_name": "JM1 Info",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 3,
+      "mailbox_match": "info@jmerrill.one",
+      "classification": "LICENSED MAILBOX/WORKLOAD REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "jackie@jmerrill.one",
+      "display_name": "Jackie Smith, Jr.",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 7,
+      "mailbox_match": null,
+      "classification": "REAL HUMAN ACCOUNT",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "jackie@jmerrill.pub",
+      "display_name": "Jackie Smith, Jr.",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 2,
+      "mailbox_match": null,
+      "classification": "REAL HUMAN ACCOUNT",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "jackie@jmerrillfoundation.onmicrosoft.com",
+      "display_name": "Jackie Smith",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "REAL HUMAN ACCOUNT",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "JackieSmithJrMrJMerrill@jmerrill.one",
+      "display_name": "Jackie Smith Jr - MrJMerrill",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": null,
+      "classification": "REAL HUMAN ACCOUNT",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "jm1-admin@jmerrill.one",
+      "display_name": "JM1 Admin",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 8,
+      "mailbox_match": null,
+      "classification": "REAL HUMAN ACCOUNT",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "JMerrillFinancial@jmerrill.one",
+      "display_name": "J Merrill Financial",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "JMerrillFoundation@jmerrill.one",
+      "display_name": "J Merrill Foundation",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "JMerrillPublishing@jmerrill.one",
+      "display_name": "J Merrill Publishing",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "JMerrillPublishingBookings@jmerrill.one",
+      "display_name": "J Merrill Publishing – Appointments",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "legal@jmerrill.one",
+      "display_name": "JM1 Legal",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "legal@jmerrill.one",
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "logging@jmerrill.one",
+      "display_name": "Email Logging",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "logging@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "marla@jmerrill.one",
+      "display_name": "Marla Smith",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "media@jmerrill.one",
+      "display_name": "JM1 Media",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "media@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "no-reply@jmerrillfoundation.onmicrosoft.com",
+      "display_name": "JM1 No-reply",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "no-reply@jmerrill.one",
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "notifications@jmerrill.one",
+      "display_name": "JM1 Notifications",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "notifications@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "preneeds@jmerrill.one",
+      "display_name": "JM1 Pre-Needs",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "preneeds@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "productions@jmerrill.one",
+      "display_name": "J Merrill Productions",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 4,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "publishing@jmerrill.one",
+      "display_name": "J Merrill Publishing",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 4,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "royalties@jmerrill.one",
+      "display_name": "JM1 Royalties",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "royalties@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "scheduling@jmerrill.one",
+      "display_name": "JM1 Scheduling",
+      "enabled": true,
+      "user_type": "Member",
+      "license_count": 2,
+      "mailbox_match": null,
+      "classification": "WORKLOAD/SERVICE USER REVIEW",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "submissions@jmerrill.one",
+      "display_name": "JM1 Submissions",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "submissions@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "tech@jmerrill.one",
+      "display_name": "JM1 Tech",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "tech@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    },
+    {
+      "upn": "voice-financial@jmerrill.one",
+      "display_name": "JM1-Voice Financial",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "voice-foundation@jmerrill.one",
+      "display_name": "JM1-Voice Foundation",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "voice-main-inbound@jmerrill.one",
+      "display_name": "JM1-Voice Main Inbound",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "voice-productions@jmerrill.one",
+      "display_name": "JM1-Voice Productions",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "voice-publishing@jmerrill.one",
+      "display_name": "JM1-Voice Publishing",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "voicebridge@jmerrill.one",
+      "display_name": "JM1 Voice Bridge",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 1,
+      "mailbox_match": null,
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "UNKNOWN - dependency proof required before removal"
+    },
+    {
+      "upn": "volunteers@jmerrill.one",
+      "display_name": "JM1 Volunteers",
+      "enabled": false,
+      "user_type": "Member",
+      "license_count": 0,
+      "mailbox_match": "volunteers@jmerrill.one",
+      "classification": "DISABLED USER",
+      "proposed_license_disposition": "N/A"
+    }
+  ]
+}

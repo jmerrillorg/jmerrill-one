@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "source_plan": "artifacts/maint01_sales_team_preservation_plan.json",
+  "source_evidence": "artifacts/maint01_sales_team_preservation_evidence.json",
+  "retained_content_classes": [
+    {
+      "class": "Pricing/materials",
+      "authoritativeLocation": "https://jmerrillfoundation.sharepoint.com/sites/sales/Shared Documents/03 Pricing Sheets",
+      "owner": "J Merrill One / Sales governance",
+      "accessibility": "resolved_post_archive",
+      "preservationState": "preserved_in_place",
+      "readOnlyArchiveRisk": "no stranded operational material identified"
+    }
+  ],
+  "action": "Archive permitted; no Sales files deleted."
+}

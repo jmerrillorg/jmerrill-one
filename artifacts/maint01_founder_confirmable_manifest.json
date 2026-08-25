@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Decision-ready retirement manifest — the artifact Jackie approves to authorize cleanup execution",
+  "status": "AWAITING FD-001 THROUGH FD-006",
+
+  "section_1_policy_decisions": {
+    "description": "Items requiring a Founder policy answer before any technical action",
+    "items": [
+      { "id": "FD-001", "object": "sites/foundation_comm", "decision": "CONSOLIDATE into foundation_div and retire OR RETAIN with documented public purpose", "approval_phrase": "APPROVE FD-001 — CONSOLIDATE foundation_comm into foundation_div and retire" },
+      { "id": "FD-002", "object": "Enterprise canon location", "decision": "Confirm ImplementationHQ/00_CANON is authoritative; publishing copy becomes reference", "approval_phrase": "APPROVE FD-002 — ImplementationHQ/Architecture/00_CANON is the authoritative enterprise canon" },
+      { "id": "FD-003", "object": "sites/projects dev artifact content", "decision": "Archive/remove dev build artifacts from SharePoint", "approval_phrase": "APPROVE FD-003 — archive and remove dev build artifacts from sites/projects" },
+      { "id": "FD-004-SALES", "object": "teams/Sales + sites/sales", "decision": "ARCHIVE or RETAIN", "approval_phrase": "APPROVE FD-004 SALES — ARCHIVE Sales Team after pricing sheet migration" },
+      { "id": "FD-004-VOICEMAIL", "object": "teams/Voicemail + sites/voicemail", "decision": "RETAIN (recommended) or DECOUPLE and ARCHIVE", "approval_phrase": "APPROVE FD-004 VOICEMAIL — RETAIN until routing dependency confirmed" },
+      { "id": "FD-005", "object": "7 shared mailboxes", "decision": "Per-mailbox: KEEP-CORE / KEEP-ALIAS / RETIRE", "approval_phrase": "APPROVE FD-005 — [per mailbox classification]" },
+      { "id": "FD-006", "object": "teams/Projects", "decision": "ARCHIVE (if moved to GitHub) or RETAIN (if channel active)", "approval_phrase": "APPROVE FD-006 — [ARCHIVE or RETAIN] Projects Team" }
+    ]
+  },
+
+  "section_2_immediate_high_confidence_after_approval": {
+    "description": "Items whose technical dependencies are cleared — executable immediately after corresponding FD approval",
+    "items": [
+      { "action": "Add canon reference label to publishing/Enterprise Governance", "prerequisite": "FD-002", "complexity": "LOW — no files moved or deleted" }
+    ]
+  },
+
+  "section_3_migration_first": {
+    "description": "Items requiring preservation/migration before any destructive action",
+    "items": [
+      { "action": "Migrate foundation_comm Programs & Events to foundation_div", "prerequisite": "FD-001 CONSOLIDATE, full file audit, owner confirmed" },
+      { "action": "Migrate Sales pricing sheets before archiving Team", "prerequisite": "FD-004 Sales ARCHIVE" },
+      { "action": "Archive ZIP of projects dev artifacts before deletion", "prerequisite": "FD-003, CI/CD verification" },
+      { "action": "Mailbox alias/forwarding setup before any retirement", "prerequisite": "FD-005, no active use confirmed" }
+    ]
+  },
+
+  "section_4_retain": {
+    "description": "Objects proven necessary — no action required",
+    "objects": [
+      "13 of 15 in-scope SharePoint sites",
+      "9 confirmed shared mailboxes (KEEP-CORE/SYSTEM)",
+      "11 Teams (confirmed retain)",
+      "9 security groups",
+      "112 app registrations",
+      "19 GitHub repos"
+    ]
+  },
+
+  "section_5_defer": {
+    "description": "Not enough evidence or business value to act now",
+    "items": [
+      { "object": "App registration retirement candidates", "reason": "Full line-item dependency audit not yet performed" },
+      { "object": "License removals", "reason": "No specific removals identified without per-user audit" },
+      { "object": "Deprecated - All Company M365 Group", "reason": "Mailbox/site content assessment needed before retirement" }
+    ]
+  }
+}
