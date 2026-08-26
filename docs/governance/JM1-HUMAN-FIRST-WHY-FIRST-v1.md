@@ -96,6 +96,24 @@ Every consuming brand must supply a brand profile before human-facing output is 
 
 Publishing is the first proving implementation. Other JM1 branches must not be reported as commissioned until they have integrated, deployed, and proven the policy.
 
+## Cross-Brand Adoption Register
+
+Publishing is the commissioned reference implementation.
+
+Financial, Foundation, Productions, and AIC must consume this enterprise policy through branch-specific overlays. A branch may be classified as guard-ready or pre-publish-ready before it is classified as live outbound commissioned.
+
+Current adoption classifications:
+
+| Branch | Overlay | Current classification | Live outbound commissioning |
+| --- | --- | --- | --- |
+| J Merrill Publishing | `publishing` | COMMISSIONED_REFERENCE_IMPLEMENTATION | PROVEN |
+| J Merrill Financial | `financial` | CONTROLLED_GUARD_READY | NOT_PROVEN |
+| J Merrill Foundation | `foundation` | PRE_PUBLISH_GUARD_READY | SEPARATE_WAVE_REQUIRED |
+| J Merrill Productions | `productions` | PRE_PUBLISH_GUARD_READY | SEPARATE_WAVE_REQUIRED |
+| Agape International Cathedral | `aic` | PRE_PUBLISH_GUARD_READY | SEPARATE_WAVE_REQUIRED |
+
+Guard-ready means the branch has an executable policy check and passing branch tests. It does not mean real external sends or public deployment are active unless separately proven.
+
 ## Artifact Release Requirement
 
 When a human-facing package requires an artifact, the system must prove the artifact is the intended human-facing artifact, not a filename-matched internal report.
