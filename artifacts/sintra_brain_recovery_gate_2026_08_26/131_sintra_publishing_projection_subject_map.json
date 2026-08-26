@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "records": [
+    {
+      "r_id": "R-001",
+      "sintra_record_title": "Manuscript Tone and Style",
+      "apparent_subject": "manuscript/editorial tone guidance",
+      "current_one_workspace_role": "branch-specific operational knowledge present in J Merrill One Brain",
+      "proposed_publishing_projection_reference_role": "Publishing-only reference to governed tone/voice canon after source certification",
+      "exact_source_evidence_needed": "current governed Publishing style or voice artifact with owner/currentness"
+    },
+    {
+      "r_id": "R-002",
+      "sintra_record_title": "Style Sheet Governance",
+      "apparent_subject": "style-sheet governance and authority",
+      "current_one_workspace_role": "branch-specific governance memory present in J Merrill One Brain",
+      "proposed_publishing_projection_reference_role": "Publishing-only pointer to canonical style-sheet governance source",
+      "exact_source_evidence_needed": "current governed style-sheet artifact or policy with owner/currentness"
+    },
+    {
+      "r_id": "R-005",
+      "sintra_record_title": "Editorial Philosophy",
+      "apparent_subject": "editorial decision philosophy",
+      "current_one_workspace_role": "branch-specific editorial doctrine present in J Merrill One Brain",
+      "proposed_publishing_projection_reference_role": "minimal source-backed Publishing summary after certification",
+      "exact_source_evidence_needed": "approved Publishing editorial policy/philosophy artifact"
+    },
+    {
+      "r_id": "R-006",
+      "sintra_record_title": "Editorial Preferences",
+      "apparent_subject": "operational editorial preferences",
+      "current_one_workspace_role": "branch-specific operating preference memory present in J Merrill One Brain",
+      "proposed_publishing_projection_reference_role": "Publishing-only pointer to current operating standard",
+      "exact_source_evidence_needed": "current governed editorial preference/standard artifact"
+    },
+    {
+      "r_id": "R-007",
+      "sintra_record_title": "Developmental Review Process",
+      "apparent_subject": "manuscript developmental review workflow",
+      "current_one_workspace_role": "branch-specific workflow memory present in J Merrill One Brain",
+      "proposed_publishing_projection_reference_role": "Publishing-only workflow reference after source certification",
+      "exact_source_evidence_needed": "current governed developmental review workflow/process source"
+    },
+    {
+      "r_id": "R-008",
+      "sintra_record_title": "Book Content Focus",
+      "apparent_subject": "book/project content focus",
+      "current_one_workspace_role": "book/project operational memory present in J Merrill One Brain",
+      "proposed_publishing_projection_reference_role": "Publishing-only project/content reference after source certification",
+      "exact_source_evidence_needed": "current governed book/project canon or public source for public-facing facts"
+    }
+  ],
+  "source_certification_from_title_similarity_allowed": false
+}

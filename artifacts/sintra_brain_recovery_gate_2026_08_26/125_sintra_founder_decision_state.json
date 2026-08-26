@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "classification": "FOUNDER DECISION STATE - FINAL EVIDENCE GAP RESOLUTION",
+  "decisions": [
+    {
+      "id": "SINTRA-NEXT-003",
+      "state": "APPROVED WITH MODIFICATION",
+      "policy": "J Merrill One Brain remains legacy/read-only for records that cannot be reversibly isolated or source-certified."
+    },
+    {
+      "id": "SINTRA-NEXT-004",
+      "state": "APPROVED WITH MODIFICATION",
+      "allowed_sintra_role": [
+        "internal ideation",
+        "read-only analysis",
+        "internal drafting",
+        "non-authoritative summaries",
+        "shadow comparison"
+      ],
+      "explicitly_excluded": [
+        "system of record",
+        "canonical authority",
+        "autonomous public actor",
+        "autonomous inbox operator",
+        "public commenter",
+        "independent production automation"
+      ]
+    },
+    {
+      "id": "SINTRA-NEXT-001",
+      "state": "HOLD - AUTOMATION DEPENDENCY CERTIFICATION"
+    },
+    {
+      "id": "SINTRA-NEXT-002",
+      "state": "HOLD - PUBLISHING SOURCE CERTIFICATION"
+    }
+  ],
+  "mutation_count": 0
+}

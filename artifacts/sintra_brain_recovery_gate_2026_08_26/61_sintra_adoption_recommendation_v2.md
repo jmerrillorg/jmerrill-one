@@ -10,6 +10,8 @@ The evidence still shows meaningful overlap with Microsoft-first systems. Inbox 
 
 The final mutation plan does not upgrade adoption. It separates cleanup readiness from product adoption and places Brain mutations on hold because no safe reversible quarantine primitive is proven.
 
-After this approved-automation pass, Sintra remains useful enough to retain only as a read-only/drafting assistant: YES - LIMITED VALUE. The value is in internal ideation, read-only analysis, internal drafting, non-authoritative summaries, and shadow comparison. It is not enough to justify autonomous public action, inbox operation, or source-of-record status.
+After final evidence-gap review, Sintra remains useful enough to retain only as a read-only/drafting assistant: LIMITED VALUE. The value is in internal ideation, read-only analysis, internal drafting, non-authoritative summaries, and shadow comparison. It is not enough to justify autonomous public action, inbox operation, or source-of-record status.
+
+Retention recommendation: RETAIN TEMPORARILY - REASSESS AFTER PROJECTION TEST.
 
 Adoption should be decided from lab response quality, action safety, Microsoft-first fit, and source authority awareness, not from feature count.

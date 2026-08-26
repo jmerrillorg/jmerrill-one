@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "classification": "AUTOMATION ESTATE STABILIZED - APPROVED DISABLES HELD BY NO READABLE DEPENDENCY EVIDENCE",
+  "states": {
+    "Inbox Manager": "OFF - PRIOR VERIFIED",
+    "Social Media Manager": "HOLD - PLATFORM DOES NOT EXPOSE DEPENDENCY EVIDENCE",
+    "Daily Summarizer": "HOLD - PLATFORM DOES NOT EXPOSE DEPENDENCY EVIDENCE",
+    "Facebook Commenter": "NO PUBLIC AUTHORITY / NON-ACTING"
+  },
+  "automation_mutation_count": 0,
+  "public_posts": 0,
+  "public_comments": 0,
+  "emails": 0,
+  "external_messages": 0
+}

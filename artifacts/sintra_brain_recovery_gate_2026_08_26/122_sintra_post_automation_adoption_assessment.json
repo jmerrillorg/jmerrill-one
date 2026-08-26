@@ -3,8 +3,8 @@
   "classification": "POST-AUTOMATION ADOPTION ASSESSMENT",
   "automation_risk_reduction": {
     "Inbox Manager": "reduced previously; remains off by prior evidence",
-    "Social Media Manager": "not reduced in this pass; dependency check unclear and disable not executed",
-    "Daily Summarizer": "not reduced in this pass; dependency check unclear and disable not executed"
+    "Social Media Manager": "not reduced in this pass; NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
+    "Daily Summarizer": "not reduced in this pass; NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD"
   },
   "remaining_value": {
     "Brain Q&A": "limited value if read-only and explicitly source-subordinate",
@@ -13,6 +13,6 @@
     "internal_analysis": "useful for bounded read-only analysis and shadow comparison"
   },
   "do_not_upgrade_because_automations_off": true,
-  "value_assessment": "YES - LIMITED VALUE",
+  "value_assessment": "LIMITED VALUE",
   "adoption_recommendation": "LIMITED LAB ADOPTION - HIGH GOVERNANCE OVERHEAD"
 }

@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "principle": "Project only the minimum useful assistive knowledge after source certification.",
+  "certified_or_partial_records": [],
+  "held_records": [
+    "R-001",
+    "R-002",
+    "R-005",
+    "R-006",
+    "R-007",
+    "R-008"
+  ],
+  "implementation_allowed": false,
+  "reason": "No candidate has SOURCE CERTIFIED or PARTIAL SOURCE CERTIFICATION status."
+}

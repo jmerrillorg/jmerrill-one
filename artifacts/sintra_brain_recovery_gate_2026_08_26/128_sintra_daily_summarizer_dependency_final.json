@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "automation": "Daily Summarizer",
+  "classification": "NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
+  "bounded_live_inspection_attempted": true,
+  "inspection_evidence": [
+    "Computer Use node_repl returned no readable Chrome accessibility text or screenshot output.",
+    "Local screenshot showed Chrome on Sintra but did not expose Daily Summarizer schedule/source/recipient state."
+  ],
+  "schedule": "not readable",
+  "data_sources": "not readable",
+  "recipients_output": "not readable",
+  "last_activity": "not readable",
+  "linked_automation_dependency": "not readable",
+  "output_consumed_by_current_workflow": "not readable",
+  "disabling_reversible": "not readable",
+  "disable_allowed": false,
+  "mutation_count": 0
+}

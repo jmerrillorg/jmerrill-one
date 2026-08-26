@@ -1,10 +1,10 @@
 {
   "generated_at": "2026-08-26T09:45:00-04:00",
-  "classification": "SINTRA RECOVERY HOLD - AUTOMATION DEPENDENCY CHECK UNCLEAR; PUBLISHING SOURCE VALIDATION REQUIRED",
+  "classification": "SINTRA RECOVERY STABILIZED - LIMITED LAB ONLY; SOURCE AUTHORITY INCOMPLETE",
   "inbox_manager_state": "PASS - PRIOR VERIFIED OFF STATE PRESERVED",
-  "social_media_manager_dependency_result": "UNCLEAR - HOLD",
+  "social_media_manager_dependency_result": "NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
   "social_media_manager_disable_result": "NOT EXECUTED - DEPENDENCY CHECK UNCLEAR",
-  "daily_summarizer_dependency_result": "UNCLEAR - HOLD",
+  "daily_summarizer_dependency_result": "NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
   "daily_summarizer_disable_result": "NOT EXECUTED - DEPENDENCY CHECK UNCLEAR",
   "facebook_commenter_policy": "NO PUBLIC AUTHORITY - KEEP DISABLED OR NON-ACTING",
   "connector_nonmutation": "PASS - NO CONNECTOR MUTATION EXECUTED",
@@ -19,11 +19,12 @@
       "SINTRA-R-007 Developmental Review Process",
       "SINTRA-R-008 Book Content Focus"
     ],
-    "design_state": "ready",
+    "design_state": "drafted",
     "implementation_state": "blocked by source certification"
   },
   "publishing_source_certification": {
     "source_certified_count": 0,
+    "partial_source_certified_count": 0,
     "source_not_proven_hold_count": 6
   },
   "one_residual_reference_design": "120_sintra_one_residual_reference_design.json",
@@ -34,6 +35,6 @@
   "brain_mutations": 0,
   "automation_mutations": 0,
   "connector_mutations": 0,
-  "adoption_assessment": "YES - LIMITED VALUE; LIMITED LAB ADOPTION - HIGH GOVERNANCE OVERHEAD",
+  "adoption_assessment": "LIMITED VALUE; LIMITED LAB ADOPTION - HIGH GOVERNANCE OVERHEAD",
   "exact_next_action": "Obtain a readable live automation dependency check path before executing approved disables; certify governed Publishing sources before any projection implementation."
 }

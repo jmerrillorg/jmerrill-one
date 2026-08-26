@@ -13,9 +13,9 @@
     "dataverse": 0,
     "github_merge": 0
   },
-  "classification": "SINTRA RECOVERY HOLD - AUTOMATION DEPENDENCY CHECK UNCLEAR; PUBLISHING SOURCE VALIDATION REQUIRED",
-  "reason": "Approved Social Media Manager and Daily Summarizer disables were not executed because final live dependency checks were unreadable through Computer Use. Brain remains read-only legacy state because no reversible isolation primitive is proven. Six Publishing projection designs are ready, but source authority certification found 0 certified and 6 source-not-proven holds.",
-  "nextSafestAction": "Obtain a readable live automation dependency-check path before executing approved disables. Certify governed Publishing sources before any projection implementation. Do not mutate Brain records, connectors, sibling Brains, or public surfaces.",
+  "classification": "SINTRA RECOVERY STABILIZED - LIMITED LAB ONLY; SOURCE AUTHORITY INCOMPLETE",
+  "reason": "Automation estate is stabilized by policy: Inbox Manager remains off; Social Media Manager and Daily Summarizer are permanent holds because the tenant did not expose readable dependency evidence; Facebook Commenter remains no-public-authority. Brain is legacy/read-only and non-authoritative where provenance/scope is unproven. Publishing source certification found 0 certified, 0 partial, and 6 held.",
+  "nextSafestAction": "Founder decides whether to retain Sintra temporarily for limited lab use and whether to provide governed Publishing source artifacts for a future source-certified projection test. Do not mutate Brain records, connectors, sibling Brains, automations, or public surfaces.",
   "liveEvidence": {
     "inspectionTimestamp": "2026-08-26T04:45:27-04:00",
     "browser": "Google Chrome",
@@ -91,8 +91,15 @@
     "delete_candidates": 0
   },
   "approved_automation_execution_pass": {
-    "Social Media Manager": "NOT EXECUTED - DEPENDENCY CHECK UNCLEAR",
-    "Daily Summarizer": "NOT EXECUTED - DEPENDENCY CHECK UNCLEAR",
+    "Social Media Manager": "NOT EXECUTED - NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
+    "Daily Summarizer": "NOT EXECUTED - NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
     "automation_mutations_this_pass": 0
+  },
+  "final_evidence_gap_resolution": {
+    "founder_decision_state": "125_sintra_founder_decision_state.json",
+    "automation_closeout": "130_sintra_automation_closeout.json",
+    "publishing_source_certification": "132_sintra_publishing_source_certification_final.json",
+    "one_brain_legacy_policy": "137_sintra_one_brain_legacy_policy.json",
+    "retention_decision_evidence": "140_sintra_retention_decision_evidence.json"
   }
 }

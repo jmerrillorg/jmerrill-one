@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "classification": "J MERRILL ONE BRAIN LEGACY READ-ONLY POLICY",
+  "policy": "J Merrill One Brain remains readable but non-authoritative where record provenance/scope cannot be proven.",
+  "groups": {
+    "quarantine_17": "RETAIN IN PLACE - DO NOT TRUST AS ONE-LEVEL AUTHORITY",
+    "unresolved_9": "RETAIN - NO AUTHORITY",
+    "unseen_52": "UNINSPECTED - RETAIN / NO AUTHORITY",
+    "prior_keep_3": "HOLD - NO AUTHORITY UNTIL SOURCE/BODY VALIDATION"
+  },
+  "governance_effect": "The absence of quarantine tooling is converted into a policy control: readable legacy memory is not treated as canon.",
+  "brain_mutation_count": 0
+}

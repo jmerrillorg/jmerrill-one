@@ -29,12 +29,13 @@
     "Azure writes"
   ],
   "mutations_executed_this_pass": 0,
-  "classification": "SINTRA RECOVERY HOLD - AUTOMATION DEPENDENCY CHECK UNCLEAR; PUBLISHING SOURCE VALIDATION REQUIRED",
+  "classification": "SINTRA RECOVERY STABILIZED - LIMITED LAB ONLY; SOURCE AUTHORITY INCOMPLETE",
   "latest_execution_closeout": "124_sintra_recovery_execution_closeout.json",
   "approved_automation_disables": {
-    "Social Media Manager": "approved but not executed; dependency check unclear",
-    "Daily Summarizer": "approved but not executed; dependency check unclear"
+    "Social Media Manager": "approved but not executed; NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
+    "Daily Summarizer": "approved but not executed; NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD"
   },
   "publishing_projection_design": "117_sintra_publishing_projection_design.json",
-  "publishing_source_authority_validation": "118_sintra_publishing_source_authority_validation.json"
+  "publishing_source_authority_validation": "132_sintra_publishing_source_certification_final.json",
+  "final_founder_decision_packet": "141_sintra_final_founder_decision_packet.md"
 }

@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "automation": "Social Media Manager",
+  "classification": "NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
+  "bounded_live_inspection_attempted": true,
+  "inspection_evidence": [
+    "Computer Use node_repl returned no readable Chrome accessibility text or screenshot output.",
+    "Local screenshot showed Chrome on Sintra but obscured by modal/other windows and did not expose Social Media Manager dependency state."
+  ],
+  "enabled_state": "not readable",
+  "last_run_activity": "not readable",
+  "connected_channels": "not readable",
+  "scheduled_jobs_posts": "not readable",
+  "linked_workflow_dependencies": "not readable",
+  "publishes_automatically": "not readable",
+  "other_sintra_automation_calls_it": "not readable",
+  "disabling_reversible": "not readable",
+  "current_jm1_social_operation_uses_it": "not proven",
+  "dependency_rule": "Social Recovery is not counted as a dependency without proof that this actual Sintra automation drives production execution.",
+  "disable_allowed": false,
+  "mutation_count": 0
+}

@@ -1,0 +1,7 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "decision": "RETAIN TEMPORARILY - REASSESS AFTER PROJECTION TEST",
+  "reason": "Sintra has limited internal ideation/drafting/read-only value, but source authority remains incomplete and governance overhead is high.",
+  "do_not_assume_retention_from_workspace_existence": true,
+  "reassessment_trigger": "Only after readable automation dependency evidence and at least one source-certified Publishing projection test."
+}

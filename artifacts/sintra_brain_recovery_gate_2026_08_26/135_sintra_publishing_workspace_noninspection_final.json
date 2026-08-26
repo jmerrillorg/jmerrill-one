@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "required": "PASS",
+  "result": "PASS",
+  "j_merrill_publishing_workspace_exists": true,
+  "publishing_brain_inspected": false,
+  "publishing_brain_compared": false,
+  "projection_content_added": false,
+  "publishing_workspace_deleted_or_modified": false,
+  "mutation_count": 0
+}

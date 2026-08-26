@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-08-26T10:05:00-04:00",
+  "method": "Bounded repository search outside Sintra recovery artifacts plus narrow read of governed Publishing-adjacent artifacts.",
+  "certified_count": 0,
+  "partial_count": 0,
+  "held_count": 6,
+  "records": [
+    {
+      "r_id": "R-001",
+      "sintra_record": "Manuscript Tone and Style",
+      "authoritative_source": null,
+      "source_path_artifact_table": null,
+      "source_date_currentness": null,
+      "source_owner_domain": "J Merrill Publishing",
+      "exact_supported_facts": [],
+      "unsupported_stale_brain_claims": "All operational tone claims remain unsupported until governed source is identified.",
+      "certification_status": "SOURCE NOT PROVEN - HOLD"
+    },
+    {
+      "r_id": "R-002",
+      "sintra_record": "Style Sheet Governance",
+      "authoritative_source": null,
+      "source_path_artifact_table": null,
+      "source_date_currentness": null,
+      "source_owner_domain": "J Merrill Publishing",
+      "exact_supported_facts": [],
+      "unsupported_stale_brain_claims": "Style-sheet governance claims remain unsupported until governed style source is identified.",
+      "certification_status": "SOURCE NOT PROVEN - HOLD"
+    },
+    {
+      "r_id": "R-005",
+      "sintra_record": "Editorial Philosophy",
+      "authoritative_source": null,
+      "source_path_artifact_table": null,
+      "source_date_currentness": null,
+      "source_owner_domain": "J Merrill Publishing",
+      "exact_supported_facts": [],
+      "unsupported_stale_brain_claims": "Editorial philosophy claims remain unsupported until approved editorial canon is identified.",
+      "certification_status": "SOURCE NOT PROVEN - HOLD"
+    },
+    {
+      "r_id": "R-006",
+      "sintra_record": "Editorial Preferences",
+      "authoritative_source": null,
+      "source_path_artifact_table": null,
+      "source_date_currentness": null,
+      "source_owner_domain": "J Merrill Publishing",
+      "exact_supported_facts": [],
+      "unsupported_stale_brain_claims": "Editorial preference claims remain unsupported until governed preference/standard source is identified.",
+      "certification_status": "SOURCE NOT PROVEN - HOLD"
+    },
+    {
+      "r_id": "R-007",
+      "sintra_record": "Developmental Review Process",
+      "authoritative_source": null,
+      "source_path_artifact_table": null,
+      "source_date_currentness": null,
+      "source_owner_domain": "J Merrill Publishing",
+      "exact_supported_facts": [],
+      "unsupported_stale_brain_claims": "Developmental review workflow claims remain unsupported until governed workflow source is identified.",
+      "certification_status": "SOURCE NOT PROVEN - HOLD"
+    },
+    {
+      "r_id": "R-008",
+      "sintra_record": "Book Content Focus",
+      "authoritative_source": null,
+      "source_path_artifact_table": null,
+      "source_date_currentness": null,
+      "source_owner_domain": "J Merrill Publishing",
+      "exact_supported_facts": [],
+      "unsupported_stale_brain_claims": "Book/project focus claims remain unsupported until current project/public canon is identified.",
+      "certification_status": "SOURCE NOT PROVEN - HOLD"
+    }
+  ],
+  "source_notes": [
+    "host02_publishing_reference_pattern.json and host02_publishing_reference_validation.json certify hosting/deployment/public domain facts, not editorial/manuscript operating authority.",
+    "cv01_publishing_survey_contract.json and cv01a_handoff_publishing.md support Author Experience survey dimensions, not the six editorial/manuscript operational records.",
+    "bp11_publishing_reconciliation.json supports Publishing domain record separation, not the six source subjects."
+  ]
+}
