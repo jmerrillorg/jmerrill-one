@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-26T00:00:00-04:00",
+  "target_repository": "J Merrill One",
+  "branch": "codex/sintra-brain-recovery-gate",
+  "origin_main": "b45f271ea88a7e28c7468513a3d2f6593638c25e",
+  "mode": "SINTRA BRAIN RECOVERY GATE AND SOCIAL OPERATIONS EVALUATION",
+  "production_mutation_authorized": false,
+  "sintra_ui_status": "TOOL_CONTEXT_BLOCKED - Edge/Chrome computer-use and browser-control attempts returned no accessible UI text or screenshots in this session",
+  "production_mutations": {
+    "sintra": 0,
+    "social": 0,
+    "azure": 0,
+    "dataverse": 0,
+    "github_merge": 0
+  },
+  "classification": "SINTRA BRAIN RECOVERY PARTIAL — AUTHORITY GAPS REMAIN",
+  "reason": "Live Sintra workspace/Brain/helper/integration/credit inspection was blocked by UI tool context. Repository-side policy, projection, and pilot gates are complete; no Sintra production Brain recovery or lab verification can be claimed.",
+  "nextSafestAction": "Jackie opens or signs into Sintra in Chrome/Edge and confirms when ready for read-only live workspace inventory; then run Stage 1 no-live-publish lab.",
+  "repository_validation": {
+    "json_parse": "PASS",
+    "checksums": "PASS",
+    "npm_run_lint": "BLOCKED - fresh origin/main worktree has no installed node_modules/eslint; dependencies were not installed or mutated during this package"
+  }
+}

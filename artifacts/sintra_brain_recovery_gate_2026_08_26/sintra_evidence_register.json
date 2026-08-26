@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-08-26T00:00:00-04:00",
+  "target_repository": "J Merrill One",
+  "branch": "codex/sintra-brain-recovery-gate",
+  "origin_main": "b45f271ea88a7e28c7468513a3d2f6593638c25e",
+  "mode": "SINTRA BRAIN RECOVERY GATE AND SOCIAL OPERATIONS EVALUATION",
+  "production_mutation_authorized": false,
+  "sintra_ui_status": "TOOL_CONTEXT_BLOCKED - Edge/Chrome computer-use and browser-control attempts returned no accessible UI text or screenshots in this session",
+  "production_mutations": {
+    "sintra": 0,
+    "social": 0,
+    "azure": 0,
+    "dataverse": 0,
+    "github_merge": 0
+  },
+  "sources": [
+    {
+      "title": "Sintra Brain AI explained",
+      "url": "https://help.sintra.ai/en/articles/12266276-brain-ai-explained",
+      "evidence": "Brain AI supports separate profiles/workspaces, knowledge types, integrations, and the need to keep Brain content current."
+    },
+    {
+      "title": "Sintra workspaces explained",
+      "url": "https://help.sintra.ai/en/articles/11704889-sintra-ai-workspaces-explained",
+      "evidence": "A workspace is designed for one business/project and has its own Brain AI profile, integrations, inbox, and subscription plan."
+    },
+    {
+      "title": "Sintra social media content manager",
+      "url": "https://help.sintra.ai/en/articles/12507919-social-media-content-manager",
+      "evidence": "Soshie can generate posts periodically and place generated posts in an in-app calendar for review."
+    },
+    {
+      "title": "Manage posts on Social Media using Sintra AI",
+      "url": "https://help.sintra.ai/en/articles/11053937-how-to-manage-posts-on-social-media-using-sintra-ai",
+      "evidence": "Social posting/scheduling is supported through Soshie for Facebook+Instagram and LinkedIn personal/organization channels."
+    },
+    {
+      "title": "Soshie social media manager",
+      "url": "https://sintra.ai/ai-employees/social-media-manager",
+      "evidence": "Soshie positions itself around social strategy, content generation, scheduling/publishing, performance review, and approval before release."
+    },
+    {
+      "title": "Sintra integrations",
+      "url": "https://sintra.ai/integrations",
+      "evidence": "Sintra lists Facebook, Instagram, LinkedIn, Microsoft/Outlook, Google Drive, Gmail, Google Analytics, Notion, QuickBooks, and other integrations; connected specialists may read/write depending on task."
+    }
+  ],
+  "localCanonSources": [
+    "docs/JM1_Public_Brand_Content_Standard_v1.md",
+    "lib/divisions.ts",
+    "docs/governance/JM1-AI-EXECUTION-ROUTING-CONTRACT-v1.0.md",
+    "artifacts/jm1_repository_routing_register.json"
+  ],
+  "workspaces": [
+    {
+      "workspace": "J Merrill One",
+      "expected": true,
+      "uiVerified": false,
+      "classification": "PARTIAL",
+      "target": "enterprise marketing projection only"
+    },
+    {
+      "workspace": "J Merrill Publishing",
+      "expected": true,
+      "uiVerified": false,
+      "classification": "PARTIAL",
+      "target": "author acquisition and publishing marketing projection"
+    },
+    {
+      "workspace": "J Merrill Financial",
+      "expected": true,
+      "uiVerified": false,
+      "classification": "PARTIAL",
+      "target": "advanced planning, estate planning, and final-expense/funeral-planning insurance marketing projection"
+    },
+    {
+      "workspace": "J Merrill Foundation",
+      "expected": true,
+      "uiVerified": false,
+      "classification": "PARTIAL",
+      "target": "community impact and donor/volunteer marketing projection"
+    },
+    {
+      "workspace": "J Merrill Productions",
+      "expected": "future",
+      "uiVerified": false,
+      "classification": "PROPOSED",
+      "target": "media/storytelling projection; do not create yet"
+    },
+    {
+      "workspace": "Agape International Cathedral",
+      "expected": "future",
+      "uiVerified": false,
+      "classification": "PROPOSED",
+      "target": "AIC projection only after church-specific authority; do not create yet"
+    }
+  ],
+  "admissionTests": [
+    "Current today",
+    "Canonical or approved current reference",
+    "Owned by the correct enterprise or division authority",
+    "Needed by the specific workspace",
+    "Marketing-safe",
+    "Not superseded",
+    "Traceable to source/version/authority"
+  ],
+  "classificationTreatments": {
+    "CURRENT_CANON": "Eligible for durable Brain AI when workspace needs it.",
+    "CURRENT_REFERENCE": "Eligible only if useful and marketing-safe.",
+    "CANDIDATE": "Exclude from production Brain AI.",
+    "SUPERSEDED": "Exclude; retain as historical evidence only.",
+    "HISTORICAL": "Exclude from durable Brain AI.",
+    "WORKING_DRAFT": "Exclude from durable Brain AI.",
+    "CHAT_DERIVED": "Exclude unless independently canonicalized.",
+    "UNKNOWN_AUTHORITY": "Quarantine.",
+    "WRONG_BRAND": "Exclude from that workspace.",
+    "SENSITIVE_INTERNAL": "Exclude unless specifically justified and approved."
+  },
+  "projections": {
+    "one": {
+      "durable": [
+        "J Merrill One enterprise identity",
+        "Human-First / Why-First public content standard",
+        "branch architecture",
+        "Microsoft remains enterprise system of record",
+        "public division pathways",
+        "approved enterprise URLs and CTAs"
+      ],
+      "exclude": [
+        "deep operational runbooks",
+        "division-only pricing details unless public",
+        "old chat-derived Sintra content",
+        "private client/author/donor records"
+      ]
+    },
+    "publishing": {
+      "durable": [
+        "full-service publishing house positioning",
+        "authors own intellectual property/control narrative/build legacy",
+        "approved service/package language and public starting prices",
+        "author acquisition CTAs",
+        "publishing FAQs and brand voice"
+      ],
+      "exclude": [
+        "deep editorial implementation internals",
+        "private manuscripts",
+        "royalty operational records",
+        "Financial estate-planning catalog except narrow cross-division reference"
+      ]
+    },
+    "financial": {
+      "durable": [
+        "advanced planning positioning",
+        "estate planning and estate readiness",
+        "final-expense/funeral-planning insurance product positioning",
+        "non-attorney planning boundaries",
+        "approved services and public prices from One registry",
+        "LegacyCare positioning when canon-source verified",
+        "appointment CTA and compliance FAQs"
+      ],
+      "exclude": [
+        "private client records",
+        "legal advice claims",
+        "unverified insurance carrier/product specifics",
+        "Publishing royalty details",
+        "Foundation donor records"
+      ]
+    },
+    "foundation": {
+      "durable": [
+        "mission and community impact",
+        "programs",
+        "donor and volunteer audience",
+        "public CTAs",
+        "partnership language",
+        "approved impact metrics only"
+      ],
+      "exclude": [
+        "client/recipient private data",
+        "Publishing editorial cadence",
+        "Financial trust workflow",
+        "unverified impact claims"
+      ]
+    },
+    "productions": {
+      "durable": [
+        "media and storytelling role",
+        "external production services",
+        "internal JM1 amplification role",
+        "visual/storytelling direction",
+        "public CTAs and approved links"
+      ],
+      "exclude": [
+        "AIC ministry operations",
+        "client project internals",
+        "unapproved production pricing or claims"
+      ]
+    }
+  },
+  "repository_validation": {
+    "json_parse": "PASS",
+    "checksums": "PASS",
+    "npm_run_lint": "BLOCKED - fresh origin/main worktree has no installed node_modules/eslint; dependencies were not installed or mutated during this package"
+  }
+}
