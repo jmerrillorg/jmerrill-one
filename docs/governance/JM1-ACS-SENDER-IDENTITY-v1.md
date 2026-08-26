@@ -37,8 +37,9 @@ Templates are not sender authority.
 | JMF | `financial@email.jmerrill.one` | `financial@jmerrill.one` | `financial@jmerrill.one` | MAILBOX | `financial@jmerrill.one` | Not required |
 | JMFN | `foundation@email.jmerrill.one` | `foundation@jmerrill.one` | `foundation@jmerrill.one` | MAILBOX | `foundation@jmerrill.one` | Not required |
 | JMPRODUCTIONS | `productions@email.jmerrill.one` | `productions@jmerrill.one` | `productions@jmerrill.one` | MAILBOX | `productions@jmerrill.one` | Not required |
+| AIC | `aic@email.agapeic.org` | `aic@agapeic.org` | `aic@agapeic.org` | MAILBOX | `aic@agapeic.org` | Not required |
 
-AIC sender identity is not decided in this policy. AIC ACS sender requests must fail closed or route to a Founder decision until explicitly governed.
+AIC uses the shared JM1 ACS sender runtime for outbound transport only. Planning Center remains the AIC ministry/event/registration source of record and must not be replaced by ACS sender configuration.
 
 ## J Merrill One Alias Rule
 
@@ -61,8 +62,6 @@ Wrong Reply-To for brand: DENY with `ACS_REPLY_TO_MISMATCH`.
 Missing required Publishing CC/archive copy: DENY with `ACS_CC_ARCHIVE_MISSING`.
 
 Duplicate signature/footer block: DENY.
-
-AIC sender request: DENY or HUMAN_GATE with `AIC_SENDER_IDENTITY_FOUNDER_DECISION_REQUIRED`.
 
 No branch may fall back to the Publishing sender.
 
@@ -90,6 +89,7 @@ Human-facing send validation must proceed in this order:
 | JMF | J Merrill Financial | J Merrill Financial | `financial@jmerrill.one` | `jmerrill.financial` |
 | JMFN | J Merrill Foundation | J Merrill Foundation | `foundation@jmerrill.one` | `jmerrillfoundation.org` |
 | JMPRODUCTIONS | J Merrill Productions | J Merrill Productions | `productions@jmerrill.one` | `jmerrill.productions` |
+| AIC | Agape International Cathedral | Agape International Cathedral | `aic@agapeic.org` | `agapeic.org` |
 
 Signature profiles must not be inferred from the From address.
 
@@ -109,5 +109,6 @@ Runtime and governance checks must detect:
 - unknown brand;
 - duplicate footer;
 - sender registry/runtime mismatch.
+- AIC Planning Center data treated as sender authority.
 
 Detected drift must surface `ACS_SENDER_IDENTITY_ATTENTION_REQUIRED` with brand, expected value, actual value, runtime, and next action.

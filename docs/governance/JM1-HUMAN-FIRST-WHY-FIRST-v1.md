@@ -100,9 +100,7 @@ Publishing is the first proving implementation. Other JM1 branches must not be r
 
 Publishing is the commissioned reference implementation.
 
-Financial, Foundation, and Productions consume this enterprise policy through the shared governed ACS outbound runtime and branch-specific overlays. A branch may be classified as guard-ready or pre-publish-ready before it is classified as live outbound commissioned.
-
-AIC remains outside the decided outbound sender set until a separate Founder decision establishes its sender identity and send boundary.
+Financial, Foundation, Productions, and AIC consume this enterprise policy through the shared governed ACS outbound runtime and branch-specific overlays. A branch may be classified as guard-ready or pre-publish-ready before it is classified as live outbound commissioned.
 
 Current adoption classifications:
 
@@ -113,11 +111,11 @@ Current adoption classifications:
 | J Merrill Financial | `financial` | ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED | PROVEN |
 | J Merrill Foundation | `foundation` | ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED | PROVEN |
 | J Merrill Productions | `productions` | ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED | PROVEN |
-| Agape International Cathedral | `aic` | PRE_PUBLISH_GUARD_READY / FOUNDER_DECISION_REQUIRED | NOT_AUTHORIZED |
+| Agape International Cathedral | `aic` | ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED | PROVEN_SYNTHETIC_INTERNAL |
 
 Guard-ready means the branch has an executable policy check and passing branch tests. It does not mean real external sends or public deployment are active unless separately proven.
 
-Enterprise outbound runtime commissioned means the shared ACS relay has proven sender identity, reply routing, Human-First / Why-First enforcement, and fail-closed behavior for the decided brand. It does not authorize unrelated public deployment, marketing sends, client communications, or AIC communications.
+Enterprise outbound runtime commissioned means the shared ACS relay has proven sender identity, reply routing, Human-First / Why-First enforcement, and fail-closed behavior for the decided brand. It does not authorize unrelated public deployment, marketing sends, client communications, ministry campaigns, or Planning Center mutation.
 
 ## Artifact Release Requirement
 
