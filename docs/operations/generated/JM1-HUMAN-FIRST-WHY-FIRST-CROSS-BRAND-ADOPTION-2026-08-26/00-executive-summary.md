@@ -17,12 +17,16 @@ This package records adoption work for J Merrill Financial, J Merrill Foundation
 | Branch | Result |
 | --- | --- |
 | J Merrill Publishing | COMMISSIONED_REFERENCE_IMPLEMENTATION |
-| J Merrill Financial | CONTROLLED_GUARD_READY |
-| J Merrill Foundation | PRE_PUBLISH_GUARD_READY / SEPARATE_WAVE_REQUIRED_FOR_LIVE_SEND |
-| J Merrill Productions | PRE_PUBLISH_GUARD_READY / SEPARATE_WAVE_REQUIRED_FOR_LIVE_SEND |
-| Agape International Cathedral | PRE_PUBLISH_GUARD_READY / SEPARATE_WAVE_REQUIRED_FOR_LIVE_SEND |
+| J Merrill Financial | CONTROLLED_RUNTIME_COMMISSIONING |
+| J Merrill Foundation | PRE_PUBLISH_GUARD_DEPLOYED / SEPARATE_WAVE_REQUIRED_FOR_LIVE_SEND |
+| J Merrill Productions | PRE_PUBLISH_GUARD_DEPLOYED / SEPARATE_WAVE_REQUIRED_FOR_LIVE_SEND |
+| Agape International Cathedral | PRE_PUBLISH_GUARD_DEPLOYED / SEPARATE_WAVE_REQUIRED_FOR_LIVE_SEND |
 
 Final enterprise classification: `JM1_HUMAN_FIRST_WHY_FIRST_CONTROLLED_COMMISSIONING`
+
+Post-adoption deployment readback was completed on 2026-08-26. Financial, Foundation, Productions, and AIC production App Service runtimes were deployed from their merged adoption heads. Financial Function App smoke passed. Productions and AIC health endpoints expose Human-First policy metadata. Foundation and Financial health endpoints are healthy but do not expose policy metadata.
+
+The enterprise is not classified fully commissioned because Foundation, Productions, and AIC still do not have an actual governed outbound sender runtime to commission. Financial has an existing communication gate bound in production, but external client sends remain controlled by the pilot/runtime switches and no unnecessary live client communication was sent.
 
 ## Validation
 
