@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "workspace": "J Merrill One",
+  "appropriate_enterprise_knowledge": [
+    "Quality Philosophy",
+    "Business Focus",
+    "Business website and brand links",
+    "Overview of J Merrill One offerings",
+    "Our hybrid offerings at J Merrill One"
+  ],
+  "brand_specific_reference_only": [
+    {
+      "candidate": "Published Works",
+      "brand": "J Merrill Publishing",
+      "risk": "One-level automation may treat publishing catalog or author content as enterprise-wide authority."
+    },
+    {
+      "candidate": "Author Identity",
+      "brand": "J Merrill Publishing / Jackie",
+      "risk": "Enterprise social content could over-index on author/publishing voice."
+    }
+  ],
+  "improper_contamination_candidates": [
+    {
+      "candidate": "Manuscript Tone and Style",
+      "brand": "J Merrill Publishing",
+      "operational_risk": "Root workspace helpers may apply manuscript/editorial tone to enterprise, Financial, Foundation, or social operations content."
+    },
+    {
+      "candidate": "Style Sheet Governance",
+      "brand": "J Merrill Publishing",
+      "operational_risk": "Publishing style-sheet rules may silently override enterprise public content standards."
+    },
+    {
+      "candidate": "Editorial Philosophy",
+      "brand": "J Merrill Publishing",
+      "operational_risk": "Editorial decision logic may be applied outside Publishing."
+    },
+    {
+      "candidate": "Developmental Review Process",
+      "brand": "J Merrill Publishing",
+      "operational_risk": "Publishing workflow terms may contaminate unrelated social, Financial, or Foundation workflows."
+    },
+    {
+      "candidate": "Music Ministry Experience",
+      "brand": "AIC / personal",
+      "operational_risk": "Ministry biography may shape secular enterprise or regulated Financial messaging."
+    },
+    {
+      "candidate": "Spiritual Authority and Calling",
+      "brand": "AIC / personal",
+      "operational_risk": "Religious authority framing may appear in inappropriate enterprise or client-facing contexts."
+    },
+    {
+      "candidate": "Scriptural Approach",
+      "brand": "AIC / ministry",
+      "operational_risk": "Ministry doctrine may leak into non-ministry content generation."
+    },
+    {
+      "candidate": "Engagement with Political and Social Critique",
+      "brand": "Jackie personal",
+      "operational_risk": "Sensitive public-risk positioning may be pulled into brand automation."
+    },
+    {
+      "candidate": "Current team size and structure",
+      "brand": "J Merrill One internal",
+      "operational_risk": "Internal operating facts may leak into public social or helper-generated content."
+    }
+  ],
+  "sidebar_context_contamination": [
+    {
+      "visible_history": "Line editing, copyediting, developmental editing, editorial review, author/editorial material",
+      "classification": "CHAT_ONLY unless linked to Brain AI; contamination risk confirmed by adjacent Brain titles",
+      "risk": "Conversation history can steer future prompting even if not durable Brain source."
+    },
+    {
+      "visible_history": "Funeral program order of service",
+      "classification": "CHAT_ONLY from visible sidebar",
+      "risk": "Could be confused with J Merrill Financial advanced/funeral pre-need planning unless properly separated; funeral/pre-need planning is an insurance-product lane where applicable, not generic event-program work."
+    }
+  ]
+}

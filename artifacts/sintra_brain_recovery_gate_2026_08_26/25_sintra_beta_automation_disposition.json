@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "workspace": "J Merrill One",
+  "mutation_authorized": false,
+  "automations": [
+    {
+      "name": "Social Media Manager",
+      "current_enabled_state": "Enabled visually",
+      "apparent_scope": "Social planning/posting workflow",
+      "connected_systems": "Possibly Facebook, Instagram, LinkedIn Organization; binding not proven",
+      "risk": "HIGH",
+      "data_action_blast_radius": "Could draft, schedule, or publish social content if connected to active channels.",
+      "microsoft_overlap": "Overlaps with JM1 Social Recovery governance, Microsoft approval workflows, and Meta-native manual execution.",
+      "recommendation": "LAB-ONLY"
+    },
+    {
+      "name": "Inbox Manager",
+      "current_enabled_state": "Enabled visually",
+      "apparent_scope": "Inbox/email support",
+      "connected_systems": "No Gmail/Outlook connection observed in J Merrill One, but email connector cards are available",
+      "risk": "HIGH",
+      "data_action_blast_radius": "Could read or send email if connected later.",
+      "microsoft_overlap": "Overlaps with Outlook, Dynamics Customer Service, Power Automate, and mailbox governance.",
+      "recommendation": "DISABLE — DUPLICATIVE/RISK"
+    },
+    {
+      "name": "Daily Summarizer",
+      "current_enabled_state": "Enabled visually",
+      "apparent_scope": "Internal summarization",
+      "connected_systems": "Unknown",
+      "risk": "MEDIUM",
+      "data_action_blast_radius": "Could summarize cross-brand or sensitive workspace context.",
+      "microsoft_overlap": "Overlaps with Microsoft 365 summaries and Chad/JM1 orchestration practices.",
+      "recommendation": "LAB-ONLY"
+    },
+    {
+      "name": "Facebook Commenter",
+      "current_enabled_state": "Enabled visually",
+      "apparent_scope": "Facebook engagement/comment workflow",
+      "connected_systems": "Possibly Facebook; binding not proven",
+      "risk": "HIGH",
+      "data_action_blast_radius": "Could generate public comment replies or engagement actions if active.",
+      "microsoft_overlap": "Overlaps with Meta-native moderation and Social Recovery engagement/privacy/compliance standards.",
+      "recommendation": "FOUNDER DECISION REQUIRED"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "workspace": "J Merrill One",
+  "truths": [
+    {
+      "connector": "QuickBooks",
+      "prior_assumption": "QuickBooks was connected.",
+      "live_truth": "QuickBooks = NOT CONNECTED in captured J Merrill One live evidence.",
+      "superseded_or_unverified_artifacts": [
+        "User prompt section 8 assumption",
+        "Any older package note implying QuickBooks live connection without screenshot evidence"
+      ],
+      "decision_impact": "No disconnect action is required. Do not connect QuickBooks for Sintra social/lab work."
+    },
+    {
+      "connector": "Facebook",
+      "prior_assumption": "External social connection existed.",
+      "live_truth": "Facebook is connected.",
+      "decision_impact": "Scope/account/page review is required before lab use."
+    },
+    {
+      "connector": "Instagram",
+      "prior_assumption": "External social connection existed.",
+      "live_truth": "Instagram is connected.",
+      "decision_impact": "Scope/account review is required before lab use."
+    },
+    {
+      "connector": "Google Analytics",
+      "prior_assumption": "Analytics connection may exist.",
+      "live_truth": "Google Analytics is connected.",
+      "decision_impact": "Property/account review is required before analytics-based lab use."
+    },
+    {
+      "connector": "LinkedIn (Organization)",
+      "prior_assumption": "LinkedIn organization connection may exist.",
+      "live_truth": "LinkedIn Organization is connected.",
+      "decision_impact": "Organization/scope review is required before lab use."
+    }
+  ]
+}

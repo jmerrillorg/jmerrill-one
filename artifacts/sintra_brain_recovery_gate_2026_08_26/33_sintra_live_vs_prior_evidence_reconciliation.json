@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "material_changes": [
+    {
+      "topic": "live access",
+      "prior_assumption": "Live UI access was blocked.",
+      "live_truth": "Authenticated Chrome visual route-level inspection succeeded for J Merrill One Integrations, Brain AI, Automations, Helpers, and Settings.",
+      "superseded_artifact": "sintra_final_gate.json prior classification",
+      "decision_impact": "Classification corrected away from LIVE ACCESS STILL BLOCKED."
+    },
+    {
+      "topic": "89 Brain records",
+      "prior_assumption": "Brain state was not directly inspected.",
+      "live_truth": "Brain AI shows 89 visible knowledge records in J Merrill One.",
+      "superseded_artifact": "Earlier no-live-evidence status",
+      "decision_impact": "Brain cleanup is evidence-supported, but mutation awaits founder approval and export/detail review."
+    },
+    {
+      "topic": "QuickBooks",
+      "prior_assumption": "QuickBooks was connected.",
+      "live_truth": "QuickBooks shows Connect in captured J Merrill One evidence.",
+      "superseded_artifact": "Prompt assumption and any older unverified note implying QuickBooks live connection",
+      "decision_impact": "No disconnect is needed; do not connect QuickBooks."
+    },
+    {
+      "topic": "beta automations",
+      "prior_assumption": "Automations were not directly inspected.",
+      "live_truth": "Four beta automations are visible and appear enabled: Social Media Manager, Inbox Manager, Daily Summarizer, Facebook Commenter.",
+      "superseded_artifact": "Earlier no-live-evidence status",
+      "decision_impact": "Automation disposition requires separate founder decision."
+    },
+    {
+      "topic": "connector state",
+      "prior_assumption": "Connector state was partially speculative.",
+      "live_truth": "Facebook, Instagram, Google Analytics, and LinkedIn Organization are connected; multiple other connectors are available but unconnected.",
+      "superseded_artifact": "Earlier no-live-evidence status",
+      "decision_impact": "Connector scope review required before lab use."
+    },
+    {
+      "topic": "Financial scope",
+      "prior_assumption": "Financial projection included advanced planning and final-expense/funeral planning.",
+      "live_truth": "Founder clarified Financial must include estate planning and advanced/funeral pre-need planning, with funeral planning treated as an insurance-product lane where applicable.",
+      "superseded_artifact": "Any generic or reduced Financial wording",
+      "decision_impact": "Financial projection updated; no Sintra mutation performed."
+    }
+  ],
+  "corrected_classification": "SINTRA BRAIN RECOVERY PARTIAL — LIVE INSPECTION COMPLETE; ADMINISTRATIVE ACCESS GAPS REMAIN"
+}

@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "classification": "LAB_SUCCESS_CRITERIA",
+  "criteria": [
+    {"name":"usefulness","target":"Outputs reduce Jackie social/content operations effort without creating extra review burden."},
+    {"name":"accuracy","target":"Outputs align with current JM1 repo canon and approved public brand standards."},
+    {"name":"cross_brand_boundary_adherence","target":"No division-specific authority leaks into another division or One-level automation."},
+    {"name":"hallucination_contamination_rate","target":"Zero material wrong-brand or fabricated claims in lab samples."},
+    {"name":"microsoft_stack_duplication","target":"Sintra only fills a gap or speed advantage not already covered by Microsoft-first systems."},
+    {"name":"operational_time_savings","target":"Measurable reduction in drafting, planning, or review time."},
+    {"name":"action_safety","target":"No public posts, comments, emails, connector changes, or production mutations during lab."},
+    {"name":"governance_fit","target":"Sintra remains assistive/projection/support and does not become a competing source of record."}
+  ],
+  "adoption_rule": "Sintra adoption depends on lab evidence, not novelty."
+}

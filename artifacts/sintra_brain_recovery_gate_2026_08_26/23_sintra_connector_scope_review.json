@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "workspace": "J Merrill One",
+  "connectors": [
+    {
+      "connector": "Facebook",
+      "live_state": "CONNECTED",
+      "why_connected": "Likely social operations setup; exact account/page not visible.",
+      "data_action_surface": "Manage Facebook and Instagram pages, accounts, and posts.",
+      "one_level_scope_appropriate": "UNKNOWN",
+      "brand_specific_scoping_needed": true,
+      "read_only_preferable": true,
+      "automation_consumes_it": "Possible; Facebook Commenter and Social Media Manager are visible/enabled, but binding not proven.",
+      "proposed_disposition": "KEEP — SCOPE REVIEW"
+    },
+    {
+      "connector": "Instagram",
+      "live_state": "CONNECTED",
+      "why_connected": "Likely social operations setup; exact account not visible.",
+      "data_action_surface": "Manage Instagram Business or Creator account.",
+      "one_level_scope_appropriate": "UNKNOWN",
+      "brand_specific_scoping_needed": true,
+      "read_only_preferable": true,
+      "automation_consumes_it": "Possible; Social Media Manager visible/enabled, but binding not proven.",
+      "proposed_disposition": "KEEP — SCOPE REVIEW"
+    },
+    {
+      "connector": "Google Analytics",
+      "live_state": "CONNECTED",
+      "why_connected": "Likely marketing measurement setup; exact property not visible.",
+      "data_action_surface": "Access Google Analytics data and insights.",
+      "one_level_scope_appropriate": "POSSIBLY, if limited to public web analytics",
+      "brand_specific_scoping_needed": true,
+      "read_only_preferable": true,
+      "automation_consumes_it": "Not proven.",
+      "proposed_disposition": "KEEP — SCOPE REVIEW"
+    },
+    {
+      "connector": "LinkedIn (Organization)",
+      "live_state": "CONNECTED",
+      "why_connected": "Likely organization posting setup; exact organization not visible.",
+      "data_action_surface": "Create and share posts on organization's behalf.",
+      "one_level_scope_appropriate": "UNKNOWN",
+      "brand_specific_scoping_needed": true,
+      "read_only_preferable": true,
+      "automation_consumes_it": "Possible; Social Media Manager visible/enabled, but binding not proven.",
+      "proposed_disposition": "KEEP — SCOPE REVIEW"
+    },
+    {
+      "connector": "QuickBooks",
+      "live_state": "NOT CONNECTED",
+      "why_connected": "Not applicable.",
+      "data_action_surface": "Read and update QuickBooks data if connected.",
+      "one_level_scope_appropriate": false,
+      "brand_specific_scoping_needed": true,
+      "read_only_preferable": true,
+      "automation_consumes_it": "No live connection observed.",
+      "proposed_disposition": "NOT CONNECTED"
+    }
+  ],
+  "mutation_authorized": false
+}

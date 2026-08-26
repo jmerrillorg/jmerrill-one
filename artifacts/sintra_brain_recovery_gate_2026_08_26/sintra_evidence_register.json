@@ -226,6 +226,6 @@
   "repository_validation": {
     "json_parse": "PASS",
     "checksums": "PASS",
-    "npm_run_lint": "BLOCKED - fresh origin/main worktree has no installed node_modules/eslint; dependencies were not installed or mutated during this package"
+    "npm_run_lint": "NOT RUN — DEPENDENCIES NOT INSTALLED"
   }
 }

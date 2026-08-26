@@ -13,8 +13,8 @@
     "dataverse": 0,
     "github_merge": 0
   },
-  "classification": "SINTRA BRAIN RECOVERY PARTIAL — LIVE ACCESS STILL BLOCKED",
-  "reason": "Live Chrome inspection proved J Merrill One access and exposed connected integrations, 89 Brain AI records, four beta automations, helpers, workspace settings, and profile settings. It did not prove complete all-workspace inventory, exact OAuth scopes, connected account/page/property bindings, or full content classification for all 89 Brain records.",
+  "classification": "SINTRA BRAIN RECOVERY PARTIAL — LIVE INSPECTION COMPLETE; ADMINISTRATIVE ACCESS GAPS REMAIN",
+  "reason": "Live Chrome inspection proved J Merrill One access and exposed connected integrations, 89 Brain AI records, four beta automations, helpers, workspace settings, and profile settings. Administrative/detail gaps remain: all-workspace selector inventory, exact OAuth scopes, connected account/page/property bindings, and full content classification for all 89 Brain records were not proven.",
   "nextSafestAction": "Jackie approves the proposed recovery diff for controlled Brain/integration cleanup, or grants a deeper export/API/safe-detail-inspection path for exact connector scopes and all-workspace inventory before mutation.",
   "liveEvidence": {
     "inspectionTimestamp": "2026-08-26T04:45:27-04:00",
@@ -76,6 +76,6 @@
   "repository_validation": {
     "json_parse": "PASS",
     "checksums": "PASS",
-    "npm_run_lint": "BLOCKED - fresh origin/main worktree has no installed node_modules/eslint; dependencies were not installed or mutated during this package"
+    "npm_run_lint": "NOT RUN — DEPENDENCIES NOT INSTALLED"
   }
 }

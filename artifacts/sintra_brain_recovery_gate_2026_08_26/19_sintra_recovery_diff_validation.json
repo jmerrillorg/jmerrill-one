@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "source_diff": "18_sintra_recovery_diff.md",
+  "classification": "RECOVERY_DIFF_VALIDATED_FOR_FOUNDER_DECISION",
+  "proposed_actions": [
+    {
+      "area": "J Merrill One Brain",
+      "action": "QUARANTINE non-enterprise records",
+      "support": "supported by live evidence",
+      "evidence": "Live Brain AI page shows 89 records, including publishing/editorial, ministry/spiritual, personal, business, and J Merrill One offering items.",
+      "requires_founder_judgment": true,
+      "notes": "Quarantine is supported; deletion is not supported without per-record export/detail review."
+    },
+    {
+      "area": "J Merrill One Brain",
+      "action": "MOVE Publishing-specific durable records to J Merrill Publishing",
+      "support": "inference",
+      "evidence": "Publishing/editorial records are visible in J Merrill One; the J Merrill Publishing workspace itself was not live-verified.",
+      "requires_founder_judgment": true,
+      "notes": "Rehome only after target workspace verification and record export/snapshot."
+    },
+    {
+      "area": "J Merrill One Brain",
+      "action": "REVIEW enterprise candidate records against One canon",
+      "support": "supported by live evidence",
+      "evidence": "Several visible records appear potentially enterprise-relevant, including Business Focus, Business website and brand links, hybrid offerings, and Overview of J Merrill One offerings.",
+      "requires_founder_judgment": true,
+      "notes": "Keep/update requires source/version traceability."
+    },
+    {
+      "area": "J Merrill Publishing",
+      "action": "Verify workspace, then move/admit Publishing-safe records only",
+      "support": "supported only by prior repo evidence",
+      "evidence": "Prior recovery package expects a Publishing workspace; live selector inventory was not completed.",
+      "requires_founder_judgment": true,
+      "notes": "No mutation until target workspace is verified."
+    },
+    {
+      "area": "J Merrill Financial",
+      "action": "Add clean Financial projection after workspace verification",
+      "support": "supported only by prior repo evidence",
+      "evidence": "Financial live workspace state was not directly verified; user/founder correction confirms estate planning plus advanced/funeral pre-need planning as insurance-product lane where applicable.",
+      "requires_founder_judgment": true,
+      "notes": "This is a content correction proposal only."
+    },
+    {
+      "area": "J Merrill Foundation",
+      "action": "Add clean Foundation projection after workspace verification",
+      "support": "supported only by prior repo evidence",
+      "evidence": "Foundation live workspace state was not directly verified.",
+      "requires_founder_judgment": true,
+      "notes": "Do not import donor, recipient, or private operational data."
+    },
+    {
+      "area": "Integrations",
+      "action": "Review connected social integrations before any lab run",
+      "support": "supported by live evidence",
+      "evidence": "Facebook, Instagram, Google Analytics, and LinkedIn Organization show Connected in J Merrill One.",
+      "requires_founder_judgment": true,
+      "notes": "Exact connected account/page/property/org and OAuth scopes remain unverified."
+    },
+    {
+      "area": "Integrations",
+      "action": "Do not connect QuickBooks, email, Microsoft broad admin/data connectors, or ad platforms before explicit approval",
+      "support": "supported by live evidence",
+      "evidence": "QuickBooks, Gmail, Outlook, Google Workspace Admin, GitHub, Microsoft Teams, Meta Ads, and similar connectors show Connect in captured evidence.",
+      "requires_founder_judgment": false,
+      "notes": "This is a non-mutation hold consistent with Microsoft-first and least-privilege governance."
+    }
+  ]
+}

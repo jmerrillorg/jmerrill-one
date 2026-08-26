@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "classification": "CONTENT_CORRECTION_PROPOSAL_ONLY",
+  "mutation_authorized": false,
+  "financial_scope": {
+    "include": [
+      "estate planning",
+      "advanced planning",
+      "funeral/pre-need planning",
+      "funeral/pre-need planning may involve insurance products where applicable"
+    ],
+    "do_not_reduce_to": [
+      "generic financial planning",
+      "generic insurance-sales-only positioning"
+    ],
+    "do_not_imply": [
+      "law practice",
+      "investment management unless separately supported",
+      "unverified insurance carrier/product specifics"
+    ],
+    "recommended_brain_language": "J Merrill Financial supports estate planning and advanced/funeral pre-need planning, with funeral/pre-need planning treated as an insurance-product lane where applicable, while preserving non-attorney and compliance boundaries."
+  }
+}

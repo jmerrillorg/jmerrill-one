@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-26T05:03:00-04:00",
+  "classification": "ROLLBACK_REQUIRED_BEFORE_MUTATION",
+  "requirements": [
+    "Record export or screenshot for every Brain item before edit, quarantine, reassign, or delete.",
+    "Screenshot connector state and connected account/page/property/org before any scope change or disconnect.",
+    "Screenshot automation state before enable/disable/configuration changes.",
+    "Record helper list before hiring/removing helpers.",
+    "Preserve evidence screenshots in the repository packet.",
+    "Do not perform destructive action unless Sintra provides a recovery path or Jackie explicitly approves irreversibility."
+  ],
+  "destructive_actions_allowed_now": false,
+  "connector_changes_allowed_now": false,
+  "automation_changes_allowed_now": false,
+  "brain_cleanup_allowed_now": false
+}
