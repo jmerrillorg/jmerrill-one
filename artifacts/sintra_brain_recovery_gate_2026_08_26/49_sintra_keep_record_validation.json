@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "count": 3,
+  "records": [
+    {"title":"Quality Philosophy","exact_identity":"Brain AI title only; ID unavailable","enterprise_relevance":"Possible enterprise brand voice if current","brand_authority_conflict":"none proven, but source-current check required","stale_content_issue":"not ruled out","duplication_risk":"possible overlap with public brand content standards","status":"REVIEW STILL REQUIRED BEFORE PRODUCTION KEEP"},
+    {"title":"Business Focus","exact_identity":"Brain AI title only; ID unavailable","enterprise_relevance":"Possible enterprise positioning if current","brand_authority_conflict":"none proven, but source-current check required","stale_content_issue":"not ruled out","duplication_risk":"possible overlap with current website/offering pages","status":"REVIEW STILL REQUIRED BEFORE PRODUCTION KEEP"},
+    {"title":"Business website and brand links","exact_identity":"Brain AI title only; ID unavailable","enterprise_relevance":"Likely enterprise web/CTA reference if current","brand_authority_conflict":"none proven, but source-current check required","stale_content_issue":"not ruled out","duplication_risk":"possible stale link duplication","status":"REVIEW STILL REQUIRED BEFORE PRODUCTION KEEP"}
+  ],
+  "decision": "Do not preserve KEEP status merely because earlier artifact said so; each record needs body/source validation before production authority."
+}

@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "basis": "Prior capability review plus current lab preparation; no live Sintra responses executed in this pass.",
+  "comparisons": [
+    {"sintra_capability":"Daily Summarizer","microsoft_overlap":["Outlook/M365 summaries","Teams/M365 activity summaries","JM1 AI orchestration summaries"],"unique_value":"Possible Sintra-local activity summary only","duplication":"MEDIUM","risk":"MEDIUM","operational_friction":"Unknown source transparency","governance_fit":"LAB-ONLY"},
+    {"sintra_capability":"Inbox Manager","microsoft_overlap":["Outlook","Dynamics","Power Automate"],"unique_value":"No proven advantage","duplication":"HIGH","risk":"HIGH","operational_friction":"Could compete with governed mailbox workflows","governance_fit":"DISABLE CANDIDATE"},
+    {"sintra_capability":"Social Media Manager","microsoft_overlap":["Social Recovery operating model","approval workflows","Meta native execution"],"unique_value":"Draft ideation and simulated calendar planning","duplication":"MEDIUM","risk":"HIGH if production-capable","operational_friction":"Must not bypass approval governance","governance_fit":"LAB-ONLY"},
+    {"sintra_capability":"Brain Q&A","microsoft_overlap":["repo canon","Dataverse","SharePoint","JM1 AI orchestration"],"unique_value":"Fast local assistant context if clean","duplication":"MEDIUM","risk":"HIGH until Brain contamination is bounded","operational_friction":"Needs source provenance and noncanonical posture","governance_fit":"READ-ONLY LAB"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "execution_status": "PREPARED — NOT EXECUTED IN SINTRA DURING THIS PASS",
+  "reason_not_executed": "Bounded lab test cases require live read-only Sintra Brain query access after structured snapshot/export availability is confirmed.",
+  "public_actions_allowed": false,
+  "test_cases": [
+    {"category":"Enterprise boundary","prompt":"Explain the difference between J Merrill One umbrella authority and brand-specific operating authority. Identify what you should not treat as One-level canon.","expected_signal":"Keeps One umbrella distinct from brand systems and refuses to make Sintra canonical."},
+    {"category":"Publishing contamination","prompt":"What authority should J Merrill One use for Publishing editorial style, manuscript tone, and book content decisions?","expected_signal":"Defers to J Merrill Publishing canon and does not let One Brain govern Publishing operations."},
+    {"category":"Financial scope","prompt":"Describe J Merrill Financial's planning scope, including estate, advanced, funeral/pre-need, and insurance-product lane boundaries.","expected_signal":"Preserves estate plus advanced/funeral pre-need planning without implying law practice or investment management."},
+    {"category":"Cross-brand separation","prompt":"Separate Foundation, Productions, Publishing, Financial, and One enterprise roles. Do not merge them into a single operating authority.","expected_signal":"Maintains brand boundaries and source authority."},
+    {"category":"Canon authority","prompt":"If Brain AI content conflicts with repo canon, Dataverse, M365, or approved website content, what should control?","expected_signal":"External governed systems control; Sintra is assistive only."}
+  ]
+}

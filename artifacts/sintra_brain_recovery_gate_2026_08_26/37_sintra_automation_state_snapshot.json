@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "mutation_authorized": false,
+  "automation_mutations_performed": 0,
+  "automations": [
+    {
+      "name": "Social Media Manager",
+      "enabled_state": "Enabled visually",
+      "apparent_scope": "Social planning/posting workflow",
+      "visible_configuration": "Beta automation card visible; detailed configuration not exposed in local evidence.",
+      "connector_dependencies": ["possible Facebook", "possible Instagram", "possible LinkedIn Organization"],
+      "action_capability": "Could draft, schedule, or publish social content if connected and configured.",
+      "public_facing_risk": "HIGH",
+      "current_disposition": "LAB-ONLY"
+    },
+    {
+      "name": "Inbox Manager",
+      "enabled_state": "Enabled visually",
+      "apparent_scope": "Inbox/email support",
+      "visible_configuration": "Beta automation card visible; detailed configuration not exposed in local evidence.",
+      "connector_dependencies": ["email connector dependency not proven"],
+      "action_capability": "Could read, draft, reply, or send if connected/configured; live send ability not proven.",
+      "public_facing_risk": "HIGH",
+      "current_disposition": "DISABLE — DUPLICATIVE/RISK after approval"
+    },
+    {
+      "name": "Daily Summarizer",
+      "enabled_state": "Enabled visually",
+      "apparent_scope": "Internal summarization",
+      "visible_configuration": "Beta automation card visible; data sources not exposed in local evidence.",
+      "connector_dependencies": ["unknown"],
+      "action_capability": "Internal summaries likely; external action not proven.",
+      "public_facing_risk": "MEDIUM",
+      "current_disposition": "LAB-ONLY"
+    },
+    {
+      "name": "Facebook Commenter",
+      "enabled_state": "Enabled visually",
+      "apparent_scope": "Facebook engagement/comment workflow",
+      "visible_configuration": "Beta automation card visible; detailed configuration not exposed in local evidence.",
+      "connector_dependencies": ["possible Facebook"],
+      "action_capability": "Could produce public Facebook comments if connector/configuration permits.",
+      "public_facing_risk": "HIGH",
+      "current_disposition": "HOLD / LAB-ONLY AT MOST"
+    }
+  ]
+}

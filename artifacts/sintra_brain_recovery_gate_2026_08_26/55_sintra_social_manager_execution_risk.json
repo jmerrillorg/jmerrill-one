@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "automation": "Social Media Manager",
+  "execution_risk": "HIGH if schedule/publish controls are enabled against connected Facebook, Instagram, or LinkedIn Organization accounts",
+  "safe_lab_only_mode_confirmed": false,
+  "recommendation": "DISABLE UNTIL TESTING IS COMPLETE unless Sintra proves a non-public lab-only/simulation mode",
+  "allowed_current_use": "internal draft and simulation only",
+  "mutation_performed": false
+}

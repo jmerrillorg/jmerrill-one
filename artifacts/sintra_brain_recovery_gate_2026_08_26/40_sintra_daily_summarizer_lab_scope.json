@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "automation": "Daily Summarizer",
+  "classification": "LAB-ONLY",
+  "allowed": [
+    "internal summary generation",
+    "comparison against Microsoft-native summaries",
+    "usefulness/accuracy testing"
+  ],
+  "not_allowed": [
+    "automatic distribution",
+    "external sending",
+    "authoritative enterprise status reporting"
+  ],
+  "evaluation_question": "Determine whether Daily Summarizer adds material value beyond the Microsoft stack.",
+  "mutation_authorized": false
+}

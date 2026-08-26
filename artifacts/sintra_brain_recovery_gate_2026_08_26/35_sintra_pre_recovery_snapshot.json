@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "snapshot_type": "pre_recovery_snapshot",
+  "workspace_identity": {
+    "workspace_name": "J Merrill One",
+    "source": "prior live Chrome visual inspection artifacts 13-17 and 33"
+  },
+  "brain": {
+    "enabled_state": "visible and active enough to show Brain AI records",
+    "visible_record_count": 89,
+    "record_identity_capture": "37 titles classified from visible Brain titles; 52 records unseen/unclassified",
+    "record_ids": "not exposed in prior visual evidence",
+    "structured_export": {
+      "available": "not proven",
+      "performed": false,
+      "reason": "No confirmed Sintra structured export control was available in local evidence for this pass.",
+      "provenance": null,
+      "checksum": null
+    }
+  },
+  "automations": {
+    "visible_count": 4,
+    "state": "Social Media Manager, Inbox Manager, Daily Summarizer, and Facebook Commenter appear enabled visually; no enable/disable action taken."
+  },
+  "connectors": {
+    "connected": ["Facebook", "Instagram", "Google Analytics", "LinkedIn Organization"],
+    "not_connected": ["QuickBooks"],
+    "mutation_state": "No connector mutation performed."
+  },
+  "sidebar_agent_state": "Visible helper cards captured in 17_sintra_live_helper_inventory.md; exact runtime task/conversation state not fully inspectable.",
+  "workspace_settings_relevant_to_rollback": "Workspace settings screenshot captured; no rollback-critical toggle beyond Brain/connectors/automations proven in local evidence.",
+  "evidence": [
+    "13_sintra_live_workspace_inventory.md",
+    "14_sintra_live_integration_inventory.md",
+    "15_sintra_live_brain_inventory.md",
+    "16_sintra_live_automation_inventory.md",
+    "17_sintra_live_helper_inventory.md",
+    "33_sintra_live_vs_prior_evidence_reconciliation.json",
+    "evidence/2026-08-26_chrome_brain_top.png",
+    "evidence/2026-08-26_chrome_brain_mid.png",
+    "evidence/2026-08-26_chrome_brain_lower.png"
+  ],
+  "public_actions_count": {
+    "social_posts": 0,
+    "comments": 0,
+    "emails": 0,
+    "external_messages": 0
+  },
+  "mutations_count": 0
+}

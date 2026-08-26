@@ -1,0 +1,7 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "required_status": "PASS — NO CONNECTOR MUTATIONS",
+  "prohibited_actions": ["reconnect", "disconnect", "reauthorize", "change account scope"],
+  "quickbooks": "NOT CONNECTED — MUST REMAIN NOT CONNECTED",
+  "connector_mutations_performed": 0
+}

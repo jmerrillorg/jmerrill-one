@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "eligible_current_review_subset_count": 34,
+  "sets": {
+    "quarantine": {"count":17,"source":"43_sintra_quarantine_record_review.json"},
+    "rehome": {"count":8,"source":"45_sintra_rehome_candidate_review.json"},
+    "title_reviewed_unresolved": {"count":9,"source":"47_sintra_title_reviewed_unresolved.json"}
+  },
+  "excluded_from_current_recovery_analysis": {
+    "keep_stable": 3,
+    "unseen_unclassified_frozen": 52
+  },
+  "delete_candidates": 0,
+  "mutation_authorized": false
+}

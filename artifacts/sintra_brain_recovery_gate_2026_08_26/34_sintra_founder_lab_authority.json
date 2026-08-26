@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "branch": "codex/sintra-brain-recovery-gate",
+  "classification": "BOUNDED LAB AUTHORITY APPROVED",
+  "allowed": [
+    "snapshot/export",
+    "read-only inspection",
+    "internal-only Brain queries",
+    "draft generation",
+    "internal summaries",
+    "shadow testing",
+    "connector read tests",
+    "simulation",
+    "evidence capture"
+  ],
+  "not_allowed": [
+    "public social posting",
+    "social commenting",
+    "email sending",
+    "connector disconnect/connect",
+    "QuickBooks connection",
+    "Brain deletion",
+    "destructive Brain edits",
+    "Dataverse writes",
+    "M365 writes",
+    "Azure writes",
+    "production automation activation"
+  ],
+  "mutation_authorized": false
+}

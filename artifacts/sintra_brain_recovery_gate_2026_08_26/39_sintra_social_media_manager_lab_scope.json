@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "automation": "Social Media Manager",
+  "classification": "LAB-ONLY",
+  "allowed": [
+    "internal draft generation",
+    "content ideation",
+    "non-publishing comparison against JM1 Social Recovery content",
+    "tone/brand analysis",
+    "simulated calendar recommendations"
+  ],
+  "not_allowed": [
+    "schedule",
+    "publish",
+    "comment",
+    "change Meta assets",
+    "override Social Recovery governance"
+  ],
+  "mutation_authorized": false
+}

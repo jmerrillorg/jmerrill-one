@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "financial_representation_required": [
+    "estate planning",
+    "advanced planning",
+    "funeral/pre-need planning",
+    "funeral/pre-need insurance-product lane where applicable"
+  ],
+  "prohibited_flattening": "Do not flatten Financial into generic financial planning.",
+  "prohibited_implications": [
+    "legal representation",
+    "investment management"
+  ],
+  "validation_status": "CANONICAL CORRECTION PRESERVED FOR LAB TESTS",
+  "mutation_authorized": false
+}

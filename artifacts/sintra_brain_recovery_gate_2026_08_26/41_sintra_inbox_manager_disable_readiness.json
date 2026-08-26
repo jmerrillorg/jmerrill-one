@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "automation": "Inbox Manager",
+  "current_recommendation": "DISABLE — DUPLICATIVE/RISK",
+  "current_monitors": "not exposed in available local evidence",
+  "send_reply_capability": "possible if email connector/configuration exists; not proven active",
+  "overlap": ["Outlook", "Dynamics", "Power Automate", "mailbox governance"],
+  "production_dependency": "not proven",
+  "rollback_reenable_path": "presumed re-enable toggle in Sintra automations; exact path must be captured before mutation",
+  "readiness": "READY TO DISABLE — FOUNDER MUTATION CONFIRMATION REQUIRED",
+  "mutation_performed": false
+}

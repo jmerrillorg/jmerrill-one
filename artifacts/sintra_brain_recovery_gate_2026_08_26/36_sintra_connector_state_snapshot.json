@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "mutation_authorized": false,
+  "connector_mutations_performed": 0,
+  "connectors": [
+    {
+      "connector": "Facebook",
+      "connected_state": "CONNECTED",
+      "workspace_scope": "J Merrill One; exact page/account scope not exposed",
+      "visible_identifiers": [],
+      "action_read_capability": "Data/action surface indicates Facebook page/account/post management; exact OAuth scopes not exposed.",
+      "connected_automation_dependencies": ["possible Facebook Commenter", "possible Social Media Manager"],
+      "disposition": "KEEP — SCOPE REVIEW"
+    },
+    {
+      "connector": "Instagram",
+      "connected_state": "CONNECTED",
+      "workspace_scope": "J Merrill One; exact account scope not exposed",
+      "visible_identifiers": [],
+      "action_read_capability": "Data/action surface indicates Instagram Business/Creator account management; exact OAuth scopes not exposed.",
+      "connected_automation_dependencies": ["possible Social Media Manager"],
+      "disposition": "KEEP — SCOPE REVIEW"
+    },
+    {
+      "connector": "Google Analytics",
+      "connected_state": "CONNECTED",
+      "workspace_scope": "J Merrill One; exact GA property not exposed",
+      "visible_identifiers": [],
+      "action_read_capability": "Analytics read/insight capability likely; write capability not proven.",
+      "connected_automation_dependencies": [],
+      "disposition": "KEEP — SCOPE REVIEW"
+    },
+    {
+      "connector": "LinkedIn Organization",
+      "connected_state": "CONNECTED",
+      "workspace_scope": "J Merrill One; exact organization not exposed",
+      "visible_identifiers": [],
+      "action_read_capability": "Organization posting/share action surface indicated; exact OAuth scopes not exposed.",
+      "connected_automation_dependencies": ["possible Social Media Manager"],
+      "disposition": "KEEP — SCOPE REVIEW"
+    },
+    {
+      "connector": "QuickBooks",
+      "connected_state": "NOT CONNECTED",
+      "workspace_scope": "No connected QuickBooks scope",
+      "visible_identifiers": [],
+      "action_read_capability": "No active capability because connector remains unconnected.",
+      "connected_automation_dependencies": [],
+      "disposition": "NOT CONNECTED"
+    }
+  ]
+}

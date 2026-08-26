@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "quarantine_definition": "Remove from active One-level influence if Sintra supports a reversible non-destructive boundary, or mark for isolation in the recovery plan.",
+  "capabilities_assessed": {
+    "folders": "not proven",
+    "tags": "not proven",
+    "disable_ignore": "not proven",
+    "workspace_separation": "product supports workspaces; exact Brain item movement not proven",
+    "archive": "not proven",
+    "export_remove_reimport": "export/remove/reimport not proven safe",
+    "other_reversible_mechanism": "not proven"
+  },
+  "safe_quarantine_primitive_confirmed": false,
+  "required_return": "QUARANTINE DESIGN REQUIRED",
+  "deletion_allowed": false
+}

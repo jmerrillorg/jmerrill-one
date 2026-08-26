@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "workspace": "J Merrill One",
+  "safe_non_destructive": [
+    "Capture structured Brain export if Sintra exposes export without mutation.",
+    "Continue read-only inspection of the 34 focused records.",
+    "Run internal-only Brain Q&A lab tests after snapshot/export.",
+    "Score lab responses with the prepared rubric.",
+    "Capture automation and connector detail screens without changing settings."
+  ],
+  "requires_founder_mutation_approval": [
+    "Disable Inbox Manager.",
+    "Disable Social Media Manager if no safe lab-only mode exists.",
+    "Disable or hold Facebook Commenter outside any public execution path.",
+    "Apply reversible quarantine to exact approved records once a safe primitive is confirmed.",
+    "Apply rehome/reference pattern to exact approved records once a safe primitive is confirmed.",
+    "Restrict connector scopes if Sintra exposes safe controls."
+  ],
+  "not_authorized": [
+    "Brain deletion",
+    "public social posting",
+    "public commenting",
+    "email sending",
+    "QuickBooks connection",
+    "Dataverse writes",
+    "M365 writes",
+    "Azure writes"
+  ],
+  "execute_manifest_now": false
+}

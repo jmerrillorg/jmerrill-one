@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-08-26T05:30:00-04:00",
+  "automation": "Facebook Commenter",
+  "current_policy": "HOLD — NO PRODUCTION AUTHORITY",
+  "optional_future_state": "LAB-ONLY only if Sintra supports a non-public or simulated test mode",
+  "public_commenting_allowed": false,
+  "if_no_non_public_test_mode": "LAB TEST NOT SAFE / DEFER",
+  "mutation_authorized": false,
+  "public_comments_performed": 0
+}
