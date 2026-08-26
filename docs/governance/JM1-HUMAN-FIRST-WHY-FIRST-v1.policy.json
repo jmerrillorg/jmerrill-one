@@ -1,0 +1,101 @@
+{
+  "policyId": "JM1-HUMAN-FIRST-WHY-FIRST-v1",
+  "version": "1.0",
+  "status": "CANON",
+  "scope": "ENTERPRISE",
+  "owner": "J MERRILL ONE",
+  "authority": "Jackie Smith, Jr. — Governance Authority",
+  "effectiveDate": "2026-08-26",
+  "executablePolicy": true,
+  "brandOverlaysRequired": true,
+  "preSendEnforcement": true,
+  "prePublishEnforcement": true,
+  "driftMonitor": true,
+  "decisionOutcomes": ["ALLOW", "ALLOW_WITH_WARNING", "DENY", "HUMAN_REVIEW_REQUIRED"],
+  "requiredHumanContext": [
+    "divisionOrApplication",
+    "recipientIdentity",
+    "recipientRelationship",
+    "eventOrTrigger",
+    "recipientWhy",
+    "recipientAction",
+    "jm1NextStep",
+    "internalInformationNotNeeded"
+  ],
+  "internalLanguageExamples": [
+    "artifact",
+    "artifactId",
+    "canonical",
+    "runtime",
+    "correlation",
+    "manifest",
+    "workstream",
+    "execution state",
+    "package-grade",
+    "governed source",
+    "system attention",
+    "lifecycle event",
+    "technical validation",
+    "queue",
+    "GUID",
+    "checksum",
+    "worker",
+    "Dataverse row",
+    "state machine token"
+  ],
+  "domainLanguageAllowed": {
+    "publishing": [
+      "manuscript",
+      "developmental edit",
+      "line edit",
+      "copyedit",
+      "proof",
+      "cover",
+      "interior",
+      "publication",
+      "distribution",
+      "royalty statement"
+    ]
+  },
+  "brandProfiles": {
+    "jm1": { "status": "PROFILE_REQUIRED" },
+    "publishing": {
+      "status": "FIRST_PROVING_IMPLEMENTATION",
+      "from": "publishing@email.jmerrill.one",
+      "replyTo": "publishing@jmerrill.one",
+      "cc": "publishing@jmerrill.one",
+      "format": "HTML"
+    },
+    "financial": { "status": "NOT_COMMISSIONED" },
+    "foundation": { "status": "NOT_COMMISSIONED" },
+    "productions": { "status": "NOT_COMMISSIONED" },
+    "aic": { "status": "NOT_COMMISSIONED" }
+  },
+  "artifactClassifications": [
+    "INTERNAL_ONLY",
+    "AUTHOR_REVIEW",
+    "AUTHOR_DELIVERABLE",
+    "PUBLIC_RELEASE",
+    "VENDOR_DELIVERABLE",
+    "EVIDENCE_ONLY"
+  ],
+  "negativeCaseFamilies": [
+    "wrong_recipient_identity",
+    "wrong_relationship_context",
+    "wrong_brand_voice",
+    "wrong_sender_identity",
+    "internal_runtime_language_exposed",
+    "artifact_identifier_exposed",
+    "checksum_or_guid_exposed",
+    "plain_english_rejected_for_missing_headings",
+    "domain_language_falsely_flagged",
+    "high_risk_financial_or_contractual_autosent",
+    "marketing_consent_blocks_required_service_message",
+    "missing_full_manuscript",
+    "memo_or_report_substituted_for_required_manuscript",
+    "internal_qa_artifact_sent",
+    "filename_used_as_artifact_type_authority",
+    "truncated_manuscript_passes",
+    "defective_send_starts_response_clock"
+  ]
+}
