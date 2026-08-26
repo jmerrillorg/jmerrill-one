@@ -13,5 +13,8 @@
     "investment management"
   ],
   "validation_status": "CANONICAL CORRECTION PRESERVED FOR LAB TESTS",
+  "future_limited_lab_guardrail": "Future Sintra limited-lab use must preserve estate planning, advanced planning, funeral/pre-need planning, and funeral/pre-need insurance-product lane awareness where applicable.",
+  "one_brain_expansion_for_recall": false,
+  "instruction": "Do not add detailed Financial operations into One Brain merely to improve recall.",
   "mutation_authorized": false
 }

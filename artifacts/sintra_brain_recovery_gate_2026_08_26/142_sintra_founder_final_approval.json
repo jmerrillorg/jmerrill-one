@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "FOUNDER FINAL APPROVALS RECORDED",
+  "automation": {
+    "decision": "HOLD - WAIT FOR READABLE DEPENDENCY EVIDENCE",
+    "applies_to": [
+      "Social Media Manager",
+      "Daily Summarizer"
+    ]
+  },
+  "publishing_projection": {
+    "decision": "HOLD - WAIT FOR GOVERNED SOURCE AUTHORITY",
+    "applies_to": [
+      "R-001",
+      "R-002",
+      "R-005",
+      "R-006",
+      "R-007",
+      "R-008"
+    ]
+  },
+  "sintra_retention": {
+    "decision": "APPROVED - TEMPORARY LIMITED-LAB RETENTION",
+    "reassessment_trigger": "SOURCE-CERTIFIED PROJECTION TEST",
+    "not_broader_adoption": true
+  },
+  "active_recovery_work": "STOP"
+}

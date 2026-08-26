@@ -12,6 +12,8 @@ The final mutation plan does not upgrade adoption. It separates cleanup readines
 
 After final evidence-gap review, Sintra remains useful enough to retain only as a read-only/drafting assistant: LIMITED VALUE. The value is in internal ideation, read-only analysis, internal drafting, non-authoritative summaries, and shadow comparison. It is not enough to justify autonomous public action, inbox operation, or source-of-record status.
 
-Retention recommendation: RETAIN TEMPORARILY - REASSESS AFTER PROJECTION TEST.
+Retention recommendation: APPROVED - TEMPORARY LIMITED-LAB RETENTION. Reassess only after a source-certified projection test or another certified reopen trigger.
+
+Active Sintra recovery work is stopped. Do not create another Sintra recovery cycle unless `147_sintra_recovery_reopen_triggers.json` is satisfied.
 
 Adoption should be decided from lab response quality, action safety, Microsoft-first fit, and source authority awareness, not from feature count.

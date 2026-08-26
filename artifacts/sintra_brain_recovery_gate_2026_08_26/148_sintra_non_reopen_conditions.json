@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "SINTRA NON-REOPEN CONDITIONS",
+  "do_not_restart_recovery_merely_because": [
+    "Sintra sends a marketing email",
+    "a new beta feature appears without relevance",
+    "a Brain answer is imperfect",
+    "a social integration remains connected",
+    "a sibling workspace exists",
+    "a record title looks interesting",
+    "a new general AI tool becomes available"
+  ],
+  "reopen_rule": "Reopen only against 147_sintra_recovery_reopen_triggers.json."
+}

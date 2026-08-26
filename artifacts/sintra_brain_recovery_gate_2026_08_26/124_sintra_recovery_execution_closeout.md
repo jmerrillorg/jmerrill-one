@@ -1,6 +1,6 @@
 # Sintra Recovery Execution Closeout
 
-Classification: SINTRA RECOVERY STABILIZED - LIMITED LAB ONLY; SOURCE AUTHORITY INCOMPLETE.
+Classification: SINTRA RECOVERY STABILIZED - TEMPORARY LIMITED-LAB RETENTION APPROVED; SOURCE/AUTOMATION HOLDS PARKED.
 
 Mutations this pass: 0.
 
@@ -67,4 +67,4 @@ Value assessment: LIMITED VALUE as a read-only/drafting assistant for internal i
 
 ## Exact Next Action
 
-Obtain a readable live automation dependency-check path before executing the already-approved Social Media Manager and Daily Summarizer disables. Certify governed Publishing sources before any Publishing projection implementation.
+No active Sintra recovery action. Maintain limited-lab posture and reopen only when a certified trigger occurs.

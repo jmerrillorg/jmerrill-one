@@ -13,9 +13,9 @@
     "dataverse": 0,
     "github_merge": 0
   },
-  "classification": "SINTRA RECOVERY STABILIZED - LIMITED LAB ONLY; SOURCE AUTHORITY INCOMPLETE",
-  "reason": "Automation estate is stabilized by policy: Inbox Manager remains off; Social Media Manager and Daily Summarizer are permanent holds because the tenant did not expose readable dependency evidence; Facebook Commenter remains no-public-authority. Brain is legacy/read-only and non-authoritative where provenance/scope is unproven. Publishing source certification found 0 certified, 0 partial, and 6 held.",
-  "nextSafestAction": "Founder decides whether to retain Sintra temporarily for limited lab use and whether to provide governed Publishing source artifacts for a future source-certified projection test. Do not mutate Brain records, connectors, sibling Brains, automations, or public surfaces.",
+  "classification": "SINTRA RECOVERY STABILIZED - TEMPORARY LIMITED-LAB RETENTION APPROVED; SOURCE/AUTOMATION HOLDS PARKED",
+  "reason": "Founder approved temporary limited-lab retention and parked unresolved automation/source issues. Automation estate is frozen by governance: Inbox Manager remains off; Social Media Manager and Daily Summarizer hold for readable dependency evidence; Facebook Commenter remains no-public-authority. Brain is legacy/read-only and non-authoritative where provenance/scope is unproven. Publishing projection implementation is held until governed source authority is certified.",
+  "nextSafestAction": "No active Sintra recovery action. Maintain limited-lab posture and reopen only when a certified trigger occurs.",
   "liveEvidence": {
     "inspectionTimestamp": "2026-08-26T04:45:27-04:00",
     "browser": "Google Chrome",
@@ -101,5 +101,11 @@
     "publishing_source_certification": "132_sintra_publishing_source_certification_final.json",
     "one_brain_legacy_policy": "137_sintra_one_brain_legacy_policy.json",
     "retention_decision_evidence": "140_sintra_retention_decision_evidence.json"
+  },
+  "final_stabilization_closeout": {
+    "founder_final_approval": "142_sintra_founder_final_approval.json",
+    "final_ledger": "151_sintra_recovery_final_ledger.json",
+    "executive_closeout": "152_sintra_recovery_final_closeout.json",
+    "active_next_action": "NONE - STABILIZED / PARKED"
   }
 }

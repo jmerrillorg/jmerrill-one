@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "J MERRILL ONE BRAIN FINAL HOLD",
+  "final_state": "J Merrill One Brain remains readable but non-authoritative where provenance, scope, or source authority is not certified.",
+  "actions": {
+    "brain_edits": 0,
+    "brain_deletes": 0,
+    "quarantine_actions": 0,
+    "rehome_actions": 0,
+    "unseen_record_actions": 0
+  },
+  "disposition": {
+    "prior_keep_candidates": "HOLD",
+    "quarantine_17": "RETAIN IN PLACE / DO NOT TRUST AS ONE AUTHORITY",
+    "rehome_reference_8": "DESIGN ONLY / NO IMPLEMENTATION",
+    "unresolved_9": "RETAIN",
+    "unseen_52": "RETAIN / NO MUTATION",
+    "delete_candidates": 0
+  }
+}

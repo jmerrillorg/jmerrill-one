@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "AUTOMATION FINAL GOVERNANCE",
+  "states": {
+    "Inbox Manager": {
+      "state": "OFF - VERIFIED",
+      "instruction": "Do not re-enable."
+    },
+    "Social Media Manager": {
+      "state": "HOLD - NO READABLE DEPENDENCY EVIDENCE",
+      "instruction": "Do not disable or re-enable."
+    },
+    "Daily Summarizer": {
+      "state": "HOLD - NO READABLE DEPENDENCY EVIDENCE",
+      "instruction": "Do not disable or re-enable."
+    },
+    "Facebook Commenter": {
+      "state": "NO PUBLIC AUTHORITY / NON-ACTING",
+      "instruction": "Do not enable public commenting."
+    }
+  },
+  "automation_mutation_count_this_closeout": 0
+}

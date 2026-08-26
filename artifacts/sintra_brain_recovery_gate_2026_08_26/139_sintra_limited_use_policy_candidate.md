@@ -1,23 +1,30 @@
 # Sintra Limited Use Policy Candidate
 
-Status: POLICY-CANDIDATE
+Classification: LIMITED-LAB OPERATING POLICY - FOUNDER APPROVED FOR TEMPORARY USE
 
-## Permitted
+Status: POLICY-CANDIDATE. Do not promote to enterprise CANON unless a separate governance process authorizes it.
 
-- Read-only internal analysis.
-- Ideation.
-- Internal drafts.
+## Allowed
+
+- Internal ideation.
+- Read-only analysis.
+- Internal drafting.
 - Non-authoritative summaries.
 - Shadow comparison.
+- Bounded lab evaluation.
 
-## Not Permitted
+## Not Allowed
 
 - Canonical authority.
-- Direct social publishing.
-- Public commenting.
+- System of record.
 - Autonomous email.
+- Inbox management.
+- Public commenting.
+- Social publishing.
 - Customer/client outreach.
-- M365, Dataverse, or Azure writes.
+- M365 writes.
+- Dataverse writes.
+- Azure writes.
 - Cross-brand operational authority.
 
 ## Brain Trust Rule

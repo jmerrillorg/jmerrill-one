@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "RETENTION REASSESSMENT CRITERIA",
+  "criteria": [
+    "unique value",
+    "source-certified projection quality",
+    "contamination rate",
+    "authority awareness",
+    "Microsoft overlap",
+    "governance burden",
+    "operational time savings",
+    "action safety",
+    "cost/value relationship"
+  ],
+  "possible_future_outcomes": [
+    "RETAIN - LIMITED LAB",
+    "EXPAND - BOUNDED ASSISTIVE ROLE",
+    "HOLD",
+    "RETIRE"
+  ],
+  "do_not_assume_expansion": true
+}

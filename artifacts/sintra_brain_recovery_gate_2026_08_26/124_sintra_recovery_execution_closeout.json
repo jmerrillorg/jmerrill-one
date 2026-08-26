@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-08-26T09:45:00-04:00",
-  "classification": "SINTRA RECOVERY STABILIZED - LIMITED LAB ONLY; SOURCE AUTHORITY INCOMPLETE",
+  "classification": "SINTRA RECOVERY STABILIZED - TEMPORARY LIMITED-LAB RETENTION APPROVED; SOURCE/AUTOMATION HOLDS PARKED",
   "inbox_manager_state": "PASS - PRIOR VERIFIED OFF STATE PRESERVED",
   "social_media_manager_dependency_result": "NO READABLE DEPENDENCY EVIDENCE - PERMANENT HOLD",
   "social_media_manager_disable_result": "NOT EXECUTED - DEPENDENCY CHECK UNCLEAR",
@@ -36,5 +36,5 @@
   "automation_mutations": 0,
   "connector_mutations": 0,
   "adoption_assessment": "LIMITED VALUE; LIMITED LAB ADOPTION - HIGH GOVERNANCE OVERHEAD",
-  "exact_next_action": "Obtain a readable live automation dependency check path before executing approved disables; certify governed Publishing sources before any projection implementation."
+  "exact_next_action": "No active Sintra recovery action. Maintain limited-lab posture and reopen only when a certified trigger occurs."
 }

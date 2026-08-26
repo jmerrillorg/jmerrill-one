@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "SINTRA RECOVERY STABILIZED - TEMPORARY LIMITED-LAB RETENTION APPROVED; SOURCE/AUTOMATION HOLDS PARKED",
+  "workspace_topology": {
+    "J Merrill One": "active inspected workspace",
+    "J Merrill Publishing": "confirmed sibling workspace / Brain not inspected",
+    "J Merrill Financial": "confirmed sibling workspace / Brain not inspected",
+    "J Merrill Foundation": "confirmed sibling workspace / Brain not inspected",
+    "J Merrill Productions": "workspace not confirmed"
+  },
+  "brain_record_categories": {
+    "prior_keep_candidates": "3 HOLD",
+    "quarantine_candidates": "17 retain in place / do not trust as One authority",
+    "rehome_reference_candidates": "8 design only / no implementation",
+    "unresolved": "9 retain",
+    "unseen": "52 retain / no mutation",
+    "delete_candidates": 0
+  },
+  "automation_states": {
+    "Inbox Manager": "OFF - VERIFIED",
+    "Social Media Manager": "HOLD - NO READABLE DEPENDENCY EVIDENCE",
+    "Daily Summarizer": "HOLD - NO READABLE DEPENDENCY EVIDENCE",
+    "Facebook Commenter": "NO PUBLIC AUTHORITY / NON-ACTING"
+  },
+  "connector_states": {
+    "Facebook": "CONNECTED / NO MUTATION",
+    "Instagram": "CONNECTED / NO MUTATION",
+    "Google Analytics": "CONNECTED / NO MUTATION",
+    "LinkedIn Organization": "CONNECTED / NO MUTATION",
+    "QuickBooks": "NOT CONNECTED"
+  },
+  "lab_score": "2.0/3.0",
+  "contamination_rate": "MODERATE",
+  "authority_awareness_status": "PARTIAL",
+  "financial_validation": "CANONICAL CORRECTION PRESERVED; do not flatten Financial into generic financial planning",
+  "structured_export_limitation": "STRUCTURED EXPORT NOT AVAILABLE / NOT EXPOSED IN CURRENT TENANT",
+  "quarantine_limitation": "NO SUPPORTED REVERSIBLE ISOLATION METHOD FOUND",
+  "publishing_source_certification": {
+    "source_certified": 0,
+    "partial": 0,
+    "held": 6
+  },
+  "founder_approvals": {
+    "automation": "HOLD - WAIT FOR READABLE DEPENDENCY EVIDENCE",
+    "publishing_projection": "HOLD - WAIT FOR GOVERNED SOURCE AUTHORITY",
+    "retention": "APPROVED - TEMPORARY LIMITED-LAB RETENTION"
+  },
+  "reopen_triggers": "147_sintra_recovery_reopen_triggers.json",
+  "exact_next_action": "No active Sintra recovery action. Maintain limited-lab posture and reopen only when a certified trigger occurs."
+}

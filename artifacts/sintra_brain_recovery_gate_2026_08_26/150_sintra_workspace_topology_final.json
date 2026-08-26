@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "WORKSPACE TOPOLOGY FINAL",
+  "workspaces": [
+    {"name":"J Merrill One","state":"active inspected workspace"},
+    {"name":"J Merrill Publishing","state":"confirmed sibling workspace / Brain not inspected"},
+    {"name":"J Merrill Financial","state":"confirmed sibling workspace / Brain not inspected"},
+    {"name":"J Merrill Foundation","state":"confirmed sibling workspace / Brain not inspected"},
+    {"name":"J Merrill Productions","state":"workspace not confirmed"}
+  ],
+  "new_workspace_creation_authorized": false
+}

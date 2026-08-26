@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "final_classification": "SINTRA RECOVERY STABILIZED - TEMPORARY LIMITED-LAB RETENTION APPROVED; SOURCE/AUTOMATION HOLDS PARKED",
+  "founder_approvals": "142_sintra_founder_final_approval.json",
+  "workspace_topology": "150_sintra_workspace_topology_final.json",
+  "brain_state": "143_sintra_one_brain_final_hold.json",
+  "automation_state": "144_sintra_automation_final_governance.json",
+  "connector_state": "145_sintra_connector_final_governance.json",
+  "structured_export_status": "STRUCTURED EXPORT NOT AVAILABLE / NOT EXPOSED IN CURRENT TENANT",
+  "quarantine_capability": "NO SUPPORTED REVERSIBLE ISOLATION METHOD FOUND",
+  "publishing_projection_status": "146_sintra_publishing_projection_final_hold.json",
+  "lab_result": {
+    "score": "2.0/3.0",
+    "contamination": "MODERATE",
+    "authority_awareness": "PARTIAL"
+  },
+  "financial_result": "Financial scope correction preserved for limited-lab use.",
+  "adoption_retention_state": "APPROVED - TEMPORARY LIMITED-LAB RETENTION",
+  "permitted_role": [
+    "internal ideation",
+    "read-only analysis",
+    "internal drafting",
+    "non-authoritative summaries",
+    "shadow comparison",
+    "bounded lab evaluation"
+  ],
+  "prohibited_role": [
+    "canonical authority",
+    "system of record",
+    "autonomous email",
+    "inbox management",
+    "public commenting",
+    "social publishing",
+    "customer/client outreach",
+    "M365 writes",
+    "Dataverse writes",
+    "Azure writes",
+    "cross-brand operational authority"
+  ],
+  "mutations_performed_during_entire_recovery": {
+    "Inbox Manager disabled": 1,
+    "brain_mutations": 0,
+    "connector_mutations": 0,
+    "social_posts": 0,
+    "comments": 0,
+    "emails": 0
+  },
+  "remaining_holds": [
+    "Social Media Manager dependency evidence",
+    "Daily Summarizer dependency evidence",
+    "Publishing governed source authority for R-001/R-002/R-005/R-006/R-007/R-008",
+    "Brain quarantine execution until reversible isolation exists"
+  ],
+  "reopen_triggers": "147_sintra_recovery_reopen_triggers.json",
+  "exact_next_action": "No active Sintra recovery action. Maintain limited-lab posture and reopen only when a certified trigger occurs."
+}

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "CONNECTOR FINAL GOVERNANCE",
+  "states": {
+    "Facebook": "CONNECTED / NO MUTATION",
+    "Instagram": "CONNECTED / NO MUTATION",
+    "Google Analytics": "CONNECTED / NO MUTATION",
+    "LinkedIn Organization": "CONNECTED / NO MUTATION",
+    "QuickBooks": "NOT CONNECTED"
+  },
+  "instruction": "Do not reconnect, disconnect, or rescope in this closeout.",
+  "connector_mutation_count_this_closeout": 0
+}

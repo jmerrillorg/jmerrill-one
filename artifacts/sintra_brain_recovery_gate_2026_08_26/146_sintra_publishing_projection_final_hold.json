@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "PUBLISHING PROJECTION FINAL HOLD",
+  "records": [
+    {"id":"R-001","state":"SOURCE AUTHORITY NOT CERTIFIED - NO PROJECTION IMPLEMENTATION"},
+    {"id":"R-002","state":"SOURCE AUTHORITY NOT CERTIFIED - NO PROJECTION IMPLEMENTATION"},
+    {"id":"R-005","state":"SOURCE AUTHORITY NOT CERTIFIED - NO PROJECTION IMPLEMENTATION"},
+    {"id":"R-006","state":"SOURCE AUTHORITY NOT CERTIFIED - NO PROJECTION IMPLEMENTATION"},
+    {"id":"R-007","state":"SOURCE AUTHORITY NOT CERTIFIED - NO PROJECTION IMPLEMENTATION"},
+    {"id":"R-008","state":"SOURCE AUTHORITY NOT CERTIFIED - NO PROJECTION IMPLEMENTATION"}
+  ],
+  "preserved_artifacts": [
+    "117_sintra_publishing_projection_design.json",
+    "119_sintra_publishing_projection_pattern.md",
+    "120_sintra_one_residual_reference_design.json",
+    "133_sintra_publishing_projection_minimization.json",
+    "134_sintra_projection_refresh_governance.md"
+  ],
+  "publishing_workspace_inspected_or_mutated": false
+}

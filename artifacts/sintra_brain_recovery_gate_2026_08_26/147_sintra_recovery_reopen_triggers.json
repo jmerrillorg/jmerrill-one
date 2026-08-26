@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-08-26T10:25:00-04:00",
+  "classification": "SINTRA RECOVERY REOPEN TRIGGERS",
+  "routine_curiosity_is_trigger": false,
+  "triggers": [
+    {
+      "id": "A",
+      "name": "Automation evidence",
+      "condition": "Sintra exposes readable dependency/activity evidence for Social Media Manager or Daily Summarizer."
+    },
+    {
+      "id": "B",
+      "name": "Publishing source authority",
+      "condition": "A current governed Publishing source can be certified for one or more held R-records."
+    },
+    {
+      "id": "C",
+      "name": "Reversible Brain isolation",
+      "condition": "Sintra adds a documented reversible archive/isolation/quarantine primitive."
+    },
+    {
+      "id": "D",
+      "name": "Material product change",
+      "condition": "Sintra materially changes Brain, workspace, automation, or connector capabilities in a way relevant to JM1 governance."
+    },
+    {
+      "id": "E",
+      "name": "Founder directive",
+      "condition": "Jackie explicitly reopens the Sintra workstream."
+    }
+  ]
+}
