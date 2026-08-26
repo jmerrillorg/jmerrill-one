@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B-R - NETWORK-STABLE HELPER VALUE RETEST",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:37:22-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "retest_base_commit": "7a093e1",
+  "buddy_selected": true,
+  "why_sintra_delegated": "The quarterly author webinar evaluation was classified as a strategic business analysis in Buddy's domain.",
+  "execution_start_observed": true,
+  "completed": true,
+  "completion_path": "Remote/stable-created chat synced into the GP workspace and was readable locally.",
+  "local_session_behavior": "Local Chrome session produced a partial/stalled trace; user reported the same instruction completed in a remote system, and the completed chat synced into the sidebar.",
+  "network_or_session_error_visible": false,
+  "external_actions": 0,
+  "evidence_file": "/tmp/sintra_gp_2br_synced_opportunity_chat.txt"
+}

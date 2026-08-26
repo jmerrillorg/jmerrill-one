@@ -1,0 +1,21 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B-R - NETWORK-STABLE HELPER VALUE RETEST",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:37:22-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "retest_base_commit": "7a093e1",
+  "result": "PASS",
+  "brain_records": 1,
+  "brain_record": "JM1-ENTERPRISE-FOUNDATION-v1.0 / 06_enterprise_foundation_pack.md",
+  "connectors": 0,
+  "automations": 0,
+  "external_actions": 0,
+  "branch_workspaces": 0,
+  "evidence_files": [
+    "/tmp/sintra_gp_2br_brain_wait.txt",
+    "/tmp/sintra_gp_2br_integrations_wait.txt",
+    "/tmp/sintra_gp_2br_automations_wait.txt"
+  ],
+  "notes": "Brain showed Name · 1 and the foundation pack; integrations showed Connect buttons; automations showed all four switches off."
+}

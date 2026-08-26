@@ -1,0 +1,27 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B-R - NETWORK-STABLE HELPER VALUE RETEST",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:37:22-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "retest_base_commit": "7a093e1",
+  "candidate_role": "GOVERNED MULTI-AGENT EXECUTIVE THINKING ROOM",
+  "role_supported": true,
+  "constraints": [
+    "one clean workspace",
+    "one governed Brain record",
+    "native internal helper orchestration",
+    "zero connectors",
+    "zero automations",
+    "zero external actions",
+    "helpers advise only",
+    "Jackie retains final authority",
+    "brand ownership reviewed against certified JM1 canon"
+  ],
+  "not_supported_roles": [
+    "external execution agent",
+    "automation operator",
+    "system of record",
+    "canonical policy owner"
+  ]
+}
