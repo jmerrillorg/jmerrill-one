@@ -55,6 +55,49 @@
       "publication",
       "distribution",
       "royalty statement"
+    ],
+    "financial": [
+      "appointment",
+      "beneficiary",
+      "document preparation",
+      "estate plan",
+      "insurance",
+      "legacy planning",
+      "planning session",
+      "reschedule",
+      "trust",
+      "will"
+    ],
+    "foundation": [
+      "donation",
+      "program",
+      "application",
+      "volunteer",
+      "event",
+      "grant",
+      "Story Hour",
+      "Reading Station"
+    ],
+    "productions": [
+      "production",
+      "talent",
+      "shoot",
+      "deliverable",
+      "release",
+      "call time",
+      "asset",
+      "edit"
+    ],
+    "aic": [
+      "worship",
+      "ministry",
+      "service",
+      "fellowship",
+      "prayer",
+      "volunteer",
+      "event",
+      "Bible study",
+      "giving"
     ]
   },
   "brandProfiles": {
@@ -66,10 +109,38 @@
       "cc": "publishing@jmerrill.one",
       "format": "HTML"
     },
-    "financial": { "status": "NOT_COMMISSIONED" },
-    "foundation": { "status": "NOT_COMMISSIONED" },
-    "productions": { "status": "NOT_COMMISSIONED" },
-    "aic": { "status": "NOT_COMMISSIONED" }
+    "financial": {
+      "status": "CONTROLLED_GUARD_READY",
+      "from": "financial@jmerrill.one",
+      "replyTo": "financial@jmerrill.one",
+      "format": "HTML_OR_CONFIGURED_CHANNEL",
+      "runtimeClassification": "COMMUNICATION_GATE_BOUND_IN_BRANCH",
+      "liveOutboundCommissioning": "NOT_PROVEN"
+    },
+    "foundation": {
+      "status": "PRE_PUBLISH_GUARD_READY",
+      "from": "foundation@jmerrill.one",
+      "replyTo": "foundation@jmerrill.one",
+      "format": "HTML_OR_PUBLIC_SURFACE",
+      "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
+      "liveOutboundCommissioning": "SEPARATE_WAVE_REQUIRED"
+    },
+    "productions": {
+      "status": "PRE_PUBLISH_GUARD_READY",
+      "from": "productions@jmerrill.one",
+      "replyTo": "productions@jmerrill.one",
+      "format": "HTML_OR_PUBLIC_SURFACE",
+      "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
+      "liveOutboundCommissioning": "SEPARATE_WAVE_REQUIRED"
+    },
+    "aic": {
+      "status": "PRE_PUBLISH_GUARD_READY",
+      "from": "info@agapeic.org",
+      "replyTo": "info@agapeic.org",
+      "format": "HTML_OR_PUBLIC_SURFACE",
+      "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
+      "liveOutboundCommissioning": "SEPARATE_WAVE_REQUIRED"
+    }
   },
   "artifactClassifications": [
     "INTERNAL_ONLY",
