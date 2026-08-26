@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "required": "PASS",
+  "result": "PASS - NO CONNECTOR MUTATION EXECUTED",
+  "preserved_last_verified_state": {
+    "Facebook": "connected",
+    "Instagram": "connected",
+    "Google Analytics": "connected",
+    "LinkedIn Organization": "connected",
+    "QuickBooks": "NOT CONNECTED"
+  },
+  "fresh_live_verification": false,
+  "connector_mutation_count": 0
+}

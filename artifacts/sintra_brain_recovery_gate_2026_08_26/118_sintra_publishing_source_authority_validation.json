@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "classification": "PUBLISHING SOURCE VALIDATION REQUIRED",
+  "method": "Focused repository search for the six approved record titles and related phrases; sibling Publishing Brain not inspected.",
+  "records": [
+    {"id":"SINTRA-R-001","record":"Manuscript Tone and Style","possible_source_types":["Publishing repo canon","SharePoint","approved operational artifact","other governed Publishing system"],"validation":"SOURCE NOT PROVEN - HOLD","reason":"Repository search found recovery-artifact references only, not governed Publishing canon."},
+    {"id":"SINTRA-R-002","record":"Style Sheet Governance","possible_source_types":["Publishing repo canon","SharePoint","approved operational artifact","other governed Publishing system"],"validation":"SOURCE NOT PROVEN - HOLD","reason":"Repository search found recovery-artifact references only, not governed Publishing canon."},
+    {"id":"SINTRA-R-005","record":"Editorial Philosophy","possible_source_types":["Publishing repo canon","approved operational artifact","current website/public canon","other governed Publishing system"],"validation":"SOURCE NOT PROVEN - HOLD","reason":"Repository search found recovery-artifact references only, not governed Publishing canon."},
+    {"id":"SINTRA-R-006","record":"Editorial Preferences","possible_source_types":["Publishing repo canon","SharePoint","approved operational artifact","other governed Publishing system"],"validation":"SOURCE NOT PROVEN - HOLD","reason":"Repository search found recovery-artifact references only, not governed Publishing canon."},
+    {"id":"SINTRA-R-007","record":"Developmental Review Process","possible_source_types":["Publishing repo canon","Dataverse","SharePoint","approved operational artifact","other governed Publishing system"],"validation":"SOURCE NOT PROVEN - HOLD","reason":"Repository search found recovery-artifact references only, not governed Publishing canon."},
+    {"id":"SINTRA-R-008","record":"Book Content Focus","possible_source_types":["Publishing repo canon","SharePoint","approved project artifact","current website/public canon","other governed Publishing system"],"validation":"SOURCE NOT PROVEN - HOLD","reason":"Repository search found recovery-artifact references only, not governed Publishing canon."}
+  ],
+  "source_certified_count": 0,
+  "source_not_proven_hold_count": 6,
+  "instruction": "Do not treat the existing One Brain record itself as the source of truth.",
+  "implementation_allowed": false
+}

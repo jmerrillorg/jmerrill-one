@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "workspace": "J Merrill One",
+  "classification": "J MERRILL ONE BRAIN - READ-ONLY LEGACY STATE PENDING SAFE ISOLATION METHOD",
+  "meaning": "The Brain is not abandoned. Structural cleanup is deferred until a reversible isolation mechanism and rollback evidence are proven.",
+  "hard_boundaries": [
+    "no Brain edit",
+    "no Brain move",
+    "no Brain rehome",
+    "no Brain quarantine",
+    "no Brain delete",
+    "no inspection of the 52 unseen records",
+    "no sibling Brain inspection"
+  ],
+  "brain_mutation_count": 0,
+  "delete_candidates": 0
+}

@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "automation": "Inbox Manager",
+  "required": "PASS",
+  "result": "PASS - PRIOR VERIFIED OFF STATE PRESERVED",
+  "fresh_live_verification": false,
+  "reason": "Computer Use output was unavailable for fresh live verification; no re-enable action was performed, and prior artifact 70 verified the off state after reload.",
+  "do_not_reenable": true,
+  "mutation_count": 0
+}

@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "classification": "NO SUPPORTED REVERSIBLE ISOLATION METHOD FOUND",
+  "bounded_live_check_attempted": true,
+  "bounded_live_check_result": "Computer Use output unavailable; no fresh UI primitive could be confirmed. Prior bounded evidence also did not expose archive, disable, hide, folder, tag/exclude, move, duplicate/copy-without-delete, deactivate, or restore/history controls.",
+  "evaluated_primitives": [
+    "archive",
+    "disable knowledge",
+    "hide from Brain",
+    "folder isolation",
+    "tag/exclude",
+    "move workspace",
+    "duplicate/copy without delete",
+    "deactivate record",
+    "restore/history"
+  ],
+  "deletion_substitute_allowed": false,
+  "recommendation": "Stop pursuing quarantine execution under current Sintra capabilities until a supported reversible feature is exposed.",
+  "brain_mutation_count": 0
+}

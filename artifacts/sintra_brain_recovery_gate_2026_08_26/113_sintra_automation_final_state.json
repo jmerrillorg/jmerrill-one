@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "result": "HOLD - FINAL LIVE STATE NOT VERIFIED",
+  "target_state": {
+    "Inbox Manager": "OFF",
+    "Social Media Manager": "OFF",
+    "Daily Summarizer": "OFF",
+    "Facebook Commenter": "NO PUBLIC AUTHORITY"
+  },
+  "actual_state_this_pass": {
+    "Inbox Manager": "prior verified OFF; not freshly verified",
+    "Social Media Manager": "disable not executed because dependency check unclear",
+    "Daily Summarizer": "disable not executed because dependency check unclear",
+    "Facebook Commenter": "no public authority policy preserved; not freshly verified"
+  },
+  "connectors_changed": false,
+  "public_posts": 0,
+  "comments": 0,
+  "emails": 0,
+  "external_messages": 0,
+  "automation_mutation_count": 0
+}

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "automation": "Daily Summarizer",
+  "required_for_execution": "SAFE TO DISABLE",
+  "dependency_check": "109_sintra_daily_summarizer_dependency_check.json",
+  "result": "NOT EXECUTED - DEPENDENCY CHECK UNCLEAR",
+  "pass": false,
+  "before_state_captured": false,
+  "disabled": false,
+  "reload_verified_off": false,
+  "other_automation_changes": 0,
+  "reason": "The final dependency check did not return readable live state; approved disable cannot be executed safely.",
+  "mutation_count": 0
+}

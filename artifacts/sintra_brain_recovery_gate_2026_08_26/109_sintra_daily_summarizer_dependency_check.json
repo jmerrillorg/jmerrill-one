@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "automation": "Daily Summarizer",
+  "classification": "UNCLEAR - HOLD",
+  "live_inspection_attempted": true,
+  "live_inspection_result": "Computer Use node_repl executed but returned no readable Chrome accessibility text or app-state output in this environment.",
+  "enabled_state": "not freshly verified in this pass",
+  "data_sources": "not freshly verified in this pass",
+  "schedule_cadence": "not freshly verified in this pass",
+  "distribution_behavior": "not freshly verified in this pass",
+  "recipients": "not freshly verified in this pass",
+  "other_automation_dependency": "not freshly verified in this pass",
+  "internal_summary_only": "not freshly verified in this pass",
+  "rollback_reenable_path": "not freshly verified in this pass",
+  "decision": "Do not disable unless SAFE TO DISABLE is proven.",
+  "mutation_count": 0
+}

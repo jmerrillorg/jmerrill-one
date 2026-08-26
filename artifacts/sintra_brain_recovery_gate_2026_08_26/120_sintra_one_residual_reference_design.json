@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "workspace": "J Merrill One",
+  "records": [
+    {"id":"SINTRA-R-001","record":"Manuscript Tone and Style","one_residual_reference":"NO ONE COPY NEEDED","reason":"Detailed manuscript tone is Publishing operational guidance."},
+    {"id":"SINTRA-R-002","record":"Style Sheet Governance","one_residual_reference":"NO ONE COPY NEEDED","reason":"Style-sheet governance is Publishing operational authority."},
+    {"id":"SINTRA-R-005","record":"Editorial Philosophy","one_residual_reference":"ROUTING / BRAND IDENTITY ONLY","reason":"One may know Publishing has an editorial philosophy but should not govern it."},
+    {"id":"SINTRA-R-006","record":"Editorial Preferences","one_residual_reference":"NO ONE COPY NEEDED","reason":"Operational editorial preferences are branch-specific."},
+    {"id":"SINTRA-R-007","record":"Developmental Review Process","one_residual_reference":"NO ONE COPY NEEDED","reason":"Manuscript workflow is Publishing operations."},
+    {"id":"SINTRA-R-008","record":"Book Content Focus","one_residual_reference":"ROUTING / BRAND IDENTITY ONLY","reason":"One may route to Publishing/book project authority but should not hold detailed project content."}
+  ],
+  "detailed_editorial_or_author_instructions_in_one": false,
+  "brain_mutation_count": 0
+}

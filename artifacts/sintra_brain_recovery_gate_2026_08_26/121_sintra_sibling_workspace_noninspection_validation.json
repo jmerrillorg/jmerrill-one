@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "required": "PASS",
+  "result": "PASS",
+  "publishing_workspace_confirmed": true,
+  "publishing_brain_opened": false,
+  "publishing_brain_inventoried": false,
+  "publishing_brain_compared": false,
+  "publishing_brain_mutated": false,
+  "financial_brain_inspected": false,
+  "foundation_brain_inspected": false,
+  "mutation_count": 0
+}

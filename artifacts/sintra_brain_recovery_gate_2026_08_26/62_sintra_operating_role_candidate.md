@@ -4,23 +4,22 @@ If retained, Sintra's approved enterprise role should be narrow.
 
 Allowed candidate role:
 
-- Draft support
-- Read-only analysis
 - Ideation
 - Internal drafting
+- Read-only analysis
+- Non-authoritative summaries
 - Supplemental summaries
 - Shadow comparisons against governed Microsoft/JM1 outputs
 
 Not allowed:
 
+- External posting
+- External commenting
+- Autonomous email
+- Operational inbox management
 - Canonical authority
-- Autonomous public actor
-- Inbox operator
-- Public commenter
-- Independent system of record
-- Canonical data store
-- Public posting or commenting
-- Email sending
+- System of record
+- Uncontrolled cross-brand decision-making
 - Replacement for Microsoft, Dataverse, SharePoint, repos, or governed website canon
 
 Sintra should operate as a projection/helper layer. JM1 authoritative systems remain authoritative.

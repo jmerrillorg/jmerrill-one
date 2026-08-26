@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "classification": "SINTRA RECOVERY HOLD - AUTOMATION DEPENDENCY CHECK UNCLEAR; PUBLISHING SOURCE VALIDATION REQUIRED",
+  "inbox_manager_state": "PASS - PRIOR VERIFIED OFF STATE PRESERVED",
+  "social_media_manager_dependency_result": "UNCLEAR - HOLD",
+  "social_media_manager_disable_result": "NOT EXECUTED - DEPENDENCY CHECK UNCLEAR",
+  "daily_summarizer_dependency_result": "UNCLEAR - HOLD",
+  "daily_summarizer_disable_result": "NOT EXECUTED - DEPENDENCY CHECK UNCLEAR",
+  "facebook_commenter_policy": "NO PUBLIC AUTHORITY - KEEP DISABLED OR NON-ACTING",
+  "connector_nonmutation": "PASS - NO CONNECTOR MUTATION EXECUTED",
+  "quarantine_isolation_final_result": "NO SUPPORTED REVERSIBLE ISOLATION METHOD FOUND",
+  "quarantine_candidate_state": "17 candidates remain QUARANTINE RECOMMENDED / EXECUTION DEFERRED; retain in place and do not trust as One-level authority",
+  "publishing_projection_designs": {
+    "approved_design_records": [
+      "SINTRA-R-001 Manuscript Tone and Style",
+      "SINTRA-R-002 Style Sheet Governance",
+      "SINTRA-R-005 Editorial Philosophy",
+      "SINTRA-R-006 Editorial Preferences",
+      "SINTRA-R-007 Developmental Review Process",
+      "SINTRA-R-008 Book Content Focus"
+    ],
+    "design_state": "ready",
+    "implementation_state": "blocked by source certification"
+  },
+  "publishing_source_certification": {
+    "source_certified_count": 0,
+    "source_not_proven_hold_count": 6
+  },
+  "one_residual_reference_design": "120_sintra_one_residual_reference_design.json",
+  "r003_r004_holds": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+  "k_holds": "K-001 through K-003 remain HOLD - SOURCE/BODY VALIDATION REQUIRED",
+  "unresolved_9": "RETAIN pending source/body validation",
+  "unseen_52": "UNINSPECTED / RETAIN / NO MUTATION",
+  "brain_mutations": 0,
+  "automation_mutations": 0,
+  "connector_mutations": 0,
+  "adoption_assessment": "YES - LIMITED VALUE; LIMITED LAB ADOPTION - HIGH GOVERNANCE OVERHEAD",
+  "exact_next_action": "Obtain a readable live automation dependency check path before executing approved disables; certify governed Publishing sources before any projection implementation."
+}

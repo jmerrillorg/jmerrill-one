@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "automation": "Social Media Manager",
+  "classification": "UNCLEAR - HOLD",
+  "live_inspection_attempted": true,
+  "live_inspection_result": "Computer Use node_repl executed but returned no readable Chrome accessibility text or app-state output in this environment.",
+  "enabled_state": "not freshly verified in this pass",
+  "configured_channels": "not freshly verified in this pass",
+  "can_schedule_or_publish": "not freshly verified in this pass",
+  "recent_activity_visible": "not freshly verified in this pass",
+  "social_recovery_dependency": "not freshly verified in this pass",
+  "disabling_reversible": "not freshly verified in this pass",
+  "other_automation_dependency": "not freshly verified in this pass",
+  "decision": "Do not disable unless SAFE TO DISABLE is proven.",
+  "mutation_count": 0
+}

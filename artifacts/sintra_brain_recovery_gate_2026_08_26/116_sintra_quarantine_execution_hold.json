@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "classification": "QUARANTINE EXECUTION DEFERRED - PLATFORM DOES NOT EXPOSE SAFE REVERSIBLE ISOLATION",
+  "candidate_count": 17,
+  "candidate_state": "RETAIN IN PLACE / DO NOT TRUST AS ONE-LEVEL AUTHORITY",
+  "instruction": "Do not repeatedly reopen quarantine execution unless Sintra exposes a new reversible isolation feature or structured rollback/export capability.",
+  "risk_signal_preserved": "QUARANTINE RECOMMENDED / EXECUTION DEFERRED",
+  "brain_mutation_count": 0
+}

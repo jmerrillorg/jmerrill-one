@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-08-26T09:45:00-04:00",
+  "automation": "Facebook Commenter",
+  "classification": "NO PUBLIC AUTHORITY - KEEP DISABLED OR NON-ACTING",
+  "public_commenting_enabled_or_tested": false,
+  "fresh_live_inspection": false,
+  "reason": "No public or simulation-only mode was proven. No public commenting test was performed.",
+  "new_risk": "Fresh enabled/acting state could not be inspected because Computer Use output was unavailable; treat as non-acting/hold until safely inspectable.",
+  "mutation_count": 0
+}

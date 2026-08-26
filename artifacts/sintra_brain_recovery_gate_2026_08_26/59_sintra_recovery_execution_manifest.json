@@ -29,5 +29,12 @@
     "Azure writes"
   ],
   "mutations_executed_this_pass": 0,
-  "classification": "SINTRA RECOVERY HOLD - REVERSIBLE QUARANTINE METHOD NOT PROVEN"
+  "classification": "SINTRA RECOVERY HOLD - AUTOMATION DEPENDENCY CHECK UNCLEAR; PUBLISHING SOURCE VALIDATION REQUIRED",
+  "latest_execution_closeout": "124_sintra_recovery_execution_closeout.json",
+  "approved_automation_disables": {
+    "Social Media Manager": "approved but not executed; dependency check unclear",
+    "Daily Summarizer": "approved but not executed; dependency check unclear"
+  },
+  "publishing_projection_design": "117_sintra_publishing_projection_design.json",
+  "publishing_source_authority_validation": "118_sintra_publishing_source_authority_validation.json"
 }
