@@ -2,6 +2,8 @@
 
 One approved mutation was executed in this pass: Inbox Manager was disabled after the final live dependency check returned SAFE TO DISABLE.
 
+Workspace correction: all Brain review and lab evidence in this packet refers to the inspected J Merrill One workspace. J Merrill Publishing, J Merrill Financial, and J Merrill Foundation are confirmed sibling workspaces, but their Brain contents were not inspected and no cross-workspace mutation is authorized.
+
 ## Decision 1: Inbox Manager
 
 Target: Inbox Manager automation.
@@ -18,6 +20,8 @@ Recommendation: completed. Keep disabled unless a governed mailbox use case is s
 
 Exact Founder response: no further response required for this executed item.
 
+Non-regression: Inbox Manager = OFF. Do not reopen this decision or re-enable it in this correction pass.
+
 ## Decision 2: Social Media Manager
 
 Target: Social Media Manager automation.
@@ -29,6 +33,8 @@ Proposed after state: lab-only if non-public simulation exists; otherwise disabl
 Risk: scheduling or publishing could bypass Social Recovery governance.
 
 Observed lab risk: Social/brand lane contamination remains moderate; do not let Social Media Manager publish or schedule outside Social Recovery governance.
+
+Workspace-aware risk: separate Publishing, Financial, and Foundation workspaces make brand-scope correctness more important. Public scheduling or publishing remains high-risk/lab-only.
 
 Rollback: re-enable after lab controls and approval flow are proven.
 
@@ -54,15 +60,17 @@ Exact Founder response: `APPROVE FACEBOOK COMMENTER HOLD / NO PUBLIC COMMENTS`.
 
 ## Decision 4: Focused Brain Quarantine/Rehome
 
-Target: exact 17 quarantine records and exact 8 rehome candidates only.
+Target: exact 17 quarantine records and exact 8 rehome/reference candidates only, all currently evaluated as J Merrill One Brain influence.
 
 Before state: active in One Brain unless Sintra internally isolates them; safe primitive not proven.
 
-Proposed after state: reversible quarantine or source-backed reference/rehome after exact body inspection.
+Proposed after state: remove/isolate from J Merrill One Brain influence through reversible quarantine or source-backed reference/projection after exact body inspection.
 
 Risk: active contamination if left in One Brain; data loss if deletion is improvised.
 
 Observed lab risk: Publishing records were treated as a governing rulebook inside One Brain; this supports quarantine/rehome design, but not deletion or opaque batch mutation.
+
+Potential destinations/references: J Merrill Publishing for Publishing-specific material, J Merrill Financial for Financial-specific material, J Merrill Foundation for Foundation-specific material, and authoritative external source/reference for governed canon. Do not assume physical rehome is required; authoritative source plus projection/reference is preferred.
 
 Rollback: only use reversible methods with export/checksum evidence.
 
@@ -71,3 +79,5 @@ Recommendation: approve design, not execution, until Sintra quarantine/rehome pr
 Exact Founder response: `APPROVE QUARANTINE DESIGN ONLY — NO DELETE`.
 
 The 52 unseen records are excluded from this mutation packet.
+
+No deletion authority is granted. Mutations authorized by this boundary correction pass: 0. Inbox Manager's prior disable remains the only executed recovery mutation.

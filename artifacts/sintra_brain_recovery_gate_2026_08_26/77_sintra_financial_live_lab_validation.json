@@ -1,6 +1,23 @@
 {
-  "generated_at": "2026-08-26T07:50:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "classification": "PARTIAL",
+  "topology_correction": {
+    "j_merrill_financial_workspace": "CONFIRMED TO EXIST - NOT YET INSPECTED UNDER THIS RECOVERY PACKAGE",
+    "proper_remediation": "Scope-correct enterprise reference in J Merrill One plus detailed Financial operational knowledge in governed Financial authority and, where useful, Financial workspace projection/reference.",
+    "improper_remediation": "Stuffing full Financial operational knowledge into J Merrill One."
+  },
+  "one_needs_to_know": [
+    "J Merrill Financial provides estate planning support/services within its approved non-attorney scope.",
+    "J Merrill Financial provides advanced planning.",
+    "J Merrill Financial provides funeral/pre-need planning.",
+    "The relevant insurance-product lane applies where applicable."
+  ],
+  "financial_workspace_may_need": [
+    "Detailed Financial operational knowledge",
+    "Client/service workflow",
+    "Compliance-reviewed product and process references",
+    "Governed projection/reference from authoritative Financial systems"
+  ],
   "required_concepts": {
     "estate_planning": "mentioned in prompt/heading but not substantively described",
     "advanced_planning": "mentioned in prompt/heading but not substantively described",
@@ -13,5 +30,6 @@
     "law_practice_implication": false,
     "funeral_planning_omitted_entirely": false
   },
-  "concern": "Estate and advanced planning were not fully represented in the live answer."
+  "concern": "Estate and advanced planning were not fully represented in the live answer.",
+  "mutation_count": 0
 }

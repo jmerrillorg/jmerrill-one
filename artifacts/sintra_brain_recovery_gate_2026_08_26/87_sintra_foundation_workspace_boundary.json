@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-26T08:26:00-04:00",
+  "workspace": "J Merrill Foundation",
+  "classification": "CONFIRMED TO EXIST - NOT YET INSPECTED UNDER THIS RECOVERY PACKAGE",
+  "effect_on_j_merrill_one": {
+    "one_may_understand": [
+      "Foundation mission",
+      "enterprise relationship",
+      "high-level programs",
+      "routing and governance boundaries"
+    ],
+    "one_should_not_become": [
+      "Foundation participant operations authority",
+      "donor or beneficiary record authority",
+      "program execution authority",
+      "full duplicate of Foundation workspace or governed Foundation systems"
+    ]
+  },
+  "preferred_pattern": "Detailed Foundation participant, donor, program, and beneficiary operations remain scoped to Foundation authority and may be projected or referenced into the Foundation Sintra workspace when separately approved.",
+  "mutation_count": 0
+}

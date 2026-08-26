@@ -4,6 +4,8 @@ Inspection timestamp: 2026-08-26T04:45:27-04:00
 
 No recovery action has been executed. This diff is for Jackie approval only.
 
+Topology correction, 2026-08-26T08:26:00-04:00: Founder-provided live workspace switcher evidence confirms J Merrill One was the active inspected workspace. J Merrill Publishing, J Merrill Financial, and J Merrill Foundation are confirmed sibling workspaces, but their Brain contents were not inspected under this package. Earlier "workspace not directly verified" statements in this file are superseded for workspace existence only.
+
 ## J Merrill One
 
 CURRENT LIVE STATE
@@ -20,13 +22,13 @@ The root workspace currently contains too much division-specific and personal/mi
 
 PROPOSED ACTION
 
-QUARANTINE non-enterprise records; MOVE Publishing-specific durable records to J Merrill Publishing after approval; REVIEW enterprise candidate records against One canon; KEEP only current public enterprise references.
+QUARANTINE non-enterprise records from J Merrill One influence; PROJECT or REFERENCE Publishing-specific durable records through J Merrill Publishing after approval and source validation; REVIEW enterprise candidate records against One canon; KEEP only current public enterprise references.
 
 ## J Merrill Publishing
 
 CURRENT LIVE STATE
 
-Workspace existence and Brain state not directly verified in this pass. Publishing content is visibly present in the J Merrill One workspace.
+Workspace existence is now confirmed by Founder-provided live switcher evidence. Brain state was not inspected. Publishing content is visibly present in the inspected J Merrill One workspace.
 
 APPROVED TARGET PROJECTION
 
@@ -34,17 +36,17 @@ Publishing should contain author acquisition, publishing services, public prices
 
 DIFFERENCE
 
-Publishing durable knowledge appears misplaced in J Merrill One, but target workspace state is UNKNOWN.
+Publishing durable operational knowledge appears misplaced in J Merrill One. Target Publishing Brain contents remain UNKNOWN.
 
 PROPOSED ACTION
 
-REQUIRES AUTHORITY DECISION: verify J Merrill Publishing workspace, then move/admit Publishing-safe records only.
+REQUIRES AUTHORITY DECISION: validate source authority, then project/reference Publishing-safe records into J Merrill Publishing only if reversible and approved.
 
 ## J Merrill Financial
 
 CURRENT LIVE STATE
 
-Workspace existence and Brain state not directly verified in this pass.
+Workspace existence is now confirmed by Founder-provided live switcher evidence. Brain state was not inspected.
 
 APPROVED TARGET PROJECTION
 
@@ -56,13 +58,13 @@ No live Financial Brain evidence yet. QuickBooks is not connected in J Merrill O
 
 PROPOSED ACTION
 
-ADD only after workspace verification: clean Financial marketing projection that explicitly covers estate planning and advanced/funeral planning as insurance positioning, with compliance boundaries.
+ADD only after source validation and approval: clean Financial projection/reference that explicitly covers estate planning and advanced/funeral planning as insurance positioning, with compliance boundaries. Do not duplicate full Financial operations into One.
 
 ## J Merrill Foundation
 
 CURRENT LIVE STATE
 
-Workspace existence and Brain state not directly verified in this pass.
+Workspace existence is now confirmed by Founder-provided live switcher evidence. Brain state was not inspected.
 
 APPROVED TARGET PROJECTION
 
@@ -74,7 +76,7 @@ No live Foundation Brain evidence yet.
 
 PROPOSED ACTION
 
-ADD only after workspace verification; do not import donor/recipient/private records.
+ADD only after source validation and approval; do not import donor/recipient/private records into One.
 
 ## Integration Recovery
 

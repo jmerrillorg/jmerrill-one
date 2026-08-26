@@ -1,22 +1,38 @@
 {
-  "generated_at": "2026-08-26T05:03:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "workspace": "J Merrill One",
+  "workspace_topology_correction": {
+    "inspected_workspace": "J Merrill One",
+    "confirmed_sibling_workspaces": [
+      "J Merrill Publishing",
+      "J Merrill Financial",
+      "J Merrill Foundation"
+    ],
+    "corrected_evidence_effect": "Publishing/editorial operational knowledge was observed in the J Merrill One Brain while J Merrill One was active, despite a separate J Merrill Publishing workspace being confirmed.",
+    "classification_rule": "Branch-specific operational records in One are CONFIRMED CROSS-WORKSPACE SCOPE RISK unless individually justified as enterprise reference.",
+    "important_distinction": "A One-level record saying Publishing exists is not equivalent to a One-level editorial operating procedure."
+  },
   "appropriate_enterprise_knowledge": [
     "Quality Philosophy",
     "Business Focus",
     "Business website and brand links",
     "Overview of J Merrill One offerings",
-    "Our hybrid offerings at J Merrill One"
+    "Our hybrid offerings at J Merrill One",
+    "High-level reference that J Merrill Publishing exists",
+    "High-level reference that J Merrill Financial exists",
+    "High-level reference that J Merrill Foundation exists"
   ],
   "brand_specific_reference_only": [
     {
       "candidate": "Published Works",
       "brand": "J Merrill Publishing",
+      "corrected_classification": "ENTERPRISE REFERENCE POSSIBLE ONLY IF LIMITED TO APPROVED PUBLIC CATALOG/ROUTING",
       "risk": "One-level automation may treat publishing catalog or author content as enterprise-wide authority."
     },
     {
       "candidate": "Author Identity",
       "brand": "J Merrill Publishing / Jackie",
+      "corrected_classification": "ENTERPRISE REFERENCE POSSIBLE ONLY IF LIMITED TO APPROVED PUBLIC BIO/ROUTING",
       "risk": "Enterprise social content could over-index on author/publishing voice."
     }
   ],
@@ -24,46 +40,55 @@
     {
       "candidate": "Manuscript Tone and Style",
       "brand": "J Merrill Publishing",
+      "corrected_classification": "CONFIRMED CROSS-WORKSPACE SCOPE RISK",
       "operational_risk": "Root workspace helpers may apply manuscript/editorial tone to enterprise, Financial, Foundation, or social operations content."
     },
     {
       "candidate": "Style Sheet Governance",
       "brand": "J Merrill Publishing",
+      "corrected_classification": "CONFIRMED CROSS-WORKSPACE SCOPE RISK",
       "operational_risk": "Publishing style-sheet rules may silently override enterprise public content standards."
     },
     {
       "candidate": "Editorial Philosophy",
       "brand": "J Merrill Publishing",
+      "corrected_classification": "CONFIRMED CROSS-WORKSPACE SCOPE RISK",
       "operational_risk": "Editorial decision logic may be applied outside Publishing."
     },
     {
       "candidate": "Developmental Review Process",
       "brand": "J Merrill Publishing",
+      "corrected_classification": "CONFIRMED CROSS-WORKSPACE SCOPE RISK",
       "operational_risk": "Publishing workflow terms may contaminate unrelated social, Financial, or Foundation workflows."
     },
     {
       "candidate": "Music Ministry Experience",
       "brand": "AIC / personal",
+      "corrected_classification": "WRONG SCOPE OR STALE/DUPLICATIVE RISK IN ONE",
       "operational_risk": "Ministry biography may shape secular enterprise or regulated Financial messaging."
     },
     {
       "candidate": "Spiritual Authority and Calling",
       "brand": "AIC / personal",
+      "corrected_classification": "WRONG SCOPE OR STALE/DUPLICATIVE RISK IN ONE",
       "operational_risk": "Religious authority framing may appear in inappropriate enterprise or client-facing contexts."
     },
     {
       "candidate": "Scriptural Approach",
       "brand": "AIC / ministry",
+      "corrected_classification": "WRONG SCOPE OR STALE/DUPLICATIVE RISK IN ONE",
       "operational_risk": "Ministry doctrine may leak into non-ministry content generation."
     },
     {
       "candidate": "Engagement with Political and Social Critique",
       "brand": "Jackie personal",
+      "corrected_classification": "STALE/DUPLICATIVE/PUBLIC-RISK IN ONE",
       "operational_risk": "Sensitive public-risk positioning may be pulled into brand automation."
     },
     {
       "candidate": "Current team size and structure",
       "brand": "J Merrill One internal",
+      "corrected_classification": "INTERNAL STALE/DISCLOSURE RISK",
       "operational_risk": "Internal operating facts may leak into public social or helper-generated content."
     }
   ],
@@ -78,5 +103,6 @@
       "classification": "CHAT_ONLY from visible sidebar",
       "risk": "Could be confused with J Merrill Financial advanced/funeral pre-need planning unless properly separated; funeral/pre-need planning is an insurance-product lane where applicable, not generic event-program work."
     }
-  ]
+  ],
+  "mutation_count": 0
 }

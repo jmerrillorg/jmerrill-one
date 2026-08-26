@@ -1,32 +1,133 @@
 {
-  "generated_at": "2026-08-26T05:30:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "workspace": "J Merrill One",
   "count": 17,
-  "allowed_proposed_actions": ["KEEP QUARANTINED", "REHOME", "KEEP — ENTERPRISE", "REVIEW REQUIRED"],
+  "allowed_topology_dispositions": [
+    "KEEP - ENTERPRISE REFERENCE",
+    "QUARANTINE RECOMMENDED - WRONG WORKSPACE SCOPE",
+    "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+    "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK"
+  ],
   "delete_actions": 0,
-  "live_lab_refinement": {
-    "did_contaminate_responses": "Partially. Publishing/umbrella blending was observed; personal/ministry-specific records were not directly triggered by the bounded lab prompt.",
-    "quarantine_still_justified": true,
-    "delete_allowed": false,
+  "topology_correction": {
+    "inspected_workspace": "J Merrill One",
+    "confirmed_sibling_workspaces": [
+      "J Merrill Publishing",
+      "J Merrill Financial",
+      "J Merrill Foundation"
+    ],
+    "productions_workspace": "WORKSPACE NOT CONFIRMED IN CURRENT EVIDENCE",
     "execution": "No quarantine action executed."
   },
   "records": [
-    {"title":"Music Ministry Experience","id":null,"source":"Brain AI title","brand":"AIC / personal","why_contamination_suspected":"Ministry/personal context is not One enterprise operating authority.","current_authority_source":"not established; requires source-current review","risk_if_left_active":"May steer enterprise voice toward ministry biography or personal history.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Worship Leadership Approach","id":null,"source":"Brain AI title","brand":"AIC / personal","why_contamination_suspected":"Ministry leadership context could contaminate enterprise marketing voice.","current_authority_source":"not established; requires source-current review","risk_if_left_active":"May blend ministry leadership language into JM1 enterprise outputs.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Performance and Recording Credentials","id":null,"source":"Brain AI title","brand":"Jackie / Productions candidate","why_contamination_suspected":"Potential bio/productions content, not One authority without canon.","current_authority_source":"not established; likely public bio or Productions canon if valid","risk_if_left_active":"May over-index enterprise outputs on personal performance credentials.","proposed_action":"REVIEW REQUIRED"},
-    {"title":"Hometown and Origins","id":null,"source":"Brain AI title","brand":"Jackie personal","why_contamination_suspected":"Personal background should not drive enterprise automation.","current_authority_source":"not established; public bio canon required if retained","risk_if_left_active":"May leak personal biography into business messaging.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Scriptural Approach","id":null,"source":"Brain AI title","brand":"AIC / ministry","why_contamination_suspected":"Ministry-specific authority should not become One enterprise canon.","current_authority_source":"not established; AIC/ministry authority if current","risk_if_left_active":"May introduce religious doctrine into enterprise operational answers.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Spiritual Authority and Calling","id":null,"source":"Brain AI title","brand":"AIC / personal","why_contamination_suspected":"Ministry-specific authority is cross-brand risk in One.","current_authority_source":"not established; AIC/ministry authority if current","risk_if_left_active":"May create public and governance risk in enterprise automation.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Primary Client/Project","id":null,"source":"Brain AI title","brand":"Unknown","why_contamination_suspected":"Could be stale or sensitive client/project context.","current_authority_source":"not established","risk_if_left_active":"May expose or operationalize stale/sensitive client context.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Military Context and Values","id":null,"source":"Brain AI title","brand":"Jackie personal","why_contamination_suspected":"Founder bio context only; should not control enterprise automations.","current_authority_source":"public bio canon required if retained","risk_if_left_active":"May turn founder biography into operating doctrine.","proposed_action":"REVIEW REQUIRED"},
-    {"title":"Engagement with Political and Social Critique","id":null,"source":"Brain AI title","brand":"Jackie personal","why_contamination_suspected":"Sensitive/public-risk content for enterprise marketing automation.","current_authority_source":"not established","risk_if_left_active":"May generate politically sensitive or brand-unsafe public content.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Writing Preference: Satirical Tone","id":null,"source":"Brain AI title","brand":"Jackie personal / Publishing","why_contamination_suspected":"Style preference could create brand safety risk in social operations.","current_authority_source":"not established; Publishing style source if valid","risk_if_left_active":"May make enterprise content inappropriately satirical.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Author's Honesty About Limitations","id":null,"source":"Brain AI title","brand":"Jackie / Publishing","why_contamination_suspected":"Likely author/publishing context; not One enterprise authority.","current_authority_source":"not established; Publishing/public bio if valid","risk_if_left_active":"May misapply author posture to enterprise operations.","proposed_action":"REVIEW REQUIRED"},
-    {"title":"Personal Background","id":null,"source":"Brain AI title","brand":"Jackie personal","why_contamination_suspected":"Personal context should be quarantined unless public bio canon.","current_authority_source":"public bio canon required if retained","risk_if_left_active":"May leak personal biography into general enterprise answers.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Author's Spiritual Perspective","id":null,"source":"Brain AI title","brand":"AIC / Publishing / personal","why_contamination_suspected":"Crosses ministry and author domains; unsuitable as One authority.","current_authority_source":"not established; AIC or Publishing if valid","risk_if_left_active":"May blend religious/author perspective into business decisions.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Current team size and structure","id":null,"source":"Brain AI title","brand":"J Merrill One internal","why_contamination_suspected":"Internal structure should not drive public social automation.","current_authority_source":"current internal operating records required","risk_if_left_active":"May disclose or fossilize internal staffing information.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Educational Background","id":null,"source":"Brain AI title","brand":"Jackie personal","why_contamination_suspected":"Bio material may be useful only if canonized for public profile.","current_authority_source":"public bio canon required if retained","risk_if_left_active":"May overuse founder education in enterprise content.","proposed_action":"REVIEW REQUIRED"},
-    {"title":"Family Values and Modeling","id":null,"source":"Brain AI title","brand":"Jackie personal","why_contamination_suspected":"Personal values may be founder context but not operational authority.","current_authority_source":"not established","risk_if_left_active":"May convert private/personal values into business policy.","proposed_action":"KEEP QUARANTINED"},
-    {"title":"Attention to Detail","id":null,"source":"Brain AI title","brand":"Jackie / One","why_contamination_suspected":"General trait; source and utility unclear.","current_authority_source":"not established","risk_if_left_active":"Low specificity may produce vague or self-referential outputs.","proposed_action":"REVIEW REQUIRED"}
-  ]
+    {
+      "title": "Music Ministry Experience",
+      "brand": "AIC / personal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Ministry/personal context is not One enterprise operating authority and no sibling ministry workspace was confirmed."
+    },
+    {
+      "title": "Worship Leadership Approach",
+      "brand": "AIC / personal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Ministry leadership context could contaminate enterprise marketing voice."
+    },
+    {
+      "title": "Performance and Recording Credentials",
+      "brand": "Jackie / Productions candidate",
+      "topology_disposition": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "Could be public bio or Productions-related, but Productions Sintra workspace is not confirmed and body/source were not validated."
+    },
+    {
+      "title": "Hometown and Origins",
+      "brand": "Jackie personal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Personal background should not drive enterprise automation unless reduced to approved public bio reference."
+    },
+    {
+      "title": "Scriptural Approach",
+      "brand": "AIC / ministry",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Ministry-specific authority should not become One enterprise canon."
+    },
+    {
+      "title": "Spiritual Authority and Calling",
+      "brand": "AIC / personal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Religious authority framing is not One enterprise authority and carries public/governance risk."
+    },
+    {
+      "title": "Primary Client/Project",
+      "brand": "Unknown",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Could expose or operationalize stale/sensitive client or project context."
+    },
+    {
+      "title": "Military Context and Values",
+      "brand": "Jackie personal",
+      "topology_disposition": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "May be public bio reference, but should not become operating doctrine without validated source/currentness."
+    },
+    {
+      "title": "Engagement with Political and Social Critique",
+      "brand": "Jackie personal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Sensitive public-risk content should not steer enterprise or social automation from One Brain."
+    },
+    {
+      "title": "Writing Preference: Satirical Tone",
+      "brand": "Jackie personal / Publishing",
+      "topology_disposition": "QUARANTINE RECOMMENDED - WRONG WORKSPACE SCOPE",
+      "reason": "If valid, this is Publishing/author style context; it is not One enterprise voice authority."
+    },
+    {
+      "title": "Author's Honesty About Limitations",
+      "brand": "Jackie / Publishing",
+      "topology_disposition": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "Likely author/publishing context, but body/source are required before deciding whether it is public bio reference or Publishing-only."
+    },
+    {
+      "title": "Personal Background",
+      "brand": "Jackie personal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Personal context should be removed from One influence unless validated as approved public bio reference."
+    },
+    {
+      "title": "Author's Spiritual Perspective",
+      "brand": "AIC / Publishing / personal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - WRONG WORKSPACE SCOPE",
+      "reason": "Crosses ministry and author domains; unsuitable as One enterprise authority."
+    },
+    {
+      "title": "Current team size and structure",
+      "brand": "J Merrill One internal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Internal structure may be stale or sensitive and should not drive public or helper outputs."
+    },
+    {
+      "title": "Educational Background",
+      "brand": "Jackie personal",
+      "topology_disposition": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "Potential public bio reference only if current and source-approved."
+    },
+    {
+      "title": "Family Values and Modeling",
+      "brand": "Jackie personal",
+      "topology_disposition": "QUARANTINE RECOMMENDED - STALE/DUPLICATIVE/RISK",
+      "reason": "Personal values may be founder context but not operational authority in One."
+    },
+    {
+      "title": "Attention to Detail",
+      "brand": "Jackie / One",
+      "topology_disposition": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "Could be harmless enterprise trait language, but title alone is too vague and source utility is unclear."
+    }
+  ],
+  "topology_counts": {
+    "keep_enterprise_reference": 0,
+    "quarantine_wrong_workspace_scope": 3,
+    "hold_source_body_validation_required": 5,
+    "quarantine_stale_duplicative_risk": 9
+  },
+  "mutation_count": 0
 }

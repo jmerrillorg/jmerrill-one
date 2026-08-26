@@ -5,7 +5,7 @@
   "origin_main": "b45f271ea88a7e28c7468513a3d2f6593638c25e",
   "mode": "SINTRA BRAIN RECOVERY GATE AND SOCIAL OPERATIONS EVALUATION",
   "production_mutation_authorized": false,
-  "sintra_ui_status": "LIVE_CHROME_VISUAL_ACCESS_PARTIAL - authenticated Chrome route-level inspection captured J Merrill One Integrations, Brain AI, Automations, Helpers, and Settings; Node browser-control output remained unavailable and multi-workspace/dropdown plus connector-scope detail were not fully inspectable",
+  "sintra_ui_status": "LIVE_CHROME_VISUAL_ACCESS_PARTIAL - authenticated Chrome route-level inspection captured J Merrill One Integrations, Brain AI, Automations, Helpers, and Settings; Founder-provided live switcher evidence later confirmed sibling Publishing, Financial, and Foundation workspaces; connector-scope detail remains not fully inspectable",
   "production_mutations": {
     "sintra": 0,
     "social": 0,
@@ -13,13 +13,18 @@
     "dataverse": 0,
     "github_merge": 0
   },
-  "classification": "SINTRA BRAIN RECOVERY PARTIAL — LIVE INSPECTION COMPLETE; ADMINISTRATIVE ACCESS GAPS REMAIN",
-  "reason": "Live Chrome inspection proved J Merrill One access and exposed connected integrations, 89 Brain AI records, four beta automations, helpers, workspace settings, and profile settings. Administrative/detail gaps remain: all-workspace selector inventory, exact OAuth scopes, connected account/page/property bindings, and full content classification for all 89 Brain records were not proven.",
-  "nextSafestAction": "Jackie approves the proposed recovery diff for controlled Brain/integration cleanup, or grants a deeper export/API/safe-detail-inspection path for exact connector scopes and all-workspace inventory before mutation.",
+  "classification": "SINTRA CONTROLLED LAB COMPLETE - LIMITED ROLLBACK EVIDENCE; FOUNDER MUTATION DECISIONS REQUIRED",
+  "reason": "Live Chrome inspection proved J Merrill One access and exposed connected integrations, 89 Brain AI records, four beta automations, helpers, workspace settings, and profile settings. Founder-provided live evidence confirms J Merrill Publishing, J Merrill Financial, and J Merrill Foundation as sibling workspaces. Administrative/detail gaps remain: sibling Brain contents, exact OAuth scopes, connected account/page/property bindings, and full content classification for all 89 One Brain records were not proven.",
+  "nextSafestAction": "Jackie reviews the workspace-aware mutation packet for controlled J Merrill One Brain isolation/projection design. No quarantine, rehome, deletion, connector change, automation change, or sibling Brain inspection is authorized by the topology correction.",
   "liveEvidence": {
     "inspectionTimestamp": "2026-08-26T04:45:27-04:00",
     "browser": "Google Chrome",
     "workspaceConfirmed": "J Merrill One",
+    "confirmedSiblingWorkspacesFromFounderLiveEvidence": [
+      "J Merrill Publishing",
+      "J Merrill Financial",
+      "J Merrill Foundation"
+    ],
     "creditsVisible": "20 / 20",
     "brainRecordsVisible": 89,
     "connectedIntegrationsVisible": [
@@ -64,7 +69,7 @@
     ]
   },
   "blockedItems": [
-    "all-workspace selector inventory",
+    "sibling Brain contents for J Merrill Publishing, J Merrill Financial, and J Merrill Foundation",
     "exact connected Facebook account/page/scope inspection",
     "exact connected Instagram account/scope inspection",
     "exact Google Analytics account/property/scope inspection",

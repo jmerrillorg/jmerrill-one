@@ -1,11 +1,35 @@
 {
-  "generated_at": "2026-08-26T05:30:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "workspace": "J Merrill One",
   "count": 3,
+  "revalidation_rule": "A record should not remain KEEP simply because it is accurate. It must be appropriate for One-level enterprise scope, source/currentness sufficient, and free of competing canonical authority problems.",
   "records": [
-    {"title":"Quality Philosophy","exact_identity":"Brain AI title only; ID unavailable","enterprise_relevance":"Possible enterprise brand voice if current","brand_authority_conflict":"none proven, but source-current check required","stale_content_issue":"not ruled out","duplication_risk":"possible overlap with public brand content standards","status":"REVIEW STILL REQUIRED BEFORE PRODUCTION KEEP"},
-    {"title":"Business Focus","exact_identity":"Brain AI title only; ID unavailable","enterprise_relevance":"Possible enterprise positioning if current","brand_authority_conflict":"none proven, but source-current check required","stale_content_issue":"not ruled out","duplication_risk":"possible overlap with current website/offering pages","status":"REVIEW STILL REQUIRED BEFORE PRODUCTION KEEP"},
-    {"title":"Business website and brand links","exact_identity":"Brain AI title only; ID unavailable","enterprise_relevance":"Likely enterprise web/CTA reference if current","brand_authority_conflict":"none proven, but source-current check required","stale_content_issue":"not ruled out","duplication_risk":"possible stale link duplication","status":"REVIEW STILL REQUIRED BEFORE PRODUCTION KEEP"}
+    {
+      "title": "Quality Philosophy",
+      "enterprise_scope_fit": "possible",
+      "not_merely_branch_content": "not proven from title alone",
+      "source_currentness_sufficient": false,
+      "competing_canonical_authority_problem": "possible overlap with public brand content standards or repository canon",
+      "topology_corrected_status": "HOLD - SOURCE/BODY VALIDATION REQUIRED"
+    },
+    {
+      "title": "Business Focus",
+      "enterprise_scope_fit": "possible",
+      "not_merely_branch_content": "not proven from title alone",
+      "source_currentness_sufficient": false,
+      "competing_canonical_authority_problem": "possible overlap with current website/offering pages",
+      "topology_corrected_status": "HOLD - SOURCE/BODY VALIDATION REQUIRED"
+    },
+    {
+      "title": "Business website and brand links",
+      "enterprise_scope_fit": "likely if limited to approved routing/reference",
+      "not_merely_branch_content": "not proven from title alone",
+      "source_currentness_sufficient": false,
+      "competing_canonical_authority_problem": "possible stale link duplication against public web canon",
+      "topology_corrected_status": "HOLD - SOURCE/BODY VALIDATION REQUIRED"
+    }
   ],
-  "decision": "Do not preserve KEEP status merely because earlier artifact said so; each record needs body/source validation before production authority."
+  "validated_keep_for_one": 0,
+  "decision": "No prior KEEP record is promoted to production authority until body/source validation confirms it belongs in One.",
+  "mutation_count": 0
 }

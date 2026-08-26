@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-08-26T08:26:00-04:00",
+  "provenance_certification": "PASS - J MERRILL ONE INSPECTION PROVENANCE CERTIFIED",
+  "inspected_workspace": {
+    "name": "J Merrill One",
+    "state_during_inspection": "active workspace",
+    "corrected_interpretation": "All Brain, automation, connector, helper, settings, and controlled lab observations in this recovery package refer to J Merrill One unless a specific artifact says otherwise."
+  },
+  "performed_in_j_merrill_one": [
+    "89-record Brain inventory",
+    "Brain contamination analysis",
+    "automation inspection",
+    "connector inspection",
+    "helper inspection",
+    "controlled read-only Brain lab",
+    "Inbox Manager disable dependency check and disable verification"
+  ],
+  "topology_correction": {
+    "previous_ambiguity": "Some artifacts treated J Merrill Publishing as an expected or unverified target workspace because the profile workspace switcher evidence had not yet been supplied.",
+    "corrected_evidence": "Founder-provided live evidence confirms J Merrill One was the inspected workspace and confirms J Merrill Publishing, J Merrill Financial, and J Merrill Foundation exist as sibling workspaces.",
+    "effect": "Publishing/editorial operational knowledge observed in the inspected Brain is now evaluated as content present in J Merrill One despite a separate Publishing workspace existing."
+  },
+  "supersession_rule": "Historical artifacts remain valid as time-stamped evidence, but any statement that Publishing, Financial, or Foundation workspace existence was not proven is superseded by 82_sintra_workspace_topology_live_evidence.json for topology only. Sibling Brain contents remain uninspected.",
+  "mutation_count_in_this_correction_pass": 0
+}

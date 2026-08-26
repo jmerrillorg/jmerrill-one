@@ -1,6 +1,13 @@
 {
-  "generated_at": "2026-08-26T07:50:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "classification": "PARTIAL",
+  "corrected_topology_test": {
+    "one_is_umbrella": "partially demonstrated",
+    "publishing_is_separate": "not reliably demonstrated by prior lab response; now externally confirmed by Founder live evidence",
+    "financial_is_separate": "not reliably demonstrated by prior lab response; now externally confirmed by Founder live evidence",
+    "foundation_is_separate": "not reliably demonstrated by prior lab response; now externally confirmed by Founder live evidence",
+    "brain_content_not_automatically_canon": "partially demonstrated"
+  },
   "strong_signals": [
     "Brain memory was described as strategic context rather than operational truth for M365/SharePoint/Dataverse.",
     "Unseen Brain records were treated as unresolved and not safe for absence claims.",
@@ -8,8 +15,10 @@
   ],
   "weak_signals": [
     "Publishing Brain records were described as a governing rulebook without source-current verification.",
-    "Brain was called authoritative for the list of tools and strategic role, which still requires repository/canon confirmation."
+    "Brain was called authoritative for the list of tools and strategic role, which still requires repository/canon confirmation.",
+    "Prior live lab did not prove Sintra natively understands the full One/Publishing/Financial/Foundation workspace topology."
   ],
   "must_not_say": "Brain says it, therefore it is canon.",
-  "result": "Sintra shows useful authority awareness, but not enough for production authority."
+  "result": "Sintra shows useful authority awareness, but not enough for production authority.",
+  "mutation_count": 0
 }

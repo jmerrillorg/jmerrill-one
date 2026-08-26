@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-08-26T08:26:00-04:00",
+  "evidence_type": "Founder-provided live workspace switcher evidence",
+  "active_inspected_workspace": {
+    "name": "J Merrill One",
+    "classification": "ACTIVE / INSPECTED",
+    "authority_note": "The 89-record Brain inventory, contamination analysis, automation inspection, connector inspection, and controlled Brain lab were performed while this workspace was active."
+  },
+  "confirmed_sibling_workspaces": [
+    {
+      "name": "J Merrill Publishing",
+      "classification": "CONFIRMED TO EXIST - NOT YET INSPECTED UNDER THIS RECOVERY PACKAGE"
+    },
+    {
+      "name": "J Merrill Financial",
+      "classification": "CONFIRMED TO EXIST - NOT YET INSPECTED UNDER THIS RECOVERY PACKAGE"
+    },
+    {
+      "name": "J Merrill Foundation",
+      "classification": "CONFIRMED TO EXIST - NOT YET INSPECTED UNDER THIS RECOVERY PACKAGE"
+    }
+  ],
+  "not_confirmed_in_current_evidence": [
+    {
+      "name": "J Merrill Productions",
+      "classification": "WORKSPACE NOT CONFIRMED IN CURRENT EVIDENCE",
+      "instruction": "Do not invent, create, or route operational knowledge into a Productions Sintra workspace until separately proven."
+    }
+  ],
+  "constraints": [
+    "Do not infer sibling workspace contents.",
+    "Do not inspect or mutate sibling workspace Brains under this correction pass.",
+    "Do not move, delete, archive, edit, quarantine, or rehome Brain records.",
+    "Treat sibling workspace existence as topology evidence only."
+  ],
+  "status": "PASS - LIVE WORKSPACE TOPOLOGY RECORDED"
+}

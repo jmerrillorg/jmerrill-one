@@ -8,6 +8,8 @@ SINTRA BRAIN RECOVERY PARTIAL — LIVE INSPECTION COMPLETE; ADMINISTRATIVE ACCES
 
 No Sintra mutation has been performed.
 
+Topology correction: the inspected Brain is J Merrill One. J Merrill Publishing, J Merrill Financial, and J Merrill Foundation are confirmed sibling workspaces, but sibling Brain contents were not inspected. Decisions below should be read as remove/isolate from J Merrill One influence unless a later Founder action explicitly approves cross-workspace projection/reference.
+
 ## A. Brain Knowledge Cleanup
 
 Recommendation: APPROVE WITH MODIFICATION
@@ -18,7 +20,7 @@ Proposed approvals:
 
 | Group | Affected records/groups | Proposed action |
 |---|---|---|
-| Clear Publishing candidates | Manuscript Tone and Style; Style Sheet Governance; Published Works; Author Identity; Editorial Philosophy; Editorial Preferences; Developmental Review Process; Book Content Focus | REASSIGN after Publishing workspace verification |
+| Clear Publishing candidates | Manuscript Tone and Style; Style Sheet Governance; Published Works; Author Identity; Editorial Philosophy; Editorial Preferences; Developmental Review Process; Book Content Focus | SOURCE-VALIDATE, THEN PROJECT/REFERENCE THROUGH J MERRILL PUBLISHING IF APPROVED |
 | Ministry/personal-sensitive candidates | Music Ministry Experience; Worship Leadership Approach; Scriptural Approach; Spiritual Authority and Calling; Author's Spiritual Perspective | QUARANTINE |
 | Public-risk/personal-style candidates | Engagement with Political and Social Critique; Writing Preference: Satirical Tone; Hometown and Origins; Military Context and Values; Current team size and structure | QUARANTINE |
 | Enterprise candidates | Quality Philosophy; Business Focus; Business website and brand links; Overview of J Merrill One offerings; Our hybrid offerings at J Merrill One | KEEP/UPDATE only after source-current review |

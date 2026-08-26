@@ -2,6 +2,8 @@
 
 Evidence classification: PARTIAL
 
+Topology correction, 2026-08-26T08:26:00-04:00: later Founder-provided live workspace switcher evidence confirms J Merrill One as the active inspected workspace and confirms J Merrill Publishing, J Merrill Financial, and J Merrill Foundation as sibling workspaces. This supersedes the workspace-existence verification caveat below for topology only; sibling Brain contents remain uninspected.
+
 Computer-use/browser access to the existing Sintra workspace was attempted through Edge and Chrome. The UI control surface returned no usable accessibility tree, screenshot, or browser documentation payload in this session. Therefore live Sintra workspace contents, Brain AI entries, conversations, helpers, automations, integrations, and credit usage were not verified.
 
 Known historical baseline supplied by Jackie: visible workspaces were J Merrill One, J Merrill Publishing, J Merrill Financial, and J Merrill Foundation. Additional workspace verification is BLOCKED until a usable signed-in browser/UI session is available.

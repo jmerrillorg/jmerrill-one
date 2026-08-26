@@ -13,11 +13,11 @@
     },
     {
       "area": "J Merrill One Brain",
-      "action": "MOVE Publishing-specific durable records to J Merrill Publishing",
+      "action": "PROJECT/REFERENCE Publishing-specific durable records through J Merrill Publishing",
       "support": "inference",
-      "evidence": "Publishing/editorial records are visible in J Merrill One; the J Merrill Publishing workspace itself was not live-verified.",
+      "evidence": "Publishing/editorial records are visible in the inspected J Merrill One Brain; Founder-provided live switcher evidence now confirms J Merrill Publishing exists as a sibling workspace.",
       "requires_founder_judgment": true,
-      "notes": "Rehome only after target workspace verification and record export/snapshot."
+      "notes": "Physical rehome is not automatic; prefer authoritative source plus reversible projection/reference after record export/snapshot."
     },
     {
       "area": "J Merrill One Brain",
@@ -29,25 +29,25 @@
     },
     {
       "area": "J Merrill Publishing",
-      "action": "Verify workspace, then move/admit Publishing-safe records only",
-      "support": "supported only by prior repo evidence",
-      "evidence": "Prior recovery package expects a Publishing workspace; live selector inventory was not completed.",
+      "action": "Source-validate, then project/reference Publishing-safe records only",
+      "support": "supported by corrected topology evidence",
+      "evidence": "Founder-provided live switcher evidence confirms J Merrill Publishing exists; Brain contents were not inspected.",
       "requires_founder_judgment": true,
-      "notes": "No mutation until target workspace is verified."
+      "notes": "No mutation until record body/source authority, reversible projection mechanics, and Founder approval are verified."
     },
     {
       "area": "J Merrill Financial",
-      "action": "Add clean Financial projection after workspace verification",
-      "support": "supported only by prior repo evidence",
-      "evidence": "Financial live workspace state was not directly verified; user/founder correction confirms estate planning plus advanced/funeral pre-need planning as insurance-product lane where applicable.",
+      "action": "Add clean Financial projection/reference after source validation",
+      "support": "supported by corrected topology evidence",
+      "evidence": "Founder-provided live switcher evidence confirms J Merrill Financial exists; Brain contents were not inspected. User/founder correction confirms estate planning plus advanced/funeral pre-need planning as insurance-product lane where applicable.",
       "requires_founder_judgment": true,
       "notes": "This is a content correction proposal only."
     },
     {
       "area": "J Merrill Foundation",
-      "action": "Add clean Foundation projection after workspace verification",
-      "support": "supported only by prior repo evidence",
-      "evidence": "Foundation live workspace state was not directly verified.",
+      "action": "Add clean Foundation projection/reference after source validation",
+      "support": "supported by corrected topology evidence",
+      "evidence": "Founder-provided live switcher evidence confirms J Merrill Foundation exists; Brain contents were not inspected.",
       "requires_founder_judgment": true,
       "notes": "Do not import donor, recipient, or private operational data."
     },

@@ -1,22 +1,109 @@
 {
-  "generated_at": "2026-08-26T05:30:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "workspace": "J Merrill One",
   "count": 8,
-  "records": [
-    {"record":"Manuscript Tone and Style","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Publishing repo or governed Publishing canon","reason":"Publishing/editorial operating knowledge is not One-level enterprise authority.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true},
-    {"record":"Style Sheet Governance","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Publishing style governance canon","reason":"Publishing style governance belongs in Publishing workspace if still current.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true},
-    {"record":"Published Works","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Published works catalog/source canon","reason":"Likely Publishing-specific catalog/reference content.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true},
-    {"record":"Author Identity","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing / Jackie public bio","target_authority":"Publishing repo, public author bio, or approved website canon","reason":"Author-facing identity belongs with Publishing or public bio, not general One authority.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true},
-    {"record":"Editorial Philosophy","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Publishing editorial canon","reason":"Editorial doctrine belongs in Publishing if current.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true},
-    {"record":"Editorial Preferences","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Publishing operating standard if current","reason":"Publishing operational style/preferences do not belong as One authority.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true},
-    {"record":"Developmental Review Process","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Publishing workflow canon","reason":"Publishing workflow content belongs in Publishing if current.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true},
-    {"record":"Book Content Focus","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Book/project canon in Publishing systems","reason":"Book/publishing content does not belong in One durable Brain.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true}
+  "topology_correction": {
+    "j_merrill_publishing_workspace": "CONFIRMED TO EXIST - NOT YET INSPECTED UNDER THIS RECOVERY PACKAGE",
+    "physical_rehome_automatic": false,
+    "authoritative_source_rule": "J Merrill Publishing workspace is a concrete candidate destination/reference surface, but Publishing operational sources remain governed Publishing systems/repository/canon unless Founder governance changes that."
+  },
+  "allowed_corrected_actions": [
+    "REFERENCE FROM AUTHORITATIVE SOURCE",
+    "PROJECT INTO J MERRILL PUBLISHING WORKSPACE",
+    "KEEP IN ONE AS ENTERPRISE REFERENCE",
+    "QUARANTINE FROM ONE",
+    "MORE SOURCE VALIDATION REQUIRED"
   ],
-  "principle": "Sintra should receive only needed projection/reference; it should not become the system of record.",
-  "live_lab_refinement": {
-    "physical_rehome_necessary": "not proven",
-    "preferred_result": "LEAVE IN AUTHORITATIVE SYSTEM — REMOVE FROM SINTRA PROJECTION",
-    "reason": "Live lab showed Publishing content can be treated as authority inside One Brain. Source-backed projections are safer than cross-workspace movement unless Sintra workspace mechanics are proven reversible.",
-    "execution": "No rehome action executed."
-  }
+  "records": [
+    {
+      "record": "Manuscript Tone and Style",
+      "current_location": "J Merrill One Brain AI",
+      "proper_brand_domain": "J Merrill Publishing",
+      "target_authority": "Publishing repo or governed Publishing canon",
+      "corrected_action": "PROJECT INTO J MERRILL PUBLISHING WORKSPACE",
+      "source_pattern": "REFERENCE FROM AUTHORITATIVE SOURCE",
+      "one_disposition": "QUARANTINE FROM ONE",
+      "reason": "Publishing/editorial operating knowledge is not One-level enterprise authority.",
+      "execution": "No rehome action executed."
+    },
+    {
+      "record": "Style Sheet Governance",
+      "current_location": "J Merrill One Brain AI",
+      "proper_brand_domain": "J Merrill Publishing",
+      "target_authority": "Publishing style governance canon",
+      "corrected_action": "PROJECT INTO J MERRILL PUBLISHING WORKSPACE",
+      "source_pattern": "REFERENCE FROM AUTHORITATIVE SOURCE",
+      "one_disposition": "QUARANTINE FROM ONE",
+      "reason": "Publishing style governance belongs in Publishing scope if still current.",
+      "execution": "No rehome action executed."
+    },
+    {
+      "record": "Published Works",
+      "current_location": "J Merrill One Brain AI",
+      "proper_brand_domain": "J Merrill Publishing",
+      "target_authority": "Published works catalog/source canon",
+      "corrected_action": "MORE SOURCE VALIDATION REQUIRED",
+      "source_pattern": "REFERENCE FROM AUTHORITATIVE SOURCE",
+      "one_disposition": "KEEP IN ONE AS ENTERPRISE REFERENCE only if reduced to approved public catalog/routing",
+      "reason": "A public catalog pointer may be enterprise reference; detailed publishing catalog authority belongs with Publishing/source canon.",
+      "execution": "No rehome action executed."
+    },
+    {
+      "record": "Author Identity",
+      "current_location": "J Merrill One Brain AI",
+      "proper_brand_domain": "J Merrill Publishing / Jackie public bio",
+      "target_authority": "Publishing repo, public author bio, or approved website canon",
+      "corrected_action": "MORE SOURCE VALIDATION REQUIRED",
+      "source_pattern": "REFERENCE FROM AUTHORITATIVE SOURCE",
+      "one_disposition": "KEEP IN ONE AS ENTERPRISE REFERENCE only if limited to approved public identity/routing",
+      "reason": "Author-facing identity may be public reference, but author operational posture belongs with Publishing or public bio authority.",
+      "execution": "No rehome action executed."
+    },
+    {
+      "record": "Editorial Philosophy",
+      "current_location": "J Merrill One Brain AI",
+      "proper_brand_domain": "J Merrill Publishing",
+      "target_authority": "Publishing editorial canon",
+      "corrected_action": "PROJECT INTO J MERRILL PUBLISHING WORKSPACE",
+      "source_pattern": "REFERENCE FROM AUTHORITATIVE SOURCE",
+      "one_disposition": "QUARANTINE FROM ONE",
+      "reason": "Editorial doctrine belongs in Publishing if current.",
+      "execution": "No rehome action executed."
+    },
+    {
+      "record": "Editorial Preferences",
+      "current_location": "J Merrill One Brain AI",
+      "proper_brand_domain": "J Merrill Publishing",
+      "target_authority": "Publishing operating standard if current",
+      "corrected_action": "PROJECT INTO J MERRILL PUBLISHING WORKSPACE",
+      "source_pattern": "REFERENCE FROM AUTHORITATIVE SOURCE",
+      "one_disposition": "QUARANTINE FROM ONE",
+      "reason": "Publishing operational style/preferences do not belong as One authority.",
+      "execution": "No rehome action executed."
+    },
+    {
+      "record": "Developmental Review Process",
+      "current_location": "J Merrill One Brain AI",
+      "proper_brand_domain": "J Merrill Publishing",
+      "target_authority": "Publishing workflow canon",
+      "corrected_action": "PROJECT INTO J MERRILL PUBLISHING WORKSPACE",
+      "source_pattern": "REFERENCE FROM AUTHORITATIVE SOURCE",
+      "one_disposition": "QUARANTINE FROM ONE",
+      "reason": "Publishing workflow content belongs in Publishing if current.",
+      "execution": "No rehome action executed."
+    },
+    {
+      "record": "Book Content Focus",
+      "current_location": "J Merrill One Brain AI",
+      "proper_brand_domain": "J Merrill Publishing",
+      "target_authority": "Book/project canon in Publishing systems",
+      "corrected_action": "PROJECT INTO J MERRILL PUBLISHING WORKSPACE",
+      "source_pattern": "REFERENCE FROM AUTHORITATIVE SOURCE",
+      "one_disposition": "QUARANTINE FROM ONE",
+      "reason": "Book/publishing content does not belong in One durable Brain.",
+      "execution": "No rehome action executed."
+    }
+  ],
+  "principle": "Sintra Publishing may consume/reference governed Publishing sources. It does not supersede them.",
+  "mutation_count": 0
 }

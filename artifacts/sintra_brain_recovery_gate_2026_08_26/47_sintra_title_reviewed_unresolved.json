@@ -1,23 +1,74 @@
 {
-  "generated_at": "2026-08-26T05:30:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "workspace": "J Merrill One",
   "count": 9,
+  "topology_signal_rule": "Workspace topology may inform likely scope, but these records remain unresolved because body/source content was not inspected.",
   "records": [
-    {"title":"Professional Role and Current Position","apparent_topic":"founder or enterprise role","likely_brand_domain":"J Merrill One / Jackie public bio","why_title_alone_insufficient":"Role/current-position content can become stale quickly and needs source-current validation.","exact_next_inspection_needed":"Open record body and compare against current website/repo public role canon.","classification_after_inspection":"UNRESOLVED"},
-    {"title":"Professional Experience","apparent_topic":"founder experience","likely_brand_domain":"Jackie / J Merrill One","why_title_alone_insufficient":"Could be public bio, private resume detail, or stale career context.","exact_next_inspection_needed":"Inspect full text and source; compare to approved public bio canon.","classification_after_inspection":"UNRESOLVED"},
-    {"title":"Strategic Thinking Style","apparent_topic":"founder working style","likely_brand_domain":"Jackie / One","why_title_alone_insufficient":"Style claims may be chat-derived and should not become policy without evidence.","exact_next_inspection_needed":"Inspect source/body and determine whether it is brand guidance or personal metadata.","classification_after_inspection":"UNRESOLVED"},
-    {"title":"Digital Literacy and AI Integration","apparent_topic":"enterprise AI operations","likely_brand_domain":"J Merrill One","why_title_alone_insufficient":"Could be relevant enterprise capability or stale self-description.","exact_next_inspection_needed":"Inspect body and compare to JM1 AI execution routing/canon artifacts.","classification_after_inspection":"UNRESOLVED"},
-    {"title":"Communication Style Preference","apparent_topic":"tone guidance","likely_brand_domain":"Jackie / One","why_title_alone_insufficient":"Tone guidance may conflict with brand-specific voice standards.","exact_next_inspection_needed":"Inspect body and compare against current public brand content standard.","classification_after_inspection":"UNRESOLVED"},
-    {"title":"Target Audience","apparent_topic":"audience definition","likely_brand_domain":"Unknown","why_title_alone_insufficient":"The title is generic and could belong to any JM1 brand or a specific book/project.","exact_next_inspection_needed":"Inspect body for brand, channel, source, and intended use.","classification_after_inspection":"UNRESOLVED"},
-    {"title":"Expertise and Domain Knowledge","apparent_topic":"capability positioning","likely_brand_domain":"Unknown","why_title_alone_insufficient":"Too broad to determine whether it is enterprise, personal, publishing, or financial context.","exact_next_inspection_needed":"Inspect full record and match claims to current canon/source authority.","classification_after_inspection":"UNRESOLVED"},
-    {"title":"Our hybrid offerings at J Merrill One","apparent_topic":"enterprise offerings","likely_brand_domain":"J Merrill One","why_title_alone_insufficient":"Likely relevant but must align to current public offerings and avoid stale phrasing.","exact_next_inspection_needed":"Inspect body and compare to current website/repo service pages.","classification_after_inspection":"UNRESOLVED"},
-    {"title":"Overview of J Merrill One offerings","apparent_topic":"enterprise offerings","likely_brand_domain":"J Merrill One","why_title_alone_insufficient":"Likely relevant but may duplicate or conflict with current public positioning.","exact_next_inspection_needed":"Inspect body and compare to current website/repo service pages.","classification_after_inspection":"UNRESOLVED"}
+    {
+      "title": "Professional Role and Current Position",
+      "likely_topology_signal": "likely enterprise reference or public bio",
+      "likely_brand_domain": "J Merrill One / Jackie public bio",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Open record body and compare against current website/repo public role canon."
+    },
+    {
+      "title": "Professional Experience",
+      "likely_topology_signal": "likely enterprise reference or public bio",
+      "likely_brand_domain": "Jackie / J Merrill One",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Inspect full text and source; compare to approved public bio canon."
+    },
+    {
+      "title": "Strategic Thinking Style",
+      "likely_topology_signal": "likely enterprise or personal metadata",
+      "likely_brand_domain": "Jackie / One",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Inspect source/body and determine whether it is brand guidance or personal metadata."
+    },
+    {
+      "title": "Digital Literacy and AI Integration",
+      "likely_topology_signal": "likely enterprise reference",
+      "likely_brand_domain": "J Merrill One",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Inspect body and compare to JM1 AI execution routing/canon artifacts."
+    },
+    {
+      "title": "Communication Style Preference",
+      "likely_topology_signal": "could be enterprise, personal, or brand-specific voice",
+      "likely_brand_domain": "Jackie / One",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Inspect body and compare against current public brand content standard."
+    },
+    {
+      "title": "Target Audience",
+      "likely_topology_signal": "could be Publishing, Financial, Foundation, enterprise, or project-specific",
+      "likely_brand_domain": "Unknown",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Inspect body for brand, channel, source, and intended use."
+    },
+    {
+      "title": "Expertise and Domain Knowledge",
+      "likely_topology_signal": "could be enterprise, Publishing, Financial, Foundation, or personal",
+      "likely_brand_domain": "Unknown",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Inspect full record and match claims to current canon/source authority."
+    },
+    {
+      "title": "Our hybrid offerings at J Merrill One",
+      "likely_topology_signal": "likely enterprise reference",
+      "likely_brand_domain": "J Merrill One",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Inspect body and compare to current website/repo service pages."
+    },
+    {
+      "title": "Overview of J Merrill One offerings",
+      "likely_topology_signal": "likely enterprise reference",
+      "likely_brand_domain": "J Merrill One",
+      "classification_after_topology_correction": "INSUFFICIENT EVIDENCE",
+      "exact_next_inspection_needed": "Inspect body and compare to current website/repo service pages."
+    }
   ],
-  "delete_allowed": false,
-  "live_lab_refinement": {
-    "resolved_count": 0,
-    "unresolved_count": 9,
-    "reason": "The live lab tested boundary behavior, not individual record bodies. No title-reviewed unresolved record was opened or source-validated.",
-    "allowed_next_classifications": ["KEEP", "QUARANTINE RECOMMENDED", "REHOME RECOMMENDED", "UNRESOLVED"]
-  }
+  "resolved_count": 0,
+  "unresolved_count": 9,
+  "mutation_count": 0
 }

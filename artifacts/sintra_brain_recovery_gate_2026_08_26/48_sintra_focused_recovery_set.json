@@ -1,23 +1,48 @@
 {
-  "generated_at": "2026-08-26T05:30:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "workspace": "J Merrill One",
   "eligible_current_review_subset_count": 34,
-  "sets": {
-    "quarantine": {"count":17,"source":"43_sintra_quarantine_record_review.json"},
-    "rehome": {"count":8,"source":"45_sintra_rehome_candidate_review.json"},
-    "title_reviewed_unresolved": {"count":9,"source":"47_sintra_title_reviewed_unresolved.json"}
+  "original_history_counts": {
+    "quarantine": 17,
+    "rehome": 8,
+    "title_reviewed_unresolved": 9,
+    "source": "Preserved from pre-topology-correction focused set."
+  },
+  "topology_corrected_sets": {
+    "quarantine_review": {
+      "source": "43_sintra_quarantine_record_review.json",
+      "total": 17,
+      "keep_enterprise_reference": 0,
+      "quarantine_wrong_workspace_scope": 3,
+      "hold_source_body_validation_required": 5,
+      "quarantine_stale_duplicative_risk": 9
+    },
+    "rehome_reference_review": {
+      "source": "45_sintra_rehome_candidate_review.json",
+      "total": 8,
+      "project_into_j_merrill_publishing_workspace": 6,
+      "more_source_validation_required": 2,
+      "keep_in_one_as_enterprise_reference_without_validation": 0
+    },
+    "title_reviewed_unresolved": {
+      "source": "47_sintra_title_reviewed_unresolved.json",
+      "total": 9,
+      "resolved_by_topology_alone": 0,
+      "insufficient_evidence": 9
+    },
+    "keep_record_revalidation": {
+      "source": "49_sintra_keep_record_validation.json",
+      "total": 3,
+      "validated_keep_for_one": 0,
+      "hold_source_body_validation_required": 3
+    }
   },
   "excluded_from_current_recovery_analysis": {
-    "keep_stable": 3,
-    "unseen_unclassified_frozen": 52
+    "unseen_unclassified_frozen": 52,
+    "instruction": "52 UNINSPECTED - RETAIN. Do not inspect sibling workspaces as a shortcut to resolving them."
   },
   "delete_candidates": 0,
-  "live_lab_informed_recommendations_only": {
-    "quarantine_recommended": 17,
-    "rehome_recommended": 8,
-    "more_review": 9,
-    "executed": 0,
-    "basis": "Moderate contamination observed in live Brain lab; exact Brain cleanup remains unexecuted pending Founder mutation approval and record body/source inspection."
-  },
-  "mutation_authorized": false
+  "mutation_authorized": false,
+  "mutation_count": 0,
+  "basis": "Corrected workspace topology proves J Merrill One was inspected and sibling Publishing/Financial/Foundation workspaces exist, but it does not inspect record bodies or authorize movement."
 }

@@ -1,22 +1,27 @@
 {
-  "generated_at": "2026-08-26T07:50:00-04:00",
+  "generated_at": "2026-08-26T08:26:00-04:00",
   "classification": "MODERATE",
+  "topology_correction_effect": "Confidence increased that Publishing/editorial contamination observed in J Merrill One is real cross-workspace contamination, because J Merrill Publishing is now confirmed as a separate workspace. Classification remains MODERATE because the controlled lab evidence still shows bounded contamination rather than broad, repeated, production-action contamination.",
   "observable_cases": [
     {
       "type": "Publishing content as One authority",
       "evidence": "Sintra recommended treating Brain editorial records as a governing rulebook.",
-      "severity": "MODERATE"
+      "severity": "MODERATE",
+      "topology_reassessment": "CONFIRMED CROSS-WORKSPACE SCOPE RISK"
     },
     {
       "type": "Umbrella blending",
       "evidence": "Sintra said Brain summary blends brand differentiators into a single narrative.",
-      "severity": "MODERATE"
+      "severity": "MODERATE",
+      "topology_reassessment": "SUPPORTED BY SEPARATE WORKSPACE EVIDENCE"
     }
   ],
   "non_observed_or_controlled": [
     "Foundation and Productions were kept distinct in the live response.",
     "Sintra warned against unseen-record inference.",
-    "Sintra did not recommend public actions."
+    "Sintra did not recommend public actions.",
+    "Sibling workspace Brains were not inspected."
   ],
-  "rate_basis": "2 material contamination signals across 7 tested categories"
+  "rate_basis": "2 material contamination signals across 7 tested categories; topology correction raises confidence but does not add new response cases.",
+  "mutation_count": 0
 }
