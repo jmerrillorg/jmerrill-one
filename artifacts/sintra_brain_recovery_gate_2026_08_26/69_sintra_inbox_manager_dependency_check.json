@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "automation": "Inbox Manager",
+  "classification": "SAFE TO DISABLE",
+  "monitored_source": "No Gmail/Outlook/inbox account exposed; detail page showed setup state.",
+  "send_reply_capability": "Product description says drafts replies for review, but no active account/configuration was visible.",
+  "actually_running": false,
+  "last_activity_visible": false,
+  "connected_account": null,
+  "production_dependency": "No active production workflow dependency visible.",
+  "overlap": ["Outlook", "Dynamics", "Power Automate"],
+  "reversible": true,
+  "evidence": [
+    "evidence/live_lab_2026-08-26/22_automations_state.txt",
+    "evidence/live_lab_2026-08-26/23_inbox_manager_detail_state.txt"
+  ]
+}

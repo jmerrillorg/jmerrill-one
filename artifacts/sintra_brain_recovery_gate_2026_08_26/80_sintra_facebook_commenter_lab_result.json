@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "automation": "Facebook Commenter",
+  "result": "NOT TESTED — SAFE NON-PUBLIC MODE UNAVAILABLE",
+  "public_comments": 0,
+  "reason": "No public or simulated commenting surface was opened; no non-public test mode was proven in the bounded live pass.",
+  "disposition": "HOLD — NO PRODUCTION AUTHORITY"
+}

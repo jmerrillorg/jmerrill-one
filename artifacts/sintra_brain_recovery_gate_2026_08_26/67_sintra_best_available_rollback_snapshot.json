@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "workspace": "J Merrill One",
+  "rollback_strength": "PARTIAL",
+  "why": "The snapshot is strong for visible workspace, 89-record count, 37 visible title identities, 34 focused recovery identities, 52 unseen hold count, connector state, automation state, and screenshots. It is partial because Sintra does not expose a structured Brain export or record IDs for all 89 records in the inspected UI.",
+  "workspace_identity": "J Merrill One",
+  "visible_record_count": 89,
+  "record_titles_ids": {
+    "visible_title_count": 37,
+    "record_ids_exposed": false
+  },
+  "focused_set": {
+    "count": 34,
+    "sources": [
+      "43_sintra_quarantine_record_review.json",
+      "45_sintra_rehome_candidate_review.json",
+      "47_sintra_title_reviewed_unresolved.json"
+    ]
+  },
+  "unseen_unclassified_hold": 52,
+  "automation_state_after_live_pass": {
+    "Social Media Manager": "on",
+    "Inbox Manager": "off",
+    "Daily Summarizer": "on",
+    "Facebook Commenter": "on"
+  },
+  "connector_state": {
+    "Facebook": "CONNECTED / SCOPE REVIEW",
+    "Instagram": "CONNECTED / SCOPE REVIEW",
+    "Google Analytics": "CONNECTED / SCOPE REVIEW",
+    "LinkedIn Organization": "CONNECTED / SCOPE REVIEW",
+    "QuickBooks": "NOT CONNECTED"
+  },
+  "evidence_references": [
+    "35_sintra_pre_recovery_snapshot.json",
+    "42_sintra_unseen_record_hold.json",
+    "48_sintra_focused_recovery_set.json",
+    "evidence/live_lab_2026-08-26/02_computer_use_chrome_state.txt",
+    "evidence/live_lab_2026-08-26/26_automations_after_reload_state.txt"
+  ]
+}

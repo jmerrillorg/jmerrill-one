@@ -1,22 +1,22 @@
 # Sintra Founder Mutation Packet
 
-No mutation was executed in this pass.
+One approved mutation was executed in this pass: Inbox Manager was disabled after the final live dependency check returned SAFE TO DISABLE.
 
 ## Decision 1: Inbox Manager
 
 Target: Inbox Manager automation.
 
-Before state: enabled visually, detailed monitor/send configuration not exposed.
+Before state: automations list switch on; detail page showed "Turn on Inbox Manager" and "Get started" with no Gmail/Outlook account or active production dependency visible.
 
-Proposed after state: disabled until a governed mailbox use case is approved.
+After state: disabled; reload verified Inbox Manager switch off.
 
 Risk: possible competition with Outlook, Dynamics, Power Automate, and mailbox governance.
 
 Rollback: re-enable in Sintra automation settings after documenting the prior enabled state and configuration.
 
-Recommendation: approve disable.
+Recommendation: completed. Keep disabled unless a governed mailbox use case is separately approved.
 
-Exact Founder response: `APPROVE DISABLE INBOX MANAGER` or `DO NOT DISABLE INBOX MANAGER`.
+Exact Founder response: no further response required for this executed item.
 
 ## Decision 2: Social Media Manager
 
@@ -27,6 +27,8 @@ Before state: enabled visually; possible Facebook, Instagram, and LinkedIn Organ
 Proposed after state: lab-only if non-public simulation exists; otherwise disabled until lab testing is complete.
 
 Risk: scheduling or publishing could bypass Social Recovery governance.
+
+Observed lab risk: Social/brand lane contamination remains moderate; do not let Social Media Manager publish or schedule outside Social Recovery governance.
 
 Rollback: re-enable after lab controls and approval flow are proven.
 
@@ -52,7 +54,7 @@ Exact Founder response: `APPROVE FACEBOOK COMMENTER HOLD / NO PUBLIC COMMENTS`.
 
 ## Decision 4: Focused Brain Quarantine/Rehome
 
-Target: 17 quarantine records and 8 rehome candidates only.
+Target: exact 17 quarantine records and exact 8 rehome candidates only.
 
 Before state: active in One Brain unless Sintra internally isolates them; safe primitive not proven.
 
@@ -60,9 +62,11 @@ Proposed after state: reversible quarantine or source-backed reference/rehome af
 
 Risk: active contamination if left in One Brain; data loss if deletion is improvised.
 
+Observed lab risk: Publishing records were treated as a governing rulebook inside One Brain; this supports quarantine/rehome design, but not deletion or opaque batch mutation.
+
 Rollback: only use reversible methods with export/checksum evidence.
 
-Recommendation: approve design, not execution, until Sintra quarantine/rehome primitive is proven.
+Recommendation: approve design, not execution, until Sintra quarantine/rehome primitive is proven and individual record bodies are inspected.
 
 Exact Founder response: `APPROVE QUARANTINE DESIGN ONLY — NO DELETE`.
 

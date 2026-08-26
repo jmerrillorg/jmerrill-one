@@ -1,0 +1,16 @@
+Window: "Brain AI", App: Google Chrome.
+0 menu New, Secondary Actions: Cancel
+	1 Document
+		2 image
+		3 text Document
+	4 Upload
+		5 image
+		6 text Upload
+	7 Link
+		8 image
+		9 text Link
+	10 Folder
+		11 image
+		12 text Folder
+
+The focused UI element is 0 menu New, Secondary Actions: Cancel

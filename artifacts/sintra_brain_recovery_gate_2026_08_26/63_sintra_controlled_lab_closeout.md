@@ -1,14 +1,14 @@
 # Sintra Controlled Lab Closeout
 
-Classification: SINTRA LIMITED LAB ADOPTION CANDIDATE — FURTHER EVIDENCE REQUIRED.
+Classification: SINTRA CONTROLLED LAB COMPLETE — LIMITED ROLLBACK EVIDENCE; FOUNDER MUTATION DECISIONS REQUIRED.
 
-No Sintra mutation was performed.
+One approved Sintra mutation was performed: Inbox Manager was disabled after the live dependency check returned SAFE TO DISABLE.
 
 ## Snapshot
 
 The snapshot is based on existing live visual evidence from the recovery gate. Brain AI shows 89 visible records: 3 KEEP candidates, 17 quarantine, 8 rehome, 9 title-reviewed unresolved, and 52 unseen/unclassified.
 
-Structured Brain export was not performed because export availability is not proven in the local evidence. Export or proof of unavailability is required before mutation.
+Structured Brain export is not exposed in the current tenant UI after bounded live inspection. Visual/record snapshot is the best available recovery evidence.
 
 ## Brain
 
@@ -24,9 +24,9 @@ Delete candidates: 0.
 
 Social Media Manager: lab-only, disable if no safe simulation/non-public mode exists.
 
-Inbox Manager: ready to disable, Founder mutation confirmation required.
+Inbox Manager: disabled after SAFE TO DISABLE dependency check.
 
-Daily Summarizer: promising, more internal-only testing required.
+Daily Summarizer: no unique value until proven.
 
 Facebook Commenter: hold, no production authority, no public comments.
 
@@ -40,11 +40,11 @@ Connector mutations: 0.
 
 ## Lab
 
-Read-only Brain lab test cases and a scorecard rubric were prepared. Live Sintra responses were not executed in this pass because structured snapshot/export remains incomplete.
+Seven read-only Brain lab categories were executed in internal chat. Overall score: 2.0/3.0. Contamination rate: MODERATE. Authority awareness: PARTIAL.
 
 ## Microsoft Overlap
 
-Inbox Manager shows high duplication/risk against Outlook, Dynamics, Power Automate, and mailbox governance. Social Media Manager and Daily Summarizer remain lab candidates only if they do not bypass Microsoft-first and Social Recovery governance.
+Inbox Manager was disabled. Social Media Manager remains high-risk/lab-only. Daily Summarizer has no unique value until proven. Facebook Commenter was not tested because no safe non-public mode was proven.
 
 ## Public Actions
 
@@ -56,8 +56,8 @@ Emails: 0.
 
 External messages: 0.
 
-Mutations: 0.
+Mutations: 1.
 
 ## Exact Next Action
 
-Obtain a structured Brain export or prove no export exists. Then inspect only the 34 focused records and run internal-only Brain tests before bringing exact mutation approvals back to the Founder.
+Inspect exact record bodies for the 34 focused records, then bring Founder mutation decisions for reversible quarantine/rehome design. Do not mutate Brain records yet.

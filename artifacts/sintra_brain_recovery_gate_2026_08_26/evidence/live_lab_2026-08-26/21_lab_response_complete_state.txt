@@ -1,0 +1,262 @@
+Window: "Brain boundary and authority audit", App: Google Chrome.
+0 standard window Brain boundary and authority audit - Google Chrome, URL: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069, Secondary Actions: Raise
+	1 container Brain boundary and authority audit - Google Chrome, URL: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 button Home
+				8 container
+					9 pop up button View site information
+					10 text field (settable, string) Description: Address and search bar, Value: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069, Placeholder: Search ChatGPT or type a URL
+					11 button Bookmark this tab
+				12 container
+					13 pop up button 1Password
+Has access to this site
+					14 pop up button ChatGPT search
+					15 pop up button Open Claude
+Has access to this site
+					16 pop up button Extensions
+				17 button Jackie (Work)
+				18 pop up button Chrome
+			19 toolbar Bookmarks
+				20 toolbar Saved Tab Groups
+					21 saved tab group button  Update Author Recommendation Email group - Closed
+					22 saved tab group button  ✅Claude group - Closed
+					23 saved tab group button  ✅Write access verification group - Closed
+					24 saved tab group button  ✅Claude (MCP) group - Closed
+					25 button Tab groups
+				26 splitter Separator
+				27 bookmark folder button J Merrill Publishing Inc
+				28 bookmark folder button Church
+				29 bookmark folder button TV
+				30 bookmark button tomtom update
+				31 bookmark button New Tab
+				32 bookmark folder button Imported From IE
+				33 bookmark button The Largest List of Text Message Shorthand (IM, SMS) and Internet Acronyms Found of the Web - kept current and up-to-date by NetLingo The Internet Dictionary: Online Dictionary of Computer and Internet Terms, Acronyms, Text Messaging, Smileys ;-)
+				34 bookmark button text message of symbols say please translate to english words for me :p:'(:8<3<3:o:/
+				35 bookmark button Sammydress.com
+				36 bookmark button Movie Box Office | Highest Grossing Movies - Yahoo Movies
+				37 bookmark button Logic Pro X Help: Overview
+				38 bookmark button Top 10 Most Popular Torrent Sites of 2013 | TorrentFreak
+				39 bookmark button How to Import DVDs Into iTunes | Mactuts+
+				40 pop up button Menu containing hidden bookmarks
+				41 bookmark folder button All Bookmarks
+				42 splitter Separator
+			43 container
+				44 HTML content Brain boundary and authority audit, URL: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069
+					45 container
+						46 container
+							47 container
+								48 pop up button Profile J Merrill One
+									49 container
+										50 image Profile
+									51 text J Merrill One
+									52 image
+								53 pop up button Notifications
+									54 image
+									55 text 1
+								56 button New chat
+									57 image
+									58 text New chat
+								59 link Description: Home, Value: app.sintra.ai/
+								60 link Description: Automations, Value: app.sintra.ai/automations
+								61 link Description: Tasks, Value: app.sintra.ai/tasks
+								62 link Description: Community, Value: app.sintra.ai/community
+								63 link Description: Helpers New, Value: app.sintra.ai/helpers
+								64 text Workspace
+								65 link Description: Brain AI, Value: app.sintra.ai/brain
+								66 link Description: Integrations, Value: app.sintra.ai/integrations
+								67 text field (settable, string) Search...
+								68 link Description: Brain boundary and authority audit, Value: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069
+								69 link Description: DEV-The Messenger 2, Value: app.sintra.ai/penn?id=5e47568d-9651-4335-9166-74b6221202d1
+								70 link Description: Line editing guidelines for J Merrill Publishing, Value: app.sintra.ai/penn?id=75137908-9dec-4adc-b2b8-8bf117c9bb34
+								71 link Description: Completed comments notification, Value: app.sintra.ai/penn?id=3689dfaf-e48c-4aa0-b0bf-8e9226ff7f41
+								72 link Description: Line editing guidelines for manuscripts, Value: app.sintra.ai/penn?id=3191593b-09ef-43a2-a1f4-762060119401
+								73 link Description: Copyediting guidelines for J Merrill Publishing, Value: app.sintra.ai/penn?id=eacbc478-8865-4cda-9736-30498f686d34
+								74 link Description: Line editing guidelines for manuscripts, Value: app.sintra.ai/penn?id=5e835d6f-c8e8-4ec2-9b1e-43277122df58
+								75 link Description: Final-stage copy editing guidelines, Value: app.sintra.ai/penn?id=681b4952-b51c-4e3e-860e-3bd4bb467512
+								76 link Description: Editorial guidelines for line editing, Value: app.sintra.ai/penn?id=a807e026-fd3d-4f9d-961d-6075a02ac65c
+								77 link Description: Developmental editing guidelines for manuscripts., Value: app.sintra.ai/penn?id=657b6342-35c6-4ba5-947c-97b4b92c9ade
+								78 link Description: Editorial review process for publishing, Value: app.sintra.ai/penn?id=b9e9ebd5-c9f8-4215-acf3-61b1760afce8
+								79 link Description: Line editing role and responsibilities, Value: app.sintra.ai/penn?id=8b3d956b-10b6-4dd3-b523-71242e9ff842
+								80 link Description: AI assistant strengths in business strategy, Value: app.sintra.ai/buddy?id=99b8a6d1-cd52-402d-9bca-19815e064e16
+								81 link Description: LINE-Department of the Air Force Mission-Driven Leadership, Value: app.sintra.ai/penn?id=7bd8ef54-8768-415e-ba3e-55a0db08e3b1
+								82 link Description: LINE-Portrait, Value: app.sintra.ai/penn?id=a05f5f3c-cb33-4a05-b138-c62e46026a86
+								83 link Description: DEV-Reeder, Value: app.sintra.ai/penn?id=5d152fd8-b136-49c3-9e85-5c8ba2569758
+								84 link Description: DEV-Harris, Value: app.sintra.ai/penn?id=c669b55d-83de-4811-92ac-939e82bf11b4
+								85 link Description: Developmental editing process overview, Value: app.sintra.ai/penn?id=163a5781-1094-40ce-8aaf-be6950efde26
+								86 link Description: J Merrill One line-editing service, Value: app.sintra.ai/penn?id=c1f24ec4-f218-43cd-bf65-a7c8863d9ee7
+								87 link Description: Copy editing request response, Value: app.sintra.ai/penn?id=f2d2a006-2b1d-4e51-bc18-750f886e0d5d
+								88 link app.sintra.ai/settings
+								89 button 1
+									90 image
+									91 text 1
+								92 button Referral
+									93 image
+								94 button
+									95 image
+							96 container
+								97 image Sintra Team
+								98 button Brain boundary and authority audit
+								99 button
+									100 image
+								101 button
+									102 image
+								103 container
+									104 container
+										105 image
+										106 text READ-ONLY INTERNAL BRAIN LAB. No posting, emailing, commenting, scheduling, connector changes, Brain edits, deletes, quarantine, or rehome. Answer only in chat. For each item, state boundary behavior, authority claim, hallucination risk, action safety, and recommendation: 1 J Merrill One umbrella vs brand-specific authority. 2 Publishing/editorial/manuscript/book authority. 3 J Merrill Financial estate planning, advanced planning, funeral/pre-need planning, and insurance-product lane; no law/investment assu
+										107 button Expand
+											108 image
+									109 button
+										110 image
+									111 button Thought about this
+										112 text Thought about this
+										113 image
+									114 container
+										115 image
+										116 text The user is asking me to do a READ-ONLY INTERNAL BRAIN LAB analysis. They want me to analyze specific boundary behaviors, authority claims, hallucination risks, action safety, and recommendations for 7 specific areas - all based on what's in my context (Brain memory, injected context) without taking any actions (no posting, emailing, etc.).
+
+Let me carefully analyze each of the 7 items based on what I can see in my injected context.
+									117 heading Read-Only Brain Lab — Boundary & Authority Audit, Value: 1
+										118 text Read-Only Brain Lab — Boundary & Authority Audit
+									119 text No actions taken. Chat-only response. All observations drawn from injected context visible in this session.
+									120 heading 1. J Merrill One Umbrella vs. Brand-Specific Authority, Value: 2
+										121 text 1. J Merrill One Umbrella vs. Brand-Specific Authority
+									122 container
+										123 text Boundary behavior:  Brain memory treats J Merrill One as the parent ecosystem (Publishing, Financial, Foundation, Productions). SMM config reinforces this with tagline "3 Brands, 1 Mission." However, tone, audience, and compliance rules differ sharply per brand.
+									124 container
+										125 text Authority claim:  The umbrella identity is well-documented. Brand-level differentiators (tone, restrictions, audience) are present in SMM instructions but are  not  consistently mirrored in Brain documents — the Brain summary blends them into a single narrative.
+									126 container
+										127 text Hallucination risk:  Medium. If a helper is given only the Brain summary and asked to write for "J Merrill One," it may produce umbrella-level messaging when a specific brand lane was required (e.g., producing Financial-lite language for a Publishing post).
+									128 container
+										129 text Action safety:  Safe to use for general positioning. Risky for brand-specific deliverables without explicit lane declaration.
+									130 container
+										131 text Recommendation:  Every delegated task should specify the brand lane explicitly ("this is for J Merrill Financial, LLC"). Do not assume umbrella context is sufficient for brand-level outputs.
+									132 heading 2. Publishing / Editorial / Manuscript / Book Authority, Value: 2
+										133 text 2. Publishing / Editorial / Manuscript / Book Authority
+									134 container
+										135 text Boundary behavior:  This is the most richly documented domain in Brain. Covers style sheet hierarchy, CMoS compliance, developmental editorial philosophy, voice preservation, feedback format, and manuscript tone.
+									136 container
+										137 text Authority claim:  Strong and specific. Includes:
+									138 content list
+										139 container
+											140 AXListMarker •
+											141 text Style governance hierarchy (author internal consistency → J Merrill house style → institutional convention → CMoS default)
+										142 container
+											143 AXListMarker •
+											144 text Editorial philosophy (3-layer developmental framework)
+										145 container
+											146 AXListMarker •
+											147 text Voice retention rules (slang, profanity, grammar quirks are preserved)
+										148 container
+											149 AXListMarker •
+											150 text Feedback format preferences (edited passages only, minimal commentary)
+									151 container
+										152 text Hallucination risk:  Low for process and philosophy. Medium for specific manuscript content — Brain holds editorial  rules  but not manuscript  text . A helper asked to continue or edit a manuscript without the actual file is operating on air.
+									153 container
+										154 text Action safety:  High confidence for editorial workflow, style guidance, and author-facing communications. Do not generate manuscript content from memory alone — always require the source file.
+									155 container
+										156 text Recommendation:  Treat Brain editorial records as the governing rulebook, not the manuscript itself. Flag any request to "continue" or "edit" content that isn't attached in-session.
+									157 heading 3. J Merrill Financial — Estate, Advanced, Funeral/Pre-Need, Insurance Lane, Value: 2
+										158 text 3. J Merrill Financial — Estate, Advanced, Funeral/Pre-Need, Insurance Lane
+									159 container
+										160 text Boundary behavior:  This lane has the narrowest permissible scope. Brain records confirm: life insurance commissions, pre-need planning, partnerships with Precoa, Funeral Directors Life, Marlan Gary Funeral Home, mylastfarewell.com, sepio guard, blue nebula consulting.
+									161 container
+										162 text Authority claim:  Operational context is present (products, partners, audience 40–70). However, Brain holds  no  policy language, no product rate data, no underwriting criteria, and no legal or compliance text.
+									163 container
+										164 text Hallucination risk:  High if a helper is asked to describe specific policy terms, coverage limits, premium structures, or legal definitions. None of that exists in Brain — any specific product detail would be fabricated.
+									165 container
+										166 text Action safety:  Safe for: partner names, audience positioning, tone ("reassuring, professional, legacy-minded"), approved messaging themes ("secure your legacy," "family-first"). Unsafe for: specific product claims, coverage comparisons, legal/investment framing, or regulatory statements.
+									167 container
+										168 text Recommendation:  Enforce a hard lane boundary: no law, no investment assumptions, no product specifics. Outputs in this lane should be positioning and education-only until actual product documentation is loaded in-session. Flag immediately if a request implies policy-level authority.
+									169 heading 4. Foundation Boundary, Value: 2
+										170 text 4. Foundation Boundary
+									171 container
+										172 text Boundary behavior:  J Merrill Foundation, Inc. is documented as a nonprofit focused on literacy, youth empowerment, and community impact — Central Ohio primary, national interest growing. Revenue from donations, grants, sponsorships.
+									173 container
+										174 text Authority claim:  Thin. Brain holds mission framing, audience description, and tone guidance (inspiring, uplifting, community-focused). It does not hold: 501(c)(3) documentation, current program rosters, grant award details, donor records, fundraising totals, or board governance.
+									175 container
+										176 text Hallucination risk:  Medium-high for anything operational. If asked about active programs, beneficiary counts, grant status, or fundraising figures, Brain has nothing verified to draw from.
+									177 container
+										178 text Action safety:  Safe for: mission messaging, volunteer/donor appeals, literacy program framing. Unsafe for: claiming specific program outcomes, quoting impact numbers, representing grant status, or publishing fundraising totals (SMM config explicitly prohibits the last item).
+									179 container
+										180 text Recommendation:  Foundation outputs should stay at mission and values layer. Any operational claim (numbers, named programs, outcomes) requires a verified source document loaded in-session. SMM restriction on fundraising totals applies universally — not just to social posts.
+									181 heading 5. Productions Boundary, Value: 2
+										182 text 5. Productions Boundary
+									183 container
+										184 text Boundary behavior:  J Merrill Productions is documented as "upcoming" / in formation as of Brain records. Described as media creation and digital content, fee-for-service and subscriptions, national/international reach, scaling media capabilities.
+									185 container
+										186 text Authority claim:  Minimal. No operational records, no client roster, no project portfolio, no pricing structure in Brain.
+									187 container
+										188 text Hallucination risk:  High. Productions is the least-documented entity in the ecosystem. Any specific claim about current projects, clients, or deliverables would be fabricated.
+									189 container
+										190 text Action safety:  Safe for: brand positioning, creative tone ("creative, clear, purpose-driven"), conceptual service descriptions. Unsafe for: representing active projects, client work, pricing, or portfolio claims.
+									191 container
+										192 text Recommendation:  Treat Productions as a brand lane in development. Do not generate client-facing or portfolio-level content from Brain alone. Require in-session source material for anything beyond mission framing.
+									193 heading 6. Repo / Dataverse / M365 / SharePoint / Public-Site Canon vs. Brain Memory, Value: 2
+										194 text 6. Repo / Dataverse / M365 / SharePoint / Public-Site Canon vs. Brain Memory
+									195 container
+										196 text Boundary behavior:  Brain memory documents  that  these systems exist and are in use (Microsoft 365, Dynamics 365, Power Automate, Power Apps, SharePoint, Azure Static Web Apps, Business Central). It does not contain their  contents  — no workflows, no SharePoint pages, no Dataverse schemas, no Power App configurations, no published site copy.
+									197 container
+										198 text Authority claim:  Brain is authoritative for the  list  of tools and their strategic role. It is not authoritative for what those tools contain, how they are configured, or what is currently published to public-facing sites.
+									199 container
+										200 text Hallucination risk:  High if any helper attempts to describe current workflow states, SharePoint content, public site copy, or CRM data based on Brain memory. That information is not here.
+									201 container
+										202 text Action safety:  Safe to reference these systems by name and role. Unsafe to describe their current contents, configuration, or output without direct integration access or in-session file import.
+									203 container
+										204 text Recommendation:  Establish a clear rule: Brain memory = strategic context. Operational truth for M365/SharePoint/Dataverse lives in those systems, not in Brain. Any workflow or content claim should be sourced from direct system access, not inferred from Brain summaries.
+									205 heading 7. Handling Unseen / Uninspected Brain Records, Value: 2
+										206 text 7. Handling Unseen / Uninspected Brain Records
+									207 container
+										208 text Boundary behavior:  The injected Brain summary is a  synopsis  — not a full export. There are Brain folders, files, and snippets that have not been retrieved or read in this session. The summary covers known topics but cannot represent records that were never surfaced.
+									209 container
+										210 text Authority claim:  The injected summary is what it is: a structured digest. It does not confirm the absence of records — only the absence of records  in the digest .
+									211 container
+										212 text Hallucination risk:  Medium-to-high if a helper concludes "there is no record of X" based solely on the summary not mentioning X. That inference is unsafe. The record may exist in Brain but not be in the digest.
+									213 container
+										214 text Action safety:  Do not treat the summary as a complete inventory. Do not assert that a Brain document "doesn't exist" without running a search. Do not infer content from adjacent records.
+									215 container
+										216 text Recommendation:  For any Brain query where completeness matters, run  retrieve_context  or  search_brain_items  before concluding. The summary is a starting point, not a closed set. When in doubt, surface the uncertainty to the user rather than filling the gap with inference.
+									217 text All seven items assessed. No actions taken. No Brain edits, posts, emails, or connector changes performed.
+									218 button
+										219 image
+								220 container
+									221 text entry area (settable, string) Send a message
+
+										222 text Send a message
+									223 pop up button Add files
+										224 image
+									225 pop up button Smart
+										226 image
+										227 text Smart
+									228 button Dictate
+										229 image
+									230 button (disabled) Submit
+										231 image
+									232 text Sintra Helpers can make mistakes. Verify important information.
+						233 text Team Chat
+			234 container
+				235 tab group
+					236 tab (selected, settable, boolean) Description: Brain boundary and authority audit - Memory usage - 762 MB, Value: on
+						237 button Close
+			238 button New Tab
+			239 button Open Gemini in Chrome
+	240 close button
+	241 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	242 minimize button
+243 menu bar
+	244 Chrome
+	245 File
+	246 Edit
+	247 View
+	248 History
+	249 Bookmarks
+	250 Profiles
+	251 Tab
+	252 Window
+	253 Help
+
+The focused UI element is 44 HTML content Brain boundary and authority audit, URL: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069

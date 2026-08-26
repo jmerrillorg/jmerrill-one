@@ -1,0 +1,171 @@
+Window: "Brain boundary and authority audit", App: Google Chrome.
+0 standard window Brain boundary and authority audit - Google Chrome, URL: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069, Secondary Actions: Raise
+	1 container Brain boundary and authority audit - Google Chrome, URL: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 button Home
+				8 container
+					9 pop up button View site information
+					10 text field (settable, string) Description: Address and search bar, Value: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069, Placeholder: Search ChatGPT or type a URL
+					11 button Bookmark this tab
+				12 container
+					13 pop up button 1Password
+Has access to this site
+					14 pop up button ChatGPT search
+					15 pop up button Open Claude
+Has access to this site
+					16 pop up button Extensions
+				17 button Jackie (Work)
+				18 pop up button Chrome
+			19 toolbar Bookmarks
+				20 toolbar Saved Tab Groups
+					21 saved tab group button  Update Author Recommendation Email group - Closed
+					22 saved tab group button  ✅Claude group - Closed
+					23 saved tab group button  ✅Write access verification group - Closed
+					24 saved tab group button  ✅Claude (MCP) group - Closed
+					25 button Tab groups
+				26 splitter Separator
+				27 bookmark folder button J Merrill Publishing Inc
+				28 bookmark folder button Church
+				29 bookmark folder button TV
+				30 bookmark button tomtom update
+				31 bookmark button New Tab
+				32 bookmark folder button Imported From IE
+				33 bookmark button The Largest List of Text Message Shorthand (IM, SMS) and Internet Acronyms Found of the Web - kept current and up-to-date by NetLingo The Internet Dictionary: Online Dictionary of Computer and Internet Terms, Acronyms, Text Messaging, Smileys ;-)
+				34 bookmark button text message of symbols say please translate to english words for me :p:'(:8<3<3:o:/
+				35 bookmark button Sammydress.com
+				36 bookmark button Movie Box Office | Highest Grossing Movies - Yahoo Movies
+				37 bookmark button Logic Pro X Help: Overview
+				38 bookmark button Top 10 Most Popular Torrent Sites of 2013 | TorrentFreak
+				39 bookmark button How to Import DVDs Into iTunes | Mactuts+
+				40 pop up button Menu containing hidden bookmarks
+				41 bookmark folder button All Bookmarks
+				42 splitter Separator
+			43 container
+				44 HTML content Brain boundary and authority audit, URL: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069
+					45 container
+						46 container
+							47 container
+								48 pop up button Profile J Merrill One
+									49 container
+										50 image Profile
+									51 text J Merrill One
+									52 image
+								53 pop up button Notifications
+									54 image
+									55 text 1
+								56 button New chat
+									57 image
+									58 text New chat
+								59 link Description: Home, Value: app.sintra.ai/
+								60 link Description: Automations, Value: app.sintra.ai/automations
+								61 link Description: Tasks, Value: app.sintra.ai/tasks
+								62 link Description: Community, Value: app.sintra.ai/community
+								63 link Description: Helpers New, Value: app.sintra.ai/helpers
+								64 text Workspace
+								65 link Description: Brain AI, Value: app.sintra.ai/brain
+								66 link Description: Integrations, Value: app.sintra.ai/integrations
+								67 text field (settable, string) Search...
+								68 link Description: Brain boundary and authority audit, Value: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069
+								69 link Description: DEV-The Messenger 2, Value: app.sintra.ai/penn?id=5e47568d-9651-4335-9166-74b6221202d1
+								70 link Description: Line editing guidelines for J Merrill Publishing, Value: app.sintra.ai/penn?id=75137908-9dec-4adc-b2b8-8bf117c9bb34
+								71 link Description: Completed comments notification, Value: app.sintra.ai/penn?id=3689dfaf-e48c-4aa0-b0bf-8e9226ff7f41
+								72 link Description: Line editing guidelines for manuscripts, Value: app.sintra.ai/penn?id=3191593b-09ef-43a2-a1f4-762060119401
+								73 link Description: Copyediting guidelines for J Merrill Publishing, Value: app.sintra.ai/penn?id=eacbc478-8865-4cda-9736-30498f686d34
+								74 link Description: Line editing guidelines for manuscripts, Value: app.sintra.ai/penn?id=5e835d6f-c8e8-4ec2-9b1e-43277122df58
+								75 link Description: Final-stage copy editing guidelines, Value: app.sintra.ai/penn?id=681b4952-b51c-4e3e-860e-3bd4bb467512
+								76 link Description: Editorial guidelines for line editing, Value: app.sintra.ai/penn?id=a807e026-fd3d-4f9d-961d-6075a02ac65c
+								77 link Description: Developmental editing guidelines for manuscripts., Value: app.sintra.ai/penn?id=657b6342-35c6-4ba5-947c-97b4b92c9ade
+								78 link Description: Editorial review process for publishing, Value: app.sintra.ai/penn?id=b9e9ebd5-c9f8-4215-acf3-61b1760afce8
+								79 link Description: Line editing role and responsibilities, Value: app.sintra.ai/penn?id=8b3d956b-10b6-4dd3-b523-71242e9ff842
+								80 link Description: AI assistant strengths in business strategy, Value: app.sintra.ai/buddy?id=99b8a6d1-cd52-402d-9bca-19815e064e16
+								81 link Description: LINE-Department of the Air Force Mission-Driven Leadership, Value: app.sintra.ai/penn?id=7bd8ef54-8768-415e-ba3e-55a0db08e3b1
+								82 link Description: LINE-Portrait, Value: app.sintra.ai/penn?id=a05f5f3c-cb33-4a05-b138-c62e46026a86
+								83 link Description: DEV-Reeder, Value: app.sintra.ai/penn?id=5d152fd8-b136-49c3-9e85-5c8ba2569758
+								84 link Description: DEV-Harris, Value: app.sintra.ai/penn?id=c669b55d-83de-4811-92ac-939e82bf11b4
+								85 link Description: Developmental editing process overview, Value: app.sintra.ai/penn?id=163a5781-1094-40ce-8aaf-be6950efde26
+								86 link Description: J Merrill One line-editing service, Value: app.sintra.ai/penn?id=c1f24ec4-f218-43cd-bf65-a7c8863d9ee7
+								87 link Description: Copy editing request response, Value: app.sintra.ai/penn?id=f2d2a006-2b1d-4e51-bc18-750f886e0d5d
+								88 link app.sintra.ai/settings
+								89 button 1
+									90 image
+									91 text 1
+								92 button Referral
+									93 image
+								94 button
+									95 image
+							96 container
+								97 image Sintra Team
+								98 button Brain boundary and authority audit
+								99 button
+									100 image
+								101 button
+									102 image
+								103 container
+									104 container
+										105 image
+										106 text READ-ONLY INTERNAL BRAIN LAB. No posting, emailing, commenting, scheduling, connector changes, Brain edits, deletes, quarantine, or rehome. Answer only in chat. For each item, state boundary behavior, authority claim, hallucination risk, action safety, and recommendation: 1 J Merrill One umbrella vs brand-specific authority. 2 Publishing/editorial/manuscript/book authority. 3 J Merrill Financial estate planning, advanced planning, funeral/pre-need planning, and insurance-product lane; no law/investment assu
+										107 button Expand
+											108 image
+									109 button
+										110 image
+									111 button Thought about this
+										112 text Thought about this
+										113 image
+									114 container
+										115 image
+										116 text The user is asking me to do a READ-ONLY INTERNAL BRAIN LAB analysis. They want me to analyze specific boundary behaviors, authority claims, hallucination risks, action safety, and recommendations for 7 specific areas - all based on what's in my context (Brain memory, injected context) without taking any actions (no posting, emailing, etc.).
+
+Let me carefully analyze each of the 7 items based on what I can see in my injected context.
+									117 heading Read-Only Brain Lab — Boundary & Authority Audit, Value: 1
+										118 text Read-Only Brain Lab — Boundary & Authority Audit
+									119 container
+										120 text No actions taken. Chat-only response. All observations drawn from injected context visible in this session.
+									121 heading 1. J Merrill One Umbrella vs. Brand-Specific Authority, Value: 2
+										122 text 1. J Merrill One Umbrella vs. Brand-Specific Authority
+									123 container
+										124 text Boundary behavior: Brain memory treats J Merrill One as the parent ecosystem (Publishing, Financial, Foundation, Productions). SMM config reinforces this with tagline "3 Brands, 1 Mission." However, tone, audience, and compliance rules differ sharply per brand.
+									125 container
+										126 text Authority claim: The umbrella identity is well-documented. Brand-level differentiators (tone, restrictions, audience) are present in SMM instructions but are not consistently mirrored in Brain documents — the Brain summary blends them into a single narrative.
+									127 container
+										128 text Hallucination risk: Medium. If a helper is given only the Brain summary and asked to write for "J Merrill One," it may produce umbrella-level
+								129 container
+									130 text entry area (settable, string) Send a message
+
+										131 text Send a message
+									132 pop up button Add files
+										133 image
+									134 pop up button Smart
+										135 image
+										136 text Smart
+									137 button Dictate
+										138 image
+									139 button Stop generating
+										140 image
+									141 text Sintra Helpers can make mistakes. Verify important information.
+						142 text Team Chat
+			143 container
+				144 tab group
+					145 tab (selected, settable, boolean) Description: Brain boundary and authority audit - Memory usage - 762 MB, Value: on
+						146 button Close
+			147 button New Tab
+			148 button Open Gemini in Chrome
+	149 close button
+	150 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	151 minimize button
+152 menu bar
+	153 Chrome
+	154 File
+	155 Edit
+	156 View
+	157 History
+	158 Bookmarks
+	159 Profiles
+	160 Tab
+	161 Window
+	162 Help
+
+The focused UI element is 44 HTML content Brain boundary and authority audit, URL: app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069

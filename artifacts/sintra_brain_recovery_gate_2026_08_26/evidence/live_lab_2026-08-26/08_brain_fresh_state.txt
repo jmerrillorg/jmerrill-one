@@ -1,0 +1,71 @@
+Window: "Brain AI", App: Google Chrome.
+0 standard window Brain AI - Google Chrome, URL: app.sintra.ai/brain, Secondary Actions: Raise
+	1 container Brain AI - Google Chrome, URL: app.sintra.ai/brain
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 button Home
+				8 container
+					9 pop up button View site information
+					10 text field (settable, string) Description: Address and search bar, Value: app.sintra.ai/brain, Placeholder: Search ChatGPT or type a URL
+					11 button Bookmark this tab
+				12 container
+					13 pop up button 1Password
+Has access to this site
+					14 pop up button ChatGPT search
+					15 pop up button Open Claude
+Has access to this site
+					16 pop up button Extensions
+				17 button Jackie (Work)
+				18 pop up button Chrome
+			19 toolbar Bookmarks
+				20 toolbar Saved Tab Groups
+					21 saved tab group button  Update Author Recommendation Email group - Closed
+					22 saved tab group button  ✅Claude group - Closed
+					23 saved tab group button  ✅Write access verification group - Closed
+					24 saved tab group button  ✅Claude (MCP) group - Closed
+					25 button Tab groups
+				26 splitter Separator
+				27 bookmark folder button J Merrill Publishing Inc
+				28 bookmark folder button Church
+				29 bookmark folder button TV
+				30 bookmark button tomtom update
+				31 bookmark button New Tab
+				32 bookmark folder button Imported From IE
+				33 bookmark button The Largest List of Text Message Shorthand (IM, SMS) and Internet Acronyms Found of the Web - kept current and up-to-date by NetLingo The Internet Dictionary: Online Dictionary of Computer and Internet Terms, Acronyms, Text Messaging, Smileys ;-)
+				34 bookmark button text message of symbols say please translate to english words for me :p:'(:8<3<3:o:/
+				35 bookmark button Sammydress.com
+				36 bookmark button Movie Box Office | Highest Grossing Movies - Yahoo Movies
+				37 bookmark button Logic Pro X Help: Overview
+				38 bookmark button Top 10 Most Popular Torrent Sites of 2013 | TorrentFreak
+				39 bookmark button How to Import DVDs Into iTunes | Mactuts+
+				40 pop up button Menu containing hidden bookmarks
+				41 bookmark folder button All Bookmarks
+				42 splitter Separator
+			43 container
+				44 HTML content Brain AI, URL: app.sintra.ai/brain
+					45 container
+			46 container
+				47 tab group
+					48 tab (selected, settable, boolean) Description: Brain AI, Value: on
+						49 button Close
+			50 button New Tab
+			51 button Open Gemini in Chrome
+	52 close button
+	53 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	54 minimize button
+55 menu bar
+	56 Chrome
+	57 File
+	58 Edit
+	59 View
+	60 History
+	61 Bookmarks
+	62 Profiles
+	63 Tab
+	64 Window
+	65 Help
+
+The focused UI element is 44 HTML content Brain AI, URL: app.sintra.ai/brain

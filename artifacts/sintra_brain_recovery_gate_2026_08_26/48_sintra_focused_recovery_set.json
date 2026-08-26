@@ -12,5 +12,12 @@
     "unseen_unclassified_frozen": 52
   },
   "delete_candidates": 0,
+  "live_lab_informed_recommendations_only": {
+    "quarantine_recommended": 17,
+    "rehome_recommended": 8,
+    "more_review": 9,
+    "executed": 0,
+    "basis": "Moderate contamination observed in live Brain lab; exact Brain cleanup remains unexecuted pending Founder mutation approval and record body/source inspection."
+  },
   "mutation_authorized": false
 }

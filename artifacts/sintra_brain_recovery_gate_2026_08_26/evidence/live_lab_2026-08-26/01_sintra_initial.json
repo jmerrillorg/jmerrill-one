@@ -1,0 +1,8 @@
+{
+  "attempted_urls": [
+    "https://app.sintra.ai/"
+  ],
+  "url": "https://app.sintra.ai/login?next=%2F",
+  "title": "Login",
+  "dom": "- main:\n  - img \"helpers\"\n  - link \"Sintra © 2026\":\n    - /url: https://sintra.ai/\n  - link \"Terms and Conditions\":\n    - /url: https://sintra.ai/terms-and-conditions\n  - link \"Privacy Policy\":\n    - /url: https://sintra.ai/privacy-policy\n  - img \"helpers\"\n  - paragraph: Sign in\n  - paragraph: Continue to Sintra\n  - textbox \"Email\" [active]\n  - button \"Continue with Email\"\n  - generic: Or\n  - button \"Continue with Google\":\n    - generic: Continue with Google\n  - paragraph: New to Sintra?\n  - link \"Get Started\":\n    - /url: https://sintra.ai/pricing?next=%2F\n- alert: Login\n- iframe"
+}

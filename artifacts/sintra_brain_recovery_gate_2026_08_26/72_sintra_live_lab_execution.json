@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "workspace": "J Merrill One",
+  "execution_mode": "read-only internal chat",
+  "chat_url": "app.sintra.ai/team?chat=17834b04-8356-487e-bf8c-97c14d533069",
+  "tests_executed": 7,
+  "categories": [
+    "Enterprise authority",
+    "Publishing contamination",
+    "Financial scope",
+    "Foundation boundary",
+    "Productions boundary",
+    "Canon authority",
+    "Unknown/unseen data handling"
+  ],
+  "no_actions": true,
+  "brain_mutations": 0,
+  "connector_mutations": 0,
+  "public_actions": 0,
+  "evidence": [
+    "evidence/live_lab_2026-08-26/18_lab_prompt_typed_short_state.txt",
+    "evidence/live_lab_2026-08-26/21_lab_response_complete_state.txt"
+  ]
+}

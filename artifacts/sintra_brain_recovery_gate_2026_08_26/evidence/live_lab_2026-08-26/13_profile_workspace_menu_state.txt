@@ -1,0 +1,29 @@
+Window: "Brain AI", App: Google Chrome.
+0 menu Profile J Merrill One, Secondary Actions: Cancel
+	1 Profile J Merrill One Workspace settings
+		2 container
+			3 image Profile
+		4 text J Merrill One
+		5 image
+		6 button Workspace settings
+			7 image
+	8 J J Merrill Publishing Workspace settings
+		9 container
+			10 text J
+		11 text J Merrill Publishing
+		12 button Workspace settings
+			13 image
+	14 J J Merrill Financial Workspace settings
+		15 container
+			16 text J
+		17 text J Merrill Financial
+		18 button Workspace settings
+			19 image
+	20 J J Merrill Foundation Workspace settings
+		21 container
+			22 text J
+		23 text J Merrill Foundation
+		24 button Workspace settings
+			25 image
+
+The focused UI element is 0 menu Profile J Merrill One, Secondary Actions: Cancel

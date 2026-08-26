@@ -13,5 +13,11 @@
     {"title":"Our hybrid offerings at J Merrill One","apparent_topic":"enterprise offerings","likely_brand_domain":"J Merrill One","why_title_alone_insufficient":"Likely relevant but must align to current public offerings and avoid stale phrasing.","exact_next_inspection_needed":"Inspect body and compare to current website/repo service pages.","classification_after_inspection":"UNRESOLVED"},
     {"title":"Overview of J Merrill One offerings","apparent_topic":"enterprise offerings","likely_brand_domain":"J Merrill One","why_title_alone_insufficient":"Likely relevant but may duplicate or conflict with current public positioning.","exact_next_inspection_needed":"Inspect body and compare to current website/repo service pages.","classification_after_inspection":"UNRESOLVED"}
   ],
-  "delete_allowed": false
+  "delete_allowed": false,
+  "live_lab_refinement": {
+    "resolved_count": 0,
+    "unresolved_count": 9,
+    "reason": "The live lab tested boundary behavior, not individual record bodies. No title-reviewed unresolved record was opened or source-validated.",
+    "allowed_next_classifications": ["KEEP", "QUARANTINE RECOMMENDED", "REHOME RECOMMENDED", "UNRESOLVED"]
+  }
 }

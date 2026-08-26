@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "export_exists": false,
+  "classification": "PARTIAL EXPORT — LIMITATIONS DOCUMENTED",
+  "visible_count": 89,
+  "exported_count": 0,
+  "record_ids_titles_compared": false,
+  "missing_records": "All records are outside structured export because no export is exposed.",
+  "duplicates": "Not assessable without export.",
+  "hidden_or_system_records": "Not assessable without export.",
+  "recoverable_state": "89-record visual state recoverable from best available snapshot and live evidence, not structured export."
+}

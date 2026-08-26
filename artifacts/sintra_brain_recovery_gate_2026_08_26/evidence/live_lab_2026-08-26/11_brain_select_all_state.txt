@@ -1,0 +1,252 @@
+Window: "Brain AI", App: Google Chrome.
+0 standard window Brain AI - Google Chrome, URL: app.sintra.ai/brain, Secondary Actions: Raise
+	1 container Brain AI - Google Chrome, URL: app.sintra.ai/brain
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 button Home
+				8 container
+					9 pop up button View site information
+					10 text field (settable, string) Description: Address and search bar, Value: app.sintra.ai/brain, Placeholder: Search ChatGPT or type a URL
+					11 button Bookmark this tab
+				12 container
+					13 pop up button 1Password
+Has access to this site
+					14 pop up button ChatGPT search
+					15 pop up button Open Claude
+Has access to this site
+					16 pop up button Extensions
+				17 button Jackie (Work)
+				18 pop up button Chrome
+			19 toolbar Bookmarks
+				20 toolbar Saved Tab Groups
+					21 saved tab group button  Update Author Recommendation Email group - Closed
+					22 saved tab group button  ✅Claude group - Closed
+					23 saved tab group button  ✅Write access verification group - Closed
+					24 saved tab group button  ✅Claude (MCP) group - Closed
+					25 button Tab groups
+				26 splitter Separator
+				27 bookmark folder button J Merrill Publishing Inc
+				28 bookmark folder button Church
+				29 bookmark folder button TV
+				30 bookmark button tomtom update
+				31 bookmark button New Tab
+				32 bookmark folder button Imported From IE
+				33 bookmark button The Largest List of Text Message Shorthand (IM, SMS) and Internet Acronyms Found of the Web - kept current and up-to-date by NetLingo The Internet Dictionary: Online Dictionary of Computer and Internet Terms, Acronyms, Text Messaging, Smileys ;-)
+				34 bookmark button text message of symbols say please translate to english words for me :p:'(:8<3<3:o:/
+				35 bookmark button Sammydress.com
+				36 bookmark button Movie Box Office | Highest Grossing Movies - Yahoo Movies
+				37 bookmark button Logic Pro X Help: Overview
+				38 bookmark button Top 10 Most Popular Torrent Sites of 2013 | TorrentFreak
+				39 bookmark button How to Import DVDs Into iTunes | Mactuts+
+				40 pop up button Menu containing hidden bookmarks
+				41 bookmark folder button All Bookmarks
+				42 splitter Separator
+			43 container
+				44 HTML content Brain AI, URL: app.sintra.ai/brain
+					45 container
+						46 container
+							47 container
+								48 pop up button Profile J Merrill One
+									49 container
+										50 image Profile
+									51 text J Merrill One
+									52 image
+								53 pop up button Notifications
+									54 image
+									55 text 1
+								56 button New chat
+									57 image
+									58 text New chat
+								59 link Description: Home, Value: app.sintra.ai/
+								60 link Description: Automations, Value: app.sintra.ai/automations
+								61 link Description: Tasks, Value: app.sintra.ai/tasks
+								62 link Description: Community, Value: app.sintra.ai/community
+								63 link Description: Helpers New, Value: app.sintra.ai/helpers
+								64 text Workspace
+								65 link Description: Brain AI, Value: app.sintra.ai/brain
+								66 container
+									67 link Description: Knowledge, Value: app.sintra.ai/brain
+									68 link Description: Brand Kit, Value: app.sintra.ai/brain/brand-kit
+								69 link Description: Integrations, Value: app.sintra.ai/integrations
+								70 text field (settable, string) Search...
+								71 link Description: DEV-The Messenger 2, Value: app.sintra.ai/penn?id=5e47568d-9651-4335-9166-74b6221202d1
+								72 link Description: Line editing guidelines for J Merrill Publishing, Value: app.sintra.ai/penn?id=75137908-9dec-4adc-b2b8-8bf117c9bb34
+								73 link Description: Completed comments notification, Value: app.sintra.ai/penn?id=3689dfaf-e48c-4aa0-b0bf-8e9226ff7f41
+								74 link Description: Line editing guidelines for manuscripts, Value: app.sintra.ai/penn?id=3191593b-09ef-43a2-a1f4-762060119401
+								75 link Description: Copyediting guidelines for J Merrill Publishing, Value: app.sintra.ai/penn?id=eacbc478-8865-4cda-9736-30498f686d34
+								76 link Description: Line editing guidelines for manuscripts, Value: app.sintra.ai/penn?id=5e835d6f-c8e8-4ec2-9b1e-43277122df58
+								77 link Description: Final-stage copy editing guidelines, Value: app.sintra.ai/penn?id=681b4952-b51c-4e3e-860e-3bd4bb467512
+								78 link Description: Editorial guidelines for line editing, Value: app.sintra.ai/penn?id=a807e026-fd3d-4f9d-961d-6075a02ac65c
+								79 link Description: Developmental editing guidelines for manuscripts., Value: app.sintra.ai/penn?id=657b6342-35c6-4ba5-947c-97b4b92c9ade
+								80 link Description: Editorial review process for publishing, Value: app.sintra.ai/penn?id=b9e9ebd5-c9f8-4215-acf3-61b1760afce8
+								81 link Description: Line editing role and responsibilities, Value: app.sintra.ai/penn?id=8b3d956b-10b6-4dd3-b523-71242e9ff842
+								82 link Description: AI assistant strengths in business strategy, Value: app.sintra.ai/buddy?id=99b8a6d1-cd52-402d-9bca-19815e064e16
+								83 link Description: LINE-Department of the Air Force Mission-Driven Leadership, Value: app.sintra.ai/penn?id=7bd8ef54-8768-415e-ba3e-55a0db08e3b1
+								84 link Description: LINE-Portrait, Value: app.sintra.ai/penn?id=a05f5f3c-cb33-4a05-b138-c62e46026a86
+								85 link Description: DEV-Reeder, Value: app.sintra.ai/penn?id=5d152fd8-b136-49c3-9e85-5c8ba2569758
+								86 link Description: DEV-Harris, Value: app.sintra.ai/penn?id=c669b55d-83de-4811-92ac-939e82bf11b4
+								87 link Description: Developmental editing process overview, Value: app.sintra.ai/penn?id=163a5781-1094-40ce-8aaf-be6950efde26
+								88 link Description: J Merrill One line-editing service, Value: app.sintra.ai/penn?id=c1f24ec4-f218-43cd-bf65-a7c8863d9ee7
+								89 link Description: Copy editing request response, Value: app.sintra.ai/penn?id=f2d2a006-2b1d-4e51-bc18-750f886e0d5d
+								90 link Description: Funeral program order of service, Value: app.sintra.ai/penn?id=2f8bf6ce-25ce-4516-9e1a-da5b1bd392f0
+								91 link app.sintra.ai/settings
+								92 button 1
+									93 image
+									94 text 1
+								95 button Referral
+									96 image
+								97 button
+									98 image
+							99 container
+								100 container
+									101 heading Brain AI, Value: 1
+										102 text Brain AI
+									103 button Filters
+										104 image
+									105 button Search
+										106 image
+									107 pop up button More Actions
+										108 image
+									109 pop up button New
+										110 image
+										111 text New
+								112 image Brain AI works
+								113 text How Brain AI works Think of Brain AI as your digital brain. Add your brand details, links, and files, and it will use them to understand you better. The richer the info, the smarter and more helpful your AI becomes.
+								114 button Ok, got it!
+								115 text Recommended actions
+								116 button Sintra Team Answer daily questions 10 left today
+									117 container
+										118 image Sintra Team
+										119 image
+									120 text Answer daily questions
+									121 text 10 left today
+								122 button Connect integrations Helpers can complete actions
+									123 text Connect integrations
+									124 text Helpers can complete actions
+								125 checkbox 0
+								126 text Name · 89
+								127 checkbox 0
+								128 text Manuscript Tone and Style
+								129 checkbox 0
+								130 text Style Sheet Governance
+								131 checkbox 0
+								132 text Published Works
+								133 checkbox 0
+								134 text Music Ministry Experience
+								135 checkbox 0
+								136 text Worship Leadership Approach
+								137 checkbox 0
+								138 text Educational Background
+								139 checkbox 0
+								140 text Performance and Recording Credentials
+								141 checkbox 0
+								142 text Professional Role and Current Position
+								143 checkbox 0
+								144 text Hometown and Origins
+								145 checkbox 0
+								146 text Scriptural Approach
+								147 checkbox 0
+								148 text Close Relationships
+								149 checkbox 0
+								150 text Family Values and Modeling
+								151 checkbox 0
+								152 text Professional Experience
+								153 checkbox 0
+								154 text Author Identity
+								155 checkbox 0
+								156 text Spiritual Authority and Calling
+								157 checkbox 0
+								158 text Editorial Philosophy
+								159 checkbox 0
+								160 text Strategic Thinking Style
+								161 checkbox 0
+								162 text Quality Philosophy
+								163 checkbox 0
+								164 text Business Focus
+								165 checkbox 0
+								166 text Primary Client/Project
+								167 checkbox 0
+								168 text Digital Literacy and AI Integration
+								169 checkbox 0
+								170 text Military Context and Values
+								171 checkbox 0
+								172 text Professional Role
+								173 checkbox 0
+								174 text Target Audience and Context
+								175 checkbox 0
+								176 text Subject Matter Expertise
+								177 checkbox 0
+								178 text Client Organization
+								179 checkbox 0
+								180 text Professional Background
+								181 checkbox 0
+								182 text Current Location
+								183 checkbox 0
+								184 text Engagement with Political and Social Critique
+								185 checkbox 0
+								186 text Editorial Preferences
+								187 checkbox 0
+								188 text Writing Preference: Satirical Tone
+								189 checkbox 0
+								190 text Communication Style Preference
+								191 checkbox 0
+								192 text Attention to Detail
+								193 checkbox 0
+								194 text Developmental Review Process
+								195 checkbox 0
+								196 text Author's Honesty About Limitations
+								197 checkbox 0
+								198 text Target Audience
+								199 checkbox 0
+								200 text Personal Background
+								201 checkbox 0
+								202 text Target Audience
+								203 checkbox 0
+								204 text Expertise and Domain Knowledge
+								205 checkbox 0
+								206 text Author's Spiritual Perspective
+								207 checkbox 0
+								208 text Book Content Focus
+								209 checkbox 0
+								210 text Business website and brand links
+								211 checkbox 0
+								212 text Our hybrid offerings at J Merrill One
+								213 checkbox 0
+								214 text Current team size and structure
+								215 checkbox 0
+								216 text Overview of J Merrill One offerings
+								217 checkbox 0
+								218 text Current team size and structure
+								219 checkbox 0
+								220 text Main Competitors of J Merrill One
+								221 checkbox 0
+								222 text Primary business goal for 2025
+								223 checkbox 0
+								224 text Email marketing strategy
+								225 checkbox 0
+								226 text Customer retention rate
+			227 container
+				228 tab group
+					229 tab (selected, settable, boolean) Description: Brain AI, Value: on
+						230 button Close
+			231 button New Tab
+			232 button Open Gemini in Chrome
+	233 close button
+	234 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	235 minimize button
+236 menu bar
+	237 Chrome
+	238 File
+	239 Edit
+	240 View
+	241 History
+	242 Bookmarks
+	243 Profiles
+	244 Tab
+	245 Window
+	246 Help
+
+The focused UI element is 125 checkbox 0

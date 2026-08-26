@@ -1,0 +1,245 @@
+Window: "Sintra Helpers", App: Google Chrome.
+0 standard window Sintra Helpers - Google Chrome, URL: app.sintra.ai/, Secondary Actions: Raise
+	1 container Sintra Helpers - Google Chrome, URL: app.sintra.ai/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 button Home
+				8 container
+					9 pop up button View site information
+					10 text field (settable, string) Description: Address and search bar, Value: app.sintra.ai, Placeholder: Search ChatGPT or type a URL
+					11 button Bookmark this tab
+				12 container
+					13 pop up button 1Password
+Has access to this site
+					14 pop up button ChatGPT search
+					15 pop up button Open Claude
+Has access to this site
+					16 pop up button Extensions
+				17 button Jackie (Work)
+				18 pop up button Chrome
+			19 toolbar Bookmarks
+				20 toolbar Saved Tab Groups
+					21 saved tab group button  Update Author Recommendation Email group - Closed
+					22 saved tab group button  ✅Claude group - Closed
+					23 saved tab group button  ✅Write access verification group - Closed
+					24 saved tab group button  ✅Claude (MCP) group - Closed
+					25 button Tab groups
+				26 splitter Separator
+				27 bookmark folder button J Merrill Publishing Inc
+				28 bookmark folder button Church
+				29 bookmark folder button TV
+				30 bookmark button tomtom update
+				31 bookmark button New Tab
+				32 bookmark folder button Imported From IE
+				33 bookmark button The Largest List of Text Message Shorthand (IM, SMS) and Internet Acronyms Found of the Web - kept current and up-to-date by NetLingo The Internet Dictionary: Online Dictionary of Computer and Internet Terms, Acronyms, Text Messaging, Smileys ;-)
+				34 bookmark button text message of symbols say please translate to english words for me :p:'(:8<3<3:o:/
+				35 bookmark button Sammydress.com
+				36 bookmark button Movie Box Office | Highest Grossing Movies - Yahoo Movies
+				37 bookmark button Logic Pro X Help: Overview
+				38 bookmark button Top 10 Most Popular Torrent Sites of 2013 | TorrentFreak
+				39 bookmark button How to Import DVDs Into iTunes | Mactuts+
+				40 pop up button Menu containing hidden bookmarks
+				41 bookmark folder button All Bookmarks
+				42 splitter Separator
+			43 container
+				44 HTML content Sintra Helpers, URL: app.sintra.ai/
+					45 container
+						46 container
+							47 container
+								48 pop up button Profile J Merrill One
+									49 container
+										50 image Profile
+									51 text J Merrill One
+									52 image
+								53 pop up button Notifications
+									54 image
+									55 text 1
+								56 button New chat
+									57 image
+									58 text New chat
+								59 link Description: Home, Value: app.sintra.ai/
+								60 link Description: Automations, Value: app.sintra.ai/automations
+								61 link Description: Tasks, Value: app.sintra.ai/tasks
+								62 link Description: Community, Value: app.sintra.ai/community
+								63 link Description: Helpers New, Value: app.sintra.ai/helpers
+								64 text Workspace
+								65 link Description: Brain AI, Value: app.sintra.ai/brain
+								66 link Description: Integrations, Value: app.sintra.ai/integrations
+								67 text field (settable, string) Search...
+								68 link Description: DEV-The Messenger 2, Value: app.sintra.ai/penn?id=5e47568d-9651-4335-9166-74b6221202d1
+								69 link Description: Line editing guidelines for J Merrill Publishing, Value: app.sintra.ai/penn?id=75137908-9dec-4adc-b2b8-8bf117c9bb34
+								70 link Description: Completed comments notification, Value: app.sintra.ai/penn?id=3689dfaf-e48c-4aa0-b0bf-8e9226ff7f41
+								71 link Description: Line editing guidelines for manuscripts, Value: app.sintra.ai/penn?id=3191593b-09ef-43a2-a1f4-762060119401
+								72 link Description: Copyediting guidelines for J Merrill Publishing, Value: app.sintra.ai/penn?id=eacbc478-8865-4cda-9736-30498f686d34
+								73 link Description: Line editing guidelines for manuscripts, Value: app.sintra.ai/penn?id=5e835d6f-c8e8-4ec2-9b1e-43277122df58
+								74 link Description: Final-stage copy editing guidelines, Value: app.sintra.ai/penn?id=681b4952-b51c-4e3e-860e-3bd4bb467512
+								75 link Description: Editorial guidelines for line editing, Value: app.sintra.ai/penn?id=a807e026-fd3d-4f9d-961d-6075a02ac65c
+								76 link Description: Developmental editing guidelines for manuscripts., Value: app.sintra.ai/penn?id=657b6342-35c6-4ba5-947c-97b4b92c9ade
+								77 link Description: Editorial review process for publishing, Value: app.sintra.ai/penn?id=b9e9ebd5-c9f8-4215-acf3-61b1760afce8
+								78 link Description: Line editing role and responsibilities, Value: app.sintra.ai/penn?id=8b3d956b-10b6-4dd3-b523-71242e9ff842
+								79 link Description: AI assistant strengths in business strategy, Value: app.sintra.ai/buddy?id=99b8a6d1-cd52-402d-9bca-19815e064e16
+								80 link Description: LINE-Department of the Air Force Mission-Driven Leadership, Value: app.sintra.ai/penn?id=7bd8ef54-8768-415e-ba3e-55a0db08e3b1
+								81 link Description: LINE-Portrait, Value: app.sintra.ai/penn?id=a05f5f3c-cb33-4a05-b138-c62e46026a86
+								82 link Description: DEV-Reeder, Value: app.sintra.ai/penn?id=5d152fd8-b136-49c3-9e85-5c8ba2569758
+								83 link Description: DEV-Harris, Value: app.sintra.ai/penn?id=c669b55d-83de-4811-92ac-939e82bf11b4
+								84 link Description: Developmental editing process overview, Value: app.sintra.ai/penn?id=163a5781-1094-40ce-8aaf-be6950efde26
+								85 link Description: J Merrill One line-editing service, Value: app.sintra.ai/penn?id=c1f24ec4-f218-43cd-bf65-a7c8863d9ee7
+								86 link Description: Copy editing request response, Value: app.sintra.ai/penn?id=f2d2a006-2b1d-4e51-bc18-750f886e0d5d
+								87 link Description: Funeral program order of service, Value: app.sintra.ai/penn?id=2f8bf6ce-25ce-4516-9e1a-da5b1bd392f0
+								88 link app.sintra.ai/settings
+								89 button 1
+									90 image
+									91 text 1
+								92 button Referral
+									93 image
+								94 button
+									95 image
+							96 container
+								97 button Open monthly credits details
+								98 text Good morning, Jackie
+								99 container Helpers
+									100 link Description: Penn Penn Copywriting, Value: app.sintra.ai/helpers/penn?entry_point=home_helpers_rail
+									101 link Description: Buddy Buddy Business Development, Value: app.sintra.ai/helpers/buddy?entry_point=home_helpers_rail
+									102 link Description: Soshie Soshie Social Media, Value: app.sintra.ai/helpers/soshie?entry_point=home_helpers_rail
+									103 link Description: Commet Commet Web Builder, Value: app.sintra.ai/helpers/commet?entry_point=home_helpers_rail
+									104 link Description: Cassie Cassie Customer Support, Value: app.sintra.ai/helpers/cassie?entry_point=home_helpers_rail
+									105 link Description: View all, Value: app.sintra.ai/helpers
+								106 container
+									107 text entry area (settable, string) Send a message
+
+										108 text Send a message
+									109 pop up button Add files
+										110 image
+									111 pop up button Choose a helper
+										112 image
+									113 pop up button Smart
+										114 image
+										115 text Smart
+									116 button Dictate
+										117 image
+									118 button (disabled) Submit
+										119 image
+								120 container Featured helpers to extend your team
+									121 button Reorder Featured helpers to extend your team
+									122 button Hide Featured helpers to extend your team
+									123 container
+										124 text Featured helpers to extend your team
+										125 button Browse all
+										126 button Finance DaddyWarbucks Hunts down class action settlements and checks your eligibility for refunds and payouts by searching every major settlement database against the companies and services you've used. DaddyWarbucks
+											127 text Finance
+											128 text DaddyWarbucks
+											129 text Hunts down class action settlements and checks your eligibility for refunds and payouts by searching every major settlement database against the companies and services you've used.
+											130 image DaddyWarbucks
+										131 button Hire
+											132 text Hire
+										133 button Marketing Remi Autonomously grows your website's search rankings — keyword research, landing page creation, on-page optimization, Google Business Profile updates, and backlink outreach. Remi
+											134 text Marketing
+											135 text Remi
+											136 text Autonomously grows your website's search rankings — keyword research, landing page creation, on-page optimization, Google Business Profile updates, and backlink outreach.
+											137 image Remi
+										138 button Hire
+											139 text Hire
+										140 button Research & Intelligence Stanislav Finds family-friendly outings in and around Vilnius — parks, events, restaurants, and day trips — and emails 2–3 curated picks to your inbox with Google Maps links and practical family tips. Stanislav
+											141 text Research & Intelligence
+											142 text Stanislav
+											143 text Finds family-friendly outings in and around Vilnius — parks, events, restaurants, and day trips — and emails 2–3 curated picks to your inbox with Google Maps links and practical family tips.
+											144 image Stanislav
+										145 button Hire
+											146 text Hire
+								147 container Next best actions
+									148 button Reorder Next best actions
+									149 container
+										150 text Next best actions
+										151 button Description: Dismiss suggestion, Help: Dismiss
+											152 image
+										153 image
+										154 heading Hire DaddyWarbucks to extend your team, Value: 3
+											155 text Hire DaddyWarbucks to extend your team
+										156 text DaddyWarbucks is a top match for your workspace. Hire in one click and start working together.
+										157 button Hire
+										158 image Commet
+										159 text Turn your Brain into a website draft
+										160 text Commet can turn your Brain into a first draft with structure, copy, and a clear next step for customers.
+										161 button Draft website
+										162 button Description: Dismiss suggestion, Help: Dismiss
+											163 image
+										164 image
+										165 text Share your Sintra experience on G2
+										166 text Tell other business owners what Sintra does for you. A review only takes a few minutes.
+										167 button Leave a review
+										168 button Description: Dismiss suggestion, Help: Dismiss
+											169 image
+								170 container Your email
+									171 button Reorder Your email
+									172 container
+										173 text Your email Your inbox, at a glance Connect Gmail or Outlook to spot unread emails that need a reply, follow-up, or quick decision. Gmail, Outlook
+										174 button Connect Gmail
+										175 button Connect Outlook
+								176 container Your tasks
+									177 button Reorder Your tasks
+									178 container
+										179 text Your tasks
+										180 image Emmie
+										181 image Buddy
+										182 text Task ideas Start with one routine task Tell Sintra what to check or create, then choose how often it should happen.
+										183 button Emmie Daily inbox briefing
+											184 image Emmie
+											185 text Daily inbox briefing
+										186 button Buddy Follow up with quiet leads
+											187 image Buddy
+											188 text Follow up with quiet leads
+										189 button Buddy Competitor price watch
+											190 image Buddy
+											191 text Competitor price watch
+										192 button Let Sintra set up tasks for you
+										193 button Automate a task
+								194 container Your finances
+									195 button Reorder Your finances
+									196 container
+										197 text Your finances
+										198 image QuickBooks
+										199 image Stripe
+										200 text Track your revenue One place for all your numbers. AI does the analysis, you make the moves.
+										201 button Connect QuickBooks
+										202 button Connect Stripe
+								203 container Your ads
+									204 button Reorder Your ads
+									205 container
+										206 text Your ads
+										207 image Meta Ads
+										208 text Watch your ad spend Connect Meta Ads and Sintra will flag spend changes, tracked results, and next moves.
+										209 button Connect Meta Ads
+								210 container Your social posts
+									211 button Reorder Your social posts
+									212 container
+										213 text Your social posts Published posts 7 People reached 0 Interactions 0
+										214 image Soshie
+										215 text Soshie recommends Your post is still finding its audience Ask Soshie what to adjust before you queue the next post.
+										216 button Chat with Soshie
+										217 button View calendar
+						218 text Sintra Helpers
+			219 container
+				220 tab group
+					221 tab (selected, settable, boolean) Description: Sintra Helpers - Memory usage - 776 MB, Value: on
+						222 button Close
+			223 button New Tab
+			224 button Open Gemini in Chrome
+	225 close button
+	226 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	227 minimize button
+228 menu bar
+	229 Chrome
+	230 File
+	231 Edit
+	232 View
+	233 History
+	234 Bookmarks
+	235 Profiles
+	236 Tab
+	237 Window
+	238 Help
+
+The focused UI element is 107 text entry area (settable, string) Send a message

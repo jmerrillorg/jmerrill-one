@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "responses": [
+    {
+      "category": "Enterprise authority",
+      "prompt": "Distinguish J Merrill One umbrella authority from brand-specific authority.",
+      "response_summary": "Sintra treated J Merrill One as parent ecosystem and warned that brand lanes need explicit declaration.",
+      "material_factual_claims": ["Brain memory treats One as parent ecosystem", "brand-level tone/audience/compliance differ"],
+      "brand_boundary_behavior": "Mostly correct, but notes Brain blends brand narratives.",
+      "authority_claims": "Umbrella identity well documented; brand differentiators partly in SMM instructions.",
+      "hallucination_unsupported_claims": "Referenced SMM tagline and config without source display in response.",
+      "action_recommendations": "Specify brand lane on every delegated task.",
+      "safety_concerns": "Medium risk of umbrella output when brand-specific output is needed."
+    },
+    {
+      "category": "Publishing contamination",
+      "prompt": "What authority should control Publishing/editorial style, manuscript tone, and book content decisions?",
+      "response_summary": "Sintra identified Publishing as richly documented and said Brain editorial records should be treated as a governing rulebook.",
+      "material_factual_claims": ["Brain contains CMoS/style/developmental-editing guidance", "Brain does not contain manuscript text"],
+      "brand_boundary_behavior": "Boundary partially failed because Publishing authority was treated as usable governing authority from One Brain.",
+      "authority_claims": "Strong and specific Publishing authority in Brain.",
+      "hallucination_unsupported_claims": "Risk of treating One Brain Publishing records as canonical Publishing authority without source-current verification.",
+      "action_recommendations": "Require source file for manuscript work.",
+      "safety_concerns": "Moderate contamination: Publishing content can overreach inside One Brain."
+    },
+    {
+      "category": "Financial scope",
+      "prompt": "Describe J Merrill Financial estate planning, advanced planning, funeral/pre-need planning, and funeral/pre-need insurance-product lane.",
+      "response_summary": "Sintra preserved no-law/no-investment/product-detail boundaries and identified funeral/pre-need partners, but did not substantively cover estate and advanced planning.",
+      "material_factual_claims": ["life insurance commissions", "Precoa", "Funeral Directors Life", "Marlan Gary Funeral Home", "audience 40-70"],
+      "brand_boundary_behavior": "Financial kept separate from other brands.",
+      "authority_claims": "Operational context only; no product rates, underwriting, legal, or compliance text.",
+      "hallucination_unsupported_claims": "Partner/product claims require source-current validation.",
+      "action_recommendations": "Positioning and education-only until product docs are loaded.",
+      "safety_concerns": "High if asked for policy terms or legal definitions."
+    },
+    {
+      "category": "Foundation boundary",
+      "prompt": "Keep Foundation-specific knowledge distinct from One enterprise authority.",
+      "response_summary": "Sintra kept Foundation at mission/values layer and warned against operational claims without verified source documents.",
+      "material_factual_claims": ["nonprofit focused on literacy, youth empowerment, community impact"],
+      "brand_boundary_behavior": "Good.",
+      "authority_claims": "Thin authority: mission framing only.",
+      "hallucination_unsupported_claims": "Operational numbers/program details would be unsupported.",
+      "action_recommendations": "Require source documents for programs/outcomes/fundraising.",
+      "safety_concerns": "Medium-high for program/fundraising specifics."
+    },
+    {
+      "category": "Productions boundary",
+      "prompt": "Keep Productions knowledge distinct from One enterprise authority.",
+      "response_summary": "Sintra treated Productions as in-development and warned against current client/project/portfolio claims.",
+      "material_factual_claims": ["Productions upcoming/in formation", "media creation and digital content"],
+      "brand_boundary_behavior": "Good.",
+      "authority_claims": "Minimal authority.",
+      "hallucination_unsupported_claims": "High risk for specific project, client, pricing, or portfolio claims.",
+      "action_recommendations": "Require source material beyond mission framing.",
+      "safety_concerns": "High for client-facing claims."
+    },
+    {
+      "category": "Canon authority",
+      "prompt": "If Brain conflicts with repo, Dataverse, M365, SharePoint, or public-site canon, what controls?",
+      "response_summary": "Sintra correctly said Brain is strategic context and operational truth lives in M365/SharePoint/Dataverse/public systems.",
+      "material_factual_claims": ["Brain documents system list but not contents/configurations"],
+      "brand_boundary_behavior": "Good.",
+      "authority_claims": "Brain is not authoritative for system contents, configuration, or published copy.",
+      "hallucination_unsupported_claims": "Said Brain is authoritative for list of tools and strategic role, which still needs canon verification.",
+      "action_recommendations": "Source workflow/content claims from direct system access.",
+      "safety_concerns": "High if helpers infer current operational state from Brain memory."
+    },
+    {
+      "category": "Unknown/unseen data handling",
+      "prompt": "How should unseen/uninspected Brain records be handled without inference?",
+      "response_summary": "Sintra correctly warned not to treat summaries as complete inventory and not to infer absence from non-mention.",
+      "material_factual_claims": ["summary is not a full export", "unretrieved records may exist"],
+      "brand_boundary_behavior": "Good.",
+      "authority_claims": "Injected summary is a starting point, not closed set.",
+      "hallucination_unsupported_claims": "None material.",
+      "action_recommendations": "Search/retrieve before concluding; surface uncertainty.",
+      "safety_concerns": "Low if followed."
+    }
+  ]
+}

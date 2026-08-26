@@ -12,5 +12,11 @@
     {"record":"Developmental Review Process","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Publishing workflow canon","reason":"Publishing workflow content belongs in Publishing if current.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true},
     {"record":"Book Content Focus","current_location":"J Merrill One Brain AI","proper_brand_domain":"J Merrill Publishing","target_authority":"Book/project canon in Publishing systems","reason":"Book/publishing content does not belong in One durable Brain.","target_sintra_workspace_exists":"not proven","rehome_technically_supported":"not proven","copy_reference_preferable":true}
   ],
-  "principle": "Sintra should receive only needed projection/reference; it should not become the system of record."
+  "principle": "Sintra should receive only needed projection/reference; it should not become the system of record.",
+  "live_lab_refinement": {
+    "physical_rehome_necessary": "not proven",
+    "preferred_result": "LEAVE IN AUTHORITATIVE SYSTEM — REMOVE FROM SINTRA PROJECTION",
+    "reason": "Live lab showed Publishing content can be treated as authority inside One Brain. Source-backed projections are safer than cross-workspace movement unless Sintra workspace mechanics are proven reversible.",
+    "execution": "No rehome action executed."
+  }
 }

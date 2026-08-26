@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "workspace": "J Merrill One",
+  "inspection_method": "Authenticated Chrome live UI via Computer Use",
+  "classification": "STRUCTURED EXPORT NOT AVAILABLE / NOT EXPOSED IN CURRENT TENANT",
+  "bounded_surfaces_inspected": [
+    "Brain AI Knowledge toolbar More Actions",
+    "Brain AI New menu",
+    "Brain AI bulk select all 89 records",
+    "workspace/account settings",
+    "profile/workspace switcher menu",
+    "direct app.sintra.ai/settings route"
+  ],
+  "controls_observed": {
+    "brain_more_actions": "No export/download item exposed.",
+    "brain_new_menu": ["Document", "Upload", "Link", "Folder"],
+    "bulk_select": ["Clear", "Move", "Delete"],
+    "settings": ["workspace details", "plans", "credit usage", "team members", "tool permissions", "account profile", "delete workspace"],
+    "profile_menu": ["workspace switch/settings entries"]
+  },
+  "absent_controls": [
+    "Brain export",
+    "knowledge export",
+    "CSV export",
+    "JSON export",
+    "bulk download",
+    "record-level export",
+    "data/privacy export for Brain records",
+    "official tenant UI API/export integration"
+  ],
+  "evidence_references": [
+    "evidence/live_lab_2026-08-26/04_brain_top_state.txt",
+    "evidence/live_lab_2026-08-26/05_brain_more_actions_top_state.txt",
+    "evidence/live_lab_2026-08-26/09_brain_new_menu_state.txt",
+    "evidence/live_lab_2026-08-26/11_brain_select_all_state.txt",
+    "evidence/live_lab_2026-08-26/07_settings_direct_state.txt",
+    "evidence/live_lab_2026-08-26/13_profile_workspace_menu_state.txt"
+  ],
+  "conclusion": "Bounded inspection is complete; do not keep searching indefinitely."
+}

@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "classification": "PARTIAL",
+  "required_concepts": {
+    "estate_planning": "mentioned in prompt/heading but not substantively described",
+    "advanced_planning": "mentioned in prompt/heading but not substantively described",
+    "funeral_pre_need_planning": "represented through pre-need partners and positioning",
+    "insurance_product_lane_where_applicable": "preserved through life insurance/pre-need framing"
+  },
+  "disallowed_drift": {
+    "generic_financial_planner_framing": false,
+    "investment_management_assumption": false,
+    "law_practice_implication": false,
+    "funeral_planning_omitted_entirely": false
+  },
+  "concern": "Estate and advanced planning were not fully represented in the live answer."
+}

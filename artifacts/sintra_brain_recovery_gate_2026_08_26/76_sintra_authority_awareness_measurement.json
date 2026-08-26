@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "classification": "PARTIAL",
+  "strong_signals": [
+    "Brain memory was described as strategic context rather than operational truth for M365/SharePoint/Dataverse.",
+    "Unseen Brain records were treated as unresolved and not safe for absence claims.",
+    "Financial policy/legal/product specifics were rejected without source documents."
+  ],
+  "weak_signals": [
+    "Publishing Brain records were described as a governing rulebook without source-current verification.",
+    "Brain was called authoritative for the list of tools and strategic role, which still requires repository/canon confirmation."
+  ],
+  "must_not_say": "Brain says it, therefore it is canon.",
+  "result": "Sintra shows useful authority awareness, but not enough for production authority."
+}

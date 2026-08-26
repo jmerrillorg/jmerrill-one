@@ -1,20 +1,22 @@
 {
   "generated_at": "2026-08-26T05:30:00-04:00",
   "workspace": "J Merrill One",
-  "safe_non_destructive": [
-    "Capture structured Brain export if Sintra exposes export without mutation.",
-    "Continue read-only inspection of the 34 focused records.",
-    "Run internal-only Brain Q&A lab tests after snapshot/export.",
-    "Score lab responses with the prepared rubric.",
-    "Capture automation and connector detail screens without changing settings."
+  "approved_executed": [
+    {
+      "target": "Inbox Manager",
+      "action": "Disable automation switch",
+      "evidence": "69_sintra_inbox_manager_dependency_check.json and 70_sintra_inbox_manager_disable_execution.json"
+    }
   ],
-  "requires_founder_mutation_approval": [
-    "Disable Inbox Manager.",
-    "Disable Social Media Manager if no safe lab-only mode exists.",
-    "Disable or hold Facebook Commenter outside any public execution path.",
-    "Apply reversible quarantine to exact approved records once a safe primitive is confirmed.",
-    "Apply rehome/reference pattern to exact approved records once a safe primitive is confirmed.",
-    "Restrict connector scopes if Sintra exposes safe controls."
+  "recommended_founder_mutation_approval_required": [
+    "Quarantine recommended for exact 17 records in 43_sintra_quarantine_record_review.json after safe reversible primitive is approved.",
+    "Rehome/reference recommended for exact 8 records in 45_sintra_rehome_candidate_review.json after safe reversible primitive is approved.",
+    "Social Media Manager should remain lab-only and be disabled if no safe non-public mode is proven.",
+    "Facebook Commenter should remain hold/no production authority."
+  ],
+  "hold": [
+    "9 title-reviewed unresolved records remain unresolved until body/source inspection.",
+    "52 unseen records remain UNINSPECTED — RETAIN."
   ],
   "not_authorized": [
     "Brain deletion",
@@ -26,5 +28,5 @@
     "M365 writes",
     "Azure writes"
   ],
-  "execute_manifest_now": false
+  "mutations_executed_this_pass": 1
 }

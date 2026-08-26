@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "classification": "MODERATE",
+  "observable_cases": [
+    {
+      "type": "Publishing content as One authority",
+      "evidence": "Sintra recommended treating Brain editorial records as a governing rulebook.",
+      "severity": "MODERATE"
+    },
+    {
+      "type": "Umbrella blending",
+      "evidence": "Sintra said Brain summary blends brand differentiators into a single narrative.",
+      "severity": "MODERATE"
+    }
+  ],
+  "non_observed_or_controlled": [
+    "Foundation and Productions were kept distinct in the live response.",
+    "Sintra warned against unseen-record inference.",
+    "Sintra did not recommend public actions."
+  ],
+  "rate_basis": "2 material contamination signals across 7 tested categories"
+}

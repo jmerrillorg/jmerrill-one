@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "workspace": "J Merrill One",
+  "tenant_route": "app.sintra.ai",
+  "classification": "STRUCTURED EXPORT NOT AVAILABLE — VISUAL/RECORD SNAPSHOT IS BEST AVAILABLE RECOVERY EVIDENCE",
+  "surfaces_inspected": [
+    "Brain settings/toolbar",
+    "Knowledge list",
+    "Workspace settings",
+    "Account/profile menu",
+    "Bulk selection controls",
+    "New/import controls"
+  ],
+  "controls_absent": [
+    "Export",
+    "Download",
+    "CSV",
+    "JSON",
+    "Backup",
+    "Bulk export",
+    "Record export"
+  ],
+  "screenshots_or_evidence": [
+    "evidence/live_lab_2026-08-26/05_brain_more_actions_top_screenshot_url.txt",
+    "evidence/live_lab_2026-08-26/09_brain_new_menu_screenshot_url.txt",
+    "evidence/live_lab_2026-08-26/11_brain_select_all_screenshot_url.txt",
+    "evidence/live_lab_2026-08-26/07_settings_direct_screenshot_url.txt"
+  ],
+  "rollback_consequence": "Rollback remains visual/evidence-backed rather than structured-export-backed. Read-only lab may proceed because it does not mutate Brain records, connectors, or public channels.",
+  "acceptable_result": true
+}

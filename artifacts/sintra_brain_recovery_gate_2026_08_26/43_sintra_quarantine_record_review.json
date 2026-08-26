@@ -4,6 +4,12 @@
   "count": 17,
   "allowed_proposed_actions": ["KEEP QUARANTINED", "REHOME", "KEEP — ENTERPRISE", "REVIEW REQUIRED"],
   "delete_actions": 0,
+  "live_lab_refinement": {
+    "did_contaminate_responses": "Partially. Publishing/umbrella blending was observed; personal/ministry-specific records were not directly triggered by the bounded lab prompt.",
+    "quarantine_still_justified": true,
+    "delete_allowed": false,
+    "execution": "No quarantine action executed."
+  },
   "records": [
     {"title":"Music Ministry Experience","id":null,"source":"Brain AI title","brand":"AIC / personal","why_contamination_suspected":"Ministry/personal context is not One enterprise operating authority.","current_authority_source":"not established; requires source-current review","risk_if_left_active":"May steer enterprise voice toward ministry biography or personal history.","proposed_action":"KEEP QUARANTINED"},
     {"title":"Worship Leadership Approach","id":null,"source":"Brain AI title","brand":"AIC / personal","why_contamination_suspected":"Ministry leadership context could contaminate enterprise marketing voice.","current_authority_source":"not established; requires source-current review","risk_if_left_active":"May blend ministry leadership language into JM1 enterprise outputs.","proposed_action":"KEEP QUARANTINED"},

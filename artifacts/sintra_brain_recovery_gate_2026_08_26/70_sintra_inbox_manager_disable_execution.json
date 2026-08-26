@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-26T07:50:00-04:00",
+  "automation": "Inbox Manager",
+  "required": "PASS",
+  "result": "PASS",
+  "before_state": "Automations list showed Inbox Manager switch on; detail page showed Turn on/Get started with no active account dependency.",
+  "action_executed": "Toggled Inbox Manager switch off.",
+  "after_state": "Automations list showed Inbox Manager switch off.",
+  "reload_verification": "After reload, Inbox Manager remained switch off.",
+  "other_automations_unchanged": {
+    "Social Media Manager": "on",
+    "Daily Summarizer": "on",
+    "Facebook Commenter": "on"
+  },
+  "evidence": [
+    "evidence/live_lab_2026-08-26/24_automations_before_inbox_disable_state.txt",
+    "evidence/live_lab_2026-08-26/25_automations_after_inbox_disable_state.txt",
+    "evidence/live_lab_2026-08-26/26_automations_after_reload_state.txt"
+  ],
+  "mutation_count": 1
+}
