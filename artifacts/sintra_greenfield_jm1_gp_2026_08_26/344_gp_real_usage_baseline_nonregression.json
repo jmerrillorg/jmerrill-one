@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST OBSERVATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T12:05:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "observation_base_commit": "a244b01",
+  "target": "PASS",
+  "result": "PASS",
+  "verification_mode": "Periodic baseline nonregression based on current active-pilot evidence; no over-monitoring or new architecture action performed.",
+  "brain_records": 1,
+  "brain_record": "JM1-ENTERPRISE-FOUNDATION-v1.0 / 06_enterprise_foundation_pack.md",
+  "connectors": 0,
+  "automations": 0,
+  "external_actions": 0,
+  "branch_workspaces": 0,
+  "native_helper_orchestration": "ALLOWED",
+  "founder_human_final_authority": "REQUIRED",
+  "material_change_observed": false,
+  "architecture_expansion_performed": false,
+  "notes": "Baseline remains the clean GP architecture recorded at activation and social-focus correction. No Sintra prompts were run for measurement."
+}

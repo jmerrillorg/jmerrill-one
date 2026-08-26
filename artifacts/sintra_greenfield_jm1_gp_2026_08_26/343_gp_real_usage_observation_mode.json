@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST OBSERVATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T12:05:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "observation_base_commit": "a244b01",
+  "classification": "ACTIVE — REAL-USAGE EVIDENCE ONLY",
+  "pilot_status": "ACTIVE",
+  "primary_use_case": "SOCIAL MEDIA STRATEGY + CONTENT ORCHESTRATION",
+  "secondary_use_case": "EXECUTIVE THINKING",
+  "synthetic_benchmark_phase_over": true,
+  "cody_role": "OBSERVER / EVIDENCE CAPTURE / DAY-14 DECISION PREPARATION",
+  "do_not_create_additional_synthetic_benchmark_suites": true,
+  "evidence_source_rule": "Use normal Jackie/Sintra use, especially real social-media strategy/content work.",
+  "capture_policy": "Update ledgers only for meaningful real-use sessions, material governance issues, Day 7 checkpoint, Day 14 gate, or Founder status request.",
+  "negative_evidence_policy": "Preserve poor sessions and defects; do not selectively retain only positive evidence.",
+  "current_direction": "INSUFFICIENT REAL-USAGE EVIDENCE",
+  "next_formal_gate": "2026-09-09"
+}
