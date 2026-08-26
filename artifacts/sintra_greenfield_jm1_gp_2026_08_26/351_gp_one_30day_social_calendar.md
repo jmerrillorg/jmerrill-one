@@ -6,7 +6,7 @@ Strategic sequence is Founder-approved and must not be redefined without approva
 1. 2026-08-27 — Welcome to J Merrill One
 2. 2026-08-28 — Why J Merrill One Exists
 3. 2026-08-29 — Meet the Family: Publishing
-4. 2026-08-30 — Human-First
+4. 2026-08-30 — People-First
 5. 2026-08-31 — Founder Perspective
 6. 2026-09-01 — Meet the Family: Financial
 7. 2026-09-02 — Why-First

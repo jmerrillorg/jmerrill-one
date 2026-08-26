@@ -9,5 +9,7 @@
   "initial_batch": "Days 1-7",
   "automatic_publication_allowed": false,
   "founder_approval_required": true,
-  "first7_ready_for_review": true
+  "first7_ready_for_review": true,
+  "founder_language_decision": "APPROVED WITH REQUIRED PEOPLE-FIRST TERMINOLOGY CORRECTION",
+  "first7_approval_status_after_correction": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
 }

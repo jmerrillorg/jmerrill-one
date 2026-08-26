@@ -18,6 +18,6 @@
     "automated_engagement": false,
     "branch_workspaces": false,
     "unrelated_brain_knowledge": false,
-    "human_founder_approval_required": true
+    "founder_final_approval_required": true
   }
 }

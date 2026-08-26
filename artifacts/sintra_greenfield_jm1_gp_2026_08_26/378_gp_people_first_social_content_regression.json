@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — PEOPLE-FIRST PUBLIC LANGUAGE CORRECTION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T17:25:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "language_correction_base_commit": "b07ff0b",
+  "review_scope": "Current social/public operating artifacts 314-375 where content or standards affect public copy.",
+  "updated_public_language": "People-First / people-first / people-centered / natural people-focused language",
+  "historical_evidence_rewritten": false,
+  "remaining_public_facing_human_first_references": [],
+  "result": "PASS"
+}

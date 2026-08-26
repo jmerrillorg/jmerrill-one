@@ -8,7 +8,7 @@
   "status": "ACTIVE",
   "gate_items": [
     "why this post matters",
-    "human value",
+    "value for people",
     "clear One brand voice",
     "no generic corporate filler",
     "no branch-authority confusion",
@@ -16,5 +16,6 @@
     "platform fit",
     "no unsupported factual claims"
   ],
-  "every_draft_requires_review": true
+  "every_draft_requires_review": true,
+  "concept_note": "People should be served by the system rather than being forced to fit the system."
 }

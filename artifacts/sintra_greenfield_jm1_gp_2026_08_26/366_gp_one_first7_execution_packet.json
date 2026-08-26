@@ -5,7 +5,7 @@
   "created_at": "2026-08-26T16:57:54-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "live_pilot_base_commit": "14e59b2",
-  "status": "DRAFT — FOUNDER APPROVAL REQUIRED",
+  "status": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION",
   "destination_certification": "HOLD",
   "items": [
     {
@@ -14,11 +14,11 @@
       "date": "2026-08-27",
       "intended_publish_time_et": "09:00",
       "facebook_copy": "Day 1: Welcome to J Merrill One\n\nJ Merrill One is the umbrella for work that should not live in silos: books, family planning, community impact, and media production. The One layer exists so people can find the right path without losing the thread.\n\nLearn more: https://jmerrill.one",
-      "instagram_copy": "Day 1/30: Welcome to J Merrill One\n\nA clean introduction to the enterprise umbrella: one place, distinct paths, human-first standards.\n\nLearn more: https://jmerrill.one",
+      "instagram_copy": "Day 1/30: Welcome to J Merrill One\n\nA clean introduction to the enterprise umbrella: one place, distinct paths, people-first standards.\n\nLearn more: https://jmerrill.one",
       "linkedin_copy": "Day 1 of 30: Welcome to J Merrill One\n\nJ Merrill One is the umbrella for work that should not live in silos: books, family planning, community impact, and media production. The One layer exists so people can find the right path without losing the thread.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nLearn more: https://jmerrill.one",
       "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
       "cta": "Learn more: https://jmerrill.one",
-      "status": "DRAFT — FOUNDER APPROVAL REQUIRED"
+      "status": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
     },
     {
       "day": 2,
@@ -26,11 +26,11 @@
       "date": "2026-08-28",
       "intended_publish_time_et": "11:30",
       "facebook_copy": "Day 2: Why J Merrill One Exists\n\nJ Merrill One exists because the work people build often touches more than one need. An author may also be protecting a family. A family may also be preserving a story. A mission may need both structure and a voice.\n\nLearn more: https://jmerrill.one",
-      "instagram_copy": "Day 2/30: Why J Merrill One Exists\n\nWhy One exists: continuity across real human needs.\n\nLearn more: https://jmerrill.one",
+      "instagram_copy": "Day 2/30: Why J Merrill One Exists\n\nWhy One exists: continuity across real needs.\n\nLearn more: https://jmerrill.one",
       "linkedin_copy": "Day 2 of 30: Why J Merrill One Exists\n\nJ Merrill One exists because the work people build often touches more than one need. An author may also be protecting a family. A family may also be preserving a story. A mission may need both structure and a voice.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nLearn more: https://jmerrill.one",
       "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
       "cta": "Learn more: https://jmerrill.one",
-      "status": "DRAFT — FOUNDER APPROVAL REQUIRED"
+      "status": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
     },
     {
       "day": 3,
@@ -42,19 +42,19 @@
       "linkedin_copy": "Day 3 of 30: Meet the Family: Publishing\n\nPublishing is where ideas become durable. Inside the JM1 family, J Merrill Publishing supports the author, book, editorial, and publishing journey while One keeps the broader enterprise story connected.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nStart with the right JM1 path: https://jmerrill.one/contact",
       "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
       "cta": "Start with the right JM1 path: https://jmerrill.one/contact",
-      "status": "DRAFT — FOUNDER APPROVAL REQUIRED"
+      "status": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
     },
     {
       "day": 4,
-      "theme": "Human-First",
+      "theme": "People-First",
       "date": "2026-08-30",
       "intended_publish_time_et": "11:30",
-      "facebook_copy": "Day 4: Human-First\n\nHuman-First means the person is not an interruption to the process. The system exists to serve the person, not to make the person fit the system.\n\nLearn more: https://jmerrill.one",
-      "instagram_copy": "Day 4/30: Human-First\n\nHuman-First is a standard, not a slogan.\n\nLearn more: https://jmerrill.one",
-      "linkedin_copy": "Day 4 of 30: Human-First\n\nHuman-First means the person is not an interruption to the process. The system exists to serve the person, not to make the person fit the system.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nLearn more: https://jmerrill.one",
-      "visual_concept": "Human-centered image or simple typography emphasizing people before process.",
+      "facebook_copy": "Day 4: People-First\n\nPeople-First means the person is not an interruption to the process. The system exists to serve people, not to make people fit the system.\n\nLearn more: https://jmerrill.one",
+      "instagram_copy": "Day 4/30: People-First\n\nPeople-First is a standard, not a slogan.\n\nLearn more: https://jmerrill.one",
+      "linkedin_copy": "Day 4 of 30: People-First\n\nPeople-First leadership starts with a simple operating belief: systems should serve people, not force people to fit the system. For J Merrill One, that principle shapes how the enterprise thinks about ownership, service, and growth.\n\nLearn more: https://jmerrill.one",
+      "visual_concept": "People-centered image or simple typography emphasizing people before process.",
       "cta": "Learn more: https://jmerrill.one",
-      "status": "DRAFT — FOUNDER APPROVAL REQUIRED"
+      "status": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
     },
     {
       "day": 5,
@@ -66,31 +66,32 @@
       "linkedin_copy": "Day 5 of 30: Founder Perspective\n\nA founder’s job is not only to start things. It is to make sure the things being built can carry weight, serve people clearly, and still make sense when the work grows.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nLearn more: https://jmerrill.one",
       "visual_concept": "Founder-perspective quote card or portrait-led graphic using One palette.",
       "cta": "Learn more: https://jmerrill.one",
-      "status": "DRAFT — FOUNDER APPROVAL REQUIRED"
+      "status": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
     },
     {
       "day": 6,
       "theme": "Meet the Family: Financial",
       "date": "2026-09-01",
       "intended_publish_time_et": "11:30",
-      "facebook_copy": "Day 6: Meet the Family: Financial\n\nFinancial work inside JM1 is about planning with care: estate planning, advanced planning, funeral/pre-need planning, and appropriate insurance-product context. It is not legal advice or investment management; it is human-first planning education and direction.\n\nStart with the right JM1 path: https://jmerrill.one/contact",
-      "instagram_copy": "Day 6/30: Meet the Family: Financial\n\nMeet Financial: planning with care and clear boundaries.\n\nStart with the right JM1 path: https://jmerrill.one/contact",
-      "linkedin_copy": "Day 6 of 30: Meet the Family: Financial\n\nFinancial work inside JM1 is about planning with care: estate planning, advanced planning, funeral/pre-need planning, and appropriate insurance-product context. It is not legal advice or investment management; it is human-first planning education and direction.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nStart with the right JM1 path: https://jmerrill.one/contact",
+      "facebook_copy": "Day 6: Meet the Family: Financial\n\nFinancial work inside JM1 is about planning with care: estate planning, advanced planning, funeral/pre-need planning, and appropriate insurance-product context. It is not legal advice or investment management; it is planning centered on people, clarity, and what matters to them.\n\nStart with the right JM1 path: https://jmerrill.one/contact",
+      "instagram_copy": "Day 6/30: Meet the Family: Financial\n\nMeet Financial: planning with care, clarity, and proper boundaries.\n\nStart with the right JM1 path: https://jmerrill.one/contact",
+      "linkedin_copy": "Day 6 of 30: Meet the Family: Financial\n\nFinancial work inside JM1 is about planning with care: estate planning, advanced planning, funeral/pre-need planning, and appropriate insurance-product context. It is not legal advice or investment management; it is planning centered on people, clarity, and what matters to them.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nStart with the right JM1 path: https://jmerrill.one/contact",
       "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
       "cta": "Start with the right JM1 path: https://jmerrill.one/contact",
-      "status": "DRAFT — FOUNDER APPROVAL REQUIRED"
+      "status": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
     },
     {
       "day": 7,
       "theme": "Why-First",
       "date": "2026-09-02",
       "intended_publish_time_et": "09:00",
-      "facebook_copy": "Day 7: Why-First\n\nWhy-First asks a simple question before any system, post, product, or plan: what human purpose is this serving? If the why is weak, the output will be weak too.\n\nLearn more: https://jmerrill.one",
-      "instagram_copy": "Day 7/30: Why-First\n\nWhy-First keeps the work honest.\n\nLearn more: https://jmerrill.one",
-      "linkedin_copy": "Day 7 of 30: Why-First\n\nWhy-First asks a simple question before any system, post, product, or plan: what human purpose is this serving? If the why is weak, the output will be weak too.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nLearn more: https://jmerrill.one",
+      "facebook_copy": "Day 7: Why-First\n\nWhy-First asks a simple question before any system, post, product, or plan: what purpose is this serving for people? If the why is weak, the output will be weak too.\n\nLearn more: https://jmerrill.one",
+      "instagram_copy": "Day 7/30: Why-First\n\nWhat purpose is this serving for people? If the why is weak, the output will be weak too.\n\nLearn more: https://jmerrill.one",
+      "linkedin_copy": "Day 7 of 30: Why-First\n\nWhy-First asks a simple question before any system, post, product, or plan: what purpose is this serving for people? If the why is weak, the output will be weak too.\n\nFor J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?\n\nLearn more: https://jmerrill.one",
       "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
       "cta": "Learn more: https://jmerrill.one",
-      "status": "DRAFT — FOUNDER APPROVAL REQUIRED"
+      "status": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
     }
-  ]
+  ],
+  "language_approval_state": "APPROVED WITH REQUIRED PEOPLE-FIRST TERMINOLOGY CORRECTION"
 }

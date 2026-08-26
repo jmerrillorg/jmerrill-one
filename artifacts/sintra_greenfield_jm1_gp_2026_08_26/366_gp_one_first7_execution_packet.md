@@ -1,11 +1,12 @@
 # J Merrill One First 7-Day Execution Packet
 
-Status: DRAFT — FOUNDER APPROVAL REQUIRED
+Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Language approval: APPROVED WITH REQUIRED PEOPLE-FIRST TERMINOLOGY CORRECTION
 Destination certification: HOLD until exact connected One destinations are verified.
 
 ## Day 1 — 2026-08-27 — Welcome to J Merrill One
 Intended time ET: 09:00
-Status: DRAFT — FOUNDER APPROVAL REQUIRED
+Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
 
 **Facebook**
 Day 1: Welcome to J Merrill One
@@ -17,7 +18,7 @@ Learn more: https://jmerrill.one
 **Instagram**
 Day 1/30: Welcome to J Merrill One
 
-A clean introduction to the enterprise umbrella: one place, distinct paths, human-first standards.
+A clean introduction to the enterprise umbrella: one place, distinct paths, people-first standards.
 
 Learn more: https://jmerrill.one
 
@@ -35,7 +36,7 @@ CTA: Learn more: https://jmerrill.one
 
 ## Day 2 — 2026-08-28 — Why J Merrill One Exists
 Intended time ET: 11:30
-Status: DRAFT — FOUNDER APPROVAL REQUIRED
+Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
 
 **Facebook**
 Day 2: Why J Merrill One Exists
@@ -47,7 +48,7 @@ Learn more: https://jmerrill.one
 **Instagram**
 Day 2/30: Why J Merrill One Exists
 
-Why One exists: continuity across real human needs.
+Why One exists: continuity across real needs.
 
 Learn more: https://jmerrill.one
 
@@ -65,7 +66,7 @@ CTA: Learn more: https://jmerrill.one
 
 ## Day 3 — 2026-08-29 — Meet the Family: Publishing
 Intended time ET: 09:00
-Status: DRAFT — FOUNDER APPROVAL REQUIRED
+Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
 
 **Facebook**
 Day 3: Meet the Family: Publishing
@@ -93,39 +94,37 @@ Start with the right JM1 path: https://jmerrill.one/contact
 Visual concept: Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.
 CTA: Start with the right JM1 path: https://jmerrill.one/contact
 
-## Day 4 — 2026-08-30 — Human-First
+## Day 4 — 2026-08-30 — People-First
 Intended time ET: 11:30
-Status: DRAFT — FOUNDER APPROVAL REQUIRED
+Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
 
 **Facebook**
-Day 4: Human-First
+Day 4: People-First
 
-Human-First means the person is not an interruption to the process. The system exists to serve the person, not to make the person fit the system.
+People-First means the person is not an interruption to the process. The system exists to serve people, not to make people fit the system.
 
 Learn more: https://jmerrill.one
 
 **Instagram**
-Day 4/30: Human-First
+Day 4/30: People-First
 
-Human-First is a standard, not a slogan.
+People-First is a standard, not a slogan.
 
 Learn more: https://jmerrill.one
 
 **LinkedIn**
-Day 4 of 30: Human-First
+Day 4 of 30: People-First
 
-Human-First means the person is not an interruption to the process. The system exists to serve the person, not to make the person fit the system.
-
-For J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?
+People-First leadership starts with a simple operating belief: systems should serve people, not force people to fit the system. For J Merrill One, that principle shapes how the enterprise thinks about ownership, service, and growth.
 
 Learn more: https://jmerrill.one
 
-Visual concept: Human-centered image or simple typography emphasizing people before process.
+Visual concept: People-centered image or simple typography emphasizing people before process.
 CTA: Learn more: https://jmerrill.one
 
 ## Day 5 — 2026-08-31 — Founder Perspective
 Intended time ET: 09:00
-Status: DRAFT — FOUNDER APPROVAL REQUIRED
+Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
 
 **Facebook**
 Day 5: Founder Perspective
@@ -155,26 +154,26 @@ CTA: Learn more: https://jmerrill.one
 
 ## Day 6 — 2026-09-01 — Meet the Family: Financial
 Intended time ET: 11:30
-Status: DRAFT — FOUNDER APPROVAL REQUIRED
+Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
 
 **Facebook**
 Day 6: Meet the Family: Financial
 
-Financial work inside JM1 is about planning with care: estate planning, advanced planning, funeral/pre-need planning, and appropriate insurance-product context. It is not legal advice or investment management; it is human-first planning education and direction.
+Financial work inside JM1 is about planning with care: estate planning, advanced planning, funeral/pre-need planning, and appropriate insurance-product context. It is not legal advice or investment management; it is planning centered on people, clarity, and what matters to them.
 
 Start with the right JM1 path: https://jmerrill.one/contact
 
 **Instagram**
 Day 6/30: Meet the Family: Financial
 
-Meet Financial: planning with care and clear boundaries.
+Meet Financial: planning with care, clarity, and proper boundaries.
 
 Start with the right JM1 path: https://jmerrill.one/contact
 
 **LinkedIn**
 Day 6 of 30: Meet the Family: Financial
 
-Financial work inside JM1 is about planning with care: estate planning, advanced planning, funeral/pre-need planning, and appropriate insurance-product context. It is not legal advice or investment management; it is human-first planning education and direction.
+Financial work inside JM1 is about planning with care: estate planning, advanced planning, funeral/pre-need planning, and appropriate insurance-product context. It is not legal advice or investment management; it is planning centered on people, clarity, and what matters to them.
 
 For J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?
 
@@ -185,26 +184,26 @@ CTA: Start with the right JM1 path: https://jmerrill.one/contact
 
 ## Day 7 — 2026-09-02 — Why-First
 Intended time ET: 09:00
-Status: DRAFT — FOUNDER APPROVAL REQUIRED
+Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
 
 **Facebook**
 Day 7: Why-First
 
-Why-First asks a simple question before any system, post, product, or plan: what human purpose is this serving? If the why is weak, the output will be weak too.
+Why-First asks a simple question before any system, post, product, or plan: what purpose is this serving for people? If the why is weak, the output will be weak too.
 
 Learn more: https://jmerrill.one
 
 **Instagram**
 Day 7/30: Why-First
 
-Why-First keeps the work honest.
+What purpose is this serving for people? If the why is weak, the output will be weak too.
 
 Learn more: https://jmerrill.one
 
 **LinkedIn**
 Day 7 of 30: Why-First
 
-Why-First asks a simple question before any system, post, product, or plan: what human purpose is this serving? If the why is weak, the output will be weak too.
+Why-First asks a simple question before any system, post, product, or plan: what purpose is this serving for people? If the why is weak, the output will be weak too.
 
 For J Merrill One, the operating question is practical: does this help people understand the right path, the right owner, and the reason the work matters?
 
