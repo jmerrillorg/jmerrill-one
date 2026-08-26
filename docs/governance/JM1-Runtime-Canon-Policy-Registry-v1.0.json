@@ -150,6 +150,23 @@
       "effectiveDate": "2026-08-25",
       "supersedes": [],
       "ownerAuthority": "Jackie Smith, Jr. — Governance Authority"
+    },
+    {
+      "policyId": "JM1-HUMAN-FIRST-WHY-FIRST-v1",
+      "version": "1.0",
+      "status": "CANON",
+      "domain": "Enterprise human-facing output",
+      "scope": "ENTERPRISE",
+      "enforcementClass": "PRE_SEND_PRE_PUBLISH_HARD_GATE",
+      "canonSource": "docs/governance/JM1-HUMAN-FIRST-WHY-FIRST-v1.md",
+      "resolver": "assertHumanFirstWhyFirst",
+      "effectiveDate": "2026-08-26",
+      "executablePolicy": true,
+      "brandOverlaysRequired": true,
+      "preSendEnforcement": true,
+      "driftMonitor": true,
+      "supersedes": [],
+      "ownerAuthority": "Jackie Smith, Jr. — Governance Authority"
     }
   ]
 }
