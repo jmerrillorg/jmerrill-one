@@ -1,63 +1,55 @@
 # Sintra Controlled Lab Closeout
 
-Classification: SINTRA CONTROLLED LAB COMPLETE — LIMITED ROLLBACK EVIDENCE; FOUNDER MUTATION DECISIONS REQUIRED.
+Classification: SINTRA RECOVERY HOLD - REVERSIBLE QUARANTINE METHOD NOT PROVEN.
 
-One approved Sintra mutation was performed: Inbox Manager was disabled after the live dependency check returned SAFE TO DISABLE.
+Mutations this pass: 0.
 
-## Snapshot
+## Workspace-Aware Mutation Ledger
 
-The snapshot is based on existing live visual evidence from the recovery gate. Brain AI shows 89 visible records: 3 KEEP candidates, 17 quarantine, 8 rehome, 9 title-reviewed unresolved, and 52 unseen/unclassified.
+The final ledger is `90_sintra_final_mutation_ledger.json`. It covers all 37 active-review records exactly once: 3 prior KEEP candidates, 17 quarantine-review records, 8 rehome/reference records, and 9 title-reviewed unresolved records.
 
-Structured Brain export is not exposed in the current tenant UI after bounded live inspection. Visual/record snapshot is the best available recovery evidence.
+## Brain Disposition
 
-## Brain
+KEEP certified: 0.
 
-The 34-record focused set is now the only current review subset: 17 quarantine, 8 rehome, and 9 title-reviewed unresolved.
+Quarantine proposed: 12 design holds plus 5 source/body holds from the 17 quarantine-review records. Execution is not requested because no safe reversible quarantine primitive is proven.
 
-The 3 KEEP records are not production-approved; each still needs source/body validation.
+Rehome/reference proposed: 6 Publishing projection/reference design approvals, 2 Publishing-related source/body holds.
 
-The 52 unseen records remain frozen as UNINSPECTED — RETAIN.
+Unresolved: 9 title-reviewed records retain pending body/source validation.
+
+Unseen: 52 UNINSPECTED - RETAIN / NO MUTATION.
 
 Delete candidates: 0.
 
+## Quarantine Method
+
+Result: NO SAFE QUARANTINE PRIMITIVE PROVEN.
+
+Archive, folder separation, per-record disable/ignore, workspace move, remove-with-export, tags, and alternate reversible controls were not proven from bounded evidence. Structured export remains unavailable/not exposed.
+
+## Routing
+
+Publishing: governed Publishing source/canon first; J Merrill Publishing projection/reference if useful; One receives only high-level enterprise reference if needed. Do not make Sintra Publishing authoritative.
+
+Financial: no active review-set Financial records. One may retain only estate planning, advanced planning, funeral/pre-need planning, and relevant insurance-product lane awareness.
+
+Foundation: no active review-set Foundation records. One may retain only mission, high-level programs, routing, and enterprise relationship.
+
+Productions: one candidate, Performance and Recording Credentials, remains HOLD because Productions Sintra workspace is not confirmed.
+
 ## Automations
 
-Social Media Manager: lab-only, disable if no safe simulation/non-public mode exists.
+Inbox Manager: PASS - REMAINS DISABLED.
 
-Inbox Manager: disabled after SAFE TO DISABLE dependency check.
+Social Media Manager: DISABLE - NO SAFE LAB-ONLY MODE, but do not disable in this pass.
 
-Daily Summarizer: no unique value until proven.
+Daily Summarizer: DISABLE - DUPLICATIVE / NO UNIQUE VALUE PROVEN, but do not alter in this pass.
 
-Facebook Commenter: hold, no production authority, no public comments.
+Facebook Commenter: KEEP DISABLED / NO PUBLIC AUTHORITY, no public testing.
 
-## Connectors
+## Adoption
 
-Facebook, Instagram, Google Analytics, and LinkedIn Organization remain connected for evidence-only scope review.
+Recommendation remains LIMITED LAB ADOPTION - HIGH GOVERNANCE OVERHEAD.
 
-QuickBooks remains not connected.
-
-Connector mutations: 0.
-
-## Lab
-
-Seven read-only Brain lab categories were executed in internal chat. Overall score: 2.0/3.0. Contamination rate: MODERATE. Authority awareness: PARTIAL.
-
-## Microsoft Overlap
-
-Inbox Manager was disabled. Social Media Manager remains high-risk/lab-only. Daily Summarizer has no unique value until proven. Facebook Commenter was not tested because no safe non-public mode was proven.
-
-## Public Actions
-
-Social posts: 0.
-
-Comments: 0.
-
-Emails: 0.
-
-External messages: 0.
-
-Mutations: 1.
-
-## Exact Next Action
-
-Inspect exact record bodies for the 34 focused records, then bring Founder mutation decisions for reversible quarantine/rehome design. Do not mutate Brain records yet.
+Cleanup readiness is separate from adoption. The final mutation packet is exact enough for Founder design decisions, but not ready for Brain mutation execution until a reversible method is proven.

@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "workspace": "J Merrill One",
+  "classification": "REHOME / REFERENCE DESIGN PACKET - NO EXECUTION",
+  "records": [
+    {"id":"SINTRA-R-001","record":"Manuscript Tone and Style","physical_movement_needed":false,"branch_projection_better":true,"authoritative_source_reference_better":true,"one_level_reference_appropriate":false,"recommendation":"APPROVE WITH MODIFICATION - DESIGN ONLY"},
+    {"id":"SINTRA-R-002","record":"Style Sheet Governance","physical_movement_needed":false,"branch_projection_better":true,"authoritative_source_reference_better":true,"one_level_reference_appropriate":false,"recommendation":"APPROVE WITH MODIFICATION - DESIGN ONLY"},
+    {"id":"SINTRA-R-003","record":"Published Works","physical_movement_needed":false,"branch_projection_better":"possibly after source validation","authoritative_source_reference_better":true,"one_level_reference_appropriate":"possibly as high-level public catalog/routing","recommendation":"HOLD"},
+    {"id":"SINTRA-R-004","record":"Author Identity","physical_movement_needed":false,"branch_projection_better":"possibly after source validation","authoritative_source_reference_better":true,"one_level_reference_appropriate":"possibly as high-level public identity/routing","recommendation":"HOLD"},
+    {"id":"SINTRA-R-005","record":"Editorial Philosophy","physical_movement_needed":false,"branch_projection_better":true,"authoritative_source_reference_better":true,"one_level_reference_appropriate":false,"recommendation":"APPROVE WITH MODIFICATION - DESIGN ONLY"},
+    {"id":"SINTRA-R-006","record":"Editorial Preferences","physical_movement_needed":false,"branch_projection_better":true,"authoritative_source_reference_better":true,"one_level_reference_appropriate":false,"recommendation":"APPROVE WITH MODIFICATION - DESIGN ONLY"},
+    {"id":"SINTRA-R-007","record":"Developmental Review Process","physical_movement_needed":false,"branch_projection_better":true,"authoritative_source_reference_better":true,"one_level_reference_appropriate":false,"recommendation":"APPROVE WITH MODIFICATION - DESIGN ONLY"},
+    {"id":"SINTRA-R-008","record":"Book Content Focus","physical_movement_needed":false,"branch_projection_better":true,"authoritative_source_reference_better":true,"one_level_reference_appropriate":false,"recommendation":"APPROVE WITH MODIFICATION - DESIGN ONLY"}
+  ],
+  "principle": "Reference/project governed source material; do not make Sintra Publishing authoritative.",
+  "mutation_count": 0
+}

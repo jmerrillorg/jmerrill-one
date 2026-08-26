@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "workspace": "J Merrill One",
+  "classification": "TITLE-REVIEWED UNRESOLVED - NO MUTATION",
+  "records": [
+    {"id":"SINTRA-U-001","title":"Professional Role and Current Position","likely_domain":"J Merrill One / Jackie public bio","source_body_gap":"body and source unavailable","exact_missing_evidence":"current website/repo public role canon comparison","current_safe_state":"retain","next_review_action":"open body/source and compare to approved public role canon"},
+    {"id":"SINTRA-U-002","title":"Professional Experience","likely_domain":"Jackie / J Merrill One","source_body_gap":"body and source unavailable","exact_missing_evidence":"approved public bio canon comparison","current_safe_state":"retain","next_review_action":"inspect full text and source"},
+    {"id":"SINTRA-U-003","title":"Strategic Thinking Style","likely_domain":"Jackie / One","source_body_gap":"body and source unavailable","exact_missing_evidence":"proof this is Founder-approved operating guidance rather than personal metadata","current_safe_state":"retain","next_review_action":"inspect source/body and determine authority"},
+    {"id":"SINTRA-U-004","title":"Digital Literacy and AI Integration","likely_domain":"J Merrill One","source_body_gap":"body and source unavailable","exact_missing_evidence":"JM1 AI execution routing/canon comparison","current_safe_state":"retain","next_review_action":"inspect body and compare to current AI canon"},
+    {"id":"SINTRA-U-005","title":"Communication Style Preference","likely_domain":"Jackie / One or brand-specific voice","source_body_gap":"body and source unavailable","exact_missing_evidence":"current public brand content standard comparison","current_safe_state":"retain","next_review_action":"inspect body and check for brand voice conflicts"},
+    {"id":"SINTRA-U-006","title":"Target Audience","likely_domain":"Unknown","source_body_gap":"body and source unavailable","exact_missing_evidence":"brand, channel, source, and intended-use evidence","current_safe_state":"retain","next_review_action":"inspect body for domain and channel scope"},
+    {"id":"SINTRA-U-007","title":"Expertise and Domain Knowledge","likely_domain":"Unknown","source_body_gap":"body and source unavailable","exact_missing_evidence":"whether claims are enterprise, personal, Publishing, Financial, or Foundation context","current_safe_state":"retain","next_review_action":"inspect full record and match claims to source authority"},
+    {"id":"SINTRA-U-008","title":"Our hybrid offerings at J Merrill One","likely_domain":"J Merrill One","source_body_gap":"body and source unavailable","exact_missing_evidence":"current website/repo service-page comparison","current_safe_state":"retain","next_review_action":"inspect body and compare to current offerings canon"},
+    {"id":"SINTRA-U-009","title":"Overview of J Merrill One offerings","likely_domain":"J Merrill One","source_body_gap":"body and source unavailable","exact_missing_evidence":"current website/repo service-page comparison","current_safe_state":"retain","next_review_action":"inspect body and compare to current offerings canon"}
+  ],
+  "mutation_count": 0
+}

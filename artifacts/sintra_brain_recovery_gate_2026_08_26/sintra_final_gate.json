@@ -13,9 +13,9 @@
     "dataverse": 0,
     "github_merge": 0
   },
-  "classification": "SINTRA CONTROLLED LAB COMPLETE - LIMITED ROLLBACK EVIDENCE; FOUNDER MUTATION DECISIONS REQUIRED",
-  "reason": "Live Chrome inspection proved J Merrill One access and exposed connected integrations, 89 Brain AI records, four beta automations, helpers, workspace settings, and profile settings. Founder-provided live evidence confirms J Merrill Publishing, J Merrill Financial, and J Merrill Foundation as sibling workspaces. Administrative/detail gaps remain: sibling Brain contents, exact OAuth scopes, connected account/page/property bindings, and full content classification for all 89 One Brain records were not proven.",
-  "nextSafestAction": "Jackie reviews the workspace-aware mutation packet for controlled J Merrill One Brain isolation/projection design. No quarantine, rehome, deletion, connector change, automation change, or sibling Brain inspection is authorized by the topology correction.",
+  "classification": "SINTRA RECOVERY HOLD - REVERSIBLE QUARANTINE METHOD NOT PROVEN",
+  "reason": "The final workspace-aware mutation packet specifies exact Founder decisions for the 37 active-review records and automations, but no safe reversible Brain quarantine primitive or structured export/copy rollback was proven. Founder-provided live evidence confirms J Merrill Publishing, J Merrill Financial, and J Merrill Foundation as sibling workspaces. Administrative/detail gaps remain: sibling Brain contents, exact OAuth scopes, connected account/page/property bindings, and full content classification for all 89 One Brain records were not proven.",
+  "nextSafestAction": "Jackie reviews the final Founder mutation packet for design decisions only. Do not execute Brain quarantine/rehome/delete, connector changes, automation changes, or sibling Brain inspection until reversible method and rollback evidence are proven.",
   "liveEvidence": {
     "inspectionTimestamp": "2026-08-26T04:45:27-04:00",
     "browser": "Google Chrome",
@@ -82,5 +82,12 @@
     "json_parse": "PASS",
     "checksums": "PASS",
     "npm_run_lint": "NOT RUN — DEPENDENCIES NOT INSTALLED"
+  },
+  "final_mutation_packet": {
+    "ledger": "90_sintra_final_mutation_ledger.json",
+    "founder_packet": "104_sintra_founder_mutation_packet_final.json",
+    "readiness_gate": "105_sintra_mutation_readiness_gate.json",
+    "mutations_this_pass": 0,
+    "delete_candidates": 0
   }
 }

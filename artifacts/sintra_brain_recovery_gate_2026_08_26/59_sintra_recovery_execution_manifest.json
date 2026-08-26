@@ -9,10 +9,10 @@
     }
   ],
   "recommended_founder_mutation_approval_required": [
-    "Quarantine recommended for exact 17 records in 43_sintra_quarantine_record_review.json after safe reversible primitive is approved.",
-    "Rehome/reference recommended for exact 8 records in 45_sintra_rehome_candidate_review.json after safe reversible primitive is approved.",
-    "Social Media Manager should remain lab-only and be disabled if no safe non-public mode is proven.",
-    "Facebook Commenter should remain hold/no production authority."
+    "Final ledger: 90_sintra_final_mutation_ledger.json",
+    "Quarantine design packet: 92_sintra_final_quarantine_packet.json; execution HOLD because 93_sintra_quarantine_execution_method.json found no safe reversible primitive.",
+    "Rehome/reference design packet: 94_sintra_final_rehome_reference_packet.json; Publishing routing in 95_sintra_publishing_record_routing.json.",
+    "Automation decisions: Social Media Manager disable recommendation, Daily Summarizer disable recommendation, Facebook Commenter no-public-authority recommendation."
   ],
   "hold": [
     "9 title-reviewed unresolved records remain unresolved until body/source inspection.",
@@ -28,5 +28,6 @@
     "M365 writes",
     "Azure writes"
   ],
-  "mutations_executed_this_pass": 1
+  "mutations_executed_this_pass": 0,
+  "classification": "SINTRA RECOVERY HOLD - REVERSIBLE QUARANTINE METHOD NOT PROVEN"
 }

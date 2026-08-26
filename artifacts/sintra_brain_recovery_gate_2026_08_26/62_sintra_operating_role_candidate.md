@@ -4,19 +4,21 @@ If retained, Sintra's approved enterprise role should be narrow.
 
 Allowed candidate role:
 
-- Ideation
 - Draft support
 - Read-only analysis
-- Cross-channel observation
+- Ideation
+- Internal drafting
 - Supplemental summaries
-- Internal-only Brain Q&A after contamination is bounded
 - Shadow comparisons against governed Microsoft/JM1 outputs
 
 Not allowed:
 
-- Enterprise authority
+- Canonical authority
+- Autonomous public actor
+- Inbox operator
+- Public commenter
+- Independent system of record
 - Canonical data store
-- Autonomous external actor
 - Public posting or commenting
 - Email sending
 - Replacement for Microsoft, Dataverse, SharePoint, repos, or governed website canon

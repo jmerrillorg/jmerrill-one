@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "automation": "Inbox Manager",
+  "required": "PASS - REMAINS DISABLED",
+  "result": "PASS - REMAINS DISABLED",
+  "instruction": "Do not re-enable. Do not reopen the completed off-state decision.",
+  "prior_evidence": "70_sintra_inbox_manager_disable_execution.json",
+  "mutation_count_this_pass": 0
+}

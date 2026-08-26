@@ -1,34 +1,27 @@
 {
-  "generated_at": "2026-08-26T07:50:00-04:00",
+  "generated_at": "2026-08-26T09:05:00-04:00",
   "workspace": "J Merrill One",
-  "branch": "codex/sintra-brain-recovery-gate",
-  "classification": "SINTRA CONTROLLED LAB COMPLETE — LIMITED ROLLBACK EVIDENCE; FOUNDER MUTATION DECISIONS REQUIRED",
-  "snapshot_status": "Captured from existing live visual evidence and strengthened with Computer Use live evidence.",
-  "brain_export": {"performed":false,"checksum":null,"required_before_mutation":false,"certification":"STRUCTURED EXPORT NOT AVAILABLE / NOT EXPOSED IN CURRENT TENANT"},
-  "connector_snapshot": "Facebook, Instagram, Google Analytics, LinkedIn Organization connected; QuickBooks not connected.",
-  "automation_snapshot": "Social Media Manager on, Inbox Manager disabled, Daily Summarizer on, Facebook Commenter on.",
-  "keep_validation": "3 KEEP candidates require body/source validation before production authority.",
-  "quarantine_review": "17 records reviewed for quarantine or further review; no delete action proposed.",
-  "rehome_review": "8 Publishing-oriented records reviewed; reference/projection preferred over making Sintra authoritative.",
-  "unresolved_review": "9 title-reviewed unresolved records documented with exact next inspection needs.",
-  "unseen_hold": "52 unseen/unclassified records frozen as UNINSPECTED — RETAIN.",
-  "lab_test_results": "Seven-category read-only Brain lab executed and scored; overall average 2.0/3.0.",
-  "microsoft_overlap": "High for Inbox Manager; medium for Social Media Manager, Daily Summarizer, and Brain Q&A until bounded.",
+  "classification": "SINTRA RECOVERY HOLD - REVERSIBLE QUARANTINE METHOD NOT PROVEN",
+  "final_workspace_aware_mutation_ledger": "90_sintra_final_mutation_ledger.json",
+  "reversible_quarantine_method_result": "NO SAFE QUARANTINE PRIMITIVE PROVEN",
+  "rehome_reference_recommendations": "94_sintra_final_rehome_reference_packet.json and 95_sintra_publishing_record_routing.json",
+  "unresolved_hold": "9 title-reviewed unresolved records retain pending source/body validation",
+  "unseen_hold": "52 UNINSPECTED - RETAIN / NO MUTATION",
   "automation_recommendations": {
-    "Social Media Manager": "LAB-ONLY; disable if no safe lab-only mode exists",
-    "Inbox Manager": "DISABLED after SAFE TO DISABLE dependency check",
-    "Daily Summarizer": "NO UNIQUE VALUE until proven otherwise",
-    "Facebook Commenter": "HOLD — NO PRODUCTION AUTHORITY"
+    "Inbox Manager": "PASS - REMAINS DISABLED",
+    "Social Media Manager": "DISABLE - NO SAFE LAB-ONLY MODE; do not disable in this pass",
+    "Daily Summarizer": "DISABLE - DUPLICATIVE; do not alter in this pass",
+    "Facebook Commenter": "KEEP DISABLED / NO PUBLIC AUTHORITY; do not test publicly"
   },
-  "public_actions_count": {"social_posts":0,"comments":0,"emails":0,"external_messages":0},
-  "mutations_count": 1,
-  "founder_mutation_decisions": [
-    "Approve reversible quarantine design for exact records after body/source inspection",
-    "Approve rehome/reference handling for exact Publishing records after source validation",
-    "Approve disable Social Media Manager if no safe lab-only mode exists",
-    "Approve Facebook Commenter hold/no public comments",
-    "Approve quarantine design only/no delete"
+  "no_delete_posture": true,
+  "delete_candidates": 0,
+  "adoption_recommendation": "LIMITED LAB ADOPTION - HIGH GOVERNANCE OVERHEAD",
+  "founder_decision_packet": "104_sintra_founder_mutation_packet_final.json",
+  "exact_founder_decision_groups": [
+    "SINTRA-K-001 through SINTRA-K-003",
+    "SINTRA-Q-001 through SINTRA-Q-017",
+    "SINTRA-R-001 through SINTRA-R-008",
+    "SINTRA-A-001 through SINTRA-A-003"
   ],
-  "adoption_recommendation": "LIMITED LAB ADOPTION — HIGH GOVERNANCE OVERHEAD",
-  "exact_next_action": "Founder review of mutation packet: no Brain cleanup yet; inspect exact record bodies and approve reversible quarantine/rehome design before Brain mutation."
+  "mutations_this_pass": 0
 }

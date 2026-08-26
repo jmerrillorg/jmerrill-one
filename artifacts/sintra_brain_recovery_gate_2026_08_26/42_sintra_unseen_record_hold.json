@@ -1,12 +1,14 @@
 {
-  "generated_at": "2026-08-26T05:30:00-04:00",
+  "generated_at": "2026-08-26T09:05:00-04:00",
   "count": 52,
-  "state": "UNINSPECTED — RETAIN",
+  "state": "52 UNINSPECTED - RETAIN / NO MUTATION",
   "quarantine": false,
   "rehome": false,
   "delete": false,
+  "executable_founder_packet_inclusion": false,
   "instruction": "Do not infer disposition from title absence or neighboring content. Leave untouched until individually inspectable.",
-  "live_lab_validation": "52 UNINSPECTED — RETAIN",
-  "touched_in_live_pass": 0,
-  "mutation_authorized": false
+  "live_lab_validation": "52 UNINSPECTED - RETAIN",
+  "touched_in_this_pass": 0,
+  "mutation_authorized": false,
+  "mutation_count": 0
 }

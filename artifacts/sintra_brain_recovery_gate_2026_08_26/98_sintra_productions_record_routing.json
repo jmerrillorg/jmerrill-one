@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "productions_workspace": "WORKSPACE NOT CONFIRMED IN CURRENT EVIDENCE",
+  "records": [
+    {
+      "record": "Performance and Recording Credentials",
+      "routing": "HOLD - PRODUCTIONS SINTRA WORKSPACE NOT CONFIRMED",
+      "recommendation": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "Could be public bio or Productions-related, but no Productions Sintra workspace is confirmed."
+    }
+  ],
+  "count": 1,
+  "recommendation": "Do not move records into a nonexistent Productions workspace. Use authoritative-source/reference handling until evidence changes.",
+  "mutation_count": 0
+}

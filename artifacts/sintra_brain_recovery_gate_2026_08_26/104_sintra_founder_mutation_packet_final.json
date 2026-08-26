@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "classification": "SINTRA RECOVERY HOLD - REVERSIBLE QUARANTINE METHOD NOT PROVEN",
+  "mutations_this_pass": 0,
+  "delete_candidates": 0,
+  "sections": {
+    "A_brain_keep_approvals": [
+      {"id":"SINTRA-K-001","record":"Quality Philosophy","recommendation":"HOLD","exact_founder_response":"HOLD SINTRA-K-001 - SOURCE/BODY VALIDATION REQUIRED"},
+      {"id":"SINTRA-K-002","record":"Business Focus","recommendation":"HOLD","exact_founder_response":"HOLD SINTRA-K-002 - SOURCE/BODY VALIDATION REQUIRED"},
+      {"id":"SINTRA-K-003","record":"Business website and brand links","recommendation":"HOLD","exact_founder_response":"HOLD SINTRA-K-003 - SOURCE/BODY VALIDATION REQUIRED"}
+    ],
+    "B_quarantine_approvals": [
+      {"id":"SINTRA-Q-001","record":"Music Ministry Experience","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-001"},
+      {"id":"SINTRA-Q-002","record":"Worship Leadership Approach","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-002"},
+      {"id":"SINTRA-Q-003","record":"Performance and Recording Credentials","recommendation":"HOLD","method":"Source/body validation first","rollback":"no mutation","exact_founder_response":"HOLD SINTRA-Q-003"},
+      {"id":"SINTRA-Q-004","record":"Hometown and Origins","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-004"},
+      {"id":"SINTRA-Q-005","record":"Scriptural Approach","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-005"},
+      {"id":"SINTRA-Q-006","record":"Spiritual Authority and Calling","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-006"},
+      {"id":"SINTRA-Q-007","record":"Primary Client/Project","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-007"},
+      {"id":"SINTRA-Q-008","record":"Military Context and Values","recommendation":"HOLD","method":"Source/body validation first","rollback":"no mutation","exact_founder_response":"HOLD SINTRA-Q-008"},
+      {"id":"SINTRA-Q-009","record":"Engagement with Political and Social Critique","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-009"},
+      {"id":"SINTRA-Q-010","record":"Writing Preference: Satirical Tone","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-010"},
+      {"id":"SINTRA-Q-011","record":"Author's Honesty About Limitations","recommendation":"HOLD","method":"Source/body validation first","rollback":"no mutation","exact_founder_response":"HOLD SINTRA-Q-011"},
+      {"id":"SINTRA-Q-012","record":"Personal Background","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-012"},
+      {"id":"SINTRA-Q-013","record":"Author's Spiritual Perspective","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-013"},
+      {"id":"SINTRA-Q-014","record":"Current team size and structure","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-014"},
+      {"id":"SINTRA-Q-015","record":"Educational Background","recommendation":"HOLD","method":"Source/body validation first","rollback":"no mutation","exact_founder_response":"HOLD SINTRA-Q-015"},
+      {"id":"SINTRA-Q-016","record":"Family Values and Modeling","recommendation":"HOLD","method":"No safe reversible method proven","rollback":"export/copy required before any future execution","exact_founder_response":"HOLD SINTRA-Q-016"},
+      {"id":"SINTRA-Q-017","record":"Attention to Detail","recommendation":"HOLD","method":"Source/body validation first","rollback":"no mutation","exact_founder_response":"HOLD SINTRA-Q-017"}
+    ],
+    "C_rehome_reference_approvals": [
+      {"id":"SINTRA-R-001","record":"Manuscript Tone and Style","recommendation":"APPROVE WITH MODIFICATION","exact_founder_response":"APPROVE WITH MODIFICATION SINTRA-R-001 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY"},
+      {"id":"SINTRA-R-002","record":"Style Sheet Governance","recommendation":"APPROVE WITH MODIFICATION","exact_founder_response":"APPROVE WITH MODIFICATION SINTRA-R-002 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY"},
+      {"id":"SINTRA-R-003","record":"Published Works","recommendation":"HOLD","exact_founder_response":"HOLD SINTRA-R-003 - SOURCE/BODY VALIDATION REQUIRED"},
+      {"id":"SINTRA-R-004","record":"Author Identity","recommendation":"HOLD","exact_founder_response":"HOLD SINTRA-R-004 - SOURCE/BODY VALIDATION REQUIRED"},
+      {"id":"SINTRA-R-005","record":"Editorial Philosophy","recommendation":"APPROVE WITH MODIFICATION","exact_founder_response":"APPROVE WITH MODIFICATION SINTRA-R-005 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY"},
+      {"id":"SINTRA-R-006","record":"Editorial Preferences","recommendation":"APPROVE WITH MODIFICATION","exact_founder_response":"APPROVE WITH MODIFICATION SINTRA-R-006 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY"},
+      {"id":"SINTRA-R-007","record":"Developmental Review Process","recommendation":"APPROVE WITH MODIFICATION","exact_founder_response":"APPROVE WITH MODIFICATION SINTRA-R-007 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY"},
+      {"id":"SINTRA-R-008","record":"Book Content Focus","recommendation":"APPROVE WITH MODIFICATION","exact_founder_response":"APPROVE WITH MODIFICATION SINTRA-R-008 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY"}
+    ],
+    "D_automation_decisions": [
+      {"id":"SINTRA-A-001","automation":"Social Media Manager","recommendation":"APPROVE","exact_founder_response":"APPROVE SINTRA-A-001 DISABLE SOCIAL MEDIA MANAGER - NO SAFE LAB-ONLY MODE"},
+      {"id":"SINTRA-A-002","automation":"Daily Summarizer","recommendation":"APPROVE","exact_founder_response":"APPROVE SINTRA-A-002 DISABLE DAILY SUMMARIZER - DUPLICATIVE / NO UNIQUE VALUE PROVEN"},
+      {"id":"SINTRA-A-003","automation":"Facebook Commenter","recommendation":"APPROVE","exact_founder_response":"APPROVE SINTRA-A-003 KEEP FACEBOOK COMMENTER DISABLED / NO PUBLIC AUTHORITY"}
+    ]
+  },
+  "inbox_manager": "Already complete/off; not reopened.",
+  "unseen_records": "52 UNINSPECTED - RETAIN / NO MUTATION",
+  "mutation_count": 0
+}

@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "routing_priority": [
+    "Governed Publishing source/canon",
+    "J Merrill Publishing Sintra projection/reference if useful",
+    "J Merrill One high-level enterprise reference only if needed"
+  ],
+  "count": 10,
+  "records": [
+    {"record":"Manuscript Tone and Style","routing":"REFERENCE / PROJECT TO PUBLISHING","one_recommendation":"remove operational influence from One projection"},
+    {"record":"Style Sheet Governance","routing":"REFERENCE / PROJECT TO PUBLISHING","one_recommendation":"remove operational influence from One projection"},
+    {"record":"Published Works","routing":"HOLD - SOURCE/BODY VALIDATION REQUIRED","one_recommendation":"possible high-level enterprise catalog/routing only"},
+    {"record":"Author Identity","routing":"HOLD - SOURCE/BODY VALIDATION REQUIRED","one_recommendation":"possible high-level public identity/routing only"},
+    {"record":"Editorial Philosophy","routing":"REFERENCE / PROJECT TO PUBLISHING","one_recommendation":"remove operational influence from One projection"},
+    {"record":"Editorial Preferences","routing":"REFERENCE / PROJECT TO PUBLISHING","one_recommendation":"remove operational influence from One projection"},
+    {"record":"Developmental Review Process","routing":"REFERENCE / PROJECT TO PUBLISHING","one_recommendation":"remove operational influence from One projection"},
+    {"record":"Book Content Focus","routing":"REFERENCE / PROJECT TO PUBLISHING","one_recommendation":"remove operational influence from One projection"},
+    {"record":"Writing Preference: Satirical Tone","routing":"HOLD or Publishing reference after validation","one_recommendation":"quarantine from One if reversible primitive is proven"},
+    {"record":"Author's Honesty About Limitations","routing":"HOLD - SOURCE/BODY VALIDATION REQUIRED","one_recommendation":"do not treat as enterprise authority"}
+  ],
+  "recommendation": "APPROVE WITH MODIFICATION - DESIGN ONLY FOR 6 CLEAR PUBLISHING PROJECTIONS; HOLD 4 SOURCE/BODY-DEPENDENT RECORDS",
+  "mutation_count": 0
+}

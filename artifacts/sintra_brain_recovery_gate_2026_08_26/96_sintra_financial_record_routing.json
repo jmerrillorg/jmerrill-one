@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "workspace": "J Merrill One",
+  "financial_workspace": "J Merrill Financial - confirmed sibling workspace; Brain not inspected",
+  "allowed_one_reference": [
+    "estate planning",
+    "advanced planning",
+    "funeral/pre-need planning",
+    "relevant insurance-product lane"
+  ],
+  "records_in_active_review_set": [],
+  "count": 0,
+  "recommendation": "No active review-set record is classified as Financial-specific. Preserve One-level awareness only; do not expand One Brain to fix the earlier Financial lab PARTIAL result.",
+  "mutation_count": 0
+}

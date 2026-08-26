@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "workspace": "J Merrill One",
+  "classification": "NO SAFE QUARANTINE PRIMITIVE PROVEN",
+  "evaluated_controls": [
+    {"control":"archive","proven":false,"evidence":"No archive primitive for Brain records proven in bounded evidence."},
+    {"control":"folder separation","proven":false,"evidence":"No folder separation primitive for Brain influence proven."},
+    {"control":"disable/ignore","proven":false,"evidence":"No per-record disable or ignore control proven."},
+    {"control":"workspace move","proven":false,"evidence":"Workspace existence is confirmed, but reversible record move mechanics are not proven."},
+    {"control":"remove from Brain while preserving export/copy","proven":false,"evidence":"Structured export is unavailable/not exposed; visual evidence is partial rollback evidence only."},
+    {"control":"tags","proven":false,"evidence":"No tags or exclusion filters proven for Brain records."},
+    {"control":"other reversible control","proven":false,"evidence":"No alternate reversible quarantine primitive documented."}
+  ],
+  "safe_execution_request": false,
+  "founder_request": "Approve design/hold only; do not authorize quarantine execution until a reversible primitive and rollback copy are proven.",
+  "mutation_readiness_effect": "HOLD - REVERSIBLE METHOD NOT PROVEN",
+  "mutation_count": 0
+}

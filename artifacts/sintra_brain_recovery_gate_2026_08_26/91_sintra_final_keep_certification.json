@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "workspace": "J Merrill One",
+  "certification_result": "0 KEEP - ENTERPRISE REFERENCE CERTIFIED",
+  "rule": "A record must be both correct/current enough and appropriate for One-level enterprise scope. Accuracy alone is insufficient.",
+  "records": [
+    {
+      "record": "Quality Philosophy",
+      "content_correct_current_enough": false,
+      "belongs_in_one": "possible but not proven",
+      "final_classification": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "Body/source/currentness were not validated against enterprise brand canon."
+    },
+    {
+      "record": "Business Focus",
+      "content_correct_current_enough": false,
+      "belongs_in_one": "possible but not proven",
+      "final_classification": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "May duplicate or conflict with current website/offering pages."
+    },
+    {
+      "record": "Business website and brand links",
+      "content_correct_current_enough": false,
+      "belongs_in_one": "likely only as high-level routing/reference",
+      "final_classification": "HOLD - SOURCE/BODY VALIDATION REQUIRED",
+      "reason": "Links and source authority were not validated against approved public canon."
+    }
+  ],
+  "founder_decisions": [
+    {
+      "id": "SINTRA-K-001",
+      "record": "Quality Philosophy",
+      "recommendation": "HOLD"
+    },
+    {
+      "id": "SINTRA-K-002",
+      "record": "Business Focus",
+      "recommendation": "HOLD"
+    },
+    {
+      "id": "SINTRA-K-003",
+      "record": "Business website and brand links",
+      "recommendation": "HOLD"
+    }
+  ],
+  "mutation_count": 0
+}

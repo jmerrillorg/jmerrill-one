@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-26T09:05:00-04:00",
+  "automation": "Social Media Manager",
+  "current_state": "HIGH RISK / LAB-ONLY",
+  "safe_lab_only_mode_proven": false,
+  "final_recommendation": "DISABLE - NO SAFE LAB-ONLY MODE",
+  "reason": "No genuinely non-publishing lab-only mode was proven; scheduling/publishing risk remains high and overlaps Social Recovery governance.",
+  "execution": "Do not disable in this pass.",
+  "founder_decision": {
+    "id": "SINTRA-A-001",
+    "recommendation": "APPROVE",
+    "exact_response": "APPROVE SINTRA-A-001 DISABLE SOCIAL MEDIA MANAGER - NO SAFE LAB-ONLY MODE"
+  },
+  "mutation_count": 0
+}

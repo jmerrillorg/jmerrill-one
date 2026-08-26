@@ -1,83 +1,70 @@
-# Sintra Founder Mutation Packet
+# Sintra Founder Mutation Packet - Final
 
-One approved mutation was executed in this pass: Inbox Manager was disabled after the final live dependency check returned SAFE TO DISABLE.
+Classification: SINTRA RECOVERY HOLD - REVERSIBLE QUARANTINE METHOD NOT PROVEN.
 
-Workspace correction: all Brain review and lab evidence in this packet refers to the inspected J Merrill One workspace. J Merrill Publishing, J Merrill Financial, and J Merrill Foundation are confirmed sibling workspaces, but their Brain contents were not inspected and no cross-workspace mutation is authorized.
+Mutations this pass: 0.
 
-## Decision 1: Inbox Manager
+Inbox Manager remains off from the prior approved mutation and is not reopened.
 
-Target: Inbox Manager automation.
+## A. Brain KEEP Approvals
 
-Before state: automations list switch on; detail page showed "Turn on Inbox Manager" and "Get started" with no Gmail/Outlook account or active production dependency visible.
+No KEEP record is certified for production authority yet.
 
-After state: disabled; reload verified Inbox Manager switch off.
+| ID | Record | Recommendation | Exact Founder response |
+|---|---|---|---|
+| SINTRA-K-001 | Quality Philosophy | HOLD | HOLD SINTRA-K-001 - SOURCE/BODY VALIDATION REQUIRED |
+| SINTRA-K-002 | Business Focus | HOLD | HOLD SINTRA-K-002 - SOURCE/BODY VALIDATION REQUIRED |
+| SINTRA-K-003 | Business website and brand links | HOLD | HOLD SINTRA-K-003 - SOURCE/BODY VALIDATION REQUIRED |
 
-Risk: possible competition with Outlook, Dynamics, Power Automate, and mailbox governance.
+## B. Quarantine Approvals
 
-Rollback: re-enable in Sintra automation settings after documenting the prior enabled state and configuration.
+Quarantine is not execution-ready because no safe reversible quarantine primitive is proven. The exact records below are recommended for design hold only.
 
-Recommendation: completed. Keep disabled unless a governed mailbox use case is separately approved.
+| ID | Record | Reason | Method | Rollback | Recommendation | Exact Founder response |
+|---|---|---|---|---|---|---|
+| SINTRA-Q-001 | Music Ministry Experience | Ministry/personal context is not One authority. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-001 |
+| SINTRA-Q-002 | Worship Leadership Approach | Ministry leadership could contaminate enterprise voice. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-002 |
+| SINTRA-Q-003 | Performance and Recording Credentials | Productions/public bio source unclear. | Source/body validation | No mutation | HOLD | HOLD SINTRA-Q-003 |
+| SINTRA-Q-004 | Hometown and Origins | Personal background should not drive automation. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-004 |
+| SINTRA-Q-005 | Scriptural Approach | Ministry authority is wrong One scope. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-005 |
+| SINTRA-Q-006 | Spiritual Authority and Calling | Religious authority framing is not One authority. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-006 |
+| SINTRA-Q-007 | Primary Client/Project | Unknown client/project context may be sensitive or stale. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-007 |
+| SINTRA-Q-008 | Military Context and Values | Public bio versus operating doctrine unresolved. | Source/body validation | No mutation | HOLD | HOLD SINTRA-Q-008 |
+| SINTRA-Q-009 | Engagement with Political and Social Critique | Sensitive public-risk content should not steer One. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-009 |
+| SINTRA-Q-010 | Writing Preference: Satirical Tone | Publishing/author tone is not One enterprise voice. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-010 |
+| SINTRA-Q-011 | Author's Honesty About Limitations | Author/publishing context unresolved. | Source/body validation | No mutation | HOLD | HOLD SINTRA-Q-011 |
+| SINTRA-Q-012 | Personal Background | Personal context should not drive One. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-012 |
+| SINTRA-Q-013 | Author's Spiritual Perspective | Blends ministry/author context outside One authority. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-013 |
+| SINTRA-Q-014 | Current team size and structure | Internal staffing facts may be stale/sensitive. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-014 |
+| SINTRA-Q-015 | Educational Background | Public bio status unresolved. | Source/body validation | No mutation | HOLD | HOLD SINTRA-Q-015 |
+| SINTRA-Q-016 | Family Values and Modeling | Personal values should not become enterprise policy. | No safe method proven | Export/copy required first | HOLD | HOLD SINTRA-Q-016 |
+| SINTRA-Q-017 | Attention to Detail | Title is vague and source utility unclear. | Source/body validation | No mutation | HOLD | HOLD SINTRA-Q-017 |
 
-Exact Founder response: no further response required for this executed item.
+## C. Rehome / Reference Approvals
 
-Non-regression: Inbox Manager = OFF. Do not reopen this decision or re-enable it in this correction pass.
+Use governed Publishing source/canon first, then J Merrill Publishing projection/reference if useful. Do not make Sintra Publishing authoritative.
 
-## Decision 2: Social Media Manager
+| ID | Record | Recommendation | Exact Founder response |
+|---|---|---|---|
+| SINTRA-R-001 | Manuscript Tone and Style | APPROVE WITH MODIFICATION | APPROVE WITH MODIFICATION SINTRA-R-001 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY |
+| SINTRA-R-002 | Style Sheet Governance | APPROVE WITH MODIFICATION | APPROVE WITH MODIFICATION SINTRA-R-002 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY |
+| SINTRA-R-003 | Published Works | HOLD | HOLD SINTRA-R-003 - SOURCE/BODY VALIDATION REQUIRED |
+| SINTRA-R-004 | Author Identity | HOLD | HOLD SINTRA-R-004 - SOURCE/BODY VALIDATION REQUIRED |
+| SINTRA-R-005 | Editorial Philosophy | APPROVE WITH MODIFICATION | APPROVE WITH MODIFICATION SINTRA-R-005 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY |
+| SINTRA-R-006 | Editorial Preferences | APPROVE WITH MODIFICATION | APPROVE WITH MODIFICATION SINTRA-R-006 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY |
+| SINTRA-R-007 | Developmental Review Process | APPROVE WITH MODIFICATION | APPROVE WITH MODIFICATION SINTRA-R-007 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY |
+| SINTRA-R-008 | Book Content Focus | APPROVE WITH MODIFICATION | APPROVE WITH MODIFICATION SINTRA-R-008 - REFERENCE/PROJECT TO PUBLISHING DESIGN ONLY |
 
-Target: Social Media Manager automation.
+## D. Automation Decisions
 
-Before state: enabled visually; possible Facebook, Instagram, and LinkedIn Organization dependencies.
+| ID | Automation | Recommendation | Exact Founder response |
+|---|---|---|---|
+| SINTRA-A-001 | Social Media Manager | APPROVE disable later | APPROVE SINTRA-A-001 DISABLE SOCIAL MEDIA MANAGER - NO SAFE LAB-ONLY MODE |
+| SINTRA-A-002 | Daily Summarizer | APPROVE disable later | APPROVE SINTRA-A-002 DISABLE DAILY SUMMARIZER - DUPLICATIVE / NO UNIQUE VALUE PROVEN |
+| SINTRA-A-003 | Facebook Commenter | APPROVE no public authority | APPROVE SINTRA-A-003 KEEP FACEBOOK COMMENTER DISABLED / NO PUBLIC AUTHORITY |
 
-Proposed after state: lab-only if non-public simulation exists; otherwise disabled until lab testing is complete.
+## Holds
 
-Risk: scheduling or publishing could bypass Social Recovery governance.
+The 9 title-reviewed unresolved records remain retain/inspect-next. The 52 unseen records are 52 UNINSPECTED - RETAIN / NO MUTATION and are not executable Founder mutation items.
 
-Observed lab risk: Social/brand lane contamination remains moderate; do not let Social Media Manager publish or schedule outside Social Recovery governance.
-
-Workspace-aware risk: separate Publishing, Financial, and Foundation workspaces make brand-scope correctness more important. Public scheduling or publishing remains high-risk/lab-only.
-
-Rollback: re-enable after lab controls and approval flow are proven.
-
-Recommendation: approve disable unless a safe lab-only mode is confirmed first.
-
-Exact Founder response: `APPROVE DISABLE SOCIAL MEDIA MANAGER IF NO SAFE LAB MODE` or `KEEP SOCIAL MEDIA MANAGER ENABLED FOR LAB OBSERVATION`.
-
-## Decision 3: Facebook Commenter
-
-Target: Facebook Commenter automation.
-
-Before state: enabled visually; possible Facebook dependency.
-
-Proposed after state: hold with no production authority; lab-only only if non-public simulation exists.
-
-Risk: public comments create external engagement, reputation, and governance exposure.
-
-Rollback: restore only after explicit production approval, if ever.
-
-Recommendation: hold; do not allow public commenting.
-
-Exact Founder response: `APPROVE FACEBOOK COMMENTER HOLD / NO PUBLIC COMMENTS`.
-
-## Decision 4: Focused Brain Quarantine/Rehome
-
-Target: exact 17 quarantine records and exact 8 rehome/reference candidates only, all currently evaluated as J Merrill One Brain influence.
-
-Before state: active in One Brain unless Sintra internally isolates them; safe primitive not proven.
-
-Proposed after state: remove/isolate from J Merrill One Brain influence through reversible quarantine or source-backed reference/projection after exact body inspection.
-
-Risk: active contamination if left in One Brain; data loss if deletion is improvised.
-
-Observed lab risk: Publishing records were treated as a governing rulebook inside One Brain; this supports quarantine/rehome design, but not deletion or opaque batch mutation.
-
-Potential destinations/references: J Merrill Publishing for Publishing-specific material, J Merrill Financial for Financial-specific material, J Merrill Foundation for Foundation-specific material, and authoritative external source/reference for governed canon. Do not assume physical rehome is required; authoritative source plus projection/reference is preferred.
-
-Rollback: only use reversible methods with export/checksum evidence.
-
-Recommendation: approve design, not execution, until Sintra quarantine/rehome primitive is proven and individual record bodies are inspected.
-
-Exact Founder response: `APPROVE QUARANTINE DESIGN ONLY — NO DELETE`.
-
-The 52 unseen records are excluded from this mutation packet.
-
-No deletion authority is granted. Mutations authorized by this boundary correction pass: 0. Inbox Manager's prior disable remains the only executed recovery mutation.
+Delete candidates: 0. Do not ask for deletion approval.
