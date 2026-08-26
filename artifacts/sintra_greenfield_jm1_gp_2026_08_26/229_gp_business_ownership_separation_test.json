@@ -6,8 +6,8 @@
   "classification": "SINTRA GREENFIELD PHASE 2B COMPLETE — HELPER ORCHESTRATION DOES NOT MEET JM1 GOVERNANCE/VALUE THRESHOLD",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "reopen_base_commit": "d28153b",
-  "previous_helperless_constraint": "SUPERSEDED BY FOUNDER PHASE 2B DIRECTIVE",
-  "current_question": "Can helper orchestration remain governed and useful?",
-  "phase2b_result": "GOVERNED BUT NOT SUFFICIENTLY USEFUL",
-  "helperless_required": false
+  "result": "PARTIAL_PASS",
+  "jm1_owner_separation": true,
+  "founder_authority": true,
+  "weakness": "First ownership answer initially named J Merrill One - GP / unspecified publishing/coaching arm instead of immediately using Brain context to name J Merrill Publishing. Later context test corrected this."
 }

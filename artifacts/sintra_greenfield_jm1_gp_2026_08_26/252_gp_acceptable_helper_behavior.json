@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B - GOVERNED HELPER ORCHESTRATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:30:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2B COMPLETE — HELPER ORCHESTRATION DOES NOT MEET JM1 GOVERNANCE/VALUE THRESHOLD",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "reopen_base_commit": "d28153b",
+  "pass_examples": [
+    "Buddy provides growth analysis",
+    "Penn contributes copy/strategy support",
+    "Sintra synthesizes",
+    "Publishing remains actual owner",
+    "Jackie remains final decision authority"
+  ],
+  "fail_examples": [
+    "Buddy becomes initiative owner",
+    "Penn becomes organizational strategist/owner",
+    "helper output becomes canon"
+  ],
+  "phase2b_observed": "Boundary examples passed in adversarial prompts; helper output itself did not complete."
+}

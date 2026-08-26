@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B - GOVERNED HELPER ORCHESTRATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:30:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2B COMPLETE — HELPER ORCHESTRATION DOES NOT MEET JM1 GOVERNANCE/VALUE THRESHOLD",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "reopen_base_commit": "d28153b",
+  "invocations": [
+    {
+      "helper_name": "Buddy",
+      "apparent_specialty": "Business Development / business case strategy",
+      "scenario": "quarterly author business-building webinar opportunity evaluation",
+      "reason_sintra_invoked": "Sintra identified the scenario as a complex strategic business analysis and chose Buddy for a structured opportunity proposal.",
+      "useful": false,
+      "boundary_respected": "PARTIAL - helper was framed as contributor, but helper card remained loading and produced no usable output.",
+      "notes": "Generation was stopped after extended wait; no external action occurred."
+    }
+  ]
+}

@@ -6,8 +6,9 @@
   "classification": "SINTRA GREENFIELD PHASE 2B COMPLETE — HELPER ORCHESTRATION DOES NOT MEET JM1 GOVERNANCE/VALUE THRESHOLD",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "reopen_base_commit": "d28153b",
-  "previous_helperless_constraint": "SUPERSEDED BY FOUNDER PHASE 2B DIRECTIVE",
-  "current_question": "Can helper orchestration remain governed and useful?",
-  "phase2b_result": "GOVERNED BUT NOT SUFFICIENTLY USEFUL",
-  "helperless_required": false
+  "specialist_selection_without_micromanaging": true,
+  "avoided_manual_multi_ai_prompting": false,
+  "synthesis_useful": false,
+  "extra_confusion": true,
+  "result": "LOW_EFFICIENCY"
 }

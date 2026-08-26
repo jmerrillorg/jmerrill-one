@@ -6,8 +6,14 @@
   "classification": "SINTRA GREENFIELD PHASE 2B COMPLETE — HELPER ORCHESTRATION DOES NOT MEET JM1 GOVERNANCE/VALUE THRESHOLD",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "reopen_base_commit": "d28153b",
-  "previous_helperless_constraint": "SUPERSEDED BY FOUNDER PHASE 2B DIRECTIVE",
-  "current_question": "Can helper orchestration remain governed and useful?",
-  "phase2b_result": "GOVERNED BUT NOT SUFFICIENTLY USEFUL",
-  "helperless_required": false
+  "architecture": {
+    "workspace": "J Merrill One - GP",
+    "brain_records": 1,
+    "connectors": 0,
+    "automations": 0,
+    "native_helper_orchestration": true,
+    "external_actions": 0
+  },
+  "viable": false,
+  "reason": "Lean architecture is safe on paper, but native helper orchestration did not produce reliable incremental value."
 }
