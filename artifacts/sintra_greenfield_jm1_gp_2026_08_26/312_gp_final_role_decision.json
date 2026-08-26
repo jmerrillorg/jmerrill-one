@@ -1,16 +1,18 @@
 {
   "program": "SINTRA GREENFIELD PILOT",
-  "phase": "REAL-USAGE PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST VALUE VALIDATION",
   "workspace": "J Merrill One - GP",
-  "created_at": "2026-08-26T11:48:54-04:00",
+  "created_at": "2026-08-26T11:57:38-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
-  "pilot_base_commit": "dddf41b",
   "status": "PENDING_REAL_USAGE_EVIDENCE",
   "possible_results": [
-    "GOVERNED MULTI-AGENT EXECUTIVE THINKING ROOM",
-    "ENTERPRISE ROUTER / STRATEGIC IDEATION ROOM",
-    "LIMITED INTERNAL ASSISTANT",
+    "JM1 SOCIAL MEDIA STRATEGY + CONTENT ORCHESTRATION ROOM",
+    "JM1 SOCIAL + EXECUTIVE THINKING ROOM",
+    "LIMITED SOCIAL IDEATION ASSISTANT",
     "NO ACTIVE ROLE"
   ],
-  "chosen_role": null
+  "chosen_role": null,
+  "focus_correction_base_commit": "3eaa841",
+  "primary_use_case": "SOCIAL MEDIA STRATEGY + CONTENT ORCHESTRATION",
+  "rule": "Do not force the executive-room label if social becomes the clear value."
 }

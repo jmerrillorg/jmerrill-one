@@ -2,10 +2,17 @@
 
 Status: PENDING_REAL_USAGE_EVIDENCE
 
-The real-usage pilot was activated on 2026-08-26 after explicit Founder approval. This closeout is intentionally not scored at activation. Evidence should come from normal voluntary use of `J Merrill One - GP` over at least 14 days, with continuation to Day 30 only if the Day-14 gate warrants it.
+The active pilot was focus-corrected on 2026-08-26 to evaluate Sintra primarily as a JM1 social media strategy and content orchestration tool. The pilot clock was not restarted.
 
-## Founder Approval
-`APPROVE SINTRA GP ORCHESTRATED REAL-USAGE PILOT — allow native internal helper orchestration for non-sensitive executive analysis while preserving zero connectors, zero automations, zero external actions, one governed Brain record, explicit JM1 ownership boundaries, and Founder final decision authority.`
+## Primary Use Case
+SOCIAL MEDIA STRATEGY + CONTENT ORCHESTRATION.
+
+Principal question: Can Sintra reduce the effort required to plan and develop high-quality, distinct, useful social content across J Merrill One and its brands?
+
+## Secondary Use Case
+EXECUTIVE THINKING / STRATEGIC ANALYSIS.
+
+Prior executive-room testing remains useful evidence about governance, reasoning, orchestration, and context persistence, but it is not the primary adoption case.
 
 ## Active Pilot Constraints
 - One clean GP workspace.
@@ -14,8 +21,29 @@ The real-usage pilot was activated on 2026-08-26 after explicit Founder approval
 - Zero connectors.
 - Zero automations.
 - Zero external actions.
-- Helpers advise only.
-- Jackie retains final authority.
+- No branch workspaces.
+- Sintra may draft/ideate internally only.
+- Social Recovery execution architecture remains authoritative.
+- Jackie/human approval remains required before any public use.
 
-## Future Closeout Sections
-The final closeout must include pilot duration, sessions/usage, voluntary returns, context persistence, context repetition, helper use, helper incremental value, strategic usefulness, ownership accuracy, authority discipline, Financial behavior if applicable, cognitive-load reduction, correction burden, recommendation restraint, governance burden, architecture sufficiency, score, expansion need, final role, adoption recommendation, and exact Founder decision.
+## Final Closeout Should Lead With
+1. social-media value
+2. content usability
+3. brand differentiation
+4. cross-brand planning
+5. revision/time reduction
+6. helper contribution
+7. voluntary usage
+8. governance
+9. architecture sufficiency
+10. executive-room secondary value
+11. final role
+12. expansion need
+
+## Final Classification Options
+- SINTRA GP REAL-USAGE PILOT COMPLETE — JM1 SOCIAL MEDIA STRATEGY/CONTENT ROLE PROVEN
+- SINTRA GP REAL-USAGE PILOT COMPLETE — JM1 SOCIAL + EXECUTIVE ORCHESTRATION ROLE PROVEN
+- SINTRA GP REAL-USAGE PILOT COMPLETE — LIMITED SOCIAL VALUE; FOUNDER RETENTION DECISION REQUIRED
+- SINTRA GP REAL-USAGE PILOT COMPLETE — NO JUSTIFIED SOCIAL MEDIA ADOPTION CASE
+
+Do not manufacture usage to populate this closeout. Evidence should come from Jackie choosing to use `J Merrill One - GP` during real social-media work.

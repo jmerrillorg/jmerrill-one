@@ -1,0 +1,12 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST VALUE VALIDATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:57:38-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "focus_correction_base_commit": "3eaa841",
+  "principal_question": "Can Sintra reduce the effort required to plan and develop high-quality, distinct, useful social content across J Merrill One and its brands?",
+  "secondary_question": "Does Sintra remain useful as a broader executive thinking room?",
+  "primary_adoption_case": "social-media strategy, ideation, content development, brand differentiation, and cross-brand orchestration",
+  "executive_room_status": "secondary capability"
+}
