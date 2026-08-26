@@ -2,6 +2,10 @@
 
 Evidence classification: CURRENT_REFERENCE from One repo canon/public registry; Sintra upload not performed.
 
+## Live Inspection Overlay
+
+Authenticated Chrome inspection confirms the current J Merrill One workspace is not a clean projection-only marketing workspace. It contains 89 Brain AI records, active social/analytics integrations, enabled beta automations, and historical conversations spanning publishing/editorial and funeral-service related material. Treat the projections below as target states, not current live state.
+
 ## J Merrill One
 
 Durable: J Merrill One enterprise identity; Human-First / Why-First public content standard; branch architecture; Microsoft remains enterprise system of record; public division pathways; approved enterprise URLs and CTAs.
@@ -16,7 +20,7 @@ Exclude: deep editorial implementation internals; private manuscripts; royalty o
 
 ## J Merrill Financial
 
-Durable: advanced planning positioning; estate planning and estate readiness; final-expense/funeral-planning insurance product positioning; non-attorney planning boundaries; approved services and public prices from One registry; LegacyCare positioning when canon-source verified; appointment CTA and compliance FAQs. This explicitly includes estate planning and advanced planning/funeral-planning insurance positioning, while preserving non-attorney and compliance boundaries.
+Durable: advanced planning positioning; estate planning and estate readiness; final-expense/funeral-planning insurance product positioning; non-attorney planning boundaries; approved services and public prices from One registry; LegacyCare positioning when canon-source verified; appointment CTA and compliance FAQs. This explicitly includes both estate planning and advanced planning/funeral planning as an insurance product, while preserving non-attorney and compliance boundaries.
 
 Exclude: private client records; legal advice claims; unverified insurance carrier/product specifics; Publishing royalty details; Foundation donor records.
 

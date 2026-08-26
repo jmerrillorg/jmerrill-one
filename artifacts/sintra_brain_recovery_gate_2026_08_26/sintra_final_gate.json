@@ -5,7 +5,7 @@
   "origin_main": "b45f271ea88a7e28c7468513a3d2f6593638c25e",
   "mode": "SINTRA BRAIN RECOVERY GATE AND SOCIAL OPERATIONS EVALUATION",
   "production_mutation_authorized": false,
-  "sintra_ui_status": "TOOL_CONTEXT_BLOCKED - Edge/Chrome computer-use and browser-control attempts returned no accessible UI text or screenshots in this session",
+  "sintra_ui_status": "LIVE_CHROME_VISUAL_ACCESS_PARTIAL - authenticated Chrome route-level inspection captured J Merrill One Integrations, Brain AI, Automations, Helpers, and Settings; Node browser-control output remained unavailable and multi-workspace/dropdown plus connector-scope detail were not fully inspectable",
   "production_mutations": {
     "sintra": 0,
     "social": 0,
@@ -13,9 +13,66 @@
     "dataverse": 0,
     "github_merge": 0
   },
-  "classification": "SINTRA BRAIN RECOVERY PARTIAL — AUTHORITY GAPS REMAIN",
-  "reason": "Live Sintra workspace/Brain/helper/integration/credit inspection was blocked by UI tool context. Repository-side policy, projection, and pilot gates are complete; no Sintra production Brain recovery or lab verification can be claimed.",
-  "nextSafestAction": "Jackie opens or signs into Sintra in Chrome/Edge and confirms when ready for read-only live workspace inventory; then run Stage 1 no-live-publish lab.",
+  "classification": "SINTRA BRAIN RECOVERY PARTIAL — LIVE ACCESS STILL BLOCKED",
+  "reason": "Live Chrome inspection proved J Merrill One access and exposed connected integrations, 89 Brain AI records, four beta automations, helpers, workspace settings, and profile settings. It did not prove complete all-workspace inventory, exact OAuth scopes, connected account/page/property bindings, or full content classification for all 89 Brain records.",
+  "nextSafestAction": "Jackie approves the proposed recovery diff for controlled Brain/integration cleanup, or grants a deeper export/API/safe-detail-inspection path for exact connector scopes and all-workspace inventory before mutation.",
+  "liveEvidence": {
+    "inspectionTimestamp": "2026-08-26T04:45:27-04:00",
+    "browser": "Google Chrome",
+    "workspaceConfirmed": "J Merrill One",
+    "creditsVisible": "20 / 20",
+    "brainRecordsVisible": 89,
+    "connectedIntegrationsVisible": [
+      "Facebook",
+      "Instagram",
+      "Google Analytics",
+      "LinkedIn (Organization)"
+    ],
+    "quickbooksVisibleState": "Connect - not connected in J Merrill One captured evidence",
+    "automationsVisible": [
+      "Social Media Manager",
+      "Inbox Manager",
+      "Daily Summarizer",
+      "Facebook Commenter"
+    ],
+    "automationsAppearEnabled": true,
+    "helpersVisible": [
+      "Buddy",
+      "Soshie",
+      "Commet",
+      "Cassie",
+      "Dexter",
+      "Vizzy",
+      "Penn",
+      "Emmie",
+      "Scouty",
+      "Milli",
+      "Seomi",
+      "Gigi"
+    ],
+    "screenshots": [
+      "evidence/2026-08-26_chrome_integrations_top.png",
+      "evidence/2026-08-26_chrome_integrations_social_canva_teams.png",
+      "evidence/2026-08-26_chrome_integrations_crm_projects.png",
+      "evidence/2026-08-26_chrome_brain_top.png",
+      "evidence/2026-08-26_chrome_brain_mid.png",
+      "evidence/2026-08-26_chrome_brain_lower.png",
+      "evidence/2026-08-26_chrome_automations.png",
+      "evidence/2026-08-26_chrome_helpers.png",
+      "evidence/2026-08-26_chrome_workspace_settings.png",
+      "evidence/2026-08-26_chrome_profile_settings.png"
+    ]
+  },
+  "blockedItems": [
+    "all-workspace selector inventory",
+    "exact connected Facebook account/page/scope inspection",
+    "exact connected Instagram account/scope inspection",
+    "exact Google Analytics account/property/scope inspection",
+    "exact LinkedIn Organization account/org/scope inspection",
+    "all 89 Brain records opened and content-reviewed",
+    "automation trigger/schedule/last-run/detail inspection",
+    "connector detail/OAuth-scope inspection for Dynamics 365 and Microsoft connectors"
+  ],
   "repository_validation": {
     "json_parse": "PASS",
     "checksums": "PASS",

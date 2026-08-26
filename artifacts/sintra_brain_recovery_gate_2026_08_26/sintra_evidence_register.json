@@ -5,7 +5,7 @@
   "origin_main": "b45f271ea88a7e28c7468513a3d2f6593638c25e",
   "mode": "SINTRA BRAIN RECOVERY GATE AND SOCIAL OPERATIONS EVALUATION",
   "production_mutation_authorized": false,
-  "sintra_ui_status": "TOOL_CONTEXT_BLOCKED - Edge/Chrome computer-use and browser-control attempts returned no accessible UI text or screenshots in this session",
+  "sintra_ui_status": "LIVE_CHROME_VISUAL_ACCESS_PARTIAL - authenticated Chrome route-level inspection captured J Merrill One Integrations, Brain AI, Automations, Helpers, and Settings; Node browser-control output remained unavailable and full tenant/detail scope inspection remains incomplete",
   "production_mutations": {
     "sintra": 0,
     "social": 0,
@@ -51,6 +51,32 @@
     "docs/governance/JM1-AI-EXECUTION-ROUTING-CONTRACT-v1.0.md",
     "artifacts/jm1_repository_routing_register.json"
   ],
+  "liveEvidence": {
+    "inspectionTimestamp": "2026-08-26T04:45:27-04:00",
+    "browser": "Google Chrome",
+    "workspaceConfirmed": "J Merrill One",
+    "creditsVisible": "20 / 20",
+    "brainRecordsVisible": 89,
+    "connectedIntegrationsVisible": [
+      "Facebook",
+      "Instagram",
+      "Google Analytics",
+      "LinkedIn (Organization)"
+    ],
+    "quickbooksVisibleState": "Connect - not connected in J Merrill One captured evidence",
+    "screenshots": [
+      "evidence/2026-08-26_chrome_integrations_top.png",
+      "evidence/2026-08-26_chrome_integrations_social_canva_teams.png",
+      "evidence/2026-08-26_chrome_integrations_crm_projects.png",
+      "evidence/2026-08-26_chrome_brain_top.png",
+      "evidence/2026-08-26_chrome_brain_mid.png",
+      "evidence/2026-08-26_chrome_brain_lower.png",
+      "evidence/2026-08-26_chrome_automations.png",
+      "evidence/2026-08-26_chrome_helpers.png",
+      "evidence/2026-08-26_chrome_workspace_settings.png",
+      "evidence/2026-08-26_chrome_profile_settings.png"
+    ]
+  },
   "workspaces": [
     {
       "workspace": "J Merrill One",
