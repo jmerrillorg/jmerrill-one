@@ -2,27 +2,36 @@
   "program": "SINTRA GREENFIELD PILOT",
   "phase": "GP SOCIAL MEDIA LIVE PILOT",
   "workspace": "J Merrill One - GP",
-  "created_at": "2026-08-26T16:57:54-04:00",
+  "updated_at": "2026-08-26T18:30:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
-  "live_pilot_base_commit": "14e59b2",
   "required": "PASS — J MERRILL ONE DESTINATION",
-  "overall_status": "HOLD — EXACT CONNECTED DESTINATIONS NOT EXPOSED",
+  "overall_status": "PASS — DESTINATIONS CERTIFIED FOR CONTROLLED SCHEDULING",
+  "evidence_source": "Founder-provided authenticated Sintra GP integrations UI screenshots",
   "destinations": [
     {
-      "platform": "Facebook",
-      "status": "HOLD THAT DESTINATION ONLY",
-      "reason": "Connected status visible, but page/account name or ID not exposed; no certified Facebook route found in repo."
+      "platform": "Instagram",
+      "status": "PASS",
+      "model": "DIRECT_ACCOUNT_CONNECTION",
+      "certified_destination": "@jmerrillone",
+      "basis": "Sintra Instagram connector directly shows account jmerrillone."
     },
     {
-      "platform": "Instagram",
-      "status": "HOLD THAT DESTINATION ONLY",
-      "reason": "Connected status visible, but account name or ID not exposed; certified public Instagram route exists as https://www.instagram.com/jmerrillone/ but connector destination was not verified."
+      "platform": "Facebook",
+      "status": "PASS",
+      "model": "MASTER_CONNECTION_WITH_SELECTABLE_PAGES",
+      "certified_destination": "J Merrill One",
+      "basis": "Founder-provided screenshot visibly shows J Merrill One among the Facebook connector's connected Pages.",
+      "execution_control": "Select J Merrill One as the destination Page for every One campaign Facebook post before scheduling/publishing."
     },
     {
       "platform": "LinkedIn",
-      "status": "HOLD THAT DESTINATION ONLY",
-      "reason": "LinkedIn Organization connector visible, but org name or ID not exposed; certified public company route exists as https://www.linkedin.com/company/jmerrillone but connector destination was not verified."
+      "status": "PASS",
+      "model": "MASTER_ORGANIZATION_CONNECTION_WITH_SELECTABLE_PAGES",
+      "certified_destination": "J Merrill One",
+      "basis": "Founder-provided screenshot visibly shows J Merrill One among the LinkedIn Organization connector's connected Pages.",
+      "execution_control": "Select J Merrill One as the organization destination for every One campaign LinkedIn post before scheduling/publishing."
     }
   ],
-  "publishing_authority_granted": false
+  "publishing_authority_granted": true,
+  "publishing_authority_scope": "Controlled Days 1-7 scheduling only, subject to post-level destination hard gate and no engagement autonomy."
 }

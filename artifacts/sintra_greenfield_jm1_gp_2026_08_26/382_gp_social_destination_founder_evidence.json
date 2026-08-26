@@ -1,0 +1,51 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T18:30:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "evidence_type": "FOUNDER_PROVIDED_AUTHENTICATED_SINTRA_GP_INTEGRATIONS_UI_SCREENSHOTS",
+  "screenshot_count": 3,
+  "screenshots_recorded": [
+    {
+      "platform": "Instagram",
+      "visible_account_or_page": "jmerrillone",
+      "model_certified": "DIRECT_ACCOUNT_CONNECTION",
+      "canonical_pilot_destination": "@jmerrillone",
+      "certification": "PASS",
+      "invisible_or_unclaimed_fields": [
+        "internal connector ID",
+        "platform account numeric ID"
+      ]
+    },
+    {
+      "platform": "Facebook",
+      "visible_account_or_page": "J Merrill One",
+      "model_certified": "MASTER_CONNECTION_WITH_SELECTABLE_PAGES",
+      "canonical_pilot_destination": "J Merrill One",
+      "certification": "PASS",
+      "invisible_or_unclaimed_fields": [
+        "internal connector ID",
+        "Facebook Page ID"
+      ]
+    },
+    {
+      "platform": "LinkedIn Organization",
+      "visible_account_or_page": "J Merrill One",
+      "other_visible_connected_pages": [
+        "J Merrill Foundation, Inc.",
+        "J Merrill Publishing, Inc."
+      ],
+      "model_certified": "MASTER_ORGANIZATION_CONNECTION_WITH_SELECTABLE_PAGES",
+      "canonical_pilot_destination": "J Merrill One",
+      "certification": "PASS",
+      "invisible_or_unclaimed_fields": [
+        "internal connector ID",
+        "LinkedIn organization numeric ID"
+      ]
+    }
+  ],
+  "certification_basis": "Founder-provided direct screenshots from the authenticated Sintra GP integrations UI clarify the previously unresolved destination mapping.",
+  "do_not_claim_ids_not_visible": true,
+  "destination_identity_investigation_closed": true
+}

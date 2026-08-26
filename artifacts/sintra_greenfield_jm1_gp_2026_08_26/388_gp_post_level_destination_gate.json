@@ -1,0 +1,30 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T18:30:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "gate": "POST_LEVEL_DESTINATION_HARD_GATE",
+  "scope": "Every Days 1-7 One campaign scheduled or published social item.",
+  "platform_rules": [
+    {
+      "platform": "Facebook",
+      "required_destination": "J Merrill One",
+      "condition": "destination == J Merrill One"
+    },
+    {
+      "platform": "Instagram",
+      "required_destination": "@jmerrillone",
+      "condition": "destination == @jmerrillone"
+    },
+    {
+      "platform": "LinkedIn",
+      "required_destination": "J Merrill One",
+      "condition": "destination == J Merrill One"
+    }
+  ],
+  "failure_rule": "If a post composer does not clearly show the destination, do not schedule that post.",
+  "gate_type": "PER_ITEM_EXECUTION_SAFEGUARD",
+  "enterprise_wide_hold": false,
+  "engagement_authority": "NONE"
+}

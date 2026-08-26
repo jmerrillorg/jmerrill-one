@@ -1,12 +1,13 @@
 # J Merrill One First 7-Day Execution Packet
 
-Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Status: FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING
 Language approval: APPROVED WITH REQUIRED PEOPLE-FIRST TERMINOLOGY CORRECTION
-Destination certification: HOLD until exact connected One destinations are verified.
+Destination certification: PASS based on founder-provided authenticated Sintra GP integrations UI screenshots.
+Post-level destination gate: Facebook destination must be J Merrill One; Instagram destination must be @jmerrillone; LinkedIn destination must be J Merrill One. If the composer does not clearly show the required destination, do not schedule that item.
 
 ## Day 1 — 2026-08-27 — Welcome to J Merrill One
 Intended time ET: 09:00
-Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Status: FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING
 
 **Facebook**
 Day 1: Welcome to J Merrill One
@@ -36,7 +37,7 @@ CTA: Learn more: https://jmerrill.one
 
 ## Day 2 — 2026-08-28 — Why J Merrill One Exists
 Intended time ET: 11:30
-Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Status: FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING
 
 **Facebook**
 Day 2: Why J Merrill One Exists
@@ -66,7 +67,7 @@ CTA: Learn more: https://jmerrill.one
 
 ## Day 3 — 2026-08-29 — Meet the Family: Publishing
 Intended time ET: 09:00
-Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Status: FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING
 
 **Facebook**
 Day 3: Meet the Family: Publishing
@@ -96,7 +97,7 @@ CTA: Start with the right JM1 path: https://jmerrill.one/contact
 
 ## Day 4 — 2026-08-30 — People-First
 Intended time ET: 11:30
-Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Status: FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING
 
 **Facebook**
 Day 4: People-First
@@ -124,7 +125,7 @@ CTA: Learn more: https://jmerrill.one
 
 ## Day 5 — 2026-08-31 — Founder Perspective
 Intended time ET: 09:00
-Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Status: FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING
 
 **Facebook**
 Day 5: Founder Perspective
@@ -154,7 +155,7 @@ CTA: Learn more: https://jmerrill.one
 
 ## Day 6 — 2026-09-01 — Meet the Family: Financial
 Intended time ET: 11:30
-Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Status: FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING
 
 **Facebook**
 Day 6: Meet the Family: Financial
@@ -184,7 +185,7 @@ CTA: Start with the right JM1 path: https://jmerrill.one/contact
 
 ## Day 7 — 2026-09-02 — Why-First
 Intended time ET: 09:00
-Status: FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION
+Status: FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING
 
 **Facebook**
 Day 7: Why-First

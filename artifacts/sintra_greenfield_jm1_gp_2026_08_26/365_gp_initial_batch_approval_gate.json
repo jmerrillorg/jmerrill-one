@@ -11,5 +11,8 @@
   "founder_approval_required": true,
   "first7_ready_for_review": true,
   "founder_language_decision": "APPROVED WITH REQUIRED PEOPLE-FIRST TERMINOLOGY CORRECTION",
-  "first7_approval_status_after_correction": "FOUNDER APPROVED — EXECUTION HELD ONLY FOR DESTINATION CERTIFICATION"
+  "destination_certification_state": "PASS — FOUNDER-PROVIDED DESTINATIONS CERTIFIED",
+  "first7_approval_status_after_correction": "FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING",
+  "copy_approval_reopened": false,
+  "post_level_destination_gate_required": true
 }

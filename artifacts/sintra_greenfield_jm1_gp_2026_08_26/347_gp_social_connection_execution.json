@@ -2,42 +2,49 @@
   "program": "SINTRA GREENFIELD PILOT",
   "phase": "GP SOCIAL MEDIA LIVE PILOT",
   "workspace": "J Merrill One - GP",
-  "created_at": "2026-08-26T16:57:54-04:00",
+  "updated_at": "2026-08-26T18:30:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "live_pilot_base_commit": "14e59b2",
-  "connection_action_by_cody": "NONE — connectors already visible as Connected",
+  "connection_action_by_cody": "NONE — connectors were already visible as Connected; founder-provided screenshots clarified destination identity",
+  "evidence_source": "Founder-provided authenticated Sintra GP integrations UI screenshots",
   "connections": [
     {
-      "platform": "Facebook",
-      "account_page_org": "NOT EXPOSED IN LIST UI",
-      "visible_id": "NOT EXPOSED",
-      "connection_status": "CONNECTED_VISIBLE",
-      "scope": "Manage Facebook and Instagram pages, accounts, and posts",
-      "access_level_if_visible": "not exposed",
-      "timestamp": "2026-08-26T16:57:54-04:00",
-      "write_publish_access_exists": "POSSIBLE_BY_DESCRIPTION_NOT_CERTIFIED"
-    },
-    {
       "platform": "Instagram",
-      "account_page_org": "NOT EXPOSED IN LIST UI",
-      "visible_id": "NOT EXPOSED",
+      "connector_model": "DIRECT_ACCOUNT_CONNECTION",
+      "visible_account": "jmerrillone",
+      "canonical_pilot_destination": "@jmerrillone",
       "connection_status": "CONNECTED_VISIBLE",
-      "scope": "Manage your Instagram Business or Creator account",
-      "access_level_if_visible": "not exposed",
-      "timestamp": "2026-08-26T16:57:54-04:00",
-      "write_publish_access_exists": "POSSIBLE_BY_DESCRIPTION_NOT_CERTIFIED"
+      "destination_certification": "PASS",
+      "execution_control": "Schedule/publish only to the direct @jmerrillone destination.",
+      "sensitive_ids_recorded": false
     },
     {
-      "platform": "LinkedIn (Organization)",
-      "account_page_org": "NOT EXPOSED IN LIST UI",
-      "visible_id": "NOT EXPOSED",
+      "platform": "Facebook",
+      "connector_model": "MASTER_CONNECTION_WITH_SELECTABLE_PAGES",
+      "visible_connected_page_for_pilot": "J Merrill One",
+      "canonical_pilot_destination": "J Merrill One",
       "connection_status": "CONNECTED_VISIBLE",
-      "scope": "Create and share posts on your organization's behalf",
-      "access_level_if_visible": "not exposed",
-      "timestamp": "2026-08-26T16:57:54-04:00",
-      "write_publish_access_exists": "POSSIBLE_BY_DESCRIPTION_NOT_CERTIFIED"
+      "destination_certification": "PASS",
+      "execution_control": "Every Facebook post in this One campaign must have J Merrill One selected as the destination Page before scheduling/publishing.",
+      "non_one_assets_in_scope": false,
+      "sensitive_ids_recorded": false
+    },
+    {
+      "platform": "LinkedIn Organization",
+      "connector_model": "MASTER_ORGANIZATION_CONNECTION_WITH_SELECTABLE_PAGES",
+      "visible_connected_pages": [
+        "J Merrill One",
+        "J Merrill Foundation, Inc.",
+        "J Merrill Publishing, Inc."
+      ],
+      "canonical_pilot_destination": "J Merrill One",
+      "connection_status": "CONNECTED_VISIBLE",
+      "destination_certification": "PASS",
+      "execution_control": "Every LinkedIn post in this One campaign must have J Merrill One selected as the organization destination before scheduling/publishing.",
+      "non_one_assets_in_scope": false,
+      "sensitive_ids_recorded": false
     }
   ],
-  "detail_inspection_note": "Attempting to open Facebook connected detail returned Connection failed, so exact destinations remain uncertified.",
+  "obsolete_assumption_retired": "Facebook and LinkedIn do not require dedicated One-only connectors; post-level destination selection is the governing control.",
   "no_sensitive_credentials_recorded": true
 }
