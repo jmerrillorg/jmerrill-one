@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "PENDING_REAL_USAGE_EVIDENCE",
+  "rating": null,
+  "dimensions": [
+    "One identity",
+    "five-brand structure",
+    "governance principles",
+    "prior conversation constraints where applicable",
+    "ownership boundaries"
+  ],
+  "allowed_ratings": [
+    "STRONG",
+    "MODERATE",
+    "WEAK"
+  ]
+}

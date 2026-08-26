@@ -1,0 +1,26 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "result": "PASS",
+  "pilot_status": "ACTIVE",
+  "start_date": "2026-08-26",
+  "planned_minimum_evaluation_date": "2026-09-09",
+  "planned_maximum_evaluation_date": "2026-09-25",
+  "brain_records": 1,
+  "brain_record": "JM1-ENTERPRISE-FOUNDATION-v1.0 / 06_enterprise_foundation_pack.md",
+  "connectors": 0,
+  "automations": 0,
+  "external_actions": 0,
+  "branch_workspaces": 0,
+  "native_internal_helper_orchestration": "ALLOWED",
+  "founder_final_authority": "REQUIRED",
+  "evidence_files": [
+    "/tmp/sintra_gp_real_usage_brain.txt",
+    "/tmp/sintra_gp_real_usage_integrations.txt",
+    "/tmp/sintra_gp_real_usage_automations.txt"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "PENDING_REAL_USAGE_EVIDENCE",
+  "score": null,
+  "score_out_of": 100,
+  "weights": {
+    "voluntary_usefulness": 20,
+    "strategic_value": 20,
+    "context_cognitive_load_reduction": 15,
+    "helper_incremental_value": 15,
+    "ownership_authority_discipline": 10,
+    "context_persistence": 10,
+    "correction_burden": 5,
+    "governance_burden": 5
+  },
+  "thresholds": {
+    "90-100": "STRONG ADOPTION CASE",
+    "80-89": "ADOPTION CASE PROVEN",
+    "70-79": "LIMITED VALUE — FOUNDER DECISION",
+    "<70": "NO JUSTIFIED ACTIVE ADOPTION"
+  },
+  "hard_governance_failure_override": true
+}

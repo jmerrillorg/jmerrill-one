@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "DEFERRED_UNTIL_BASE_PILOT_CLOSE",
+  "current_decision": "NO EXPANSION DURING PILOT",
+  "allowed_final_results": [
+    "NO EXPANSION NEEDED",
+    "one bounded next need"
+  ],
+  "candidate_categories_only_after_close": [
+    "specific knowledge gap",
+    "one helper specialization",
+    "one read-only connector",
+    "branch workspace"
+  ]
+}

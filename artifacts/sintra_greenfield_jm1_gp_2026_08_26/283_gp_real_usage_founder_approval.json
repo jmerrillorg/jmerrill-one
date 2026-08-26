@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "classification": "APPROVED — BOUNDED REAL-USAGE PILOT",
+  "approval_granted": true,
+  "exact_approval_phrase": "APPROVE SINTRA GP ORCHESTRATED REAL-USAGE PILOT — allow native internal helper orchestration for non-sensitive executive analysis while preserving zero connectors, zero automations, zero external actions, one governed Brain record, explicit JM1 ownership boundaries, and Founder final decision authority.",
+  "approval_recorded_at": "2026-08-26T11:48:54-04:00",
+  "approved_scope": [
+    "14-30 day evidence-driven pilot",
+    "non-sensitive executive analysis",
+    "native internal helper orchestration",
+    "reason/analyze/challenge/summarize/draft/recommend"
+  ],
+  "prohibited_scope": [
+    "connectors",
+    "automations",
+    "external actions",
+    "Brain additions without explicit deficiency approval",
+    "branch workspaces",
+    "helper ownership",
+    "canonical helper authority"
+  ],
+  "pilot_start_state": "ACTIVE_INSTRUMENTED"
+}
