@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "phase": "PHASE 1 - CLEAN ENTERPRISE INTELLIGENCE PROOF",
+  "created_at": "2026-08-26T09:45:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 1 COMPLETE - LIMITED VALUE PROVEN; FOUNDER DIRECTION REQUIRED",
+  "legacy_recovery_reference": {
+    "status": "SUPERSEDED_BY_GREENFIELD_WORKSPACE",
+    "historical_commit": "de03b8c",
+    "forward_implementation_dependency": false
+  },
+  "knowledge_records_maintained": 1,
+  "sources_requiring_refresh": 1,
+  "manual_governance_rules": 35,
+  "export_recovery_limitation": "STRUCTURED BRAIN EXPORT NOT EXPOSED",
+  "connector_controls": 0,
+  "helper_controls": 0,
+  "automation_controls": "unexpected 4 active visible must be resolved before expansion",
+  "ongoing_review_burden": "MODERATE"
+}
