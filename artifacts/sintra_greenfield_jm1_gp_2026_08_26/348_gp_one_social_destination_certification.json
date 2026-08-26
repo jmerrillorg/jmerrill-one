@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "required": "PASS — J MERRILL ONE DESTINATION",
+  "overall_status": "HOLD — EXACT CONNECTED DESTINATIONS NOT EXPOSED",
+  "destinations": [
+    {
+      "platform": "Facebook",
+      "status": "HOLD THAT DESTINATION ONLY",
+      "reason": "Connected status visible, but page/account name or ID not exposed; no certified Facebook route found in repo."
+    },
+    {
+      "platform": "Instagram",
+      "status": "HOLD THAT DESTINATION ONLY",
+      "reason": "Connected status visible, but account name or ID not exposed; certified public Instagram route exists as https://www.instagram.com/jmerrillone/ but connector destination was not verified."
+    },
+    {
+      "platform": "LinkedIn",
+      "status": "HOLD THAT DESTINATION ONLY",
+      "reason": "LinkedIn Organization connector visible, but org name or ID not exposed; certified public company route exists as https://www.linkedin.com/company/jmerrillone but connector destination was not verified."
+    }
+  ],
+  "publishing_authority_granted": false
+}

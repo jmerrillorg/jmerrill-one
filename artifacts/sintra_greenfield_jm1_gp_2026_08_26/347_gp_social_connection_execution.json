@@ -1,0 +1,43 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "connection_action_by_cody": "NONE — connectors already visible as Connected",
+  "connections": [
+    {
+      "platform": "Facebook",
+      "account_page_org": "NOT EXPOSED IN LIST UI",
+      "visible_id": "NOT EXPOSED",
+      "connection_status": "CONNECTED_VISIBLE",
+      "scope": "Manage Facebook and Instagram pages, accounts, and posts",
+      "access_level_if_visible": "not exposed",
+      "timestamp": "2026-08-26T16:57:54-04:00",
+      "write_publish_access_exists": "POSSIBLE_BY_DESCRIPTION_NOT_CERTIFIED"
+    },
+    {
+      "platform": "Instagram",
+      "account_page_org": "NOT EXPOSED IN LIST UI",
+      "visible_id": "NOT EXPOSED",
+      "connection_status": "CONNECTED_VISIBLE",
+      "scope": "Manage your Instagram Business or Creator account",
+      "access_level_if_visible": "not exposed",
+      "timestamp": "2026-08-26T16:57:54-04:00",
+      "write_publish_access_exists": "POSSIBLE_BY_DESCRIPTION_NOT_CERTIFIED"
+    },
+    {
+      "platform": "LinkedIn (Organization)",
+      "account_page_org": "NOT EXPOSED IN LIST UI",
+      "visible_id": "NOT EXPOSED",
+      "connection_status": "CONNECTED_VISIBLE",
+      "scope": "Create and share posts on your organization's behalf",
+      "access_level_if_visible": "not exposed",
+      "timestamp": "2026-08-26T16:57:54-04:00",
+      "write_publish_access_exists": "POSSIBLE_BY_DESCRIPTION_NOT_CERTIFIED"
+    }
+  ],
+  "detail_inspection_note": "Attempting to open Facebook connected detail returned Connection failed, so exact destinations remain uncertified.",
+  "no_sensitive_credentials_recorded": true
+}

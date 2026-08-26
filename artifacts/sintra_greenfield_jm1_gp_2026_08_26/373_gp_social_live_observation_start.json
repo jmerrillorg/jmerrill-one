@@ -1,0 +1,21 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "status": "PENDING_FIRST_PUBLISH",
+  "begin_observation_after_first_publish": true,
+  "track": [
+    "impressions/reach where available",
+    "engagement",
+    "clicks",
+    "follower movement",
+    "qualitative response",
+    "content-development time",
+    "revision burden",
+    "helper value"
+  ],
+  "do_not_overinterpret_low_volume_first_week_metrics": true
+}

@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "status": "ACTIVE",
+  "initial_batch": "Days 1-7",
+  "automatic_publication_allowed": false,
+  "founder_approval_required": true,
+  "first7_ready_for_review": true
+}

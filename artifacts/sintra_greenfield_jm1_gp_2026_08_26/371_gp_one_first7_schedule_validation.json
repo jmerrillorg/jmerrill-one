@@ -1,0 +1,19 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "status": "PENDING — NO SCHEDULED BATCH",
+  "required_result": "PASS",
+  "checks": [
+    "7 days accounted for",
+    "platform variants accounted for",
+    "correct One destinations",
+    "no duplicate accidental schedules",
+    "no wrong-brand accounts",
+    "no unapproved content"
+  ],
+  "current_result": "NOT_APPLICABLE_UNTIL_SCHEDULED"
+}

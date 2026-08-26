@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "required_result": "PASS",
+  "actual_result": "PARTIAL — APPROVED SOCIAL CONNECTORS ALREADY PRESENT AT INSPECTION",
+  "brain_records": 1,
+  "brain_record": "06_enterprise_foundation_pack.md",
+  "automations": 0,
+  "existing_connectors_expected": 0,
+  "existing_connectors_observed": 3,
+  "observed_connected_platforms": [
+    "Facebook",
+    "Instagram",
+    "LinkedIn (Organization)"
+  ],
+  "external_actions": 0,
+  "branch_workspaces": 0,
+  "notes": "Read-only baseline capture found the approved social connectors already marked Connected before Cody initiated any new OAuth/connect action. This was recorded as observed state, not treated as blanket execution authority."
+}
