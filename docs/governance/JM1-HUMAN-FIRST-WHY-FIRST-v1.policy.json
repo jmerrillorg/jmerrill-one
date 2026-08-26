@@ -111,7 +111,7 @@
     },
     "financial": {
       "status": "CONTROLLED_GUARD_READY",
-      "from": "financial@jmerrill.one",
+      "from": "financial@email.jmerrill.one",
       "replyTo": "financial@jmerrill.one",
       "format": "HTML_OR_CONFIGURED_CHANNEL",
       "runtimeClassification": "COMMUNICATION_GATE_BOUND_IN_BRANCH",
@@ -119,7 +119,7 @@
     },
     "foundation": {
       "status": "PRE_PUBLISH_GUARD_READY",
-      "from": "foundation@jmerrill.one",
+      "from": "foundation@email.jmerrill.one",
       "replyTo": "foundation@jmerrill.one",
       "format": "HTML_OR_PUBLIC_SURFACE",
       "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
@@ -127,7 +127,7 @@
     },
     "productions": {
       "status": "PRE_PUBLISH_GUARD_READY",
-      "from": "productions@jmerrill.one",
+      "from": "productions@email.jmerrill.one",
       "replyTo": "productions@jmerrill.one",
       "format": "HTML_OR_PUBLIC_SURFACE",
       "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
