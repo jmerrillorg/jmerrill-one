@@ -101,7 +101,15 @@
     ]
   },
   "brandProfiles": {
-    "jm1": { "status": "PROFILE_REQUIRED" },
+    "jm1": {
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "one@email.jmerrill.one",
+      "replyTo": "one@jmerrill.one",
+      "replyMailboxAuthority": "info@jmerrill.one",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
+    },
     "publishing": {
       "status": "FIRST_PROVING_IMPLEMENTATION",
       "from": "publishing@email.jmerrill.one",
@@ -110,36 +118,36 @@
       "format": "HTML"
     },
     "financial": {
-      "status": "CONTROLLED_GUARD_READY",
-      "from": "financial@jmerrill.one",
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "financial@email.jmerrill.one",
       "replyTo": "financial@jmerrill.one",
-      "format": "HTML_OR_CONFIGURED_CHANNEL",
-      "runtimeClassification": "COMMUNICATION_GATE_BOUND_IN_BRANCH",
-      "liveOutboundCommissioning": "NOT_PROVEN"
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
     },
     "foundation": {
-      "status": "PRE_PUBLISH_GUARD_READY",
-      "from": "foundation@jmerrill.one",
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "foundation@email.jmerrill.one",
       "replyTo": "foundation@jmerrill.one",
-      "format": "HTML_OR_PUBLIC_SURFACE",
-      "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
-      "liveOutboundCommissioning": "SEPARATE_WAVE_REQUIRED"
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
     },
     "productions": {
-      "status": "PRE_PUBLISH_GUARD_READY",
-      "from": "productions@jmerrill.one",
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "productions@email.jmerrill.one",
       "replyTo": "productions@jmerrill.one",
-      "format": "HTML_OR_PUBLIC_SURFACE",
-      "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
-      "liveOutboundCommissioning": "SEPARATE_WAVE_REQUIRED"
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
     },
     "aic": {
-      "status": "PRE_PUBLISH_GUARD_READY",
-      "from": "info@agapeic.org",
-      "replyTo": "info@agapeic.org",
+      "status": "PRE_PUBLISH_GUARD_READY_FOUNDER_DECISION_REQUIRED",
+      "from": "FOUNDER_DECISION_REQUIRED",
+      "replyTo": "FOUNDER_DECISION_REQUIRED",
       "format": "HTML_OR_PUBLIC_SURFACE",
       "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
-      "liveOutboundCommissioning": "SEPARATE_WAVE_REQUIRED"
+      "liveOutboundCommissioning": "NOT_AUTHORIZED"
     }
   },
   "artifactClassifications": [
