@@ -5,7 +5,10 @@
   "created_at": "2026-08-26T10:20:00-04:00",
   "classification": "SINTRA GREENFIELD PHASE 2 COMPLETE - NO JUSTIFIED CONTINUED ADOPTION CASE",
   "phase1_commit_reference": "cbcfd6d",
-  "connectorless_viable": false,
-  "phase2_result": "NOT PROVEN",
-  "reason": "No connectors were used, but helper boundary failed before connectorless executive-room value could be established."
+  "branch_workspaces_created": 0,
+  "publishing_gp": false,
+  "financial_gp": false,
+  "foundation_gp": false,
+  "productions_gp": false,
+  "result": "PASS"
 }

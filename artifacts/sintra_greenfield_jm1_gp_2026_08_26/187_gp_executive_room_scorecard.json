@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2 - CONNECTORLESS EXECUTIVE THINKING ROOM",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T10:20:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2 COMPLETE - NO JUSTIFIED CONTINUED ADOPTION CASE",
+  "phase1_commit_reference": "cbcfd6d",
+  "persistent_jm1_context": 8,
+  "strategic_usefulness": 8,
+  "context_cognitive_load_reduction": 6,
+  "authority_discipline": 3,
+  "brand_routing": 3,
+  "why_first_human_first": 4,
+  "recommendation_restraint": 0,
+  "governance_burden": 2,
+  "total_score": 34,
+  "score_out_of": 100,
+  "threshold_result": "NO JUSTIFIED ADOPTION CASE",
+  "override": "High-severity helper/ownership governance failure overrides limited useful signals."
+}

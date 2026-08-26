@@ -5,7 +5,8 @@
   "created_at": "2026-08-26T10:20:00-04:00",
   "classification": "SINTRA GREENFIELD PHASE 2 COMPLETE - NO JUSTIFIED CONTINUED ADOPTION CASE",
   "phase1_commit_reference": "cbcfd6d",
-  "connectorless_viable": false,
-  "phase2_result": "NOT PROVEN",
-  "reason": "No connectors were used, but helper boundary failed before connectorless executive-room value could be established."
+  "helpers_hired": 0,
+  "helpers_intentionally_activated_by_codex": 0,
+  "helper_auto_delegation_observed": "Buddy delegation occurred from Sintra Smart/team behavior during scenario 2; generation was stopped.",
+  "result": "HOLD BREACHED BY PRODUCT BEHAVIOR - NOT BY CODEX HIRING"
 }

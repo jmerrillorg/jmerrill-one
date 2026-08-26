@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2 - CONNECTORLESS EXECUTIVE THINKING ROOM",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T10:20:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2 COMPLETE - NO JUSTIFIED CONTINUED ADOPTION CASE",
+  "phase1_commit_reference": "cbcfd6d",
+  "status": "STARTED",
+  "founder_approval": "APPROVE SINTRA GREENFIELD PHASE 2 - first disable and verify all four default GP automations; then conduct CONNECTORLESS EXECUTIVE THINKING ROOM ONLY. NO HELPERS, NO CONNECTORS, NO AUTOMATIONS, NO BRANCH WORKSPACES, NO EXTERNAL ACTIONS.",
+  "targets": [
+    "Social Media Manager",
+    "Inbox Manager",
+    "Daily Summarizer",
+    "Facebook Commenter"
+  ],
+  "legacy_dependency_archaeology_reopened": false
+}

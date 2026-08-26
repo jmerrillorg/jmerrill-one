@@ -5,7 +5,6 @@
   "created_at": "2026-08-26T10:20:00-04:00",
   "classification": "SINTRA GREENFIELD PHASE 2 COMPLETE - NO JUSTIFIED CONTINUED ADOPTION CASE",
   "phase1_commit_reference": "cbcfd6d",
-  "connectorless_viable": false,
-  "phase2_result": "NOT PROVEN",
-  "reason": "No connectors were used, but helper boundary failed before connectorless executive-room value could be established."
+  "result": "SINTRA_NOT_ADVANTAGEOUS_UNDER_REQUIRED_ROLE",
+  "finding": "Sintra reduced some setup context, but generic ChatGPT with explicit JM1 context would not auto-delegate to Sintra helpers or confuse helper personas with brand owners. Persistent context did not offset governance risk."
 }

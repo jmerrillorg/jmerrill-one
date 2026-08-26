@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2 - CONNECTORLESS EXECUTIVE THINKING ROOM",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T10:20:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2 COMPLETE - NO JUSTIFIED CONTINUED ADOPTION CASE",
+  "phase1_commit_reference": "cbcfd6d",
+  "brain_records": 1,
+  "connectors": 0,
+  "helpers_hired": 0,
+  "automations_on": 0,
+  "source_maintenance": "LOW",
+  "evaluation_review_requirement": "HIGH",
+  "product_behavior_controls": "HIGH",
+  "overall": "HIGH",
+  "reason": "Nominal architecture is lean, but policing helper auto-delegation and ownership contamination creates unacceptable review burden."
+}
