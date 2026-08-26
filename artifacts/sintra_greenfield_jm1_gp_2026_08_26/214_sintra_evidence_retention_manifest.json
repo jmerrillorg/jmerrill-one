@@ -1,0 +1,21 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "FINAL CLOSEOUT / ADOPTION DECISION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T10:45:00-04:00",
+  "final_classification": "SINTRA EVALUATION CLOSED — GREENFIELD PILOT FAILED REQUIRED GOVERNANCE BOUNDARY; NO ACTIVE JM1 ADOPTION",
+  "current_branch": "codex/sintra-greenfield-jm1-gp",
+  "phase2_commit_reference": "b071019",
+  "do_not_delete": [
+    "legacy Sintra recovery evidence",
+    "Phase 1 greenfield evidence",
+    "Phase 2 failure evidence",
+    "test suites",
+    "screenshots/captures referenced in artifacts",
+    "governed Foundation Pack",
+    "branch history"
+  ],
+  "purpose": "adoption decision record",
+  "evidence_root": "artifacts/sintra_greenfield_jm1_gp_2026_08_26",
+  "legacy_recovery_root": "artifacts/sintra_brain_recovery_gate_2026_08_26"
+}

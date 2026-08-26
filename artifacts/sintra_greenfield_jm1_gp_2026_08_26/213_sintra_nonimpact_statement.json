@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "FINAL CLOSEOUT / ADOPTION DECISION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T10:45:00-04:00",
+  "final_classification": "SINTRA EVALUATION CLOSED — GREENFIELD PILOT FAILED REQUIRED GOVERNANCE BOUNDARY; NO ACTIVE JM1 ADOPTION",
+  "current_branch": "codex/sintra-greenfield-jm1-gp",
+  "phase2_commit_reference": "b071019",
+  "does_not_reopen_or_alter": [
+    "Microsoft-first architecture",
+    "JM1 AI orchestration",
+    "ChatGPT use",
+    "Cody/Codex use",
+    "Microsoft Copilot",
+    "Social Recovery",
+    "HOST-02",
+    "MAINT-01",
+    "JRN-01",
+    "Azure modernization"
+  ],
+  "sintra_status": "evaluated external platform that did not clear adoption"
+}
