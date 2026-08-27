@@ -142,12 +142,28 @@
       "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
     },
     "aic": {
-      "status": "PRE_PUBLISH_GUARD_READY_FOUNDER_DECISION_REQUIRED",
-      "from": "FOUNDER_DECISION_REQUIRED",
-      "replyTo": "FOUNDER_DECISION_REQUIRED",
-      "format": "HTML_OR_PUBLIC_SURFACE",
-      "runtimeClassification": "PUBLIC_PRE_PUBLISH_GUARD",
-      "liveOutboundCommissioning": "NOT_AUTHORIZED"
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "aic@email.agapeic.org",
+      "replyTo": "aic@agapeic.org",
+      "replyMailboxAuthority": "aic@agapeic.org",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL",
+      "organization": "Agape International Cathedral",
+      "voice": [
+        "faith-centered where appropriate",
+        "warm",
+        "clear",
+        "natural",
+        "community-aware",
+        "plain-English",
+        "not always sermon-like"
+      ],
+      "planningCenterBoundary": "PLANNING_CENTER_REMAINS_MINISTRY_EVENT_REGISTRATION_SOURCE_OF_RECORD",
+      "riskRouting": {
+        "routineLowRisk": "ALLOW_AFTER_VALIDATION",
+        "pastoralSensitiveLegalFinancial": "HUMAN_REVIEW_REQUIRED"
+      }
     }
   },
   "artifactClassifications": [

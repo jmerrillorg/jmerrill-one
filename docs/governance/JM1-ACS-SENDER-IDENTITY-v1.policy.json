@@ -10,7 +10,7 @@
   "humanFirstWhyFirstBinding": "JM1-HUMAN-FIRST-WHY-FIRST-v1",
   "acsEmailService": "email-jm1-core",
   "acsCommunicationService": "acs-jm1-core",
-  "acsDomain": "email.jmerrill.one",
+  "acsDomains": ["email.jmerrill.one", "email.agapeic.org"],
   "registry": {
     "JM1": {
       "brand": "JM1",
@@ -92,11 +92,37 @@
         "publicContactIdentity": "productions@jmerrill.one",
         "website": "jmerrill.productions"
       }
+    },
+    "AIC": {
+      "brand": "AIC",
+      "organization": "Agape International Cathedral",
+      "acsFrom": "aic@email.agapeic.org",
+      "replyTo": "aic@agapeic.org",
+      "replyMailboxAuthority": "aic@agapeic.org",
+      "replyAddressType": "MAILBOX",
+      "inboundProcessingMailbox": "aic@agapeic.org",
+      "ccRequired": false,
+      "ccAddress": null,
+      "humanFirstPolicy": "JM1-HUMAN-FIRST-WHY-FIRST-v1",
+      "brandOverlay": "AIC",
+      "planningCenterBoundary": "PLANNING_CENTER_REMAINS_MINISTRY_EVENT_REGISTRATION_SOURCE_OF_RECORD",
+      "riskRouting": {
+        "routineLowRisk": "ALLOW_AFTER_VALIDATION",
+        "pastoralSensitiveLegalFinancial": "HUMAN_REVIEW_REQUIRED"
+      },
+      "identityContract": [
+        "recipient",
+        "AIC",
+        "ministryOrEventOrServiceOrRegistrationContext",
+        "communicationPurpose"
+      ],
+      "signatureProfile": {
+        "organizationDisplayName": "Agape International Cathedral",
+        "signatureName": "Agape International Cathedral",
+        "publicContactIdentity": "aic@agapeic.org",
+        "website": "agapeic.org"
+      }
     }
-  },
-  "aic": {
-    "senderIdentity": "FOUNDER_DECISION_REQUIRED",
-    "includedInCompletionDenominator": false
   },
   "failureCodes": [
     "ACS_BRAND_REQUIRED",
@@ -105,6 +131,7 @@
     "ACS_REPLY_TO_MISMATCH",
     "ACS_CC_ARCHIVE_MISSING",
     "ACS_DUPLICATE_SIGNATURE_BLOCKED",
-    "AIC_SENDER_IDENTITY_FOUNDER_DECISION_REQUIRED"
+    "ACS_PLANNING_CENTER_AUTHORITY_MISMATCH",
+    "ACS_HIGH_RISK_HUMAN_REVIEW_REQUIRED"
   ]
 }
