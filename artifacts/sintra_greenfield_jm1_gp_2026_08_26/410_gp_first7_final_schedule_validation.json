@@ -1,29 +1,27 @@
 {
   "program": "SINTRA GREENFIELD PILOT",
-  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
   "workspace": "J Merrill One - GP",
-  "updated_at": "2026-08-27T09:00:00-04:00",
+  "updated_at": "2026-08-27T10:45:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "expected_platform_post_opportunities": 21,
-  "actual_scheduled": 3,
+  "actual_scheduled": 0,
   "actual_published": 0,
-  "prepared_for_founder_manual_final_click": 18,
-  "scheduled_items": [
-    "Day 1 Facebook → J Merrill One",
-    "Day 1 Instagram → @jmerrillone",
-    "Day 1 LinkedIn Organization → J Merrill One"
-  ],
+  "scheduled_items": [],
   "platform_holds": [],
-  "manual_final_click_required": [
-    "Days 2-7 Facebook",
-    "Days 2-7 Instagram",
-    "Days 2-7 LinkedIn Organization"
-  ],
+  "manual_final_click_required": [],
   "duplicates": 0,
   "wrong_destinations": 0,
   "copy_deviations": 0,
   "creative_deviations": 0,
-  "classification": "SINTRA GP SOCIAL LIVE PILOT ACTIVE — FOUNDER-MANUAL SCHEDULING PATH PROVEN",
+  "classification": "SINTRA GP SOCIAL LIVE PILOT — CONTENT PIPELINE READY; LIVE PLATFORM EXECUTION FAILED — ROOT CAUSE REQUIRED",
   "destination_certification_resurrected": false,
-  "thirty_day_calendar_stop_date": false
+  "thirty_day_calendar_stop_date": false,
+  "execution_attempts": 3,
+  "failed_day1_actions": 3,
+  "days_2_7_governed_content_ready": 18,
+  "days_2_7_sintra_draft_materialized": 0,
+  "days_2_7_scheduled": 0,
+  "execution_incident_open": true,
+  "visible_error_text": "Error publishing post. Post not published because automation was turned off"
 }

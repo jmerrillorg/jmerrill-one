@@ -1,0 +1,12 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "SETUP INCOMPLETE / AUTOMATION OFF INDICATED",
+  "visible_setup_control": "Setup social media manager button visible on calendar surface.",
+  "founder_confirmation": "Founder confirmed the social media manager is not turned on.",
+  "automatic_setup_completed": false,
+  "conclusion": "Additional Social Media Manager setup/enablement is likely required before scheduled posts can execute."
+}

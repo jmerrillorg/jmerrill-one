@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "ONE-PLATFORM CANARY PLAN AFTER REMEDIATION",
+  "retry_canary_platform": "LinkedIn Organization",
+  "destination": "J Merrill One",
+  "reason": "Prior inspection found LinkedIn Organization destination/composer clearest; all three failures share the same automation-off message.",
+  "timing_rule": "Use next reasonable future time today after remediation; do not recreate a past 9:00 AM schedule.",
+  "proposed_future_time_et": "TBD after Social Media Manager is turned on and Founder approves retry window",
+  "all_three_simultaneous_retry_authorized": false
+}

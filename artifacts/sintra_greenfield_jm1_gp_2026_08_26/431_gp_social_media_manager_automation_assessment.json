@@ -1,10 +1,10 @@
 {
   "program": "SINTRA GREENFIELD PILOT",
-  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
   "workspace": "J Merrill One - GP",
   "created_at": "2026-08-27T09:00:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
-  "assessment_status": "PRELIMINARY — DO NOT ENABLE YET",
+  "assessment_status": "INCIDENT EVIDENCE — AUTOMATION OFF AT EXECUTION TIME",
   "manual_scheduling_surface": "AUTHORIZED",
   "automation_candidate": "PILOT CANDIDATE IF REVIEW/APPROVAL CONTROLS ARE PROVEN",
   "enabled": false,
@@ -19,5 +19,9 @@
     "engagement implications"
   ],
   "not_automatic_hold": true,
-  "not_authorized_without_exact_founder_authority": true
+  "not_authorized_without_exact_founder_authority": true,
+  "updated_at": "2026-08-27T10:45:00-04:00",
+  "day1_failure_relevance": "RELATED",
+  "visible_error_text": "Error publishing post. Post not published because automation was turned off",
+  "note": "Manual schedule creation/attempt and automated publication execution are separate capabilities."
 }

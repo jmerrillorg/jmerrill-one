@@ -1,0 +1,12 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "SCHEDULE OBJECT / PUBLICATION EXECUTION ARE SEPARATE CAPABILITIES",
+  "create_schedule": "Prior manual flow appears to have created/attempted Day 1 post objects.",
+  "retain_schedule": "Failed action cards remain visible in calendar/history.",
+  "execute_publication": "FAILED; visible error says automation was turned off.",
+  "operating_implication": "Future social operating model must verify both schedule visibility and publication execution."
+}
