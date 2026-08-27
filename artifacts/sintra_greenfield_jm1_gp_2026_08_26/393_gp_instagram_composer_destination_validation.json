@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "platform": "Instagram",
+  "required_result": "PASS — @JMERRILLONE",
+  "actual_result": "INSTAGRAM TECHNICAL HOLD",
+  "reason": "Soshie stated all three destinations were confirmed, but the visible composer item exposed only LinkedIn Organization · J Merrill One. The direct @jmerrillone composer destination was not safely exposed before UI-control hold.",
+  "destination_selected": "NOT SAFELY VERIFIED IN COMPOSER",
+  "scheduled": false
+}

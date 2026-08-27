@@ -1,0 +1,12 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "result": "NO SCHEDULED CANARY TO VALIDATE",
+  "scheduled_canaries": [],
+  "duplicates_detected": 0,
+  "wrong_destinations_detected": 0,
+  "note": "No final Schedule action was executed."
+}

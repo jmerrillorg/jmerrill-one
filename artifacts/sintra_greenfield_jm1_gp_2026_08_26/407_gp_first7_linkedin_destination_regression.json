@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "platform": "LinkedIn Organization",
+  "required_destination": "J Merrill One",
+  "result": "PASS FOR VISIBLE DRAFT; N/A FOR SCHEDULED REGRESSION",
+  "visible_draft_destination": "LinkedIn (Organization) · J Merrill One",
+  "wrong_destination_count": 0,
+  "scheduled_count": 0
+}

@@ -5,8 +5,16 @@
   "created_at": "2026-08-26T16:57:54-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "live_pilot_base_commit": "14e59b2",
-  "status": "NOT EXECUTED — PENDING FOUNDER APPROVAL AND DESTINATION CERTIFICATION",
+  "status": "NOT EXECUTED — CONTROLLED SCHEDULING BLOCKED BY COMPOSER/UI-CONTROL SAFETY",
+  "updated_at": "2026-08-26T20:45:00-04:00",
+  "authorization_state": "FOUNDER APPROVED — DESTINATIONS CERTIFIED — READY FOR CONTROLLED SCHEDULING",
+  "block_reason": "Sintra generated the Day 1 creative and exposed a LinkedIn Organization · J Merrill One draft, but the UI-control surface could not safely complete platform switching or final scheduling validation.",
   "scheduled_count": 0,
   "published_count": 0,
+  "technical_holds": [
+    "Facebook composer destination selector not safely exposed",
+    "Instagram composer destination not safely exposed",
+    "LinkedIn final Schedule action not safely executable after edit-panel control failure"
+  ],
   "items": []
 }

@@ -1,0 +1,33 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "expected_platform_post_opportunities": 21,
+  "actual_scheduled": 0,
+  "actual_published": 0,
+  "platform_holds": [
+    {
+      "platform": "Facebook",
+      "hold": "FACEBOOK TECHNICAL HOLD",
+      "reason": "Usable Facebook composer destination selector not safely exposed."
+    },
+    {
+      "platform": "Instagram",
+      "hold": "INSTAGRAM TECHNICAL HOLD",
+      "reason": "Usable @jmerrillone composer destination not safely exposed."
+    },
+    {
+      "platform": "LinkedIn Organization",
+      "hold": "SAFE UI-CONTROL HOLD",
+      "reason": "Visible destination/copy/creative passed, but final scheduling was not clicked because the edit panel could not be safely controlled."
+    }
+  ],
+  "duplicates": 0,
+  "wrong_destinations": 0,
+  "copy_deviations": 0,
+  "creative_deviations": 0,
+  "classification": "CONTROLLED SCHEDULING BLOCKED — COMPOSER/CREATIVE EXECUTION ISSUE",
+  "destination_certification_resurrected": false
+}

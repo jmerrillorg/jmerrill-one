@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "day": 6,
+  "required": "PASS",
+  "scheduled": false,
+  "result": "PASS IN APPROVED SOURCE COPY; N/A FOR SCHEDULED CONTENT",
+  "approved_source_preserves": {
+    "estate_planning": true,
+    "advanced_planning": true,
+    "funeral_pre_need": true,
+    "appropriate_insurance_product_context": true,
+    "no_legal_advice_implication": true,
+    "no_investment_management_drift": true,
+    "people_centered_framing": true
+  }
+}

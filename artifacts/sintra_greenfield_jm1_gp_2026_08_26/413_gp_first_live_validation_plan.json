@@ -1,0 +1,26 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "status": "PREPARED — NOT ACTIVE",
+  "activate_after_first_actual_publication": true,
+  "do_not_mark_pass_before_publication": true,
+  "validation_items": [
+    "correct destination",
+    "copy",
+    "creative",
+    "link",
+    "formatting",
+    "no unintended cross-post",
+    "no automated engagement"
+  ],
+  "pilot_dates_preserved": {
+    "pilot_start": "2026-08-26",
+    "day_14_gate": "2026-09-09",
+    "maximum_window": "2026-09-25"
+  },
+  "observation_start_artifact": "373_gp_social_live_observation_start.json",
+  "observation_started": false
+}

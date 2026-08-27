@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "day": 1,
+  "initial_repo_asset_state": "CREATIVE ASSET REQUIRED",
+  "repo_asset_search_result": "No Day 1 social creative file found in repository; only site icons were present.",
+  "sintra_generated_asset_state": "PASS",
+  "evidence": "/tmp/sintra_gp_soshie_response_4.png",
+  "validated": {
+    "one_brand_identity": "PASS",
+    "official_one_palette": "PASS",
+    "people_first_terminology_where_applicable": "PASS",
+    "correct_visual_concept": "PASS",
+    "wrong_brand_identity": "NOT OBSERVED",
+    "usable_platform_dimensions": "PARTIAL — visible social-card preview, exact exported dimensions not exposed",
+    "legacy_content": "NOT OBSERVED"
+  },
+  "days_2_7_creative_state": "CREATIVE ASSETS NOT CREATED IN THIS EXECUTION"
+}

@@ -1,0 +1,15 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "day": 1,
+  "theme": "Welcome to J Merrill One",
+  "required": "PASS — APPROVED COPY PRESERVED",
+  "actual_result": "PASS FOR VISIBLE LINKEDIN DRAFT",
+  "evidence": "/tmp/sintra_gp_caption_detail.png",
+  "source_artifact": "366_gp_one_first7_execution_packet.json",
+  "copy_regenerated_or_improved": false,
+  "note": "Visible LinkedIn caption matched the approved Day 1 LinkedIn copy. Facebook and Instagram copy were not exposed in a safe visible composer before hold."
+}

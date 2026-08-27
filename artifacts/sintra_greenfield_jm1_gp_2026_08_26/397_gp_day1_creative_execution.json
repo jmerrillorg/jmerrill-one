@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "day": 1,
+  "execution_path": "Sintra Soshie Create with Soshie",
+  "result": "PASS — SINTRA GENERATED DAY 1 GRAPHIC",
+  "generated_asset_label": "Welcome to J Merrill One - Day 1 Graphic",
+  "evidence": "/tmp/sintra_gp_soshie_response_4.png",
+  "external_creative_tool_used": false,
+  "schedule_with_missing_creative": false
+}
