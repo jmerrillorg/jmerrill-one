@@ -20,8 +20,11 @@
   ],
   "not_automatic_hold": true,
   "not_authorized_without_exact_founder_authority": true,
-  "updated_at": "2026-08-27T10:45:00-04:00",
+  "updated_at": "2026-08-27T16:20:00-04:00",
   "day1_failure_relevance": "RELATED",
   "visible_error_text": "Error publishing post. Post not published because automation was turned off",
-  "note": "Manual schedule creation/attempt and automated publication execution are separate capabilities."
+  "note": "Manual schedule creation/attempt and automated publication execution are separate capabilities.",
+  "classification": "CONTROLLED_AUTONOMOUS_SCHEDULING_RUNTIME_ASSESSMENT",
+  "assessment": "Social Media Manager is acceptable as an ON runtime for founder-approved, destination-certified scheduling/publishing. It is not approved as unsupervised editorial, engagement, inbox, comment, or DM automation.",
+  "evidence": "Day 1 published after runtime ON; Days 2-7 scheduled."
 }

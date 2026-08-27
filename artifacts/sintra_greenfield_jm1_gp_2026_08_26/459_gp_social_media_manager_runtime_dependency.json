@@ -1,0 +1,15 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — RUNTIME DEPENDENCY",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "classification": "SMM_RUNTIME_REQUIRED_FOR_SCHEDULED_POST_EXECUTION",
+  "dependency": "Scheduled public posts require Social Media Manager automation/runtime ON through execution time.",
+  "evidence": [
+    "Day 1 failed when runtime was off",
+    "Day 1 published after Founder enabled runtime",
+    "Days 2-7 scheduled while runtime was operational"
+  ],
+  "guardrail": "Runtime ON authorizes governed scheduling/publishing only; it does not authorize comments, DMs, inbox, daily summarizer, Facebook commenter, or autonomous editorial decisions."
+}

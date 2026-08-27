@@ -1,34 +1,42 @@
 {
   "program": "SINTRA GREENFIELD PILOT",
-  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — EXECUTION RELIABILITY UPDATED",
   "workspace": "J Merrill One - GP",
   "created_at": "2026-08-27T10:45:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
-  "classification": "SOCIAL EXECUTION RELIABILITY METRIC ADDED",
+  "classification": "SOCIAL EXECUTION RELIABILITY METRIC UPDATED AFTER REMEDIATION",
   "current_metrics": {
-    "execution_attempts": 3,
-    "schedule_verified": 0,
-    "publication_verified": 0,
+    "execution_attempts": 6,
+    "initial_errors": 3,
+    "schedule_verified": 18,
+    "publication_verified": 3,
     "errors": 3,
-    "retries": 0,
-    "successful_retries": 0,
+    "retries": 3,
+    "successful_retries": 3,
+    "retry_effectiveness": "100%",
+    "final_platform_publication_success": "3/3",
+    "first_week_calendar_success": "21/21 published_or_scheduled",
     "platform_specific_reliability": {
       "Facebook": {
-        "attempts": 1,
-        "published_verified": 0,
+        "attempts": 2,
+        "published_verified": 1,
+        "scheduled_verified_future": 6,
         "errors": 1
       },
       "Instagram": {
-        "attempts": 1,
-        "published_verified": 0,
+        "attempts": 2,
+        "published_verified": 1,
+        "scheduled_verified_future": 6,
         "errors": 1
       },
-      "LinkedIn": {
-        "attempts": 1,
-        "published_verified": 0,
+      "LinkedIn Organization": {
+        "attempts": 2,
+        "published_verified": 1,
+        "scheduled_verified_future": 6,
         "errors": 1
       }
     }
   },
-  "adoption_decision_relevance": "Required input for final Sintra social adoption decision."
+  "adoption_decision_relevance": "Runtime dependency is now known: approved posts publish only when Social Media Manager runtime remains on.",
+  "updated_at": "2026-08-27T16:20:00-04:00"
 }

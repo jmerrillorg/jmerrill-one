@@ -13,5 +13,12 @@
     "HEAVY",
     "UNUSABLE"
   ],
-  "adoption_note": "If Jackie has to rewrite nearly everything, Sintra is not saving enough work."
+  "adoption_note": "If Jackie has to rewrite nearly everything, Sintra is not saving enough work.",
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "live_pilot_revision_burden": "LOW_AFTER_RUNTIME_DEPENDENCY_IDENTIFIED",
+  "evidence": "Days 3-7 scheduled one day at a time with destination and logo confirmation; no copy regeneration required.",
+  "remaining_burden": [
+    "Day 2 creative logo review if current image lacks logo",
+    "Post-publication observation through Day 14"
+  ]
 }

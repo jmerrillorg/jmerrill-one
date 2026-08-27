@@ -17,3 +17,8 @@ Required where Financial, privacy, rights, legal, regulated, or other specialize
 ## Current Pilot Rule
 
 The first-week Founder approval remains appropriate for calibration. Any future reduction in review burden must be evidence-based and explicitly approved.
+
+
+## 2026-08-27 Controlled Runtime Update
+
+Social Media Manager may remain ON as a governed scheduling/publishing runtime for approved J Merrill One content. This does not activate autonomous editorial authority, comments, DMs, Inbox, Daily Summarizer, or Facebook Commenter. Future approval routines should include destination verification, People-First copy validation, and visible-logo creative validation before scheduling.

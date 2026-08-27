@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — RUNTIME CONTINUITY",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "KEEP_SMM_RUNTIME_ON_THROUGH_SCHEDULED_EXECUTION",
+  "continuity_requirement": "Social Media Manager must remain on through all scheduled publish times for Days 2-7.",
+  "protected_boundaries": [
+    "Inbox OFF",
+    "Daily Summarizer OFF",
+    "Facebook Commenter OFF",
+    "no comments",
+    "no DMs",
+    "no engagement authority"
+  ]
+}

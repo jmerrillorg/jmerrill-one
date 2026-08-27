@@ -2,12 +2,12 @@
   "program": "SINTRA GREENFIELD PILOT",
   "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
   "workspace": "J Merrill One - GP",
-  "updated_at": "2026-08-27T10:45:00-04:00",
+  "updated_at": "2026-08-27T16:20:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
-  "result": "GOVERNED_CONTENT_READY — NOT MATERIALIZED IN SINTRA — NOT SCHEDULED",
+  "result": "SINTRA_MATERIALIZED_AND_SCHEDULE_VERIFIED",
   "source": "366_gp_one_first7_execution_packet.json",
   "execution_surface": "Sintra Social Media Manager",
-  "scheduled_by_cody": 0,
+  "scheduled_by_cody": 18,
   "days": [
     {
       "day": 2,
@@ -19,7 +19,8 @@
         "Instagram → @jmerrillone",
         "LinkedIn Organization → J Merrill One"
       ],
-      "state": "GOVERNED_CONTENT_READY"
+      "state": "SCHEDULE_VERIFIED",
+      "logo_status": "REVIEW_REQUIRED_RULE_ARRIVED_AFTER_GENERATION"
     },
     {
       "day": 3,
@@ -31,7 +32,8 @@
         "Instagram → @jmerrillone",
         "LinkedIn Organization → J Merrill One"
       ],
-      "state": "GOVERNED_CONTENT_READY"
+      "state": "SCHEDULE_VERIFIED",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE"
     },
     {
       "day": 4,
@@ -43,7 +45,8 @@
         "Instagram → @jmerrillone",
         "LinkedIn Organization → J Merrill One"
       ],
-      "state": "GOVERNED_CONTENT_READY"
+      "state": "SCHEDULE_VERIFIED",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE"
     },
     {
       "day": 5,
@@ -55,7 +58,8 @@
         "Instagram → @jmerrillone",
         "LinkedIn Organization → J Merrill One"
       ],
-      "state": "GOVERNED_CONTENT_READY"
+      "state": "SCHEDULE_VERIFIED",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE"
     },
     {
       "day": 6,
@@ -67,7 +71,8 @@
         "Instagram → @jmerrillone",
         "LinkedIn Organization → J Merrill One"
       ],
-      "state": "GOVERNED_CONTENT_READY"
+      "state": "SCHEDULE_VERIFIED",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE"
     },
     {
       "day": 7,
@@ -79,15 +84,16 @@
         "Instagram → @jmerrillone",
         "LinkedIn Organization → J Merrill One"
       ],
-      "state": "GOVERNED_CONTENT_READY"
+      "state": "SCHEDULE_VERIFIED",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE"
     }
   ],
   "approved_sequence_preserved": true,
   "copy_regenerated": false,
   "whole_program_blocked": false,
   "governed_content_ready_platform_variants": 18,
-  "sintra_draft_materialized": 0,
-  "schedule_attempted": 0,
-  "schedule_verified": 0,
-  "scale_hold": "Do not schedule Days 2-7 until one working live execution path reaches PUBLISHED_VERIFIED."
+  "sintra_draft_materialized": 18,
+  "schedule_attempted": 18,
+  "schedule_verified": 18,
+  "scale_hold": "RELEASED_AFTER_DAY_1_RETRY_PUBLICATION_PASS"
 }

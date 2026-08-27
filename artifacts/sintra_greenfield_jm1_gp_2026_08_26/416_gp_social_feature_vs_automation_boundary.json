@@ -11,5 +11,19 @@
   "daily_summarizer": "OFF / NOT AUTHORIZED FOR THIS SOCIAL PILOT",
   "facebook_commenter": "OFF / NOT AUTHORIZED",
   "rule": "Do not report Social Media Manager simply as OFF required when its manual calendar/scheduling surface is the approved execution surface.",
-  "engagement_authority": "NONE"
+  "engagement_authority": "NONE",
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "distinction": "Social Media Manager ON is a runtime requirement for governed approved content execution, not an expansion of autonomous social authority.",
+  "smm_on_means": [
+    "approved/scheduled content may publish through runtime",
+    "calendar can hold verified future posts"
+  ],
+  "smm_on_does_not_mean": [
+    "comments authorized",
+    "DMs authorized",
+    "Inbox authorized",
+    "Daily Summarizer authorized",
+    "Facebook Commenter authorized",
+    "new editorial authority authorized"
+  ]
 }

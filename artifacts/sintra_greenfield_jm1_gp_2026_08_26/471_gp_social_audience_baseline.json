@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — SOCIAL AUDIENCE BASELINE",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "PARTIAL_BASELINE_CAPTURED",
+  "instagram": {
+    "handle": "@jmerrillone",
+    "posts": 189,
+    "followers": 36,
+    "following": 11
+  },
+  "linkedin": {
+    "page": "J Merrill One",
+    "followers": 4
+  },
+  "facebook": {
+    "page": "J Merrill One",
+    "followers": "UNKNOWN_NOT_VISIBLE"
+  },
+  "note": "Do not infer unavailable Facebook follower count."
+}

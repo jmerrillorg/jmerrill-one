@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CREATIVE LOGO REQUIREMENT",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "NEW_RULE_RECORDED",
+  "user_instruction": "all new images should contain our logo somewhere within it",
+  "logo_reference_file": "473_gp_j_merrill_logo_reference.png",
+  "applicability": "All new images generated after the instruction must include the J Merrill One logo visibly somewhere in the image.",
+  "day2_caveat": "Day 2 creative was generated before this rule and requires logo review/replacement before publish if logo is absent.",
+  "days3_7_status": "Soshie generated Days 3-7 visuals using uploaded logo/source image and confirmed visible logo status."
+}

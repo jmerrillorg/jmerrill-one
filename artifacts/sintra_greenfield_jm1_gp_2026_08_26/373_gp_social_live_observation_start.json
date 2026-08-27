@@ -17,5 +17,9 @@
     "revision burden",
     "helper value"
   ],
-  "do_not_overinterpret_low_volume_first_week_metrics": true
+  "do_not_overinterpret_low_volume_first_week_metrics": true,
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "live_observation_start_date": "2026-08-27",
+  "observation_status": "STARTED",
+  "baseline_source": "Sintra calendar metrics and Founder platform screenshots"
 }

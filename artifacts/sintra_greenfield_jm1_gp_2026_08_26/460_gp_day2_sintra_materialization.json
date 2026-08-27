@@ -1,0 +1,53 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 2 SINTRA MATERIALIZATION",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "SINTRA_DRAFT_MATERIALIZED_AND_SCHEDULE_VERIFIED",
+  "materialized_post_count": 3,
+  "scheduled_post_count": 3,
+  "destinations_verified": true,
+  "items": [
+    {
+      "day": 2,
+      "platform": "Facebook",
+      "destination": "J Merrill One",
+      "destination_id": "101196349506906",
+      "date": "2026-08-28",
+      "time_et": "11:30",
+      "copy_source": "366_gp_one_first7_execution_packet.json",
+      "sintra_state": "SCHEDULE_VERIFIED",
+      "calendar_card": "Facebook Custom Scheduled",
+      "creative": "J Merrill One Day 2 Brand Visual",
+      "logo_status": "REVIEW_REQUIRED_RULE_ARRIVED_AFTER_GENERATION"
+    },
+    {
+      "day": 2,
+      "platform": "Instagram",
+      "destination": "@jmerrillone",
+      "destination_id": "17841456905118441",
+      "date": "2026-08-28",
+      "time_et": "11:30",
+      "copy_source": "366_gp_one_first7_execution_packet.json",
+      "sintra_state": "SCHEDULE_VERIFIED",
+      "calendar_card": "Instagram (FB Pages) Custom Scheduled",
+      "creative": "J Merrill One Day 2 Brand Visual",
+      "logo_status": "REVIEW_REQUIRED_RULE_ARRIVED_AFTER_GENERATION"
+    },
+    {
+      "day": 2,
+      "platform": "LinkedIn Organization",
+      "destination": "J Merrill One",
+      "destination_id": "urn:li:organization:106683183",
+      "date": "2026-08-28",
+      "time_et": "11:30",
+      "copy_source": "366_gp_one_first7_execution_packet.json",
+      "sintra_state": "SCHEDULE_VERIFIED",
+      "calendar_card": "LinkedIn (Organization) Custom Scheduled",
+      "creative": "J Merrill One Day 2 Brand Visual",
+      "logo_status": "REVIEW_REQUIRED_RULE_ARRIVED_AFTER_GENERATION"
+    }
+  ],
+  "logo_rule_note": "User logo requirement arrived after Day 2 image generation; Day 2 creative should be reviewed/replaced before publication if the current image lacks visible logo."
+}

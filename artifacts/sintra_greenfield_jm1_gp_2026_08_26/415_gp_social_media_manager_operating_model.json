@@ -6,23 +6,26 @@
   "branch": "codex/sintra-greenfield-jm1-gp",
   "supersedes_prior_assumption": "Social Media Manager must remain OFF / unused",
   "authorized_model": {
-    "name": "SOCIAL MEDIA MANAGER — MANUAL/GOVERNED SCHEDULING SURFACE",
-    "status": "AUTHORIZED",
-    "scope": "Founder-approved J Merrill One social content scheduling to certified One destinations.",
-    "proof": "Founder manually scheduled Day 1 canary for Facebook, Instagram, and LinkedIn."
+    "name": "SOCIAL MEDIA MANAGER — GOVERNED SCHEDULING/PUBLISHING RUNTIME",
+    "status": "AUTHORIZED_ON",
+    "scope": "Founder-approved J Merrill One social content scheduling and publishing to certified One destinations.",
+    "proof": "Day 1 published after runtime enabled; Days 2-7 scheduled in Sintra calendar."
   },
   "not_yet_authorized_model": {
-    "name": "SOCIAL MEDIA MANAGER — AUTONOMOUS UNSUPERVISED SOCIAL AUTHORITY",
-    "status": "NOT YET AUTHORIZED",
+    "name": "OTHER SOCIAL AUTOMATIONS / AUTONOMOUS SOCIAL AUTHORITY",
+    "status": "NOT AUTHORIZED",
     "blocked_capabilities": [
-      "autonomous public posting without review",
-      "autonomous future calendar generation without approval controls",
+      "Inbox",
+      "Daily Summarizer",
+      "Facebook Commenter",
       "comments",
       "DMs",
       "inbox responses",
       "crisis response",
-      "brand authority decisions"
+      "autonomous editorial decisions",
+      "autonomous future calendar generation without approval controls"
     ]
   },
-  "operating_distinction_recorded": true
+  "operating_distinction_recorded": true,
+  "updated_at": "2026-08-27T16:20:00-04:00"
 }

@@ -1,10 +1,10 @@
 {
   "program": "SINTRA GREENFIELD PILOT",
-  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — SINTRA STATE CONSISTENCY UPDATED",
   "workspace": "J Merrill One - GP",
   "created_at": "2026-08-27T10:45:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
-  "classification": "STATE CONSISTENCY METRIC ADDED",
+  "classification": "RUNTIME PROVEN WITH ONBOARDING STATE INCONSISTENCY",
   "observed_discrepancy": "Sintra conversational summary said scheduled/locked in; action cards show Error; no platform post published.",
   "discrepancy_count": 1,
   "governance_severity": "SIGNIFICANT",
@@ -14,5 +14,10 @@
     "scheduled_state_vs_published_state",
     "connector_connected_vs_publish_capable"
   ],
-  "current_resolution": "Action card and external publication outcome are authoritative."
+  "current_resolution": "Action card and external publication outcome are authoritative.",
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "runtime_state": "PUBLISHING_RUNTIME_PROVEN_ON",
+  "calendar_state": "Day 1 Published; Days 2-7 Scheduled",
+  "inconsistency": "Calendar still exposes Setup social media manager despite successful published/scheduled states.",
+  "decision": "Do not reopen root cause; record as UI/setup-state inconsistency while runtime is operational."
 }
