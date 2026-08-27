@@ -1,0 +1,26 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "target": "10-20 reusable evergreen concepts",
+  "do_not_schedule_all_immediately": true,
+  "concepts": [
+    "What One coordinates across the JM1 family",
+    "People-First as an operating standard",
+    "Why-First before systems or offers",
+    "How authors move through the Publishing path",
+    "Planning education with proper Financial boundaries",
+    "Foundation impact with continuity",
+    "Productions as message-to-media work",
+    "Founder lesson from building across brands",
+    "Behind the Build: Microsoft-first operating discipline",
+    "A useful question for the community",
+    "How JM1 thinks about AI as support, not authority",
+    "What makes a post useful rather than noisy",
+    "Distinct brands with shared standards",
+    "The value of clear ownership",
+    "Purpose before automation"
+  ]
+}

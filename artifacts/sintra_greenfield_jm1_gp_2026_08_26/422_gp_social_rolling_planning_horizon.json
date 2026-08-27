@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "model": {
+    "30_days": "Strategic themes and pillars",
+    "14_days": "Draft content/calendar",
+    "7_days": "Founder-approved execution queue"
+  },
+  "purpose": "Stay ahead without creating months of stale prewritten content.",
+  "pilot_gate_preserved": "2026-09-09"
+}

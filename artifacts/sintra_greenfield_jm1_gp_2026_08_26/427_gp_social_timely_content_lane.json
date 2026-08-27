@@ -1,0 +1,18 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "purpose": "Keep calendar capacity for timely and real enterprise movement.",
+  "allowed_lanes": [
+    "current events relevant to JM1",
+    "launches",
+    "announcements",
+    "milestones",
+    "community moments",
+    "seasonal content"
+  ],
+  "do_not_pre_fill_every_slot_months_ahead": true,
+  "sensitive_context_rule": "Use approved summaries/context rather than ingesting sensitive underlying records into Sintra."
+}

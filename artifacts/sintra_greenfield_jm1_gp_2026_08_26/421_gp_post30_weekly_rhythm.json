@@ -1,0 +1,25 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "recommended_baseline": "4-5 core content days per week",
+  "platform_model": "Platform-native variants across Facebook, Instagram, and LinkedIn rather than one universal caption.",
+  "additional_post_triggers": [
+    "launches",
+    "events",
+    "timely news",
+    "author/title moments",
+    "Foundation activity",
+    "Financial education opportunities",
+    "Founder updates"
+  ],
+  "do_not_lock_permanent_frequency_yet": true,
+  "evidence_to_determine_final_frequency": [
+    "daily sustainability",
+    "5x weekly quality",
+    "3-4x weekly quality",
+    "platform-specific performance and effort"
+  ]
+}

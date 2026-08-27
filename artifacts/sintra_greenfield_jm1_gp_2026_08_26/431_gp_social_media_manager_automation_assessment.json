@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "assessment_status": "PRELIMINARY — DO NOT ENABLE YET",
+  "manual_scheduling_surface": "AUTHORIZED",
+  "automation_candidate": "PILOT CANDIDATE IF REVIEW/APPROVAL CONTROLS ARE PROVEN",
+  "enabled": false,
+  "unknowns_to_validate_before_enablement": [
+    "what it generates",
+    "what it schedules",
+    "destination controls",
+    "approval controls",
+    "cadence controls",
+    "ability to pause",
+    "ability to edit",
+    "engagement implications"
+  ],
+  "not_automatic_hold": true,
+  "not_authorized_without_exact_founder_authority": true
+}

@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "status": "PREPARED — FOUNDER REVIEW",
+  "source_calendar": "351_gp_one_30day_social_calendar.json",
+  "source_variants": "353_gp_one_platform_variant_register.json",
+  "do_not_schedule_without_clear_current_authority": true,
+  "days": [
+    {"day": 8, "date": "2026-09-03", "theme": "Behind the Enterprise", "state": "DRAFT — FOUNDER REVIEW"},
+    {"day": 9, "date": "2026-09-04", "theme": "Meet the Family: Foundation", "state": "DRAFT — FOUNDER REVIEW"},
+    {"day": 10, "date": "2026-09-05", "theme": "What We Mean by Useful", "state": "DRAFT — FOUNDER REVIEW"},
+    {"day": 11, "date": "2026-09-06", "theme": "Sunday Reflection / Purpose", "state": "DRAFT — FOUNDER REVIEW"},
+    {"day": 12, "date": "2026-09-07", "theme": "Meet the Family: Productions", "state": "DRAFT — FOUNDER REVIEW"},
+    {"day": 13, "date": "2026-09-08", "theme": "One Enterprise, Distinct Brands", "state": "DRAFT — FOUNDER REVIEW"},
+    {"day": 14, "date": "2026-09-09", "theme": "People Before Automation", "state": "DRAFT — FOUNDER REVIEW"}
+  ],
+  "pilot_gate": "2026-09-09",
+  "forward_momentum_model": "Live now → next 7 scheduled → following 7 prepared → 30-day strategic horizon → evergreen reserve"
+}

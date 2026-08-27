@@ -1,0 +1,31 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "result": "PREPARED — FOUNDER MANUAL FINAL-CLICK REQUIRED",
+  "wrong_destination_count": 0,
+  "scheduled_count_by_cody": 0,
+  "prepared_count": 18,
+  "items": [
+    {"day": 2, "platform": "Facebook", "destination": "J Merrill One", "date": "2026-08-28", "time_et": "11:30", "creative": "Why J Merrill One Exists", "copy": "artifact 366 Facebook Day 2", "scheduled_state": "PREPARED"},
+    {"day": 2, "platform": "Instagram", "destination": "@jmerrillone", "date": "2026-08-28", "time_et": "11:30", "creative": "Why J Merrill One Exists", "copy": "artifact 366 Instagram Day 2", "scheduled_state": "PREPARED"},
+    {"day": 2, "platform": "LinkedIn Organization", "destination": "J Merrill One", "date": "2026-08-28", "time_et": "11:30", "creative": "Why J Merrill One Exists", "copy": "artifact 366 LinkedIn Day 2", "scheduled_state": "PREPARED"},
+    {"day": 3, "platform": "Facebook", "destination": "J Merrill One", "date": "2026-08-29", "time_et": "09:00", "creative": "Meet the Family: Publishing", "copy": "artifact 366 Facebook Day 3", "scheduled_state": "PREPARED"},
+    {"day": 3, "platform": "Instagram", "destination": "@jmerrillone", "date": "2026-08-29", "time_et": "09:00", "creative": "Meet the Family: Publishing", "copy": "artifact 366 Instagram Day 3", "scheduled_state": "PREPARED"},
+    {"day": 3, "platform": "LinkedIn Organization", "destination": "J Merrill One", "date": "2026-08-29", "time_et": "09:00", "creative": "Meet the Family: Publishing", "copy": "artifact 366 LinkedIn Day 3", "scheduled_state": "PREPARED"},
+    {"day": 4, "platform": "Facebook", "destination": "J Merrill One", "date": "2026-08-30", "time_et": "11:30", "creative": "People-First", "copy": "artifact 366 Facebook Day 4", "scheduled_state": "PREPARED"},
+    {"day": 4, "platform": "Instagram", "destination": "@jmerrillone", "date": "2026-08-30", "time_et": "11:30", "creative": "People-First", "copy": "artifact 366 Instagram Day 4", "scheduled_state": "PREPARED"},
+    {"day": 4, "platform": "LinkedIn Organization", "destination": "J Merrill One", "date": "2026-08-30", "time_et": "11:30", "creative": "People-First", "copy": "artifact 366 LinkedIn Day 4", "scheduled_state": "PREPARED"},
+    {"day": 5, "platform": "Facebook", "destination": "J Merrill One", "date": "2026-08-31", "time_et": "09:00", "creative": "Founder Perspective", "copy": "artifact 366 Facebook Day 5", "scheduled_state": "PREPARED"},
+    {"day": 5, "platform": "Instagram", "destination": "@jmerrillone", "date": "2026-08-31", "time_et": "09:00", "creative": "Founder Perspective", "copy": "artifact 366 Instagram Day 5", "scheduled_state": "PREPARED"},
+    {"day": 5, "platform": "LinkedIn Organization", "destination": "J Merrill One", "date": "2026-08-31", "time_et": "09:00", "creative": "Founder Perspective", "copy": "artifact 366 LinkedIn Day 5", "scheduled_state": "PREPARED"},
+    {"day": 6, "platform": "Facebook", "destination": "J Merrill One", "date": "2026-09-01", "time_et": "11:30", "creative": "Meet the Family: Financial", "copy": "artifact 366 Facebook Day 6", "scheduled_state": "PREPARED"},
+    {"day": 6, "platform": "Instagram", "destination": "@jmerrillone", "date": "2026-09-01", "time_et": "11:30", "creative": "Meet the Family: Financial", "copy": "artifact 366 Instagram Day 6", "scheduled_state": "PREPARED"},
+    {"day": 6, "platform": "LinkedIn Organization", "destination": "J Merrill One", "date": "2026-09-01", "time_et": "11:30", "creative": "Meet the Family: Financial", "copy": "artifact 366 LinkedIn Day 6", "scheduled_state": "PREPARED"},
+    {"day": 7, "platform": "Facebook", "destination": "J Merrill One", "date": "2026-09-02", "time_et": "09:00", "creative": "Why-First", "copy": "artifact 366 Facebook Day 7", "scheduled_state": "PREPARED"},
+    {"day": 7, "platform": "Instagram", "destination": "@jmerrillone", "date": "2026-09-02", "time_et": "09:00", "creative": "Why-First", "copy": "artifact 366 Instagram Day 7", "scheduled_state": "PREPARED"},
+    {"day": 7, "platform": "LinkedIn Organization", "destination": "J Merrill One", "date": "2026-09-02", "time_et": "09:00", "creative": "Why-First", "copy": "artifact 366 LinkedIn Day 7", "scheduled_state": "PREPARED"}
+  ]
+}

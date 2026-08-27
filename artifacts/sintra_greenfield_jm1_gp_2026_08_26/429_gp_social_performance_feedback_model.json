@@ -1,0 +1,30 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "activate_once_live_data_available": true,
+  "inputs": [
+    "reach",
+    "engagement",
+    "clicks",
+    "shares",
+    "saves where available",
+    "meaningful inquiries",
+    "content-development effort",
+    "revision burden"
+  ],
+  "do_not_optimize_solely_for_vanity_metrics": true,
+  "purpose": [
+    "awareness",
+    "trust",
+    "useful education",
+    "audience growth",
+    "brand clarity",
+    "inquiries/opportunities",
+    "author/title visibility where applicable",
+    "enterprise visibility"
+  ],
+  "not_the_purpose": "POST EVERY DAY"
+}

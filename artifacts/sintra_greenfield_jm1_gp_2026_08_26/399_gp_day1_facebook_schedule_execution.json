@@ -1,8 +1,8 @@
 {
   "program": "SINTRA GREENFIELD PILOT",
-  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
   "workspace": "J Merrill One - GP",
-  "created_at": "2026-08-26T20:45:00-04:00",
+  "updated_at": "2026-08-27T09:00:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "platform": "Facebook",
   "day": 1,
@@ -12,6 +12,7 @@
   "copy_identity": "Day 1 Facebook copy from artifact 366",
   "creative_identity": "Welcome to J Merrill One - Day 1 Graphic",
   "schedule_id": "NOT EXPOSED",
-  "result": "NOT EXECUTED — FACEBOOK TECHNICAL HOLD",
-  "scheduled": false
+  "result": "SCHEDULED — FOUNDER MANUAL EXECUTION",
+  "scheduled": true,
+  "evidence_artifact": "414_gp_day1_founder_manual_execution_evidence.json"
 }

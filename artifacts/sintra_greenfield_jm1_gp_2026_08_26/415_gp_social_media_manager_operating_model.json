@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "supersedes_prior_assumption": "Social Media Manager must remain OFF / unused",
+  "authorized_model": {
+    "name": "SOCIAL MEDIA MANAGER — MANUAL/GOVERNED SCHEDULING SURFACE",
+    "status": "AUTHORIZED",
+    "scope": "Founder-approved J Merrill One social content scheduling to certified One destinations.",
+    "proof": "Founder manually scheduled Day 1 canary for Facebook, Instagram, and LinkedIn."
+  },
+  "not_yet_authorized_model": {
+    "name": "SOCIAL MEDIA MANAGER — AUTONOMOUS UNSUPERVISED SOCIAL AUTHORITY",
+    "status": "NOT YET AUTHORIZED",
+    "blocked_capabilities": [
+      "autonomous public posting without review",
+      "autonomous future calendar generation without approval controls",
+      "comments",
+      "DMs",
+      "inbox responses",
+      "crisis response",
+      "brand authority decisions"
+    ]
+  },
+  "operating_distinction_recorded": true
+}

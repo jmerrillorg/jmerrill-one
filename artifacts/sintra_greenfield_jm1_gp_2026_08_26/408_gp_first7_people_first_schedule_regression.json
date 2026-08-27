@@ -1,12 +1,14 @@
 {
   "program": "SINTRA GREENFIELD PILOT",
-  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
   "workspace": "J Merrill One - GP",
-  "created_at": "2026-08-26T20:45:00-04:00",
+  "updated_at": "2026-08-27T09:00:00-04:00",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "required": "PASS",
-  "scheduled_content_count": 0,
+  "scheduled_content_count": 3,
+  "prepared_content_count": 18,
   "unintended_public_facing_human_first_references": 0,
+  "people_first_expected": true,
   "result": "PASS",
-  "note": "No scheduled active content was created. Visible Day 1 LinkedIn draft preserved people-first language."
+  "note": "Day 1 Founder-manual scheduled canary and Days 2-7 prepared content preserve People-First terminology. No deprecated prior public terminology regression introduced."
 }
