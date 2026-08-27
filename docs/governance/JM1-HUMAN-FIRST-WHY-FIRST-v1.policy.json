@@ -98,6 +98,16 @@
       "event",
       "Bible study",
       "giving"
+    ],
+    "jsj": [
+      "reflection",
+      "leadership",
+      "essay",
+      "personal note",
+      "speaking",
+      "writing",
+      "archive",
+      "founder perspective"
     ]
   },
   "brandProfiles": {
@@ -163,6 +173,29 @@
       "riskRouting": {
         "routineLowRisk": "ALLOW_AFTER_VALIDATION",
         "pastoralSensitiveLegalFinancial": "HUMAN_REVIEW_REQUIRED"
+      }
+    },
+    "jsj": {
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "jackie@email.jackiesmithjr.com",
+      "replyTo": "jackie@jmerrill.one",
+      "replyMailboxAuthority": "jackie@jmerrill.one",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL",
+      "organization": "Jackie Smith Jr.",
+      "voice": [
+        "personal",
+        "reflective",
+        "direct",
+        "human",
+        "plain-English",
+        "not divisional"
+      ],
+      "personalBrandBoundary": "JSJ_MAIL_MUST_NOT_CARRY_DIVISIONAL_LEGAL_FINANCIAL_CONTRACT_OR_MINISTRY_AUTHORITY",
+      "riskRouting": {
+        "routineLowRisk": "ALLOW_AFTER_VALIDATION",
+        "divisionalLegalFinancialContractOrRights": "HUMAN_REVIEW_REQUIRED"
       }
     }
   },

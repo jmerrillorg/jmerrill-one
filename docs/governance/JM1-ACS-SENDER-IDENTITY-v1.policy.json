@@ -10,7 +10,7 @@
   "humanFirstWhyFirstBinding": "JM1-HUMAN-FIRST-WHY-FIRST-v1",
   "acsEmailService": "email-jm1-core",
   "acsCommunicationService": "acs-jm1-core",
-  "acsDomains": ["email.jmerrill.one", "email.agapeic.org"],
+  "acsDomains": ["email.jmerrill.one", "email.agapeic.org", "email.jackiesmithjr.com"],
   "registry": {
     "JM1": {
       "brand": "JM1",
@@ -122,6 +122,36 @@
         "publicContactIdentity": "aic@agapeic.org",
         "website": "agapeic.org"
       }
+    },
+    "JSJ": {
+      "brand": "JSJ",
+      "organization": "Jackie Smith Jr.",
+      "acsFrom": "jackie@email.jackiesmithjr.com",
+      "replyTo": "jackie@jmerrill.one",
+      "replyMailboxAuthority": "jackie@jmerrill.one",
+      "replyAddressType": "MAILBOX",
+      "inboundProcessingMailbox": "jackie@jmerrill.one",
+      "ccRequired": false,
+      "ccAddress": null,
+      "humanFirstPolicy": "JM1-HUMAN-FIRST-WHY-FIRST-v1",
+      "brandOverlay": "JSJ",
+      "personalBrandBoundary": "JSJ_MAIL_MUST_NOT_CARRY_DIVISIONAL_LEGAL_FINANCIAL_CONTRACT_OR_MINISTRY_AUTHORITY",
+      "riskRouting": {
+        "routineLowRisk": "ALLOW_AFTER_VALIDATION",
+        "divisionalLegalFinancialContractOrRights": "HUMAN_REVIEW_REQUIRED"
+      },
+      "identityContract": [
+        "recipient",
+        "Jackie Smith Jr.",
+        "personalBrandContext",
+        "communicationPurpose"
+      ],
+      "signatureProfile": {
+        "organizationDisplayName": "Jackie Smith Jr.",
+        "signatureName": "Jackie Smith Jr.",
+        "publicContactIdentity": "jackie@jmerrill.one",
+        "website": "jackiesmithjr.com"
+      }
     }
   },
   "failureCodes": [
@@ -132,6 +162,7 @@
     "ACS_CC_ARCHIVE_MISSING",
     "ACS_DUPLICATE_SIGNATURE_BLOCKED",
     "ACS_PLANNING_CENTER_AUTHORITY_MISMATCH",
-    "ACS_HIGH_RISK_HUMAN_REVIEW_REQUIRED"
+    "ACS_HIGH_RISK_HUMAN_REVIEW_REQUIRED",
+    "HUMAN_REVIEW_REQUIRED_JSJ_PERSONAL_BRAND_BOUNDARY"
   ]
 }
