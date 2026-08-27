@@ -112,10 +112,11 @@ Current adoption classifications:
 | J Merrill Foundation | `foundation` | ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED | PROVEN |
 | J Merrill Productions | `productions` | ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED | PROVEN |
 | Agape International Cathedral | `aic` | ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED | PROVEN_SYNTHETIC_INTERNAL |
+| Jackie Smith Jr. | `jsj` | ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED | PROVEN_SYNTHETIC_INTERNAL |
 
 Guard-ready means the branch has an executable policy check and passing branch tests. It does not mean real external sends or public deployment are active unless separately proven.
 
-Enterprise outbound runtime commissioned means the shared ACS relay has proven sender identity, reply routing, Human-First / Why-First enforcement, and fail-closed behavior for the decided brand. It does not authorize unrelated public deployment, marketing sends, client communications, ministry campaigns, or Planning Center mutation.
+Enterprise outbound runtime commissioned means the shared ACS relay has proven sender identity, reply routing, Human-First / Why-First enforcement, and fail-closed behavior for the decided brand. It does not authorize unrelated public deployment, marketing sends, client communications, ministry campaigns, personal-brand campaigns, or Planning Center mutation.
 
 ## Artifact Release Requirement
 

@@ -38,8 +38,11 @@ Templates are not sender authority.
 | JMFN | `foundation@email.jmerrill.one` | `foundation@jmerrill.one` | `foundation@jmerrill.one` | MAILBOX | `foundation@jmerrill.one` | Not required |
 | JMPRODUCTIONS | `productions@email.jmerrill.one` | `productions@jmerrill.one` | `productions@jmerrill.one` | MAILBOX | `productions@jmerrill.one` | Not required |
 | AIC | `aic@email.agapeic.org` | `aic@agapeic.org` | `aic@agapeic.org` | MAILBOX | `aic@agapeic.org` | Not required |
+| JSJ | `jackie@email.jackiesmithjr.com` | `jackie@jmerrill.one` | `jackie@jmerrill.one` | MAILBOX | `jackie@jmerrill.one` | Not required |
 
 AIC uses the shared JM1 ACS sender runtime for outbound transport only. Planning Center remains the AIC ministry/event/registration source of record and must not be replaced by ACS sender configuration.
+
+JSJ is Jackie Smith Jr.'s personal brand sender identity. JSJ mail must use the `email.jackiesmithjr.com` ACS domain and must not use JM1, Publishing, Financial, Foundation, Productions, or AIC sender identities.
 
 ## J Merrill One Alias Rule
 
@@ -90,6 +93,7 @@ Human-facing send validation must proceed in this order:
 | JMFN | J Merrill Foundation | J Merrill Foundation | `foundation@jmerrill.one` | `jmerrillfoundation.org` |
 | JMPRODUCTIONS | J Merrill Productions | J Merrill Productions | `productions@jmerrill.one` | `jmerrill.productions` |
 | AIC | Agape International Cathedral | Agape International Cathedral | `aic@agapeic.org` | `agapeic.org` |
+| JSJ | Jackie Smith Jr. | Jackie Smith Jr. | `jackie@jmerrill.one` | `jackiesmithjr.com` |
 
 Signature profiles must not be inferred from the From address.
 
@@ -110,5 +114,6 @@ Runtime and governance checks must detect:
 - duplicate footer;
 - sender registry/runtime mismatch.
 - AIC Planning Center data treated as sender authority.
+- JSJ personal-brand traffic routed through a divisional or ministry sender.
 
 Detected drift must surface `ACS_SENDER_IDENTITY_ATTENTION_REQUIRED` with brand, expected value, actual value, runtime, and next action.

@@ -35,9 +35,10 @@ function validateIdentity(message) {
   return { decision: "ALLOW", code: "ALLOW" };
 }
 
-assert.deepEqual(senderPolicy.acsDomains, ["email.jmerrill.one", "email.agapeic.org"]);
+assert.deepEqual(senderPolicy.acsDomains, ["email.jmerrill.one", "email.agapeic.org", "email.jackiesmithjr.com"]);
 assert.equal(senderPolicy.aic, undefined);
 assert.ok(!senderPolicy.failureCodes.includes("AIC_SENDER_IDENTITY_FOUNDER_DECISION_REQUIRED"));
+assert.ok(senderPolicy.failureCodes.includes("HUMAN_REVIEW_REQUIRED_JSJ_PERSONAL_BRAND_BOUNDARY"));
 
 const aic = senderPolicy.registry.AIC;
 assert.equal(aic.brand, "AIC");
@@ -55,6 +56,24 @@ assert.equal(aicHumanFirst.from, "aic@email.agapeic.org");
 assert.equal(aicHumanFirst.replyTo, "aic@agapeic.org");
 assert.equal(aicHumanFirst.replyMailboxAuthority, "aic@agapeic.org");
 assert.equal(aicHumanFirst.runtimeClassification, "SHARED_ACS_RELAY_BOUND");
+
+const jsj = senderPolicy.registry.JSJ;
+assert.equal(jsj.brand, "JSJ");
+assert.equal(jsj.organization, "Jackie Smith Jr.");
+assert.equal(jsj.acsFrom, "jackie@email.jackiesmithjr.com");
+assert.equal(jsj.replyTo, "jackie@jmerrill.one");
+assert.equal(jsj.replyMailboxAuthority, "jackie@jmerrill.one");
+assert.equal(jsj.replyAddressType, "MAILBOX");
+assert.equal(jsj.humanFirstPolicy, "JM1-HUMAN-FIRST-WHY-FIRST-v1");
+assert.equal(jsj.brandOverlay, "JSJ");
+assert.equal(jsj.personalBrandBoundary, "JSJ_MAIL_MUST_NOT_CARRY_DIVISIONAL_LEGAL_FINANCIAL_CONTRACT_OR_MINISTRY_AUTHORITY");
+
+const jsjHumanFirst = humanFirstPolicy.brandProfiles.jsj;
+assert.equal(jsjHumanFirst.status, "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED");
+assert.equal(jsjHumanFirst.from, "jackie@email.jackiesmithjr.com");
+assert.equal(jsjHumanFirst.replyTo, "jackie@jmerrill.one");
+assert.equal(jsjHumanFirst.replyMailboxAuthority, "jackie@jmerrill.one");
+assert.equal(jsjHumanFirst.runtimeClassification, "SHARED_ACS_RELAY_BOUND");
 
 assert.deepEqual(
   validateIdentity({
@@ -117,4 +136,31 @@ assert.deepEqual(
   { decision: "DENY", code: "ACS_DUPLICATE_SIGNATURE_BLOCKED" },
 );
 
-console.log("AIC ACS sender policy validation PASS");
+assert.deepEqual(
+  validateIdentity({
+    brand: "JSJ",
+    from: "jackie@email.jackiesmithjr.com",
+    replyTo: "jackie@jmerrill.one",
+  }),
+  { decision: "ALLOW", code: "ALLOW" },
+);
+
+for (const from of [
+  "one@email.jmerrill.one",
+  "publishing@email.jmerrill.one",
+  "financial@email.jmerrill.one",
+  "foundation@email.jmerrill.one",
+  "productions@email.jmerrill.one",
+  "aic@email.agapeic.org",
+]) {
+  assert.deepEqual(
+    validateIdentity({
+      brand: "JSJ",
+      from,
+      replyTo: "jackie@jmerrill.one",
+    }),
+    { decision: "DENY", code: "ACS_BRAND_SENDER_MISMATCH" },
+  );
+}
+
+console.log("AIC and JSJ ACS sender policy validation PASS");
