@@ -4,8 +4,8 @@
   "branch": "codex/sintra-greenfield-jm1-gp",
   "phase": "GP SOCIAL MEDIA LIVE PILOT — RUNTIME CONTINUITY",
   "created_at": "2026-08-27T16:20:00-04:00",
-  "result": "KEEP_SMM_RUNTIME_ON_THROUGH_SCHEDULED_EXECUTION",
-  "continuity_requirement": "Social Media Manager must remain on through all scheduled publish times for Days 2-7.",
+  "result": "KEEP_SMM_RUNTIME_ON_THROUGH_FULL_30DAY_SCHEDULED_EXECUTION",
+  "continuity_requirement": "Social Media Manager must remain on through all scheduled publish times for Days 2-30.",
   "protected_boundaries": [
     "Inbox OFF",
     "Daily Summarizer OFF",
@@ -13,5 +13,11 @@
     "no comments",
     "no DMs",
     "no engagement authority"
-  ]
+  ],
+  "updated_at": "2026-08-27T21:30:00-04:00",
+  "full_month_scope": {
+    "published_verified": 3,
+    "scheduled_future_posts": 87,
+    "last_scheduled_post": "2026-09-25T11:30:00-04:00"
+  }
 }

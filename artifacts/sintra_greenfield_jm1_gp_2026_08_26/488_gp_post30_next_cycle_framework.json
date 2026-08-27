@@ -1,0 +1,10 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "POST-30 NEXT CYCLE FRAMEWORK",
+  "result": "PREPARED_NOT_SCHEDULED",
+  "scope": "Framework only; no post-30 posts were scheduled.",
+  "recommendation": "Use a rolling 14-day queue after Day 30 with weekly Founder review, visual-logo gate, People-First regression, and branch authority validation."
+}

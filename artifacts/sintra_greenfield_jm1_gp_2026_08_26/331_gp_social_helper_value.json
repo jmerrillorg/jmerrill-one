@@ -6,7 +6,16 @@
   "branch": "codex/sintra-greenfield-jm1-gp",
   "focus_correction_base_commit": "3eaa841",
   "status": "ACTIVE",
-  "helper_invocations": [],
+  "helper_invocations": [
+    {
+      "date": "2026-08-27T21:30:00-04:00",
+      "helper": "Soshie",
+      "purpose": "full-month social creative materialization and scheduling",
+      "useful_contribution": "Generated logo-compliant day creatives and scheduled approved copy to three destinations.",
+      "brand_boundary_behavior": "Preserved J Merrill One umbrella voice, People-First language, and no-engagement boundary.",
+      "incremental_value": "HIGH"
+    }
+  ],
   "rule": "Allow native helper orchestration naturally; do not manually force social helpers.",
   "capture_fields": [
     "helper",
@@ -14,5 +23,6 @@
     "useful contribution",
     "brand-boundary behavior",
     "incremental value"
-  ]
+  ],
+  "updated_at": "2026-08-27T21:30:00-04:00"
 }

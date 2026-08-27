@@ -1,0 +1,16 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "FULL MONTH CREATIVE ATTACHMENT VALIDATION",
+  "result": "PASS",
+  "expected_creatives": {
+    "day1": 1,
+    "days2_7": 6,
+    "days8_30": 23,
+    "total_day_creatives": 30
+  },
+  "attachment_rule": "One creative per day attached to all three platform posts.",
+  "logo_rule": "All new/corrected creatives logo-gated after Founder instruction."
+}

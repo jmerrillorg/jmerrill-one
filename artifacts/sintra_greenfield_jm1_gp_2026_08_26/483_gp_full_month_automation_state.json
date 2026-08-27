@@ -1,0 +1,24 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "FULL MONTH AUTOMATION STATE",
+  "result": "PASS",
+  "social_media_manager": "ON_REQUIRED_FOR_PUBLISHING_RUNTIME",
+  "all_other_automations": "OFF",
+  "explicitly_off": [
+    "Inbox",
+    "Daily Summarizer",
+    "Facebook Commenter"
+  ],
+  "engagement_authority": "NONE",
+  "allowed": "Scheduled publishing only for approved posts.",
+  "blocked": [
+    "comment replies",
+    "DMs",
+    "inbox management",
+    "comment moderation",
+    "reactive engagement"
+  ]
+}

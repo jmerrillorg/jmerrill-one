@@ -1,0 +1,172 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "DAYS 8-30 EXECUTION SEQUENCE",
+  "result": "SEQUENCE_MATERIALIZED",
+  "cadence_rule": "Odd day numbers at 9:00 AM ET; even day numbers at 11:30 AM ET, continuing the established first-week rhythm.",
+  "days": [
+    {
+      "day": 8,
+      "date": "2026-09-03",
+      "theme": "Behind the Enterprise",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 9,
+      "date": "2026-09-04",
+      "theme": "Meet the Family: Foundation",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 10,
+      "date": "2026-09-05",
+      "theme": "What We Mean by Useful",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 11,
+      "date": "2026-09-06",
+      "theme": "Sunday Reflection / Purpose",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 12,
+      "date": "2026-09-07",
+      "theme": "Meet the Family: Productions",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 13,
+      "date": "2026-09-08",
+      "theme": "One Enterprise, Distinct Brands",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 14,
+      "date": "2026-09-09",
+      "theme": "People Before Automation",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 15,
+      "date": "2026-09-10",
+      "theme": "Mid-Month JM1 Snapshot",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 16,
+      "date": "2026-09-11",
+      "theme": "What We Don’t Do",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 17,
+      "date": "2026-09-12",
+      "theme": "The Power of Clear Ownership",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 18,
+      "date": "2026-09-13",
+      "theme": "Building for the Long Term",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 19,
+      "date": "2026-09-14",
+      "theme": "Publishing Spotlight",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 20,
+      "date": "2026-09-15",
+      "theme": "Financial Spotlight",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 21,
+      "date": "2026-09-16",
+      "theme": "Foundation Spotlight",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 22,
+      "date": "2026-09-17",
+      "theme": "Productions Spotlight",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 23,
+      "date": "2026-09-18",
+      "theme": "Cross-Brand Thinking",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 24,
+      "date": "2026-09-19",
+      "theme": "Founder Question",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 25,
+      "date": "2026-09-20",
+      "theme": "Microsoft-First, Not Microsoft-Only",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 26,
+      "date": "2026-09-21",
+      "theme": "How JM1 Thinks About AI",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 27,
+      "date": "2026-09-22",
+      "theme": "Systems With Purpose",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 28,
+      "date": "2026-09-23",
+      "theme": "What Connects the Brands",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 29,
+      "date": "2026-09-24",
+      "theme": "Where We’re Going",
+      "time_et": "09:00 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    },
+    {
+      "day": 30,
+      "date": "2026-09-25",
+      "theme": "30 Days of One",
+      "time_et": "11:30 AM ET",
+      "creative_logo_status": "VISIBLE_LOGO_REQUIRED_AND_SOSHIE_PROMPT_CONFIRMED"
+    }
+  ]
+}

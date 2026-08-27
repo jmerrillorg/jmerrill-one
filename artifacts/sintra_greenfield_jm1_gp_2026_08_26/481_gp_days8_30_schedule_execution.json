@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "DAYS 8-30 SCHEDULE EXECUTION",
+  "result": "SCHEDULED",
+  "execution_summary": {
+    "days": 23,
+    "posts": 69,
+    "facebook": 23,
+    "instagram": 23,
+    "linkedin_organization": 23
+  },
+  "date_range": {
+    "start": "2026-09-03",
+    "end": "2026-09-25"
+  },
+  "timezone": "America/New_York",
+  "cadence_rule": "Odd day numbers 9:00 AM ET; even day numbers 11:30 AM ET.",
+  "evidence": "Soshie created and scheduled all batch posts; live UI showed scheduled status through Day 30 LinkedIn."
+}

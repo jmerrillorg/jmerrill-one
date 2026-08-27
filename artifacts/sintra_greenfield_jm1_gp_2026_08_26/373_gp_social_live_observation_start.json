@@ -18,8 +18,15 @@
     "helper value"
   ],
   "do_not_overinterpret_low_volume_first_week_metrics": true,
-  "updated_at": "2026-08-27T16:20:00-04:00",
+  "updated_at": "2026-08-27T21:30:00-04:00",
   "live_observation_start_date": "2026-08-27",
   "observation_status": "STARTED",
-  "baseline_source": "Sintra calendar metrics and Founder platform screenshots"
+  "baseline_source": "Sintra calendar metrics and Founder platform screenshots",
+  "full_month_observation_state": {
+    "day1_published": 3,
+    "day2_30_scheduled": 87,
+    "day14_gate": "2026-09-09",
+    "day30_end": "2026-09-25",
+    "smm_runtime": "ON_REQUIRED"
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "DAYS 8-30 PEOPLE-FIRST REGRESSION",
+  "result": "PASS",
+  "forbidden_terms_checked": [
+    "Human-First",
+    "human-first",
+    "human-centered",
+    "human purpose"
+  ],
+  "public_language": "People-First / people-first only",
+  "scope": "Days 8-30 scheduled copy and scheduling prompts preserved People-First language and barred legacy public wording."
+}

@@ -1,0 +1,94 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "POST-30 14-DAY THEME MAP",
+  "result": "PREPARED_NOT_SCHEDULED",
+  "themes": [
+    {
+      "cycle_day": 1,
+      "proposed_date": "2026-09-26",
+      "theme": "Post-30 Reflection",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 2,
+      "proposed_date": "2026-09-27",
+      "theme": "Publishing Practical Value",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 3,
+      "proposed_date": "2026-09-28",
+      "theme": "Financial Boundary Education",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 4,
+      "proposed_date": "2026-09-29",
+      "theme": "Foundation Continuity",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 5,
+      "proposed_date": "2026-09-30",
+      "theme": "Productions Message Travel",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 6,
+      "proposed_date": "2026-10-01",
+      "theme": "One Operating Standard",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 7,
+      "proposed_date": "2026-10-02",
+      "theme": "Sunday Purpose Check",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 8,
+      "proposed_date": "2026-10-03",
+      "theme": "Cross-Brand Opportunity",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 9,
+      "proposed_date": "2026-10-04",
+      "theme": "Founder Question Follow-up",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 10,
+      "proposed_date": "2026-10-05",
+      "theme": "Microsoft-First Tool Discipline",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 11,
+      "proposed_date": "2026-10-06",
+      "theme": "AI Assistance Boundary",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 12,
+      "proposed_date": "2026-10-07",
+      "theme": "Systems That Preserve Context",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 13,
+      "proposed_date": "2026-10-08",
+      "theme": "Useful Growth",
+      "status": "theme_only_not_scheduled"
+    },
+    {
+      "cycle_day": 14,
+      "proposed_date": "2026-10-09",
+      "theme": "Next 30-Day Planning",
+      "status": "theme_only_not_scheduled"
+    }
+  ]
+}
