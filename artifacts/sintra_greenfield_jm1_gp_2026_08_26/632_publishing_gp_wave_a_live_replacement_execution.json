@@ -1,6 +1,6 @@
 {
   "wave": "A",
-  "generated_at": "2026-08-28T07:35:58-04:00",
+  "generated_at": "2026-08-28T07:52:36-04:00",
   "live_surface": "Meta Business Suite canary plus Soshie caption history",
   "meta_canary": {
     "facebook": {
@@ -17,10 +17,14 @@
       "destination": "jmerrillpub",
       "creative": "day01_2026-08-28_101_wisdom_people_first.png",
       "caption": "NOT_VERIFIED_IN_EDIT_SURFACE",
-      "status": "SCHEDULED_MEDIA_ONLY_RISK"
+      "status": "MOVED_TO_DRAFTS_UNSAFE_MEDIA_ONLY"
     }
   },
   "wrong_date_duplicate": "MOVED_TO_DRAFTS",
+  "unsafe_instagram_canary": "MOVED_TO_DRAFTS",
+  "scheduled_meta_rows_after_refresh": [
+    "Facebook Aug 28 10:00 AM, J Merrill Publishing Inc, corrected caption visible"
+  ],
   "scheduled_duplicate_count_after_refresh": 0,
   "wave_completion": "PARTIAL_CANARY_ONLY"
 }
