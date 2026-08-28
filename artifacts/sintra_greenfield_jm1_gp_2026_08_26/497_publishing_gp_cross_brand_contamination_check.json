@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "workspace": "J Merrill Publishing",
+  "result": "PASS — CLEAN PUBLISHING BRAIN",
+  "brain_observation": "Brain page showed first-item onboarding state and no recent chats.",
+  "unexpected_content": {
+    "one_operational_content": false,
+    "financial": false,
+    "foundation": false,
+    "productions": false,
+    "legacy_publishing_recovery_data": false
+  },
+  "note": "No branch Brain content was inherited before loading any Publishing-specific record.",
+  "after_foundation_load": {
+    "brain_record_count": 1,
+    "loaded_record": "Publishing-only Foundation Pack",
+    "cross_brand_operational_content_loaded": false
+  }
+}

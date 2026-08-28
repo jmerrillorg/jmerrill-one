@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "rule": "Shared master connectors are acceptable only if post-level destination is branch-correct.",
+  "mapping": {
+    "facebook": "Publishing FB post -> J Merrill Publishing",
+    "instagram": "Publishing IG post -> canonical J Merrill Publishing account",
+    "linkedin": "Publishing LinkedIn post -> J Merrill Publishing, Inc."
+  },
+  "fail_closed": true
+}

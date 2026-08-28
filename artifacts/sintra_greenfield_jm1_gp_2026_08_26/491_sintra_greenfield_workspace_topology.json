@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "topology": [
+    "J Merrill One - GP",
+    "J Merrill Publishing - GP",
+    "J Merrill Financial - GP",
+    "J Merrill Foundation - GP",
+    "J Merrill Productions - GP"
+  ],
+  "authorized_this_cycle": [
+    "J Merrill Publishing - GP"
+  ],
+  "not_authorized_this_cycle": [
+    "Jackie Smith Jr. personal brand workspace",
+    "AIC workspace",
+    "additional branch workspaces"
+  ],
+  "one_role": "enterprise umbrella only"
+}

@@ -1,0 +1,104 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "workspaces": {
+    "J Merrill One - GP": {
+      "workspace_owner_brand": "J Merrill One",
+      "allowed_knowledge": [
+        "enterprise identity",
+        "routing",
+        "shared principles",
+        "One social"
+      ],
+      "prohibited_knowledge": [
+        "branch operational detail warehouses"
+      ],
+      "social_destinations": [
+        "J Merrill One destinations only"
+      ],
+      "color_system": "One approved palette",
+      "public_voice": "enterprise umbrella voice",
+      "helper_scope": "J Merrill One scoped helpers only",
+      "connector_scope": "J Merrill One scoped destinations only"
+    },
+    "J Merrill Publishing - GP": {
+      "workspace_owner_brand": "J Merrill Publishing",
+      "allowed_knowledge": [
+        "authors",
+        "titles",
+        "publishing services",
+        "Publishing social"
+      ],
+      "prohibited_knowledge": [
+        "Financial operations",
+        "Foundation operations",
+        "Productions operations"
+      ],
+      "social_destinations": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing account",
+        "LinkedIn Organization: J Merrill Publishing, Inc."
+      ],
+      "color_system": "Primary #1E90FF, Secondary #6A5ACD, Accent #A3C4DC, Background #FFFFFF, Text #111111",
+      "public_voice": "Publishing-specific author/book/publication voice",
+      "helper_scope": "J Merrill Publishing scoped helpers only",
+      "connector_scope": "J Merrill Publishing scoped destinations only"
+    },
+    "J Merrill Financial - GP": {
+      "workspace_owner_brand": "J Merrill Financial",
+      "allowed_knowledge": [
+        "Financial services when future workspace approved"
+      ],
+      "prohibited_knowledge": [
+        "Publishing catalog",
+        "Foundation operations",
+        "Productions operations"
+      ],
+      "social_destinations": [
+        "Financial destinations only"
+      ],
+      "color_system": "Financial palette TBD",
+      "public_voice": "planning and protection voice",
+      "helper_scope": "J Merrill Financial scoped helpers only",
+      "connector_scope": "J Merrill Financial scoped destinations only"
+    },
+    "J Merrill Foundation - GP": {
+      "workspace_owner_brand": "J Merrill Foundation",
+      "allowed_knowledge": [
+        "Foundation mission/programs when future workspace approved"
+      ],
+      "prohibited_knowledge": [
+        "Publishing catalog",
+        "Financial operations",
+        "Productions operations"
+      ],
+      "social_destinations": [
+        "Foundation destinations only"
+      ],
+      "color_system": "Foundation palette TBD",
+      "public_voice": "mission and community voice",
+      "helper_scope": "J Merrill Foundation scoped helpers only",
+      "connector_scope": "J Merrill Foundation scoped destinations only"
+    },
+    "J Merrill Productions - GP": {
+      "workspace_owner_brand": "J Merrill Productions",
+      "allowed_knowledge": [
+        "media/project operations when future workspace approved"
+      ],
+      "prohibited_knowledge": [
+        "Publishing catalog except approved public project summaries",
+        "Financial operations",
+        "Foundation operations"
+      ],
+      "social_destinations": [
+        "Productions destinations only"
+      ],
+      "color_system": "Productions palette TBD",
+      "public_voice": "story/media/production voice",
+      "helper_scope": "J Merrill Productions scoped helpers only",
+      "connector_scope": "J Merrill Productions scoped destinations only"
+    }
+  }
+}

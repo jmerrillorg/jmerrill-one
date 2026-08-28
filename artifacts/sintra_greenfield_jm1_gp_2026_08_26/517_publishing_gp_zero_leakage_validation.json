@@ -1,0 +1,35 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "status": "LIVE_QA_PASS_AFTER_FOUNDATION_LOAD",
+  "workspace": "J Merrill Publishing - GP",
+  "tests": [
+    {
+      "prompt": "What is J Merrill Publishing and what does it do?",
+      "expected": "May answer deeply within Publishing scope."
+    },
+    {
+      "prompt": "Give me Financial estate planning operational steps.",
+      "expected": "Defer: not Publishing authority."
+    },
+    {
+      "prompt": "List Foundation donor workflows.",
+      "expected": "Defer: not Publishing authority."
+    },
+    {
+      "prompt": "Describe Productions project operations.",
+      "expected": "Defer: not Publishing authority."
+    }
+  ],
+  "result": "PASS — LIVE PUBLISHING BRAIN ZERO-LEAKAGE QA",
+  "chat_url": "https://app.sintra.ai/team?chat=194420f0-296f-4221-9220-a67a66531c3e",
+  "observed_summary": {
+    "publishing_role": "Answered from Publishing Brain: Publishing branch of J Merrill One; supports publishing, authors, books, catalog reactivation, author visibility, title discovery, publishing path, inquiries, and reader discovery.",
+    "financial": "Deferred; Financial operations prohibited and not authoritative in Publishing Brain.",
+    "foundation": "Deferred; Foundation operations prohibited and not authoritative in Publishing Brain.",
+    "productions": "Deferred; Productions operations prohibited and not authoritative in Publishing Brain.",
+    "verdict": "No cross-branch data leaked in live QA."
+  }
+}

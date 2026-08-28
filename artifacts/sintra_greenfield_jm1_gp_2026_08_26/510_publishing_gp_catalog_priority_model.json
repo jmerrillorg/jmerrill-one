@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "priority_classes": {
+    "P1": "Upcoming/current release",
+    "P2": "Recent active title",
+    "P3": "Evergreen/backlist",
+    "P4": "Dormant reactivation",
+    "HOLD": "not eligible"
+  },
+  "default_assignment": "Visible public catalog sample assigned P3/P4 until release/current campaign data is verified."
+}

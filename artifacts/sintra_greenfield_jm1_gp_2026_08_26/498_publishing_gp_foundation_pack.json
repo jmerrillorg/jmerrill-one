@@ -1,0 +1,36 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "record_id": "JMP-SINTRA-FOUNDATION-v1.0",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "LOADED_TO_PUBLISHING_BRAIN",
+  "contains": [
+    "identity",
+    "relationship to One",
+    "public purpose",
+    "People-First",
+    "Why-First",
+    "purpose before process",
+    "authority rule",
+    "scope",
+    "social purpose",
+    "publishing-specific voice",
+    "rights rule",
+    "unknown-information rule",
+    "no sensitive author records or manuscripts"
+  ],
+  "explicit_exclusions": [
+    "legacy Sintra records",
+    "One foundation pack unchanged",
+    "Financial/Foundation/Productions operations",
+    "sensitive author/manuscript material"
+  ],
+  "live_brain_record": {
+    "title_observed": "j merrill publishing foundation overview",
+    "source_file": "498_publishing_gp_foundation_pack.md",
+    "record_count_after_load": 1
+  }
+}

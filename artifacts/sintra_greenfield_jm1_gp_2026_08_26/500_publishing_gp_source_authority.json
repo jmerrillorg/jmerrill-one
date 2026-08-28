@@ -1,0 +1,19 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "policy": "Publishing operational/source data must come from Publishing authority, not One Brain evidence.",
+  "authorized_sources": [
+    "J Merrill Publishing repository",
+    "Publishing Dataverse records where available",
+    "governed Publishing catalogs/registries",
+    "current public Publishing surfaces",
+    "current approved Publishing source artifacts"
+  ],
+  "sources_used_this_packet": [
+    "https://jmerrill.pub/books",
+    "https://jmerrill.pub/authors"
+  ],
+  "one_repo_role": "enterprise architecture evidence and cross-workspace governance only"
+}
