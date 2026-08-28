@@ -17,5 +17,17 @@
   "workspace": "J Merrill Publishing - GP",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
-  "generated_at": "2026-08-28T10:18:00-04:00"
+  "generated_at": "2026-08-28T10:18:00-04:00",
+  "updated_at": "2026-08-28T11:38:00-04:00",
+  "wave1_media_binding": "NO_SAFE_MEDIA_REPLACEMENT_PATH",
+  "sep1_7": {
+    "live_captions_updated": 21,
+    "replacement_images_generated": 7,
+    "official_logo_in_new_images": true,
+    "public_machine_language_removed": true,
+    "score": 4
+  },
+  "caption_rewrite_burden": "HIGH - AI Edit required per scheduled object and may vary exact text.",
+  "creative_redesign_burden": "HIGH - existing Soshie media cannot be safely replaced with exact-logo assets through inspected controls.",
+  "founder_correction_burden": "REDUCED_BY_NEW_GATES_BUT_NOT_ZERO_UNTIL_FULL_90_POST_REMEDIATION"
 }

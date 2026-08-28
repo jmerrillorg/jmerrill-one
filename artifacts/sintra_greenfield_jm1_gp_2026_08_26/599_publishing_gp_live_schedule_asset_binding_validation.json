@@ -6,5 +6,9 @@
   "workspace": "J Merrill Publishing - GP",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
-  "generated_at": "2026-08-28T10:18:00-04:00"
+  "generated_at": "2026-08-28T10:18:00-04:00",
+  "updated_at": "2026-08-28T10:55:00-04:00",
+  "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH",
+  "scheduled_post_media_binding_ui_limitation": "Scheduled post editor exposes only Regenerate image and AI Edit; Create from media accepts upload but transforms uploaded asset and rewrites caption before scheduling, so it is unsafe for exact-logo replacement.",
+  "candidate_declined": true
 }

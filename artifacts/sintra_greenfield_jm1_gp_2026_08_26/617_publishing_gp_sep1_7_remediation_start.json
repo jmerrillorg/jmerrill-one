@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T11:38:00-04:00",
+  "status": "STARTED_AFTER_WAVE1_MEDIA_CAPABILITY_DECISION",
+  "scope": [
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-05",
+    "2026-09-06",
+    "2026-09-07"
+  ],
+  "caption_live_target": 21,
+  "visual_asset_target": 7,
+  "media_binding_constraint": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
+}

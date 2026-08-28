@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:55:00-04:00",
+  "outcome": "RECREATE_SCHEDULED_POST_REQUIRED_BUT_NOT_SAFE",
+  "executed": false,
+  "candidate_test": {
+    "asset_uploaded": true,
+    "scheduled": false,
+    "declined": true,
+    "unsafe_reasons": [
+      "Soshie transformed the uploaded exact creative into a different mockup scene.",
+      "Soshie rewrote the exact caption.",
+      "Review panel did not expose destination page before scheduling."
+    ]
+  },
+  "hard_rule_preserved": "Original scheduled post was not deleted."
+}

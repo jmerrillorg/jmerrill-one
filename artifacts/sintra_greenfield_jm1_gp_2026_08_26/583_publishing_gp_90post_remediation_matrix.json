@@ -4,152 +4,223 @@
     {
       "day": 1,
       "posts": 3,
-      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 2,
       "posts": 3,
-      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 3,
       "posts": 3,
-      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 4,
       "posts": 3,
-      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 5,
       "posts": 3,
-      "status": "P1_NEXT_SEAN_FEATURED_AUTHOR_RECONCEPTUALIZE"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 6,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 7,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 8,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 9,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 10,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 11,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "LIVE_CAPTION_REMEDIATED_ASSET_READY",
+      "caption_live_bound": "YES",
+      "creative_live_bound": "NO",
+      "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
     },
     {
       "day": 12,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "REDESIGN_OR_REWRITE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 13,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 14,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "REDESIGN_OR_REWRITE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 15,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 16,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 17,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "REDESIGN_OR_REWRITE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 18,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "REDESIGN_OR_REWRITE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 19,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 20,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 21,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "REDESIGN_OR_REWRITE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 22,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 23,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 24,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "REDESIGN_OR_REWRITE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 25,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 26,
       "posts": 3,
-      "status": "P3_STRATEGIES_RELEASE_REDESIGN_REQUIRED"
+      "status": "P3_STRATEGIES_RELEASE_REDESIGN_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 27,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 28,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "REDESIGN_OR_REWRITE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 29,
       "posts": 3,
-      "status": "REDESIGN_OR_REWRITE_REQUIRED"
+      "status": "REDESIGN_OR_REWRITE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     },
     {
       "day": 30,
       "posts": 3,
-      "status": "REFINE_REQUIRED"
+      "status": "REFINE_REQUIRED",
+      "caption_live_bound": "NO",
+      "creative_live_bound": "NO"
     }
   ],
   "program": "SINTRA GREENFIELD PILOT",

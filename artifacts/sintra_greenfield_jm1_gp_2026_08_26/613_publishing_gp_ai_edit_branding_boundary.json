@@ -1,0 +1,10 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:35:00-04:00",
+  "rule": "AI EDIT = NOT AUTHORIZED FOR OFFICIAL BRAND MARK REPLACEMENT",
+  "reason": "The official logo must remain exact; generative edit controls cannot guarantee logo fidelity.",
+  "allowed": "Read-only inspection of the AI Edit affordance; no submission for logo-sensitive image replacement."
+}
