@@ -5,8 +5,8 @@
   },
   "meta_business_suite": {
     "facebook_exact_file": "usable in canary",
-    "instagram_exact_file": "media upload usable in canary, edit surface unstable",
-    "platform_specific_details": "supported by Meta flow but must be verified per platform"
+    "instagram_exact_file": "usable when rebuilt through Instagram-only create flow; edit surface remains unstable",
+    "platform_specific_details": "supported by Meta flow and verified in Day1 canary; must still be verified per platform before scheduling"
   },
   "linkedin": {
     "status": "not yet verified in this wave"
