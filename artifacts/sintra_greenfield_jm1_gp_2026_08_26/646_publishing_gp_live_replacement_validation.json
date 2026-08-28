@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-28T07:35:58-04:00",
+  "wrong_destination_count": 0,
+  "wrong_date_duplicate_count_after_cleanup": 0,
+  "validated": [
+    "Meta scheduled list narrowed to one Aug28 Facebook row and one Aug28 Instagram row",
+    "Day2 wrong-date Facebook row moved to Drafts",
+    "Remaining Facebook row shows Day1 creative preview"
+  ],
+  "not_validated": [
+    "Instagram caption binding",
+    "LinkedIn exact-file scheduling",
+    "Soshie old weak post removal"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "generated_at": "2026-08-28T07:35:58-04:00",
+  "rule": "QUALITY_OVER_SCHEDULE_CONVENIENCE",
+  "decision": "A post is not public-ready merely because it is scheduled.",
+  "blocked_shortcuts": [
+    "Retaining boring or template-heavy images to preserve calendar completeness",
+    "Using AI Edit where official logo fidelity cannot be guaranteed",
+    "Deleting old scheduled posts before replacement verification"
+  ],
+  "required_finish_state": "Verified creative, caption, destination, date, and platform details."
+}

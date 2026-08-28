@@ -1,0 +1,10 @@
+{
+  "classification": "SOSHIE SCHEDULED-POST MEDIA WORKFLOW DOES NOT CURRENTLY GUARANTEE EXACT BRAND-ASSET FIDELITY",
+  "basis": [
+    "AI Edit cannot guarantee official logo fidelity.",
+    "Create-from-media transformed the supplied PNG into a new scene and changed caption context.",
+    "Scheduled-post media replacement did not expose a safe exact-file binding path during live testing."
+  ],
+  "required_fallback": "Use local creative production plus exact-file-preserving scheduler, then verify before removing old weak scheduled versions.",
+  "status": "ACTIVE_LIMIT"
+}

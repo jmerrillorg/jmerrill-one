@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-28T07:35:58-04:00",
+  "entries": [
+    {
+      "date": "2026-08-28",
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "replacement_surface": "Meta Business Suite",
+      "status": "SCHEDULED_CANARY_REPAIRED",
+      "notes": "Wrong Day2 duplicate moved to Drafts; Day1 caption pasted in edit composer and preview."
+    },
+    {
+      "date": "2026-08-28",
+      "platform": "Instagram",
+      "destination": "jmerrillpub",
+      "replacement_surface": "Meta Business Suite",
+      "status": "SCHEDULED_MEDIA_ONLY_RISK",
+      "notes": "Scheduled row exists at 12:00 PM; edit composer did not safely load destination/media/time."
+    }
+  ]
+}

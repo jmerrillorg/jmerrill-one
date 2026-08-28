@@ -1,0 +1,10 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "generated_at": "2026-08-28T07:35:58-04:00",
+  "boundary": "IMAGE_GENERATION_IS_NOT_LIVE_BINDING",
+  "rules": [
+    "Generated or locally composed images are candidates until exact-file upload is verified.",
+    "AI-generated logo approximations are prohibited.",
+    "The official logo file must be included as an exact visual asset in every new image."
+  ]
+}

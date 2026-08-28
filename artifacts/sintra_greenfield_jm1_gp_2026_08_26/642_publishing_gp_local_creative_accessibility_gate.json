@@ -1,0 +1,9 @@
+{
+  "gate": "LOCAL_CREATIVE_ACCESSIBILITY",
+  "rules": [
+    "Images must remain legible at social feed scale.",
+    "Text overlays must not obscure the official logo.",
+    "Alt-text-sensitive previews must identify book/author content accurately."
+  ],
+  "status": "ACTIVE"
+}

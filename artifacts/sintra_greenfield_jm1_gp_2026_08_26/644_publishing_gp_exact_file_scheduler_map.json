@@ -1,0 +1,14 @@
+{
+  "soshie": {
+    "caption_editing": "usable",
+    "scheduled_media_replacement": "not safe for exact official logo fidelity"
+  },
+  "meta_business_suite": {
+    "facebook_exact_file": "usable in canary",
+    "instagram_exact_file": "media upload usable in canary, edit surface unstable",
+    "platform_specific_details": "supported by Meta flow but must be verified per platform"
+  },
+  "linkedin": {
+    "status": "not yet verified in this wave"
+  }
+}
