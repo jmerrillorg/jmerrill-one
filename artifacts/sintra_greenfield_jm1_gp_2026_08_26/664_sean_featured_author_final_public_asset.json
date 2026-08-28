@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-08-28T11:01:03-04:00",
+  "date": "2026-09-01",
+  "author": "Sean A Crowley I",
+  "status": "HOLD_SOURCE_ASSETS_REQUIRED",
+  "old_card": {
+    "file": "publishing_full30_creatives/day05_2026-09-01_september_featured_author_sean_a_crowley_i.png",
+    "disposition": "REPLACE"
+  },
+  "transitional_concept": {
+    "file": "publishing_remediation_sep1_7_creatives/day05_2026-09-01_sean_featured_author_launch.png",
+    "disposition": "REWORK_NOT_FINAL"
+  },
+  "required_final_asset": [
+    "actual source-backed image if available",
+    "actual book cover(s)",
+    "tasteful September Featured Author treatment",
+    "J Merrill Publishing identity",
+    "exact logo",
+    "no metadata-card look"
+  ],
+  "preserved_links": [
+    {
+      "url": "https://amzn.to/4hZvsNG",
+      "title": "The Shift: Changing with God"
+    },
+    {
+      "url": "https://amzn.to/4wXeeV0",
+      "title": "Strategies for Success in Educational Leadership"
+    }
+  ],
+  "scheduler": "HOLD until final source-backed creative exists",
+  "status_for_sep1": "NOT_READY_FOR_REBUILD"
+}

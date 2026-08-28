@@ -1,0 +1,52 @@
+{
+  "classification": "J MERRILL PUBLISHING SOCIAL EXECUTION RESET - DUPLICATE SCHEDULER + CREATIVE FIDELITY + CROSS-PLATFORM FAILURE",
+  "created_at": "2026-08-28T11:01:03-04:00",
+  "founder_live_evidence": {
+    "facebook_duplicate_post_condition": true,
+    "sintra_weak_creative_published": true,
+    "corrected_meta_local_creative_also_published": true,
+    "instagram_missing_from_expected_publication": true,
+    "linkedin_missing_from_expected_publication": true
+  },
+  "live_meta_planner_readback": {
+    "asset_pair": "J Merrill Publishing Inc, jmerrillpub",
+    "page_id": "307480763084670",
+    "followers_readback": {
+      "facebook": "1.6K",
+      "instagram": "299"
+    },
+    "facebook_duplicate_count_visible_for_day1_caption": 2,
+    "facebook_content_ids_visible": [
+      "1394829325988848",
+      "1394829422655505"
+    ],
+    "instagram_planner_item_visible_at_1200": true,
+    "instagram_published_verified_from_visible_readback": false
+  },
+  "prior_90_of_90_scheduled_success_classification": "SUPERSEDED_DO_NOT_USE_AS_COMPLETION_CLAIM",
+  "reset_status": "ACTIVE",
+  "public_facebook_readback": {
+    "source": "Microsoft Edge authenticated/live public Facebook Page readback",
+    "url": "https://www.facebook.com/jmerrillpub",
+    "page": "J Merrill Publishing Inc",
+    "day1_visible_post_count": 2,
+    "sintra_post": {
+      "visible": true,
+      "attribution": "Published by Sintra",
+      "relative_time": "about an hour ago at time of readback",
+      "creative_alt_summary": "Metadata/registry-card style image mentioning FIRST WEEK ACTIVATION, 2026-08-28, Meet the Book, Rights-safe author/title spotlight, and Helping Authors Help Themselves.",
+      "disposition": "DELETE_AFTER_REPLACEMENT_INVENTORY_AND_SINGLE_AUTHORITY_REBUILD"
+    },
+    "meta_or_local_remediated_post": {
+      "visible": true,
+      "attribution": "No Sintra attribution visible in public readback",
+      "relative_time": "about an hour ago at time of readback",
+      "creative_alt_summary": "Reader-facing 101 Wisdom Lessons for Life and Living image with J Merrill Publishing identity and Helping Authors Help Themselves.",
+      "disposition": "RECOMMENDED_KEEPER_FOR_DAY1_FACEBOOK"
+    },
+    "content_id_mapping_note": "Meta Planner exposed two Facebook content IDs, but the public readback did not map each visible post to one content ID."
+  },
+  "cleanup_result": "NOT_DELETED_NO_PUBLIC_DELETION_PERFORMED",
+  "recommended_keeper": "Facebook Day 1 locally remediated / non-Sintra-attributed editorial post",
+  "recommended_cleanup": "Remove the Sintra-published weak metadata-card duplicate only after live queue inventory and replacement authority are ready."
+}

@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-08-28T11:01:03-04:00",
+  "platform": "LinkedIn",
+  "selected_scheduler": "LinkedIn native scheduler",
+  "destination": "J Merrill Publishing, Inc. / urn:li:organization:13048648",
+  "scheduled": false,
+  "result": "PENDING_CREATIVE_REPLACEMENT_AND_NATIVE_SCHEDULER_SETUP",
+  "proof_required": [
+    "LinkedIn visibly scheduled",
+    "exact media readback",
+    "live publication verification"
+  ]
+}

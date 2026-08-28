@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-08-28T11:01:03-04:00",
+  "platform": "LinkedIn",
+  "destination": "J Merrill Publishing, Inc.",
+  "destination_id": "urn:li:organization:13048648",
+  "scheduler_used_prior": "Sintra/Soshie prior manifest",
+  "publication_state": "NOT_PUBLISHED_VERIFIED; LinkedIn public/member posts tab showed no Aug. 28 Day 1 Publishing post.",
+  "correction": "Use LinkedIn native scheduler for canary until JM1-owned LinkedIn API publishing is available or Sintra proves exact-file LinkedIn execution.",
+  "canary_state": "PENDING",
+  "public_posts_tab_readback": {
+    "source": "Microsoft Edge public/member LinkedIn Company Page readback",
+    "url": "https://www.linkedin.com/company/jmerrillpub/posts/?feedView=all&viewAsMember=true",
+    "page_name": "J Merrill Publishing, Inc.",
+    "tagline": "Helping Authors Help Themselves",
+    "followers_visible": 21,
+    "industry_visible": "Book and Periodical Publishing",
+    "location_visible": "Columbus, Ohio",
+    "company_size_visible": "2-10 employees",
+    "aug28_day1_post_visible": false,
+    "visible_posts_state": "No company posts visible in readback; page showed advertising/offer modules and people-also-follow content."
+  },
+  "root_cause": "UNRESOLVED_FROM_AVAILABLE_UI_READBACK"
+}

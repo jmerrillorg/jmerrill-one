@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-08-28T11:01:03-04:00",
+  "criteria": [
+    "exact creative preservation",
+    "correct destination",
+    "reliable scheduling",
+    "reliable publication",
+    "duplicate prevention",
+    "evidence/readback"
+  ],
+  "decisions": {
+    "facebook": {
+      "scheduler": "Meta Business Suite",
+      "rationale": "Meta Planner exposes Publishing Facebook destination and duplicate publication evidence; exact-file preservation must be validated on canary before scale.",
+      "status": "SELECTED_FOR_CANARY"
+    },
+    "instagram": {
+      "scheduler": "Meta Business Suite",
+      "rationale": "Meta Planner exposes the paired Publishing Instagram destination; publication failure requires root-cause investigation and dual-platform canary before scale.",
+      "status": "SELECTED_FOR_CANARY_HOLD_PENDING_FAILURE_DIAGNOSIS"
+    },
+    "linkedin": {
+      "scheduler": "LinkedIn native scheduler",
+      "rationale": "LinkedIn execution did not publish through Sintra; use native scheduler until JM1-owned LinkedIn API is available or Sintra proves exact-file reliable LinkedIn execution.",
+      "status": "SELECTED_FOR_CANARY"
+    },
+    "sintra": {
+      "scheduler": "NONE for direct final publishing until proven",
+      "final_role": "SOCIAL INTELLIGENCE / CONTENT ORCHESTRATION",
+      "retained_for": [
+        "strategy",
+        "ideation",
+        "caption drafting",
+        "calendar orchestration",
+        "campaign planning",
+        "helper orchestration"
+      ]
+    }
+  }
+}
