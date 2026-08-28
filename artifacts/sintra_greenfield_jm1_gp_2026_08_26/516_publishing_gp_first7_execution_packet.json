@@ -2,8 +2,8 @@
   "program": "SINTRA GREENFIELD PILOT",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
-  "generated_at": "2026-08-27T21:22:54-04:00",
-  "status": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+  "generated_at": "2026-08-27T22:18:00-04:00",
+  "status": "FOUNDER APPROVED; FACEBOOK CANARY SCHEDULED AFTER OFFICIAL-LOGO AND NO-CIRCLE CORRECTION; REMAINING FIRST WEEK HELD FOR CORRECTED LIVE UPLOAD",
   "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
   "items": [
     {
@@ -25,8 +25,9 @@
       ],
       "schedule_time": "10:00 America/New_York",
       "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
-      "scheduled": false,
-      "materialization_state": "GOVERNED_CONTENT_READY"
+      "scheduled": true,
+      "materialization_state": "LIVE_SINTRA_FACEBOOK_CANARY_SCHEDULED_FINAL_REAL_LOGO_NO_CIRCLE",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
     },
     {
       "day": 2,
@@ -48,7 +49,8 @@
       "schedule_time": "10:00 America/New_York",
       "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
-      "materialization_state": "GOVERNED_CONTENT_READY"
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
     },
     {
       "day": 3,
@@ -70,7 +72,8 @@
       "schedule_time": "10:00 America/New_York",
       "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
-      "materialization_state": "GOVERNED_CONTENT_READY"
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
     },
     {
       "day": 4,
@@ -92,7 +95,8 @@
       "schedule_time": "10:00 America/New_York",
       "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
-      "materialization_state": "GOVERNED_CONTENT_READY"
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
     },
     {
       "day": 5,
@@ -114,8 +118,9 @@
       "schedule_time": "10:00 America/New_York",
       "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
-      "materialization_state": "GOVERNED_CONTENT_READY",
-      "featured_author_month": "2026-09"
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "featured_author_month": "2026-09",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
     },
     {
       "day": 6,
@@ -137,7 +142,8 @@
       "schedule_time": "10:00 America/New_York",
       "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
-      "materialization_state": "GOVERNED_CONTENT_READY"
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
     },
     {
       "day": 7,
@@ -159,7 +165,8 @@
       "schedule_time": "10:00 America/New_York",
       "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
-      "materialization_state": "GOVERNED_CONTENT_READY"
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
     }
   ]
 }

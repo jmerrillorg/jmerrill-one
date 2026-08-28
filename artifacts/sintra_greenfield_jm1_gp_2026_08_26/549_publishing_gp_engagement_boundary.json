@@ -1,0 +1,24 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "ENGAGEMENT_NONE",
+  "allowed": [
+    "create governed social post objects",
+    "schedule approved outbound posts to certified Publishing destinations"
+  ],
+  "prohibited": [
+    "reply to comments",
+    "auto-like/react",
+    "inbox handling",
+    "Facebook commenter automation",
+    "engagement automation"
+  ],
+  "current_state": {
+    "inbox_manager": "OFF",
+    "facebook_commenter": "OFF"
+  }
+}

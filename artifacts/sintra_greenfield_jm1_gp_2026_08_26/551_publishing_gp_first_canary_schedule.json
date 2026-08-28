@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:18:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "SCHEDULED_AND_CORRECTED_FINAL_NO_CIRCLE",
+  "canary": {
+    "post_id": "341b2ceb-2d2f-4ccc-835d-930cda11e9ec",
+    "day": 1,
+    "date": "2026-08-28",
+    "time": "10:00 America/New_York",
+    "platform": "Facebook",
+    "destination": "J Merrill Publishing Inc",
+    "destination_id": "307480763084670",
+    "caption": "VALIDATED_IN_516_PACKET",
+    "image": "publishing_first7_creatives/day01_2026-08-28_meet_the_book.svg.png",
+    "image_state": "FINAL_CORRECTED_VERSION_NO_CIRCLE_CORRECT_J_MERRILL_LOGO",
+    "status": "Scheduled"
+  },
+  "correction_event": "Founder identified prior mark was not the official logo and asked about the gray/purple circle; media was replaced with final no-circle asset using supplied logo only."
+}

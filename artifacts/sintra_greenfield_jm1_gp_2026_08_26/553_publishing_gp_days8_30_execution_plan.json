@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "READY_AFTER_FIRST_WEEK_CORRECTION",
+  "period": "2026-09-04 through 2026-09-26",
+  "plan": "Continue rights-safe catalog rotation with Sean A Crowley I recurring September featured-author posts, preserve Publishing destinations only, and require the supplied J Merrill logo in every new image.",
+  "gates": [
+    "Destination certificate per platform",
+    "Real-logo creative validation",
+    "No engagement automation",
+    "Post-level wrong-destination count = 0"
+  ]
+}

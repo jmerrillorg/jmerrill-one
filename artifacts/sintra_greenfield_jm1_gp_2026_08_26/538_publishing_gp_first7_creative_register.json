@@ -2,10 +2,10 @@
   "program": "SINTRA GREENFIELD PILOT",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
-  "generated_at": "2026-08-27T22:35:00-04:00",
+  "generated_at": "2026-08-27T22:15:00-04:00",
   "workspace": "J Merrill Publishing",
   "canonical_workspace": "J Merrill Publishing - GP",
-  "status": "PASS",
+  "status": "PASS_CORRECTED_REAL_LOGO",
   "creative_count": 7,
   "creatives": [
     {
@@ -25,7 +25,9 @@
         "#111111"
       ],
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "status": "CREATIVE_READY"
+      "status": "CREATIVE_READY_CORRECTED_REAL_LOGO",
+      "logo_source": "jm1-logo-white.png",
+      "decorative_header_circle_present": false
     },
     {
       "day": 2,
@@ -44,7 +46,9 @@
         "#111111"
       ],
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "status": "CREATIVE_READY"
+      "status": "CREATIVE_READY_CORRECTED_REAL_LOGO",
+      "logo_source": "jm1-logo-white.png",
+      "decorative_header_circle_present": false
     },
     {
       "day": 3,
@@ -63,7 +67,9 @@
         "#111111"
       ],
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "status": "CREATIVE_READY"
+      "status": "CREATIVE_READY_CORRECTED_REAL_LOGO",
+      "logo_source": "jm1-logo-white.png",
+      "decorative_header_circle_present": false
     },
     {
       "day": 4,
@@ -82,7 +88,9 @@
         "#111111"
       ],
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "status": "CREATIVE_READY"
+      "status": "CREATIVE_READY_CORRECTED_REAL_LOGO",
+      "logo_source": "jm1-logo-white.png",
+      "decorative_header_circle_present": false
     },
     {
       "day": 5,
@@ -101,7 +109,9 @@
         "#111111"
       ],
       "rights_status": "RIGHTS-SAFE: Founder-supplied Amazon title link and public title metadata; no unsupported biography or excerpts.",
-      "status": "CREATIVE_READY"
+      "status": "CREATIVE_READY_CORRECTED_REAL_LOGO",
+      "logo_source": "jm1-logo-white.png",
+      "decorative_header_circle_present": false
     },
     {
       "day": 6,
@@ -120,7 +130,9 @@
         "#111111"
       ],
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "status": "CREATIVE_READY"
+      "status": "CREATIVE_READY_CORRECTED_REAL_LOGO",
+      "logo_source": "jm1-logo-white.png",
+      "decorative_header_circle_present": false
     },
     {
       "day": 7,
@@ -139,8 +151,15 @@
         "#111111"
       ],
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "status": "CREATIVE_READY"
+      "status": "CREATIVE_READY_CORRECTED_REAL_LOGO",
+      "logo_source": "jm1-logo-white.png",
+      "decorative_header_circle_present": false
     }
   ],
-  "validation": "SVG social cards rendered to PNG via macOS Quick Look. Text wrapping checked on Sep. 1 card; each card includes visible J Merrill logo treatment and Publishing palette."
+  "validation": "Corrected after Founder visual QA: prior text-drawn JM mark and decorative circle were removed/replaced. PNG exports now include the supplied J Merrill logo image in the header tile and no decorative gray/purple header circle.",
+  "logo_source": {
+    "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PRJ/projects/Brands/One/dev/jm1-one/public/icons/jm1-logo-white.png",
+    "sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+    "rule": "Use the supplied J Merrill logo image, not text-drawn or decorative logo substitutes."
+  }
 }

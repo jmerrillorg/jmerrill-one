@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "ENFORCED",
+  "rule": "Every post must carry platform-level destination fields before scheduling; workspace identity alone is insufficient.",
+  "required_destinations": {
+    "facebook": "J Merrill Publishing Inc / 307480763084670",
+    "instagram": "jmerrillpub / 17841410046020869",
+    "linkedin_organization": "J Merrill Publishing, Inc. / urn:li:organization:13048648"
+  },
+  "scheduled_canary": {
+    "post_id": "341b2ceb-2d2f-4ccc-835d-930cda11e9ec",
+    "platform": "Facebook",
+    "destination": "J Merrill Publishing Inc",
+    "status": "SCHEDULED_VERIFIED"
+  },
+  "wrong_destination_tolerance": 0
+}

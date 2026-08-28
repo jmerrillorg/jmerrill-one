@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "PASS",
+  "platform": "LinkedIn Organization",
+  "certified_destination": {
+    "display_name": "J Merrill Publishing, Inc.",
+    "id": "urn:li:organization:13048648",
+    "source": "LinkedIn Organization connector detail plus Soshie get_available_platform_pages result"
+  },
+  "excluded_destinations": [
+    "J Merrill One",
+    "J Merrill Foundation, Inc."
+  ],
+  "wrong_destination_tolerance": 0
+}

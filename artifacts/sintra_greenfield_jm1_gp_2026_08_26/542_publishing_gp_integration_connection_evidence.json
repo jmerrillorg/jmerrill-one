@@ -1,0 +1,55 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "PASS_CONNECTED_VISIBLE_AND_DETAIL_INSPECTED",
+  "source": "Live Sintra UI via Computer Use",
+  "evidence": [
+    {
+      "screen": "Integrations",
+      "workspace": "J Merrill Publishing",
+      "facebook": "Connected",
+      "instagram": "Connected",
+      "linkedin_organization": "Connected"
+    },
+    {
+      "screen": "Facebook connector detail",
+      "account": "chosen2k7@icloud.com",
+      "connected_pages": [
+        "J Merrill Financial",
+        "AGAPE International Cathedral",
+        "J Merrill Financial, LLC",
+        "J Merrill One",
+        "J Merrill Productions",
+        "J Merrill Publishing Inc",
+        "J Merrill Foundation Inc",
+        "Jackie Smith, Jr."
+      ],
+      "instagram_accounts": [
+        "agapeiclove",
+        "jmerrillone",
+        "jmerrillprod",
+        "jmerrillpub",
+        "jmerrillorg",
+        "mrjmerrill"
+      ]
+    },
+    {
+      "screen": "Instagram connector detail",
+      "account": "jmerrillpub"
+    },
+    {
+      "screen": "LinkedIn Organization connector detail",
+      "account": "Org: mrjmerrill",
+      "connected_pages": [
+        "J Merrill Publishing, Inc.",
+        "J Merrill One",
+        "J Merrill Foundation, Inc."
+      ]
+    }
+  ],
+  "supersedes": "Older Connect/not-connected hold is retired for these three integrations."
+}
