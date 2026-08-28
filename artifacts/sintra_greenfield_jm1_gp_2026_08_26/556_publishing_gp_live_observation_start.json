@@ -1,0 +1,16 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "LIVE OBSERVATION START",
+  "status": "PASS",
+  "observation_start": "2026-08-28",
+  "monitored_window": "2026-08-28 through 2026-09-26",
+  "metrics_baseline": {
+    "people_reached": 0,
+    "interactions": 0
+  },
+  "engagement_boundary": "Observation only; no comments, replies, inbox, or Facebook Commenter actions."
+}

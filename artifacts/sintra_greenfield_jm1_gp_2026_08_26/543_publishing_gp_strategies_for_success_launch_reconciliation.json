@@ -1,0 +1,318 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "STRATEGIES FOR SUCCESS LAUNCH RECONCILIATION",
+  "status": "PASS",
+  "title": "Strategies for Success",
+  "author": "Sean A Crowley I",
+  "release_date": "2026-09-22",
+  "founder_cta": "https://amzn.to/4y4udRZ",
+  "amazon_redirect_observation": {
+    "resolved_path_contains": "Strategies-Success-Educational-Leadership-Chancellors",
+    "dp": "1961475839",
+    "final_amazon_response": "HTTP 503 from Amazon edge during automated check; redirect mapping still established title/ASIN authority."
+  },
+  "reconciliation_decision": "Inserted a Sep 15-25 launch lane inside the existing 30-day Aug 28-Sep 26 schedule; Sep 28-30 belongs to post-30 continuity because it is outside the governed 90-item window.",
+  "release_items": [
+    {
+      "date": "2026-09-15",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day19_2026-09-15_publishing_inquiry.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-15",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day19_2026-09-15_publishing_inquiry.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-15",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day19_2026-09-15_publishing_inquiry.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-16",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day20_2026-09-16_publishing_faq_myth.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-16",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day20_2026-09-16_publishing_faq_myth.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-16",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day20_2026-09-16_publishing_faq_myth.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-17",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Delicious Ideas!",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day21_2026-09-17_meet_the_book.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-17",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Delicious Ideas!",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day21_2026-09-17_meet_the_book.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-17",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Delicious Ideas!",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day21_2026-09-17_meet_the_book.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-18",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day22_2026-09-18_inside_publishing.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-18",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day22_2026-09-18_inside_publishing.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-18",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day22_2026-09-18_inside_publishing.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-19",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day23_2026-09-19_reader_discovery.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-19",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day23_2026-09-19_reader_discovery.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-19",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day23_2026-09-19_reader_discovery.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-20",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Discipline and Direction",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day24_2026-09-20_backlist_rediscovery.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-20",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Discipline and Direction",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day24_2026-09-20_backlist_rediscovery.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-20",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Discipline and Direction",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day24_2026-09-20_backlist_rediscovery.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-21",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day25_2026-09-21_author_journey.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-21",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day25_2026-09-21_author_journey.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-21",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day25_2026-09-21_author_journey.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-22",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-22",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-22",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-23",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day27_2026-09-23_publishing_education.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-23",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day27_2026-09-23_publishing_education.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-23",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day27_2026-09-23_publishing_education.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-24",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Establishing Glory: The Praise and Worship Handbook (2nd Edition)",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day28_2026-09-24_meet_the_author.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-24",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Establishing Glory: The Praise and Worship Handbook (2nd Edition)",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day28_2026-09-24_meet_the_author.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-24",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Establishing Glory: The Praise and Worship Handbook (2nd Edition)",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day28_2026-09-24_meet_the_author.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "title": "Focus, Trust, & Follow",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day29_2026-09-25_why_this_book_matters.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "title": "Focus, Trust, & Follow",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day29_2026-09-25_why_this_book_matters.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "title": "Focus, Trust, & Follow",
+      "cta": "https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day29_2026-09-25_why_this_book_matters.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    }
+  ]
+}

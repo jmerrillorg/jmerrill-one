@@ -1,0 +1,81 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "SEP 22 PLATFORM PACKET",
+  "status": "PASS",
+  "date": "2026-09-22",
+  "destinations": {
+    "facebook": {
+      "platform": "Facebook",
+      "name": "J Merrill Publishing Inc",
+      "id": "307480763084670",
+      "ui_label": "Facebook · J Merrill Publishing Inc"
+    },
+    "instagram": {
+      "platform": "Instagram",
+      "name": "jmerrillpub",
+      "id": "17841410046020869",
+      "ui_label": "Instagram (FB Pages) · jmerrillpub"
+    },
+    "linkedin": {
+      "platform": "LinkedIn Organization",
+      "name": "J Merrill Publishing, Inc.",
+      "id": "urn:li:organization:13048648",
+      "ui_label": "LinkedIn (Organization) · J Merrill Publishing, Inc."
+    }
+  },
+  "items": [
+    {
+      "day": 26,
+      "date": "2026-09-22",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "destination_id": "307480763084670",
+      "theme": "Release Day",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents",
+      "priority_lane": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "caption": "Release Day: Strategies for Success\n\nJ Merrill Publishing is marking the Sep. 22 release of Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents by Sean A Crowley I. This new release gives readers a focused path into higher-education leadership, using source-backed title information only.\n\nAvailable now: https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "day": 26,
+      "date": "2026-09-22",
+      "time": "12:00 America/New_York",
+      "platform": "Instagram",
+      "destination": "jmerrillpub",
+      "destination_id": "17841410046020869",
+      "theme": "Release Day",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents",
+      "priority_lane": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "caption": "RELEASE DAY\nStrategies for Success\nSean A Crowley I\n\nAvailable Sep. 22 from J Merrill Publishing.\n\nhttps://amzn.to/4y4udRZ\n\n#JMerrillPublishing #StrategiesForSuccess #EducationLeadership",
+      "creative": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    },
+    {
+      "day": 26,
+      "date": "2026-09-22",
+      "time": "14:00 America/New_York",
+      "platform": "LinkedIn",
+      "destination": "J Merrill Publishing, Inc.",
+      "destination_id": "urn:li:organization:13048648",
+      "theme": "Release Day",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents",
+      "priority_lane": "Strategies for Success",
+      "cta": "https://amzn.to/4y4udRZ",
+      "caption": "Release day: Strategies for Success\n\nJ Merrill Publishing is spotlighting Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents by Sean A Crowley I for its Sep. 22 release. The professional frame is clear: higher-education leadership, preparation, and institutional responsibility.\n\nAvailable now: https://amzn.to/4y4udRZ",
+      "creative": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "status": "READY_FOR_SOSHIE_SCHEDULING"
+    }
+  ],
+  "live_status": "Scheduled across Facebook, Instagram, and LinkedIn Organization"
+}

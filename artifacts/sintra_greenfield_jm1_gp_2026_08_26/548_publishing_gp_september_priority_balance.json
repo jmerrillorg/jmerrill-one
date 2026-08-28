@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "SEPTEMBER PRIORITY BALANCE",
+  "status": "PASS",
+  "september_featured_author": "Sean A Crowley I",
+  "release_priority": "Strategies for Success on 2026-09-22",
+  "balance_decision": "Release campaign is prioritized Sep 15-25 without displacing September Featured Author status.",
+  "featured_author_dates": [
+    "2026-09-01",
+    "2026-09-05",
+    "2026-09-10",
+    "2026-09-16",
+    "2026-09-23",
+    "2026-09-30"
+  ],
+  "in_window_featured_author_dates": [
+    "2026-09-01",
+    "2026-09-05",
+    "2026-09-10",
+    "2026-09-16",
+    "2026-09-23"
+  ],
+  "october_featured_author": "Iyorwuese Hagher"
+}

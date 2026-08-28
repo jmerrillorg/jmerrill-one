@@ -2,19 +2,17 @@
   "program": "SINTRA GREENFIELD PILOT",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
-  "generated_at": "2026-08-27T21:22:54-04:00",
-  "workspace": "J Merrill Publishing - GP",
-  "social_media_manager": "ON — GOVERNED PUBLISHING/SCHEDULING RUNTIME",
-  "not_authorized": [
-    "autonomous comments",
-    "DMs",
-    "inbox responses",
-    "unsupervised editorial authority"
-  ],
-  "other_automations": {
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "SMM OPERATING MODEL",
+  "status": "PASS",
+  "automation_state": {
+    "social_media_manager": "ON",
     "inbox_manager": "OFF",
     "daily_summarizer": "OFF",
     "facebook_commenter": "OFF"
   },
-  "engagement_authority": "NONE"
+  "engagement_authority": "NONE",
+  "workspace_isolation": "J Merrill Publishing only; no One GP scheduling or One Brain catalog ingestion.",
+  "runtime_note": "Social Media Manager used for schedule-only activation; comments/replies/inbox handling remained off."
 }

@@ -2,7 +2,7 @@
   "program": "SINTRA GREENFIELD PILOT",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
-  "generated_at": "2026-08-27T21:22:54-04:00",
+  "generated_at": "2026-08-28T07:21:02.649Z",
   "goal": "Every eligible title enters systematic social rotation independent of the author’s own marketing activity.",
   "fields": [
     "author",
@@ -391,5 +391,12 @@
       "Strategies for Success in Educational Leadership"
     ],
     "priority_exception": "FOUNDER / PROGRAMMATIC PRIORITY"
-  }
+  },
+  "release_priority_rule": {
+    "artifact": "554_publishing_gp_release_priority_rotation_rule.json",
+    "active_release": "Strategies for Success",
+    "release_date": "2026-09-22",
+    "priority_window": "2026-09-15 through 2026-09-25"
+  },
+  "current_priority_adjustment": "Strategies for Success launch lane has temporary priority while September Featured Author and catalog rotation remain active."
 }

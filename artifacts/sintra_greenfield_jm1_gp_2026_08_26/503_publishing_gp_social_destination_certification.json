@@ -2,16 +2,33 @@
   "program": "SINTRA GREENFIELD PILOT",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
-  "generated_at": "2026-08-27T21:22:54-04:00",
-  "workspace": "J Merrill Publishing - GP",
-  "certification_status": "DESTINATION_RULE_CERTIFIED; LIVE_CONNECTION_PENDING",
-  "destinations": {
-    "facebook": "J Merrill Publishing",
-    "instagram": "canonical J Merrill Publishing account",
-    "linkedin_organization": "J Merrill Publishing, Inc."
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "SOCIAL DESTINATION CERTIFICATION",
+  "status": "LIVE_DESTINATION_CERTIFIED",
+  "certified_destinations": {
+    "facebook": {
+      "platform": "Facebook",
+      "name": "J Merrill Publishing Inc",
+      "id": "307480763084670",
+      "ui_label": "Facebook · J Merrill Publishing Inc"
+    },
+    "instagram": {
+      "platform": "Instagram",
+      "name": "jmerrillpub",
+      "id": "17841410046020869",
+      "ui_label": "Instagram (FB Pages) · jmerrillpub"
+    },
+    "linkedin": {
+      "platform": "LinkedIn Organization",
+      "name": "J Merrill Publishing, Inc.",
+      "id": "urn:li:organization:13048648",
+      "ui_label": "LinkedIn (Organization) · J Merrill Publishing, Inc."
+    }
   },
-  "live_integrations_observation": "Publishing workspace integrations page showed social connectors as Connect, not connected. No One destination selected.",
-  "hard_gate": "No One destination may be selected for Publishing execution.",
-  "updated_for_founder_approved_launch": true,
-  "scheduling_gate": "BLOCKED_UNTIL_PUBLISHING_FACEBOOK_INSTAGRAM_LINKEDIN_CONNECTIONS_VISIBLE_CONNECTED_AND_BRANCH_DESTINATIONS_SELECTABLE"
+  "validation_source": [
+    "Sintra/Soshie available platform pages",
+    "Live calendar labels after scheduling"
+  ],
+  "wrong_destination_items": 0
 }

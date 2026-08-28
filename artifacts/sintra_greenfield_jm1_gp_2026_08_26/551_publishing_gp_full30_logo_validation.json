@@ -1,0 +1,16 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "FULL 30 LOGO VALIDATION",
+  "status": "PASS",
+  "logo_file": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PRJ/projects/Brands/One/dev/jm1-one/public/icons/jm1-logo-white.png",
+  "copied_logo": "publishing_full30_creatives/jm1-logo-white-source.png",
+  "logo_sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+  "validation": "PASS",
+  "sampled_visual": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+  "all_new_images_include_logo": true,
+  "all_new_images_exclude_prior_gray_circle": true
+}

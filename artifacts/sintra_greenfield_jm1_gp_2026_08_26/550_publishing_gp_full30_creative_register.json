@@ -1,0 +1,196 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "FULL 30 CREATIVE REGISTER",
+  "status": "PASS",
+  "expected_day_creatives": 30,
+  "actual_day_creatives": 30,
+  "logo_source": "publishing_full30_creatives/jm1-logo-white-source.png",
+  "logo_sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+  "no_gray_circle_policy": "ENFORCED",
+  "creatives": [
+    {
+      "file": "publishing_full30_creatives/day01_2026-08-28_meet_the_book.png",
+      "sha256": "17317db266ae67b45f044025b118677762b0cb6cab90c4391978ac88b0f672a7",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day02_2026-08-29_meet_the_author.png",
+      "sha256": "24eac47a3b054fe461df27125b2347d46b96dd7088baf1d47e744b6fdf29e14a",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day03_2026-08-30_publishing_education.png",
+      "sha256": "641cf6f686f2faf029635673d20a96bff9c1724b60b75163af9a73a85cd4b407",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day04_2026-08-31_publishing_inquiry.png",
+      "sha256": "d6dad861194aced607d9564616a1a3642ac1826b1a14026420f1729059e817fe",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day05_2026-09-01_september_featured_author_sean_a_crowley_i.png",
+      "sha256": "d608ba4e1171f3d3cd719912b56ecab384d1ecbcd381c6153ebe75ebaab6f6c3",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day06_2026-09-02_inside_publishing.png",
+      "sha256": "b3882146fb9185ec2b56f7d97cea49b4e580042547b6b379056a5e3225c58d77",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day07_2026-09-03_backlist_rediscovery.png",
+      "sha256": "bdcb9604c6a992ca97673f324fba21276f11a1bff6fa12e06d1efd8809e80e8e",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day08_2026-09-04_why_this_book_matters.png",
+      "sha256": "7333ada1aa838beea3c4b854cb0d9c947f52d9869e752d167a6489066cff3279",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day09_2026-09-05_publishing_faq_myth.png",
+      "sha256": "115d21ec87abaab301c79dd853e652cab43af0d572e4dfee466f97b980a7a0bd",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day10_2026-09-06_author_journey.png",
+      "sha256": "c634debdd261e6ca894a6eccebd422c417639ec4558a244807c46a26fe492767",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day11_2026-09-07_timely_flexible.png",
+      "sha256": "8de8c8508451cb7052c1fdfce1c7897a04b3417bd3496e14077209c450bd8d3b",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day12_2026-09-08_meet_the_book.png",
+      "sha256": "92501842c81b4d44b14bd5a8b6186bf2b531b5c5bfc6e8942454694b21a6e815",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day13_2026-09-09_behind_the_book.png",
+      "sha256": "f5771adce0014d31ff438110450039e4be337f6b8aa20823345ab4337e5bf2c8",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day14_2026-09-10_backlist_rediscovery.png",
+      "sha256": "4daba918d0cd9cfc9eb1ba13b9c48091aa8b11a361ca325a46e5177d3459e889",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day15_2026-09-11_publishing_education.png",
+      "sha256": "cb1de2868c1a29a473f828cc467d7d0bd7fd5d0ffc16f4c6394955beffd00906",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day16_2026-09-12_reader_discovery.png",
+      "sha256": "2f2123605eb7c75c70cfb463cd2cd0701c334123287a647285ba1bb24a30f300",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day17_2026-09-13_meet_the_author.png",
+      "sha256": "379090b7535615ef5125161ecd84e3faa3f31870f0135896efe4c742c3a2fb34",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day18_2026-09-14_why_this_book_matters.png",
+      "sha256": "5b18acc8739749dbeff4e9924785f444ed6793fc56d011f5006d3c1cdc3e8dca",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day19_2026-09-15_publishing_inquiry.png",
+      "sha256": "6ac49498c07828b33d7786205e298c47db01156872232b07b8ec0485be68163b",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day20_2026-09-16_publishing_faq_myth.png",
+      "sha256": "c14d406e7ce6d03743d6d3397bcf897fc05adebc3b5429f6177fb8449aed4635",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day21_2026-09-17_meet_the_book.png",
+      "sha256": "2172ca484cb0bbb99173180cf3f9d1ca50694ff6bc57cf7a1e9ee3de5c2545b0",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day22_2026-09-18_inside_publishing.png",
+      "sha256": "8f057cece9a2f35149b05bb8c53ff57dffa8392d7c7ace19a8d200775044cf4c",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day23_2026-09-19_reader_discovery.png",
+      "sha256": "ea2e0568062997eb44df8b24919cf2f4da87056b853bb39d28f368672ac55c18",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day24_2026-09-20_backlist_rediscovery.png",
+      "sha256": "348fd4bb4f1ae7c370997f679a6cf48adc7de6cee43b9d589a3866046f7e99ea",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day25_2026-09-21_author_journey.png",
+      "sha256": "2778cbfed7eaf0199d0032d27b8721d3c4d23d7d6895c7b0c28324a9da5b3191",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "sha256": "08adacde337d409b4716dcc6679084fa707d707ab6e16b354a743a5b68ad4f2e",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day27_2026-09-23_publishing_education.png",
+      "sha256": "e01634b35457e733ef254a4a84fe9192ce7caaf365f3c3a23a075161b35af8d0",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day28_2026-09-24_meet_the_author.png",
+      "sha256": "20f768e619f53124507d0feb65f606b711123086b55ef0bd9a1bda379b816ddb",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day29_2026-09-25_why_this_book_matters.png",
+      "sha256": "764d3fa957f95156ac9772da16af460228d44d3dc396404af14c31fa4acf89b9",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    },
+    {
+      "file": "publishing_full30_creatives/day30_2026-09-26_timely_flexible.png",
+      "sha256": "c274fbcbd77d3e91a8dcd2a6ce5f43013cc8a164b0b9a2663da3645ce9478951",
+      "logo_required": true,
+      "no_decorative_header_circle": true
+    }
+  ]
+}

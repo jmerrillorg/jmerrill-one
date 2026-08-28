@@ -1,0 +1,18 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "PEOPLE-FIRST FULL30 REGRESSION",
+  "status": "PASS",
+  "result": "PASS",
+  "public_language_policy": "Author/reader centered; no Human-First label carried into public social captions.",
+  "forbidden_public_label": "Human-First",
+  "allowed_governance_label": "People-First",
+  "scan_scope": [
+    "manifest captions",
+    "calendar captions",
+    "new full30 artifacts"
+  ]
+}

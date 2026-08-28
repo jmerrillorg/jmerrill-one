@@ -1,0 +1,47 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "FULL 30-DAY FOUNDER EXECUTION APPROVAL",
+  "status": "PASS",
+  "result": "APPROVED_FOR_FULL_30_DAY_ACTIVATION_WITHOUT_ADDITIONAL_PER_POST_APPROVAL",
+  "approval_scope": {
+    "dates": "2026-08-28 through 2026-09-26",
+    "total_platform_items": 90,
+    "platforms": [
+      {
+        "platform": "Facebook",
+        "name": "J Merrill Publishing Inc",
+        "id": "307480763084670",
+        "ui_label": "Facebook · J Merrill Publishing Inc"
+      },
+      {
+        "platform": "Instagram",
+        "name": "jmerrillpub",
+        "id": "17841410046020869",
+        "ui_label": "Instagram (FB Pages) · jmerrillpub"
+      },
+      {
+        "platform": "LinkedIn Organization",
+        "name": "J Merrill Publishing, Inc.",
+        "id": "urn:li:organization:13048648",
+        "ui_label": "LinkedIn (Organization) · J Merrill Publishing, Inc."
+      }
+    ],
+    "engagement_authority": "NONE",
+    "publish_immediately": false,
+    "schedule_only": true
+  },
+  "supersedes": [
+    "DRAFT — FOUNDER APPROVAL REQUIRED states inside earlier Days 8-30 planning artifacts"
+  ],
+  "retained_constraints": [
+    "J Merrill Publishing workspace only",
+    "SMM ON",
+    "Inbox/Daily/Facebook Commenter OFF",
+    "No comments/replies/engagement actions",
+    "All images include official J Merrill logo"
+  ]
+}

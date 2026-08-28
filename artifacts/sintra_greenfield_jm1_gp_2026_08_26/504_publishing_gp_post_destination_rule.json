@@ -2,12 +2,16 @@
   "program": "SINTRA GREENFIELD PILOT",
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
-  "generated_at": "2026-08-27T21:22:54-04:00",
-  "rule": "Shared master connectors are acceptable only if post-level destination is branch-correct.",
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "POST DESTINATION RULE",
+  "status": "PASS",
+  "rule": "Every Publishing social post must resolve to one of the exact certified Publishing destination ids before scheduling.",
   "mapping": {
-    "facebook": "Publishing FB post -> J Merrill Publishing",
-    "instagram": "Publishing IG post -> canonical J Merrill Publishing account",
-    "linkedin": "Publishing LinkedIn post -> J Merrill Publishing, Inc."
+    "facebook": "J Merrill Publishing Inc / 307480763084670",
+    "instagram": "jmerrillpub / 17841410046020869",
+    "linkedin": "J Merrill Publishing, Inc. / urn:li:organization:13048648"
   },
-  "fail_closed": true
+  "fail_closed": true,
+  "wrong_destination_action": "Hold item; do not schedule."
 }

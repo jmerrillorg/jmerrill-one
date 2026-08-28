@@ -1,0 +1,74 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "STRATEGIES FOR SUCCESS LAUNCH PLAN",
+  "status": "PASS",
+  "launch_window": "2026-09-15 through 2026-09-25 inside active 30-day calendar",
+  "release_day": "2026-09-22",
+  "post30_continuity_dates": [
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30"
+  ],
+  "campaign_lanes": [
+    {
+      "lane": "pre_release",
+      "dates": [
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-19",
+        "2026-09-20",
+        "2026-09-21"
+      ]
+    },
+    {
+      "lane": "release_day",
+      "dates": [
+        "2026-09-22"
+      ],
+      "cta": "https://amzn.to/4y4udRZ"
+    },
+    {
+      "lane": "post_release_in_window",
+      "dates": [
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25"
+      ]
+    },
+    {
+      "lane": "post30_continuity",
+      "dates": [
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30"
+      ],
+      "status": "PLANNED_NOT_SCHEDULED_IN_90_ITEM_WINDOW"
+    }
+  ],
+  "platform_policy": {
+    "facebook": {
+      "platform": "Facebook",
+      "name": "J Merrill Publishing Inc",
+      "id": "307480763084670",
+      "ui_label": "Facebook · J Merrill Publishing Inc"
+    },
+    "instagram": {
+      "platform": "Instagram",
+      "name": "jmerrillpub",
+      "id": "17841410046020869",
+      "ui_label": "Instagram (FB Pages) · jmerrillpub"
+    },
+    "linkedin": {
+      "platform": "LinkedIn Organization",
+      "name": "J Merrill Publishing, Inc.",
+      "id": "urn:li:organization:13048648",
+      "ui_label": "LinkedIn (Organization) · J Merrill Publishing, Inc."
+    }
+  }
+}
