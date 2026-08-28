@@ -18,7 +18,7 @@ Recommended logical name:
 
 Purpose:
 
-- Track Facebook and Instagram independently
+- Track Facebook, Instagram, and LinkedIn independently
 - Enforce idempotency per destination
 - Persist external IDs and failure evidence
 - Prevent a retry on one platform from republishing a platform that already succeeded
@@ -35,4 +35,11 @@ Required approval fields:
 
 ## Financial LinkedIn
 
-Because Financial has no LinkedIn page, do not create Financial LinkedIn execution records by default. LinkedInEnabled should remain false or absent for Financial until a founder-approved page exists.
+Financial LinkedIn Page was created on 2026-08-28 as `J Merrill Financial`, organization ID `146207089`.
+
+Do not enable Financial LinkedIn execution by default yet. `LinkedInEnabled` must remain false until both conditions are met:
+
+- Founder verifies the public LinkedIn Page.
+- JM1-owned LinkedIn API product/permission access is approved and tested.
+
+LinkedIn destination records may be staged as inactive/certification-pending with immutable organization ID `146207089`.

@@ -34,7 +34,18 @@ Other observed JM1 social assets include J Merrill Publishing Inc, J Merrill One
 
 The Financial Facebook Page and Financial Instagram account both exist in the JM1 Meta business portfolio. The current blocker is not handle availability. The blocker is connection and API readiness: Meta did not show the Financial Facebook Page connected to @jmerrillfin from either side in Business Settings.
 
-Financial has no LinkedIn page. No Financial LinkedIn execution should be configured until a separate founder-approved Financial LinkedIn presence exists.
+Historical state before 2026-08-28 LinkedIn creation: Financial had no LinkedIn page, so Financial LinkedIn execution was out of scope.
+
+Current LinkedIn state after Founder approval and Computer Use creation:
+
+- LinkedIn Page: J Merrill Financial
+- LinkedIn organization ID: 146207089
+- Public slug shown by LinkedIn admin form: `jmerrillfinancial`
+- Admin dashboard URL: https://www.linkedin.com/company/146207089/admin/dashboard/
+- Public URL for Founder verification: https://www.linkedin.com/company/jmerrillfinancial/
+- Founder session state: authenticated admin dashboard accessible
+
+Financial LinkedIn execution must still not be configured in Sintra or the JM1 API layer until Founder verifies the public Page.
 
 ## Evidence State
 
@@ -45,6 +56,7 @@ Not yet proven:
 - Page to Instagram relationship
 - Instagram Professional status
 - Meta app access to Financial assets
+- LinkedIn API product access for Financial organization publishing
 - API read request
 - Test media container
 - Test publication

@@ -2,7 +2,7 @@
 
 Date: 2026-08-28
 
-Status: not complete
+Status: not complete; Financial LinkedIn created and awaiting Founder verification
 
 ## Completion Standard
 
@@ -14,7 +14,7 @@ Dataverse -> Power Automate -> JM1 Marketing Automation API -> Meta Graph API ->
 
 No browser interaction may be required for publication.
 
-For J Merrill Financial, completion additionally requires successful Instagram API publication through the official connected Financial account.
+For J Merrill Financial, completion additionally requires successful API publication through the official connected Financial platform account. LinkedIn execution is independent and may remain in HOLD until LinkedIn product/permission access is available.
 
 ## Current Readiness
 
@@ -24,12 +24,15 @@ Ready:
 - Dataverse remains authoritative
 - Computer Use limited to bridge/admin
 - Financial Page and @jmerrillfin asset IDs observed in Meta Business Settings
+- J Merrill Financial LinkedIn Page created from Founder/admin LinkedIn session
 - Required evidence package scaffolded
 
 Not ready:
 
 - Financial Page to Instagram relationship is not confirmed
+- Financial LinkedIn Page requires Founder public verification before any Sintra connection
 - Meta developer app is not yet configured in evidence
+- LinkedIn developer app/product access is not yet configured in evidence
 - API token lifecycle is not yet proven
 - Azure Function/API is not yet implemented in this worktree
 - Power Automate flow is not yet implemented

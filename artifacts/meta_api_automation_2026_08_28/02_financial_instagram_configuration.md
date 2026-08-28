@@ -30,4 +30,4 @@ No historical assets were deleted.
 
 No shadow asset should be created to work around a Meta restriction without founder approval.
 
-Financial LinkedIn is out of scope because Financial has no LinkedIn page.
+Financial LinkedIn Page now exists as `J Merrill Financial`, organization ID `146207089`, but must remain disconnected from Sintra and disabled for API execution until Founder public verification and LinkedIn API permission proof are complete.

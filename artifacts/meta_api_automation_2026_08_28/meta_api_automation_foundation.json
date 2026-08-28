@@ -1,19 +1,25 @@
 {
-  "generated_at": "2026-08-28T08:19:30-04:00",
-  "program": "JM1 Meta API Automation + J Merrill Financial Instagram Provisioning",
+  "generated_at": "2026-08-28T15:44:00-04:00",
+  "program": "JM1 Social API Automation + J Merrill Financial LinkedIn Creation",
   "authority": "Founder controlling implementation instruction",
   "current_model_rejected": "Computer Use as permanent Meta posting engine",
   "target_model": [
     "Dataverse",
     "Human Approval",
     "Publishing Queue",
-    "Power Automate",
-    "JM1 Marketing Automation API",
-    "Meta Graph API",
-    "Facebook and Instagram",
-    "Publication Result and Analytics",
+    "Power Automate or Azure Function",
+    "JM1 Social Orchestrator",
+    "Platform Adapters",
+    "Facebook, Instagram, and LinkedIn APIs",
+    "Publication Result, Post ID, Readback, and Analytics",
     "Dataverse"
   ],
+  "publishing_30_day_execution_classification": {
+    "jm1_owned_api_created": false,
+    "sintra_soshie_ui_scheduled": true,
+    "live_schedule_preserved": true,
+    "correction_artifact": "17_social_api_execution_gap_correction.md"
+  },
   "meta_business": {
     "name": "J Merrill One",
     "business_id": "846921439784613"
@@ -31,8 +37,19 @@
       "owner": "J Merrill One",
       "connected_assets_visible": false
     },
-    "linkedin_page_exists": false,
-    "api_gate_status": "BLOCKED_PENDING_PAGE_INSTAGRAM_CONNECTION_AND_API_PROOF"
+    "linkedin_page": {
+      "created": true,
+      "name": "J Merrill Financial",
+      "organization_id": "146207089",
+      "public_slug": "jmerrillfinancial",
+      "public_url": "https://www.linkedin.com/company/jmerrillfinancial/",
+      "admin_url": "https://www.linkedin.com/company/146207089/admin/dashboard/",
+      "founder_admin_dashboard_accessible": true,
+      "sintra_connection": "NOT_YET_EXECUTED",
+      "founder_verification_required": true,
+      "location_status": "ATTEMPTED_CITY_STATE_ONLY_BLOCKED_BY_LINKEDIN_CONCURRENT_ADMIN_WARNING"
+    },
+    "api_gate_status": "BLOCKED_PENDING_PAGE_INSTAGRAM_CONNECTION_FOUNDER_LINKEDIN_VERIFICATION_AND_API_PROOF"
   },
   "azure_readback": {
     "subscription_name": "JM1 - Nonprofit Core (2025 Grant)",
@@ -50,11 +67,20 @@
     "environment": "JM1-Core",
     "environment_url": "https://jm1hq.crm.dynamics.com/"
   },
-  "meta_graph_api": {
-    "version_anchor": "v26.0",
-    "version_basis": "Official Meta Graph API changelog and versions pages read on 2026-08-28",
-    "instagram_publish_pattern": "Create media container, verify processing where applicable, publish container",
-    "facebook_publish_pattern": "Publish through Facebook Page identity via Pages API"
+  "platform_api_paths": {
+    "facebook": {
+      "api": "Meta Graph API / Pages API",
+      "status": "HOLD_PENDING_JM1_OWNED_APP_TOKEN_PERMISSION_PROOF"
+    },
+    "instagram": {
+      "api": "Instagram Graph API / Meta Graph API",
+      "status": "HOLD_PENDING_PAGE_IG_CONNECTION_AND_JM1_OWNED_TOKEN_PROOF"
+    },
+    "linkedin": {
+      "api": "LinkedIn organization Posts API",
+      "status": "HOLD_EXTERNAL_PERMISSION_DEPENDENCY"
+    }
   },
+  "exact_media_preservation_required": true,
   "completion_claim": false
 }
