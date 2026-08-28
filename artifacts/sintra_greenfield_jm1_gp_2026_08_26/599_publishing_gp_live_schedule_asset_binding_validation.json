@@ -1,0 +1,10 @@
+{
+  "caption_binding": "12 of 12 first-wave captions updated live in Soshie and still Scheduled.",
+  "image_binding": "Prepared 4 replacement image assets and upload zip; live Soshie post panel exposes Regenerate image and AI Edit but no direct upload/replace-file control was found. AI image edit was not used because it cannot guarantee exact official-logo preservation.",
+  "next_safe_binding_path": "Use Soshie direct upload if exposed by product, or manually replace assets using the prepared zip.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

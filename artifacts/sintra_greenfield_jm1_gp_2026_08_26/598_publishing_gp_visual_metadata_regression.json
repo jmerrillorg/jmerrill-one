@@ -1,0 +1,9 @@
+{
+  "regression": "Prior visuals included schedule metadata and a gray-header/avatar style that read like internal system output.",
+  "first_wave_fix": "New images remove day/date activation headers and use official logo as placed source asset.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

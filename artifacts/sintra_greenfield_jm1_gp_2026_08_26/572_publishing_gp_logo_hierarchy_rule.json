@@ -1,0 +1,10 @@
+{
+  "logo_source": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PRJ/projects/Brands/One/dev/jm1-one/public/icons/jm1-logo-white.png",
+  "rule": "All new images must include this official logo as an actual placed asset, not a generated approximation.",
+  "avoid": "Do not substitute the Soshie gray account avatar or a generic monogram.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

@@ -1,0 +1,25 @@
+{
+  "public_may_say": [
+    "J Merrill Publishing",
+    "Helping Authors Help Themselves",
+    "book title",
+    "author name",
+    "reader question",
+    "natural CTA"
+  ],
+  "public_must_not_say": [
+    "rights-safe",
+    "source-safe",
+    "governance",
+    "catalog reactivation",
+    "uncleared excerpts",
+    "calendar validation",
+    "Brain"
+  ],
+  "internal_only": "Use these terms in artifacts, audits, and operator notes.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

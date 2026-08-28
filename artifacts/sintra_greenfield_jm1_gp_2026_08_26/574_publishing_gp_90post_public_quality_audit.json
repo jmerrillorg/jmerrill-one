@@ -1,0 +1,13 @@
+{
+  "total_posts": 90,
+  "scheduled_preserved": 90,
+  "live_caption_remediated_first_wave": 12,
+  "image_replacements_prepared_first_wave": 4,
+  "live_image_binding": "PENDING_DIRECT_UPLOAD_OR_APPROVED_SAFE_IMAGE_EDIT_PATH",
+  "held_or_deleted_posts": 0,
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

@@ -1,0 +1,18 @@
+{
+  "gate": "WHY_FIRST_CREATIVE_GATE",
+  "required_before_schedule": [
+    "why this matters to reader/author",
+    "what feeling/question/problem it meets",
+    "what public action is natural"
+  ],
+  "blocked_patterns": [
+    "date exists only",
+    "theme label as hook",
+    "metadata masquerading as meaning"
+  ],
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

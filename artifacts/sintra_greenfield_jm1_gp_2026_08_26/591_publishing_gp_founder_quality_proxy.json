@@ -1,0 +1,11 @@
+{
+  "proxy_question": "Would the founder recognize this as a human reason to care, or only as proof that a scheduler worked?",
+  "minimum_score": 4,
+  "first_wave_score": 4,
+  "remaining_run_score": "requires remediation before COMPLETE classification",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

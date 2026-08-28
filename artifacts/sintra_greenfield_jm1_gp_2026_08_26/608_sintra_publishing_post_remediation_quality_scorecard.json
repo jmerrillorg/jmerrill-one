@@ -1,0 +1,21 @@
+{
+  "first_wave": {
+    "live_captions_updated": 12,
+    "replacement_images_generated": 4,
+    "official_logo_in_new_images": true,
+    "public_machine_language_removed": true,
+    "schedule_preserved": true,
+    "destinations_preserved": true,
+    "score": 4
+  },
+  "remaining_risk": [
+    "full 90-post run still needs wave-by-wave creative rewrite",
+    "live image binding awaits direct upload path"
+  ],
+  "classification": "J MERRILL PUBLISHING SOCIAL REMEDIATION IN PROGRESS - PEOPLE-FIRST / WHY-FIRST CREATIVE STANDARD ACTIVE",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

@@ -1,0 +1,15 @@
+{
+  "complete_only_when": [
+    "all 90 captions pass public-ready v2 or are intentionally accepted",
+    "all new/replacement images use official logo",
+    "Sean and Strategies lanes remediated",
+    "calendar still shows 90 Scheduled / 0 Needs approval",
+    "Brain isolation remains clean"
+  ],
+  "current_status": "IN_PROGRESS_FIRST_WAVE_COMPLETE_NOT_FULL_RUN_COMPLETE",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

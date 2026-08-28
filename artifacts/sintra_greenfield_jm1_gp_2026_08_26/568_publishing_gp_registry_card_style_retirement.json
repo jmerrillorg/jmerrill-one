@@ -1,0 +1,15 @@
+{
+  "retired_style": "registry_card",
+  "symptoms": [
+    "large date labels",
+    "theme as headline",
+    "internal compliance footer",
+    "template repetition"
+  ],
+  "replacement_style": "editorial_social_asset_with_logo_and_human_hook",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

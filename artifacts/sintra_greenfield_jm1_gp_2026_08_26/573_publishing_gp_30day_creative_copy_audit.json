@@ -1,0 +1,23 @@
+{
+  "scope": "30 daily creative concepts / 90 platform posts",
+  "finding": "Original run overused schedule-card graphics and repeat copy scaffolds.",
+  "first_wave_audited_days": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "classification_counts": {
+    "keep": 2,
+    "refine": 8,
+    "rewrite": 6,
+    "redesign": 12,
+    "reconceptualize": 2
+  },
+  "next_priority": "Sep 1 Sean A Crowley I launch and Sep 22 Strategies for Success release runway.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

@@ -1,0 +1,10 @@
+{
+  "gate": "HOOK_DIVERSITY",
+  "rule": "Adjacent posts cannot reuse the same opening construction across platforms unless they are intentionally adapted for a campaign sequence.",
+  "first_wave_unique_hooks": 12,
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

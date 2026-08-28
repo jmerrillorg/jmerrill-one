@@ -1,0 +1,14 @@
+{
+  "rule": "Every public post must name or imply a person-facing reason to read, publish, notice, share, or remember.",
+  "fail_examples": [
+    "catalog spotlight",
+    "source-safe author/title spotlight",
+    "rights-safe catalog rotation"
+  ],
+  "pass_requirement": "The first sentence must be intelligible to a reader without internal program context.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

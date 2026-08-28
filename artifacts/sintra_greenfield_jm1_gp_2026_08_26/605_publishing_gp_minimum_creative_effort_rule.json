@@ -1,0 +1,16 @@
+{
+  "rule": "A scheduled post is not complete until the creative/caption pair has a distinct public reason to exist.",
+  "minimum": [
+    "unique hook",
+    "platform adaptation",
+    "source truth check",
+    "logo check",
+    "CTA check",
+    "no machine-language check"
+  ],
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

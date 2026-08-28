@@ -1,0 +1,15 @@
+{
+  "decision": "FOUNDER_APPROVES_COMPLETE_CREATIVE_PUBLIC_COPY_REMEDIATION",
+  "classification": "J MERRILL PUBLISHING SOCIAL REMEDIATION IN PROGRESS - PEOPLE-FIRST / WHY-FIRST CREATIVE STANDARD ACTIVE",
+  "preserve_schedule": true,
+  "preserve_destinations": true,
+  "preserve_smm_on": true,
+  "engagement_authority": "NONE",
+  "reason": "The scheduled system worked, but the public communication layer optimized for post/date/platform existence instead of human interest.",
+  "first_meaningful_wave": "2026-08-28 through 2026-08-31; 12 captions remediated live; replacement visual assets prepared.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

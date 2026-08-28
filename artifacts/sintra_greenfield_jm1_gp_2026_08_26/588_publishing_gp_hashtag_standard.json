@@ -1,0 +1,18 @@
+{
+  "platform_rules": {
+    "Facebook": "hashtags optional, usually omit",
+    "Instagram": "2-4 relevant tags, no generic pileups",
+    "LinkedIn": "0-3 professional tags only when useful"
+  },
+  "default_tags": [
+    "#JMerrillPublishing",
+    "#BookDiscovery",
+    "#Authors"
+  ],
+  "blocked_overuse": "#Authors #Books repeated by default",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

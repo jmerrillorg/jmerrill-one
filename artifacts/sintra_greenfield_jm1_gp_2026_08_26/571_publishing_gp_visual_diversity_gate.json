@@ -1,0 +1,10 @@
+{
+  "gate": "VISUAL_DIVERSITY",
+  "minimum_for_30_days": "No more than two consecutive days may share the same layout skeleton, dominant color, and headline structure.",
+  "first_wave": "4 distinct editorial treatments generated.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

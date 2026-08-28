@@ -1,0 +1,21 @@
+{
+  "blacklist": [
+    "rights-safe",
+    "source-safe",
+    "catalog spotlight",
+    "reader-discovery spotlight from the JMP catalog",
+    "without relying on uncleared excerpts",
+    "systematic catalog discovery",
+    "public reader pathways",
+    "custom scheduled"
+  ],
+  "whitelist": [
+    "Helping Authors Help Themselves"
+  ],
+  "whitelist_reason": "Founder-approved official J Merrill Publishing tagline.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}
