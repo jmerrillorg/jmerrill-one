@@ -1,0 +1,146 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:35:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "PASS",
+  "creative_count": 7,
+  "creatives": [
+    {
+      "day": 1,
+      "date": "2026-08-28",
+      "theme": "Meet the Book",
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "svg": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day01_2026-08-28_meet_the_book.svg",
+      "png": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day01_2026-08-28_meet_the_book.svg.png",
+      "logo_present": true,
+      "palette": [
+        "#1E90FF",
+        "#6A5ACD",
+        "#A3C4DC",
+        "#FFFFFF",
+        "#111111"
+      ],
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "status": "CREATIVE_READY"
+    },
+    {
+      "day": 2,
+      "date": "2026-08-29",
+      "theme": "Meet the Author",
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "svg": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day02_2026-08-29_meet_the_author.svg",
+      "png": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day02_2026-08-29_meet_the_author.svg.png",
+      "logo_present": true,
+      "palette": [
+        "#1E90FF",
+        "#6A5ACD",
+        "#A3C4DC",
+        "#FFFFFF",
+        "#111111"
+      ],
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "status": "CREATIVE_READY"
+    },
+    {
+      "day": 3,
+      "date": "2026-08-30",
+      "theme": "Publishing Education",
+      "author": null,
+      "title": null,
+      "svg": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day03_2026-08-30_publishing_education.svg",
+      "png": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day03_2026-08-30_publishing_education.svg.png",
+      "logo_present": true,
+      "palette": [
+        "#1E90FF",
+        "#6A5ACD",
+        "#A3C4DC",
+        "#FFFFFF",
+        "#111111"
+      ],
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "status": "CREATIVE_READY"
+    },
+    {
+      "day": 4,
+      "date": "2026-08-31",
+      "theme": "Publishing Inquiry",
+      "author": null,
+      "title": null,
+      "svg": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day04_2026-08-31_publishing_inquiry.svg",
+      "png": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day04_2026-08-31_publishing_inquiry.svg.png",
+      "logo_present": true,
+      "palette": [
+        "#1E90FF",
+        "#6A5ACD",
+        "#A3C4DC",
+        "#FFFFFF",
+        "#111111"
+      ],
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "status": "CREATIVE_READY"
+    },
+    {
+      "day": 5,
+      "date": "2026-09-01",
+      "theme": "September Featured Author — Sean A Crowley I",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "svg": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day05_2026-09-01_september_featured_author_sean_a_crowley_i.svg",
+      "png": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day05_2026-09-01_september_featured_author_sean_a_crowley_i.svg.png",
+      "logo_present": true,
+      "palette": [
+        "#1E90FF",
+        "#6A5ACD",
+        "#A3C4DC",
+        "#FFFFFF",
+        "#111111"
+      ],
+      "rights_status": "RIGHTS-SAFE: Founder-supplied Amazon title link and public title metadata; no unsupported biography or excerpts.",
+      "status": "CREATIVE_READY"
+    },
+    {
+      "day": 6,
+      "date": "2026-09-02",
+      "theme": "Inside Publishing",
+      "author": null,
+      "title": null,
+      "svg": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day06_2026-09-02_inside_publishing.svg",
+      "png": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day06_2026-09-02_inside_publishing.svg.png",
+      "logo_present": true,
+      "palette": [
+        "#1E90FF",
+        "#6A5ACD",
+        "#A3C4DC",
+        "#FFFFFF",
+        "#111111"
+      ],
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "status": "CREATIVE_READY"
+    },
+    {
+      "day": 7,
+      "date": "2026-09-03",
+      "theme": "Backlist Rediscovery",
+      "author": "Shelley McIntosh",
+      "title": "A Principal's Tale",
+      "svg": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day07_2026-09-03_backlist_rediscovery.svg",
+      "png": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day07_2026-09-03_backlist_rediscovery.svg.png",
+      "logo_present": true,
+      "palette": [
+        "#1E90FF",
+        "#6A5ACD",
+        "#A3C4DC",
+        "#FFFFFF",
+        "#111111"
+      ],
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "status": "CREATIVE_READY"
+    }
+  ],
+  "validation": "SVG social cards rendered to PNG via macOS Quick Look. Text wrapping checked on Sep. 1 card; each card includes visible J Merrill logo treatment and Publishing palette."
+}

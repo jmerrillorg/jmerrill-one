@@ -4,12 +4,14 @@
   "pr": 10,
   "generated_at": "2026-08-27T21:22:54-04:00",
   "workspace": "J Merrill Publishing - GP",
-  "certification_status": "DESTINATION_RULE_CERTIFIED — LIVE CONNECTION NOT COMPLETED_IN_THIS_PACKET",
+  "certification_status": "DESTINATION_RULE_CERTIFIED; LIVE_CONNECTION_PENDING",
   "destinations": {
     "facebook": "J Merrill Publishing",
     "instagram": "canonical J Merrill Publishing account",
     "linkedin_organization": "J Merrill Publishing, Inc."
   },
   "live_integrations_observation": "Publishing workspace integrations page showed social connectors as Connect, not connected. No One destination selected.",
-  "hard_gate": "No One destination may be selected for Publishing execution."
+  "hard_gate": "No One destination may be selected for Publishing execution.",
+  "updated_for_founder_approved_launch": true,
+  "scheduling_gate": "BLOCKED_UNTIL_PUBLISHING_FACEBOOK_INSTAGRAM_LINKEDIN_CONNECTIONS_VISIBLE_CONNECTED_AND_BRANCH_DESTINATIONS_SELECTABLE"
 }

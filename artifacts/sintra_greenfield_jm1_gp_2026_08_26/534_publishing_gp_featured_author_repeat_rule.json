@@ -1,0 +1,15 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "default_rule": "Do not repeat a Monthly Featured Author until all reasonably eligible authors have had an opportunity.",
+  "exceptions": [
+    "Founder direction",
+    "launch timing",
+    "strategic need"
+  ],
+  "archive_dependency": "Use 535_publishing_gp_featured_author_archive.json before future random selection."
+}

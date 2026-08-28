@@ -1,0 +1,104 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:22:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "REPO_CALENDAR_PASS; LIVE_SINTRA_CALENDAR_NOT_SCHEDULED",
+  "items": [
+    {
+      "day": 1,
+      "date": "2026-08-28",
+      "time": "10:00 America/New_York",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "copy": "VALIDATED_IN_516_PACKET",
+      "creative": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day01_2026-08-28_meet_the_book.svg.png",
+      "status": "READY_NOT_SCHEDULED"
+    },
+    {
+      "day": 2,
+      "date": "2026-08-29",
+      "time": "10:00 America/New_York",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "copy": "VALIDATED_IN_516_PACKET",
+      "creative": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day02_2026-08-29_meet_the_author.svg.png",
+      "status": "READY_NOT_SCHEDULED"
+    },
+    {
+      "day": 3,
+      "date": "2026-08-30",
+      "time": "10:00 America/New_York",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "copy": "VALIDATED_IN_516_PACKET",
+      "creative": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day03_2026-08-30_publishing_education.svg.png",
+      "status": "READY_NOT_SCHEDULED"
+    },
+    {
+      "day": 4,
+      "date": "2026-08-31",
+      "time": "10:00 America/New_York",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "copy": "VALIDATED_IN_516_PACKET",
+      "creative": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day04_2026-08-31_publishing_inquiry.svg.png",
+      "status": "READY_NOT_SCHEDULED"
+    },
+    {
+      "day": 5,
+      "date": "2026-09-01",
+      "time": "10:00 America/New_York",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "copy": "VALIDATED_IN_516_PACKET",
+      "creative": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day05_2026-09-01_september_featured_author_sean_a_crowley_i.svg.png",
+      "status": "READY_NOT_SCHEDULED"
+    },
+    {
+      "day": 6,
+      "date": "2026-09-02",
+      "time": "10:00 America/New_York",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "copy": "VALIDATED_IN_516_PACKET",
+      "creative": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day06_2026-09-02_inside_publishing.svg.png",
+      "status": "READY_NOT_SCHEDULED"
+    },
+    {
+      "day": 7,
+      "date": "2026-09-03",
+      "time": "10:00 America/New_York",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "copy": "VALIDATED_IN_516_PACKET",
+      "creative": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/day07_2026-09-03_backlist_rediscovery.svg.png",
+      "status": "READY_NOT_SCHEDULED"
+    }
+  ],
+  "scheduled_count": 0,
+  "validation_note": "Actual Sintra calendar cannot show scheduled items because destination gate has not passed."
+}

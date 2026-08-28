@@ -1,0 +1,67 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "GOVERNED_ASSET_MATERIALIZED; LIVE_SINTRA_DRAFT_SCHEDULING_PENDING_DESTINATION_CONNECTION",
+  "items": [
+    {
+      "day": 1,
+      "date": "2026-08-28",
+      "theme": "Meet the Book",
+      "materialization_state": "SINTRA_DRAFT_MATERIALIZED_AS_REPO_ARTIFACT_AND_READY_FOR_SINTRA_SMM",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false
+    },
+    {
+      "day": 2,
+      "date": "2026-08-29",
+      "theme": "Meet the Author",
+      "materialization_state": "SINTRA_DRAFT_MATERIALIZED_AS_REPO_ARTIFACT_AND_READY_FOR_SINTRA_SMM",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false
+    },
+    {
+      "day": 3,
+      "date": "2026-08-30",
+      "theme": "Publishing Education",
+      "materialization_state": "SINTRA_DRAFT_MATERIALIZED_AS_REPO_ARTIFACT_AND_READY_FOR_SINTRA_SMM",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false
+    },
+    {
+      "day": 4,
+      "date": "2026-08-31",
+      "theme": "Publishing Inquiry",
+      "materialization_state": "SINTRA_DRAFT_MATERIALIZED_AS_REPO_ARTIFACT_AND_READY_FOR_SINTRA_SMM",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false
+    },
+    {
+      "day": 5,
+      "date": "2026-09-01",
+      "theme": "September Featured Author — Sean A Crowley I",
+      "materialization_state": "SINTRA_DRAFT_MATERIALIZED_AS_REPO_ARTIFACT_AND_READY_FOR_SINTRA_SMM",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false
+    },
+    {
+      "day": 6,
+      "date": "2026-09-02",
+      "theme": "Inside Publishing",
+      "materialization_state": "SINTRA_DRAFT_MATERIALIZED_AS_REPO_ARTIFACT_AND_READY_FOR_SINTRA_SMM",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false
+    },
+    {
+      "day": 7,
+      "date": "2026-09-03",
+      "theme": "Backlist Rediscovery",
+      "materialization_state": "SINTRA_DRAFT_MATERIALIZED_AS_REPO_ARTIFACT_AND_READY_FOR_SINTRA_SMM",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false
+    }
+  ]
+}

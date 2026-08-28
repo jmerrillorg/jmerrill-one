@@ -1,6 +1,6 @@
 # Publishing GP First 7 Execution Packet
 
-Approval state for every item: DRAFT — FOUNDER APPROVAL REQUIRED. Nothing is scheduled.
+Approval state for every item: FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING. Destination connection/certification must pass before scheduling.
 
 ## Day 1: Meet the Book
 
@@ -106,7 +106,38 @@ Learn more: https://jmerrill.pub/books
 
 Creative: Create a Publishing Inquiry graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.
 
-## Day 5: Inside Publishing
+## Day 5: September Featured Author — Sean A Crowley I
+
+Author/Title: Sean A Crowley I — The Shift: Changing with God
+
+Rights: RIGHTS-SAFE: Founder-supplied Amazon title link and public title metadata; no unsupported biography or excerpts.
+
+Facebook: September Featured Author: Sean A Crowley I
+
+J Merrill Publishing is opening September by featuring Sean A Crowley I throughout the month. His work will be introduced through rights-safe title spotlights and reader-discovery posts, beginning with The Shift: Changing with God.
+
+Follow along this month as we surface his published work and help readers discover the conversation his books invite.
+
+Explore the title: https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790
+
+Instagram: SEPTEMBER FEATURED AUTHOR
+Sean A Crowley I
+
+Starting September with a focused author spotlight from J Merrill Publishing. First up: The Shift: Changing with God.
+
+#JMerrillPublishing #FeaturedAuthor #Books
+
+LinkedIn: September Featured Author: Sean A Crowley I
+
+J Merrill Publishing is using September to give sustained visibility to Sean A Crowley I and his published work. The month opens with The Shift: Changing with God, using public, rights-safe title information and a reader-discovery frame.
+
+Featured Author programming gives authors repeated visibility without depending only on their own self-marketing.
+
+Explore the title: https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790
+
+Creative: September Featured Author launch graphic with Sean A Crowley I, The Shift: Changing with God, Publishing palette, and approved shared J Merrill logo.
+
+## Day 6: Inside Publishing
 
 Author/Title: Publishing-owned non-title post
 
@@ -130,33 +161,7 @@ For authors, publishing is not only a production process. It is a public positio
 
 Learn more: https://jmerrill.pub/books
 
-Creative: Create a Inside Publishing graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.
-
-## Day 6: Reader Discovery
-
-Author/Title: Publishing-owned non-title post
-
-Rights: RIGHTS-SAFE: no excerpt; official author/title identity and public link only
-
-Facebook: Reader Discovery: A Publishing note for authors and readers
-
-Publishing works best when purpose comes before process. Today is a chance to clarify the path for authors and readers.
-
-Explore J Merrill Publishing: https://jmerrill.pub/books
-
-Instagram: J Merrill Publishing
-
-Purpose first. Process second. Authors and readers at the center.
-
-#JMerrillPublishing #Authors #Books
-
-LinkedIn: Reader Discovery: Publishing clarity
-
-For authors, publishing is not only a production process. It is a public positioning decision, a rights decision, and a reader relationship decision.
-
-Learn more: https://jmerrill.pub/books
-
-Creative: Create a Reader Discovery graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.
+Creative: Create an Inside Publishing graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.
 
 ## Day 7: Backlist Rediscovery
 

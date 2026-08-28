@@ -1,0 +1,15 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "INTEGRATED",
+  "changes": [
+    "Sep. 1 changed from Inside Publishing to September Featured Author launch for Sean A Crowley I",
+    "Inside Publishing displaced theme moved to Sep. 2 slot",
+    "First seven approval state moved to Founder approved while retaining destination gate"
+  ],
+  "balance": "Other authors remain in rotation around the Featured Author lane."
+}

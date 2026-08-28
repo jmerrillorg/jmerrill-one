@@ -3,7 +3,7 @@
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
   "generated_at": "2026-08-27T21:22:54-04:00",
-  "status": "PREPARED_NOT_SCHEDULED",
+  "status": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
   "content_mix_observed": {
     "author_title_catalog": 13,
     "publishing_education": 5,
@@ -22,14 +22,15 @@
       "title": "101 Wisdom Lessons for Life and Living",
       "theme": "Meet the Book",
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
       "destinations": [
         "Facebook: J Merrill Publishing",
         "Instagram: canonical J Merrill Publishing",
         "LinkedIn: J Merrill Publishing, Inc."
       ],
-      "creative_rule": "Include approved shared J Merrill logo in every new image."
+      "creative_rule": "Include approved shared J Merrill logo in every new image.",
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 2,
@@ -40,14 +41,15 @@
       "title": "27 Days to Overcoming Depression",
       "theme": "Meet the Author",
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
       "destinations": [
         "Facebook: J Merrill Publishing",
         "Instagram: canonical J Merrill Publishing",
         "LinkedIn: J Merrill Publishing, Inc."
       ],
-      "creative_rule": "Include approved shared J Merrill logo in every new image."
+      "creative_rule": "Include approved shared J Merrill logo in every new image.",
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 3,
@@ -58,14 +60,15 @@
       "title": null,
       "theme": "Publishing Education",
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
       "destinations": [
         "Facebook: J Merrill Publishing",
         "Instagram: canonical J Merrill Publishing",
         "LinkedIn: J Merrill Publishing, Inc."
       ],
-      "creative_rule": "Include approved shared J Merrill logo in every new image."
+      "creative_rule": "Include approved shared J Merrill logo in every new image.",
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 4,
@@ -76,50 +79,56 @@
       "title": null,
       "theme": "Publishing Inquiry",
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
       "destinations": [
         "Facebook: J Merrill Publishing",
         "Instagram: canonical J Merrill Publishing",
         "LinkedIn: J Merrill Publishing, Inc."
       ],
-      "creative_rule": "Include approved shared J Merrill logo in every new image."
+      "creative_rule": "Include approved shared J Merrill logo in every new image.",
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 5,
       "proposed_date": "2026-09-01",
+      "pillar": "September Featured Author Launch",
+      "mix_category": "author/title/catalog",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "theme": "September Featured Author — Sean A Crowley I",
+      "rights_status": "RIGHTS-SAFE: Founder-supplied retail title link and external public title metadata; no excerpt unless quoted from public source within limits.",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "destinations": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "creative_rule": "Include approved shared J Merrill logo and visible SEPTEMBER FEATURED AUTHOR treatment.",
+      "materialization_state": "GOVERNED_CONTENT_READY",
+      "source": "https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "featured_author_month": "2026-09"
+    },
+    {
+      "day": 6,
+      "proposed_date": "2026-09-02",
       "pillar": "Inside Publishing",
       "mix_category": "behind-the-scenes/process",
       "author": null,
       "title": null,
       "theme": "Inside Publishing",
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
       "destinations": [
         "Facebook: J Merrill Publishing",
         "Instagram: canonical J Merrill Publishing",
         "LinkedIn: J Merrill Publishing, Inc."
       ],
-      "creative_rule": "Include approved shared J Merrill logo in every new image."
-    },
-    {
-      "day": 6,
-      "proposed_date": "2026-09-02",
-      "pillar": "Reader Discovery",
-      "mix_category": "reader discovery",
-      "author": null,
-      "title": null,
-      "theme": "Reader Discovery",
-      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
-      "scheduled": false,
-      "destinations": [
-        "Facebook: J Merrill Publishing",
-        "Instagram: canonical J Merrill Publishing",
-        "LinkedIn: J Merrill Publishing, Inc."
-      ],
-      "creative_rule": "Include approved shared J Merrill logo in every new image."
+      "creative_rule": "Include approved shared J Merrill logo in every new image.",
+      "materialization_state": "GOVERNED_CONTENT_READY",
+      "displaced_from": "2026-09-01"
     },
     {
       "day": 7,
@@ -130,14 +139,15 @@
       "title": "A Principal's Tale",
       "theme": "Backlist Rediscovery",
       "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
       "scheduled": false,
       "destinations": [
         "Facebook: J Merrill Publishing",
         "Instagram: canonical J Merrill Publishing",
         "LinkedIn: J Merrill Publishing, Inc."
       ],
-      "creative_rule": "Include approved shared J Merrill logo in every new image."
+      "creative_rule": "Include approved shared J Merrill logo in every new image.",
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 8,
@@ -553,5 +563,11 @@
       ],
       "creative_rule": "Include approved shared J Merrill logo in every new image."
     }
-  ]
+  ],
+  "founder_approval": "PUBLISHING FIRST 7 DAYS — APPROVED",
+  "september_featured_author_override": {
+    "date": "2026-09-01",
+    "featured_author": "Sean A Crowley I",
+    "authority": "FOUNDER"
+  }
 }

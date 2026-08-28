@@ -375,5 +375,21 @@
       "asset_readiness": "READY — ASSET GAP",
       "current_priority": "P4"
     }
-  ]
+  ],
+  "additional_tracking": [
+    "featured-author month",
+    "associated title exposures",
+    "title clicks/engagement where available",
+    "author exposure",
+    "remaining eligible catalog titles"
+  ],
+  "featured_author_integration": {
+    "month": "2026-09",
+    "author": "Sean A Crowley I",
+    "associated_titles": [
+      "The Shift: Changing with God",
+      "Strategies for Success in Educational Leadership"
+    ],
+    "priority_exception": "FOUNDER / PROGRAMMATIC PRIORITY"
+  }
 }

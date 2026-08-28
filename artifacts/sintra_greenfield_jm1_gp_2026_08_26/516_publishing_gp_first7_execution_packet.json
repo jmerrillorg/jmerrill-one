@@ -3,8 +3,8 @@
   "branch": "codex/sintra-greenfield-jm1-gp",
   "pr": 10,
   "generated_at": "2026-08-27T21:22:54-04:00",
-  "status": "DRAFT_NOT_SCHEDULED",
-  "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
+  "status": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+  "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
   "items": [
     {
       "day": 1,
@@ -24,8 +24,9 @@
         "LinkedIn: J Merrill Publishing, Inc."
       ],
       "schedule_time": "10:00 America/New_York",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
-      "scheduled": false
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 2,
@@ -45,8 +46,9 @@
         "LinkedIn: J Merrill Publishing, Inc."
       ],
       "schedule_time": "10:00 America/New_York",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
-      "scheduled": false
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 3,
@@ -66,8 +68,9 @@
         "LinkedIn: J Merrill Publishing, Inc."
       ],
       "schedule_time": "10:00 America/New_York",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
-      "scheduled": false
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 4,
@@ -87,11 +90,35 @@
         "LinkedIn: J Merrill Publishing, Inc."
       ],
       "schedule_time": "10:00 America/New_York",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
-      "scheduled": false
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 5,
+      "theme": "September Featured Author — Sean A Crowley I",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "source": "https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "rights_status": "RIGHTS-SAFE: Founder-supplied Amazon title link and public title metadata; no unsupported biography or excerpts.",
+      "facebook_copy": "September Featured Author: Sean A Crowley I\n\nJ Merrill Publishing is opening September by featuring Sean A Crowley I throughout the month. His work will be introduced through rights-safe title spotlights and reader-discovery posts, beginning with The Shift: Changing with God.\n\nFollow along this month as we surface his published work and help readers discover the conversation his books invite.\n\nExplore the title: https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "instagram_copy": "SEPTEMBER FEATURED AUTHOR\nSean A Crowley I\n\nStarting September with a focused author spotlight from J Merrill Publishing. First up: The Shift: Changing with God.\n\n#JMerrillPublishing #FeaturedAuthor #Books",
+      "linkedin_copy": "September Featured Author: Sean A Crowley I\n\nJ Merrill Publishing is using September to give sustained visibility to Sean A Crowley I and his published work. The month opens with The Shift: Changing with God, using public, rights-safe title information and a reader-discovery frame.\n\nFeatured Author programming gives authors repeated visibility without depending only on their own self-marketing.\n\nExplore the title: https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "creative": "September Featured Author launch graphic with Sean A Crowley I, The Shift: Changing with God, Publishing palette, and approved shared J Merrill logo.",
+      "cta": "Follow September Featured Author posts",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "schedule_time": "10:00 America/New_York",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "GOVERNED_CONTENT_READY",
+      "featured_author_month": "2026-09"
+    },
+    {
+      "day": 6,
       "theme": "Inside Publishing",
       "author": null,
       "title": null,
@@ -100,7 +127,7 @@
       "facebook_copy": "Inside Publishing: A Publishing note for authors and readers\n\nPublishing works best when purpose comes before process. Today is a chance to clarify the path for authors and readers.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
       "instagram_copy": "J Merrill Publishing\n\nPurpose first. Process second. Authors and readers at the center.\n\n#JMerrillPublishing #Authors #Books",
       "linkedin_copy": "Inside Publishing: Publishing clarity\n\nFor authors, publishing is not only a production process. It is a public positioning decision, a rights decision, and a reader relationship decision.\n\nLearn more: https://jmerrill.pub/books",
-      "creative": "Create a Inside Publishing graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
+      "creative": "Create an Inside Publishing graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
       "cta": "Tell us about your book",
       "destination": [
         "Facebook: J Merrill Publishing",
@@ -108,29 +135,9 @@
         "LinkedIn: J Merrill Publishing, Inc."
       ],
       "schedule_time": "10:00 America/New_York",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
-      "scheduled": false
-    },
-    {
-      "day": 6,
-      "theme": "Reader Discovery",
-      "author": null,
-      "title": null,
-      "source": "https://jmerrill.pub/books",
-      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
-      "facebook_copy": "Reader Discovery: A Publishing note for authors and readers\n\nPublishing works best when purpose comes before process. Today is a chance to clarify the path for authors and readers.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
-      "instagram_copy": "J Merrill Publishing\n\nPurpose first. Process second. Authors and readers at the center.\n\n#JMerrillPublishing #Authors #Books",
-      "linkedin_copy": "Reader Discovery: Publishing clarity\n\nFor authors, publishing is not only a production process. It is a public positioning decision, a rights decision, and a reader relationship decision.\n\nLearn more: https://jmerrill.pub/books",
-      "creative": "Create a Reader Discovery graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
-      "cta": "Tell us about your book",
-      "destination": [
-        "Facebook: J Merrill Publishing",
-        "Instagram: canonical J Merrill Publishing",
-        "LinkedIn: J Merrill Publishing, Inc."
-      ],
-      "schedule_time": "10:00 America/New_York",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
-      "scheduled": false
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "GOVERNED_CONTENT_READY"
     },
     {
       "day": 7,
@@ -150,8 +157,9 @@
         "LinkedIn: J Merrill Publishing, Inc."
       ],
       "schedule_time": "10:00 America/New_York",
-      "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
-      "scheduled": false
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "GOVERNED_CONTENT_READY"
     }
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "month": "2026-09",
+  "featured_author": "Sean A Crowley I",
+  "status": "ACTIVE_SOURCE_CONSTRAINED",
+  "opportunities": [
+    {
+      "date": "2026-09-01",
+      "type": "Launch",
+      "source_backed": true,
+      "title": "The Shift: Changing with God"
+    },
+    {
+      "date": "2026-09-05",
+      "type": "Meet the Book",
+      "source_backed": true,
+      "title": "The Shift: Changing with God"
+    },
+    {
+      "date": "2026-09-10",
+      "type": "Book/theme discovery",
+      "source_backed": true,
+      "note": "Use public description themes from external retail source; avoid long excerpts."
+    },
+    {
+      "date": "2026-09-16",
+      "type": "Second title / catalog discovery",
+      "source_backed": "PARTIAL",
+      "title": "Strategies for Success in Educational Leadership",
+      "note": "Use only Founder-supplied Amazon title identity until fuller source is verified."
+    },
+    {
+      "date": "2026-09-23",
+      "type": "Reader Prompt",
+      "source_backed": true,
+      "note": "Question framed around change/leadership without claiming biography."
+    },
+    {
+      "date": "2026-09-30",
+      "type": "Month-End Recap",
+      "source_backed": true,
+      "note": "Recap September feature and direct readers to verified title links."
+    }
+  ],
+  "not_required": [
+    "Behind the Author/Journey unless an official bio source is supplied"
+  ]
+}

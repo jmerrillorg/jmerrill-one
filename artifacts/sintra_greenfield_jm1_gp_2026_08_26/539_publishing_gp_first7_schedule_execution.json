@@ -1,0 +1,24 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:22:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "NOT_SCHEDULED — FAIL_CLOSED_DESTINATION_CERTIFICATION_PENDING",
+  "eligible_items": 7,
+  "scheduled_count": 0,
+  "blocking_gates": [
+    "Publishing social integrations visible as Connect, not connected",
+    "Post-level destination selection cannot be validated",
+    "Sean Publishing-owned catalog identity still pending, though Founder supplied Amazon title links"
+  ],
+  "non_blocking": [
+    "Founder approval granted",
+    "calendar reconciled",
+    "creatives generated",
+    "SMM on",
+    "engagement automation off"
+  ],
+  "rule": "Hold only exceptions; do not schedule through One or non-Publishing destinations."
+}
