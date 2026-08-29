@@ -1,0 +1,25 @@
+{
+  "packageId": 719,
+  "title": "Sintra Workspace Execution Boundary",
+  "generatedAt": "2026-08-29T08:09:57.422Z",
+  "rule": "Workspace identity is execution authority. Publishing work must be performed only in the J Merrill Publishing workspace.",
+  "boundaries": [
+    {
+      "workspace": "J Merrill One - GP",
+      "allowedScope": "Enterprise/JM1 One GP evaluation and One-level social only",
+      "publishingMutationCertified": false
+    },
+    {
+      "workspace": "J Merrill Publishing",
+      "allowedScope": "J Merrill Publishing Social Media Manager and Publishing-only social execution",
+      "publishingMutationCertified": true
+    }
+  ],
+  "preMutationChecklist": [
+    "verify workspace switcher text",
+    "verify Social Media Manager route",
+    "verify Pages/destinations in opened cards",
+    "verify not One/Financial/Foundation/AIC/personal destination"
+  ],
+  "classification": "ACTIVE HARD BOUNDARY"
+}
