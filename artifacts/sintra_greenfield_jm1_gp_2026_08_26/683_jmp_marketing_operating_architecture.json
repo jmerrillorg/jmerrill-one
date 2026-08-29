@@ -1,0 +1,57 @@
+{
+  "packageId": 683,
+  "title": "JMP Marketing Operating Architecture",
+  "generatedAt": "2026-08-29T07:47:37.157Z",
+  "program": "J Merrill Publishing Automated Marketing Operating System",
+  "evidenceSources": {
+    "socialApi": "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md",
+    "journeysStandard": "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+    "journeysCloseout": "artifacts/jrn01_final_closeout_v2.md",
+    "journeysCheckpoint": "artifacts/bp12a_journeys_status_checkpoint.json",
+    "pubLifecycle": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/architecture/JMP-Title-Lifecycle-and-Product-Form-Orchestration-Target-Architecture-v1.0.md",
+    "pubIntake": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/dataverse/int-pub-005-publishing-intake-mapping.md",
+    "runtimeGap": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/publisher-runtime-ownership/event-driven-runtime-gap-register.json",
+    "assetStaging": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-staging.json",
+    "assetHealth": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-health.json"
+  },
+  "classificationLegend": {
+    "designed": "Architecture/rule defined in this package or prior canon.",
+    "implemented": "Runtime, table, app, or scheduler exists and has been observed or deployed.",
+    "proven": "End-to-end execution evidence exists with authoritative external/readback proof."
+  },
+  "primeDirective": "People-First / Why-First public marketing; internal machinery stays backstage.",
+  "lanes": [
+    {
+      "id": "evergreen_portfolio",
+      "purpose": "Continuous portfolio, backlist, featured-author, theme, and seasonal marketing."
+    },
+    {
+      "id": "lifecycle_business_event",
+      "purpose": "Marketing initiated by authoritative lifecycle/business events such as cover approval, release date, distribution live, launch day, and post-launch review."
+    }
+  ],
+  "targetFlow": [
+    "Dataverse lifecycle and campaign authority",
+    "Eligibility and public-ready gates",
+    "Sintra/JM1 AI strategy and copy support",
+    "D365 Customer Insights - Journeys for consent-supported engagement",
+    "JM1 Social Publishing Orchestrator for approved social execution",
+    "Platform post IDs/readback",
+    "Dataverse evidence and performance return loop"
+  ],
+  "status": {
+    "architecture": "DESIGNED",
+    "intakeMapping": "SOURCE_BACKED_SCHEMA_MAPPING_COMPLETE_BUT_ACTIVATION_BLOCKED",
+    "journeys": "STANDARD_EXISTS_BUT_JRN01_EXTERNAL_ADMIN_ACTION_REQUIRED",
+    "socialApi": "ARCHITECTURE_FOUNDATION_NOT_END_TO_END_PROVEN",
+    "publishing30DayRun": "SINTRA_SOSHIE_UI_BASED_SCHEDULING_NOT_JM1_API"
+  },
+  "nonPublicTerms": [
+    "registry",
+    "governed service definition",
+    "compliance gate",
+    "SKU catalog",
+    "Dataverse",
+    "orchestrator"
+  ]
+}

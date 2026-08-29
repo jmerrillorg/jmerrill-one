@@ -1,0 +1,56 @@
+{
+  "packageId": 687,
+  "title": "Marketing Eligibility Schema",
+  "generatedAt": "2026-08-29T07:47:37.157Z",
+  "program": "J Merrill Publishing Automated Marketing Operating System",
+  "evidenceSources": {
+    "socialApi": "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md",
+    "journeysStandard": "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+    "journeysCloseout": "artifacts/jrn01_final_closeout_v2.md",
+    "journeysCheckpoint": "artifacts/bp12a_journeys_status_checkpoint.json",
+    "pubLifecycle": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/architecture/JMP-Title-Lifecycle-and-Product-Form-Orchestration-Target-Architecture-v1.0.md",
+    "pubIntake": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/dataverse/int-pub-005-publishing-intake-mapping.md",
+    "runtimeGap": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/publisher-runtime-ownership/event-driven-runtime-gap-register.json",
+    "assetStaging": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-staging.json",
+    "assetHealth": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-health.json"
+  },
+  "classificationLegend": {
+    "designed": "Architecture/rule defined in this package or prior canon.",
+    "implemented": "Runtime, table, app, or scheduler exists and has been observed or deployed.",
+    "proven": "End-to-end execution evidence exists with authoritative external/readback proof."
+  },
+  "proposedTable": "jm1pub_marketingeligibility",
+  "mutationAuthority": "NOT_GRANTED_BY_THIS_PACKAGE",
+  "requiredFields": [
+    "marketingEligibilityId",
+    "titleId",
+    "authorId",
+    "triggerCode",
+    "triggerSourceTable",
+    "triggerSourceRecordId",
+    "triggerSourceField",
+    "triggerObservedAt",
+    "eligibilityState",
+    "rightsState",
+    "assetReadinessState",
+    "consentState",
+    "suppressionState",
+    "spendApprovalState",
+    "publicReadyState",
+    "reasonHeld",
+    "createdBySystem",
+    "idempotencyKey",
+    "supersededBy"
+  ],
+  "states": [
+    "ELIGIBLE_INTERNAL_ONLY",
+    "ELIGIBLE_FOR_CREATIVE_PREP",
+    "ELIGIBLE_FOR_SOCIAL_APPROVAL",
+    "ELIGIBLE_FOR_JOURNEY_APPROVAL",
+    "HELD_RIGHTS",
+    "HELD_ASSETS",
+    "HELD_CONSENT",
+    "HELD_APPROVAL",
+    "SUPERSEDED"
+  ]
+}

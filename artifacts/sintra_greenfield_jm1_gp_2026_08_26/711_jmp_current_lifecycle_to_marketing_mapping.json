@@ -1,0 +1,69 @@
+{
+  "packageId": 711,
+  "title": "Current Lifecycle To Marketing Mapping",
+  "generatedAt": "2026-08-29T07:47:37.157Z",
+  "program": "J Merrill Publishing Automated Marketing Operating System",
+  "evidenceSources": {
+    "socialApi": "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md",
+    "journeysStandard": "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+    "journeysCloseout": "artifacts/jrn01_final_closeout_v2.md",
+    "journeysCheckpoint": "artifacts/bp12a_journeys_status_checkpoint.json",
+    "pubLifecycle": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/architecture/JMP-Title-Lifecycle-and-Product-Form-Orchestration-Target-Architecture-v1.0.md",
+    "pubIntake": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/dataverse/int-pub-005-publishing-intake-mapping.md",
+    "runtimeGap": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/publisher-runtime-ownership/event-driven-runtime-gap-register.json",
+    "assetStaging": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-staging.json",
+    "assetHealth": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-health.json"
+  },
+  "classificationLegend": {
+    "designed": "Architecture/rule defined in this package or prior canon.",
+    "implemented": "Runtime, table, app, or scheduler exists and has been observed or deployed.",
+    "proven": "End-to-end execution evidence exists with authoritative external/readback proof."
+  },
+  "sourceFieldTruth": [
+    {
+      "source": "jm1_publishingintake",
+      "fields": [
+        "jm1_FirstName",
+        "jm1_LastName",
+        "jm1_Email",
+        "jm1_ProjectTitle",
+        "jm1_ManuscriptType",
+        "jm1_GenreSubject",
+        "jm1_Purpose",
+        "jm1_ConsenttoContact",
+        "jm1_IntakeReferenceCode",
+        "jm1_IdempotencyKey"
+      ],
+      "marketingUse": "internal eligibility/profile candidate only",
+      "activation": "blocked pending Dataverse write validation and consent handling"
+    },
+    {
+      "source": "J0-J8 lifecycle architecture",
+      "fields": [
+        "J1/J2 package/onboarding/agreement",
+        "J3 editorial",
+        "J4 cover validation/release lock",
+        "J5/J6 distribution/launch planning",
+        "J8 annual review"
+      ],
+      "marketingUse": "candidate lifecycle anchors",
+      "activation": "canon-candidate; client-title automation frozen"
+    },
+    {
+      "source": "event-driven runtime gap register",
+      "fields": [
+        "Contract active",
+        "Editorial path confirmed",
+        "Cover concept approved",
+        "Retail listing verified",
+        "Release date confirmed",
+        "Release day",
+        "7/30/60/90 days after release",
+        "Backlist review date"
+      ],
+      "marketingUse": "marketing trigger vocabulary",
+      "activation": "not production-proven"
+    }
+  ],
+  "mappingState": "SOURCE_INVENTORIED_IMPLEMENTATION_NOT_MUTATED"
+}

@@ -1,0 +1,75 @@
+{
+  "packageId": 696,
+  "title": "Sintra Exact-File Unified Scheduler Canary",
+  "generatedAt": "2026-08-29T07:47:37.157Z",
+  "program": "J Merrill Publishing Automated Marketing Operating System",
+  "evidenceSources": {
+    "socialApi": "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md",
+    "journeysStandard": "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+    "journeysCloseout": "artifacts/jrn01_final_closeout_v2.md",
+    "journeysCheckpoint": "artifacts/bp12a_journeys_status_checkpoint.json",
+    "pubLifecycle": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/architecture/JMP-Title-Lifecycle-and-Product-Form-Orchestration-Target-Architecture-v1.0.md",
+    "pubIntake": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/dataverse/int-pub-005-publishing-intake-mapping.md",
+    "runtimeGap": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/publisher-runtime-ownership/event-driven-runtime-gap-register.json",
+    "assetStaging": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-staging.json",
+    "assetHealth": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-health.json"
+  },
+  "classificationLegend": {
+    "designed": "Architecture/rule defined in this package or prior canon.",
+    "implemented": "Runtime, table, app, or scheduler exists and has been observed or deployed.",
+    "proven": "End-to-end execution evidence exists with authoritative external/readback proof."
+  },
+  "requestedCanary": {
+    "surface": "Sintra/Soshie unified scheduler",
+    "action": "fresh post from scratch with exact local PNG/JPG to Facebook, Instagram, and LinkedIn",
+    "status": "PENDING_LIVE_UI_EXECUTION"
+  },
+  "selectedCandidateAsset": {
+    "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_rebuild_exact_creatives/strategies_teaser_square.png",
+    "sha256": "db09cb3bac8b774d467fdd0044605136b67d320d845e9e98bd5b0b8f492b009c",
+    "publicCaption": "Some books arrive as a second chance to lead with more clarity. Strategies for Success in Educational Leadership returns September 22 from J Merrill Publishing. https://amzn.to/4y4udRZ"
+  },
+  "result": {
+    "classification": "SINTRA - STRATEGY/ORCHESTRATION ONLY",
+    "facebook": {
+      "status": "FAIL_NOT_CREATED",
+      "reason": "No Facebook canary object was generated."
+    },
+    "instagram": {
+      "status": "FAIL_NOT_CREATED",
+      "reason": "No Instagram canary object was generated."
+    },
+    "linkedin": {
+      "status": "FAIL_WRONG_SURFACE_NOT_SCHEDULED",
+      "reason": "Generated one LinkedIn needs-approval card, not LinkedIn Organization unified scheduler object; card was declined."
+    },
+    "platformPostIds": [],
+    "liveReadback": "NOT_AVAILABLE - no canary was scheduled or published.",
+    "finalRule": "Unified Sintra exact-file scheduler did not pass. Do not approve Sintra as interim execution surface for cross-platform exact-file Publishing posts."
+  },
+  "liveAttempt": {
+    "attempted": true,
+    "attemptedAt": "2026-08-29T07:52:23.861Z",
+    "workspace": "J Merrill One - GP",
+    "url": "https://app.sintra.ai/automations/social-media-manager",
+    "action": "Create content -> Create from media -> uploaded exact local PNG -> one-post instruction -> Generate post",
+    "uploadedFileVisible": "strategies_teaser_square.png",
+    "uploadedFileSha256": "db09cb3bac8b774d467fdd0044605136b67d320d845e9e98bd5b0b8f492b009c",
+    "requestedDestinations": [
+      "Facebook / J Merrill Publishing",
+      "Instagram / jmerrillpub",
+      "LinkedIn Organization / J Merrill Publishing, Inc."
+    ],
+    "observedGeneratedObject": {
+      "date": "September 1, 2026 at 6:00 AM",
+      "platformLabel": "LinkedIn",
+      "status": "Needs approval",
+      "contentObserved": "Caption partially preserved, but instruction tail truncated in visible content and destination/platform did not match requested three-platform organization scheduler."
+    },
+    "cleanup": {
+      "action": "Decline generated canary card",
+      "result": "Card absent from Sep. 1 calendar after decline; pre-existing scheduled items remained."
+    },
+    "evidenceScreenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/696_sintra_canary_failure_calendar_after_decline.png"
+  }
+}

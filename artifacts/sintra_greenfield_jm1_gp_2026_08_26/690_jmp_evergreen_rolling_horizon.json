@@ -1,0 +1,45 @@
+{
+  "packageId": 690,
+  "title": "Evergreen Rolling Horizon",
+  "generatedAt": "2026-08-29T07:47:37.157Z",
+  "program": "J Merrill Publishing Automated Marketing Operating System",
+  "evidenceSources": {
+    "socialApi": "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md",
+    "journeysStandard": "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+    "journeysCloseout": "artifacts/jrn01_final_closeout_v2.md",
+    "journeysCheckpoint": "artifacts/bp12a_journeys_status_checkpoint.json",
+    "pubLifecycle": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/architecture/JMP-Title-Lifecycle-and-Product-Form-Orchestration-Target-Architecture-v1.0.md",
+    "pubIntake": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/dataverse/int-pub-005-publishing-intake-mapping.md",
+    "runtimeGap": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/publisher-runtime-ownership/event-driven-runtime-gap-register.json",
+    "assetStaging": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-staging.json",
+    "assetHealth": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-health.json"
+  },
+  "classificationLegend": {
+    "designed": "Architecture/rule defined in this package or prior canon.",
+    "implemented": "Runtime, table, app, or scheduler exists and has been observed or deployed.",
+    "proven": "End-to-end execution evidence exists with authoritative external/readback proof."
+  },
+  "horizons": [
+    {
+      "name": "90_day_strategy",
+      "owner": "Marketing system",
+      "purpose": "Theme, author, title, and business-event balance."
+    },
+    {
+      "name": "30_day_build",
+      "owner": "Sintra/JM1 AI plus reviewer",
+      "purpose": "Draft copy and creative plan."
+    },
+    {
+      "name": "14_day_approval",
+      "owner": "Public-ready gate",
+      "purpose": "Approve exact copy/media/destinations."
+    },
+    {
+      "name": "7_day_execution_lock",
+      "owner": "Scheduler/orchestrator",
+      "purpose": "Prevent duplicate schedulers and late asset mutation."
+    }
+  ],
+  "replenishmentRule": "The engine should refill gaps from eligible evergreen candidates, not recycle weak filler."
+}
