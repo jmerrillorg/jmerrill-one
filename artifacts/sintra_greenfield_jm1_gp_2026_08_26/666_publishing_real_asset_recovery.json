@@ -1,0 +1,67 @@
+{
+  "artifact": "PUBLISHING_REAL_ASSET_RECOVERY",
+  "createdAt": "2026-08-29T03:13:33-0400",
+  "brand": "J Merrill Publishing",
+  "classification": "REAL GOVERNED ASSETS RECOVERED",
+  "sourcePrinciple": "Publishing-owned source storage was searched directly; the worktree absence of assets was not treated as an asset hold.",
+  "canonicalSourceRoot": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB",
+  "publicContextSource": "https://jmerrill.pub/books",
+  "sourceAssets": [
+    {
+      "asset": "The Shift cover",
+      "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2026_Crowley_The_Shift/03_Design/Cover/FC.jpg",
+      "sha256": "ceb3ee6e23669a5a3caf5636953a733ba41f3308609250efa7196f52dd6cc784",
+      "dimensions": "1708x2560",
+      "status": "RECOVERED_REAL_COVER"
+    },
+    {
+      "asset": "Strategies for Success cover",
+      "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2026_Crowley_Strategies_For_Success/03_Design/Cover/SFS-FINAL.jpg",
+      "sha256": "1ffd5c7b255b0b56a0cb55abfc113b7357f75cc6996906d6673b3ad425b28886",
+      "dimensions": "1707x2560",
+      "status": "RECOVERED_REAL_COVER"
+    },
+    {
+      "asset": "Sean A Crowley I author portrait",
+      "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2026_Crowley_Strategies_For_Success/03_Design/Cover/headshot.png",
+      "sha256": "ebd8786186f79f9e6c34134249b916a2c4f1bd168716f242e32bf4ef81b7aa04",
+      "dimensions": "3925x4908",
+      "status": "RECOVERED_REAL_AUTHOR_PORTRAIT"
+    },
+    {
+      "asset": "Founder-corrected J Merrill logo",
+      "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PRJ/projects/Brands/One/dev/jm1-one/public/icons/jm1-logo-white.png",
+      "sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+      "dimensions": "512x512",
+      "status": "RECOVERED_OFFICIAL_LOGO"
+    }
+  ],
+  "localDerivatives": [
+    {
+      "path": "publishing_rebuild_exact_assets/the_shift_cover_social_derivative.png",
+      "sha256": "4fb9eda4a15f920270c33f65a06a15a60916111b3a932af85b7147602c5f0f5b",
+      "dimensions": "300x450",
+      "note": "Derived from recovered real cover without AI transformation."
+    },
+    {
+      "path": "publishing_rebuild_exact_assets/strategies_cover_social_derivative.png",
+      "sha256": "b9f4419d40eb3ab85dc8116ec45e01322fef10e9de3723a6c22a76cfe1918f79",
+      "dimensions": "300x450",
+      "note": "Derived from recovered real cover without AI transformation."
+    },
+    {
+      "path": "publishing_rebuild_exact_assets/sean_headshot_square_crop.png",
+      "sha256": "1cbb75c00763ae53671cea04038aa6b6fc7b21d8c1b82cfd3473022c752c86b7",
+      "dimensions": "430x538",
+      "note": "Cropped from recovered real author portrait without AI-generated likeness."
+    }
+  ],
+  "guardrailResults": {
+    "fabricatedBookCovers": 0,
+    "fabricatedAuthorPortraits": 0,
+    "questionableThirdPartyImagery": 0,
+    "fakeLogoUsage": 0,
+    "aiEditedBookCovers": 0,
+    "aiGeneratedRealAuthorLikeness": 0
+  }
+}

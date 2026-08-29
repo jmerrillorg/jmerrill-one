@@ -1,0 +1,64 @@
+{
+  "artifact": "PUBLISHING_EXACT_FILE_CANARY_EXECUTION",
+  "createdAt": "2026-08-29T03:13:33-0400",
+  "brand": "J Merrill Publishing",
+  "engagementAuthority": "NONE",
+  "socialRoleSeparation": {
+    "sintra": "STRATEGY / COPY / CALENDAR / ORCHESTRATION",
+    "metaBusinessSuite": "FACEBOOK + INSTAGRAM EXECUTION",
+    "linkedinNative": "LINKEDIN EXECUTION",
+    "futureJm1Api": "TARGET DETERMINISTIC EXECUTION LAYER"
+  },
+  "metaCanary": {
+    "creationAttempted": true,
+    "scheduler": "Meta Business Suite UI",
+    "destinationReadbackBeforePublish": "J Merrill Publishing Inc and jmerrillpub",
+    "facebookStory": "OFF",
+    "boost": "OFF",
+    "caption": "Before September begins, we are opening the month with an author worth meeting. Sean A Crowley I brings readers into questions of faith, change, and leadership through The Shift: Changing with God and Strategies for Success in Educational Leadership. Explore The Shift: https://amzn.to/4hZvsNG Strategies for Success: https://amzn.to/4wXeeV0 #JMerrillPublishing #FeaturedAuthor #HelpingAuthorsHelpThemselves",
+    "media": {
+      "path": "publishing_rebuild_exact_creatives/sean_featured_author_meta_square_2026-09-01.png",
+      "sha256": "dc3f056d6179cd37f95b034ce8498b681627dde330684e3936a285044c51d9d3",
+      "dimensions": "1080x1080",
+      "metaComposerReadback": "1080 x 1080"
+    },
+    "facebook": {
+      "status": "PASS_PUBLIC_VERIFIED",
+      "publicPage": "https://www.facebook.com/jmerrillpub",
+      "liveReadback": "Visible on J Merrill Publishing Inc page at approximately 1 minute old with the submitted caption prefix and exact-file image.",
+      "platformPhotoId": "1395401745931606"
+    },
+    "instagram": {
+      "status": "HOLD_NOT_PUBLIC_VERIFIED",
+      "publicProfile": "https://www.instagram.com/jmerrillpub/",
+      "liveReadback": "Profile still showed 354 posts with top visible post dated July 22, 2026 after refresh/recheck. Meta publish flow completed, but Instagram public proof was not established.",
+      "platformPostId": null
+    }
+  },
+  "linkedinCanary": {
+    "creationAttempted": true,
+    "scheduler": "LinkedIn native company-page composer",
+    "destinationReadbackBeforePublish": "J Merrill Publishing, Inc.; Post to Anyone",
+    "organizationId": "13048648",
+    "caption": "September opens with a focused J Merrill Publishing author spotlight: Sean A Crowley I. His work moves through faith, change, and leadership, including The Shift: Changing with God and Strategies for Success in Educational Leadership. Explore The Shift: https://amzn.to/4hZvsNG Strategies for Success: https://amzn.to/4wXeeV0 #JMerrillPublishing #FeaturedAuthor #HelpingAuthorsHelpThemselves",
+    "media": {
+      "path": "publishing_rebuild_exact_creatives/sean_featured_author_linkedin_wide_2026-09-01.png",
+      "sha256": "7cc5501bde642937334bbd63d85afc2f64af9e0f51642a9b03920b7f0abfa756",
+      "dimensions": "1200x627",
+      "linkedinUploaderReadback": "Preview of sean_featured_author_linkedin_wide_2026-09-01.png"
+    },
+    "altText": "J Merrill Publishing September Featured Author graphic for Sean A Crowley I, featuring his portrait with The Shift and Strategies for Success book covers.",
+    "platformResponse": "Post successful",
+    "platformPostId": "urn:li:share:7499363165080829952",
+    "publicUrl": "https://www.linkedin.com/feed/update/urn:li:share:7499363165080829952?actorCompanyId=13048648",
+    "status": "PASS_PLATFORM_RESPONSE_AND_URL",
+    "readbackCaveat": "The direct post page loaded as Post | LinkedIn, but the post page content did not expose readable accessibility text during verification. Treat as posted with platform response/link, not full screen-reader content verification."
+  },
+  "classification": "J MERRILL PUBLISHING EXACT-FILE EXECUTION PARTIALLY PROVEN - FACEBOOK PUBLIC VERIFIED + LINKEDIN NATIVE PLATFORM RESPONSE; INSTAGRAM PUBLIC VERIFICATION HOLD",
+  "notClaimed": [
+    "Instagram public publication proof",
+    "complete 30-day rebuild",
+    "Sintra future queue fully retired",
+    "JM1-owned API-based publishing execution"
+  ]
+}
