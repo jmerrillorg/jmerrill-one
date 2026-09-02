@@ -1,0 +1,489 @@
+{
+  "packageId": 777,
+  "artifact": "JM1-DEDICATED-DATAVERSE-MARKETING-RUNTIME-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "solution": "JMerrillOne",
+  "metadata": [
+    {
+      "logicalName": "jm1_marketingeligibility",
+      "entitySetName": "jm1_marketingeligibilities",
+      "state": "REUSED",
+      "columns": [
+        {
+          "schemaName": "jm1_Branch",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_SourceEntity",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_SourceRecord",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_SourceEvent",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_MarketingProgram",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CampaignType",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Subject",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Priority",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_State",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_IdempotencyKey",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_AuthoritySource",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ExceptionState",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_EligibleAt",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ExpiresAt",
+          "state": "REUSED"
+        }
+      ]
+    },
+    {
+      "logicalName": "jm1_campaignauthority",
+      "entitySetName": "jm1_campaignauthorities",
+      "state": "REUSED",
+      "columns": [
+        {
+          "schemaName": "jm1_Branch",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Program",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CampaignType",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Subject",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Audience",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CTA",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Cadence",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Priority",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Supersession",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_JourneyRequirement",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_SocialRequirement",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CreativeRequirement",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_AnalyticsRequirement",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_State",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_IdempotencyKey",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Start",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Stop",
+          "state": "REUSED"
+        }
+      ]
+    },
+    {
+      "logicalName": "jm1_contentwork",
+      "entitySetName": "jm1_contentworks",
+      "state": "REUSED",
+      "columns": [
+        {
+          "schemaName": "jm1_Branch",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Stage",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Audience",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CopyBrief",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_DraftCopy",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_PublicReadyState",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_IdempotencyKey",
+          "state": "REUSED"
+        }
+      ]
+    },
+    {
+      "logicalName": "jm1_creativework",
+      "entitySetName": "jm1_creativeworks",
+      "state": "REUSED",
+      "columns": [
+        {
+          "schemaName": "jm1_Branch",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Stage",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_AssetPath",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_AssetHash",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_LogoHash",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Dimensions",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_PublicReadyState",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_IdempotencyKey",
+          "state": "REUSED"
+        }
+      ]
+    },
+    {
+      "logicalName": "jm1_socialexecution",
+      "entitySetName": "jm1_socialexecutions",
+      "state": "REUSED",
+      "columns": [
+        {
+          "schemaName": "jm1_Branch",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Platform",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Executor",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_RequestedDestination",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ActualDestination",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_RequestedMediaHash",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ActualMediaReference",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CaptionVersion",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_PlatformPostId",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Status",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ErrorCode",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ErrorMessage",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ReadbackState",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_IdempotencyKey",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_RequestedSchedule",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ActualSchedule",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_VerifiedAt",
+          "state": "REUSED"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "parent": "jm1_marketingeligibility",
+      "child": "jm1_campaignauthority",
+      "lookupSchema": "jm1_MarketingEligibility",
+      "relationshipSchema": "jm1_marketingeligibility_campaignauthority",
+      "state": "REUSED"
+    },
+    {
+      "parent": "jm1_campaignauthority",
+      "child": "jm1_contentwork",
+      "lookupSchema": "jm1_CampaignAuthority",
+      "relationshipSchema": "jm1_campaignauthority_contentwork",
+      "state": "REUSED"
+    },
+    {
+      "parent": "jm1_campaignauthority",
+      "child": "jm1_creativework",
+      "lookupSchema": "jm1_CampaignAuthority",
+      "relationshipSchema": "jm1_campaignauthority_creativework",
+      "state": "REUSED"
+    },
+    {
+      "parent": "jm1_campaignauthority",
+      "child": "jm1_socialexecution",
+      "lookupSchema": "jm1_CampaignAuthority",
+      "relationshipSchema": "jm1_campaignauthority_socialexecution",
+      "state": "REUSED"
+    }
+  ],
+  "runtime": {
+    "trigger": "FEATURED_AUTHOR_MONTH_ACTIVE",
+    "branch": "J Merrill Publishing",
+    "featuredAuthor": "Iyorwuese",
+    "campaign": "October 2026 Featured Author - Iyorwuese",
+    "firstRun": {
+      "eligibilityId": "d32fae45-90a6-f111-b8de-00224820105b",
+      "campaignId": "d42fae45-90a6-f111-b8de-00224820105b",
+      "contentIds": [
+        "d52fae45-90a6-f111-b8de-00224820105b",
+        "d62fae45-90a6-f111-b8de-00224820105b",
+        "5c2b2542-90a6-f111-b8de-6045bdd69435",
+        "d72fae45-90a6-f111-b8de-00224820105b",
+        "5d2b2542-90a6-f111-b8de-6045bdd69435"
+      ],
+      "creativeId": "d82fae45-90a6-f111-b8de-00224820105b",
+      "socialIds": [
+        "65fd1047-90a6-f111-b8de-000d3a9eacee",
+        "263e5146-90a6-f111-b8de-6045bdd69738",
+        "d92fae45-90a6-f111-b8de-00224820105b"
+      ]
+    },
+    "secondRun": {
+      "eligibilityId": "d32fae45-90a6-f111-b8de-00224820105b",
+      "campaignId": "d42fae45-90a6-f111-b8de-00224820105b",
+      "contentIds": [
+        "d52fae45-90a6-f111-b8de-00224820105b",
+        "d62fae45-90a6-f111-b8de-00224820105b",
+        "5c2b2542-90a6-f111-b8de-6045bdd69435",
+        "d72fae45-90a6-f111-b8de-00224820105b",
+        "5d2b2542-90a6-f111-b8de-6045bdd69435"
+      ],
+      "creativeId": "d82fae45-90a6-f111-b8de-00224820105b",
+      "socialIds": [
+        "65fd1047-90a6-f111-b8de-000d3a9eacee",
+        "263e5146-90a6-f111-b8de-6045bdd69738",
+        "d92fae45-90a6-f111-b8de-00224820105b"
+      ]
+    },
+    "readbackCounts": {
+      "eligibility": 1,
+      "campaign": 1,
+      "content": 5,
+      "creative": 1,
+      "social": 3
+    },
+    "readback": {
+      "eligibility": [
+        {
+          "@odata.etag": "W/\"50887072\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:eligibility",
+          "jm1_marketingeligibilityid": "d32fae45-90a6-f111-b8de-00224820105b",
+          "jm1_name": "October 2026 Featured Author - Iyorwuese Eligibility",
+          "createdon": "2026-09-02T05:36:41Z"
+        }
+      ],
+      "campaign": [
+        {
+          "@odata.etag": "W/\"50887073\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:campaign",
+          "jm1_name": "October 2026 Featured Author - Iyorwuese",
+          "jm1_campaignauthorityid": "d42fae45-90a6-f111-b8de-00224820105b",
+          "createdon": "2026-09-02T05:36:41Z"
+        }
+      ],
+      "content": [
+        {
+          "@odata.etag": "W/\"50887074\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:content:month_introduction",
+          "jm1_name": "Iyorwuese month introduction",
+          "jm1_contentworkid": "d52fae45-90a6-f111-b8de-00224820105b",
+          "createdon": "2026-09-02T05:36:41Z"
+        },
+        {
+          "@odata.etag": "W/\"50887075\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:content:title_discovery",
+          "jm1_name": "Iyorwuese title discovery",
+          "jm1_contentworkid": "d62fae45-90a6-f111-b8de-00224820105b",
+          "createdon": "2026-09-02T05:36:42Z"
+        },
+        {
+          "@odata.etag": "W/\"50887078\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:content:mid_month_engagement",
+          "jm1_name": "Iyorwuese mid month engagement",
+          "jm1_contentworkid": "d72fae45-90a6-f111-b8de-00224820105b",
+          "createdon": "2026-09-02T05:36:42Z"
+        },
+        {
+          "@odata.etag": "W/\"50887076\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:content:author_continuation",
+          "jm1_name": "Iyorwuese author continuation",
+          "jm1_contentworkid": "5c2b2542-90a6-f111-b8de-6045bdd69435",
+          "createdon": "2026-09-02T05:36:42Z"
+        },
+        {
+          "@odata.etag": "W/\"50887079\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:content:month_close_continuation",
+          "jm1_name": "Iyorwuese month close continuation",
+          "jm1_contentworkid": "5d2b2542-90a6-f111-b8de-6045bdd69435",
+          "createdon": "2026-09-02T05:36:42Z"
+        }
+      ],
+      "creative": [
+        {
+          "@odata.etag": "W/\"50887080\"",
+          "jm1_creativeworkid": "d82fae45-90a6-f111-b8de-00224820105b",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:creative:month_introduction",
+          "jm1_name": "Iyorwuese October Featured Author intro creative",
+          "createdon": "2026-09-02T05:36:42Z"
+        }
+      ],
+      "social": [
+        {
+          "@odata.etag": "W/\"50887081\"",
+          "jm1_socialexecutionid": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:social:facebook",
+          "jm1_name": "Iyorwuese October intro - facebook",
+          "createdon": "2026-09-02T05:36:43Z"
+        },
+        {
+          "@odata.etag": "W/\"50887085\"",
+          "jm1_socialexecutionid": "d92fae45-90a6-f111-b8de-00224820105b",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:social:linkedin",
+          "jm1_name": "Iyorwuese October intro - linkedin",
+          "createdon": "2026-09-02T05:36:44Z"
+        },
+        {
+          "@odata.etag": "W/\"50887083\"",
+          "jm1_socialexecutionid": "263e5146-90a6-f111-b8de-6045bdd69738",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:social:instagram",
+          "jm1_name": "Iyorwuese October intro - instagram",
+          "createdon": "2026-09-02T05:36:44Z"
+        }
+      ]
+    },
+    "idempotency": {
+      "marker": "e60c47b5da7824de99976e0a",
+      "result": "PASS",
+      "before": {
+        "jm1_marketingeligibility": 1,
+        "jm1_campaignauthority": 1,
+        "jm1_contentwork": 5,
+        "jm1_creativework": 1,
+        "jm1_socialexecution": 3
+      },
+      "afterFirstRun": {
+        "jm1_marketingeligibility": 1,
+        "jm1_campaignauthority": 1,
+        "jm1_contentwork": 5,
+        "jm1_creativework": 1,
+        "jm1_socialexecution": 3
+      },
+      "afterSecondRun": {
+        "jm1_marketingeligibility": 1,
+        "jm1_campaignauthority": 1,
+        "jm1_contentwork": 5,
+        "jm1_creativework": 1,
+        "jm1_socialexecution": 3
+      }
+    },
+    "manualInterventionCount": 0
+  },
+  "classification": "DATAVERSE_MARKETING_TABLE_RUNTIME_PROVEN"
+}
