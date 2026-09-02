@@ -1,0 +1,99 @@
+{
+  "packageId": 784,
+  "artifact": "JM1-OWNED-RUNTIME-ACTIVATION-GATE-STATUS-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "environment": {
+    "dataverseUrl": "https://jm1hq.crm.dynamics.com",
+    "environmentName": "JM1-Core",
+    "authenticatedUser": "jm1-admin@jmerrill.one",
+    "azureTenantId": "352d075e-8e17-4169-9f8e-22e6946ce66d",
+    "azureSubscription": "JM1 - Nonprofit Core (2025 Grant)"
+  },
+  "correctedSeptemberBaseline": {
+    "facebookFinalExecution": "Meta Business Suite UI",
+    "instagramFinalExecution": "Meta Business Suite UI",
+    "linkedinFinalExecution": "LinkedIn native organization UI",
+    "sintraSoshieFinalAuthority": "NO - superseded execution objects were removed during remediation",
+    "level1PassCondition": "Approved execution records -> no Computer Use / no Meta UI / no LinkedIn UI / no Sintra UI -> JM1-owned platform adapters -> FB + IG + LinkedIn -> platform IDs/readback -> Dataverse"
+  },
+  "dynamicsCustomerInsightsJourneys": {
+    "appModule": {
+      "name": "Customer Insights - Journeys",
+      "uniqueName": "msdyncrm_MarketingSMBApp",
+      "appModuleId": "ca6ccef2-1897-f111-8076-00224820105b"
+    },
+    "observedRuntimeCounts": {
+      "msdynmkt_journeys": 0,
+      "msdynmkt_emails": 0,
+      "msdynmkt_segments": 0,
+      "msdynmkt_purposes": 4,
+      "msdynmkt_topics": 0,
+      "msdynmkt_contactpointconsents": 0,
+      "msdynmkt_journeytemplates": 0,
+      "msdynmkt_emailtemplates": 34,
+      "msdynmkt_brandprofiles": 1
+    },
+    "supportedActionsObserved": [
+      "msdynmkt_CreateJourneyFromTemplate",
+      "msdynmkt_CreateJourneyJsonFromTemplate",
+      "msdynmkt_ValidateJourneyJson",
+      "msdynmkt_PublishJourneyV2"
+    ],
+    "safeAuthoringResult": "HELD",
+    "classification": "DYNAMICS_JOURNEY_SAFE_AUTHORING_BOUNDARY_HELD",
+    "reason": "The Customer Insights - Journeys app is installed, but no Journey, Segment, marketing email, topic/consent, or journey template runtime currently exists for a minimum safe controlled Publishing Journey proof. The supported API path is template/JSON-validation based, and creating a production marketing journey without a verified sender/audience/consent/template contract would violate the controlled-test boundary."
+  },
+  "meta": {
+    "developerConsoleObserved": true,
+    "observedState": {
+      "appsList": "No apps yet",
+      "createAppAvailable": true,
+      "businessPortfolioSelector": "No business portfolio selected"
+    },
+    "targetBusinessAuthority": "J Merrill One business authority",
+    "targetDestinations": {
+      "facebook": "J Merrill Publishing Inc",
+      "instagram": "jmerrillpub"
+    },
+    "runtimeCredit": "NO JM1-owned Meta API publishing proof yet",
+    "classification": "META_APP_CREATION_ACTION_TIME_CONFIRMATION_REQUIRED",
+    "reason": "Creating a Meta developer app, configuring OAuth, requesting scopes, and storing credentials creates persistent platform access. The controlling approval was supplied in an attached instruction document, but action-time confirmation is still required before making the persistent external-platform change."
+  },
+  "linkedin": {
+    "developerConsoleObserved": true,
+    "observedState": {
+      "appsList": "zero LinkedIn developer apps observed",
+      "createAppAvailable": true
+    },
+    "targetOrganization": {
+      "name": "J Merrill Publishing, Inc.",
+      "organizationId": "13048648"
+    },
+    "targetApiProduct": "Community Management / organization publishing",
+    "runtimeCredit": "NO JM1-owned LinkedIn API publishing proof yet",
+    "classification": "LINKEDIN_APP_CREATION_ACTION_TIME_CONFIRMATION_REQUIRED_THEN_API_PRODUCT_REVIEW_DEPENDENCY",
+    "reason": "Creating/submitting the LinkedIn developer app and requesting Community Management access creates persistent platform/app state. LinkedIn organization publishing access may also require external product review and approval."
+  },
+  "assetResolution": {
+    "artifact": "783_jm1_iyorwuese_asset_resolution_and_rework_v1.json",
+    "authorHeadshot": "APPROVED_PROVENANCE_AUTHOR_WORKSPACE",
+    "aPortraitOfParadiseCover": "APPROVED_CURRENT_DISTRIBUTION_COVER",
+    "theGeneralsWill": {
+      "titleMarketingEligibility": "TITLE_MARKETING_ELIGIBLE_WITHOUT_COVER",
+      "coverDependentCreativeArchetypes": "HELD"
+    },
+    "automationProof": "ASSET_EXCEPTION_REEVALUATION_AUTOMATION_PROVEN"
+  },
+  "noTouchReadiness": {
+    "dynamics": "HELD_SAFE_AUTHORING_BOUNDARY",
+    "meta": "HELD_ACTION_TIME_CONFIRMATION_AND_PLATFORM_AUTHORITY",
+    "linkedin": "HELD_ACTION_TIME_CONFIRMATION_AND_EXTERNAL_PRODUCT_REVIEW",
+    "dataverse": "PASS",
+    "assetResolution": "PASS",
+    "overall": "NOT_READY_FOR_LEVEL1_NO_TOUCH_PASS"
+  },
+  "nextFounderOnlyDecisions": [
+    "Confirm in chat that Cody should create persistent JM1-owned Meta and LinkedIn developer app/OAuth configuration now under the observed authenticated sessions.",
+    "Confirm the exact controlled Customer Insights sender/audience/consent setup if Customer Insights Journeys cannot derive it from existing production configuration."
+  ]
+}

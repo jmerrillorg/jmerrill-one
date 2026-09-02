@@ -1,0 +1,153 @@
+{
+  "packageId": 783,
+  "artifact": "JM1-IYORWUESE-ASSET-RESOLUTION-AND-REWORK-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "campaignAuthority": {
+    "id": "d42fae45-90a6-f111-b8de-00224820105b",
+    "name": "October 2026 Featured Author - Iyorwuese",
+    "idempotencyKey": "e60c47b5da7824de99976e0a:campaign"
+  },
+  "assetResolution": {
+    "authorHeadshot": {
+      "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/author_headshot.jpg",
+      "basename": "author_headshot.jpg",
+      "exists": true,
+      "sha256": "8f16b0a7b0c47e1a813478c31f31f47c868849dc20e88032b5846d39a9b754eb",
+      "mime": "image/jpeg",
+      "bytes": 905593,
+      "dimensions": {
+        "width": 1063,
+        "height": 1328
+      },
+      "provenance": "Publishing distribution folder / 01 Author Files",
+      "approvalState": "APPROVED_PROVENANCE_AUTHOR_WORKSPACE"
+    },
+    "aPortraitOfParadiseCover": {
+      "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/08 Distribution Records/9781961475670_FC.jpg",
+      "basename": "9781961475670_FC.jpg",
+      "exists": true,
+      "sha256": "5cf31e28bfd3eb7dbd091445a4ccbce5f9c65b5d3eb5d039fafae3d642033be3",
+      "mime": "image/jpeg",
+      "bytes": 695265,
+      "dimensions": {
+        "width": 1707,
+        "height": 2560
+      },
+      "provenance": "Publishing distribution records / front-cover asset",
+      "approvalState": "APPROVED_CURRENT_DISTRIBUTION_COVER"
+    },
+    "aPortraitOfParadiseCoverDesignMaster": {
+      "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/full.png",
+      "basename": "full.png",
+      "exists": true,
+      "sha256": "64c75e7431820853186c48375a7adf9b5c3caffca1520c52503037ab21d8cf7c",
+      "mime": "image/png",
+      "bytes": 12458941,
+      "dimensions": {
+        "width": 4052,
+        "height": 2720
+      },
+      "provenance": "Publishing cover design master file",
+      "approvalState": "SUPPORTING_PROVENANCE_FOUND"
+    },
+    "officialLogo": {
+      "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PRJ/projects/Brands/One/dev/jm1-one/public/icons/jm1-logo-white.png",
+      "basename": "jm1-logo-white.png",
+      "exists": true,
+      "sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+      "mime": "image/png",
+      "bytes": 47399,
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "provenance": "Official J Merrill One logo path supplied by Founder",
+      "approvalState": "APPROVED_OFFICIAL_LOGO"
+    },
+    "theGeneralsWill": {
+      "titleMarketingEligibility": "TITLE_MARKETING_ELIGIBLE_WITHOUT_COVER",
+      "coverDependentCreativeArchetypes": "HELD",
+      "reason": "The General's Will marketing may use non-cover public-ready concepts; final-cover creative remains blocked until a governed cover asset exists."
+    }
+  },
+  "exceptionUpdates": [
+    {
+      "idempotencyKey": "e60c47b5da7824de99976e0a:exception:missing_author_portrait",
+      "state": "PATCHED",
+      "rowId": "0bffaf40-b8a6-f111-b8de-6045bdd69678",
+      "payload": {
+        "jm1_resolutionstate": "RESOLVED",
+        "jm1_resolution": "author_headshot.jpg is located in the Publishing distribution source under 01 Author Files with title contract/source context present; likeness-specific October creative may proceed from this file without AI-generated likeness.",
+        "jm1_authorityrequired": "None - provenance established from Publishing source"
+      }
+    },
+    {
+      "idempotencyKey": "e60c47b5da7824de99976e0a:exception:missing_title_cover",
+      "state": "PATCHED",
+      "rowId": "6ae9c344-b8a6-f111-b8de-6045bdd69435",
+      "payload": {
+        "jm1_resolutionstate": "PARTIAL_RESOLVED",
+        "jm1_resolution": "A Portrait of Paradise cover is resolved from Publishing distribution records. The General's Will cover remains held; title marketing may proceed without that cover, and cover-dependent creative archetypes for The General's Will stay held.",
+        "jm1_authorityrequired": "None for A Portrait of Paradise; Publishing/title authority still required for The General's Will cover"
+      }
+    }
+  ],
+  "automationProof": {
+    "exceptionResolved": true,
+    "affectedCreativeWorkReevaluated": true,
+    "creativeProductionEngine": "PASS",
+    "publicReadyGate": "PASS",
+    "executionEligibility": "ELIGIBLE_HELD_FOR_PLATFORM_API_AUTHORITY"
+  },
+  "creative": {
+    "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_a_portrait_of_paradise_asset_resolved_1080.svg",
+    "sha256": "48ceea8ef987454d5ac7e2cb2a5933881223b721dfb0de4151f36ea5ef350a15",
+    "sourceAssets": {
+      "cover": {
+        "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/08 Distribution Records/9781961475670_FC.jpg",
+        "sha256": "5cf31e28bfd3eb7dbd091445a4ccbce5f9c65b5d3eb5d039fafae3d642033be3"
+      },
+      "authorHeadshot": {
+        "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/author_headshot.jpg",
+        "sha256": "8f16b0a7b0c47e1a813478c31f31f47c868849dc20e88032b5846d39a9b754eb"
+      },
+      "logo": {
+        "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PRJ/projects/Brands/One/dev/jm1-one/public/icons/jm1-logo-white.png",
+        "sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a"
+      }
+    },
+    "dimensions": {
+      "width": 1080,
+      "height": 1080
+    },
+    "publicReadyState": "PASS",
+    "noAiCoverEdit": true,
+    "noAiGeneratedAuthorLikeness": true,
+    "logoIncluded": true
+  },
+  "dataverseRows": {
+    "creativeId": "e68983fa-bba6-f111-b8de-6045bdd69738",
+    "socialIds": [
+      "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2",
+      "bbf1b9fe-bba6-f111-b8de-00224820105b",
+      "f36a5ffa-bba6-f111-b8de-6045bdd69678"
+    ],
+    "controlLoopId": "bcf1b9fe-bba6-f111-b8de-00224820105b"
+  },
+  "readback": {
+    "exceptions": 5,
+    "creative": 3,
+    "social": 9,
+    "controlLoops": 3,
+    "assetResolvedSocialRows": 3
+  },
+  "classifications": [
+    "IYORWUESE_AUTHOR_HEADSHOT_APPROVED_BY_PUBLISHING_SOURCE_PROVENANCE",
+    "A_PORTRAIT_OF_PARADISE_CURRENT_COVER_APPROVED_BY_DISTRIBUTION_PROVENANCE",
+    "THE_GENERALS_WILL_TITLE_MARKETING_ELIGIBLE_WITHOUT_COVER",
+    "THE_GENERALS_WILL_COVER_DEPENDENT_CREATIVE_ARCHETYPES_HELD",
+    "ASSET_EXCEPTION_REEVALUATION_AUTOMATION_PROVEN"
+  ],
+  "noTouchRuntime": "PLATFORM_EXECUTION_STILL_HELD_FOR_META_AND_LINKEDIN_API_AUTHORITY"
+}
