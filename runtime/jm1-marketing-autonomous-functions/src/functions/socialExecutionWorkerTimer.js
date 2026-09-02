@@ -78,6 +78,13 @@ app.timer('socialExecutionWorkerTimer', {
         continue;
       }
 
+      await patchById(socialSet, row.jm1_socialexecutionid, {
+        jm1_status: 'PLATFORM_API_ATTEMPT_IN_PROGRESS',
+        jm1_actualmediareference: mediaUrl,
+        jm1_readbackstate: 'PLATFORM_API_ATTEMPT_STARTED',
+        jm1_verifiedat: envelope.startedAt
+      });
+
       const result = row.jm1_platform === 'facebook'
         ? await publishFacebookPhoto({ expected: publishing, caption, imageUrl: mediaUrl })
         : await publishInstagramPhoto({ expected: publishing, caption, imageUrl: mediaUrl });
@@ -87,7 +94,6 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_status: 'PUBLISHED_VERIFIED',
           jm1_platformpostid: result.platformPostId,
           jm1_actualmediareference: mediaUrl,
-          jm1_actualcaption: caption,
           jm1_readbackstate: result.readbackState,
           jm1_verifiedat: envelope.startedAt,
           jm1_errorcode: '',
@@ -97,7 +103,6 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_status: result.state === 'READBACK_MISMATCH' ? 'READBACK_MISMATCH' : 'HELD_PLATFORM_API_ERROR',
           jm1_platformpostid: result.platformPostId || '',
           jm1_actualmediareference: mediaUrl,
-          jm1_actualcaption: caption,
           jm1_readbackstate: result.readbackState || result.state,
           jm1_verifiedat: envelope.startedAt,
           jm1_errorcode: result.state,
