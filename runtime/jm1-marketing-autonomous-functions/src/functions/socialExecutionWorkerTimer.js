@@ -88,7 +88,6 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_platformpostid: result.platformPostId,
           jm1_actualmediareference: mediaUrl,
           jm1_actualcaption: caption,
-          jm1_publishedat: envelope.startedAt,
           jm1_readbackstate: result.readbackState,
           jm1_verifiedat: envelope.startedAt,
           jm1_errorcode: '',
