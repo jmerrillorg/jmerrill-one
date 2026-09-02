@@ -1,0 +1,14 @@
+{
+  "name": "jm1-marketing-autonomous-functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/functions/*.js",
+  "scripts": {
+    "check": "node --check src/functions/marketingControlLoopTimer.js && node --check src/functions/socialExecutionWorkerTimer.js && node --check src/functions/credentialMonitorTimer.js"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.7.2"
+  },
+  "devDependencies": {}
+}

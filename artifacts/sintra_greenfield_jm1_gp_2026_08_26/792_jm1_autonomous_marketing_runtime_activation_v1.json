@@ -1,0 +1,288 @@
+{
+  "packageId": 792,
+  "artifact": "JM1-AUTONOMOUS-MARKETING-RUNTIME-ACTIVATION-v1",
+  "generatedAt": "2026-09-02T16:31:00Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Autonomous Trigger + Dynamics Runtime",
+  "classification": "AUTONOMOUS_MARKETING_CONTROL_LOOP_TRIGGER_PROVEN_BOUNDARY_HELD",
+  "preservedClassifications": [
+    "META_SYSTEM_USER_TOKEN_VERIFIED",
+    "FACEBOOK_OWNED_API_RUNTIME_PROVEN",
+    "INSTAGRAM_OWNED_API_RUNTIME_PROVEN",
+    "META_PLATFORM_IDEMPOTENCY_PROVEN",
+    "META_OWNED_API_RUNTIME_PROVEN"
+  ],
+  "azureRuntime": {
+    "resourceGroup": "rg-jm1-ai",
+    "functionApp": "func-jm1-marketing-runtime",
+    "defaultHostName": "func-jm1-marketing-runtime.azurewebsites.net",
+    "runtime": "Node|22",
+    "identityPrincipalId": "38b09d6f-34d9-48b3-9627-f04c047fd534",
+    "keyVaultAccess": {
+      "vault": "jm1-core-vault",
+      "role": "Key Vault Secrets User",
+      "secretValuesRecorded": false
+    },
+    "applicationInsightsAppId": "af8c2778-2a98-4b7e-93b3-b5b49666234f",
+    "deployment": {
+      "method": "Azure Functions Core Tools remote build",
+      "remoteBuild": "PASS",
+      "deploymentTimestampObserved": "2026-09-02T16:28:06Z",
+      "sourcePackage": "runtime/jm1-marketing-autonomous-functions"
+    }
+  },
+  "productionTriggers": [
+    {
+      "function": "credentialMonitorTimer",
+      "type": "timerTrigger",
+      "schedule": "0 7 12 * * *",
+      "purpose": "Daily credential lifecycle monitoring and exception routing"
+    },
+    {
+      "function": "marketingControlLoopTimer",
+      "type": "timerTrigger",
+      "schedule": "0 17 12 * * *",
+      "purpose": "Daily branch-aware Marketing Control Loop"
+    },
+    {
+      "function": "socialExecutionWorkerTimer",
+      "type": "timerTrigger",
+      "schedule": "0 */15 * * * *",
+      "purpose": "Routine social execution queue worker; live platform execution flag currently held"
+    }
+  ],
+  "secureConfiguration": {
+    "dataverseClientId": {
+      "type": "KeyVaultReference",
+      "secretReference": "jm1-core-vault/DATAVERSE-CLIENT-ID",
+      "secretVersion": "0315754ad82940c3b336830eff5b0933",
+      "valueRecorded": false
+    },
+    "dataverseClientSecret": {
+      "type": "KeyVaultReference",
+      "secretReference": "jm1-core-vault/DATAVERSE-CLIENT-SECRET",
+      "secretVersion": "beb12e0f4b5948e18d418e35b002128f",
+      "valueRecorded": false
+    },
+    "dataverseTenantId": {
+      "type": "KeyVaultReference",
+      "secretReference": "jm1-core-vault/DATAVERSE-TENANT-ID",
+      "secretVersion": "8bffaa868e0440a4911772a6017cd718",
+      "valueRecorded": false
+    },
+    "metaSystemUserToken": {
+      "type": "KeyVaultReference",
+      "secretReference": "jm1-core-vault/JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+      "secretVersion": "c8d340a1d16640c099e65ca4b2a0ae19",
+      "issuedAt": "2026-09-02T12:02:43Z",
+      "rotationDueAt": "2026-10-17T12:02:43Z",
+      "expiresAt": "2026-11-01T12:02:43Z",
+      "valueRecorded": false
+    }
+  },
+  "branchRuntimePolicy": {
+    "enterpriseOwner": "J Merrill One",
+    "activeBranches": [
+      "J Merrill Publishing"
+    ],
+    "configuredNotActivated": [
+      "J Merrill One",
+      "J Merrill Financial",
+      "J Merrill Foundation"
+    ],
+    "publishingDestinations": {
+      "facebook": {
+        "name": "J Merrill Publishing Inc",
+        "pageId": "307480763084670"
+      },
+      "instagram": {
+        "handle": "jmerrillpub",
+        "graphId": "17841410046020869"
+      },
+      "linkedin": {
+        "name": "J Merrill Publishing, Inc.",
+        "organizationId": "13048648",
+        "state": "HELD_LINKEDIN_API_PRODUCT_AUTHORITY"
+      }
+    },
+    "crossBranchAccessBroadening": false
+  },
+  "firstAutonomousInvocation": {
+    "timestamp": "2026-09-02T16:20:00Z",
+    "manualShellInvocationOfProductionFlow": false,
+    "browserExecution": false,
+    "metaBusinessSuiteUiExecution": false,
+    "sintraExecution": false,
+    "linkedinNativeUiExecution": false,
+    "dataverseReadWrite": "PASS",
+    "readback": {
+      "controlLoop": {
+        "entity": "jm1_marketingcontrolloop",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:autonomous:control-loop:daily",
+        "id": "ce5b4923-eaa6-f111-b8dd-7c1e52683637",
+        "state": "AUTONOMOUS_TRIGGER_PROVEN_BOUNDARY_HELD",
+        "evaluatedAt": "2026-09-02T16:20:00Z"
+      },
+      "credentialMonitor": [
+        {
+          "idempotencyKey": "e60c47b5da7824de99976e0a:credential:meta:system-user-token",
+          "id": "2689ac42-e7a6-f111-b8dd-7c1e52683637",
+          "state": "VERIFIED_ACTIVE_ROTATION_TRACKED",
+          "lastVerifiedAt": "2026-09-02T16:20:00Z"
+        },
+        {
+          "idempotencyKey": "e60c47b5da7824de99976e0a:credential:meta:synthetic-rotation-due-proof",
+          "id": "49c7ec24-eaa6-f111-b8de-7c1e525b15c2",
+          "state": "META_CREDENTIAL_ROTATION_DUE",
+          "exceptionCode": "META_CREDENTIAL_ROTATION_DUE",
+          "lastVerifiedAt": "2026-09-02T16:20:00Z"
+        }
+      ]
+    }
+  },
+  "idempotentAutonomousRerun": {
+    "timestamp": "2026-09-02T16:25:00Z",
+    "controlLoopRowsAfterRerun": 1,
+    "credentialRowsAfterRerun": 2,
+    "sameControlLoopIdReused": true,
+    "sameCredentialIdsReused": true,
+    "controlLoopId": "ce5b4923-eaa6-f111-b8dd-7c1e52683637",
+    "credentialIds": [
+      "2689ac42-e7a6-f111-b8dd-7c1e52683637",
+      "49c7ec24-eaa6-f111-b8de-7c1e525b15c2"
+    ],
+    "updatedTimestamps": [
+      "2026-09-02T16:25:00Z"
+    ],
+    "classification": "AUTONOMOUS_CONTROL_LOOP_IDEMPOTENCY_PROVEN"
+  },
+  "applicationInsightsProof": {
+    "requestSuccessesAt": "2026-09-02T16:25:00Z",
+    "successfulTimerRequests": [
+      {
+        "name": "credentialMonitorTimer",
+        "operationId": "d662a76590e243cbbaf60c689f64a734",
+        "success": true,
+        "resultCode": "0"
+      },
+      {
+        "name": "marketingControlLoopTimer",
+        "operationId": "ae804853ab7f15c0544985a4a2a07eb3",
+        "success": true,
+        "resultCode": "0"
+      },
+      {
+        "name": "socialExecutionWorkerTimer",
+        "operationId": "b0bd84b824f9635032a6045326018925",
+        "success": true,
+        "resultCode": "0"
+      }
+    ],
+    "exceptionsObserved": 0,
+    "controlLoopCorrelationId": "35c2eaab-244b-4783-98ad-e7ecf75e6fe6",
+    "socialWorkerCorrelationId": "ee157e39-b245-42f9-95a5-736730224f96",
+    "credentialMonitorCorrelationId": "55734294-3bfe-4abb-97cb-e614372a3be0"
+  },
+  "socialWorkerProof": {
+    "timestamp": "2026-09-02T16:25:00Z",
+    "metaAuthorityReadback": {
+      "state": "META_SYSTEM_USER_TOKEN_VERIFIED",
+      "pageId": "307480763084670",
+      "pageName": "J Merrill Publishing Inc",
+      "instagramGraphId": "17841410046020869"
+    },
+    "socialRowsRead": 9,
+    "eligibleMetaRowsRead": 4,
+    "platformObjectsCreated": 0,
+    "reason": "Execution flag intentionally held for the first autonomous trigger proof; no accidental live posts.",
+    "rowsMarkedReady": [
+      "bbf1b9fe-bba6-f111-b8de-00224820105b",
+      "8668125b-baa6-f111-b8de-6045bdd69435",
+      "d8f0155e-baa6-f111-b8de-6045bdd69678",
+      "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2"
+    ]
+  },
+  "credentialMonitorProof": {
+    "productionCredential": {
+      "state": "VERIFIED_ACTIVE_ROTATION_TRACKED",
+      "rotationDueAt": "2026-10-17T12:02:43Z",
+      "expiresAt": "2026-11-01T12:02:43Z",
+      "exceptionCode": null
+    },
+    "syntheticAcceleratedProof": {
+      "state": "META_CREDENTIAL_ROTATION_DUE",
+      "exceptionCode": "META_CREDENTIAL_ROTATION_DUE",
+      "realTokenReplaced": false
+    },
+    "postProofSyntheticFlag": "DISABLED"
+  },
+  "dynamics": {
+    "classification": "DYNAMICS_JOURNEY_HELD_SAFE_RUNTIME_BOUNDARY",
+    "latestAutonomousReadback": {
+      "journeys": 0,
+      "journeyTemplates": 0,
+      "emails": 0,
+      "segments": 0,
+      "topics": 0,
+      "contactPointConsents": 0
+    },
+    "implemented": false,
+    "executionProven": false,
+    "readbackProven": false,
+    "reason": "Customer Insights Journeys remains available as a product surface but lacks a controlled sender/email/segment/topic/contact-point consent runtime. The autonomous control loop now records the precise hold instead of requiring Cody to start a script."
+  },
+  "linkedin": {
+    "classification": "LINKEDIN_API_PRODUCT_REVIEW_OR_APP_CREATION_STILL_HELD",
+    "targetOrganization": {
+      "name": "J Merrill Publishing, Inc.",
+      "organizationId": "13048648"
+    },
+    "adapterExecution": "HELD_BEHIND_AUTHORITY",
+    "reason": "This package did not complete LinkedIn developer-app/product-review setup. LinkedIn remains a separate external platform authority boundary and does not block the Meta/autonomous control-loop proof."
+  },
+  "octoberControlLoop": {
+    "campaign": "October 2026 Featured Author - Iyorwuese",
+    "manualThirtyDayCalendarGenerated": false,
+    "introFatigueRule": "Intro already published; do not repeat the Featured Author intro.",
+    "nextStage": "Title discovery / asset-aware progression only after Dynamics or approved Meta timing boundary is resolved."
+  },
+  "noTouchResult": {
+    "result": "JM1_CORE_META_NO_TOUCH_TEST_FAIL",
+    "whatNowPasses": [
+      "Autonomous Azure timer trigger",
+      "Dataverse control-loop read/write/readback",
+      "Credential monitor read/write/readback",
+      "Social worker queue/readiness readback without browser execution",
+      "Meta authority readback from secure token reference"
+    ],
+    "remainingFailureReasons": [
+      "Dynamics Journey runtime not implemented/proven",
+      "Future scheduled Meta execution remains flag-held pending exact payload timing decision",
+      "LinkedIn API product/app authority not proven"
+    ],
+    "founderTouchCount": 0,
+    "codyManualStartCount": 0,
+    "browserExecutionCount": 0,
+    "metaBusinessSuiteUiExecutionCount": 0,
+    "sintraExecutionCount": 0,
+    "linkedinNativeUiExecutionCount": 0
+  },
+  "sintraAccounting": {
+    "currentClassification": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
+    "facebookInstagramExecution": "JM1 MetaAdapter proven; autonomous social worker deployed; scheduled execution flag held",
+    "linkedinExecution": "NOT_REPLACED",
+    "dynamicsLifecycle": "NOT_REPLACED_BY_SINTRA; HELD FOR CUSTOMER INSIGHTS JOURNEYS SAFE RUNTIME",
+    "sintraOptionalThresholdMet": false
+  },
+  "returnBoundary": {
+    "founderActionRequired": [
+      "Dynamics Customer Insights Journeys controlled sender/audience/compliance setup remains the consolidated activation item.",
+      "LinkedIn developer app/product review/terms boundary remains unresolved."
+    ],
+    "notRequired": [
+      "Meta proof rerun",
+      "Sintra publishing",
+      "Meta Business Suite UI publishing",
+      "Cody/local shell as production trigger"
+    ]
+  }
+}
