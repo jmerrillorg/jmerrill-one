@@ -419,7 +419,7 @@ function sanitizeReadback(input) {
   if (input && typeof input === 'object') {
     const output = {};
     for (const [key, value] of Object.entries(input)) {
-      if (/token/i.test(key)) output[key] = '[REDACTED]';
+      if (/token/i.test(key) && typeof value === 'string') output[key] = '[REDACTED]';
       else output[key] = sanitizeReadback(value);
     }
     return output;
