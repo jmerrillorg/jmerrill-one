@@ -1,0 +1,168 @@
+{
+  "packageId": 794,
+  "artifact": "JM1-DYNAMICS-META-AUTONOMOUS-RUNTIME-PROOF-v1",
+  "generatedAt": "2026-09-02T21:45:00Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Dynamics Runtime + Autonomous Meta Proof",
+  "security": {
+    "secretsCommitted": false,
+    "tokenValuesLogged": false,
+    "metaTokenSecretReference": "jm1-core-vault/JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+    "metaTokenSecretVersion": "c8d340a1d16640c099e65ca4b2a0ae19"
+  },
+  "dynamics": {
+    "classification": "DYNAMICS_JOURNEY_NOT_PROVEN",
+    "journeyExecutionRow": {
+      "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery",
+      "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY",
+      "dynamicsJourneyId": null
+    },
+    "liveCustomerInsightsInventory": {
+      "journeys": 0,
+      "journeyTemplates": 0,
+      "marketingEmails": 0,
+      "segments": 0,
+      "topics": 0,
+      "contactPointConsentRecords": 0,
+      "emailTemplates": 34,
+      "brandProfiles": 1,
+      "purposes": 4,
+      "complianceSettings": 1,
+      "domains": 1
+    },
+    "blocker": "No supported Customer Insights Journey/email/segment runtime surface is present for a controlled internal Journey proof. Do not create a production journey or infer consent."
+  },
+  "autonomousCreative": {
+    "classification": "CREATIVE_WORKER_AUTONOMOUS_TRIGGER_NOT_PROVEN",
+    "reason": "Existing governed creative rows are present, but no autonomous creative-worker trigger was proven in this run.",
+    "normalizedAssetCreated": {
+      "source": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_a_portrait_of_paradise_asset_resolved_1080.svg",
+      "output": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative_normalized/iyorwuese_a_portrait_of_paradise_asset_resolved_1080.png",
+      "outputSha256": "790f1b101f70266fcf5207df0d306776a1f6406ea6eb7bb1f599d3497e6d0346",
+      "dimensions": "1080x1080",
+      "logoIncluded": true
+    }
+  },
+  "autonomousMeta": {
+    "classification": "META_AUTONOMOUS_EXECUTION_NOT_PROVEN_DUPLICATE_RECONCILIATION_REQUIRED",
+    "executionMode": {
+      "metaBusinessSuiteUiPublishing": false,
+      "sintraPublishing": false,
+      "computerUsePublishing": false,
+      "azureTimerWorker": true
+    },
+    "attemptedRows": [
+      {
+        "platform": "instagram",
+        "id": "bbf1b9fe-bba6-f111-b8de-00224820105b",
+        "status": "HELD_DUPLICATE_RECONCILIATION_REQUIRED",
+        "canonicalRecordedPlatformId": "18124469272814415",
+        "readbackState": "READBACK_MATCH_DUPLICATE_OBJECTS_PRESENT",
+        "matchedInstagramObjectIds": [
+          "18124469272814415",
+          "18134196829616273",
+          "17906275731540577",
+          "18015028736923935"
+        ],
+        "permalinkReadbacks": [
+          "https://www.instagram.com/p/DczOLGaGryW/",
+          "https://www.instagram.com/p/DczOMkfIBJu/",
+          "https://www.instagram.com/p/DczOT2eDHIL/",
+          "https://www.instagram.com/p/DczObJFjP2D/"
+        ],
+        "failureCause": "Platform publish succeeded, then Dataverse rejected invalid jm1_actualcaption patch field; timer retried while row remained eligible."
+      },
+      {
+        "platform": "facebook",
+        "id": "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2",
+        "status": "HELD_AUTONOMOUS_META_RETRY_REQUIRES_RECONCILIATION",
+        "platformPostId": null,
+        "readbackState": "NO_FACEBOOK_MATCH_FOUND_AFTER_FAILED_WORKER_RUNS",
+        "failureCause": "Worker did not reach a durable Facebook certification state before Meta execution was disabled."
+      }
+    ],
+    "safetyActions": {
+      "metaAutonomousExecutionEnabled": false,
+      "socialExecutionWorkerCron": "0 */15 * * * *",
+      "affectedRowsHeld": true,
+      "workerHardened": "Pre-claims row as PLATFORM_API_ATTEMPT_IN_PROGRESS before platform publish and no longer writes nonexistent jm1_actualcaption/jm1_publishedat fields."
+    }
+  },
+  "credentialMonitor": {
+    "classification": "CREDENTIAL_ROTATION_MONITOR_BEHAVIOR_PROVEN",
+    "productionCredentialState": "VERIFIED_ACTIVE_ROTATION_TRACKED",
+    "productionCredentialRow": "2689ac42-e7a6-f111-b8dd-7c1e52683637",
+    "syntheticCredentialRow": "49c7ec24-eaa6-f111-b8de-7c1e525b15c2",
+    "syntheticExceptionRow": "70ef6eda-15a7-f111-b8dd-7c1e52683637",
+    "firstSyntheticExceptionCreatedAt": "2026-09-02T21:33:00Z",
+    "rerunBehavior": "Subsequent timer runs updated existing synthetic credential/exception rows; no duplicate exception was created.",
+    "restoredSettings": {
+      "JM1_CREDENTIAL_MONITOR_SYNTHETIC_ENABLED": "false",
+      "JM1_CREDENTIAL_MONITOR_CRON": "0 7 12 * * *"
+    }
+  },
+  "controlLoop": {
+    "classification": "CONTROL_LOOP_ACTIVE_DYNAMICS_BOUNDARY_HELD",
+    "introEligible": false,
+    "reason": "Intro rows already exist and are certified; no repeat October intro should be generated."
+  },
+  "coordinatedCampaign": {
+    "classification": "PARTIAL_EXTERNAL_DEPENDENCY_WITH_META_RECONCILIATION_REQUIRED",
+    "facebook": "HELD_AUTONOMOUS_META_RETRY_REQUIRES_RECONCILIATION",
+    "instagram": "HELD_DUPLICATE_RECONCILIATION_REQUIRED",
+    "linkedin": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+    "dynamicsJourney": "DYNAMICS_JOURNEY_NOT_PROVEN"
+  },
+  "noTouchTest": {
+    "exactResult": "JM1_CORE_META_NO_TOUCH_TEST_FAIL",
+    "reasons": [
+      "Dynamics Journey execution/readback not proven.",
+      "Autonomous Meta scheduled execution produced duplicate Instagram objects and did not complete Facebook proof.",
+      "LinkedIn Community Management API remains under external product review."
+    ]
+  },
+  "linkedin": {
+    "classification": "LINKEDIN_API_PRODUCT_REVIEW_PENDING",
+    "appName": "JM1 Organization Publisher",
+    "clientId": "78hqh0jqrb4y06",
+    "appInternalId": "266134085",
+    "organizationId": "13048648",
+    "organization": "J Merrill Publishing, Inc.",
+    "autonomousExecutionEnabled": false
+  },
+  "sintraAccounting": {
+    "classification": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
+    "sintraExecutionCreditForSeptemberFinalRun": false,
+    "metaBusinessSuiteUiWasSeptemberFinalFbIgScheduler": true,
+    "linkedinNativeWasSeptemberFinalLinkedInScheduler": true,
+    "ownedRuntimeStatus": "Not certified for routine execution until Dynamics and Meta duplicate reconciliation are closed."
+  },
+  "deploymentEvidence": {
+    "functionApp": "func-jm1-marketing-runtime",
+    "resourceGroup": "rg-jm1-ai",
+    "commits": [
+      "3f9afaa99df82c1ac840e429b576fb93e69a9e46",
+      "3e000b67ad40f5873ad714f67a4a2df3d11a6fb6",
+      "a354b44b4466e28376ca891cf26342996998bc83"
+    ],
+    "deployedAfterSafetyPatch": true,
+    "timerEvidence": {
+      "socialWorker": "21:33Z, 21:34Z, 21:35Z, 21:36Z, 21:37Z traces succeeded before due; 21:39Z, 21:40Z, 21:41Z failed on invalid Dataverse field during post-publish patch.",
+      "credentialMonitor": "21:33Z created synthetic exception; 21:34Z-21:41Z updated existing rows without duplicate exception."
+    }
+  },
+  "founderDecisionsRequired": [
+    {
+      "decision": "Approve whether Cody may delete three duplicate Instagram A Portrait posts, and which one should remain canonical.",
+      "currentCanonicalCandidate": "18124469272814415",
+      "duplicateCandidates": [
+        "18134196829616273",
+        "17906275731540577",
+        "18015028736923935"
+      ]
+    },
+    {
+      "decision": "Provide/approve the controlled Dynamics sender/compliance/audience setup required before Customer Insights Journey execution proof."
+    }
+  ]
+}
