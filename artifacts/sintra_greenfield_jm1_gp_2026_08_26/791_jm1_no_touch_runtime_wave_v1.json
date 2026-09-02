@@ -1,0 +1,597 @@
+{
+  "packageId": 791,
+  "artifact": "JM1-NO-TOUCH-RUNTIME-WAVE-v1",
+  "generatedAt": "2026-09-02T16:00:06.279Z",
+  "stream": "JM1 Enterprise Marketing Operating System - No-Touch Runtime Proof",
+  "replacementMatrix": {
+    "dataverseMarketingRuntime": "PROVEN",
+    "marketingControlLoop": "PROVEN_BOUNDARY_HELD",
+    "creativeEngine": "PROVEN_CURRENT_CONTROLLED_CASES",
+    "publicReadyGate": "PROVEN_PASS_REWORK_EXCEPTION_BEHAVIOR",
+    "facebookOwnedApiRuntime": "PROVEN",
+    "instagramOwnedApiRuntime": "PROVEN",
+    "metaPlatformIdempotency": "PROVEN",
+    "metaReadback": "PROVEN",
+    "metaBrowserFallback": "EXCEPTION_SETUP_ONLY",
+    "linkedinOwnedApi": "NOT_PROVEN_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED",
+    "dynamicsJourney": "NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY",
+    "fullNoTouch": "NOT_PROVEN",
+    "sintra": "SINTRA BRIDGE - REPLACEMENT UNDERWAY"
+  },
+  "dataverse": {
+    "environment": "https://jm1hq.crm.dynamics.com",
+    "entitySets": {
+      "jm1_campaignauthority": "jm1_campaignauthorities",
+      "jm1_journeyexecution": "jm1_journeyexecutions",
+      "jm1_marketingexception": "jm1_marketingexceptions",
+      "jm1_marketingcontrolloop": "jm1_marketingcontrolloops",
+      "jm1_socialexecution": "jm1_socialexecutions",
+      "jm1_creativework": "jm1_creativeworks",
+      "jm1_contentwork": "jm1_contentworks",
+      "jm1_credentialmonitor": "jm1_credentialmonitors"
+    },
+    "credentialMetadata": {
+      "logicalName": "jm1_credentialmonitor",
+      "entitySetName": "jm1_credentialmonitors",
+      "state": "REUSED",
+      "columns": [
+        {
+          "schemaName": "jm1_Branch",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_Platform",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CredentialReference",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CredentialType",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_SecretVersion",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_IssuedAt",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ExpiresAt",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_RotationDueAt",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_LastVerifiedAt",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_CurrentCredentialState",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ReplacementCredentialState",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_ExceptionCode",
+          "state": "REUSED"
+        },
+        {
+          "schemaName": "jm1_IdempotencyKey",
+          "state": "REUSED"
+        }
+      ]
+    },
+    "credentialMonitorId": "2689ac42-e7a6-f111-b8dd-7c1e52683637",
+    "readbackCounts": {
+      "content": 5,
+      "creative": 3,
+      "social": 9,
+      "journey": 1,
+      "exceptions": 5,
+      "controlLoops": 3,
+      "credentialMonitor": 1
+    },
+    "dataverseMarketingRuntime": "PROVEN"
+  },
+  "dynamics": {
+    "inspectedAt": "2026-09-02T16:00:06.279Z",
+    "journeys": {
+      "available": true,
+      "count": 0,
+      "state": "QUERY_OK"
+    },
+    "journeyTemplates": {
+      "available": true,
+      "count": 0,
+      "state": "QUERY_OK"
+    },
+    "emails": {
+      "available": true,
+      "count": 0,
+      "state": "QUERY_OK"
+    },
+    "emailTemplates": {
+      "available": true,
+      "count": 34,
+      "state": "QUERY_OK"
+    },
+    "segments": {
+      "available": true,
+      "count": 0,
+      "state": "QUERY_OK"
+    },
+    "brandProfiles": {
+      "available": true,
+      "count": 1,
+      "state": "QUERY_OK"
+    },
+    "purposes": {
+      "available": true,
+      "count": 4,
+      "state": "QUERY_OK"
+    },
+    "topics": {
+      "available": true,
+      "count": 0,
+      "state": "QUERY_OK"
+    },
+    "contactPointConsents": {
+      "available": true,
+      "count": 0,
+      "state": "QUERY_OK"
+    },
+    "supportedCreationPaths": {
+      "templatePathObserved": true,
+      "journeyJsonFromTemplateObserved": true,
+      "validateJourneyJsonObserved": true,
+      "publishJourneyObserved": true,
+      "directDesignerPath": "AVAILABLE_IN_UI_REQUIRES_FOUNDER_ADMIN_CONTROLLED_CONFIGURATION",
+      "directApiPathWithoutTemplate": "POSSIBLE_REQUIRES_PAYLOAD_REVIEW"
+    },
+    "classification": "DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_HELD",
+    "reason": "The tenant has Customer Insights Journeys actions, email templates, a brand profile, and purposes, but lacks the controlled journey/email/segment/topic/contact-point-consent runtime needed for a non-production proof.",
+    "journeyPromotion": {
+      "classification": "DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_RECORDED",
+      "rows": [
+        {
+          "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+          "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY"
+        }
+      ]
+    },
+    "exactMaturity": "DYNAMICS_JOURNEY_NOT_PROVEN",
+    "controlledConfiguration": {
+      "publishingSenderIdentity": "BRAND_PROFILE_EXISTS_REQUIRES_SENDER_CONSENT_REVIEW",
+      "controlledTestContacts": "NOT_SELECTED_NO_FOUNDER_APPROVED_TEST_AUDIENCE_CONTRACT",
+      "minimalAudienceSegment": "NOT_IMPLEMENTED_NO_SEGMENT",
+      "minimalCompliantEmail": "NOT_IMPLEMENTED_NO_MARKETING_EMAIL",
+      "journeyTrigger": "NOT_IMPLEMENTED",
+      "wait": "NOT_IMPLEMENTED",
+      "branchOrExit": "NOT_IMPLEMENTED",
+      "runtimeReadback": "NOT_PROVEN"
+    }
+  },
+  "meta": {
+    "runtimeStillHealthy": true,
+    "credentialLifecycle": {
+      "credentialReference": "jm1-core-vault/JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+      "credentialType": "MetaSystemUserAccessToken",
+      "secretVersion": "c8d340a1d16640c099e65ca4b2a0ae19",
+      "issuedAt": "2026-09-02T12:02:43Z",
+      "expiresAt": "2026-11-01T12:02:43Z",
+      "rotationDueAt": "2026-10-17T12:02:43Z",
+      "lastVerifiedAt": "2026-09-02T12:06:20Z",
+      "currentCredentialState": "VERIFIED_ACTIVE_ROTATION_TRACKED",
+      "replacementCredentialState": "NOT_STARTED",
+      "exceptionCode": null
+    },
+    "futureRowAuthorityReevaluation": {
+      "classification": "META_FUTURE_ROWS_AUTHORITY_REEVALUATED",
+      "rows": [
+        {
+          "id": "bbf1b9fe-bba6-f111-b8de-00224820105b",
+          "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:instagram",
+          "platform": "instagram",
+          "authority": "AVAILABLE",
+          "campaignStillActive": true,
+          "timingStillValid": true,
+          "publicReady": "PASS_ASSUMED_FROM_CREATIVE_WORK_GATE",
+          "mediaStillCurrent": "HASH_PRESENT",
+          "superseded": false,
+          "fatigueConflict": false,
+          "dynamicsCoordinationRequired": true,
+          "nextState": "PUBLIC_READY_SCHEDULED_ELIGIBLE"
+        },
+        {
+          "id": "8668125b-baa6-f111-b8de-6045bdd69435",
+          "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:facebook",
+          "platform": "facebook",
+          "authority": "AVAILABLE",
+          "campaignStillActive": true,
+          "timingStillValid": true,
+          "publicReady": "PASS_ASSUMED_FROM_CREATIVE_WORK_GATE",
+          "mediaStillCurrent": "HASH_PRESENT",
+          "superseded": false,
+          "fatigueConflict": false,
+          "dynamicsCoordinationRequired": true,
+          "nextState": "PUBLIC_READY_SCHEDULED_ELIGIBLE"
+        },
+        {
+          "id": "d8f0155e-baa6-f111-b8de-6045bdd69678",
+          "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:instagram",
+          "platform": "instagram",
+          "authority": "AVAILABLE",
+          "campaignStillActive": true,
+          "timingStillValid": true,
+          "publicReady": "PASS_ASSUMED_FROM_CREATIVE_WORK_GATE",
+          "mediaStillCurrent": "HASH_PRESENT",
+          "superseded": false,
+          "fatigueConflict": false,
+          "dynamicsCoordinationRequired": true,
+          "nextState": "PUBLIC_READY_SCHEDULED_ELIGIBLE"
+        },
+        {
+          "id": "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2",
+          "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:facebook",
+          "platform": "facebook",
+          "authority": "AVAILABLE",
+          "campaignStillActive": true,
+          "timingStillValid": true,
+          "publicReady": "PASS_ASSUMED_FROM_CREATIVE_WORK_GATE",
+          "mediaStillCurrent": "HASH_PRESENT",
+          "superseded": false,
+          "fatigueConflict": false,
+          "dynamicsCoordinationRequired": true,
+          "nextState": "PUBLIC_READY_SCHEDULED_ELIGIBLE"
+        }
+      ]
+    },
+    "proofEvidence": [
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/787_jm1_meta_owned_api_canary_v1.json",
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/789_jm1_meta_owned_api_runtime_proof_v1.json",
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/790_jm1_meta_runtime_promotion_and_remaining_boundaries_v1.json"
+    ]
+  },
+  "iyorwueseControlLoop": {
+    "campaignStageDetected": "FEATURED_AUTHOR_INTRO_META_PUBLISHED_VERIFIED",
+    "assetReevaluation": {
+      "portrait": "APPROVED_PROVENANCE_AUTHOR_WORKSPACE",
+      "aPortraitOfParadise": "APPROVED_CURRENT_DISTRIBUTION_COVER",
+      "theGeneralsWill": "TITLE_MARKETING_ELIGIBLE_WITHOUT_COVER",
+      "assetExceptionResolved": true,
+      "creativeWorkReevaluated": true,
+      "richerCreativeAvailable": true,
+      "creative": {
+        "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_a_portrait_of_paradise_asset_resolved_1080.svg",
+        "sha256": "48ceea8ef987454d5ac7e2cb2a5933881223b721dfb0de4151f36ea5ef350a15",
+        "sourceAssets": {
+          "cover": {
+            "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/08 Distribution Records/9781961475670_FC.jpg",
+            "sha256": "5cf31e28bfd3eb7dbd091445a4ccbce5f9c65b5d3eb5d039fafae3d642033be3"
+          },
+          "authorHeadshot": {
+            "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/author_headshot.jpg",
+            "sha256": "8f16b0a7b0c47e1a813478c31f31f47c868849dc20e88032b5846d39a9b754eb"
+          },
+          "logo": {
+            "path": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PRJ/projects/Brands/One/dev/jm1-one/public/icons/jm1-logo-white.png",
+            "sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a"
+          }
+        },
+        "dimensions": {
+          "width": 1080,
+          "height": 1080
+        },
+        "publicReadyState": "PASS",
+        "noAiCoverEdit": true,
+        "noAiGeneratedAuthorLikeness": true,
+        "logoIncluded": true
+      },
+      "publicReady": "PASS",
+      "classification": "ASSET_RESOLUTION_REACTIVITY_PROVEN"
+    },
+    "contentWorkRows": 5,
+    "creativeWorkRows": [
+      {
+        "id": "6b0c705d-baa6-f111-b8de-000d3a14673b",
+        "name": "Iyorwuese October title discovery brand creative",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:creative:title_discovery"
+      },
+      {
+        "id": "d82fae45-90a6-f111-b8de-00224820105b",
+        "name": "Iyorwuese October Featured Author intro creative",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:creative:month_introduction"
+      },
+      {
+        "id": "e68983fa-bba6-f111-b8de-6045bdd69738",
+        "name": "Iyorwuese A Portrait of Paradise asset-resolved creative",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:creative:asset_resolution_a_portrait_of_paradise"
+      }
+    ],
+    "socialExecutionRows": [
+      {
+        "id": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+        "name": "Iyorwuese October intro - facebook",
+        "platform": "facebook",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "307480763084670_1398847435587037",
+        "readbackState": "READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:facebook"
+      },
+      {
+        "id": "d92fae45-90a6-f111-b8de-00224820105b",
+        "name": "Iyorwuese October intro - linkedin",
+        "platform": "linkedin",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:linkedin"
+      },
+      {
+        "id": "bbf1b9fe-bba6-f111-b8de-00224820105b",
+        "name": "Iyorwuese A Portrait of Paradise asset-resolved - instagram",
+        "platform": "instagram",
+        "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_META_API_AUTHORITY_AVAILABLE",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:instagram"
+      },
+      {
+        "id": "8668125b-baa6-f111-b8de-6045bdd69435",
+        "name": "Iyorwuese October title discovery - facebook",
+        "platform": "facebook",
+        "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_META_API_AUTHORITY_AVAILABLE",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:facebook"
+      },
+      {
+        "id": "d8f0155e-baa6-f111-b8de-6045bdd69678",
+        "name": "Iyorwuese October title discovery - instagram",
+        "platform": "instagram",
+        "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_META_API_AUTHORITY_AVAILABLE",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:instagram"
+      },
+      {
+        "id": "f36a5ffa-bba6-f111-b8de-6045bdd69678",
+        "name": "Iyorwuese A Portrait of Paradise asset-resolved - linkedin",
+        "platform": "linkedin",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:linkedin"
+      },
+      {
+        "id": "263e5146-90a6-f111-b8de-6045bdd69738",
+        "name": "Iyorwuese October intro - instagram",
+        "platform": "instagram",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "18015844355734287",
+        "readbackState": "READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:instagram"
+      },
+      {
+        "id": "e9a19b5b-baa6-f111-b8de-6045bdd69738",
+        "name": "Iyorwuese October title discovery - linkedin",
+        "platform": "linkedin",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:linkedin"
+      },
+      {
+        "id": "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2",
+        "name": "Iyorwuese A Portrait of Paradise asset-resolved - facebook",
+        "platform": "facebook",
+        "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_META_API_AUTHORITY_AVAILABLE",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:facebook"
+      }
+    ],
+    "journeyExecutionRows": [
+      {
+        "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+        "name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery"
+      }
+    ],
+    "currentHorizon": "META_EXECUTION_READY_DYNAMICS_AND_LINKEDIN_HELD",
+    "nextRoutineAction": "WAIT_FOR_DYNAMICS_CONTROLLED_SURFACE_BEFORE_COORDINATED_TEST",
+    "manualInterventionCount": 0
+  },
+  "coordinatedCampaign": {
+    "campaignAuthority": "e60c47b5da7824de99976e0a:campaign",
+    "journeyChild": {
+      "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+      "name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
+      "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY",
+      "dynamicsJourneyId": null,
+      "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery"
+    },
+    "facebookChild": {
+      "id": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+      "name": "Iyorwuese October intro - facebook",
+      "platform": "facebook",
+      "status": "PUBLISHED_VERIFIED",
+      "platformPostId": "307480763084670_1398847435587037",
+      "readbackState": "READBACK_MATCH",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:facebook"
+    },
+    "instagramChild": {
+      "id": "263e5146-90a6-f111-b8de-6045bdd69738",
+      "name": "Iyorwuese October intro - instagram",
+      "platform": "instagram",
+      "status": "PUBLISHED_VERIFIED",
+      "platformPostId": "18015844355734287",
+      "readbackState": "READBACK_MATCH",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:instagram"
+    },
+    "linkedinChild": {
+      "id": "d92fae45-90a6-f111-b8de-00224820105b",
+      "name": "Iyorwuese October intro - linkedin",
+      "platform": "linkedin",
+      "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "platformPostId": null,
+      "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:linkedin"
+    },
+    "aggregateState": "PARTIAL_COORDINATED_CAMPAIGN_META_PROVEN_DYNAMICS_AND_LINKEDIN_HELD"
+  },
+  "linkedin": {
+    "app": "NOT_CREATED_IN_THIS_WAVE",
+    "productRequest": "NOT_SUBMITTED_IN_THIS_WAVE",
+    "approvalState": "LINKEDIN_APP_CREATION_OR_PRODUCT_REVIEW_ACTION_REQUIRED",
+    "oauthState": "NOT_CONFIGURED",
+    "adapterReadiness": "LINKEDIN_ADAPTER_PAYLOAD_READY_AUTHORITY_CHECK_HELD",
+    "targetOrganization": {
+      "name": "J Merrill Publishing, Inc.",
+      "organizationId": "13048648",
+      "urn": "urn:li:organization:13048648"
+    },
+    "exactState": "LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED"
+  },
+  "noTouchTest": {
+    "requiredResult": "JM1_CORE_META_NO_TOUCH_TEST_FAIL - Dynamics Journey runtime not implemented/proven; campaign progression still requires Cody-authored runtime wave script before autonomous trigger can run.",
+    "coreMetaNoTouch": "FAIL",
+    "metaReason": "Meta adapter itself is proven and no browser publishing is required.",
+    "blockingManualDependency": "DYNAMICS_CONTROLLED_JOURNEY_AND_AUTONOMOUS_TRIGGER_NOT_PROVEN",
+    "linkedinTreatment": "HELD_EXTERNAL_PLATFORM_AUTHORITY_DOES_NOT_FAIL_CORE_META_TEST"
+  },
+  "nextActionLoop": {
+    "readback": {
+      "facebook": {
+        "id": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+        "name": "Iyorwuese October intro - facebook",
+        "platform": "facebook",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "307480763084670_1398847435587037",
+        "readbackState": "READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:facebook"
+      },
+      "instagram": {
+        "id": "263e5146-90a6-f111-b8de-6045bdd69738",
+        "name": "Iyorwuese October intro - instagram",
+        "platform": "instagram",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "18015844355734287",
+        "readbackState": "READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:instagram"
+      },
+      "journey": {
+        "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+        "name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
+        "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY",
+        "dynamicsJourneyId": null,
+        "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery"
+      }
+    },
+    "campaignReevaluation": "WAIT_FOR_DYNAMICS_CONTROLLED_SURFACE_OR_APPROVED_NEXT_META_STAGE",
+    "nextSystemDecision": "WAIT_FOR_DYNAMICS_CONTROLLED_SURFACE_BEFORE_COORDINATED_TEST"
+  },
+  "sintraReplacementAccounting": {
+    "unifiedFacebookInstagramExecution": "REPLACED_BY_JM1_META_ADAPTER",
+    "platformReadback": "REPLACED_BY_JM1_READBACK",
+    "platformIdempotency": "REPLACED_BY_JM1_RUNTIME",
+    "campaignState": "REPLACED_BY_DATAVERSE",
+    "publicReadyGate": "REPLACED_BY_JM1",
+    "creativeProduction": "MATERIALLY_REPLACED_FOR_CONTROLLED_CASES",
+    "controlLoop": "JM1_RUNTIME_PROVEN_BOUNDARY_HELD",
+    "dynamicsOrchestration": "JM1_DYNAMICS_TARGET_NOT_SINTRA_NOT_PROVEN",
+    "linkedinExecution": "NOT_YET_REPLACED",
+    "classification": "SINTRA BRIDGE - REPLACEMENT UNDERWAY"
+  },
+  "sintraClassification": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
+  "enterpriseReuseShape": {
+    "sharedEnterpriseOwner": "J Merrill One",
+    "sharedApp": "JM1 Social Publisher",
+    "sharedRuntimeComponents": [
+      "Dataverse Marketing Runtime",
+      "MetaAdapter",
+      "platform readback",
+      "platform idempotency",
+      "credential monitor",
+      "Public-Ready Gate"
+    ],
+    "branchSpecificControls": [
+      "Facebook/Instagram destination IDs",
+      "brand policy",
+      "content policy",
+      "compliance requirements",
+      "campaign types",
+      "approved assets"
+    ],
+    "branchesPreparedForConfigurationShapeOnly": {
+      "publishing": {
+        "state": "FIRST_CONTROLLED_RUNTIME_CONSUMER",
+        "facebookInstagramAuthority": "PROVEN",
+        "destinations": [
+          "J Merrill Publishing Inc",
+          "jmerrillpub"
+        ]
+      },
+      "one": {
+        "state": "CONFIGURATION_SHAPE_PREPARED_NOT_AUTHORIZED_FOR_META_RUNTIME",
+        "facebookInstagramAuthority": "NOT_CONNECTED_IN_THIS_WAVE"
+      },
+      "financial": {
+        "state": "CONFIGURATION_SHAPE_PREPARED_PUBLIC_READY_POLICY_REQUIRED",
+        "facebookInstagramAuthority": "NOT_CONNECTED_IN_THIS_WAVE"
+      },
+      "foundation": {
+        "state": "CONFIGURATION_SHAPE_PREPARED_NOT_AUTHORIZED_FOR_META_RUNTIME",
+        "facebookInstagramAuthority": "NOT_CONNECTED_IN_THIS_WAVE"
+      }
+    },
+    "zeroLeakage": true
+  },
+  "financialPublicReadyPolicy": {
+    "branch": "J Merrill Financial",
+    "contractOnly": true,
+    "publicMarketingLaunchAuthorized": false,
+    "requiredChecks": [
+      "legal-advice implication",
+      "investment-advice implication",
+      "insurance-claims implication",
+      "misleading guarantee",
+      "regulated language",
+      "approved service positioning",
+      "street-address omission unless Founder directs",
+      "Advanced Planning Advisor positioning"
+    ],
+    "prohibitedImplications": [
+      "law firm",
+      "attorney services",
+      "investment management",
+      "securities advisory",
+      "unrestricted legal advice",
+      "guaranteed financial/insurance outcomes"
+    ],
+    "approvedPositioningBoundary": "advanced planning and estate-planning-oriented advisory/document-preparation/education practice, including funeral/pre-need planning and appropriate insurance-product context",
+    "geographyBoundary": "Headquartered in Columbus, OH",
+    "classification": "FINANCIAL_PUBLIC_READY_POLICY_CONTRACT_PREPARED_NOT_LAUNCHED"
+  },
+  "routineFounderManualMarketingTouch": "NOT_ZERO_YET",
+  "classifications": [
+    "META_SYSTEM_USER_TOKEN_VERIFIED",
+    "FACEBOOK_OWNED_API_RUNTIME_PROVEN",
+    "INSTAGRAM_OWNED_API_RUNTIME_PROVEN",
+    "META_PLATFORM_IDEMPOTENCY_PROVEN",
+    "META_OWNED_API_RUNTIME_PROVEN",
+    "DATAVERSE_MARKETING_RUNTIME_PROVEN",
+    "MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD",
+    "DYNAMICS_JOURNEY_NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY",
+    "LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED",
+    "JM1_CORE_META_NO_TOUCH_TEST_FAIL"
+  ]
+}
