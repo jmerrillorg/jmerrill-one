@@ -1,0 +1,56 @@
+{
+  "packageId": 780,
+  "artifact": "JM1-MARKETING-CONTROL-LOOP-EXECUTION-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "campaignAuthority": {
+    "id": "d42fae45-90a6-f111-b8de-00224820105b",
+    "name": "October 2026 Featured Author - Iyorwuese",
+    "idempotencyKey": "e60c47b5da7824de99976e0a:campaign"
+  },
+  "queriedRuntime": {
+    "contentWork": 5,
+    "creativeBefore": 2,
+    "socialBefore": 6,
+    "journeyExecution": 1,
+    "exceptions": 5
+  },
+  "rulesApplied": {
+    "introEligible": false,
+    "introRepetitionPrevented": true,
+    "portraitTreatment": "OPTIONAL_ASSET_HELD",
+    "titleCoverTreatment": "RIGHTS_REVIEW_REQUIRED",
+    "safeCreativeArchetype": "OFFICIAL_LOGO_PLUS_TYPOGRAPHY_EDITORIAL_DESIGN",
+    "noManualOctoberCalendarBuilt": true
+  },
+  "generated": [],
+  "creative": {
+    "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_october_title_discovery_brand_1080.svg",
+    "sha256": "29ac993a391a40d4d4183437c193955438c202312d180e15992d29876770507d",
+    "logoAssetPath": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/jm1-logo-white-source.png",
+    "logoAssetHash": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+    "dimensions": {
+      "width": 1080,
+      "height": 1080
+    },
+    "publicReadyState": "PASS",
+    "dependsOnPortrait": false,
+    "dependsOnTitleCover": false
+  },
+  "controlLoopId": "61236261-baa6-f111-b8de-000d3a9eacee",
+  "readback": {
+    "creativeAfter": 2,
+    "socialAfter": 6,
+    "controlLoopsAfter": 2,
+    "titleDiscoveryCreativeExists": true,
+    "titleDiscoverySocialRows": 3
+  },
+  "classification": "MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD",
+  "blockersRemaining": [
+    "DYNAMICS_JOURNEY_ADMIN_SETUP_REQUIRED",
+    "META_PLATFORM_AUTHORITY_MISSING",
+    "LINKEDIN_PLATFORM_AUTHORITY_MISSING",
+    "TITLE_COVER_RIGHTS_REVIEW_REQUIRED"
+  ],
+  "noTouchReadiness": "NO_TOUCH_TEST_NOT_READY"
+}

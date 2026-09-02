@@ -1,0 +1,183 @@
+{
+  "packageId": 782,
+  "artifact": "JM1-EXTERNAL-ACTIVATION-BLOCKER-REGISTER-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "status": "FOUNDER_ACTIVATION_PACKET_READY",
+  "basis": [
+    "Dedicated Dataverse marketing runtime accepted and committed.",
+    "Dataverse exception, journey execution, and control-loop rows proved by readback.",
+    "Control loop executed against the October/Iyorwuese campaign and generated the next title-discovery stage idempotently.",
+    "Social adapter authority check updated six Social Execution rows to explicit held states without browser/platform publishing."
+  ],
+  "blockerRegister": [
+    {
+      "blocker": "Dynamics Customer Insights Journeys setup/runtime",
+      "owner": "Founder/admin Dynamics authority",
+      "whyBlocked": "JM1-Core has Customer Insights Journeys backend components and API messages, but no journey records, no journey templates, no segments, no topics, and no proven safe Journey designer/runtime route for a controlled Publishing journey.",
+      "whatCodyCompletedNow": [
+        "Verified active PAC/Azure authority for jm1-admin@jmerrill.one against https://jm1hq.crm.dynamics.com.",
+        "Verified Journey API messages exist in Dataverse: msdynmkt_CreateJourneyFromTemplate, msdynmkt_CreateJourneyJsonFromTemplate, msdynmkt_ValidateJourneyJson, msdynmkt_PublishJourneyV2.",
+        "Verified live counts: journeys 0, journey templates 0, emails 0, segments 0, purposes 4, topics 0, contact point consents 0, email templates 34, brand profiles 1.",
+        "Created Journey Execution tracking row tied to the October/Iyorwuese Campaign Authority.",
+        "Held the Journey Execution at HELD_ADMIN_SETUP_REQUIRED instead of creating unsafe internal records."
+      ],
+      "exactFounderActionRequired": "Sign in to Power Apps/Customer Insights as jm1-admin@jmerrill.one, open JM1-Core, verify Customer Insights - Journeys app setup is complete, then create or enable a reusable controlled journey template/email/segment path for test audience use.",
+      "externalReviewRequired": false,
+      "stateAfterAction": "DYNAMICS_JOURNEY_IMPLEMENTABLE; Cody can create the controlled Iyorwuese Publishing journey and attempt safe execution/readback.",
+      "dependentCapabilities": [
+        "DYNAMICS_JOURNEY_IMPLEMENTED",
+        "DYNAMICS_JOURNEY_PROVEN",
+        "JM1_CORE_META_NO_TOUCH_TEST"
+      ],
+      "founderActionPacket": {
+        "SYSTEM": "Dynamics 365 Customer Insights - Journeys / Power Apps",
+        "ACTION": "Complete or confirm Journeys app setup in JM1-Core and provide one controlled test audience/template/email path.",
+        "WHY_REQUIRED": "Cody can read Dataverse and create JM1 tracking rows, but a legitimate Journey proof needs a usable Journeys authoring/runtime surface, template or supported create path, sender/compliance configuration, and controlled audience.",
+        "CODY_CANNOT_COMPLETE_BECAUSE": "The browser route required signed-in admin UI context, and the tenant currently exposes zero Journey templates, zero Journeys, zero segments, zero topics, and zero contact point consent rows through API readback.",
+        "EXACT_SCREEN_RESOURCE": "make.powerapps.com -> JM1-Core environment -> Customer Insights - Journeys app/setup area; if prompted, use jm1-admin@jmerrill.one.",
+        "EXACT_DECISION_CONSENT": "Confirm the approved controlled test audience and sender/compliance profile for a non-production Publishing journey.",
+        "RISK": "Without this, direct Dataverse Journey record creation risks unsupported or noncompliant Customer Insights records.",
+        "WHAT_BECOMES_UNBLOCKED": "Cody can create and validate the IYORWUESE - OCTOBER 2026 FEATURED AUTHOR controlled Journey.",
+        "EXPECTED_TIME": "15-45 minutes depending on Microsoft setup prompts.",
+        "ONE_TIME_OR_RECURRING": "One-time tenant/app setup, then reusable per campaign."
+      }
+    },
+    {
+      "blocker": "Meta owned developer app / OAuth / token authority",
+      "owner": "Founder/admin Meta developer and Business authority",
+      "whyBlocked": "Signed-in Meta for Developers console showed no apps under no selected business portfolio. No JM1-owned Meta app/token secret reference was found in local environment, Azure app registrations, Function Apps, or accessible Key Vault secret names.",
+      "whatCodyCompletedNow": [
+        "Verified Meta developer UI is accessible in Edge.",
+        "Verified no app is visible in the default Meta developer app list.",
+        "Inventoried local/Azure/accessible Key Vault references without reading secret values.",
+        "Updated all Facebook and Instagram Social Execution rows to HELD_EXTERNAL_PLATFORM_AUTHORITY via adapter authority check."
+      ],
+      "exactFounderActionRequired": "Authorize creation/configuration of a JM1-owned Meta developer app under the correct JM1 Business Portfolio, attach Publishing Facebook Page and Instagram professional account assets, and grant the required OAuth permissions for Pages and Instagram publishing/readback.",
+      "externalReviewRequired": true,
+      "stateAfterAction": "META_AUTHORITY_AVAILABLE_FOR_CANARY; Cody can store only secure secret references, run the MetaAdapter canary, and prove Facebook/Instagram idempotency/readback.",
+      "dependentCapabilities": [
+        "FACEBOOK_OWNED_API_RUNTIME_PROVEN",
+        "INSTAGRAM_OWNED_API_RUNTIME_PROVEN",
+        "META_PLATFORM_IDEMPOTENCY_PROVEN",
+        "META_OWNED_API_RUNTIME_PROVEN"
+      ],
+      "founderActionPacket": {
+        "SYSTEM": "Meta for Developers / Meta Business Portfolio",
+        "ACTION": "Create or authorize Cody to create the JM1 Social Publishing developer app and connect it to the correct JM1 Business Portfolio with Publishing FB/IG assets.",
+        "WHY_REQUIRED": "Creating the app and granting OAuth permissions materially expands persistent access to social assets.",
+        "CODY_CANNOT_COMPLETE_BECAUSE": "Computer Use policy requires action-time confirmation for persistent credential/OAuth access, and Meta may require app review or business authorization.",
+        "EXACT_SCREEN_RESOURCE": "developers.facebook.com/apps -> Create App; Meta Business Portfolio selector for the JM1 business that owns J Merrill Publishing Facebook and Instagram.",
+        "EXACT_DECISION_CONSENT": "Approve JM1-owned app creation and OAuth scope/product setup for Page publishing, Instagram content publishing, media upload, post ID/readback, and asset access.",
+        "RISK": "Incorrect business/page selection could grant the wrong app access to social assets or fail app review.",
+        "WHAT_BECOMES_UNBLOCKED": "Cody can wire secure Key Vault references and run non-browser Facebook and Instagram API canaries from jm1_socialexecution.",
+        "EXPECTED_TIME": "20-60 minutes, plus any Meta review time if required.",
+        "ONE_TIME_OR_RECURRING": "One-time app/OAuth setup with recurring token maintenance."
+      }
+    },
+    {
+      "blocker": "LinkedIn developer product / OAuth authority",
+      "owner": "Founder/admin LinkedIn developer authority",
+      "whyBlocked": "Signed-in LinkedIn developer console showed zero apps. No JM1-owned LinkedIn developer app, Community Management product access, OAuth token, or secure secret reference was found locally for J Merrill Publishing organization 13048648.",
+      "whatCodyCompletedNow": [
+        "Verified LinkedIn developer UI is accessible in Edge.",
+        "Verified LinkedIn developer app list shows first-app state.",
+        "Recorded known Publishing organization ID 13048648.",
+        "Updated LinkedIn Social Execution rows to HELD_EXTERNAL_PLATFORM_AUTHORITY via adapter authority check."
+      ],
+      "exactFounderActionRequired": "Create or authorize creation of a LinkedIn developer app associated to J Merrill Publishing, Inc. organization 13048648, then request Community Management API/product access and complete OAuth consent for organization social scopes.",
+      "externalReviewRequired": true,
+      "stateAfterAction": "LINKEDIN_API_PRODUCT_REVIEW_PENDING or LINKEDIN_AUTHORITY_AVAILABLE_FOR_CANARY depending on LinkedIn approval.",
+      "dependentCapabilities": [
+        "LINKEDIN_ADAPTER_EXECUTION",
+        "LINKEDIN_ORGANIZATION_POST_ID_READBACK",
+        "FULL_CROSS_PLATFORM_NO_TOUCH_TEST"
+      ],
+      "founderActionPacket": {
+        "SYSTEM": "LinkedIn Developer",
+        "ACTION": "Create the JM1 LinkedIn organization publishing app and request Community Management API access for J Merrill Publishing, Inc.",
+        "WHY_REQUIRED": "LinkedIn organization publishing requires developer application ownership, organization association, product access, and member/admin OAuth consent.",
+        "CODY_CANNOT_COMPLETE_BECAUSE": "Creating the app/product request grants persistent platform access and may require LinkedIn review; no existing app is visible.",
+        "EXACT_SCREEN_RESOURCE": "linkedin.com/developers/apps -> Create app; associate with J Merrill Publishing, Inc. organization ID 13048648.",
+        "EXACT_DECISION_CONSENT": "Approve app creation/product request and requested organization social read/write scopes.",
+        "RISK": "LinkedIn may restrict Community Management API access or keep the app in Development tier until review is complete.",
+        "WHAT_BECOMES_UNBLOCKED": "Cody can run LinkedInAdapter authority check to product-approved state, then attempt organization post canary/readback.",
+        "EXPECTED_TIME": "15-30 minutes to create/request, external review timing unknown.",
+        "ONE_TIME_OR_RECURRING": "One-time app/product request with recurring token maintenance."
+      }
+    },
+    {
+      "blocker": "Iyorwuese portrait/title-cover rights/use confirmation",
+      "owner": "Founder or Publishing asset authority",
+      "whyBlocked": "Governed source surfaces contain Hagher image and A Portrait of Paradise cover candidates, but their marketing-use scope and title association were not automatically proven. The General's Will and Last Testament cover remains unresolved.",
+      "whatCodyCompletedNow": [
+        "Found Iyorwuese Hagher person folder.",
+        "Found The General's Will and Last Testament title/editorial folder.",
+        "Found A Portrait of Paradise distribution folder with author_headshot.jpg and cover/distribution image candidates.",
+        "Updated campaign logic so portrait is OPTIONAL_ASSET_HELD, not a full campaign blocker.",
+        "Generated title-discovery brand/typography creative that uses the official logo and does not depend on unresolved portrait or cover assets."
+      ],
+      "exactFounderActionRequired": "Confirm whether author_headshot.jpg and the A Portrait of Paradise cover/distribution files are approved for October Featured Author marketing use, and clarify whether The General's Will and Last Testament should be marketed before cover art exists.",
+      "externalReviewRequired": false,
+      "stateAfterAction": "Asset exceptions can be resolved individually; affected creative work can re-evaluate and advance without a new Cody prompt.",
+      "dependentCapabilities": [
+        "TITLE_SPECIFIC_CREATIVE_READY",
+        "ASSET_EXCEPTION_RESOLUTION_CONTROL_LOOP",
+        "META_CANARY_ASSET_SELECTION"
+      ],
+      "founderActionPacket": {
+        "SYSTEM": "J Merrill Publishing asset authority",
+        "ACTION": "Approve or reject the specific Hagher portrait and A Portrait of Paradise cover candidates for October Featured Author marketing.",
+        "WHY_REQUIRED": "The files are real Publishing-owned candidates, but rights/title-use scope is not explicit enough to promote automatically.",
+        "CODY_CANNOT_COMPLETE_BECAUSE": "Rights/use approval is a publishing authority decision, not a technical task.",
+        "EXACT_SCREEN_RESOURCE": "OneDrive JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files and /04 Cover Design or /08 Distribution Records.",
+        "EXACT_DECISION_CONSENT": "Approve author_headshot.jpg for public author marketing; approve or reject A Portrait of Paradise cover files for October Featured Author title marketing; clarify hold/go for The General's Will and Last Testament without cover art.",
+        "RISK": "Using an unapproved portrait or title cover could create rights/title-confusion risk.",
+        "WHAT_BECOMES_UNBLOCKED": "Portrait/title-specific creative can be generated and Public-Ready re-evaluated automatically.",
+        "EXPECTED_TIME": "5-15 minutes.",
+        "ONE_TIME_OR_RECURRING": "One-time per asset/title."
+      }
+    }
+  ],
+  "nonFounderBlockersEliminatedOrReduced": [
+    {
+      "item": "Control loop was only a row",
+      "result": "Reduced. Control loop now executed, generated next stage, prevented intro repetition, and persisted decision/readback."
+    },
+    {
+      "item": "Social execution adapter hold was vague",
+      "result": "Reduced. Six Social Execution rows now carry explicit HELD_EXTERNAL_PLATFORM_AUTHORITY status and platform-specific error codes."
+    },
+    {
+      "item": "Portrait blocked entire campaign",
+      "result": "Eliminated. Portrait is now OPTIONAL_ASSET_HELD; brand/typography creative can proceed."
+    }
+  ],
+  "currentClassifications": {
+    "dataverseMarketingRuntime": "DATAVERSE_MARKETING_TABLE_RUNTIME_PROVEN",
+    "marketingControlLoop": "MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD",
+    "dynamicsJourney": "DYNAMICS_JOURNEY_HELD_ADMIN_SETUP_REQUIRED",
+    "metaOwnedApi": "META_OWNED_API_RUNTIME_NOT_PROVEN",
+    "linkedinApi": "LINKEDIN_API_EXTERNAL_DEPENDENCY",
+    "socialAdapterAuthorityBoundary": "SOCIAL_ADAPTER_AUTHORITY_BOUNDARY_PROVEN_HELD",
+    "sintra": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
+    "noTouch": "NO_TOUCH_TEST_NOT_READY"
+  },
+  "sources": [
+    "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/developer/create-journey-template-api",
+    "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/fair-use-policy",
+    "https://developers.facebook.com/docs/graph-api/reference/page/feed/",
+    "https://developers.facebook.com/docs/graph-api/reference/page/photos/",
+    "https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/v21.0/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-08",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-08"
+  ],
+  "nextCodyExecutionAfterFounderActions": [
+    "Create/validate controlled Dynamics Journey for IYORWUESE - OCTOBER 2026 FEATURED AUTHOR.",
+    "Store only secure credential references in Azure Key Vault or approved runtime storage.",
+    "Run MetaAdapter Facebook and Instagram exact-file API canaries from jm1_socialexecution.",
+    "Run Meta idempotency duplicate-prevention proof.",
+    "If LinkedIn product access is approved, run LinkedInAdapter canary; otherwise preserve LINKEDIN_API_PRODUCT_REVIEW_PENDING.",
+    "Resolve approved asset exceptions and trigger creative re-evaluation without manual October calendar construction."
+  ],
+  "founderActionsRequiredCount": 4
+}
