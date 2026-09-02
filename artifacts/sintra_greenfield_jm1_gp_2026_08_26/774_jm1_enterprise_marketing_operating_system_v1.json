@@ -87,8 +87,8 @@
     },
     {
       "level": "L4",
-      "name": "Dataverse queue writes and approvals execute in tenant",
-      "currentState": "NOT_PRESENT"
+      "name": "Dataverse queue writes, exceptions, journey contract, and control loop execute in tenant",
+      "currentState": "PROVEN_BY_779"
     },
     {
       "level": "L5",

@@ -45,6 +45,26 @@
       "evidenceNote": "777 proves dedicated tables, relationships, writes, readback, and idempotency."
     },
     {
+      "name": "Dataverse exception model and control loop rows proven",
+      "pass": true,
+      "evidenceNote": "779 proves five exception rows, one journey-execution contract row, one control-loop row, and three social rows by readback."
+    },
+    {
+      "name": "Dynamics Journey created or proven",
+      "pass": false,
+      "evidenceNote": "DYNAMICS_JOURNEY_HELD_ADMIN_SETUP_REQUIRED"
+    },
+    {
+      "name": "Meta owned API execution proven",
+      "pass": false,
+      "evidenceNote": "META_OWNED_API_RUNTIME_NOT_PROVEN"
+    },
+    {
+      "name": "LinkedIn owned API execution proven",
+      "pass": false,
+      "evidenceNote": "LINKEDIN_API_EXTERNAL_DEPENDENCY"
+    },
+    {
       "name": "One lifecycle trigger worked in harness",
       "pass": true,
       "evidenceNote": "COVER_APPROVED maps to a candidate chain without live execution."
@@ -62,7 +82,7 @@
     {
       "name": "No-manual-touch runtime proven",
       "pass": false,
-      "evidenceNote": "Dataverse marketing table writes, Dynamics Journey runtime, and platform API canaries are not yet proven."
+      "evidenceNote": "NO_TOUCH_TEST_NOT_READY - Dynamics Journey implemented/proven; Meta owned FB/IG platform adapter proof; Iyorwuese governed portrait/title-cover assets for title-specific creative"
     },
     {
       "name": "Computer Use removed from routine target path",

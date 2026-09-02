@@ -30,6 +30,7 @@ const evidence = {
   implementationPlan715: join(ROOT, '715_jmp_marketing_automation_implementation_plan.json'),
   runtimeProof776: join(ROOT, '776_jm1_marketing_owned_runtime_proof_v1.json'),
   dedicatedDataverse777: join(ROOT, '777_jm1_dedicated_dataverse_marketing_runtime_v1.json'),
+  runtimeExpansion779: join(ROOT, '779_jm1_marketing_runtime_expansion_v1.json'),
   metaApiArchitecture: 'docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md',
   journeysStandard: 'artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md',
   septemberBatchBuilder: 'scripts/build-publishing-sep11-30-batch.mjs'
@@ -37,6 +38,7 @@ const evidence = {
 
 const closeout = existsSync(evidence.closeout771) ? readJson(evidence.closeout771) : {};
 const dedicatedDataverse = existsSync(evidence.dedicatedDataverse777) ? readJson(evidence.dedicatedDataverse777) : null;
+const runtimeExpansion = existsSync(evidence.runtimeExpansion779) ? readJson(evidence.runtimeExpansion779) : null;
 
 const manualOperations = [
   op('Determine what to market', 'September required human judgment to choose Sean A Crowley I, The Shift, Strategies for Success, publishing inquiries, and brand education lanes.', ['Founder directives', 'Publishing catalog facts', 'September Featured Author authority'], 'Promote only source-backed titles/authors and approved Publishing programs.', 'Campaign candidates and daily themes.', ['stale campaign content', 'inaccurate title classification'], 'Campaign Authority Engine + Portfolio Marketing Health', 'DESIGNED'),
@@ -229,7 +231,7 @@ const enterpriseMos = {
     { level: 'L1', name: 'Current architecture inventoried', currentState: 'PROVEN_BY_773' },
     { level: 'L2', name: 'Enterprise MOS ratified', currentState: 'PROVEN_BY_774' },
     { level: 'L3', name: 'Lifecycle trigger produces eligible campaign candidate without manual calendar build', currentState: 'HARNESS_PROVEN_DESIGN_ONLY_BY_775' },
-    { level: 'L4', name: 'Dataverse queue writes and approvals execute in tenant', currentState: 'NOT_PRESENT' },
+    { level: 'L4', name: 'Dataverse queue writes, exceptions, journey contract, and control loop execute in tenant', currentState: runtimeExpansion?.classification === 'DATAVERSE_RUNTIME_EXPANSION_PROVEN_BOUNDARY_HELD' ? 'PROVEN_BY_779' : 'NOT_PRESENT' },
     { level: 'L5', name: 'Owned API canary publishes exact file and stores platform ID/readback', currentState: 'NOT_PRESENT' },
     { level: 'L6', name: 'Routine Founder manual marketing touch equals zero except exceptions', currentState: 'NOT_PRESENT' }
   ],
@@ -277,10 +279,14 @@ const replacementMatrix = {
     assert('Sintra/Soshie was final authoritative September scheduler', false, 'Soshie held superseded execution objects that were removed during remediation.'),
     assert('The Shift classified as new/recent, not backlist/draft', true, 'Founder correction is recorded in 772 and 774.'),
     assert('Dedicated Dataverse marketing table runtime proven', dedicatedDataverse?.classification === 'DATAVERSE_MARKETING_TABLE_RUNTIME_PROVEN', dedicatedDataverse?.classification === 'DATAVERSE_MARKETING_TABLE_RUNTIME_PROVEN' ? '777 proves dedicated tables, relationships, writes, readback, and idempotency.' : 'Dedicated Dataverse marketing table proof is not present.'),
+    assert('Dataverse exception model and control loop rows proven', runtimeExpansion?.classification === 'DATAVERSE_RUNTIME_EXPANSION_PROVEN_BOUNDARY_HELD', runtimeExpansion?.classification === 'DATAVERSE_RUNTIME_EXPANSION_PROVEN_BOUNDARY_HELD' ? '779 proves five exception rows, one journey-execution contract row, one control-loop row, and three social rows by readback.' : '779 runtime expansion proof is not present.'),
+    assert('Dynamics Journey created or proven', false, runtimeExpansion?.dynamics?.classification ?? 'Dynamics Journey proof is not present.'),
+    assert('Meta owned API execution proven', false, runtimeExpansion?.platformAuthority?.meta?.classification ?? 'Meta API proof is not present.'),
+    assert('LinkedIn owned API execution proven', false, runtimeExpansion?.platformAuthority?.linkedin?.classification ?? 'LinkedIn API proof is not present.'),
     assert('One lifecycle trigger worked in harness', true, 'COVER_APPROVED maps to a candidate chain without live execution.'),
     assert('One branch mapping completed', true, 'Publishing branch maps to four ratified programs in 774.'),
     assert('One automation maturity level reached', true, 'L0-L2 are artifact-proven; L3 is design-canary proven.'),
-    assert('No-manual-touch runtime proven', false, 'Dataverse marketing table writes, Dynamics Journey runtime, and platform API canaries are not yet proven.'),
+    assert('No-manual-touch runtime proven', false, runtimeExpansion?.noTouchReadiness?.result ?? 'Dataverse marketing table writes, Dynamics Journey runtime, and platform API canaries are not yet proven.'),
     assert('Computer Use removed from routine target path', true, '774 assigns Computer Use to setup/debug/exception only.')
   ],
   lifecycleCanary,
