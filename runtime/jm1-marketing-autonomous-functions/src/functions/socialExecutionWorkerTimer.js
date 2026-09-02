@@ -1,8 +1,14 @@
 import { app } from '@azure/functions';
-import { AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED, AUTONOMOUS_META_EXECUTION_ENABLED, BRANCH_CONFIG } from '../lib/config.js';
+import {
+  AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED,
+  AUTONOMOUS_META_EXECUTION_ENABLED,
+  BRANCH_CONFIG,
+  META_CAPTION_REGISTRY,
+  META_MEDIA_URL_REGISTRY
+} from '../lib/config.js';
 import { entitySet, patchById, queryByPrefix } from '../lib/dataverse.js';
 import { checkLinkedInAuthority } from '../lib/linkedin.js';
-import { verifyMetaAuthority } from '../lib/meta.js';
+import { publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
 import { octoberIyorwueseMarker, runEnvelope } from '../lib/runtime.js';
 
 app.timer('socialExecutionWorkerTimer', {
@@ -15,7 +21,7 @@ app.timer('socialExecutionWorkerTimer', {
     const rows = await queryByPrefix(
       socialSet,
       `${marker}:social`,
-      'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination',
+      'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion',
       100
     );
 
@@ -40,8 +46,85 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_verifiedat: envelope.startedAt
         });
         writes.push({ id: row.jm1_socialexecutionid, state: 'READY_EXECUTION_FLAG_HELD' });
+        continue;
       }
+
+      if (!metaAuthority.ok) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_errorcode: metaAuthority.state,
+          jm1_readbackstate: metaAuthority.state,
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state: metaAuthority.state });
+        continue;
+      }
+
+      const scheduledFor = new Date(row.jm1_requestedschedule);
+      if (!Number.isNaN(scheduledFor.getTime()) && scheduledFor > new Date(envelope.startedAt)) {
+        writes.push({ id: row.jm1_socialexecutionid, state: 'SCHEDULED_NOT_DUE', scheduledFor: row.jm1_requestedschedule });
+        continue;
+      }
+
+      const mediaUrl = META_MEDIA_URL_REGISTRY[row.jm1_requestedmediahash] || META_MEDIA_URL_REGISTRY[row.jm1_idempotencykey];
+      const caption = META_CAPTION_REGISTRY[row.jm1_captionversion] || META_CAPTION_REGISTRY[row.jm1_idempotencykey];
+      if (!mediaUrl || !caption) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'HELD_CREATIVE_REFERENCE_REQUIRED',
+          jm1_errorcode: 'META_EXACT_MEDIA_OR_CAPTION_REGISTRY_MISSING',
+          jm1_readbackstate: 'META_EXACT_MEDIA_OR_CAPTION_REGISTRY_MISSING',
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state: 'META_EXACT_MEDIA_OR_CAPTION_REGISTRY_MISSING' });
+        continue;
+      }
+
+      const result = row.jm1_platform === 'facebook'
+        ? await publishFacebookPhoto({ expected: publishing, caption, imageUrl: mediaUrl })
+        : await publishInstagramPhoto({ expected: publishing, caption, imageUrl: mediaUrl });
+
+      const patch = result.ok
+        ? {
+          jm1_status: 'PUBLISHED_VERIFIED',
+          jm1_platformpostid: result.platformPostId,
+          jm1_actualmediareference: mediaUrl,
+          jm1_actualcaption: caption,
+          jm1_publishedat: envelope.startedAt,
+          jm1_readbackstate: result.readbackState,
+          jm1_verifiedat: envelope.startedAt,
+          jm1_errorcode: '',
+          jm1_errormessage: ''
+        }
+        : {
+          jm1_status: result.state === 'READBACK_MISMATCH' ? 'READBACK_MISMATCH' : 'HELD_PLATFORM_API_ERROR',
+          jm1_platformpostid: result.platformPostId || '',
+          jm1_actualmediareference: mediaUrl,
+          jm1_actualcaption: caption,
+          jm1_readbackstate: result.readbackState || result.state,
+          jm1_verifiedat: envelope.startedAt,
+          jm1_errorcode: result.state,
+          jm1_errormessage: result.message || ''
+        };
+      await patchById(socialSet, row.jm1_socialexecutionid, patch);
+      writes.push({
+        id: row.jm1_socialexecutionid,
+        platform: row.jm1_platform,
+        state: result.state,
+        platformPostId: result.platformPostId || null,
+        readbackState: result.readbackState || null,
+        permalink: result.permalink || null
+      });
     }
+
+    const platformObjectsCreated = writes.filter((write) => write.platformPostId).length;
+    const alreadyCertifiedMetaRows = rows.filter((row) =>
+      ['facebook', 'instagram'].includes(row.jm1_platform)
+      && row.jm1_status === 'PUBLISHED_VERIFIED'
+      && row.jm1_platformpostid
+    );
+    for (const row of alreadyCertifiedMetaRows) {
+      writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'IDEMPOTENT_ALREADY_CERTIFIED', platformPostId: row.jm1_platformpostid });
+    }
+
     for (const row of linkedinRows) {
       if (!AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED || !linkedinAuthority.ok) {
         await patchById(socialSet, row.jm1_socialexecutionid, {
@@ -64,7 +147,7 @@ app.timer('socialExecutionWorkerTimer', {
         meta: AUTONOMOUS_META_EXECUTION_ENABLED,
         linkedin: AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
       },
-      platformObjectsCreated: 0,
+      platformObjectsCreated,
       reason: AUTONOMOUS_META_EXECUTION_ENABLED || AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
         ? 'One or more execution flags enabled; adapters still gate on exact row authority and platform product approval.'
         : 'Execution flag held to avoid unintended live posts while autonomous trigger proof is established.'

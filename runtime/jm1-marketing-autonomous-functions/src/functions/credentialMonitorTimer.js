@@ -36,6 +36,7 @@ app.timer('credentialMonitorTimer', {
     });
 
     let syntheticWrite = null;
+    let syntheticExceptionWrite = null;
     if (SYNTHETIC_CREDENTIAL_MONITOR_ENABLED) {
       syntheticWrite = await upsertByIdempotency(credentialSet, 'jm1_credentialmonitorid', {
         jm1_name: 'Synthetic Meta credential rotation threshold proof',
@@ -53,11 +54,32 @@ app.timer('credentialMonitorTimer', {
         jm1_exceptioncode: 'META_CREDENTIAL_ROTATION_DUE',
         jm1_idempotencykey: `${marker}:credential:meta:synthetic-rotation-due-proof`
       });
+
+      const exceptionSet = await entitySet('jm1_marketingexception');
+      syntheticExceptionWrite = await upsertByIdempotency(exceptionSet, 'jm1_marketingexceptionid', {
+        jm1_name: 'Synthetic Meta credential rotation exception proof',
+        jm1_branch: 'J Merrill Publishing',
+        jm1_campaign: 'October 2026 Featured Author - Iyorwuese',
+        jm1_workrecord: `${marker}:credential:meta:synthetic-rotation-due-proof`,
+        jm1_exceptiontype: 'CREDENTIAL_ROTATION_DUE',
+        jm1_severity: 'P1',
+        jm1_reason: 'Synthetic monitor row crossed the configured rotation threshold without altering the real Meta system-user token expiration.',
+        jm1_resolutionstate: 'OPEN_GOVERNED_ROTATION_REQUIRED',
+        jm1_resolution: 'Rotate the credential through governed secure storage, validate the replacement, then close the exception.',
+        jm1_authorityrequired: 'JM1 platform administrator',
+        jm1_createdat: envelope.startedAt,
+        jm1_idempotencykey: `${marker}:exception:credential:meta:synthetic-rotation-due-proof`
+      });
     }
 
     context.log(JSON.stringify({
       ...envelope,
-      dataverseWrite: { entitySet: credentialSet, production: productionWrite, synthetic: syntheticWrite },
+      dataverseWrite: {
+        entitySet: credentialSet,
+        production: productionWrite,
+        synthetic: syntheticWrite,
+        syntheticException: syntheticExceptionWrite
+      },
       productionCredentialState: state,
       tokenValueLogged: false
     }));
