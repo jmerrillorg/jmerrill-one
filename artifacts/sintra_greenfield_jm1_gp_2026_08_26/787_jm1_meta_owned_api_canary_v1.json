@@ -1,0 +1,88 @@
+{
+  "packageId": 787,
+  "artifact": "JM1-META-OWNED-API-CANARY-v1",
+  "generatedAt": "2026-09-02T12:05:15.430Z",
+  "mode": "VERIFY_ONLY",
+  "graphVersion": "v26.0",
+  "secretReference": {
+    "vaultName": "jm1-core-vault",
+    "secretName": "JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+    "tokenValueRecorded": false
+  },
+  "tokenSanity": {
+    "tokenValueRecorded": false,
+    "length": 241,
+    "sha256PrefixOnly": "c9432cc19496",
+    "checks": {
+      "nonEmpty": true,
+      "noSurroundingQuotes": true,
+      "noWhitespace": true,
+      "plausibleLength": true,
+      "startsWithExpectedPrefix": true,
+      "allowedCharactersOnly": true
+    },
+    "pass": true
+  },
+  "graphReadback": {
+    "pass": true,
+    "appIdentity": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "id": "1293210212769981",
+        "name": "JM1 Social Publisher"
+      }
+    },
+    "pageDiscovery": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "data": [
+          {
+            "id": "307480763084670",
+            "name": "J Merrill Publishing Inc",
+            "access_token": "[REDACTED]",
+            "instagram_business_account": {
+              "id": "17841410046020869"
+            }
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "before": "QVFIVFFMYmNveF9GSmtRUXNRSjhTdzhjQm9NTVB6cDZAfZAGE3aUkzSkJ5T2hzdU4zNEtwTkxnT2JMVUY3YlpGQi1TQzk5SVRnUkQ0aUozeWRBNEFWSFN5ZAHR3",
+            "after": "QVFIVFFMYmNveF9GSmtRUXNRSjhTdzhjQm9NTVB6cDZAfZAGE3aUkzSkJ5T2hzdU4zNEtwTkxnT2JMVUY3YlpGQi1TQzk5SVRnUkQ0aUozeWRBNEFWSFN5ZAHR3"
+          }
+        }
+      }
+    },
+    "targetPage": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "id": "307480763084670",
+        "name": "J Merrill Publishing Inc",
+        "instagram_business_account": {
+          "id": "17841410046020869"
+        }
+      }
+    },
+    "targetInstagram": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "id": "17841410046020869",
+        "username": "jmerrillpub",
+        "name": "J Merrill Publishing, Inc.",
+        "media_count": 358
+      }
+    },
+    "pageAccessTokenAvailable": "[REDACTED]",
+    "pageId": "307480763084670",
+    "pageName": "J Merrill Publishing Inc",
+    "instagramGraphId": "17841410046020869"
+  },
+  "dataverse": null,
+  "canary": null,
+  "idempotency": null,
+  "classification": "META_SYSTEM_USER_TOKEN_VERIFIED"
+}
