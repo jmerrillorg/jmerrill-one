@@ -2,14 +2,14 @@
   "packageId": 782,
   "artifact": "JM1-EXTERNAL-ACTIVATION-BLOCKER-REGISTER-v1",
   "generatedAt": "2026-09-02T00:00:00-04:00",
-  "status": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_HELD_ACCOUNT_VERIFICATION_REQUIRED",
+  "status": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_STORED_NOT_VERIFIED__REGENERATION_HELD_ACCOUNT_VERIFICATION_REQUIRED",
   "basis": [
     "Dedicated Dataverse marketing runtime accepted and committed.",
     "Dataverse exception, journey execution, and control-loop rows proved by readback.",
     "Control loop executed against the October/Iyorwuese campaign and generated the next title-discovery stage idempotently.",
     "Social adapter authority check updated six Social Execution rows to explicit held states without browser/platform publishing.",
     "Meta app ownership was corrected from J Merrill Publishing, Inc. to J Merrill One while preserving app ID 1293210212769981.",
-    "Meta Publishing asset authorization and minimum FB/IG testing scopes were configured, but token generation reached a Meta account-verification gate before credential issuance."
+    "Meta Publishing asset authorization and minimum FB/IG testing scopes were configured; a token was generated and stored in Key Vault, but Graph API readback rejected it as unparseable, and fresh regeneration reached a Meta account-verification gate."
   ],
   "blockerRegister": [
     {
@@ -47,7 +47,7 @@
     {
       "blocker": "Meta OAuth / token authority / asset connection",
       "owner": "Founder/admin Meta developer and Business authority",
-      "whyBlocked": "The JM1 Social Publisher app now exists and is owned by the J Merrill One business portfolio. The app has been connected only to Publishing Facebook/Instagram assets and minimum FB/IG testing scopes were selected, but Meta presented an account-verification gate before system-user token issuance.",
+      "whyBlocked": "The JM1 Social Publisher app now exists and is owned by the J Merrill One business portfolio. The app has been connected only to Publishing Facebook/Instagram assets and minimum FB/IG testing scopes were selected. A token was generated and stored in Key Vault, but Graph API readback rejected it with OAuth code 190 ('Invalid OAuth access token - Cannot parse access token'). Fresh token regeneration now presents a Meta account-verification gate.",
       "whatCodyCompletedNow": [
         "Verified Meta developer UI is accessible in Edge.",
         "Verified J Merrill One business portfolio ID 846921439784613 exists and contains/hosts the Publishing Facebook and Instagram assets.",
@@ -62,11 +62,14 @@
         "Assigned only jmerrillpub Instagram asset 102246875862327 with Partial access (Content and Insights).",
         "Configured app permissions ready for testing: pages_manage_posts, pages_read_engagement, pages_show_list, instagram_business_basic, and instagram_business_content_publish.",
         "Selected token scopes: pages_manage_posts, pages_read_engagement, pages_show_list, instagram_basic, and instagram_content_publish.",
-        "Accepted the authorized Meta terms-bound continuation attempt, but Meta stopped at account verification before generating a token."
+        "Generated and stored the token in jm1-core-vault as secret reference JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN with expiration 2026-11-01T11:50:48Z.",
+        "Cleared the local clipboard after secure storage.",
+        "Attempted Graph API readback against /me and /me/accounts without printing the token; both failed with OAuth code 190, 'Invalid OAuth access token - Cannot parse access token'.",
+        "Attempted fresh replacement token generation with the same approved app/assets/scopes; Meta stopped at account verification."
       ],
-      "exactFounderActionRequired": "Complete Meta account verification in the authenticated Founder/admin browser session. After verification, Cody can resume token generation for the already selected app/system-user/scope boundary and store the token in Key Vault.",
+      "exactFounderActionRequired": "Complete Meta account verification in the authenticated Founder/admin browser session. After verification, Cody can regenerate the token for the already selected app/system-user/scope boundary, replace the Key Vault secret, and verify Graph readback before any canary.",
       "externalReviewRequired": true,
-      "stateAfterAction": "META_TOKEN_AVAILABLE_FOR_SECURE_STORAGE; Cody can store only secure secret references, run the MetaAdapter canary, and prove Facebook/Instagram idempotency/readback.",
+      "stateAfterAction": "META_TOKEN_AVAILABLE_FOR_REPLACEMENT_AND_READBACK; Cody can replace the Key Vault secret, run Graph readback, then run the MetaAdapter canary and prove Facebook/Instagram idempotency/readback.",
       "dependentCapabilities": [
         "FACEBOOK_OWNED_API_RUNTIME_PROVEN",
         "INSTAGRAM_OWNED_API_RUNTIME_PROVEN",
@@ -75,12 +78,12 @@
       ],
       "founderActionPacket": {
         "SYSTEM": "Meta for Developers / Meta Business Portfolio",
-        "ACTION": "Complete the Meta account verification gate displayed during system-user token generation.",
-        "WHY_REQUIRED": "Meta stopped token generation with an account-security verification prompt after the already authorized scope and terms step.",
+        "ACTION": "Complete the Meta account verification gate displayed during fresh system-user token generation.",
+        "WHY_REQUIRED": "The first generated token was stored but failed Graph parsing, and Meta now requires account-security verification before a replacement token can be generated.",
         "CODY_CANNOT_COMPLETE_BECAUSE": "The verification prompt is account-security verification for the authenticated Founder/admin account and is outside the prior app/scope authorization.",
         "EXACT_SCREEN_RESOURCE": "business.facebook.com/latest/settings/system_users?business_id=846921439784613&selected_user_id=61593707745004 -> Generate token -> selected JM1 Social Publisher -> 60 days -> selected five scopes -> verification gate.",
         "EXACT_DECISION_CONSENT": "Complete Meta account verification, then permit Cody to resume without changing the approved app/assets/scopes.",
-        "RISK": "Without completing verification, no system-user token can be generated or stored, so no owned API canary can be run.",
+        "RISK": "Without completing verification and successful replacement/readback, the stored credential cannot be trusted for owned API publishing.",
         "WHAT_BECOMES_UNBLOCKED": "Cody can wire secure Key Vault references and run non-browser Facebook and Instagram API canaries from jm1_socialexecution.",
         "EXPECTED_TIME": "20-60 minutes, plus any Meta review time if required.",
         "ONE_TIME_OR_RECURRING": "One-time app/OAuth setup with recurring token maintenance."
@@ -168,7 +171,7 @@
     "dataverseMarketingRuntime": "DATAVERSE_MARKETING_TABLE_RUNTIME_PROVEN",
     "marketingControlLoop": "MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD",
     "dynamicsJourney": "DYNAMICS_JOURNEY_HELD_ADMIN_SETUP_REQUIRED",
-    "metaOwnedApi": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_HELD_ACCOUNT_VERIFICATION_REQUIRED",
+    "metaOwnedApi": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_STORED_NOT_VERIFIED__REGENERATION_HELD_ACCOUNT_VERIFICATION_REQUIRED",
     "linkedinApi": "LINKEDIN_API_EXTERNAL_DEPENDENCY",
     "socialAdapterAuthorityBoundary": "SOCIAL_ADAPTER_AUTHORITY_BOUNDARY_PROVEN_HELD",
     "sintra": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",

@@ -1,7 +1,7 @@
 {
   "packageId": 786,
   "artifact": "JM1-META-PERSISTENT-AUTHORITY-ACTIVATION-BOUNDARY-v1",
-  "generatedAt": "2026-09-02T07:48:19-04:00",
+  "generatedAt": "2026-09-02T07:53:35-04:00",
   "stream": "JM1 Enterprise Marketing Operating System - Persistent Platform Authority Activation",
   "scope": "Meta persistent app, branch-scoped Publishing asset authorization, minimum token-scope configuration, and account-verification boundary. No platform publishing occurred.",
   "founderAuthorization": {
@@ -109,19 +109,41 @@
       "instagram_content_publish"
     ],
     "termsActionAuthorizedAndAttempted": true,
-    "tokenGenerated": false,
-    "tokenStoredInKeyVault": false,
-    "secretReference": null,
-    "blocker": "META_ACCOUNT_VERIFICATION_REQUIRED",
+    "tokenGenerated": true,
+    "tokenStoredInKeyVault": true,
+    "secretReference": {
+      "vaultName": "jm1-core-vault",
+      "secretName": "JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+      "secretUri": "https://jm1-core-vault.vault.azure.net/secrets/JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+      "createdAt": "2026-09-02T11:50:50Z",
+      "expiresAt": "2026-11-01T11:50:48Z"
+    },
+    "apiVerificationResult": "FAILED_INVALID_OAUTH_TOKEN_CANNOT_PARSE_ACCESS_TOKEN",
+    "freshReplacementAttempted": true,
+    "freshReplacementBlocked": true,
+    "blocker": "META_ACCOUNT_VERIFICATION_REQUIRED_FOR_REGENERATION",
     "observedMetaGate": "Almost done. To help keep this account secure, we need you to verify your account.",
-    "nextRequiredAction": "Founder/admin must complete Meta account verification in the authenticated browser session, then token generation can resume from the same system-user/app/scope configuration."
+    "nextRequiredAction": "Founder/admin must complete Meta account verification in the authenticated browser session, then token generation can resume from the same system-user/app/scope configuration. The existing Key Vault secret must not be promoted until Graph API readback succeeds."
+  },
+  "apiVerification": {
+    "attempted": true,
+    "method": "Graph API readback using Key Vault secret value without printing token",
+    "endpointsAttempted": [
+      "GET /v26.0/me?fields=id,name",
+      "GET /v26.0/me/accounts?fields=id,name,access_token,instagram_business_account"
+    ],
+    "result": "FAILED",
+    "errorCode": 190,
+    "errorType": "OAuthException",
+    "errorMessage": "Invalid OAuth access token - Cannot parse access token",
+    "certificationImpact": "No Facebook or Instagram API runtime proof can be promoted from this credential."
   },
   "runtimeProofState": {
-    "facebookCanary": "NOT_ATTEMPTED_TOKEN_BLOCKED",
-    "instagramCanary": "NOT_ATTEMPTED_TOKEN_BLOCKED",
-    "readback": "NOT_ATTEMPTED_TOKEN_BLOCKED",
-    "idempotency": "NOT_ATTEMPTED_TOKEN_BLOCKED",
-    "dataverseUpdate": "PENDING_AFTER_TOKEN"
+    "facebookCanary": "NOT_ATTEMPTED_TOKEN_NOT_VERIFIED",
+    "instagramCanary": "NOT_ATTEMPTED_TOKEN_NOT_VERIFIED",
+    "readback": "FAILED_TOKEN_PARSE",
+    "idempotency": "NOT_ATTEMPTED_TOKEN_NOT_VERIFIED",
+    "dataverseUpdate": "PENDING_VALID_TOKEN"
   },
   "rotationRequirement": {
     "required": true,
@@ -135,10 +157,10 @@
       "no token values in evidence, logs, source, or PR comments"
     ]
   },
-  "classification": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_HELD_ACCOUNT_VERIFICATION_REQUIRED",
+  "classification": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_STORED_NOT_VERIFIED__REGENERATION_HELD_ACCOUNT_VERIFICATION_REQUIRED",
   "securityBoundary": {
     "secretsExposed": false,
-    "tokensGenerated": false,
+    "tokensGenerated": true,
     "tokensCommitted": false,
     "tokensWrittenToEvidence": false,
     "screenshotsWithTokenCaptured": false,
