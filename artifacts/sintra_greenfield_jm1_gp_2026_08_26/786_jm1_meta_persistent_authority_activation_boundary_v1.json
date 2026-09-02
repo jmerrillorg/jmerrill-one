@@ -1,0 +1,151 @@
+{
+  "packageId": 786,
+  "artifact": "JM1-META-PERSISTENT-AUTHORITY-ACTIVATION-BOUNDARY-v1",
+  "generatedAt": "2026-09-02T07:48:19-04:00",
+  "stream": "JM1 Enterprise Marketing Operating System - Persistent Platform Authority Activation",
+  "scope": "Meta persistent app, branch-scoped Publishing asset authorization, minimum token-scope configuration, and account-verification boundary. No platform publishing occurred.",
+  "founderAuthorization": {
+    "directTypedAuthorizationPresent": true,
+    "authorizedActions": [
+      "Accept the Meta Platform Terms and Developer Policies for this configuration.",
+      "Allow Meta to add required Instagram permissions to the app.",
+      "Generate a 60-day system-user access token.",
+      "Store credential material only in governed JM1 secure storage.",
+      "Proceed to Facebook and Instagram API canaries after secure token storage."
+    ]
+  },
+  "metaEnterpriseAuthority": {
+    "businessPortfolio": {
+      "name": "J Merrill One",
+      "businessPortfolioId": "846921439784613"
+    },
+    "app": {
+      "name": "JM1 Social Publisher",
+      "appId": "1293210212769981",
+      "owner": "J Merrill One"
+    },
+    "systemUser": {
+      "name": "JM1PublishingRuntime",
+      "systemUserId": "61593707745004",
+      "role": "Employee"
+    }
+  },
+  "assetAuthorization": {
+    "scopeBoundary": "Publishing only",
+    "facebookPage": {
+      "name": "J Merrill Publishing Inc",
+      "observedMetaAssetId": "307480763084670",
+      "access": "Partial access (Content and Insights)"
+    },
+    "instagramAccount": {
+      "handle": "jmerrillpub",
+      "observedMetaAssetId": "102246875862327",
+      "access": "Partial access (Content and Insights)"
+    },
+    "otherBranchesAuthorized": false,
+    "browserPublishingUsed": false,
+    "sintraPublishingUsed": false,
+    "metaBusinessSuitePublishingUsed": false
+  },
+  "appRoleConfiguration": {
+    "initialMinimumAttempt": "Test app",
+    "secondMinimumAttempt": "Develop app",
+    "finalObservedRequirement": "Meta Business Settings continued to show 'No permissions available' until the system user had Full access to the app object.",
+    "finalAppAccess": "Full access",
+    "branchAssetAccessStillLimitedToPublishing": true,
+    "reason": "Required by Meta token-generation UI to expose permission selection for the system user."
+  },
+  "appPermissionProductsConfigured": {
+    "pagesUseCase": {
+      "useCase": "Manage Pages",
+      "permissionsReadyForTesting": [
+        "pages_manage_posts",
+        "pages_read_engagement",
+        "pages_show_list"
+      ],
+      "permissionsNotAdded": [
+        "pages_manage_engagement",
+        "pages_manage_metadata",
+        "pages_read_user_content",
+        "read_insights",
+        "ads_management",
+        "ads_read",
+        "catalog_management"
+      ]
+    },
+    "instagramUseCase": {
+      "useCase": "Instagram API / Manage messaging & content on Instagram",
+      "permissionsReadyForTesting": [
+        "instagram_business_basic",
+        "instagram_business_content_publish",
+        "pages_read_engagement",
+        "pages_show_list"
+      ],
+      "tokenSelectorLegacyScopeNamesSelected": [
+        "instagram_basic",
+        "instagram_content_publish"
+      ],
+      "permissionsNotAdded": [
+        "instagram_manage_comments",
+        "instagram_manage_contents",
+        "instagram_manage_insights",
+        "instagram_manage_messages",
+        "instagram_manage_engagement",
+        "instagram_shopping_tag_products",
+        "ads_management",
+        "ads_read",
+        "catalog_management"
+      ]
+    }
+  },
+  "tokenGenerationAttempt": {
+    "attempted": true,
+    "tokenLifetimeSelected": "60 days",
+    "selectedScopesAtBoundary": [
+      "pages_manage_posts",
+      "pages_read_engagement",
+      "pages_show_list",
+      "instagram_basic",
+      "instagram_content_publish"
+    ],
+    "termsActionAuthorizedAndAttempted": true,
+    "tokenGenerated": false,
+    "tokenStoredInKeyVault": false,
+    "secretReference": null,
+    "blocker": "META_ACCOUNT_VERIFICATION_REQUIRED",
+    "observedMetaGate": "Almost done. To help keep this account secure, we need you to verify your account.",
+    "nextRequiredAction": "Founder/admin must complete Meta account verification in the authenticated browser session, then token generation can resume from the same system-user/app/scope configuration."
+  },
+  "runtimeProofState": {
+    "facebookCanary": "NOT_ATTEMPTED_TOKEN_BLOCKED",
+    "instagramCanary": "NOT_ATTEMPTED_TOKEN_BLOCKED",
+    "readback": "NOT_ATTEMPTED_TOKEN_BLOCKED",
+    "idempotency": "NOT_ATTEMPTED_TOKEN_BLOCKED",
+    "dataverseUpdate": "PENDING_AFTER_TOKEN"
+  },
+  "rotationRequirement": {
+    "required": true,
+    "reason": "The selected system-user token lifetime is 60 days and must not be treated as permanent infrastructure.",
+    "minimumRuntimeControls": [
+      "expiry monitoring",
+      "proactive rotation window before expiration",
+      "replacement validation before cutover",
+      "no-downtime credential swap where possible",
+      "exception state if renewal fails",
+      "no token values in evidence, logs, source, or PR comments"
+    ]
+  },
+  "classification": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_HELD_ACCOUNT_VERIFICATION_REQUIRED",
+  "securityBoundary": {
+    "secretsExposed": false,
+    "tokensGenerated": false,
+    "tokensCommitted": false,
+    "tokensWrittenToEvidence": false,
+    "screenshotsWithTokenCaptured": false,
+    "browserCookiesUsedAsRuntimeCredentials": false,
+    "sintraCredentialsUsed": false
+  },
+  "evidenceFiles": [
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/786_meta_account_verification_gate.png"
+  ]
+}

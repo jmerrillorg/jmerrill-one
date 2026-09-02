@@ -2,13 +2,14 @@
   "packageId": 782,
   "artifact": "JM1-EXTERNAL-ACTIVATION-BLOCKER-REGISTER-v1",
   "generatedAt": "2026-09-02T00:00:00-04:00",
-  "status": "META_ENTERPRISE_APP_OWNERSHIP_PROVEN__PERSISTENT_ACCESS_CONFIGURATION_HELD",
+  "status": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_HELD_ACCOUNT_VERIFICATION_REQUIRED",
   "basis": [
     "Dedicated Dataverse marketing runtime accepted and committed.",
     "Dataverse exception, journey execution, and control-loop rows proved by readback.",
     "Control loop executed against the October/Iyorwuese campaign and generated the next title-discovery stage idempotently.",
     "Social adapter authority check updated six Social Execution rows to explicit held states without browser/platform publishing.",
-    "Meta app ownership was corrected from J Merrill Publishing, Inc. to J Merrill One while preserving app ID 1293210212769981."
+    "Meta app ownership was corrected from J Merrill Publishing, Inc. to J Merrill One while preserving app ID 1293210212769981.",
+    "Meta Publishing asset authorization and minimum FB/IG testing scopes were configured, but token generation reached a Meta account-verification gate before credential issuance."
   ],
   "blockerRegister": [
     {
@@ -46,7 +47,7 @@
     {
       "blocker": "Meta OAuth / token authority / asset connection",
       "owner": "Founder/admin Meta developer and Business authority",
-      "whyBlocked": "The JM1 Social Publisher app now exists and is owned by the J Merrill One business portfolio, but the app has not yet been connected to Publishing Facebook/Instagram assets and no OAuth token or secure secret reference has been created.",
+      "whyBlocked": "The JM1 Social Publisher app now exists and is owned by the J Merrill One business portfolio. The app has been connected only to Publishing Facebook/Instagram assets and minimum FB/IG testing scopes were selected, but Meta presented an account-verification gate before system-user token issuance.",
       "whatCodyCompletedNow": [
         "Verified Meta developer UI is accessible in Edge.",
         "Verified J Merrill One business portfolio ID 846921439784613 exists and contains/hosts the Publishing Facebook and Instagram assets.",
@@ -55,11 +56,17 @@
         "Verified Meta developer dashboard opens for JM1 Social Publisher under business_id=846921439784613.",
         "Verified visible use cases: Manage messaging & content on Instagram; Manage everything on your Page.",
         "Inventoried local/Azure/accessible Key Vault references without reading secret values.",
-        "Updated all Facebook and Instagram Social Execution rows to HELD_EXTERNAL_PLATFORM_AUTHORITY via adapter authority check."
+        "Updated all Facebook and Instagram Social Execution rows to HELD_EXTERNAL_PLATFORM_AUTHORITY via adapter authority check.",
+        "Created system user JM1PublishingRuntime (ID 61593707745004) under J Merrill One.",
+        "Assigned only J Merrill Publishing Inc Facebook Page asset 307480763084670 with Partial access (Content and Insights).",
+        "Assigned only jmerrillpub Instagram asset 102246875862327 with Partial access (Content and Insights).",
+        "Configured app permissions ready for testing: pages_manage_posts, pages_read_engagement, pages_show_list, instagram_business_basic, and instagram_business_content_publish.",
+        "Selected token scopes: pages_manage_posts, pages_read_engagement, pages_show_list, instagram_basic, and instagram_content_publish.",
+        "Accepted the authorized Meta terms-bound continuation attempt, but Meta stopped at account verification before generating a token."
       ],
-      "exactFounderActionRequired": "Confirm action-time approval to connect app ID 1293210212769981 to the J Merrill Publishing Inc Facebook Page and @jmerrillpub Instagram account, then grant only the required OAuth permissions for Pages and Instagram publishing/readback.",
+      "exactFounderActionRequired": "Complete Meta account verification in the authenticated Founder/admin browser session. After verification, Cody can resume token generation for the already selected app/system-user/scope boundary and store the token in Key Vault.",
       "externalReviewRequired": true,
-      "stateAfterAction": "META_AUTHORITY_AVAILABLE_FOR_CANARY; Cody can store only secure secret references, run the MetaAdapter canary, and prove Facebook/Instagram idempotency/readback.",
+      "stateAfterAction": "META_TOKEN_AVAILABLE_FOR_SECURE_STORAGE; Cody can store only secure secret references, run the MetaAdapter canary, and prove Facebook/Instagram idempotency/readback.",
       "dependentCapabilities": [
         "FACEBOOK_OWNED_API_RUNTIME_PROVEN",
         "INSTAGRAM_OWNED_API_RUNTIME_PROVEN",
@@ -68,12 +75,12 @@
       ],
       "founderActionPacket": {
         "SYSTEM": "Meta for Developers / Meta Business Portfolio",
-        "ACTION": "Approve Cody to connect the One-owned JM1 Social Publisher app to the Publishing Facebook/Instagram assets and proceed through minimum Meta OAuth scope/product setup.",
-        "WHY_REQUIRED": "Connecting assets and granting OAuth permissions materially expands persistent access to social assets.",
-        "CODY_CANNOT_COMPLETE_BECAUSE": "Computer Use policy requires action-time confirmation before creating or materially expanding persistent credential/OAuth access.",
-        "EXACT_SCREEN_RESOURCE": "business.facebook.com/latest/settings/apps?business_id=846921439784613 -> JM1 Social Publisher -> Connect assets; developers.facebook.com/apps/1293210212769981 under business_id=846921439784613.",
-        "EXACT_DECISION_CONSENT": "Approve asset connection and OAuth scope/product setup for Page publishing, Instagram content publishing, media upload, post ID/readback, and asset access.",
-        "RISK": "Incorrect asset/scope selection could grant the app unnecessary access or fail app review.",
+        "ACTION": "Complete the Meta account verification gate displayed during system-user token generation.",
+        "WHY_REQUIRED": "Meta stopped token generation with an account-security verification prompt after the already authorized scope and terms step.",
+        "CODY_CANNOT_COMPLETE_BECAUSE": "The verification prompt is account-security verification for the authenticated Founder/admin account and is outside the prior app/scope authorization.",
+        "EXACT_SCREEN_RESOURCE": "business.facebook.com/latest/settings/system_users?business_id=846921439784613&selected_user_id=61593707745004 -> Generate token -> selected JM1 Social Publisher -> 60 days -> selected five scopes -> verification gate.",
+        "EXACT_DECISION_CONSENT": "Complete Meta account verification, then permit Cody to resume without changing the approved app/assets/scopes.",
+        "RISK": "Without completing verification, no system-user token can be generated or stored, so no owned API canary can be run.",
         "WHAT_BECOMES_UNBLOCKED": "Cody can wire secure Key Vault references and run non-browser Facebook and Instagram API canaries from jm1_socialexecution.",
         "EXPECTED_TIME": "20-60 minutes, plus any Meta review time if required.",
         "ONE_TIME_OR_RECURRING": "One-time app/OAuth setup with recurring token maintenance."
@@ -161,7 +168,7 @@
     "dataverseMarketingRuntime": "DATAVERSE_MARKETING_TABLE_RUNTIME_PROVEN",
     "marketingControlLoop": "MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD",
     "dynamicsJourney": "DYNAMICS_JOURNEY_HELD_ADMIN_SETUP_REQUIRED",
-    "metaOwnedApi": "META_ENTERPRISE_APP_OWNERSHIP_PROVEN__OAUTH_AND_CANARIES_NOT_PROVEN",
+    "metaOwnedApi": "META_PUBLISHING_ASSET_AND_SCOPE_SETUP_COMPLETE__TOKEN_HELD_ACCOUNT_VERIFICATION_REQUIRED",
     "linkedinApi": "LINKEDIN_API_EXTERNAL_DEPENDENCY",
     "socialAdapterAuthorityBoundary": "SOCIAL_ADAPTER_AUTHORITY_BOUNDARY_PROVEN_HELD",
     "sintra": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
