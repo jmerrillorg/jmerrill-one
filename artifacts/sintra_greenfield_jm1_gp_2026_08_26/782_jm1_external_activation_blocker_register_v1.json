@@ -2,12 +2,13 @@
   "packageId": 782,
   "artifact": "JM1-EXTERNAL-ACTIVATION-BLOCKER-REGISTER-v1",
   "generatedAt": "2026-09-02T00:00:00-04:00",
-  "status": "FOUNDER_ACTIVATION_PACKET_READY",
+  "status": "META_ENTERPRISE_APP_OWNERSHIP_PROVEN__PERSISTENT_ACCESS_CONFIGURATION_HELD",
   "basis": [
     "Dedicated Dataverse marketing runtime accepted and committed.",
     "Dataverse exception, journey execution, and control-loop rows proved by readback.",
     "Control loop executed against the October/Iyorwuese campaign and generated the next title-discovery stage idempotently.",
-    "Social adapter authority check updated six Social Execution rows to explicit held states without browser/platform publishing."
+    "Social adapter authority check updated six Social Execution rows to explicit held states without browser/platform publishing.",
+    "Meta app ownership was corrected from J Merrill Publishing, Inc. to J Merrill One while preserving app ID 1293210212769981."
   ],
   "blockerRegister": [
     {
@@ -43,16 +44,20 @@
       }
     },
     {
-      "blocker": "Meta owned developer app / OAuth / token authority",
+      "blocker": "Meta OAuth / token authority / asset connection",
       "owner": "Founder/admin Meta developer and Business authority",
-      "whyBlocked": "Signed-in Meta for Developers console showed no apps under no selected business portfolio. No JM1-owned Meta app/token secret reference was found in local environment, Azure app registrations, Function Apps, or accessible Key Vault secret names.",
+      "whyBlocked": "The JM1 Social Publisher app now exists and is owned by the J Merrill One business portfolio, but the app has not yet been connected to Publishing Facebook/Instagram assets and no OAuth token or secure secret reference has been created.",
       "whatCodyCompletedNow": [
         "Verified Meta developer UI is accessible in Edge.",
-        "Verified no app is visible in the default Meta developer app list.",
+        "Verified J Merrill One business portfolio ID 846921439784613 exists and contains/hosts the Publishing Facebook and Instagram assets.",
+        "Preserved existing app ID 1293210212769981 and corrected app ownership from J Merrill Publishing, Inc. to J Merrill One.",
+        "Verified Meta Business Settings hard owner label: Owned by: J Merrill One.",
+        "Verified Meta developer dashboard opens for JM1 Social Publisher under business_id=846921439784613.",
+        "Verified visible use cases: Manage messaging & content on Instagram; Manage everything on your Page.",
         "Inventoried local/Azure/accessible Key Vault references without reading secret values.",
         "Updated all Facebook and Instagram Social Execution rows to HELD_EXTERNAL_PLATFORM_AUTHORITY via adapter authority check."
       ],
-      "exactFounderActionRequired": "Authorize creation/configuration of a JM1-owned Meta developer app under the correct JM1 Business Portfolio, attach Publishing Facebook Page and Instagram professional account assets, and grant the required OAuth permissions for Pages and Instagram publishing/readback.",
+      "exactFounderActionRequired": "Confirm action-time approval to connect app ID 1293210212769981 to the J Merrill Publishing Inc Facebook Page and @jmerrillpub Instagram account, then grant only the required OAuth permissions for Pages and Instagram publishing/readback.",
       "externalReviewRequired": true,
       "stateAfterAction": "META_AUTHORITY_AVAILABLE_FOR_CANARY; Cody can store only secure secret references, run the MetaAdapter canary, and prove Facebook/Instagram idempotency/readback.",
       "dependentCapabilities": [
@@ -63,12 +68,12 @@
       ],
       "founderActionPacket": {
         "SYSTEM": "Meta for Developers / Meta Business Portfolio",
-        "ACTION": "Create or authorize Cody to create the JM1 Social Publishing developer app and connect it to the correct JM1 Business Portfolio with Publishing FB/IG assets.",
-        "WHY_REQUIRED": "Creating the app and granting OAuth permissions materially expands persistent access to social assets.",
-        "CODY_CANNOT_COMPLETE_BECAUSE": "Computer Use policy requires action-time confirmation for persistent credential/OAuth access, and Meta may require app review or business authorization.",
-        "EXACT_SCREEN_RESOURCE": "developers.facebook.com/apps -> Create App; Meta Business Portfolio selector for the JM1 business that owns J Merrill Publishing Facebook and Instagram.",
-        "EXACT_DECISION_CONSENT": "Approve JM1-owned app creation and OAuth scope/product setup for Page publishing, Instagram content publishing, media upload, post ID/readback, and asset access.",
-        "RISK": "Incorrect business/page selection could grant the wrong app access to social assets or fail app review.",
+        "ACTION": "Approve Cody to connect the One-owned JM1 Social Publisher app to the Publishing Facebook/Instagram assets and proceed through minimum Meta OAuth scope/product setup.",
+        "WHY_REQUIRED": "Connecting assets and granting OAuth permissions materially expands persistent access to social assets.",
+        "CODY_CANNOT_COMPLETE_BECAUSE": "Computer Use policy requires action-time confirmation before creating or materially expanding persistent credential/OAuth access.",
+        "EXACT_SCREEN_RESOURCE": "business.facebook.com/latest/settings/apps?business_id=846921439784613 -> JM1 Social Publisher -> Connect assets; developers.facebook.com/apps/1293210212769981 under business_id=846921439784613.",
+        "EXACT_DECISION_CONSENT": "Approve asset connection and OAuth scope/product setup for Page publishing, Instagram content publishing, media upload, post ID/readback, and asset access.",
+        "RISK": "Incorrect asset/scope selection could grant the app unnecessary access or fail app review.",
         "WHAT_BECOMES_UNBLOCKED": "Cody can wire secure Key Vault references and run non-browser Facebook and Instagram API canaries from jm1_socialexecution.",
         "EXPECTED_TIME": "20-60 minutes, plus any Meta review time if required.",
         "ONE_TIME_OR_RECURRING": "One-time app/OAuth setup with recurring token maintenance."
@@ -156,7 +161,7 @@
     "dataverseMarketingRuntime": "DATAVERSE_MARKETING_TABLE_RUNTIME_PROVEN",
     "marketingControlLoop": "MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD",
     "dynamicsJourney": "DYNAMICS_JOURNEY_HELD_ADMIN_SETUP_REQUIRED",
-    "metaOwnedApi": "META_OWNED_API_RUNTIME_NOT_PROVEN",
+    "metaOwnedApi": "META_ENTERPRISE_APP_OWNERSHIP_PROVEN__OAUTH_AND_CANARIES_NOT_PROVEN",
     "linkedinApi": "LINKEDIN_API_EXTERNAL_DEPENDENCY",
     "socialAdapterAuthorityBoundary": "SOCIAL_ADAPTER_AUTHORITY_BOUNDARY_PROVEN_HELD",
     "sintra": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
