@@ -1,0 +1,210 @@
+{
+  "packageId": 793,
+  "artifact": "JM1-LINKEDIN-AUTHORITY-BOUNDARY-v1",
+  "generatedAt": "2026-09-02T20:38:06Z",
+  "stream": "JM1 Enterprise Marketing Operating System - LinkedIn Authority + Dynamics Safe Runtime",
+  "classification": "LINKEDIN_API_PRODUCT_REVIEW_PENDING",
+  "preservedAutonomousRuntimeClassifications": [
+    "MARKETING_CONTROL_LOOP_AUTONOMOUS_TRIGGER_PROVEN",
+    "AUTONOMOUS_CONTROL_LOOP_IDEMPOTENCY_PROVEN",
+    "CREDENTIAL_MONITOR_AUTONOMOUS_TRIGGER_PROVEN",
+    "SOCIAL_EXECUTION_WORKER_AUTONOMOUS_TRIGGER_PROVEN"
+  ],
+  "linkedinApp": {
+    "created": true,
+    "createdAtObserved": "2026-09-02",
+    "appName": "JM1 Organization Publisher",
+    "appUrlId": "266134085",
+    "clientId": "78hqh0jqrb4y06",
+    "appType": "Standalone app",
+    "purpose": "JM1 governed LinkedIn organization publishing adapter for J Merrill Publishing organization posts and readback.",
+    "secretValueRecorded": false,
+    "clientSecretStored": false,
+    "reasonClientSecretNotStored": "No LinkedIn OAuth credential was generated in this step. Community Management API access is in external review before publish/readback token configuration."
+  },
+  "organizationAssociation": {
+    "organizationName": "J Merrill Publishing, Inc.",
+    "organizationId": "13048648",
+    "linkedinPageUrl": "https://www.linkedin.com/company/13048648",
+    "associationVerified": true,
+    "verificationObservedText": "JM1 Organization Publisher is now verified with your LinkedIn Page",
+    "verificationUrlGenerated": true,
+    "verificationUrlExpires": "2026-10-02",
+    "irreversibleAssociationApprovedByFounder": true,
+    "enterpriseOwnershipPreserved": "J Merrill One owns the enterprise runtime; Publishing is the first branch-specific LinkedIn organization authority."
+  },
+  "logo": {
+    "sourcePath": "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PRJ/projects/Brands/One/dev/jm1-one/public/icons/jm1-logo-white.png",
+    "sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+    "dimensionsObserved": "512x512",
+    "fabricated": false
+  },
+  "terms": {
+    "linkedinApiTermsAccepted": true,
+    "acceptedAtObserved": "2026-09-02T20:20Z",
+    "basis": "Founder explicitly authorized LinkedIn API Terms acceptance for this app creation boundary."
+  },
+  "communityManagementApi": {
+    "productVisible": true,
+    "requestSubmittedInLinkedInDeveloperPortal": true,
+    "businessEmailVerificationCompletedByFounder": true,
+    "accessFormSubmitted": true,
+    "accessFormSubmittedAtObserved": "2026-09-02T20:36Z",
+    "productState": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+    "productStateRefreshedAtObserved": "2026-09-02T20:49Z",
+    "productStatusButtonObserved": "Review in progress",
+    "linkedInNotice": "Status may take up to 10 minutes to refresh after submitting the form. You have 21 days to submit.",
+    "qualtricsConfirmationObserved": "Thank you for submitting the Community Management API development tier access form. We are working to review all submissions in a timely manner.",
+    "completedFieldsRecorded": {
+      "organizationLegalName": "J Merrill Publishing, Inc.",
+      "alternateLegalName": "No",
+      "organizationWebsite": "https://jmerrill.pub",
+      "registeredBusinessAddress": "Founder-entered in LinkedIn/Qualtrics form; not recorded in repo evidence.",
+      "useCasesSelected": [
+        "Page management",
+        "Page analytics"
+      ]
+    },
+    "excludedUseCases": [
+      "Profile management",
+      "Employee advocacy",
+      "Other"
+    ],
+    "publicUseBoundary": "Organization Page publishing and Page/post readback for governed JM1 social execution. No automated comments, reactions, DMs, personal-profile actions, or employee advocacy were requested as routine runtime behavior.",
+    "externalDependency": "LinkedIn/Microsoft business verification and product review.",
+    "productReviewClassification": "LINKEDIN_API_PRODUCT_REVIEW_PENDING"
+  },
+  "azureRuntimeConfiguration": {
+    "functionApp": "func-jm1-marketing-runtime",
+    "resourceGroup": "rg-jm1-ai",
+    "settingsVerifiedAt": "2026-09-02T20:38:06Z",
+    "settingsUpdated": {
+      "JM1_LINKEDIN_CLIENT_ID": "78hqh0jqrb4y06",
+      "JM1_LINKEDIN_APP_ID": "266134085",
+      "JM1_LINKEDIN_APP_NAME": "JM1 Organization Publisher",
+      "JM1_LINKEDIN_APP_VERIFICATION_STATE": "VERIFIED_WITH_PUBLISHING_PAGE",
+      "JM1_LINKEDIN_PRODUCT_STATE": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+      "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED": "false"
+    },
+    "secretValuesRecorded": false,
+    "deployment": {
+      "functionAppPublished": true,
+      "updatedAdapterCodeDeployed": true,
+      "triggersSynced": [
+        "credentialMonitorTimer",
+        "marketingControlLoopTimer",
+        "socialExecutionWorkerTimer"
+      ]
+    }
+  },
+  "linkedinAdapter": {
+    "implemented": true,
+    "sourceFiles": [
+      "runtime/jm1-marketing-autonomous-functions/src/lib/config.js",
+      "runtime/jm1-marketing-autonomous-functions/src/lib/linkedin.js",
+      "runtime/jm1-marketing-autonomous-functions/src/functions/socialExecutionWorkerTimer.js"
+    ],
+    "authorityCheck": {
+      "appConfigured": true,
+      "companyVerification": "VERIFIED_WITH_PUBLISHING_PAGE",
+      "productAuthority": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+      "organizationId": "13048648",
+      "autonomousExecutionEnabled": false
+    },
+    "autonomousTimerReadback": {
+      "observedAt": "2026-09-02T20:45:01Z",
+      "functionAppTrace": "AUTONOMOUS_SOCIAL_EXECUTION_WORKER",
+      "runId": "AUTONOMOUS_SOCIAL_EXECUTION_WORKER:2026-09-02T20:45:00.043Z:3dc5cc2f-6f08-4ff4-966f-23cb1f8a25fc",
+      "dataverseRead": {
+        "socialRows": 9,
+        "eligibleMetaRows": 4,
+        "linkedinRows": 3
+      },
+      "dataverseLinkedInWrites": [
+        {
+          "id": "d92fae45-90a6-f111-b8de-00224820105b",
+          "state": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING"
+        },
+        {
+          "id": "f36a5ffa-bba6-f111-b8de-6045bdd69678",
+          "state": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING"
+        },
+        {
+          "id": "e9a19b5b-baa6-f111-b8de-6045bdd69738",
+          "state": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING"
+        }
+      ],
+      "manualPublishingCounters": {
+        "founderTouchCount": 0,
+        "codyManualStartCount": 0,
+        "browserExecutionCount": 0,
+        "metaBusinessSuiteUiPublishing": false,
+        "sintraPublishing": false,
+        "linkedinNativeUiPublishing": false
+      },
+      "platformObjectsCreated": 0
+    },
+    "dataverseLinkedInReadback": {
+      "observedAt": "2026-09-02T20:45:00Z",
+      "marker": "e60c47b5da7824de99976e0a:social",
+      "rows": [
+        {
+          "id": "d92fae45-90a6-f111-b8de-00224820105b",
+          "name": "Iyorwuese October intro - linkedin",
+          "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+          "errorCode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+          "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
+          "platformPostId": null
+        },
+        {
+          "id": "f36a5ffa-bba6-f111-b8de-6045bdd69678",
+          "name": "Iyorwuese A Portrait of Paradise asset-resolved - linkedin",
+          "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+          "errorCode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+          "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
+          "platformPostId": null
+        },
+        {
+          "id": "e9a19b5b-baa6-f111-b8de-6045bdd69738",
+          "name": "Iyorwuese October title discovery - linkedin",
+          "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+          "errorCode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+          "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
+          "platformPostId": null
+        }
+      ]
+    },
+    "executionState": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+    "canaryRun": false,
+    "canaryHoldReason": "Community Management API product access is not yet approved; no LinkedIn organization publishing OAuth proof or canary is authorized as complete."
+  },
+  "dynamics": {
+    "classification": "DYNAMICS_JOURNEY_SAFE_RUNTIME_NOT_IMPLEMENTED",
+    "readbackAt": "2026-09-02T20:31:36Z",
+    "tenantState": {
+      "journeys": 0,
+      "journeyTemplates": 0,
+      "emails": 0,
+      "segments": 0,
+      "topics": 0,
+      "contactPointConsents": 0,
+      "brandProfiles": 1,
+      "purposes": 4,
+      "emailTemplates": 34
+    },
+    "actionTaken": "No controlled Journey was fabricated from unsupported/internal records.",
+    "minimumSafeRuntimeBoundary": "Founder/admin Microsoft action remains required to provide or approve registered sender/audience/compliance/test-contact foundation before Journey execution proof."
+  },
+  "sintraAccounting": {
+    "classification": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
+    "notRegressedToSintra": true,
+    "linkedinNotReplacedYet": true,
+    "metaAndAutonomousRuntimePreserved": true
+  },
+  "nextExternalDependency": {
+    "system": "LinkedIn Community Management API product review",
+    "expectedFollowUp": "Business verification/review email from Microsoft Vetting Services or LinkedIn product approval/status update.",
+    "founderDecisionRequiredNow": false,
+    "reason": "The authorized access form has been submitted; routine LinkedIn API execution must wait for product/scopes approval."
+  }
+}

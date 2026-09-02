@@ -11,6 +11,11 @@ export const META_TOKEN_ISSUED_AT = process.env.JM1_META_TOKEN_ISSUED_AT || '';
 export const META_TOKEN_EXPIRES_AT = process.env.JM1_META_TOKEN_EXPIRES_AT || '';
 export const META_TOKEN_ROTATION_DUE_AT = process.env.JM1_META_TOKEN_ROTATION_DUE_AT || '';
 export const META_GRAPH_VERSION = process.env.JM1_META_GRAPH_VERSION || 'v26.0';
+export const LINKEDIN_CLIENT_ID = process.env.JM1_LINKEDIN_CLIENT_ID || '';
+export const LINKEDIN_APP_ID = process.env.JM1_LINKEDIN_APP_ID || '';
+export const LINKEDIN_APP_NAME = process.env.JM1_LINKEDIN_APP_NAME || '';
+export const LINKEDIN_APP_VERIFICATION_STATE = process.env.JM1_LINKEDIN_APP_VERIFICATION_STATE || 'NOT_CONFIGURED';
+export const LINKEDIN_PRODUCT_STATE = process.env.JM1_LINKEDIN_PRODUCT_STATE || 'NOT_CONFIGURED';
 
 export const BRANCH_CONFIG = parseJsonEnv('JM1_MARKETING_BRANCH_CONFIG', {
   publishing: {
@@ -28,6 +33,7 @@ export const BRANCH_CONFIG = parseJsonEnv('JM1_MARKETING_BRANCH_CONFIG', {
 });
 
 export const AUTONOMOUS_META_EXECUTION_ENABLED = process.env.JM1_MARKETING_AUTONOMOUS_META_EXECUTION_ENABLED === 'true';
+export const AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED = process.env.JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED === 'true';
 export const SYNTHETIC_CREDENTIAL_MONITOR_ENABLED = process.env.JM1_CREDENTIAL_MONITOR_SYNTHETIC_ENABLED === 'true';
 
 function requireEnv(name) {
