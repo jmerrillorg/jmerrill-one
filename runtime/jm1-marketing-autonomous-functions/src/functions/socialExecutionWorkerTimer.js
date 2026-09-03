@@ -8,7 +8,7 @@ import {
 } from '../lib/config.js';
 import { entitySet, patchById, queryByPrefix } from '../lib/dataverse.js';
 import { checkLinkedInAuthority } from '../lib/linkedin.js';
-import { publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
+import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
 import { octoberIyorwueseMarker, runEnvelope } from '../lib/runtime.js';
 
 app.timer('socialExecutionWorkerTimer', {
@@ -32,6 +32,11 @@ app.timer('socialExecutionWorkerTimer', {
       && row.jm1_status === 'PUBLIC_READY_SCHEDULED_ELIGIBLE'
       && !row.jm1_platformpostid
     );
+    const reconciliationMetaRows = rows.filter((row) =>
+      ['facebook', 'instagram'].includes(row.jm1_platform)
+      && ['PUBLISHING_CLAIMED', 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'].includes(row.jm1_status)
+      && !row.jm1_platformpostid
+    );
     const linkedinRows = rows.filter((row) =>
       row.jm1_platform === 'linkedin'
       && !row.jm1_platformpostid
@@ -39,6 +44,35 @@ app.timer('socialExecutionWorkerTimer', {
     );
 
     const writes = [];
+    for (const row of reconciliationMetaRows) {
+      const caption = META_CAPTION_REGISTRY[row.jm1_captionversion] || META_CAPTION_REGISTRY[row.jm1_idempotencykey];
+      const captionPrefix = caption ? caption.slice(0, 72) : '';
+      const existing = await findRecentMatchingMetaObject({ expected: publishing, platform: row.jm1_platform, captionPrefix });
+      if (existing.ok && existing.duplicateCount === 0) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'PUBLISHED_VERIFIED',
+          jm1_platformpostid: existing.platformPostId,
+          jm1_actualdestination: existing.actualDestination || '',
+          jm1_actualmediareference: existing.permalink || '',
+          jm1_actualschedule: existing.publishedAt || envelope.startedAt,
+          jm1_readbackstate: 'RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH',
+          jm1_verifiedat: envelope.startedAt,
+          jm1_errorcode: '',
+          jm1_errormessage: ''
+        });
+        writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'RECONCILED_PLATFORM_SUCCESS', platformPostId: existing.platformPostId });
+      } else {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
+          jm1_readbackstate: existing.state,
+          jm1_verifiedat: envelope.startedAt,
+          jm1_errorcode: existing.state,
+          jm1_errormessage: existing.duplicateCount > 0 ? `Duplicate platform objects detected during reconciliation: ${existing.duplicateCount}` : existing.message || ''
+        });
+        writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: existing.state, duplicateCount: existing.duplicateCount || 0 });
+      }
+    }
+
     for (const row of eligibleMetaRows) {
       if (!AUTONOMOUS_META_EXECUTION_ENABLED) {
         await patchById(socialSet, row.jm1_socialexecutionid, {
@@ -79,9 +113,11 @@ app.timer('socialExecutionWorkerTimer', {
       }
 
       await patchById(socialSet, row.jm1_socialexecutionid, {
-        jm1_status: 'PLATFORM_API_ATTEMPT_IN_PROGRESS',
+        jm1_status: 'PUBLISHING_CLAIMED',
         jm1_actualmediareference: mediaUrl,
-        jm1_readbackstate: 'PLATFORM_API_ATTEMPT_STARTED',
+        jm1_actualschedule: envelope.startedAt,
+        jm1_executor: envelope.runId,
+        jm1_readbackstate: 'PUBLISHING_CLAIMED',
         jm1_verifiedat: envelope.startedAt
       });
 
@@ -91,10 +127,12 @@ app.timer('socialExecutionWorkerTimer', {
 
       const patch = result.ok
         ? {
-          jm1_status: 'PUBLISHED_VERIFIED',
+          jm1_status: 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
           jm1_platformpostid: result.platformPostId,
+          jm1_actualdestination: result.actualDestination || '',
           jm1_actualmediareference: mediaUrl,
-          jm1_readbackstate: result.readbackState,
+          jm1_actualschedule: result.publishedAt || envelope.startedAt,
+          jm1_readbackstate: 'PLATFORM_OBJECT_ID_PERSISTED',
           jm1_verifiedat: envelope.startedAt,
           jm1_errorcode: '',
           jm1_errormessage: ''
@@ -102,24 +140,34 @@ app.timer('socialExecutionWorkerTimer', {
         : {
           jm1_status: result.state === 'READBACK_MISMATCH' ? 'READBACK_MISMATCH' : 'HELD_PLATFORM_API_ERROR',
           jm1_platformpostid: result.platformPostId || '',
+          jm1_actualdestination: result.actualDestination || '',
           jm1_actualmediareference: mediaUrl,
+          jm1_actualschedule: result.publishedAt || envelope.startedAt,
           jm1_readbackstate: result.readbackState || result.state,
           jm1_verifiedat: envelope.startedAt,
           jm1_errorcode: result.state,
           jm1_errormessage: result.message || ''
         };
       await patchById(socialSet, row.jm1_socialexecutionid, patch);
+      if (result.ok) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'PUBLISHED_VERIFIED',
+          jm1_readbackstate: result.readbackState,
+          jm1_verifiedat: envelope.startedAt
+        });
+      }
       writes.push({
         id: row.jm1_socialexecutionid,
         platform: row.jm1_platform,
         state: result.state,
         platformPostId: result.platformPostId || null,
         readbackState: result.readbackState || null,
-        permalink: result.permalink || null
+        permalink: result.permalink || null,
+        createdPlatformObject: result.ok
       });
     }
 
-    const platformObjectsCreated = writes.filter((write) => write.platformPostId).length;
+    const platformObjectsCreated = writes.filter((write) => write.createdPlatformObject).length;
     const alreadyCertifiedMetaRows = rows.filter((row) =>
       ['facebook', 'instagram'].includes(row.jm1_platform)
       && row.jm1_status === 'PUBLISHED_VERIFIED'
@@ -145,7 +193,7 @@ app.timer('socialExecutionWorkerTimer', {
       ...envelope,
       metaAuthority,
       linkedinAuthority,
-      dataverseRead: { socialRows: rows.length, eligibleMetaRows: eligibleMetaRows.length, linkedinRows: linkedinRows.length },
+      dataverseRead: { socialRows: rows.length, eligibleMetaRows: eligibleMetaRows.length, reconciliationMetaRows: reconciliationMetaRows.length, linkedinRows: linkedinRows.length },
       dataverseWrite: writes,
       executionEnabled: {
         meta: AUTONOMOUS_META_EXECUTION_ENABLED,

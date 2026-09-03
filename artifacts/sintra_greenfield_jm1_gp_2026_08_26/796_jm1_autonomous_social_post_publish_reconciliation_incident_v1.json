@@ -1,0 +1,143 @@
+{
+  "artifact": "JM1-AUTONOMOUS-SOCIAL-POST-PUBLISH-RECONCILIATION-INCIDENT-v1",
+  "createdAt": "2026-09-03T05:06:22Z",
+  "updatedAt": "2026-09-03T05:18:00Z",
+  "program": "JM1 Enterprise Marketing Operating System",
+  "stream": "Autonomous Meta Remediation / Persistent Platform Authority Activation",
+  "classification": "JM1-MKT-INCIDENT_AUTONOMOUS_SOCIAL_POST_PUBLISH_RECONCILIATION_DUPLICATION",
+  "runtimeBoundary": {
+    "routineBrowserExecution": false,
+    "metaBusinessSuitePublishing": false,
+    "sintraPublishing": false,
+    "autonomousMetaExecutionEnabledAtIncidentClosure": false
+  },
+  "incidentSummary": {
+    "platform": "instagram",
+    "destination": "jmerrillpub",
+    "branch": "publishing",
+    "dataverseTable": "jm1_socialexecution",
+    "socialExecutionId": "bbf1b9fe-bba6-f111-b8de-00224820105b",
+    "idempotencyKey": "2026-10-iyowerese-featured-author:iyo-featured-author-v1:social:asset_resolution_a_portrait_of_paradise:instagram",
+    "campaign": "October Featured Author: Iyorwuese Hagher / A Portrait of Paradise",
+    "captionVersion": "e60c47b5da7824de99976e0a:caption:asset_resolution_a_portrait_of_paradise:v1",
+    "requestedMediaSha256": "48ceea8ef987454d5ac7e2cb2a5933881223b721dfb0de4151f36ea5ef350a15",
+    "rootCause": "Meta platform publish succeeded, then the post-publish Dataverse PATCH failed because the worker attempted to write a non-existent jm1_actualcaption column. The row remained retry-eligible without a persisted platform object ID, so later worker invocations created additional Instagram media objects.",
+    "rootCauseClassification": "PLATFORM_SUCCESS_DATAVERSE_WRITE_FAILURE_DUPLICATE_RETRY"
+  },
+  "triggeringEvidence": {
+    "failedDataverseField": "jm1_actualcaption",
+    "schemaInspection": {
+      "jm1_actualcaptionExists": false,
+      "captionAuthority": "jm1_captionversion plus platform readback/evidence, not a Dataverse jm1_actualcaption column"
+    },
+    "observedFailure": {
+      "errorSource": "Dataverse PATCH",
+      "status": 400,
+      "technicalFinding": "Invalid property jm1_actualcaption on jm1_socialexecution write."
+    }
+  },
+  "instagramObjectRecovery": {
+    "canonicalKept": {
+      "id": "18134196829616273",
+      "selectionReason": "Only readable surviving A Portrait object in Instagram account media readback; exact caption match, expected destination, expected media type, and visible platform permalink.",
+      "timestamp": "2026-09-02T21:39:08Z",
+      "permalink": "https://www.instagram.com/p/DczOMkfIBJu/",
+      "username": "jmerrillpub",
+      "mediaType": "IMAGE",
+      "captionMatch": true
+    },
+    "duplicatesChecked": [
+      {
+        "id": "18124469272814415",
+        "beforeReadback": "UNAVAILABLE_OR_NONEXISTENT",
+        "deleteAttempted": false,
+        "deleteSkippedReason": "Object was already unavailable before deletion; no destructive call issued.",
+        "afterReadback": "UNAVAILABLE_OR_NONEXISTENT",
+        "absentAfter": true
+      },
+      {
+        "id": "17906275731540577",
+        "beforeReadback": "UNAVAILABLE_OR_NONEXISTENT",
+        "deleteAttempted": false,
+        "deleteSkippedReason": "Object was already unavailable before deletion; no destructive call issued.",
+        "afterReadback": "UNAVAILABLE_OR_NONEXISTENT",
+        "absentAfter": true
+      },
+      {
+        "id": "18015028736923935",
+        "beforeReadback": "UNAVAILABLE_OR_NONEXISTENT",
+        "deleteAttempted": false,
+        "deleteSkippedReason": "Object was already unavailable before deletion; no destructive call issued.",
+        "afterReadback": "UNAVAILABLE_OR_NONEXISTENT",
+        "absentAfter": true
+      }
+    ],
+    "postCleanupAccountMediaReadback": {
+      "matchingCaptionObjectCount": 1,
+      "canonicalId": "18134196829616273",
+      "duplicateObjectCountVisibleToGraph": 0
+    }
+  },
+  "dataverseRecovery": {
+    "canonicalStateBeforeWorkerReconciliationProof": {
+      "status": "PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED",
+      "platformPostId": null,
+      "actualDestination": "jmerrillpub",
+      "actualMediaReference": "https://www.instagram.com/p/DczOMkfIBJu/",
+      "actualSchedule": "2026-09-02T21:39:08Z",
+      "readbackState": "REGRESSION_RECONCILIATION_ARMED_NO_PUBLISH"
+    },
+    "requiredRecoveredState": {
+      "status": "PUBLISHED_VERIFIED",
+      "platformPostId": "18134196829616273",
+      "readbackState": "RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH"
+    }
+  },
+  "workerHardening": {
+    "schemaCorrection": [
+      "Removed all jm1_actualcaption writes from autonomous worker path.",
+      "No jm1_publishedat write is used because the live schema uses jm1_actualschedule and jm1_verifiedat."
+    ],
+    "preclaim": [
+      "Before platform publish, eligible rows are moved to PUBLISHING_CLAIMED with executor and media metadata.",
+      "Rows already in PUBLISHING_CLAIMED are reconciled before any new publish attempt."
+    ],
+    "platformIdFirstPersistence": [
+      "After a successful platform publish, the worker first persists jm1_platformpostid and marks PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED.",
+      "A later promotion to PUBLISHED_VERIFIED is intentionally separate so the platform object ID remains anti-duplicate authority if the final certification write fails."
+    ],
+    "reconciliation": [
+      "Rows in PUBLISHING_CLAIMED or PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED with no platformPostId are checked against recent platform objects by destination and caption prefix before publishing.",
+      "Exactly one readback match promotes the row to PUBLISHED_VERIFIED.",
+      "Multiple matches or missing matches hold the row for attention instead of publishing blindly."
+    ]
+  },
+  "regressionProof": {
+    "artifact": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/795_jm1_social_post_publish_reconciliation_regression_v1.json",
+    "type": "NON_DESTRUCTIVE_LOCAL_SIMULATION",
+    "result": "POST_PUBLISH_FAILURE_IDEMPOTENCY_PROVEN",
+    "platformObjectsCreated": 1,
+    "duplicateObjectsCreated": 0
+  },
+  "openProofItems": {
+    "facebookAutonomousProof": "OPEN_NOT_INFERRED_FROM_INSTAGRAM",
+    "instagramWorkerReconciliationProof": "PASS_2026-09-03T05:11:00Z_RECONCILED_EXISTING_PLATFORM_OBJECT_ZERO_NEW_PLATFORM_OBJECTS",
+    "metaOwnedRuntime": "HELD_PENDING_RECOVERY_RETEST",
+    "dynamicsJourneyProof": "OPEN",
+    "noTouchRuntime": "FAIL_UNTIL_FB_IG_LINKEDIN_OR_HELD_LINKEDIN_AND_DYNAMICS_BOUNDARIES_ARE_PROVEN"
+  },
+  "currentControls": {
+    "JM1_MARKETING_AUTONOMOUS_META_EXECUTION_ENABLED": "false",
+    "JM1_SOCIAL_EXECUTION_WORKER_CRON": "0 */1 * * * * during recovery proof; restored to 0 */15 * * * * after proof",
+    "observedAzureTimerBindingBeforeReindex": "0 0,15,30,45 * * * *",
+    "observedAzureTimerBindingAfterRestore": "0 */15 * * * *",
+    "liveProofArtifact": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/797_jm1_autonomous_social_reconciliation_live_proof_v1.json",
+    "linkedinExecution": "HELD_EXTERNAL_PLATFORM_AUTHORITY"
+  },
+  "founderSafetyNotes": [
+    "No token or secret value is stored in this artifact.",
+    "This artifact does not claim Facebook autonomous runtime proof.",
+    "This artifact does not claim the full no-touch operating system is complete.",
+    "This artifact does not authorize additional duplicate Instagram posting."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "packageId": 795,
+  "artifact": "JM1-SOCIAL-POST-PUBLISH-RECONCILIATION-REGRESSION-v1",
+  "generatedAt": "2026-09-03T04:58:20.969Z",
+  "mode": "NON_DESTRUCTIVE_SIMULATION",
+  "firstExecution": {
+    "state": "SIMULATED_POST_PUBLISH_DATAVERSE_FAILURE",
+    "error": "SIMULATED_DATAVERSE_METADATA_WRITE_FAILURE",
+    "platformPostIdNotYetStored": "mock_ig_1"
+  },
+  "retryExecution": {
+    "state": "RECONCILED_PLATFORM_SUCCESS",
+    "platformPostId": "mock_ig_1"
+  },
+  "platformObjectsCreated": 1,
+  "duplicateObjectsCreated": 0,
+  "finalRow": {
+    "id": "regression-social-row",
+    "idempotencyKey": "regression:post-publish-failure",
+    "platform": "instagram",
+    "status": "PUBLISHED_VERIFIED",
+    "platformPostId": "mock_ig_1",
+    "caption": "October Featured Author: Iyorwuese Hagher. A Portrait of Paradise opens a reader-first invitation.",
+    "destination": "jmerrillpub",
+    "readbackState": "RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH",
+    "actualDestination": "jmerrillpub",
+    "actualMediaReference": "https://example.test/1"
+  },
+  "dataverseWrites": [
+    "PUBLISHING_CLAIMED",
+    "PUBLISHED_VERIFIED"
+  ],
+  "classification": "POST_PUBLISH_FAILURE_IDEMPOTENCY_PROVEN"
+}

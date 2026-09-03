@@ -69,6 +69,8 @@ export async function publishFacebookPhoto({ expected, caption, imageUrl }) {
     state: matchesDestination ? 'PUBLISHED_VERIFIED' : 'READBACK_MISMATCH',
     readbackState: matchesDestination ? 'READBACK_MATCH' : 'READBACK_MISMATCH',
     platformPostId: postId,
+    actualDestination: page.name,
+    publishedAt: readback.json.created_time || null,
     permalink: readback.json.permalink_url || null,
     readback: readback.json
   };
@@ -130,9 +132,68 @@ export async function publishInstagramPhoto({ expected, caption, imageUrl }) {
     readbackState: matchesDestination ? 'READBACK_MATCH' : 'READBACK_MISMATCH',
     mediaContainerId: mediaId,
     platformPostId,
+    actualDestination: readback.json.username || null,
+    publishedAt: readback.json.timestamp || null,
     permalink: readback.json.permalink || null,
     readback: readback.json
   };
+}
+
+export async function findRecentMatchingMetaObject({ expected, platform, captionPrefix }) {
+  if (!captionPrefix) return { ok: false, state: 'META_RECONCILIATION_CAPTION_PREFIX_MISSING' };
+
+  if (platform === 'instagram') {
+    const authority = await verifyMetaAuthority(expected);
+    if (!authority.ok) return authority;
+    const media = await graph(`/${authority.instagramGraphId}/media`, {
+      fields: 'id,caption,media_type,permalink,timestamp,username',
+      limit: '50'
+    });
+    if (!media.ok) return { ok: false, state: 'INSTAGRAM_RECONCILIATION_READBACK_FAILED', status: media.status, message: media.json?.error?.message };
+    const matches = (media.json.data || [])
+      .filter((item) => (item.caption || '').startsWith(captionPrefix) && item.username === expected.instagramHandle)
+      .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+    const match = matches[0];
+    return match
+      ? {
+        ok: true,
+        state: 'RECONCILED_PLATFORM_SUCCESS',
+        platformPostId: match.id,
+        actualDestination: match.username,
+        publishedAt: match.timestamp || null,
+        permalink: match.permalink || null,
+        duplicateCount: matches.length > 1 ? matches.length - 1 : 0
+      }
+      : { ok: false, state: 'NO_RECENT_INSTAGRAM_MATCH_FOUND' };
+  }
+
+  if (platform === 'facebook') {
+    const page = await pageWithAccessToken(expected);
+    if (!page.ok) return page;
+    const photos = await graphWithToken(page.accessToken, `/${page.id}/photos`, {
+      type: 'uploaded',
+      fields: 'id,name,created_time,link,from',
+      limit: '50'
+    });
+    if (!photos.ok) return { ok: false, state: 'FACEBOOK_RECONCILIATION_READBACK_FAILED', status: photos.status, message: photos.json?.error?.message };
+    const matches = (photos.json.data || [])
+      .filter((item) => (item.name || '').startsWith(captionPrefix) && item.from?.id === expected.facebookPageId)
+      .sort((a, b) => new Date(a.created_time) - new Date(b.created_time));
+    const match = matches[0];
+    return match
+      ? {
+        ok: true,
+        state: 'RECONCILED_PLATFORM_SUCCESS',
+        platformPostId: match.id,
+        actualDestination: page.name,
+        publishedAt: match.created_time || null,
+        permalink: match.link || null,
+        duplicateCount: matches.length > 1 ? matches.length - 1 : 0
+      }
+      : { ok: false, state: 'NO_RECENT_FACEBOOK_MATCH_FOUND' };
+  }
+
+  return { ok: false, state: 'META_RECONCILIATION_UNSUPPORTED_PLATFORM' };
 }
 
 async function pageWithAccessToken(expected) {
