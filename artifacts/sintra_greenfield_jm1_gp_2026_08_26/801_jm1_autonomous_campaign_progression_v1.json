@@ -1,0 +1,233 @@
+{
+  "packageId": 801,
+  "artifact": "JM1-AUTONOMOUS-CAMPAIGN-PROGRESSION-v1",
+  "generatedAt": "2026-09-03T12:31:40Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Dynamics + Autonomous Campaign Progression",
+  "metaPreserved": {
+    "classification": "META_OWNED_API_RUNTIME_PROVEN",
+    "facebookProofPostId": "307480763084670_1399525035519277",
+    "instagramProofMediaId": "18096148589127244",
+    "reEnableTick": "2026-09-03T09:15:00Z",
+    "additionalMetaProofCyclesSpent": false
+  },
+  "runtimeDeployment": {
+    "functionApp": "func-jm1-marketing-runtime",
+    "resourceGroup": "rg-jm1-ai",
+    "deployedFunctions": [
+      "marketingControlLoopTimer",
+      "creativeWorkProcessorTimer",
+      "credentialMonitorTimer",
+      "socialExecutionWorkerTimer"
+    ],
+    "productionCadenceRestored": {
+      "JM1_MARKETING_CONTROL_LOOP_CRON": "0 17 12 * * *",
+      "JM1_CREATIVE_WORKER_CRON": "0 22 12 * * *",
+      "JM1_SOCIAL_EXECUTION_WORKER_CRON": "0 */15 * * * *",
+      "JM1_MARKETING_AUTONOMOUS_META_EXECUTION_ENABLED": "true",
+      "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED": "false"
+    }
+  },
+  "genericProgramEngine": {
+    "sourceFiles": [
+      "runtime/jm1-marketing-autonomous-functions/src/lib/campaignProgram.js",
+      "runtime/jm1-marketing-autonomous-functions/src/functions/marketingControlLoopTimer.js",
+      "runtime/jm1-marketing-autonomous-functions/src/functions/creativeWorkProcessorTimer.js"
+    ],
+    "hardwiredProofStage": false,
+    "campaignSelection": "Active Dataverse campaign authority rows whose campaign type/program resolve to Monthly Featured Author.",
+    "programContract": {
+      "program": "MONTHLY_FEATURED_AUTHOR",
+      "stages": [
+        "INTRO",
+        "TITLE_DISCOVERY",
+        "AUTHOR_CONTINUATION",
+        "MID_MONTH_ENGAGEMENT",
+        "ADDITIONAL_TITLE_DISCOVERY",
+        "MONTH_CLOSE"
+      ],
+      "rules": [
+        "intro once",
+        "stage order",
+        "earliest stage day offsets",
+        "asset availability",
+        "fatigue/repetition gate",
+        "journey readiness",
+        "channel eligibility",
+        "LinkedIn external authority hold",
+        "public-ready gate",
+        "supersession by existing content/creative/social state"
+      ]
+    }
+  },
+  "autonomousStageResolution": {
+    "classification": "AUTONOMOUS_CAMPAIGN_STAGE_RESOLUTION_PROVEN",
+    "campaignAuthority": {
+      "id": "d42fae45-90a6-f111-b8de-00224820105b",
+      "name": "October 2026 Featured Author - Iyorwuese",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:campaign"
+    },
+    "timerTrace": {
+      "timestamp": "2026-09-03T12:23:18.1563517Z",
+      "runId": "AUTONOMOUS_DAILY_MARKETING_CONTROL_LOOP:2026-09-03T12:23:16.846Z:e6524bbe-7936-42ff-a64c-72276e9f611c",
+      "correlationId": "c9f7d30b-660b-4c75-8a43-3931a9da8cb2",
+      "runtimeService": "Azure Functions Timer Trigger",
+      "founderTouchCount": 0,
+      "codyManualStartCount": 0,
+      "browserExecutionCount": 0
+    },
+    "decisionReadback": {
+      "currentStage": "TITLE_DISCOVERY",
+      "nextEligibleStage": "TITLE_DISCOVERY",
+      "controlDecision": "RESOLVE_EXCEPTION",
+      "reason": "TITLE_DISCOVERY has held child work that must be resolved before progression.",
+      "introEligible": false,
+      "fatigueResult": "GENERATE_NEXT_STAGE",
+      "dynamicsReady": false,
+      "socialReady": true,
+      "exceptionsOpen": 3,
+      "currentControlLoopRow": "463ddb0b-92a7-f111-b8de-7c1e525b15c2"
+    }
+  },
+  "introSupersession": {
+    "classification": "FEATURED_AUTHOR_INTRO_SUPERSESSION_PROVEN",
+    "introEligible": false,
+    "basis": "Existing intro content and published verified Facebook/Instagram intro social executions are present; the control loop returned FALSE rather than generating another intro."
+  },
+  "fatigueDecision": {
+    "classification": "AUTONOMOUS_CAMPAIGN_FATIGUE_DECISION_PROVEN",
+    "decision": "GENERATE_NEXT_STAGE",
+    "reason": "Recent public output exists, but no configured repetition/fatigue threshold blocks future-stage materialization.",
+    "allowedOutcomesImplemented": [
+      "GENERATE_NEXT_STAGE",
+      "WAIT",
+      "RESOLVE_EXCEPTION",
+      "DO_NOTHING"
+    ]
+  },
+  "contentWork": {
+    "classification": "AUTONOMOUS_CONTENT_WORK_GENERATION_PROVEN",
+    "rowId": "e33bc90f-92a7-f111-b8de-000d3a14673b",
+    "idempotencyKey": "e60c47b5da7824de99976e0a:content:additional_title_discovery",
+    "stage": "additional_title_discovery",
+    "publicReadyState": "PASS",
+    "createdOn": "2026-09-03T12:22:01Z",
+    "createdBy": "Dataverse service principal",
+    "copyBriefIncludes": [
+      "campaign reason",
+      "stage",
+      "featured entity",
+      "audience intent",
+      "branch voice",
+      "approved CTA",
+      "platform requirements",
+      "Journey requirement"
+    ],
+    "manualCaptionConstructionByCody": false
+  },
+  "creativeWorker": {
+    "classification": "CREATIVE_WORKER_AUTONOMOUS_TRIGGER_PROVEN",
+    "functionName": "creativeWorkProcessorTimer",
+    "trigger": "Azure Functions Timer Trigger",
+    "timerTrace": {
+      "timestamp": "2026-09-03T12:23:18.2284419Z",
+      "runId": "AUTONOMOUS_CREATIVE_WORK_PROCESSOR:2026-09-03T12:23:16.895Z:547d3eb7-1477-4802-bbb5-a2c642f3b8e7",
+      "correlationId": "f72a7ebb-b679-405a-bcca-978f2f298afa",
+      "founderTouchCount": 0,
+      "codyManualStartCount": 0,
+      "browserExecutionCount": 0
+    },
+    "assetResolution": {
+      "officialLogoHash": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+      "authorPortraitApproved": true,
+      "aPortraitCoverApproved": true,
+      "theGeneralsWill": "TITLE_MARKETING_ELIGIBLE_WITHOUT_COVER"
+    },
+    "archetypeSelection": {
+      "classification": "AUTONOMOUS_CREATIVE_ARCHETYPE_SELECTION_PROVEN",
+      "stage": "additional_title_discovery",
+      "selectedArchetype": "EVERGREEN_DISCOVERY",
+      "selectionDerivedFrom": [
+        "campaign stage",
+        "asset availability",
+        "recent archetypes",
+        "platform/brand policy"
+      ]
+    },
+    "publicReadyGate": {
+      "classification": "PUBLIC_READY_GATE_PROVEN",
+      "firstGateState": "REWORK",
+      "firstGateFailure": "OFFICIAL_LOGO_REQUIRED",
+      "finalGateState": "PASS",
+      "automaticRework": true,
+      "reworkClassification": "AUTONOMOUS_CREATIVE_REWORK_PROVEN"
+    },
+    "creativeOutput": {
+      "rowId": "aa400a3d-92a7-f111-b8de-6045bdd69738",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:creative:additional_title_discovery",
+      "assetPath": "runtime-generated://jm1/e60c47b5da7824de99976e0a/additional_title_discovery/EVERGREEN_DISCOVERY.svg",
+      "assetHash": "e530d31011cd637dbaa0dd85a80906297befd396cd707ac47d1d28a0c822b96e",
+      "dimensions": "1080x1080",
+      "logoIncluded": true,
+      "publicReadyState": "PASS",
+      "createdOn": "2026-09-03T12:23:17Z"
+    }
+  },
+  "socialRowGeneration": {
+    "classification": "SOCIAL_ROW_GENERATION_FROM_CAMPAIGN_AUTHORITY_PROVEN",
+    "rows": [
+      {
+        "platform": "facebook",
+        "rowId": "c4510039-92a7-f111-b8de-00224820105b",
+        "status": "WAIT_CREATIVE_RUNTIME_REGISTRY_REQUIRED",
+        "scheduledFor": "2026-10-21T14:00:00Z",
+        "reason": "Autonomous creative generated; exact public media URL registry is required before Meta execution eligibility."
+      },
+      {
+        "platform": "instagram",
+        "rowId": "6495ca3c-92a7-f111-b8de-7c1e525b15c2",
+        "status": "WAIT_CREATIVE_RUNTIME_REGISTRY_REQUIRED",
+        "scheduledFor": "2026-10-21T16:00:00Z",
+        "reason": "Autonomous creative generated; exact public media URL registry is required before Meta execution eligibility."
+      },
+      {
+        "platform": "linkedin",
+        "rowId": "6595ca3c-92a7-f111-b8de-7c1e525b15c2",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "scheduledFor": "2026-10-21T18:00:00Z",
+        "reason": "LinkedIn Community Management API product review remains pending."
+      }
+    ],
+    "noOctoberPublishingForced": true
+  },
+  "safetyReadback": {
+    "classification": "GENERATED_SOCIAL_ROWS_DID_NOT_PUBLISH_UNSAFELY",
+    "socialWorkerTick": {
+      "timestamp": "2026-09-03T12:30:01.7620608Z",
+      "runId": "AUTONOMOUS_SOCIAL_EXECUTION_WORKER:2026-09-03T12:30:00.035Z:d00812b9-c1ac-42be-a199-3d0ddface6ee",
+      "eligibleMetaRows": 0,
+      "platformObjectsCreated": 0,
+      "metaExecutionEnabled": true,
+      "linkedinExecutionEnabled": false
+    }
+  },
+  "classifications": [
+    "AUTONOMOUS_CAMPAIGN_STAGE_RESOLUTION_PROVEN",
+    "FEATURED_AUTHOR_INTRO_SUPERSESSION_PROVEN",
+    "AUTONOMOUS_CAMPAIGN_FATIGUE_DECISION_PROVEN",
+    "AUTONOMOUS_CONTENT_WORK_GENERATION_PROVEN",
+    "CREATIVE_WORKER_AUTONOMOUS_TRIGGER_PROVEN",
+    "AUTONOMOUS_CREATIVE_ARCHETYPE_SELECTION_PROVEN",
+    "PUBLIC_READY_GATE_PROVEN",
+    "AUTONOMOUS_CREATIVE_REWORK_PROVEN",
+    "SOCIAL_ROW_GENERATION_FROM_CAMPAIGN_AUTHORITY_PROVEN"
+  ],
+  "noTouchStatus": {
+    "exactResult": "JM1_CORE_META_NO_TOUCH_TEST_FAIL - Dynamics Journey still open and generated creative requires durable public media URL registry before routine Meta execution eligibility",
+    "founderRoutineMarketingActions": 0,
+    "codyCampaignConstruction": 0,
+    "codyWorkerStarts": 0,
+    "computerUsePublishing": 0,
+    "metaUiPublishing": 0,
+    "sintraExecution": 0
+  }
+}

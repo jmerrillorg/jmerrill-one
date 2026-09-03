@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/functions/*.js",
   "scripts": {
-    "check": "node --check src/functions/marketingControlLoopTimer.js && node --check src/functions/socialExecutionWorkerTimer.js && node --check src/functions/credentialMonitorTimer.js"
+    "check": "node --check src/functions/marketingControlLoopTimer.js && node --check src/functions/socialExecutionWorkerTimer.js && node --check src/functions/credentialMonitorTimer.js && node --check src/functions/creativeWorkProcessorTimer.js"
   },
   "dependencies": {
     "@azure/functions": "^4.7.2"
