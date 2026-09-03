@@ -112,13 +112,15 @@ report.dataverse = {
 report.dynamics = {
   ...dynamics,
   journeyPromotion,
-  exactMaturity: 'DYNAMICS_JOURNEY_NOT_PROVEN',
+  exactMaturity: dynamics.controlledMarketingEmail.ready
+    ? 'DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_NOT_PROVEN'
+    : 'DYNAMICS_JOURNEY_NOT_PROVEN',
   controlledConfiguration: {
     publishingSenderIdentity: dynamics.governedPublishingSender.ready ? 'GOVERNED_PUBLISHING_SENDER_COMMISSIONED' : 'NOT_FOUND',
     publishingDomain: dynamics.governedPublishingDomain.ready ? 'EMAIL_JMERRILL_ONE_AUTHENTICATED_READY' : 'NOT_READY',
     controlledTestContacts: dynamics.controlledTestAudience.ready ? 'INTERNAL_TEST_CONTACT_PROVEN' : 'NOT_SELECTED_NO_FOUNDER_APPROVED_TEST_AUDIENCE_CONTRACT',
     minimalAudienceSegment: dynamics.controlledTestAudience.ready ? 'INTERNAL_TEST_SEGMENT_PROVEN' : (dynamics.segments.count === 0 ? 'NOT_IMPLEMENTED_NO_SEGMENT' : 'EXISTS_REQUIRES_REVIEW'),
-    minimalCompliantEmail: dynamics.emails.count === 0 ? 'NOT_IMPLEMENTED_NO_MARKETING_EMAIL' : 'EXISTS_REQUIRES_REVIEW',
+    minimalCompliantEmail: dynamics.controlledMarketingEmail.ready ? 'CONTROLLED_MARKETING_EMAIL_IMPLEMENTED' : (dynamics.emails.count === 0 ? 'NOT_IMPLEMENTED_NO_MARKETING_EMAIL' : 'EXISTS_REQUIRES_REVIEW'),
     journeyTrigger: 'NOT_IMPLEMENTED',
     wait: 'NOT_IMPLEMENTED',
     branchOrExit: 'NOT_IMPLEMENTED',
@@ -173,10 +175,10 @@ report.linkedin = {
 };
 
 report.noTouchTest = {
-  requiredResult: 'JM1_CORE_META_NO_TOUCH_TEST_FAIL - Dynamics Journey runtime not implemented/proven; campaign progression still requires Cody-authored runtime wave script before autonomous trigger can run.',
+  requiredResult: `JM1_CORE_META_NO_TOUCH_TEST_FAIL - ${dynamics.exactRemainingNormalOperationDependency}`,
   coreMetaNoTouch: 'FAIL',
   metaReason: 'Meta adapter itself is proven and no browser publishing is required.',
-  blockingManualDependency: 'DYNAMICS_CONTROLLED_JOURNEY_AND_AUTONOMOUS_TRIGGER_NOT_PROVEN',
+  blockingManualDependency: dynamics.exactRemainingNormalOperationDependency,
   linkedinTreatment: 'HELD_EXTERNAL_PLATFORM_AUTHORITY_DOES_NOT_FAIL_CORE_META_TEST'
 };
 
@@ -201,6 +203,7 @@ report.classifications = [
   'META_PLATFORM_IDEMPOTENCY_PROVEN',
   'META_OWNED_API_RUNTIME_PROVEN',
   'DATAVERSE_MARKETING_RUNTIME_PROVEN',
+  ...(dynamics.controlledMarketingEmail.ready ? ['DYNAMICS_MARKETING_EMAIL_IMPLEMENTED'] : []),
   'MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD',
   'DYNAMICS_JOURNEY_NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY',
   'LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED',
@@ -327,13 +330,17 @@ async function promoteJourneyBoundary(entitySet, rows, dynamics) {
   const out = [];
   for (const row of rows) {
     const payload = {
-      jm1_state: 'DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY',
+      jm1_state: dynamics.controlledMarketingEmail.ready
+        ? 'DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED'
+        : 'DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY',
       jm1_dynamicsjourneyid: '',
       jm1_audiencecontract: dynamics.controlledTestAudience.ready
         ? 'Controlled internal test contact and static segment are proven by Dataverse readback.'
         : 'Controlled audience/test contact contract not yet selected; do not infer from production contacts.',
-      jm1_triggercontract: 'Supported Journey APIs/actions exist, but no controlled marketing email/journey trigger runtime currently exists.',
-      jm1_blocker: `Exact tenant state: journeys=${dynamics.journeys.count}; journeyTemplates=${dynamics.journeyTemplates.count}; emails=${dynamics.emails.count}; segments=${dynamics.segments.count}; topics=${dynamics.topics.count}; contactPointConsents=${dynamics.contactPointConsents.count}. Existing emailTemplates=${dynamics.emailTemplates.count}, brandProfiles=${dynamics.brandProfiles.count}, purposes=${dynamics.purposes.count}. Governed sender ready=${dynamics.governedPublishingSender.ready}; authenticated domain ready=${dynamics.governedPublishingDomain.ready}; controlled test audience ready=${dynamics.controlledTestAudience.ready}. Remaining safe-runtime boundary: create/validate a minimal compliant email and non-production Journey without sending uncontrolled marketing.`,
+      jm1_triggercontract: dynamics.journeySourceAvailability.safeJourneySourceAvailable
+        ? 'Supported Journey APIs/actions and seed/template source exist; controlled Journey implementation can proceed.'
+        : 'Actual Customer Insights Journey runtime requires a valid Journey template or existing Journey seed for msdynmkt_CreateJourneyFromTemplate; none exists in tenant by readback.',
+      jm1_blocker: dynamics.exactRemainingNormalOperationDependency,
       jm1_validatedat: GENERATED_AT
     };
     await patchById(entitySet, row.jm1_journeyexecutionid, payload);
@@ -380,12 +387,20 @@ async function inspectDynamicsJourneys() {
   const governedPublishingDomain = await inspectGovernedPublishingDomain();
   const governedPublishingSender = await inspectGovernedPublishingSender();
   const controlledTestAudience = await inspectControlledTestAudience();
+  const controlledMarketingEmail = await inspectControlledMarketingEmail();
+  const journeySourceAvailability = await inspectJourneySourceAvailability();
+  const exactRemainingNormalOperationDependency = journeySourceAvailability.safeJourneySourceAvailable
+    ? 'DYNAMICS_CONTROLLED_JOURNEY_IMPLEMENTATION_AND_READBACK_REQUIRED'
+    : 'DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION';
   return {
     inspectedAt: GENERATED_AT,
     ...probes,
     governedPublishingDomain,
     governedPublishingSender,
     controlledTestAudience,
+    controlledMarketingEmail,
+    journeySourceAvailability,
+    exactRemainingNormalOperationDependency,
     supportedCreationPaths: {
       templatePathObserved: actions.includes('msdynmkt_CreateJourneyFromTemplate'),
       journeyJsonFromTemplateObserved: actions.includes('msdynmkt_CreateJourneyJsonFromTemplate'),
@@ -395,9 +410,11 @@ async function inspectDynamicsJourneys() {
       directApiPathWithoutTemplate: actions.includes('msdynmkt_GenerateJourneyJdsl') ? 'POSSIBLE_REQUIRES_PAYLOAD_REVIEW' : 'NOT_PROVEN'
     },
     classification: 'DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_HELD',
-    reason: governedPublishingDomain.ready && governedPublishingSender.ready && controlledTestAudience.ready
-      ? 'The governed Publishing sender/domain and controlled internal audience are ready; the tenant still lacks a controlled marketing email and Journey runtime proof.'
-      : 'The tenant has Customer Insights Journeys actions, email templates, a brand profile, and purposes, but lacks the full controlled journey/email/segment/topic/contact-point-consent runtime needed for a non-production proof.'
+    reason: governedPublishingDomain.ready && governedPublishingSender.ready && controlledTestAudience.ready && controlledMarketingEmail.ready
+      ? 'The governed Publishing sender/domain, controlled internal audience, and controlled marketing email are ready; Microsoft-supported Journey creation still needs an accessible Journey template or existing Journey seed.'
+      : governedPublishingDomain.ready && governedPublishingSender.ready && controlledTestAudience.ready
+        ? 'The governed Publishing sender/domain and controlled internal audience are ready; the tenant still lacks a controlled marketing email and Journey runtime proof.'
+        : 'The tenant has Customer Insights Journeys actions, email templates, a brand profile, and purposes, but lacks the full controlled journey/email/segment/topic/contact-point-consent runtime needed for a non-production proof.'
   };
 }
 
@@ -454,6 +471,47 @@ async function inspectControlledTestAudience() {
     contactEmail: contactRow?.emailaddress1 ?? null,
     segmentId: segmentRow?.msdynmkt_segmentid ?? null,
     segmentName: segmentRow?.msdynmkt_displayname ?? null
+  };
+}
+
+async function inspectControlledMarketingEmail() {
+  const response = await dv("/msdynmkt_emails?$select=msdynmkt_emailid,msdynmkt_name,msdynmkt_subject,msdynmkt_fromname,msdynmkt_fromemail,msdynmkt_replytoemail,msdynmkt_to,statuscode,statecode,_msdynmkt_senderid_value,_msdynmkt_brandprofileid_value,_msdynmkt_compliancesettings4_value,_msdynmkt_purpose_value&$filter=msdynmkt_name eq 'IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED JOURNEY EMAIL'&$top=1", {}, true);
+  const row = response.ok ? response.body.value?.[0] : null;
+  return {
+    ready: !!row
+      && row.msdynmkt_fromemail === 'publishing@email.jmerrill.one'
+      && row.msdynmkt_replytoemail === 'publishing@jmerrill.one'
+      && row.msdynmkt_subject === 'October Featured Author: Iyorwuese Hagher'
+      && row.statuscode === 1
+      && row.statecode === 0,
+    id: row?.msdynmkt_emailid ?? null,
+    name: row?.msdynmkt_name ?? null,
+    subject: row?.msdynmkt_subject ?? null,
+    fromName: row?.msdynmkt_fromname ?? null,
+    fromEmail: row?.msdynmkt_fromemail ?? null,
+    replyToEmail: row?.msdynmkt_replytoemail ?? null,
+    to: row?.msdynmkt_to ?? null,
+    senderId: row?._msdynmkt_senderid_value ?? null,
+    brandProfileId: row?._msdynmkt_brandprofileid_value ?? null,
+    complianceSettings4Id: row?._msdynmkt_compliancesettings4_value ?? null,
+    purposeId: row?._msdynmkt_purpose_value ?? null,
+    statuscode: row?.statuscode ?? null,
+    statecode: row?.statecode ?? null
+  };
+}
+
+async function inspectJourneySourceAvailability() {
+  const [templates, journeys] = await Promise.all([
+    dv('/msdynmkt_journeytemplates?$select=msdynmkt_journeytemplateid,msdynmkt_name,statuscode,statecode&$top=50', {}, true),
+    dv('/msdynmkt_journeys?$select=msdynmkt_journeyid,msdynmkt_name,statuscode,statecode&$top=50', {}, true)
+  ]);
+  const journeyTemplatesAvailable = templates.ok ? templates.body.value?.length ?? 0 : null;
+  const existingJourneysAvailableAsSeed = journeys.ok ? journeys.body.value?.length ?? 0 : null;
+  return {
+    journeyTemplatesAvailable,
+    existingJourneysAvailableAsSeed,
+    safeJourneySourceAvailable: (journeyTemplatesAvailable ?? 0) > 0 || (existingJourneysAvailableAsSeed ?? 0) > 0,
+    supportedPath: 'msdynmkt_CreateJourneyFromTemplate'
   };
 }
 

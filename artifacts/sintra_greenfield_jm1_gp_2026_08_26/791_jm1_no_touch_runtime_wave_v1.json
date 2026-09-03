@@ -1,7 +1,7 @@
 {
   "packageId": 791,
   "artifact": "JM1-NO-TOUCH-RUNTIME-WAVE-v1",
-  "generatedAt": "2026-09-03T18:41:53.473Z",
+  "generatedAt": "2026-09-03T19:56:12.730Z",
   "stream": "JM1 Enterprise Marketing Operating System - No-Touch Runtime Proof",
   "replacementMatrix": {
     "dataverseMarketingRuntime": "PROVEN",
@@ -102,7 +102,7 @@
     "dataverseMarketingRuntime": "PROVEN"
   },
   "dynamics": {
-    "inspectedAt": "2026-09-03T18:41:53.473Z",
+    "inspectedAt": "2026-09-03T19:56:12.730Z",
     "journeys": {
       "available": true,
       "count": 0,
@@ -115,7 +115,7 @@
     },
     "emails": {
       "available": true,
-      "count": 0,
+      "count": 1,
       "state": "QUERY_OK"
     },
     "emailTemplates": {
@@ -179,6 +179,29 @@
       "segmentId": "1fdc470c-97a7-f111-b8de-6045bdd69435",
       "segmentName": "JM1 INTERNAL MARKETING TEST AUDIENCE"
     },
+    "controlledMarketingEmail": {
+      "ready": true,
+      "id": "395de679-d0a7-f111-b8de-000d3a14673b",
+      "name": "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED JOURNEY EMAIL",
+      "subject": "October Featured Author: Iyorwuese Hagher",
+      "fromName": "J Merrill Publishing",
+      "fromEmail": "publishing@email.jmerrill.one",
+      "replyToEmail": "publishing@jmerrill.one",
+      "to": "contact.emailaddress1",
+      "senderId": "f5be1ba7-c6a7-f111-b8de-6045bdd69738",
+      "brandProfileId": "967124c2-7d97-f111-8075-70a8a5914a07",
+      "complianceSettings4Id": "7f4a6355-1811-4cde-bde3-fee8c85f56b1",
+      "purposeId": "10000000-0000-0000-0000-000000000003",
+      "statuscode": 1,
+      "statecode": 0
+    },
+    "journeySourceAvailability": {
+      "journeyTemplatesAvailable": 0,
+      "existingJourneysAvailableAsSeed": 0,
+      "safeJourneySourceAvailable": false,
+      "supportedPath": "msdynmkt_CreateJourneyFromTemplate"
+    },
+    "exactRemainingNormalOperationDependency": "DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION",
     "supportedCreationPaths": {
       "templatePathObserved": true,
       "journeyJsonFromTemplateObserved": true,
@@ -188,23 +211,23 @@
       "directApiPathWithoutTemplate": "POSSIBLE_REQUIRES_PAYLOAD_REVIEW"
     },
     "classification": "DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_HELD",
-    "reason": "The governed Publishing sender/domain and controlled internal audience are ready; the tenant still lacks a controlled marketing email and Journey runtime proof.",
+    "reason": "The governed Publishing sender/domain, controlled internal audience, and controlled marketing email are ready; Microsoft-supported Journey creation still needs an accessible Journey template or existing Journey seed.",
     "journeyPromotion": {
       "classification": "DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_RECORDED",
       "rows": [
         {
           "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
-          "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY"
+          "state": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED"
         }
       ]
     },
-    "exactMaturity": "DYNAMICS_JOURNEY_NOT_PROVEN",
+    "exactMaturity": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_NOT_PROVEN",
     "controlledConfiguration": {
       "publishingSenderIdentity": "GOVERNED_PUBLISHING_SENDER_COMMISSIONED",
       "publishingDomain": "EMAIL_JMERRILL_ONE_AUTHENTICATED_READY",
       "controlledTestContacts": "INTERNAL_TEST_CONTACT_PROVEN",
       "minimalAudienceSegment": "INTERNAL_TEST_SEGMENT_PROVEN",
-      "minimalCompliantEmail": "NOT_IMPLEMENTED_NO_MARKETING_EMAIL",
+      "minimalCompliantEmail": "CONTROLLED_MARKETING_EMAIL_IMPLEMENTED",
       "journeyTrigger": "NOT_IMPLEMENTED",
       "wait": "NOT_IMPLEMENTED",
       "branchOrExit": "NOT_IMPLEMENTED",
@@ -511,7 +534,7 @@
     "journeyChild": {
       "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
       "name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
-      "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY",
+      "state": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED",
       "dynamicsJourneyId": null,
       "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery"
     },
@@ -558,10 +581,10 @@
     "exactState": "LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED"
   },
   "noTouchTest": {
-    "requiredResult": "JM1_CORE_META_NO_TOUCH_TEST_FAIL - Dynamics Journey runtime not implemented/proven; campaign progression still requires Cody-authored runtime wave script before autonomous trigger can run.",
+    "requiredResult": "JM1_CORE_META_NO_TOUCH_TEST_FAIL - DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION",
     "coreMetaNoTouch": "FAIL",
     "metaReason": "Meta adapter itself is proven and no browser publishing is required.",
-    "blockingManualDependency": "DYNAMICS_CONTROLLED_JOURNEY_AND_AUTONOMOUS_TRIGGER_NOT_PROVEN",
+    "blockingManualDependency": "DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION",
     "linkedinTreatment": "HELD_EXTERNAL_PLATFORM_AUTHORITY_DOES_NOT_FAIL_CORE_META_TEST"
   },
   "nextActionLoop": {
@@ -587,7 +610,7 @@
       "journey": {
         "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
         "name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
-        "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY",
+        "state": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED",
         "dynamicsJourneyId": null,
         "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery"
       }
@@ -685,6 +708,7 @@
     "META_PLATFORM_IDEMPOTENCY_PROVEN",
     "META_OWNED_API_RUNTIME_PROVEN",
     "DATAVERSE_MARKETING_RUNTIME_PROVEN",
+    "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED",
     "MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD",
     "DYNAMICS_JOURNEY_NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY",
     "LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED",
