@@ -1,0 +1,93 @@
+{
+  "packageId": 804,
+  "artifact": "JM1-DYNAMICS-CONTROLLED-AUDIENCE-BOUNDARY-v1",
+  "generatedAt": "2026-09-03T12:57:45.632Z",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "sourceDocs": [
+    "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/real-time-marketing-api-segment",
+    "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/real-time-marketing-email",
+    "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/real-time-marketing-overview"
+  ],
+  "selectedInternalRecipient": "jackie@jmerrill.one",
+  "contact": {
+    "id": "5fcf77f5-96a7-f111-b8de-000d3a9eacee",
+    "email": "jackie@jmerrill.one",
+    "fullName": "JM1 Internal Marketing Test",
+    "state": "REUSED"
+  },
+  "segmentDefinition": {
+    "id": "1bdc470c-97a7-f111-b8de-6045bdd69435",
+    "state": "CREATED",
+    "groupId": "5fcf77f5-96a7-f111-b8de-000d3a9eacee"
+  },
+  "segment": {
+    "id": "1fdc470c-97a7-f111-b8de-6045bdd69435",
+    "displayName": "JM1 INTERNAL MARKETING TEST AUDIENCE",
+    "state": "CREATED"
+  },
+  "staticMembership": {
+    "addMembersStatus": 204,
+    "addMembersOk": true,
+    "listMembersStatus": 200,
+    "listMembersOk": true,
+    "memberIds": [
+      "5fcf77f5-96a7-f111-b8de-000d3a9eacee"
+    ],
+    "containsInternalContact": true,
+    "addMembersError": null,
+    "listMembersError": null
+  },
+  "senderInspection": {
+    "brandSenders": [
+      {
+        "name": "Default brand sender",
+        "fromName": "Admin",
+        "fromEmail": "admin@unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+        "replyToEmail": "no-reply@unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+        "statuscode": 1
+      }
+    ],
+    "domains": [
+      {
+        "name": "unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+        "ownershipValidationStatus": 1,
+        "domainAlignmentValidationStatus": 3,
+        "emailDnsRecord1Status": 1,
+        "emailDnsRecord2Status": 1,
+        "statuscode": 1,
+        "statecode": 0
+      }
+    ],
+    "governedPublishingSenderValidated": false
+  },
+  "classifications": [
+    "DYNAMICS_TEST_AUDIENCE_PROVEN",
+    "DYNAMICS_JOURNEY_HELD_GOVERNED_SENDER_IDENTITY_REQUIRED"
+  ],
+  "blocked": [
+    {
+      "dependency": "DYNAMICS_GOVERNED_PUBLISHING_SENDER_IDENTITY_REQUIRED",
+      "finding": "Customer Insights currently exposes only the default generated Dynamics sender; no validated J Merrill Publishing sender/domain was found through Dataverse readback.",
+      "observedBrandSenders": [
+        {
+          "name": "Default brand sender",
+          "fromName": "Admin",
+          "fromEmail": "admin@unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+          "replyToEmail": "no-reply@unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+          "statuscode": 1
+        }
+      ],
+      "observedDomains": [
+        {
+          "name": "unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+          "ownershipValidationStatus": 1,
+          "domainAlignmentValidationStatus": 3,
+          "emailDnsRecord1Status": 1,
+          "emailDnsRecord2Status": 1,
+          "statuscode": 1,
+          "statecode": 0
+        }
+      ]
+    }
+  ]
+}

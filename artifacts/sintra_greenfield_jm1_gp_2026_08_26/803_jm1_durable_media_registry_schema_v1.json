@@ -1,0 +1,94 @@
+{
+  "packageId": 803,
+  "artifact": "JM1-DURABLE-MEDIA-REGISTRY-SCHEMA-v1",
+  "generatedAt": "2026-09-03T12:50:54.014Z",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "table": {
+    "logicalName": "jm1_mediaasset",
+    "entitySetName": "jm1_mediaassets",
+    "state": "REUSED",
+    "columns": [
+      {
+        "schemaName": "jm1_MediaBranch",
+        "state": "CREATED"
+      },
+      {
+        "schemaName": "jm1_AssetType",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_FileName",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_MimeType",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_Dimensions",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_Sha256Local",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_Sha256Remote",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_StorageProvider",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_StorageContainer",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_StoragePath",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_DurableUrl",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_PublicAccessibilityState",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_RightsProvenanceState",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_PublicReadyState",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_SupersededState",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_CreativeWorkIdText",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_CampaignAuthorityIdText",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_IdempotencyKey",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_Expiration",
+        "state": "REUSED"
+      },
+      {
+        "schemaName": "jm1_CreatedAt",
+        "state": "REUSED"
+      }
+    ]
+  },
+  "classification": "MEDIA_REGISTRY_SCHEMA_PROVEN"
+}

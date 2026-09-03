@@ -2,6 +2,7 @@ import { app } from '@azure/functions';
 import { buildCreativeArtifact, campaignMarker, inferAssetState, selectCreativeArchetype } from '../lib/campaignProgram.js';
 import { BRANCH_CONFIG } from '../lib/config.js';
 import { dv, entitySet, patchById, queryByPrefix, upsertByIdempotency } from '../lib/dataverse.js';
+import { registerCampaignCreativeMedia } from '../lib/mediaRegistry.js';
 import { runEnvelope } from '../lib/runtime.js';
 
 app.timer('creativeWorkProcessorTimer', {
@@ -78,6 +79,15 @@ app.timer('creativeWorkProcessorTimer', {
           });
         }
       }
+
+      const refreshedCreativeRows = await queryByPrefix(
+        creativeSet,
+        `${marker}:creative`,
+        'jm1_creativeworkid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_assethash,jm1_logohash,jm1_assetpath,jm1_dimensions',
+        100
+      );
+      const mediaWrites = await registerCampaignCreativeMedia({ campaign, contentRows, creativeRows: refreshedCreativeRows, exceptionRows, envelope, context });
+      writes.push(...mediaWrites);
     }
 
     context.log(JSON.stringify({

@@ -1,0 +1,114 @@
+{
+  "packageId": 805,
+  "artifact": "JM1-DYNAMICS-MEDIA-ACTIVATION-CLOSEOUT-v1",
+  "generatedAt": "2026-09-03T12:59:00Z",
+  "stream": "JM1 Enterprise Marketing Operating System — Dynamics Activation + Durable Media Registry",
+  "preservedClassifications": [
+    "META_SYSTEM_USER_TOKEN_VERIFIED",
+    "FACEBOOK_OWNED_API_RUNTIME_PROVEN",
+    "INSTAGRAM_OWNED_API_RUNTIME_PROVEN",
+    "META_PLATFORM_IDEMPOTENCY_PROVEN",
+    "META_OWNED_API_RUNTIME_PROVEN",
+    "AUTONOMOUS_CAMPAIGN_STAGE_RESOLUTION_PROVEN",
+    "FEATURED_AUTHOR_INTRO_SUPERSESSION_PROVEN",
+    "AUTONOMOUS_CAMPAIGN_FATIGUE_DECISION_PROVEN",
+    "AUTONOMOUS_CONTENT_WORK_GENERATION_PROVEN",
+    "CREATIVE_WORKER_AUTONOMOUS_TRIGGER_PROVEN",
+    "AUTONOMOUS_CREATIVE_ARCHETYPE_SELECTION_PROVEN",
+    "PUBLIC_READY_GATE_PROVEN",
+    "AUTONOMOUS_CREATIVE_REWORK_PROVEN",
+    "SOCIAL_EXECUTION_CHILD_GENERATION_PROVEN"
+  ],
+  "durableMediaRegistry": {
+    "schema": {
+      "artifact": "803_jm1_durable_media_registry_schema_v1.json",
+      "classification": "MEDIA_REGISTRY_SCHEMA_PROVEN",
+      "table": "jm1_mediaasset",
+      "entitySetName": "jm1_mediaassets"
+    },
+    "storage": {
+      "account": "jm1media",
+      "container": "$web",
+      "prefix": "jm1-marketing",
+      "publicBaseUrl": "https://jm1media.z13.web.core.windows.net",
+      "staticWebsiteEnabled": true,
+      "blobPublicAccess": false,
+      "functionAppManagedIdentityRole": "Storage Blob Data Contributor"
+    },
+    "proofCreativeWork": {
+      "creativeWorkId": "aa400a3d-92a7-f111-b8de-6045bdd69738",
+      "contentWorkId": "e33bc90f-92a7-f111-b8de-000d3a14673b",
+      "stage": "additional_title_discovery",
+      "mediaAssetId": "998c2075-96a7-f111-b8de-6045bdd69738",
+      "durableUrl": "https://jm1media.z13.web.core.windows.net/jm1-marketing/e60c47b5da7824de99976e0a/additional_title_discovery/evergreen_discovery-e530d31011cd637d.svg",
+      "sha256Local": "e530d31011cd637dbaa0dd85a80906297befd396cd707ac47d1d28a0c822b96e",
+      "sha256Remote": "e530d31011cd637dbaa0dd85a80906297befd396cd707ac47d1d28a0c822b96e",
+      "publicAccessibilityState": "PUBLIC_HTTPS_HASH_VERIFIED",
+      "publicReadyState": "PASS"
+    },
+    "classification": "AUTONOMOUS_MEDIA_REGISTRATION_PROVEN"
+  },
+  "socialExecutionReadback": {
+    "facebook": {
+      "socialExecutionId": "c4510039-92a7-f111-b8de-00224820105b",
+      "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+      "requestedSchedule": "2026-10-21T14:00:00Z",
+      "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE",
+      "platformPostId": null
+    },
+    "instagram": {
+      "socialExecutionId": "6495ca3c-92a7-f111-b8de-7c1e525b15c2",
+      "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+      "requestedSchedule": "2026-10-21T16:00:00Z",
+      "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE",
+      "platformPostId": null
+    },
+    "linkedin": {
+      "socialExecutionId": "6595ca3c-92a7-f111-b8de-7c1e525b15c2",
+      "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
+      "errorCode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING"
+    },
+    "workerProof": {
+      "runId": "AUTONOMOUS_SOCIAL_EXECUTION_WORKER:2026-09-03T12:54:21.167Z:7d2ec92a-cf4c-4ac1-b410-5f78d20fa94c",
+      "eligibleMetaRows": 2,
+      "platformObjectsCreated": 0,
+      "reason": "Future-dated rows were read as SCHEDULED_NOT_DUE; no Meta Business Suite UI, Sintra publishing, LinkedIn native UI, or Computer Use publishing occurred."
+    }
+  },
+  "dynamics": {
+    "artifact": "804_jm1_dynamics_controlled_audience_boundary_v1.json",
+    "testAudience": {
+      "classification": "DYNAMICS_TEST_AUDIENCE_PROVEN",
+      "contactId": "5fcf77f5-96a7-f111-b8de-000d3a9eacee",
+      "contactEmail": "jackie@jmerrill.one",
+      "segmentId": "1fdc470c-97a7-f111-b8de-6045bdd69435",
+      "segmentName": "JM1 INTERNAL MARKETING TEST AUDIENCE",
+      "membershipReadback": "PASS"
+    },
+    "journeyState": {
+      "classification": "DYNAMICS_JOURNEY_HELD_GOVERNED_SENDER_IDENTITY_REQUIRED",
+      "reason": "Customer Insights exposes only the default generated Dynamics brand sender; no validated J Merrill Publishing sender/domain was found through Dataverse readback.",
+      "observedSender": "Default brand sender <admin@unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com>",
+      "observedDomain": "unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com"
+    }
+  },
+  "sourceReferences": [
+    {
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/real-time-marketing-api-segment",
+      "usedFor": "Customer Insights segment definition, static member add, membership readback API shape."
+    },
+    {
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/real-time-marketing-email",
+      "usedFor": "Email compliance profile and purpose requirement boundary."
+    },
+    {
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/real-time-marketing-overview",
+      "usedFor": "Audience/email/journey relationship in Customer Insights Journeys."
+    }
+  ],
+  "finalClassification": "JM1_CORE_META_NO_TOUCH_TEST_FAIL — Dynamics governed J Merrill Publishing sender/domain identity remains the remaining normal-operation dependency"
+}

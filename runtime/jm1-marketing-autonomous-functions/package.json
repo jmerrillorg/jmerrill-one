@@ -8,7 +8,9 @@
     "check": "node --check src/functions/marketingControlLoopTimer.js && node --check src/functions/socialExecutionWorkerTimer.js && node --check src/functions/credentialMonitorTimer.js && node --check src/functions/creativeWorkProcessorTimer.js"
   },
   "dependencies": {
-    "@azure/functions": "^4.7.2"
+    "@azure/functions": "^4.7.2",
+    "@azure/identity": "^4.10.2",
+    "@azure/storage-blob": "^12.27.0"
   },
   "devDependencies": {}
 }

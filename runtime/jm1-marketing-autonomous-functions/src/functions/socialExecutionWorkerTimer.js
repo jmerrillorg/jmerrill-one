@@ -9,6 +9,7 @@ import {
 } from '../lib/config.js';
 import { entitySet, patchById, queryByPrefix } from '../lib/dataverse.js';
 import { checkLinkedInAuthority } from '../lib/linkedin.js';
+import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
 import { octoberIyorwueseMarker, runEnvelope } from '../lib/runtime.js';
 
@@ -22,7 +23,13 @@ app.timer('socialExecutionWorkerTimer', {
     const rows = await queryByPrefix(
       socialSet,
       `${marker}:social`,
-      'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_verifiedat,jm1_executor',
+      'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_actualmediareference,jm1_captionversion,jm1_verifiedat,jm1_executor',
+      100
+    );
+    const contentRows = await queryByPrefix(
+      await entitySet('jm1_contentwork'),
+      `${marker}:content`,
+      'jm1_contentworkid,jm1_idempotencykey,jm1_stage,jm1_draftcopy,jm1_publicreadystate',
       100
     );
 
@@ -69,7 +76,7 @@ app.timer('socialExecutionWorkerTimer', {
         continue;
       }
 
-      const caption = META_CAPTION_REGISTRY[row.jm1_captionversion] || META_CAPTION_REGISTRY[row.jm1_idempotencykey];
+      const caption = resolveCaption(row, contentRows);
       const captionPrefix = caption ? caption.slice(0, 72) : '';
       const existing = await findRecentMatchingMetaObject({ expected: publishing, platform: row.jm1_platform, captionPrefix });
       if (existing.ok && existing.duplicateCount === 0) {
@@ -143,8 +150,11 @@ app.timer('socialExecutionWorkerTimer', {
         continue;
       }
 
-      const mediaUrl = META_MEDIA_URL_REGISTRY[row.jm1_requestedmediahash] || META_MEDIA_URL_REGISTRY[row.jm1_idempotencykey];
-      const caption = META_CAPTION_REGISTRY[row.jm1_captionversion] || META_CAPTION_REGISTRY[row.jm1_idempotencykey];
+      const mediaUrl = row.jm1_actualmediareference
+        || META_MEDIA_URL_REGISTRY[row.jm1_requestedmediahash]
+        || META_MEDIA_URL_REGISTRY[row.jm1_idempotencykey]
+        || await lookupMediaUrlByHash(row.jm1_requestedmediahash);
+      const caption = resolveCaption(row, contentRows);
       if (!mediaUrl || !caption) {
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_status: 'HELD_CREATIVE_REFERENCE_REQUIRED',
@@ -272,4 +282,12 @@ function isClaimLeaseActive(claimTimestamp, nowIso) {
 
 function claimOwner(envelope) {
   return `CLAIM:${envelope.correlationId}`;
+}
+
+function resolveCaption(row, contentRows) {
+  const registered = META_CAPTION_REGISTRY[row.jm1_captionversion] || META_CAPTION_REGISTRY[row.jm1_idempotencykey];
+  if (registered) return registered;
+  const stage = String(row.jm1_idempotencykey || '').split(':social:')[1]?.split(':')[0] || '';
+  const content = contentRows.find((item) => item.jm1_stage === stage && item.jm1_publicreadystate === 'PASS');
+  return content?.jm1_draftcopy || '';
 }
