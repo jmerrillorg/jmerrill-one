@@ -1,7 +1,7 @@
 {
   "packageId": 791,
   "artifact": "JM1-NO-TOUCH-RUNTIME-WAVE-v1",
-  "generatedAt": "2026-09-02T16:00:06.279Z",
+  "generatedAt": "2026-09-03T18:41:53.473Z",
   "stream": "JM1 Enterprise Marketing Operating System - No-Touch Runtime Proof",
   "replacementMatrix": {
     "dataverseMarketingRuntime": "PROVEN",
@@ -91,18 +91,18 @@
     },
     "credentialMonitorId": "2689ac42-e7a6-f111-b8dd-7c1e52683637",
     "readbackCounts": {
-      "content": 5,
-      "creative": 3,
-      "social": 9,
+      "content": 6,
+      "creative": 4,
+      "social": 14,
       "journey": 1,
-      "exceptions": 5,
+      "exceptions": 6,
       "controlLoops": 3,
-      "credentialMonitor": 1
+      "credentialMonitor": 2
     },
     "dataverseMarketingRuntime": "PROVEN"
   },
   "dynamics": {
-    "inspectedAt": "2026-09-02T16:00:06.279Z",
+    "inspectedAt": "2026-09-03T18:41:53.473Z",
     "journeys": {
       "available": true,
       "count": 0,
@@ -125,7 +125,7 @@
     },
     "segments": {
       "available": true,
-      "count": 0,
+      "count": 1,
       "state": "QUERY_OK"
     },
     "brandProfiles": {
@@ -148,6 +148,37 @@
       "count": 0,
       "state": "QUERY_OK"
     },
+    "governedPublishingDomain": {
+      "ready": true,
+      "name": "email.jmerrill.one",
+      "id": "f2a2eec3-c5a7-f111-b8de-000d3a14673b",
+      "ownershipValidationStatus": 1,
+      "domainAlignmentValidationStatus": 1,
+      "emailDnsRecord1Status": 1,
+      "emailDnsRecord2Status": 1,
+      "validationDate": "2026-09-03T18:37:34.6868749Z",
+      "statuscode": 1,
+      "statecode": 0,
+      "alignedName": "bouncing.nam.email.jmerrill.one"
+    },
+    "governedPublishingSender": {
+      "ready": true,
+      "name": "J Merrill Publishing",
+      "id": "f5be1ba7-c6a7-f111-b8de-6045bdd69738",
+      "fromName": "J Merrill Publishing",
+      "fromEmail": "publishing@email.jmerrill.one",
+      "replyToEmail": "publishing@jmerrill.one",
+      "brandProfileId": "967124c2-7d97-f111-8075-70a8a5914a07",
+      "statuscode": 1,
+      "statecode": 0
+    },
+    "controlledTestAudience": {
+      "ready": true,
+      "contactId": "5fcf77f5-96a7-f111-b8de-000d3a9eacee",
+      "contactEmail": "jackie@jmerrill.one",
+      "segmentId": "1fdc470c-97a7-f111-b8de-6045bdd69435",
+      "segmentName": "JM1 INTERNAL MARKETING TEST AUDIENCE"
+    },
     "supportedCreationPaths": {
       "templatePathObserved": true,
       "journeyJsonFromTemplateObserved": true,
@@ -157,7 +188,7 @@
       "directApiPathWithoutTemplate": "POSSIBLE_REQUIRES_PAYLOAD_REVIEW"
     },
     "classification": "DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_HELD",
-    "reason": "The tenant has Customer Insights Journeys actions, email templates, a brand profile, and purposes, but lacks the controlled journey/email/segment/topic/contact-point-consent runtime needed for a non-production proof.",
+    "reason": "The governed Publishing sender/domain and controlled internal audience are ready; the tenant still lacks a controlled marketing email and Journey runtime proof.",
     "journeyPromotion": {
       "classification": "DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_RECORDED",
       "rows": [
@@ -169,9 +200,10 @@
     },
     "exactMaturity": "DYNAMICS_JOURNEY_NOT_PROVEN",
     "controlledConfiguration": {
-      "publishingSenderIdentity": "BRAND_PROFILE_EXISTS_REQUIRES_SENDER_CONSENT_REVIEW",
-      "controlledTestContacts": "NOT_SELECTED_NO_FOUNDER_APPROVED_TEST_AUDIENCE_CONTRACT",
-      "minimalAudienceSegment": "NOT_IMPLEMENTED_NO_SEGMENT",
+      "publishingSenderIdentity": "GOVERNED_PUBLISHING_SENDER_COMMISSIONED",
+      "publishingDomain": "EMAIL_JMERRILL_ONE_AUTHENTICATED_READY",
+      "controlledTestContacts": "INTERNAL_TEST_CONTACT_PROVEN",
+      "minimalAudienceSegment": "INTERNAL_TEST_SEGMENT_PROVEN",
       "minimalCompliantEmail": "NOT_IMPLEMENTED_NO_MARKETING_EMAIL",
       "journeyTrigger": "NOT_IMPLEMENTED",
       "wait": "NOT_IMPLEMENTED",
@@ -197,9 +229,9 @@
       "classification": "META_FUTURE_ROWS_AUTHORITY_REEVALUATED",
       "rows": [
         {
-          "id": "bbf1b9fe-bba6-f111-b8de-00224820105b",
-          "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:instagram",
-          "platform": "instagram",
+          "id": "c4510039-92a7-f111-b8de-00224820105b",
+          "idempotencyKey": "e60c47b5da7824de99976e0a:social:additional_title_discovery:facebook",
+          "platform": "facebook",
           "authority": "AVAILABLE",
           "campaignStillActive": true,
           "timingStillValid": true,
@@ -242,6 +274,20 @@
           "id": "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2",
           "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:facebook",
           "platform": "facebook",
+          "authority": "AVAILABLE",
+          "campaignStillActive": true,
+          "timingStillValid": false,
+          "publicReady": "PASS_ASSUMED_FROM_CREATIVE_WORK_GATE",
+          "mediaStillCurrent": "HASH_PRESENT",
+          "superseded": false,
+          "fatigueConflict": false,
+          "dynamicsCoordinationRequired": true,
+          "nextState": "HELD_FOR_CAMPAIGN_REEVALUATION"
+        },
+        {
+          "id": "6495ca3c-92a7-f111-b8de-7c1e525b15c2",
+          "idempotencyKey": "e60c47b5da7824de99976e0a:social:additional_title_discovery:instagram",
+          "platform": "instagram",
           "authority": "AVAILABLE",
           "campaignStillActive": true,
           "timingStillValid": true,
@@ -298,7 +344,7 @@
       "publicReady": "PASS",
       "classification": "ASSET_RESOLUTION_REACTIVITY_PROVEN"
     },
-    "contentWorkRows": 5,
+    "contentWorkRows": 6,
     "creativeWorkRows": [
       {
         "id": "6b0c705d-baa6-f111-b8de-000d3a14673b",
@@ -314,9 +360,32 @@
         "id": "e68983fa-bba6-f111-b8de-6045bdd69738",
         "name": "Iyorwuese A Portrait of Paradise asset-resolved creative",
         "idempotencyKey": "e60c47b5da7824de99976e0a:creative:asset_resolution_a_portrait_of_paradise"
+      },
+      {
+        "id": "aa400a3d-92a7-f111-b8de-6045bdd69738",
+        "name": "Iyorwuese Additional Title Discovery autonomous creative",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:creative:additional_title_discovery"
       }
     ],
     "socialExecutionRows": [
+      {
+        "id": "0118504f-69a7-f111-b8de-000d3a14673b",
+        "name": "Iyorwuese autonomous Meta closure proof - facebook",
+        "platform": "facebook",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "307480763084670_1399525035519277",
+        "readbackState": "READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:autonomous_meta_closure_facebook:facebook"
+      },
+      {
+        "id": "0218504f-69a7-f111-b8de-000d3a14673b",
+        "name": "Iyorwuese autonomous Meta closure proof - instagram",
+        "platform": "instagram",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "18096148589127244",
+        "readbackState": "READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:autonomous_meta_closure_instagram:instagram"
+      },
       {
         "id": "65fd1047-90a6-f111-b8de-000d3a9eacee",
         "name": "Iyorwuese October intro - facebook",
@@ -332,17 +401,26 @@
         "platform": "linkedin",
         "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
         "platformPostId": null,
-        "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+        "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
         "idempotencyKey": "e60c47b5da7824de99976e0a:social:linkedin"
       },
       {
         "id": "bbf1b9fe-bba6-f111-b8de-00224820105b",
         "name": "Iyorwuese A Portrait of Paradise asset-resolved - instagram",
         "platform": "instagram",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "18134196829616273",
+        "readbackState": "RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:instagram"
+      },
+      {
+        "id": "c4510039-92a7-f111-b8de-00224820105b",
+        "name": "Iyorwuese Additional Title Discovery - facebook",
+        "platform": "facebook",
         "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
         "platformPostId": null,
         "readbackState": "NOT_EXECUTED_META_API_AUTHORITY_AVAILABLE",
-        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:instagram"
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:additional_title_discovery:facebook"
       },
       {
         "id": "8668125b-baa6-f111-b8de-6045bdd69435",
@@ -368,7 +446,7 @@
         "platform": "linkedin",
         "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
         "platformPostId": null,
-        "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+        "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
         "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:linkedin"
       },
       {
@@ -386,17 +464,35 @@
         "platform": "linkedin",
         "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
         "platformPostId": null,
-        "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+        "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
         "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:linkedin"
       },
       {
         "id": "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2",
         "name": "Iyorwuese A Portrait of Paradise asset-resolved - facebook",
         "platform": "facebook",
+        "status": "HELD_FOR_CAMPAIGN_REEVALUATION",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_REEVALUATION_REQUIRED",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:facebook"
+      },
+      {
+        "id": "6495ca3c-92a7-f111-b8de-7c1e525b15c2",
+        "name": "Iyorwuese Additional Title Discovery - instagram",
+        "platform": "instagram",
         "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
         "platformPostId": null,
         "readbackState": "NOT_EXECUTED_META_API_AUTHORITY_AVAILABLE",
-        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:facebook"
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:additional_title_discovery:instagram"
+      },
+      {
+        "id": "6595ca3c-92a7-f111-b8de-7c1e525b15c2",
+        "name": "Iyorwuese Additional Title Discovery - linkedin",
+        "platform": "linkedin",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:additional_title_discovery:linkedin"
       }
     ],
     "journeyExecutionRows": [
@@ -443,7 +539,7 @@
       "platform": "linkedin",
       "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
       "platformPostId": null,
-      "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+      "readbackState": "LINKEDIN_ADAPTER_AUTHORITY_CHECK_HELD",
       "idempotencyKey": "e60c47b5da7824de99976e0a:social:linkedin"
     },
     "aggregateState": "PARTIAL_COORDINATED_CAMPAIGN_META_PROVEN_DYNAMICS_AND_LINKEDIN_HELD"

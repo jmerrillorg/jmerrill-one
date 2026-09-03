@@ -87,6 +87,7 @@ const metaFutureEvaluation = await reevaluateFutureMetaRows(entitySets.jm1_socia
 const journeyPromotion = await promoteJourneyBoundary(entitySets.jm1_journeyexecution, journeyRows, dynamics);
 const controlPromotion = await promoteControlLoops(entitySets.jm1_marketingcontrolloop, controlRows);
 const credentialRows = await queryByKey(entitySets.jm1_credentialmonitor, `${RUN_MARKER}:credential:meta`, 'jm1_credentialmonitorid');
+const metaSystemUserCredential = credentialRows.find((row) => row.jm1_credentialtype === 'MetaSystemUserAccessToken') ?? credentialRows[0];
 const socialAfter = await queryByKey(entitySets.jm1_socialexecution, `${RUN_MARKER}:social`, 'jm1_socialexecutionid');
 const journeyAfter = await queryByKey(entitySets.jm1_journeyexecution, `${RUN_MARKER}:journey`, 'jm1_journeyexecutionid');
 const exceptions = await queryByKey(entitySets.jm1_marketingexception, `${RUN_MARKER}:exception`, 'jm1_marketingexceptionid');
@@ -113,9 +114,10 @@ report.dynamics = {
   journeyPromotion,
   exactMaturity: 'DYNAMICS_JOURNEY_NOT_PROVEN',
   controlledConfiguration: {
-    publishingSenderIdentity: dynamics.brandProfiles.count > 0 ? 'BRAND_PROFILE_EXISTS_REQUIRES_SENDER_CONSENT_REVIEW' : 'NOT_FOUND',
-    controlledTestContacts: 'NOT_SELECTED_NO_FOUNDER_APPROVED_TEST_AUDIENCE_CONTRACT',
-    minimalAudienceSegment: dynamics.segments.count === 0 ? 'NOT_IMPLEMENTED_NO_SEGMENT' : 'EXISTS_REQUIRES_REVIEW',
+    publishingSenderIdentity: dynamics.governedPublishingSender.ready ? 'GOVERNED_PUBLISHING_SENDER_COMMISSIONED' : 'NOT_FOUND',
+    publishingDomain: dynamics.governedPublishingDomain.ready ? 'EMAIL_JMERRILL_ONE_AUTHENTICATED_READY' : 'NOT_READY',
+    controlledTestContacts: dynamics.controlledTestAudience.ready ? 'INTERNAL_TEST_CONTACT_PROVEN' : 'NOT_SELECTED_NO_FOUNDER_APPROVED_TEST_AUDIENCE_CONTRACT',
+    minimalAudienceSegment: dynamics.controlledTestAudience.ready ? 'INTERNAL_TEST_SEGMENT_PROVEN' : (dynamics.segments.count === 0 ? 'NOT_IMPLEMENTED_NO_SEGMENT' : 'EXISTS_REQUIRES_REVIEW'),
     minimalCompliantEmail: dynamics.emails.count === 0 ? 'NOT_IMPLEMENTED_NO_MARKETING_EMAIL' : 'EXISTS_REQUIRES_REVIEW',
     journeyTrigger: 'NOT_IMPLEMENTED',
     wait: 'NOT_IMPLEMENTED',
@@ -126,7 +128,7 @@ report.dynamics = {
 
 report.meta = {
   runtimeStillHealthy: true,
-  credentialLifecycle: credentialRows[0] ? summarizeCredentialRow(credentialRows[0]) : null,
+  credentialLifecycle: metaSystemUserCredential ? summarizeCredentialRow(metaSystemUserCredential) : null,
   futureRowAuthorityReevaluation: metaFutureEvaluation,
   proofEvidence: [
     'artifacts/sintra_greenfield_jm1_gp_2026_08_26/787_jm1_meta_owned_api_canary_v1.json',
@@ -327,9 +329,11 @@ async function promoteJourneyBoundary(entitySet, rows, dynamics) {
     const payload = {
       jm1_state: 'DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY',
       jm1_dynamicsjourneyid: '',
-      jm1_audiencecontract: 'Controlled audience/test contact contract not yet selected; do not infer from production contacts.',
-      jm1_triggercontract: 'Supported Journey APIs/actions exist, but no template/segment/email runtime currently exists.',
-      jm1_blocker: `Exact tenant state: journeys=${dynamics.journeys.count}; journeyTemplates=${dynamics.journeyTemplates.count}; emails=${dynamics.emails.count}; segments=${dynamics.segments.count}; topics=${dynamics.topics.count}; contactPointConsents=${dynamics.contactPointConsents.count}. Existing emailTemplates=${dynamics.emailTemplates.count}, brandProfiles=${dynamics.brandProfiles.count}, purposes=${dynamics.purposes.count}. Founder/admin decision required for controlled sender/audience/consent before any journey send.`,
+      jm1_audiencecontract: dynamics.controlledTestAudience.ready
+        ? 'Controlled internal test contact and static segment are proven by Dataverse readback.'
+        : 'Controlled audience/test contact contract not yet selected; do not infer from production contacts.',
+      jm1_triggercontract: 'Supported Journey APIs/actions exist, but no controlled marketing email/journey trigger runtime currently exists.',
+      jm1_blocker: `Exact tenant state: journeys=${dynamics.journeys.count}; journeyTemplates=${dynamics.journeyTemplates.count}; emails=${dynamics.emails.count}; segments=${dynamics.segments.count}; topics=${dynamics.topics.count}; contactPointConsents=${dynamics.contactPointConsents.count}. Existing emailTemplates=${dynamics.emailTemplates.count}, brandProfiles=${dynamics.brandProfiles.count}, purposes=${dynamics.purposes.count}. Governed sender ready=${dynamics.governedPublishingSender.ready}; authenticated domain ready=${dynamics.governedPublishingDomain.ready}; controlled test audience ready=${dynamics.controlledTestAudience.ready}. Remaining safe-runtime boundary: create/validate a minimal compliant email and non-production Journey without sending uncontrolled marketing.`,
       jm1_validatedat: GENERATED_AT
     };
     await patchById(entitySet, row.jm1_journeyexecutionid, payload);
@@ -373,9 +377,15 @@ async function inspectDynamicsJourneys() {
   ]) probes[key] = await safeCount(entitySet);
 
   const actions = await safeActions();
+  const governedPublishingDomain = await inspectGovernedPublishingDomain();
+  const governedPublishingSender = await inspectGovernedPublishingSender();
+  const controlledTestAudience = await inspectControlledTestAudience();
   return {
     inspectedAt: GENERATED_AT,
     ...probes,
+    governedPublishingDomain,
+    governedPublishingSender,
+    controlledTestAudience,
     supportedCreationPaths: {
       templatePathObserved: actions.includes('msdynmkt_CreateJourneyFromTemplate'),
       journeyJsonFromTemplateObserved: actions.includes('msdynmkt_CreateJourneyJsonFromTemplate'),
@@ -385,7 +395,65 @@ async function inspectDynamicsJourneys() {
       directApiPathWithoutTemplate: actions.includes('msdynmkt_GenerateJourneyJdsl') ? 'POSSIBLE_REQUIRES_PAYLOAD_REVIEW' : 'NOT_PROVEN'
     },
     classification: 'DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_HELD',
-    reason: 'The tenant has Customer Insights Journeys actions, email templates, a brand profile, and purposes, but lacks the controlled journey/email/segment/topic/contact-point-consent runtime needed for a non-production proof.'
+    reason: governedPublishingDomain.ready && governedPublishingSender.ready && controlledTestAudience.ready
+      ? 'The governed Publishing sender/domain and controlled internal audience are ready; the tenant still lacks a controlled marketing email and Journey runtime proof.'
+      : 'The tenant has Customer Insights Journeys actions, email templates, a brand profile, and purposes, but lacks the full controlled journey/email/segment/topic/contact-point-consent runtime needed for a non-production proof.'
+  };
+}
+
+async function inspectGovernedPublishingDomain() {
+  const response = await dv("/msdynmkt_domains?$select=msdynmkt_domainid,msdynmkt_name,msdynmkt_ownershipvalidationstatus,msdynmkt_domainalignmentvalidationstatus,msdynmkt_emaildnsrecord1status,msdynmkt_emaildnsrecord2status,msdynmkt_validationdate,statuscode,statecode,msdynmkt_alignedname&$filter=msdynmkt_name eq 'email.jmerrill.one'&$top=5", {}, true);
+  const row = response.ok ? response.body.value?.[0] : null;
+  return {
+    ready: !!row
+      && row.msdynmkt_ownershipvalidationstatus === 1
+      && row.msdynmkt_domainalignmentvalidationstatus === 1
+      && row.msdynmkt_emaildnsrecord1status === 1
+      && row.msdynmkt_emaildnsrecord2status === 1,
+    name: row?.msdynmkt_name ?? null,
+    id: row?.msdynmkt_domainid ?? null,
+    ownershipValidationStatus: row?.msdynmkt_ownershipvalidationstatus ?? null,
+    domainAlignmentValidationStatus: row?.msdynmkt_domainalignmentvalidationstatus ?? null,
+    emailDnsRecord1Status: row?.msdynmkt_emaildnsrecord1status ?? null,
+    emailDnsRecord2Status: row?.msdynmkt_emaildnsrecord2status ?? null,
+    validationDate: row?.msdynmkt_validationdate ?? null,
+    statuscode: row?.statuscode ?? null,
+    statecode: row?.statecode ?? null,
+    alignedName: row?.msdynmkt_alignedname ?? null
+  };
+}
+
+async function inspectGovernedPublishingSender() {
+  const response = await dv("/msdynmkt_brandsenders?$select=msdynmkt_brandsenderid,msdynmkt_name,msdynmkt_fromname,msdynmkt_fromemail,msdynmkt_replytoemail,_msdynmkt_brandprofileid_value,statuscode,statecode&$filter=msdynmkt_fromemail eq 'publishing@email.jmerrill.one'&$top=5", {}, true);
+  const row = response.ok ? response.body.value?.[0] : null;
+  return {
+    ready: !!row
+      && row.msdynmkt_fromname === 'J Merrill Publishing'
+      && row.msdynmkt_replytoemail === 'publishing@jmerrill.one'
+      && row.statuscode === 1
+      && row.statecode === 0,
+    name: row?.msdynmkt_name ?? null,
+    id: row?.msdynmkt_brandsenderid ?? null,
+    fromName: row?.msdynmkt_fromname ?? null,
+    fromEmail: row?.msdynmkt_fromemail ?? null,
+    replyToEmail: row?.msdynmkt_replytoemail ?? null,
+    brandProfileId: row?._msdynmkt_brandprofileid_value ?? null,
+    statuscode: row?.statuscode ?? null,
+    statecode: row?.statecode ?? null
+  };
+}
+
+async function inspectControlledTestAudience() {
+  const contact = await dv("/contacts?$select=contactid,fullname,emailaddress1&$filter=emailaddress1 eq 'jackie@jmerrill.one'&$top=1", {}, true);
+  const segment = await dv("/msdynmkt_segments?$select=msdynmkt_segmentid,msdynmkt_displayname,msdynmkt_sourcesegmentuid&$filter=msdynmkt_displayname eq 'JM1 INTERNAL MARKETING TEST AUDIENCE'&$top=1", {}, true);
+  const contactRow = contact.ok ? contact.body.value?.[0] : null;
+  const segmentRow = segment.ok ? segment.body.value?.[0] : null;
+  return {
+    ready: !!contactRow && !!segmentRow,
+    contactId: contactRow?.contactid ?? null,
+    contactEmail: contactRow?.emailaddress1 ?? null,
+    segmentId: segmentRow?.msdynmkt_segmentid ?? null,
+    segmentName: segmentRow?.msdynmkt_displayname ?? null
   };
 }
 
