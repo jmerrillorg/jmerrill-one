@@ -4,7 +4,8 @@ import {
   AUTONOMOUS_META_EXECUTION_ENABLED,
   BRANCH_CONFIG,
   META_CAPTION_REGISTRY,
-  META_MEDIA_URL_REGISTRY
+  META_MEDIA_URL_REGISTRY,
+  SOCIAL_EXECUTION_CLAIM_LEASE_MINUTES
 } from '../lib/config.js';
 import { entitySet, patchById, queryByPrefix } from '../lib/dataverse.js';
 import { checkLinkedInAuthority } from '../lib/linkedin.js';
@@ -21,7 +22,7 @@ app.timer('socialExecutionWorkerTimer', {
     const rows = await queryByPrefix(
       socialSet,
       `${marker}:social`,
-      'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion',
+      'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_verifiedat,jm1_executor',
       100
     );
 
@@ -29,13 +30,23 @@ app.timer('socialExecutionWorkerTimer', {
     const linkedinAuthority = checkLinkedInAuthority(publishing);
     const eligibleMetaRows = rows.filter((row) =>
       ['facebook', 'instagram'].includes(row.jm1_platform)
-      && row.jm1_status === 'PUBLIC_READY_SCHEDULED_ELIGIBLE'
+      && ['PUBLIC_READY_SCHEDULED_ELIGIBLE', 'RETRY_REQUIRED'].includes(row.jm1_status)
       && !row.jm1_platformpostid
     );
     const reconciliationMetaRows = rows.filter((row) =>
       ['facebook', 'instagram'].includes(row.jm1_platform)
-      && ['PUBLISHING_CLAIMED', 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'].includes(row.jm1_status)
+      && [
+        'PUBLISHING_CLAIMED',
+        'PLATFORM_ACCEPTED',
+        'READBACK_PENDING',
+        'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'
+      ].includes(row.jm1_status)
       && !row.jm1_platformpostid
+    );
+    const platformIdRecoveryRows = rows.filter((row) =>
+      ['facebook', 'instagram'].includes(row.jm1_platform)
+      && ['PLATFORM_ACCEPTED', 'READBACK_PENDING', 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'].includes(row.jm1_status)
+      && row.jm1_platformpostid
     );
     const linkedinRows = rows.filter((row) =>
       row.jm1_platform === 'linkedin'
@@ -45,6 +56,19 @@ app.timer('socialExecutionWorkerTimer', {
 
     const writes = [];
     for (const row of reconciliationMetaRows) {
+      const freshClaim = row.jm1_status === 'PUBLISHING_CLAIMED'
+        && isClaimLeaseActive(row.jm1_verifiedat, envelope.startedAt);
+      if (freshClaim) {
+        writes.push({
+          id: row.jm1_socialexecutionid,
+          platform: row.jm1_platform,
+          state: 'PUBLISHING_CLAIMED_LEASE_ACTIVE',
+          claimOwner: row.jm1_executor || null,
+          claimTimestamp: row.jm1_verifiedat || null
+        });
+        continue;
+      }
+
       const caption = META_CAPTION_REGISTRY[row.jm1_captionversion] || META_CAPTION_REGISTRY[row.jm1_idempotencykey];
       const captionPrefix = caption ? caption.slice(0, 72) : '';
       const existing = await findRecentMatchingMetaObject({ expected: publishing, platform: row.jm1_platform, captionPrefix });
@@ -61,6 +85,15 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_errormessage: ''
         });
         writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'RECONCILED_PLATFORM_SUCCESS', platformPostId: existing.platformPostId });
+      } else if (row.jm1_status === 'PUBLISHING_CLAIMED') {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'RETRY_REQUIRED',
+          jm1_readbackstate: 'STALE_CLAIM_NO_PLATFORM_OBJECT_FOUND_READY_FOR_SAFE_RECLAIM',
+          jm1_verifiedat: envelope.startedAt,
+          jm1_errorcode: 'STALE_CLAIM_RECOVERY',
+          jm1_errormessage: 'Claim lease expired; no matching platform object found during reconciliation. Row is eligible for safe reclaim on a later worker tick.'
+        });
+        writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'STALE_CLAIM_RECOVERY_READY_FOR_SAFE_RECLAIM' });
       } else {
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_status: 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
@@ -71,6 +104,17 @@ app.timer('socialExecutionWorkerTimer', {
         });
         writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: existing.state, duplicateCount: existing.duplicateCount || 0 });
       }
+    }
+
+    for (const row of platformIdRecoveryRows) {
+      await patchById(socialSet, row.jm1_socialexecutionid, {
+        jm1_status: 'PUBLISHED_VERIFIED',
+        jm1_readbackstate: 'PLATFORM_ID_PRESENT_PROMOTED_WITHOUT_REPUBLISH',
+        jm1_verifiedat: envelope.startedAt,
+        jm1_errorcode: '',
+        jm1_errormessage: ''
+      });
+      writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'PLATFORM_ID_PRESENT_PROMOTED_WITHOUT_REPUBLISH', platformPostId: row.jm1_platformpostid });
     }
 
     for (const row of eligibleMetaRows) {
@@ -116,7 +160,7 @@ app.timer('socialExecutionWorkerTimer', {
         jm1_status: 'PUBLISHING_CLAIMED',
         jm1_actualmediareference: mediaUrl,
         jm1_actualschedule: envelope.startedAt,
-        jm1_executor: envelope.runId,
+        jm1_executor: claimOwner(envelope),
         jm1_readbackstate: 'PUBLISHING_CLAIMED',
         jm1_verifiedat: envelope.startedAt
       });
@@ -127,12 +171,12 @@ app.timer('socialExecutionWorkerTimer', {
 
       const patch = result.ok
         ? {
-          jm1_status: 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
+          jm1_status: 'PLATFORM_ACCEPTED',
           jm1_platformpostid: result.platformPostId,
           jm1_actualdestination: result.actualDestination || '',
           jm1_actualmediareference: mediaUrl,
           jm1_actualschedule: result.publishedAt || envelope.startedAt,
-          jm1_readbackstate: 'PLATFORM_OBJECT_ID_PERSISTED',
+          jm1_readbackstate: 'PLATFORM_OBJECT_ID_PERSISTED_READBACK_PENDING',
           jm1_verifiedat: envelope.startedAt,
           jm1_errorcode: '',
           jm1_errormessage: ''
@@ -150,6 +194,11 @@ app.timer('socialExecutionWorkerTimer', {
         };
       await patchById(socialSet, row.jm1_socialexecutionid, patch);
       if (result.ok) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'READBACK_PENDING',
+          jm1_readbackstate: 'READBACK_PENDING_AFTER_PLATFORM_ACCEPTED',
+          jm1_verifiedat: envelope.startedAt
+        });
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_status: 'PUBLISHED_VERIFIED',
           jm1_readbackstate: result.readbackState,
@@ -193,7 +242,13 @@ app.timer('socialExecutionWorkerTimer', {
       ...envelope,
       metaAuthority,
       linkedinAuthority,
-      dataverseRead: { socialRows: rows.length, eligibleMetaRows: eligibleMetaRows.length, reconciliationMetaRows: reconciliationMetaRows.length, linkedinRows: linkedinRows.length },
+      dataverseRead: {
+        socialRows: rows.length,
+        eligibleMetaRows: eligibleMetaRows.length,
+        reconciliationMetaRows: reconciliationMetaRows.length,
+        platformIdRecoveryRows: platformIdRecoveryRows.length,
+        linkedinRows: linkedinRows.length
+      },
       dataverseWrite: writes,
       executionEnabled: {
         meta: AUTONOMOUS_META_EXECUTION_ENABLED,
@@ -206,3 +261,15 @@ app.timer('socialExecutionWorkerTimer', {
     }));
   }
 });
+
+function isClaimLeaseActive(claimTimestamp, nowIso) {
+  const claimedAt = new Date(claimTimestamp);
+  const now = new Date(nowIso);
+  if (Number.isNaN(claimedAt.getTime()) || Number.isNaN(now.getTime())) return false;
+  const ageMs = now.getTime() - claimedAt.getTime();
+  return ageMs >= 0 && ageMs < SOCIAL_EXECUTION_CLAIM_LEASE_MINUTES * 60 * 1000;
+}
+
+function claimOwner(envelope) {
+  return `CLAIM:${envelope.correlationId}`;
+}

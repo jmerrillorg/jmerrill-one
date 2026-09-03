@@ -208,8 +208,8 @@ async function pageWithAccessToken(expected) {
   return { ok: true, id: page.id, name: page.name, accessToken: page.access_token };
 }
 
-async function graph(path, params = {}, method = 'GET') {
-  return graphWithToken(META_SYSTEM_USER_TOKEN, path, params, method);
+async function graph(path, params = {}, method = 'GET', shouldSanitize = true) {
+  return graphWithToken(META_SYSTEM_USER_TOKEN, path, params, method, shouldSanitize);
 }
 
 async function graphWithToken(token, path, params = {}, method = 'GET', shouldSanitize = true) {

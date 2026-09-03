@@ -1,0 +1,41 @@
+{
+  "packageId": 799,
+  "artifact": "JM1-DYNAMICS-RUNTIME-LIVE-BASELINE-v1",
+  "generatedAt": "2026-09-03T09:11:57Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Dynamics Runtime + Autonomous Meta Closure",
+  "classification": "DYNAMICS_JOURNEY_NOT_PROVEN_SAFE_RUNTIME_BOUNDARY",
+  "dataverseEnvironment": "https://jm1hq.crm.dynamics.com",
+  "customerInsightsJourneysInventory": {
+    "msdynmkt_journeys": 0,
+    "msdynmkt_journeytemplates": 0,
+    "msdynmkt_emails": 0,
+    "msdynmkt_emailtemplates": 34,
+    "msdynmkt_segments": 0,
+    "msdynmkt_segmentdefinitions": 0,
+    "msdynmkt_topics": 0,
+    "msdynmkt_contactpointconsent4s": 0,
+    "msdynmkt_compliancesettings4s": 2,
+    "msdynmkt_brandsenders": 1,
+    "contactsQueriedLimit": 5000
+  },
+  "controlledJourneyContract": {
+    "rowId": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+    "name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
+    "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery",
+    "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY",
+    "dynamicsJourneyId": null
+  },
+  "safeRuntimeBoundary": {
+    "journeyCreated": false,
+    "emailCreated": false,
+    "segmentCreated": false,
+    "sendExecuted": false,
+    "uncontrolledProductionMarketingSent": false,
+    "reason": "Live Customer Insights - Journeys contains no journeys, journey templates, marketing emails, segments, topics, or contact-point consent records suitable for a controlled proof. Compliance settings and one brand sender exist, but no Founder-approved Publishing sender/test-audience/consent contract was identified."
+  },
+  "nextFounderOnlyOrAdminBoundary": [
+    "Approve or provide a controlled internal test audience/recipient with consent basis.",
+    "Confirm the Publishing sender identity/domain to use for a controlled Customer Insights proof.",
+    "Approve the minimum compliant test email/journey surface before any Journey execution."
+  ]
+}
