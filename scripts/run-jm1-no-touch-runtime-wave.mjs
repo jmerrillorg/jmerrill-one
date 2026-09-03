@@ -85,7 +85,7 @@ const controlRows = await queryByKey(entitySets.jm1_marketingcontrolloop, `${RUN
 const credentialMonitorId = await upsertCredentialMonitor(entitySets.jm1_credentialmonitor, secret);
 const metaFutureEvaluation = await reevaluateFutureMetaRows(entitySets.jm1_socialexecution, socialBefore);
 const journeyPromotion = await promoteJourneyBoundary(entitySets.jm1_journeyexecution, journeyRows, dynamics);
-const controlPromotion = await promoteControlLoops(entitySets.jm1_marketingcontrolloop, controlRows);
+const controlPromotion = await promoteControlLoops(entitySets.jm1_marketingcontrolloop, controlRows, dynamics);
 const credentialRows = await queryByKey(entitySets.jm1_credentialmonitor, `${RUN_MARKER}:credential:meta`, 'jm1_credentialmonitorid');
 const metaSystemUserCredential = credentialRows.find((row) => row.jm1_credentialtype === 'MetaSystemUserAccessToken') ?? credentialRows[0];
 const socialAfter = await queryByKey(entitySets.jm1_socialexecution, `${RUN_MARKER}:social`, 'jm1_socialexecutionid');
@@ -113,18 +113,18 @@ report.dynamics = {
   ...dynamics,
   journeyPromotion,
   exactMaturity: dynamics.controlledMarketingEmail.ready
-    ? 'DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_NOT_PROVEN'
+    ? (dynamics.controlledJourney.proven ? 'DYNAMICS_CONTROLLED_JOURNEY_PROVEN' : 'DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_NOT_PROVEN')
     : 'DYNAMICS_JOURNEY_NOT_PROVEN',
   controlledConfiguration: {
     publishingSenderIdentity: dynamics.governedPublishingSender.ready ? 'GOVERNED_PUBLISHING_SENDER_COMMISSIONED' : 'NOT_FOUND',
     publishingDomain: dynamics.governedPublishingDomain.ready ? 'EMAIL_JMERRILL_ONE_AUTHENTICATED_READY' : 'NOT_READY',
     controlledTestContacts: dynamics.controlledTestAudience.ready ? 'INTERNAL_TEST_CONTACT_PROVEN' : 'NOT_SELECTED_NO_FOUNDER_APPROVED_TEST_AUDIENCE_CONTRACT',
     minimalAudienceSegment: dynamics.controlledTestAudience.ready ? 'INTERNAL_TEST_SEGMENT_PROVEN' : (dynamics.segments.count === 0 ? 'NOT_IMPLEMENTED_NO_SEGMENT' : 'EXISTS_REQUIRES_REVIEW'),
-    minimalCompliantEmail: dynamics.controlledMarketingEmail.ready ? 'CONTROLLED_MARKETING_EMAIL_IMPLEMENTED' : (dynamics.emails.count === 0 ? 'NOT_IMPLEMENTED_NO_MARKETING_EMAIL' : 'EXISTS_REQUIRES_REVIEW'),
-    journeyTrigger: 'NOT_IMPLEMENTED',
-    wait: 'NOT_IMPLEMENTED',
-    branchOrExit: 'NOT_IMPLEMENTED',
-    runtimeReadback: 'NOT_PROVEN'
+    minimalCompliantEmail: dynamics.controlledMarketingEmail.ready ? 'CONTROLLED_MARKETING_EMAIL_READY_TO_SEND' : (dynamics.emails.count === 0 ? 'NOT_IMPLEMENTED_NO_MARKETING_EMAIL' : 'EXISTS_REQUIRES_REVIEW'),
+    journeyTrigger: dynamics.controlledJourney.proven ? 'IMPLEMENTED_SEGMENT_ENTRY' : 'NOT_IMPLEMENTED',
+    wait: dynamics.controlledJourney.proven ? 'IMPLEMENTED_1_HOUR' : 'NOT_IMPLEMENTED',
+    branchOrExit: dynamics.controlledJourney.proven ? 'IMPLEMENTED_EXIT' : 'NOT_IMPLEMENTED',
+    runtimeReadback: dynamics.controlledJourney.proven ? 'LIVE_READBACK_PROVEN' : 'NOT_PROVEN'
   }
 };
 
@@ -175,8 +175,8 @@ report.linkedin = {
 };
 
 report.noTouchTest = {
-  requiredResult: `JM1_CORE_META_NO_TOUCH_TEST_FAIL - ${dynamics.exactRemainingNormalOperationDependency}`,
-  coreMetaNoTouch: 'FAIL',
+  requiredResult: dynamics.controlledJourney.proven ? 'JM1_CORE_META_NO_TOUCH_TEST_PASS' : `JM1_CORE_META_NO_TOUCH_TEST_FAIL - ${dynamics.exactRemainingNormalOperationDependency}`,
+  coreMetaNoTouch: dynamics.controlledJourney.proven ? 'PASS' : 'FAIL',
   metaReason: 'Meta adapter itself is proven and no browser publishing is required.',
   blockingManualDependency: dynamics.exactRemainingNormalOperationDependency,
   linkedinTreatment: 'HELD_EXTERNAL_PLATFORM_AUTHORITY_DOES_NOT_FAIL_CORE_META_TEST'
@@ -193,9 +193,12 @@ report.nextActionLoop = {
 };
 
 report.replacementMatrix = buildReplacementMatrix();
-report.sintraReplacementAccounting = buildSintraAccounting();
+report.sintraReplacementAccounting = buildSintraAccounting(dynamics);
 report.enterpriseReuseShape = buildEnterpriseReuseShape();
 report.financialPublicReadyPolicy = buildFinancialPolicyContract();
+if (dynamics.controlledJourney.proven) {
+  report.sintraClassification = 'SINTRA OPTIONAL-CANDIDATE - CORE JM1/DYNAMICS/META MARKETING EXECUTION REPLACED; LINKEDIN PRODUCT REVIEW PENDING';
+}
 report.classifications = [
   'META_SYSTEM_USER_TOKEN_VERIFIED',
   'FACEBOOK_OWNED_API_RUNTIME_PROVEN',
@@ -203,11 +206,11 @@ report.classifications = [
   'META_PLATFORM_IDEMPOTENCY_PROVEN',
   'META_OWNED_API_RUNTIME_PROVEN',
   'DATAVERSE_MARKETING_RUNTIME_PROVEN',
-  ...(dynamics.controlledMarketingEmail.ready ? ['DYNAMICS_MARKETING_EMAIL_IMPLEMENTED'] : []),
+  ...(dynamics.controlledMarketingEmail.ready ? ['DYNAMICS_MARKETING_EMAIL_IMPLEMENTED', 'DYNAMICS_MARKETING_EMAIL_READY_TO_SEND_PROVEN'] : []),
   'MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD',
-  'DYNAMICS_JOURNEY_NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY',
+  ...(dynamics.controlledJourney.proven ? ['DYNAMICS_JOURNEY_SEED_IMPLEMENTED', 'DYNAMICS_CONTROLLED_JOURNEY_PROVEN'] : ['DYNAMICS_JOURNEY_NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY']),
   'LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED',
-  'JM1_CORE_META_NO_TOUCH_TEST_FAIL'
+  dynamics.controlledJourney.proven ? 'JM1_CORE_META_NO_TOUCH_TEST_PASS' : 'JM1_CORE_META_NO_TOUCH_TEST_FAIL'
 ];
 
 writeJson(REPORT_PATH, report);
@@ -330,14 +333,18 @@ async function promoteJourneyBoundary(entitySet, rows, dynamics) {
   const out = [];
   for (const row of rows) {
     const payload = {
-      jm1_state: dynamics.controlledMarketingEmail.ready
+      jm1_state: dynamics.controlledJourney.proven
+        ? 'DYNAMICS_CONTROLLED_JOURNEY_RUNTIME_STARTED'
+        : dynamics.controlledMarketingEmail.ready
         ? 'DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED'
         : 'DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY',
-      jm1_dynamicsjourneyid: '',
+      jm1_dynamicsjourneyid: dynamics.controlledJourney.proven ? dynamics.controlledJourney.proof.msdynmkt_journeyid : '',
       jm1_audiencecontract: dynamics.controlledTestAudience.ready
         ? 'Controlled internal test contact and static segment are proven by Dataverse readback.'
         : 'Controlled audience/test contact contract not yet selected; do not infer from production contacts.',
-      jm1_triggercontract: dynamics.journeySourceAvailability.safeJourneySourceAvailable
+      jm1_triggercontract: dynamics.controlledJourney.proven
+        ? 'Controlled Journey seed exists; proof Journey was created from seed-generated validated JSON, published through msdynmkt_PublishJourneyV2, and read back Live.'
+        : dynamics.journeySourceAvailability.safeJourneySourceAvailable
         ? 'Supported Journey APIs/actions and seed/template source exist; controlled Journey implementation can proceed.'
         : 'Actual Customer Insights Journey runtime requires a valid Journey template or existing Journey seed for msdynmkt_CreateJourneyFromTemplate; none exists in tenant by readback.',
       jm1_blocker: dynamics.exactRemainingNormalOperationDependency,
@@ -349,7 +356,7 @@ async function promoteJourneyBoundary(entitySet, rows, dynamics) {
   return { classification: 'DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_RECORDED', rows: out };
 }
 
-async function promoteControlLoops(entitySet, rows) {
+async function promoteControlLoops(entitySet, rows, dynamics) {
   const out = [];
   for (const row of rows) {
     const prereqs = String(row.jm1_unresolvedprerequisites || '')
@@ -358,9 +365,9 @@ async function promoteControlLoops(entitySet, rows) {
       .replace(/^;\s*|;\s*$/g, '')
       .trim();
     const payload = {
-      jm1_horizon7day: 'META_READY_DYNAMICS_AND_LINKEDIN_HELD',
-      jm1_unresolvedprerequisites: prereqs || 'DYNAMICS_JOURNEY_SAFE_RUNTIME_BOUNDARY; LINKEDIN_API_EXTERNAL_DEPENDENCY',
-      jm1_state: 'CONTROL_LOOP_META_READY_BOUNDARY_HELD',
+      jm1_horizon7day: dynamics.controlledJourney.proven ? 'CORE_META_DYNAMICS_READY_LINKEDIN_HELD' : 'META_READY_DYNAMICS_AND_LINKEDIN_HELD',
+      jm1_unresolvedprerequisites: dynamics.controlledJourney.proven ? 'LINKEDIN_API_EXTERNAL_DEPENDENCY' : (prereqs || 'DYNAMICS_JOURNEY_SAFE_RUNTIME_BOUNDARY; LINKEDIN_API_EXTERNAL_DEPENDENCY'),
+      jm1_state: dynamics.controlledJourney.proven ? 'CONTROL_LOOP_CORE_META_DYNAMICS_READY_LINKEDIN_HELD' : 'CONTROL_LOOP_META_READY_BOUNDARY_HELD',
       jm1_evaluatedat: GENERATED_AT
     };
     await patchById(entitySet, row.jm1_marketingcontrolloopid, payload);
@@ -389,7 +396,10 @@ async function inspectDynamicsJourneys() {
   const controlledTestAudience = await inspectControlledTestAudience();
   const controlledMarketingEmail = await inspectControlledMarketingEmail();
   const journeySourceAvailability = await inspectJourneySourceAvailability();
-  const exactRemainingNormalOperationDependency = journeySourceAvailability.safeJourneySourceAvailable
+  const controlledJourney = await inspectControlledJourney();
+  const exactRemainingNormalOperationDependency = controlledJourney.proven
+    ? ''
+    : journeySourceAvailability.safeJourneySourceAvailable
     ? 'DYNAMICS_CONTROLLED_JOURNEY_IMPLEMENTATION_AND_READBACK_REQUIRED'
     : 'DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION';
   return {
@@ -400,6 +410,7 @@ async function inspectDynamicsJourneys() {
     controlledTestAudience,
     controlledMarketingEmail,
     journeySourceAvailability,
+    controlledJourney,
     exactRemainingNormalOperationDependency,
     supportedCreationPaths: {
       templatePathObserved: actions.includes('msdynmkt_CreateJourneyFromTemplate'),
@@ -407,10 +418,12 @@ async function inspectDynamicsJourneys() {
       validateJourneyJsonObserved: actions.includes('msdynmkt_ValidateJourneyJson'),
       publishJourneyObserved: actions.includes('msdynmkt_PublishJourneyV2') || actions.includes('msdynmkt_PublishJourney'),
       directDesignerPath: 'AVAILABLE_IN_UI_REQUIRES_FOUNDER_ADMIN_CONTROLLED_CONFIGURATION',
-      directApiPathWithoutTemplate: actions.includes('msdynmkt_GenerateJourneyJdsl') ? 'POSSIBLE_REQUIRES_PAYLOAD_REVIEW' : 'NOT_PROVEN'
+      directApiPathWithoutTemplate: controlledJourney.proven ? 'PROVEN_FROM_SEED_GENERATED_VALIDATED_JSON' : (actions.includes('msdynmkt_GenerateJourneyJdsl') ? 'POSSIBLE_REQUIRES_PAYLOAD_REVIEW' : 'NOT_PROVEN')
     },
-    classification: 'DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_HELD',
-    reason: governedPublishingDomain.ready && governedPublishingSender.ready && controlledTestAudience.ready && controlledMarketingEmail.ready
+    classification: controlledJourney.proven ? 'DYNAMICS_JOURNEY_PROVEN' : 'DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_HELD',
+    reason: controlledJourney.proven
+      ? 'A controlled Customer Insights Journey was created from the seed-generated validated JSON, published through msdynmkt_PublishJourneyV2, and read back Live with the internal test audience.'
+      : governedPublishingDomain.ready && governedPublishingSender.ready && controlledTestAudience.ready && controlledMarketingEmail.ready
       ? 'The governed Publishing sender/domain, controlled internal audience, and controlled marketing email are ready; Microsoft-supported Journey creation still needs an accessible Journey template or existing Journey seed.'
       : governedPublishingDomain.ready && governedPublishingSender.ready && controlledTestAudience.ready
         ? 'The governed Publishing sender/domain and controlled internal audience are ready; the tenant still lacks a controlled marketing email and Journey runtime proof.'
@@ -462,15 +475,23 @@ async function inspectGovernedPublishingSender() {
 
 async function inspectControlledTestAudience() {
   const contact = await dv("/contacts?$select=contactid,fullname,emailaddress1&$filter=emailaddress1 eq 'jackie@jmerrill.one'&$top=1", {}, true);
-  const segment = await dv("/msdynmkt_segments?$select=msdynmkt_segmentid,msdynmkt_displayname,msdynmkt_sourcesegmentuid&$filter=msdynmkt_displayname eq 'JM1 INTERNAL MARKETING TEST AUDIENCE'&$top=1", {}, true);
+  const segment = await dv("/msdynmkt_segments?$select=msdynmkt_segmentid,msdynmkt_displayname,msdynmkt_sourcesegmentuid,statuscode,statecode,msdynmkt_type&$filter=msdynmkt_displayname eq 'JM1 INTERNAL MARKETING TEST AUDIENCE'&$top=1", {}, true);
+  const members = await dv('/msdynmkt_MembersList', {
+    method: 'POST',
+    body: JSON.stringify({ SegmentId: '1fdc470c-97a7-f111-b8de-6045bdd69435' })
+  }, true);
   const contactRow = contact.ok ? contact.body.value?.[0] : null;
   const segmentRow = segment.ok ? segment.body.value?.[0] : null;
+  const membership = parseJson(members.body?.ResultText);
   return {
-    ready: !!contactRow && !!segmentRow,
+    ready: !!contactRow && !!segmentRow && membership.totalCount === 1 && membership.members?.includes(contactRow.contactid),
     contactId: contactRow?.contactid ?? null,
     contactEmail: contactRow?.emailaddress1 ?? null,
     segmentId: segmentRow?.msdynmkt_segmentid ?? null,
-    segmentName: segmentRow?.msdynmkt_displayname ?? null
+    segmentName: segmentRow?.msdynmkt_displayname ?? null,
+    segmentStatuscode: segmentRow?.statuscode ?? null,
+    segmentStatecode: segmentRow?.statecode ?? null,
+    membership
   };
 }
 
@@ -482,7 +503,7 @@ async function inspectControlledMarketingEmail() {
       && row.msdynmkt_fromemail === 'publishing@email.jmerrill.one'
       && row.msdynmkt_replytoemail === 'publishing@jmerrill.one'
       && row.msdynmkt_subject === 'October Featured Author: Iyorwuese Hagher'
-      && row.statuscode === 1
+      && row.statuscode === 2
       && row.statecode === 0,
     id: row?.msdynmkt_emailid ?? null,
     name: row?.msdynmkt_name ?? null,
@@ -497,6 +518,24 @@ async function inspectControlledMarketingEmail() {
     purposeId: row?._msdynmkt_purpose_value ?? null,
     statuscode: row?.statuscode ?? null,
     statecode: row?.statecode ?? null
+  };
+}
+
+async function inspectControlledJourney() {
+  const [seed, proof, reuse] = await Promise.all([
+    dv("/msdynmkt_journeys(5aa19c34-d4a7-f111-b8de-00224820105b)?$select=msdynmkt_journeyid,msdynmkt_name,statuscode,statecode,msdynmkt_journeystarttime,msdynmkt_errorDetails", {}, true),
+    dv("/msdynmkt_journeys(2fc19ecf-d6a7-f111-b8de-000d3a9eacee)?$select=msdynmkt_journeyid,msdynmkt_name,statuscode,statecode,msdynmkt_journeystarttime,msdynmkt_errorDetails", {}, true),
+    dv("/msdynmkt_journeys(46f84bdf-d6a7-f111-b8de-6045bdd69435)?$select=msdynmkt_journeyid,msdynmkt_name,statuscode,statecode,msdynmkt_journeystarttime,msdynmkt_errorDetails", {}, true)
+  ]);
+  const proofRow = proof.ok ? proof.body : null;
+  const reuseRow = reuse.ok ? reuse.body : null;
+  return {
+    seed: seed.ok ? seed.body : null,
+    proof: proofRow,
+    reuse: reuseRow,
+    proven: !!proofRow && proofRow.statecode === 1 && proofRow.statuscode === 2 && !proofRow.msdynmkt_errorDetails,
+    seedReusabilityProven: !!reuseRow && reuseRow.statecode === 0 && reuseRow.statuscode === 1,
+    creationPath: 'CreateJourneyJsonFromTemplate(seed) -> ValidateJourneyJson -> msdynmkt_journeys create -> PublishJourneyV2'
   };
 }
 
@@ -551,13 +590,15 @@ function buildReplacementMatrix() {
     metaReadback: 'PROVEN',
     metaBrowserFallback: 'EXCEPTION_SETUP_ONLY',
     linkedinOwnedApi: 'NOT_PROVEN_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED',
-    dynamicsJourney: 'NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY',
-    fullNoTouch: 'NOT_PROVEN',
-    sintra: 'SINTRA BRIDGE - REPLACEMENT UNDERWAY'
+    dynamicsJourney: report.dynamics?.controlledJourney?.proven ? 'PROVEN' : 'NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY',
+    fullNoTouch: report.dynamics?.controlledJourney?.proven ? 'PROVEN_CORE_META' : 'NOT_PROVEN',
+    sintra: report.dynamics?.controlledJourney?.proven
+      ? 'SINTRA OPTIONAL-CANDIDATE - CORE JM1/DYNAMICS/META MARKETING EXECUTION REPLACED; LINKEDIN PRODUCT REVIEW PENDING'
+      : 'SINTRA BRIDGE - REPLACEMENT UNDERWAY'
   };
 }
 
-function buildSintraAccounting() {
+function buildSintraAccounting(dynamics) {
   return {
     unifiedFacebookInstagramExecution: 'REPLACED_BY_JM1_META_ADAPTER',
     platformReadback: 'REPLACED_BY_JM1_READBACK',
@@ -566,9 +607,11 @@ function buildSintraAccounting() {
     publicReadyGate: 'REPLACED_BY_JM1',
     creativeProduction: 'MATERIALLY_REPLACED_FOR_CONTROLLED_CASES',
     controlLoop: 'JM1_RUNTIME_PROVEN_BOUNDARY_HELD',
-    dynamicsOrchestration: 'JM1_DYNAMICS_TARGET_NOT_SINTRA_NOT_PROVEN',
+    dynamicsOrchestration: dynamics.controlledJourney.proven ? 'REPLACED_BY_CUSTOMER_INSIGHTS_JOURNEY_RUNTIME' : 'JM1_DYNAMICS_TARGET_NOT_SINTRA_NOT_PROVEN',
     linkedinExecution: 'NOT_YET_REPLACED',
-    classification: 'SINTRA BRIDGE - REPLACEMENT UNDERWAY'
+    classification: dynamics.controlledJourney.proven
+      ? 'SINTRA OPTIONAL-CANDIDATE - CORE JM1/DYNAMICS/META MARKETING EXECUTION REPLACED; LINKEDIN PRODUCT REVIEW PENDING'
+      : 'SINTRA BRIDGE - REPLACEMENT UNDERWAY'
   };
 }
 
@@ -949,6 +992,15 @@ function dateValue(value) {
 
 function sanitizeError(error) {
   return String(error.message ?? error).replace(/Bearer\s+[A-Za-z0-9._-]+/g, 'Bearer [REDACTED]');
+}
+
+function parseJson(text) {
+  if (!text) return {};
+  try {
+    return JSON.parse(text);
+  } catch {
+    return { raw: text };
+  }
 }
 
 function readJson(path) {

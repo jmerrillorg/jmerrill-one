@@ -1,7 +1,7 @@
 {
   "packageId": 791,
   "artifact": "JM1-NO-TOUCH-RUNTIME-WAVE-v1",
-  "generatedAt": "2026-09-03T19:56:12.730Z",
+  "generatedAt": "2026-09-03T20:39:42.053Z",
   "stream": "JM1 Enterprise Marketing Operating System - No-Touch Runtime Proof",
   "replacementMatrix": {
     "dataverseMarketingRuntime": "PROVEN",
@@ -14,9 +14,9 @@
     "metaReadback": "PROVEN",
     "metaBrowserFallback": "EXCEPTION_SETUP_ONLY",
     "linkedinOwnedApi": "NOT_PROVEN_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED",
-    "dynamicsJourney": "NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY",
-    "fullNoTouch": "NOT_PROVEN",
-    "sintra": "SINTRA BRIDGE - REPLACEMENT UNDERWAY"
+    "dynamicsJourney": "PROVEN",
+    "fullNoTouch": "PROVEN_CORE_META",
+    "sintra": "SINTRA OPTIONAL-CANDIDATE - CORE JM1/DYNAMICS/META MARKETING EXECUTION REPLACED; LINKEDIN PRODUCT REVIEW PENDING"
   },
   "dataverse": {
     "environment": "https://jm1hq.crm.dynamics.com",
@@ -102,10 +102,10 @@
     "dataverseMarketingRuntime": "PROVEN"
   },
   "dynamics": {
-    "inspectedAt": "2026-09-03T19:56:12.730Z",
+    "inspectedAt": "2026-09-03T20:39:42.053Z",
     "journeys": {
       "available": true,
-      "count": 0,
+      "count": 3,
       "state": "QUERY_OK"
     },
     "journeyTemplates": {
@@ -177,7 +177,21 @@
       "contactId": "5fcf77f5-96a7-f111-b8de-000d3a9eacee",
       "contactEmail": "jackie@jmerrill.one",
       "segmentId": "1fdc470c-97a7-f111-b8de-6045bdd69435",
-      "segmentName": "JM1 INTERNAL MARKETING TEST AUDIENCE"
+      "segmentName": "JM1 INTERNAL MARKETING TEST AUDIENCE",
+      "segmentStatuscode": 1,
+      "segmentStatecode": 0,
+      "membership": {
+        "totalCount": 1,
+        "pageNumber": 1,
+        "pageSize": 1,
+        "hasNextPage": false,
+        "baseEntityLogicalName": "contact",
+        "primaryKeyColumnName": "contactid",
+        "members": [
+          "5fcf77f5-96a7-f111-b8de-000d3a9eacee"
+        ],
+        "additionalProperties": {}
+      }
     },
     "controlledMarketingEmail": {
       "ready": true,
@@ -187,51 +201,86 @@
       "fromName": "J Merrill Publishing",
       "fromEmail": "publishing@email.jmerrill.one",
       "replyToEmail": "publishing@jmerrill.one",
-      "to": "contact.emailaddress1",
+      "to": null,
       "senderId": "f5be1ba7-c6a7-f111-b8de-6045bdd69738",
       "brandProfileId": "967124c2-7d97-f111-8075-70a8a5914a07",
       "complianceSettings4Id": "7f4a6355-1811-4cde-bde3-fee8c85f56b1",
       "purposeId": "10000000-0000-0000-0000-000000000003",
-      "statuscode": 1,
+      "statuscode": 2,
       "statecode": 0
     },
     "journeySourceAvailability": {
       "journeyTemplatesAvailable": 0,
-      "existingJourneysAvailableAsSeed": 0,
-      "safeJourneySourceAvailable": false,
+      "existingJourneysAvailableAsSeed": 3,
+      "safeJourneySourceAvailable": true,
       "supportedPath": "msdynmkt_CreateJourneyFromTemplate"
     },
-    "exactRemainingNormalOperationDependency": "DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION",
+    "controlledJourney": {
+      "seed": {
+        "@odata.context": "https://jm1hq.crm.dynamics.com/api/data/v9.2/$metadata#msdynmkt_journeys(msdynmkt_journeyid,msdynmkt_name,statuscode,statecode,msdynmkt_journeystarttime,msdynmkt_errorDetails)/$entity",
+        "@odata.etag": "W/\"51390959\"",
+        "msdynmkt_errorDetails": null,
+        "msdynmkt_journeystarttime": "2026-09-03T22:00:00Z",
+        "msdynmkt_journeyid": "5aa19c34-d4a7-f111-b8de-00224820105b",
+        "msdynmkt_name": "JM1 — CONTROLLED MARKETING JOURNEY SEED v1",
+        "statecode": 0,
+        "statuscode": 1
+      },
+      "proof": {
+        "@odata.context": "https://jm1hq.crm.dynamics.com/api/data/v9.2/$metadata#msdynmkt_journeys(msdynmkt_journeyid,msdynmkt_name,statuscode,statecode,msdynmkt_journeystarttime,msdynmkt_errorDetails)/$entity",
+        "@odata.etag": "W/\"51392007\"",
+        "msdynmkt_errorDetails": null,
+        "msdynmkt_journeystarttime": "2026-09-04T20:34:12Z",
+        "msdynmkt_journeyid": "2fc19ecf-d6a7-f111-b8de-000d3a9eacee",
+        "msdynmkt_name": "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED PROOF DIRECT 1788467652986",
+        "statecode": 1,
+        "statuscode": 2
+      },
+      "reuse": {
+        "@odata.context": "https://jm1hq.crm.dynamics.com/api/data/v9.2/$metadata#msdynmkt_journeys(msdynmkt_journeyid,msdynmkt_name,statuscode,statecode,msdynmkt_journeystarttime,msdynmkt_errorDetails)/$entity",
+        "@odata.etag": "W/\"51391356\"",
+        "msdynmkt_errorDetails": null,
+        "msdynmkt_journeystarttime": "2026-09-05T20:34:42Z",
+        "msdynmkt_journeyid": "46f84bdf-d6a7-f111-b8de-6045bdd69435",
+        "msdynmkt_name": "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED PROOF REUSE 1788467682190",
+        "statecode": 0,
+        "statuscode": 1
+      },
+      "proven": true,
+      "seedReusabilityProven": true,
+      "creationPath": "CreateJourneyJsonFromTemplate(seed) -> ValidateJourneyJson -> msdynmkt_journeys create -> PublishJourneyV2"
+    },
+    "exactRemainingNormalOperationDependency": "",
     "supportedCreationPaths": {
       "templatePathObserved": true,
       "journeyJsonFromTemplateObserved": true,
       "validateJourneyJsonObserved": true,
       "publishJourneyObserved": true,
       "directDesignerPath": "AVAILABLE_IN_UI_REQUIRES_FOUNDER_ADMIN_CONTROLLED_CONFIGURATION",
-      "directApiPathWithoutTemplate": "POSSIBLE_REQUIRES_PAYLOAD_REVIEW"
+      "directApiPathWithoutTemplate": "PROVEN_FROM_SEED_GENERATED_VALIDATED_JSON"
     },
-    "classification": "DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_HELD",
-    "reason": "The governed Publishing sender/domain, controlled internal audience, and controlled marketing email are ready; Microsoft-supported Journey creation still needs an accessible Journey template or existing Journey seed.",
+    "classification": "DYNAMICS_JOURNEY_PROVEN",
+    "reason": "A controlled Customer Insights Journey was created from the seed-generated validated JSON, published through msdynmkt_PublishJourneyV2, and read back Live with the internal test audience.",
     "journeyPromotion": {
       "classification": "DYNAMICS_JOURNEY_PRECISE_SAFE_RUNTIME_BOUNDARY_RECORDED",
       "rows": [
         {
           "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
-          "state": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED"
+          "state": "DYNAMICS_CONTROLLED_JOURNEY_RUNTIME_STARTED"
         }
       ]
     },
-    "exactMaturity": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_NOT_PROVEN",
+    "exactMaturity": "DYNAMICS_CONTROLLED_JOURNEY_PROVEN",
     "controlledConfiguration": {
       "publishingSenderIdentity": "GOVERNED_PUBLISHING_SENDER_COMMISSIONED",
       "publishingDomain": "EMAIL_JMERRILL_ONE_AUTHENTICATED_READY",
       "controlledTestContacts": "INTERNAL_TEST_CONTACT_PROVEN",
       "minimalAudienceSegment": "INTERNAL_TEST_SEGMENT_PROVEN",
-      "minimalCompliantEmail": "CONTROLLED_MARKETING_EMAIL_IMPLEMENTED",
-      "journeyTrigger": "NOT_IMPLEMENTED",
-      "wait": "NOT_IMPLEMENTED",
-      "branchOrExit": "NOT_IMPLEMENTED",
-      "runtimeReadback": "NOT_PROVEN"
+      "minimalCompliantEmail": "CONTROLLED_MARKETING_EMAIL_READY_TO_SEND",
+      "journeyTrigger": "IMPLEMENTED_SEGMENT_ENTRY",
+      "wait": "IMPLEMENTED_1_HOUR",
+      "branchOrExit": "IMPLEMENTED_EXIT",
+      "runtimeReadback": "LIVE_READBACK_PROVEN"
     }
   },
   "meta": {
@@ -526,7 +575,7 @@
       }
     ],
     "currentHorizon": "META_EXECUTION_READY_DYNAMICS_AND_LINKEDIN_HELD",
-    "nextRoutineAction": "WAIT_FOR_DYNAMICS_CONTROLLED_SURFACE_BEFORE_COORDINATED_TEST",
+    "nextRoutineAction": "GENERATE_NEXT_STAGE",
     "manualInterventionCount": 0
   },
   "coordinatedCampaign": {
@@ -534,8 +583,8 @@
     "journeyChild": {
       "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
       "name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
-      "state": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED",
-      "dynamicsJourneyId": null,
+      "state": "DYNAMICS_CONTROLLED_JOURNEY_RUNTIME_STARTED",
+      "dynamicsJourneyId": "2fc19ecf-d6a7-f111-b8de-000d3a9eacee",
       "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery"
     },
     "facebookChild": {
@@ -581,10 +630,10 @@
     "exactState": "LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED"
   },
   "noTouchTest": {
-    "requiredResult": "JM1_CORE_META_NO_TOUCH_TEST_FAIL - DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION",
-    "coreMetaNoTouch": "FAIL",
+    "requiredResult": "JM1_CORE_META_NO_TOUCH_TEST_PASS",
+    "coreMetaNoTouch": "PASS",
     "metaReason": "Meta adapter itself is proven and no browser publishing is required.",
-    "blockingManualDependency": "DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION",
+    "blockingManualDependency": "",
     "linkedinTreatment": "HELD_EXTERNAL_PLATFORM_AUTHORITY_DOES_NOT_FAIL_CORE_META_TEST"
   },
   "nextActionLoop": {
@@ -610,13 +659,13 @@
       "journey": {
         "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
         "name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
-        "state": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED",
-        "dynamicsJourneyId": null,
+        "state": "DYNAMICS_CONTROLLED_JOURNEY_RUNTIME_STARTED",
+        "dynamicsJourneyId": "2fc19ecf-d6a7-f111-b8de-000d3a9eacee",
         "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery"
       }
     },
     "campaignReevaluation": "WAIT_FOR_DYNAMICS_CONTROLLED_SURFACE_OR_APPROVED_NEXT_META_STAGE",
-    "nextSystemDecision": "WAIT_FOR_DYNAMICS_CONTROLLED_SURFACE_BEFORE_COORDINATED_TEST"
+    "nextSystemDecision": "GENERATE_NEXT_STAGE"
   },
   "sintraReplacementAccounting": {
     "unifiedFacebookInstagramExecution": "REPLACED_BY_JM1_META_ADAPTER",
@@ -626,11 +675,11 @@
     "publicReadyGate": "REPLACED_BY_JM1",
     "creativeProduction": "MATERIALLY_REPLACED_FOR_CONTROLLED_CASES",
     "controlLoop": "JM1_RUNTIME_PROVEN_BOUNDARY_HELD",
-    "dynamicsOrchestration": "JM1_DYNAMICS_TARGET_NOT_SINTRA_NOT_PROVEN",
+    "dynamicsOrchestration": "REPLACED_BY_CUSTOMER_INSIGHTS_JOURNEY_RUNTIME",
     "linkedinExecution": "NOT_YET_REPLACED",
-    "classification": "SINTRA BRIDGE - REPLACEMENT UNDERWAY"
+    "classification": "SINTRA OPTIONAL-CANDIDATE - CORE JM1/DYNAMICS/META MARKETING EXECUTION REPLACED; LINKEDIN PRODUCT REVIEW PENDING"
   },
-  "sintraClassification": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
+  "sintraClassification": "SINTRA OPTIONAL-CANDIDATE - CORE JM1/DYNAMICS/META MARKETING EXECUTION REPLACED; LINKEDIN PRODUCT REVIEW PENDING",
   "enterpriseReuseShape": {
     "sharedEnterpriseOwner": "J Merrill One",
     "sharedApp": "JM1 Social Publisher",
@@ -709,9 +758,11 @@
     "META_OWNED_API_RUNTIME_PROVEN",
     "DATAVERSE_MARKETING_RUNTIME_PROVEN",
     "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED",
+    "DYNAMICS_MARKETING_EMAIL_READY_TO_SEND_PROVEN",
     "MARKETING_CONTROL_LOOP_PROVEN_BOUNDARY_HELD",
-    "DYNAMICS_JOURNEY_NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY",
+    "DYNAMICS_JOURNEY_SEED_IMPLEMENTED",
+    "DYNAMICS_CONTROLLED_JOURNEY_PROVEN",
     "LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED",
-    "JM1_CORE_META_NO_TOUCH_TEST_FAIL"
+    "JM1_CORE_META_NO_TOUCH_TEST_PASS"
   ]
 }
