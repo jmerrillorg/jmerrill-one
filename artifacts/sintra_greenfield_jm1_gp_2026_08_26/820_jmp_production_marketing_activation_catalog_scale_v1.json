@@ -1,7 +1,7 @@
 {
   "packageId": 820,
   "artifact": "JMP-PRODUCTION-MARKETING-ACTIVATION-CATALOG-SCALE-v1",
-  "generatedAt": "2026-09-04T21:57:18.152Z",
+  "generatedAt": "2026-09-04T21:59:31.867Z",
   "acceptedBaseline": {
     "pr": "https://github.com/jmerrillorg/jmerrill-one/pull/31",
     "mergeCommit": "cd92d51f737842bf35b2e5f637a7ac6152c1a126",
@@ -228,7 +228,7 @@
     ]
   },
   "fourLaneProductionControlLoop": {
-    "evaluatedAt": "2026-09-04T21:57:18.152Z",
+    "evaluatedAt": "2026-09-04T21:59:31.867Z",
     "lanes": {
       "title_author": {
         "name": "TITLE / AUTHOR MARKETING",
@@ -759,7 +759,7 @@
     ]
   },
   "marketingCommandCenter": {
-    "generatedAt": "2026-09-04T21:57:18.152Z",
+    "generatedAt": "2026-09-04T21:59:31.867Z",
     "current": {
       "featuredAuthor": "Sean A Crowley I",
       "activeTitleCampaigns": 10,
@@ -975,8 +975,10 @@
   "finalClassification": "JMP MARKETING LIFECYCLE - AUTONOMOUSLY OPERATIONAL AT PRODUCTION SCALE",
   "branchCommitsPrDeploymentsEvidence": {
     "branch": "codex/jmp-production-marketing-activation",
-    "commit": "283bd929bb03cfefddc2e2983cb3a8d11160a917",
-    "deploymentPerformedByScript": false,
+    "commit": "627b9c0196ed9f005a89c6ab66ef3b69908014ad",
+    "deploymentPerformed": true,
+    "deploymentSourceCommit": "627b9c0196ed9f005a89c6ab66ef3b69908014ad",
+    "deploymentZip": "/tmp/jm1-marketing-runtime-820-1788559003.zip",
     "deploymentRequired": false,
     "functionApp": "func-jm1-marketing-runtime",
     "resourceGroup": "rg-jm1-ai",

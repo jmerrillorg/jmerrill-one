@@ -216,7 +216,9 @@ report.finalClassification = finalClassification(report);
 report.branchCommitsPrDeploymentsEvidence = {
   branch: currentBranch(),
   commit: currentCommit(),
-  deploymentPerformedByScript: false,
+  deploymentPerformed: process.env.JM1_PRODUCTION_DEPLOYMENT_PERFORMED === 'true',
+  deploymentSourceCommit: process.env.JM1_PRODUCTION_DEPLOYMENT_SOURCE_COMMIT || runtimeSetting(azure.settings, 'JM1_RELEASE_SHA') || currentCommit(),
+  deploymentZip: process.env.JM1_PRODUCTION_DEPLOYMENT_ZIP || '',
   deploymentRequired: runtimeAlignment.productionDeploymentChanges.result === 'DEPLOYMENT_REQUIRED',
   functionApp: FUNCTION_APP,
   resourceGroup: RESOURCE_GROUP,
