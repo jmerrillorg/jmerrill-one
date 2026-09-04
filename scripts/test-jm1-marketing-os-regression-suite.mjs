@@ -3,10 +3,18 @@ import assert from 'node:assert/strict';
 import {
   buildCreativeArtifact,
   publicReadyGate,
+  resolveCampaignProgram,
   resolveStageDecision,
+  resolveTitleLifecycle,
   selectCreativeArchetype
 } from '../runtime/jm1-marketing-autonomous-functions/src/lib/campaignProgram.js';
-import { credentialState, deterministicId } from '../runtime/jm1-marketing-autonomous-functions/src/lib/runtime.js';
+import {
+  credentialState,
+  currentFeaturedAuthorMarker,
+  deterministicId,
+  octoberIyorwueseMarker,
+  septemberSeanMarker
+} from '../runtime/jm1-marketing-autonomous-functions/src/lib/runtime.js';
 
 const OFFICIAL_LOGO_HASH = 'a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a';
 const nowIso = '2026-09-04T16:00:00.000Z';
@@ -24,6 +32,19 @@ const campaign = {
   jm1_idempotencykey: 'regression:featured-author:2026-10:iyorwuese:campaign'
 };
 
+const septemberSeanCampaign = {
+  jm1_name: 'September Featured Author - Sean A Crowley I',
+  jm1_campaigntype: 'featured_author_month',
+  jm1_program: 'Monthly Featured Author',
+  jm1_branch: 'J Merrill Publishing',
+  jm1_subject: 'Sean A Crowley I',
+  jm1_audience: 'Publishing readers and author community',
+  jm1_cta: 'Explore The Shift and Strategies for Success through J Merrill Publishing.',
+  jm1_start: '2026-09-01T00:00:00.000Z',
+  jm1_stop: '2026-09-30T23:59:59.000Z',
+  jm1_idempotencykey: 'regression:featured-author:2026-09:sean:campaign'
+};
+
 const content = {
   jm1_name: 'Iyorwuese Hagher Month Introduction',
   jm1_stage: 'month_introduction',
@@ -39,6 +60,39 @@ const assetState = {
 };
 
 const tests = [
+  test('September Sean is the active current Featured Author on September 4', () => {
+    const program = resolveCampaignProgram(septemberSeanCampaign, nowIso);
+    assert.equal(program.temporalAuthority.state, 'ACTIVE_CURRENT_MONTH');
+    assert.equal(program.temporalAuthority.currentMonthReplacementAllowed, true);
+    assert.equal(currentFeaturedAuthorMarker(new Date(nowIso)), septemberSeanMarker());
+  }),
+  test('October Iyorwuese remains future/pre-staged during September', () => {
+    const decision = resolveStageDecision({
+      campaign,
+      contentRows: [],
+      creativeRows: [],
+      socialRows: [],
+      journeyRows: [],
+      exceptionRows: [],
+      nowIso
+    });
+    assert.equal(decision.program.temporalAuthority.state, 'FUTURE_NEXT_MONTH_PRESTAGED');
+    assert.equal(decision.controlDecision, 'OBSERVE_FUTURE_PRESTAGE');
+    assert.equal(decision.program.temporalAuthority.currentMonthReplacementAllowed, false);
+  }),
+  test('October Iyorwuese becomes active at the October boundary', () => {
+    const octoberNow = '2026-10-01T16:00:00.000Z';
+    const program = resolveCampaignProgram(campaign, octoberNow);
+    assert.equal(program.temporalAuthority.state, 'ACTIVE_CURRENT_MONTH');
+    assert.equal(currentFeaturedAuthorMarker(new Date(octoberNow)), octoberIyorwueseMarker());
+  }),
+  test('no current Featured Author marker is returned after the known authority window', () => {
+    assert.equal(currentFeaturedAuthorMarker(new Date('2026-11-01T16:00:00.000Z')), '');
+  }),
+  test('The Shift remains new/recently released, not backlist or draft', () => {
+    const lifecycle = resolveTitleLifecycle(septemberSeanCampaign);
+    assert.equal(lifecycle.theShift, 'NEW_RECENTLY_RELEASED_NOT_BACKLIST_NOT_DRAFT');
+  }),
   test('missing official logo is blocked', () => {
     const artifact = buildCreativeArtifact({
       campaign,

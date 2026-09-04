@@ -1,5 +1,7 @@
 import { createHash } from 'node:crypto';
 
+import { FEATURED_AUTHOR_AUTHORITIES, featuredAuthorMarker } from './runtime.js';
+
 const DEFAULT_STAGE_POLICY = [
   {
     key: 'month_introduction',
@@ -76,8 +78,80 @@ export function resolveCampaignProgram(campaign, nowIso) {
     cta: campaign.jm1_cta || 'Follow J Merrill Publishing for Featured Author updates.',
     start,
     stop,
+    temporalAuthority: resolveFeaturedAuthorTemporalAuthority(campaign, nowIso),
+    titleLifecycle: resolveTitleLifecycle(campaign),
     evaluatedAt: nowIso,
     stages: DEFAULT_STAGE_POLICY
+  };
+}
+
+export function resolveFeaturedAuthorTemporalAuthority(campaign, nowIso) {
+  const campaignMonth = dateOrNull(campaign.jm1_start)?.toISOString().slice(0, 7) || monthFromText(campaign.jm1_name) || 'UNKNOWN';
+  const subject = campaign.jm1_subject || campaign.jm1_name || '';
+  const branch = campaign.jm1_branch || 'J Merrill Publishing';
+  const known = FEATURED_AUTHOR_AUTHORITIES.find((authority) =>
+    authority.branch === branch
+    && authority.month === campaignMonth
+    && normalize(subject).includes(normalize(authority.author).split('_')[0])
+  ) || FEATURED_AUTHOR_AUTHORITIES.find((authority) =>
+    authority.branch === branch
+    && authority.month === campaignMonth
+    && normalize(authority.author).includes(normalize(subject).split('_')[0])
+  );
+  const startsAt = dateOrNull(known?.startsAt) || dateOrNull(campaign.jm1_start);
+  const stopsAt = dateOrNull(known?.stopsAt) || dateOrNull(campaign.jm1_stop);
+  const now = dateOrNull(nowIso) || new Date();
+  const marker = known ? featuredAuthorMarker(known) : campaignMarker(campaign);
+
+  if (startsAt && now < startsAt) {
+    return {
+      state: 'FUTURE_NEXT_MONTH_PRESTAGED',
+      campaignMonth,
+      currentMonthReplacementAllowed: false,
+      preStageAllowed: true,
+      marker,
+      reason: 'Featured Author campaign starts after the evaluation date; preserve as future/pre-staged authority.'
+    };
+  }
+  if (startsAt && stopsAt && now >= startsAt && now <= stopsAt) {
+    return {
+      state: 'ACTIVE_CURRENT_MONTH',
+      campaignMonth,
+      currentMonthReplacementAllowed: true,
+      preStageAllowed: true,
+      marker,
+      reason: 'Featured Author campaign is inside its governed calendar month.'
+    };
+  }
+  if (stopsAt && now > stopsAt) {
+    return {
+      state: 'PAST_CONCLUDED_MONTH',
+      campaignMonth,
+      currentMonthReplacementAllowed: false,
+      preStageAllowed: false,
+      marker,
+      reason: 'Featured Author campaign month has concluded.'
+    };
+  }
+  return {
+    state: 'TEMPORAL_AUTHORITY_UNKNOWN',
+    campaignMonth,
+    currentMonthReplacementAllowed: false,
+    preStageAllowed: false,
+    marker,
+    reason: 'Campaign start/stop dates are not sufficient to assign current-month authority.'
+  };
+}
+
+export function resolveTitleLifecycle(campaign) {
+  const text = `${campaign.jm1_name || ''}\n${campaign.jm1_subject || ''}\n${campaign.jm1_program || ''}\n${campaign.jm1_cta || ''}`;
+  return {
+    theShift: /shift/i.test(text) || /Sean A Crowley/i.test(text)
+      ? 'NEW_RECENTLY_RELEASED_NOT_BACKLIST_NOT_DRAFT'
+      : 'NOT_APPLICABLE',
+    strategiesForSuccess: /strategies/i.test(text) || /Sean A Crowley/i.test(text)
+      ? 'SEPTEMBER_22_2026_RELEASE_LIFECYCLE_PRIORITY'
+      : 'NOT_APPLICABLE'
   };
 }
 
@@ -115,6 +189,20 @@ export function resolveStageDecision({ campaign, contentRows, creativeRows, soci
   let reason = nextStage
     ? 'Next configured stage is missing materialized content/creative/social children.'
     : 'All configured stages already have materialized work; wait for execution/readback.';
+
+  if (program.temporalAuthority.state === 'FUTURE_NEXT_MONTH_PRESTAGED') {
+    controlDecision = 'OBSERVE_FUTURE_PRESTAGE';
+    reason = 'Future Featured Author authority is valid for pre-staging, but it must not replace the active current-month author.';
+    nextStage = null;
+  } else if (program.temporalAuthority.state === 'PAST_CONCLUDED_MONTH') {
+    controlDecision = 'OBSERVE_CONCLUDED_MONTH';
+    reason = 'Featured Author month is concluded; do not generate replacement current-month content.';
+    nextStage = null;
+  } else if (program.temporalAuthority.state !== 'ACTIVE_CURRENT_MONTH') {
+    controlDecision = 'HOLD_TEMPORAL_AUTHORITY_UNKNOWN';
+    reason = program.temporalAuthority.reason;
+    nextStage = null;
+  }
 
   if (fatigue.result === 'DO_NOTHING') {
     controlDecision = 'DO_NOTHING';
@@ -328,6 +416,26 @@ function sentenceCase(value) {
 
 function normalize(value) {
   return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '_');
+}
+
+function monthFromText(value) {
+  const lower = String(value || '').toLowerCase();
+  const year = lower.match(/20\d{2}/)?.[0] || '2026';
+  const month = [
+    ['january', '01'],
+    ['february', '02'],
+    ['march', '03'],
+    ['april', '04'],
+    ['may', '05'],
+    ['june', '06'],
+    ['july', '07'],
+    ['august', '08'],
+    ['september', '09'],
+    ['october', '10'],
+    ['november', '11'],
+    ['december', '12']
+  ].find(([name]) => lower.includes(name))?.[1];
+  return month ? `${year}-${month}` : '';
 }
 
 function dateOrNull(value) {

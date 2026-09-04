@@ -1,0 +1,202 @@
+{
+  "artifact": "818_jmp_marketing_lifecycle_operationalization_v1",
+  "generatedAt": "2026-09-04T21:15:17Z",
+  "program": "JM1 Enterprise Marketing Operating System",
+  "stream": "Publishing Marketing Lifecycle Operationalization",
+  "classification": "JMP_MARKETING_LIFECYCLE_TEMPORAL_AUTHORITY_CORRECTED",
+  "targetClassification": "JMP MARKETING LIFECYCLE - AUTONOMOUSLY OPERATIONAL",
+  "targetClassificationState": "ADVANCED_NOT_FULLY_CLAIMED",
+  "summary": "Dataverse Campaign Authority now separates September/Sean current-month authority from October/Iyorwuese future pre-stage authority. Runtime marker and campaign decision logic were corrected so October proof work cannot supersede September Featured Author operations.",
+  "liveDataverseReadback": {
+    "environment": "https://jm1hq.crm.dynamics.com",
+    "checkedAt": "2026-09-04T21:15:07.545Z",
+    "campaignCount": 2,
+    "campaigns": [
+      {
+        "name": "September 2026 Featured Author - Sean A Crowley I",
+        "subject": "Sean A Crowley I",
+        "start": "2026-09-01T00:00:00Z",
+        "stop": "2026-10-01T00:00:00Z",
+        "state": "ACTIVE_CURRENT_MONTH_AUTHORITY_RESTORED",
+        "marker": "f3b943c5e8ed68b6c663a915",
+        "contentCount": 0,
+        "socialCount": 0,
+        "note": "Authority row only; no September content/social rows were recreated or manufactured."
+      },
+      {
+        "name": "October 2026 Featured Author - Iyorwuese",
+        "subject": "Iyorwuese",
+        "start": "2026-10-01T00:00:00Z",
+        "stop": "2026-11-01T00:00:00Z",
+        "state": "SYSTEM_AUTHORITY_CREATED_HELD_FOR_DOWNSTREAM_PROOF",
+        "marker": "e60c47b5da7824de99976e0a",
+        "contentCount": 6,
+        "socialCount": 14,
+        "socialByPlatform": {
+          "facebook": 5,
+          "instagram": 5,
+          "linkedin": 4
+        },
+        "socialStatuses": [
+          "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+          "HELD_FOR_CAMPAIGN_REEVALUATION",
+          "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+          "PUBLISHED_VERIFIED"
+        ],
+        "classification": "FUTURE_NEXT_MONTH_PRESTAGED"
+      }
+    ]
+  },
+  "dataverseWrite": {
+    "checkedAt": "2026-09-04T21:14:44.451Z",
+    "action": "created",
+    "entity": "jm1_campaignauthority",
+    "id": "a0c12da3-a5a8-f111-b8de-6045bdd69678",
+    "idempotencyKey": "f3b943c5e8ed68b6c663a915:campaign",
+    "socialRowsCreated": 0,
+    "contentRowsCreated": 0,
+    "publicPostsCreated": 0
+  },
+  "returnContract": {
+    "featuredAuthorAuthority": {
+      "september2026": "Sean A Crowley I - ACTIVE_CURRENT_MONTH",
+      "october2026": "Iyorwuese Hagher - FUTURE_NEXT_MONTH / PRE-STAGED",
+      "target": "FEATURED_AUTHOR_TEMPORAL_AUTHORITY_PROVEN",
+      "result": "PASS"
+    },
+    "seanCampaignHealth": {
+      "authority": "RESTORED_IN_LIVE_DATAVERSE",
+      "alreadyPublishedIntroHandling": "DO_NOT_RECREATE",
+      "sep1AnnouncementHandling": "DO_NOT_REINTRODUCE",
+      "remainingSeptemberCadence": "Preserved from existing rebuilt September evidence and live manual scheduler proof; no duplicate rows generated here.",
+      "fatigueAndDuplicateGuards": "Campaign/month scoped regression coverage added."
+    },
+    "strategiesForSuccess": {
+      "title": "Strategies for Success in Educational Leadership",
+      "author": "Sean A Crowley I",
+      "releaseDate": "2026-09-22",
+      "state": "SEPTEMBER_22_2026_RELEASE_LIFECYCLE_PRIORITY",
+      "lifecycle": [
+        "PRE-LAUNCH",
+        "TITLE DISCOVERY",
+        "RELEASE COUNTDOWN",
+        "RELEASE EVE",
+        "RELEASE DAY",
+        "POST-LAUNCH",
+        "+7",
+        "+30"
+      ],
+      "founderCtaPreserved": "https://amzn.to/4y4udRZ"
+    },
+    "theShift": {
+      "title": "The Shift: Changing with God",
+      "status": "NEW / RECENTLY RELEASED",
+      "notBacklist": true,
+      "notDraft": true,
+      "notPreLaunch": true
+    },
+    "octoberFutureBoundary": {
+      "validFutureObjectsPreserved": true,
+      "currentMonthReplacementAllowedBeforeOctober": false,
+      "automaticOctoberBoundary": "Runtime marker changes to October/Iyorwuese only after the date evaluates inside October authority."
+    },
+    "transitionLogic": {
+      "target": "FEATURED_AUTHOR_MONTH_TRANSITION_AUTOMATION_PROVEN",
+      "result": "PASS_IN_REGRESSION",
+      "tests": [
+        "September Sean is active on 2026-09-04",
+        "October Iyorwuese is future/pre-staged on 2026-09-04",
+        "October Iyorwuese becomes active on 2026-10-01"
+      ]
+    },
+    "publishingProgramRegistry": {
+      "lanes": [
+        "TITLE / AUTHOR MARKETING",
+        "AUTHOR ACQUISITION / INQUIRY MARKETING",
+        "J MERRILL PUBLISHING BRAND MARKETING",
+        "READER / AUDIENCE MARKETING"
+      ],
+      "state": "COMMISSIONED_FOR_RUNTIME_EXPANSION"
+    },
+    "lifecycleTriggers": {
+      "state": "REGISTERED_IN_OPERATING_MODEL",
+      "minimumTriggers": [
+        "INTAKE / FIT",
+        "IMPRINT CONFIRMED",
+        "POSITIONING READY",
+        "EDITING UNDERWAY",
+        "COVER APPROVED",
+        "PRODUCTION PROOF",
+        "METADATA READY",
+        "DISTRIBUTION LIVE",
+        "LAUNCH DATE LOCKED",
+        "LAUNCH DAY",
+        "+7",
+        "+30",
+        "+90",
+        "ANNIVERSARY",
+        "NEW EDITION",
+        "NEW FORMAT",
+        "AUDIOBOOK",
+        "RELATED NEW TITLE",
+        "BACKLIST REACTIVATION"
+      ]
+    },
+    "authorAcquisitionJourney": "COMMISSIONED_NOT_ACTIVATED_BY_THIS_SLICE",
+    "readerAudienceModel": "COMMISSIONED_NOT_ACTIVATED_BY_THIS_SLICE",
+    "publishingBrandLane": "COMMISSIONED_NOT_ACTIVATED_BY_THIS_SLICE",
+    "backlistReactivation": "COMMISSIONED_WITH_GUARDRAIL_THE_SHIFT_NOT_BACKLIST",
+    "marketingCommandCenter": "TEMPORAL_AUTHORITY_INPUT_CORRECTED; FULL COMMAND CENTER REMAINS NEXT PRODUCTIONIZATION STEP",
+    "dynamics": "Existing controlled Journey boundary preserved; no uncontrolled production marketing sent.",
+    "meta": "Owned Meta runtime proof remains preserved from prior packages; this slice did not create new Meta platform posts.",
+    "linkedin": "LINKEDIN_EXTERNAL_REVIEW_ONLY - ALL JM1 PREREQUISITES COMPLETE; no LinkedIn implementation resumed until review state changes.",
+    "sintraExit": "Sintra exit prep preserved. Strategy/research value retained; execution remains JM1-owned target. Subscription cancellation not performed.",
+    "founderTouchCount": 0,
+    "codyTouchCount": 1,
+    "finalClassification": "JMP_MARKETING_LIFECYCLE_TEMPORAL_AUTHORITY_CORRECTED_AND_OPERATIONALIZATION_ADVANCED"
+  },
+  "runtimeChanges": [
+    {
+      "file": "runtime/jm1-marketing-autonomous-functions/src/lib/runtime.js",
+      "change": "Added date-aware Featured Author authorities for September/Sean and October/Iyorwuese, plus current marker selection."
+    },
+    {
+      "file": "runtime/jm1-marketing-autonomous-functions/src/lib/campaignProgram.js",
+      "change": "Added temporal authority and title lifecycle resolution; future-month campaigns are observed/pre-staged instead of promoted as current."
+    },
+    {
+      "file": "runtime/jm1-marketing-autonomous-functions/src/functions/socialExecutionWorkerTimer.js",
+      "change": "Stopped defaulting the worker to the October marker; current-month marker is date-driven with an explicit environment override available."
+    },
+    {
+      "file": "runtime/jm1-marketing-autonomous-functions/src/functions/credentialMonitorTimer.js",
+      "change": "Credential monitor idempotency now attaches to the current Featured Author authority instead of hard-coded October proof work."
+    },
+    {
+      "file": "scripts/test-jm1-marketing-os-regression-suite.mjs",
+      "change": "Added temporal authority, month transition, and The Shift lifecycle regression tests."
+    }
+  ],
+  "verification": {
+    "nodeCheck": "PASS",
+    "marketingRegressionSuite": {
+      "passed": 15,
+      "failed": 0,
+      "classifications": [
+        "JM1_MARKETING_OS_REGRESSION_SUITE_PASS",
+        "FEATURED_AUTHOR_PROGRAM_TRANSFERABILITY_PROVEN"
+      ]
+    }
+  },
+  "guardrails": {
+    "noSintraPublishing": true,
+    "noMetaBusinessSuiteUiPublishing": true,
+    "noLinkedInNativeUiPublishing": true,
+    "noComputerUsePublishing": true,
+    "noSecretsRecorded": true,
+    "noSeptemberIntroRecreated": true,
+    "noSep1AnnouncementReintroduced": true,
+    "noOctoberDeletion": true,
+    "noFinancialActivation": true
+  }
+}
