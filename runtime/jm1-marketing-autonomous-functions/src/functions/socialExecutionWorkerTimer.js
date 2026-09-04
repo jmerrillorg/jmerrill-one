@@ -11,14 +11,22 @@ import { entitySet, patchById, queryByPrefix } from '../lib/dataverse.js';
 import { checkLinkedInAuthority, findRecentMatchingLinkedInPost, publishLinkedInOrganizationImagePost } from '../lib/linkedin.js';
 import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
-import { octoberIyorwueseMarker, runEnvelope } from '../lib/runtime.js';
+import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
 
 app.timer('socialExecutionWorkerTimer', {
   schedule: process.env.JM1_SOCIAL_EXECUTION_WORKER_CRON || '0 */15 * * * *',
   handler: async (timer, context) => {
     const envelope = runEnvelope('AUTONOMOUS_SOCIAL_EXECUTION_WORKER', timer, context);
     const socialSet = await entitySet('jm1_socialexecution');
-    const marker = octoberIyorwueseMarker();
+    const marker = process.env.JM1_SOCIAL_EXECUTION_MARKER || currentFeaturedAuthorMarker(new Date(envelope.startedAt));
+    if (!marker) {
+      context.log(JSON.stringify({
+        ...envelope,
+        state: 'NO_CURRENT_FEATURED_AUTHOR_AUTHORITY',
+        dataverseWrite: []
+      }));
+      return;
+    }
     const publishing = BRANCH_CONFIG.publishing;
     const rows = await queryByPrefix(
       socialSet,

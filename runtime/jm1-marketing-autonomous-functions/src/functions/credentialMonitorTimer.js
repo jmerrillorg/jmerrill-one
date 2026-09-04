@@ -12,14 +12,15 @@ import {
   SYNTHETIC_CREDENTIAL_MONITOR_ENABLED
 } from '../lib/config.js';
 import { entitySet, upsertByIdempotency } from '../lib/dataverse.js';
-import { credentialState, isoNow, octoberIyorwueseMarker, runEnvelope } from '../lib/runtime.js';
+import { credentialState, currentFeaturedAuthorMarker, deterministicId, isoNow, runEnvelope } from '../lib/runtime.js';
 
 app.timer('credentialMonitorTimer', {
   schedule: process.env.JM1_CREDENTIAL_MONITOR_CRON || '0 7 12 * * *',
   handler: async (timer, context) => {
     const envelope = runEnvelope('AUTONOMOUS_CREDENTIAL_MONITOR', timer, context);
     const credentialSet = await entitySet('jm1_credentialmonitor');
-    const marker = octoberIyorwueseMarker();
+    const marker = currentFeaturedAuthorMarker(new Date(envelope.startedAt))
+      || deterministicId('JM1_MARKETING', 'credential-monitor', 'global');
     const state = credentialState(META_TOKEN_ROTATION_DUE_AT, META_TOKEN_EXPIRES_AT);
     const linkedinState = LINKEDIN_TOKEN_EXPIRES_AT
       ? 'LINKEDIN_CREDENTIAL_ISSUED_MONITORING_ACTIVE'
