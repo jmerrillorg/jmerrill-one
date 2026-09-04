@@ -58,6 +58,9 @@ export function verifyLinkedInOAuthState(state: string | null): VerifiedLinkedIn
   return { ok: true, payload, stateHash: hash };
 }
 
+export function stateHash(value: string): string;
+export function stateHash(value: null): null;
+export function stateHash(value: string | null): string | null;
 export function stateHash(value: string | null) {
   if (!value) return null;
   return createHmac("sha256", "jm1-linkedin-state-evidence").update(value).digest("hex").slice(0, 16);
