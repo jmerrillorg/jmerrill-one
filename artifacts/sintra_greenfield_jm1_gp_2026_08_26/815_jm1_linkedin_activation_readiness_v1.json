@@ -1,0 +1,211 @@
+{
+  "artifact": "815_jm1_linkedin_activation_readiness_v1",
+  "generatedAt": "2026-09-04T13:03:00Z",
+  "program": "JM1 Enterprise Marketing Operating System",
+  "stream": "LinkedIn Activation Readiness",
+  "classification": "LINKEDIN_FOUNDER_ACTION_REQUIRED",
+  "classificationDetail": "Confirm/save LinkedIn Developer app privacy URL and OAuth redirect URL, then resolve or classify the business-email notice from the authenticated Founder/admin LinkedIn Developer session.",
+  "liveProductReviewState": {
+    "appName": "JM1 Organization Publisher",
+    "appUrlId": "266134085",
+    "clientId": "78hqh0jqrb4y06",
+    "organizationName": "J Merrill Publishing, Inc.",
+    "organizationId": "13048648",
+    "product": "Community Management API",
+    "runtimeState": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+    "visiblePortalStatePreviouslyObserved": "Review in progress",
+    "currentReadOnlyPortalRefresh": "NOT_REFRESHED_RELIABLY_EDGE_DID_NOT_FOCUS_IN_CURRENT_DESKTOP_CAPTURE"
+  },
+  "privacyUrlDeployment": {
+    "url": "https://jmerrill.one/privacy",
+    "httpStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "productionHostname": "jmerrill.one",
+    "privacyPageQuality": "ENTERPRISE_PRIVACY_SURFACE_DEPLOYED_FOR_JM1_IDENTITY_DATA_PROCESSING_PLATFORM_INTEGRATIONS_RETENTION_DELETION_CONTACT_AND_RIGHTS_REQUEST_PATH",
+    "deployedCommit": "2881b0424950f8b98a95be3d251a1c5e3840ed31"
+  },
+  "oauthCallbackDeployment": {
+    "callbackUrl": "https://jmerrill.one/api/linkedin/oauth/callback",
+    "readyProbe": {
+      "httpStatus": 200,
+      "status": "LINKEDIN_OAUTH_CALLBACK_READY",
+      "codeReceived": false
+    },
+    "badStateProbe": {
+      "httpStatus": 400,
+      "status": "LINKEDIN_OAUTH_STATE_VALIDATION_FAILED",
+      "reason": "INVALID_STATE_FORMAT",
+      "codeReceived": true,
+      "tokenOrCodeEchoed": false
+    },
+    "oauthStartProbe": {
+      "url": "https://jmerrill.one/api/linkedin/oauth/start",
+      "httpStatus": 307,
+      "redirectHost": "www.linkedin.com",
+      "redirectPath": "/oauth/v2/authorization",
+      "clientId": "78hqh0jqrb4y06",
+      "redirectUri": "https://jmerrill.one/api/linkedin/oauth/callback",
+      "scopes": [
+        "w_organization_social",
+        "r_organization_social"
+      ],
+      "signedStatePresent": true
+    },
+    "deployment": {
+      "githubRunId": "33874179290",
+      "deploymentStatusId": "edb56860-fe63-45ff-a081-1030e2712441",
+      "deployedCommit": "2881b0424950f8b98a95be3d251a1c5e3840ed31",
+      "healthRelease": "2881b0424950f8b98a95be3d251a1c5e3840ed31",
+      "buildRuntime": "Node 24.20.0 / npm 11.19.0",
+      "result": "PASS"
+    }
+  },
+  "linkedinAppSavedUrlConfiguration": {
+    "privacyPolicyUrlRequired": "https://jmerrill.one/privacy",
+    "oauthRedirectUrlRequired": "https://jmerrill.one/api/linkedin/oauth/callback",
+    "state": "FOUNDER_ACTION_TIME_CONFIRMATION_REQUIRED_BEFORE_PERSISTENT_LINKEDIN_DEVELOPER_SAVE",
+    "reason": "Changing saved LinkedIn Developer app settings is a persistent external account configuration action. It has not been confirmed in-chat after the action-time prompt.",
+    "notSavedByCodyInThisPackage": true
+  },
+  "businessEmailNotice": {
+    "preferredEmail": "jm1-admin@jmerrill.one",
+    "state": "LINKEDIN_BUSINESS_EMAIL_FOUNDER_ACTION_REQUIRED",
+    "exactAction": "Open the authenticated LinkedIn Developer app Settings notice and confirm whether LinkedIn permits saving/verifying jm1-admin@jmerrill.one; complete any Founder identity or email-verification step LinkedIn requires.",
+    "reason": "The notice was previously visible, but current desktop tooling did not provide a reliable read-only portal refresh and no persistent setting save is authorized without action-time confirmation."
+  },
+  "appPageOrgAssociation": {
+    "appName": "JM1 Organization Publisher",
+    "companyPage": "J Merrill Publishing, Inc.",
+    "organizationId": "13048648",
+    "verificationState": "VERIFIED_WITH_PUBLISHING_PAGE",
+    "scopeBoundary": "Publishing only; no expansion to Financial, Foundation, One, Productions, or future branches."
+  },
+  "communityManagementReviewCompleteness": {
+    "knownState": "PENDING_LINKEDIN_REVIEW",
+    "additionalQuestionsObserved": "NONE_OBSERVED_PREVIOUSLY",
+    "unansweredReviewRequestObserved": "NONE_OBSERVED_PREVIOUSLY",
+    "currentPortalRefresh": "ACTION_REQUIRED_FOR_RELIABLE_LIVE_READBACK",
+    "externalReviewDependency": true
+  },
+  "oauthRuntimeReadiness": {
+    "clientIdConfigured": true,
+    "organizationIdConfigured": "13048648",
+    "callbackRouteConfigured": true,
+    "startRouteConfigured": true,
+    "stateCsrfProtection": "HMAC_SIGNED_EXPIRING_STATE",
+    "stateTtlMinutes": 10,
+    "correlationSurface": "signed state hash; no authorization code or token logged",
+    "tokenExchangeState": "HELD_UNTIL_LINKEDIN_PRODUCT_APPROVAL_AND_GOVERNED_CLIENT_SECRET_STORAGE",
+    "fakeTokensGenerated": false
+  },
+  "keyVaultContract": {
+    "vault": "jm1-core-vault",
+    "oauthStateSecretReference": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-OAUTH-STATE-SECRET",
+    "oauthStateSecretCreatedAt": "2026-09-04T12:36:32Z",
+    "clientSecretReference": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-CLIENT-SECRET",
+    "accessTokenReference": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-ACCESS-TOKEN",
+    "webAppManagedIdentityPrincipalId": "f4744464-018b-4bd7-8df6-6e460149742f",
+    "webAppVaultRole": "Key Vault Secrets User",
+    "secretValuesRecorded": false
+  },
+  "linkedinAdapterState": {
+    "organizationImagePostAdapter": "IMPLEMENTED",
+    "dataverseSocialExecutionWorkerWiring": "IMPLEMENTED",
+    "idempotency": "IMPLEMENTED_AND_OFFLINE_REGRESSION_PASS",
+    "postPublishReconciliation": "IMPLEMENTED_AND_OFFLINE_REGRESSION_PASS",
+    "staleClaimRecovery": "IMPLEMENTED_AND_OFFLINE_REGRESSION_PASS",
+    "apiVersionCurrent": "202608",
+    "versionConfigurationSurface": "JM1_LINKEDIN_API_VERSION / runtime config",
+    "autonomousExecutionEnabled": false
+  },
+  "azureConfiguration": {
+    "productionWebApp": {
+      "name": "app-jm1-one-prod-v2",
+      "resourceGroup": "rg-jm1-web-prod-premium",
+      "settings": {
+        "JM1_LINKEDIN_CLIENT_ID": "CONFIGURED",
+        "JM1_LINKEDIN_ORGANIZATION_ID": "13048648",
+        "JM1_LINKEDIN_REDIRECT_URI": "https://jmerrill.one/api/linkedin/oauth/callback",
+        "JM1_LINKEDIN_OAUTH_SCOPES": "w_organization_social r_organization_social",
+        "JM1_LINKEDIN_OAUTH_STATE_SECRET": "KEY_VAULT_REFERENCE_CONFIGURED",
+        "JM1_LINKEDIN_OAUTH_STATE_SECRET_REFERENCE": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-OAUTH-STATE-SECRET"
+      }
+    },
+    "functionApp": {
+      "name": "func-jm1-marketing-runtime",
+      "resourceGroup": "rg-jm1-ai",
+      "state": "Running",
+      "httpsOnly": true,
+      "functionsVisible": 4,
+      "sourcePackageUpdated": "2026-09-04T12:48Z",
+      "settings": {
+        "JM1_LINKEDIN_CLIENT_ID": "78hqh0jqrb4y06",
+        "JM1_LINKEDIN_APP_ID": "266134085",
+        "JM1_LINKEDIN_APP_NAME": "JM1 Organization Publisher",
+        "JM1_LINKEDIN_APP_VERIFICATION_STATE": "VERIFIED_WITH_PUBLISHING_PAGE",
+        "JM1_LINKEDIN_PRODUCT_STATE": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+        "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED": "false",
+        "JM1_LINKEDIN_REDIRECT_URI": "https://jmerrill.one/api/linkedin/oauth/callback",
+        "JM1_LINKEDIN_PRIVACY_POLICY_URL": "https://jmerrill.one/privacy",
+        "JM1_LINKEDIN_API_VERSION": "202608",
+        "JM1_LINKEDIN_ORGANIZATION_ID": "13048648",
+        "JM1_LINKEDIN_CLIENT_SECRET_REFERENCE": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-CLIENT-SECRET",
+        "JM1_LINKEDIN_TOKEN_SECRET_REFERENCE": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-ACCESS-TOKEN",
+        "JM1_LINKEDIN_OAUTH_STATE_SECRET_REFERENCE": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-OAUTH-STATE-SECRET"
+      }
+    },
+    "appInsights": {
+      "exceptionsLast3Hours": 0,
+      "latestSocialWorkerTimestamp": "2026-09-04T13:00:01.9737987Z"
+    }
+  },
+  "linkedinRowHoldState": {
+    "latestWorkerTimestamp": "2026-09-04T13:00:01.9737987Z",
+    "linkedinRows": 4,
+    "holdState": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+    "linkedinAutonomousExecution": false,
+    "platformObjectsCreated": 0,
+    "browserExecutionCount": 0,
+    "metaBusinessSuiteUiPublishing": false,
+    "sintraPublishing": false,
+    "linkedinNativeUiPublishing": false
+  },
+  "regressionResults": {
+    "runtimeCheck": "PASS",
+    "testLinkedinRuntime": {
+      "passed": 7,
+      "failed": 0,
+      "classifications": [
+        "LINKEDIN_ADAPTER_PAYLOAD_READY",
+        "LINKEDIN_POST_PUBLISH_RECONCILIATION_PROVEN_OFFLINE",
+        "LINKEDIN_STALE_CLAIM_RECOVERY_PROVEN_OFFLINE"
+      ]
+    },
+    "testMarketingOs": {
+      "passed": 10,
+      "failed": 0,
+      "classifications": [
+        "JM1_MARKETING_OS_REGRESSION_SUITE_PASS",
+        "FEATURED_AUTHOR_PROGRAM_TRANSFERABILITY_PROVEN"
+      ]
+    },
+    "githubProductionBuild": "PASS"
+  },
+  "localToolchainClassification": {
+    "classification": "LOCAL_TOOLCHAIN_ALIGNMENT_REQUIRED",
+    "repoExpectation": "Node >=24 and npm >=11",
+    "currentLocalShell": "Node v22.23.1 and npm 10.9.8",
+    "productionValidationEnvironment": "GitHub Actions Node 24.20.0 and npm 11.19.0",
+    "agendsNextDocsState": "Local Next docs under node_modules/next/dist/docs were unavailable because root dependencies were not installed locally."
+  },
+  "sourceReferences": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview?view=li-lms-2026-08",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-08",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role?view=li-lms-2026-08"
+  ],
+  "nextFounderDecision": {
+    "required": true,
+    "decision": "Confirm that Cody may save https://jmerrill.one/privacy and https://jmerrill.one/api/linkedin/oauth/callback in LinkedIn Developer app settings/Auth, then inspect/resolve the business-email notice using jm1-admin@jmerrill.one where LinkedIn permits."
+  }
+}
