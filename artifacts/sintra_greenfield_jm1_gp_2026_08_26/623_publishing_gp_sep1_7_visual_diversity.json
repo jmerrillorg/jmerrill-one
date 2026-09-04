@@ -1,0 +1,18 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T11:38:00-04:00",
+  "status": "PASS - COHESIVE, NOT REPETITIVE",
+  "visual_archetypes": [
+    "author editorial feature",
+    "behind-the-book process insight",
+    "book hero",
+    "reader path",
+    "weekend reflection",
+    "author journey",
+    "reader question"
+  ],
+  "assets_folder": "publishing_remediation_sep1_7_creatives"
+}

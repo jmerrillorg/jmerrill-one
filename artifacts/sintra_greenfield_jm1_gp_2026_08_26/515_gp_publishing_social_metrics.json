@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "CREATED",
+  "metrics": [
+    "Featured Author impressions/reach",
+    "Featured Author engagement",
+    "profile/title clicks where available",
+    "associated title exposure",
+    "author coverage",
+    "title coverage",
+    "month-over-month Featured Author performance",
+    "inquiries attributable where reasonably observable"
+  ],
+  "attribution_guardrail": "Do not promise attribution that platforms cannot actually prove."
+}

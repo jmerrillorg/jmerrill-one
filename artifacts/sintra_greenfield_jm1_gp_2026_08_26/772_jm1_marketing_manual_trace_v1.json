@@ -1,0 +1,521 @@
+{
+  "packageId": 772,
+  "artifact": "JM1-MARKETING-MANUAL-TRACE-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "status": "RATIFIED",
+  "basis": "September Publishing remediation is a manual trace for replacement, not the new operating procedure.",
+  "correctedSeptemberExecutionTruth": {
+    "facebook": "Meta Business Suite UI",
+    "instagram": "Meta Business Suite UI",
+    "linkedin": "LinkedIn native organization UI",
+    "sintraSoshie": "Superseded execution objects removed during remediation; not the authoritative final scheduler for the completed September run",
+    "replacementTarget": "Replace browser-operated Meta and LinkedIn steps with JM1-owned platform adapters; do not give Sintra replacement credit for final September execution."
+  },
+  "supersedesForCompleteness": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/745_jm1_marketing_manual_to_automation_trace_v1.json",
+  "preservesHistoricalTruth": true,
+  "founderCorrectionsPreserved": [
+    "The Shift was released last month relative to the September 2026 campaign; classify as new/recent, not backlist and not draft.",
+    "All new images must include the official J Merrill logo asset.",
+    "Meta post details may be Facebook-specific or Instagram-specific within the same Meta scheduling surface."
+  ],
+  "manualOperations": [
+    {
+      "manualAction": "Determine what to market",
+      "whyNecessary": "September required human judgment to choose Sean A Crowley I, The Shift, Strategies for Success, publishing inquiries, and brand education lanes.",
+      "inputs": [
+        "Founder directives",
+        "Publishing catalog facts",
+        "September Featured Author authority"
+      ],
+      "decisionRule": "Promote only source-backed titles/authors and approved Publishing programs.",
+      "output": "Campaign candidates and daily themes.",
+      "failureModesObserved": [
+        "stale campaign content",
+        "inaccurate title classification"
+      ],
+      "futureSystemComponent": "Campaign Authority Engine + Portfolio Marketing Health",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Determine timing",
+      "whyNecessary": "The live month needed daily platform timing and launch-runway ordering.",
+      "inputs": [
+        "release dates",
+        "platform cadence",
+        "Founder priorities"
+      ],
+      "decisionRule": "Protect launch dates and avoid overloading one author/title lane.",
+      "output": "ScheduledFor values by platform.",
+      "failureModesObserved": [
+        "partial platform completion",
+        "manual date-picker error risk"
+      ],
+      "futureSystemComponent": "Lifecycle Trigger Registry + Execution Schedule Validation",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Find real cover assets",
+      "whyNecessary": "Rejected creative had to be replaced with real source-backed book covers.",
+      "inputs": [
+        "Publishing-owned asset folders",
+        "Amazon/public retailer proof where appropriate"
+      ],
+      "decisionRule": "Use actual cover only; do not AI-edit or approximate book covers.",
+      "output": "Cover asset reference with provenance.",
+      "failureModesObserved": [
+        "source assets assumed missing too early",
+        "fake/weak visual substitutes"
+      ],
+      "futureSystemComponent": "Asset Resolver",
+      "currentAutomationMaturity": "PARTIAL"
+    },
+    {
+      "manualAction": "Find real author assets",
+      "whyNecessary": "Author creative required governed portraits or a rights-safe fallback.",
+      "inputs": [
+        "author asset folders",
+        "source provenance register"
+      ],
+      "decisionRule": "Use governed author imagery only; otherwise hold likeness-specific creative.",
+      "output": "Author asset status and fallback path.",
+      "failureModesObserved": [
+        "risk of fabricated likeness",
+        "missing author portrait evidence"
+      ],
+      "futureSystemComponent": "Asset Resolver + Rights Gate",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Find approved logos",
+      "whyNecessary": "Every new image must include the correct J Merrill logo, not a fake mark or placeholder.",
+      "inputs": [
+        "official JM1 logo asset",
+        "branch logo rules"
+      ],
+      "decisionRule": "Use official approved logo asset only.",
+      "output": "Logo reference bound to creative.",
+      "failureModesObserved": [
+        "fake logo",
+        "incorrect day-one logo",
+        "unexplained gray-circle/header mark"
+      ],
+      "futureSystemComponent": "Brand Asset Resolver",
+      "currentAutomationMaturity": "PARTIAL"
+    },
+    {
+      "manualAction": "Validate source facts",
+      "whyNecessary": "Copy needed correction when a title was treated as draft/backlist instead of newly released.",
+      "inputs": [
+        "Founder correction",
+        "retailer/public title status",
+        "campaign ledger"
+      ],
+      "decisionRule": "New/recent releases cannot be classified as backlist or draft.",
+      "output": "Corrected factual framing.",
+      "failureModesObserved": [
+        "The Shift misclassified as backlist",
+        "The Shift misclassified as draft"
+      ],
+      "futureSystemComponent": "Public Fact Validator",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Normalize media",
+      "whyNecessary": "Meta uploads exposed RGB/export constraints and exact-file handling issues.",
+      "inputs": [
+        "approved PNG/SVG",
+        "dimensions",
+        "MIME type",
+        "SHA-256"
+      ],
+      "decisionRule": "Normalize only technical format; preserve approved visual content exactly.",
+      "output": "Upload-ready exact file with checksum.",
+      "failureModesObserved": [
+        "RGB normalization blocker",
+        "malformed platform variant"
+      ],
+      "futureSystemComponent": "Media Normalization Service",
+      "currentAutomationMaturity": "PARTIAL"
+    },
+    {
+      "manualAction": "Create creative",
+      "whyNecessary": "Manual rebuild produced higher-quality People-First/Why-First creative after rejecting registry-card output.",
+      "inputs": [
+        "campaign brief",
+        "real assets",
+        "brand system"
+      ],
+      "decisionRule": "Create public art that supports the reason to care, not internal process labels.",
+      "output": "Approved local creative artifacts.",
+      "failureModesObserved": [
+        "rejected Sintra creative",
+        "generic/registry-card creative"
+      ],
+      "futureSystemComponent": "Creative Production Engine",
+      "currentAutomationMaturity": "PARTIAL"
+    },
+    {
+      "manualAction": "Reject weak creative",
+      "whyNecessary": "The operator manually blocked bad, malformed, or off-brand outputs.",
+      "inputs": [
+        "visual inspection",
+        "brand requirements",
+        "content quality gate"
+      ],
+      "decisionRule": "Reject if fake asset, malformed layout, missing logo, poor public quality, or wrong framing.",
+      "output": "Hold/rebuild decision.",
+      "failureModesObserved": [
+        "malformed LinkedIn wide export",
+        "weak generated assets"
+      ],
+      "futureSystemComponent": "Creative Quality Scoring + Public-Ready Gate",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Apply factual corrections",
+      "whyNecessary": "Founder corrections changed The Shift status and current marketing language.",
+      "inputs": [
+        "Founder correction",
+        "existing artifacts"
+      ],
+      "decisionRule": "Authoritative Founder correction supersedes stale generated classification.",
+      "output": "Corrected campaign/copy rule.",
+      "failureModesObserved": [
+        "inaccurate title classification",
+        "stale campaign content"
+      ],
+      "futureSystemComponent": "Instruction/Authority Resolver",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Write platform-specific copy",
+      "whyNecessary": "Meta allows Facebook and Instagram details inside the same flow, but captions may differ by platform.",
+      "inputs": [
+        "campaign voice",
+        "platform constraints",
+        "destination registry"
+      ],
+      "decisionRule": "Use channel-appropriate copy without changing facts or CTA authority.",
+      "output": "Facebook, Instagram, and LinkedIn variants.",
+      "failureModesObserved": [
+        "one-size-fits-all copy",
+        "platform detail mismatch"
+      ],
+      "futureSystemComponent": "Channel-Aware Assembly Engine",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Run People-First gate",
+      "whyNecessary": "September replacement had to shift from calendar filler to audience-centered public posts.",
+      "inputs": [
+        "copy draft",
+        "creative draft",
+        "branch voice"
+      ],
+      "decisionRule": "Public post must make the person/audience reason clear.",
+      "output": "People-First pass/hold.",
+      "failureModesObserved": [
+        "automation filled a calendar but weakened judgment"
+      ],
+      "futureSystemComponent": "Public-Ready Gate",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Run Why-First gate",
+      "whyNecessary": "Each post needed a clear reason to exist beyond posting cadence.",
+      "inputs": [
+        "campaign objective",
+        "reader/author value",
+        "launch context"
+      ],
+      "decisionRule": "Publish only when the post explains why this matters now.",
+      "output": "Why-First pass/hold.",
+      "failureModesObserved": [
+        "generic filler",
+        "technical count outranking quality"
+      ],
+      "futureSystemComponent": "Public-Ready Gate",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Set public language boundaries",
+      "whyNecessary": "Internal governance terms and rights metadata had to stay backstage.",
+      "inputs": [
+        "branch public voice rules",
+        "campaign authority"
+      ],
+      "decisionRule": "No internal governance vocabulary in public copy.",
+      "output": "Public-safe caption.",
+      "failureModesObserved": [
+        "public exposure of internal governance language"
+      ],
+      "futureSystemComponent": "Public Language Boundary Filter",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Select destination",
+      "whyNecessary": "Wrong workspace/page context was a live risk across Sintra, Meta, and LinkedIn.",
+      "inputs": [
+        "destination registry",
+        "visible admin/page context"
+      ],
+      "decisionRule": "Use immutable destination IDs where available; never infer from similar names.",
+      "output": "Destination-bound social post.",
+      "failureModesObserved": [
+        "wrong Sintra workspace",
+        "wrong destination risk"
+      ],
+      "futureSystemComponent": "Destination Authority Registry",
+      "currentAutomationMaturity": "PARTIAL"
+    },
+    {
+      "manualAction": "Schedule Facebook",
+      "whyNecessary": "Facebook had to be rebuilt through Meta Business Suite UI with exact creative.",
+      "inputs": [
+        "Facebook destination",
+        "caption",
+        "media",
+        "scheduledFor"
+      ],
+      "decisionRule": "Schedule only after exact file, destination, story state, and time preflight pass.",
+      "output": "Facebook scheduled item/readback.",
+      "failureModesObserved": [
+        "Meta picker failure",
+        "FB Story default ON"
+      ],
+      "futureSystemComponent": "MetaAdapter automation requirement: Facebook Page publishing/media upload/readback",
+      "currentAutomationMaturity": "MANUAL_UI_PROVEN_TARGET_API_NOT_PROVEN"
+    },
+    {
+      "manualAction": "Schedule Instagram",
+      "whyNecessary": "Instagram had to be rebuilt through Meta Business Suite UI with exact creative and separate platform proof.",
+      "inputs": [
+        "Instagram destination",
+        "caption",
+        "media",
+        "scheduledFor"
+      ],
+      "decisionRule": "Planner presence alone is not publication proof; require IG-specific confirmation/readback.",
+      "output": "Instagram scheduled item/readback.",
+      "failureModesObserved": [
+        "partial platform completion",
+        "Meta planner ambiguity"
+      ],
+      "futureSystemComponent": "MetaAdapter automation requirement: Instagram Graph publishing/media upload/readback",
+      "currentAutomationMaturity": "MANUAL_UI_PROVEN_TARGET_API_NOT_PROVEN"
+    },
+    {
+      "manualAction": "Schedule LinkedIn",
+      "whyNecessary": "LinkedIn native organization UI was used because owned LinkedIn API publishing was not yet proven.",
+      "inputs": [
+        "LinkedIn organization destination",
+        "caption",
+        "media",
+        "alt text",
+        "scheduledFor"
+      ],
+      "decisionRule": "Schedule to Publishing organization only and verify requested-vs-actual state before certification.",
+      "output": "LinkedIn scheduled item/readback.",
+      "failureModesObserved": [
+        "LinkedIn snapback",
+        "malformed variant",
+        "time/date retry"
+      ],
+      "futureSystemComponent": "LinkedInAdapter automation requirement: organization publishing/media upload/readback",
+      "currentAutomationMaturity": "MANUAL_UI_PROVEN_TARGET_API_NOT_PROVEN_EXTERNAL_PERMISSION_RISK"
+    },
+    {
+      "manualAction": "Disable Facebook Story",
+      "whyNecessary": "Meta defaulted Facebook Story behavior in a way that could create unintended placements.",
+      "inputs": [
+        "Meta composer state",
+        "preflight screenshots"
+      ],
+      "decisionRule": "Facebook Story must be off unless explicitly approved.",
+      "output": "FB feed-only schedule proof.",
+      "failureModesObserved": [
+        "FB Story default ON",
+        "unclean Sep28 story-off evidence"
+      ],
+      "futureSystemComponent": "Placement Control Rule",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Add LinkedIn alt text",
+      "whyNecessary": "LinkedIn accessibility metadata was manually entered.",
+      "inputs": [
+        "asset description",
+        "platform metadata field"
+      ],
+      "decisionRule": "Attach approved alt text to every LinkedIn image post.",
+      "output": "Alt-text-bearing LinkedIn post.",
+      "failureModesObserved": [
+        "manual omission risk"
+      ],
+      "futureSystemComponent": "Accessibility Metadata Generator",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Perform preflight/readback",
+      "whyNecessary": "Every platform needed evidence beyond draft presence.",
+      "inputs": [
+        "composer review",
+        "scheduled list",
+        "platform confirmation"
+      ],
+      "decisionRule": "Verify destination, creative, caption, date, time, and platform state.",
+      "output": "Execution evidence artifact.",
+      "failureModesObserved": [
+        "platform confirmation ambiguity",
+        "treating planner presence as proof"
+      ],
+      "futureSystemComponent": "Preflight + Readback Service",
+      "currentAutomationMaturity": "PARTIAL"
+    },
+    {
+      "manualAction": "Retry partial failures",
+      "whyNecessary": "Some days/platforms completed while others held or needed retry.",
+      "inputs": [
+        "execution status per platform",
+        "failure reason"
+      ],
+      "decisionRule": "Retry only failed/held platform execution without duplicating passed records.",
+      "output": "Per-platform pass/hold/retry state.",
+      "failureModesObserved": [
+        "partial platform completion",
+        "blind retry duplicate risk"
+      ],
+      "futureSystemComponent": "Retry + Dead-Letter Engine",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Preserve fallback until replacement",
+      "whyNecessary": "Old Soshie items stayed until exact-file replacements were scheduled and verified.",
+      "inputs": [
+        "old queue item",
+        "replacement proof"
+      ],
+      "decisionRule": "Never remove executable fallback before replacement is confirmed.",
+      "output": "Fallback preservation or safe removal.",
+      "failureModesObserved": [
+        "execution gap risk"
+      ],
+      "futureSystemComponent": "Supersession Engine",
+      "currentAutomationMaturity": "MANUAL_PROVEN_TARGET_DESIGNED"
+    },
+    {
+      "manualAction": "Delete Soshie executor after replacement",
+      "whyNecessary": "Soshie duplicates had to be retired once Meta/LinkedIn native replacements existed.",
+      "inputs": [
+        "Soshie calendar",
+        "replacement evidence"
+      ],
+      "decisionRule": "Delete only superseded platform item with matching date/destination/campaign.",
+      "output": "Residual executable item removed.",
+      "failureModesObserved": [
+        "duplicate scheduler",
+        "wrong-item deletion risk"
+      ],
+      "futureSystemComponent": "Supersession Reconciliation",
+      "currentAutomationMaturity": "MANUAL_PROVEN_TARGET_DESIGNED"
+    },
+    {
+      "manualAction": "Prevent duplicates",
+      "whyNecessary": "The rebuild needed a single authoritative scheduler per platform/date/item.",
+      "inputs": [
+        "replacement ledger",
+        "old queue inventory"
+      ],
+      "decisionRule": "One platform item per campaign occurrence unless explicitly split.",
+      "output": "duplicates = 0.",
+      "failureModesObserved": [
+        "Sintra + Meta duplicate path",
+        "Sintra + LinkedIn duplicate path"
+      ],
+      "futureSystemComponent": "Idempotency Standard",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Verify status",
+      "whyNecessary": "Scheduled, published, held, and deleted states had to be classified separately.",
+      "inputs": [
+        "platform UI/readback",
+        "evidence screenshots",
+        "validation JSON"
+      ],
+      "decisionRule": "Do not promote state without direct platform evidence.",
+      "output": "Status ledger.",
+      "failureModesObserved": [
+        "draft treated as scheduled",
+        "scheduled treated as published"
+      ],
+      "futureSystemComponent": "Publication State Model",
+      "currentAutomationMaturity": "PARTIAL"
+    },
+    {
+      "manualAction": "Capture evidence",
+      "whyNecessary": "The September rescue depended on screenshot and JSON evidence to remain auditable.",
+      "inputs": [
+        "screenshots",
+        "checksums",
+        "validation artifacts"
+      ],
+      "decisionRule": "Capture enough evidence to support every pass/hold/deleted claim.",
+      "output": "Evidence package.",
+      "failureModesObserved": [
+        "missing readback",
+        "ambiguous state proof"
+      ],
+      "futureSystemComponent": "Dataverse Execution Evidence + Observability",
+      "currentAutomationMaturity": "PARTIAL"
+    },
+    {
+      "manualAction": "Decide next action",
+      "whyNecessary": "Operator had to choose rebuild, retry, hold, preserve, or delete on each exception.",
+      "inputs": [
+        "state ledger",
+        "guardrails",
+        "Founder corrections"
+      ],
+      "decisionRule": "Choose the least risky action that preserves public quality and avoids duplicate execution.",
+      "output": "Next action and owner.",
+      "failureModesObserved": [
+        "manual branching load",
+        "stale assumption carryover"
+      ],
+      "futureSystemComponent": "Next-Best-Marketing-Action Engine",
+      "currentAutomationMaturity": "DESIGNED"
+    },
+    {
+      "manualAction": "Replenish queue",
+      "whyNecessary": "The system must keep marketing moving after September without a new manual calendar build.",
+      "inputs": [
+        "campaign eligibility",
+        "performance loop",
+        "portfolio health"
+      ],
+      "decisionRule": "Generate only eligible next items with source-backed assets and approved campaign authority.",
+      "output": "Next queue candidates.",
+      "failureModesObserved": [
+        "manual queue exhaustion",
+        "October manual-calendar temptation"
+      ],
+      "futureSystemComponent": "Queue Replenishment Runtime",
+      "currentAutomationMaturity": "DESIGNED"
+    }
+  ],
+  "observedFailureModesBecomeRequirements": [
+    "wrong Sintra workspace",
+    "rejected Sintra creative",
+    "duplicate scheduler",
+    "Meta picker failure",
+    "RGB normalization",
+    "FB Story default ON",
+    "LinkedIn snapback",
+    "malformed variant",
+    "partial platform completion",
+    "inaccurate title classification",
+    "stale campaign content"
+  ],
+  "closureRule": "Future routine Publishing execution must convert this trace into Dataverse-governed system behavior before replacing manual/browser scheduling."
+}

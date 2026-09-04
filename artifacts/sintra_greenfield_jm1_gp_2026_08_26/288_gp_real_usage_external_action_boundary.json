@@ -1,0 +1,30 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "ACTIVE",
+  "allowed": [
+    "reason",
+    "analyze",
+    "challenge",
+    "summarize",
+    "draft",
+    "recommend"
+  ],
+  "not_allowed": [
+    "email",
+    "post",
+    "comment",
+    "publish",
+    "message",
+    "modify systems",
+    "create records",
+    "change configuration",
+    "contact clients/authors/donors/families",
+    "execute approved recommendations"
+  ],
+  "external_actions_observed_at_start": 0
+}

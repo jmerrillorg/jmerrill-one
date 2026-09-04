@@ -1,0 +1,26 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST VALUE VALIDATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:57:38-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "focus_correction_base_commit": "3eaa841",
+  "status": "ACTIVE",
+  "sintra_may": [
+    "develop social strategy",
+    "generate content ideas",
+    "develop campaign concepts",
+    "propose content pillars",
+    "draft social copy internally",
+    "propose weekly/monthly content themes",
+    "repurpose ideas across formats",
+    "identify likely audiences",
+    "differentiate brand voice",
+    "suggest CTA approaches",
+    "suggest platform-fit ideas",
+    "identify which JM1 brand owns a content concept",
+    "use native helpers for internal analysis/ideation",
+    "challenge weak content ideas",
+    "synthesize multi-brand content plans"
+  ]
+}

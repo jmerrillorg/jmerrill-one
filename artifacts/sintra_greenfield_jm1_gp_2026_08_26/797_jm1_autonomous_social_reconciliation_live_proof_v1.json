@@ -1,0 +1,109 @@
+{
+  "artifact": "JM1-AUTONOMOUS-SOCIAL-RECONCILIATION-LIVE-PROOF-v1",
+  "createdAt": "2026-09-03T05:18:00Z",
+  "program": "JM1 Enterprise Marketing Operating System",
+  "stream": "Autonomous Meta Remediation / Persistent Platform Authority Activation",
+  "classification": "INSTAGRAM_POST_PUBLISH_RECONCILIATION_PROVEN_NO_NEW_PLATFORM_OBJECT",
+  "runtime": {
+    "functionApp": "func-jm1-marketing-runtime",
+    "resourceGroup": "rg-jm1-ai",
+    "function": "socialExecutionWorkerTimer",
+    "triggerScheduleAtProof": "0 */1 * * * *",
+    "triggerScheduleRestoredAfterProof": "0 */15 * * * *",
+    "executionFlag": {
+      "JM1_MARKETING_AUTONOMOUS_META_EXECUTION_ENABLED": "false",
+      "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED": "false"
+    },
+    "routineBrowserExecution": false,
+    "metaBusinessSuiteUiPublishing": false,
+    "sintraPublishing": false,
+    "linkedinNativeUiPublishing": false
+  },
+  "timerProof": {
+    "timestamp": "2026-09-03T05:11:03.1043788Z",
+    "correlationId": "af151617-b662-453b-bc5e-09b802573477",
+    "runId": "AUTONOMOUS_SOCIAL_EXECUTION_WORKER:2026-09-03T05:11:00.023Z:caa3e5d0-2f99-48eb-951d-fd2bc1c503f5",
+    "metaAuthority": {
+      "state": "META_SYSTEM_USER_TOKEN_VERIFIED",
+      "pageId": "307480763084670",
+      "pageName": "J Merrill Publishing Inc",
+      "instagramGraphId": "17841410046020869"
+    },
+    "dataverseRead": {
+      "socialRows": 9,
+      "eligibleMetaRows": 2,
+      "reconciliationMetaRows": 1,
+      "linkedinRows": 3
+    },
+    "dataverseWrite": {
+      "socialExecutionId": "bbf1b9fe-bba6-f111-b8de-00224820105b",
+      "platform": "instagram",
+      "state": "RECONCILED_PLATFORM_SUCCESS",
+      "platformPostId": "18134196829616273"
+    },
+    "platformObjectsCreated": 0
+  },
+  "dataverseReadback": {
+    "environment": "https://jm1hq.crm.dynamics.com",
+    "table": "jm1_socialexecution",
+    "socialExecutionId": "bbf1b9fe-bba6-f111-b8de-00224820105b",
+    "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:instagram",
+    "platform": "instagram",
+    "status": "PUBLISHED_VERIFIED",
+    "platformPostId": "18134196829616273",
+    "actualDestination": "jmerrillpub",
+    "actualMediaReference": "https://www.instagram.com/p/DczOMkfIBJu/",
+    "actualSchedule": "2026-09-02T21:39:08Z",
+    "readbackState": "RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH",
+    "verifiedAt": "2026-09-03T05:11:00Z",
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "instagramReadback": {
+    "igGraphId": "17841410046020869",
+    "captionPrefix": "October Featured Author: Iyorwuese Hagher. A Portrait of Paradise",
+    "matchingObjectCount": 1,
+    "canonicalObject": {
+      "id": "18134196829616273",
+      "timestamp": "2026-09-02T21:39:08+0000",
+      "permalink": "https://www.instagram.com/p/DczOMkfIBJu/",
+      "username": "jmerrillpub",
+      "mediaType": "IMAGE"
+    }
+  },
+  "idempotencyEvidence": {
+    "postReconciliationTimerTicks": [
+      {
+        "timestamp": "2026-09-03T05:12:01.9783477Z",
+        "state": "IDEMPOTENT_ALREADY_CERTIFIED",
+        "platformPostId": "18134196829616273",
+        "platformObjectsCreated": 0
+      },
+      {
+        "timestamp": "2026-09-03T05:17:01.071406Z",
+        "state": "IDEMPOTENT_ALREADY_CERTIFIED",
+        "platformPostId": "18134196829616273",
+        "platformObjectsCreated": 0
+      }
+    ],
+    "result": "RERUN_RECOGNIZED_EXISTING_CERTIFIED_EXECUTION_ZERO_NEW_OBJECTS"
+  },
+  "status": {
+    "instagramReconciliation": "PASS",
+    "instagramDuplicateCountVisibleToGraph": 0,
+    "facebookAutonomousRetest": "OPEN_NOT_RERUN_IN_THIS_PROOF",
+    "metaOwnedRuntime": "PARTIAL_META_TOKEN_AND_PRIOR_CANARIES_PROVEN_RECOVERY_HARDENING_DEPLOYED",
+    "fullNoTouchRuntime": "NOT_COMPLETE"
+  },
+  "security": {
+    "tokenPrinted": false,
+    "secretsCommitted": false,
+    "evidenceContainsSecretValue": false
+  },
+  "finalRuntimeState": {
+    "verifiedAt": "2026-09-03T05:20:00Z",
+    "JM1_MARKETING_AUTONOMOUS_META_EXECUTION_ENABLED": "false",
+    "JM1_SOCIAL_EXECUTION_WORKER_CRON": "0 */15 * * * *",
+    "liveFunctionBinding": "0 */15 * * * *"
+  }
+}

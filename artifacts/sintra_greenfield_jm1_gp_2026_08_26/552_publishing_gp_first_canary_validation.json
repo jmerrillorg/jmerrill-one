@@ -1,0 +1,19 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:18:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "PASS",
+  "validated": {
+    "scheduled": true,
+    "platform": "Facebook",
+    "destination": "J Merrill Publishing Inc",
+    "publish_date": "August 28, 2026 at 10:00 AM EDT",
+    "post_card_text": "This post is scheduled to be published. Feel free to make any changes until then.",
+    "image": "Final corrected version (no circle, correct J Merrill logo)",
+    "wrong_destination_count": 0
+  },
+  "not_yet_scheduled": "Remaining 20 platform posts held pending live upload/schedule using corrected real-logo creatives."
+}

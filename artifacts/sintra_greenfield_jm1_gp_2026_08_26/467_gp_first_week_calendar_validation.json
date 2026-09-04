@@ -1,0 +1,95 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST WEEK CALENDAR VALIDATION",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "PASS",
+  "calendar_window": "Aug 24 - Sep 6",
+  "first_week": {
+    "published_verified": 3,
+    "scheduled_verified": 18,
+    "total_published_or_scheduled": 21,
+    "wrong_destination_count": 0
+  },
+  "by_day": [
+    {
+      "day": 1,
+      "date": "2026-08-27",
+      "theme": "Welcome to J Merrill One",
+      "state": "PUBLISHED_VERIFIED",
+      "cards": [
+        "Facebook Custom Published",
+        "Instagram (FB Pages) Custom Published",
+        "LinkedIn (Organization) Custom Published"
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-08-28",
+      "theme": "Why J Merrill One Exists",
+      "state": "SCHEDULE_VERIFIED",
+      "cards": [
+        "Facebook Custom Scheduled",
+        "Instagram (FB Pages) Custom Scheduled",
+        "LinkedIn (Organization) Custom Scheduled"
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-08-29",
+      "theme": "Meet the Family: Publishing",
+      "state": "SCHEDULE_VERIFIED",
+      "cards": [
+        "Facebook Custom Scheduled",
+        "Instagram (FB Pages) Custom Scheduled",
+        "LinkedIn (Organization) Custom Scheduled"
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-08-30",
+      "theme": "People-First",
+      "state": "SCHEDULE_VERIFIED",
+      "cards": [
+        "Facebook Custom Scheduled",
+        "Instagram (FB Pages) Custom Scheduled",
+        "LinkedIn (Organization) Custom Scheduled"
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-08-31",
+      "theme": "Founder Perspective",
+      "state": "SCHEDULE_VERIFIED",
+      "cards": [
+        "Facebook Custom Scheduled",
+        "Instagram (FB Pages) Custom Scheduled",
+        "LinkedIn (Organization) Custom Scheduled"
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-09-01",
+      "theme": "Meet the Family: Financial",
+      "state": "SCHEDULE_VERIFIED",
+      "cards": [
+        "Facebook Custom Scheduled",
+        "Instagram (FB Pages) Custom Scheduled",
+        "LinkedIn (Organization) Custom Scheduled"
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-09-02",
+      "theme": "Why-First",
+      "state": "SCHEDULE_VERIFIED",
+      "cards": [
+        "Facebook Custom Scheduled",
+        "Instagram (FB Pages) Custom Scheduled",
+        "LinkedIn (Organization) Custom Scheduled"
+      ]
+    }
+  ],
+  "note": "Calendar still shows Setup social media manager button; recorded separately as state inconsistency while runtime is proven."
+}

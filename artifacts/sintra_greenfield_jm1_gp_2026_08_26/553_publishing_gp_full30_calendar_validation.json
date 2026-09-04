@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "FULL 30 CALENDAR VALIDATION",
+  "status": "PASS",
+  "expected_calendar_items": 90,
+  "validation_ranges": [
+    {
+      "range": "Aug 24 - Sep 6",
+      "scheduled_buttons": 30,
+      "needs_approval_buttons": 0
+    },
+    {
+      "range": "Sep 7 - Sep 20",
+      "scheduled_buttons": 42,
+      "needs_approval_buttons": 0
+    },
+    {
+      "range": "Sep 21 - Oct 4",
+      "scheduled_buttons": 18,
+      "needs_approval_buttons": 0
+    }
+  ],
+  "result": "PASS: all 90 custom posts are Scheduled and zero items remain Needs approval."
+}

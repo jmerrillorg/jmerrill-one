@@ -1,0 +1,77 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "PARTIAL_LIVE_MATERIALIZATION_CANARY_ONLY_AFTER_LOGO_CORRECTION",
+  "items": [
+    {
+      "day": 1,
+      "date": "2026-08-28",
+      "theme": "Meet the Book",
+      "materialization_state": "LIVE_SINTRA_POST_OBJECT_SCHEDULED_CORRECTED_REAL_LOGO",
+      "workspace": "J Merrill Publishing",
+      "scheduled": true,
+      "platforms_scheduled": [
+        "Facebook"
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-08-29",
+      "theme": "Meet the Author",
+      "materialization_state": "CORRECTED_REAL_LOGO_ASSET_READY_FOR_LIVE_SINTRA_UPLOAD",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false,
+      "platforms_scheduled": []
+    },
+    {
+      "day": 3,
+      "date": "2026-08-30",
+      "theme": "Publishing Education",
+      "materialization_state": "CORRECTED_REAL_LOGO_ASSET_READY_FOR_LIVE_SINTRA_UPLOAD",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false,
+      "platforms_scheduled": []
+    },
+    {
+      "day": 4,
+      "date": "2026-08-31",
+      "theme": "Publishing Inquiry",
+      "materialization_state": "CORRECTED_REAL_LOGO_ASSET_READY_FOR_LIVE_SINTRA_UPLOAD",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false,
+      "platforms_scheduled": []
+    },
+    {
+      "day": 5,
+      "date": "2026-09-01",
+      "theme": "September Featured Author — Sean A Crowley I",
+      "materialization_state": "CORRECTED_REAL_LOGO_ASSET_READY_FOR_LIVE_SINTRA_UPLOAD",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false,
+      "platforms_scheduled": []
+    },
+    {
+      "day": 6,
+      "date": "2026-09-02",
+      "theme": "Inside Publishing",
+      "materialization_state": "CORRECTED_REAL_LOGO_ASSET_READY_FOR_LIVE_SINTRA_UPLOAD",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false,
+      "platforms_scheduled": []
+    },
+    {
+      "day": 7,
+      "date": "2026-09-03",
+      "theme": "Backlist Rediscovery",
+      "materialization_state": "CORRECTED_REAL_LOGO_ASSET_READY_FOR_LIVE_SINTRA_UPLOAD",
+      "workspace": "J Merrill Publishing",
+      "scheduled": false,
+      "platforms_scheduled": []
+    }
+  ],
+  "note": "Only Day 1 Facebook canary was live scheduled. Remaining first-week platform posts are intentionally held until the corrected real-logo images are uploaded/scheduled in Sintra."
+}

@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "schedule": [
+    {
+      "month": "2026-09",
+      "featured_author": "Sean A Crowley I",
+      "selection_authority": "FOUNDER",
+      "status": "LOCKED"
+    },
+    {
+      "month": "2026-10",
+      "featured_author": "Iyorwuese",
+      "selection_authority": "FOUNDER",
+      "status": "LOCKED"
+    }
+  ],
+  "rule": "Do not randomize, replace, or restyle Founder selections without governed evidence or Founder direction."
+}

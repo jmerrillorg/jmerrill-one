@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "effective_start": "2026-11",
+  "selection_model": "fair/randomized rotation from eligible governed Publishing authors unless Founder specifies selection",
+  "eligibility": [
+    "currently published/available title",
+    "rights-safe promotional assets",
+    "active Publishing relationship/status",
+    "not recently featured",
+    "enough verified source material to sustain multiple posts"
+  ],
+  "process": [
+    "create candidate pool",
+    "exclude holds/recent features/source-insufficient records",
+    "choose randomly from eligible set",
+    "record pool, selected author, selection date, prior-feature history"
+  ]
+}

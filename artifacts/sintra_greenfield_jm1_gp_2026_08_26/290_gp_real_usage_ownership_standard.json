@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "ACTIVE",
+  "substantial_recommendation_required_fields": [
+    "actual JM1 owner/domain",
+    "helper contribution",
+    "Founder authority"
+  ],
+  "actual_jm1_owner_options": [
+    "J Merrill One",
+    "J Merrill Publishing",
+    "J Merrill Financial",
+    "J Merrill Foundation",
+    "J Merrill Productions"
+  ],
+  "helpers_are_contributors_only": true
+}

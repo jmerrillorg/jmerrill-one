@@ -1,0 +1,51 @@
+{
+  "packageId": 720,
+  "title": "Publishing Sean Sep. 1 Actual Workspace Reconciliation",
+  "generatedAt": "2026-08-29T08:09:57.422Z",
+  "activeWorkspace": "J Merrill Publishing",
+  "targetState": "Replace rejected Sep. 1 Sean metadata cards with approved editorial-quality exact assets.",
+  "approvedAssets": {
+    "facebookInstagram": {
+      "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_rebuild_exact_creatives/sean_featured_author_meta_square_2026-09-01.png",
+      "sha256": "dc3f056d6179cd37f95b034ce8498b681627dde330684e3936a285044c51d9d3"
+    },
+    "linkedIn": {
+      "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_rebuild_exact_creatives/sean_featured_author_linkedin_wide_2026-09-01.png",
+      "sha256": "7cc5501bde642937334bbd63d85afc2f64af9e0f51642a9b03920b7f0abfa756"
+    }
+  },
+  "actualWorkspaceFindings": [
+    {
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "scheduledFor": "2026-09-01T10:00:00",
+      "oldPublishingObjectFound": true,
+      "oldObjectRemoved": false,
+      "approvedCreativeScheduled": false,
+      "rejectedCreativeStillPresent": true,
+      "screenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/720_sep1_facebook_card.png"
+    },
+    {
+      "platform": "Instagram (FB Pages)",
+      "destination": "jmerrillpub",
+      "scheduledFor": "2026-09-01T12:00:00",
+      "oldPublishingObjectFound": true,
+      "oldObjectRemoved": false,
+      "approvedCreativeScheduled": false,
+      "rejectedCreativeStillPresent": true,
+      "screenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/720_sep1_instagram_card.png"
+    },
+    {
+      "platform": "LinkedIn (Organization)",
+      "destination": "J Merrill Publishing, Inc.",
+      "scheduledFor": "2026-09-01T14:00:00",
+      "oldPublishingObjectFound": true,
+      "oldObjectRemoved": false,
+      "approvedCreativeScheduled": false,
+      "rejectedCreativeStillPresent": true,
+      "screenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/720_sep1_linkedin_org_card.png"
+    }
+  ],
+  "executionDecision": "Do not certify Sean Sep. 1 complete. Because Sintra exact-file unified scheduling failed, create native Meta/LinkedIn replacements first, then delete these Sintra objects.",
+  "classification": "SEAN SEP. 1 ACTUAL PUBLISHING WORKSPACE RECONCILIATION REQUIRED"
+}

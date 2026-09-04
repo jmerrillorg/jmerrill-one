@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B-R - NETWORK-STABLE HELPER VALUE RETEST",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:37:22-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "retest_base_commit": "7a093e1",
+  "interim_classification": "SINTRA GREENFIELD PHASE 2B INCONCLUSIVE — GOVERNANCE BOUNDARIES PASSED; HELPER VALUE TEST REQUIRES NETWORK-STABLE RETEST",
+  "governance_findings_reopened": false,
+  "superseded_variable_only": "HELPER INCREMENTAL VALUE = NOT PROVEN",
+  "reason": "Prior Buddy execution stalled and may have been affected by local network/session instability; value conclusion requires one bounded stable retest.",
+  "historical_phase2b_result_erased": false
+}

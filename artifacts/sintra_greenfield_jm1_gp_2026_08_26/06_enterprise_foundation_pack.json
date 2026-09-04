@@ -1,0 +1,29 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "phase": "PHASE 1 - CLEAN ENTERPRISE INTELLIGENCE PROOF",
+  "created_at": "2026-08-26T09:45:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 1 COMPLETE - LIMITED VALUE PROVEN; FOUNDER DIRECTION REQUIRED",
+  "legacy_recovery_reference": {
+    "status": "SUPERSEDED_BY_GREENFIELD_WORKSPACE",
+    "historical_commit": "de03b8c",
+    "forward_implementation_dependency": false
+  },
+  "version": "JM1-ENTERPRISE-FOUNDATION-v1.0",
+  "record_title": "06_enterprise_foundation_pack.md",
+  "loaded_to_sintra": true,
+  "sensitive_operational_data": false,
+  "legacy_imports": 0,
+  "knowledge_domains": [
+    "enterprise identity",
+    "five-brand awareness",
+    "authority boundary",
+    "unknown rule",
+    "Human-First",
+    "Why-First",
+    "Microsoft-First",
+    "brand routing",
+    "Financial scope",
+    "action boundary"
+  ]
+}

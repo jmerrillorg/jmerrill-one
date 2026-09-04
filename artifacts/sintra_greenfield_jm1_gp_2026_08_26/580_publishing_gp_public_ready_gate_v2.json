@@ -1,0 +1,17 @@
+{
+  "gate": "PUBLIC_READY_V2",
+  "required": [
+    "human hook",
+    "reader or author relevance",
+    "specific source-safe truth",
+    "natural CTA",
+    "logo present for images",
+    "no internal process language"
+  ],
+  "first_wave": "PASS_FOR_CAPTIONS_AND_PREPARED_ASSETS",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

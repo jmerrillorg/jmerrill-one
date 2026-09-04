@@ -1,0 +1,16 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "FIRST WEEK LIVE STATE RECONCILED",
+  "execution_attempts": 3,
+  "successful_scheduled_posts": 0,
+  "published_posts": 0,
+  "failed_day1_actions": 3,
+  "days_2_7_governed_content_ready_platform_variants": 18,
+  "days_2_7_sintra_draft_materialized": 0,
+  "days_2_7_scheduled": 0,
+  "do_not_report_final_click_ready_without_sintra_drafts": true
+}

@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "workspace": "J Merrill Publishing - GP",
+  "colors": {
+    "primary": "#1E90FF",
+    "secondary": "#6A5ACD",
+    "accent": "#A3C4DC",
+    "background": "#FFFFFF",
+    "text": "#111111"
+  },
+  "logo": {
+    "approved_shared_logo": "J Merrill logo",
+    "local_reference": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/473_gp_j_merrill_logo_reference.png",
+    "rule": "All new Publishing images must include the logo somewhere within the creative."
+  },
+  "sintra_workspace_color_observed": "Sky"
+}

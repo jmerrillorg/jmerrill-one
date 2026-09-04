@@ -1,0 +1,17 @@
+{
+  "gate": "PUBLIC_AI_FINGERPRINT",
+  "blocked_markers": [
+    "catalog spotlight",
+    "rights-safe",
+    "source-safe",
+    "without relying on uncleared excerpts",
+    "systematic catalog discovery",
+    "public reader pathways"
+  ],
+  "allowed_when_internal_only": true,
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

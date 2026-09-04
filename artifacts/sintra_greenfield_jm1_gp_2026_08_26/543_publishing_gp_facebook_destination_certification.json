@@ -1,0 +1,25 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "PASS",
+  "platform": "Facebook",
+  "certified_destination": {
+    "display_name": "J Merrill Publishing Inc",
+    "id": "307480763084670",
+    "source": "Soshie get_available_platform_pages result plus live Facebook connector detail"
+  },
+  "excluded_destinations": [
+    "J Merrill One",
+    "J Merrill Financial",
+    "J Merrill Financial, LLC",
+    "J Merrill Productions",
+    "J Merrill Foundation Inc",
+    "AGAPE International Cathedral",
+    "Jackie Smith, Jr."
+  ],
+  "wrong_destination_tolerance": 0
+}

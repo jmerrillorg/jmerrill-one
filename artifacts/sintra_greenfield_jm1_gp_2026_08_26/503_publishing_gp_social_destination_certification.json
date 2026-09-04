@@ -1,0 +1,34 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "SOCIAL DESTINATION CERTIFICATION",
+  "status": "LIVE_DESTINATION_CERTIFIED",
+  "certified_destinations": {
+    "facebook": {
+      "platform": "Facebook",
+      "name": "J Merrill Publishing Inc",
+      "id": "307480763084670",
+      "ui_label": "Facebook · J Merrill Publishing Inc"
+    },
+    "instagram": {
+      "platform": "Instagram",
+      "name": "jmerrillpub",
+      "id": "17841410046020869",
+      "ui_label": "Instagram (FB Pages) · jmerrillpub"
+    },
+    "linkedin": {
+      "platform": "LinkedIn Organization",
+      "name": "J Merrill Publishing, Inc.",
+      "id": "urn:li:organization:13048648",
+      "ui_label": "LinkedIn (Organization) · J Merrill Publishing, Inc."
+    }
+  },
+  "validation_source": [
+    "Sintra/Soshie available platform pages",
+    "Live calendar labels after scheduling"
+  ],
+  "wrong_destination_items": 0
+}

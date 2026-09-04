@@ -1,0 +1,27 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 CROSS-PLATFORM PUBLICATION EVIDENCE",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "PUBLISHED_VERIFIED_3_OF_3",
+  "evidence": [
+    {
+      "platform": "Facebook",
+      "destination": "J Merrill One",
+      "evidence": "Founder screenshot: live Facebook creative/post; visible Published by Sintra attribution."
+    },
+    {
+      "platform": "Instagram",
+      "destination": "@jmerrillone",
+      "evidence": "Founder screenshot: Instagram profile/grid with live creative; baseline profile counts visible."
+    },
+    {
+      "platform": "LinkedIn Organization",
+      "destination": "J Merrill One",
+      "evidence": "Founder screenshot: live LinkedIn organization post/creative."
+    }
+  ],
+  "post_ids_captured": false,
+  "note": "Do not invent post IDs; evidence is screenshot/calendar based."
+}

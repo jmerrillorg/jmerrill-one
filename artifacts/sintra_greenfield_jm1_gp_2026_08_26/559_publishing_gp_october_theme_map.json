@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "OCTOBER THEME MAP",
+  "status": "RESERVED_FROM_PRIOR_FEATURED_AUTHOR_ARTIFACTS",
+  "month": "2026-10",
+  "featured_author": "Iyorwuese Hagher",
+  "known_titles": [
+    "A Portrait of Paradise",
+    "The Conquest of Azenga"
+  ],
+  "theme_lanes": [
+    "Featured Author introduction",
+    "Title spotlight",
+    "Reader-discovery prompt",
+    "Publishing context",
+    "Backlist continuity"
+  ],
+  "random_featured_author_selection": "Not before November 2026."
+}

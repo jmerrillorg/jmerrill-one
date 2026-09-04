@@ -1,0 +1,261 @@
+{
+  "marketingEligibility": [
+    {
+      "id": "9bd64158443c3a91485bfcd0",
+      "kind": "MarketingEligibility",
+      "triggerId": "3462a234084e937981d3230a",
+      "branch": "J Merrill Publishing",
+      "program": "Title/Author Marketing",
+      "subject": "Iyorwuese",
+      "month": "2026-10",
+      "eligibilityState": "ELIGIBLE_WITH_ASSET_EXCEPTIONS",
+      "blockers": [
+        "MISSING_AUTHORIZED_AUTHOR_IMAGE",
+        "MISSING_TITLE_COVER_FOR_TITLE_SPECIFIC_STAGE"
+      ],
+      "createdBy": "jm1-marketing-runtime-proof",
+      "createdAt": "2026-09-02T00:00:00-04:00",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    }
+  ],
+  "campaignAuthority": [
+    {
+      "id": "8f7703bb573495e0e94a4d9b",
+      "kind": "CampaignAuthority",
+      "eligibilityId": "9bd64158443c3a91485bfcd0",
+      "branch": "J Merrill Publishing",
+      "campaignName": "October 2026 Featured Author - Iyorwuese",
+      "campaignType": "featured_author_month",
+      "campaignStages": [
+        "month_introduction",
+        "title_discovery",
+        "author_continuation",
+        "mid_month_engagement",
+        "month_close_continuation"
+      ],
+      "repetitionPolicy": "Do not repeat an introduction if a valid introduction has already been published.",
+      "cadenceIntent": "stage-based October sequence, not a manually assembled 30-day calendar",
+      "approvalState": "SYSTEM_AUTHORITY_CREATED_HELD_FOR_DOWNSTREAM_PROOF",
+      "createdAt": "2026-09-02T00:00:00-04:00",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    }
+  ],
+  "contentWork": [
+    {
+      "id": "da09b489b26935106b7ef319",
+      "kind": "ContentWork",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "stage": "month_introduction",
+      "sequence": 1,
+      "audience": "readers and prospective authors",
+      "requiredPublicLanguage": [
+        "Helping Authors Help Themselves"
+      ],
+      "prohibitedPublicLanguage": [
+        "source-backed",
+        "rights-safe",
+        "activation",
+        "validation",
+        "governed",
+        "execution",
+        "official-logo post",
+        "internal state names"
+      ],
+      "cta": "Follow J Merrill Publishing for October Featured Author updates.",
+      "status": "GENERATED",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    {
+      "id": "47a9cd99a96150062c9546bd",
+      "kind": "ContentWork",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "stage": "title_discovery",
+      "sequence": 2,
+      "audience": "Publishing audience",
+      "requiredPublicLanguage": [
+        "Helping Authors Help Themselves"
+      ],
+      "prohibitedPublicLanguage": [
+        "source-backed",
+        "rights-safe",
+        "activation",
+        "validation",
+        "governed",
+        "execution",
+        "official-logo post",
+        "internal state names"
+      ],
+      "cta": "Continue following the October Featured Author series.",
+      "status": "GENERATED",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    {
+      "id": "276059029a2bc232e41a2aa1",
+      "kind": "ContentWork",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "stage": "author_continuation",
+      "sequence": 3,
+      "audience": "Publishing audience",
+      "requiredPublicLanguage": [
+        "Helping Authors Help Themselves"
+      ],
+      "prohibitedPublicLanguage": [
+        "source-backed",
+        "rights-safe",
+        "activation",
+        "validation",
+        "governed",
+        "execution",
+        "official-logo post",
+        "internal state names"
+      ],
+      "cta": "Continue following the October Featured Author series.",
+      "status": "GENERATED",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    {
+      "id": "72c6448bb4f253e82c723f07",
+      "kind": "ContentWork",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "stage": "mid_month_engagement",
+      "sequence": 4,
+      "audience": "Publishing audience",
+      "requiredPublicLanguage": [
+        "Helping Authors Help Themselves"
+      ],
+      "prohibitedPublicLanguage": [
+        "source-backed",
+        "rights-safe",
+        "activation",
+        "validation",
+        "governed",
+        "execution",
+        "official-logo post",
+        "internal state names"
+      ],
+      "cta": "Continue following the October Featured Author series.",
+      "status": "GENERATED",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    {
+      "id": "665a9a554b2c08ef12c8add8",
+      "kind": "ContentWork",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "stage": "month_close_continuation",
+      "sequence": 5,
+      "audience": "Publishing audience",
+      "requiredPublicLanguage": [
+        "Helping Authors Help Themselves"
+      ],
+      "prohibitedPublicLanguage": [
+        "source-backed",
+        "rights-safe",
+        "activation",
+        "validation",
+        "governed",
+        "execution",
+        "official-logo post",
+        "internal state names"
+      ],
+      "cta": "Continue following the October Featured Author series.",
+      "status": "GENERATED",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    }
+  ],
+  "creativeWork": [
+    {
+      "id": "5e04334332dfd8b786b90dc6",
+      "kind": "CreativeWork",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "stage": "month_introduction",
+      "requestedDimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "requiredAssets": [
+        "official_jm1_logo"
+      ],
+      "optionalAssets": [
+        "author_portrait",
+        "title_cover"
+      ],
+      "status": "GENERATED",
+      "assetExceptionCodes": [
+        "MISSING_AUTHORIZED_AUTHOR_IMAGE",
+        "MISSING_TITLE_COVER_FOR_TITLE_SPECIFIC_STAGE"
+      ],
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    }
+  ],
+  "socialExecutionRecords": [
+    {
+      "id": "9285492cf9a768c082ec8366",
+      "kind": "SocialExecutionRecord",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "platform": "facebook",
+      "destinationName": "J Merrill Publishing, Inc.",
+      "executor": "MetaAdapter",
+      "requestedSchedule": "2026-10-01T10:00:00-04:00",
+      "requestedMediaHash": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+      "requestedDestination": "J Merrill Publishing, Inc.",
+      "executionState": "APPROVED_HELD_FOR_API_ADAPTER",
+      "platformPostId": null,
+      "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+      "browserUiUsed": false,
+      "sintraUiUsed": false,
+      "metaUiUsed": false,
+      "linkedInUiUsed": false,
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    {
+      "id": "f6d00d6185e7bc465a514adf",
+      "kind": "SocialExecutionRecord",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "platform": "instagram",
+      "destinationName": "J Merrill Publishing, Inc.",
+      "executor": "MetaAdapter",
+      "requestedSchedule": "2026-10-01T12:00:00-04:00",
+      "requestedMediaHash": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+      "requestedDestination": "J Merrill Publishing, Inc.",
+      "executionState": "APPROVED_HELD_FOR_API_ADAPTER",
+      "platformPostId": null,
+      "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+      "browserUiUsed": false,
+      "sintraUiUsed": false,
+      "metaUiUsed": false,
+      "linkedInUiUsed": false,
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    {
+      "id": "9ec336d405ac99c475479bfc",
+      "kind": "SocialExecutionRecord",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "platform": "linkedin",
+      "destinationName": "J Merrill Publishing, Inc.",
+      "executor": "LinkedInAdapter",
+      "requestedSchedule": "2026-10-01T14:00:00-04:00",
+      "requestedMediaHash": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+      "requestedDestination": "J Merrill Publishing, Inc.",
+      "executionState": "APPROVED_HELD_FOR_API_ADAPTER",
+      "platformPostId": null,
+      "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+      "browserUiUsed": false,
+      "sintraUiUsed": false,
+      "metaUiUsed": false,
+      "linkedInUiUsed": false,
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    }
+  ],
+  "updatedAt": "2026-09-02T00:00:00-04:00"
+}

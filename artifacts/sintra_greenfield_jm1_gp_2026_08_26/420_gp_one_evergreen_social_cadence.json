@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "cadence_type": "EVERGREEN SOCIAL CONTENT ARCHITECTURE",
+  "pillars": [
+    "One / Enterprise Story",
+    "People-First",
+    "Why-First",
+    "Publishing",
+    "Financial",
+    "Foundation",
+    "Productions",
+    "Founder Perspective",
+    "Behind the Build",
+    "Community / Conversation"
+  ],
+  "strategy": "Use recurring pillars to sustain relevance without creating a stale long-range static calendar.",
+  "sensitive_record_ingestion": "DO NOT ingest sensitive underlying records into Sintra; use approved summaries/context."
+}

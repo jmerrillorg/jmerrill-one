@@ -1,0 +1,8 @@
+{
+  "platforms": {
+    "facebook": {"preferred_size": "1080x1080", "exact_file_upload_required": true},
+    "instagram": {"preferred_size": "1080x1080", "exact_file_upload_required": true},
+    "linkedin": {"preferred_size": "1080x1080", "exact_file_upload_required": true}
+  },
+  "logo": "required"
+}

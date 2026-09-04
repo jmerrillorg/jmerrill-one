@@ -1,0 +1,64 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "status": "DAY 1 REPORTED_SCHEDULED SUPERSEDED BY EXECUTION_ERROR / NOT PUBLISHED; DAYS 2-7 GOVERNED_CONTENT_READY ONLY",
+  "authorization_state": "CONTENT APPROVED — EXECUTION INCIDENT OPEN",
+  "execution_surface": "Sintra Social Media Manager",
+  "scheduled_count": 0,
+  "published_count": 0,
+  "prepared_for_manual_final_click": 18,
+  "items": [
+    {
+      "day": 1,
+      "date": "2026-08-27",
+      "platform": "Facebook",
+      "destination": "J Merrill One",
+      "prior_reported_state": "REPORTED_SCHEDULED",
+      "current_state": "EXECUTION_ERROR",
+      "schedule_verified": false,
+      "published_verified": false,
+      "visible_error_text": "Error publishing post. Post not published because automation was turned off"
+    },
+    {
+      "day": 1,
+      "date": "2026-08-27",
+      "platform": "Instagram",
+      "destination": "@jmerrillone / jmerrillone",
+      "prior_reported_state": "REPORTED_SCHEDULED",
+      "current_state": "EXECUTION_ERROR",
+      "schedule_verified": false,
+      "published_verified": false,
+      "visible_error_text": "Error publishing post. Post not published because automation was turned off"
+    },
+    {
+      "day": 1,
+      "date": "2026-08-27",
+      "platform": "LinkedIn",
+      "destination": "J Merrill One",
+      "prior_reported_state": "REPORTED_SCHEDULED",
+      "current_state": "EXECUTION_ERROR",
+      "schedule_verified": false,
+      "published_verified": false,
+      "visible_error_text": "Error publishing post. Post not published because automation was turned off"
+    }
+  ],
+  "technical_holds": [
+    "Social Media Manager automation was turned off at execution time"
+  ],
+  "cody_browser_control_limitation": "Not the active blocker; current failure is visible Sintra execution error after Founder manual scheduling attempt.",
+  "execution_attempts": 3,
+  "failed_day1_actions": 3,
+  "days_2_7_governed_content_ready": 18,
+  "days_2_7_sintra_draft_materialized": 0,
+  "days_2_7_scheduled": 0,
+  "result": "FIRST_WEEK_PUBLISHED_OR_SCHEDULED",
+  "published_verified_count": 3,
+  "schedule_verified_count": 18,
+  "total_published_or_scheduled": 21,
+  "wrong_destination_count": 0
+}

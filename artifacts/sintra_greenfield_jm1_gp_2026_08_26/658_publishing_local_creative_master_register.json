@@ -1,0 +1,939 @@
+{
+  "created_at": "2026-08-28T11:01:03-04:00",
+  "source_manifest": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/549_publishing_gp_full30_soshie_manifest.json",
+  "total_days": 30,
+  "logo_requirement": "Every image must include the exact official J Merrill logo; do not generate or approximate logo.",
+  "source_asset_rule": "Use real book covers and real author portraits where available/permitted; never generate fake covers or fake author likenesses.",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-08-28",
+      "creativeConcept": "Meet the Book",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day01_2026-08-28_meet_the_book.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 2,
+      "date": "2026-08-29",
+      "creativeConcept": "Meet the Author",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day02_2026-08-29_meet_the_author.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 3,
+      "date": "2026-08-30",
+      "creativeConcept": "Publishing Education",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day03_2026-08-30_publishing_education.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 4,
+      "date": "2026-08-31",
+      "creativeConcept": "Publishing Inquiry",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day04_2026-08-31_publishing_inquiry.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 5,
+      "date": "2026-09-01",
+      "creativeConcept": "September Featured Author editorial feature for Sean A Crowley I",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Introduces the month through a real author and real books, not an internal registry card.",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day05_2026-09-01_september_featured_author_sean_a_crowley_i.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 6,
+      "date": "2026-09-02",
+      "creativeConcept": "Inside Publishing",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day06_2026-09-02_inside_publishing.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 7,
+      "date": "2026-09-03",
+      "creativeConcept": "Backlist Rediscovery",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Shelley McIntosh",
+      "title": "A Principal's Tale",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day07_2026-09-03_backlist_rediscovery.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 8,
+      "date": "2026-09-04",
+      "creativeConcept": "Why This Book Matters",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Alesia Corpening",
+      "title": "A Trubie's Guide Pt. 1",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day08_2026-09-04_why_this_book_matters.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 9,
+      "date": "2026-09-05",
+      "creativeConcept": "Publishing FAQ/Myth",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day09_2026-09-05_publishing_faq_myth.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 10,
+      "date": "2026-09-06",
+      "creativeConcept": "Author Journey",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day10_2026-09-06_author_journey.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 11,
+      "date": "2026-09-07",
+      "creativeConcept": "Timely/Flexible",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day11_2026-09-07_timely_flexible.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 12,
+      "date": "2026-09-08",
+      "creativeConcept": "Meet the Book",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Jaylonna Stevette",
+      "title": "Almost Happy",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day12_2026-09-08_meet_the_book.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 13,
+      "date": "2026-09-09",
+      "creativeConcept": "Behind the Book",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day13_2026-09-09_behind_the_book.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 14,
+      "date": "2026-09-10",
+      "creativeConcept": "Backlist Rediscovery",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day14_2026-09-10_backlist_rediscovery.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 15,
+      "date": "2026-09-11",
+      "creativeConcept": "Publishing Education",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day15_2026-09-11_publishing_education.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 16,
+      "date": "2026-09-12",
+      "creativeConcept": "Reader Discovery",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day16_2026-09-12_reader_discovery.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 17,
+      "date": "2026-09-13",
+      "creativeConcept": "Meet the Author",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Nathaniel Short",
+      "title": "Bodacious",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day17_2026-09-13_meet_the_author.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 18,
+      "date": "2026-09-14",
+      "creativeConcept": "Why This Book Matters",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Dennis Brown",
+      "title": "Connected!",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day18_2026-09-14_why_this_book_matters.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 19,
+      "date": "2026-09-15",
+      "creativeConcept": "Publishing Inquiry",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day19_2026-09-15_publishing_inquiry.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 20,
+      "date": "2026-09-16",
+      "creativeConcept": "Publishing FAQ/Myth",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day20_2026-09-16_publishing_faq_myth.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 21,
+      "date": "2026-09-17",
+      "creativeConcept": "Meet the Book",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Agape International Cathedral",
+      "title": "Delicious Ideas!",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day21_2026-09-17_meet_the_book.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 22,
+      "date": "2026-09-18",
+      "creativeConcept": "Inside Publishing",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day22_2026-09-18_inside_publishing.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 23,
+      "date": "2026-09-19",
+      "creativeConcept": "Reader Discovery",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day23_2026-09-19_reader_discovery.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 24,
+      "date": "2026-09-20",
+      "creativeConcept": "Backlist Rediscovery",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Terry Stephens",
+      "title": "Discipline and Direction",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day24_2026-09-20_backlist_rediscovery.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 25,
+      "date": "2026-09-21",
+      "creativeConcept": "Author Journey",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day25_2026-09-21_author_journey.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 26,
+      "date": "2026-09-22",
+      "creativeConcept": "Strategies for Success release-day editorial launch creative",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Turns release day into a human leadership/book moment, not a database announcement.",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success: Effective Educational Leadership for College Chancellors and Presidents",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 27,
+      "date": "2026-09-23",
+      "creativeConcept": "Publishing Education",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Sean A Crowley I",
+      "title": "Strategies for Success",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day27_2026-09-23_publishing_education.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 28,
+      "date": "2026-09-24",
+      "creativeConcept": "Meet the Author",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory: The Praise and Worship Handbook (2nd Edition)",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day28_2026-09-24_meet_the_author.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 29,
+      "date": "2026-09-25",
+      "creativeConcept": "Why This Book Matters",
+      "audience": "Readers, authors, and Publishing followers interested in the featured title/author",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": "Shana Byrd",
+      "title": "Focus, Trust, & Follow",
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day29_2026-09-25_why_this_book_matters.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    },
+    {
+      "day": 30,
+      "date": "2026-09-26",
+      "creativeConcept": "Timely/Flexible",
+      "audience": "Authors and readers evaluating J Merrill Publishing perspective",
+      "reasonToCare": "Gives a people-first reason to revisit Publishing work.",
+      "author": null,
+      "title": null,
+      "actualCover": "REQUIRED_WHERE_TITLE_SPECIFIC; not source-confirmed in repo for this reset artifact",
+      "actualAuthorImage": "OPTIONAL_IF_PERMITTED; not source-confirmed in repo for this reset artifact",
+      "visualTreatment": "Editorial/literary composition with exact J Merrill Publishing logo; no registry card, no machine/process footer language.",
+      "outputFile": "publishing_full30_creatives/day30_2026-09-26_timely_flexible.png",
+      "platformVariants": [
+        {
+          "platform": "Facebook",
+          "destination": "J Merrill Publishing Inc",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "Instagram",
+          "destination": "jmerrillpub",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        },
+        {
+          "platform": "LinkedIn",
+          "destination": "J Merrill Publishing, Inc.",
+          "currentScheduler": "Sintra/Soshie prior manifest"
+        }
+      ],
+      "validationState": "REJECT_OR_REWORK_PENDING_SOURCE_ASSET_BINDING"
+    }
+  ]
+}

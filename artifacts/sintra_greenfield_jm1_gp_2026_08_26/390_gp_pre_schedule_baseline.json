@@ -1,0 +1,30 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "result": "PASS",
+  "evidence": {
+    "brain_screenshot": "/tmp/sintra_gp_brain_live.png",
+    "automations_screenshot": "/tmp/sintra_gp_automations_live.png",
+    "calendar_screenshot": "/tmp/sintra_gp_calendar_after_click.png"
+  },
+  "brain": {
+    "expected_governed_records": 1,
+    "observed_governed_records": 1,
+    "observed_record": "06_enterprise_foundation_pack.md",
+    "result": "PASS"
+  },
+  "automations": {
+    "Social Media Manager": "OFF",
+    "Inbox Manager": "OFF",
+    "Daily Summarizer": "OFF",
+    "Facebook Commenter": "OFF",
+    "result": "PASS"
+  },
+  "engagement_authority": "NONE",
+  "days_1_7_founder_approved": true,
+  "destination_certification": "PASS",
+  "scheduled_by_this_execution_package_before_start": 0
+}

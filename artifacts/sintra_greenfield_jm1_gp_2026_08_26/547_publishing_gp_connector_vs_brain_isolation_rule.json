@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "ACTIVE",
+  "rule": "Connected social connectors expose multiple external pages/accounts, but Publishing Brain knowledge remains brand-isolated. Connector availability must not be treated as permission to post to non-Publishing destinations or as Brain/catalog leakage.",
+  "connector_scope": "Operational destination picker only",
+  "brain_scope": "J Merrill Publishing workspace knowledge only",
+  "prohibited": [
+    "Do not schedule from J Merrill One GP",
+    "Do not load Publishing catalog into One Brain",
+    "Do not infer One-brand authority from connector lists"
+  ]
+}

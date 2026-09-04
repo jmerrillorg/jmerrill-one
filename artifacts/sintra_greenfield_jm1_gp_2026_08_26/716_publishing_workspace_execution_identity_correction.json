@@ -1,0 +1,18 @@
+{
+  "packageId": 716,
+  "title": "Publishing Workspace Execution Identity Correction",
+  "generatedAt": "2026-08-29T08:09:57.422Z",
+  "activeWorkspace": "J Merrill Publishing",
+  "activeWorkspaceVerified": true,
+  "wrongWorkspacePriorRisk": "Prior work and PR evidence included actions/screens from J Merrill One - GP and therefore cannot certify mutations in the isolated J Merrill Publishing workspace.",
+  "proof": {
+    "workspaceSwitcherText": "J Merrill Publishing",
+    "socialMediaManagerVisible": true,
+    "calendarRangeVisible": "Aug 24 - Sep 6",
+    "automationState": "Social Media Manager switch observed ON in J Merrill Publishing workspace",
+    "brainIdentityVisible": "Sidebar Brain AI within J Merrill Publishing workspace; not opened/mutated",
+    "integrationsScreen": "J Merrill Publishing workspace integrations screen opened; visible panel showed No integrations available, so destination proof relies on actual scheduled-card Pages fields.",
+    "evidenceScreenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/716_publishing_workspace_identity_calendar.png"
+  },
+  "correctionClassification": "WORKSPACE IDENTITY FAILURE CORRECTED FOR CURRENT INSPECTION; PRIOR PUBLISHING REMEDIATION NOT CERTIFIED"
+}

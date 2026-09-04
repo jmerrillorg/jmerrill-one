@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "result": "PASS",
+  "one_brain_action": "No Publishing catalog or detailed workflow was added to One Brain in this packet.",
+  "prohibited_ingestion": [
+    "120-title catalog",
+    "detailed author inventory",
+    "Publishing editorial operations"
+  ],
+  "allowed_one_reference": "author/book inquiries route to Publishing"
+}

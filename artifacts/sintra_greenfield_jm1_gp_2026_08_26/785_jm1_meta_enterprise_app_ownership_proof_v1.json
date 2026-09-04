@@ -1,0 +1,111 @@
+{
+  "packageId": 785,
+  "artifact": "JM1-META-ENTERPRISE-APP-OWNERSHIP-PROOF-v1",
+  "generatedAt": "2026-09-02T07:25:05-04:00",
+  "stream": "JM1 Enterprise Marketing Operating System - Persistent Platform Authority Activation",
+  "scope": "Meta app ownership correction only; no OAuth token generation, no app secret exposure, no platform publishing.",
+  "app": {
+    "name": "JM1 Social Publisher",
+    "appId": "1293210212769981",
+    "priorBusinessPortfolio": {
+      "name": "J Merrill Publishing, Inc.",
+      "businessId": "2374546629481301",
+      "state": "Historical/current-session prior owner observed before correction"
+    },
+    "targetBusinessPortfolio": {
+      "name": "J Merrill One",
+      "businessId": "846921439784613",
+      "state": "Final owner verified in Meta Business Settings"
+    }
+  },
+  "founderAuthorization": {
+    "directTypedAuthorizationPresent": true,
+    "authorizedActions": [
+      "Create/configure persistent JM1-owned Meta developer application under correct JM1 business authority.",
+      "Correct app ownership to J Merrill One before OAuth/API setup.",
+      "Preserve app ID if safely possible and do not create duplicate app."
+    ],
+    "latestHoldInstructionSatisfied": true
+  },
+  "ownershipCorrectionActions": [
+    {
+      "step": "Verified J Merrill One portfolio exists.",
+      "observedResult": "Business Settings portfolio selector and URL used business_id=846921439784613."
+    },
+    {
+      "step": "Verified app was associated with J Merrill Publishing, Inc. before correction.",
+      "observedResult": "App dashboard URL and Business Settings context used business_id=2374546629481301 for JM1 Social Publisher."
+    },
+    {
+      "step": "Removed app from J Merrill Publishing, Inc. portfolio.",
+      "observedResult": "Publishing Apps surface returned to 'No apps added'; Meta warning did not state app deletion or app ID destruction."
+    },
+    {
+      "step": "Connected existing app ID to J Merrill One portfolio.",
+      "observedResult": "Meta Add app flow accepted app ID 1293210212769981."
+    },
+    {
+      "step": "Meta auto-approved the ownership request.",
+      "observedResult": "UI message: request was automatically approved because the signed-in account is an admin of this app."
+    },
+    {
+      "step": "Verified hard ownership label after refresh and detail-panel readback.",
+      "observedResult": "Meta Business Settings Apps detail panel showed 'Owned by: J Merrill One' for app ID 1293210212769981."
+    }
+  ],
+  "businessAssetInventoryObservedInJm1OnePortfolio": {
+    "facebookPagesListed": [
+      "J Merrill One",
+      "J Merrill Publishing Inc",
+      "J Merrill Financial",
+      "J Merrill Foundation Inc",
+      "J Merrill Productions",
+      "AGAPE International Cathedral",
+      "Jackie Smith, Jr."
+    ],
+    "instagramAccountsListed": [
+      "@jmerrillone",
+      "@jmerrillpub",
+      "@jmerrillfin",
+      "@jmerrillorg",
+      "@jmerrillprod",
+      "@agapeiclove",
+      "@mrjmerrill"
+    ],
+    "branchAssetConclusion": "J Merrill One exists as the enterprise Meta authority and contains the Publishing Facebook/Instagram assets needed for the first runtime consumer."
+  },
+  "dashboardStateAfterOwnershipCorrection": {
+    "developerDashboardOpenedUnderBusinessId": "846921439784613",
+    "useCasesVisible": [
+      "Manage messaging & content on Instagram",
+      "Manage everything on your Page"
+    ],
+    "productsVisible": [
+      "Facebook Login for Business"
+    ],
+    "publishStateObserved": "Unpublished App",
+    "basicSettingsObservedWithoutSecretExposure": {
+      "appId": "1293210212769981",
+      "appSecret": "MASKED_IN_UI_NOT_OPENED",
+      "displayName": "JM1 Social Publisher",
+      "contactEmail": "jm1-admin@jmerrill.one"
+    }
+  },
+  "securityBoundary": {
+    "secretsExposed": false,
+    "tokensGenerated": false,
+    "oauthGrantCreated": false,
+    "browserCookiesUsedAsRuntimeCredentials": false,
+    "repositorySecretsWritten": false,
+    "secureStorageTarget": "Existing JM1 Azure Key Vault or governed secure runtime path; secret values must not be committed or echoed."
+  },
+  "nextActionHeldForComputerUseConfirmation": {
+    "whyHeld": "Connecting the app to Publishing Facebook/Instagram assets and proceeding through OAuth would materially expand persistent access.",
+    "specificActionNeedingConfirmation": "Connect One-owned app JM1 Social Publisher (1293210212769981) to J Merrill Publishing Inc Facebook Page and @jmerrillpub Instagram account, then proceed with the minimum Meta OAuth/API permissions needed for publishing/readback canaries.",
+    "confirmationPolicy": "Computer Use action-time confirmation required before persistent access expansion."
+  },
+  "classification": "META_ENTERPRISE_APP_OWNERSHIP_PROVEN__PERSISTENT_ACCESS_CONFIGURATION_HELD_FOR_ACTION_TIME_CONFIRMATION",
+  "evidenceFiles": [
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/785_meta_app_owned_by_jm1_verified.png"
+  ]
+}

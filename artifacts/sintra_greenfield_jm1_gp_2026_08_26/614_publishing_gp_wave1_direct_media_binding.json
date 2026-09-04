@@ -1,0 +1,10 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:55:00-04:00",
+  "outcome": "DIRECT_REPLACE_NOT_SUPPORTED",
+  "executed": false,
+  "reason": "No direct media replacement/upload/remove-add/media-library attachment control is exposed on scheduled post objects."
+}

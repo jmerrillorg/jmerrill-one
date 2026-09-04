@@ -1,0 +1,18 @@
+{
+  "name": "jm1-marketing-autonomous-functions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/functions/*.js",
+  "scripts": {
+    "check": "node --check src/functions/marketingControlLoopTimer.js && node --check src/functions/socialExecutionWorkerTimer.js && node --check src/functions/credentialMonitorTimer.js && node --check src/functions/creativeWorkProcessorTimer.js",
+    "test:marketing-os": "node ../../scripts/test-jm1-marketing-os-regression-suite.mjs",
+    "test:linkedin-runtime": "node ../../scripts/test-jm1-linkedin-runtime-regression-suite.mjs"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.7.2",
+    "@azure/identity": "^4.10.2",
+    "@azure/storage-blob": "^12.27.0"
+  },
+  "devDependencies": {}
+}

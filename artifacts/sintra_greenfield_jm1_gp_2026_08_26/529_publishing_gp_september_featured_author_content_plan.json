@@ -1,0 +1,62 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "month": "2026-09",
+  "featured_author": "Sean A Crowley I",
+  "status": "ACTIVE_SOURCE_CONSTRAINED",
+  "public_creative_doctrine": "PUBLIC CREATIVE DOCTRINE v2 REQUIRED",
+  "editorial_standard": "Featured Author programming must vary public hooks and creative treatments; do not repeat author/title registry cards across the month.",
+  "official_tagline": "Helping Authors Help Themselves",
+  "opportunities": [
+    {
+      "date": "2026-09-01",
+      "type": "Launch",
+      "source_backed": true,
+      "title": "The Shift: Changing with God",
+      "creative_direction": "Introduce Sean A Crowley I through a reader-facing question about change and faith; preserve verified title identity and retail link only."
+    },
+    {
+      "date": "2026-09-05",
+      "type": "Meet the Book",
+      "source_backed": true,
+      "title": "The Shift: Changing with God",
+      "creative_direction": "Shift from catalog spotlight to why-this-title-might-matter for readers."
+    },
+    {
+      "date": "2026-09-10",
+      "type": "Book/theme discovery",
+      "source_backed": true,
+      "note": "Use public description themes from external retail source; avoid long excerpts.",
+      "creative_direction": "Use one fresh public hook; do not reuse launch framing."
+    },
+    {
+      "date": "2026-09-16",
+      "type": "Second title / catalog discovery",
+      "source_backed": "PARTIAL",
+      "title": "Strategies for Success in Educational Leadership",
+      "note": "Use only Founder-supplied Amazon title identity until fuller source is verified.",
+      "creative_direction": "Frame as educational-leadership reader value without inventing claims beyond the title."
+    },
+    {
+      "date": "2026-09-23",
+      "type": "Reader Prompt",
+      "source_backed": true,
+      "note": "Question framed around change/leadership without claiming biography.",
+      "creative_direction": "Prompt readers with a question, not a status update."
+    },
+    {
+      "date": "2026-09-30",
+      "type": "Month-End Recap",
+      "source_backed": true,
+      "note": "Recap September feature and direct readers to verified title links.",
+      "creative_direction": "Close the feature as an editorial arc, not a repeated list of scheduled posts."
+    }
+  ],
+  "not_required": [
+    "Behind the Author/Journey unless an official bio source is supplied"
+  ]
+}

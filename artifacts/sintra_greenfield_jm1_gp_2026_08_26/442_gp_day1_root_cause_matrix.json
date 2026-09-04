@@ -1,0 +1,31 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 ROOT CAUSE RESOLUTION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "ROOT CAUSE CONFIRMED AND RESOLVED",
+  "categories": {
+    "AUTHENTICATION": "Not demonstrated; connectors show Connected.",
+    "AUTHORIZATION / PERMISSION": "Not demonstrated; no explicit permission error exposed.",
+    "DESTINATION": "Not demonstrated; intended destinations are visible.",
+    "MEDIA / CREATIVE": "Not demonstrated; no media compatibility error exposed.",
+    "CONTENT FORMAT": "Not demonstrated; no content format error exposed.",
+    "SCHEDULING / TIME": "Not demonstrated as root cause; 9:00 AM publish date is visible and past.",
+    "SINTRA INTERNAL": "POSSIBLE; Sintra allowed/retained post objects while automation was off.",
+    "PLATFORM API": "Not demonstrated; no platform/API error exposed.",
+    "CONNECTOR": "Not demonstrated as broken; connectors show Connected but this does not prove publishing capability.",
+    "UNKNOWN": "Underlying reason automation was off is not yet determined."
+  },
+  "demonstrated_cause": "Automation was turned off at publication execution time.",
+  "root_cause_not_fully_closed": true,
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "confirmed_root_cause": "Social Media Manager publishing runtime was turned off during Day 1 execution.",
+  "ruled_out": [
+    "Wrong destination",
+    "Copy approval problem",
+    "Credit exhaustion as final cause",
+    "Platform-specific single-channel outage"
+  ],
+  "remediation": "Founder enabled Social Media Manager and re-ran scheduling; all three Day 1 posts published."
+}

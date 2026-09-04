@@ -1,0 +1,109 @@
+{
+  "packageId": 789,
+  "artifact": "JM1-META-OWNED-API-RUNTIME-PROOF-v1",
+  "generatedAt": "2026-09-02T12:09:32.251Z",
+  "classification": "META_OWNED_API_RUNTIME_PROVEN",
+  "token": {
+    "secretReference": "jm1-core-vault/JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+    "tokenValueRecorded": false,
+    "verifiedBy": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/787_jm1_meta_owned_api_canary_v1.json"
+  },
+  "executionBoundary": {
+    "noMetaBusinessSuiteUiPublishing": true,
+    "noSintraPublishing": true,
+    "noComputerUsePublishing": true,
+    "browserUseLimitedToOneTimeAdminAndTokenSetup": true,
+    "dataverseExecutionAuthority": true
+  },
+  "sourceRecord": {
+    "runMarker": "e60c47b5da7824de99976e0a",
+    "branch": "J Merrill Publishing",
+    "campaign": "October Featured Author - Iyorwuese",
+    "dataverseEntitySet": "jm1_socialexecutions"
+  },
+  "media": {
+    "approvedSourcePath": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_october_featured_author_intro_1080.svg",
+    "approvedSourceSha256": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+    "platformNormalizedPath": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative_normalized/iyorwuese_october_featured_author_intro_1080.png",
+    "platformNormalizedSha256": "ca6d3d1d6a07aa20f00c6df7001bc882a0def4e4ab349023068e6404ad19e8b9",
+    "platformNormalizedMimeType": "image/png",
+    "platformPublicUrl": "https://raw.githubusercontent.com/jmerrillorg/jmerrill-one/f42751779398357acb76c70e12f3985ec3498ebf/artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative_normalized/iyorwuese_october_featured_author_intro_1080.png",
+    "normalizationMethod": "SVG_SOURCE_TO_PLATFORM_PNG_RENDER",
+    "aiTransformation": false,
+    "officialLogoPresent": true
+  },
+  "facebook": {
+    "classification": "FACEBOOK_OWNED_API_RUNTIME_PROVEN",
+    "destinationName": "J Merrill Publishing Inc",
+    "destinationId": "307480763084670",
+    "platformPostId": "307480763084670_1398847435587037",
+    "readback": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "id": "307480763084670_1398847435587037",
+        "message": "October Featured Author: Iyorwuese. Helping Authors Help Themselves begins with showing up for the people behind the work.",
+        "created_time": "2026-09-02T12:06:27+0000",
+        "permalink_url": "https://www.facebook.com/1398847478920366/posts/1398847435587037",
+        "status_type": "added_photos"
+      }
+    },
+    "dataverseRow": {
+      "@odata.etag": "W/\"50972074\"",
+      "jm1_socialexecutionid": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+      "jm1_idempotencykey": "e60c47b5da7824de99976e0a:social:facebook",
+      "jm1_verifiedat": "2026-09-02T12:06:20Z",
+      "jm1_name": "Iyorwuese October intro - facebook",
+      "jm1_actualdestination": "J Merrill Publishing Inc",
+      "jm1_platformpostid": "307480763084670_1398847435587037",
+      "jm1_status": "PUBLISHED_VERIFIED",
+      "jm1_actualmediareference": "1398847415587039",
+      "jm1_errorcode": null,
+      "jm1_platform": "facebook",
+      "jm1_readbackstate": "READBACK_MATCH"
+    }
+  },
+  "instagram": {
+    "classification": "INSTAGRAM_OWNED_API_RUNTIME_PROVEN",
+    "destinationHandle": "jmerrillpub",
+    "instagramGraphId": "17841410046020869",
+    "platformMediaId": "18015844355734287",
+    "readback": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "id": "18015844355734287",
+        "caption": "October Featured Author: Iyorwuese. Helping Authors Help Themselves begins with showing up for the people behind the work.",
+        "media_type": "IMAGE",
+        "permalink": "https://www.instagram.com/p/DcyMr3sDwlb/",
+        "timestamp": "2026-09-02T12:06:42+0000",
+        "username": "jmerrillpub"
+      }
+    },
+    "dataverseRow": {
+      "@odata.etag": "W/\"50972076\"",
+      "jm1_socialexecutionid": "263e5146-90a6-f111-b8de-6045bdd69738",
+      "jm1_idempotencykey": "e60c47b5da7824de99976e0a:social:instagram",
+      "jm1_verifiedat": "2026-09-02T12:06:20Z",
+      "jm1_name": "Iyorwuese October intro - instagram",
+      "jm1_actualdestination": "jmerrillpub",
+      "jm1_platformpostid": "18015844355734287",
+      "jm1_status": "PUBLISHED_VERIFIED",
+      "jm1_actualmediareference": "https://raw.githubusercontent.com/jmerrillorg/jmerrill-one/f42751779398357acb76c70e12f3985ec3498ebf/artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative_normalized/iyorwuese_october_featured_author_intro_1080.png",
+      "jm1_errorcode": null,
+      "jm1_platform": "instagram",
+      "jm1_readbackstate": "READBACK_MATCH"
+    }
+  },
+  "idempotency": {
+    "classification": "META_PLATFORM_IDEMPOTENCY_PROVEN",
+    "rerunEvidence": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/787_jm1_meta_owned_api_canary_v1.json",
+    "facebookDuplicateObjectsCreated": 0,
+    "instagramDuplicateObjectsCreated": 0,
+    "mechanism": "Dataverse platformPostId/readback state recognized existing certified execution before publish path."
+  },
+  "linkedIn": {
+    "classification": "LINKEDIN_API_AUTHORITY_STILL_HELD_SEPARATELY",
+    "doesNotBlockMeta": true
+  }
+}

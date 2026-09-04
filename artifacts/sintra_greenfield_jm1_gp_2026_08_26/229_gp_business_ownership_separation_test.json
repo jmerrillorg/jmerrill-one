@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B - GOVERNED HELPER ORCHESTRATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:30:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2B COMPLETE — HELPER ORCHESTRATION DOES NOT MEET JM1 GOVERNANCE/VALUE THRESHOLD",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "reopen_base_commit": "d28153b",
+  "result": "PARTIAL_PASS",
+  "jm1_owner_separation": true,
+  "founder_authority": true,
+  "weakness": "First ownership answer initially named J Merrill One - GP / unspecified publishing/coaching arm instead of immediately using Brain context to name J Merrill Publishing. Later context test corrected this."
+}

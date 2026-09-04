@@ -1,0 +1,24 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:15:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "PASS_RESOLVED",
+  "links": [
+    {
+      "short_url": "https://amzn.to/4hZvsNG",
+      "resolved_product": "The Shift: Changing with God",
+      "resolved_url": "https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "authority": "Founder-supplied preferred public CTA; supersedes Eden/World of Books for public CTA once mapped."
+    },
+    {
+      "short_url": "https://amzn.to/4wXeeV0",
+      "resolved_product": "Strategies for Success in Educational Leadership",
+      "resolved_url": "https://www.amazon.com/Strategies-Success-Educational-Leadership-Chancellors/dp/1961475839",
+      "authority": "Founder-supplied preferred public CTA; supersedes Eden/World of Books for public CTA once mapped."
+    }
+  ],
+  "constraint": "Use only mapped Amazon short links/product URLs; do not invent biography or claims."
+}

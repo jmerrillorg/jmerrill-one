@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:18:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "BASELINE_CAPTURED",
+  "first_week_catalog_slots": 4,
+  "first_week_non_catalog_education_slots": 3,
+  "september_featured_author_slots_in_first_week": 1,
+  "covered_public_catalog_titles": [
+    "101 Wisdom Lessons for Life and Living",
+    "27 Days to Overcoming Depression",
+    "The Shift: Changing with God",
+    "A Principal's Tale"
+  ],
+  "cta_authority": {
+    "sean_short_links_resolved": true,
+    "preferred_public_cta": "Founder-supplied Amazon short links after mapping"
+  },
+  "note": "Coverage metric is about rights-safe title/author coverage, not Brain loading breadth."
+}

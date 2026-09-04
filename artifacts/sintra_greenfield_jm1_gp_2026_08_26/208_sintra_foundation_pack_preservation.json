@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "FINAL CLOSEOUT / ADOPTION DECISION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T10:45:00-04:00",
+  "final_classification": "SINTRA EVALUATION CLOSED — GREENFIELD PILOT FAILED REQUIRED GOVERNANCE BOUNDARY; NO ACTIVE JM1 ADOPTION",
+  "current_branch": "codex/sintra-greenfield-jm1-gp",
+  "phase2_commit_reference": "b071019",
+  "foundation_pack": "JM1-ENTERPRISE-FOUNDATION-v1.0",
+  "preserved_in_governed_repository": true,
+  "sintra_dependency_for_recoverability": false,
+  "required_result": "PASS",
+  "status": "PASS"
+}

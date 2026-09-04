@@ -1,0 +1,15 @@
+{
+  "gaps": [
+    "rights-cleared author photos",
+    "rights-cleared cover images",
+    "official author bios",
+    "approved short descriptions",
+    "review/endorsement permissions"
+  ],
+  "first_wave_response": "Use source-backed typography/editorial graphics only.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

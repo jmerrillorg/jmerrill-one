@@ -1,0 +1,242 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "workspace": "J Merrill Publishing - GP",
+  "status_model": [
+    "READY",
+    "READY — ASSET GAP",
+    "HOLD — STATUS",
+    "HOLD — RIGHTS",
+    "HOLD — RELATIONSHIP",
+    "RETIRED / DO NOT PROMOTE"
+  ],
+  "summary": {
+    "ready": 0,
+    "ready_asset_gap": 36,
+    "hold_status": 0,
+    "hold_rights": 0,
+    "hold_relationship": 0,
+    "retired_do_not_promote": 0
+  },
+  "rule": "Isolated holds do not block eligible titles.",
+  "items": [
+    {
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Daphanny Baker",
+      "title": "365 Days of Transparency",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Ericka Johnson-Settles",
+      "title": "7 Step Jumpstart to Becoming Your Best Self",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Shecara Norris",
+      "title": "A Blended Family",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Iyorwuese Hagher",
+      "title": "A Portrait of Paradise",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Shelley McIntosh",
+      "title": "A Principal's Tale",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Alesia Corpening",
+      "title": "A Trubie's Guide Pt. 1",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Alesia Corpening",
+      "title": "A Trubie's Guide Pt. 2",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Abortion!",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Dennis Brown",
+      "title": "Aligned!",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Jaylonna Stevette",
+      "title": "Almost Happy",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Ericka Thornton",
+      "title": "Are You Sure That You Are Ready?",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Because the Lord Is My Shepherd",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Deborah Eiland",
+      "title": "BEE Careful",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "Biblical Prescriptions for Life's Troubles",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Nathaniel Short",
+      "title": "Bodacious",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Dennis Brown",
+      "title": "Connected!",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Gloria Patterson",
+      "title": "Conquer Your Fears and Win",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Lisa Taylor",
+      "title": "Damaged",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Agape International Cathedral",
+      "title": "Delicious Ideas!",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Sean Smith, Sr.",
+      "title": "Destined to Break the Curse",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Sean Smith, Sr.",
+      "title": "Destined to Break the Curse Devotional",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "Discipline and Direction",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Regina Scales",
+      "title": "Divinely Inspired",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory 2: The Relationship Handbook (2nd Edition)",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory 3: The Marriage Handbook",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory: The Praise and Worship Handbook (2nd Edition)",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Shana Byrd",
+      "title": "Focus, Trust, & Follow",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Kelli Milligan Stammen",
+      "title": "For What It's Worth",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Karen Hill",
+      "title": "From Stylist to CEO",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Jaylonna Stevette",
+      "title": "Getting Back 2 Happy",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Kimberly Reeder",
+      "title": "Girl, Did You Know... ?",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Girl, You're Not Crazy. You're Dealing with a Narcissist",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "God's Business Plan",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    },
+    {
+      "author": "Tekisha Wimbush",
+      "title": "God's Nudge",
+      "status": "READY — ASSET GAP",
+      "reason": "Public card confirms author/title visibility; cover/excerpt/release metadata incomplete, so use rights-safe title/author/theme posts."
+    }
+  ]
+}

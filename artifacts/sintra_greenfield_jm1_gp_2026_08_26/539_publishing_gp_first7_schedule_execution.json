@@ -1,0 +1,38 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:18:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "CANARY_SCHEDULED_REMAINING_HELD_FOR_CORRECTED_LOGO_UPLOAD",
+  "eligible_platform_posts": 21,
+  "scheduled_count": 1,
+  "held_count": 20,
+  "scheduled": [
+    {
+      "day": 1,
+      "date": "2026-08-28",
+      "time": "10:00 America/New_York",
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "destination_id": "307480763084670",
+      "post_id": "341b2ceb-2d2f-4ccc-835d-930cda11e9ec",
+      "creative": "publishing_first7_creatives/day01_2026-08-28_meet_the_book.svg.png",
+      "creative_state": "FINAL_REAL_LOGO_NO_CIRCLE",
+      "status": "SCHEDULED"
+    }
+  ],
+  "held_rule": "Remaining 20 platform posts are held until live upload/scheduling uses corrected official-logo/no-circle creatives.",
+  "blocking_gates": [
+    "Remaining 20 platform posts require live upload/scheduling with corrected real-logo creatives",
+    "SMM toggle ON but Soshie has_onboarded:false; manual controlled creation path verified"
+  ],
+  "non_blocking": [
+    "Integrations connected",
+    "Destinations certified",
+    "Facebook canary scheduled and corrected",
+    "Engagement automation off"
+  ],
+  "rule": "Hold only exceptions; do not schedule through One or non-Publishing destinations."
+}

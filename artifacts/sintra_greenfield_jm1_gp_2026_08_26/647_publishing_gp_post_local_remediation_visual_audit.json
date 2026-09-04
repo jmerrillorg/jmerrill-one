@@ -1,0 +1,9 @@
+{
+  "audit": "POST_LOCAL_REMEDIATION_VISUAL_AUDIT",
+  "status": "ACTIVE",
+  "requirements": [
+    "No boring registry-card creative may be accepted as final.",
+    "No image may omit the official logo.",
+    "No transformed approximation of the logo may replace the official file."
+  ]
+}

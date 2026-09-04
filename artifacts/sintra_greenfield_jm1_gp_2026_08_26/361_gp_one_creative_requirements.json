@@ -1,0 +1,521 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "status": "DRAFT_CREATIVE_REQUIREMENTS_PREPARED",
+  "requirements": [
+    {
+      "day": 1,
+      "date": "2026-08-27",
+      "theme": "Welcome to J Merrill One",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Welcome to J Merrill One",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 2,
+      "date": "2026-08-28",
+      "theme": "Why J Merrill One Exists",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Why J Merrill One Exists",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 3,
+      "date": "2026-08-29",
+      "theme": "Meet the Family: Publishing",
+      "creative_type": "brand-family intro card",
+      "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Meet the Family: Publishing",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 4,
+      "date": "2026-08-30",
+      "theme": "People-First",
+      "creative_type": "single-image social card",
+      "visual_concept": "People-centered image or simple typography emphasizing people before process.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "People-First",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 5,
+      "date": "2026-08-31",
+      "theme": "Founder Perspective",
+      "creative_type": "quote/reflection card",
+      "visual_concept": "Founder-perspective quote card or portrait-led graphic using One palette.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Founder Perspective",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 6,
+      "date": "2026-09-01",
+      "theme": "Meet the Family: Financial",
+      "creative_type": "brand-family intro card",
+      "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Meet the Family: Financial",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 7,
+      "date": "2026-09-02",
+      "theme": "Why-First",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Why-First",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 8,
+      "date": "2026-09-03",
+      "theme": "Behind the Enterprise",
+      "creative_type": "process/system explainer graphic",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Behind the Enterprise",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 9,
+      "date": "2026-09-04",
+      "theme": "Meet the Family: Foundation",
+      "creative_type": "brand-family intro card",
+      "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Meet the Family: Foundation",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 10,
+      "date": "2026-09-05",
+      "theme": "What We Mean by Useful",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "What We Mean by Useful",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 11,
+      "date": "2026-09-06",
+      "theme": "Sunday Reflection / Purpose",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Sunday Reflection / Purpose",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 12,
+      "date": "2026-09-07",
+      "theme": "Meet the Family: Productions",
+      "creative_type": "brand-family intro card",
+      "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Meet the Family: Productions",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 13,
+      "date": "2026-09-08",
+      "theme": "One Enterprise, Distinct Brands",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "One Enterprise, Distinct Brands",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 14,
+      "date": "2026-09-09",
+      "theme": "People Before Automation",
+      "creative_type": "single-image social card",
+      "visual_concept": "People-centered image or simple typography emphasizing people before process.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "People Before Automation",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 15,
+      "date": "2026-09-10",
+      "theme": "Mid-Month JM1 Snapshot",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Mid-Month JM1 Snapshot",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 16,
+      "date": "2026-09-11",
+      "theme": "What We Don’t Do",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "What We Don’t Do",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 17,
+      "date": "2026-09-12",
+      "theme": "The Power of Clear Ownership",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "The Power of Clear Ownership",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 18,
+      "date": "2026-09-13",
+      "theme": "Building for the Long Term",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Building for the Long Term",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 19,
+      "date": "2026-09-14",
+      "theme": "Publishing Spotlight",
+      "creative_type": "brand-family intro card",
+      "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Publishing Spotlight",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 20,
+      "date": "2026-09-15",
+      "theme": "Financial Spotlight",
+      "creative_type": "brand-family intro card",
+      "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Financial Spotlight",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 21,
+      "date": "2026-09-16",
+      "theme": "Foundation Spotlight",
+      "creative_type": "brand-family intro card",
+      "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Foundation Spotlight",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 22,
+      "date": "2026-09-17",
+      "theme": "Productions Spotlight",
+      "creative_type": "brand-family intro card",
+      "visual_concept": "Clean brand-family card with One palette, branch name as text, subtle enterprise-line motif.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Productions Spotlight",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 23,
+      "date": "2026-09-18",
+      "theme": "Cross-Brand Thinking",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Cross-Brand Thinking",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 24,
+      "date": "2026-09-19",
+      "theme": "Founder Question",
+      "creative_type": "quote/reflection card",
+      "visual_concept": "Founder-perspective quote card or portrait-led graphic using One palette.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Founder Question",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 25,
+      "date": "2026-09-20",
+      "theme": "Microsoft-First, Not Microsoft-Only",
+      "creative_type": "single-image social card",
+      "visual_concept": "Minimal systems diagram or typography-led graphic with clear governance cue.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Microsoft-First, Not Microsoft-Only",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 26,
+      "date": "2026-09-21",
+      "theme": "How JM1 Thinks About AI",
+      "creative_type": "single-image social card",
+      "visual_concept": "Minimal systems diagram or typography-led graphic with clear governance cue.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "How JM1 Thinks About AI",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 27,
+      "date": "2026-09-22",
+      "theme": "Systems With Purpose",
+      "creative_type": "process/system explainer graphic",
+      "visual_concept": "Minimal systems diagram or typography-led graphic with clear governance cue.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Systems With Purpose",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 28,
+      "date": "2026-09-23",
+      "theme": "What Connects the Brands",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "What Connects the Brands",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 29,
+      "date": "2026-09-24",
+      "theme": "Where We’re Going",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "Where We’re Going",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    },
+    {
+      "day": 30,
+      "date": "2026-09-25",
+      "theme": "30 Days of One",
+      "creative_type": "single-image social card",
+      "visual_concept": "Typography-led One-branded graphic with strong headline and clean white space.",
+      "logo_requirement": "J Merrill One logo or subtle One mark where appropriate; not required on every asset.",
+      "image_requirement": "Use people-focused imagery, simple typography, or clean abstract systems visual when relevant; avoid branch color substitution.",
+      "graphic_text": "30 Days of One",
+      "aspect_ratios": {
+        "Facebook": "4:5 or 1:1",
+        "Instagram": "4:5 feed; 9:16 if converted to Reel/Story",
+        "LinkedIn": "1.91:1 or 4:5"
+      },
+      "single_asset_adaptable": true,
+      "adaptation_note": "Core design can adapt, but copy and cropping should be platform-specific."
+    }
+  ]
+}

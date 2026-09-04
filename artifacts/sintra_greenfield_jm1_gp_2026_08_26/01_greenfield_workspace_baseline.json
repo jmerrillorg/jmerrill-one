@@ -1,0 +1,32 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "phase": "PHASE 1 - CLEAN ENTERPRISE INTELLIGENCE PROOF",
+  "created_at": "2026-08-26T09:45:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 1 COMPLETE - LIMITED VALUE PROVEN; FOUNDER DIRECTION REQUIRED",
+  "legacy_recovery_reference": {
+    "status": "SUPERSEDED_BY_GREENFIELD_WORKSPACE",
+    "historical_commit": "de03b8c",
+    "forward_implementation_dependency": false
+  },
+  "workspace_name_verified": "J Merrill One - GP",
+  "greenfield_certification": "PARTIAL - BRAIN CLEAN; AUTOMATION STATE NOT CLEAN",
+  "brain_initial_count": 0,
+  "brain_final_count": 1,
+  "unexpected_inherited_state": [
+    "Automations page showed Social Media Manager, Inbox Manager, Daily Summarizer, and Facebook Commenter switches ON in GP workspace. Not mutated."
+  ],
+  "legacy_data_unexpectedly_present": false,
+  "connectors_connected_count": 0,
+  "helpers_hired_count": 0,
+  "tasks_configured_count": 0,
+  "automations_active_count_visible": 4,
+  "inspection_method": "Live authenticated Sintra UI via Computer Use / Chrome accessibility capture.",
+  "evidence_files": [
+    "/tmp/chrome_state_sintra.txt",
+    "/tmp/sintra_gp_integrations_wait.txt",
+    "/tmp/sintra_gp_automations_wait.txt",
+    "/tmp/sintra_gp_helpers_wait.txt",
+    "/tmp/sintra_gp_post_upload_state.txt"
+  ]
+}

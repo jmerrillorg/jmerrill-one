@@ -1,0 +1,30 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST VALUE VALIDATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:57:38-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "focus_correction_base_commit": "3eaa841",
+  "status": "ACTIVE",
+  "entries": [
+    {
+      "date": "2026-08-27T21:30:00-04:00",
+      "rating": "MINIMAL",
+      "evidence": "Day 2 required logo correction after the new logo rule; Days 8-30 copy required no rewrite beyond scheduling/visual instructions."
+    }
+  ],
+  "allowed_ratings": [
+    "MINIMAL",
+    "MODERATE",
+    "HEAVY",
+    "UNUSABLE"
+  ],
+  "adoption_note": "If Jackie has to rewrite nearly everything, Sintra is not saving enough work.",
+  "updated_at": "2026-08-27T21:30:00-04:00",
+  "live_pilot_revision_burden": "LOW_AFTER_RUNTIME_DEPENDENCY_IDENTIFIED",
+  "evidence": "Days 3-7 scheduled one day at a time with destination and logo confirmation; no copy regeneration required.",
+  "remaining_burden": [
+    "Day 2 creative logo review if current image lacks logo",
+    "Post-publication observation through Day 14"
+  ]
+}

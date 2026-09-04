@@ -1,0 +1,35 @@
+{
+  "packageId": 702,
+  "title": "Marketing Exception Policy",
+  "generatedAt": "2026-08-29T07:47:37.157Z",
+  "program": "J Merrill Publishing Automated Marketing Operating System",
+  "evidenceSources": {
+    "socialApi": "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md",
+    "journeysStandard": "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+    "journeysCloseout": "artifacts/jrn01_final_closeout_v2.md",
+    "journeysCheckpoint": "artifacts/bp12a_journeys_status_checkpoint.json",
+    "pubLifecycle": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/architecture/JMP-Title-Lifecycle-and-Product-Form-Orchestration-Target-Architecture-v1.0.md",
+    "pubIntake": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/dataverse/int-pub-005-publishing-intake-mapping.md",
+    "runtimeGap": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/publisher-runtime-ownership/event-driven-runtime-gap-register.json",
+    "assetStaging": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-staging.json",
+    "assetHealth": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-health.json"
+  },
+  "classificationLegend": {
+    "designed": "Architecture/rule defined in this package or prior canon.",
+    "implemented": "Runtime, table, app, or scheduler exists and has been observed or deployed.",
+    "proven": "End-to-end execution evidence exists with authoritative external/readback proof."
+  },
+  "autoRoute": "Routine deterministic eligibility, queue fill, checksum, platform retry, and reporting may be automated after approved runtime.",
+  "founderRequired": [
+    "public fact ambiguity",
+    "missing/uncertain rights",
+    "paid spend",
+    "regulated claim",
+    "new brand/page connection",
+    "duplicate page/page identity risk",
+    "author likeness uncertainty",
+    "scheduler cutover exception",
+    "high-risk public issue"
+  ],
+  "noSilentFailure": "Exceptions must land in an attention/dead-letter state with owner and next action."
+}

@@ -1,0 +1,188 @@
+{
+  "packageId": 813,
+  "artifact": "JM1-LINKEDIN-RUNTIME-FINALIZATION-v1",
+  "generatedAt": "2026-09-04T02:42:56Z",
+  "mode": "LINKEDIN_RUNTIME_FINALIZATION_AND_EXTERNAL_REVIEW_BOUNDARY",
+  "stream": "JM1 Enterprise Marketing Operating System - LinkedIn Runtime Finalization",
+  "doNotReopen": [
+    "META_OWNED_API_RUNTIME_PROVEN",
+    "META_PLATFORM_IDEMPOTENCY_PROVEN",
+    "DYNAMICS_CONTROLLED_JOURNEY_SEED_PROVEN"
+  ],
+  "linkedinApplication": {
+    "appName": "JM1 Organization Publisher",
+    "clientId": "78hqh0jqrb4y06",
+    "appUrlId": "266134085",
+    "linkedInPage": "J Merrill Publishing, Inc.",
+    "organizationId": "13048648",
+    "organizationVerification": {
+      "state": "VERIFIED_WITH_PUBLISHING_PAGE",
+      "verifiedAtObserved": "2026-09-02"
+    }
+  },
+  "liveDeveloperPortalStatus": {
+    "checkedAt": "2026-09-04T02:42:56Z",
+    "product": "Community Management API",
+    "tier": "Development Tier",
+    "productStatus": "REVIEW_IN_PROGRESS",
+    "oauthScopesVisible": [],
+    "authorizedRedirectUrlsVisible": [],
+    "privacyPolicyUrlVisible": null,
+    "businessEmailNoticeVisible": true,
+    "clientSecretState": "MASKED_IN_UI_NOT_CAPTURED",
+    "routineBrowserPublishing": "NOT_USED",
+    "classification": "LINKEDIN_API_PRODUCT_REVIEW_PENDING"
+  },
+  "jm1ControlledPrerequisites": {
+    "completedInSource": [
+      {
+        "item": "Public privacy policy route",
+        "path": "app/privacy/page.tsx",
+        "targetUrl": "https://jmerrill.one/privacy",
+        "state": "SOURCE_READY_NOT_YET_DEPLOYED"
+      },
+      {
+        "item": "LinkedIn OAuth callback route",
+        "path": "app/api/linkedin/oauth/callback/route.ts",
+        "targetUrl": "https://jmerrill.one/api/linkedin/oauth/callback",
+        "state": "SOURCE_READY_NOT_YET_DEPLOYED",
+        "security": "Does not echo OAuth code, token, or full state; returns only readiness/held exchange metadata."
+      },
+      {
+        "item": "Runtime configuration placeholders",
+        "path": "runtime/jm1-marketing-autonomous-functions/src/lib/config.js",
+        "state": "SOURCE_READY",
+        "secretReference": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-ACCESS-TOKEN"
+      },
+      {
+        "item": "LinkedIn adapter implementation",
+        "path": "runtime/jm1-marketing-autonomous-functions/src/lib/linkedin.js",
+        "state": "SOURCE_READY"
+      },
+      {
+        "item": "Social worker LinkedIn branch",
+        "path": "runtime/jm1-marketing-autonomous-functions/src/functions/socialExecutionWorkerTimer.js",
+        "state": "SOURCE_READY_AUTONOMOUS_FLAG_HELD"
+      },
+      {
+        "item": "Offline LinkedIn runtime regression suite",
+        "path": "scripts/test-jm1-linkedin-runtime-regression-suite.mjs",
+        "state": "PASS"
+      }
+    ],
+    "requiresDeploymentOrPortalSave": [
+      "Deploy https://jmerrill.one/privacy so LinkedIn can resolve the privacy policy URL.",
+      "Deploy https://jmerrill.one/api/linkedin/oauth/callback so LinkedIn OAuth can return authorization codes to a controlled JM1 endpoint.",
+      "Save the privacy policy URL in the LinkedIn Developer app settings.",
+      "Save the authorized redirect URL in the LinkedIn Developer auth settings.",
+      "Resolve or document the LinkedIn Developer business email update notice."
+    ],
+    "requiresLinkedInApproval": [
+      "Community Management API product approval.",
+      "Product-granted organization social scopes becoming available for OAuth.",
+      "3-legged admin authorization after scopes are available."
+    ]
+  },
+  "runtimeAdapter": {
+    "targetOrganization": "urn:li:organization:13048648",
+    "requiredScopes": [
+      "w_organization_social",
+      "r_organization_social"
+    ],
+    "apiVersionDefault": "202608",
+    "headers": [
+      "Authorization: Bearer [REDACTED]",
+      "Linkedin-Version",
+      "X-Restli-Protocol-Version: 2.0.0"
+    ],
+    "supportedMediaTypes": [
+      "image/jpeg",
+      "image/png",
+      "image/gif"
+    ],
+    "postFlow": [
+      "Fetch exact approved image asset without transformation",
+      "Initialize LinkedIn image upload",
+      "Upload binary to LinkedIn upload URL",
+      "Create organization post via /rest/posts",
+      "Capture x-restli-id platform object ID",
+      "Read back post with AUTHOR context",
+      "Compare author, caption, media URN, visibility",
+      "Update Dataverse execution row"
+    ],
+    "idempotencyAndReconciliation": [
+      "Certified rows with platform IDs are reported as already certified and not republished.",
+      "Claim leases block immediate duplicate execution.",
+      "Expired claims reconcile against recent LinkedIn posts before retry.",
+      "Duplicate readback refuses certification.",
+      "Post-create Dataverse write failure is reconciled without duplicate platform creation."
+    ],
+    "autonomousExecutionFlag": "false"
+  },
+  "officialLinkedInReferences": [
+    {
+      "name": "Posts API",
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-08",
+      "relevance": "Organization posting requires w_organization_social; readback requires r_organization_social; create post returns x-restli-id."
+    },
+    {
+      "name": "Images API",
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-08",
+      "relevance": "Organization image upload uses initializeUpload and binary upload before post creation."
+    },
+    {
+      "name": "Organization Access Control",
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role?view=li-lms-2026-08",
+      "relevance": "Organization API access depends on approved organization role/ACL."
+    },
+    {
+      "name": "Increasing Access",
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-08",
+      "relevance": "Development and Standard tiers, product approval, and 3-legged member authorization boundaries."
+    }
+  ],
+  "validation": {
+    "runtimeSyntaxCheck": {
+      "command": "npm --prefix runtime/jm1-marketing-autonomous-functions run check",
+      "result": "PASS"
+    },
+    "linkedinRuntimeRegression": {
+      "command": "npm --prefix runtime/jm1-marketing-autonomous-functions run test:linkedin-runtime",
+      "result": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "classifications": [
+        "LINKEDIN_ADAPTER_PAYLOAD_READY",
+        "LINKEDIN_POST_PUBLISH_RECONCILIATION_PROVEN_OFFLINE",
+        "LINKEDIN_STALE_CLAIM_RECOVERY_PROVEN_OFFLINE"
+      ]
+    },
+    "marketingOsRegression": {
+      "command": "npm --prefix runtime/jm1-marketing-autonomous-functions run test:marketing-os",
+      "result": "PASS",
+      "passed": 10,
+      "failed": 0,
+      "classifications": [
+        "JM1_MARKETING_OS_REGRESSION_SUITE_PASS",
+        "FEATURED_AUTHOR_PROGRAM_TRANSFERABILITY_PROVEN"
+      ]
+    },
+    "rootLint": {
+      "command": "npm run lint",
+      "result": "NOT_RUN_AFTER_CHANGE",
+      "reason": "Earlier attempt failed because root node_modules are absent and local runtime is Node 22/npm 10 while package metadata requires Node >=24/npm >=11."
+    }
+  },
+  "blockedExecution": {
+    "linkedinOauthExchange": "BLOCKED_UNTIL_PRODUCT_SCOPES_VISIBLE_AND_REDIRECT_URL_SAVED",
+    "keyVaultTokenStorage": "BLOCKED_UNTIL_OAUTH_AUTHORIZATION_COMPLETES",
+    "liveLinkedInCanary": "BLOCKED_UNTIL_LINKEDIN_PRODUCT_APPROVAL_AND_TOKEN",
+    "readback": "BLOCKED_UNTIL_CANARY_PLATFORM_OBJECT_EXISTS",
+    "idempotency": "BLOCKED_UNTIL_FIRST_LIVE_LINKEDIN_EXECUTION_CERTIFIED"
+  },
+  "finalClassification": "LINKEDIN_API_PRODUCT_REVIEW_PENDING - JM1 ADAPTER AND WEB PREREQUISITES PREPARED IN SOURCE; LIVE DEPLOYMENT AND LINKEDIN PORTAL SETTINGS STILL REQUIRED",
+  "nextFounderOnlyBoundary": {
+    "required": true,
+    "reason": "Saving LinkedIn Developer app OAuth/privacy settings and resolving the business email notice are persistent app-setting changes. Product approval remains under LinkedIn control after JM1-controlled settings are deployed/saved."
+  }
+}

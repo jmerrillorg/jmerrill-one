@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "FINAL CLOSEOUT / ADOPTION DECISION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T10:45:00-04:00",
+  "final_classification": "SINTRA EVALUATION CLOSED — GREENFIELD PILOT FAILED REQUIRED GOVERNANCE BOUNDARY; NO ACTIVE JM1 ADOPTION",
+  "current_branch": "codex/sintra-greenfield-jm1-gp",
+  "phase2_commit_reference": "b071019",
+  "founder_decision": "DO NOT APPROVE SINTRA GP REAL-USAGE PILOT",
+  "reason": "The clean Phase 2 test failed the required governance boundary because Sintra autonomously involved helper personas in reasoning despite helpers hired = 0, explicit no-helper instruction, and executive-room-only scope.",
+  "adoption_state": "NO ACTIVE JM1 ADOPTION",
+  "active_evaluation_closed": true
+}

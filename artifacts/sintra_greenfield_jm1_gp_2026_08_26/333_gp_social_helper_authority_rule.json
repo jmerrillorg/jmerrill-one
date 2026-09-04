@@ -1,0 +1,19 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST VALUE VALIDATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:57:38-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "focus_correction_base_commit": "3eaa841",
+  "status": "ACTIVE",
+  "actual_owner_options": [
+    "J Merrill One",
+    "J Merrill Publishing",
+    "J Merrill Financial",
+    "J Merrill Foundation",
+    "J Merrill Productions"
+  ],
+  "helper_role": "AI SOCIAL SPECIALIST CONTRIBUTOR",
+  "never": "JM1 SOCIAL MEDIA OWNER",
+  "rule": "A social helper may contribute social strategy or drafts but cannot own JM1 social media."
+}

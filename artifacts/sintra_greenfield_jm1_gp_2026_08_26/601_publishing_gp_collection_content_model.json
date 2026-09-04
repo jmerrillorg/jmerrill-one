@@ -1,0 +1,21 @@
+{
+  "collection_axes": [
+    "reader problem/question",
+    "theme",
+    "author lane",
+    "release moment",
+    "seasonal relevance",
+    "professional audience"
+  ],
+  "do_not_group_by": [
+    "governance status",
+    "rights status",
+    "scheduler batch",
+    "internal source tier"
+  ],
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

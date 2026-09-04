@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "ACTIVE",
+  "days_used": 0,
+  "sessions_used": 0,
+  "meaningful_executive_questions": 0,
+  "voluntary_returns_without_test_prompting": 0,
+  "measurement_note": "Counts start after activation; do not manufacture usage."
+}

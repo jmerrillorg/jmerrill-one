@@ -1,0 +1,884 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "workspace": "J Merrill Publishing - GP",
+  "counts": {
+    "public_site_claim_titles": "125+ titles",
+    "visible_book_cards_itemized": 36,
+    "visible_author_cards": 65,
+    "visible_author_directory_title_count_sum": 109,
+    "strategic_expectation": "70+ authors / 120+ titles",
+    "gap": "Public pages did not expose all 125+ titles as itemized records without client-side load-more interaction; do not treat expectation as verified itemized count."
+  },
+  "authors_visible": [
+    {
+      "author": "Agape International Cathedral",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Alesia Corpening",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Ashanti Flemister",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Brandyn McElroy",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title_count": 6,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Cheryl Cook",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Cheryl Travis",
+      "title_count": 8,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Christy Grogg",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Cynthia Sloan",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Daphanny Baker",
+      "title_count": 5,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "David Williams",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Dean Wilson",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Deanna Jones",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Deborah Eiland",
+      "title_count": 4,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Dennis Brown",
+      "title_count": 3,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Diane Johnson",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Donjia Walls",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Earline Neal",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Edith Clay",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Ericka Johnson-Settles",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Ericka Thornton",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Gloria Patterson",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Gwendolyn Rucker-Carr",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Iyorwuese Hagher",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "J. Derrick Johnson",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Jackie Smith Jr",
+      "title_count": 3,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Janet Stephens",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Jaylonna Stevette",
+      "title_count": 4,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Karen Hill",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "KD Heard",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Kelli Milligan Stammen",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Kiena Hughley",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Kimberly Reeder",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Kurt Broadnax",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Leslie Banks",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Lisa Clark",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Lisa Taylor",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Lyle Goddard",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Mack Hughley",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Marvin Grayson",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Maurche Reed",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Mildred Beard",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Nathaniel Short",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Obadiah Harris",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Pamela Smith",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "R. Dorian Night",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Randall Beverly",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Regina Scales",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Rodney Waller",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Rosetta Perry",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Sean Smith Sr",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Shana Byrd",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Shecara Norris",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Shelley McIntosh",
+      "title_count": 3,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Sylvia Benson",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Tekisha Wimbush",
+      "title_count": 4,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Terry Stephens",
+      "title_count": 4,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Thaddues Smith",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Tia Benincase",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Toni Kleckley",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Tracy Norris",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Veronica Brown",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Wayne Pounds",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Will Harris",
+      "title_count": 2,
+      "source_authority": "https://jmerrill.pub/authors"
+    },
+    {
+      "author": "Winter Dockery",
+      "title_count": 1,
+      "source_authority": "https://jmerrill.pub/authors"
+    }
+  ],
+  "titles": [
+    {
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/100-wisdom-lessons-for-life-and-living"
+    },
+    {
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/27-days-to-overcoming-depression"
+    },
+    {
+      "author": "Daphanny Baker",
+      "title": "365 Days of Transparency",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/365-days-of-transparency"
+    },
+    {
+      "author": "Ericka Johnson-Settles",
+      "title": "7 Step Jumpstart to Becoming Your Best Self",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/7-step-jumpstart-to-becoming-your-best-self"
+    },
+    {
+      "author": "Shecara Norris",
+      "title": "A Blended Family",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/a-blended-family"
+    },
+    {
+      "author": "Iyorwuese Hagher",
+      "title": "A Portrait of Paradise",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/a-portrait-of-paradise"
+    },
+    {
+      "author": "Shelley McIntosh",
+      "title": "A Principal's Tale",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/a-principal-s-tale"
+    },
+    {
+      "author": "Alesia Corpening",
+      "title": "A Trubie's Guide Pt. 1",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/a-truebies-guide-part-1"
+    },
+    {
+      "author": "Alesia Corpening",
+      "title": "A Trubie's Guide Pt. 2",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/a-truebies-guide-part-2"
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Abortion!",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/abortion"
+    },
+    {
+      "author": "Dennis Brown",
+      "title": "Aligned!",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/aligned"
+    },
+    {
+      "author": "Jaylonna Stevette",
+      "title": "Almost Happy",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P3",
+      "source_authority": "https://jmerrill.pub/books/books/almost-happy"
+    },
+    {
+      "author": "Ericka Thornton",
+      "title": "Are You Sure That You Are Ready?",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/are-you-sure-that-you-are-ready"
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Because the Lord Is My Shepherd",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/because-the-lord-is-my-shepherd"
+    },
+    {
+      "author": "Deborah Eiland",
+      "title": "BEE Careful",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/bee-careful"
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "Biblical Prescriptions for Life's Troubles",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/biblical-prescriptions-for-life-s-troubles"
+    },
+    {
+      "author": "Nathaniel Short",
+      "title": "Bodacious",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/bodacious"
+    },
+    {
+      "author": "Dennis Brown",
+      "title": "Connected!",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/connected"
+    },
+    {
+      "author": "Gloria Patterson",
+      "title": "Conquer Your Fears and Win",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/conquer-your-fears-and-win"
+    },
+    {
+      "author": "Lisa Taylor",
+      "title": "Damaged",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/damaged"
+    },
+    {
+      "author": "Agape International Cathedral",
+      "title": "Delicious Ideas!",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/delicious-ideas"
+    },
+    {
+      "author": "Sean Smith, Sr.",
+      "title": "Destined to Break the Curse",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/destined-to-break-the-curse"
+    },
+    {
+      "author": "Sean Smith, Sr.",
+      "title": "Destined to Break the Curse Devotional",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/destined-to-break-the-curse-devotional"
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "Discipline and Direction",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/discipline-and-direction"
+    },
+    {
+      "author": "Regina Scales",
+      "title": "Divinely Inspired",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/divinely-inspired"
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory 2: The Relationship Handbook (2nd Edition)",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/establishing-glory-2"
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory 3: The Marriage Handbook",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/establishing-glory-3"
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory: The Praise and Worship Handbook (2nd Edition)",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/establishing-glory"
+    },
+    {
+      "author": "Shana Byrd",
+      "title": "Focus, Trust, & Follow",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/focus-trust-and-follow"
+    },
+    {
+      "author": "Kelli Milligan Stammen",
+      "title": "For What It's Worth",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/for-what-it-s-worth"
+    },
+    {
+      "author": "Karen Hill",
+      "title": "From Stylist to CEO",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/from-stylist-to-ceo"
+    },
+    {
+      "author": "Jaylonna Stevette",
+      "title": "Getting Back 2 Happy",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/getting-back-2-happy"
+    },
+    {
+      "author": "Kimberly Reeder",
+      "title": "Girl, Did You Know... ?",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/girl-did-you-know"
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Girl, You're Not Crazy. You're Dealing with a Narcissist",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/girl-you-re-not-crazy-you-re-dealing-with-a-narcissist"
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "God's Business Plan",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/god-s-business-plan"
+    },
+    {
+      "author": "Tekisha Wimbush",
+      "title": "God's Nudge",
+      "publication_status": "PUBLIC_CATALOG_VISIBLE",
+      "current_availability": "VISIBLE_ON_PUBLIC_BOOKS_PAGE",
+      "release_date": "NOT_VISIBLE_IN_PUBLIC_SOURCE",
+      "cover": "Logo placeholder visible when no cover image is exposed in card; exact cover status not fully verified",
+      "author_image": "NOT_VISIBLE_IN_BOOK_CARD",
+      "description": "Catalog description pending.",
+      "rights_safe_excerpt_status": "NO_EXCERPT_VERIFIED — USE TITLE/AUTHOR/OFFICIAL DESCRIPTION ONLY",
+      "social_eligibility": "READY — ASSET GAP",
+      "last_social_promotion_if_known": "UNKNOWN",
+      "priority": "P4",
+      "source_authority": "https://jmerrill.pub/books/books/god-s-nudge"
+    }
+  ]
+}

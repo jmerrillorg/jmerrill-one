@@ -1,0 +1,67 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "status": "PREPARED — FOUNDER MANUAL FINAL-CLICK REQUIRED",
+  "visual_system": {
+    "navy": "#002C54",
+    "sky_blue": "#A3C4DC",
+    "gold_amber": "#F4B400",
+    "white": "#FFFFFF",
+    "charcoal": "#111111"
+  },
+  "creative_items": [
+    {
+      "day": 2,
+      "date": "2026-08-28",
+      "theme": "Why J Merrill One Exists",
+      "creative": "Typography-led graphic with the line 'Why J Merrill One Exists', navy headline, gold divider, soft sky-blue supporting line, white field.",
+      "treatment": "typography-led graphic",
+      "status": "PREPARED FOR SOCIAL MEDIA MANAGER CREATION/SCHEDULING"
+    },
+    {
+      "day": 3,
+      "date": "2026-08-29",
+      "theme": "Meet the Family: Publishing",
+      "creative": "Brand-family card using One palette; J Merrill One umbrella framing with Publishing named as the referenced family branch.",
+      "treatment": "brand-family card",
+      "status": "PREPARED FOR SOCIAL MEDIA MANAGER CREATION/SCHEDULING"
+    },
+    {
+      "day": 4,
+      "date": "2026-08-30",
+      "theme": "People-First",
+      "creative": "People-centered image or warm typography card emphasizing people before process; no deprecated prior public terminology.",
+      "treatment": "people-centered imagery / typography",
+      "status": "PREPARED FOR SOCIAL MEDIA MANAGER CREATION/SCHEDULING"
+    },
+    {
+      "day": 5,
+      "date": "2026-08-31",
+      "theme": "Founder Perspective",
+      "creative": "Founder-perspective quote/reflection card; portrait may be used only if an approved Founder image is available.",
+      "treatment": "quote graphic / Founder perspective",
+      "status": "PREPARED FOR SOCIAL MEDIA MANAGER CREATION/SCHEDULING"
+    },
+    {
+      "day": 6,
+      "date": "2026-09-01",
+      "theme": "Meet the Family: Financial",
+      "creative": "Clean brand-family Financial card with careful planning language; no legal, tax, or investment-management implication.",
+      "treatment": "brand-family card",
+      "status": "PREPARED FOR SOCIAL MEDIA MANAGER CREATION/SCHEDULING"
+    },
+    {
+      "day": 7,
+      "date": "2026-09-02",
+      "theme": "Why-First",
+      "creative": "Simple conceptual graphic: purpose before process; navy/white field with gold accent and restrained sky-blue support.",
+      "treatment": "conceptual typography graphic",
+      "status": "PREPARED FOR SOCIAL MEDIA MANAGER CREATION/SCHEDULING"
+    }
+  ],
+  "feed_variation_rule": "The first-week feed should feel related through the One visual system without becoming six copies of the same template.",
+  "external_tool_used": false
+}

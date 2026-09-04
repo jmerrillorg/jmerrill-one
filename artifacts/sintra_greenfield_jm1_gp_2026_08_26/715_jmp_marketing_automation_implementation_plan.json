@@ -1,0 +1,62 @@
+{
+  "packageId": 715,
+  "title": "Marketing Automation Implementation Plan",
+  "generatedAt": "2026-08-29T07:47:37.157Z",
+  "program": "J Merrill Publishing Automated Marketing Operating System",
+  "evidenceSources": {
+    "socialApi": "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md",
+    "journeysStandard": "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+    "journeysCloseout": "artifacts/jrn01_final_closeout_v2.md",
+    "journeysCheckpoint": "artifacts/bp12a_journeys_status_checkpoint.json",
+    "pubLifecycle": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/architecture/JMP-Title-Lifecycle-and-Product-Form-Orchestration-Target-Architecture-v1.0.md",
+    "pubIntake": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/docs/dataverse/int-pub-005-publishing-intake-mapping.md",
+    "runtimeGap": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/publisher-runtime-ownership/event-driven-runtime-gap-register.json",
+    "assetStaging": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-staging.json",
+    "assetHealth": "/Users/jmerrillone/.codex/worktrees/cv02/jmerrill-pub/data/is009-publishing-asset-health.json"
+  },
+  "classificationLegend": {
+    "designed": "Architecture/rule defined in this package or prior canon.",
+    "implemented": "Runtime, table, app, or scheduler exists and has been observed or deployed.",
+    "proven": "End-to-end execution evidence exists with authoritative external/readback proof."
+  },
+  "phases": [
+    {
+      "phase": "M1",
+      "name": "Authority inventory and schema draft",
+      "status": "STARTED_BY_THIS_PACKAGE"
+    },
+    {
+      "phase": "M2",
+      "name": "Dataverse marketing eligibility and campaign table review",
+      "status": "REQUIRES_APPROVAL_BEFORE_SCHEMA_MUTATION"
+    },
+    {
+      "phase": "M3",
+      "name": "Exact media registry and social queue implementation",
+      "status": "DESIGNED"
+    },
+    {
+      "phase": "M4",
+      "name": "JM1 Social Orchestrator API with Meta first",
+      "status": "DESIGNED_NOT_PROVEN"
+    },
+    {
+      "phase": "M5",
+      "name": "Customer Insights journey proof after JRN-01 clears",
+      "status": "EXTERNAL_ADMIN_DEPENDENCY"
+    },
+    {
+      "phase": "M6",
+      "name": "Closed-loop performance/replenishment",
+      "status": "DESIGNED"
+    }
+  ],
+  "firstProofTarget": "A source-backed lifecycle or evergreen candidate creates an approved social queue item, publishes through a JM1-owned adapter, records platform ID/readback, and updates marketing health without browser interaction.",
+  "guardrails": [
+    "no public machinery language",
+    "no duplicate schedulers",
+    "no fake assets",
+    "no secrets in source",
+    "no live journey activation before JRN-01 proof"
+  ]
+}

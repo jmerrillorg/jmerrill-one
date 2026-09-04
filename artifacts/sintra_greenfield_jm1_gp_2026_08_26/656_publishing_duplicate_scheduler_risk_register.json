@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-08-28T11:01:03-04:00",
+  "known_p0": [
+    {
+      "date": "2026-08-28",
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "classification": "DUPLICATE_AUTHORITY",
+      "evidence": "Meta Planner showed two Facebook 10:00 AM entries for the same 101 Wisdom caption with distinct content IDs 1394829325988848 and 1394829422655505; Founder evidence also reports Sintra weak creative and Meta/local remediated creative both published.",
+      "public_readback": {
+        "facebook_url": "https://www.facebook.com/jmerrillpub",
+        "duplicate_visible_posts": 2,
+        "sintra_attributed_duplicate_visible": true,
+        "local_remediated_duplicate_visible": true,
+        "recommended_keeper": "local remediated/non-Sintra-attributed Day 1 Facebook post",
+        "cleanup_result": "NOT_DELETED_NO_PUBLIC_DELETION_PERFORMED"
+      }
+    }
+  ],
+  "future_items_prior_manifest_classification": "SINTRA_ONLY_PENDING_LIVE_REVERIFICATION",
+  "future_duplicate_status": "UNKNOWN until Meta/Sintra/LinkedIn native inventory is completed",
+  "p0_rule": "Any DUPLICATE_AUTHORITY item is P0."
+}

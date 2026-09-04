@@ -1,0 +1,12 @@
+{
+  "wave": "A",
+  "dates": ["2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31"],
+  "assets": [
+    "publishing_remediation_wave1_creatives/day01_2026-08-28_101_wisdom_people_first.png",
+    "publishing_remediation_wave1_creatives/day02_2026-08-29_27_days_quiet_step.png",
+    "publishing_remediation_wave1_creatives/day03_2026-08-30_purpose_before_process.png",
+    "publishing_remediation_wave1_creatives/day04_2026-08-31_reader_promise.png"
+  ],
+  "logo_fidelity": "LOCAL_OFFICIAL_LOGO_INCLUDED",
+  "status": "READY_FOR_EXACT_FILE_SCHEDULING"
+}

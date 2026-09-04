@@ -1,0 +1,30 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "assessment_status": "INCIDENT EVIDENCE — AUTOMATION OFF AT EXECUTION TIME",
+  "manual_scheduling_surface": "AUTHORIZED",
+  "automation_candidate": "PILOT CANDIDATE IF REVIEW/APPROVAL CONTROLS ARE PROVEN",
+  "enabled": false,
+  "unknowns_to_validate_before_enablement": [
+    "what it generates",
+    "what it schedules",
+    "destination controls",
+    "approval controls",
+    "cadence controls",
+    "ability to pause",
+    "ability to edit",
+    "engagement implications"
+  ],
+  "not_automatic_hold": true,
+  "not_authorized_without_exact_founder_authority": true,
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "day1_failure_relevance": "RELATED",
+  "visible_error_text": "Error publishing post. Post not published because automation was turned off",
+  "note": "Manual schedule creation/attempt and automated publication execution are separate capabilities.",
+  "classification": "CONTROLLED_AUTONOMOUS_SCHEDULING_RUNTIME_ASSESSMENT",
+  "assessment": "Social Media Manager is acceptable as an ON runtime for founder-approved, destination-certified scheduling/publishing. It is not approved as unsupervised editorial, engagement, inbox, comment, or DM automation.",
+  "evidence": "Day 1 published after runtime ON; Days 2-7 scheduled."
+}

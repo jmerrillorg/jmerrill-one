@@ -1,0 +1,40 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B-R - NETWORK-STABLE HELPER VALUE RETEST",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:37:22-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "retest_base_commit": "7a093e1",
+  "old_phase2b_score": 67,
+  "revised_score": 83,
+  "components_changed": {
+    "orchestration_usefulness": {
+      "old": 3,
+      "new": 14,
+      "why": "Buddy completed and added a full specialist memo."
+    },
+    "strategic_synthesis": {
+      "old": 8,
+      "new": 13,
+      "why": "Memo integrated market positioning, costs, risks, stack options, and decision gates."
+    },
+    "cognitive_load_reduction": {
+      "old": 5,
+      "new": 8,
+      "why": "Single specialist pass reduced manual strategy-framing burden."
+    },
+    "context_inheritance": {
+      "old": 14,
+      "new": 12,
+      "why": "Buddy used JM1 context but partially missed established brand ownership routing."
+    }
+  },
+  "components_preserved": {
+    "helper_business_authority_separation": 17,
+    "brand_routing": 8,
+    "recommendation_restraint": 9,
+    "governance_burden": 3
+  },
+  "hard_failures": 0,
+  "threshold": "ADOPTION CASE PROVEN — LIMITED ORCHESTRATED ROLE"
+}

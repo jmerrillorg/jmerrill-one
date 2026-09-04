@@ -1,0 +1,18 @@
+{
+  "archetypes": [
+    "reader question",
+    "author visibility",
+    "book promise",
+    "publishing clarity",
+    "release-day invitation",
+    "collection/merchandising",
+    "behind-the-purpose",
+    "gentle CTA"
+  ],
+  "rule": "Rotate archetypes; do not reuse one formula across adjacent posts.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

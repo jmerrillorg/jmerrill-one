@@ -1,0 +1,75 @@
+{
+  "packageId": 807,
+  "artifact": "JM1-8HOUR-WINDOW-HARD-STOP-PACKET-v1",
+  "generatedAt": "2026-09-03T13:05:00Z",
+  "stream": "JM1 Enterprise Marketing Operating System — 8-Hour Autonomous Execution Window",
+  "executiveStatus": "Progressed autonomous media and credential operations; Dynamics journey execution is held at the governed Publishing sender/domain activation boundary.",
+  "completed": [
+    "AUTONOMOUS_MEDIA_REGISTRATION_PROVEN",
+    "DURABLE_MEDIA_EXACT_FILE_INTEGRITY_PROVEN",
+    "AUTONOMOUS_CAMPAIGN_TO_EXECUTABLE_MEDIA_PIPELINE_PROVEN",
+    "DYNAMICS_TEST_AUDIENCE_PROVEN",
+    "CREDENTIAL_MONITOR_THRESHOLD_AND_IDEMPOTENCY_PROVEN"
+  ],
+  "dynamicsSenderFinding": {
+    "governedCanon": {
+      "source": "docs/governance/JM1-CANON-ENFORCEMENT-RUNTIME-POLICY-LAYER-v1.0.md",
+      "from": "publishing@email.jmerrill.one",
+      "replyTo": "publishing@jmerrill.one",
+      "cc": "publishing@jmerrill.one",
+      "format": "HTML"
+    },
+    "tenantReadback": {
+      "customerInsightsBrandSenders": [
+        {
+          "name": "Default brand sender",
+          "fromName": "Admin",
+          "fromEmail": "admin@unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+          "replyToEmail": "no-reply@unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com"
+        }
+      ],
+      "customerInsightsDomains": [
+        {
+          "name": "unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+          "ownershipValidationStatus": 1,
+          "domainAlignmentValidationStatus": 3,
+          "emailDnsRecord1Status": 1,
+          "emailDnsRecord2Status": 1
+        }
+      ],
+      "publishingSenderValidatedInCustomerInsights": false
+    },
+    "hardStopReason": "Production sending-domain/sender activation is required before a J Merrill Publishing Customer Insights journey can be sent or certified. Substituting the generated Admin Dynamics sender would violate the governed Publishing sender identity.",
+    "founderApprovalRequiredFor": [
+      "Validate/activate the governed Customer Insights sending domain for publishing@email.jmerrill.one, including any DNS modification if Microsoft requires it.",
+      "Create/approve the J Merrill Publishing Customer Insights brand sender using publishing@email.jmerrill.one and reply-to publishing@jmerrill.one.",
+      "Confirm whether the controlled Journey may use that sender once Customer Insights validates it."
+    ]
+  },
+  "mediaRegistryState": {
+    "schema": "MEDIA_REGISTRY_SCHEMA_PROVEN",
+    "storage": "jm1media / $web / jm1-marketing",
+    "proofUrl": "https://jm1media.z13.web.core.windows.net/jm1-marketing/e60c47b5da7824de99976e0a/additional_title_discovery/evergreen_discovery-e530d31011cd637d.svg",
+    "sha256": "e530d31011cd637dbaa0dd85a80906297befd396cd707ac47d1d28a0c822b96e"
+  },
+  "coordinatedCampaignState": {
+    "campaignAuthority": "d42fae45-90a6-f111-b8de-00224820105b",
+    "journeyExecution": "HELD_GOVERNED_SENDER_IDENTITY_REQUIRED",
+    "facebookSocialExecution": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+    "instagramSocialExecution": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+    "linkedinSocialExecution": "HELD_EXTERNAL_PLATFORM_AUTHORITY"
+  },
+  "linkedInState": "LINKEDIN_API_PRODUCT_REVIEW_PENDING",
+  "sintraReplacementMatrix": {
+    "strategyIdeation": "OPTIONAL_EVALUATION_REMAINS",
+    "copyAssistance": "OPTIONAL_EVALUATION_REMAINS",
+    "routineFacebookExecution": "REPLACED_BY_JM1_META_ADAPTER",
+    "routineInstagramExecution": "REPLACED_BY_JM1_META_ADAPTER",
+    "routineLinkedInExecution": "HELD_LINKEDIN_PRODUCT_REVIEW",
+    "routineDynamicsJourneyExecution": "HELD_GOVERNED_PUBLISHING_SENDER_IDENTITY_REQUIRED"
+  },
+  "sintraClassification": "SINTRA BRIDGE — REPLACEMENT UNDERWAY",
+  "noTouchResult": "JM1_CORE_META_NO_TOUCH_TEST_FAIL — Dynamics governed J Merrill Publishing sender/domain identity remains the remaining normal-operation dependency",
+  "routineFounderTouchCount": 0,
+  "oneTimeAdminTouchCount": 0
+}

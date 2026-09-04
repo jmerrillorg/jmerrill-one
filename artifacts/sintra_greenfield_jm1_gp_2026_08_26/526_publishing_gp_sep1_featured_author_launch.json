@@ -1,0 +1,37 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "date": "2026-09-01",
+  "override": "Founder-directed Sep. 1 Monthly Featured Author launch",
+  "featured_author": "Sean A Crowley I",
+  "title": "The Shift: Changing with God",
+  "replaced_prior_slot": {
+    "day": 5,
+    "proposed_date": "2026-09-01",
+    "pillar": "Inside Publishing",
+    "mix_category": "behind-the-scenes/process",
+    "author": null,
+    "title": null,
+    "theme": "Inside Publishing",
+    "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+    "approval_state": "DRAFT — FOUNDER APPROVAL REQUIRED",
+    "scheduled": false,
+    "destinations": [
+      "Facebook: J Merrill Publishing",
+      "Instagram: canonical J Merrill Publishing",
+      "LinkedIn: J Merrill Publishing, Inc."
+    ],
+    "creative_rule": "Include approved shared J Merrill logo in every new image."
+  },
+  "displaced_theme_moved_to": "2026-09-02",
+  "status": "APPLIED_TO_CALENDAR_AND_FIRST7_PACKET",
+  "guardrails": [
+    "no invented biography",
+    "no unsupported excerpts",
+    "use Founder-supplied/public title sources only"
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "packageId": 781,
+  "artifact": "JM1-SOCIAL-ADAPTER-AUTHORITY-CHECK-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "authorityInventory": {
+    "inspectedWithoutReadingSecretValues": true,
+    "envNames": [],
+    "azureApps": [
+      "J Merrill Foundation Integration",
+      "J Merrill One HQ – Power BI",
+      "J Merrill Publishing Inquiry bot (Microsoft Copilot Studio)"
+    ],
+    "keyVaults": [
+      "kv-jm1-core",
+      "jm1-core-vault"
+    ],
+    "secretNameInventory": {
+      "kv-jm1-core": "INACCESSIBLE_OR_EMPTY",
+      "jm1-core-vault": [
+        "AnthropicApiKey",
+        "AUTH-SECRET",
+        "AUTHOR-CONNECT-ENROLLMENT-TOKEN-SECRET",
+        "AUTHOR-OPERATING-CENTER-EXTERNAL-CLIENT-SECRET",
+        "AUTHOR-PORTAL-ACCESS-CODE-PEPPER",
+        "AUTHOR-PORTAL-ACCESS-REGISTRY-JSON",
+        "AUTHOR-PORTAL-MASTER-ACCESS-CODE",
+        "AUTHOR-PORTAL-SESSION-SECRET",
+        "AZURE-STORAGE-CONNECTION-STRING",
+        "DATAVERSE-CLIENT-ID",
+        "DATAVERSE-CLIENT-SECRET",
+        "DATAVERSE-TENANT-ID",
+        "EXTERNAL-ID-PROVISIONER-CLIENT-SECRET",
+        "INFRA002-DATAVERSE-CLIENT-ID",
+        "INFRA002-DATAVERSE-CLIENT-SECRET",
+        "INFRA002-DATAVERSE-RESOURCE-URL",
+        "INFRA002-DATAVERSE-TENANT-ID",
+        "INFRA002-DATAVERSE-WEB-API-BASE-URL",
+        "jm1-int-pub-005-diagnostic-runner-key",
+        "jm1-int-pub-005-relay-api-key",
+        "JM1-JOIN-INTERNAL-NOTIFICATION-RELAY-KEY",
+        "JM1-JOIN-INTERNAL-NOTIFICATION-RELAY-URL",
+        "JM1-ORCHESTRATION-WORKER-KEY",
+        "JM1-PAYMENT-EVENT-RECOVERY-KEY",
+        "JM1-PUB-INTAKE-WEBAPI-CLIENT-ID",
+        "JM1-PUB-INTAKE-WEBAPI-CLIENT-SECRET",
+        "jm1-publishing-orchestration-worker-key",
+        "PRECOA-CALENDAR-FEED-URL",
+        "PUBLISHER-OPERATING-CENTER-CLIENT-SECRET",
+        "PublisherOperatingCenterClientSecret",
+        "SHAREPOINT-CLIENT-ID",
+        "SHAREPOINT-CLIENT-SECRET",
+        "SHAREPOINT-TENANT-ID",
+        "STRIPE-CHECKOUT-SECRET-KEY",
+        "STRIPE-CONNECT-SECRET-KEY",
+        "STRIPE-WEBHOOK-SECRET",
+        "TURNSTILE-SECRET-KEY",
+        "TURNSTILE-SITE-KEY"
+      ]
+    },
+    "metaCredentialReferencePresent": false,
+    "linkedinCredentialReferencePresent": false,
+    "metaDeveloperUiObserved": "Signed-in Meta for Developers console showed no apps under no selected business portfolio.",
+    "linkedinDeveloperUiObserved": "Signed-in LinkedIn developer console showed zero apps and Create app route available."
+  },
+  "adapterBoundary": {
+    "meta": "Social Execution -> MetaAdapter -> authority check -> HELD_EXTERNAL_PLATFORM_AUTHORITY until JM1-owned app/token/asset authority exists.",
+    "linkedin": "Social Execution -> LinkedInAdapter -> authority check -> HELD_EXTERNAL_PLATFORM_AUTHORITY until LinkedIn developer product/OAuth approval exists.",
+    "browserExecutionUsed": false,
+    "platformPublishingAttempted": false
+  },
+  "socialRowsInspected": 6,
+  "socialRowsUpdated": [
+    {
+      "id": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+      "platform": "facebook",
+      "state": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "META_PLATFORM_AUTHORITY_MISSING"
+    },
+    {
+      "id": "d92fae45-90a6-f111-b8de-00224820105b",
+      "platform": "linkedin",
+      "state": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "LINKEDIN_PLATFORM_AUTHORITY_MISSING"
+    },
+    {
+      "id": "8668125b-baa6-f111-b8de-6045bdd69435",
+      "platform": "facebook",
+      "state": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "META_PLATFORM_AUTHORITY_MISSING"
+    },
+    {
+      "id": "d8f0155e-baa6-f111-b8de-6045bdd69678",
+      "platform": "instagram",
+      "state": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "META_PLATFORM_AUTHORITY_MISSING"
+    },
+    {
+      "id": "263e5146-90a6-f111-b8de-6045bdd69738",
+      "platform": "instagram",
+      "state": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "META_PLATFORM_AUTHORITY_MISSING"
+    },
+    {
+      "id": "e9a19b5b-baa6-f111-b8de-6045bdd69738",
+      "platform": "linkedin",
+      "state": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "LINKEDIN_PLATFORM_AUTHORITY_MISSING"
+    }
+  ],
+  "readback": [
+    {
+      "id": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+      "name": "Iyorwuese October intro - facebook",
+      "platform": "facebook",
+      "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "META_PLATFORM_AUTHORITY_MISSING",
+      "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:facebook"
+    },
+    {
+      "id": "d92fae45-90a6-f111-b8de-00224820105b",
+      "name": "Iyorwuese October intro - linkedin",
+      "platform": "linkedin",
+      "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "LINKEDIN_PLATFORM_AUTHORITY_MISSING",
+      "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:linkedin"
+    },
+    {
+      "id": "8668125b-baa6-f111-b8de-6045bdd69435",
+      "name": "Iyorwuese October title discovery - facebook",
+      "platform": "facebook",
+      "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "META_PLATFORM_AUTHORITY_MISSING",
+      "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:facebook"
+    },
+    {
+      "id": "d8f0155e-baa6-f111-b8de-6045bdd69678",
+      "name": "Iyorwuese October title discovery - instagram",
+      "platform": "instagram",
+      "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "META_PLATFORM_AUTHORITY_MISSING",
+      "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:instagram"
+    },
+    {
+      "id": "263e5146-90a6-f111-b8de-6045bdd69738",
+      "name": "Iyorwuese October intro - instagram",
+      "platform": "instagram",
+      "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "META_PLATFORM_AUTHORITY_MISSING",
+      "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:instagram"
+    },
+    {
+      "id": "e9a19b5b-baa6-f111-b8de-6045bdd69738",
+      "name": "Iyorwuese October title discovery - linkedin",
+      "platform": "linkedin",
+      "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "errorCode": "LINKEDIN_PLATFORM_AUTHORITY_MISSING",
+      "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:linkedin"
+    }
+  ],
+  "classification": "SOCIAL_ADAPTER_AUTHORITY_BOUNDARY_PROVEN_HELD"
+}

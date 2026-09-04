@@ -1,0 +1,29 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T09:00:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "FEATURE/AUTOMATION TERMINOLOGY RECONCILED",
+  "social_media_manager_scheduling_surface": "AUTHORIZED",
+  "autonomous_social_media_manager_behavior": "NOT YET AUTHORIZED",
+  "inbox_manager": "OFF / NOT AUTHORIZED",
+  "daily_summarizer": "OFF / NOT AUTHORIZED FOR THIS SOCIAL PILOT",
+  "facebook_commenter": "OFF / NOT AUTHORIZED",
+  "rule": "Do not report Social Media Manager simply as OFF required when its manual calendar/scheduling surface is the approved execution surface.",
+  "engagement_authority": "NONE",
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "distinction": "Social Media Manager ON is a runtime requirement for governed approved content execution, not an expansion of autonomous social authority.",
+  "smm_on_means": [
+    "approved/scheduled content may publish through runtime",
+    "calendar can hold verified future posts"
+  ],
+  "smm_on_does_not_mean": [
+    "comments authorized",
+    "DMs authorized",
+    "Inbox authorized",
+    "Daily Summarizer authorized",
+    "Facebook Commenter authorized",
+    "new editorial authority authorized"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "requested_exact_name": "J Merrill Publishing - GP",
+  "live_sintra_display_name": "J Merrill Publishing",
+  "creation_result": "CREATED_WITH_SINTRA_NAME_LIMIT_CONSTRAINT",
+  "observed_constraint": "Sintra create-workspace field accepted 20 characters and truncated the requested exact name to J Merrill Publishing before enabling Create Workspace.",
+  "color_selected": "Sky",
+  "do_not_rename_one": true,
+  "do_not_delete_one": true,
+  "workspace_baseline_summary": "New workspace opened to settings, then Brain/Integrations/Automations/Tasks/Helpers were inspected."
+}

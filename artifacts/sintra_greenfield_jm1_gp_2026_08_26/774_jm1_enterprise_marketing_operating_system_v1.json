@@ -1,0 +1,109 @@
+{
+  "packageId": 774,
+  "artifact": "JM1-ENTERPRISE-MARKETING-OPERATING-SYSTEM-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "status": "RATIFIED_DESIGN_READY_FOR_IMPLEMENTATION",
+  "owner": "J Merrill One",
+  "firstProductionBranch": "J Merrill Publishing",
+  "governingPrinciple": "Branch strategy and public voice stay branch-isolated; shared One infrastructure handles eligibility, assembly, execution, evidence, and exception routing.",
+  "doNotDo": [
+    "Do not manually build another October social calendar.",
+    "Do not use September browser workflow as the routine operating procedure.",
+    "Do not classify Sintra/Soshie scheduling as JM1-owned API publishing.",
+    "Do not give Sintra/Soshie replacement credit for the final remediated September execution.",
+    "Do not classify The Shift as backlist or draft."
+  ],
+  "sharedServices": [
+    "Marketing Eligibility Service",
+    "Campaign Authority Service",
+    "Lifecycle Trigger Registry",
+    "Asset Resolver",
+    "Creative Production Engine",
+    "Public-Ready Gate",
+    "Dataverse Social Queue",
+    "Platform Adapter Layer",
+    "Execution Evidence Store",
+    "Idempotency and Supersession Engine",
+    "Retry and Dead-Letter Engine",
+    "Analytics Return Loop",
+    "Next-Best-Marketing-Action Engine",
+    "Founder Digest"
+  ],
+  "publishingProgramAuthority": [
+    "Title/Author Marketing",
+    "Author Acquisition/Inquiry",
+    "Publishing Brand Marketing",
+    "Reader/Audience Engagement"
+  ],
+  "branchIsolationRules": [
+    "Publishing campaigns publish only to certified Publishing destinations.",
+    "Financial, Foundation, One, Productions, AIC, and personal destinations are not fallback destinations for Publishing.",
+    "Shared infrastructure may be reused, but branch facts, logos, compliance boundaries, CTAs, and voice must be loaded from the active branch configuration."
+  ],
+  "targetRuntime": {
+    "authority": "Dataverse",
+    "orchestration": "Azure Function / Logic App / Power Automate as appropriate",
+    "executionAdapters": [
+      "Meta Graph API -> Facebook Pages",
+      "Instagram Graph API -> Instagram Business/Creator",
+      "LinkedIn Organization API -> LinkedIn Company Pages after permission proof"
+    ],
+    "exactMediaRule": "Upload approved creative file by asset reference/checksum with no AI transformation between approval and platform upload.",
+    "proofRule": "Published or scheduled state requires platform response plus platform object ID/readback where supported.",
+    "idempotencyKey": "SocialPostId + Platform + DestinationAccountId + PayloadHash"
+  },
+  "publishingLifecycleTriggerRegistry": [
+    "COVER_APPROVED",
+    "LAUNCH_DATE_LOCKED",
+    "DISTRIBUTION_LIVE",
+    "LAUNCH_DAY",
+    "LAUNCH_PLUS_7",
+    "LAUNCH_PLUS_30",
+    "LAUNCH_PLUS_90",
+    "TITLE_ANNIVERSARY",
+    "NEW_FORMAT",
+    "AUDIOBOOK_RELEASED"
+  ],
+  "acceptanceLevels": [
+    {
+      "level": "L0",
+      "name": "Manual trace captured",
+      "currentState": "PROVEN_BY_772"
+    },
+    {
+      "level": "L1",
+      "name": "Current architecture inventoried",
+      "currentState": "PROVEN_BY_773"
+    },
+    {
+      "level": "L2",
+      "name": "Enterprise MOS ratified",
+      "currentState": "PROVEN_BY_774"
+    },
+    {
+      "level": "L3",
+      "name": "Lifecycle trigger produces eligible campaign candidate without manual calendar build",
+      "currentState": "HARNESS_PROVEN_DESIGN_ONLY_BY_775"
+    },
+    {
+      "level": "L4",
+      "name": "Dataverse queue writes, exceptions, journey contract, and control loop execute in tenant",
+      "currentState": "PROVEN_BY_779"
+    },
+    {
+      "level": "L5",
+      "name": "Owned API canary publishes exact file and stores platform ID/readback",
+      "currentState": "NOT_PRESENT"
+    },
+    {
+      "level": "L6",
+      "name": "Routine Founder manual marketing touch equals zero except exceptions",
+      "currentState": "NOT_PRESENT"
+    }
+  ],
+  "octoberControlledTest": {
+    "featuredAuthor": "Iyorwuese",
+    "permittedActionNow": "Create system-driven eligibility/campaign candidate and hold before live execution until API/Journeys proof exists.",
+    "prohibitedActionNow": "Manual October 30-day calendar rebuild."
+  }
+}

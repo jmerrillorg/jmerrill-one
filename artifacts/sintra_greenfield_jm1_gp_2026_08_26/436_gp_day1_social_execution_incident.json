@@ -1,0 +1,24 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT RESOLUTION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "SINTRA GP SOCIAL LIVE PILOT — DAY 1 EXECUTION INCIDENT RESOLVED",
+  "impact": "INITIAL 3 PLATFORM POSTS FAILED, THEN WERE REMEDIATED AND PUBLISHED",
+  "scope": [
+    "Facebook",
+    "Instagram",
+    "LinkedIn"
+  ],
+  "root_cause_status": "RESOLVED — SOCIAL MEDIA MANAGER PUBLISHING RUNTIME WAS OFF",
+  "visible_error_text": "Error publishing post. Post not published because automation was turned off",
+  "not_architecture_reset": true,
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "remediation": "Founder enabled Social Media Manager runtime and rescheduled the Day 1 canary posts.",
+  "final_publication_state": {
+    "Facebook": "PUBLISHED_VERIFIED",
+    "Instagram": "PUBLISHED_VERIFIED",
+    "LinkedIn Organization": "PUBLISHED_VERIFIED"
+  }
+}

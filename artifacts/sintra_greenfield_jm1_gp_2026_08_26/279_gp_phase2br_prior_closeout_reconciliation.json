@@ -1,0 +1,11 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B-R - NETWORK-STABLE HELPER VALUE RETEST",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:37:22-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "retest_base_commit": "7a093e1",
+  "result": "PRIOR NO-ADOPTION CLOSEOUT SUPERSEDED BY NETWORK-STABLE RETEST",
+  "historical_evidence_rewritten": false,
+  "reason": "The prior no-adoption value conclusion depended materially on incomplete Buddy execution. Under stable execution, Buddy produced material strategic value and the revised score reached the limited adoption threshold."
+}

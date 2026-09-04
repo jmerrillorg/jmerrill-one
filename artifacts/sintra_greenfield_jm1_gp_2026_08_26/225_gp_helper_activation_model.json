@@ -1,0 +1,11 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B - GOVERNED HELPER ORCHESTRATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:30:00-04:00",
+  "classification": "AUTO-DELEGATION",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "reopen_base_commit": "d28153b",
+  "manual_hire_performed": false,
+  "observed_behavior": "Sintra created a Buddy helper card without manual hiring. Helper card remained loading and produced no usable output within the wait window."
+}

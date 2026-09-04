@@ -1,0 +1,155 @@
+{
+  "packageId": 808,
+  "artifact": "JM1-DYNAMICS-PUBLISHING-SENDER-DOMAIN-COMMISSIONING-v1",
+  "generatedAt": "2026-09-03T18:40:44Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Dynamics Runtime + Sender Authority",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "founderAuthorization": {
+    "from": "publishing@email.jmerrill.one",
+    "replyTo": "publishing@jmerrill.one",
+    "displayName": "J Merrill Publishing",
+    "domain": "email.jmerrill.one",
+    "doNotUseDefaultDynamicsSender": true
+  },
+  "sourceDocs": [
+    "https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/domain-authentication",
+    "https://learn.microsoft.com/en-us/troubleshoot/dynamics-365/customer-insights/journeys/email/troubleshoot-domain-authentication"
+  ],
+  "preflight": {
+    "microsoft365RootDomain": {
+      "domain": "jmerrill.one",
+      "verified": true,
+      "default": true
+    },
+    "sendingSubdomainGraphState": {
+      "domain": "email.jmerrill.one",
+      "graphDomainObject": "NOT_PRESENT",
+      "mailboxRequiredForFrom": "NOT_OBSERVED_FOR_CUSTOMER_INSIGHTS_DOMAIN_AUTH",
+      "replyMailbox": {
+        "address": "publishing@jmerrill.one",
+        "exists": true,
+        "accountEnabled": true
+      }
+    },
+    "dnsAuthority": {
+      "zone": "jmerrill.one",
+      "resourceGroup": "jm1-core-services",
+      "provider": "Azure DNS",
+      "publicNameserversMatchedAzureDns": true
+    },
+    "existingDnsPreserved": {
+      "emailTxtValuesBefore": [
+        "ms-domain-verification=bac3cf45-a0e1-44fa-b176-48a27b93c6a4",
+        "v=spf1 include:spf.protection.outlook.com -all"
+      ],
+      "existingAzureCommunicationServicesDkimRecords": [
+        {
+          "host": "selector1-azurecomm-prod-net._domainkey.email.jmerrill.one",
+          "target": "selector1-azurecomm-prod-net._domainkey.azurecomm.net"
+        },
+        {
+          "host": "selector2-azurecomm-prod-net._domainkey.email.jmerrill.one",
+          "target": "selector2-azurecomm-prod-net._domainkey.azurecomm.net"
+        }
+      ],
+      "changesWereAdditive": true,
+      "spfParallelRecordCreated": false,
+      "m365ExchangeDkimSpfDmarcReplaced": false
+    }
+  },
+  "customerInsightsDomain": {
+    "createdOrReused": "CREATED",
+    "domainId": "f2a2eec3-c5a7-f111-b8de-000d3a14673b",
+    "name": "email.jmerrill.one",
+    "businessUnitOwned": true,
+    "ownershipRecord": {
+      "type": "TXT",
+      "host": "email.jmerrill.one",
+      "value": "d365mktkey=mNr2upEYaZM9n70tKYZKWhrFt4SyqUhym9IZcoEWxsox",
+      "publicDnsVisible": true
+    },
+    "emailDkimRecords": [
+      {
+        "type": "CNAME",
+        "host": "namkey1._domainkey.email.jmerrill.one",
+        "target": "namkey1emailjmerrillone.k02.dyn365mktg.com",
+        "publicDnsVisible": true
+      },
+      {
+        "type": "CNAME",
+        "host": "namkey2._domainkey.email.jmerrill.one",
+        "target": "namkey2emailjmerrillone.k02.dyn365mktg.com",
+        "publicDnsVisible": true
+      }
+    ],
+    "domainAlignmentRecord": {
+      "type": "CNAME",
+      "host": "bouncing.nam.email.jmerrill.one",
+      "target": "nam.pb-dynmktg.com",
+      "publicDnsVisible": true,
+      "alignedName": "bouncing.nam.email.jmerrill.one"
+    },
+    "validationAction": {
+      "action": "msdynmkt_ValidateCjoDomainCustomAction",
+      "status": 200,
+      "ownershipValidationDate": "2026-09-03T18:37:34Z",
+      "ownershipStatus": 1,
+      "emailRecord1Status": 1,
+      "emailRecord2Status": 1,
+      "domainAlignmentStatus": 1,
+      "validationErrorMessage": null
+    },
+    "dataverseReadback": {
+      "ownershipValidationStatus": 1,
+      "domainAlignmentValidationStatus": 1,
+      "emailDnsRecord1Status": 1,
+      "emailDnsRecord2Status": 1,
+      "validationDate": "2026-09-03T18:37:34.6868749Z",
+      "statuscode": 1,
+      "statecode": 0
+    },
+    "classification": "CUSTOMER_INSIGHTS_EMAIL_JMERRILL_ONE_DOMAIN_AUTHENTICATED_READY"
+  },
+  "customerInsightsSender": {
+    "createdOrReused": "CREATED",
+    "brandSenderId": "f5be1ba7-c6a7-f111-b8de-6045bdd69738",
+    "name": "J Merrill Publishing",
+    "fromName": "J Merrill Publishing",
+    "fromEmail": "publishing@email.jmerrill.one",
+    "replyToEmail": "publishing@jmerrill.one",
+    "brandProfileId": "967124c2-7d97-f111-8075-70a8a5914a07",
+    "statuscode": 1,
+    "statecode": 0,
+    "classification": "GOVERNED_PUBLISHING_BRAND_SENDER_COMMISSIONED"
+  },
+  "controlledAudience": {
+    "contactId": "5fcf77f5-96a7-f111-b8de-000d3a9eacee",
+    "contactEmail": "jackie@jmerrill.one",
+    "segmentId": "1fdc470c-97a7-f111-b8de-6045bdd69435",
+    "segmentName": "JM1 INTERNAL MARKETING TEST AUDIENCE",
+    "membershipReadback": "PASS",
+    "classification": "DYNAMICS_TEST_AUDIENCE_PROVEN"
+  },
+  "runtimeRetest": {
+    "controlledAudienceReport": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/804_jm1_dynamics_controlled_audience_boundary_v1.json",
+    "noTouchWaveReport": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/791_jm1_no_touch_runtime_wave_v1.json",
+    "controlledBoundaryClassification": "DYNAMICS_SAFE_RUNTIME_BOUNDARY_READY_FOR_JOURNEY_BUILD",
+    "noTouchClassification": "JM1_CORE_META_NO_TOUCH_TEST_FAIL",
+    "reason": "Meta remains proven and the governed sender/domain/audience are ready; the tenant still lacks a controlled marketing email and Journey runtime proof."
+  },
+  "classifications": [
+    "CUSTOMER_INSIGHTS_EMAIL_JMERRILL_ONE_DOMAIN_AUTHENTICATED_READY",
+    "GOVERNED_PUBLISHING_BRAND_SENDER_COMMISSIONED",
+    "DYNAMICS_TEST_AUDIENCE_PROVEN",
+    "DYNAMICS_SAFE_RUNTIME_BOUNDARY_READY_FOR_JOURNEY_BUILD",
+    "DYNAMICS_JOURNEY_NOT_PROVEN_PRECISE_SAFE_RUNTIME_BOUNDARY",
+    "JM1_CORE_META_NO_TOUCH_TEST_FAIL"
+  ],
+  "remainingBoundary": {
+    "minimalCompliantEmail": "NOT_IMPLEMENTED_NO_MARKETING_EMAIL",
+    "journeyTrigger": "NOT_IMPLEMENTED",
+    "journeyReadback": "NOT_PROVEN",
+    "linkedin": "LINKEDIN_API_EXTERNAL_DEPENDENCY_PRECISE_ACTION_REQUIRED",
+    "sintra": "SINTRA BRIDGE - REPLACEMENT UNDERWAY"
+  }
+}

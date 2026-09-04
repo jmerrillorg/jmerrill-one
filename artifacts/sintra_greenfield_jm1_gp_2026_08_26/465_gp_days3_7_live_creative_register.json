@@ -1,0 +1,47 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAYS 3-7 LIVE CREATIVE REGISTER",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "LOGO_COMPLIANT_CREATIVES_CONFIRMED_BY_SOSHIE",
+  "logo_source": "Uploaded user-provided J Merrill One logo in Soshie chat d8f6fcee-8512-4628-9e64-90aef6e3fa0f",
+  "logo_source_url_captured_in_soshie": "https://us.chat-img.sintra.ai/29b29be4-e943-4697-8214-0d04594d4bec/104366a5-66b2-49b1-998d-9a133fccb327/codex-clipboard-86764fcd-5ea3-4b79-9b9b-b435e0dba770.png",
+  "creative_register": [
+    {
+      "day": 3,
+      "theme": "Meet the Family: Publishing",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE",
+      "visual_state": "IMAGE_CREATED_BY_SOSHIE",
+      "platform_post_count": 3
+    },
+    {
+      "day": 4,
+      "theme": "People-First",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE",
+      "visual_state": "IMAGE_CREATED_BY_SOSHIE",
+      "platform_post_count": 3
+    },
+    {
+      "day": 5,
+      "theme": "Founder Perspective",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE",
+      "visual_state": "IMAGE_CREATED_BY_SOSHIE",
+      "platform_post_count": 3
+    },
+    {
+      "day": 6,
+      "theme": "Meet the Family: Financial",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE",
+      "visual_state": "IMAGE_CREATED_BY_SOSHIE",
+      "platform_post_count": 3
+    },
+    {
+      "day": 7,
+      "theme": "Why-First",
+      "logo_status": "VISIBLE_CONFIRMED_BY_SOSHIE",
+      "visual_state": "IMAGE_CREATED_BY_SOSHIE",
+      "platform_post_count": 3
+    }
+  ]
+}

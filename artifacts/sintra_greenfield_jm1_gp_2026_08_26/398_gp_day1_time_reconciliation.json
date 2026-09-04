@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "day": 1,
+  "original_date": "2026-08-27",
+  "original_time_et": "09:00",
+  "actual_scheduled_time_et": "NOT SCHEDULED",
+  "candidate_time_observed_in_composer": "2026-08-27 09:00",
+  "changed": false,
+  "reason": "Original cadence remained feasible on the evening of 2026-08-26, but final scheduling was held for UI-control safety."
+}

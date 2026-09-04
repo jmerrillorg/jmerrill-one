@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST VALUE VALIDATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:57:38-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "focus_correction_base_commit": "3eaa841",
+  "status": "ACTIVE",
+  "helper_invocations": [
+    {
+      "date": "2026-08-27T21:30:00-04:00",
+      "helper": "Soshie",
+      "purpose": "full-month social creative materialization and scheduling",
+      "useful_contribution": "Generated logo-compliant day creatives and scheduled approved copy to three destinations.",
+      "brand_boundary_behavior": "Preserved J Merrill One umbrella voice, People-First language, and no-engagement boundary.",
+      "incremental_value": "HIGH"
+    }
+  ],
+  "rule": "Allow native helper orchestration naturally; do not manually force social helpers.",
+  "capture_fields": [
+    "helper",
+    "purpose",
+    "useful contribution",
+    "brand-boundary behavior",
+    "incremental value"
+  ],
+  "updated_at": "2026-08-27T21:30:00-04:00"
+}

@@ -1,0 +1,195 @@
+{
+  "packageId": 787,
+  "artifact": "JM1-META-OWNED-API-CANARY-v1",
+  "generatedAt": "2026-09-02T12:08:45.123Z",
+  "mode": "EXECUTE_CANARY",
+  "graphVersion": "v26.0",
+  "secretReference": {
+    "vaultName": "jm1-core-vault",
+    "secretName": "JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+    "tokenValueRecorded": false
+  },
+  "tokenSanity": {
+    "tokenValueRecorded": false,
+    "length": 241,
+    "sha256PrefixOnly": "c9432cc19496",
+    "checks": {
+      "nonEmpty": true,
+      "noSurroundingQuotes": true,
+      "noWhitespace": true,
+      "plausibleLength": true,
+      "startsWithExpectedPrefix": true,
+      "allowedCharactersOnly": true
+    },
+    "pass": true
+  },
+  "graphReadback": {
+    "pass": true,
+    "appIdentity": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "id": "1293210212769981",
+        "name": "JM1 Social Publisher"
+      }
+    },
+    "pageDiscovery": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "data": [
+          {
+            "id": "307480763084670",
+            "name": "J Merrill Publishing Inc",
+            "access_token": "[REDACTED]",
+            "instagram_business_account": {
+              "id": "17841410046020869"
+            }
+          }
+        ],
+        "paging": {
+          "cursors": {
+            "before": "QVFIVFFMYmNveF9GSmtRUXNRSjhTdzhjQm9NTVB6cDZAfZAGE3aUkzSkJ5T2hzdU4zNEtwTkxnT2JMVUY3YlpGQi1TQzk5SVRnUkQ0aUozeWRBNEFWSFN5ZAHR3",
+            "after": "QVFIVFFMYmNveF9GSmtRUXNRSjhTdzhjQm9NTVB6cDZAfZAGE3aUkzSkJ5T2hzdU4zNEtwTkxnT2JMVUY3YlpGQi1TQzk5SVRnUkQ0aUozeWRBNEFWSFN5ZAHR3"
+          }
+        }
+      }
+    },
+    "targetPage": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "id": "307480763084670",
+        "name": "J Merrill Publishing Inc",
+        "instagram_business_account": {
+          "id": "17841410046020869"
+        }
+      }
+    },
+    "targetInstagram": {
+      "ok": true,
+      "status": 200,
+      "json": {
+        "id": "17841410046020869",
+        "username": "jmerrillpub",
+        "name": "J Merrill Publishing, Inc.",
+        "media_count": 359
+      }
+    },
+    "pageAccessTokenAvailable": true,
+    "pageId": "307480763084670",
+    "pageName": "J Merrill Publishing Inc",
+    "instagramGraphId": "17841410046020869"
+  },
+  "dataverse": {
+    "environment": "https://jm1hq.crm.dynamics.com",
+    "socialRowsFound": [
+      {
+        "id": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+        "name": "Iyorwuese October intro - facebook",
+        "platform": "facebook",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "307480763084670_1398847435587037",
+        "readbackState": "READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:facebook"
+      },
+      {
+        "id": "d92fae45-90a6-f111-b8de-00224820105b",
+        "name": "Iyorwuese October intro - linkedin",
+        "platform": "linkedin",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:linkedin"
+      },
+      {
+        "id": "bbf1b9fe-bba6-f111-b8de-00224820105b",
+        "name": "Iyorwuese A Portrait of Paradise asset-resolved - instagram",
+        "platform": "instagram",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:instagram"
+      },
+      {
+        "id": "8668125b-baa6-f111-b8de-6045bdd69435",
+        "name": "Iyorwuese October title discovery - facebook",
+        "platform": "facebook",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:facebook"
+      },
+      {
+        "id": "d8f0155e-baa6-f111-b8de-6045bdd69678",
+        "name": "Iyorwuese October title discovery - instagram",
+        "platform": "instagram",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:instagram"
+      },
+      {
+        "id": "f36a5ffa-bba6-f111-b8de-6045bdd69678",
+        "name": "Iyorwuese A Portrait of Paradise asset-resolved - linkedin",
+        "platform": "linkedin",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:linkedin"
+      },
+      {
+        "id": "263e5146-90a6-f111-b8de-6045bdd69738",
+        "name": "Iyorwuese October intro - instagram",
+        "platform": "instagram",
+        "status": "PUBLISHED_VERIFIED",
+        "platformPostId": "18015844355734287",
+        "readbackState": "READBACK_MATCH",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:instagram"
+      },
+      {
+        "id": "e9a19b5b-baa6-f111-b8de-6045bdd69738",
+        "name": "Iyorwuese October title discovery - linkedin",
+        "platform": "linkedin",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_AUTHORITY_CHECK_HELD",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:title_discovery:linkedin"
+      },
+      {
+        "id": "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2",
+        "name": "Iyorwuese A Portrait of Paradise asset-resolved - facebook",
+        "platform": "facebook",
+        "status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+        "idempotencyKey": "e60c47b5da7824de99976e0a:social:asset_resolution_a_portrait_of_paradise:facebook"
+      }
+    ]
+  },
+  "canary": {
+    "facebook": {
+      "classification": "FACEBOOK_OWNED_API_RUNTIME_PROVEN",
+      "platformPostId": "307480763084670_1398847435587037",
+      "readbackState": "EXISTING_CERTIFIED_EXECUTION_RECOGNIZED"
+    },
+    "instagram": {
+      "classification": "INSTAGRAM_OWNED_API_RUNTIME_PROVEN",
+      "platformPostId": "18015844355734287",
+      "readbackState": "EXISTING_CERTIFIED_EXECUTION_RECOGNIZED"
+    }
+  },
+  "idempotency": {
+    "facebook": {
+      "duplicateObjectsCreated": 0,
+      "state": "EXISTING_CERTIFIED_EXECUTION_RECOGNIZED",
+      "platformPostId": "307480763084670_1398847435587037"
+    },
+    "instagram": {
+      "duplicateObjectsCreated": 0,
+      "state": "EXISTING_CERTIFIED_EXECUTION_RECOGNIZED",
+      "platformPostId": "18015844355734287"
+    }
+  },
+  "classification": "META_OWNED_API_RUNTIME_PROVEN"
+}

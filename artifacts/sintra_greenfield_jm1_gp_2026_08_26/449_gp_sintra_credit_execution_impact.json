@@ -1,0 +1,15 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "UNKNOWN",
+  "visible_credit_state": "Monthly credits used up / 0 of 20 / Adjust plan visible on Sintra home.",
+  "relevance_to_generation": "POSSIBLE",
+  "relevance_to_helper_use": "POSSIBLE",
+  "relevance_to_scheduled_execution": "NOT DEMONSTRATED",
+  "relevance_to_social_media_manager_actions": "UNKNOWN",
+  "conclusion": "Do not assume credits caused publication failure; visible failure text points to automation being turned off.",
+  "spending_or_upgrade_performed": false
+}

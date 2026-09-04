@@ -1,0 +1,36 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — FIRST-WEEK EXECUTION + CONTINUING SOCIAL CADENCE",
+  "workspace": "J Merrill One - GP",
+  "updated_at": "2026-08-27T16:20:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "state": "SOCIAL MEDIA MANAGER SCHEDULING DOES NOT AUTHORIZE CONVERSATIONAL AUTONOMY",
+  "authorized": [
+    "manual governed scheduling through Sintra Social Media Manager",
+    "Founder-approved content scheduling to certified One destinations"
+  ],
+  "prohibited": [
+    "automated comments",
+    "DMs",
+    "inbox responses",
+    "auto-replies",
+    "public conversational engagement",
+    "Facebook Commenter",
+    "autonomous moderation",
+    "unsupervised crisis response"
+  ],
+  "engagement_authority": "NONE",
+  "facebook_commenter_status": "NOT AUTHORIZED",
+  "inbox_manager_status": "NOT AUTHORIZED",
+  "daily_summarizer_status": "NOT AUTHORIZED FOR SOCIAL ENGAGEMENT",
+  "helpers_are_brand_owners": false,
+  "unchanged_by_smm_runtime": true,
+  "prohibited_actions": [
+    "comments",
+    "DMs",
+    "inbox responses",
+    "community replies",
+    "crisis response"
+  ],
+  "note": "Social Media Manager runtime ON does not grant engagement authority."
+}

@@ -1,0 +1,16 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "DAYS 8-30 FINANCIAL CONTENT VALIDATION",
+  "result": "PASS",
+  "day20": "Financial Spotlight stayed in planning education, clarity, care, people-first guidance, and proper boundaries.",
+  "blocked_content": [
+    "law-firm implication",
+    "legal advice",
+    "investment-management drift",
+    "unsupported financial claims",
+    "charts/graphs suggesting performance advice"
+  ]
+}

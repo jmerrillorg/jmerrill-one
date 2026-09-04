@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "EXTERNAL PUBLICATION VALIDATION — 0 PUBLISHED VERIFIED",
+  "verification_method": "Founder live report plus public web search for exact Day 1 copy/destinations; platform pages may have limited public crawl visibility.",
+  "results": [
+    {
+      "platform": "Facebook",
+      "destination": "J Merrill One",
+      "published_verified": false
+    },
+    {
+      "platform": "Instagram",
+      "destination": "@jmerrillone / jmerrillone",
+      "published_verified": false
+    },
+    {
+      "platform": "LinkedIn",
+      "destination": "J Merrill One",
+      "published_verified": false
+    }
+  ],
+  "published_count": 0,
+  "caveat": "No direct logged-in posting action was performed; no matching public post was found, consistent with Founder report."
+}

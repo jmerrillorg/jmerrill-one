@@ -1,0 +1,10 @@
+{
+  "gate": "AUTHOR_IDENTITY_FIDELITY",
+  "rule": "Author names must match approved records and platform captions.",
+  "active_examples": [
+    "J. Derrick Johnson",
+    "Donjia Walls",
+    "Sean A Crowley I"
+  ],
+  "status": "ACTIVE"
+}

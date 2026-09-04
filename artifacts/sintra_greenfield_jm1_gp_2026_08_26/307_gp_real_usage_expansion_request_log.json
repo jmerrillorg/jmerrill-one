@@ -1,0 +1,18 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "ACTIVE",
+  "no_expansion_during_pilot": true,
+  "requests": [],
+  "log_categories": [
+    "KNOWLEDGE GAP",
+    "CONNECTOR VALUE HYPOTHESIS",
+    "HELPER SPECIALIZATION HYPOTHESIS",
+    "BRANCH WORKSPACE HYPOTHESIS"
+  ],
+  "rule": "Record requests as observations only; do not expand during pilot."
+}

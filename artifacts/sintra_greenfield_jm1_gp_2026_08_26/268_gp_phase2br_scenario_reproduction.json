@@ -1,0 +1,11 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B-R - NETWORK-STABLE HELPER VALUE RETEST",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:37:22-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "retest_base_commit": "7a093e1",
+  "original_scenario": "JM1 is considering a quarterly author business-building webinar under the JM1 enterprise. Evaluate why it matters, owning JM1 division, collaborating brands, useful Sintra helper contributors, Microsoft overlap, cost/complexity, conditions, reasons not to proceed, and Founder decision; helper delegation allowed; helpers are not owners, executives, employees, canon, final decision makers, or external actors.",
+  "retest_scenario": "SINTRA GREENFIELD PHASE 2B-R NETWORK-STABLE RETEST. Use the same opportunity-evaluation scenario as before: JM1 is considering a quarterly author business-building webinar under the JM1 enterprise. Evaluate why this matters, which JM1 division should own it, which JM1 brands might collaborate, which Sintra helper contributors would be useful if any, Microsoft-first overlap or alternatives, cost and complexity, conditions required before proceeding, reasons not to proceed, and the Founder decision. Helper delegation is allowed if Sintra would naturally use it, but helpers are AI contributors only: not JM1 owners, executives, employees, canon, final decision makers, or external actors. Do not connect systems, enable automations, publish, email, or take external action.",
+  "material_differences": "None material. Retest text preserved the same opportunity, requested dimensions, helper allowance, and no-external-action boundary."
+}

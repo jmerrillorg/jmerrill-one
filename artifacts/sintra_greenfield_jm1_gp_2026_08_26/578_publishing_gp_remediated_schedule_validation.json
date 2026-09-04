@@ -1,0 +1,102 @@
+{
+  "scheduled_skeleton_preserved": true,
+  "destinations_preserved": [
+    "Facebook J Merrill Publishing Inc",
+    "Instagram jmerrillpub",
+    "LinkedIn J Merrill Publishing, Inc."
+  ],
+  "first_wave_live_caption_results": [
+    {
+      "date": "2026-08-28",
+      "platform": "Facebook",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "A small book can still ask a large question: what wisdom is worth carrying into daily life?"
+    },
+    {
+      "date": "2026-08-28",
+      "platform": "Instagram",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "What wisdom do you return to when life gets noisy?"
+    },
+    {
+      "date": "2026-08-28",
+      "platform": "LinkedIn",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "Useful books do not always need to be loud. Some earn attention by giving readers language they can take back into ordinary decisions."
+    },
+    {
+      "date": "2026-08-29",
+      "platform": "Facebook",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "Some books meet readers at a tender threshold."
+    },
+    {
+      "date": "2026-08-29",
+      "platform": "Instagram",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "One day at a time is sometimes the only honest pace."
+    },
+    {
+      "date": "2026-08-29",
+      "platform": "LinkedIn",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "Readers often look for books that make difficult seasons feel more nameable."
+    },
+    {
+      "date": "2026-08-30",
+      "platform": "Facebook",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "Before a book becomes a product, it has to know who it is trying to reach."
+    },
+    {
+      "date": "2026-08-30",
+      "platform": "Instagram",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "The best publishing question is simple: who is this for?"
+    },
+    {
+      "date": "2026-08-30",
+      "platform": "LinkedIn",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "Publishing strategy starts with audience clarity. Production matters, but a book becomes stronger when the author can name the reader, the promise, and the public reason for the work."
+    },
+    {
+      "date": "2026-08-31",
+      "platform": "Facebook",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "Thinking about publishing? Start with the reader, not the checklist."
+    },
+    {
+      "date": "2026-08-31",
+      "platform": "Instagram",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "exact",
+      "first_line": "A manuscript is pages. A published book is a reader relationship."
+    },
+    {
+      "date": "2026-08-31",
+      "platform": "LinkedIn",
+      "status": "LIVE_CAPTION_UPDATED_VISIBLE",
+      "variant": "soshie_ai_adapted_people_first",
+      "first_line": "A publishing inquiry starts with your why."
+    }
+  ],
+  "smm": "ON",
+  "inbox_daily_facebook_commenter": "OFF",
+  "engagement_authority": "NONE",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

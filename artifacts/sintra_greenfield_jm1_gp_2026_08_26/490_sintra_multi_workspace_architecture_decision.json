@@ -1,0 +1,16 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "classification": "SINTRA GREENFIELD ARCHITECTURE — BRAND-ISOLATED WORKSPACES REQUIRED",
+  "decision": "Founder correction supersedes the shared-One-workspace social expansion model before Publishing implementation.",
+  "supersedes": "prior shared-One-workspace branch social proposal",
+  "historical_evidence_policy": "Do not rewrite historical evidence; mark earlier proposal records superseded.",
+  "hard_rejections": [
+    "Publishing social ops inside J Merrill One - GP",
+    "One Brain as shared operational knowledge warehouse",
+    "legacy Sintra Brain import",
+    "cross-brand operational leakage"
+  ]
+}

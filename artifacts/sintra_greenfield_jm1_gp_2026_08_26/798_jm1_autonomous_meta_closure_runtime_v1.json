@@ -1,0 +1,195 @@
+{
+  "packageId": 798,
+  "artifact": "JM1-AUTONOMOUS-META-CLOSURE-RUNTIME-v1",
+  "generatedAt": "2026-09-03T09:17:06Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Autonomous Meta Closure + Dynamics Runtime",
+  "security": {
+    "secretsCommitted": false,
+    "tokenValuesLogged": false,
+    "metaTokenSecretReference": "jm1-core-vault/JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+    "metaTokenSecretVersion": "c8d340a1d16640c099e65ca4b2a0ae19"
+  },
+  "runtimeConfiguration": {
+    "functionApp": "func-jm1-marketing-runtime",
+    "resourceGroup": "rg-jm1-ai",
+    "socialWorkerCron": "0 */15 * * * *",
+    "autonomousMetaExecutionEnabled": true,
+    "autonomousLinkedInExecutionEnabled": false,
+    "credentialMonitorSyntheticEnabled": false,
+    "credentialMonitorCron": "0 7 12 * * *",
+    "claimLeaseMinutes": 20
+  },
+  "ownedAuthority": {
+    "metaApp": "JM1 Social Publisher",
+    "appId": "1293210212769981",
+    "businessPortfolioId": "846921439784613",
+    "systemUser": "JM1PublishingRuntime",
+    "systemUserId": "61593707745004",
+    "authorizedBranchScope": "J Merrill Publishing only",
+    "facebookPage": {
+      "name": "J Merrill Publishing Inc",
+      "pageId": "307480763084670"
+    },
+    "instagram": {
+      "handle": "jmerrillpub",
+      "graphId": "17841410046020869"
+    },
+    "scopeBoundary": [
+      "pages_manage_posts",
+      "pages_read_engagement",
+      "pages_show_list",
+      "instagram_basic",
+      "instagram_content_publish"
+    ],
+    "sintraCredentialsUsed": false,
+    "browserPublishingUsed": false,
+    "metaBusinessSuitePublishingUsed": false
+  },
+  "liveAutonomousProof": {
+    "facebook": {
+      "classification": "FACEBOOK_SCHEDULED_AUTONOMOUS_EXECUTION_PROVEN",
+      "socialExecutionRowId": "0118504f-69a7-f111-b8de-000d3a14673b",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:autonomous_meta_closure_facebook:facebook",
+      "requestedSchedule": "2026-09-03T07:45:00Z",
+      "actualSchedule": "2026-09-03T08:30:03Z",
+      "platformPostId": "307480763084670_1399525035519277",
+      "platformReadback": {
+        "directObjectReadbackOk": true,
+        "createdTime": "2026-09-03T08:30:03+0000",
+        "permalink": "https://www.facebook.com/1398847478920366/posts/1399525035519277",
+        "statusType": "added_photos",
+        "messagePrefixMatched": true
+      },
+      "dataverseFinalState": "PUBLISHED_VERIFIED",
+      "readbackState": "READBACK_MATCH",
+      "executor": "CLAIM:a5456b99-b6ee-4d52-bd7e-548c88b87a39",
+      "timerInvocation": {
+        "timestamp": "2026-09-03T08:30:09.1405866Z",
+        "runId": "AUTONOMOUS_SOCIAL_EXECUTION_WORKER:2026-09-03T08:30:00.075Z:773e37b2-80f4-4e74-b657-ea6415997ec9",
+        "correlationId": "a5456b99-b6ee-4d52-bd7e-548c88b87a39",
+        "platformObjectsCreated": 1
+      },
+      "listCountNote": "Direct post readback succeeded. Facebook /feed returned a permissions error in this proof window and /photos did not expose this post as a reliable duplicate-count source, so duplicate prevention is certified by Dataverse idempotency plus the subsequent timer's zero-created-platform-object trace."
+    },
+    "instagram": {
+      "classification": "INSTAGRAM_SCHEDULED_AUTONOMOUS_EXECUTION_PROVEN",
+      "socialExecutionRowId": "0218504f-69a7-f111-b8de-000d3a14673b",
+      "idempotencyKey": "e60c47b5da7824de99976e0a:social:autonomous_meta_closure_instagram:instagram",
+      "requestedSchedule": "2026-09-03T07:45:00Z",
+      "actualSchedule": "2026-09-03T08:15:09Z",
+      "platformPostId": "18096148589127244",
+      "platformReadback": {
+        "mediaListMatchCount": 1,
+        "permalink": "https://www.instagram.com/p/Dc0W-3onBN4/",
+        "timestamp": "2026-09-03T08:15:09+0000",
+        "username": "jmerrillpub",
+        "mediaType": "IMAGE"
+      },
+      "dataverseFinalState": "PUBLISHED_VERIFIED",
+      "readbackState": "READBACK_MATCH",
+      "executor": "CLAIM:84ebd945-613b-4be8-8616-15b97c7018be",
+      "timerInvocation": {
+        "timestamp": "2026-09-03T08:15:13.5428497Z",
+        "runId": "AUTONOMOUS_SOCIAL_EXECUTION_WORKER:2026-09-03T08:15:00.037Z:74d96ae3-bb2f-46fc-a790-1f6fa2bf4012",
+        "correlationId": "84ebd945-613b-4be8-8616-15b97c7018be",
+        "platformObjectsCreated": 1
+      }
+    },
+    "idempotency": {
+      "classification": "INSTAGRAM_AUTONOMOUS_DUPLICATE_PREVENTION_PROVEN",
+      "timerInvocation": {
+        "timestamp": "2026-09-03T09:15:01.4604013Z",
+        "runId": "AUTONOMOUS_SOCIAL_EXECUTION_WORKER:2026-09-03T09:15:00.022Z:e678ac92-eedb-489a-b2a7-a735576b667a",
+        "correlationId": "108cfca2-4922-4949-9a58-210840ec3ae6",
+        "executionEnabledMeta": true,
+        "eligibleMetaRows": 0,
+        "reconciliationMetaRows": 0,
+        "platformIdRecoveryRows": 0,
+        "platformObjectsCreated": 0
+      },
+      "certifiedRowsRecognized": [
+        "0118504f-69a7-f111-b8de-000d3a14673b",
+        "0218504f-69a7-f111-b8de-000d3a14673b",
+        "65fd1047-90a6-f111-b8de-000d3a9eacee",
+        "bbf1b9fe-bba6-f111-b8de-00224820105b",
+        "263e5146-90a6-f111-b8de-6045bdd69738"
+      ]
+    }
+  },
+  "incidentPreservation": {
+    "canonicalInstagramPost": "18134196829616273",
+    "dataverseRow": "bbf1b9fe-bba6-f111-b8de-00224820105b",
+    "finalState": "PUBLISHED_VERIFIED",
+    "readback": "RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH",
+    "recoveryTickPlatformObjectsCreated": 0,
+    "finalMatchingInstagramObjectCount": 1,
+    "classification": "INSTAGRAM_RECOVERY_SLICE_CLOSED"
+  },
+  "workerHardening": {
+    "classifications": [
+      "FACEBOOK_POST_PUBLISH_RECONCILIATION_PROVEN",
+      "POST_PUBLISH_FAILURE_IDEMPOTENCY_PROVEN",
+      "STALE_EXECUTION_CLAIM_RECOVERY_PROVEN"
+    ],
+    "regressionArtifact": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/795_jm1_social_post_publish_reconciliation_regression_v1.json",
+    "regressionGeneratedAt": "2026-09-03T09:17:06.117Z",
+    "duplicateObjectsCreated": 0,
+    "claimLeaseMinutes": 20,
+    "stateMachine": [
+      "PUBLIC_READY_SCHEDULED_ELIGIBLE",
+      "PUBLISHING_CLAIMED",
+      "PLATFORM_ACCEPTED",
+      "READBACK_PENDING",
+      "PUBLISHED_VERIFIED"
+    ],
+    "safeRetryStates": [
+      "RETRY_REQUIRED",
+      "PUBLISHING_CLAIMED_LEASE_ACTIVE",
+      "STALE_CLAIM_NO_PLATFORM_OBJECT_FOUND_READY_FOR_SAFE_RECLAIM",
+      "PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED"
+    ]
+  },
+  "futureRowSafetySweep": {
+    "classification": "FUTURE_EXECUTION_ROW_SAFETY_SWEEP_COMPLETE",
+    "readyRowsAllowedAfterSweep": 0,
+    "rowsMovedToWait": [
+      {
+        "id": "8668125b-baa6-f111-b8de-6045bdd69435",
+        "platform": "facebook",
+        "status": "WAIT_CREATIVE_RUNTIME_REGISTRY_REQUIRED",
+        "errorCode": "META_MEDIA_URL_REGISTRY_MISSING"
+      },
+      {
+        "id": "d8f0155e-baa6-f111-b8de-6045bdd69678",
+        "platform": "instagram",
+        "status": "WAIT_CREATIVE_RUNTIME_REGISTRY_REQUIRED",
+        "errorCode": "META_MEDIA_URL_REGISTRY_MISSING"
+      }
+    ],
+    "rowsHeld": [
+      {
+        "id": "d0fdbbfb-bba6-f111-b8de-7c1e525b15c2",
+        "platform": "facebook",
+        "status": "HELD_AUTONOMOUS_META_RETRY_REQUIRES_RECONCILIATION"
+      }
+    ],
+    "linkedinRowsRemainHeld": true
+  },
+  "classifications": [
+    "FACEBOOK_SCHEDULED_AUTONOMOUS_EXECUTION_PROVEN",
+    "FACEBOOK_POST_PUBLISH_RECONCILIATION_PROVEN",
+    "INSTAGRAM_SCHEDULED_AUTONOMOUS_EXECUTION_PROVEN",
+    "INSTAGRAM_AUTONOMOUS_DUPLICATE_PREVENTION_PROVEN",
+    "POST_PUBLISH_FAILURE_IDEMPOTENCY_PROVEN",
+    "STALE_EXECUTION_CLAIM_RECOVERY_PROVEN",
+    "META_OWNED_API_RUNTIME_PROVEN",
+    "META_PLATFORM_IDEMPOTENCY_PROVEN"
+  ],
+  "noTouchTest": {
+    "exactResult": "JM1_CORE_META_NO_TOUCH_TEST_FAIL - Dynamics Journey and autonomous creative/campaign progression still open",
+    "metaNoTouchExecution": "PASS",
+    "linkedInNoTouchExecution": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+    "dynamicsJourney": "NOT_PROVEN",
+    "creativeControlLoop": "NOT_PROVEN"
+  }
+}

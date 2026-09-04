@@ -1,0 +1,19 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T21:22:54-04:00",
+  "rule": "Avoid repetitive exposure of a small group unless justified.",
+  "justifications": [
+    "release timing",
+    "strategic campaign",
+    "engagement",
+    "contractual commitment",
+    "Founder direction"
+  ],
+  "cadence_guard": "Do not repeat the same author/title within the first 30 days unless Founder-approved or launch-driven.",
+  "exceptions": [
+    "MONTHLY FEATURED AUTHOR — FOUNDER / PROGRAMMATIC PRIORITY"
+  ],
+  "featured_author_balance": "Other eligible authors should continue normal rotation around the featured-author lane."
+}

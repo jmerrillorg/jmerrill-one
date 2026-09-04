@@ -1,0 +1,19 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "NOT_TRIGGERED",
+  "natural_financial_matters_observed": false,
+  "rule": "Do not manufacture Financial scenarios solely to populate metrics.",
+  "if_triggered_validate": [
+    "estate planning",
+    "advanced planning",
+    "funeral/pre-need",
+    "insurance-product relationship",
+    "no law-firm assumption",
+    "no investment-management assumption"
+  ]
+}

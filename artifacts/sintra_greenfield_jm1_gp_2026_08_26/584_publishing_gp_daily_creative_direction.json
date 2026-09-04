@@ -1,0 +1,57 @@
+{
+  "first_wave": {
+    "2026-08-28": {
+      "theme": "Meet the Book",
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "creative": "publishing_remediation_wave1_creatives/day01_2026-08-28_101_wisdom_people_first.png",
+      "platforms": {
+        "Facebook": "A small book can still ask a large question: what wisdom is worth carrying into daily life?\n\n101 Wisdom Lessons for Life and Living by J. Derrick Johnson invites readers back to practical reflection, one lesson at a time.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+        "Instagram": "What wisdom do you return to when life gets noisy?\n\n101 Wisdom Lessons for Life and Living by J. Derrick Johnson brings a reflective title back into view for readers looking for something useful to carry.\n\n#JMerrillPublishing #BookDiscovery #WisdomBooks",
+        "LinkedIn": "Useful books do not always need to be loud. Some earn attention by giving readers language they can take back into ordinary decisions.\n\nToday we are bringing 101 Wisdom Lessons for Life and Living by J. Derrick Johnson back into view as part of J Merrill Publishing reader discovery.\n\nLearn more: https://jmerrill.pub/books"
+      }
+    },
+    "2026-08-29": {
+      "theme": "Meet the Author",
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "creative": "publishing_remediation_wave1_creatives/day02_2026-08-29_27_days_quiet_step.png",
+      "platforms": {
+        "Facebook": "Some books meet readers at a tender threshold.\n\n27 Days to Overcoming Depression by Donjia Walls is being resurfaced for readers who may be looking for language, pacing, and encouragement around a difficult season. One day at a time is sometimes the most honest beginning.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+        "Instagram": "One day at a time is sometimes the only honest pace.\n\nToday we are bringing Donjia Walls and 27 Days to Overcoming Depression back into reader view with care and respect for the subject.\n\n#JMerrillPublishing #BookDiscovery #AuthorSpotlight",
+        "LinkedIn": "Readers often look for books that make difficult seasons feel more nameable.\n\nJ Merrill Publishing is resurfacing 27 Days to Overcoming Depression by Donjia Walls with a reader-first frame: careful language, no unsupported claims, and a clear path to discover more.\n\nLearn more: https://jmerrill.pub/books"
+      }
+    },
+    "2026-08-30": {
+      "theme": "Publishing Education",
+      "author": null,
+      "title": null,
+      "creative": "publishing_remediation_wave1_creatives/day03_2026-08-30_purpose_before_process.png",
+      "platforms": {
+        "Facebook": "Before a book becomes a product, it has to know who it is trying to reach.\n\nThat is where publishing work starts: with the reader, the promise, and the reason the book should exist in public.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+        "Instagram": "The best publishing question is simple: who is this for?\n\nPurpose first. Process second. Readers always in view.\n\n#JMerrillPublishing #Publishing #Authors",
+        "LinkedIn": "Publishing strategy starts with audience clarity. Production matters, but a book becomes stronger when the author can name the reader, the promise, and the public reason for the work.\n\nJ Merrill Publishing keeps that conversation at the center.\n\nLearn more: https://jmerrill.pub/books"
+      }
+    },
+    "2026-08-31": {
+      "theme": "Publishing Inquiry",
+      "author": null,
+      "title": null,
+      "creative": "publishing_remediation_wave1_creatives/day04_2026-08-31_reader_promise.png",
+      "platforms": {
+        "Facebook": "Thinking about publishing? Start with the reader, not the checklist.\n\nA manuscript is pages. A published book is a promise someone else can encounter, question, remember, and share.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+        "Instagram": "A manuscript is pages. A published book is a reader relationship.\n\nStart there. Build from there.\n\n#JMerrillPublishing #PublishingJourney #Authors",
+        "LinkedIn": "A publishing inquiry is stronger when it begins with purpose.\n\nBefore timelines, formats, or launch plans, the more important question is what the book should make possible for its readers.\n\nLearn more: https://jmerrill.pub/books"
+      }
+    }
+  },
+  "next_wave_direction": {
+    "2026-09-01": "Sean A Crowley I as an editorial author introduction rooted in change, faith, and leadership only where source-backed.",
+    "2026-09-22": "Founder CTA release-day creative for Strategies for Success."
+  },
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

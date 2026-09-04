@@ -1,0 +1,30 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T18:30:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "rule": "Other authorized assets visible inside master social connectors are out of scope for this One campaign and do not create a hold.",
+  "facebook": {
+    "connector_contains_other_authorized_assets": true,
+    "campaign_destination": "J Merrill One",
+    "other_assets_status": "OUT_OF_SCOPE_FOR_THIS_ONE_CAMPAIGN"
+  },
+  "linkedin_organization": {
+    "connector_contains_other_authorized_assets": true,
+    "campaign_destination": "J Merrill One",
+    "other_visible_pages": [
+      "J Merrill Foundation, Inc.",
+      "J Merrill Publishing, Inc."
+    ],
+    "other_assets_status": "OUT_OF_SCOPE_FOR_THIS_ONE_CAMPAIGN"
+  },
+  "do_not": [
+    "investigate non-One connected assets",
+    "disconnect non-One connected assets",
+    "change non-One connected assets",
+    "use non-One connected assets",
+    "require separate certification for non-One connected assets"
+  ],
+  "execution_control": "Use only the certified One destination for each post."
+}

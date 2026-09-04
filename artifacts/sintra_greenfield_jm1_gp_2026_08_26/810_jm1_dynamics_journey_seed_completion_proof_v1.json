@@ -1,0 +1,140 @@
+{
+  "packageId": 810,
+  "artifact": "JM1-DYNAMICS-JOURNEY-SEED-COMPLETION-PROOF-v1",
+  "generatedAt": "2026-09-03T20:38:47.660Z",
+  "dataverse": {
+    "environment": "https://jm1hq.crm.dynamics.com",
+    "entitySets": {
+      "jm1_campaignauthority": "jm1_campaignauthorities",
+      "jm1_journeyexecution": "jm1_journeyexecutions",
+      "jm1_socialexecution": "jm1_socialexecutions"
+    }
+  },
+  "journeySeed": {
+    "name": "JM1 — CONTROLLED MARKETING JOURNEY SEED v1",
+    "id": "5aa19c34-d4a7-f111-b8de-00224820105b",
+    "statecode": 0,
+    "statuscode": 1,
+    "shape": "Entry/Audience -> Email -> Wait -> Exit",
+    "sourceCreation": "UI_ONE_TIME_SEED_SETUP_AUTHORIZED",
+    "generatedJsonFromSeed": true,
+    "generatedJsonValid": true,
+    "validationErrors": "null"
+  },
+  "controlledJourney": {
+    "name": "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED PROOF DIRECT 1788467652986",
+    "id": "2fc19ecf-d6a7-f111-b8de-000d3a9eacee",
+    "createdFromSeedGeneratedJson": true,
+    "publishApi": "msdynmkt_PublishJourneyV2",
+    "statecode": 1,
+    "statuscode": 2,
+    "startTime": "2026-09-04T20:34:12Z",
+    "errorDetails": null,
+    "productionRecipientsIncluded": false
+  },
+  "seedReusability": {
+    "secondJourneyName": "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED PROOF REUSE 1788467682190",
+    "secondJourneyId": "46f84bdf-d6a7-f111-b8de-6045bdd69435",
+    "secondJourneyStatecode": 0,
+    "secondJourneyStatuscode": 1,
+    "proven": true
+  },
+  "controlledEmail": {
+    "id": "395de679-d0a7-f111-b8de-000d3a14673b",
+    "name": "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED JOURNEY EMAIL",
+    "subject": "October Featured Author: Iyorwuese Hagher",
+    "from": "J Merrill Publishing <publishing@email.jmerrill.one>",
+    "replyTo": "publishing@jmerrill.one",
+    "to": null,
+    "statuscode": 2,
+    "statecode": 0,
+    "readyToSend": true,
+    "complianceTokensPresent": {
+      "companyAddress": true,
+      "preferenceCenter": true
+    }
+  },
+  "audience": {
+    "segment": {
+      "@odata.etag": "W/\"51392058\"",
+      "msdynmkt_displayname": "JM1 INTERNAL MARKETING TEST AUDIENCE",
+      "msdynmkt_type": 11,
+      "statecode": 0,
+      "msdynmkt_sourcesegmentuid": "1bdc470c-97a7-f111-b8de-6045bdd69435",
+      "msdynmkt_source": 12,
+      "msdynmkt_segmentid": "1fdc470c-97a7-f111-b8de-6045bdd69435",
+      "statuscode": 1
+    },
+    "segmentStatus": {
+      "segmentId": "1fdc470c-97a7-f111-b8de-6045bdd69435",
+      "lastExecution": {
+        "currentStrategy": "Synapse",
+        "lastUsedStrategy": "Synapse",
+        "strategyCalculationTime": "2026-09-03T20:18:03.7707643+00:00",
+        "lastRunTime": "2026-09-03T20:28:28.2559736+00:00",
+        "status": "Success",
+        "statusMessage": null,
+        "executionStatus": null,
+        "executionReasonForUser": "Unknown",
+        "nonLocalizedExecutionReasonForUser": "",
+        "executionReasonMetadata": null
+      },
+      "additionalProperties": {}
+    },
+    "members": {
+      "totalCount": 1,
+      "pageNumber": 1,
+      "pageSize": 1,
+      "hasNextPage": false,
+      "baseEntityLogicalName": "contact",
+      "primaryKeyColumnName": "contactid",
+      "members": [
+        "5fcf77f5-96a7-f111-b8de-000d3a9eacee"
+      ],
+      "additionalProperties": {}
+    },
+    "ready": true
+  },
+  "campaignAuthority": null,
+  "journeyExecutionUpdates": [],
+  "autonomousPipeline": {
+    "campaignAuthorityToCreativeToMedia": "PROVEN_PREVIOUSLY_PRESERVED",
+    "durableMediaExactFileIntegrity": "PROVEN_PREVIOUSLY_PRESERVED",
+    "metaOwnedApiRuntime": "PROVEN_PREVIOUSLY_PRESERVED",
+    "facebookInstagramFutureRows": []
+  },
+  "linkedin": {
+    "organizationId": "13048648",
+    "state": "LINKEDIN_API_PRODUCT_REVIEW_PENDING",
+    "autonomousExecutionEnabled": false
+  },
+  "noTouchTest": {
+    "result": "JM1_CORE_META_NO_TOUCH_TEST_PASS",
+    "exactRemainingNormalOperationDependency": "",
+    "routineFounderTouchCount": 0,
+    "oneTimeAdminActivationCount": 1,
+    "browserExecutionRuntime": false,
+    "metaBusinessSuiteExecutionRuntime": false,
+    "sintraExecutionRuntime": false
+  },
+  "sintra": {
+    "classification": "SINTRA OPTIONAL-CANDIDATE - CORE JM1/DYNAMICS/META MARKETING EXECUTION REPLACED; LINKEDIN PRODUCT REVIEW PENDING",
+    "matrix": {
+      "strategyCopyCalendar": "OPTIONAL_VENDOR_SURFACE",
+      "facebookExecution": "REPLACED_BY_JM1_META_ADAPTER",
+      "instagramExecution": "REPLACED_BY_JM1_META_ADAPTER",
+      "dynamicsJourneyExecution": "REPLACED_BY_CUSTOMER_INSIGHTS_JOURNEY_RUNTIME",
+      "linkedinExecution": "HELD_LINKEDIN_API_PRODUCT_REVIEW_PENDING"
+    }
+  },
+  "classifications": [
+    "DYNAMICS_JOURNEY_SEED_IMPLEMENTED",
+    "DYNAMICS_MARKETING_EMAIL_READY_TO_SEND_PROVEN",
+    "DYNAMICS_TEST_AUDIENCE_PROVEN",
+    "DYNAMICS_CONTROLLED_JOURNEY_SEED_REUSABILITY_PROVEN",
+    "DYNAMICS_CONTROLLED_JOURNEY_RUNTIME_STARTED",
+    "DYNAMICS_CONTROLLED_JOURNEY_PROVEN",
+    "JM1_CORE_META_NO_TOUCH_TEST_PASS",
+    "SINTRA_OPTIONAL_CANDIDATE_CORE_JM1_DYNAMICS_META_MARKETING_EXECUTION_REPLACED_LINKEDIN_PRODUCT_REVIEW_PENDING"
+  ]
+}

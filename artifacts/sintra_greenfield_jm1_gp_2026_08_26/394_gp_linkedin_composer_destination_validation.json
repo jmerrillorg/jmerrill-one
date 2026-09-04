@@ -1,0 +1,18 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "platform": "LinkedIn Organization",
+  "required_result": "PASS — J MERRILL ONE SELECTED",
+  "actual_result": "PASS — J MERRILL ONE SELECTED",
+  "evidence": "/tmp/sintra_gp_soshie_response_4.png",
+  "destination_selected": "LinkedIn (Organization) · J Merrill One",
+  "excluded_destinations_not_selected": [
+    "J Merrill Foundation, Inc.",
+    "J Merrill Publishing, Inc."
+  ],
+  "scheduled": false,
+  "scheduling_hold_reason": "Safe UI-control failure before final Schedule action."
+}

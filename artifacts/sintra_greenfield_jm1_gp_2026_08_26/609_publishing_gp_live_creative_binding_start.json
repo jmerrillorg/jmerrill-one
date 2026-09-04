@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:35:00-04:00",
+  "classification": "LIVE CREATIVE BINDING PASS - IMMINENT POSTS PRIORITIZED",
+  "scope": [
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31"
+  ],
+  "caption_state": "KEEP",
+  "priority_order": [
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31"
+  ],
+  "do_not_broaden_until_wave1_resolved": true
+}

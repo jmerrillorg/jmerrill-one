@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "ACTIVE EXECUTION STATE MODEL",
+  "states": {
+    "GOVERNED_CONTENT_READY": "Approved copy/creative specification exists in governed artifacts.",
+    "SINTRA_DRAFT_MATERIALIZED": "Actual draft exists inside Sintra.",
+    "SCHEDULE_ATTEMPTED": "Sintra scheduling action executed.",
+    "SCHEDULE_VERIFIED": "Actual future scheduled item independently visible in Social Media Manager/calendar.",
+    "PUBLISHED_VERIFIED": "Actual post visibly live on the intended social destination.",
+    "EXECUTION_ERROR": "Action failed."
+  },
+  "rule": "Do not collapse governed content readiness, Sintra draft materialization, schedule attempts, schedule verification, publication verification, and execution errors."
+}

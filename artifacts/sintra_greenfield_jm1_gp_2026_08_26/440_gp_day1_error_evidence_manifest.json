@@ -1,0 +1,46 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "classification": "DAY 1 ERROR EVIDENCE MANIFEST",
+  "founder_provided_evidence": [
+    "Current live Sintra evidence: all three Day 1 action cards show red Error; no posts published; Days 2-7 not visible/materialized."
+  ],
+  "cody_captured_evidence": [
+    {
+      "file": "440_gp_day1_error_calendar_state.png",
+      "description": "Sintra Social Media Manager calendar showing Facebook, Instagram, and LinkedIn Day 1 cards in Error state."
+    },
+    {
+      "file": "440_gp_day1_facebook_error_detail.png",
+      "description": "Facebook detail panel with automation-off error text."
+    },
+    {
+      "file": "440_gp_day1_instagram_error_detail.png",
+      "description": "Instagram detail panel with automation-off error text."
+    },
+    {
+      "file": "440_gp_day1_linkedin_error_detail.png",
+      "description": "LinkedIn Organization detail panel with automation-off error text."
+    }
+  ],
+  "accessibility_evidence_summary": [
+    {
+      "platform": "Facebook",
+      "visible_error_text": "Error publishing post. Post not published because automation was turned off",
+      "publish_date_visible": "August 27, 2026 at 9:00 AM"
+    },
+    {
+      "platform": "Instagram",
+      "visible_error_text": "Error publishing post. Post not published because automation was turned off",
+      "publish_date_visible": "August 27, 2026 at 9:00 AM"
+    },
+    {
+      "platform": "LinkedIn",
+      "visible_error_text": "Error publishing post. Post not published because automation was turned off",
+      "publish_date_visible": "August 27, 2026 at 9:00 AM"
+    }
+  ]
+}

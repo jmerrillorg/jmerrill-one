@@ -1,0 +1,30 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 CANARY FINAL PASS",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "PASS",
+  "root_cause": "Social Media Manager publishing runtime was off; Founder enabled it.",
+  "canary": {
+    "date": "2026-08-27",
+    "platforms": [
+      {
+        "platform": "Facebook",
+        "destination": "J Merrill One",
+        "state": "PUBLISHED_VERIFIED"
+      },
+      {
+        "platform": "Instagram",
+        "destination": "@jmerrillone",
+        "state": "PUBLISHED_VERIFIED"
+      },
+      {
+        "platform": "LinkedIn Organization",
+        "destination": "J Merrill One",
+        "state": "PUBLISHED_VERIFIED"
+      }
+    ]
+  },
+  "downstream_gate": "UNBLOCKED_FIRST_WEEK_SCALE"
+}

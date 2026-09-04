@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-28T08:03:54-04:00",
+  "entries": [
+    {
+      "date": "2026-08-28",
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "replacement_surface": "Meta Business Suite",
+      "status": "SCHEDULED_CANARY_REPAIRED",
+      "notes": "Wrong Day2 duplicate moved to Drafts; Day1 caption pasted in edit composer and preview."
+    },
+    {
+      "date": "2026-08-28",
+      "platform": "Instagram",
+      "destination": "jmerrillpub",
+      "replacement_surface": "Meta Business Suite",
+      "status": "SCHEDULED_CANARY_REBUILT",
+      "notes": "The prior media-only row was moved to Drafts. A fresh Instagram-only Meta post was created with exact 1080x1080 local file upload, platform-specific Instagram caption, Aug 28 2026 12:00 PM schedule time, and scheduled-table persistence verification."
+    }
+  ]
+}

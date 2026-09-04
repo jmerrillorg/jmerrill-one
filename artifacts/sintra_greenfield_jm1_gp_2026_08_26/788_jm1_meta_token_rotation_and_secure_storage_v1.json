@@ -1,0 +1,71 @@
+{
+  "packageId": 788,
+  "artifact": "JM1-META-TOKEN-ROTATION-AND-SECURE-STORAGE-v1",
+  "generatedAt": "2026-09-02T12:05:06.584Z",
+  "classification": "META_SYSTEM_USER_TOKEN_STORED_ROTATION_TRACKED_READBACK_VERIFIED",
+  "secretReference": {
+    "vaultName": "jm1-core-vault",
+    "secretName": "JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN",
+    "secretId": "https://jm1-core-vault.vault.azure.net/secrets/JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN/c8d340a1d16640c099e65ca4b2a0ae19",
+    "versioned": true,
+    "tokenValueRecorded": false,
+    "priorFailedVersionDeleted": false,
+    "priorFailedVersionLogicalState": "INVALID_TOKEN_PARSE_FAILURE"
+  },
+  "credential": {
+    "type": "Meta system-user access token",
+    "appId": "1293210212769981",
+    "businessPortfolioId": "846921439784613",
+    "owner": "J Merrill One",
+    "systemUser": "JM1PublishingRuntime",
+    "systemUserId": "61593707745004",
+    "branchScope": "J Merrill Publishing only",
+    "associatedAssets": [
+      {
+        "platform": "Facebook",
+        "name": "J Merrill Publishing Inc",
+        "assetId": "307480763084670"
+      },
+      {
+        "platform": "Instagram",
+        "handle": "jmerrillpub",
+        "businessAccountId": "17841410046020869",
+        "businessAssetId": "102246875862327"
+      }
+    ],
+    "approvedScopes": [
+      "pages_manage_posts",
+      "pages_read_engagement",
+      "pages_show_list",
+      "instagram_basic",
+      "instagram_content_publish"
+    ]
+  },
+  "tokenOperations": {
+    "issuedAt": "2026-09-02T12:02:43Z",
+    "expiresAt": "2026-11-01T12:02:43Z",
+    "rotationDueAt": "2026-10-17T12:02:43Z",
+    "tokenLifetime": "60 days",
+    "currentCredentialState": "VERIFIED_FOR_GRAPH_READBACK",
+    "lastSuccessfulVerification": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/787_jm1_meta_owned_api_canary_v1.json",
+    "runtimeRequirement": "raise governed exception before expiration; rotate and validate replacement without relying on Founder memory"
+  },
+  "mediaNormalization": {
+    "sourcePath": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_october_featured_author_intro_1080.svg",
+    "sourceSha256": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+    "normalizedPath": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative_normalized/iyorwuese_october_featured_author_intro_1080.png",
+    "normalizedSha256": "ca6d3d1d6a07aa20f00c6df7001bc882a0def4e4ab349023068e6404ad19e8b9",
+    "normalizedMimeType": "image/png",
+    "normalizationMethod": "macOS sips SVG_SOURCE_TO_PLATFORM_PNG_RENDER",
+    "aiTransformation": false,
+    "officialLogoPresent": true
+  },
+  "securityControls": {
+    "noTokenInRepo": true,
+    "noTokenInEvidenceJson": true,
+    "noTokenPrintedToLogs": true,
+    "clipboardClearedAfterStorage": true,
+    "sintraCredentialsUsed": false,
+    "browserSessionCookiesUsedAsRuntimeCredentials": false
+  }
+}

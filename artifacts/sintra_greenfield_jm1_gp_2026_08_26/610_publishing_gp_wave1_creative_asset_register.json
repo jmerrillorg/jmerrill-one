@@ -1,0 +1,95 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:35:00-04:00",
+  "source_zip": "publishing_remediation_wave1_soshie_upload.zip",
+  "asset_source_folder": "publishing_remediation_wave1_creatives",
+  "items": [
+    {
+      "date": "2026-08-28",
+      "platform": "Facebook",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day01_2026-08-28_101_wisdom_people_first.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-28",
+      "platform": "Instagram",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day01_2026-08-28_101_wisdom_people_first.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-28",
+      "platform": "LinkedIn",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day01_2026-08-28_101_wisdom_people_first.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-29",
+      "platform": "Facebook",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day02_2026-08-29_27_days_quiet_step.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-29",
+      "platform": "Instagram",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day02_2026-08-29_27_days_quiet_step.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-29",
+      "platform": "LinkedIn",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day02_2026-08-29_27_days_quiet_step.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-30",
+      "platform": "Facebook",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day03_2026-08-30_purpose_before_process.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-30",
+      "platform": "Instagram",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day03_2026-08-30_purpose_before_process.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-30",
+      "platform": "LinkedIn",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day03_2026-08-30_purpose_before_process.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-31",
+      "platform": "Facebook",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day04_2026-08-31_reader_promise.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-31",
+      "platform": "Instagram",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day04_2026-08-31_reader_promise.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    },
+    {
+      "date": "2026-08-31",
+      "platform": "LinkedIn",
+      "caption_state": "KEEP",
+      "replacement_asset": "publishing_remediation_wave1_creatives/day04_2026-08-31_reader_promise.png",
+      "live_binding_status": "PENDING_CAPABILITY_DECISION"
+    }
+  ]
+}

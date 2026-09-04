@@ -1,0 +1,18 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2 - CONNECTORLESS EXECUTIVE THINKING ROOM",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T10:20:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2 COMPLETE - NO JUSTIFIED CONTINUED ADOPTION CASE",
+  "phase1_commit_reference": "cbcfd6d",
+  "not_started": true,
+  "would_require": [
+    "zero helper auto-delegation",
+    "no helper/brand ownership confusion",
+    "automations remain off",
+    "one Brain record or approved versioned update only",
+    "no connectors/helpers/workspaces",
+    "voluntary repeated use without correction burden"
+  ],
+  "strongest_signal": "voluntary usefulness without governance incidents"
+}

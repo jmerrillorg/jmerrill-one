@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "FULL 30-DAY FOUNDER EXECUTION APPROVAL",
+  "result": "APPROVED_FOR_EXECUTION",
+  "source": "Founder continuation packet authorized materializing/scheduling Days 8-30 and explicitly required all images to include the J Merrill One logo.",
+  "approval_scope": {
+    "days_8_30_materialization": true,
+    "visible_logo_on_all_new_images": true,
+    "platforms": [
+      "Facebook page J Merrill One",
+      "Instagram account jmerrillone",
+      "LinkedIn Organization J Merrill One"
+    ],
+    "social_media_manager_runtime": "ON_REQUIRED",
+    "other_automations": "OFF",
+    "engagement_authority": "NONE"
+  },
+  "supersedes_prior_gate": "Days 8-30 no longer require separate Founder approval before scheduling."
+}

@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B - GOVERNED HELPER ORCHESTRATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:30:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2B COMPLETE — HELPER ORCHESTRATION DOES NOT MEET JM1 GOVERNANCE/VALUE THRESHOLD",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "reopen_base_commit": "d28153b",
+  "materially_better_than_generic_multi_perspective_prompting": false,
+  "friction": "Higher due stalled helper card and monitoring burden.",
+  "persistence": "Moderate once Brain retrieval occurred.",
+  "conclusion": "Differentiation not proven."
+}

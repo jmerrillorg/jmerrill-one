@@ -1,0 +1,42 @@
+{
+  "packageId": 721,
+  "title": "Publishing Strategies Actual Workspace Reconciliation",
+  "generatedAt": "2026-08-29T08:09:57.422Z",
+  "activeWorkspace": "J Merrill Publishing",
+  "targetState": "Sep. 22 Strategies launch objects use high-quality launch assets, public copy, and Founder CTA https://amzn.to/4y4udRZ.",
+  "approvedAsset": {
+    "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_rebuild_exact_creatives/strategies_sep22_hero_square.png",
+    "sha256": "3c06b09eca3e51ad15bcecec6724f353d152be242c2119ef148072ebf121fbc1"
+  },
+  "actualWorkspaceFindings": [
+    {
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "scheduledFor": "2026-09-22T10:00:00",
+      "objectFound": true,
+      "ctaPresent": true,
+      "rejectedCreativeStillPresent": true,
+      "publicLanguageViolation": true,
+      "violationText": "source-backed title information only",
+      "screenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/721_sep22_facebook_card_after_wait.png"
+    },
+    {
+      "platform": "Instagram (FB Pages)",
+      "destination": "VISIBLE_CALENDAR_ONLY_NOT_DETAIL_INSPECTED",
+      "objectFound": true,
+      "ctaPresent": "NOT_INSPECTED",
+      "rejectedCreativeStillPresent": "LIKELY_UNCONFIRMED",
+      "publicLanguageViolation": "NOT_INSPECTED"
+    },
+    {
+      "platform": "LinkedIn (Organization)",
+      "destination": "VISIBLE_CALENDAR_ONLY_NOT_DETAIL_INSPECTED",
+      "objectFound": true,
+      "ctaPresent": "NOT_INSPECTED",
+      "rejectedCreativeStillPresent": "LIKELY_UNCONFIRMED",
+      "publicLanguageViolation": "NOT_INSPECTED"
+    }
+  ],
+  "executionDecision": "Do not certify Strategies Sep. 22 complete. Replace with exact approved local launch creative/copy through a single execution authority, then remove old Sintra objects.",
+  "classification": "STRATEGIES SEP. 22 ACTUAL PUBLISHING WORKSPACE RECONCILIATION REQUIRED"
+}

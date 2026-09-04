@@ -1,0 +1,193 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T11:38:00-04:00",
+  "wave1": {
+    "dates": [
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31"
+    ],
+    "caption_live_bound": 12,
+    "creative_live_bound": 0,
+    "media_binding_outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH"
+  },
+  "sep1_7": {
+    "caption_live_bound": 21,
+    "creative_live_bound": 0,
+    "items": [
+      {
+        "date": "2026-09-01",
+        "platform": "Facebook",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day05_2026-09-01_sean_featured_author_launch.png"
+      },
+      {
+        "date": "2026-09-01",
+        "platform": "Instagram",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day05_2026-09-01_sean_featured_author_launch.png"
+      },
+      {
+        "date": "2026-09-01",
+        "platform": "LinkedIn",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day05_2026-09-01_sean_featured_author_launch.png"
+      },
+      {
+        "date": "2026-09-02",
+        "platform": "Facebook",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day06_2026-09-02_inside_publishing_reader_promise.png"
+      },
+      {
+        "date": "2026-09-02",
+        "platform": "Instagram",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day06_2026-09-02_inside_publishing_reader_promise.png"
+      },
+      {
+        "date": "2026-09-02",
+        "platform": "LinkedIn",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day06_2026-09-02_inside_publishing_reader_promise.png"
+      },
+      {
+        "date": "2026-09-03",
+        "platform": "Facebook",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day07_2026-09-03_principals_tale_rediscovery.png"
+      },
+      {
+        "date": "2026-09-03",
+        "platform": "Instagram",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day07_2026-09-03_principals_tale_rediscovery.png"
+      },
+      {
+        "date": "2026-09-03",
+        "platform": "LinkedIn",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day07_2026-09-03_principals_tale_rediscovery.png"
+      },
+      {
+        "date": "2026-09-04",
+        "platform": "Facebook",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day08_2026-09-04_trubies_guide_reader_path.png"
+      },
+      {
+        "date": "2026-09-04",
+        "platform": "Instagram",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day08_2026-09-04_trubies_guide_reader_path.png"
+      },
+      {
+        "date": "2026-09-04",
+        "platform": "LinkedIn",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day08_2026-09-04_trubies_guide_reader_path.png"
+      },
+      {
+        "date": "2026-09-05",
+        "platform": "Facebook",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day09_2026-09-05_shift_weekend_reflection.png"
+      },
+      {
+        "date": "2026-09-05",
+        "platform": "Instagram",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day09_2026-09-05_shift_weekend_reflection.png"
+      },
+      {
+        "date": "2026-09-05",
+        "platform": "LinkedIn",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day09_2026-09-05_shift_weekend_reflection.png"
+      },
+      {
+        "date": "2026-09-06",
+        "platform": "Facebook",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day10_2026-09-06_author_journey_reader_first.png"
+      },
+      {
+        "date": "2026-09-06",
+        "platform": "Instagram",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day10_2026-09-06_author_journey_reader_first.png"
+      },
+      {
+        "date": "2026-09-06",
+        "platform": "LinkedIn",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day10_2026-09-06_author_journey_reader_first.png"
+      },
+      {
+        "date": "2026-09-07",
+        "platform": "Facebook",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day11_2026-09-07_week_start_publishing_question.png"
+      },
+      {
+        "date": "2026-09-07",
+        "platform": "Instagram",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day11_2026-09-07_week_start_publishing_question.png"
+      },
+      {
+        "date": "2026-09-07",
+        "platform": "LinkedIn",
+        "caption_state": "LIVE_REMEDIATED_VISIBLE",
+        "creative_state": "READY_LOCAL_NOT_LIVE_BOUND",
+        "live_bound": "CAPTION_ONLY",
+        "asset": "publishing_remediation_sep1_7_creatives/day11_2026-09-07_week_start_publishing_question.png"
+      }
+    ]
+  },
+  "schedule_integrity": "No original scheduled post deleted; unsafe candidate declined; visible calendar statuses remained Scheduled."
+}

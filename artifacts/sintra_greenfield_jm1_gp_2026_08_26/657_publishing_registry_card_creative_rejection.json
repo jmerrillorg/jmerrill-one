@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-08-28T11:01:03-04:00",
+  "status": "ACTIVE_REJECTION_RULE",
+  "reject_if_resembles": [
+    "date card",
+    "content-category card",
+    "title/author registry",
+    "operational footer",
+    "campaign metadata"
+  ],
+  "banned_public_fingerprints": [
+    "30-Day Social Activation",
+    "rights-safe",
+    "official-logo publishing post",
+    "source-safe",
+    "uncleared excerpts",
+    "governed",
+    "content pillar",
+    "validation"
+  ],
+  "allowed_tagline_exception": "Helping Authors Help Themselves",
+  "inspected_assets": [
+    {
+      "file": "publishing_full30_creatives/day05_2026-09-01_september_featured_author_sean_a_crowley_i.png",
+      "disposition": "REPLACE",
+      "reason": "date-card/registry layout and rights-safe/official-logo footer language"
+    },
+    {
+      "file": "publishing_full30_creatives/day26_2026-09-22_release_day.png",
+      "disposition": "REPLACE",
+      "reason": "date-card/registry layout and Founder CTA/machine-like footer language"
+    },
+    {
+      "file": "publishing_remediation_sep1_7_creatives/day05_2026-09-01_sean_featured_author_launch.png",
+      "disposition": "REWORK_NOT_FINAL",
+      "reason": "better editorial tone, but lacks actual source-backed cover/author asset binding"
+    }
+  ]
+}

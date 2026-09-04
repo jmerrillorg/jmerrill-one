@@ -1,0 +1,78 @@
+{
+  "packageId": 718,
+  "title": "Actual Publishing Live Schedule Inventory",
+  "generatedAt": "2026-08-29T08:09:57.422Z",
+  "activeWorkspace": "J Merrill Publishing",
+  "inventoryStatus": "PARTIAL_LIVE_INVENTORY_WITH_REPRESENTATIVE_DETAIL_PROOF",
+  "visibleFutureCounts": [
+    {
+      "range": "Aug 24 - Sep 6",
+      "futureRange": "Aug 29 - Sep 6",
+      "scheduledItems": 27,
+      "perDay": "Facebook, Instagram (FB Pages), LinkedIn (Organization)"
+    },
+    {
+      "range": "Sep 7 - Sep 20",
+      "scheduledItems": 42,
+      "perDay": "Facebook, Instagram (FB Pages), LinkedIn (Organization)"
+    },
+    {
+      "range": "Sep 21 - Oct 4",
+      "visibleScheduledItems": 18,
+      "coveredDates": "Sep 21 - Sep 26 only",
+      "perDay": "Facebook, Instagram (FB Pages), LinkedIn (Organization)"
+    }
+  ],
+  "representativeInspectedItems": [
+    {
+      "date": "2026-09-01",
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "status": "Scheduled",
+      "publishDate": "September 1, 2026 at 10:00 AM",
+      "caption": "September begins with Sean A Crowley I... Explore The Shift: https://amzn.to/4hZvsNG",
+      "creative": "metadata/registry-style September Featured Author card",
+      "rejectedCreative": true,
+      "publicLanguageViolation": false,
+      "screenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/720_sep1_facebook_card.png"
+    },
+    {
+      "date": "2026-09-01",
+      "platform": "Instagram (FB Pages)",
+      "destination": "jmerrillpub",
+      "status": "Scheduled",
+      "publishDate": "September 1, 2026 at 12:00 PM",
+      "caption": "September Featured Author: Sean A Crowley I... #TheShift",
+      "creative": "metadata/registry-style September Featured Author card",
+      "rejectedCreative": true,
+      "publicLanguageViolation": false,
+      "screenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/720_sep1_instagram_card.png"
+    },
+    {
+      "date": "2026-09-01",
+      "platform": "LinkedIn (Organization)",
+      "destination": "J Merrill Publishing, Inc.",
+      "status": "Scheduled",
+      "publishDate": "September 1, 2026 at 2:00 PM",
+      "caption": "Featured Author programming should give a writer more than a single announcement...",
+      "creative": "metadata/registry-style September Featured Author card",
+      "rejectedCreative": true,
+      "publicLanguageViolation": false,
+      "screenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/720_sep1_linkedin_org_card.png"
+    },
+    {
+      "date": "2026-09-22",
+      "platform": "Facebook",
+      "destination": "J Merrill Publishing Inc",
+      "status": "Scheduled",
+      "publishDate": "September 22, 2026 at 10:00 AM",
+      "caption": "Release Day: Strategies for Success... Available now: https://amzn.to/4y4udRZ",
+      "creative": "metadata/registry-style Release Day card",
+      "rejectedCreative": true,
+      "publicLanguageViolation": true,
+      "violationText": "source-backed title information only",
+      "screenshot": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/721_sep22_facebook_card_after_wait.png"
+    }
+  ],
+  "supersedes": "Any inventory derived from J Merrill One - GP or workspace-ambiguous Soshie screens."
+}

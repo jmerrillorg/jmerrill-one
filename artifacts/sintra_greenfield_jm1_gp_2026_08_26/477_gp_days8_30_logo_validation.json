@@ -1,0 +1,19 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "DAYS 8-30 LOGO VALIDATION",
+  "result": "PASS",
+  "rule": "Every newly generated image must visibly include the actual J Merrill One logo asset, not merely typed brand text.",
+  "evidence": [
+    "Soshie image prompts for Days 8-30 explicitly placed the J Merrill One logo in each creative.",
+    "Soshie used the saved source logo image from the active chat for logo-aware generation.",
+    "Day 2 pre-rule failure was corrected before publish."
+  ],
+  "validated_counts": {
+    "days8_30_creatives": 23,
+    "day2_corrected_creatives": 1,
+    "total_logo_gated_campaign_creatives": 29
+  }
+}

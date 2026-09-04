@@ -1,0 +1,258 @@
+{
+  "packageId": 773,
+  "artifact": "JM1-MARKETING-CURRENT-STATE-INVENTORY-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "status": "RATIFIED_CURRENT_STATE",
+  "inspectedEvidence": [
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/771_sep25_30_live_rebuild_closeout.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/745_jm1_marketing_manual_to_automation_trace_v1.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/683_jmp_marketing_operating_architecture.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/684_jmp_marketing_trigger_taxonomy.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/687_jmp_marketing_eligibility_schema.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/688_jmp_campaign_authority_schema.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/704_jmp_social_queue_schema.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/707_jm1_social_idempotency_standard.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/708_jm1_social_execution_exception_model.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/710_jmp_marketing_supersession_rule.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/711_jmp_current_lifecycle_to_marketing_mapping.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/712_jmp_campaign_to_journey_mapping.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/713_jmp_marketing_performance_return_loop.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/715_jmp_marketing_automation_implementation_plan.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/776_jm1_marketing_owned_runtime_proof_v1.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/777_jm1_dedicated_dataverse_marketing_runtime_v1.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/779_jm1_marketing_runtime_expansion_v1.json",
+    "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md",
+    "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+    "scripts/build-publishing-sep11-30-batch.mjs"
+  ],
+  "classificationScale": [
+    "DESIGNED",
+    "IMPLEMENTED",
+    "PROVEN",
+    "PARTIAL",
+    "NOT_PRESENT",
+    "EXTERNAL_DEPENDENCY"
+  ],
+  "capabilities": [
+    {
+      "capability": "Enterprise Marketing Operating System",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/683_jmp_marketing_operating_architecture.json"
+      ],
+      "notes": "Reusable architecture exists, but runtime no-manual-touch execution is not proven."
+    },
+    {
+      "capability": "Publishing Program Authority",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/683_jmp_marketing_operating_architecture.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/688_jmp_campaign_authority_schema.json"
+      ],
+      "notes": "Authority needs explicit four-program ratification in the enterprise MOS."
+    },
+    {
+      "capability": "Marketing Eligibility",
+      "classification": "PROVEN",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/687_jmp_marketing_eligibility_schema.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/777_jm1_dedicated_dataverse_marketing_runtime_v1.json"
+      ],
+      "notes": "Dedicated Dataverse Marketing Eligibility table write/readback/idempotency proven."
+    },
+    {
+      "capability": "Campaign Authority",
+      "classification": "PROVEN",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/688_jmp_campaign_authority_schema.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/777_jm1_dedicated_dataverse_marketing_runtime_v1.json"
+      ],
+      "notes": "Dedicated Dataverse Campaign Authority table write/readback/idempotency proven."
+    },
+    {
+      "capability": "Lifecycle Trigger Registry",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/684_jmp_marketing_trigger_taxonomy.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/711_jmp_current_lifecycle_to_marketing_mapping.json"
+      ],
+      "notes": "Trigger taxonomy is source-backed but production event ingestion is not proven."
+    },
+    {
+      "capability": "Customer Insights Journeys",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "artifacts/JM1_Customer_Insights_Journeys_Operating_Standard_v1.md",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/712_jmp_campaign_to_journey_mapping.json"
+      ],
+      "notes": "Operating standard exists; production journey activation remains gated by tenant proof/consent controls."
+    },
+    {
+      "capability": "Asset Resolver",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "scripts/build-publishing-sep11-30-batch.mjs",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/721_jmp_exact_creative_asset_pipeline.json"
+      ],
+      "notes": "Real assets were manually resolved and scripted into creative generation; no service endpoint/table implementation is proven."
+    },
+    {
+      "capability": "Creative Production Engine",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "scripts/build-publishing-sep11-30-batch.mjs",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/741_sep11_30_creative_register.json"
+      ],
+      "notes": "Batch generation exists for September but is campaign-specific, not a reusable production service."
+    },
+    {
+      "capability": "Public-Ready Gate",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/701_jmp_public_ready_gate.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/771_sep25_30_live_rebuild_closeout.json"
+      ],
+      "notes": "Manual QA was effective; deterministic automated scoring is not proven."
+    },
+    {
+      "capability": "Social Queue Schema",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/704_jmp_social_queue_schema.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/777_jm1_dedicated_dataverse_marketing_runtime_v1.json"
+      ],
+      "notes": "Dedicated Social Execution table exists with held FB/IG/LN rows; platform API execution remains unproven."
+    },
+    {
+      "capability": "Meta Facebook API Execution",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md"
+      ],
+      "notes": "Architecture exists; owned app/token/canary evidence is not present here."
+    },
+    {
+      "capability": "Instagram Graph API Execution",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md"
+      ],
+      "notes": "Architecture exists; owned app/token/canary evidence is not present here."
+    },
+    {
+      "capability": "LinkedIn Organization API Execution",
+      "classification": "EXTERNAL_DEPENDENCY",
+      "evidenceSources": [
+        "docs/governance/JM1-Meta-Graph-Publishing-Architecture-v0.1.md"
+      ],
+      "notes": "LinkedIn organization publishing may require app product permission/review; native UI scheduling is not API proof."
+    },
+    {
+      "capability": "Native Scheduler Bridge",
+      "classification": "PROVEN",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/771_sep25_30_live_rebuild_closeout.json"
+      ],
+      "notes": "Meta native and LinkedIn native September execution evidence exists; this is a bridge, not target automation."
+    },
+    {
+      "capability": "Exact Media Preservation",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/721_jmp_exact_creative_asset_pipeline.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/771_sep25_30_live_rebuild_closeout.json"
+      ],
+      "notes": "Exact-file scheduling was manually proven; API upload/readback is not proven."
+    },
+    {
+      "capability": "Destination Authority Registry",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/728_jmp_marketing_configuration_registry.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/771_sep25_30_live_rebuild_closeout.json"
+      ],
+      "notes": "Publishing destinations were manually verified; immutable API IDs remain required."
+    },
+    {
+      "capability": "Idempotency",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/707_jm1_social_idempotency_standard.json"
+      ],
+      "notes": "Rule exists; runtime duplicate prevention is not implemented/proven."
+    },
+    {
+      "capability": "Retry and Dead Letter",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/708_jm1_social_execution_exception_model.json"
+      ],
+      "notes": "Exception model exists; no orchestrator implementation is proven."
+    },
+    {
+      "capability": "Supersession",
+      "classification": "PARTIAL",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/710_jmp_marketing_supersession_rule.json",
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/771_sep25_30_live_rebuild_closeout.json"
+      ],
+      "notes": "Manual Soshie retirement worked; system-driven supersession is not implemented."
+    },
+    {
+      "capability": "Analytics Return Loop",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/713_jmp_marketing_performance_return_loop.json"
+      ],
+      "notes": "Inputs/outputs defined; platform API metric ingestion is not proven."
+    },
+    {
+      "capability": "Daily Control Loop",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/726_jmp_daily_marketing_control_loop.json"
+      ],
+      "notes": "Model exists; scheduled autonomous daily run is not proven."
+    },
+    {
+      "capability": "Founder Digest",
+      "classification": "DESIGNED",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/727_jmp_founder_marketing_digest_model.json"
+      ],
+      "notes": "Model exists; exception-only digest delivery is not proven."
+    },
+    {
+      "capability": "October Featured Author Controlled Test",
+      "classification": "NOT_PRESENT",
+      "evidenceSources": [
+        "artifacts/sintra_greenfield_jm1_gp_2026_08_26/724_jmp_featured_author_runtime.json"
+      ],
+      "notes": "Iyorwuese test not yet executed in this worktree."
+    },
+    {
+      "capability": "No Manual Touch Acceptance Test",
+      "classification": "NOT_PRESENT",
+      "evidenceSources": [],
+      "notes": "No routine campaign has yet passed from trigger to platform readback without browser/manual execution."
+    }
+  ],
+  "explicitTruths": {
+    "septemberPublishingRunCreatedThroughJm1OwnedApi": false,
+    "septemberOriginalOrSupersededObjectsCreatedThroughSintraSoshieUi": true,
+    "septemberFinalAuthoritativeFacebookScheduler": "Meta Business Suite UI",
+    "septemberFinalAuthoritativeInstagramScheduler": "Meta Business Suite UI",
+    "septemberFinalAuthoritativeLinkedInScheduler": "LinkedIn native organization UI",
+    "septemberFinalAuthoritativeSintraSoshieScheduler": false,
+    "sep25To30OperationalCloseout": "SEE_771",
+    "routineFounderManualMarketingTouchTarget": 0,
+    "computerUseRole": "ONE_TIME_SETUP_DEBUG_EXCEPTION_HANDLING_ONLY"
+  },
+  "gapsThatBlockNoManualTouch": [
+    "Dataverse social queue/table mutation not proven from this worktree.",
+    "JM1-owned Meta app credentials/tokens and posting canary are not present in repo evidence.",
+    "LinkedIn organization API permission remains an external dependency until product access is verified.",
+    "Customer Insights Journeys production criteria are not yet proven for Publishing programs.",
+    "Reusable creative quality scoring/service runtime is not yet implemented."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "updated_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "result": "FAIL — DAY 1 EXECUTION ERROR",
+  "scheduled_canaries": [
+    {
+      "platform": "Facebook",
+      "destination": "J Merrill One",
+      "date": "2026-08-27",
+      "visible_state": "Custom / Scheduled"
+    },
+    {
+      "platform": "Instagram",
+      "destination": "@jmerrillone",
+      "date": "2026-08-27",
+      "visible_state": "Custom / Scheduled"
+    },
+    {
+      "platform": "LinkedIn Organization",
+      "destination": "J Merrill One",
+      "date": "2026-08-27",
+      "visible_state": "Custom / Scheduled"
+    }
+  ],
+  "duplicates_detected": 0,
+  "wrong_destinations_detected": 0,
+  "evidence_artifact": "414_gp_day1_founder_manual_execution_evidence.json",
+  "prior_result_superseded": "PASS based on earlier reported scheduled state",
+  "execution_attempts": 3,
+  "verified_scheduled_canaries": 0,
+  "published_verified": 0,
+  "failed_actions": 3,
+  "visible_error_text": "Error publishing post. Post not published because automation was turned off",
+  "validation_rule": "Actual action state and publication outcome supersede conversational confirmation."
+}

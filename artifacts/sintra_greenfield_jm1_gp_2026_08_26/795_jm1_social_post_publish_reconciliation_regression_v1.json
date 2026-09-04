@@ -1,0 +1,105 @@
+{
+  "packageId": 795,
+  "artifact": "JM1-SOCIAL-POST-PUBLISH-RECONCILIATION-REGRESSION-v1",
+  "generatedAt": "2026-09-03T09:17:06.117Z",
+  "mode": "NON_DESTRUCTIVE_SIMULATION",
+  "firstExecution": {
+    "state": "SIMULATED_POST_PUBLISH_DATAVERSE_FAILURE",
+    "error": "SIMULATED_DATAVERSE_METADATA_WRITE_FAILURE",
+    "platformPostIdNotYetStored": "mock_ig_1"
+  },
+  "retryExecution": {
+    "state": "RECONCILED_PLATFORM_SUCCESS",
+    "platformPostId": "mock_ig_1"
+  },
+  "certifiedRerun": {
+    "state": "IDEMPOTENT_ALREADY_CERTIFIED",
+    "platformPostId": "mock_ig_1"
+  },
+  "facebookPostPublishFailure": {
+    "firstExecution": {
+      "state": "SIMULATED_POST_PUBLISH_DATAVERSE_FAILURE",
+      "error": "SIMULATED_DATAVERSE_METADATA_WRITE_FAILURE",
+      "platformPostIdNotYetStored": "mock_fb_2"
+    },
+    "retryExecution": {
+      "state": "RECONCILED_PLATFORM_SUCCESS",
+      "platformPostId": "mock_fb_2"
+    },
+    "certifiedRerun": {
+      "state": "IDEMPOTENT_ALREADY_CERTIFIED",
+      "platformPostId": "mock_fb_2"
+    },
+    "finalRow": {
+      "id": "regression-facebook-post-publish-row",
+      "idempotencyKey": "regression:facebook-post-publish-failure",
+      "platform": "facebook",
+      "status": "PUBLISHED_VERIFIED",
+      "platformPostId": "mock_fb_2",
+      "caption": "J Merrill Publishing proof point: Facebook post-publish reconciliation.",
+      "destination": "J Merrill Publishing Inc",
+      "verifiedAt": "2026-09-03T09:17:06.117Z",
+      "readbackState": "RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH",
+      "actualDestination": "J Merrill Publishing Inc",
+      "actualMediaReference": "https://example.test/2"
+    }
+  },
+  "staleClaimLease": {
+    "leaseMinutes": 20,
+    "freshClaim": {
+      "state": "PUBLISHING_CLAIMED_LEASE_ACTIVE",
+      "platformObjectsCreated": 0
+    },
+    "staleClaim": {
+      "state": "STALE_CLAIM_RECOVERY_READY_FOR_SAFE_RECLAIM",
+      "platformObjectsCreated": 0
+    },
+    "staleClaimReclaim": {
+      "state": "PUBLISHED_VERIFIED",
+      "platformPostId": "mock_fb_1",
+      "platformObjectsCreated": 1
+    }
+  },
+  "expectedDistinctPlatformObjects": 2,
+  "platformObjectsCreated": 2,
+  "duplicateObjectsCreated": 0,
+  "finalRow": {
+    "id": "regression-social-row",
+    "idempotencyKey": "regression:post-publish-failure",
+    "platform": "instagram",
+    "status": "PUBLISHED_VERIFIED",
+    "platformPostId": "mock_ig_1",
+    "caption": "October Featured Author: Iyorwuese Hagher. A Portrait of Paradise opens a reader-first invitation.",
+    "destination": "jmerrillpub",
+    "verifiedAt": "2026-09-03T09:17:06.117Z",
+    "readbackState": "RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH",
+    "actualDestination": "jmerrillpub",
+    "actualMediaReference": "https://example.test/1"
+  },
+  "staleClaimFinalRow": {
+    "id": "regression-stale-claim-row",
+    "idempotencyKey": "regression:stale-claim",
+    "platform": "facebook",
+    "status": "PUBLISHED_VERIFIED",
+    "platformPostId": "mock_fb_1",
+    "caption": "J Merrill Publishing runtime proof: stale claim recovery.",
+    "destination": "J Merrill Publishing Inc",
+    "verifiedAt": "2026-09-03T09:17:06.117Z",
+    "readbackState": "READBACK_MATCH",
+    "errorCode": "STALE_CLAIM_RECOVERY",
+    "actualDestination": "J Merrill Publishing Inc",
+    "actualMediaReference": "https://example.test/facebook/1"
+  },
+  "dataverseWrites": [
+    "PUBLISHING_CLAIMED",
+    "PUBLISHED_VERIFIED",
+    "PUBLISHING_CLAIMED",
+    "PUBLISHED_VERIFIED",
+    "RETRY_REQUIRED",
+    "PUBLISHING_CLAIMED",
+    "PLATFORM_ACCEPTED",
+    "READBACK_PENDING",
+    "PUBLISHED_VERIFIED"
+  ],
+  "classification": "POST_PUBLISH_FAILURE_IDEMPOTENCY_PROVEN"
+}

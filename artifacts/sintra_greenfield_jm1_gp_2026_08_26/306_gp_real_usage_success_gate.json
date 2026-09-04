@@ -1,0 +1,21 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "DEFINED",
+  "success_indicators": [
+    "Jackie voluntarily returns to GP",
+    "low context-restatement burden",
+    "moderate/high strategic usefulness",
+    "helper orchestration adds material/modest value regularly",
+    "low correction burden",
+    "correct JM1 ownership",
+    "no hard governance failures",
+    "zero external-action violations",
+    "lean architecture remains sufficient",
+    "governance burden remains low/moderate"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "ACTIVE",
+  "automations_required": 0,
+  "automations_observed": 0,
+  "social_media_manager": "OFF",
+  "inbox_manager": "OFF",
+  "daily_summarizer": "OFF",
+  "facebook_commenter": "OFF",
+  "evidence": "Automations page displayed switch off for all four listed automations."
+}

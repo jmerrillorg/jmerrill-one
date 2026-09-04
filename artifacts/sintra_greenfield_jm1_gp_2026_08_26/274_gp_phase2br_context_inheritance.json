@@ -1,0 +1,15 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B-R - NETWORK-STABLE HELPER VALUE RETEST",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:37:22-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "retest_base_commit": "7a093e1",
+  "rating": "PARTIAL",
+  "j_merrill_one_umbrella_awareness": true,
+  "brand_structure_used": "PARTIAL",
+  "authority_boundaries_used": true,
+  "strategic_principles_used": true,
+  "generic_business_answer_disconnected_from_jm1": false,
+  "notes": "Buddy used JM1/J Merrill One framing, Microsoft-first reasoning, and helper-as-contributor boundaries. It did not cleanly inherit the established five-brand structure when naming the owning division."
+}

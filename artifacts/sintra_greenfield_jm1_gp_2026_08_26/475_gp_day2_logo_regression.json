@@ -1,0 +1,21 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "DAY 2 LOGO REGRESSION",
+  "result": "FAIL_THEN_CORRECTED_PASS",
+  "initial_observation": "Day 2 image in calendar lacked the visible J Merrill One logo and failed the new image-logo gate.",
+  "corrective_action": "Soshie updated existing Day 2 Facebook, Instagram, and LinkedIn Organization scheduled posts with a new logo-compliant image using the saved J Merrill One logo asset.",
+  "post_ids": {
+    "facebook": "d9e0e774-6ab9-4802-8ea9-d0f1721e722e",
+    "instagram": "7d31e7b5-e9a0-48ce-90e5-45d81af54ae2",
+    "linkedin": "12ec854f-7726-4c51-a0b2-77e9819ab07e"
+  },
+  "final_status": {
+    "facebook": "scheduled_logo_compliant",
+    "instagram": "scheduled_logo_compliant",
+    "linkedin": "scheduled_logo_compliant"
+  },
+  "publish_time": "2026-08-28T11:30:00-04:00"
+}

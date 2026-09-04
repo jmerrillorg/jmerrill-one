@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "generated_at": "2026-08-28T07:35:58-04:00",
+  "scope": "30-day Publishing visual replacement",
+  "local_asset_directories": [
+    "publishing_remediation_wave1_creatives",
+    "publishing_remediation_sep1_7_creatives",
+    "publishing_full30_creatives"
+  ],
+  "asset_count_expected": 30,
+  "official_logo_required": true,
+  "status": "ACTIVE_REPLACEMENT_REGISTER"
+}

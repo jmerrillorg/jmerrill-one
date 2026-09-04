@@ -1,0 +1,13 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "ACTIVE",
+  "rule": "Helpers may invent functional categories for analysis, but Sintra must map actual ownership back to certified JM1 brand structure.",
+  "known_risk": "Buddy previously used functional labels such as Author Education/Authorship.",
+  "acceptable_use": "Conceptual workstream or operating function",
+  "unacceptable_use": "Fictional JM1 entity, branch, owner, authority, or canon."
+}

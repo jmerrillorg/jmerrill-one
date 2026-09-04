@@ -1,0 +1,45 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "updated_at": "2026-08-26T18:30:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "status": "DESTINATION_MODEL_CERTIFIED_FROM_FOUNDER_EVIDENCE",
+  "platforms": [
+    {
+      "platform": "Facebook",
+      "connector_model": "MASTER_CONNECTION_WITH_SELECTABLE_PAGES",
+      "certified_one_destination": "J Merrill One",
+      "draft_only": "unknown",
+      "schedule": "allowed if composer clearly shows J Merrill One selected",
+      "publish": "allowed if composer clearly shows J Merrill One selected",
+      "analytics": "unknown",
+      "comments": "not authorized",
+      "dms": "not authorized"
+    },
+    {
+      "platform": "Instagram",
+      "connector_model": "DIRECT_ACCOUNT_CONNECTION",
+      "certified_one_destination": "@jmerrillone",
+      "draft_only": "unknown",
+      "schedule": "allowed for @jmerrillone",
+      "publish": "allowed for @jmerrillone",
+      "analytics": "unknown",
+      "comments": "not authorized",
+      "dms": "not authorized"
+    },
+    {
+      "platform": "LinkedIn Organization",
+      "connector_model": "MASTER_ORGANIZATION_CONNECTION_WITH_SELECTABLE_PAGES",
+      "certified_one_destination": "J Merrill One",
+      "draft_only": "unknown",
+      "schedule": "allowed if composer clearly shows J Merrill One selected",
+      "publish": "allowed if composer clearly shows J Merrill One selected",
+      "analytics": "unknown",
+      "comments": "not authorized",
+      "dms": "not authorized"
+    }
+  ],
+  "capability_is_not_engagement_authority": true,
+  "post_level_destination_gate_required": true
+}

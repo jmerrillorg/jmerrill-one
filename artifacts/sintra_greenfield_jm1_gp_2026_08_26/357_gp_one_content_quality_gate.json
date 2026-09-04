@@ -1,0 +1,21 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "status": "ACTIVE",
+  "gate_items": [
+    "why this post matters",
+    "value for people",
+    "clear One brand voice",
+    "no generic corporate filler",
+    "no branch-authority confusion",
+    "useful CTA",
+    "platform fit",
+    "no unsupported factual claims"
+  ],
+  "every_draft_requires_review": true,
+  "concept_note": "People should be served by the system rather than being forced to fit the system."
+}

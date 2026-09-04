@@ -1,0 +1,54 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T11:38:00-04:00",
+  "items": [
+    {
+      "date": "2026-09-03",
+      "audience": "education and leadership readers",
+      "reason_to_care": "leadership is human before professional",
+      "subject": "A Principal's Tale by Shelley McIntosh",
+      "visual_concept": "book-page editorial prompt",
+      "desired_outcome": "reader curiosity",
+      "platform_treatment": "FB narrative, IG question, LI education-leadership value"
+    },
+    {
+      "date": "2026-09-04",
+      "audience": "readers looking for practical paths",
+      "reason_to_care": "guides help someone take a next step",
+      "subject": "A Trubie's Guide Pt. 1 by Alesia Corpening",
+      "visual_concept": "guide/path motif",
+      "desired_outcome": "book discovery",
+      "platform_treatment": "FB context, IG visual line, LI practical-reader frame"
+    },
+    {
+      "date": "2026-09-05",
+      "audience": "Sean Featured Author readers",
+      "reason_to_care": "change asks for more than momentum",
+      "subject": "The Shift: Changing with God",
+      "visual_concept": "weekend reflection title hero",
+      "desired_outcome": "continue Sean month arc",
+      "platform_treatment": "FB reflective, IG succinct, LI featured-author lens"
+    },
+    {
+      "date": "2026-09-06",
+      "audience": "authors and future readers",
+      "reason_to_care": "author journey must include reader fit",
+      "subject": "Author Journey",
+      "visual_concept": "reader-before-launch insight",
+      "desired_outcome": "publishing inquiry clarity",
+      "platform_treatment": "FB fuller thought, IG concise, LI positioning value"
+    },
+    {
+      "date": "2026-09-07",
+      "audience": "authors starting the week",
+      "reason_to_care": "outcome beats output",
+      "subject": "Publishing Question",
+      "visual_concept": "week-start question",
+      "desired_outcome": "reader-first planning",
+      "platform_treatment": "FB practical, IG direct question, LI strategic framing"
+    }
+  ]
+}

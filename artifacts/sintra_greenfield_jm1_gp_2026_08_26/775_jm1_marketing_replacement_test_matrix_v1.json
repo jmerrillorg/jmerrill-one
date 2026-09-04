@@ -1,0 +1,162 @@
+{
+  "packageId": 775,
+  "artifact": "JM1-MARKETING-CODY-TO-SYSTEM-REPLACEMENT-TEST-MATRIX-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "status": "PARTIAL_PASS_DESIGN_CANARY_ONLY",
+  "sourceArtifactsCreated": [
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/772_jm1_marketing_manual_trace_v1.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/773_jm1_marketing_current_state_inventory_v1.json",
+    "artifacts/sintra_greenfield_jm1_gp_2026_08_26/774_jm1_enterprise_marketing_operating_system_v1.json"
+  ],
+  "testAssertions": [
+    {
+      "name": "September manual trace captured with required fields",
+      "pass": true,
+      "evidenceNote": "772 contains all requested manual operation mappings."
+    },
+    {
+      "name": "Final remediated September run was JM1 API-driven",
+      "pass": false,
+      "evidenceNote": "Final September execution was browser/UI driven, not JM1-owned API."
+    },
+    {
+      "name": "Final remediated September authoritative FB/IG scheduler was Meta Business Suite UI",
+      "pass": true,
+      "evidenceNote": "Founder clarification supersedes any shorthand that over-credited Sintra/Soshie."
+    },
+    {
+      "name": "Final remediated September authoritative LinkedIn scheduler was LinkedIn native organization UI",
+      "pass": true,
+      "evidenceNote": "LinkedIn native scheduling was the final manual bridge."
+    },
+    {
+      "name": "Sintra/Soshie was final authoritative September scheduler",
+      "pass": false,
+      "evidenceNote": "Soshie held superseded execution objects that were removed during remediation."
+    },
+    {
+      "name": "The Shift classified as new/recent, not backlist/draft",
+      "pass": true,
+      "evidenceNote": "Founder correction is recorded in 772 and 774."
+    },
+    {
+      "name": "Dedicated Dataverse marketing table runtime proven",
+      "pass": true,
+      "evidenceNote": "777 proves dedicated tables, relationships, writes, readback, and idempotency."
+    },
+    {
+      "name": "Dataverse exception model and control loop rows proven",
+      "pass": true,
+      "evidenceNote": "779 proves five exception rows, one journey-execution contract row, one control-loop row, and three social rows by readback."
+    },
+    {
+      "name": "Dynamics Journey created or proven",
+      "pass": false,
+      "evidenceNote": "DYNAMICS_JOURNEY_HELD_ADMIN_SETUP_REQUIRED"
+    },
+    {
+      "name": "Meta owned API execution proven",
+      "pass": false,
+      "evidenceNote": "META_OWNED_API_RUNTIME_NOT_PROVEN"
+    },
+    {
+      "name": "LinkedIn owned API execution proven",
+      "pass": false,
+      "evidenceNote": "LINKEDIN_API_EXTERNAL_DEPENDENCY"
+    },
+    {
+      "name": "One lifecycle trigger worked in harness",
+      "pass": true,
+      "evidenceNote": "COVER_APPROVED maps to a candidate chain without live execution."
+    },
+    {
+      "name": "One branch mapping completed",
+      "pass": true,
+      "evidenceNote": "Publishing branch maps to four ratified programs in 774."
+    },
+    {
+      "name": "One automation maturity level reached",
+      "pass": true,
+      "evidenceNote": "L0-L2 are artifact-proven; L3 is design-canary proven."
+    },
+    {
+      "name": "No-manual-touch runtime proven",
+      "pass": false,
+      "evidenceNote": "NO_TOUCH_TEST_NOT_READY - Dynamics Journey implemented/proven; Meta owned FB/IG platform adapter proof; Iyorwuese governed portrait/title-cover assets for title-specific creative"
+    },
+    {
+      "name": "Computer Use removed from routine target path",
+      "pass": true,
+      "evidenceNote": "774 assigns Computer Use to setup/debug/exception only."
+    }
+  ],
+  "lifecycleCanary": {
+    "trigger": "COVER_APPROVED",
+    "branch": "J Merrill Publishing",
+    "program": "Title/Author Marketing",
+    "input": {
+      "titleStatus": "new_or_active_title_candidate",
+      "assetRequirement": "real governed cover asset",
+      "founderManualTouch": 0
+    },
+    "producedSystemObjects": [
+      "marketingEligibilityCandidate",
+      "campaignAuthorityCandidate",
+      "creativeBriefCandidate",
+      "socialQueueDraftCandidate"
+    ],
+    "executionHold": "HOLD_BEFORE_PLATFORM_EXECUTION_UNTIL_DATAVERSE_WRITE_AND_OWNED_API_CANARY_ARE_PROVEN",
+    "result": "PASS_DESIGN_CANARY_ONLY"
+  },
+  "platformApiState": {
+    "facebook": {
+      "ownedApp": "NOT_PROVEN_IN_REPO_EVIDENCE",
+      "apiPermissions": "DESIGNED_META_GRAPH_REQUIRED",
+      "credentialState": "NOT_PRESENT_NO_SECRETS_STORED",
+      "publishCapability": "PARTIAL_ARCHITECTURE_ONLY",
+      "scheduleApproach": "JM1 delayed execution via Dataverse/orchestrator unless platform scheduling endpoint is explicitly available",
+      "implementationStatus": "HOLD_PENDING_OWNED_APP_TOKEN_AND_CANARY"
+    },
+    "instagram": {
+      "ownedApp": "NOT_PROVEN_IN_REPO_EVIDENCE",
+      "apiPermissions": "DESIGNED_INSTAGRAM_GRAPH_REQUIRED",
+      "credentialState": "NOT_PRESENT_NO_SECRETS_STORED",
+      "publishCapability": "PARTIAL_ARCHITECTURE_ONLY",
+      "scheduleApproach": "JM1 delayed execution via Dataverse/orchestrator",
+      "implementationStatus": "HOLD_PENDING_OWNED_APP_TOKEN_AND_CANARY"
+    },
+    "linkedin": {
+      "ownedApp": "NOT_PROVEN_IN_REPO_EVIDENCE",
+      "apiPermissions": "EXTERNAL_PERMISSION_DEPENDENCY",
+      "credentialState": "NOT_PRESENT_NO_SECRETS_STORED",
+      "publishCapability": "NATIVE_UI_PROVEN_API_NOT_PROVEN",
+      "scheduleApproach": "JM1 delayed execution via orchestrator after LinkedIn organization API access is approved",
+      "implementationStatus": "HOLD_LINKEDIN_API_EXTERNAL_PERMISSION_DEPENDENCY"
+    }
+  },
+  "targetRuntime": {
+    "authority": "Dataverse",
+    "orchestration": "Azure Function / Logic App / Power Automate as appropriate",
+    "executionAdapters": [
+      "Meta Graph API -> Facebook Pages",
+      "Instagram Graph API -> Instagram Business/Creator",
+      "LinkedIn Organization API -> LinkedIn Company Pages after permission proof"
+    ],
+    "exactMediaRule": "Upload approved creative file by asset reference/checksum with no AI transformation between approval and platform upload.",
+    "proofRule": "Published or scheduled state requires platform response plus platform object ID/readback where supported.",
+    "idempotencyKey": "SocialPostId + Platform + DestinationAccountId + PayloadHash"
+  },
+  "canary": {
+    "platform": "NONE_LIVE",
+    "destination": "NONE_LIVE",
+    "result": "NOT_EXECUTED_NO_API_AUTHORITY_PRESENT",
+    "platformPostId": null,
+    "liveReadbackValidation": "NOT_AVAILABLE"
+  },
+  "finalClassification": "POST-SEPTEMBER AUTOMATION REPLACEMENT PHASE STARTED; DESIGN_CANARY_PASS; OWNED_API_RUNTIME_NOT_YET_PROVEN",
+  "nextFounderDecisions": [
+    "Authorize/identify the JM1-owned Meta app and Business asset access to run the first exact-file API canary.",
+    "Authorize/identify LinkedIn developer application/product access if LinkedIn organization API publishing is desired beyond native scheduler bridge.",
+    "Confirm which Publishing-owned October/Iyorwuese source assets are approved for the controlled lifecycle-trigger test."
+  ]
+}

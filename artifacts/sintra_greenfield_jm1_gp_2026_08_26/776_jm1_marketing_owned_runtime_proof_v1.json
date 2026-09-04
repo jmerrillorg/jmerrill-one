@@ -1,0 +1,701 @@
+{
+  "packageId": 776,
+  "artifact": "JM1-MARKETING-OWNED-RUNTIME-PROOF-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "correctedSeptemberBaseline": {
+    "facebook": "Meta Business Suite UI",
+    "instagram": "Meta Business Suite UI",
+    "linkedin": "LinkedIn native organization UI",
+    "sintraSoshie": "Superseded execution objects removed during remediation; not authoritative final scheduler",
+    "replacementPassCondition": "No Computer Use, no Meta UI, no LinkedIn UI, no Sintra UI; JM1-owned platform adapters create FB/IG/LinkedIn work, receive platform IDs/readback, and persist to Dataverse."
+  },
+  "dataverseRuntime": {
+    "attempted": true,
+    "environment": "https://jm1hq.crm.dynamics.com",
+    "entityUsed": "jm1_executionlogs",
+    "whoAmI": {
+      "userId": "55ae9ef6-ef93-f011-b4cc-7ced8d1cd64f",
+      "businessUnitId": "b589d1e7-e690-f011-b4cc-7c1e525b3eb3",
+      "organizationId": "9dafb403-b493-f011-a700-000d3a106f37"
+    },
+    "recordsCreatedThisRun": [],
+    "readback": [
+      {
+        "@odata.etag": "W/\"50754729\"",
+        "jm1_executionlogid": "c162b3db-85a6-f111-b8de-000d3a14673b",
+        "jm1_name": "JM1MarketingCreativeWork - October Iyorwuese runtime proof",
+        "jm1_sourcerecordid": "9e547d63c95ed31069aa6dfa",
+        "jm1_actiontype": "JM1MarketingCreativeWork",
+        "createdon": "2026-09-02T04:22:16Z"
+      },
+      {
+        "@odata.etag": "W/\"50754723\"",
+        "jm1_executionlogid": "d9263ddb-85a6-f111-b8dd-000d3a4f142c",
+        "jm1_name": "JM1MarketingCampaignAuthority - October Iyorwuese runtime proof",
+        "jm1_sourcerecordid": "9e547d63c95ed31069aa6dfa",
+        "jm1_actiontype": "JM1MarketingCampaignAuthority",
+        "createdon": "2026-09-02T04:22:15Z"
+      },
+      {
+        "@odata.etag": "W/\"50754726\"",
+        "jm1_executionlogid": "103673e0-85a6-f111-b8de-6045bdd69435",
+        "jm1_name": "JM1MarketingContentWork - October Iyorwuese runtime proof",
+        "jm1_sourcerecordid": "9e547d63c95ed31069aa6dfa",
+        "jm1_actiontype": "JM1MarketingContentWork",
+        "createdon": "2026-09-02T04:22:16Z"
+      },
+      {
+        "@odata.etag": "W/\"50754732\"",
+        "jm1_executionlogid": "113673e0-85a6-f111-b8de-6045bdd69435",
+        "jm1_name": "JM1MarketingSocialExecution - October Iyorwuese runtime proof",
+        "jm1_sourcerecordid": "9e547d63c95ed31069aa6dfa",
+        "jm1_actiontype": "JM1MarketingSocialExecution",
+        "createdon": "2026-09-02T04:22:16Z"
+      },
+      {
+        "@odata.etag": "W/\"50754720\"",
+        "jm1_executionlogid": "fc4b46de-85a6-f111-b8de-6045bdd69678",
+        "jm1_name": "JM1MarketingEligibility - October Iyorwuese runtime proof",
+        "jm1_sourcerecordid": "9e547d63c95ed31069aa6dfa",
+        "jm1_actiontype": "JM1MarketingEligibility",
+        "createdon": "2026-09-02T04:22:15Z"
+      }
+    ],
+    "idempotencyProof": {
+      "marker": "9e547d63c95ed31069aa6dfa",
+      "duplicateActionType": "JM1MarketingSocialExecution",
+      "duplicateRowsAfterRerun": 1,
+      "expectedRows": 1,
+      "result": "PASS"
+    },
+    "marketingEntityRuntime": "PARTIAL_EVIDENCE_LOGS_ONLY",
+    "classification": "DATAVERSE_EVIDENCE_LOG_RUNTIME_PROVEN_MARKETING_TABLE_RUNTIME_NOT_PROVEN"
+  },
+  "dedicatedDataverseMarketingRuntime": {
+    "classification": "DATAVERSE_MARKETING_TABLE_RUNTIME_PROVEN",
+    "environment": "https://jm1hq.crm.dynamics.com",
+    "tables": [
+      {
+        "logicalName": "jm1_marketingeligibility",
+        "entitySetName": "jm1_marketingeligibilities",
+        "state": "REUSED"
+      },
+      {
+        "logicalName": "jm1_campaignauthority",
+        "entitySetName": "jm1_campaignauthorities",
+        "state": "REUSED"
+      },
+      {
+        "logicalName": "jm1_contentwork",
+        "entitySetName": "jm1_contentworks",
+        "state": "REUSED"
+      },
+      {
+        "logicalName": "jm1_creativework",
+        "entitySetName": "jm1_creativeworks",
+        "state": "REUSED"
+      },
+      {
+        "logicalName": "jm1_socialexecution",
+        "entitySetName": "jm1_socialexecutions",
+        "state": "REUSED"
+      }
+    ],
+    "relationships": [
+      {
+        "parent": "jm1_marketingeligibility",
+        "child": "jm1_campaignauthority",
+        "lookupSchema": "jm1_MarketingEligibility",
+        "relationshipSchema": "jm1_marketingeligibility_campaignauthority",
+        "state": "CREATED"
+      },
+      {
+        "parent": "jm1_campaignauthority",
+        "child": "jm1_contentwork",
+        "lookupSchema": "jm1_CampaignAuthority",
+        "relationshipSchema": "jm1_campaignauthority_contentwork",
+        "state": "CREATED"
+      },
+      {
+        "parent": "jm1_campaignauthority",
+        "child": "jm1_creativework",
+        "lookupSchema": "jm1_CampaignAuthority",
+        "relationshipSchema": "jm1_campaignauthority_creativework",
+        "state": "CREATED"
+      },
+      {
+        "parent": "jm1_campaignauthority",
+        "child": "jm1_socialexecution",
+        "lookupSchema": "jm1_CampaignAuthority",
+        "relationshipSchema": "jm1_campaignauthority_socialexecution",
+        "state": "CREATED"
+      }
+    ],
+    "readbackCounts": {
+      "eligibility": 1,
+      "campaign": 1,
+      "content": 5,
+      "creative": 1,
+      "social": 3
+    },
+    "idempotency": {
+      "marker": "e60c47b5da7824de99976e0a",
+      "result": "PASS",
+      "before": {
+        "jm1_marketingeligibility": 0,
+        "jm1_campaignauthority": 0,
+        "jm1_contentwork": 0,
+        "jm1_creativework": 0,
+        "jm1_socialexecution": 0
+      },
+      "afterFirstRun": {
+        "jm1_marketingeligibility": 1,
+        "jm1_campaignauthority": 1,
+        "jm1_contentwork": 5,
+        "jm1_creativework": 1,
+        "jm1_socialexecution": 3
+      },
+      "afterSecondRun": {
+        "jm1_marketingeligibility": 1,
+        "jm1_campaignauthority": 1,
+        "jm1_contentwork": 5,
+        "jm1_creativework": 1,
+        "jm1_socialexecution": 3
+      }
+    },
+    "evidenceArtifact": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/777_jm1_dedicated_dataverse_marketing_runtime_v1.json"
+  },
+  "octoberIyorwuese": {
+    "systemTrigger": {
+      "id": "3462a234084e937981d3230a",
+      "branch": "J Merrill Publishing",
+      "program": "Title/Author Marketing",
+      "code": "FEATURED_AUTHOR_MONTH_ACTIVE",
+      "month": "2026-10",
+      "featuredAuthor": "Iyorwuese",
+      "sourceAuthority": "Founder supplied October Featured Author authority",
+      "manualInitiationCount": 0
+    },
+    "marketingEligibility": {
+      "id": "9bd64158443c3a91485bfcd0",
+      "kind": "MarketingEligibility",
+      "triggerId": "3462a234084e937981d3230a",
+      "branch": "J Merrill Publishing",
+      "program": "Title/Author Marketing",
+      "subject": "Iyorwuese",
+      "month": "2026-10",
+      "eligibilityState": "ELIGIBLE_WITH_ASSET_EXCEPTIONS",
+      "blockers": [
+        "MISSING_AUTHORIZED_AUTHOR_IMAGE",
+        "MISSING_TITLE_COVER_FOR_TITLE_SPECIFIC_STAGE"
+      ],
+      "createdBy": "jm1-marketing-runtime-proof",
+      "createdAt": "2026-09-02T00:00:00-04:00",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    "campaignAuthority": {
+      "id": "8f7703bb573495e0e94a4d9b",
+      "kind": "CampaignAuthority",
+      "eligibilityId": "9bd64158443c3a91485bfcd0",
+      "branch": "J Merrill Publishing",
+      "campaignName": "October 2026 Featured Author - Iyorwuese",
+      "campaignType": "featured_author_month",
+      "campaignStages": [
+        "month_introduction",
+        "title_discovery",
+        "author_continuation",
+        "mid_month_engagement",
+        "month_close_continuation"
+      ],
+      "repetitionPolicy": "Do not repeat an introduction if a valid introduction has already been published.",
+      "cadenceIntent": "stage-based October sequence, not a manually assembled 30-day calendar",
+      "approvalState": "SYSTEM_AUTHORITY_CREATED_HELD_FOR_DOWNSTREAM_PROOF",
+      "createdAt": "2026-09-02T00:00:00-04:00",
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    "contentWork": [
+      {
+        "id": "da09b489b26935106b7ef319",
+        "kind": "ContentWork",
+        "campaignId": "8f7703bb573495e0e94a4d9b",
+        "stage": "month_introduction",
+        "sequence": 1,
+        "audience": "readers and prospective authors",
+        "requiredPublicLanguage": [
+          "Helping Authors Help Themselves"
+        ],
+        "prohibitedPublicLanguage": [
+          "source-backed",
+          "rights-safe",
+          "activation",
+          "validation",
+          "governed",
+          "execution",
+          "official-logo post",
+          "internal state names"
+        ],
+        "cta": "Follow J Merrill Publishing for October Featured Author updates.",
+        "status": "GENERATED",
+        "idempotentReplay": true,
+        "updatedAt": "2026-09-02T00:00:00-04:00"
+      },
+      {
+        "id": "47a9cd99a96150062c9546bd",
+        "kind": "ContentWork",
+        "campaignId": "8f7703bb573495e0e94a4d9b",
+        "stage": "title_discovery",
+        "sequence": 2,
+        "audience": "Publishing audience",
+        "requiredPublicLanguage": [
+          "Helping Authors Help Themselves"
+        ],
+        "prohibitedPublicLanguage": [
+          "source-backed",
+          "rights-safe",
+          "activation",
+          "validation",
+          "governed",
+          "execution",
+          "official-logo post",
+          "internal state names"
+        ],
+        "cta": "Continue following the October Featured Author series.",
+        "status": "GENERATED",
+        "idempotentReplay": true,
+        "updatedAt": "2026-09-02T00:00:00-04:00"
+      },
+      {
+        "id": "276059029a2bc232e41a2aa1",
+        "kind": "ContentWork",
+        "campaignId": "8f7703bb573495e0e94a4d9b",
+        "stage": "author_continuation",
+        "sequence": 3,
+        "audience": "Publishing audience",
+        "requiredPublicLanguage": [
+          "Helping Authors Help Themselves"
+        ],
+        "prohibitedPublicLanguage": [
+          "source-backed",
+          "rights-safe",
+          "activation",
+          "validation",
+          "governed",
+          "execution",
+          "official-logo post",
+          "internal state names"
+        ],
+        "cta": "Continue following the October Featured Author series.",
+        "status": "GENERATED",
+        "idempotentReplay": true,
+        "updatedAt": "2026-09-02T00:00:00-04:00"
+      },
+      {
+        "id": "72c6448bb4f253e82c723f07",
+        "kind": "ContentWork",
+        "campaignId": "8f7703bb573495e0e94a4d9b",
+        "stage": "mid_month_engagement",
+        "sequence": 4,
+        "audience": "Publishing audience",
+        "requiredPublicLanguage": [
+          "Helping Authors Help Themselves"
+        ],
+        "prohibitedPublicLanguage": [
+          "source-backed",
+          "rights-safe",
+          "activation",
+          "validation",
+          "governed",
+          "execution",
+          "official-logo post",
+          "internal state names"
+        ],
+        "cta": "Continue following the October Featured Author series.",
+        "status": "GENERATED",
+        "idempotentReplay": true,
+        "updatedAt": "2026-09-02T00:00:00-04:00"
+      },
+      {
+        "id": "665a9a554b2c08ef12c8add8",
+        "kind": "ContentWork",
+        "campaignId": "8f7703bb573495e0e94a4d9b",
+        "stage": "month_close_continuation",
+        "sequence": 5,
+        "audience": "Publishing audience",
+        "requiredPublicLanguage": [
+          "Helping Authors Help Themselves"
+        ],
+        "prohibitedPublicLanguage": [
+          "source-backed",
+          "rights-safe",
+          "activation",
+          "validation",
+          "governed",
+          "execution",
+          "official-logo post",
+          "internal state names"
+        ],
+        "cta": "Continue following the October Featured Author series.",
+        "status": "GENERATED",
+        "idempotentReplay": true,
+        "updatedAt": "2026-09-02T00:00:00-04:00"
+      }
+    ],
+    "creativeWork": {
+      "id": "5e04334332dfd8b786b90dc6",
+      "kind": "CreativeWork",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "stage": "month_introduction",
+      "requestedDimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "requiredAssets": [
+        "official_jm1_logo"
+      ],
+      "optionalAssets": [
+        "author_portrait",
+        "title_cover"
+      ],
+      "status": "GENERATED",
+      "assetExceptionCodes": [
+        "MISSING_AUTHORIZED_AUTHOR_IMAGE",
+        "MISSING_TITLE_COVER_FOR_TITLE_SPECIFIC_STAGE"
+      ],
+      "idempotentReplay": true,
+      "updatedAt": "2026-09-02T00:00:00-04:00"
+    },
+    "socialExecutionRecords": [
+      {
+        "id": "9285492cf9a768c082ec8366",
+        "kind": "SocialExecutionRecord",
+        "campaignId": "8f7703bb573495e0e94a4d9b",
+        "platform": "facebook",
+        "destinationName": "J Merrill Publishing, Inc.",
+        "executor": "MetaAdapter",
+        "requestedSchedule": "2026-10-01T10:00:00-04:00",
+        "requestedMediaHash": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+        "requestedDestination": "J Merrill Publishing, Inc.",
+        "executionState": "APPROVED_HELD_FOR_API_ADAPTER",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+        "browserUiUsed": false,
+        "sintraUiUsed": false,
+        "metaUiUsed": false,
+        "linkedInUiUsed": false,
+        "idempotentReplay": true,
+        "updatedAt": "2026-09-02T00:00:00-04:00"
+      },
+      {
+        "id": "f6d00d6185e7bc465a514adf",
+        "kind": "SocialExecutionRecord",
+        "campaignId": "8f7703bb573495e0e94a4d9b",
+        "platform": "instagram",
+        "destinationName": "J Merrill Publishing, Inc.",
+        "executor": "MetaAdapter",
+        "requestedSchedule": "2026-10-01T12:00:00-04:00",
+        "requestedMediaHash": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+        "requestedDestination": "J Merrill Publishing, Inc.",
+        "executionState": "APPROVED_HELD_FOR_API_ADAPTER",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+        "browserUiUsed": false,
+        "sintraUiUsed": false,
+        "metaUiUsed": false,
+        "linkedInUiUsed": false,
+        "idempotentReplay": true,
+        "updatedAt": "2026-09-02T00:00:00-04:00"
+      },
+      {
+        "id": "9ec336d405ac99c475479bfc",
+        "kind": "SocialExecutionRecord",
+        "campaignId": "8f7703bb573495e0e94a4d9b",
+        "platform": "linkedin",
+        "destinationName": "J Merrill Publishing, Inc.",
+        "executor": "LinkedInAdapter",
+        "requestedSchedule": "2026-10-01T14:00:00-04:00",
+        "requestedMediaHash": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+        "requestedDestination": "J Merrill Publishing, Inc.",
+        "executionState": "APPROVED_HELD_FOR_API_ADAPTER",
+        "platformPostId": null,
+        "readbackState": "NOT_EXECUTED_NO_PLATFORM_API_AUTHORITY",
+        "browserUiUsed": false,
+        "sintraUiUsed": false,
+        "metaUiUsed": false,
+        "linkedInUiUsed": false,
+        "idempotentReplay": true,
+        "updatedAt": "2026-09-02T00:00:00-04:00"
+      }
+    ],
+    "manualInterventionCount": 0,
+    "classification": "AUTOMATED_CAMPAIGN_ASSEMBLY_PROVEN_LOCAL_RUNTIME"
+  },
+  "assetResolver": {
+    "logo": {
+      "role": "official_jm1_logo",
+      "source": "local governed source search",
+      "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/jm1-logo-white-source.png",
+      "hash": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+      "sha256": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+      "mimeType": "image/png",
+      "branchOwnership": "J Merrill Publishing/J Merrill One shared brand asset as applicable",
+      "rightsUseState": "APPROVED_FOR_JMERRILL_PUBLIC_CREATIVE",
+      "suitability": "ELIGIBLE"
+    },
+    "authorPortrait": null,
+    "titleCover": null,
+    "searchedRoots": [
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26"
+    ],
+    "discoveredIyorwueseCandidates": [],
+    "exceptions": [
+      {
+        "code": "MISSING_AUTHORIZED_AUTHOR_IMAGE",
+        "message": "No governed Iyorwuese author portrait was found; likeness-specific creative is blocked.",
+        "state": "EXCEPTION_CREATED"
+      },
+      {
+        "code": "MISSING_TITLE_COVER_FOR_TITLE_SPECIFIC_STAGE",
+        "message": "No Iyorwuese title cover was found; title-specific creative is blocked until a governed cover is resolved.",
+        "state": "EXCEPTION_CREATED"
+      }
+    ]
+  },
+  "creativeEngine": {
+    "generatedArtifact": {
+      "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_october_featured_author_intro_1080.svg",
+      "mimeType": "image/svg+xml",
+      "dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "sha256": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+      "logoAssetHash": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+      "publicFacingComposition": true
+    },
+    "qaResult": "PASS",
+    "reworkTest": {
+      "negativeCase": {
+        "omittedOfficialLogo": true,
+        "includedBlockedBackstagePhrase": true,
+        "gateResult": "EXCEPTION",
+        "failedChecks": [
+          "official logo",
+          "People-First",
+          "Why-First",
+          "approved public phrase",
+          "internal-language blacklist",
+          "creative suitability"
+        ]
+      },
+      "automaticRework": {
+        "regeneratedCreative": {
+          "path": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_october_featured_author_intro_1080.svg",
+          "mimeType": "image/svg+xml",
+          "dimensions": {
+            "width": 1080,
+            "height": 1080
+          },
+          "sha256": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+          "logoAssetHash": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+          "publicFacingComposition": true
+        },
+        "gateResult": "PASS",
+        "passedChecks": [
+          "branch identity",
+          "author truth",
+          "official logo",
+          "People-First",
+          "Why-First",
+          "approved public phrase",
+          "internal-language blacklist",
+          "creative suitability"
+        ]
+      },
+      "result": "PASS"
+    },
+    "officialLogoProof": {
+      "logoAssetPath": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/jm1-logo-white-source.png",
+      "logoAssetHash": "a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a",
+      "embeddedInCreative": true
+    },
+    "classification": "CREATIVE_ENGINE_RUNTIME_PROVEN_LOCAL"
+  },
+  "publicReadyGate": {
+    "result": "PASS",
+    "checks": [
+      {
+        "name": "branch identity",
+        "pass": true,
+        "detail": "J Merrill Publishing branch required."
+      },
+      {
+        "name": "author truth",
+        "pass": true,
+        "detail": "October Featured Author must be Iyorwuese."
+      },
+      {
+        "name": "official logo",
+        "pass": true,
+        "detail": "Official logo must be bound to creative."
+      },
+      {
+        "name": "People-First",
+        "pass": true,
+        "detail": "Copy must keep the human/audience frame visible."
+      },
+      {
+        "name": "Why-First",
+        "pass": true,
+        "detail": "Copy must give the post a reason to exist."
+      },
+      {
+        "name": "approved public phrase",
+        "pass": true,
+        "detail": "Approved JMP phrase is allowed and present."
+      },
+      {
+        "name": "internal-language blacklist",
+        "pass": true,
+        "detail": "Internal implementation terms are blocked publicly."
+      },
+      {
+        "name": "creative suitability",
+        "pass": true,
+        "detail": "Creative must be platform-safe square."
+      }
+    ],
+    "controlsDownstreamEligibility": "ALLOWED_TO_API_HOLD",
+    "classification": "PUBLIC_READY_GATE_RUNTIME_PROVEN_LOCAL"
+  },
+  "dynamics": {
+    "actualJourneyImplementation": "NOT_EXECUTED",
+    "classification": "DYNAMICS_JOURNEY_NOT_PROVEN",
+    "reason": "No Customer Insights Journeys creation API/path was proven in this turn; Dataverse evidence logging is separate from Journey implementation."
+  },
+  "metaOwnedApi": {
+    "credentialAuthority": "NOT_PROVEN",
+    "mediaUpload": "NOT_EXECUTED",
+    "facebookCanary": "NOT_EXECUTED",
+    "instagramCanary": "NOT_EXECUTED",
+    "idsReadback": "NOT_AVAILABLE",
+    "currentMaturity": "MANUAL_FINAL_WORKFLOW_IDENTIFIED_API_NOT_PROVEN"
+  },
+  "linkedinOwnedApi": {
+    "productAccessStatus": "NOT_PROVEN",
+    "canaryReadback": "NOT_EXECUTED",
+    "currentMaturity": "LINKEDIN_API_EXTERNAL_DEPENDENCY_UNLESS_APP_PRODUCT_ACCESS_IS_CONFIRMED"
+  },
+  "reliability": {
+    "idempotency": {
+      "test": "Duplicate request",
+      "expected": "ONE platform execution object",
+      "beforeCount": 3,
+      "afterCount": 3,
+      "result": "PASS"
+    },
+    "partialFailure": {
+      "test": "Partial failure",
+      "aggregate": "PARTIALLY_PUBLISHED",
+      "retryScope": [
+        "instagram"
+      ],
+      "nonRetryScope": [
+        "facebook",
+        "linkedin"
+      ],
+      "result": "PASS"
+    },
+    "scheduleMismatch": {
+      "test": "Schedule mismatch",
+      "campaignId": "8f7703bb573495e0e94a4d9b",
+      "requestedSchedule": "2026-10-01T14:00:00-04:00",
+      "actualSchedule": "2026-10-01T05:15:00-04:00",
+      "requestedMediaHash": "45de60e262569c686ce0e7c524e61c422fbb3769b044c3731e773fe43420e824",
+      "status": "FAIL_SCHEDULE_MISMATCH",
+      "result": "PASS"
+    },
+    "supersession": {
+      "implemented": "LOCAL_CONTRACT_ONLY",
+      "rule": "New execution verified before old executor cancellation; Soshie may not remain a hidden parallel executor."
+    }
+  },
+  "dailyControlLoop": {
+    "implementedSchedule": "LOCAL_RUNNER_ONLY_NOT_RECURRING",
+    "queueHorizonBehavior": "Generated work only because October Featured Author authority exists and October is active.",
+    "generatedWork": [
+      "marketing eligibility",
+      "campaign authority",
+      "content work",
+      "creative work",
+      "social execution records"
+    ]
+  },
+  "noTouchTest": {
+    "result": "FAIL",
+    "manualInterventionCount": 0,
+    "reason": "Local runtime generated governed work without row-by-row manual construction, but live Dataverse marketing tables, Dynamics Journey, and platform adapters are not fully proven.",
+    "unresolvedDependencies": [
+      "Dataverse marketing entity/table implementation or explicit reuse decision",
+      "Meta owned API credentials/canary",
+      "LinkedIn app product access/canary",
+      "Customer Insights Journeys implementation"
+    ]
+  },
+  "exceptionTest": {
+    "test": "Missing governed author image",
+    "result": "PASS",
+    "assetResolver": "MISSING_ASSET",
+    "creativeWork": "BLOCKED_FOR_LIKENESS_SPECIFIC_CREATIVE",
+    "execution": "NOT_ELIGIBLE_FOR_LIKENESS_SPECIFIC_PUBLIC_POST",
+    "exceptionCreated": true,
+    "founderNotification": "EXCEPTION_ONLY_IF_SYSTEM_CANNOT_RESOLVE_FROM_GOVERNED_ASSETS"
+  },
+  "enterpriseReuse": {
+    "oneSharedComponents": [
+      "eligibility",
+      "campaign authority",
+      "asset resolver",
+      "creative work",
+      "public-ready gate",
+      "social queue",
+      "readback contract",
+      "idempotency",
+      "retry",
+      "supersession",
+      "exception"
+    ],
+    "publishingConfig": "IMPLEMENTED_LOCAL",
+    "financialConfigSkeleton": "NOT_CREATED_THIS_RUN",
+    "foundationConfigSkeleton": "NOT_CREATED_THIS_RUN",
+    "leakageControls": [
+      "branch field required",
+      "destination branch check",
+      "public language blacklist",
+      "official logo requirement"
+    ]
+  },
+  "updatedReplacementMatrix": {
+    "architecture": "DESIGNED",
+    "replacementHarness": "IMPLEMENTED",
+    "localRuntimeHarness": "IMPLEMENTED",
+    "localRuntimeGeneratedWork": "PROVEN",
+    "dataverseEvidenceLogging": "PROVEN",
+    "dataverseMarketingRuntime": "PROVEN",
+    "metaOwnedApi": "NOT_PROVEN",
+    "linkedinOwnedApi": "EXTERNAL_DEPENDENCY",
+    "noTouchMarketing": "NOT_PROVEN"
+  },
+  "sintraCurrentClassification": "SINTRA BRIDGE - REPLACEMENT UNDERWAY",
+  "branchCommitPrRuntimeEvidence": {
+    "branch": "codex/sintra-greenfield-jm1-gp",
+    "commit": "NOT_CREATED",
+    "pullRequest": "NOT_CREATED",
+    "runtimeEvidence": [
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/jm1_marketing_runtime_state.json",
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/runtime/creative/iyorwuese_october_featured_author_intro_1080.svg",
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/776_jm1_marketing_owned_runtime_proof_v1.json"
+    ]
+  }
+}

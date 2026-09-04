@@ -1,0 +1,172 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:18:00-04:00",
+  "status": "FOUNDER APPROVED; FACEBOOK CANARY SCHEDULED AFTER OFFICIAL-LOGO AND NO-CIRCLE CORRECTION; REMAINING FIRST WEEK HELD FOR CORRECTED LIVE UPLOAD",
+  "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+  "items": [
+    {
+      "day": 1,
+      "theme": "Meet the Book",
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "source": "https://jmerrill.pub/books/books/100-wisdom-lessons-for-life-and-living",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "facebook_copy": "Meet the Book: 101 Wisdom Lessons for Life and Living by J. Derrick Johnson\n\nThis catalog spotlight brings J. Derrick Johnson's 101 Wisdom Lessons for Life and Living back into reader view without relying on uncleared excerpts.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+      "instagram_copy": "101 Wisdom Lessons for Life and Living | J. Derrick Johnson\n\nA reader-discovery spotlight from the JMP catalog.\n\n#JMerrillPublishing #Authors #Books",
+      "linkedin_copy": "Meet the Book: 101 Wisdom Lessons for Life and Living by J. Derrick Johnson\n\nJ Merrill Publishing can resurface catalog titles through rights-safe author/title spotlights, public links, and thoughtful reader context.\n\nLearn more: https://jmerrill.pub/books",
+      "creative": "Create a Meet the Book graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
+      "cta": "Explore the title",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "schedule_time": "10:00 America/New_York",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": true,
+      "materialization_state": "LIVE_SINTRA_FACEBOOK_CANARY_SCHEDULED_FINAL_REAL_LOGO_NO_CIRCLE",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
+    },
+    {
+      "day": 2,
+      "theme": "Meet the Author",
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "source": "https://jmerrill.pub/books/books/27-days-to-overcoming-depression",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "facebook_copy": "Meet the Author: 27 Days to Overcoming Depression by Donjia Walls\n\nThis catalog spotlight brings Donjia Walls's 27 Days to Overcoming Depression back into reader view without relying on uncleared excerpts.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+      "instagram_copy": "27 Days to Overcoming Depression | Donjia Walls\n\nA reader-discovery spotlight from the JMP catalog.\n\n#JMerrillPublishing #Authors #Books",
+      "linkedin_copy": "Meet the Author: 27 Days to Overcoming Depression by Donjia Walls\n\nJ Merrill Publishing can resurface catalog titles through rights-safe author/title spotlights, public links, and thoughtful reader context.\n\nLearn more: https://jmerrill.pub/books",
+      "creative": "Create a Meet the Author graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
+      "cta": "Explore the title",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "schedule_time": "10:00 America/New_York",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
+    },
+    {
+      "day": 3,
+      "theme": "Publishing Education",
+      "author": null,
+      "title": null,
+      "source": "https://jmerrill.pub/books",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "facebook_copy": "Publishing Education: A Publishing note for authors and readers\n\nPublishing works best when purpose comes before process. Today is a chance to clarify the path for authors and readers.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+      "instagram_copy": "J Merrill Publishing\n\nPurpose first. Process second. Authors and readers at the center.\n\n#JMerrillPublishing #Authors #Books",
+      "linkedin_copy": "Publishing Education: Publishing clarity\n\nFor authors, publishing is not only a production process. It is a public positioning decision, a rights decision, and a reader relationship decision.\n\nLearn more: https://jmerrill.pub/books",
+      "creative": "Create a Publishing Education graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
+      "cta": "Tell us about your book",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "schedule_time": "10:00 America/New_York",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
+    },
+    {
+      "day": 4,
+      "theme": "Publishing Inquiry",
+      "author": null,
+      "title": null,
+      "source": "https://jmerrill.pub/books",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "facebook_copy": "Publishing Inquiry: A Publishing note for authors and readers\n\nPublishing works best when purpose comes before process. Today is a chance to clarify the path for authors and readers.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+      "instagram_copy": "J Merrill Publishing\n\nPurpose first. Process second. Authors and readers at the center.\n\n#JMerrillPublishing #Authors #Books",
+      "linkedin_copy": "Publishing Inquiry: Publishing clarity\n\nFor authors, publishing is not only a production process. It is a public positioning decision, a rights decision, and a reader relationship decision.\n\nLearn more: https://jmerrill.pub/books",
+      "creative": "Create a Publishing Inquiry graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
+      "cta": "Tell us about your book",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "schedule_time": "10:00 America/New_York",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
+    },
+    {
+      "day": 5,
+      "theme": "September Featured Author — Sean A Crowley I",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "source": "https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "rights_status": "RIGHTS-SAFE: Founder-supplied Amazon title link and public title metadata; no unsupported biography or excerpts.",
+      "facebook_copy": "September Featured Author: Sean A Crowley I\n\nJ Merrill Publishing is opening September by featuring Sean A Crowley I throughout the month. His work will be introduced through rights-safe title spotlights and reader-discovery posts, beginning with The Shift: Changing with God.\n\nFollow along this month as we surface his published work and help readers discover the conversation his books invite.\n\nExplore the title: https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "instagram_copy": "SEPTEMBER FEATURED AUTHOR\nSean A Crowley I\n\nStarting September with a focused author spotlight from J Merrill Publishing. First up: The Shift: Changing with God.\n\n#JMerrillPublishing #FeaturedAuthor #Books",
+      "linkedin_copy": "September Featured Author: Sean A Crowley I\n\nJ Merrill Publishing is using September to give sustained visibility to Sean A Crowley I and his published work. The month opens with The Shift: Changing with God, using public, rights-safe title information and a reader-discovery frame.\n\nFeatured Author programming gives authors repeated visibility without depending only on their own self-marketing.\n\nExplore the title: https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "creative": "September Featured Author launch graphic with Sean A Crowley I, The Shift: Changing with God, Publishing palette, and approved shared J Merrill logo.",
+      "cta": "Follow September Featured Author posts",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "schedule_time": "10:00 America/New_York",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "featured_author_month": "2026-09",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
+    },
+    {
+      "day": 6,
+      "theme": "Inside Publishing",
+      "author": null,
+      "title": null,
+      "source": "https://jmerrill.pub/books",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "facebook_copy": "Inside Publishing: A Publishing note for authors and readers\n\nPublishing works best when purpose comes before process. Today is a chance to clarify the path for authors and readers.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+      "instagram_copy": "J Merrill Publishing\n\nPurpose first. Process second. Authors and readers at the center.\n\n#JMerrillPublishing #Authors #Books",
+      "linkedin_copy": "Inside Publishing: Publishing clarity\n\nFor authors, publishing is not only a production process. It is a public positioning decision, a rights decision, and a reader relationship decision.\n\nLearn more: https://jmerrill.pub/books",
+      "creative": "Create an Inside Publishing graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
+      "cta": "Tell us about your book",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "schedule_time": "10:00 America/New_York",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
+    },
+    {
+      "day": 7,
+      "theme": "Backlist Rediscovery",
+      "author": "Shelley McIntosh",
+      "title": "A Principal's Tale",
+      "source": "https://jmerrill.pub/books/books/a-principal-s-tale",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "facebook_copy": "Backlist Rediscovery: A Principal's Tale by Shelley McIntosh\n\nThis catalog spotlight brings Shelley McIntosh's A Principal's Tale back into reader view without relying on uncleared excerpts.\n\nExplore J Merrill Publishing: https://jmerrill.pub/books",
+      "instagram_copy": "A Principal's Tale | Shelley McIntosh\n\nA reader-discovery spotlight from the JMP catalog.\n\n#JMerrillPublishing #Authors #Books",
+      "linkedin_copy": "Backlist Rediscovery: A Principal's Tale by Shelley McIntosh\n\nJ Merrill Publishing can resurface catalog titles through rights-safe author/title spotlights, public links, and thoughtful reader context.\n\nLearn more: https://jmerrill.pub/books",
+      "creative": "Create a Backlist Rediscovery graphic using Publishing palette (#1E90FF, #6A5ACD, #A3C4DC, #FFFFFF, #111111) and include the approved shared J Merrill logo somewhere within the image.",
+      "cta": "Explore the title",
+      "destination": [
+        "Facebook: J Merrill Publishing",
+        "Instagram: canonical J Merrill Publishing",
+        "LinkedIn: J Merrill Publishing, Inc."
+      ],
+      "schedule_time": "10:00 America/New_York",
+      "approval_state": "FOUNDER APPROVED — READY FOR LIVE MATERIALIZATION AND CONTROLLED SCHEDULING",
+      "scheduled": false,
+      "materialization_state": "CORRECTED_REAL_LOGO_NO_CIRCLE_ASSET_READY_FOR_LIVE_UPLOAD",
+      "logo_requirement": "Every image must include supplied jm1-logo-white.png; no text-drawn substitute logo; no decorative header circle."
+    }
+  ]
+}

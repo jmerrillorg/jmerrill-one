@@ -1,0 +1,94 @@
+{
+  "packageId": 802,
+  "artifact": "JM1-DYNAMICS-RELATIONSHIP-ORCHESTRATION-BOUNDARY-v1",
+  "generatedAt": "2026-09-03T12:28:15Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Dynamics + Autonomous Campaign Progression",
+  "classification": "DYNAMICS_JOURNEY_NOT_PROVEN_ADMIN_BOUNDARY",
+  "system": "Dynamics Customer Insights - Journeys",
+  "tenantReadback": {
+    "msdynmkt_journeys": 0,
+    "msdynmkt_journeytemplates": 0,
+    "msdynmkt_emails": 0,
+    "msdynmkt_emailtemplates": 34,
+    "msdynmkt_segments": 0,
+    "msdynmkt_segmentdefinitions": 0,
+    "msdynmkt_topics": 0,
+    "msdynmkt_contactpointconsent4s": 0,
+    "msdynmkt_compliancesettings4s": 2,
+    "msdynmkt_brandsenders": 1,
+    "msdynmkt_brandprofiles": 1,
+    "msdynmkt_purposes": 4,
+    "msdynmkt_domains": 1,
+    "contactsQueriedLimit": 5000
+  },
+  "availableComplianceSurface": {
+    "complianceSettings": [
+      {
+        "name": "pes",
+        "statecode": 0,
+        "statuscode": 1,
+        "legalAddressPresent": true
+      },
+      {
+        "name": "default",
+        "statecode": 0,
+        "statuscode": 1,
+        "legalAddressPresent": true
+      }
+    ],
+    "purposesObserved": [
+      "Transactional",
+      "Commercial",
+      "Tracking"
+    ],
+    "domainObserved": "unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+    "defaultBrandSender": {
+      "name": "Default brand sender",
+      "fromName": "Admin",
+      "fromEmailDomain": "unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+      "replyToDomain": "unq9dafb403b493f011a700000d3a106.s05.dyn365mktg.com",
+      "publishingSenderCertified": false
+    }
+  },
+  "controlledJourneyContract": {
+    "rowId": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+    "idempotencyKey": "e60c47b5da7824de99976e0a:journey:title_discovery",
+    "state": "DYNAMICS_JOURNEY_NOT_IMPLEMENTED_SAFE_RUNTIME_BOUNDARY",
+    "dynamicsJourneyId": null
+  },
+  "notCreated": {
+    "testContact": true,
+    "reasonTestContactNotCreated": "No Founder-approved internal test recipient/consent basis was present in governed evidence. Existing contacts include public/personal-looking records and must not be used for the first proof.",
+    "marketingEmail": true,
+    "reasonEmailNotCreated": "No certified J Merrill Publishing sender identity/domain and no controlled recipient/consent basis were available.",
+    "segment": true,
+    "reasonSegmentNotCreated": "No controlled test contact exists yet.",
+    "journey": true,
+    "reasonJourneyNotCreated": "No controlled test contact, segment, Publishing sender, or marketing email exists."
+  },
+  "exactAdminBoundary": {
+    "exactAction": "Founder/admin must approve or provide one internal JM1-controlled test recipient and consent basis, then confirm the J Merrill Publishing sender identity/domain for Customer Insights.",
+    "why": "Customer Insights Journey proof requires a lawful controlled audience and sender/compliance relationship. Cody found default compliance/domain/sender objects, but not a Publishing-certified sender or test-contact consent record.",
+    "whatCodyAlreadyCompleted": [
+      "Re-read live Customer Insights tables.",
+      "Confirmed no journeys, journey templates, marketing emails, segments, topics, or contact-point consent records exist.",
+      "Confirmed default compliance settings, purposes, brand profile, sender, and Dynamics-hosted domain exist.",
+      "Preserved the controlled Journey Execution contract row without fabricating production marketing objects."
+    ],
+    "whatItUnblocks": [
+      "JM1 MARKETING RUNTIME TEST CONTACT",
+      "JM1 INTERNAL MARKETING TEST AUDIENCE",
+      "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED JOURNEY EMAIL",
+      "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED PROOF Journey",
+      "DYNAMICS_JOURNEY_PROVEN"
+    ]
+  },
+  "maturity": {
+    "DYNAMICS_TEST_AUDIENCE_PROVEN": false,
+    "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED": false,
+    "DYNAMICS_JOURNEY_IMPLEMENTED": false,
+    "DYNAMICS_JOURNEY_EXECUTION_PROVEN": false,
+    "DYNAMICS_JOURNEY_READBACK_PROVEN": false,
+    "DYNAMICS_JOURNEY_PROVEN": false
+  }
+}

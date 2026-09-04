@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "status": "PENDING_REAL_USAGE_EVIDENCE",
+  "possible_results": [
+    "JM1 SOCIAL MEDIA STRATEGY + CONTENT ORCHESTRATION ROOM",
+    "JM1 SOCIAL + EXECUTIVE THINKING ROOM",
+    "LIMITED SOCIAL IDEATION ASSISTANT",
+    "NO ACTIVE ROLE"
+  ],
+  "chosen_role": null,
+  "focus_correction_base_commit": "3eaa841",
+  "primary_use_case": "SOCIAL MEDIA STRATEGY + CONTENT ORCHESTRATION",
+  "rule": "Do not force the executive-room label if social becomes the clear value.",
+  "live_pilot_base_commit": "14e59b2",
+  "likely_candidate_role": "JM1 SOCIAL MEDIA STRATEGY + CONTENT ORCHESTRATION ROOM",
+  "secondary_role": "EXECUTIVE THINKING",
+  "not_role": "social publishing authority until separately certified and approved"
+}

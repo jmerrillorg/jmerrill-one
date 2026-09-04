@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:48:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pilot_base_commit": "dddf41b",
+  "status": "ACTIVE",
+  "privacy_rule": "Do not capture sensitive prompt content unnecessarily.",
+  "entries": [],
+  "entry_schema": {
+    "date_time": "ISO-8601",
+    "broad_topic": "non-sensitive summary",
+    "jm1_owner_domain": "One/Publishing/Financial/Foundation/Productions",
+    "helpers_invoked": [],
+    "helper_contribution_useful": "true/false/null",
+    "ownership_correct": "true/false/null",
+    "jackie_corrected_sintra": "true/false",
+    "usefulness_rating": "HIGH/MODERATE/LOW/NONE",
+    "context_restatement_burden": "LOW/MODERATE/HIGH",
+    "notable_governance_issue": "none or concise note"
+  }
+}

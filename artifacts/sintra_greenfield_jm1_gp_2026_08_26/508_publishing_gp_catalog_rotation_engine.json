@@ -1,0 +1,402 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "goal": "Every eligible title enters systematic social rotation independent of the author’s own marketing activity.",
+  "fields": [
+    "author",
+    "title",
+    "last_promoted",
+    "count_promoted",
+    "next_eligible_date",
+    "promotion_type",
+    "asset_readiness",
+    "current_priority"
+  ],
+  "seed_queue": [
+    {
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Daphanny Baker",
+      "title": "365 Days of Transparency",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Ericka Johnson-Settles",
+      "title": "7 Step Jumpstart to Becoming Your Best Self",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Shecara Norris",
+      "title": "A Blended Family",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Iyorwuese Hagher",
+      "title": "A Portrait of Paradise",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Shelley McIntosh",
+      "title": "A Principal's Tale",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Alesia Corpening",
+      "title": "A Trubie's Guide Pt. 1",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Alesia Corpening",
+      "title": "A Trubie's Guide Pt. 2",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Abortion!",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Dennis Brown",
+      "title": "Aligned!",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Jaylonna Stevette",
+      "title": "Almost Happy",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P3"
+    },
+    {
+      "author": "Ericka Thornton",
+      "title": "Are You Sure That You Are Ready?",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Because the Lord Is My Shepherd",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Deborah Eiland",
+      "title": "BEE Careful",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "Biblical Prescriptions for Life's Troubles",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Nathaniel Short",
+      "title": "Bodacious",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Dennis Brown",
+      "title": "Connected!",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Gloria Patterson",
+      "title": "Conquer Your Fears and Win",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Lisa Taylor",
+      "title": "Damaged",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Agape International Cathedral",
+      "title": "Delicious Ideas!",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Sean Smith, Sr.",
+      "title": "Destined to Break the Curse",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Sean Smith, Sr.",
+      "title": "Destined to Break the Curse Devotional",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "Discipline and Direction",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Regina Scales",
+      "title": "Divinely Inspired",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory 2: The Relationship Handbook (2nd Edition)",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory 3: The Marriage Handbook",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory: The Praise and Worship Handbook (2nd Edition)",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Shana Byrd",
+      "title": "Focus, Trust, & Follow",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Kelli Milligan Stammen",
+      "title": "For What It's Worth",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Karen Hill",
+      "title": "From Stylist to CEO",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Jaylonna Stevette",
+      "title": "Getting Back 2 Happy",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Kimberly Reeder",
+      "title": "Girl, Did You Know... ?",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-28",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Carolyn Booker-Pierce",
+      "title": "Girl, You're Not Crazy. You're Dealing with a Narcissist",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-29",
+      "promotion_type": "Meet the Book",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Terry Stephens",
+      "title": "God's Business Plan",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-30",
+      "promotion_type": "Backlist Rediscovery",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    },
+    {
+      "author": "Tekisha Wimbush",
+      "title": "God's Nudge",
+      "last_promoted": "UNKNOWN",
+      "count_promoted": 0,
+      "next_eligible_date": "2026-08-31",
+      "promotion_type": "Why This Book Matters",
+      "asset_readiness": "READY — ASSET GAP",
+      "current_priority": "P4"
+    }
+  ],
+  "additional_tracking": [
+    "featured-author month",
+    "associated title exposures",
+    "title clicks/engagement where available",
+    "author exposure",
+    "remaining eligible catalog titles"
+  ],
+  "featured_author_integration": {
+    "month": "2026-09",
+    "author": "Sean A Crowley I",
+    "associated_titles": [
+      "The Shift: Changing with God",
+      "Strategies for Success in Educational Leadership"
+    ],
+    "priority_exception": "FOUNDER / PROGRAMMATIC PRIORITY"
+  },
+  "release_priority_rule": {
+    "artifact": "554_publishing_gp_release_priority_rotation_rule.json",
+    "active_release": "Strategies for Success",
+    "release_date": "2026-09-22",
+    "priority_window": "2026-09-15 through 2026-09-25"
+  },
+  "current_priority_adjustment": "Strategies for Success launch lane has temporary priority while September Featured Author and catalog rotation remain active."
+}

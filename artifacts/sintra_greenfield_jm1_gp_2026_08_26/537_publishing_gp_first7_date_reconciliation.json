@@ -1,0 +1,70 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "PASS",
+  "actual_dates": [
+    {
+      "day": 1,
+      "date": "2026-08-28",
+      "theme": "Meet the Book",
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "sep1_override": false
+    },
+    {
+      "day": 2,
+      "date": "2026-08-29",
+      "theme": "Meet the Author",
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "sep1_override": false
+    },
+    {
+      "day": 3,
+      "date": "2026-08-30",
+      "theme": "Publishing Education",
+      "author": null,
+      "title": null,
+      "sep1_override": false
+    },
+    {
+      "day": 4,
+      "date": "2026-08-31",
+      "theme": "Publishing Inquiry",
+      "author": null,
+      "title": null,
+      "sep1_override": false
+    },
+    {
+      "day": 5,
+      "date": "2026-09-01",
+      "theme": "September Featured Author — Sean A Crowley I",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "sep1_override": true
+    },
+    {
+      "day": 6,
+      "date": "2026-09-02",
+      "theme": "Inside Publishing",
+      "author": null,
+      "title": null,
+      "sep1_override": false
+    },
+    {
+      "day": 7,
+      "date": "2026-09-03",
+      "theme": "Backlist Rediscovery",
+      "author": "Shelley McIntosh",
+      "title": "A Principal's Tale",
+      "sep1_override": false
+    }
+  ],
+  "sep1": "Sean Featured Author launch",
+  "displaced_theme": "Inside Publishing moved from 2026-09-01 to 2026-09-02",
+  "duplicate_date_theme_conflict": false
+}

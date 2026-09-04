@@ -1,0 +1,385 @@
+{
+  "packageId": 779,
+  "artifact": "JM1-MARKETING-RUNTIME-EXPANSION-v1",
+  "generatedAt": "2026-09-02T00:00:00-04:00",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "solution": "JMerrillOne",
+  "metadata": [
+    {
+      "logicalName": "jm1_marketingexception",
+      "state": "SKIPPED_EXISTING_SCHEMA_VERIFIED_EXTERNALLY"
+    },
+    {
+      "logicalName": "jm1_journeyexecution",
+      "state": "SKIPPED_EXISTING_SCHEMA_VERIFIED_EXTERNALLY"
+    },
+    {
+      "logicalName": "jm1_marketingcontrolloop",
+      "state": "SKIPPED_EXISTING_SCHEMA_VERIFIED_EXTERNALLY"
+    }
+  ],
+  "relationships": [
+    {
+      "parent": "jm1_campaignauthority",
+      "child": "jm1_marketingexception",
+      "lookupSchema": "jm1_CampaignAuthority",
+      "relationshipSchema": "jm1_campaignauthority_marketingexception",
+      "state": "SKIPPED_EXISTING_SCHEMA_VERIFIED_EXTERNALLY"
+    },
+    {
+      "parent": "jm1_campaignauthority",
+      "child": "jm1_journeyexecution",
+      "lookupSchema": "jm1_CampaignAuthority",
+      "relationshipSchema": "jm1_campaignauthority_journeyexecution",
+      "state": "SKIPPED_EXISTING_SCHEMA_VERIFIED_EXTERNALLY"
+    },
+    {
+      "parent": "jm1_campaignauthority",
+      "child": "jm1_marketingcontrolloop",
+      "lookupSchema": "jm1_CampaignAuthority",
+      "relationshipSchema": "jm1_campaignauthority_marketingcontrolloop",
+      "state": "SKIPPED_EXISTING_SCHEMA_VERIFIED_EXTERNALLY"
+    }
+  ],
+  "dataverseRuntime": {
+    "readbackCounts": {
+      "exceptions": 5,
+      "journeys": 1,
+      "controlLoops": 1,
+      "social": 3
+    },
+    "readback": {
+      "exceptions": [
+        {
+          "@odata.etag": "W/\"50969682\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:exception:dynamics_journey_admin_setup_required",
+          "jm1_name": "Dynamics Journeys setup required",
+          "createdon": "2026-09-02T10:23:02Z",
+          "jm1_marketingexceptionid": "db216246-b8a6-f111-b8de-000d3a9eacee"
+        },
+        {
+          "@odata.etag": "W/\"50969684\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:exception:meta_platform_authority_missing",
+          "jm1_name": "Meta owned API authority missing",
+          "createdon": "2026-09-02T10:23:02Z",
+          "jm1_marketingexceptionid": "d8910341-b8a6-f111-b8de-00224820105b"
+        },
+        {
+          "@odata.etag": "W/\"50969686\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:exception:linkedin_platform_authority_missing",
+          "jm1_name": "LinkedIn Community Management authority missing",
+          "createdon": "2026-09-02T10:23:02Z",
+          "jm1_marketingexceptionid": "d9910341-b8a6-f111-b8de-00224820105b"
+        },
+        {
+          "@odata.etag": "W/\"50969680\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:exception:missing_title_cover",
+          "jm1_name": "Iyorwuese title cover missing",
+          "createdon": "2026-09-02T10:23:01Z",
+          "jm1_marketingexceptionid": "6ae9c344-b8a6-f111-b8de-6045bdd69435"
+        },
+        {
+          "@odata.etag": "W/\"50969678\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:exception:missing_author_portrait",
+          "jm1_name": "Iyorwuese author portrait missing",
+          "createdon": "2026-09-02T10:23:01Z",
+          "jm1_marketingexceptionid": "0bffaf40-b8a6-f111-b8de-6045bdd69678"
+        }
+      ],
+      "journeys": [
+        {
+          "@odata.etag": "W/\"50969687\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:journey:title_discovery",
+          "jm1_name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
+          "jm1_journeyexecutionid": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+          "createdon": "2026-09-02T10:23:02Z"
+        }
+      ],
+      "controlLoops": [
+        {
+          "@odata.etag": "W/\"50969688\"",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:control-loop:2026-09-02",
+          "jm1_name": "October Iyorwuese daily control loop horizon",
+          "createdon": "2026-09-02T10:23:03Z",
+          "jm1_marketingcontrolloopid": "6ce9cb43-b8a6-f111-b8de-6045bdd69738"
+        }
+      ],
+      "social": [
+        {
+          "@odata.etag": "W/\"50887081\"",
+          "jm1_socialexecutionid": "65fd1047-90a6-f111-b8de-000d3a9eacee",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:social:facebook",
+          "jm1_name": "Iyorwuese October intro - facebook",
+          "createdon": "2026-09-02T05:36:43Z"
+        },
+        {
+          "@odata.etag": "W/\"50887085\"",
+          "jm1_socialexecutionid": "d92fae45-90a6-f111-b8de-00224820105b",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:social:linkedin",
+          "jm1_name": "Iyorwuese October intro - linkedin",
+          "createdon": "2026-09-02T05:36:44Z"
+        },
+        {
+          "@odata.etag": "W/\"50887083\"",
+          "jm1_socialexecutionid": "263e5146-90a6-f111-b8de-6045bdd69738",
+          "jm1_idempotencykey": "e60c47b5da7824de99976e0a:social:instagram",
+          "jm1_name": "Iyorwuese October intro - instagram",
+          "createdon": "2026-09-02T05:36:44Z"
+        }
+      ]
+    },
+    "idempotency": {
+      "marker": "e60c47b5da7824de99976e0a",
+      "result": "PASS"
+    },
+    "exceptionModelImplementation": "DATAVERSE_TABLE_AND_ROWS_PROVEN",
+    "journeyContractImplementation": "DATAVERSE_TABLE_AND_HELD_CONTRACT_PROVEN",
+    "controlLoopImplementation": "DATAVERSE_TABLE_AND_DAILY_EVALUATION_ROW_PROVEN"
+  },
+  "dynamics": {
+    "environment": "https://jm1hq.crm.dynamics.com",
+    "inspectedEntitySets": {
+      "journeys": {
+        "available": true,
+        "count": 0,
+        "state": "QUERY_OK"
+      },
+      "emails": {
+        "available": true,
+        "count": 0,
+        "state": "QUERY_OK"
+      },
+      "segments": {
+        "available": true,
+        "count": 0,
+        "state": "QUERY_OK"
+      },
+      "topics": {
+        "available": true,
+        "count": 0,
+        "state": "QUERY_OK"
+      },
+      "purposes": {
+        "available": true,
+        "count": 4,
+        "state": "QUERY_OK"
+      },
+      "contactPointConsents": {
+        "available": true,
+        "count": 0,
+        "state": "QUERY_OK"
+      },
+      "journeyTemplates": {
+        "available": true,
+        "count": 0,
+        "state": "QUERY_OK"
+      }
+    },
+    "createJourneyApi": {
+      "supportedPathFromMicrosoftDocs": "msdynmkt_CreateJourneyFromTemplate",
+      "localPrerequisiteState": "BLOCKED_NO_TEMPLATE_EMAIL_SEGMENT_RUNTIME",
+      "journeyCreated": false,
+      "journeyState": "NOT_CREATED_HELD_ADMIN_SETUP_REQUIRED"
+    },
+    "classification": "DYNAMICS_JOURNEY_HELD_ADMIN_SETUP_REQUIRED"
+  },
+  "assets": {
+    "searchedGovernedSurfaces": [
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_People/Hagher, Iyorwuese",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/01_Titles/02_Developmental-Editing/JMP-INT-202607-DL2T20 - Iyorwuese Hagher - The General's Will and Last Testament",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise"
+    ],
+    "discoveredSourceSurfaceFacts": [
+      "Iyorwuese Hagher person folder exists.",
+      "The General's Will and Last Testament title/editorial folder exists.",
+      "A Portrait of Paradise distribution folder exists."
+    ],
+    "imageCandidates": [
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/WhatsApp Image 2025-09-05 at 10.52.09.jpeg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/WhatsApp Image 2025-09-05 at 10.52.59.jpeg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/WhatsApp Image 2025-09-05 at 10.53.22.jpeg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/WhatsApp Image 2025-09-05 at 10.53.53.jpeg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/author_headshot.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Apple Books/A-Portrait-of-Paradise-Apple-2026-02-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Apple Books/A-Portrait-of-Paradise-Apple-2026-02-26.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Apple Books/A-Portrait-of-Paradise-Apple-2026-03-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Apple Books/A-Portrait-of-Paradise-Apple-2026-05-30.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Generic/A-Portrait-of-Paradise-Generic-2026-02-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Generic/A-Portrait-of-Paradise-Generic-2026-02-26.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Generic/A-Portrait-of-Paradise-Generic-2026-03-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Generic/A-Portrait-of-Paradise-Generic-2026-05-30.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Google Play/A-Portrait-of-Paradise-Google-2026-02-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Google Play/A-Portrait-of-Paradise-Google-2026-02-26.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Google Play/A-Portrait-of-Paradise-Google-2026-03-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Google Play/A-Portrait-of-Paradise-Google-2026-05-30.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Kindle/A-Portrait-of-Paradise-Kindle-2026-02-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Kindle/A-Portrait-of-Paradise-Kindle-2026-02-26.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Kindle/A-Portrait-of-Paradise-Kindle-2026-03-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Kindle/A-Portrait-of-Paradise-Kindle-2026-05-30.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Kobo/A-Portrait-of-Paradise-Kobo-2026-02-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Kobo/A-Portrait-of-Paradise-Kobo-2026-02-26.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Kobo/A-Portrait-of-Paradise-Kobo-2026-03-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Kobo/A-Portrait-of-Paradise-Kobo-2026-05-30.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Nook/A-Portrait-of-Paradise-Nook-2026-02-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Nook/A-Portrait-of-Paradise-Nook-2026-02-26.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Nook/A-Portrait-of-Paradise-Nook-2026-03-16.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Nook/A-Portrait-of-Paradise-Nook-2026-05-30.jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/POP-01.png",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/POP-02.png",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/full.png",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/full.psd",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/image (6).jpg",
+      "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/08 Distribution Records/9781961475670_FC.jpg"
+    ],
+    "portrait": {
+      "state": "CANDIDATE_REQUIRES_RIGHTS_REVIEW",
+      "candidates": [
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/WhatsApp Image 2025-09-05 at 10.52.09.jpeg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/WhatsApp Image 2025-09-05 at 10.52.59.jpeg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/WhatsApp Image 2025-09-05 at 10.53.22.jpeg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/WhatsApp Image 2025-09-05 at 10.53.53.jpeg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/01 Author Files/author_headshot.jpg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Apple Books/A-Portrait-of-Paradise-Apple-2026-02-16.jpg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Apple Books/A-Portrait-of-Paradise-Apple-2026-02-26.jpg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Apple Books/A-Portrait-of-Paradise-Apple-2026-03-16.jpg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Apple Books/A-Portrait-of-Paradise-Apple-2026-05-30.jpg",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/03 Layout & Design/A Portrait of Paradise/Generic/A-Portrait-of-Paradise-Generic-2026-02-16.jpg"
+      ]
+    },
+    "titleCover": {
+      "state": "CANDIDATE_REQUIRES_RIGHTS_REVIEW",
+      "candidates": [
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/POP-01.png",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/POP-02.png",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/full.png",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/full.psd",
+        "/Users/jmerrillone/Library/CloudStorage/OneDrive-JMerrillFoundation,Inc/JM1-PUB/02_Active-Pipeline/07_Distribution/2025-Hagher-APortraitOfParadise/04 Cover Design/image (6).jpg"
+      ]
+    },
+    "logo": {
+      "state": "RESOLVED",
+      "sourcePath": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/publishing_first7_creatives/jm1-logo-white-source.png"
+    }
+  },
+  "platformAuthority": {
+    "inventoryMethod": "Local environment names, Azure app registrations, Function Apps, and Key Vault secret names only; no secret values read or stored.",
+    "envNameMatches": [
+      "JM1_SKIP_METADATA"
+    ],
+    "azureApplicationMatches": [],
+    "functionApps": [
+      {
+        "name": "jm1-ed-functions",
+        "resourceGroup": "jm1-core-services"
+      },
+      {
+        "name": "func-jm1-acs-email-relay",
+        "resourceGroup": "rg-jm1-communications"
+      },
+      {
+        "name": "func-jm1-diagnostic-ai-runner",
+        "resourceGroup": "rg-jm1-ai"
+      },
+      {
+        "name": "func-jm1-fin-prod",
+        "resourceGroup": "jmerrill-financial_group"
+      },
+      {
+        "name": "func-jm1-foundation-intake",
+        "resourceGroup": "func-jm1-foundation-intake_group"
+      }
+    ],
+    "keyVaults": [
+      "kv-jm1-core",
+      "jm1-core-vault"
+    ],
+    "accessibleVaultSecretNameHits": {
+      "kv-jm1-core": "INACCESSIBLE_OR_EMPTY",
+      "jm1-core-vault": [
+        "AnthropicApiKey",
+        "AUTH-SECRET",
+        "AUTHOR-CONNECT-ENROLLMENT-TOKEN-SECRET",
+        "AUTHOR-OPERATING-CENTER-EXTERNAL-CLIENT-SECRET",
+        "AUTHOR-PORTAL-ACCESS-CODE-PEPPER",
+        "AUTHOR-PORTAL-ACCESS-REGISTRY-JSON",
+        "AUTHOR-PORTAL-MASTER-ACCESS-CODE",
+        "AUTHOR-PORTAL-SESSION-SECRET",
+        "AZURE-STORAGE-CONNECTION-STRING",
+        "DATAVERSE-CLIENT-ID",
+        "DATAVERSE-CLIENT-SECRET",
+        "DATAVERSE-TENANT-ID",
+        "EXTERNAL-ID-PROVISIONER-CLIENT-SECRET",
+        "INFRA002-DATAVERSE-CLIENT-ID",
+        "INFRA002-DATAVERSE-CLIENT-SECRET",
+        "INFRA002-DATAVERSE-RESOURCE-URL",
+        "INFRA002-DATAVERSE-TENANT-ID",
+        "INFRA002-DATAVERSE-WEB-API-BASE-URL",
+        "jm1-int-pub-005-diagnostic-runner-key",
+        "jm1-int-pub-005-relay-api-key",
+        "JM1-JOIN-INTERNAL-NOTIFICATION-RELAY-KEY",
+        "JM1-JOIN-INTERNAL-NOTIFICATION-RELAY-URL",
+        "JM1-ORCHESTRATION-WORKER-KEY",
+        "JM1-PAYMENT-EVENT-RECOVERY-KEY",
+        "JM1-PUB-INTAKE-WEBAPI-CLIENT-ID",
+        "JM1-PUB-INTAKE-WEBAPI-CLIENT-SECRET",
+        "jm1-publishing-orchestration-worker-key",
+        "PRECOA-CALENDAR-FEED-URL",
+        "PUBLISHER-OPERATING-CENTER-CLIENT-SECRET",
+        "PublisherOperatingCenterClientSecret",
+        "SHAREPOINT-CLIENT-ID",
+        "SHAREPOINT-CLIENT-SECRET",
+        "SHAREPOINT-TENANT-ID",
+        "STRIPE-CHECKOUT-SECRET-KEY",
+        "STRIPE-CONNECT-SECRET-KEY",
+        "STRIPE-WEBHOOK-SECRET",
+        "TURNSTILE-SECRET-KEY",
+        "TURNSTILE-SITE-KEY"
+      ]
+    },
+    "meta": {
+      "requiredApiPath": "Meta Graph API for Facebook Pages; Instagram Graph API / Meta Graph API for Instagram professional publishing.",
+      "requiredCredentialState": "JM1-owned Meta app, Page/IG ownership, approved permissions, Page/IG tokens stored securely outside source control.",
+      "currentCredentialState": "NOT_FOUND",
+      "canary": "NOT_EXECUTED",
+      "facebook": "HELD_PLATFORM_AUTHORITY_MISSING",
+      "instagram": "HELD_PLATFORM_AUTHORITY_MISSING",
+      "classification": "META_OWNED_API_RUNTIME_NOT_PROVEN"
+    },
+    "linkedin": {
+      "knownOrganization": {
+        "name": "J Merrill Publishing, Inc.",
+        "organizationId": "13048648",
+        "urn": "urn:li:organization:13048648"
+      },
+      "requiredApiPath": "LinkedIn Community Management / Posts API for organization-authored posts, subject to application product access and 3-legged member consent.",
+      "requiredCredentialState": "LinkedIn developer app, Community Management or relevant product access, w_organization_social/r_organization_social scopes, member admin consent.",
+      "currentCredentialState": "NOT_FOUND",
+      "adapterBoundary": "Dataverse Social Execution -> LinkedInAdapter -> AUTHORITY CHECK -> HELD_EXTERNAL_PLATFORM_AUTHORITY",
+      "canary": "NOT_EXECUTED",
+      "classification": "LINKEDIN_API_EXTERNAL_DEPENDENCY"
+    }
+  },
+  "noTouchReadiness": {
+    "result": "NO_TOUCH_TEST_NOT_READY - Dynamics Journey implemented/proven; Meta owned FB/IG platform adapter proof; Iyorwuese governed portrait/title-cover assets for title-specific creative",
+    "coreNoTouch": "NOT_READY",
+    "metaNoTouch": "NOT_READY",
+    "linkedin": "EXTERNAL_DEPENDENCY",
+    "routineBrowserExecutionRemaining": [
+      "Meta Business Suite UI fallback",
+      "LinkedIn native UI fallback"
+    ],
+    "routineFounderManualMarketingTouch": "NOT_ZERO_YET"
+  },
+  "classification": "DATAVERSE_RUNTIME_EXPANSION_PROVEN_BOUNDARY_HELD",
+  "rowsWrittenOrReused": {
+    "exceptionIds": [
+      "0bffaf40-b8a6-f111-b8de-6045bdd69678",
+      "6ae9c344-b8a6-f111-b8de-6045bdd69435",
+      "db216246-b8a6-f111-b8de-000d3a9eacee",
+      "d8910341-b8a6-f111-b8de-00224820105b",
+      "d9910341-b8a6-f111-b8de-00224820105b"
+    ],
+    "journeyId": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+    "controlLoopId": "6ce9cb43-b8a6-f111-b8de-6045bdd69738"
+  }
+}

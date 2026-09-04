@@ -1,0 +1,33 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "month": "2026-10",
+  "featured_author_founder_display": "Iyorwuese",
+  "canonical_author_display_name": "Iyorwuese Hagher",
+  "status": "RESERVED — OCTOBER PREP",
+  "public_creative_doctrine": "PUBLIC CREATIVE DOCTRINE v2 REQUIRED",
+  "official_tagline": "Helping Authors Help Themselves",
+  "eligible_titles": [
+    "A Portrait of Paradise",
+    "The Conquest of Azenga"
+  ],
+  "asset_gaps": [
+    "richer official bio",
+    "author image rights",
+    "cover asset rights confirmation"
+  ],
+  "rights_status": "Use official public catalog identity/descriptions only until richer rights-cleared assets are verified.",
+  "creative_precondition": "October creative must use people-first/why-first public hooks, official-logo image treatment, and no internal governance language before scheduling.",
+  "preliminary_content_opportunities": [
+    "October launch",
+    "Meet the author",
+    "Meet A Portrait of Paradise",
+    "Meet The Conquest of Azenga",
+    "reader discovery prompt",
+    "month-end recap"
+  ]
+}

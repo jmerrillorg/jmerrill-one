@@ -1,0 +1,21 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 1 EXECUTION INCIDENT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-27T10:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "action": "Day 1 social post publication attempt",
+  "destination": "J Merrill One",
+  "requested_execution_time": "2026-08-27T09:00:00-04:00",
+  "current_state": "ERROR",
+  "error_text": "Error publishing post. Post not published because automation was turned off",
+  "error_code": null,
+  "retry_option": "Not exposed in inspected detail view; Duplicate and Delete controls were visible but not used.",
+  "authentication_indication": "Connector page shows Connected; no authentication error visible in post detail.",
+  "permissions_indication": "No explicit permission error visible in post detail.",
+  "media_indication": "Preview image visible/loading; no unsupported media, upload, missing asset, or size error exposed.",
+  "scheduling_indication": "Publish date displayed as August 27, 2026 at 9:00 AM; no timezone rejection or timing rule error exposed.",
+  "platform_api_indication": "No platform/API error code exposed.",
+  "sintra_automation_indication": "Error states post not published because automation was turned off.",
+  "screenshot": "440_gp_day1_facebook_error_detail.png"
+}

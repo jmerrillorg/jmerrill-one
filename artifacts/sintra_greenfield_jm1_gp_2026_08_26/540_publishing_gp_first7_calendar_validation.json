@@ -1,0 +1,73 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:18:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "status": "CANARY_CALENDAR_PASS_REMAINING_NOT_SCHEDULED",
+  "scheduled_count": 1,
+  "held_count": 20,
+  "validation_note": "Facebook Day 1 canary verified scheduled after media replacement with final no-circle official-logo creative; remaining platform posts not yet live scheduled.",
+  "items": [
+    {
+      "day": 1,
+      "date": "2026-08-28",
+      "time": "10:00 America/New_York",
+      "status": "FACEBOOK_CANARY_SCHEDULED_FINAL_REAL_LOGO_NO_CIRCLE",
+      "scheduled_platforms": [
+        "Facebook"
+      ],
+      "creative": "publishing_first7_creatives/day01_2026-08-28_meet_the_book.svg.png"
+    },
+    {
+      "day": 2,
+      "date": "2026-08-29",
+      "time": "10:00 America/New_York",
+      "status": "READY_NOT_SCHEDULED_PENDING_CORRECTED_REAL_LOGO_UPLOAD",
+      "scheduled_platforms": [],
+      "creative": "publishing_first7_creatives/day02_2026-08-29_meet_the_author.svg.png"
+    },
+    {
+      "day": 3,
+      "date": "2026-08-30",
+      "time": "10:00 America/New_York",
+      "status": "READY_NOT_SCHEDULED_PENDING_CORRECTED_REAL_LOGO_UPLOAD",
+      "scheduled_platforms": [],
+      "creative": "publishing_first7_creatives/day03_2026-08-30_publishing_education.svg.png"
+    },
+    {
+      "day": 4,
+      "date": "2026-08-31",
+      "time": "10:00 America/New_York",
+      "status": "READY_NOT_SCHEDULED_PENDING_CORRECTED_REAL_LOGO_UPLOAD",
+      "scheduled_platforms": [],
+      "creative": "publishing_first7_creatives/day04_2026-08-31_publishing_inquiry.svg.png"
+    },
+    {
+      "day": 5,
+      "date": "2026-09-01",
+      "time": "10:00 America/New_York",
+      "status": "READY_NOT_SCHEDULED_PENDING_CORRECTED_REAL_LOGO_UPLOAD",
+      "scheduled_platforms": [],
+      "creative": "publishing_first7_creatives/day05_2026-09-01_september_featured_author_sean_a_crowley_i.svg.png"
+    },
+    {
+      "day": 6,
+      "date": "2026-09-02",
+      "time": "10:00 America/New_York",
+      "status": "READY_NOT_SCHEDULED_PENDING_CORRECTED_REAL_LOGO_UPLOAD",
+      "scheduled_platforms": [],
+      "creative": "publishing_first7_creatives/day06_2026-09-02_inside_publishing.svg.png"
+    },
+    {
+      "day": 7,
+      "date": "2026-09-03",
+      "time": "10:00 America/New_York",
+      "status": "READY_NOT_SCHEDULED_PENDING_CORRECTED_REAL_LOGO_UPLOAD",
+      "scheduled_platforms": [],
+      "creative": "publishing_first7_creatives/day07_2026-09-03_backlist_rediscovery.svg.png"
+    }
+  ],
+  "wrong_destination_count": 0
+}

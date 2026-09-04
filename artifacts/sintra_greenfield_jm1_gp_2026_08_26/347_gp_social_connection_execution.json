@@ -1,0 +1,50 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "updated_at": "2026-08-26T18:30:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "connection_action_by_cody": "NONE — connectors were already visible as Connected; founder-provided screenshots clarified destination identity",
+  "evidence_source": "Founder-provided authenticated Sintra GP integrations UI screenshots",
+  "connections": [
+    {
+      "platform": "Instagram",
+      "connector_model": "DIRECT_ACCOUNT_CONNECTION",
+      "visible_account": "jmerrillone",
+      "canonical_pilot_destination": "@jmerrillone",
+      "connection_status": "CONNECTED_VISIBLE",
+      "destination_certification": "PASS",
+      "execution_control": "Schedule/publish only to the direct @jmerrillone destination.",
+      "sensitive_ids_recorded": false
+    },
+    {
+      "platform": "Facebook",
+      "connector_model": "MASTER_CONNECTION_WITH_SELECTABLE_PAGES",
+      "visible_connected_page_for_pilot": "J Merrill One",
+      "canonical_pilot_destination": "J Merrill One",
+      "connection_status": "CONNECTED_VISIBLE",
+      "destination_certification": "PASS",
+      "execution_control": "Every Facebook post in this One campaign must have J Merrill One selected as the destination Page before scheduling/publishing.",
+      "non_one_assets_in_scope": false,
+      "sensitive_ids_recorded": false
+    },
+    {
+      "platform": "LinkedIn Organization",
+      "connector_model": "MASTER_ORGANIZATION_CONNECTION_WITH_SELECTABLE_PAGES",
+      "visible_connected_pages": [
+        "J Merrill One",
+        "J Merrill Foundation, Inc.",
+        "J Merrill Publishing, Inc."
+      ],
+      "canonical_pilot_destination": "J Merrill One",
+      "connection_status": "CONNECTED_VISIBLE",
+      "destination_certification": "PASS",
+      "execution_control": "Every LinkedIn post in this One campaign must have J Merrill One selected as the organization destination before scheduling/publishing.",
+      "non_one_assets_in_scope": false,
+      "sensitive_ids_recorded": false
+    }
+  ],
+  "obsolete_assumption_retired": "Facebook and LinkedIn do not require dedicated One-only connectors; post-level destination selection is the governing control.",
+  "no_sensitive_credentials_recorded": true
+}

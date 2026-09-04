@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — DAY 2 MATERIALIZATION VALIDATION",
+  "created_at": "2026-08-27T16:20:00-04:00",
+  "result": "PASS_WITH_LOGO_REVIEW_CAVEAT",
+  "validations": {
+    "copy_matches_approved_packet": true,
+    "destinations_correct": true,
+    "date_future": true,
+    "time_et": "11:30",
+    "people_first_regression_pass": true,
+    "wrong_brand_count": 0,
+    "creative_logo_status": "REVIEW_REQUIRED_RULE_ARRIVED_AFTER_GENERATION"
+  }
+}

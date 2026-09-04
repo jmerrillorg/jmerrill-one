@@ -1,0 +1,14 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "PHASE 2B - GOVERNED HELPER ORCHESTRATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:30:00-04:00",
+  "classification": "SINTRA GREENFIELD PHASE 2B COMPLETE — HELPER ORCHESTRATION DOES NOT MEET JM1 GOVERNANCE/VALUE THRESHOLD",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "reopen_base_commit": "d28153b",
+  "result": "PARTIAL_PASS",
+  "jm1_owner": "J Merrill Publishing for author webinar content after context inheritance prompt",
+  "helper_contributions": "Penn/Emmie/Soshie/Vizzy/Milli/Dexter listed as possible internal contributors",
+  "founder_decision": "Preserved",
+  "limitation": "Actual helper output not completed."
+}

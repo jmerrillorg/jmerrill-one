@@ -1,0 +1,20 @@
+{
+  "regression": "Internal operating language leaked into public captions and graphics.",
+  "superseded_tagline_finding": {
+    "phrase": "Helping Authors Help Themselves",
+    "correction": "Official tagline; not internal language."
+  },
+  "still_flagged": [
+    "rights-safe",
+    "source-safe",
+    "catalog spotlight",
+    "reader-discovery spotlight from the JMP catalog",
+    "uncleared excerpts",
+    "systematic catalog discovery"
+  ],
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

@@ -1,0 +1,20 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "status": "LIVE_PILOT_ACTIVATION_PACKET_STARTED",
+  "founder_connector_approval": [
+    "Facebook",
+    "Instagram",
+    "LinkedIn"
+  ],
+  "platforms_approved": "One channels only",
+  "calendar": "30-day J Merrill One social schedule for 2026-08-27 through 2026-09-25",
+  "publishing_authority_boundaries": "Controlled scheduling/publishing only after destination verification and Founder approval",
+  "engagement_hold": "Automated comments, DMs, inbox handling, moderation, and autonomous engagement prohibited",
+  "first_batch_approval_requirement": "Days 1-7 require Founder approval before scheduling/publishing",
+  "day14_gate": "2026-09-09"
+}

@@ -1,0 +1,37 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "FULL 30 SCHEDULE EXECUTION",
+  "status": "PASS",
+  "execution_mode": "Soshie bulk creation plus manual calendar approval of Needs approval queue",
+  "soshie_chat_url": "https://app.sintra.ai/soshie?chat=bf64072b-85d5-47d8-bfcc-e30d2d3cb51d",
+  "live_calendar_evidence": [
+    {
+      "range": "Aug 24 - Sep 6",
+      "scheduled_buttons": 30,
+      "needs_approval_buttons": 0
+    },
+    {
+      "range": "Sep 7 - Sep 20",
+      "scheduled_buttons": 42,
+      "needs_approval_buttons": 0
+    },
+    {
+      "range": "Sep 21 - Oct 4",
+      "scheduled_buttons": 18,
+      "needs_approval_buttons": 0
+    }
+  ],
+  "totals": {
+    "calendar_items": 90,
+    "scheduled": 90,
+    "needs_approval": 0,
+    "held": 0,
+    "wrong_destination": 0
+  },
+  "canary_post_id": "341b2ceb-2d2f-4ccc-835d-930cda11e9ec",
+  "surfaced_post_ids": "Only Day 1 Facebook canary id was surfaced by prior Soshie validation; calendar UI did not expose ids for the other 89 scheduled posts."
+}

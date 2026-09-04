@@ -1,0 +1,24 @@
+{
+  "packageId": 717,
+  "title": "Publishing Prior Execution Evidence Correction",
+  "generatedAt": "2026-08-29T08:09:57.422Z",
+  "correctionRule": "Historical artifacts are preserved, but any claim of actual Publishing workspace mutation requires active workspace proof naming J Merrill Publishing.",
+  "supersededClaim": "J Merrill Publishing social remediation complete/in progress based on One workspace or workspace-ambiguous evidence.",
+  "correctedClassification": "WORKSPACE IDENTITY NOT PROVEN / DOES NOT CERTIFY PUBLISHING WORKSPACE MUTATION",
+  "affectedArtifactFamilies": [
+    "404_gp_days2_7_schedule_execution.json",
+    "462_gp_day2_schedule_execution.json",
+    "516_publishing_gp_first7_execution_packet.json",
+    "549_publishing_gp_full30_soshie_manifest.json",
+    "552_publishing_gp_first_canary_validation.json",
+    "578_publishing_gp_remediated_schedule_validation.json",
+    "645_publishing_gp_live_replacement_ledger.json",
+    "646_publishing_gp_live_replacement_validation.json",
+    "655_publishing_existing_schedule_inventory.json",
+    "667_publishing_exact_file_canary_execution.json",
+    "668_publishing_rebuild_wave_status.md",
+    "696_sintra_exact_file_unified_scheduler_canary.json"
+  ],
+  "liveCorrectionBasis": "Current Computer Use inspection shows active Sintra workspace J Merrill Publishing and proves its actual schedule still contains rejected metadata-card creative on Sep. 1 and Sep. 22.",
+  "nonDeletionPolicy": "Do not delete old artifacts; consume this correction as the supersession record."
+}

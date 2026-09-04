@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "POST30 OPERATING MODEL",
+  "status": "PASS",
+  "starts_after": "2026-09-26",
+  "recommended_next_actions": [
+    "Observe scheduled performance",
+    "Prepare Sep 28-30 Strategies continuation outside 90-item governed window",
+    "Activate October Featured Author map for Iyorwuese Hagher"
+  ],
+  "automation_state": {
+    "social_media_manager": "ON",
+    "inbox_manager": "OFF",
+    "daily_summarizer": "OFF",
+    "facebook_commenter": "OFF"
+  },
+  "approval_model": "Founder can approve next batch as a bounded post-30 continuation."
+}

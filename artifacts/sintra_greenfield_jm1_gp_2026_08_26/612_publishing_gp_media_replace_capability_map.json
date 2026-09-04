@@ -1,0 +1,40 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:55:00-04:00",
+  "outcome": "NO_SAFE_MEDIA_REPLACEMENT_PATH",
+  "capability_paths": [
+    {
+      "path": "scheduled_post_preview_click",
+      "result": "NO_REPLACE_CONTROL_EXPOSED",
+      "evidence": "Preview remains image display; scheduled object panel exposes Regenerate image and AI Edit only."
+    },
+    {
+      "path": "scheduled_post_regenerate_image",
+      "result": "REJECTED_BY_POLICY",
+      "evidence": "Would regenerate media and cannot guarantee exact official logo fidelity."
+    },
+    {
+      "path": "scheduled_post_image_ai_edit",
+      "result": "INSPECTED_NOT_USED",
+      "evidence": "Expands to prompt field only; not authorized for logo-sensitive replacement."
+    },
+    {
+      "path": "upload_media_direct_to_existing_scheduled_post",
+      "result": "NOT_EXPOSED",
+      "evidence": "No Upload media, Replace image, Remove image, Add new image, attachment replacement, or media library control found on scheduled object panel."
+    },
+    {
+      "path": "create_content_from_media",
+      "result": "UNSAFE_FOR_CONTROLLED_RECREATION",
+      "evidence": "Upload accepted exact PNG, but Soshie transformed it into a 3D mockup-style image and rewrote the exact caption before Schedule."
+    },
+    {
+      "path": "controlled_recreation_then_delete_original",
+      "result": "NOT_EXECUTED",
+      "evidence": "Pre-schedule candidate did not preserve exact image/caption and did not expose a page selector in review; candidate declined before scheduling."
+    }
+  ]
+}

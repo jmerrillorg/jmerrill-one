@@ -1,0 +1,22 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T16:57:54-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "live_pilot_base_commit": "14e59b2",
+  "required": "PASS",
+  "status": "ACTIVE",
+  "financial_content_requirements": [
+    "estate planning",
+    "advanced planning",
+    "funeral/pre-need planning",
+    "insurance-product context where applicable",
+    "no law-firm implication",
+    "no investment-management drift"
+  ],
+  "financial_posts_in_first7": [
+    6
+  ],
+  "first7_result": "PASS_AS_DRAFT_WITH_REVIEW_REQUIRED"
+}

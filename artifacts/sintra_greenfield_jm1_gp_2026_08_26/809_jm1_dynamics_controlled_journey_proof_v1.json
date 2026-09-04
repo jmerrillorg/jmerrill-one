@@ -1,0 +1,231 @@
+{
+  "packageId": 809,
+  "artifact": "JM1-DYNAMICS-CONTROLLED-JOURNEY-PROOF-v1",
+  "generatedAt": "2026-09-03T19:54:29.854Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Dynamics Journey Completion + Final No-Touch Proof",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "campaignAuthority": {
+    "id": "d42fae45-90a6-f111-b8de-00224820105b",
+    "name": "October 2026 Featured Author - Iyorwuese",
+    "idempotencyKey": "e60c47b5da7824de99976e0a:campaign"
+  },
+  "sender": {
+    "senderReady": true,
+    "domainReady": true,
+    "sender": {
+      "@odata.etag": "W/\"51388877\"",
+      "msdynmkt_replytoemail": "publishing@jmerrill.one",
+      "msdynmkt_fromname": "J Merrill Publishing",
+      "msdynmkt_fromemail": "publishing@email.jmerrill.one",
+      "msdynmkt_name": "J Merrill Publishing",
+      "statecode": 0,
+      "msdynmkt_brandsenderid": "f5be1ba7-c6a7-f111-b8de-6045bdd69738",
+      "statuscode": 1
+    },
+    "domain": {
+      "@odata.etag": "W/\"51388958\"",
+      "msdynmkt_generateemailkeys": true,
+      "msdynmkt_generateformkeys": false,
+      "msdynmkt_domainalignmentrecordtype": "CNAME",
+      "msdynmkt_emailhost1": "namkey1._domainkey",
+      "msdynmkt_emailhost2": "namkey2._domainkey",
+      "msdynmkt_generatedomainalignmentkeys": true,
+      "msdynmkt_ownershipvalidationstatus": 1,
+      "msdynmkt_emailkey2": "namkey2emailjmerrillone.k02.dyn365mktg.com",
+      "msdynmkt_validationdate": "2026-09-03T18:37:34.6868749Z",
+      "msdynmkt_domainalignmentrecordvalue": "nam.pb-dynmktg.com",
+      "msdynmkt_domainid": "f2a2eec3-c5a7-f111-b8de-000d3a14673b",
+      "msdynmkt_name": "email.jmerrill.one",
+      "msdynmkt_domainalignmentrecordhost": "bouncing.nam",
+      "msdynmkt_emailtyperecord1": "CNAME",
+      "msdynmkt_alignedname": "bouncing.nam.email.jmerrill.one",
+      "statecode": 0,
+      "msdynmkt_emailtyperecord2": "CNAME",
+      "msdynmkt_domainalignmentvalidationstatus": 1,
+      "msdynmkt_emailkey1": "namkey1emailjmerrillone.k02.dyn365mktg.com",
+      "msdynmkt_ownershiprecordkey": "d365mktkey=mNr2upEYaZM9n70tKYZKWhrFt4SyqUhym9IZcoEWxsox",
+      "msdynmkt_emaildnsrecord2status": 1,
+      "msdynmkt_businessunitowned": true,
+      "msdynmkt_ownershiprecordtype": "TXT",
+      "_owningbusinessunit_value": "b589d1e7-e690-f011-b4cc-7c1e525b3eb3",
+      "statuscode": 1,
+      "msdynmkt_emaildnsrecord1status": 1
+    }
+  },
+  "audience": {
+    "ready": true,
+    "productionRecipientsIncluded": false,
+    "contact": {
+      "@odata.etag": "W/\"51381385\"",
+      "fullname": "JM1 Internal Marketing Test",
+      "emailaddress1": "jackie@jmerrill.one",
+      "contactid": "5fcf77f5-96a7-f111-b8de-000d3a9eacee"
+    },
+    "segment": {
+      "@odata.etag": "W/\"51381405\"",
+      "msdynmkt_displayname": "JM1 INTERNAL MARKETING TEST AUDIENCE",
+      "statecode": 1,
+      "msdynmkt_sourcesegmentuid": "1bdc470c-97a7-f111-b8de-6045bdd69435",
+      "msdynmkt_segmentid": "1fdc470c-97a7-f111-b8de-6045bdd69435",
+      "statuscode": 2
+    },
+    "membership": {
+      "status": 200,
+      "ok": true,
+      "memberIds": [
+        "5fcf77f5-96a7-f111-b8de-000d3a9eacee"
+      ]
+    }
+  },
+  "consentCompliance": {
+    "consentBasis": "Founder-authorized internal marketing runtime test only; no production consent inferred.",
+    "complianceSettings4": {
+      "@odata.context": "https://jm1hq.crm.dynamics.com/api/data/v9.2/$metadata#msdynmkt_compliancesettings4s(msdynmkt_compliancesettings4id,msdynmkt_name,msdynmkt_legaladdress,msdynmkt_consentlink,statuscode,statecode)/$entity",
+      "@odata.etag": "W/\"11605876\"",
+      "msdynmkt_compliancesettings4id": "7f4a6355-1811-4cde-bde3-fee8c85f56b1",
+      "statuscode": 1,
+      "msdynmkt_name": "default",
+      "msdynmkt_consentlink": null,
+      "statecode": 0,
+      "msdynmkt_legaladdress": "Address"
+    },
+    "purpose": {
+      "@odata.context": "https://jm1hq.crm.dynamics.com/api/data/v9.2/$metadata#msdynmkt_purposes(msdynmkt_purposeid,msdynmkt_name,statuscode,statecode)/$entity",
+      "@odata.etag": "W/\"11605879\"",
+      "msdynmkt_name": "Commercial",
+      "statecode": 0,
+      "msdynmkt_purposeid": "10000000-0000-0000-0000-000000000003",
+      "statuscode": 1
+    },
+    "externalProductionConsentInferred": false
+  },
+  "email": {
+    "createdOrReused": "REUSED",
+    "id": "395de679-d0a7-f111-b8de-000d3a14673b",
+    "name": "IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED JOURNEY EMAIL",
+    "subject": "October Featured Author: Iyorwuese Hagher",
+    "fromName": "J Merrill Publishing",
+    "fromEmail": "publishing@email.jmerrill.one",
+    "replyToEmail": "publishing@jmerrill.one",
+    "to": "contact.emailaddress1",
+    "senderId": "f5be1ba7-c6a7-f111-b8de-6045bdd69738",
+    "brandProfileId": "967124c2-7d97-f111-8075-70a8a5914a07",
+    "complianceSettings4Id": "7f4a6355-1811-4cde-bde3-fee8c85f56b1",
+    "purposeId": "10000000-0000-0000-0000-000000000003",
+    "statuscode": 1,
+    "statecode": 0,
+    "content": {
+      "publicReady": true,
+      "accurateFacts": [
+        "Iyorwuese Hagher",
+        "October Featured Author",
+        "A Portrait of Paradise"
+      ],
+      "internalImplementationVocabulary": false,
+      "productionAudience": false
+    },
+    "validationAttempts": [
+      {
+        "requestShape": [
+          "EmailId"
+        ],
+        "status": 400,
+        "ok": false,
+        "error": "Exception 'WebException' occured: The remote server returned an error: (400) Bad Request., CorrelationId: 68817121-d382-46a7-9fa8-cbccda4d6377"
+      },
+      {
+        "requestShape": [
+          "emailId"
+        ],
+        "status": 400,
+        "ok": false,
+        "error": "Exception 'WebException' occured: The remote server returned an error: (400) Bad Request., CorrelationId: 60bceb3e-2092-4c1d-9be1-d84ae1404fb1"
+      },
+      {
+        "requestShape": [
+          "Id",
+          "EntityName"
+        ],
+        "status": 400,
+        "ok": false,
+        "error": "Exception 'WebException' occured: The remote server returned an error: (400) Bad Request., CorrelationId: e05ba5ee-5be1-4f80-9d69-723545408a1d"
+      },
+      {
+        "requestShape": [
+          "EntityId",
+          "EntityName"
+        ],
+        "status": 400,
+        "ok": false,
+        "error": "Exception 'WebException' occured: The remote server returned an error: (400) Bad Request., CorrelationId: 3e5325d3-b01f-4f89-bd3b-50473dce5c44"
+      }
+    ],
+    "readbackReady": true
+  },
+  "journeyApiSurface": {
+    "supportedTemplateApi": true,
+    "supportedPublishApi": true,
+    "supportedValidateJsonApi": true,
+    "journeyTemplatesAvailable": 0,
+    "existingJourneysAvailableAsSeed": 0,
+    "safeJourneySourceAvailable": false,
+    "createJourneyAttempted": false,
+    "createJourneyResult": "NOT_ATTEMPTED_NO_SAFE_TEMPLATE_OR_SEED_SOURCE",
+    "validationProbe": {
+      "attempted": true,
+      "status": 200,
+      "ok": true,
+      "isValid": false,
+      "errors": [
+        {
+          "errorCode": "InvalidJson",
+          "errorMessage": "Invalid JSON format - unable to deserialize it to valid JourneyJson structure. Error message: Could not create an instance of type Microsoft.Dynamics.Cxp.Orchestration.JourneyDefinition.Contracts.ITrigger. Type is an interface or abstract class and cannot be instantiated. Path 'type', line 1, position 81."
+        }
+      ],
+      "conclusion": "DIRECT_HAND_AUTHORED_JOURNEY_JSON_NOT_SAFE_FOR_RUNTIME_CREATION"
+    },
+    "microsoftSupportedPath": "msdynmkt_CreateJourneyFromTemplate requires an accessible Journey template or existing Journey ID as source.",
+    "actualJourneyRuntimeStarted": false,
+    "actualJourneyRuntimeReadback": "NOT_PROVEN"
+  },
+  "journeyExecution": {
+    "updated": true,
+    "id": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+    "state": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED",
+    "readback": {
+      "@odata.etag": "W/\"51390350\"",
+      "jm1_idempotencykey": "e60c47b5da7824de99976e0a:journey:title_discovery",
+      "jm1_name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
+      "jm1_journeyexecutionid": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+      "jm1_validatedat": "2026-09-03T19:54:29Z",
+      "jm1_dynamicsjourneyid": null,
+      "jm1_triggercontract": "Actual Customer Insights Journey runtime requires a valid Journey template or existing Journey seed for msdynmkt_CreateJourneyFromTemplate; none exists in tenant by readback.",
+      "jm1_state": "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED_JOURNEY_TEMPLATE_REQUIRED",
+      "jm1_emailrequirement": "{\"dynamicsEmailId\":\"395de679-d0a7-f111-b8de-000d3a14673b\",\"emailName\":\"IYORWUESE OCTOBER FEATURED AUTHOR - CONTROLLED JOURNEY EMAIL\",\"senderId\":\"f5be1ba7-c6a7-f111-b8de-6045bdd69738\",\"sender\":\"J Merrill Publishing <publishing@email.jmerrill.one>\",\"replyTo\":\"publishing@jmerrill.one\",\"complianceSettings4Id\":\"7f4a6355-1811-4cde-bde3-fee8c85f56b1\",\"purposeId\":\"10000000-0000-0000-0000-000000000003\"}",
+      "jm1_audiencecontract": "{\"segmentId\":\"1fdc470c-97a7-f111-b8de-6045bdd69435\",\"segmentName\":\"JM1 INTERNAL MARKETING TEST AUDIENCE\",\"contactId\":\"5fcf77f5-96a7-f111-b8de-000d3a9eacee\",\"contactEmail\":\"jackie@jmerrill.one\",\"productionRecipientsIncluded\":false}",
+      "jm1_blocker": "DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION"
+    }
+  },
+  "mediaRegistry": {
+    "durableStorage": "jm1media/$web/jm1-marketing",
+    "url": "https://jm1media.z13.web.core.windows.net/jm1-marketing/e60c47b5da7824de99976e0a/additional_title_discovery/evergreen_discovery-e530d31011cd637d.svg",
+    "registryRow": "998c2075-96a7-f111-b8de-6045bdd69738",
+    "hashVerification": "e530d31011cd637dbaa0dd85a80906297befd396cd707ac47d1d28a0c822b96e",
+    "allProven": true
+  },
+  "classifications": [
+    "DYNAMICS_TEST_AUDIENCE_PROVEN",
+    "DYNAMICS_PUBLISHING_SENDER_DOMAIN_COMMISSIONED",
+    "DYNAMICS_PUBLISHING_SENDER_VERIFIED",
+    "DYNAMICS_MARKETING_EMAIL_IMPLEMENTED",
+    "DYNAMICS_JOURNEY_TEMPLATE_OR_SEED_REQUIRED",
+    "AUTONOMOUS_MEDIA_REGISTRATION_PROVEN",
+    "DURABLE_MEDIA_EXACT_FILE_INTEGRITY_PROVEN",
+    "AUTONOMOUS_CAMPAIGN_TO_EXECUTABLE_MEDIA_PIPELINE_PROVEN"
+  ],
+  "noTouchResult": {
+    "result": "JM1_CORE_META_NO_TOUCH_TEST_FAIL",
+    "exactRemainingNormalOperationDependency": "DYNAMICS_CONTROLLED_JOURNEY_TEMPLATE_OR_SEED_REQUIRED_FOR_ACTUAL_CUSTOMER_INSIGHTS_ORCHESTRATION",
+    "reason": "The governed sender/domain, controlled audience, and controlled marketing email exist by readback. Microsoft-supported Journey creation is template/seed based, and this tenant has zero Journey templates and zero existing Journeys to clone; direct hand-authored JourneyJson validation failed against the internal JourneyJson contract."
+  }
+}

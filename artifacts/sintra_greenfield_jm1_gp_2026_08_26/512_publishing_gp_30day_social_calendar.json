@@ -1,0 +1,620 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "status": "FOUNDER_APPROVED_AND_LIVE_SCHEDULED",
+  "content_mix_observed": {
+    "author_title_catalog": 13,
+    "publishing_education": 5,
+    "author_acquisition_inquiries": 4,
+    "behind_scenes_process": 3,
+    "reader_discovery": 3,
+    "timely_flexible": 2
+  },
+  "calendar": [
+    {
+      "day": 1,
+      "proposed_date": "2026-08-28",
+      "pillar": "Meet the Book",
+      "mix_category": "author/title/catalog",
+      "author": "J. Derrick Johnson",
+      "title": "101 Wisdom Lessons for Life and Living",
+      "theme": "Meet the Book",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 2,
+      "proposed_date": "2026-08-29",
+      "pillar": "Meet the Author",
+      "mix_category": "author/title/catalog",
+      "author": "Donjia Walls",
+      "title": "27 Days to Overcoming Depression",
+      "theme": "Meet the Author",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 3,
+      "proposed_date": "2026-08-30",
+      "pillar": "Publishing Education",
+      "mix_category": "Publishing education",
+      "author": null,
+      "title": null,
+      "theme": "Publishing Education",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 4,
+      "proposed_date": "2026-08-31",
+      "pillar": "Publishing Inquiry",
+      "mix_category": "author acquisition/inquiries",
+      "author": null,
+      "title": null,
+      "theme": "Publishing Inquiry",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 5,
+      "proposed_date": "2026-09-01",
+      "pillar": "September Featured Author Launch",
+      "mix_category": "author/title/catalog",
+      "author": "Sean A Crowley I",
+      "title": "The Shift: Changing with God",
+      "theme": "September Featured Author — Sean A Crowley I",
+      "rights_status": "RIGHTS-SAFE: Founder-supplied retail title link and external public title metadata; no excerpt unless quoted from public source within limits.",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED",
+      "source": "https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+      "featured_author_month": "2026-09"
+    },
+    {
+      "day": 6,
+      "proposed_date": "2026-09-02",
+      "pillar": "Inside Publishing",
+      "mix_category": "behind-the-scenes/process",
+      "author": null,
+      "title": null,
+      "theme": "Inside Publishing",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED",
+      "displaced_from": "2026-09-01"
+    },
+    {
+      "day": 7,
+      "proposed_date": "2026-09-03",
+      "pillar": "Backlist Rediscovery",
+      "mix_category": "author/title/catalog",
+      "author": "Shelley McIntosh",
+      "title": "A Principal's Tale",
+      "theme": "Backlist Rediscovery",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 8,
+      "proposed_date": "2026-09-04",
+      "pillar": "Why This Book Matters",
+      "mix_category": "author/title/catalog",
+      "author": "Alesia Corpening",
+      "title": "A Trubie's Guide Pt. 1",
+      "theme": "Why This Book Matters",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 9,
+      "proposed_date": "2026-09-05",
+      "pillar": "Publishing FAQ/Myth",
+      "mix_category": "Publishing education",
+      "author": null,
+      "title": null,
+      "theme": "Publishing FAQ/Myth",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 10,
+      "proposed_date": "2026-09-06",
+      "pillar": "Author Journey",
+      "mix_category": "author acquisition/inquiries",
+      "author": null,
+      "title": null,
+      "theme": "Author Journey",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 11,
+      "proposed_date": "2026-09-07",
+      "pillar": "Timely/Flexible",
+      "mix_category": "timely/flexible",
+      "author": null,
+      "title": null,
+      "theme": "Timely/Flexible",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 12,
+      "proposed_date": "2026-09-08",
+      "pillar": "Meet the Book",
+      "mix_category": "author/title/catalog",
+      "author": "Jaylonna Stevette",
+      "title": "Almost Happy",
+      "theme": "Meet the Book",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 13,
+      "proposed_date": "2026-09-09",
+      "pillar": "Behind the Book",
+      "mix_category": "behind-the-scenes/process",
+      "author": null,
+      "title": null,
+      "theme": "Behind the Book",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 14,
+      "proposed_date": "2026-09-10",
+      "pillar": "Backlist Rediscovery",
+      "mix_category": "author/title/catalog",
+      "author": "Carolyn Booker-Pierce",
+      "title": "Because the Lord Is My Shepherd",
+      "theme": "Backlist Rediscovery",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 15,
+      "proposed_date": "2026-09-11",
+      "pillar": "Publishing Education",
+      "mix_category": "Publishing education",
+      "author": null,
+      "title": null,
+      "theme": "Publishing Education",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 16,
+      "proposed_date": "2026-09-12",
+      "pillar": "Reader Discovery",
+      "mix_category": "reader discovery",
+      "author": null,
+      "title": null,
+      "theme": "Reader Discovery",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 17,
+      "proposed_date": "2026-09-13",
+      "pillar": "Meet the Author",
+      "mix_category": "author/title/catalog",
+      "author": "Nathaniel Short",
+      "title": "Bodacious",
+      "theme": "Meet the Author",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 18,
+      "proposed_date": "2026-09-14",
+      "pillar": "Why This Book Matters",
+      "mix_category": "author/title/catalog",
+      "author": "Dennis Brown",
+      "title": "Connected!",
+      "theme": "Why This Book Matters",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 19,
+      "proposed_date": "2026-09-15",
+      "pillar": "Publishing Inquiry",
+      "mix_category": "author acquisition/inquiries",
+      "author": null,
+      "title": null,
+      "theme": "Publishing Inquiry",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 20,
+      "proposed_date": "2026-09-16",
+      "pillar": "Publishing FAQ/Myth",
+      "mix_category": "Publishing education",
+      "author": null,
+      "title": null,
+      "theme": "Publishing FAQ/Myth",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 21,
+      "proposed_date": "2026-09-17",
+      "pillar": "Meet the Book",
+      "mix_category": "author/title/catalog",
+      "author": "Agape International Cathedral",
+      "title": "Delicious Ideas!",
+      "theme": "Meet the Book",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 22,
+      "proposed_date": "2026-09-18",
+      "pillar": "Inside Publishing",
+      "mix_category": "behind-the-scenes/process",
+      "author": null,
+      "title": null,
+      "theme": "Inside Publishing",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 23,
+      "proposed_date": "2026-09-19",
+      "pillar": "Reader Discovery",
+      "mix_category": "reader discovery",
+      "author": null,
+      "title": null,
+      "theme": "Reader Discovery",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 24,
+      "proposed_date": "2026-09-20",
+      "pillar": "Backlist Rediscovery",
+      "mix_category": "author/title/catalog",
+      "author": "Terry Stephens",
+      "title": "Discipline and Direction",
+      "theme": "Backlist Rediscovery",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 25,
+      "proposed_date": "2026-09-21",
+      "pillar": "Author Journey",
+      "mix_category": "author acquisition/inquiries",
+      "author": null,
+      "title": null,
+      "theme": "Author Journey",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 26,
+      "proposed_date": "2026-09-22",
+      "pillar": "Meet the Book",
+      "mix_category": "author/title/catalog",
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory 2: The Relationship Handbook (2nd Edition)",
+      "theme": "Meet the Book",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 27,
+      "proposed_date": "2026-09-23",
+      "pillar": "Publishing Education",
+      "mix_category": "Publishing education",
+      "author": null,
+      "title": null,
+      "theme": "Publishing Education",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 28,
+      "proposed_date": "2026-09-24",
+      "pillar": "Meet the Author",
+      "mix_category": "author/title/catalog",
+      "author": "Jackie Smith, Jr.",
+      "title": "Establishing Glory: The Praise and Worship Handbook (2nd Edition)",
+      "theme": "Meet the Author",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 29,
+      "proposed_date": "2026-09-25",
+      "pillar": "Why This Book Matters",
+      "mix_category": "author/title/catalog",
+      "author": "Shana Byrd",
+      "title": "Focus, Trust, & Follow",
+      "theme": "Why This Book Matters",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    },
+    {
+      "day": 30,
+      "proposed_date": "2026-09-26",
+      "pillar": "Timely/Flexible",
+      "mix_category": "timely/flexible",
+      "author": null,
+      "title": null,
+      "theme": "Timely/Flexible",
+      "rights_status": "RIGHTS-SAFE: no excerpt; official author/title identity and public link only",
+      "approval_state": "FOUNDER APPROVED — LIVE SCHEDULED",
+      "scheduled": true,
+      "destinations": [
+        "Facebook: J Merrill Publishing Inc / 307480763084670",
+        "Instagram: jmerrillpub / 17841410046020869",
+        "LinkedIn Organization: J Merrill Publishing, Inc. / urn:li:organization:13048648"
+      ],
+      "creative_rule": "Every new image includes the official J Merrill logo file; no decorative gray/purple header circle allowed.",
+      "materialization_state": "SOSHIE_CUSTOM_SCHEDULED"
+    }
+  ],
+  "founder_approval": "PUBLISHING FIRST 7 DAYS — APPROVED",
+  "september_featured_author_override": {
+    "date": "2026-09-01",
+    "featured_author": "Sean A Crowley I",
+    "authority": "FOUNDER"
+  },
+  "full30_live_execution": {
+    "soshie_chat_url": "https://app.sintra.ai/soshie?chat=bf64072b-85d5-47d8-bfcc-e30d2d3cb51d",
+    "social_media_manager_calendar_url": "https://app.sintra.ai/automations/social-media-manager",
+    "live_calendar_sweep": [
+      {
+        "range": "Aug 24 - Sep 6",
+        "scheduled_buttons": 30,
+        "needs_approval_buttons": 0
+      },
+      {
+        "range": "Sep 7 - Sep 20",
+        "scheduled_buttons": 42,
+        "needs_approval_buttons": 0
+      },
+      {
+        "range": "Sep 21 - Oct 4",
+        "scheduled_buttons": 18,
+        "needs_approval_buttons": 0
+      }
+    ],
+    "total_custom_scheduled_buttons": 90,
+    "total_needs_approval_buttons": 0,
+    "note": "Soshie bulk creation used monthly credits and then displayed Monthly credits used up; remaining Needs approval cards were manually opened and scheduled through the calendar UI under Founder authorization."
+  }
+}

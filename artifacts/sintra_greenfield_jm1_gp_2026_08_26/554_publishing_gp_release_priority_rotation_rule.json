@@ -1,0 +1,18 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "RELEASE PRIORITY ROTATION RULE",
+  "status": "PASS",
+  "rule": "A Founder-specified new release may override routine catalog rotation inside its launch window while preserving featured-author continuity and no-claim/no-excerpt rights gates.",
+  "active_release": {
+    "title": "Strategies for Success",
+    "author": "Sean A Crowley I",
+    "release_date": "2026-09-22",
+    "cta": "https://amzn.to/4y4udRZ"
+  },
+  "priority_window": "2026-09-15 through 2026-09-25",
+  "post30_followup_window": "2026-09-28 through 2026-09-30"
+}

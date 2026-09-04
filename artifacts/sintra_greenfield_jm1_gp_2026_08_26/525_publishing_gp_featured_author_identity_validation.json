@@ -1,0 +1,78 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-27T22:05:00-04:00",
+  "workspace": "J Merrill Publishing",
+  "canonical_workspace": "J Merrill Publishing - GP",
+  "authors": [
+    {
+      "month": "2026-09",
+      "founder_display_name": "Sean A Crowley I",
+      "canonical_author_display_name": "Sean A Crowley I — Founder-provided; source variants include Sean Arron Crowley, I / I Sean Arron Crowley / Bishop Dr. Sean Arron Crowley I",
+      "governed_author_record_source": [
+        "Founder packet and supplied Amazon links",
+        "https://www.eden.co.uk/shop/the-shift-7586753.html",
+        "https://www.worldofbooks.com/products/shift-book-i-sean-arron-crowley-9781961475793"
+      ],
+      "current_published_titles": [
+        {
+          "title": "The Shift: Changing with God",
+          "isbn10": "1961475790",
+          "isbn13": "9781961475793",
+          "publisher": "JM Signature",
+          "published": "August 2026 / 2026-08-18 per external retail sources",
+          "availability": "Amazon link Founder-supplied; Eden lists available; World of Books stock unavailable at capture",
+          "sources": [
+            "https://www.amazon.com/Shift-Changing-Sean-Arron-Crowley/dp/1961475790",
+            "https://www.eden.co.uk/shop/the-shift-7586753.html",
+            "https://www.worldofbooks.com/products/shift-book-i-sean-arron-crowley-9781961475793"
+          ]
+        },
+        {
+          "title": "Strategies for Success in Educational Leadership",
+          "isbn10": "1961475839",
+          "availability": "Founder-supplied Amazon link; not independently readable due Amazon bot-gate in local fetch",
+          "sources": [
+            "https://www.amazon.com/Strategies-Success-Educational-Leadership-Chancellors/dp/1961475839"
+          ]
+        }
+      ],
+      "cover_assets": "External retail/public cover imagery not copied; creative uses rights-safe typographic/logo treatment unless cover rights are separately confirmed.",
+      "author_imagery": "NOT VERIFIED",
+      "official_biography_source": "No Publishing-owned official bio verified in jmerrill.pub at capture; do not invent credentials beyond source-backed public title descriptions.",
+      "social_media_eligibility": "READY — SOURCE GAP for Publishing-owned author page; usable for title/author identity posts from Founder-supplied retail links.",
+      "relationship_status_restriction": "No restriction supplied; verify before deeper campaign claims."
+    },
+    {
+      "month": "2026-10",
+      "founder_display_name": "Iyorwuese",
+      "canonical_author_display_name": "Iyorwuese Hagher",
+      "governed_author_record_source": [
+        "https://jmerrill.pub/authors/iyorwuese-hagher",
+        "https://jmerrill.pub/books"
+      ],
+      "current_published_titles": [
+        {
+          "title": "A Portrait of Paradise",
+          "source": "https://jmerrill.pub/books/a-portrait-of-paradise",
+          "availability": "Visible in public Publishing catalog",
+          "description": "Description pending",
+          "imprint": "JM Signature"
+        },
+        {
+          "title": "The Conquest of Azenga",
+          "source": "https://jmerrill.pub/books/the-conquest-of-azenga",
+          "availability": "Visible on public Iyorwuese Hagher author profile",
+          "description": "Catalog description pending",
+          "imprint": "JM Signature"
+        }
+      ],
+      "cover_assets": "Public catalog cards visible; exact cover rights not separately verified.",
+      "author_imagery": "Public author profile uses initial/avatar treatment; rights-safe author photo not verified.",
+      "official_biography_source": "Public profile states J Merrill Publishing author family; richer bio not present.",
+      "social_media_eligibility": "READY — ASSET GAP",
+      "relationship_status_restriction": "No restriction visible in public source."
+    }
+  ]
+}

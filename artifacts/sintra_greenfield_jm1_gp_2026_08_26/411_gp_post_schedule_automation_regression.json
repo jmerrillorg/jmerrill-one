@@ -1,0 +1,17 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "required": "PASS",
+  "result": "PASS",
+  "basis": "No scheduling occurred; pre-schedule automations baseline showed all four switches OFF.",
+  "automations": {
+    "Social Media Manager": "OFF",
+    "Inbox Manager": "OFF",
+    "Daily Summarizer": "OFF",
+    "Facebook Commenter": "OFF"
+  },
+  "automation_on_count": 0
+}

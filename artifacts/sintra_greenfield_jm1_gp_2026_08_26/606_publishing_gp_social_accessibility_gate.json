@@ -1,0 +1,19 @@
+{
+  "gate": "ACCESSIBILITY",
+  "image_requirements": [
+    "high contrast text",
+    "readable title/author",
+    "logo visible but not dominating",
+    "no tiny footer metadata as essential meaning"
+  ],
+  "caption_requirements": [
+    "clear first sentence",
+    "avoid jargon",
+    "link or CTA legible"
+  ],
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

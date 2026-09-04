@@ -1,0 +1,19 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill One - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "created_at": "2026-08-27T21:30:00-04:00",
+  "phase": "FULL 30-DAY CALENDAR VALIDATION",
+  "result": "PASS_WITH_LIVE_UI_EVIDENCE",
+  "expected_total_posts": 90,
+  "published_verified": 3,
+  "scheduled_verified": 87,
+  "days1_7_posts": 21,
+  "days8_30_posts": 69,
+  "date_range": {
+    "start": "2026-08-27",
+    "end": "2026-09-25"
+  },
+  "timezone": "America/New_York",
+  "note": "Soshie/live post panels confirmed scheduled status through Day 30; future publication still depends on Social Media Manager runtime remaining on."
+}

@@ -1,0 +1,18 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "workspace": "J Merrill Publishing",
+  "generated_at": "2026-08-28T07:21:02.649Z",
+  "phase": "ZERO LEAKAGE REGRESSION",
+  "status": "PASS",
+  "result": "PASS",
+  "checks": [
+    "Active workspace remained J Merrill Publishing in Sintra UI",
+    "Destinations were J Merrill Publishing social properties only",
+    "No One/Foundation/Productions destination labels appeared in calendar validation",
+    "Publishing catalog detail remains branch-local artifacts and was not added to One Brain"
+  ],
+  "wrong_destination_items": 0,
+  "one_brain_ingestion": "NOT_PERFORMED"
+}

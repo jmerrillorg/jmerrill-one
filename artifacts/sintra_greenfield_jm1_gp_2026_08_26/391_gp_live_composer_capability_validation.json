@@ -1,0 +1,27 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "GP SOCIAL MEDIA LIVE PILOT — CONTROLLED SCHEDULING",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T20:45:00-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "result": "PARTIAL — COMPOSER DISCOVERED, SAFE CONTROL BLOCKED BEFORE SCHEDULING",
+  "evidence": {
+    "calendar": "/tmp/sintra_gp_calendar_after_click.png",
+    "create_content_modal": "/tmp/sintra_gp_create_content_2.png",
+    "soshie_response": "/tmp/sintra_gp_soshie_response_4.png",
+    "caption_detail": "/tmp/sintra_gp_caption_detail.png"
+  },
+  "available_controls_observed": {
+    "platform_selection": "VISIBLE_FOR_GENERATED_ITEM",
+    "destination_selection": "VISIBLE_FOR_GENERATED_LINKEDIN_ITEM",
+    "copy": "VISIBLE_AND_EDITABLE",
+    "creative_media": "VISIBLE; SINTRA GENERATED DAY 1 GRAPHIC",
+    "preview": "VISIBLE",
+    "schedule_date": "VISIBLE",
+    "schedule_time": "VISIBLE",
+    "immediate_publishing": "NOT OBSERVED",
+    "draft_save_behavior": "EDIT PANEL SHOWED SAVE BUTTON; NOT USED"
+  },
+  "control_limitation": "After opening caption detail, back/Escape/coordinate actions did not safely return to the main post panel. Scheduling was not attempted.",
+  "external_state_changed": "Sintra draft/creative generation only; no schedule or publish action executed."
+}

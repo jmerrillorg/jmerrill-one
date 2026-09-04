@@ -1,0 +1,31 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST VALUE VALIDATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:57:38-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "focus_correction_base_commit": "3eaa841",
+  "status": "ACTIVE",
+  "session_ratings": [
+    {
+      "date": "2026-08-27T21:30:00-04:00",
+      "rating": "HIGH",
+      "evidence": "Founder-approved full 30-day activation was executed into a live scheduled cross-platform campaign with post-30 continuity artifacts."
+    }
+  ],
+  "allowed_ratings": [
+    "HIGH",
+    "MODERATE",
+    "LOW",
+    "NONE"
+  ],
+  "track": [
+    "usefulness",
+    "strategic depth",
+    "brand fit",
+    "originality",
+    "practical usability",
+    "amount of revision needed"
+  ],
+  "updated_at": "2026-08-27T21:30:00-04:00"
+}

@@ -1,0 +1,16 @@
+{
+  "gate": "GENERATED_VISUAL_QUALITY",
+  "first_wave_assets": [
+    "publishing_remediation_wave1_creatives/day01_2026-08-28_101_wisdom_people_first.png",
+    "publishing_remediation_wave1_creatives/day02_2026-08-29_27_days_quiet_step.png",
+    "publishing_remediation_wave1_creatives/day03_2026-08-30_purpose_before_process.png",
+    "publishing_remediation_wave1_creatives/day04_2026-08-31_reader_promise.png"
+  ],
+  "logo_verified": "official source copied and placed in each asset",
+  "blocked": "No AI-generated logo approximations; no synthetic author likeness; no fake covers.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}

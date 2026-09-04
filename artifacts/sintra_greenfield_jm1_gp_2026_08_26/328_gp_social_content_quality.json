@@ -1,0 +1,28 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "phase": "REAL-USAGE PILOT — SOCIAL-MEDIA-FIRST VALUE VALIDATION",
+  "workspace": "J Merrill One - GP",
+  "created_at": "2026-08-26T11:57:38-04:00",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "focus_correction_base_commit": "3eaa841",
+  "status": "ACTIVE",
+  "entries": [
+    {
+      "date": "2026-08-27T21:30:00-04:00",
+      "rating": "HIGH",
+      "evidence": "Days 8-30 copy preserved People-First, umbrella voice, proper branch boundaries, CTAs, and useful operating narrative with logo-gated creatives."
+    }
+  ],
+  "assess_for": [
+    "People-First",
+    "Why-First",
+    "clarity",
+    "authenticity",
+    "useful point",
+    "CTA appropriateness",
+    "absence of generic corporate filler",
+    "brand voice",
+    "actual reason someone would engage"
+  ],
+  "updated_at": "2026-08-27T21:30:00-04:00"
+}

@@ -1,0 +1,23 @@
+{
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T11:38:00-04:00",
+  "status": "PASS",
+  "unintended_public_occurrences": 0,
+  "scanned_blocked_terms": [
+    "rights-safe",
+    "source-certified",
+    "official-logo post",
+    "activation",
+    "governed content",
+    "content pillar",
+    "execution",
+    "validation",
+    "catalog spotlight",
+    "source-safe",
+    "uncleared excerpts"
+  ],
+  "tagline_status": "Helping Authors Help Themselves remains approved and available."
+}

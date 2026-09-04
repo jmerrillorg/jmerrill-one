@@ -1,0 +1,7 @@
+{
+  "wave": "B",
+  "dates": ["2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07"],
+  "assets_directory": "publishing_remediation_sep1_7_creatives",
+  "status": "READY_LOCAL_NOT_LIVE_BOUND",
+  "note": "Sep1 is tracked separately as Sean featured-author launch."
+}

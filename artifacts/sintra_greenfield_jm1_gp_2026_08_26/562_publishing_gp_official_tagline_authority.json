@@ -1,0 +1,12 @@
+{
+  "official_tagline": "Helping Authors Help Themselves",
+  "status": "APPROVED_PUBLIC_TAGLINE",
+  "not_a_regression": true,
+  "usage_rule": "May appear as brand signature when paired with a human-facing hook, not as filler or machine framing.",
+  "supersedes": "Any prior classification that treated the tagline itself as internal or robotic.",
+  "program": "SINTRA GREENFIELD PILOT",
+  "workspace": "J Merrill Publishing - GP",
+  "branch": "codex/sintra-greenfield-jm1-gp",
+  "pr": 10,
+  "generated_at": "2026-08-28T10:18:00-04:00"
+}
