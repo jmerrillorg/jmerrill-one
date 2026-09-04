@@ -1,0 +1,1939 @@
+{
+  "packageId": 819,
+  "artifact": "JMP-MARKETING-LIFECYCLE-AUTONOMOUS-COMMISSIONING-v1",
+  "generatedAt": "2026-09-04T21:25:00Z",
+  "environment": "https://jm1hq.crm.dynamics.com",
+  "programRegistry": [
+    {
+      "key": "title_author",
+      "name": "TITLE / AUTHOR MARKETING",
+      "purpose": "Move governed titles and authors through lifecycle-appropriate reader and author-facing marketing.",
+      "routineTouchTarget": {
+        "founder": 0,
+        "cody": 0
+      },
+      "state": "ACTIVE",
+      "branch": "J Merrill Publishing"
+    },
+    {
+      "key": "author_acquisition",
+      "name": "AUTHOR ACQUISITION / INQUIRY MARKETING",
+      "purpose": "Respond to inquiry and manuscript-intake state with useful publishing education and next-step nurture.",
+      "routineTouchTarget": {
+        "founder": 0,
+        "cody": 0
+      },
+      "state": "ACTIVE",
+      "branch": "J Merrill Publishing"
+    },
+    {
+      "key": "publishing_brand",
+      "name": "J MERRILL PUBLISHING BRAND MARKETING",
+      "purpose": "Keep Helping Authors Help Themselves, publishing education, and imprint differentiation visible between title events.",
+      "routineTouchTarget": {
+        "founder": 0,
+        "cody": 0
+      },
+      "state": "ACTIVE",
+      "branch": "J Merrill Publishing"
+    },
+    {
+      "key": "reader_audience",
+      "name": "READER / AUDIENCE MARKETING",
+      "purpose": "Use reader affinity and engagement state to drive discovery, re-engagement, and cross-title recommendations.",
+      "routineTouchTarget": {
+        "founder": 0,
+        "cody": 0
+      },
+      "state": "ACTIVE",
+      "branch": "J Merrill Publishing"
+    }
+  ],
+  "triggerRegistry": [
+    {
+      "event": "INTAKE_FIT",
+      "businessEvent": "INTAKE_FIT",
+      "marketingEligibility": "INTAKE_FIT_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "INTAKE_FIT",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "INTAKE_FIT_content_work",
+      "creative": "INTAKE_FIT_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "IMPRINT_CONFIRMED",
+      "businessEvent": "IMPRINT_CONFIRMED",
+      "marketingEligibility": "IMPRINT_CONFIRMED_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "IMPRINT_CONFIRMED",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "IMPRINT_CONFIRMED_content_work",
+      "creative": "IMPRINT_CONFIRMED_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "POSITIONING_READY",
+      "businessEvent": "POSITIONING_READY",
+      "marketingEligibility": "POSITIONING_READY_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "POSITIONING_READY",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "POSITIONING_READY_content_work",
+      "creative": "POSITIONING_READY_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "EDITING_UNDERWAY",
+      "businessEvent": "EDITING_UNDERWAY",
+      "marketingEligibility": "EDITING_UNDERWAY_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "EDITING_UNDERWAY",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "EDITING_UNDERWAY_content_work",
+      "creative": "EDITING_UNDERWAY_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "COVER_APPROVED",
+      "businessEvent": "COVER_APPROVED",
+      "marketingEligibility": "COVER_REVEAL_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "cover_reveal",
+      "journey": "title_lifecycle_cover_reveal",
+      "content": "cover_reveal_content_work",
+      "creative": "cover_reveal_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "INTERIOR_PRODUCTION_READY",
+      "businessEvent": "INTERIOR_PRODUCTION_READY",
+      "marketingEligibility": "INTERIOR_PRODUCTION_READY_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "INTERIOR_PRODUCTION_READY",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "INTERIOR_PRODUCTION_READY_content_work",
+      "creative": "INTERIOR_PRODUCTION_READY_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "PRODUCTION_PROOF_APPROVED",
+      "businessEvent": "PRODUCTION_PROOF_APPROVED",
+      "marketingEligibility": "PRODUCTION_PROOF_APPROVED_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "PRODUCTION_PROOF_APPROVED",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "PRODUCTION_PROOF_APPROVED_content_work",
+      "creative": "PRODUCTION_PROOF_APPROVED_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "METADATA_CATALOG_READY",
+      "businessEvent": "METADATA_CATALOG_READY",
+      "marketingEligibility": "METADATA_CATALOG_READY_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "METADATA_CATALOG_READY",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "METADATA_CATALOG_READY_content_work",
+      "creative": "METADATA_CATALOG_READY_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "DISTRIBUTION_LIVE",
+      "businessEvent": "DISTRIBUTION_LIVE",
+      "marketingEligibility": "RELEASE_AVAILABILITY_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "release_availability",
+      "journey": "title_lifecycle_release_availability",
+      "content": "distribution_live_content_work",
+      "creative": "distribution_live_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": [
+        "coming_soon",
+        "pre_distribution_waitlist"
+      ]
+    },
+    {
+      "event": "LAUNCH_DATE_LOCKED",
+      "businessEvent": "LAUNCH_DATE_LOCKED",
+      "marketingEligibility": "LAUNCH_DATE_LOCKED_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "LAUNCH_DATE_LOCKED",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "LAUNCH_DATE_LOCKED_content_work",
+      "creative": "LAUNCH_DATE_LOCKED_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "LAUNCH_DAY",
+      "businessEvent": "LAUNCH_DAY",
+      "marketingEligibility": "LAUNCH_DAY_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "launch_day",
+      "journey": "title_lifecycle_launch_day",
+      "content": "launch_day_content_work",
+      "creative": "launch_day_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": [
+        "coming_soon",
+        "pre_launch_countdown"
+      ]
+    },
+    {
+      "event": "PLUS_7",
+      "businessEvent": "PLUS_7",
+      "marketingEligibility": "PLUS_7_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "PLUS_7",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "PLUS_7_content_work",
+      "creative": "PLUS_7_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "PLUS_30",
+      "businessEvent": "PLUS_30",
+      "marketingEligibility": "POST_LAUNCH_ENGAGEMENT_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "post_launch_engagement",
+      "journey": "title_lifecycle_post_launch_engagement",
+      "content": "post_launch_30_content_work",
+      "creative": "post_launch_30_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "PLUS_90",
+      "businessEvent": "PLUS_90",
+      "marketingEligibility": "PLUS_90_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "PLUS_90",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "PLUS_90_content_work",
+      "creative": "PLUS_90_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "ANNIVERSARY",
+      "businessEvent": "ANNIVERSARY",
+      "marketingEligibility": "ANNIVERSARY_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "ANNIVERSARY",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "ANNIVERSARY_content_work",
+      "creative": "ANNIVERSARY_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "NEW_EDITION",
+      "businessEvent": "NEW_EDITION",
+      "marketingEligibility": "NEW_EDITION_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "NEW_EDITION",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "NEW_EDITION_content_work",
+      "creative": "NEW_EDITION_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "NEW_FORMAT",
+      "businessEvent": "NEW_FORMAT",
+      "marketingEligibility": "NEW_FORMAT_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "NEW_FORMAT",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "NEW_FORMAT_content_work",
+      "creative": "NEW_FORMAT_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "AUDIOBOOK_RELEASED",
+      "businessEvent": "AUDIOBOOK_RELEASED",
+      "marketingEligibility": "AUDIOBOOK_RELEASED_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "AUDIOBOOK_RELEASED",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "AUDIOBOOK_RELEASED_content_work",
+      "creative": "AUDIOBOOK_RELEASED_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "RELATED_NEW_TITLE",
+      "businessEvent": "RELATED_NEW_TITLE",
+      "marketingEligibility": "RELATED_NEW_TITLE_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "RELATED_NEW_TITLE",
+      "journey": "title_lifecycle_relationship_journey",
+      "content": "RELATED_NEW_TITLE_content_work",
+      "creative": "RELATED_NEW_TITLE_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    },
+    {
+      "event": "BACKLIST_REACTIVATION",
+      "businessEvent": "BACKLIST_REACTIVATION",
+      "marketingEligibility": "BACKLIST_REACTIVATION_ELIGIBLE",
+      "campaignProgram": "TITLE / AUTHOR MARKETING",
+      "campaignAuthority": "backlist_reactivation",
+      "journey": "reader_audience_backlist_reactivation",
+      "content": "backlist_reactivation_content_work",
+      "creative": "backlist_reactivation_creative_work",
+      "audience": "Publishing readers and author community",
+      "channels": [
+        "Dynamics Customer Insights - Journeys",
+        "Facebook",
+        "Instagram",
+        "LinkedIn held until external authority arrives"
+      ],
+      "cadence": "Lifecycle-stage governed",
+      "stopCondition": "Next authoritative lifecycle state, fatigue guard, campaign end, or exception",
+      "readback": "Dataverse child row readback plus platform/Journey state where execution is enabled.",
+      "nextAction": "Create campaign, content, creative, Journey, and held/executable social children.",
+      "supersedes": []
+    }
+  ],
+  "fourLaneCycle": {
+    "evaluatedAt": "2026-09-04T21:25:00Z",
+    "lanes": {
+      "title_author": {
+        "name": "TITLE / AUTHOR MARKETING",
+        "decisions": [
+          {
+            "marker": "0f4d548550cb73201571dcfb",
+            "lane": "title_author",
+            "laneName": "TITLE / AUTHOR MARKETING",
+            "sourceEvent": "LAUNCH_DAY",
+            "sourceEntity": "title_lifecycle_signal",
+            "sourceRecord": "strategies-for-success-launch-day-controlled-proof",
+            "subject": "Strategies for Success in Educational Leadership",
+            "title": "Strategies for Success in Educational Leadership",
+            "author": "Sean A Crowley I",
+            "titleLifecycle": "SEPTEMBER_22_2026_RELEASE_LIFECYCLE_PRIORITY",
+            "campaignType": "launch_day",
+            "stage": "launch_day",
+            "priority": "P0",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [
+              "coming_soon",
+              "pre_launch_countdown"
+            ],
+            "derived": {
+              "eligibility": "0f4d548550cb73201571dcfb:eligibility",
+              "campaign": "0f4d548550cb73201571dcfb:campaign",
+              "content": "0f4d548550cb73201571dcfb:content:launch_day",
+              "creative": "0f4d548550cb73201571dcfb:creative:launch_day",
+              "journey": "0f4d548550cb73201571dcfb:journey:launch_day",
+              "social": [
+                "0f4d548550cb73201571dcfb:social:launch_day:facebook",
+                "0f4d548550cb73201571dcfb:social:launch_day:instagram",
+                "0f4d548550cb73201571dcfb:social:launch_day:linkedin"
+              ]
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          },
+          {
+            "marker": "3db6863d3130cba670727d65",
+            "lane": "title_author",
+            "laneName": "TITLE / AUTHOR MARKETING",
+            "sourceEvent": "PLUS_30",
+            "sourceEntity": "controlled_title_lifecycle_fixture",
+            "sourceRecord": "post-launch-30-controlled-proof",
+            "subject": "Controlled Post-Launch Proof Title",
+            "title": "Controlled Post-Launch Proof Title",
+            "author": "Controlled Publishing Author",
+            "titleLifecycle": "ACTIVE_RELEASE_LIFECYCLE",
+            "campaignType": "post_launch_engagement",
+            "stage": "post_launch_30",
+            "priority": "P2",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [],
+            "derived": {
+              "eligibility": "3db6863d3130cba670727d65:eligibility",
+              "campaign": "3db6863d3130cba670727d65:campaign",
+              "content": "3db6863d3130cba670727d65:content:post_launch_30",
+              "creative": "3db6863d3130cba670727d65:creative:post_launch_30",
+              "journey": "3db6863d3130cba670727d65:journey:post_launch_30",
+              "social": [
+                "3db6863d3130cba670727d65:social:post_launch_30:facebook",
+                "3db6863d3130cba670727d65:social:post_launch_30:instagram",
+                "3db6863d3130cba670727d65:social:post_launch_30:linkedin"
+              ]
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          }
+        ],
+        "state": "EVALUATED"
+      },
+      "author_acquisition": {
+        "name": "AUTHOR ACQUISITION / INQUIRY MARKETING",
+        "decisions": [
+          {
+            "marker": "73808d18aaf4ca9b3294f74c",
+            "lane": "author_acquisition",
+            "laneName": "AUTHOR ACQUISITION / INQUIRY MARKETING",
+            "sourceEvent": "JOIN_INQUIRY",
+            "sourceEntity": "controlled_publishing_prospect",
+            "sourceRecord": "author-inquiry-controlled-proof",
+            "subject": "Controlled Publishing author inquiry",
+            "title": "",
+            "author": "",
+            "titleLifecycle": "ACTIVE_MARKETING_LIFECYCLE",
+            "campaignType": "author_inquiry_nurture",
+            "stage": "inquiry_nurture",
+            "priority": "P1",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [],
+            "derived": {
+              "eligibility": "73808d18aaf4ca9b3294f74c:eligibility",
+              "campaign": "73808d18aaf4ca9b3294f74c:campaign",
+              "content": "73808d18aaf4ca9b3294f74c:content:inquiry_nurture",
+              "creative": "",
+              "journey": "73808d18aaf4ca9b3294f74c:journey:inquiry_nurture",
+              "social": []
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          }
+        ],
+        "state": "EVALUATED"
+      },
+      "publishing_brand": {
+        "name": "J MERRILL PUBLISHING BRAND MARKETING",
+        "decisions": [
+          {
+            "marker": "b0765d1d7cd7b88a40f4b3d3",
+            "lane": "publishing_brand",
+            "laneName": "J MERRILL PUBLISHING BRAND MARKETING",
+            "sourceEvent": "BRAND_EVERGREEN_BELOW_THRESHOLD",
+            "sourceEntity": "brand_health",
+            "sourceRecord": "helping-authors-help-themselves-evergreen-proof",
+            "subject": "Helping Authors Help Themselves",
+            "title": "",
+            "author": "",
+            "titleLifecycle": "ACTIVE_MARKETING_LIFECYCLE",
+            "campaignType": "publishing_brand_evergreen",
+            "stage": "brand_education",
+            "priority": "P2",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [],
+            "derived": {
+              "eligibility": "b0765d1d7cd7b88a40f4b3d3:eligibility",
+              "campaign": "b0765d1d7cd7b88a40f4b3d3:campaign",
+              "content": "b0765d1d7cd7b88a40f4b3d3:content:brand_education",
+              "creative": "b0765d1d7cd7b88a40f4b3d3:creative:brand_education",
+              "journey": "b0765d1d7cd7b88a40f4b3d3:journey:brand_education",
+              "social": [
+                "b0765d1d7cd7b88a40f4b3d3:social:brand_education:facebook",
+                "b0765d1d7cd7b88a40f4b3d3:social:brand_education:instagram",
+                "b0765d1d7cd7b88a40f4b3d3:social:brand_education:linkedin"
+              ]
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          }
+        ],
+        "state": "EVALUATED"
+      },
+      "reader_audience": {
+        "name": "READER / AUDIENCE MARKETING",
+        "decisions": [
+          {
+            "marker": "64ebb1ce7017d61506d0e43d",
+            "lane": "reader_audience",
+            "laneName": "READER / AUDIENCE MARKETING",
+            "sourceEvent": "READER_REENGAGEMENT_DUE",
+            "sourceEntity": "controlled_reader_segment",
+            "sourceRecord": "leadership-reader-reengagement-controlled-proof",
+            "subject": "Leadership reader re-engagement",
+            "title": "",
+            "author": "",
+            "titleLifecycle": "ACTIVE_MARKETING_LIFECYCLE",
+            "campaignType": "reader_reengagement",
+            "stage": "reader_reengagement",
+            "priority": "P2",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [],
+            "derived": {
+              "eligibility": "64ebb1ce7017d61506d0e43d:eligibility",
+              "campaign": "64ebb1ce7017d61506d0e43d:campaign",
+              "content": "64ebb1ce7017d61506d0e43d:content:reader_reengagement",
+              "creative": "",
+              "journey": "64ebb1ce7017d61506d0e43d:journey:reader_reengagement",
+              "social": []
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          }
+        ],
+        "state": "EVALUATED"
+      }
+    },
+    "concurrency": {
+      "lanesEvaluated": 4,
+      "lanesWithDecisions": 4,
+      "starvationDetected": false
+    },
+    "classifications": [
+      "JMP_FOUR_LANE_MARKETING_PROGRAM_REGISTRY_ACTIVE",
+      "JMP_FOUR_LANE_CONCURRENT_CONTROL_LOOP_PROVEN"
+    ]
+  },
+  "catalogHealth": [
+    {
+      "title": "The Shift: Changing with God",
+      "author": "Sean A Crowley I",
+      "lifecycleState": "NEW_RECENTLY_RELEASED_NOT_BACKLIST_NOT_DRAFT",
+      "lastMarketedAt": "2026-09-01T00:00:00Z",
+      "currentCampaign": "September Featured Author - Sean A Crowley I",
+      "engagementState": "ACTIVE_RECENT_RELEASE_DISCOVERY",
+      "seasonalRelevance": "UNKNOWN",
+      "relatedTitleActivity": "NONE",
+      "fatigueHeld": true,
+      "recentReleaseHeld": true,
+      "eligibleForReactivation": false,
+      "exclusionReason": "RECENT_RELEASE_HELD_FROM_BACKLIST_REACTIVATION",
+      "nextReviewDate": "2026-10-04"
+    },
+    {
+      "title": "Strategies for Success in Educational Leadership",
+      "author": "Sean A Crowley I",
+      "lifecycleState": "LAUNCH",
+      "lastMarketedAt": "2026-09-04T00:00:00Z",
+      "currentCampaign": "September 22 launch",
+      "engagementState": "ACTIVE_LAUNCH_RUNWAY",
+      "seasonalRelevance": "UNKNOWN",
+      "relatedTitleActivity": "NONE",
+      "fatigueHeld": true,
+      "recentReleaseHeld": false,
+      "eligibleForReactivation": false,
+      "exclusionReason": "MARKETING_FATIGUE_HELD",
+      "nextReviewDate": "2026-09-18"
+    },
+    {
+      "title": "Controlled Dormant Catalog Title",
+      "author": "Controlled Publishing Author",
+      "lifecycleState": "BACKLIST",
+      "lastMarketedAt": "2026-06-01T00:00:00Z",
+      "currentCampaign": "",
+      "engagementState": "DORMANT",
+      "seasonalRelevance": "UNKNOWN",
+      "relatedTitleActivity": "NONE",
+      "fatigueHeld": false,
+      "recentReleaseHeld": false,
+      "eligibleForReactivation": true,
+      "exclusionReason": "",
+      "nextReviewDate": "2026-09-18"
+    }
+  ],
+  "enterpriseBranchConfiguration": {
+    "owner": "J Merrill One",
+    "sharedEngine": "JM1 Marketing OS",
+    "publishing": {
+      "activationState": "ACTIVE_PRODUCTION_RUNTIME_CONSUMER",
+      "programs": [
+        "TITLE_AUTHOR",
+        "AUTHOR_ACQUISITION",
+        "PUBLISHING_BRAND",
+        "READER_AUDIENCE"
+      ],
+      "destinations": [
+        "J Merrill Publishing Inc Facebook",
+        "jmerrillpub Instagram",
+        "J Merrill Publishing, Inc. LinkedIn held"
+      ],
+      "sender": "publishing@email.jmerrill.one",
+      "exceptionOwner": "Publishing marketing authority"
+    },
+    "one": {
+      "activationState": "CONFIGURED_NOT_ACTIVATED",
+      "programs": [
+        "enterprise brand marketing",
+        "ecosystem awareness",
+        "enterprise announcements",
+        "business thought leadership"
+      ],
+      "duplicateBranchMessagingGuard": true
+    },
+    "financial": {
+      "activationState": "CONFIGURED_NOT_ACTIVATED",
+      "complianceActivationHeld": true,
+      "holdClasses": [
+        "legal-advice implications",
+        "estate-planning legal representation",
+        "investment-advice implications",
+        "unsupported tax advice",
+        "insurance guarantees",
+        "performance/return claims",
+        "regulated product claims",
+        "required disclosures",
+        "partner-role confusion",
+        "funeral-home/Precoa/JMF service confusion"
+      ]
+    },
+    "foundation": {
+      "activationState": "CONFIGURED_NOT_ACTIVATED",
+      "programs": [
+        "donor engagement",
+        "fundraising/campaign journeys",
+        "volunteer engagement",
+        "event marketing",
+        "impact storytelling",
+        "donor re-engagement"
+      ],
+      "audienceIsolation": "Foundation donors and volunteers must not mix with Publishing readers or Financial prospects."
+    },
+    "classifications": [
+      "JM1_MARKETING_OS_ENTERPRISE_BRANCH_CONFIGURATION_READY",
+      "JMF_MARKETING_CONFIGURATION_READY_COMPLIANCE_ACTIVATION_HELD"
+    ]
+  },
+  "supersessionProof": {
+    "previousStage": "coming_soon",
+    "sourceEvent": "DISTRIBUTION_LIVE",
+    "superseded": true,
+    "state": "SUPERSEDED_BY_NEWER_LIFECYCLE_AUTHORITY",
+    "reason": "DISTRIBUTION_LIVE supersedes coming_soon messaging."
+  },
+  "entitySets": {
+    "eligibility": "jm1_marketingeligibilities",
+    "campaign": "jm1_campaignauthorities",
+    "content": "jm1_contentworks",
+    "creative": "jm1_creativeworks",
+    "social": "jm1_socialexecutions",
+    "journey": "jm1_journeyexecutions",
+    "controlLoop": "jm1_marketingcontrolloops",
+    "exception": "jm1_marketingexceptions"
+  },
+  "firstRun": [
+    {
+      "runLabel": "first",
+      "marker": "41b85618daa4eef1a2930d6b",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "19689a23-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "f44c8e26-a7a8-f111-b8de-7c1e525b15c2",
+      "contentId": "a90a7b23-a7a8-f111-b8de-00224820105b",
+      "creativeId": "fe4c8e26-a7a8-f111-b8de-7c1e525b15c2",
+      "journeyId": "1e689a23-a7a8-f111-b8de-6045bdd69678",
+      "socialIds": [
+        "4ddd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "2d689a23-a7a8-f111-b8de-6045bdd69678",
+        "3f689a23-a7a8-f111-b8de-6045bdd69678"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "first",
+      "marker": "0baaf76ddf35cd87bcad69bc",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "63c39229-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "d092b129-a7a8-f111-b8de-00224820105b",
+      "contentId": "27f36128-a7a8-f111-b8de-000d3a14673b",
+      "creativeId": "8bd8a725-a7a8-f111-b8de-6045bdd69435",
+      "journeyId": "28f36128-a7a8-f111-b8de-000d3a14673b",
+      "socialIds": [
+        "8cd8a725-a7a8-f111-b8de-6045bdd69435",
+        "d592b129-a7a8-f111-b8de-00224820105b",
+        "91d8a725-a7a8-f111-b8de-6045bdd69435"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "first",
+      "marker": "0f4d548550cb73201571dcfb",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "92d8a725-a7a8-f111-b8de-6045bdd69435",
+      "campaignId": "93d8a725-a7a8-f111-b8de-6045bdd69435",
+      "contentId": "d692b129-a7a8-f111-b8de-00224820105b",
+      "creativeId": "2ff36128-a7a8-f111-b8de-000d3a14673b",
+      "journeyId": "264d8e26-a7a8-f111-b8de-7c1e525b15c2",
+      "socialIds": [
+        "30f36128-a7a8-f111-b8de-000d3a14673b",
+        "304d8e26-a7a8-f111-b8de-7c1e525b15c2",
+        "59dd7f28-a7a8-f111-b8dd-000d3a19ee71"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "first",
+      "marker": "3db6863d3130cba670727d65",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "334d8e26-a7a8-f111-b8de-7c1e525b15c2",
+      "campaignId": "1145a02b-a7a8-f111-b8de-6045bdd69435",
+      "contentId": "ee92b129-a7a8-f111-b8de-00224820105b",
+      "creativeId": "1245a02b-a7a8-f111-b8de-6045bdd69435",
+      "journeyId": "34f36128-a7a8-f111-b8de-000d3a14673b",
+      "socialIds": [
+        "35f36128-a7a8-f111-b8de-000d3a14673b",
+        "5bdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "e51cdf2c-a7a8-f111-b8de-7c1e525b15c2"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "first",
+      "marker": "73808d18aaf4ca9b3294f74c",
+      "lane": "author_acquisition",
+      "state": "ELIGIBLE",
+      "eligibilityId": "a7c39229-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "a8c39229-a7a8-f111-b8de-6045bdd69678",
+      "contentId": "e61cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "creativeId": null,
+      "journeyId": "a9c39229-a7a8-f111-b8de-6045bdd69678",
+      "socialIds": [],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "first",
+      "marker": "b0765d1d7cd7b88a40f4b3d3",
+      "lane": "publishing_brand",
+      "state": "ELIGIBLE",
+      "eligibilityId": "5cdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+      "campaignId": "50f36128-a7a8-f111-b8de-000d3a14673b",
+      "contentId": "f092b129-a7a8-f111-b8de-00224820105b",
+      "creativeId": "eb1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "journeyId": "b1c39229-a7a8-f111-b8de-6045bdd69678",
+      "socialIds": [
+        "f192b129-a7a8-f111-b8de-00224820105b",
+        "f292b129-a7a8-f111-b8de-00224820105b",
+        "ed1cdf2c-a7a8-f111-b8de-7c1e525b15c2"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "first",
+      "marker": "64ebb1ce7017d61506d0e43d",
+      "lane": "reader_audience",
+      "state": "ELIGIBLE",
+      "eligibilityId": "5fdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+      "campaignId": "c4c39229-a7a8-f111-b8de-6045bdd69678",
+      "contentId": "2193b129-a7a8-f111-b8de-00224820105b",
+      "creativeId": null,
+      "journeyId": "15c49229-a7a8-f111-b8de-6045bdd69678",
+      "socialIds": [],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "first",
+      "marker": "a53c96ee0c5f14a638c5a9dd",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "2cc49229-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "f51cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "contentId": "8a5ced2e-a7a8-f111-b8dd-000d3a19ee71",
+      "creativeId": "4b45a02b-a7a8-f111-b8de-6045bdd69435",
+      "journeyId": "fa1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "socialIds": [
+        "adc49229-a7a8-f111-b8de-6045bdd69678",
+        "4e45a02b-a7a8-f111-b8de-6045bdd69435",
+        "ae93b129-a7a8-f111-b8de-00224820105b"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "first",
+      "marker": "8747f3d029ab2c711afef8d0",
+      "lane": "title_author",
+      "state": "HELD_GOVERNED_EXCEPTION",
+      "eligibilityId": "d2be942f-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "fb1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "contentId": "d3be942f-a7a8-f111-b8de-6045bdd69678",
+      "creativeId": "d5be942f-a7a8-f111-b8de-6045bdd69678",
+      "journeyId": "6fba5a2e-a7a8-f111-b8de-000d3a14673b",
+      "socialIds": [
+        "dcbe942f-a7a8-f111-b8de-6045bdd69678",
+        "70ba5a2e-a7a8-f111-b8de-000d3a14673b",
+        "ddbe942f-a7a8-f111-b8de-6045bdd69678"
+      ],
+      "exceptionId": "fd1cdf2c-a7a8-f111-b8de-7c1e525b15c2"
+    },
+    {
+      "runLabel": "first",
+      "type": "controlLoop",
+      "id": "20a03b30-a7a8-f111-b8de-00224820105b"
+    }
+  ],
+  "secondRun": [
+    {
+      "runLabel": "second",
+      "marker": "41b85618daa4eef1a2930d6b",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "19689a23-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "f44c8e26-a7a8-f111-b8de-7c1e525b15c2",
+      "contentId": "a90a7b23-a7a8-f111-b8de-00224820105b",
+      "creativeId": "fe4c8e26-a7a8-f111-b8de-7c1e525b15c2",
+      "journeyId": "1e689a23-a7a8-f111-b8de-6045bdd69678",
+      "socialIds": [
+        "4ddd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "2d689a23-a7a8-f111-b8de-6045bdd69678",
+        "3f689a23-a7a8-f111-b8de-6045bdd69678"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "second",
+      "marker": "0baaf76ddf35cd87bcad69bc",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "63c39229-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "d092b129-a7a8-f111-b8de-00224820105b",
+      "contentId": "27f36128-a7a8-f111-b8de-000d3a14673b",
+      "creativeId": "8bd8a725-a7a8-f111-b8de-6045bdd69435",
+      "journeyId": "28f36128-a7a8-f111-b8de-000d3a14673b",
+      "socialIds": [
+        "8cd8a725-a7a8-f111-b8de-6045bdd69435",
+        "d592b129-a7a8-f111-b8de-00224820105b",
+        "91d8a725-a7a8-f111-b8de-6045bdd69435"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "second",
+      "marker": "0f4d548550cb73201571dcfb",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "92d8a725-a7a8-f111-b8de-6045bdd69435",
+      "campaignId": "93d8a725-a7a8-f111-b8de-6045bdd69435",
+      "contentId": "d692b129-a7a8-f111-b8de-00224820105b",
+      "creativeId": "2ff36128-a7a8-f111-b8de-000d3a14673b",
+      "journeyId": "264d8e26-a7a8-f111-b8de-7c1e525b15c2",
+      "socialIds": [
+        "30f36128-a7a8-f111-b8de-000d3a14673b",
+        "304d8e26-a7a8-f111-b8de-7c1e525b15c2",
+        "59dd7f28-a7a8-f111-b8dd-000d3a19ee71"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "second",
+      "marker": "3db6863d3130cba670727d65",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "334d8e26-a7a8-f111-b8de-7c1e525b15c2",
+      "campaignId": "1145a02b-a7a8-f111-b8de-6045bdd69435",
+      "contentId": "ee92b129-a7a8-f111-b8de-00224820105b",
+      "creativeId": "1245a02b-a7a8-f111-b8de-6045bdd69435",
+      "journeyId": "34f36128-a7a8-f111-b8de-000d3a14673b",
+      "socialIds": [
+        "35f36128-a7a8-f111-b8de-000d3a14673b",
+        "5bdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "e51cdf2c-a7a8-f111-b8de-7c1e525b15c2"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "second",
+      "marker": "73808d18aaf4ca9b3294f74c",
+      "lane": "author_acquisition",
+      "state": "ELIGIBLE",
+      "eligibilityId": "a7c39229-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "a8c39229-a7a8-f111-b8de-6045bdd69678",
+      "contentId": "e61cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "creativeId": null,
+      "journeyId": "a9c39229-a7a8-f111-b8de-6045bdd69678",
+      "socialIds": [],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "second",
+      "marker": "b0765d1d7cd7b88a40f4b3d3",
+      "lane": "publishing_brand",
+      "state": "ELIGIBLE",
+      "eligibilityId": "5cdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+      "campaignId": "50f36128-a7a8-f111-b8de-000d3a14673b",
+      "contentId": "f092b129-a7a8-f111-b8de-00224820105b",
+      "creativeId": "eb1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "journeyId": "b1c39229-a7a8-f111-b8de-6045bdd69678",
+      "socialIds": [
+        "f192b129-a7a8-f111-b8de-00224820105b",
+        "f292b129-a7a8-f111-b8de-00224820105b",
+        "ed1cdf2c-a7a8-f111-b8de-7c1e525b15c2"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "second",
+      "marker": "64ebb1ce7017d61506d0e43d",
+      "lane": "reader_audience",
+      "state": "ELIGIBLE",
+      "eligibilityId": "5fdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+      "campaignId": "c4c39229-a7a8-f111-b8de-6045bdd69678",
+      "contentId": "2193b129-a7a8-f111-b8de-00224820105b",
+      "creativeId": null,
+      "journeyId": "15c49229-a7a8-f111-b8de-6045bdd69678",
+      "socialIds": [],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "second",
+      "marker": "a53c96ee0c5f14a638c5a9dd",
+      "lane": "title_author",
+      "state": "ELIGIBLE",
+      "eligibilityId": "2cc49229-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "f51cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "contentId": "8a5ced2e-a7a8-f111-b8dd-000d3a19ee71",
+      "creativeId": "4b45a02b-a7a8-f111-b8de-6045bdd69435",
+      "journeyId": "fa1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "socialIds": [
+        "adc49229-a7a8-f111-b8de-6045bdd69678",
+        "4e45a02b-a7a8-f111-b8de-6045bdd69435",
+        "ae93b129-a7a8-f111-b8de-00224820105b"
+      ],
+      "exceptionId": null
+    },
+    {
+      "runLabel": "second",
+      "marker": "8747f3d029ab2c711afef8d0",
+      "lane": "title_author",
+      "state": "HELD_GOVERNED_EXCEPTION",
+      "eligibilityId": "d2be942f-a7a8-f111-b8de-6045bdd69678",
+      "campaignId": "fb1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+      "contentId": "d3be942f-a7a8-f111-b8de-6045bdd69678",
+      "creativeId": "d5be942f-a7a8-f111-b8de-6045bdd69678",
+      "journeyId": "6fba5a2e-a7a8-f111-b8de-000d3a14673b",
+      "socialIds": [
+        "dcbe942f-a7a8-f111-b8de-6045bdd69678",
+        "70ba5a2e-a7a8-f111-b8de-000d3a14673b",
+        "ddbe942f-a7a8-f111-b8de-6045bdd69678"
+      ],
+      "exceptionId": "fd1cdf2c-a7a8-f111-b8de-7c1e525b15c2"
+    },
+    {
+      "runLabel": "second",
+      "type": "controlLoop",
+      "id": "20a03b30-a7a8-f111-b8de-00224820105b"
+    }
+  ],
+  "readback": {
+    "eligibility": [
+      {
+        "@odata.etag": "W/\"51426992\"",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:eligibility",
+        "modifiedon": "2026-09-04T21:28:05Z",
+        "jm1_marketingeligibilityid": "19689a23-a7a8-f111-b8de-6045bdd69678",
+        "jm1_name": "Controlled Cover Approval Proof Title - COVER_APPROVED eligibility",
+        "jm1_marketingprogram": "TITLE / AUTHOR MARKETING",
+        "jm1_sourceevent": "COVER_APPROVED",
+        "jm1_exceptionstate": null,
+        "jm1_state": "ELIGIBLE",
+        "createdon": "2026-09-04T21:25:31Z"
+      },
+      {
+        "@odata.etag": "W/\"51427001\"",
+        "jm1_idempotencykey": "0baaf76ddf35cd87bcad69bc:eligibility",
+        "modifiedon": "2026-09-04T21:28:06Z",
+        "jm1_marketingeligibilityid": "63c39229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_name": "Strategies for Success in Educational Leadership - DISTRIBUTION_LIVE eligibility",
+        "jm1_marketingprogram": "TITLE / AUTHOR MARKETING",
+        "jm1_sourceevent": "DISTRIBUTION_LIVE",
+        "jm1_exceptionstate": null,
+        "jm1_state": "ELIGIBLE",
+        "createdon": "2026-09-04T21:25:34Z"
+      },
+      {
+        "@odata.etag": "W/\"51427009\"",
+        "jm1_idempotencykey": "0f4d548550cb73201571dcfb:eligibility",
+        "modifiedon": "2026-09-04T21:28:07Z",
+        "jm1_marketingeligibilityid": "92d8a725-a7a8-f111-b8de-6045bdd69435",
+        "jm1_name": "Strategies for Success in Educational Leadership - LAUNCH_DAY eligibility",
+        "jm1_marketingprogram": "TITLE / AUTHOR MARKETING",
+        "jm1_sourceevent": "LAUNCH_DAY",
+        "jm1_exceptionstate": null,
+        "jm1_state": "ELIGIBLE",
+        "createdon": "2026-09-04T21:25:36Z"
+      },
+      {
+        "@odata.etag": "W/\"51427017\"",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:eligibility",
+        "modifiedon": "2026-09-04T21:28:09Z",
+        "jm1_marketingeligibilityid": "334d8e26-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_name": "Controlled Post-Launch Proof Title - PLUS_30 eligibility",
+        "jm1_marketingprogram": "TITLE / AUTHOR MARKETING",
+        "jm1_sourceevent": "PLUS_30",
+        "jm1_exceptionstate": null,
+        "jm1_state": "ELIGIBLE",
+        "createdon": "2026-09-04T21:25:39Z"
+      },
+      {
+        "@odata.etag": "W/\"51427027\"",
+        "jm1_idempotencykey": "73808d18aaf4ca9b3294f74c:eligibility",
+        "modifiedon": "2026-09-04T21:28:10Z",
+        "jm1_marketingeligibilityid": "a7c39229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_name": "Controlled Publishing author inquiry - JOIN_INQUIRY eligibility",
+        "jm1_marketingprogram": "AUTHOR ACQUISITION / INQUIRY MARKETING",
+        "jm1_sourceevent": "JOIN_INQUIRY",
+        "jm1_exceptionstate": null,
+        "jm1_state": "ELIGIBLE",
+        "createdon": "2026-09-04T21:25:40Z"
+      },
+      {
+        "@odata.etag": "W/\"51427032\"",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:eligibility",
+        "modifiedon": "2026-09-04T21:28:11Z",
+        "jm1_marketingeligibilityid": "5cdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "jm1_name": "Helping Authors Help Themselves - BRAND_EVERGREEN_BELOW_THRESHOLD eligibility",
+        "jm1_marketingprogram": "J MERRILL PUBLISHING BRAND MARKETING",
+        "jm1_sourceevent": "BRAND_EVERGREEN_BELOW_THRESHOLD",
+        "jm1_exceptionstate": null,
+        "jm1_state": "ELIGIBLE",
+        "createdon": "2026-09-04T21:25:41Z"
+      },
+      {
+        "@odata.etag": "W/\"51427040\"",
+        "jm1_idempotencykey": "64ebb1ce7017d61506d0e43d:eligibility",
+        "modifiedon": "2026-09-04T21:28:12Z",
+        "jm1_marketingeligibilityid": "5fdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "jm1_name": "Leadership reader re-engagement - READER_REENGAGEMENT_DUE eligibility",
+        "jm1_marketingprogram": "READER / AUDIENCE MARKETING",
+        "jm1_sourceevent": "READER_REENGAGEMENT_DUE",
+        "jm1_exceptionstate": null,
+        "jm1_state": "ELIGIBLE",
+        "createdon": "2026-09-04T21:25:42Z"
+      },
+      {
+        "@odata.etag": "W/\"51427044\"",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:eligibility",
+        "modifiedon": "2026-09-04T21:28:13Z",
+        "jm1_marketingeligibilityid": "2cc49229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_name": "Controlled Dormant Catalog Title - BACKLIST_REACTIVATION eligibility",
+        "jm1_marketingprogram": "TITLE / AUTHOR MARKETING",
+        "jm1_sourceevent": "BACKLIST_REACTIVATION",
+        "jm1_exceptionstate": null,
+        "jm1_state": "ELIGIBLE",
+        "createdon": "2026-09-04T21:25:43Z"
+      },
+      {
+        "@odata.etag": "W/\"51427052\"",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:eligibility",
+        "modifiedon": "2026-09-04T21:28:14Z",
+        "jm1_marketingeligibilityid": "d2be942f-a7a8-f111-b8de-6045bdd69678",
+        "jm1_name": "The Shift: Changing with God - BACKLIST_REACTIVATION eligibility",
+        "jm1_marketingprogram": "TITLE / AUTHOR MARKETING",
+        "jm1_sourceevent": "BACKLIST_REACTIVATION",
+        "jm1_exceptionstate": "RECENT_RELEASE_NOT_BACKLIST",
+        "jm1_state": "HELD_GOVERNED_EXCEPTION",
+        "createdon": "2026-09-04T21:25:44Z"
+      }
+    ],
+    "campaign": [
+      {
+        "@odata.etag": "W/\"51426994\"",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:campaign",
+        "modifiedon": "2026-09-04T21:28:05Z",
+        "jm1_name": "Controlled Cover Approval Proof Title - cover_reveal",
+        "jm1_campaigntype": "cover_reveal",
+        "jm1_campaignauthorityid": "f44c8e26-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_subject": "Controlled Cover Approval Proof Title",
+        "jm1_program": "TITLE / AUTHOR MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_DERIVED_FROM_LIFECYCLE",
+        "createdon": "2026-09-04T21:25:32Z"
+      },
+      {
+        "@odata.etag": "W/\"51427002\"",
+        "jm1_idempotencykey": "0baaf76ddf35cd87bcad69bc:campaign",
+        "modifiedon": "2026-09-04T21:28:06Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - release_availability",
+        "jm1_campaigntype": "release_availability",
+        "jm1_campaignauthorityid": "d092b129-a7a8-f111-b8de-00224820105b",
+        "jm1_subject": "Strategies for Success in Educational Leadership",
+        "jm1_program": "TITLE / AUTHOR MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_DERIVED_FROM_LIFECYCLE",
+        "createdon": "2026-09-04T21:25:34Z"
+      },
+      {
+        "@odata.etag": "W/\"51427010\"",
+        "jm1_idempotencykey": "0f4d548550cb73201571dcfb:campaign",
+        "modifiedon": "2026-09-04T21:28:07Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - launch_day",
+        "jm1_campaigntype": "launch_day",
+        "jm1_campaignauthorityid": "93d8a725-a7a8-f111-b8de-6045bdd69435",
+        "jm1_subject": "Strategies for Success in Educational Leadership",
+        "jm1_program": "TITLE / AUTHOR MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_DERIVED_FROM_LIFECYCLE",
+        "createdon": "2026-09-04T21:25:37Z"
+      },
+      {
+        "@odata.etag": "W/\"51427018\"",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:campaign",
+        "modifiedon": "2026-09-04T21:28:09Z",
+        "jm1_name": "Controlled Post-Launch Proof Title - post_launch_engagement",
+        "jm1_campaigntype": "post_launch_engagement",
+        "jm1_campaignauthorityid": "1145a02b-a7a8-f111-b8de-6045bdd69435",
+        "jm1_subject": "Controlled Post-Launch Proof Title",
+        "jm1_program": "TITLE / AUTHOR MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_DERIVED_FROM_LIFECYCLE",
+        "createdon": "2026-09-04T21:25:39Z"
+      },
+      {
+        "@odata.etag": "W/\"51427029\"",
+        "jm1_idempotencykey": "73808d18aaf4ca9b3294f74c:campaign",
+        "modifiedon": "2026-09-04T21:28:10Z",
+        "jm1_name": "Controlled Publishing author inquiry - author_inquiry_nurture",
+        "jm1_campaigntype": "author_inquiry_nurture",
+        "jm1_campaignauthorityid": "a8c39229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_subject": "Controlled Publishing author inquiry",
+        "jm1_program": "AUTHOR ACQUISITION / INQUIRY MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_DERIVED_FROM_LIFECYCLE",
+        "createdon": "2026-09-04T21:25:40Z"
+      },
+      {
+        "@odata.etag": "W/\"51427033\"",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:campaign",
+        "modifiedon": "2026-09-04T21:28:11Z",
+        "jm1_name": "Helping Authors Help Themselves - publishing_brand_evergreen",
+        "jm1_campaigntype": "publishing_brand_evergreen",
+        "jm1_campaignauthorityid": "50f36128-a7a8-f111-b8de-000d3a14673b",
+        "jm1_subject": "Helping Authors Help Themselves",
+        "jm1_program": "J MERRILL PUBLISHING BRAND MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_DERIVED_FROM_LIFECYCLE",
+        "createdon": "2026-09-04T21:25:41Z"
+      },
+      {
+        "@odata.etag": "W/\"51427041\"",
+        "jm1_idempotencykey": "64ebb1ce7017d61506d0e43d:campaign",
+        "modifiedon": "2026-09-04T21:28:12Z",
+        "jm1_name": "Leadership reader re-engagement - reader_reengagement",
+        "jm1_campaigntype": "reader_reengagement",
+        "jm1_campaignauthorityid": "c4c39229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_subject": "Leadership reader re-engagement",
+        "jm1_program": "READER / AUDIENCE MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_DERIVED_FROM_LIFECYCLE",
+        "createdon": "2026-09-04T21:25:42Z"
+      },
+      {
+        "@odata.etag": "W/\"51427045\"",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:campaign",
+        "modifiedon": "2026-09-04T21:28:13Z",
+        "jm1_name": "Controlled Dormant Catalog Title - backlist_reactivation",
+        "jm1_campaigntype": "backlist_reactivation",
+        "jm1_campaignauthorityid": "f51cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_subject": "Controlled Dormant Catalog Title",
+        "jm1_program": "TITLE / AUTHOR MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_DERIVED_FROM_LIFECYCLE",
+        "createdon": "2026-09-04T21:25:43Z"
+      },
+      {
+        "@odata.etag": "W/\"51427053\"",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:campaign",
+        "modifiedon": "2026-09-04T21:28:14Z",
+        "jm1_name": "The Shift: Changing with God - backlist_reactivation",
+        "jm1_campaigntype": "backlist_reactivation",
+        "jm1_campaignauthorityid": "fb1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_subject": "The Shift: Changing with God",
+        "jm1_program": "TITLE / AUTHOR MARKETING",
+        "jm1_state": "CAMPAIGN_AUTHORITY_HELD_BY_EXCEPTION",
+        "createdon": "2026-09-04T21:25:44Z"
+      }
+    ],
+    "content": [
+      {
+        "@odata.etag": "W/\"51426995\"",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:content:cover_reveal",
+        "modifiedon": "2026-09-04T21:28:05Z",
+        "jm1_name": "Controlled Cover Approval Proof Title - cover_reveal content",
+        "jm1_contentworkid": "a90a7b23-a7a8-f111-b8de-00224820105b",
+        "createdon": "2026-09-04T21:25:32Z"
+      },
+      {
+        "@odata.etag": "W/\"51427003\"",
+        "jm1_idempotencykey": "0baaf76ddf35cd87bcad69bc:content:distribution_live",
+        "modifiedon": "2026-09-04T21:28:06Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - distribution_live content",
+        "jm1_contentworkid": "27f36128-a7a8-f111-b8de-000d3a14673b",
+        "createdon": "2026-09-04T21:25:35Z"
+      },
+      {
+        "@odata.etag": "W/\"51427011\"",
+        "jm1_idempotencykey": "0f4d548550cb73201571dcfb:content:launch_day",
+        "modifiedon": "2026-09-04T21:28:08Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - launch_day content",
+        "jm1_contentworkid": "d692b129-a7a8-f111-b8de-00224820105b",
+        "createdon": "2026-09-04T21:25:37Z"
+      },
+      {
+        "@odata.etag": "W/\"51427019\"",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:content:post_launch_30",
+        "modifiedon": "2026-09-04T21:28:09Z",
+        "jm1_name": "Controlled Post-Launch Proof Title - post_launch_30 content",
+        "jm1_contentworkid": "ee92b129-a7a8-f111-b8de-00224820105b",
+        "createdon": "2026-09-04T21:25:39Z"
+      },
+      {
+        "@odata.etag": "W/\"51427030\"",
+        "jm1_idempotencykey": "73808d18aaf4ca9b3294f74c:content:inquiry_nurture",
+        "modifiedon": "2026-09-04T21:28:10Z",
+        "jm1_name": "Controlled Publishing author inquiry - inquiry_nurture content",
+        "jm1_contentworkid": "e61cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+        "createdon": "2026-09-04T21:25:40Z"
+      },
+      {
+        "@odata.etag": "W/\"51427034\"",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:content:brand_education",
+        "modifiedon": "2026-09-04T21:28:11Z",
+        "jm1_name": "Helping Authors Help Themselves - brand_education content",
+        "jm1_contentworkid": "f092b129-a7a8-f111-b8de-00224820105b",
+        "createdon": "2026-09-04T21:25:41Z"
+      },
+      {
+        "@odata.etag": "W/\"51427042\"",
+        "jm1_idempotencykey": "64ebb1ce7017d61506d0e43d:content:reader_reengagement",
+        "modifiedon": "2026-09-04T21:28:12Z",
+        "jm1_name": "Leadership reader re-engagement - reader_reengagement content",
+        "jm1_contentworkid": "2193b129-a7a8-f111-b8de-00224820105b",
+        "createdon": "2026-09-04T21:25:42Z"
+      },
+      {
+        "@odata.etag": "W/\"51427046\"",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:content:backlist_reactivation",
+        "modifiedon": "2026-09-04T21:28:13Z",
+        "jm1_name": "Controlled Dormant Catalog Title - backlist_reactivation content",
+        "jm1_contentworkid": "8a5ced2e-a7a8-f111-b8dd-000d3a19ee71",
+        "createdon": "2026-09-04T21:25:43Z"
+      },
+      {
+        "@odata.etag": "W/\"51427054\"",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:content:backlist_reactivation",
+        "modifiedon": "2026-09-04T21:28:14Z",
+        "jm1_name": "The Shift: Changing with God - backlist_reactivation content",
+        "jm1_contentworkid": "d3be942f-a7a8-f111-b8de-6045bdd69678",
+        "createdon": "2026-09-04T21:25:45Z"
+      }
+    ],
+    "creative": [
+      {
+        "@odata.etag": "W/\"51426996\"",
+        "jm1_creativeworkid": "fe4c8e26-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:creative:cover_reveal",
+        "modifiedon": "2026-09-04T21:28:05Z",
+        "jm1_name": "Controlled Cover Approval Proof Title - cover_reveal creative",
+        "createdon": "2026-09-04T21:25:33Z"
+      },
+      {
+        "@odata.etag": "W/\"51427004\"",
+        "jm1_creativeworkid": "8bd8a725-a7a8-f111-b8de-6045bdd69435",
+        "jm1_idempotencykey": "0baaf76ddf35cd87bcad69bc:creative:distribution_live",
+        "modifiedon": "2026-09-04T21:28:07Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - distribution_live creative",
+        "createdon": "2026-09-04T21:25:35Z"
+      },
+      {
+        "@odata.etag": "W/\"51427012\"",
+        "jm1_creativeworkid": "2ff36128-a7a8-f111-b8de-000d3a14673b",
+        "jm1_idempotencykey": "0f4d548550cb73201571dcfb:creative:launch_day",
+        "modifiedon": "2026-09-04T21:28:08Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - launch_day creative",
+        "createdon": "2026-09-04T21:25:37Z"
+      },
+      {
+        "@odata.etag": "W/\"51427020\"",
+        "jm1_creativeworkid": "1245a02b-a7a8-f111-b8de-6045bdd69435",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:creative:post_launch_30",
+        "modifiedon": "2026-09-04T21:28:09Z",
+        "jm1_name": "Controlled Post-Launch Proof Title - post_launch_30 creative",
+        "createdon": "2026-09-04T21:25:39Z"
+      },
+      {
+        "@odata.etag": "W/\"51427035\"",
+        "jm1_creativeworkid": "eb1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:creative:brand_education",
+        "modifiedon": "2026-09-04T21:28:11Z",
+        "jm1_name": "Helping Authors Help Themselves - brand_education creative",
+        "createdon": "2026-09-04T21:25:41Z"
+      },
+      {
+        "@odata.etag": "W/\"51427047\"",
+        "jm1_creativeworkid": "4b45a02b-a7a8-f111-b8de-6045bdd69435",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:creative:backlist_reactivation",
+        "modifiedon": "2026-09-04T21:28:13Z",
+        "jm1_name": "Controlled Dormant Catalog Title - backlist_reactivation creative",
+        "createdon": "2026-09-04T21:25:43Z"
+      },
+      {
+        "@odata.etag": "W/\"51427055\"",
+        "jm1_creativeworkid": "d5be942f-a7a8-f111-b8de-6045bdd69678",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:creative:backlist_reactivation",
+        "modifiedon": "2026-09-04T21:28:14Z",
+        "jm1_name": "The Shift: Changing with God - backlist_reactivation creative",
+        "createdon": "2026-09-04T21:25:45Z"
+      }
+    ],
+    "social": [
+      {
+        "@odata.etag": "W/\"51426998\"",
+        "jm1_socialexecutionid": "4ddd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:social:cover_reveal:facebook",
+        "modifiedon": "2026-09-04T21:28:06Z",
+        "jm1_name": "Controlled Cover Approval Proof Title - cover_reveal - facebook",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "facebook",
+        "createdon": "2026-09-04T21:25:33Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51426999\"",
+        "jm1_socialexecutionid": "2d689a23-a7a8-f111-b8de-6045bdd69678",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:social:cover_reveal:instagram",
+        "modifiedon": "2026-09-04T21:28:06Z",
+        "jm1_name": "Controlled Cover Approval Proof Title - cover_reveal - instagram",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "instagram",
+        "createdon": "2026-09-04T21:25:34Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427000\"",
+        "jm1_socialexecutionid": "3f689a23-a7a8-f111-b8de-6045bdd69678",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:social:cover_reveal:linkedin",
+        "modifiedon": "2026-09-04T21:28:06Z",
+        "jm1_name": "Controlled Cover Approval Proof Title - cover_reveal - linkedin",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "jm1_errorcode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+        "jm1_platform": "linkedin",
+        "createdon": "2026-09-04T21:25:34Z",
+        "jm1_readbackstate": "LINKEDIN_EXTERNAL_REVIEW_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427007\"",
+        "jm1_socialexecutionid": "d592b129-a7a8-f111-b8de-00224820105b",
+        "jm1_idempotencykey": "0baaf76ddf35cd87bcad69bc:social:distribution_live:instagram",
+        "modifiedon": "2026-09-04T21:28:07Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - distribution_live - instagram",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "instagram",
+        "createdon": "2026-09-04T21:25:36Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427006\"",
+        "jm1_socialexecutionid": "8cd8a725-a7a8-f111-b8de-6045bdd69435",
+        "jm1_idempotencykey": "0baaf76ddf35cd87bcad69bc:social:distribution_live:facebook",
+        "modifiedon": "2026-09-04T21:28:07Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - distribution_live - facebook",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "facebook",
+        "createdon": "2026-09-04T21:25:36Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427008\"",
+        "jm1_socialexecutionid": "91d8a725-a7a8-f111-b8de-6045bdd69435",
+        "jm1_idempotencykey": "0baaf76ddf35cd87bcad69bc:social:distribution_live:linkedin",
+        "modifiedon": "2026-09-04T21:28:07Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - distribution_live - linkedin",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "jm1_errorcode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+        "jm1_platform": "linkedin",
+        "createdon": "2026-09-04T21:25:36Z",
+        "jm1_readbackstate": "LINKEDIN_EXTERNAL_REVIEW_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427014\"",
+        "jm1_socialexecutionid": "30f36128-a7a8-f111-b8de-000d3a14673b",
+        "jm1_idempotencykey": "0f4d548550cb73201571dcfb:social:launch_day:facebook",
+        "modifiedon": "2026-09-04T21:28:08Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - launch_day - facebook",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "facebook",
+        "createdon": "2026-09-04T21:25:38Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427016\"",
+        "jm1_socialexecutionid": "59dd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "jm1_idempotencykey": "0f4d548550cb73201571dcfb:social:launch_day:linkedin",
+        "modifiedon": "2026-09-04T21:28:08Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - launch_day - linkedin",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "jm1_errorcode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+        "jm1_platform": "linkedin",
+        "createdon": "2026-09-04T21:25:38Z",
+        "jm1_readbackstate": "LINKEDIN_EXTERNAL_REVIEW_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427015\"",
+        "jm1_socialexecutionid": "304d8e26-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_idempotencykey": "0f4d548550cb73201571dcfb:social:launch_day:instagram",
+        "modifiedon": "2026-09-04T21:28:08Z",
+        "jm1_name": "Strategies for Success in Educational Leadership - launch_day - instagram",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "instagram",
+        "createdon": "2026-09-04T21:25:38Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427023\"",
+        "jm1_socialexecutionid": "35f36128-a7a8-f111-b8de-000d3a14673b",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:social:post_launch_30:facebook",
+        "modifiedon": "2026-09-04T21:28:09Z",
+        "jm1_name": "Controlled Post-Launch Proof Title - post_launch_30 - facebook",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "facebook",
+        "createdon": "2026-09-04T21:25:39Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427025\"",
+        "jm1_socialexecutionid": "5bdd7f28-a7a8-f111-b8dd-000d3a19ee71",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:social:post_launch_30:instagram",
+        "modifiedon": "2026-09-04T21:28:10Z",
+        "jm1_name": "Controlled Post-Launch Proof Title - post_launch_30 - instagram",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "instagram",
+        "createdon": "2026-09-04T21:25:40Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427026\"",
+        "jm1_socialexecutionid": "e51cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:social:post_launch_30:linkedin",
+        "modifiedon": "2026-09-04T21:28:10Z",
+        "jm1_name": "Controlled Post-Launch Proof Title - post_launch_30 - linkedin",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "jm1_errorcode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+        "jm1_platform": "linkedin",
+        "createdon": "2026-09-04T21:25:40Z",
+        "jm1_readbackstate": "LINKEDIN_EXTERNAL_REVIEW_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427037\"",
+        "jm1_socialexecutionid": "f192b129-a7a8-f111-b8de-00224820105b",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:social:brand_education:facebook",
+        "modifiedon": "2026-09-04T21:28:11Z",
+        "jm1_name": "Helping Authors Help Themselves - brand_education - facebook",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "facebook",
+        "createdon": "2026-09-04T21:25:42Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427038\"",
+        "jm1_socialexecutionid": "f292b129-a7a8-f111-b8de-00224820105b",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:social:brand_education:instagram",
+        "modifiedon": "2026-09-04T21:28:12Z",
+        "jm1_name": "Helping Authors Help Themselves - brand_education - instagram",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "instagram",
+        "createdon": "2026-09-04T21:25:42Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427039\"",
+        "jm1_socialexecutionid": "ed1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:social:brand_education:linkedin",
+        "modifiedon": "2026-09-04T21:28:12Z",
+        "jm1_name": "Helping Authors Help Themselves - brand_education - linkedin",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "jm1_errorcode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+        "jm1_platform": "linkedin",
+        "createdon": "2026-09-04T21:25:42Z",
+        "jm1_readbackstate": "LINKEDIN_EXTERNAL_REVIEW_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427051\"",
+        "jm1_socialexecutionid": "ae93b129-a7a8-f111-b8de-00224820105b",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:social:backlist_reactivation:linkedin",
+        "modifiedon": "2026-09-04T21:28:14Z",
+        "jm1_name": "Controlled Dormant Catalog Title - backlist_reactivation - linkedin",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "jm1_errorcode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+        "jm1_platform": "linkedin",
+        "createdon": "2026-09-04T21:25:44Z",
+        "jm1_readbackstate": "LINKEDIN_EXTERNAL_REVIEW_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427050\"",
+        "jm1_socialexecutionid": "4e45a02b-a7a8-f111-b8de-6045bdd69435",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:social:backlist_reactivation:instagram",
+        "modifiedon": "2026-09-04T21:28:14Z",
+        "jm1_name": "Controlled Dormant Catalog Title - backlist_reactivation - instagram",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "instagram",
+        "createdon": "2026-09-04T21:25:44Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427049\"",
+        "jm1_socialexecutionid": "adc49229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:social:backlist_reactivation:facebook",
+        "modifiedon": "2026-09-04T21:28:13Z",
+        "jm1_name": "Controlled Dormant Catalog Title - backlist_reactivation - facebook",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "facebook",
+        "createdon": "2026-09-04T21:25:44Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427059\"",
+        "jm1_socialexecutionid": "70ba5a2e-a7a8-f111-b8de-000d3a14673b",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:social:backlist_reactivation:instagram",
+        "modifiedon": "2026-09-04T21:28:15Z",
+        "jm1_name": "The Shift: Changing with God - backlist_reactivation - instagram",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "instagram",
+        "createdon": "2026-09-04T21:25:45Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427058\"",
+        "jm1_socialexecutionid": "dcbe942f-a7a8-f111-b8de-6045bdd69678",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:social:backlist_reactivation:facebook",
+        "modifiedon": "2026-09-04T21:28:15Z",
+        "jm1_name": "The Shift: Changing with God - backlist_reactivation - facebook",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_INTERNAL_COMMISSIONING_NO_PUBLIC_POST",
+        "jm1_errorcode": "COMMISSIONING_PROOF_NO_PLATFORM_EXECUTION",
+        "jm1_platform": "facebook",
+        "createdon": "2026-09-04T21:25:45Z",
+        "jm1_readbackstate": "DATAVERSE_DERIVATION_READBACK_ONLY"
+      },
+      {
+        "@odata.etag": "W/\"51427060\"",
+        "jm1_socialexecutionid": "ddbe942f-a7a8-f111-b8de-6045bdd69678",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:social:backlist_reactivation:linkedin",
+        "modifiedon": "2026-09-04T21:28:15Z",
+        "jm1_name": "The Shift: Changing with God - backlist_reactivation - linkedin",
+        "jm1_platformpostid": null,
+        "jm1_status": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+        "jm1_errorcode": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+        "jm1_platform": "linkedin",
+        "createdon": "2026-09-04T21:25:45Z",
+        "jm1_readbackstate": "LINKEDIN_EXTERNAL_REVIEW_ONLY"
+      }
+    ],
+    "journey": [
+      {
+        "@odata.etag": "W/\"51426997\"",
+        "modifiedon": "2026-09-04T21:28:05Z",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:journey:cover_reveal",
+        "jm1_name": "Controlled Cover Approval Proof Title - cover_reveal Journey contract",
+        "jm1_journeyarchetype": "cover_reveal",
+        "jm1_journeyexecutionid": "1e689a23-a7a8-f111-b8de-6045bdd69678",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:33Z"
+      },
+      {
+        "@odata.etag": "W/\"51427005\"",
+        "modifiedon": "2026-09-04T21:28:07Z",
+        "jm1_idempotencykey": "0baaf76ddf35cd87bcad69bc:journey:distribution_live",
+        "jm1_name": "Strategies for Success in Educational Leadership - distribution_live Journey contract",
+        "jm1_journeyarchetype": "release_availability",
+        "jm1_journeyexecutionid": "28f36128-a7a8-f111-b8de-000d3a14673b",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:35Z"
+      },
+      {
+        "@odata.etag": "W/\"51427013\"",
+        "modifiedon": "2026-09-04T21:28:08Z",
+        "jm1_idempotencykey": "0f4d548550cb73201571dcfb:journey:launch_day",
+        "jm1_name": "Strategies for Success in Educational Leadership - launch_day Journey contract",
+        "jm1_journeyarchetype": "launch_day",
+        "jm1_journeyexecutionid": "264d8e26-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:37Z"
+      },
+      {
+        "@odata.etag": "W/\"51427021\"",
+        "modifiedon": "2026-09-04T21:28:09Z",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:journey:post_launch_30",
+        "jm1_name": "Controlled Post-Launch Proof Title - post_launch_30 Journey contract",
+        "jm1_journeyarchetype": "post_launch_engagement",
+        "jm1_journeyexecutionid": "34f36128-a7a8-f111-b8de-000d3a14673b",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:39Z"
+      },
+      {
+        "@odata.etag": "W/\"51427031\"",
+        "modifiedon": "2026-09-04T21:28:10Z",
+        "jm1_idempotencykey": "73808d18aaf4ca9b3294f74c:journey:inquiry_nurture",
+        "jm1_name": "Controlled Publishing author inquiry - inquiry_nurture Journey contract",
+        "jm1_journeyarchetype": "author_inquiry_nurture",
+        "jm1_journeyexecutionid": "a9c39229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:40Z"
+      },
+      {
+        "@odata.etag": "W/\"51427036\"",
+        "modifiedon": "2026-09-04T21:28:11Z",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:journey:brand_education",
+        "jm1_name": "Helping Authors Help Themselves - brand_education Journey contract",
+        "jm1_journeyarchetype": "publishing_brand_evergreen",
+        "jm1_journeyexecutionid": "b1c39229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:42Z"
+      },
+      {
+        "@odata.etag": "W/\"51427043\"",
+        "modifiedon": "2026-09-04T21:28:12Z",
+        "jm1_idempotencykey": "64ebb1ce7017d61506d0e43d:journey:reader_reengagement",
+        "jm1_name": "Leadership reader re-engagement - reader_reengagement Journey contract",
+        "jm1_journeyarchetype": "reader_reengagement",
+        "jm1_journeyexecutionid": "15c49229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:43Z"
+      },
+      {
+        "@odata.etag": "W/\"51427048\"",
+        "modifiedon": "2026-09-04T21:28:13Z",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:journey:backlist_reactivation",
+        "jm1_name": "Controlled Dormant Catalog Title - backlist_reactivation Journey contract",
+        "jm1_journeyarchetype": "backlist_reactivation",
+        "jm1_journeyexecutionid": "fa1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:44Z"
+      },
+      {
+        "@odata.etag": "W/\"51427056\"",
+        "modifiedon": "2026-09-04T21:28:15Z",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:journey:backlist_reactivation",
+        "jm1_name": "The Shift: Changing with God - backlist_reactivation Journey contract",
+        "jm1_journeyarchetype": "backlist_reactivation",
+        "jm1_journeyexecutionid": "6fba5a2e-a7a8-f111-b8de-000d3a14673b",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED",
+        "createdon": "2026-09-04T21:25:45Z"
+      }
+    ],
+    "controlLoop": [
+      {
+        "@odata.etag": "W/\"51427063\"",
+        "jm1_idempotencykey": "jmp:lifecycle:commissioning:control-loop:2026-09-04",
+        "modifiedon": "2026-09-04T21:28:15Z",
+        "jm1_name": "JMP four-lane lifecycle commissioning control loop",
+        "jm1_controldecision": "FOUR_LANE_CONCURRENT_CONTROL_LOOP_PROVEN",
+        "jm1_state": "JMP_MARKETING_LIFECYCLE_AUTONOMOUS_COMMISSIONING_PROVEN",
+        "createdon": "2026-09-04T21:25:46Z",
+        "jm1_marketingcontrolloopid": "20a03b30-a7a8-f111-b8de-00224820105b"
+      }
+    ],
+    "exception": [
+      {
+        "@odata.etag": "W/\"51427062\"",
+        "modifiedon": "2026-09-04T21:28:15Z",
+        "jm1_idempotencykey": "8747f3d029ab2c711afef8d0:exception:backlist_reactivation",
+        "jm1_name": "The Shift: Changing with God - lifecycle commissioning hold",
+        "jm1_exceptiontype": "RECENT_RELEASE_NOT_BACKLIST",
+        "jm1_resolutionstate": "HELD_BY_GOVERNED_POLICY",
+        "createdon": "2026-09-04T21:25:46Z",
+        "jm1_marketingexceptionid": "fd1cdf2c-a7a8-f111-b8de-7c1e525b15c2"
+      }
+    ]
+  },
+  "idempotency": {
+    "firstRunWrites": 10,
+    "secondRunWrites": 10,
+    "sameIds": true,
+    "duplicateCounts": {
+      "eligibility": 0,
+      "campaign": 0,
+      "content": 0,
+      "creative": 0,
+      "social": 0,
+      "journey": 0,
+      "controlLoop": 0,
+      "exception": 0
+    },
+    "result": "PASS"
+  },
+  "classifications": [
+    "FEATURED_AUTHOR_TEMPORAL_AUTHORITY_PROVEN",
+    "FEATURED_AUTHOR_MONTH_TRANSITION_AUTOMATION_PROVEN",
+    "JMP_FOUR_LANE_MARKETING_PROGRAM_REGISTRY_ACTIVE",
+    "STRATEGIES_FOR_SUCCESS_LAUNCH_MARKETING_AUTOMATION_ACTIVE",
+    "JMP_LIFECYCLE_TO_MARKETING_RUNTIME_PROVEN",
+    "JMP_ACTIVE_CATALOG_MARKETING_HEALTH_EVALUATOR_PROVEN",
+    "JMP_BRAND_EVERGREEN_CONTROL_LOOP_ACTIVE",
+    "JMP_FOUR_LANE_CONCURRENT_CONTROL_LOOP_PROVEN",
+    "JMP_MARKETING_EVENT_IDEMPOTENCY_PROVEN",
+    "JMP_MARKETING_STAGE_SUPERSESSION_PROVEN",
+    "JMP_BACKLIST_REACTIVATION_ENGINE_ACTIVE",
+    "SINTRA_KNOWLEDGE_RETENTION_COMPLETE",
+    "SINTRA_READY_FOR_FOUNDER_CANCELLATION",
+    "JM1_MARKETING_OS_ENTERPRISE_BRANCH_CONFIGURATION_READY",
+    "JMF_MARKETING_CONFIGURATION_READY_COMPLIANCE_ACTIVATION_HELD",
+    "JMP_MARKETING_LIFECYCLE_AUTONOMOUS_COMMISSIONING_PROVEN"
+  ],
+  "security": {
+    "secretsRead": false,
+    "secretsWritten": false,
+    "tokensLogged": false,
+    "publicPostsCreated": false,
+    "browserPublishing": false,
+    "sintraPublishing": false
+  }
+}
