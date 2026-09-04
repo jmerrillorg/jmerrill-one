@@ -1,0 +1,162 @@
+{
+  "artifact": "816_jm1_linkedin_external_review_closure_v1",
+  "generatedAt": "2026-09-04T20:20:51Z",
+  "program": "JM1 Enterprise Marketing Operating System",
+  "stream": "LinkedIn External Review Closure",
+  "supersedes": [
+    "815_jm1_linkedin_activation_readiness_v1"
+  ],
+  "classification": "LINKEDIN_FOUNDER_ACTION_REQUIRED",
+  "classificationDetail": "Verify jm1-admin@jmerrill.one from the LinkedIn verification email. JM1-controlled app URLs are saved and read back; Community Management API remains in LinkedIn review.",
+  "linkedinApplication": {
+    "appName": "JM1 Organization Publisher",
+    "appUrlId": "266134085",
+    "clientId": "78hqh0jqrb4y06",
+    "appType": "Standalone app",
+    "created": "2026-09-02",
+    "organizationName": "J Merrill Publishing, Inc.",
+    "organizationId": "13048648",
+    "organizationIndustry": "Book and Periodical Publishing",
+    "organizationSize": "1-10 employees",
+    "organizationVerificationState": "Verified Sep 2, 2026",
+    "scopeBoundary": "Publishing organization only; no Financial, Foundation, One, Productions, or future-branch authorization added."
+  },
+  "privacyPolicyUrl": {
+    "requestedUrl": "https://jmerrill.one/privacy",
+    "savedInLinkedInDeveloperPortal": true,
+    "liveReadback": "https://jmerrill.one/privacy",
+    "readbackTimestamp": "2026-09-04T20:19:00Z",
+    "status": "PASS"
+  },
+  "oauthRedirectUrl": {
+    "requestedUrl": "https://jmerrill.one/api/linkedin/oauth/callback",
+    "savedInLinkedInDeveloperPortal": true,
+    "liveReadback": [
+      "https://jmerrill.one/api/linkedin/oauth/callback"
+    ],
+    "readbackTimestamp": "2026-09-04T20:19:00Z",
+    "status": "PASS"
+  },
+  "businessEmail": {
+    "priorReadbackBeforeUpdate": {
+      "email": "info@jmerrill.one",
+      "verificationStatus": "Verified on Sep 04, 2026",
+      "promotionalEmailNotification": "Not subscribed"
+    },
+    "founderConfirmedAction": "Save jm1-admin@jmerrill.one as the LinkedIn Developer business email.",
+    "savedEmail": "jm1-admin@jmerrill.one",
+    "promotionalEmailNotification": "Not subscribed",
+    "liveReadback": "Pending, verification email sent to jm1-admin@jmerrill.one.",
+    "linkedinToast": "Verification email sent to updated email.",
+    "status": "PENDING_EMAIL_VERIFICATION",
+    "requiredFounderAction": "Open the verification email sent by LinkedIn to jm1-admin@jmerrill.one and complete the email-verification step."
+  },
+  "communityManagementApi": {
+    "product": "Community Management API",
+    "tier": "Development Tier",
+    "visiblePortalState": "Review in progress",
+    "readbackTimestamp": "2026-09-04T20:18:00Z",
+    "externalReviewDependency": true,
+    "additionalLinkedInQuestionsObserved": "NONE",
+    "additionalLinkedInTermsObserved": "NONE",
+    "status": "LINKEDIN_API_PRODUCT_REVIEW_PENDING"
+  },
+  "oauthScopes": {
+    "visiblePortalState": "No permissions added",
+    "expectedRuntimeScopesAfterProductApproval": [
+      "w_organization_social",
+      "r_organization_social"
+    ],
+    "accessTokenTtlVisible": "2 months (5184000 seconds)",
+    "oauthAuthorizationRouteDeployed": true,
+    "oauthAuthorizationRouteScopeRequest": [
+      "w_organization_social",
+      "r_organization_social"
+    ],
+    "tokenGenerated": false,
+    "reasonTokenHeld": "LinkedIn Community Management product authority is still in review and OAuth scopes are not visible/granted in the app portal."
+  },
+  "runtimeState": {
+    "linkedinAutonomousExecutionEnabled": false,
+    "functionAppSetting": "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED=false",
+    "productStateSetting": "JM1_LINKEDIN_PRODUCT_STATE=COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+    "heldExecutionRows": 4,
+    "heldExecutionState": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+    "platformObjectsCreated": 0,
+    "browserExecutionCount": 0,
+    "metaBusinessSuiteUiPublishing": false,
+    "sintraPublishing": false,
+    "linkedinNativeUiPublishing": false,
+    "latestObservedWorkerTick": "2026-09-04T13:00:01.9737987Z"
+  },
+  "deployedRuntimePrerequisites": {
+    "privacyPage": {
+      "url": "https://jmerrill.one/privacy",
+      "httpStatus": 200,
+      "deployedCommit": "2881b0424950f8b98a95be3d251a1c5e3840ed31"
+    },
+    "oauthCallback": {
+      "url": "https://jmerrill.one/api/linkedin/oauth/callback",
+      "readyProbeStatus": "LINKEDIN_OAUTH_CALLBACK_READY",
+      "badStateProbeStatus": "LINKEDIN_OAUTH_STATE_VALIDATION_FAILED",
+      "tokenOrCodeEchoed": false
+    },
+    "oauthStart": {
+      "url": "https://jmerrill.one/api/linkedin/oauth/start",
+      "redirectHost": "www.linkedin.com",
+      "clientId": "78hqh0jqrb4y06",
+      "redirectUri": "https://jmerrill.one/api/linkedin/oauth/callback",
+      "signedStatePresent": true
+    }
+  },
+  "security": {
+    "clientSecretShownOrCopied": false,
+    "oauthTokenGenerated": false,
+    "secretValuesRecorded": false,
+    "tokenEvidenceStored": false,
+    "knownSecretReferencesOnly": [
+      "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-CLIENT-SECRET",
+      "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-ACCESS-TOKEN",
+      "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-OAUTH-STATE-SECRET"
+    ]
+  },
+  "pullRequests": {
+    "pr24": {
+      "state": "MERGED",
+      "note": "Initial production deploy failed due TypeScript typing and was repaired by PR #25."
+    },
+    "pr25": {
+      "state": "MERGED",
+      "productionDeploy": "PASS",
+      "deployedCommit": "2881b0424950f8b98a95be3d251a1c5e3840ed31"
+    },
+    "pr26": {
+      "state": "MERGED",
+      "contains": "815 LinkedIn activation readiness boundary"
+    }
+  },
+  "sintraExitState": {
+    "state": "SINTRA_EXIT_PRECHECK_PASS",
+    "operationalConclusion": "CANCEL SINTRA - operationally safe to exit execution stack",
+    "subscriptionCancellationPerformed": false,
+    "linkedinCaveat": "LinkedIn remains held for external API product review and business-email verification, not for Sintra dependency."
+  },
+  "returnContract": {
+    "privacyUrlSavedAndReadBack": true,
+    "oauthCallbackSavedAndReadBack": true,
+    "businessEmailNoticeResolution": "jm1-admin@jmerrill.one saved; LinkedIn verification email sent; Founder email verification required.",
+    "applicationConfigCompleteness": "Privacy URL and OAuth redirect complete; OAuth scopes not yet added because product authority remains pending.",
+    "communityManagementLiveReviewState": "Review in progress",
+    "linkedinRequestedSupplementalAction": "Verify jm1-admin@jmerrill.one by email.",
+    "oauthScopeVisibility": "No permissions added",
+    "autonomousLinkedInFlag": false,
+    "heldLinkedInExecutionRowState": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+    "pr24State": "Merged; deploy repaired by PR #25.",
+    "sintraExitState": "SINTRA_EXIT_PRECHECK_PASS"
+  },
+  "nextFounderDecision": {
+    "required": true,
+    "decision": "Complete LinkedIn's verification email for jm1-admin@jmerrill.one."
+  },
+  "finalClassification": "LINKEDIN_FOUNDER_ACTION_REQUIRED - verify jm1-admin@jmerrill.one business email; Community Management API review remains external."
+}
