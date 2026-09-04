@@ -1,0 +1,204 @@
+{
+  "packageId": 814,
+  "artifact": "JM1-FINAL-PLATFORM-CLOSURE-SINTRA-EXIT-v1",
+  "generatedAt": "2026-09-04T03:01:46Z",
+  "stream": "JM1 Enterprise Marketing Operating System - Final Platform Closure + Sintra Exit",
+  "acceptedPackage812Classification": "JM1 ENTERPRISE MARKETING OPERATING SYSTEM - PUBLISHING PRODUCTION OPERATIONAL; LINKEDIN API PRODUCT REVIEW PENDING",
+  "acceptedSintraRecommendation": "CANCEL SINTRA - operationally safe to exit execution stack",
+  "linkedInLiveReviewStatus": {
+    "state": "REVIEW_IN_PROGRESS",
+    "observedAt": "2026-09-04T02:48:00Z",
+    "app": "JM1 Organization Publisher",
+    "clientId": "78hqh0jqrb4y06",
+    "appUrlId": "266134085",
+    "organization": "J Merrill Publishing, Inc.",
+    "organizationId": "13048648",
+    "source": "LinkedIn Developer UI via authenticated Founder Edge session",
+    "visibleProduct": "Community Management API",
+    "visibleTier": "Development Tier",
+    "visibleStatus": "Review in progress",
+    "oauthScopesVisible": []
+  },
+  "linkedInJm1ControlledPrerequisites": {
+    "webDeployment": {
+      "pullRequest": "https://github.com/jmerrillorg/jmerrill-one/pull/10",
+      "mergeCommit": "104655336ea157fd8d30b63579ccde5c9806ff3c",
+      "deploymentRun": "https://github.com/jmerrillorg/jmerrill-one/actions/runs/33831027808",
+      "deploymentResult": "SUCCESS",
+      "privacyUrl": {
+        "url": "https://jmerrill.one/privacy",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      "oauthCallbackUrl": {
+        "url": "https://jmerrill.one/api/linkedin/oauth/callback",
+        "status": 200,
+        "response": {
+          "status": "LINKEDIN_OAUTH_CALLBACK_READY",
+          "codeReceived": false,
+          "stateHash": null
+        }
+      },
+      "health": {
+        "url": "https://jmerrill.one/api/health",
+        "status": "ready",
+        "release": "104655336ea157fd8d30b63579ccde5c9806ff3c"
+      }
+    },
+    "functionRuntimeMetadata": {
+      "resourceGroup": "rg-jm1-ai",
+      "functionApp": "func-jm1-marketing-runtime",
+      "settingsApplied": {
+        "JM1_LINKEDIN_REDIRECT_URI": "https://jmerrill.one/api/linkedin/oauth/callback",
+        "JM1_LINKEDIN_PRIVACY_POLICY_URL": "https://jmerrill.one/privacy",
+        "JM1_LINKEDIN_API_VERSION": "202608",
+        "JM1_LINKEDIN_TOKEN_SECRET_REFERENCE": "jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-ACCESS-TOKEN"
+      },
+      "settingsNotApplied": {
+        "JM1_LINKEDIN_GRANTED_SCOPES": "Not applied because LinkedIn product scopes are not visible/granted.",
+        "JM1_LINKEDIN_ACCESS_TOKEN": "Not applied because OAuth authority is not available.",
+        "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED": "Remains false until product approval, OAuth, canary, readback, and idempotency proof."
+      }
+    },
+    "linkedInPortal": {
+      "privacyPolicyUrlSave": "PENDING_ACTION_TIME_CONFIRMATION",
+      "authorizedRedirectUrlSave": "PENDING_ACTION_TIME_CONFIRMATION",
+      "businessEmailNotice": "VISIBLE_IN_SETTINGS",
+      "reason": "Computer Use policy requires confirmation immediately before persistent OAuth/app-settings edits."
+    },
+    "classification": "JM1_WEB_AND_AZURE_PREREQUISITES_COMPLETE; LINKEDIN_PORTAL_SETTING_SAVE_PENDING_FOUNDER_ACTION_TIME_CONFIRMATION"
+  },
+  "linkedInApiRuntimeIfApproved": {
+    "currentState": "NOT_APPROVED_NOT_EXECUTED",
+    "adapter": "SOURCE_READY",
+    "requiredProofsHeld": [
+      "LINKEDIN_ORGANIZATION_POST_AUTHORITY_VERIFIED",
+      "LINKEDIN_OWNED_API_RUNTIME_PROVEN",
+      "LINKEDIN_READBACK_MATCH",
+      "LINKEDIN_PLATFORM_IDEMPOTENCY_PROVEN",
+      "LINKEDIN_POST_PUBLISH_RECONCILIATION_PROVEN",
+      "LINKEDIN_STALE_CLAIM_RECOVERY_PROVEN",
+      "LINKEDIN_SCHEDULED_AUTONOMOUS_EXECUTION_PROVEN"
+    ],
+    "blocker": "Community Management API product review remains in progress and no OAuth scopes are visible."
+  },
+  "linkedInAutonomousEnablementState": {
+    "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED": "false",
+    "reason": "LinkedIn API authority not yet granted and no live LinkedIn canary/readback/idempotency proof exists."
+  },
+  "socialStackFinalClassification": {
+    "current": "JM1_OWNED_SOCIAL_RUNTIME_PROVEN_FB_IG; LINKEDIN_API_PRODUCT_REVIEW_PENDING",
+    "notPromotedTo": "JM1_OWNED_SOCIAL_RUNTIME_PROVEN_FB_IG_LINKEDIN",
+    "reason": "LinkedIn remains externally blocked."
+  },
+  "httpsOnlyHardening": {
+    "resourceGroup": "rg-jm1-ai",
+    "functionApp": "func-jm1-marketing-runtime",
+    "before": {
+      "httpsOnly": false
+    },
+    "after": {
+      "httpsOnly": true,
+      "state": "Running",
+      "enabled": true
+    },
+    "timerIndexingAfter": [
+      "creativeWorkProcessorTimer",
+      "credentialMonitorTimer",
+      "marketingControlLoopTimer",
+      "socialExecutionWorkerTimer"
+    ],
+    "naturalTimerInvocationAfter": {
+      "operationName": "socialExecutionWorkerTimer",
+      "timestamp": "2026-09-04T03:00:00.9578402Z"
+    },
+    "exceptionsAfterChange": 0,
+    "classification": "FUNCTION_APP_HTTPS_ONLY_HARDENING_PROVEN"
+  },
+  "alwaysOnClassification": {
+    "currentAlwaysOn": false,
+    "hostingSemantics": "Consumption-style/serverless Function App; no migration performed.",
+    "classification": "ALWAYS_ON_NOT_APPLICABLE_TO_CURRENT_HOSTING_MODEL",
+    "rationale": "Timer triggers remain indexed and invoked naturally while Always On is false. A hosting-plan migration solely for Always On was not authorized."
+  },
+  "productionObservationHealth": {
+    "functionApp": "HEALTHY",
+    "timersIndexed": 4,
+    "latestNaturalSocialWorkerInvocation": "2026-09-04T03:00:00.9578402Z",
+    "recentExceptionsSinceHardening": 0,
+    "websiteHealth": {
+      "status": "ready",
+      "release": "104655336ea157fd8d30b63579ccde5c9806ff3c"
+    }
+  },
+  "octoberCampaignHealth": {
+    "campaign": "October 2026 Featured Author - Iyorwuese",
+    "state": "GOVERNED_BY_DATAVERSE_AND_JM1_RUNTIME",
+    "meta": "PROVEN_PREVIOUSLY_PRESERVED",
+    "dynamicsJourney": "PROVEN_PREVIOUSLY_PRESERVED",
+    "linkedin": "HELD_LINKEDIN_API_PRODUCT_REVIEW_PENDING",
+    "duplicates": "NO_NEW_DUPLICATES_OBSERVED_IN_THIS_CLOSEOUT",
+    "staleProofRows": "NO_MANUAL_OR_SYNTHETIC_EXECUTION_CREATED_IN_THIS_CLOSEOUT"
+  },
+  "sintraExitPrecheck": {
+    "routinePublishingExecutionDependsOnSintra": false,
+    "octoberCampaignObjectsOnlyInSintra": false,
+    "futurePublishingScheduleOnlyInSintra": false,
+    "usefulIntegrationCredentialAuthorityDependentOnSintra": false,
+    "retentionNeeded": [
+      "meaningful campaign strategy",
+      "reusable market research",
+      "approved positioning ideas",
+      "high-value historical insights"
+    ],
+    "cancellationWouldRestoreManualJackieCodyOperation": false,
+    "dynamicsJm1RuntimeMetaAuthoritative": true,
+    "classification": "SINTRA_EXIT_PRECHECK_PASS",
+    "subscriptionCancellationExecuted": false
+  },
+  "sintraArchiveRecommendation": {
+    "retain": [
+      "meaningful campaign strategy",
+      "reusable market research",
+      "approved positioning ideas",
+      "high-value historical insights"
+    ],
+    "doNotRetainByDefault": [
+      "generated schedules superseded by Dataverse",
+      "rejected creatives",
+      "mechanical evidence dumps",
+      "duplicate execution objects"
+    ],
+    "systemOfRecord": "JM1 runtime/database truth supersedes Sintra calendar state."
+  },
+  "touchAccounting": {
+    "routineFounderManualMarketingTouch": 0,
+    "routineCodyManualMarketingTouch": 0,
+    "oneTimeAdminActivationTouch": [
+      "Merged/deployed JM1 web prerequisites.",
+      "Enabled Function App HTTPS-only through Azure configuration.",
+      "Set non-secret LinkedIn runtime metadata in Azure Function App.",
+      "Read LinkedIn Developer status through authenticated browser session."
+    ],
+    "exceptionTouch": [
+      "Local generated .next build caches were cleared because the host filesystem had 103 MiB free and Computer Use could not initialize."
+    ]
+  },
+  "finalMarketingOsClassification": "JM1 ENTERPRISE MARKETING OPERATING SYSTEM - PUBLISHING PRODUCTION OPERATIONAL; LINKEDIN API PRODUCT REVIEW PENDING; FUNCTION_APP_HTTPS_ONLY_HARDENING_PROVEN; SINTRA_EXIT_PRECHECK_PASS",
+  "returnBoundary": {
+    "linkedInReturnState": "REVIEW_IN_PROGRESS",
+    "notYetEligibleFor": "LINKEDIN_EXTERNAL_REVIEW_ONLY - ALL JM1 PREREQUISITES COMPLETE",
+    "reason": "LinkedIn portal privacy/redirect settings remain pending action-time Founder confirmation for persistent app-setting edits.",
+    "requestedConfirmation": "Save https://jmerrill.one/privacy and https://jmerrill.one/api/linkedin/oauth/callback into the LinkedIn Developer app."
+  },
+  "sources": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-08",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-08",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role?view=li-lms-2026-08",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-08",
+    "https://learn.microsoft.com/en-us/azure/app-service/configure-common",
+    "https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale",
+    "https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer",
+    "https://learn.microsoft.com/en-us/azure/app-service/tls-minimum-version"
+  ]
+}

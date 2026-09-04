@@ -5,6 +5,10 @@ import {
   META_TOKEN_ROTATION_DUE_AT,
   META_TOKEN_SECRET_REFERENCE,
   META_TOKEN_SECRET_VERSION,
+  LINKEDIN_CLIENT_SECRET_REFERENCE,
+  LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
+  LINKEDIN_TOKEN_EXPIRES_AT,
+  LINKEDIN_TOKEN_SECRET_REFERENCE,
   SYNTHETIC_CREDENTIAL_MONITOR_ENABLED
 } from '../lib/config.js';
 import { entitySet, upsertByIdempotency } from '../lib/dataverse.js';
@@ -17,6 +21,9 @@ app.timer('credentialMonitorTimer', {
     const credentialSet = await entitySet('jm1_credentialmonitor');
     const marker = octoberIyorwueseMarker();
     const state = credentialState(META_TOKEN_ROTATION_DUE_AT, META_TOKEN_EXPIRES_AT);
+    const linkedinState = LINKEDIN_TOKEN_EXPIRES_AT
+      ? 'LINKEDIN_CREDENTIAL_ISSUED_MONITORING_ACTIVE'
+      : 'LINKEDIN_CREDENTIAL_NOT_ISSUED_PRODUCT_REVIEW_PENDING';
 
     const productionWrite = await upsertByIdempotency(credentialSet, 'jm1_credentialmonitorid', {
       jm1_name: 'Meta Social Publisher system-user token',
@@ -33,6 +40,23 @@ app.timer('credentialMonitorTimer', {
       jm1_replacementcredentialstate: 'NOT_STARTED',
       jm1_exceptioncode: state === 'META_CREDENTIAL_ROTATION_DUE' ? 'META_CREDENTIAL_ROTATION_DUE' : '',
       jm1_idempotencykey: `${marker}:credential:meta:system-user-token`
+    });
+
+    const linkedInWrite = await upsertByIdempotency(credentialSet, 'jm1_credentialmonitorid', {
+      jm1_name: 'LinkedIn Organization Publisher OAuth credential contract',
+      jm1_branch: 'J Merrill Publishing',
+      jm1_platform: 'LinkedIn',
+      jm1_credentialreference: LINKEDIN_TOKEN_SECRET_REFERENCE,
+      jm1_credentialtype: 'LinkedInOrganizationOAuthAccessToken',
+      jm1_secretversion: '',
+      jm1_issuedat: '',
+      jm1_expiresat: LINKEDIN_TOKEN_EXPIRES_AT,
+      jm1_rotationdueat: '',
+      jm1_lastverifiedat: envelope.startedAt,
+      jm1_currentcredentialstate: linkedinState,
+      jm1_replacementcredentialstate: 'WAITING_FOR_LINKEDIN_PRODUCT_APPROVAL_AND_OAUTH',
+      jm1_exceptioncode: LINKEDIN_TOKEN_EXPIRES_AT ? '' : 'LINKEDIN_CREDENTIAL_NOT_ISSUED_PRODUCT_REVIEW_PENDING',
+      jm1_idempotencykey: `${marker}:credential:linkedin:organization-oauth-token`
     });
 
     let syntheticWrite = null;
@@ -77,6 +101,12 @@ app.timer('credentialMonitorTimer', {
       dataverseWrite: {
         entitySet: credentialSet,
         production: productionWrite,
+        linkedin: {
+          token: linkedInWrite,
+          tokenSecretReference: LINKEDIN_TOKEN_SECRET_REFERENCE,
+          clientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
+          oauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE
+        },
         synthetic: syntheticWrite,
         syntheticException: syntheticExceptionWrite
       },

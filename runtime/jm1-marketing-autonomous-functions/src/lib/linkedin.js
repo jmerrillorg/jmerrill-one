@@ -6,7 +6,10 @@ import {
   LINKEDIN_APP_NAME,
   LINKEDIN_APP_VERIFICATION_STATE,
   LINKEDIN_CLIENT_ID,
+  LINKEDIN_CLIENT_SECRET_REFERENCE,
   LINKEDIN_GRANTED_SCOPES,
+  LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
+  LINKEDIN_ORGANIZATION_ID,
   LINKEDIN_PRIVACY_POLICY_URL,
   LINKEDIN_PRODUCT_STATE,
   LINKEDIN_REDIRECT_URI,
@@ -20,7 +23,7 @@ const SUPPORTED_IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/gif']);
 
 export function checkLinkedInAuthority(branch) {
   const configured = Boolean(LINKEDIN_CLIENT_ID && LINKEDIN_APP_ID);
-  const organizationId = branch.linkedinOrganizationId || '';
+  const organizationId = branch.linkedinOrganizationId || LINKEDIN_ORGANIZATION_ID || '';
   const verified = LINKEDIN_APP_VERIFICATION_STATE === 'VERIFIED_WITH_PUBLISHING_PAGE';
   const productApproved = LINKEDIN_PRODUCT_STATE === 'COMMUNITY_MANAGEMENT_APPROVED';
   const scopesReady = LINKEDIN_REQUIRED_SCOPES.every((scope) => LINKEDIN_GRANTED_SCOPES.includes(scope));
@@ -35,6 +38,8 @@ export function checkLinkedInAuthority(branch) {
       grantedScopes: LINKEDIN_GRANTED_SCOPES,
       redirectUri: LINKEDIN_REDIRECT_URI,
       privacyPolicyUrl: LINKEDIN_PRIVACY_POLICY_URL,
+      clientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
+      oauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
       autonomousExecutionEnabled: AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
     };
   }
@@ -51,6 +56,8 @@ export function checkLinkedInAuthority(branch) {
       grantedScopes: LINKEDIN_GRANTED_SCOPES,
       redirectUri: LINKEDIN_REDIRECT_URI,
       privacyPolicyUrl: LINKEDIN_PRIVACY_POLICY_URL,
+      clientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
+      oauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
       autonomousExecutionEnabled: AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
     };
   }
@@ -68,6 +75,8 @@ export function checkLinkedInAuthority(branch) {
       grantedScopes: LINKEDIN_GRANTED_SCOPES,
       redirectUri: LINKEDIN_REDIRECT_URI,
       privacyPolicyUrl: LINKEDIN_PRIVACY_POLICY_URL,
+      clientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
+      oauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
       autonomousExecutionEnabled: AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
     };
   }
@@ -82,6 +91,10 @@ export function checkLinkedInAuthority(branch) {
       organizationId,
       requiredScopes: LINKEDIN_REQUIRED_SCOPES,
       grantedScopes: LINKEDIN_GRANTED_SCOPES,
+      redirectUri: LINKEDIN_REDIRECT_URI,
+      privacyPolicyUrl: LINKEDIN_PRIVACY_POLICY_URL,
+      clientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
+      oauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
       autonomousExecutionEnabled: AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
     };
   }
@@ -94,7 +107,9 @@ export function checkLinkedInAuthority(branch) {
       clientId: LINKEDIN_CLIENT_ID,
       appName: LINKEDIN_APP_NAME,
       organizationId,
+      clientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
       tokenSecretReference: LINKEDIN_TOKEN_SECRET_REFERENCE,
+      oauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
       tokenExpiresAt: LINKEDIN_TOKEN_EXPIRES_AT,
       autonomousExecutionEnabled: AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
     };
@@ -110,7 +125,11 @@ export function checkLinkedInAuthority(branch) {
     requiredScopes: LINKEDIN_REQUIRED_SCOPES,
     grantedScopes: LINKEDIN_GRANTED_SCOPES,
     apiVersion: LINKEDIN_API_VERSION,
+    redirectUri: LINKEDIN_REDIRECT_URI,
+    privacyPolicyUrl: LINKEDIN_PRIVACY_POLICY_URL,
+    clientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
     tokenSecretReference: LINKEDIN_TOKEN_SECRET_REFERENCE,
+    oauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
     tokenExpiresAt: LINKEDIN_TOKEN_EXPIRES_AT,
     autonomousExecutionEnabled: AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
   };
