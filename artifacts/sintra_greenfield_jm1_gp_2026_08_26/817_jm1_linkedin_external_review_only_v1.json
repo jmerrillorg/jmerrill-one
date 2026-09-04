@@ -1,0 +1,116 @@
+{
+  "artifact": "817_jm1_linkedin_external_review_only_v1",
+  "generatedAt": "2026-09-04T20:55:45Z",
+  "program": "JM1 Enterprise Marketing Operating System",
+  "stream": "LinkedIn External Review Closure",
+  "supersedes": [
+    "816_jm1_linkedin_external_review_closure_v1"
+  ],
+  "classification": "LINKEDIN_EXTERNAL_REVIEW_ONLY",
+  "classificationDetail": "All JM1-controlled LinkedIn Developer prerequisites observed in this workstream are complete. Remaining blocker is LinkedIn Community Management API review/approval.",
+  "linkedinApplication": {
+    "appName": "JM1 Organization Publisher",
+    "appUrlId": "266134085",
+    "clientId": "78hqh0jqrb4y06",
+    "appType": "Standalone app",
+    "created": "2026-09-02",
+    "organizationName": "J Merrill Publishing, Inc.",
+    "organizationId": "13048648",
+    "organizationVerificationState": "Verified Sep 2, 2026",
+    "scopeBoundary": "Publishing organization only; no Financial, Foundation, One, Productions, or future-branch authorization added."
+  },
+  "businessEmailVerification": {
+    "email": "jm1-admin@jmerrill.one",
+    "inbox": "jm1-admin@jmerrill.one",
+    "sender": "messages-noreply@linkedin.com",
+    "messageSubject": "Verify your email address for developer platform updates",
+    "firstMessageReceivedAt": "2026-09-04T20:21:23Z",
+    "firstVerificationAttempt": "LINK_EXPIRED",
+    "resendTriggeredFromLinkedInDeveloperSettings": true,
+    "freshMessageReceivedAt": "2026-09-04T20:54:10Z",
+    "verificationPageReadback": "Congratulations, your email address jm1-admin@jmerrill.one has been successfully verified.",
+    "developerSettingsReadback": {
+      "emailAddress": "jm1-admin@jmerrill.one",
+      "verificationStatus": "Verified on Sep 04, 2026",
+      "promotionalEmailNotification": "Not subscribed"
+    },
+    "verificationTokenRecorded": false,
+    "status": "PASS"
+  },
+  "appSettingsReadback": {
+    "readbackTimestamp": "2026-09-04T20:55:00Z",
+    "privacyPolicyUrl": "https://jmerrill.one/privacy",
+    "privacyPolicyUrlStatus": "SAVED_AND_READ_BACK",
+    "businessEmailWarningVisible": false,
+    "appLogoVisible": true,
+    "companyPage": "J Merrill Publishing, Inc.",
+    "companyPageVerified": "Sep 2, 2026",
+    "status": "PASS"
+  },
+  "authReadback": {
+    "readbackTimestamp": "2026-09-04T20:55:00Z",
+    "clientId": "78hqh0jqrb4y06",
+    "accessTokenTtl": "2 months (5184000 seconds)",
+    "authorizedRedirectUrls": [
+      "https://jmerrill.one/api/linkedin/oauth/callback"
+    ],
+    "oauthScopesVisibleInAuthTab": "No permissions added",
+    "expectedRuntimeScopesAfterProductApproval": [
+      "w_organization_social",
+      "r_organization_social"
+    ],
+    "clientSecretShownOrCopied": false,
+    "oauthTokenGenerated": false,
+    "status": "PASS"
+  },
+  "communityManagementReview": {
+    "readbackTimestamp": "2026-09-04T20:55:00Z",
+    "product": "Community Management API",
+    "tier": "Development Tier",
+    "visiblePortalState": "Review in progress",
+    "endpointSurfaceVisible": true,
+    "endpointSurfaceProductVersion": "202505",
+    "representativeEndpointScopesVisible": [
+      "w_organization_social",
+      "rw_organization_admin"
+    ],
+    "scopeGrantState": "NOT_GRANTED_IN_AUTH_TAB",
+    "additionalLinkedInControlledQuestionsObserved": "NONE",
+    "additionalLinkedInLegalTermsObserved": "NONE",
+    "additionalJm1ControlledPrerequisitesObserved": "NONE",
+    "externalReviewDependency": true,
+    "status": "LINKEDIN_API_PRODUCT_REVIEW_PENDING"
+  },
+  "remainingPrerequisites": {
+    "jm1ControlledRemainingActions": 0,
+    "linkedinControlledRemainingAction": "Community Management API review/approval",
+    "oauthTokenState": "NOT_CREATED",
+    "linkedinOwnedApiPosts": 0
+  },
+  "safeRuntimeState": {
+    "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED": false,
+    "linkedinSocialExecutionRows": "HELD_EXTERNAL_PLATFORM_AUTHORITY",
+    "heldExecutionState": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+    "platformObjectsCreated": 0,
+    "browserExecutionCount": 0,
+    "metaBusinessSuiteUiPublishing": false,
+    "sintraPublishing": false,
+    "linkedinNativeUiPublishing": false
+  },
+  "security": {
+    "verificationEmailLinkRecorded": false,
+    "clientSecretRecorded": false,
+    "oauthTokenRecorded": false,
+    "apiSecretsRecorded": false,
+    "secretValuesRecorded": false
+  },
+  "returnContract": {
+    "businessEmailVerificationState": "Verified on Sep 04, 2026",
+    "communityManagementReviewState": "Review in progress",
+    "remainingJm1ControlledPrerequisites": 0,
+    "oauthScopeVisibility": "No permissions added in Auth tab; endpoint reference visible but not granted",
+    "linkedinAutonomousExecutionState": false,
+    "heldLinkedInRowState": "HELD_EXTERNAL_PLATFORM_AUTHORITY / COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING"
+  },
+  "finalClassification": "LINKEDIN_EXTERNAL_REVIEW_ONLY - ALL JM1 PREREQUISITES COMPLETE"
+}
