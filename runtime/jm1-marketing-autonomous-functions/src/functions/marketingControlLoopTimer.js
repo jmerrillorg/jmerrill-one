@@ -2,6 +2,7 @@ import { app } from '@azure/functions';
 import { BRANCH_CONFIG } from '../lib/config.js';
 import { buildContentWork, campaignMarker, resolveStageDecision } from '../lib/campaignProgram.js';
 import { dv, entitySet, queryByPrefix, safeCount, upsertByIdempotency } from '../lib/dataverse.js';
+import { evaluateFourLaneControlCycle } from '../lib/marketingLifecycle.js';
 import { activeBranches, runEnvelope } from '../lib/runtime.js';
 
 app.timer('marketingControlLoopTimer', {
@@ -31,6 +32,7 @@ app.timer('marketingControlLoopTimer', {
     const dynamicsReady = Object.values(dynamicsCounts).every((item) => item.available && item.count > 0);
     const writes = [];
     const decisions = [];
+    const fourLaneCycle = evaluateFourLaneControlCycle(defaultPublishingSignals(envelope.startedAt), envelope.startedAt);
 
     for (const campaign of campaigns) {
       const marker = campaignMarker(campaign);
@@ -96,10 +98,55 @@ app.timer('marketingControlLoopTimer', {
       ...envelope,
       dataverseRead: { campaigns: campaigns.length, dynamicsCounts },
       dataverseWrite: writes,
+      fourLaneCycle,
       decisions
     }));
   }
 });
+
+function defaultPublishingSignals(nowIso) {
+  return [
+    {
+      sourceEvent: 'LAUNCH_DAY',
+      sourceEntity: 'title',
+      sourceRecord: 'strategies-for-success',
+      title: 'Strategies for Success in Educational Leadership',
+      author: 'Sean A Crowley I',
+      subject: 'Strategies for Success in Educational Leadership',
+      releaseDate: '2026-09-22',
+      assetState: 'GOVERNED_ASSET_AVAILABLE',
+      rightsState: 'RESOLVED',
+      observedAt: nowIso,
+      priority: 'P0'
+    },
+    {
+      sourceEvent: 'JOIN_INQUIRY',
+      sourceEntity: 'publishing_prospect',
+      sourceRecord: 'controlled-author-inquiry-signal',
+      subject: 'Controlled Publishing author inquiry',
+      rightsState: 'RESOLVED',
+      observedAt: nowIso,
+      priority: 'P1'
+    },
+    {
+      sourceEvent: 'BRAND_EVERGREEN_BELOW_THRESHOLD',
+      sourceEntity: 'brand_health',
+      sourceRecord: 'helping-authors-help-themselves',
+      subject: 'Helping Authors Help Themselves',
+      assetState: 'GOVERNED_ASSET_AVAILABLE',
+      rightsState: 'RESOLVED',
+      observedAt: nowIso
+    },
+    {
+      sourceEvent: 'READER_REENGAGEMENT_DUE',
+      sourceEntity: 'reader_segment',
+      sourceRecord: 'controlled-reader-affinity-signal',
+      subject: 'Leadership reader re-engagement',
+      rightsState: 'RESOLVED',
+      observedAt: nowIso
+    }
+  ];
+}
 
 async function activeCampaigns(campaignSet) {
   const filter = encodeURIComponent("jm1_campaigntype eq 'featured_author_month' or contains(jm1_program,'Author')");

@@ -15,6 +15,14 @@ import {
   octoberIyorwueseMarker,
   septemberSeanMarker
 } from '../runtime/jm1-marketing-autonomous-functions/src/lib/runtime.js';
+import {
+  evaluateCatalogMarketingHealth,
+  evaluateFourLaneControlCycle,
+  evaluateLifecycleEvent,
+  evaluateSupersession,
+  resolveLifecycleTriggerRegistry,
+  resolveProgramRegistry
+} from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const OFFICIAL_LOGO_HASH = 'a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a';
 const nowIso = '2026-09-04T16:00:00.000Z';
@@ -92,6 +100,81 @@ const tests = [
   test('The Shift remains new/recently released, not backlist or draft', () => {
     const lifecycle = resolveTitleLifecycle(septemberSeanCampaign);
     assert.equal(lifecycle.theShift, 'NEW_RECENTLY_RELEASED_NOT_BACKLIST_NOT_DRAFT');
+  }),
+  test('Publishing four-lane program registry is active', () => {
+    const registry = resolveProgramRegistry();
+    assert.equal(registry.length, 4);
+    assert.deepEqual(registry.map((program) => program.key), ['title_author', 'author_acquisition', 'publishing_brand', 'reader_audience']);
+    assert.ok(registry.every((program) => program.state === 'ACTIVE'));
+  }),
+  test('title lifecycle trigger registry includes required release and downstream triggers', () => {
+    const registry = resolveLifecycleTriggerRegistry();
+    const events = registry.map((item) => item.event);
+    for (const required of ['COVER_APPROVED', 'DISTRIBUTION_LIVE', 'LAUNCH_DAY', 'PLUS_30', 'BACKLIST_REACTIVATION']) {
+      assert.ok(events.includes(required), `${required} missing`);
+    }
+  }),
+  test('cover approved derives marketing consequences', () => {
+    const decision = evaluateLifecycleEvent({
+      sourceEvent: 'COVER_APPROVED',
+      sourceEntity: 'controlled_lifecycle_fixture',
+      sourceRecord: 'cover-approved-proof',
+      title: 'Controlled Cover Proof',
+      author: 'Controlled Author',
+      assetState: 'GOVERNED_ASSET_AVAILABLE',
+      rightsState: 'RESOLVED'
+    });
+    assert.equal(decision.state, 'ELIGIBLE');
+    assert.equal(decision.campaignType, 'cover_reveal');
+    assert.ok(decision.derived.eligibility.endsWith(':eligibility'));
+    assert.equal(decision.derived.social.length, 3);
+  }),
+  test('distribution live supersedes stale coming soon messaging', () => {
+    const supersession = evaluateSupersession('coming_soon', {
+      sourceEvent: 'DISTRIBUTION_LIVE',
+      title: 'Controlled Distribution Proof',
+      author: 'Controlled Author',
+      assetState: 'GOVERNED_ASSET_AVAILABLE',
+      rightsState: 'RESOLVED'
+    });
+    assert.equal(supersession.state, 'SUPERSEDED_BY_NEWER_LIFECYCLE_AUTHORITY');
+  }),
+  test('same lifecycle event has stable idempotency keys', () => {
+    const event = {
+      sourceEvent: 'LAUNCH_DAY',
+      sourceEntity: 'title',
+      sourceRecord: 'strategies-for-success',
+      title: 'Strategies for Success in Educational Leadership',
+      author: 'Sean A Crowley I',
+      releaseDate: '2026-09-22',
+      assetState: 'GOVERNED_ASSET_AVAILABLE',
+      rightsState: 'RESOLVED'
+    };
+    const first = evaluateLifecycleEvent(event);
+    const second = evaluateLifecycleEvent(event);
+    assert.equal(first.marker, second.marker);
+    assert.deepEqual(first.derived, second.derived);
+  }),
+  test('four-lane control cycle evaluates every lane concurrently', () => {
+    const cycle = evaluateFourLaneControlCycle([
+      { sourceEvent: 'LAUNCH_DAY', sourceEntity: 'title', sourceRecord: 'strategies-for-success', title: 'Strategies for Success in Educational Leadership', author: 'Sean A Crowley I', releaseDate: '2026-09-22', assetState: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED' },
+      { sourceEvent: 'JOIN_INQUIRY', sourceEntity: 'publishing_prospect', sourceRecord: 'prospect-proof', subject: 'Controlled inquiry', rightsState: 'RESOLVED' },
+      { sourceEvent: 'BRAND_EVERGREEN_BELOW_THRESHOLD', sourceEntity: 'brand_health', sourceRecord: 'brand-proof', subject: 'Helping Authors Help Themselves', assetState: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED' },
+      { sourceEvent: 'READER_REENGAGEMENT_DUE', sourceEntity: 'reader_segment', sourceRecord: 'reader-proof', subject: 'Leadership reader re-engagement', rightsState: 'RESOLVED' }
+    ], nowIso);
+    assert.equal(cycle.concurrency.lanesEvaluated, 4);
+    assert.equal(cycle.concurrency.lanesWithDecisions, 4);
+    assert.equal(cycle.concurrency.starvationDetected, false);
+    assert.ok(cycle.classifications.includes('JMP_FOUR_LANE_CONCURRENT_CONTROL_LOOP_PROVEN'));
+  }),
+  test('catalog health holds The Shift from backlist reactivation', () => {
+    const health = evaluateCatalogMarketingHealth([
+      { title: 'The Shift: Changing with God', author: 'Sean A Crowley I', lifecycleState: 'BACKLIST', lastMarketedAt: '2026-09-01T00:00:00.000Z' },
+      { title: 'Controlled Dormant Catalog Title', author: 'Controlled Author', lifecycleState: 'BACKLIST', lastMarketedAt: '2026-06-01T00:00:00.000Z' }
+    ], nowIso);
+    assert.equal(health[0].recentReleaseHeld, true);
+    assert.equal(health[0].eligibleForReactivation, false);
+    assert.equal(health[1].eligibleForReactivation, true);
   }),
   test('missing official logo is blocked', () => {
     const artifact = buildCreativeArtifact({
