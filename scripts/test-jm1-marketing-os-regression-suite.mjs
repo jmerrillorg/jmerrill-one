@@ -16,12 +16,21 @@ import {
   septemberSeanMarker
 } from '../runtime/jm1-marketing-autonomous-functions/src/lib/runtime.js';
 import {
+  acquisitionSourceMap,
+  buildMarketingCommandCenter,
+  evergreenQueuePolicy,
   evaluateCatalogMarketingHealth,
   evaluateFourLaneControlCycle,
   evaluateLifecycleEvent,
   evaluateSupersession,
+  exceptionRoutingPolicy,
+  productionPublishingSignals,
+  reconcileLegacyScheduledObjects,
   resolveLifecycleTriggerRegistry,
-  resolveProgramRegistry
+  resolveProgramRegistry,
+  readerAudienceSignalFoundation,
+  selectAutonomousReactivationCandidates,
+  summarizeCatalogMarketingHealth
 } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const OFFICIAL_LOGO_HASH = 'a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a';
@@ -268,6 +277,116 @@ const tests = [
     const november = instantiateJourney(seed, { author: 'Transferability Fixture', month: '2026-11' });
     assert.equal(october.shape, november.shape);
     assert.notEqual(october.idempotencyKey, november.idempotencyKey);
+  }),
+  test('production Publishing signals evaluate all four lanes without fixture authority', () => {
+    const cycle = evaluateFourLaneControlCycle(productionPublishingSignals({
+      nowIso,
+      campaigns: [septemberSeanCampaign],
+      catalog: [{ title: 'Strategies for Success in Educational Leadership', author: 'Sean A Crowley I', publicationDate: '2026-09-22', releaseStatus: 'LAUNCH_RUNWAY', assetReadiness: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED' }],
+      audienceSignals: { evergreenQueueDepth: 4, daysSinceReaderEngagement: 44 },
+      acquisitionSignals: { hasOpenInquiry: true }
+    }), nowIso);
+    assert.equal(cycle.concurrency.lanesEvaluated, 4);
+    assert.equal(cycle.concurrency.lanesWithDecisions, 4);
+    assert.equal(cycle.concurrency.starvationDetected, false);
+  }),
+  test('healthy evergreen production signal remains in the Publishing Brand lane', () => {
+    const cycle = evaluateFourLaneControlCycle(productionPublishingSignals({
+      nowIso,
+      campaigns: [septemberSeanCampaign],
+      catalog: [{ title: 'Strategies for Success in Educational Leadership', author: 'Sean A Crowley I', publicationDate: '2026-09-22', releaseStatus: 'LAUNCH_RUNWAY', assetReadiness: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED' }],
+      audienceSignals: { evergreenQueueDepth: 30, daysSinceReaderEngagement: 10 },
+      acquisitionSignals: { hasOpenInquiry: false }
+    }), nowIso);
+    assert.equal(cycle.lanes.publishing_brand.decisions.length, 1);
+    assert.equal(cycle.lanes.author_acquisition.decisions.length, 1);
+    assert.equal(cycle.lanes.reader_audience.decisions.length, 1);
+    assert.equal(cycle.lanes.title_author.decisions.length, 1);
+  }),
+  test('legacy scheduled objects prevent duplicate autonomous execution', () => {
+    const reconciliation = reconcileLegacyScheduledObjects([
+      {
+        jm1_platform: 'facebook',
+        jm1_requesteddestination: 'J Merrill Publishing Inc',
+        jm1_requestedschedule: '2026-09-22T14:00:00Z',
+        jm1_campaign: 'Strategies launch',
+        jm1_executor: 'META_BUSINESS_SUITE_UI',
+        jm1_status: 'SCHEDULED_VERIFIED'
+      }
+    ], [
+      {
+        platform: 'facebook',
+        destination: 'J Merrill Publishing Inc',
+        scheduledFor: '2026-09-22T18:00:00Z',
+        campaign: 'Strategies launch'
+      }
+    ]);
+    assert.equal(reconciliation.legacyScheduledCount, 1);
+    assert.equal(reconciliation.duplicateEquivalentFutureCount, 1);
+    assert.equal(reconciliation.duplicatePreventionState, 'HOLD_DUPLICATE_EQUIVALENT_AUTONOMOUS_ROWS');
+  }),
+  test('catalog health summarizes production-scale states', () => {
+    const health = evaluateCatalogMarketingHealth([
+      { titleId: 'shift', title: 'The Shift: Changing with God', author: 'Sean A Crowley I', lifecycleState: 'BACKLIST', assetReadiness: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED', lastMarketedAt: '2026-08-15T00:00:00Z' },
+      { titleId: 'dormant', title: 'Source-Backed Dormant Title', author: 'J Merrill Publishing Author', lifecycleState: 'BACKLIST', assetReadiness: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED', lastMarketedAt: '2026-05-01T00:00:00Z' },
+      { titleId: 'asset-missing', title: 'Asset Missing Title', author: 'J Merrill Publishing Author', lifecycleState: 'BACKLIST', assetReadiness: 'MISSING_GOVERNED_ASSET', rightsState: 'RESOLVED', lastMarketedAt: '2026-05-01T00:00:00Z' }
+    ], nowIso);
+    const summary = summarizeCatalogMarketingHealth(health);
+    assert.equal(summary.titlesEvaluated, 3);
+    assert.equal(summary.recentReleaseHeld, 1);
+    assert.equal(summary.reactivationEligible, 1);
+    assert.equal(summary.assetException, 1);
+  }),
+  test('autonomous reactivation selection respects eligibility and capacity', () => {
+    const health = evaluateCatalogMarketingHealth([
+      { titleId: 'a', title: 'Eligible A', author: 'Author A', lifecycleState: 'BACKLIST', assetReadiness: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED', lastMarketedAt: '2026-01-01T00:00:00Z' },
+      { titleId: 'b', title: 'Eligible B', author: 'Author B', lifecycleState: 'BACKLIST', assetReadiness: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED', lastMarketedAt: '2026-02-01T00:00:00Z' },
+      { titleId: 'c', title: 'Held C', author: 'Author C', lifecycleState: 'BACKLIST', assetReadiness: 'UNKNOWN', rightsState: 'RESOLVED', lastMarketedAt: '2026-02-01T00:00:00Z' }
+    ], nowIso);
+    const selected = selectAutonomousReactivationCandidates(health, { capacity: 1 });
+    assert.equal(selected.length, 1);
+    assert.equal(selected[0].eligibleForReactivation, true);
+    assert.ok(selected[0].idempotencyKey);
+  }),
+  test('acquisition source map exits acquisition when author joins', () => {
+    const map = acquisitionSourceMap({ joinInquiry: { name: '/join form' }, joinedTheFamily: { name: 'Publishing author record' } });
+    assert.equal(map.find((item) => item.state === 'join_inquiry').classification, 'LIVE_OR_AVAILABLE');
+    assert.equal(map.find((item) => item.state === 'joined_the_family').journeyAction, 'EXIT_ACQUISITION_ENTER_AUTHOR_LIFECYCLE');
+  }),
+  test('reader audience signal foundation does not invent unavailable signals', () => {
+    const signals = readerAudienceSignalFoundation({ emailEngagement: { source: 'Dynamics interactions', classification: 'LIVE' } });
+    assert.equal(signals.find((item) => item.signal === 'email_engagement').classification, 'LIVE');
+    assert.equal(signals.find((item) => item.signal === 'title_page_visits').classification, 'NOT_AVAILABLE');
+  }),
+  test('evergreen queue policy replenishes below minimum depth', () => {
+    const policy = evergreenQueuePolicy({ currentQueueDepth: 3, minimumQueueDepth: 14 });
+    assert.equal(policy.state, 'REPLENISHMENT_DUE');
+    assert.match(policy.titleLaunchPriorityRule, /Strategies for Success/);
+  }),
+  test('exception routing suppresses routine wait states', () => {
+    const routed = exceptionRoutingPolicy([
+      { jm1_exceptiontype: 'LINKEDIN_EXTERNAL_REVIEW' },
+      { jm1_exceptiontype: 'RIGHTS_AMBIGUITY' },
+      { jm1_exceptiontype: 'WAITING_FOR_SCHEDULE' }
+    ]);
+    assert.equal(routed.founderActionableCount, 1);
+    assert.deepEqual(routed.actionableTypes, ['RIGHTS_AMBIGUITY']);
+  }),
+  test('marketing command center exposes current upcoming health exceptions and catalog', () => {
+    const commandCenter = buildMarketingCommandCenter({
+      nowIso,
+      featuredAuthor: 'Sean A Crowley I',
+      nextFeaturedAuthor: 'Iyorwuese Hagher',
+      campaigns: [septemberSeanCampaign, campaign],
+      socialRows: [{ jm1_platform: 'facebook', jm1_status: 'PUBLISHED_VERIFIED', jm1_platformpostid: 'fb_1' }],
+      journeyRows: [{ jm1_state: 'DYNAMICS_CONTROLLED_JOURNEY_PROVEN' }],
+      creativeRows: [{ jm1_assethash: OFFICIAL_LOGO_HASH }],
+      exceptionRows: [{ jm1_exceptiontype: 'RIGHTS_AMBIGUITY' }],
+      catalogHealth: evaluateCatalogMarketingHealth([{ title: 'Eligible A', author: 'Author A', lifecycleState: 'BACKLIST', assetReadiness: 'GOVERNED_ASSET_AVAILABLE', rightsState: 'RESOLVED', lastMarketedAt: '2026-01-01T00:00:00Z' }], nowIso)
+    });
+    assert.equal(commandCenter.classification, 'JM1_MARKETING_COMMAND_CENTER_OPERATIONAL');
+    assert.equal(commandCenter.current.featuredAuthor, 'Sean A Crowley I');
+    assert.equal(commandCenter.exceptions.founderActionableCount, 1);
   })
 ];
 

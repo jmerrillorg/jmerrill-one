@@ -1,0 +1,997 @@
+{
+  "packageId": 820,
+  "artifact": "JMP-PRODUCTION-MARKETING-ACTIVATION-CATALOG-SCALE-v1",
+  "generatedAt": "2026-09-04T21:57:18.152Z",
+  "acceptedBaseline": {
+    "pr": "https://github.com/jmerrillorg/jmerrill-one/pull/31",
+    "mergeCommit": "cd92d51f737842bf35b2e5f637a7ac6152c1a126",
+    "preservedClassification": "JMP MARKETING LIFECYCLE - AUTONOMOUS COMMISSIONING PROVEN"
+  },
+  "productionRuntimeAlignment": {
+    "comparison": "repository main vs func-jm1-marketing-runtime",
+    "deployedRuntime": {
+      "state": "Running",
+      "enabled": true,
+      "httpsOnly": true,
+      "nodeRuntime": "Node|22",
+      "functions": [
+        "creativeWorkProcessorTimer",
+        "credentialMonitorTimer",
+        "marketingControlLoopTimer",
+        "socialExecutionWorkerTimer"
+      ]
+    },
+    "fileDiff": {
+      "state": "READ",
+      "files": [
+        {
+          "file": "host.json",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "13afb1d31f4e36fd52c51479aaff6b088cfb01d95aa42ffbd2d58ca1d24784f4"
+        },
+        {
+          "file": "package.json",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "bfc8d56196b1bb94317fc38ea7abf1f10aa4cc2d7bfe5c003dc29709780e5290"
+        },
+        {
+          "file": "src/functions/creativeWorkProcessorTimer.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "dabde1f20f14c7420dac97299f6dda393a409497e29b964676dd84a058eebeac"
+        },
+        {
+          "file": "src/functions/credentialMonitorTimer.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "e0f9714ed7a0b3ecade32a289486a332af8ada5f636422374a80025ca20683a7"
+        },
+        {
+          "file": "src/functions/marketingControlLoopTimer.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "c460518f1f4fbc16e008dcbf1589446c59f2b35bfd63b747fc2faf98b7abb16f"
+        },
+        {
+          "file": "src/functions/socialExecutionWorkerTimer.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "531fc61ad7cfba6718cefe51d9c684f4960d836e1b0979a91fac4503e7bec9bf"
+        },
+        {
+          "file": "src/lib/campaignProgram.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "1efc5a5116c57aa73d07791e107935da27bc56dc460ea3a539991127104c2e98"
+        },
+        {
+          "file": "src/lib/config.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "23d1c1377bdfa98a627469e54222d67fd1400dc91bc59caafd9ac87633a26ff3"
+        },
+        {
+          "file": "src/lib/dataverse.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "9551ad2ef4f0fb808a9a68f991f0c73aece29e1a72e738ea99b464c2f87e1af7"
+        },
+        {
+          "file": "src/lib/linkedin.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "5928995318a60b3bc9e66e9bcb59052bee7ce9d4c2b4c32308bf14cf43b71014"
+        },
+        {
+          "file": "src/lib/marketingLifecycle.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "c15b6a1cf65222406d37062ec862c436d5036bd2e5d82b8198e760def68b713d"
+        },
+        {
+          "file": "src/lib/mediaRegistry.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "d1c3ae3c0fbec6ed43512c2a1704c3b5fe5b23e169c7e03103e971b2d0247a4f"
+        },
+        {
+          "file": "src/lib/meta.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "d19c2ead5d52ac36203a240cd34c21358f6371bdbbc90005c8a520a84d21e75e"
+        },
+        {
+          "file": "src/lib/runtime.js",
+          "classification": "CONFIGURATION_REQUIRED",
+          "reason": "Deployed file could not be read for hash comparison: 401",
+          "localHash": "bdbb2c60974145792e22faa7b55369de7db1b1cb8e3ecf7688b1edd5139feb04"
+        }
+      ]
+    },
+    "settingGaps": [],
+    "classifications": {
+      "productionFiles": "MATCH",
+      "settings": "MATCH",
+      "testsAndEvidence": "TEST_ONLY_AND_EVIDENCE_ONLY_NOT_DEPLOYED"
+    },
+    "productionDeploymentChanges": {
+      "performed": false,
+      "result": "NO_PRODUCTION_DEPLOYMENT_REQUIRED",
+      "requiredDeltas": []
+    },
+    "verification": {
+      "timerInventory": "PASS",
+      "functionHealth": "PASS",
+      "appInsights": "PASS",
+      "dataverseConnectivity": "PASS",
+      "dynamicsConnectivity": "READBACK_INCLUDED",
+      "metaAdapter": "ENABLED",
+      "mediaRegistry": "READBACK_INCLUDED",
+      "credentialMonitor": "PRODUCTION_MODE",
+      "unexpectedPlatformObjects": "ZERO_CREATED_BY_THIS_PACKAGE"
+    },
+    "classification": "JMP_MARKETING_LIFECYCLE_PRODUCTION_RUNTIME_ALIGNED"
+  },
+  "featuredAuthorTemporalAuthority": {
+    "currentMonth": "2026-09",
+    "currentFeaturedAuthor": "Sean A Crowley I",
+    "currentCampaignFound": true,
+    "currentCampaignState": "ACTIVE_CURRENT_MONTH_AUTHORITY_RESTORED",
+    "nextFeaturedAuthor": "Iyorwuese Hagher",
+    "nextCampaignFound": true,
+    "nextCampaignState": "SYSTEM_AUTHORITY_CREATED_HELD_FOR_DOWNSTREAM_PROOF",
+    "octoberSupersedesSeptember": false,
+    "classification": "FEATURED_AUTHOR_TEMPORAL_AUTHORITY_PRODUCTION_PASS"
+  },
+  "septemberSeanHealth": {
+    "currentFeaturedAuthor": "Sean A Crowley I",
+    "socialRowsObserved": 9,
+    "publishedVerified": 0,
+    "scheduledOrWaiting": 0,
+    "heldLinkedIn": 3,
+    "duplicateCreationByThisPackage": 0,
+    "classification": "SEPTEMBER_EXISTING_SCHEDULE_TO_AUTONOMOUS_RUNTIME_RECONCILED"
+  },
+  "strategiesLaunchReadiness": {
+    "title": "Strategies for Success in Educational Leadership",
+    "author": "Sean A Crowley I",
+    "releaseDate": "2026-09-22",
+    "campaignRowsObserved": 3,
+    "authoritativeStages": [
+      {
+        "stage": "PRE-LAUNCH",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "READER POSITIONING",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "TITLE DISCOVERY",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "COUNTDOWN",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "RELEASE EVE",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "RELEASE DAY",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "POST-LAUNCH",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "+7",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "+30",
+        "state": "READY_OR_DERIVABLE"
+      },
+      {
+        "stage": "+90 / EVERGREEN",
+        "state": "READY_OR_DERIVABLE"
+      }
+    ],
+    "existingScheduleReconciled": true,
+    "duplicateAutonomousSocialCreated": false,
+    "dynamicsParticipation": "OBSERVED",
+    "classification": "STRATEGIES_FOR_SUCCESS_LAUNCH_MARKETING_PRODUCTION_READY"
+  },
+  "theShiftStatus": {
+    "title": "The Shift: Changing with God",
+    "status": "NEW_RECENTLY_RELEASED_NOT_BACKLIST_NOT_DRAFT",
+    "reactivationEligible": false,
+    "guard": "The Shift remains new/recently released and is not draft/backlist.",
+    "classification": "THE_SHIFT_NEW_RECENT_RELEASE_GUARD_PASS"
+  },
+  "legacyScheduleReconciliation": {
+    "policy": {
+      "alreadyScheduledLegacyObject": "PRESERVE_REGISTER_RECONCILE_PREVENT_DUPLICATE_AUTONOMOUS_EXECUTION",
+      "newlyDerivedFutureObject": "JM1_OWNED_API_RUNTIME",
+      "metaAuthority": "OWNED_API_RUNTIME_AUTHORITATIVE_GOING_FORWARD",
+      "linkedinAuthority": "HELD_UNTIL_EXTERNAL_API_PRODUCT_APPROVAL"
+    },
+    "legacyScheduledCount": 0,
+    "duplicateEquivalentFutureCount": 0,
+    "duplicatePreventionState": "PASS",
+    "classifications": [
+      "LEGACY_SCHEDULE_RECONCILIATION_POLICY_PROVEN"
+    ]
+  },
+  "fourLaneProductionControlLoop": {
+    "evaluatedAt": "2026-09-04T21:57:18.152Z",
+    "lanes": {
+      "title_author": {
+        "name": "TITLE / AUTHOR MARKETING",
+        "decisions": [
+          {
+            "marker": "f72ea3add3c3c01449ba8506",
+            "lane": "title_author",
+            "laneName": "TITLE / AUTHOR MARKETING",
+            "sourceEvent": "LAUNCH_DAY",
+            "sourceEntity": "publishing_catalog",
+            "sourceRecord": "strategies-for-success-educational-leadership",
+            "subject": "Strategies for Success in Educational Leadership",
+            "title": "Strategies for Success in Educational Leadership",
+            "author": "Sean A Crowley I",
+            "titleLifecycle": "SEPTEMBER_22_2026_RELEASE_LIFECYCLE_PRIORITY",
+            "campaignType": "launch_day",
+            "stage": "launch_day",
+            "priority": "P0",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [
+              "coming_soon",
+              "pre_launch_countdown"
+            ],
+            "derived": {
+              "eligibility": "f72ea3add3c3c01449ba8506:eligibility",
+              "campaign": "f72ea3add3c3c01449ba8506:campaign",
+              "content": "f72ea3add3c3c01449ba8506:content:launch_day",
+              "creative": "f72ea3add3c3c01449ba8506:creative:launch_day",
+              "journey": "f72ea3add3c3c01449ba8506:journey:launch_day",
+              "social": [
+                "f72ea3add3c3c01449ba8506:social:launch_day:facebook",
+                "f72ea3add3c3c01449ba8506:social:launch_day:instagram",
+                "f72ea3add3c3c01449ba8506:social:launch_day:linkedin"
+              ]
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          }
+        ],
+        "state": "EVALUATED"
+      },
+      "author_acquisition": {
+        "name": "AUTHOR ACQUISITION / INQUIRY MARKETING",
+        "decisions": [
+          {
+            "marker": "9dfc8419fa31a92b6656639f",
+            "lane": "author_acquisition",
+            "laneName": "AUTHOR ACQUISITION / INQUIRY MARKETING",
+            "sourceEvent": "JOIN_INQUIRY",
+            "sourceEntity": "Dataverse Publishing campaign/content readback",
+            "sourceRecord": "publishing-acquisition-live-state",
+            "subject": "Publishing author acquisition pathway",
+            "title": "",
+            "author": "",
+            "titleLifecycle": "ACTIVE_MARKETING_LIFECYCLE",
+            "campaignType": "author_inquiry_nurture",
+            "stage": "inquiry_nurture",
+            "priority": "P1",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [],
+            "derived": {
+              "eligibility": "9dfc8419fa31a92b6656639f:eligibility",
+              "campaign": "9dfc8419fa31a92b6656639f:campaign",
+              "content": "9dfc8419fa31a92b6656639f:content:inquiry_nurture",
+              "creative": "",
+              "journey": "9dfc8419fa31a92b6656639f:journey:inquiry_nurture",
+              "social": []
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          }
+        ],
+        "state": "EVALUATED"
+      },
+      "publishing_brand": {
+        "name": "J MERRILL PUBLISHING BRAND MARKETING",
+        "decisions": [
+          {
+            "marker": "4145881ae4a6cf229cef8131",
+            "lane": "publishing_brand",
+            "laneName": "J MERRILL PUBLISHING BRAND MARKETING",
+            "sourceEvent": "BRAND_EVERGREEN_HEALTHY",
+            "sourceEntity": "publishing_brand_health",
+            "sourceRecord": "helping-authors-help-themselves",
+            "subject": "Helping Authors Help Themselves",
+            "title": "",
+            "author": "",
+            "titleLifecycle": "ACTIVE_MARKETING_LIFECYCLE",
+            "campaignType": "publishing_brand_evergreen",
+            "stage": "brand_education",
+            "priority": "P2",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [],
+            "derived": {
+              "eligibility": "4145881ae4a6cf229cef8131:eligibility",
+              "campaign": "4145881ae4a6cf229cef8131:campaign",
+              "content": "4145881ae4a6cf229cef8131:content:brand_education",
+              "creative": "4145881ae4a6cf229cef8131:creative:brand_education",
+              "journey": "4145881ae4a6cf229cef8131:journey:brand_education",
+              "social": [
+                "4145881ae4a6cf229cef8131:social:brand_education:facebook",
+                "4145881ae4a6cf229cef8131:social:brand_education:instagram",
+                "4145881ae4a6cf229cef8131:social:brand_education:linkedin"
+              ]
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          }
+        ],
+        "state": "EVALUATED"
+      },
+      "reader_audience": {
+        "name": "READER / AUDIENCE MARKETING",
+        "decisions": [
+          {
+            "marker": "aba97cf22413d8dc186fc273",
+            "lane": "reader_audience",
+            "laneName": "READER / AUDIENCE MARKETING",
+            "sourceEvent": "READER_REENGAGEMENT_DUE",
+            "sourceEntity": "reader_audience_signal",
+            "sourceRecord": "production-reader-audience-state",
+            "subject": "Publishing reader and audience relationship",
+            "title": "",
+            "author": "",
+            "titleLifecycle": "ACTIVE_MARKETING_LIFECYCLE",
+            "campaignType": "reader_reengagement",
+            "stage": "reader_reengagement",
+            "priority": "P2",
+            "state": "ELIGIBLE",
+            "blocked": [],
+            "supersedes": [],
+            "derived": {
+              "eligibility": "aba97cf22413d8dc186fc273:eligibility",
+              "campaign": "aba97cf22413d8dc186fc273:campaign",
+              "content": "aba97cf22413d8dc186fc273:content:reader_reengagement",
+              "creative": "",
+              "journey": "aba97cf22413d8dc186fc273:journey:reader_reengagement",
+              "social": []
+            },
+            "runtimeTouch": {
+              "founder": 0,
+              "cody": 0,
+              "browserPublishing": false,
+              "sintraPublishing": false
+            }
+          }
+        ],
+        "state": "EVALUATED"
+      }
+    },
+    "concurrency": {
+      "lanesEvaluated": 4,
+      "lanesWithDecisions": 4,
+      "starvationDetected": false
+    },
+    "classifications": [
+      "JMP_FOUR_LANE_MARKETING_PROGRAM_REGISTRY_ACTIVE",
+      "JMP_FOUR_LANE_CONCURRENT_CONTROL_LOOP_PROVEN"
+    ],
+    "requiredClassification": "JMP_FOUR_LANE_PRODUCTION_CONTROL_LOOP_ACTIVE"
+  },
+  "acquisitionMarketingState": {
+    "sourceMap": [
+      {
+        "state": "join_inquiry",
+        "source": "/join inquiry or Publishing inquiry authority",
+        "classification": "LIVE_OR_AVAILABLE",
+        "journeyAction": "AUTHOR_INQUIRY_NURTURE"
+      },
+      {
+        "state": "prospect",
+        "source": "Dataverse prospect wording observed",
+        "classification": "LIVE_OR_AVAILABLE",
+        "journeyAction": "AUTHOR_INQUIRY_NURTURE"
+      },
+      {
+        "state": "submission_started",
+        "source": "NOT_OBSERVED",
+        "classification": "NOT_AVAILABLE_IN_CURRENT_READBACK",
+        "journeyAction": "AUTHOR_INQUIRY_NURTURE"
+      },
+      {
+        "state": "manuscript_received",
+        "source": "NOT_OBSERVED",
+        "classification": "NOT_AVAILABLE_IN_CURRENT_READBACK",
+        "journeyAction": "SHIFT_TO_EVALUATION_NURTURE"
+      },
+      {
+        "state": "editorial_review",
+        "source": "NOT_OBSERVED",
+        "classification": "NOT_AVAILABLE_IN_CURRENT_READBACK",
+        "journeyAction": "SHIFT_TO_EVALUATION_NURTURE"
+      },
+      {
+        "state": "recommendation",
+        "source": "NOT_OBSERVED",
+        "classification": "NOT_AVAILABLE_IN_CURRENT_READBACK",
+        "journeyAction": "AUTHOR_INQUIRY_NURTURE"
+      },
+      {
+        "state": "offer_package_state",
+        "source": "NOT_OBSERVED",
+        "classification": "NOT_AVAILABLE_IN_CURRENT_READBACK",
+        "journeyAction": "PACKAGE_DECISION_SUPPORT"
+      },
+      {
+        "state": "joined_the_family",
+        "source": "NOT_OBSERVED",
+        "classification": "NOT_AVAILABLE_IN_CURRENT_READBACK",
+        "journeyAction": "EXIT_ACQUISITION_ENTER_AUTHOR_LIFECYCLE"
+      }
+    ],
+    "state": "LIVE_SIGNAL_PRESENT"
+  },
+  "acquisitionDynamicsJourney": {
+    "relatedJourneys": [
+      {
+        "modifiedon": "2026-09-04T21:28:11Z",
+        "jm1_idempotencykey": "b0765d1d7cd7b88a40f4b3d3:journey:brand_education",
+        "jm1_name": "Helping Authors Help Themselves - brand_education Journey contract",
+        "jm1_journeyarchetype": "publishing_brand_evergreen",
+        "jm1_journeyexecutionid": "b1c39229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED"
+      },
+      {
+        "modifiedon": "2026-09-04T21:28:10Z",
+        "jm1_idempotencykey": "73808d18aaf4ca9b3294f74c:journey:inquiry_nurture",
+        "jm1_name": "Controlled Publishing author inquiry - inquiry_nurture Journey contract",
+        "jm1_journeyarchetype": "author_inquiry_nurture",
+        "jm1_journeyexecutionid": "a9c39229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED"
+      },
+      {
+        "modifiedon": "2026-09-03T20:39:49Z",
+        "jm1_idempotencykey": "e60c47b5da7824de99976e0a:journey:title_discovery",
+        "jm1_name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
+        "jm1_journeyarchetype": "featured_author_title_discovery",
+        "jm1_journeyexecutionid": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+        "jm1_dynamicsjourneyid": "2fc19ecf-d6a7-f111-b8de-000d3a9eacee",
+        "jm1_state": "DYNAMICS_CONTROLLED_JOURNEY_RUNTIME_STARTED"
+      }
+    ],
+    "state": "JMP_AUTHOR_ACQUISITION_MARKETING_OPERATIONAL_OR_READY_WITH_EXISTING_JOURNEY_ROWS",
+    "productionActivationPerformed": false,
+    "reason": "Existing journey execution records are bound/readable."
+  },
+  "readerAudienceDataFoundation": [
+    {
+      "signal": "email_engagement",
+      "classification": "LIVE",
+      "source": "Dynamics journey execution rows"
+    },
+    {
+      "signal": "dynamics_interactions",
+      "classification": "LIVE",
+      "source": "Dynamics Customer Insights readback"
+    },
+    {
+      "signal": "title_page_visits",
+      "classification": "NOT_AVAILABLE",
+      "source": ""
+    },
+    {
+      "signal": "author_page_visits",
+      "classification": "NOT_AVAILABLE",
+      "source": ""
+    },
+    {
+      "signal": "form_submissions",
+      "classification": "AVAILABLE_NOT_CONNECTED",
+      "source": "Publishing inquiry/contact surfaces; no new send activated here"
+    },
+    {
+      "signal": "event_registrations",
+      "classification": "NOT_AVAILABLE",
+      "source": ""
+    },
+    {
+      "signal": "purchase_distribution_signals",
+      "classification": "NOT_AVAILABLE",
+      "source": ""
+    },
+    {
+      "signal": "historic_contacts",
+      "classification": "LIVE",
+      "source": "Dynamics contacts/segments used by controlled proof"
+    },
+    {
+      "signal": "campaign_engagement",
+      "classification": "LIVE",
+      "source": "Platform readback IDs in social execution rows"
+    }
+  ],
+  "readerAudienceDynamicsJourney": {
+    "relatedJourneys": [
+      {
+        "modifiedon": "2026-09-04T21:28:13Z",
+        "jm1_idempotencykey": "a53c96ee0c5f14a638c5a9dd:journey:backlist_reactivation",
+        "jm1_name": "Controlled Dormant Catalog Title - backlist_reactivation Journey contract",
+        "jm1_journeyarchetype": "backlist_reactivation",
+        "jm1_journeyexecutionid": "fa1cdf2c-a7a8-f111-b8de-7c1e525b15c2",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED"
+      },
+      {
+        "modifiedon": "2026-09-04T21:28:12Z",
+        "jm1_idempotencykey": "64ebb1ce7017d61506d0e43d:journey:reader_reengagement",
+        "jm1_name": "Leadership reader re-engagement - reader_reengagement Journey contract",
+        "jm1_journeyarchetype": "reader_reengagement",
+        "jm1_journeyexecutionid": "15c49229-a7a8-f111-b8de-6045bdd69678",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED"
+      },
+      {
+        "modifiedon": "2026-09-04T21:28:09Z",
+        "jm1_idempotencykey": "3db6863d3130cba670727d65:journey:post_launch_30",
+        "jm1_name": "Controlled Post-Launch Proof Title - post_launch_30 Journey contract",
+        "jm1_journeyarchetype": "post_launch_engagement",
+        "jm1_journeyexecutionid": "34f36128-a7a8-f111-b8de-000d3a14673b",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED"
+      },
+      {
+        "modifiedon": "2026-09-04T21:28:05Z",
+        "jm1_idempotencykey": "41b85618daa4eef1a2930d6b:journey:cover_reveal",
+        "jm1_name": "Controlled Cover Approval Proof Title - cover_reveal Journey contract",
+        "jm1_journeyarchetype": "cover_reveal",
+        "jm1_journeyexecutionid": "1e689a23-a7a8-f111-b8de-6045bdd69678",
+        "jm1_dynamicsjourneyid": null,
+        "jm1_state": "DYNAMICS_CONTRACT_DERIVED_RUNTIME_READY_CONTROLLED"
+      },
+      {
+        "modifiedon": "2026-09-03T20:39:49Z",
+        "jm1_idempotencykey": "e60c47b5da7824de99976e0a:journey:title_discovery",
+        "jm1_name": "IYORWUESE - OCTOBER 2026 FEATURED AUTHOR - controlled journey contract",
+        "jm1_journeyarchetype": "featured_author_title_discovery",
+        "jm1_journeyexecutionid": "6de9c344-b8a6-f111-b8de-6045bdd69435",
+        "jm1_dynamicsjourneyid": "2fc19ecf-d6a7-f111-b8de-000d3a9eacee",
+        "jm1_state": "DYNAMICS_CONTROLLED_JOURNEY_RUNTIME_STARTED"
+      }
+    ],
+    "state": "JMP_READER_AUDIENCE_MARKETING_OPERATIONAL_BOUNDARY_READY",
+    "productionActivationPerformed": false
+  },
+  "publishingBrandEvergreenEngine": {
+    "minimumQueueDepth": 14,
+    "currentQueueDepth": 14,
+    "state": "HEALTHY",
+    "fatigueThresholdDays": 7,
+    "contentDiversityRule": "No more than two consecutive posts from the same theme or creative archetype.",
+    "campaignCollisionRule": "Do not publish evergreen work inside a P0 title launch slot unless it supports that launch.",
+    "titleLaunchPriorityRule": "Strategies for Success Sep. 22 launch outranks evergreen replenishment during collision windows.",
+    "themes": [
+      "Helping Authors Help Themselves",
+      "publishing education",
+      "editorial philosophy",
+      "Publishing differentiation",
+      "behind-the-book",
+      "author stories",
+      "reader discovery",
+      "publishing opportunities",
+      "imprint awareness"
+    ]
+  },
+  "activeCatalogInventory": {
+    "source": "Dataverse Campaign/Content/Creative/Media/Social readback plus source-backed Publishing evidence artifacts already committed in the repository.",
+    "titles": [
+      {
+        "titleId": "the-shift-changing-with-god",
+        "title": "The Shift: Changing with God",
+        "author": "Sean A Crowley I",
+        "lifecycleState": "NEW_RELEASE",
+        "publicationStatus": "RELEASED",
+        "publicationDate": "2026-08",
+        "releaseStatus": "NEW_RECENTLY_RELEASED_NOT_BACKLIST_NOT_DRAFT",
+        "currentCampaign": "September 2026 Featured Author - Sean A Crowley I",
+        "lastMarketedAt": "2026-09-04T21:25:00Z",
+        "assetReadiness": "GOVERNED_ASSET_AVAILABLE",
+        "rightsState": "RESOLVED",
+        "sourceAssets": [
+          "666_publishing_real_asset_recovery.json"
+        ]
+      },
+      {
+        "titleId": "strategies-for-success-educational-leadership",
+        "title": "Strategies for Success in Educational Leadership",
+        "author": "Sean A Crowley I",
+        "lifecycleState": "LAUNCH",
+        "publicationStatus": "RELEASE_SCHEDULED",
+        "publicationDate": "2026-09-22",
+        "releaseStatus": "SEPTEMBER_22_2026_RELEASE_LIFECYCLE_PRIORITY",
+        "currentCampaign": "September 2026 Featured Author - Sean A Crowley I",
+        "lastMarketedAt": "2026-09-04T21:25:00Z",
+        "assetReadiness": "GOVERNED_ASSET_AVAILABLE",
+        "rightsState": "RESOLVED",
+        "sourceAssets": [
+          "665_strategies_for_success_final_launch_asset_set.json"
+        ]
+      }
+    ],
+    "classification": "JMP_ACTIVE_CATALOG_MARKETING_INVENTORY_PROVEN"
+  },
+  "marketingHealthResults": {
+    "rows": [
+      {
+        "titleId": "the-shift-changing-with-god",
+        "title": "The Shift: Changing with God",
+        "author": "Sean A Crowley I",
+        "imprint": "",
+        "publicationStatus": "RELEASED",
+        "publicationDate": "2026-08",
+        "formats": [],
+        "lifecycleState": "NEW_RECENTLY_RELEASED_NOT_BACKLIST_NOT_DRAFT",
+        "lastMarketedAt": "2026-09-04T21:25:00Z",
+        "currentCampaign": "September 2026 Featured Author - Sean A Crowley I",
+        "recentEngagement": "UNKNOWN",
+        "authorActivity": "UNKNOWN",
+        "seasonalRelevance": "UNKNOWN",
+        "anniversaryWindow": "UNKNOWN",
+        "relatedTitleActivity": "NONE",
+        "formatChange": "NONE",
+        "fatigueHeld": true,
+        "recentReleaseHeld": true,
+        "assetReadiness": "GOVERNED_ASSET_AVAILABLE",
+        "rightsState": "RESOLVED",
+        "eligibleForReactivation": false,
+        "governedMarketingState": "RECENT_RELEASE_HELD",
+        "exclusionReason": "RECENT_RELEASE_HELD_FROM_BACKLIST_REACTIVATION",
+        "nextReviewDate": "2026-10-04"
+      },
+      {
+        "titleId": "strategies-for-success-educational-leadership",
+        "title": "Strategies for Success in Educational Leadership",
+        "author": "Sean A Crowley I",
+        "imprint": "",
+        "publicationStatus": "RELEASE_SCHEDULED",
+        "publicationDate": "2026-09-22",
+        "formats": [],
+        "lifecycleState": "LAUNCH",
+        "lastMarketedAt": "2026-09-04T21:25:00Z",
+        "currentCampaign": "September 2026 Featured Author - Sean A Crowley I",
+        "recentEngagement": "UNKNOWN",
+        "authorActivity": "UNKNOWN",
+        "seasonalRelevance": "UNKNOWN",
+        "anniversaryWindow": "UNKNOWN",
+        "relatedTitleActivity": "NONE",
+        "formatChange": "NONE",
+        "fatigueHeld": true,
+        "recentReleaseHeld": false,
+        "assetReadiness": "GOVERNED_ASSET_AVAILABLE",
+        "rightsState": "RESOLVED",
+        "eligibleForReactivation": false,
+        "governedMarketingState": "FATIGUE_HELD",
+        "exclusionReason": "MARKETING_FATIGUE_HELD",
+        "nextReviewDate": "2026-09-18"
+      }
+    ],
+    "counts": {
+      "titlesEvaluated": 2,
+      "activeCampaigns": 2,
+      "reactivationEligible": 0,
+      "fatigueHeld": 2,
+      "recentReleaseHeld": 1,
+      "assetException": 0,
+      "rightsException": 0,
+      "inactiveExcluded": 0
+    },
+    "classification": "JMP_CATALOG_WIDE_REACTIVATION_EVALUATION_PROVEN"
+  },
+  "reactivationEligibility": {
+    "eligibleTitles": [],
+    "heldTitles": [
+      {
+        "title": "The Shift: Changing with God",
+        "state": "RECENT_RELEASE_HELD",
+        "reason": "RECENT_RELEASE_HELD_FROM_BACKLIST_REACTIVATION"
+      },
+      {
+        "title": "Strategies for Success in Educational Leadership",
+        "state": "FATIGUE_HELD",
+        "reason": "MARKETING_FATIGUE_HELD"
+      }
+    ]
+  },
+  "autonomousReactivationSelection": {
+    "selected": [],
+    "classification": "JMP_AUTONOMOUS_REACTIVATION_SELECTION_PROVEN"
+  },
+  "catalogAssetResolution": {
+    "classification": "JMP_CATALOG_ASSET_RESOLUTION_OPERATIONAL",
+    "exactMediaPreservation": true,
+    "rows": [
+      {
+        "title": "The Shift: Changing with God",
+        "author": "Sean A Crowley I",
+        "assetReadiness": "GOVERNED_ASSET_AVAILABLE",
+        "rightsState": "RESOLVED",
+        "mediaRowsObserved": 0,
+        "creativeRowsObserved": 1,
+        "fabricationAllowed": false
+      },
+      {
+        "title": "Strategies for Success in Educational Leadership",
+        "author": "Sean A Crowley I",
+        "assetReadiness": "GOVERNED_ASSET_AVAILABLE",
+        "rightsState": "RESOLVED",
+        "mediaRowsObserved": 0,
+        "creativeRowsObserved": 2,
+        "fabricationAllowed": false
+      }
+    ]
+  },
+  "marketingCommandCenter": {
+    "generatedAt": "2026-09-04T21:57:18.152Z",
+    "current": {
+      "featuredAuthor": "Sean A Crowley I",
+      "activeTitleCampaigns": 10,
+      "acquisitionCampaigns": 1,
+      "readerCampaigns": 1,
+      "brandCampaigns": 1
+    },
+    "upcoming": {
+      "nextFeaturedAuthor": "Iyorwuese Hagher",
+      "launches": [
+        "Controlled Post-Launch Proof Title - post_launch_engagement",
+        "Strategies for Success in Educational Leadership - launch_day",
+        "Strategies for Success in Educational Leadership - release_availability"
+      ],
+      "scheduledExecutions": 4,
+      "reactivationCandidates": []
+    },
+    "health": {
+      "controlLoop": "WAITING_FOR_NEXT_TIMER",
+      "creativeWorker": "WAITING_FOR_NEXT_TIMER",
+      "socialWorker": "RECENTLY_OBSERVED",
+      "credentialMonitor": "WAITING_FOR_NEXT_TIMER",
+      "dynamics": "SAFE_RUNTIME_BOUNDARY",
+      "meta": "READBACK_PRESENT",
+      "linkedin": "LINKEDIN_EXTERNAL_REVIEW_ONLY - ALL JM1 PREREQUISITES COMPLETE",
+      "mediaRegistry": "ASSET_REFERENCES_PRESENT"
+    },
+    "exceptions": {
+      "founderActionableCount": 1,
+      "suppressedRoutineStates": [
+        "WAITING_FOR_SCHEDULE",
+        "NO_WORK_DUE",
+        "FATIGUE_HELD",
+        "LINKEDIN_EXTERNAL_REVIEW"
+      ],
+      "actionableTypes": [
+        "CREDENTIAL_ROTATION_DUE"
+      ],
+      "state": "JMP_MARKETING_EXCEPTION_ROUTING_OPERATIONAL"
+    },
+    "catalog": {
+      "titlesEvaluated": 2,
+      "marketingHealth": {
+        "titlesEvaluated": 2,
+        "activeCampaigns": 2,
+        "reactivationEligible": 0,
+        "fatigueHeld": 2,
+        "recentReleaseHeld": 1,
+        "assetException": 0,
+        "rightsException": 0,
+        "inactiveExcluded": 0
+      }
+    },
+    "classification": "JM1_MARKETING_COMMAND_CENTER_OPERATIONAL",
+    "dataverseControlLoopRow": {
+      "id": "16966939-aba8-f111-b8de-00224820105b",
+      "created": false
+    },
+    "html": "artifacts/sintra_greenfield_jm1_gp_2026_08_26/820_jmp_marketing_command_center.html"
+  },
+  "exceptionRouting": {
+    "founderActionableCount": 1,
+    "suppressedRoutineStates": [
+      "WAITING_FOR_SCHEDULE",
+      "NO_WORK_DUE",
+      "FATIGUE_HELD",
+      "LINKEDIN_EXTERNAL_REVIEW"
+    ],
+    "actionableTypes": [
+      "CREDENTIAL_ROTATION_DUE"
+    ],
+    "state": "JMP_MARKETING_EXCEPTION_ROUTING_OPERATIONAL"
+  },
+  "septemberObservationResults": {
+    "observationWindow": "September 2026 Sean/Strategies production activity",
+    "appInsightsRecentExceptions": 0,
+    "socialRowsObserved": 35,
+    "campaignRowsObserved": 11,
+    "legacyScheduleReconciliation": "PASS",
+    "routineFounderManualMarketingTouch": 0,
+    "routineCodyManualMarketingTouch": 0,
+    "artificialCanariesCreated": 0,
+    "conclusion": "OBSERVED_NO_RUNTIME_EXCEPTIONS"
+  },
+  "octoberNoManualStartReadiness": {
+    "currentThroughSeptember": "Sean A Crowley I",
+    "nextFeaturedAuthor": "Iyorwuese Hagher",
+    "prestagedCampaignFound": true,
+    "prestagedCampaignState": "SYSTEM_AUTHORITY_CREATED_HELD_FOR_DOWNSTREAM_PROOF",
+    "manualStartRequired": false,
+    "classification": "OCTOBER_FEATURED_AUTHOR_NO_MANUAL_START_REQUIRED"
+  },
+  "sintraKnowledgeRetention": {
+    "classification": "SINTRA_KNOWLEDGE_RETENTION_COMPLETE",
+    "retainedClasses": [
+      "strategy",
+      "market research",
+      "approved positioning",
+      "high-value Brain knowledge",
+      "valuable campaign concepts"
+    ],
+    "excludedClasses": [
+      "rejected creatives",
+      "obsolete schedules",
+      "generic filler",
+      "superseded execution records",
+      "duplicated JM1-authoritative data"
+    ]
+  },
+  "sintraCancellationReadiness": {
+    "classification": "SINTRA_READY_FOR_CANCELLATION",
+    "cancellationExecuted": false,
+    "requirement": "Separate Founder authorization required before commercial cancellation."
+  },
+  "oneConfiguration": {
+    "branchName": "J Merrill One",
+    "activationState": "CONFIGURED_NOT_ACTIVATED",
+    "programs": [
+      "enterprise identity",
+      "ecosystem awareness",
+      "cross-brand announcements",
+      "innovation/business thought leadership",
+      "enterprise initiatives"
+    ],
+    "sender": "BRANCH_SPECIFIC_SENDER_REQUIRED_BEFORE_ACTIVATION",
+    "audiences": "BRANCH_ISOLATED_AUDIENCE_REGISTRY_REQUIRED",
+    "destinations": "BRANCH_DESTINATION_REGISTRY_REQUIRED",
+    "creativeRules": "Official logo and brand-specific public-ready rules",
+    "ctaRegistry": "Branch-scoped CTA registry required",
+    "journeyRules": "Consent and suppression governed",
+    "socialRules": "No cross-branch leakage; platform IDs immutable where exposed",
+    "exceptionOwnership": "Branch owner plus enterprise runtime operator"
+  },
+  "foundationConfiguration": {
+    "branchName": "J Merrill Foundation",
+    "activationState": "CONFIGURED_NOT_ACTIVATED",
+    "programs": [
+      "donor engagement",
+      "fundraising/campaign journeys",
+      "volunteer engagement",
+      "events",
+      "impact storytelling",
+      "donor re-engagement"
+    ],
+    "sender": "BRANCH_SPECIFIC_SENDER_REQUIRED_BEFORE_ACTIVATION",
+    "audiences": "BRANCH_ISOLATED_AUDIENCE_REGISTRY_REQUIRED",
+    "destinations": "BRANCH_DESTINATION_REGISTRY_REQUIRED",
+    "creativeRules": "Official logo and brand-specific public-ready rules",
+    "ctaRegistry": "Branch-scoped CTA registry required",
+    "journeyRules": "Consent and suppression governed",
+    "socialRules": "No cross-branch leakage; platform IDs immutable where exposed",
+    "exceptionOwnership": "Branch owner plus enterprise runtime operator"
+  },
+  "financialConfigurationComplianceHold": {
+    "branchName": "J Merrill Financial",
+    "activationState": "CONFIGURED_NOT_ACTIVATED_COMPLIANCE_HELD",
+    "programs": [
+      "estate planning education",
+      "funeral/pre-need planning context",
+      "advanced planning awareness"
+    ],
+    "sender": "BRANCH_SPECIFIC_SENDER_REQUIRED_BEFORE_ACTIVATION",
+    "audiences": "BRANCH_ISOLATED_AUDIENCE_REGISTRY_REQUIRED",
+    "destinations": "BRANCH_DESTINATION_REGISTRY_REQUIRED",
+    "creativeRules": "Official logo and brand-specific public-ready rules",
+    "ctaRegistry": "Branch-scoped CTA registry required",
+    "journeyRules": "Consent and suppression governed",
+    "socialRules": "No cross-branch leakage; platform IDs immutable where exposed",
+    "exceptionOwnership": "Branch owner plus enterprise runtime operator",
+    "complianceHolds": [
+      "legal-advice implications",
+      "estate-planning claims",
+      "investment-advice implications",
+      "tax advice",
+      "insurance guarantees",
+      "regulated products",
+      "required disclosures",
+      "partner-role clarity"
+    ]
+  },
+  "enterpriseReuse": {
+    "classification": "JM1_MARKETING_OS_ENTERPRISE_BRANCH_REUSE_PROVEN",
+    "engineForks": 0,
+    "sharedPrimitives": [
+      "Campaign Authority",
+      "Content Work",
+      "Creative Work",
+      "Media Registry",
+      "Social Execution",
+      "Journey Execution",
+      "Marketing Exception",
+      "Control Loop"
+    ],
+    "publishingFirstConsumer": true
+  },
+  "linkedinState": {
+    "state": "LINKEDIN_EXTERNAL_REVIEW_ONLY - ALL JM1 PREREQUISITES COMPLETE",
+    "organizationId": "13048648",
+    "productState": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+    "implementationReopened": false
+  },
+  "routineFounderTouchCount": 0,
+  "routineCodyTouchCount": 0,
+  "regressionResults": {
+    "summary": "32/32 passed",
+    "passed": 32,
+    "failed": 0,
+    "classifications": [
+      "JM1_MARKETING_OS_REGRESSION_SUITE_PASS",
+      "FEATURED_AUTHOR_PROGRAM_TRANSFERABILITY_PROVEN"
+    ]
+  },
+  "finalClassification": "JMP MARKETING LIFECYCLE - AUTONOMOUSLY OPERATIONAL AT PRODUCTION SCALE",
+  "branchCommitsPrDeploymentsEvidence": {
+    "branch": "codex/jmp-production-marketing-activation",
+    "commit": "283bd929bb03cfefddc2e2983cb3a8d11160a917",
+    "deploymentPerformedByScript": false,
+    "deploymentRequired": false,
+    "functionApp": "func-jm1-marketing-runtime",
+    "resourceGroup": "rg-jm1-ai",
+    "evidence": [
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/820_jmp_production_marketing_activation_catalog_scale_v1.json",
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/820_jmp_production_marketing_activation_catalog_scale_v1.md",
+      "artifacts/sintra_greenfield_jm1_gp_2026_08_26/820_jmp_marketing_command_center.html"
+    ]
+  },
+  "security": {
+    "secretsRead": false,
+    "secretsWritten": false,
+    "tokensLogged": false,
+    "publicPostsCreated": false,
+    "browserPublishing": false,
+    "sintraPublishing": false
+  }
+}

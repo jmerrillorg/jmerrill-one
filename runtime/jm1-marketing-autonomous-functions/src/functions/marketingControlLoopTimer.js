@@ -2,7 +2,7 @@ import { app } from '@azure/functions';
 import { BRANCH_CONFIG } from '../lib/config.js';
 import { buildContentWork, campaignMarker, resolveStageDecision } from '../lib/campaignProgram.js';
 import { dv, entitySet, queryByPrefix, safeCount, upsertByIdempotency } from '../lib/dataverse.js';
-import { evaluateFourLaneControlCycle } from '../lib/marketingLifecycle.js';
+import { evaluateFourLaneControlCycle, productionPublishingSignals } from '../lib/marketingLifecycle.js';
 import { activeBranches, runEnvelope } from '../lib/runtime.js';
 
 app.timer('marketingControlLoopTimer', {
@@ -32,7 +32,19 @@ app.timer('marketingControlLoopTimer', {
     const dynamicsReady = Object.values(dynamicsCounts).every((item) => item.available && item.count > 0);
     const writes = [];
     const decisions = [];
-    const fourLaneCycle = evaluateFourLaneControlCycle(defaultPublishingSignals(envelope.startedAt), envelope.startedAt);
+    const fourLaneCycle = evaluateFourLaneControlCycle(productionPublishingSignals({
+      nowIso: envelope.startedAt,
+      campaigns,
+      audienceSignals: {
+        evergreenQueueDepth: Number(process.env.JM1_PUBLISHING_EVERGREEN_QUEUE_DEPTH || 0),
+        daysSinceReaderEngagement: Number(process.env.JM1_PUBLISHING_READER_ENGAGEMENT_AGE_DAYS || 31)
+      },
+      acquisitionSignals: {
+        hasOpenInquiry: process.env.JM1_PUBLISHING_AUTHOR_ACQUISITION_SIGNAL === 'open_inquiry',
+        sourceEntity: 'production_marketing_control_loop'
+      },
+      catalog: productionCatalogSignals()
+    }), envelope.startedAt);
 
     for (const campaign of campaigns) {
       const marker = campaignMarker(campaign);
@@ -104,46 +116,17 @@ app.timer('marketingControlLoopTimer', {
   }
 });
 
-function defaultPublishingSignals(nowIso) {
+function productionCatalogSignals() {
   return [
     {
-      sourceEvent: 'LAUNCH_DAY',
-      sourceEntity: 'title',
-      sourceRecord: 'strategies-for-success',
+      titleId: 'strategies-for-success-educational-leadership',
       title: 'Strategies for Success in Educational Leadership',
       author: 'Sean A Crowley I',
-      subject: 'Strategies for Success in Educational Leadership',
-      releaseDate: '2026-09-22',
-      assetState: 'GOVERNED_ASSET_AVAILABLE',
+      publicationDate: '2026-09-22',
+      releaseStatus: 'LAUNCH_RUNWAY',
+      assetReadiness: 'GOVERNED_ASSET_AVAILABLE',
       rightsState: 'RESOLVED',
-      observedAt: nowIso,
-      priority: 'P0'
-    },
-    {
-      sourceEvent: 'JOIN_INQUIRY',
-      sourceEntity: 'publishing_prospect',
-      sourceRecord: 'controlled-author-inquiry-signal',
-      subject: 'Controlled Publishing author inquiry',
-      rightsState: 'RESOLVED',
-      observedAt: nowIso,
-      priority: 'P1'
-    },
-    {
-      sourceEvent: 'BRAND_EVERGREEN_BELOW_THRESHOLD',
-      sourceEntity: 'brand_health',
-      sourceRecord: 'helping-authors-help-themselves',
-      subject: 'Helping Authors Help Themselves',
-      assetState: 'GOVERNED_ASSET_AVAILABLE',
-      rightsState: 'RESOLVED',
-      observedAt: nowIso
-    },
-    {
-      sourceEvent: 'READER_REENGAGEMENT_DUE',
-      sourceEntity: 'reader_segment',
-      sourceRecord: 'controlled-reader-affinity-signal',
-      subject: 'Leadership reader re-engagement',
-      rightsState: 'RESOLVED',
-      observedAt: nowIso
+      currentCampaign: 'September 22 launch'
     }
   ];
 }
