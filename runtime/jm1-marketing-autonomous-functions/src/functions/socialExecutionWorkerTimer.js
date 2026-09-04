@@ -8,7 +8,7 @@ import {
   SOCIAL_EXECUTION_CLAIM_LEASE_MINUTES
 } from '../lib/config.js';
 import { entitySet, patchById, queryByPrefix } from '../lib/dataverse.js';
-import { checkLinkedInAuthority } from '../lib/linkedin.js';
+import { checkLinkedInAuthority, findRecentMatchingLinkedInPost, publishLinkedInOrganizationImagePost } from '../lib/linkedin.js';
 import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
 import { octoberIyorwueseMarker, runEnvelope } from '../lib/runtime.js';
@@ -23,7 +23,7 @@ app.timer('socialExecutionWorkerTimer', {
     const rows = await queryByPrefix(
       socialSet,
       `${marker}:social`,
-      'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_actualmediareference,jm1_captionversion,jm1_verifiedat,jm1_executor',
+      'jm1_socialexecutionid,jm1_name,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_actualmediareference,jm1_captionversion,jm1_verifiedat,jm1_executor',
       100
     );
     const contentRows = await queryByPrefix(
@@ -58,7 +58,15 @@ app.timer('socialExecutionWorkerTimer', {
     const linkedinRows = rows.filter((row) =>
       row.jm1_platform === 'linkedin'
       && !row.jm1_platformpostid
-      && ['HELD_EXTERNAL_PLATFORM_AUTHORITY', 'PUBLIC_READY_SCHEDULED_ELIGIBLE'].includes(row.jm1_status)
+      && [
+        'HELD_EXTERNAL_PLATFORM_AUTHORITY',
+        'PUBLIC_READY_SCHEDULED_ELIGIBLE',
+        'RETRY_REQUIRED',
+        'PUBLISHING_CLAIMED',
+        'PLATFORM_ACCEPTED',
+        'READBACK_PENDING',
+        'LINKEDIN_PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'
+      ].includes(row.jm1_status)
     );
 
     const writes = [];
@@ -226,7 +234,6 @@ app.timer('socialExecutionWorkerTimer', {
       });
     }
 
-    const platformObjectsCreated = writes.filter((write) => write.createdPlatformObject).length;
     const alreadyCertifiedMetaRows = rows.filter((row) =>
       ['facebook', 'instagram'].includes(row.jm1_platform)
       && row.jm1_status === 'PUBLISHED_VERIFIED'
@@ -245,8 +252,155 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_verifiedat: envelope.startedAt
         });
         writes.push({ id: row.jm1_socialexecutionid, state: linkedinAuthority.state });
+        continue;
       }
+
+      const freshClaim = row.jm1_status === 'PUBLISHING_CLAIMED'
+        && isClaimLeaseActive(row.jm1_verifiedat, envelope.startedAt);
+      if (freshClaim) {
+        writes.push({
+          id: row.jm1_socialexecutionid,
+          platform: row.jm1_platform,
+          state: 'PUBLISHING_CLAIMED_LEASE_ACTIVE',
+          claimOwner: row.jm1_executor || null,
+          claimTimestamp: row.jm1_verifiedat || null
+        });
+        continue;
+      }
+
+      const caption = resolveCaption(row, contentRows);
+      const captionPrefix = caption ? caption.slice(0, 72) : '';
+      if (['PUBLISHING_CLAIMED', 'PLATFORM_ACCEPTED', 'READBACK_PENDING', 'LINKEDIN_PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'].includes(row.jm1_status)) {
+        const existing = await findRecentMatchingLinkedInPost({
+          organizationId: publishing.linkedinOrganizationId,
+          captionPrefix
+        });
+        if (existing.ok && existing.duplicateCount === 0) {
+          await patchById(socialSet, row.jm1_socialexecutionid, {
+            jm1_status: 'PUBLISHED_VERIFIED',
+            jm1_platformpostid: existing.platformPostId,
+            jm1_actualdestination: existing.actualDestination || '',
+            jm1_actualmediareference: existing.permalink || '',
+            jm1_actualschedule: existing.publishedAt ? new Date(existing.publishedAt).toISOString() : envelope.startedAt,
+            jm1_readbackstate: 'LINKEDIN_RECONCILED_PLATFORM_SUCCESS_READBACK_MATCH',
+            jm1_verifiedat: envelope.startedAt,
+            jm1_errorcode: '',
+            jm1_errormessage: ''
+          });
+          writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'LINKEDIN_RECONCILED_PLATFORM_SUCCESS', platformPostId: existing.platformPostId });
+        } else if (row.jm1_status === 'PUBLISHING_CLAIMED') {
+          await patchById(socialSet, row.jm1_socialexecutionid, {
+            jm1_status: 'RETRY_REQUIRED',
+            jm1_readbackstate: 'LINKEDIN_STALE_CLAIM_NO_PLATFORM_OBJECT_FOUND_READY_FOR_SAFE_RECLAIM',
+            jm1_verifiedat: envelope.startedAt,
+            jm1_errorcode: 'LINKEDIN_STALE_CLAIM_RECOVERY',
+            jm1_errormessage: 'Claim lease expired; no matching LinkedIn platform object found during reconciliation. Row is eligible for safe reclaim on a later worker tick.'
+          });
+          writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'LINKEDIN_STALE_CLAIM_RECOVERY_READY_FOR_SAFE_RECLAIM' });
+        } else {
+          await patchById(socialSet, row.jm1_socialexecutionid, {
+            jm1_status: 'LINKEDIN_PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
+            jm1_readbackstate: existing.state,
+            jm1_verifiedat: envelope.startedAt,
+            jm1_errorcode: existing.state,
+            jm1_errormessage: existing.duplicateCount > 0 ? `Duplicate LinkedIn platform objects detected during reconciliation: ${existing.duplicateCount}` : existing.message || ''
+          });
+          writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: existing.state, duplicateCount: existing.duplicateCount || 0 });
+        }
+        continue;
+      }
+
+      const scheduledFor = new Date(row.jm1_requestedschedule);
+      if (!Number.isNaN(scheduledFor.getTime()) && scheduledFor > new Date(envelope.startedAt)) {
+        writes.push({ id: row.jm1_socialexecutionid, state: 'LINKEDIN_SCHEDULED_NOT_DUE', scheduledFor: row.jm1_requestedschedule });
+        continue;
+      }
+
+      const mediaUrl = row.jm1_actualmediareference
+        || await lookupMediaUrlByHash(row.jm1_requestedmediahash);
+      if (!mediaUrl || !caption) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'HELD_CREATIVE_REFERENCE_REQUIRED',
+          jm1_errorcode: 'LINKEDIN_EXACT_MEDIA_OR_CAPTION_REGISTRY_MISSING',
+          jm1_readbackstate: 'LINKEDIN_EXACT_MEDIA_OR_CAPTION_REGISTRY_MISSING',
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state: 'LINKEDIN_EXACT_MEDIA_OR_CAPTION_REGISTRY_MISSING' });
+        continue;
+      }
+
+      await patchById(socialSet, row.jm1_socialexecutionid, {
+        jm1_status: 'PUBLISHING_CLAIMED',
+        jm1_actualmediareference: mediaUrl,
+        jm1_actualschedule: envelope.startedAt,
+        jm1_executor: claimOwner(envelope),
+        jm1_readbackstate: 'LINKEDIN_PUBLISHING_CLAIMED',
+        jm1_verifiedat: envelope.startedAt
+      });
+
+      const result = await publishLinkedInOrganizationImagePost({
+        expected: publishing,
+        caption,
+        imageUrl: mediaUrl,
+        altText: `J Merrill Publishing approved social creative for ${row.jm1_name || row.jm1_captionversion || 'campaign post'}.`
+      });
+      const patch = result.ok
+        ? {
+          jm1_status: 'PLATFORM_ACCEPTED',
+          jm1_platformpostid: result.platformPostId,
+          jm1_actualdestination: result.actualDestination || '',
+          jm1_actualmediareference: result.actualMediaReference || mediaUrl,
+          jm1_actualschedule: result.publishedAt ? new Date(result.publishedAt).toISOString() : envelope.startedAt,
+          jm1_readbackstate: 'LINKEDIN_PLATFORM_OBJECT_ID_PERSISTED_READBACK_PENDING',
+          jm1_verifiedat: envelope.startedAt,
+          jm1_errorcode: '',
+          jm1_errormessage: ''
+        }
+        : {
+          jm1_status: result.state === 'READBACK_MISMATCH' ? 'READBACK_MISMATCH' : 'HELD_PLATFORM_API_ERROR',
+          jm1_platformpostid: result.platformPostId || '',
+          jm1_actualdestination: result.actualDestination || '',
+          jm1_actualmediareference: result.actualMediaReference || mediaUrl,
+          jm1_actualschedule: result.publishedAt ? new Date(result.publishedAt).toISOString() : envelope.startedAt,
+          jm1_readbackstate: result.readbackState || result.state,
+          jm1_verifiedat: envelope.startedAt,
+          jm1_errorcode: result.state,
+          jm1_errormessage: result.message || ''
+        };
+      await patchById(socialSet, row.jm1_socialexecutionid, patch);
+      if (result.ok) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'READBACK_PENDING',
+          jm1_readbackstate: 'LINKEDIN_READBACK_PENDING_AFTER_PLATFORM_ACCEPTED',
+          jm1_verifiedat: envelope.startedAt
+        });
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'PUBLISHED_VERIFIED',
+          jm1_readbackstate: result.readbackState,
+          jm1_verifiedat: envelope.startedAt
+        });
+      }
+      writes.push({
+        id: row.jm1_socialexecutionid,
+        platform: row.jm1_platform,
+        state: result.state,
+        platformPostId: result.platformPostId || null,
+        readbackState: result.readbackState || null,
+        permalink: result.permalink || null,
+        createdPlatformObject: result.ok
+      });
     }
+
+    const alreadyCertifiedLinkedInRows = rows.filter((row) =>
+      row.jm1_platform === 'linkedin'
+      && row.jm1_status === 'PUBLISHED_VERIFIED'
+      && row.jm1_platformpostid
+    );
+    for (const row of alreadyCertifiedLinkedInRows) {
+      writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'LINKEDIN_IDEMPOTENT_ALREADY_CERTIFIED', platformPostId: row.jm1_platformpostid });
+    }
+
+    const platformObjectsCreated = writes.filter((write) => write.createdPlatformObject).length;
 
     context.log(JSON.stringify({
       ...envelope,

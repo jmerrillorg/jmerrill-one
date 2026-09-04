@@ -18,10 +18,17 @@ export const MEDIA_STORAGE_CONTAINER = process.env.JM1_MEDIA_STORAGE_CONTAINER |
 export const MEDIA_STORAGE_PREFIX = process.env.JM1_MEDIA_STORAGE_PREFIX || 'jm1-marketing';
 export const MEDIA_PUBLIC_BASE_URL = process.env.JM1_MEDIA_PUBLIC_BASE_URL || `https://${MEDIA_STORAGE_ACCOUNT_NAME}.z13.web.core.windows.net`;
 export const LINKEDIN_CLIENT_ID = process.env.JM1_LINKEDIN_CLIENT_ID || '';
+export const LINKEDIN_ACCESS_TOKEN = process.env.JM1_LINKEDIN_ACCESS_TOKEN || '';
+export const LINKEDIN_TOKEN_SECRET_REFERENCE = process.env.JM1_LINKEDIN_TOKEN_SECRET_REFERENCE || 'jm1-core-vault/JM1-LINKEDIN-ORGANIZATION-PUBLISHER-ACCESS-TOKEN';
+export const LINKEDIN_TOKEN_EXPIRES_AT = process.env.JM1_LINKEDIN_TOKEN_EXPIRES_AT || '';
+export const LINKEDIN_REDIRECT_URI = process.env.JM1_LINKEDIN_REDIRECT_URI || 'https://jmerrill.one/api/linkedin/oauth/callback';
+export const LINKEDIN_PRIVACY_POLICY_URL = process.env.JM1_LINKEDIN_PRIVACY_POLICY_URL || 'https://jmerrill.one/privacy';
+export const LINKEDIN_API_VERSION = process.env.JM1_LINKEDIN_API_VERSION || '202608';
 export const LINKEDIN_APP_ID = process.env.JM1_LINKEDIN_APP_ID || '';
 export const LINKEDIN_APP_NAME = process.env.JM1_LINKEDIN_APP_NAME || '';
 export const LINKEDIN_APP_VERIFICATION_STATE = process.env.JM1_LINKEDIN_APP_VERIFICATION_STATE || 'NOT_CONFIGURED';
 export const LINKEDIN_PRODUCT_STATE = process.env.JM1_LINKEDIN_PRODUCT_STATE || 'NOT_CONFIGURED';
+export const LINKEDIN_GRANTED_SCOPES = parseListEnv('JM1_LINKEDIN_GRANTED_SCOPES');
 
 export const BRANCH_CONFIG = parseJsonEnv('JM1_MARKETING_BRANCH_CONFIG', {
   publishing: {
@@ -57,4 +64,12 @@ function parseJsonEnv(name, fallback) {
   } catch (error) {
     throw new Error(`Invalid JSON in ${name}: ${error.message}`);
   }
+}
+
+function parseListEnv(name) {
+  const raw = process.env[name] || '';
+  return raw
+    .split(/[\s,]+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
 }

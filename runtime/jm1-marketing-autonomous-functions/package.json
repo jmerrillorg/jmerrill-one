@@ -6,7 +6,8 @@
   "main": "src/functions/*.js",
   "scripts": {
     "check": "node --check src/functions/marketingControlLoopTimer.js && node --check src/functions/socialExecutionWorkerTimer.js && node --check src/functions/credentialMonitorTimer.js && node --check src/functions/creativeWorkProcessorTimer.js",
-    "test:marketing-os": "node ../../scripts/test-jm1-marketing-os-regression-suite.mjs"
+    "test:marketing-os": "node ../../scripts/test-jm1-marketing-os-regression-suite.mjs",
+    "test:linkedin-runtime": "node ../../scripts/test-jm1-linkedin-runtime-regression-suite.mjs"
   },
   "dependencies": {
     "@azure/functions": "^4.7.2",
