@@ -118,7 +118,7 @@ export default async function MarketingCommandCenterPage() {
         <div className={styles.sectionHeading}><p>Asset readiness</p><h2>Works needing review</h2></div>
         {data.assets.attention.length ? (
           <div className={styles.tableWrap}><table><thead><tr><th>Title</th><th>Author</th><th>State</th></tr></thead><tbody>
-            {data.assets.attention.map((item) => <tr key={`${item.author}-${item.title}`}><td>{item.title}</td><td>{item.author}</td><td>{item.state.replaceAll("_", " ")}</td></tr>)}
+            {data.assets.attention.map((item) => <tr key={item.workId}><td><Link href={`/marketing/assets/${item.workId}`}>{item.title}</Link></td><td>{item.author}</td><td>{item.state.replaceAll("_", " ")}</td></tr>)}
           </tbody></table></div>
         ) : <p className={styles.empty}>All canonical works have governed production assets.</p>}
       </section>

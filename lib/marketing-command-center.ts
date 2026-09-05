@@ -6,7 +6,7 @@ export type MarketingCommandCenter = {
   upcoming: { nextFeaturedAuthor: string; launches: string[]; scheduledExecutions: number; reactivationCandidates: number };
   health: Array<{ name: string; state: string }>;
   catalog: { sourceRows: number; canonicalWorks: number; formatProducts: number; reservedIsbns: number; marketingEligible: number; rightsHolds: number };
-  assets: { registeredFiles: number; worksReady: number; worksPartial: number; worksMissing: number; primaryCovers: number; attention: Array<{ title: string; author: string; state: string }> };
+  assets: { registeredFiles: number; worksReady: number; worksPartial: number; worksMissing: number; primaryCovers: number; attention: Array<{ workId: string; title: string; author: string; state: string }> };
   exceptions: Array<{ name: string; type: string; owner: string; state: string }>;
   executions: Array<{ name: string; platform: string; state: string; scheduled: string }>;
 };
@@ -22,7 +22,7 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
     query(config, token, "/jm1_marketingexceptions?$select=jm1_name,jm1_exceptiontype,jm1_resolutionstate,jm1_authorityrequired,jm1_exceptionowner&$orderby=modifiedon desc&$top=50"),
     query(config, token, "/jm1_marketingcontrolloops?$select=jm1_name,jm1_state,jm1_controldecision,jm1_evaluatedat&$orderby=modifiedon desc&$top=20"),
     query(config, token, "/jm1_credentialmonitors?$select=jm1_name,jm1_platform,jm1_currentcredentialstate,jm1_expiresat&$orderby=modifiedon desc&$top=20"),
-    query(config, token, "/jm1pub_titles?$select=jm1pub_titlename,jm1pub_authorname,jm1pub_marketingauthoritystate,jm1pub_rightsholdstate,jm1pub_assetregistrystatus&$filter=jm1pub_catalogcorrelationid%20eq%20'JMP-CATALOG-CANONICAL-20260905'&$top=500"),
+    query(config, token, "/jm1pub_titles?$select=jm1pub_titleid,jm1pub_titlename,jm1pub_authorname,jm1pub_marketingauthoritystate,jm1pub_rightsholdstate,jm1pub_assetregistrystatus&$filter=jm1pub_catalogcorrelationid%20eq%20'JMP-CATALOG-CANONICAL-20260905'&$top=500"),
     query(config, token, "/jm1pub_productionassets?$apply=aggregate($count%20as%20Total)"),
     query(config, token, "/jm1pub_productionassets?$select=jm1pub_productionassetid&$filter=jm1pub_assetstate%20eq%20'GOVERNED_PRIMARY'&$top=500"),
   ]);
@@ -82,7 +82,7 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
       worksMissing,
       primaryCovers: primaryCovers.length,
       attention: catalogWorks.filter((row) => assetStatus(row) !== 100000003).map((row) => ({
-        title: text(row.jm1pub_titlename), author: text(row.jm1pub_authorname),
+        workId: text(row.jm1pub_titleid), title: text(row.jm1pub_titlename), author: text(row.jm1pub_authorname),
         state: assetStatus(row) === 100000004 ? "MISSING" : "PARTIAL_OR_AMBIGUOUS",
       })).slice(0, 20),
     },
@@ -99,6 +99,21 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
       scheduled: text(row.jm1_requestedschedule),
     })).slice(0, 12),
   };
+}
+
+export async function loadProductionAssetDrilldown(workId: string) {
+  if (!/^[0-9a-f-]{36}$/i.test(workId)) throw new Error("Invalid canonical work ID.");
+  const config = dataverseConfig();
+  const token = await dataverseToken(config);
+  const [workRows, editions, products, assets] = await Promise.all([
+    query(config, token, `/jm1pub_titles?$select=jm1pub_titleid,jm1pub_titlename,jm1pub_authorname,jm1pub_assetregistrystatus&$filter=jm1pub_titleid%20eq%20${workId}&$top=1`),
+    query(config, token, `/jm1pub_editions?$select=jm1pub_editionid,jm1pub_editionname,jm1pub_releasedate&$filter=_jm1pub_title_value%20eq%20${workId}&$top=100`),
+    query(config, token, `/jm1pub_publishingassets?$select=jm1pub_publishingassetid,jm1pub_name,jm1pub_assetformat,jm1pub_isbn13,jm1pub_distributionstatus&$filter=_jm1pub_titleid_value%20eq%20${workId}&$top=500`),
+    query(config, token, `/jm1pub_productionassets?$select=jm1pub_name,jm1pub_filename,jm1pub_assettype,jm1pub_assetstate,jm1pub_canonicalproductid,jm1pub_weburl,jm1pub_sha256,jm1pub_lastmodified&$filter=jm1pub_canonicalworkid%20eq%20'${workId}'%20and%20(jm1pub_assetstate%20eq%20'GOVERNED_PRIMARY'%20or%20jm1pub_assetstate%20eq%20'GOVERNED_ALTERNATE'%20or%20jm1pub_assetstate%20eq%20'HISTORICAL')&$orderby=jm1pub_assetstate,jm1pub_filename&$top=500`),
+  ]);
+  const work = workRows[0];
+  if (!work) throw new Error("Canonical work not found.");
+  return { work, editions, products, assets };
 }
 
 function dataverseConfig() {
