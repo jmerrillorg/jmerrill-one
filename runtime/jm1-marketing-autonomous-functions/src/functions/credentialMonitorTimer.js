@@ -13,11 +13,13 @@ import {
 } from '../lib/config.js';
 import { entitySet, upsertByIdempotency } from '../lib/dataverse.js';
 import { credentialState, currentFeaturedAuthorMarker, deterministicId, isoNow, runEnvelope } from '../lib/runtime.js';
+import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 
 app.timer('credentialMonitorTimer', {
   schedule: process.env.JM1_CREDENTIAL_MONITOR_CRON || '0 7 12 * * *',
   handler: async (timer, context) => {
     const envelope = runEnvelope('AUTONOMOUS_CREDENTIAL_MONITOR', timer, context);
+    return withDistributedTimerLease('credential-monitor', envelope, context, async () => {
     const credentialSet = await entitySet('jm1_credentialmonitor');
     const marker = currentFeaturedAuthorMarker(new Date(envelope.startedAt))
       || deterministicId('JM1_MARKETING', 'credential-monitor', 'global');
@@ -114,5 +116,6 @@ app.timer('credentialMonitorTimer', {
       productionCredentialState: state,
       tokenValueLogged: false
     }));
+    });
   }
 });

@@ -1,0 +1,57 @@
+.shell { min-height: 100vh; background: #f4f6f8; color: #111827; padding-bottom: 3rem; }
+.header { min-height: 150px; padding: 2rem clamp(1rem, 4vw, 4rem); background: #fff; border-bottom: 1px solid #d9dee5; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+.header h1 { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(2.25rem, 5vw, 4rem); font-weight: 400; line-height: 1; letter-spacing: 0; color: #05111f; }
+.eyebrow, .sectionHeading p { margin-bottom: .55rem; color: #586474; font-family: 'DM Mono', monospace; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+.subtitle { margin-top: .8rem; color: #586474; font-size: .9rem; }
+.identity { display: flex; align-items: center; gap: 1rem; font-size: .75rem; color: #586474; }
+.identity a { padding: .55rem .8rem; border: 1px solid #b9c1cb; border-radius: 4px; color: #002c54; font-weight: 700; }
+.statusBar { min-height: 48px; padding: .8rem clamp(1rem, 4vw, 4rem); display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; background: #05111f; color: #d9e3ec; font-size: .72rem; }
+.statusBar time { margin-left: auto; color: #9ba8b5; }
+.liveDot { width: 8px; height: 8px; border-radius: 50%; background: #38a169; box-shadow: 0 0 0 3px rgba(56,161,105,.2); }
+.band, .tableSection { padding: 2.25rem clamp(1rem, 4vw, 4rem); border-bottom: 1px solid #d9dee5; }
+.band { background: #fff; }
+.sectionHeading { margin-bottom: 1.25rem; }
+.sectionHeading h2 { font-size: 1.15rem; line-height: 1.25; letter-spacing: 0; }
+.metricGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); border: 1px solid #d9dee5; border-radius: 6px; overflow: hidden; }
+.metricGrid article { min-height: 104px; padding: 1rem; border-right: 1px solid #d9dee5; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
+.metricGrid article:last-child { border-right: 0; }
+.metricGrid span { color: #647181; font-size: .72rem; }
+.metricGrid strong { overflow-wrap: anywhere; font-size: 1rem; line-height: 1.35; }
+.twoColumn { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #d9dee5; }
+.panel { padding: 2.25rem clamp(1rem, 4vw, 4rem); }
+.panel + .panel { border-left: 1px solid #d9dee5; }
+.rows { border-top: 1px solid #d9dee5; }
+.row { min-height: 48px; padding: .65rem 0; border-bottom: 1px solid #d9dee5; display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-size: .78rem; }
+.row strong { max-width: 58%; text-align: right; overflow-wrap: anywhere; font-family: 'DM Mono', monospace; font-size: .64rem; font-weight: 500; }
+.healthy { color: #207544; }
+.attention { color: #a33b20; }
+.neutral { color: #556270; }
+.details { border-top: 1px solid #d9dee5; }
+.details div { min-height: 48px; padding: .65rem 0; border-bottom: 1px solid #d9dee5; display: grid; grid-template-columns: 42% 1fr; gap: 1rem; }
+.details dt { color: #647181; font-size: .72rem; }
+.details dd { overflow-wrap: anywhere; font-size: .78rem; font-weight: 700; }
+.tableWrap { overflow-x: auto; border: 1px solid #d9dee5; border-radius: 6px; background: #fff; }
+.tableWrap table { width: 100%; min-width: 720px; border-collapse: collapse; text-align: left; }
+.tableWrap th { padding: .7rem .85rem; background: #eef1f4; color: #586474; font-family: 'DM Mono', monospace; font-size: .64rem; font-weight: 500; text-transform: uppercase; }
+.tableWrap td { padding: .8rem .85rem; border-top: 1px solid #e2e6eb; font-size: .76rem; vertical-align: top; }
+.empty { padding: 1rem; border: 1px solid #d9dee5; border-radius: 6px; background: #fff; color: #647181; font-size: .8rem; }
+.footer { padding: 1.25rem clamp(1rem, 4vw, 4rem); color: #667282; font-family: 'DM Mono', monospace; font-size: .62rem; text-align: right; }
+
+@media (max-width: 900px) {
+  .header { align-items: flex-start; flex-direction: column; }
+  .identity { width: 100%; justify-content: space-between; }
+  .metricGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metricGrid article { border-bottom: 1px solid #d9dee5; }
+  .metricGrid article:nth-child(2n) { border-right: 0; }
+  .metricGrid article:last-child { border-bottom: 0; }
+  .twoColumn { grid-template-columns: 1fr; }
+  .panel + .panel { border-left: 0; border-top: 1px solid #d9dee5; }
+  .statusBar time { width: 100%; margin-left: 19px; }
+}
+
+@media (max-width: 520px) {
+  .metricGrid { grid-template-columns: 1fr; }
+  .metricGrid article { min-height: 86px; border-right: 0; }
+  .identity span { max-width: 65%; overflow-wrap: anywhere; }
+  .details div { grid-template-columns: 1fr; gap: .25rem; }
+}

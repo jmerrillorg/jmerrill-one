@@ -1,0 +1,105 @@
+{
+  "artifact": "JMP-Full-Catalog-Marketing-Health-Autonomous-Commissioning-v1",
+  "generatedAt": "2026-09-05T19:59:39.792Z",
+  "mode": "EXECUTE",
+  "authority": {
+    "canonicalWorks": 129,
+    "marketingEligible": 129,
+    "source": "Ratified Publishing catalog plus Production Asset Registry"
+  },
+  "summary": {
+    "total": 129,
+    "dispositions": {
+      "ACTIVE_CAMPAIGN": 1,
+      "LAUNCH_PRIORITY": 1,
+      "FEATURED_AUTHOR_PRIORITY": 0,
+      "RECENT_RELEASE_HELD": 1,
+      "REACTIVATION_ELIGIBLE": 71,
+      "EVERGREEN_ELIGIBLE": 16,
+      "FATIGUE_HELD": 0,
+      "COLLISION_HELD": 0,
+      "ASSET_HELD": 39,
+      "HEALTHY_NO_ACTION_REQUIRED": 0,
+      "OTHER_POLICY_HELD": 0
+    },
+    "assets": {
+      "READY": 74,
+      "PARTIAL": 16,
+      "MISSING": 11,
+      "AMBIGUOUS": 28
+    }
+  },
+  "candidate": {
+    "titleId": "574797d0-c27a-f111-ab0f-7c1e525b15c2",
+    "title": "Just What I Needed",
+    "author": "Adrean Young",
+    "assetReadiness": "READY",
+    "disposition": "ACTIVE_CAMPAIGN",
+    "reason": "An existing campaign already owns current title activity.",
+    "score": 1,
+    "currentFeaturedAuthor": "Sean A Crowley I",
+    "nextFeaturedAuthor": "Iyorwuese Hagher",
+    "marketingEligible": true,
+    "rightsClear": true,
+    "activeAuthority": true,
+    "lastMarketedAt": "",
+    "currentCampaign": "Autonomous reactivation - Just What I Needed",
+    "nextEligibleAction": "PRESERVE_CURRENT_CAMPAIGN_AUTHORITY",
+    "evaluatedAt": "2026-09-05T19:59:39.792Z",
+    "governedPrimaryAsset": {
+      "productionAssetKey": "b!mA37NWi8UEKdDYwH1o5AJNWKIBAoAPBIn_pxeBKSSDVm9PH59uWnQpr1oD4m79se:01DF3SEQOB7TQQILYOLVHLGYPP5NQ5N5D6",
+      "driveId": "b!mA37NWi8UEKdDYwH1o5AJNWKIBAoAPBIn_pxeBKSSDVm9PH59uWnQpr1oD4m79se",
+      "itemId": "01DF3SEQOB7TQQILYOLVHLGYPP5NQ5N5D6",
+      "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/publishing/Shared%20Documents/08_Backlist/Young,%20Adrean/Just%20What%20I%20Needed%20-%20Daily%20Devotional/_COVER/9781950719860-Cover.jpg",
+      "relativePath": "08_Backlist/Young, Adrean/Just What I Needed - Daily Devotional/_COVER/9781950719860-Cover.jpg"
+    }
+  },
+  "campaignResult": {
+    "state": "QUEUE_POLICY_HELD",
+    "created": false,
+    "idempotencyKey": "JMP_FULL_CATALOG_REACTIVATION:574797d0-c27a-f111-ab0f-7c1e525b15c2:v1"
+  },
+  "downstream": {
+    "contentWork": "NOT_CREATED_QUEUE_POLICY_HELD",
+    "creativeWork": "NOT_CREATED_QUEUE_POLICY_HELD",
+    "mediaRegistry": "GOVERNED_PRIMARY_REFERENCE_RESOLVED",
+    "socialExecution": "NONE",
+    "dynamics": "UNCHANGED"
+  },
+  "schema": {
+    "entitySetName": "jm1pub_titlemarketinghealths",
+    "actions": []
+  },
+  "writes": {
+    "healthCreates": 0,
+    "healthUpdates": 129,
+    "catalogMutations": 0,
+    "sharePointMutations": 0
+  },
+  "guards": {
+    "shift": "RECENT_RELEASE_HELD",
+    "strategies": "LAUNCH_PRIORITY",
+    "sean": [
+      "RECENT_RELEASE_HELD",
+      "LAUNCH_PRIORITY"
+    ],
+    "octoberFeaturedAuthor": "Iyorwuese Hagher",
+    "linkedinAutonomous": false,
+    "browserExecution": 0,
+    "sintraExecution": 0,
+    "publicPosts": 0
+  },
+  "productionProof": {
+    "functionApp": "func-jm1-marketing-runtime",
+    "runtimeRelease": "7754100480617dc2b19a24994092c1380c3740f2",
+    "timerInvocation": "SUCCESS",
+    "timerSelectedWorkId": null,
+    "registeredFunctions": 6,
+    "incrementalAssetDeliveries": 2,
+    "incrementalAssetStableKeyRows": 1,
+    "incrementalAssetDuplicates": 0,
+    "commandCenterRelease": "bd7b4e21c4ec4d9a180488f23bb02ab32ea1a050",
+    "commandCenterHealth": 200,
+    "commandCenterAuthenticationProtected": true
+  }
+}
