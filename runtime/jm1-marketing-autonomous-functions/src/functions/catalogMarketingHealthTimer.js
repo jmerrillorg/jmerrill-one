@@ -1,5 +1,5 @@
 import { app } from '@azure/functions';
-import { dv, entitySet, upsertByIdempotency } from '../lib/dataverse.js';
+import { dv, entitySet } from '../lib/dataverse.js';
 import { evaluateFullCatalogMarketingHealth, selectFullCatalogCandidate, summarizeFullCatalogMarketingHealth } from '../lib/marketingLifecycle.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { runEnvelope } from '../lib/runtime.js';
@@ -21,7 +21,7 @@ app.timer('catalogMarketingHealthTimer', {
     }));
     const nowIso = new Date().toISOString();
     const health = evaluateFullCatalogMarketingHealth(titles, { nowIso, currentFeaturedAuthor: 'Sean A Crowley I', nextFeaturedAuthor: 'Iyorwuese Hagher' });
-    for (const row of health) await upsertByIdempotency(healthSet, 'jm1pub_titlemarketinghealthid', payload(row));
+    for (const row of health) await upsertHealth(healthSet, payload(row));
     const candidate = selectFullCatalogCandidate(health);
     context.log(JSON.stringify({ event: 'FULL_CATALOG_MARKETING_HEALTH', summary: summarizeFullCatalogMarketingHealth(health), selectedWorkId: candidate?.titleId || null, publicExecutionCreated: false }));
   })
@@ -35,3 +35,9 @@ function payload(row) { return {
   jm1pub_idempotencykey: `JMP_FULL_CATALOG_HEALTH:${row.titleId}`
 }; }
 function assetStatus(value) { return value === 100000003 ? 'READY' : value === 100000004 ? 'MISSING' : 'PARTIAL'; }
+async function upsertHealth(healthSet, body) {
+  const filter = encodeURIComponent(`jm1pub_idempotencykey eq '${body.jm1pub_idempotencykey.replaceAll("'", "''")}'`);
+  const existing = (await dv(`/${healthSet}?$select=jm1pub_titlemarketinghealthid&$filter=${filter}&$top=1`)).value?.[0];
+  if (existing) return dv(`/${healthSet}(${existing.jm1pub_titlemarketinghealthid})`, { method: 'PATCH', body: JSON.stringify(body) });
+  return dv(`/${healthSet}`, { method: 'POST', body: JSON.stringify(body) });
+}
