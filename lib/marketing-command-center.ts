@@ -7,6 +7,7 @@ export type MarketingCommandCenter = {
   health: Array<{ name: string; state: string }>;
   catalog: { sourceRows: number; canonicalWorks: number; formatProducts: number; reservedIsbns: number; marketingEligible: number; rightsHolds: number };
   assets: { registeredFiles: number; worksReady: number; worksPartial: number; worksMissing: number; primaryCovers: number; attention: Array<{ workId: string; title: string; author: string; state: string }> };
+  marketingHealth: { evaluated: number; counts: Record<string, number>; works: Array<{ workId: string; title: string; author: string; disposition: string; reason: string; assetReadiness: string; nextAction: string }> };
   exceptions: Array<{ name: string; type: string; owner: string; state: string }>;
   executions: Array<{ name: string; platform: string; state: string; scheduled: string }>;
 };
@@ -14,7 +15,7 @@ export type MarketingCommandCenter = {
 export async function loadMarketingCommandCenter(): Promise<MarketingCommandCenter> {
   const config = dataverseConfig();
   const token = await dataverseToken(config);
-  const [campaigns, social, journeys, creatives, exceptions, controls, credentials, catalogWorks, assetTotals, primaryCovers] = await Promise.all([
+  const [campaigns, social, journeys, creatives, exceptions, controls, credentials, catalogWorks, assetTotals, primaryCovers, catalogHealth] = await Promise.all([
     query(config, token, "/jm1_campaignauthorities?$select=jm1_name,jm1_branch,jm1_program,jm1_campaigntype,jm1_subject,jm1_start,jm1_stop,jm1_state&$orderby=modifiedon desc&$top=50"),
     query(config, token, "/jm1_socialexecutions?$select=jm1_name,jm1_platform,jm1_status,jm1_requestedschedule,jm1_platformpostid,jm1_readbackstate&$orderby=modifiedon desc&$top=100"),
     query(config, token, "/jm1_journeyexecutions?$select=jm1_name,jm1_state,jm1_dynamicsjourneyid&$orderby=modifiedon desc&$top=50"),
@@ -25,6 +26,7 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
     query(config, token, "/jm1pub_titles?$select=jm1pub_titleid,jm1pub_titlename,jm1pub_authorname,jm1pub_marketingauthoritystate,jm1pub_rightsholdstate,jm1pub_assetregistrystatus&$filter=jm1pub_catalogcorrelationid%20eq%20'JMP-CATALOG-CANONICAL-20260905'&$top=500"),
     query(config, token, "/jm1pub_productionassets?$apply=aggregate($count%20as%20Total)"),
     query(config, token, "/jm1pub_productionassets?$select=jm1pub_productionassetid&$filter=jm1pub_assetstate%20eq%20'GOVERNED_PRIMARY'&$top=500"),
+    query(config, token, "/jm1pub_titlemarketinghealths?$select=jm1pub_canonicalworkid,jm1pub_worktitle,jm1pub_authorname,jm1pub_disposition,jm1pub_reason,jm1pub_assetreadiness,jm1pub_nexteligibleaction&$orderby=jm1pub_authorname,jm1pub_worktitle&$top=500"),
   ]);
 
   const activeCampaigns = campaigns.filter((row) => !/INACTIVE|RETIRED|COMPLETE/i.test(text(row.jm1_state)));
@@ -85,6 +87,14 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
         workId: text(row.jm1pub_titleid), title: text(row.jm1pub_titlename), author: text(row.jm1pub_authorname),
         state: assetStatus(row) === 100000004 ? "MISSING" : "PARTIAL_OR_AMBIGUOUS",
       })).slice(0, 20),
+    },
+    marketingHealth: {
+      evaluated: catalogHealth.length,
+      counts: catalogHealth.reduce<Record<string, number>>((counts, row) => { const key = text(row.jm1pub_disposition) || "UNKNOWN"; counts[key] = (counts[key] || 0) + 1; return counts; }, {}),
+      works: catalogHealth.map((row) => ({
+        workId: text(row.jm1pub_canonicalworkid), title: text(row.jm1pub_worktitle), author: text(row.jm1pub_authorname),
+        disposition: text(row.jm1pub_disposition), reason: text(row.jm1pub_reason), assetReadiness: text(row.jm1pub_assetreadiness), nextAction: text(row.jm1pub_nexteligibleaction),
+      })),
     },
     exceptions: founderExceptions.map((row) => ({
       name: text(row.jm1_name),
