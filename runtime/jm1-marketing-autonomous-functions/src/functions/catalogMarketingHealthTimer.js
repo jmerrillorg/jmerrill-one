@@ -9,7 +9,7 @@ app.timer('catalogMarketingHealthTimer', {
   handler: async (timer, context) => withDistributedTimerLease('catalog-marketing-health', runEnvelope('FULL_CATALOG_MARKETING_HEALTH', timer, context), context, async () => {
     const healthSet = await entitySet('jm1pub_titlemarketinghealth');
     const response = await dv("/jm1pub_titles?$select=jm1pub_titleid,jm1pub_titlename,jm1pub_authorname,jm1pub_marketingauthoritystate,jm1pub_rightsholdstate,jm1pub_retirementstate,jm1pub_currentcatalogstate,jm1pub_releasedate,jm1pub_assetregistrystatus&$filter=jm1pub_catalogcorrelationid%20eq%20'JMP-CATALOG-CANONICAL-20260905'&$top=500");
-    const existing = await dv(`/${healthSet}?$select=jm1pub_canonicalworkid,jm1pub_assetreadiness,jm1pub_lastmarketedat,jm1pub_currentcampaign&$top=500`);
+    const existing = await dv(`/${healthSet}?$select=jm1pub_canonicalworkid,jm1pub_assetreadiness,jm1pub_disposition,jm1pub_lastmarketedat,jm1pub_currentcampaign&$top=500`);
     const byWork = new Map((existing.value || []).map((row) => [row.jm1pub_canonicalworkid, row]));
     const titles = (response.value || []).map((row) => ({
       titleId: row.jm1pub_titleid, title: row.jm1pub_titlename, author: row.jm1pub_authorname,
@@ -18,11 +18,12 @@ app.timer('catalogMarketingHealthTimer', {
       assetReadiness: byWork.get(row.jm1pub_titleid)?.jm1pub_assetreadiness || assetStatus(row.jm1pub_assetregistrystatus),
       lastMarketedAt: byWork.get(row.jm1pub_titleid)?.jm1pub_lastmarketedat,
       currentCampaign: byWork.get(row.jm1pub_titleid)?.jm1pub_currentcampaign
+      ,compatibleArchetypeAvailable: byWork.get(row.jm1pub_titleid)?.jm1pub_disposition === 'EVERGREEN_ELIGIBLE'
     }));
     const nowIso = new Date().toISOString();
     const health = evaluateFullCatalogMarketingHealth(titles, { nowIso, currentFeaturedAuthor: 'Sean A Crowley I', nextFeaturedAuthor: 'Iyorwuese Hagher' });
     for (const row of health) await upsertHealth(healthSet, payload(row));
-    const candidate = selectFullCatalogCandidate(health);
+    const candidate = health.some((row) => row.disposition === 'ACTIVE_CAMPAIGN') ? null : selectFullCatalogCandidate(health);
     context.log(JSON.stringify({ event: 'FULL_CATALOG_MARKETING_HEALTH', summary: summarizeFullCatalogMarketingHealth(health), selectedWorkId: candidate?.titleId || null, publicExecutionCreated: false }));
   })
 });
