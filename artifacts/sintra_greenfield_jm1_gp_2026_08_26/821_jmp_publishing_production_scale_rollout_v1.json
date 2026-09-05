@@ -3,13 +3,13 @@
   "artifact": "JMP-PUBLISHING-PRODUCTION-SCALE-ROLLOUT-v1",
   "generatedAt": "2026-09-05T01:49:03Z",
   "mode": "PRODUCTION_RUNTIME_DELTA_DEPLOYED_NON_PUBLISHING",
-  "sourceCommit": "6bb9bf209a1aac71882ed8acc315d3f58be464b0",
+  "sourceCommit": "678d015b4830e93ee5492edaadb46f43e1bab73c",
   "deployment": {
     "functionApp": "func-jm1-marketing-runtime",
     "resourceGroup": "rg-jm1-ai",
-    "packageSha256": "a690bb5195b75bce8eeb9c06bc92fca4c179edcf2f0bb7e414f409d3435c967d",
+    "packageSha256": "fa7d6d055ea78d9458604e9a9e3de1da5d01a42855372b624e24e6e9bf654457",
     "deploymentMethod": "Azure Function App zip deployment",
-    "releaseShaSetting": "6bb9bf209a1aac71882ed8acc315d3f58be464b0",
+    "releaseShaSetting": "678d015b4830e93ee5492edaadb46f43e1bab73c",
     "runtimeState": "Running",
     "httpsOnly": true,
     "nodeRuntime": "Node|22",
@@ -47,8 +47,7 @@
       "failed": 0,
       "classifications": [
         "JM1_MARKETING_OS_REGRESSION_SUITE_PASS",
-        "FEATURED_AUTHOR_PROGRAM_TRANSFERABILITY_PROVEN",
-        "JMP_PRODUCTION_SCALE_ROLLOUT_INVARIANTS_PROVEN"
+        "FEATURED_AUTHOR_PROGRAM_TRANSFERABILITY_PROVEN"
       ]
     },
     "linkedinRuntimeRegressionSuite": {
@@ -68,7 +67,7 @@
       "JM1_LINKEDIN_APP_VERIFICATION_STATE": "VERIFIED_WITH_PUBLISHING_PAGE",
       "JM1_CREDENTIAL_MONITOR_SYNTHETIC_ENABLED": "false",
       "JM1_META_GRAPH_VERSION": "v26.0",
-      "JM1_RELEASE_SHA": "6bb9bf209a1aac71882ed8acc315d3f58be464b0"
+      "JM1_RELEASE_SHA": "678d015b4830e93ee5492edaadb46f43e1bab73c"
     },
     "appInsights": {
       "exceptionsLast24Hours": 0,

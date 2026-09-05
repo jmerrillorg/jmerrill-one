@@ -16,8 +16,8 @@ This step did not publish new platform content, delete scheduled posts, activate
 
 - Function App: `func-jm1-marketing-runtime`
 - Resource Group: `rg-jm1-ai`
-- Source commit: `6bb9bf209a1aac71882ed8acc315d3f58be464b0`
-- Package SHA-256: `a690bb5195b75bce8eeb9c06bc92fca4c179edcf2f0bb7e414f409d3435c967d`
+- Source commit: `678d015b4830e93ee5492edaadb46f43e1bab73c`
+- Package SHA-256: `fa7d6d055ea78d9458604e9a9e3de1da5d01a42855372b624e24e6e9bf654457`
 - Runtime: `Running`
 - HTTPS-only: `true`
 - Node runtime: `Node|22`
