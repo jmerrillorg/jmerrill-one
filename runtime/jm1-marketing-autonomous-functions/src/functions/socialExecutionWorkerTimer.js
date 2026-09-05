@@ -7,16 +7,19 @@ import {
   META_MEDIA_URL_REGISTRY,
   SOCIAL_EXECUTION_CLAIM_LEASE_MINUTES
 } from '../lib/config.js';
-import { entitySet, patchById, queryByPrefix } from '../lib/dataverse.js';
+import { entitySet, patchById, queryByPrefix, upsertByIdempotency } from '../lib/dataverse.js';
+import { classifyFailure, deadLetterRecord } from '../lib/failurePolicy.js';
 import { checkLinkedInAuthority, findRecentMatchingLinkedInPost, publishLinkedInOrganizationImagePost } from '../lib/linkedin.js';
 import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
 import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
+import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 
 app.timer('socialExecutionWorkerTimer', {
   schedule: process.env.JM1_SOCIAL_EXECUTION_WORKER_CRON || '0 */15 * * * *',
   handler: async (timer, context) => {
     const envelope = runEnvelope('AUTONOMOUS_SOCIAL_EXECUTION_WORKER', timer, context);
+    return withDistributedTimerLease('social-execution-worker', envelope, context, async () => {
     const socialSet = await entitySet('jm1_socialexecution');
     const marker = process.env.JM1_SOCIAL_EXECUTION_MARKER || currentFeaturedAuthorMarker(new Date(envelope.startedAt));
     if (!marker) {
@@ -31,7 +34,7 @@ app.timer('socialExecutionWorkerTimer', {
     const rows = await queryByPrefix(
       socialSet,
       `${marker}:social`,
-      'jm1_socialexecutionid,jm1_name,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_actualmediareference,jm1_captionversion,jm1_verifiedat,jm1_executor',
+      'jm1_socialexecutionid,jm1_name,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_actualmediareference,jm1_captionversion,jm1_verifiedat,jm1_executor,jm1_attemptcount,jm1_lastattemptat,jm1_nextretryat,jm1_correlationid,jm1_failurecategory,jm1_exceptionowner',
       100
     );
     const contentRows = await queryByPrefix(
@@ -47,6 +50,7 @@ app.timer('socialExecutionWorkerTimer', {
       ['facebook', 'instagram'].includes(row.jm1_platform)
       && ['PUBLIC_READY_SCHEDULED_ELIGIBLE', 'RETRY_REQUIRED'].includes(row.jm1_status)
       && !row.jm1_platformpostid
+      && retryIsDue(row.jm1_nextretryat, envelope.startedAt)
     );
     const reconciliationMetaRows = rows.filter((row) =>
       ['facebook', 'instagram'].includes(row.jm1_platform)
@@ -187,6 +191,9 @@ app.timer('socialExecutionWorkerTimer', {
         jm1_actualmediareference: mediaUrl,
         jm1_actualschedule: envelope.startedAt,
         jm1_executor: claimOwner(envelope),
+        jm1_attemptcount: Number(row.jm1_attemptcount || 0) + 1,
+        jm1_lastattemptat: envelope.startedAt,
+        jm1_correlationid: envelope.correlationId,
         jm1_readbackstate: 'PUBLISHING_CLAIMED',
         jm1_verifiedat: envelope.startedAt
       });
@@ -195,6 +202,12 @@ app.timer('socialExecutionWorkerTimer', {
         ? await publishFacebookPhoto({ expected: publishing, caption, imageUrl: mediaUrl })
         : await publishInstagramPhoto({ expected: publishing, caption, imageUrl: mediaUrl });
 
+      const failure = result.ok ? null : classifyFailure({
+        attempts: Number(row.jm1_attemptcount || 0) + 1,
+        maxAttempts: Number(process.env.JM1_SOCIAL_MAX_ATTEMPTS || 3),
+        category: result.state,
+        retryable: result.state !== 'READBACK_MISMATCH'
+      });
       const patch = result.ok
         ? {
           jm1_status: 'PLATFORM_ACCEPTED',
@@ -208,17 +221,42 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_errormessage: ''
         }
         : {
-          jm1_status: result.state === 'READBACK_MISMATCH' ? 'READBACK_MISMATCH' : 'HELD_PLATFORM_API_ERROR',
+          jm1_status: failure.state === 'DEAD_LETTERED' ? 'DEAD_LETTERED' : 'RETRY_REQUIRED',
           jm1_platformpostid: result.platformPostId || '',
           jm1_actualdestination: result.actualDestination || '',
           jm1_actualmediareference: mediaUrl,
           jm1_actualschedule: result.publishedAt || envelope.startedAt,
           jm1_readbackstate: result.readbackState || result.state,
+          jm1_attemptcount: failure.attempts,
+          jm1_lastattemptat: envelope.startedAt,
+          jm1_nextretryat: failure.retryAfterMinutes ? addMinutes(envelope.startedAt, failure.retryAfterMinutes) : null,
+          jm1_correlationid: envelope.correlationId,
+          jm1_failurecategory: result.state,
+          jm1_exceptionowner: 'JM1 marketing runtime operator',
           jm1_verifiedat: envelope.startedAt,
           jm1_errorcode: result.state,
           jm1_errormessage: result.message || ''
         };
       await patchById(socialSet, row.jm1_socialexecutionid, patch);
+      if (failure?.state === 'DEAD_LETTERED') {
+        const exceptionSet = await entitySet('jm1_marketingexception');
+        const exception = deadLetterRecord({
+          envelope,
+          worker: 'social-execution-worker',
+          branch: row.jm1_branch || BRANCH_CONFIG.publishing.branchName,
+          campaign: row.jm1_name,
+          category: result.state,
+          attempts: failure.attempts,
+          message: result.message || result.state,
+          owner: 'JM1 marketing runtime operator'
+        });
+        exception.jm1_attemptcount = failure.attempts;
+        exception.jm1_correlationid = envelope.correlationId;
+        exception.jm1_worker = 'social-execution-worker';
+        exception.jm1_lastfailureat = envelope.startedAt;
+        exception.jm1_exceptionowner = 'JM1 marketing runtime operator';
+        await upsertByIdempotency(exceptionSet, 'jm1_marketingexceptionid', exception);
+      }
       if (result.ok) {
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_status: 'READBACK_PENDING',
@@ -431,6 +469,7 @@ app.timer('socialExecutionWorkerTimer', {
         ? 'One or more execution flags enabled; adapters still gate on exact row authority and platform product approval.'
         : 'Execution flag held to avoid unintended live posts while autonomous trigger proof is established.'
     }));
+    });
   }
 });
 
@@ -444,6 +483,17 @@ function isClaimLeaseActive(claimTimestamp, nowIso) {
 
 function claimOwner(envelope) {
   return `CLAIM:${envelope.correlationId}`;
+}
+
+function retryIsDue(nextRetryAt, nowIso) {
+  if (!nextRetryAt) return true;
+  const retryAt = new Date(nextRetryAt);
+  const now = new Date(nowIso);
+  return Number.isNaN(retryAt.getTime()) || retryAt <= now;
+}
+
+function addMinutes(iso, minutes) {
+  return new Date(new Date(iso).getTime() + minutes * 60 * 1000).toISOString();
 }
 
 function resolveCaption(row, contentRows) {

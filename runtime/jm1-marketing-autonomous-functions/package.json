@@ -5,8 +5,9 @@
   "type": "module",
   "main": "src/functions/*.js",
   "scripts": {
-    "check": "node --check src/functions/marketingControlLoopTimer.js && node --check src/functions/socialExecutionWorkerTimer.js && node --check src/functions/credentialMonitorTimer.js && node --check src/functions/creativeWorkProcessorTimer.js",
+    "check": "node --check src/functions/marketingControlLoopTimer.js && node --check src/functions/socialExecutionWorkerTimer.js && node --check src/functions/credentialMonitorTimer.js && node --check src/functions/creativeWorkProcessorTimer.js && node --check src/lib/runtimeLease.js && node --check src/lib/failurePolicy.js",
     "test:marketing-os": "node ../../scripts/test-jm1-marketing-os-regression-suite.mjs",
+    "test:resilience": "node ../../scripts/test-jm1-marketing-resilience.mjs",
     "test:linkedin-runtime": "node ../../scripts/test-jm1-linkedin-runtime-regression-suite.mjs"
   },
   "dependencies": {

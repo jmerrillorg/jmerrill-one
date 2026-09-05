@@ -4,11 +4,13 @@ import { buildContentWork, campaignMarker, resolveStageDecision } from '../lib/c
 import { dv, entitySet, queryByPrefix, safeCount, upsertByIdempotency } from '../lib/dataverse.js';
 import { evaluateFourLaneControlCycle, productionPublishingSignals } from '../lib/marketingLifecycle.js';
 import { activeBranches, runEnvelope } from '../lib/runtime.js';
+import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 
 app.timer('marketingControlLoopTimer', {
   schedule: process.env.JM1_MARKETING_CONTROL_LOOP_CRON || '0 17 12 * * *',
   handler: async (timer, context) => {
     const envelope = runEnvelope('AUTONOMOUS_DAILY_MARKETING_CONTROL_LOOP', timer, context);
+    return withDistributedTimerLease('marketing-control-loop', envelope, context, async () => {
     const controlSet = await entitySet('jm1_marketingcontrolloop');
     const socialSet = await entitySet('jm1_socialexecution');
     const credentialSet = await entitySet('jm1_credentialmonitor');
@@ -113,6 +115,7 @@ app.timer('marketingControlLoopTimer', {
       fourLaneCycle,
       decisions
     }));
+    });
   }
 });
 
