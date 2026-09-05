@@ -2,7 +2,16 @@ import { app } from '@azure/functions';
 import { BRANCH_CONFIG } from '../lib/config.js';
 import { buildContentWork, campaignMarker, resolveStageDecision } from '../lib/campaignProgram.js';
 import { dv, entitySet, queryByPrefix, safeCount, upsertByIdempotency } from '../lib/dataverse.js';
-import { evaluateFourLaneControlCycle } from '../lib/marketingLifecycle.js';
+import {
+  buildBusinessOutcomeMeasurementBaseline,
+  buildMarketingCommandCenter,
+  evaluateCatalogMarketingHealth,
+  evaluateEnterpriseBranchReuse,
+  evaluateFourLaneControlCycle,
+  evaluateStrategiesLaunchGovernance,
+  reconcileSeptemberExecution,
+  selectAutonomousReactivation
+} from '../lib/marketingLifecycle.js';
 import { activeBranches, runEnvelope } from '../lib/runtime.js';
 
 app.timer('marketingControlLoopTimer', {
@@ -33,6 +42,33 @@ app.timer('marketingControlLoopTimer', {
     const writes = [];
     const decisions = [];
     const fourLaneCycle = evaluateFourLaneControlCycle(defaultPublishingSignals(envelope.startedAt), envelope.startedAt);
+    const catalogHealth = evaluateCatalogMarketingHealth(defaultCatalogSignals(), envelope.startedAt);
+    const strategiesGovernance = evaluateStrategiesLaunchGovernance({
+      nowIso: envelope.startedAt,
+      scheduleObjects: defaultSeptemberScheduleObjects()
+    });
+    const septemberReconciliation = reconcileSeptemberExecution({
+      intents: defaultSeptemberIntents(),
+      scheduledObjects: defaultSeptemberScheduleObjects()
+    });
+    const branchReuse = evaluateEnterpriseBranchReuse(BRANCH_CONFIG);
+    const reactivation = selectAutonomousReactivation({
+      catalogHealth,
+      capacity: 1,
+      activeCampaignSubjects: ['Sean A Crowley I', 'Strategies for Success in Educational Leadership']
+    });
+    const outcomeBaseline = buildBusinessOutcomeMeasurementBaseline({
+      generatedAt: envelope.startedAt,
+      socialReach: null
+    });
+    const commandCenter = buildMarketingCommandCenter({
+      nowIso: envelope.startedAt,
+      strategiesGovernance,
+      catalogHealth,
+      fourLaneCycle,
+      exceptions: [],
+      linkedinState: 'LINKEDIN_EXTERNAL_REVIEW_ONLY'
+    });
 
     for (const campaign of campaigns) {
       const marker = campaignMarker(campaign);
@@ -99,6 +135,15 @@ app.timer('marketingControlLoopTimer', {
       dataverseRead: { campaigns: campaigns.length, dynamicsCounts },
       dataverseWrite: writes,
       fourLaneCycle,
+      productionScale: {
+        strategiesGovernance,
+        septemberReconciliation,
+        catalogHealth,
+        reactivation,
+        branchReuse,
+        outcomeBaseline,
+        commandCenter
+      },
       decisions
     }));
   }
@@ -144,6 +189,89 @@ function defaultPublishingSignals(nowIso) {
       subject: 'Leadership reader re-engagement',
       rightsState: 'RESOLVED',
       observedAt: nowIso
+    }
+  ];
+}
+
+function defaultCatalogSignals() {
+  return [
+    {
+      title: 'The Shift: Changing with God',
+      author: 'Sean A Crowley I',
+      lifecycleState: 'NEW_RECENTLY_RELEASED',
+      releaseDate: '2026-08-01',
+      lastMarketedAt: '2026-09-01T00:00:00.000Z'
+    },
+    {
+      title: 'Strategies for Success in Educational Leadership',
+      author: 'Sean A Crowley I',
+      lifecycleState: 'PRE_LAUNCH_TO_RELEASE',
+      releaseDate: '2026-09-22',
+      lastMarketedAt: '2026-09-04T00:00:00.000Z',
+      currentCampaign: 'September launch runway'
+    },
+    {
+      title: 'Controlled Dormant Catalog Title',
+      author: 'Controlled Publishing Author',
+      lifecycleState: 'BACKLIST',
+      lastMarketedAt: '2026-06-01T00:00:00.000Z',
+      engagementState: 'DORMANT'
+    }
+  ];
+}
+
+function defaultSeptemberIntents() {
+  return [
+    {
+      idempotencyKey: 'september:strategies:release-day:facebook',
+      platform: 'facebook',
+      destinationId: 'j-merrill-publishing-inc',
+      stage: 'release_day',
+      scheduledFor: '2026-09-22T14:00:00.000Z',
+      mediaHash: 'strategies-release-day-approved'
+    },
+    {
+      idempotencyKey: 'september:strategies:release-day:instagram',
+      platform: 'instagram',
+      destinationId: 'jmerrillpub',
+      stage: 'release_day',
+      scheduledFor: '2026-09-22T16:00:00.000Z',
+      mediaHash: 'strategies-release-day-approved'
+    }
+  ];
+}
+
+function defaultSeptemberScheduleObjects() {
+  return [
+    {
+      id: 'existing-meta-fb-strategies-release-day',
+      scheduler: 'Meta Business Suite UI',
+      platform: 'facebook',
+      destinationId: 'j-merrill-publishing-inc',
+      stage: 'release_day',
+      scheduledFor: '2026-09-22T14:00:00.000Z',
+      mediaHash: 'strategies-release-day-approved',
+      status: 'SCHEDULED_VERIFIED'
+    },
+    {
+      id: 'existing-meta-ig-strategies-release-day',
+      scheduler: 'Meta Business Suite UI',
+      platform: 'instagram',
+      destinationId: 'jmerrillpub',
+      stage: 'release_day',
+      scheduledFor: '2026-09-22T16:00:00.000Z',
+      mediaHash: 'strategies-release-day-approved',
+      status: 'SCHEDULED_VERIFIED'
+    },
+    {
+      id: 'existing-linkedin-strategies-release-day',
+      scheduler: 'LinkedIn native organization UI',
+      platform: 'linkedin',
+      destinationId: '13048648',
+      stage: 'release_day',
+      scheduledFor: '2026-09-22T18:00:00.000Z',
+      mediaHash: 'strategies-release-day-approved',
+      status: 'SCHEDULED_VERIFIED'
     }
   ];
 }

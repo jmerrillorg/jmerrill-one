@@ -117,6 +117,36 @@ const TRIGGER_POLICY = {
   }
 };
 
+export const STRATEGIES_FOR_SUCCESS_RELEASE = {
+  title: 'Strategies for Success in Educational Leadership',
+  author: 'Sean A Crowley I',
+  releaseDate: '2026-09-22',
+  founderCta: 'https://amzn.to/4y4udRZ',
+  priority: 'P0'
+};
+
+export const STRATEGIES_FOR_SUCCESS_LAUNCH_STAGES = [
+  { key: 'pre_launch', label: 'Pre-launch authority', dueDate: '2026-09-14', channelPolicy: 'META_ACTIVE_LINKEDIN_NATIVE_EXISTING' },
+  { key: 'reader_positioning', label: 'Reader positioning', dueDate: '2026-09-16', channelPolicy: 'META_ACTIVE_LINKEDIN_NATIVE_EXISTING' },
+  { key: 'title_discovery', label: 'Title discovery', dueDate: '2026-09-18', channelPolicy: 'META_ACTIVE_LINKEDIN_NATIVE_EXISTING' },
+  { key: 'countdown', label: 'Release countdown', dueDate: '2026-09-21', channelPolicy: 'META_ACTIVE_LINKEDIN_NATIVE_EXISTING' },
+  { key: 'release_day', label: 'Release day', dueDate: '2026-09-22', channelPolicy: 'META_ACTIVE_LINKEDIN_NATIVE_EXISTING' },
+  { key: 'post_launch', label: 'Post-launch reader proof', dueDate: '2026-09-23', channelPolicy: 'META_ACTIVE_LINKEDIN_NATIVE_EXISTING' },
+  { key: 'plus_7', label: 'Plus 7 follow-up', dueDate: '2026-09-29', channelPolicy: 'META_ACTIVE_LINKEDIN_NATIVE_EXISTING' },
+  { key: 'plus_30', label: 'Plus 30 follow-up', dueDate: '2026-10-22', channelPolicy: 'META_ACTIVE_LINKEDIN_API_DEPENDENT' },
+  { key: 'plus_90_evergreen', label: 'Plus 90 evergreen evaluation', dueDate: '2026-12-21', channelPolicy: 'AUTONOMOUS_EVALUATION' }
+];
+
+const ROUTINE_EXCEPTION_TYPES = new Set([
+  'NO_WORK_DUE',
+  'WAITING_FOR_SCHEDULE',
+  'FATIGUE_HELD',
+  'LINKEDIN_EXTERNAL_REVIEW_ONLY',
+  'LINKEDIN_API_EXTERNAL_DEPENDENCY',
+  'NORMAL_CAMPAIGN_WAIT',
+  'FUTURE_NEXT_MONTH_PRESTAGED'
+]);
+
 export function resolveProgramRegistry() {
   return PUBLISHING_PROGRAM_REGISTRY.map((program) => ({
     ...program,
@@ -262,6 +292,263 @@ export function evaluateCatalogMarketingHealth(titles, nowIso) {
   });
 }
 
+export function evaluateStrategiesLaunchGovernance(options = {}) {
+  const nowIso = options.nowIso || new Date().toISOString();
+  const now = new Date(nowIso);
+  const scheduleObjects = options.scheduleObjects || [];
+  const linkedInAuthority = options.linkedInAuthority || 'LINKEDIN_EXTERNAL_REVIEW_ONLY';
+  const stages = STRATEGIES_FOR_SUCCESS_LAUNCH_STAGES.map((stage) => {
+    const due = new Date(`${stage.dueDate}T23:59:59.999Z`);
+    const matchingObjects = scheduleObjects.filter((object) => object.stage === stage.key);
+    const metaState = platformStageState(matchingObjects, ['facebook', 'instagram']);
+    const linkedInState = linkedInAuthority === 'LINKEDIN_EXTERNAL_REVIEW_ONLY'
+      ? nativeOrHeldState(matchingObjects)
+      : platformStageState(matchingObjects, ['linkedin']);
+    return {
+      ...stage,
+      temporalState: now > due ? 'PAST_OR_ACTIVE_STAGE' : 'FUTURE_STAGE',
+      metaState,
+      linkedInState,
+      manualBuildRequired: false
+    };
+  });
+  return {
+    title: STRATEGIES_FOR_SUCCESS_RELEASE.title,
+    author: STRATEGIES_FOR_SUCCESS_RELEASE.author,
+    releaseDate: STRATEGIES_FOR_SUCCESS_RELEASE.releaseDate,
+    founderCta: STRATEGIES_FOR_SUCCESS_RELEASE.founderCta,
+    priority: STRATEGIES_FOR_SUCCESS_RELEASE.priority,
+    currentStage: currentStageForDate(stages, nowIso),
+    stages,
+    classifications: [
+      'STRATEGIES_FOR_SUCCESS_SEP_22_PRIORITY_PRESERVED',
+      linkedInAuthority === 'LINKEDIN_EXTERNAL_REVIEW_ONLY'
+        ? 'LINKEDIN_EXTERNAL_REVIEW_ONLY_PRESERVED'
+        : 'LINKEDIN_API_STAGE_ELIGIBLE'
+    ]
+  };
+}
+
+export function reconcileSeptemberExecution({ intents = [], scheduledObjects = [] } = {}) {
+  const usedObjects = new Set();
+  const decisions = intents.map((intent) => {
+    const exact = scheduledObjects.find((object, index) => {
+      if (usedObjects.has(index)) return false;
+      return sameExecutionIdentity(intent, object) && mediaCompatible(intent, object);
+    });
+    if (exact) {
+      usedObjects.add(scheduledObjects.indexOf(exact));
+      return {
+        intentId: intent.idempotencyKey || deterministicId('intent', intent.platform, intent.stage, intent.scheduledFor),
+        platform: intent.platform,
+        scheduledFor: intent.scheduledFor,
+        state: exact.status === 'PUBLISHED_VERIFIED' ? 'ALREADY_PUBLISHED_PRESERVE' : 'ALREADY_SCHEDULED_PRESERVE',
+        platformPostId: exact.platformPostId || '',
+        objectId: exact.id || '',
+        action: 'NO_NEW_OBJECT'
+      };
+    }
+    const duplicate = scheduledObjects.find((object) => sameExecutionIdentity(intent, object) && !mediaCompatible(intent, object));
+    if (duplicate) {
+      return {
+        intentId: intent.idempotencyKey || deterministicId('intent', intent.platform, intent.stage, intent.scheduledFor),
+        platform: intent.platform,
+        scheduledFor: intent.scheduledFor,
+        state: 'READBACK_MISMATCH_HELD',
+        objectId: duplicate.id || '',
+        action: 'RAISE_EXCEPTION'
+      };
+    }
+    return {
+      intentId: intent.idempotencyKey || deterministicId('intent', intent.platform, intent.stage, intent.scheduledFor),
+      platform: intent.platform,
+      scheduledFor: intent.scheduledFor,
+      state: 'MISSING_AUTONOMOUS_OBJECT',
+      action: 'CREATE_VIA_OWNED_RUNTIME_WHEN_ELIGIBLE'
+    };
+  });
+  const residualObjects = scheduledObjects
+    .filter((_, index) => !usedObjects.has(index))
+    .map((object) => ({
+      objectId: object.id || '',
+      platform: object.platform,
+      scheduledFor: object.scheduledFor,
+      state: object.superseded ? 'SUPERSEDED_RECONCILE' : 'UNMATCHED_EXISTING_OBJECT_REVIEW',
+      action: object.superseded ? 'SUPPRESS_OR_REMOVE_AFTER_REPLACEMENT_VERIFIED' : 'PRESERVE_PENDING_REVIEW'
+    }));
+  const duplicates = residualObjects.filter((object) => object.state === 'SUPERSEDED_RECONCILE').length;
+  return {
+    decisions,
+    residualObjects,
+    accounting: {
+      expectedPlatformItems: intents.length,
+      preservedExistingObjects: decisions.filter((decision) => /PRESERVE$/.test(decision.state)).length,
+      missingAutonomousObjects: decisions.filter((decision) => decision.state === 'MISSING_AUTONOMOUS_OBJECT').length,
+      readbackMismatches: decisions.filter((decision) => decision.state === 'READBACK_MISMATCH_HELD').length,
+      duplicates,
+      wrongDestinations: scheduledObjects.filter((object) => object.destinationState === 'WRONG_DESTINATION').length,
+      residualSintraPublishingExecutionItems: scheduledObjects.filter((object) => object.scheduler === 'Sintra/Soshie' && !object.superseded).length
+    },
+    classification: 'SEPTEMBER_EXECUTION_RECONCILED_WITH_AUTONOMOUS_AUTHORITY'
+  };
+}
+
+export function filterActionableMarketingExceptions(exceptions = []) {
+  return exceptions.filter((exception) => {
+    const type = exception.type || exception.jm1_exceptiontype || exception.state || '';
+    const resolved = exception.resolutionState || exception.jm1_resolutionstate || '';
+    return !ROUTINE_EXCEPTION_TYPES.has(type) && !/RESOLVED|CLOSED|SUPPRESSED/i.test(resolved);
+  });
+}
+
+export function resolveBranchMarketingConfigurations(config = {}) {
+  const defaults = {
+    one: { active: false, state: 'CONFIGURED_NOT_ACTIVE', audienceIsolation: 'ENTERPRISE_ONLY' },
+    publishing: { active: true, state: 'ACTIVE_RUNTIME_CONSUMER', audienceIsolation: 'PUBLISHING_ONLY' },
+    financial: { active: false, state: 'CONFIGURED_NOT_ACTIVATED', audienceIsolation: 'FINANCIAL_COMPLIANCE_HELD' },
+    foundation: { active: false, state: 'CONFIGURED_NOT_ACTIVE', audienceIsolation: 'FOUNDATION_ONLY' }
+  };
+  return Object.fromEntries(Object.entries(defaults).map(([key, value]) => [
+    key,
+    {
+      ...value,
+      ...(config[key] || {}),
+      branchKey: key,
+      engineForkRequired: false,
+      sharedRuntimeOwner: 'J Merrill One'
+    }
+  ]));
+}
+
+export function evaluateEnterpriseBranchReuse(config = {}) {
+  const branches = resolveBranchMarketingConfigurations(config);
+  const activeBranches = Object.values(branches).filter((branch) => branch.active);
+  return {
+    branches,
+    activeRuntimeConsumers: activeBranches.map((branch) => branch.branchKey),
+    state: activeBranches.length === 1 && branches.publishing.active
+      ? 'PUBLISHING_FIRST_CONSUMER_ENTERPRISE_REUSE_READY'
+      : 'ENTERPRISE_REUSE_REQUIRES_BRANCH_ACTIVATION_REVIEW',
+    classifications: [
+      'JM1_MARKETING_OS_ENTERPRISE_BRANCH_REUSE_READY',
+      branches.financial.state === 'CONFIGURED_NOT_ACTIVATED'
+        ? 'FINANCIAL_CONFIGURED_NOT_ACTIVATED'
+        : 'FINANCIAL_BRANCH_STATE_REVIEW'
+    ]
+  };
+}
+
+export function selectAutonomousReactivation({ catalogHealth = [], capacity = 1, activeCampaignSubjects = [] } = {}) {
+  const active = new Set(activeCampaignSubjects);
+  const candidates = catalogHealth
+    .filter((title) => title.eligibleForReactivation)
+    .filter((title) => !active.has(title.author) && !active.has(title.title))
+    .sort((a, b) => {
+      const aDays = daysSince(a.lastMarketedAt, new Date().toISOString());
+      const bDays = daysSince(b.lastMarketedAt, new Date().toISOString());
+      return bDays - aDays || String(a.title).localeCompare(String(b.title));
+    });
+  return {
+    capacity,
+    selected: candidates.slice(0, capacity).map((title) => ({
+      title: title.title,
+      author: title.author,
+      action: 'CREATE_AUTONOMOUS_REACTIVATION_CANDIDATE'
+    })),
+    held: catalogHealth
+      .filter((title) => !title.eligibleForReactivation)
+      .map((title) => ({ title: title.title, reason: title.exclusionReason })),
+    classification: candidates.length > 0
+      ? 'CATALOG_REACTIVATION_CANDIDATE_SELECTED_BY_POLICY'
+      : 'CATALOG_REACTIVATION_NO_ELIGIBLE_CANDIDATE'
+  };
+}
+
+export function evaluateAcquisitionLifecycleSafety(signal = {}) {
+  const blockers = [];
+  if (signal.consentState !== 'OPTED_IN') blockers.push('CONSENT_REQUIRED');
+  if (!signal.senderReady) blockers.push('DYNAMICS_SENDER_REQUIRED');
+  if (signal.suppressed) blockers.push('SUPPRESSION_PRESENT');
+  if (signal.duplicateCommunication) blockers.push('DUPLICATE_COMMUNICATION_BLOCKED');
+  if (signal.lifecycleState === 'JOINED_THE_FAMILY') blockers.push('EXIT_JOINED_THE_FAMILY');
+  return {
+    subject: signal.subject || signal.prospectId || 'author_acquisition_signal',
+    state: blockers.length === 0 ? 'ACQUISITION_NURTURE_ELIGIBLE' : 'ACQUISITION_NURTURE_HELD',
+    blockers,
+    exitCondition: signal.lifecycleState === 'JOINED_THE_FAMILY',
+    routineTouch: { founder: 0, cody: 0 }
+  };
+}
+
+export function evaluateReaderAudienceSignals(signals = []) {
+  const eligible = signals.filter((signal) => signal.consentState === 'OPTED_IN' && !signal.fatigueHeld && !signal.suppressed);
+  return {
+    totalSignals: signals.length,
+    eligibleSignals: eligible.length,
+    state: eligible.length > 0 ? 'READER_AUDIENCE_PROGRAM_ELIGIBLE' : 'READER_AUDIENCE_PROGRAM_OBSERVE',
+    nextActions: eligible.map((signal) => ({
+      segment: signal.segment || signal.subject,
+      action: 'CREATE_READER_AUDIENCE_JOURNEY_CANDIDATE'
+    }))
+  };
+}
+
+export function buildBusinessOutcomeMeasurementBaseline(signals = {}) {
+  const metric = (value) => value === undefined || value === null
+    ? { state: 'NOT_AVAILABLE', value: null }
+    : { state: 'LIVE', value };
+  return {
+    generatedAt: signals.generatedAt || new Date().toISOString(),
+    bookDiscovery: metric(signals.bookDiscovery),
+    authorInquiry: metric(signals.authorInquiry),
+    readerEngagement: metric(signals.readerEngagement),
+    socialReach: metric(signals.socialReach),
+    revenueAttribution: {
+      state: signals.revenueAttribution === undefined ? 'NOT_AVAILABLE_DO_NOT_FABRICATE' : 'LIVE',
+      value: signals.revenueAttribution ?? null
+    },
+    classification: 'BUSINESS_OUTCOME_MEASUREMENT_BASELINE_CREATED'
+  };
+}
+
+export function buildMarketingCommandCenter({
+  nowIso = new Date().toISOString(),
+  currentFeaturedAuthor = 'Sean A Crowley I',
+  nextFeaturedAuthor = 'Iyorwuese Hagher',
+  strategiesGovernance = evaluateStrategiesLaunchGovernance({ nowIso }),
+  catalogHealth = [],
+  fourLaneCycle,
+  exceptions = [],
+  linkedinState = 'LINKEDIN_EXTERNAL_REVIEW_ONLY'
+} = {}) {
+  const actionableExceptions = filterActionableMarketingExceptions(exceptions);
+  return {
+    generatedAt: nowIso,
+    state: actionableExceptions.length === 0
+      ? 'PRODUCTION_OBSERVATION_NO_ACTION_REQUIRED'
+      : 'PRODUCTION_OBSERVATION_ACTION_REQUIRED',
+    currentFeaturedAuthor,
+    nextFeaturedAuthor,
+    octoberManualStartBlocked: true,
+    strategiesGovernance,
+    catalog: {
+      titlesObserved: catalogHealth.length,
+      eligibleForReactivation: catalogHealth.filter((title) => title.eligibleForReactivation).length,
+      recentReleaseHeld: catalogHealth.filter((title) => title.recentReleaseHeld).map((title) => title.title)
+    },
+    fourLaneCycle,
+    linkedinState,
+    actionableExceptions,
+    routineTouch: { founder: 0, cody: 0 },
+    classifications: [
+      'JMP_MARKETING_COMMAND_CENTER_OBSERVATION_SURFACE_READY',
+      actionableExceptions.length === 0
+        ? 'JMP_EXCEPTION_ONLY_GOVERNANCE_NO_ACTION_REQUIRED'
+        : 'JMP_EXCEPTION_ONLY_GOVERNANCE_ACTION_REQUIRED'
+    ]
+  };
+}
+
 export function evaluateSupersession(previousStage, event) {
   const decision = evaluateLifecycleEvent(event);
   const superseded = decision.supersedes.includes(previousStage);
@@ -345,6 +632,41 @@ function exclusionReason({ recentReleaseHeld, fatigueHeld, title }) {
   if (fatigueHeld) return 'MARKETING_FATIGUE_HELD';
   if (title.lifecycleState !== 'BACKLIST') return 'NOT_BACKLIST';
   return 'NOT_ELIGIBLE';
+}
+
+function currentStageForDate(stages, nowIso) {
+  const now = new Date(nowIso);
+  const past = stages.filter((stage) => now >= new Date(`${stage.dueDate}T00:00:00.000Z`));
+  return past.at(-1)?.key || stages[0]?.key || '';
+}
+
+function platformStageState(objects, platforms) {
+  const relevant = objects.filter((object) => platforms.includes(object.platform));
+  if (relevant.length === 0) return 'MISSING_OR_NOT_YET_DUE';
+  if (relevant.every((object) => /PUBLISHED_VERIFIED|SCHEDULED_VERIFIED|PUBLISHED|SCHEDULED/.test(object.status || ''))) {
+    return 'VERIFIED_OR_SCHEDULED';
+  }
+  return 'REVIEW_REQUIRED';
+}
+
+function nativeOrHeldState(objects) {
+  const linkedIn = objects.filter((object) => object.platform === 'linkedin');
+  if (linkedIn.some((object) => /PUBLISHED_VERIFIED|SCHEDULED_VERIFIED|PUBLISHED|SCHEDULED/.test(object.status || ''))) {
+    return 'LINKEDIN_NATIVE_EXISTING_PRESERVED';
+  }
+  return 'LINKEDIN_API_EXTERNAL_REVIEW_HELD';
+}
+
+function sameExecutionIdentity(intent, object) {
+  return intent.platform === object.platform
+    && intent.destinationId === object.destinationId
+    && intent.stage === object.stage
+    && intent.scheduledFor === object.scheduledFor;
+}
+
+function mediaCompatible(intent, object) {
+  if (!intent.mediaHash || !object.mediaHash) return true;
+  return intent.mediaHash === object.mediaHash;
 }
 
 function daysSince(value, nowIso) {
