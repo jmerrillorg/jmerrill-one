@@ -99,7 +99,7 @@ export default async function MarketingCommandCenterPage() {
           <article><span>Format products</span><strong>{data.catalog.formatProducts}</strong></article>
           <article><span>Reserved ISBNs</span><strong>{data.catalog.reservedIsbns}</strong></article>
           <article><span>Marketing eligible</span><strong>{data.catalog.marketingEligible}</strong></article>
-          <article><span>Rights held</span><strong>{data.catalog.rightsHeld}</strong></article>
+          <article><span>Rights holds</span><strong>{data.catalog.rightsHolds}</strong></article>
         </div>
       </section>
 
