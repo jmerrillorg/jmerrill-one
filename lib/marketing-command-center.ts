@@ -6,6 +6,7 @@ export type MarketingCommandCenter = {
   upcoming: { nextFeaturedAuthor: string; launches: string[]; scheduledExecutions: number; reactivationCandidates: number };
   health: Array<{ name: string; state: string }>;
   catalog: { sourceRows: number; canonicalWorks: number; formatProducts: number; reservedIsbns: number; marketingEligible: number; rightsHeld: number };
+  assets: { registeredFiles: number; worksReady: number; worksPartial: number; worksMissing: number; primaryCovers: number; attention: Array<{ title: string; author: string; state: string }> };
   exceptions: Array<{ name: string; type: string; owner: string; state: string }>;
   executions: Array<{ name: string; platform: string; state: string; scheduled: string }>;
 };
@@ -13,7 +14,7 @@ export type MarketingCommandCenter = {
 export async function loadMarketingCommandCenter(): Promise<MarketingCommandCenter> {
   const config = dataverseConfig();
   const token = await dataverseToken(config);
-  const [campaigns, social, journeys, creatives, exceptions, controls, credentials] = await Promise.all([
+  const [campaigns, social, journeys, creatives, exceptions, controls, credentials, catalogWorks, assetTotals, primaryCovers] = await Promise.all([
     query(config, token, "/jm1_campaignauthorities?$select=jm1_name,jm1_branch,jm1_program,jm1_campaigntype,jm1_subject,jm1_start,jm1_stop,jm1_state&$orderby=modifiedon desc&$top=50"),
     query(config, token, "/jm1_socialexecutions?$select=jm1_name,jm1_platform,jm1_status,jm1_requestedschedule,jm1_platformpostid,jm1_readbackstate&$orderby=modifiedon desc&$top=100"),
     query(config, token, "/jm1_journeyexecutions?$select=jm1_name,jm1_state,jm1_dynamicsjourneyid&$orderby=modifiedon desc&$top=50"),
@@ -21,6 +22,9 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
     query(config, token, "/jm1_marketingexceptions?$select=jm1_name,jm1_exceptiontype,jm1_resolutionstate,jm1_authorityrequired,jm1_exceptionowner&$orderby=modifiedon desc&$top=50"),
     query(config, token, "/jm1_marketingcontrolloops?$select=jm1_name,jm1_state,jm1_controldecision,jm1_evaluatedat&$orderby=modifiedon desc&$top=20"),
     query(config, token, "/jm1_credentialmonitors?$select=jm1_name,jm1_platform,jm1_currentcredentialstate,jm1_expiresat&$orderby=modifiedon desc&$top=20"),
+    query(config, token, "/jm1pub_titles?$select=jm1pub_titlename,jm1pub_authorname,jm1pub_marketingauthoritystate,jm1pub_rightsholdstate,jm1pub_assetregistrystatus&$filter=jm1pub_catalogcorrelationid%20eq%20'JMP-CATALOG-CANONICAL-20260905'&$top=500"),
+    query(config, token, "/jm1pub_productionassets?$apply=aggregate($count%20as%20Total)"),
+    query(config, token, "/jm1pub_productionassets?$select=jm1pub_productionassetid&$filter=jm1pub_assetstate%20eq%20'GOVERNED_PRIMARY'&$top=500"),
   ]);
 
   const activeCampaigns = campaigns.filter((row) => !/INACTIVE|RETIRED|COMPLETE/i.test(text(row.jm1_state)));
@@ -33,6 +37,10 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
   const nextFeatured = activeCampaigns.find((row) => /Iyorwuese Hagher/i.test([row.jm1_name, row.jm1_subject].map(text).join(" ")));
   const credentialFailure = credentials.some((row) => /EXPIRED|FAILED|INVALID/i.test(text(row.jm1_currentcredentialstate)));
   const metaReadback = social.some((row) => ["facebook", "instagram"].includes(text(row.jm1_platform).toLowerCase()) && text(row.jm1_platformpostid));
+  const assetStatus = (row: Row) => Number(row.jm1pub_assetregistrystatus);
+  const worksReady = catalogWorks.filter((row) => assetStatus(row) === 100000003).length;
+  const worksPartial = catalogWorks.filter((row) => assetStatus(row) === 100000002).length;
+  const worksMissing = catalogWorks.filter((row) => [100000000, 100000004].includes(assetStatus(row))).length;
 
   return {
     generatedAt: new Date().toISOString(),
@@ -64,8 +72,19 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
       canonicalWorks: 129,
       formatProducts: 300,
       reservedIsbns: 111,
-      marketingEligible: 4,
-      rightsHeld: 125,
+      marketingEligible: catalogWorks.filter((row) => text(row.jm1pub_marketingauthoritystate) === "MARKETING_ELIGIBLE").length,
+      rightsHeld: catalogWorks.filter((row) => text(row.jm1pub_rightsholdstate) !== "NO_RIGHTS_HOLD_FOUND").length,
+    },
+    assets: {
+      registeredFiles: Number(assetTotals[0]?.Total || 0),
+      worksReady,
+      worksPartial,
+      worksMissing,
+      primaryCovers: primaryCovers.length,
+      attention: catalogWorks.filter((row) => assetStatus(row) !== 100000003).map((row) => ({
+        title: text(row.jm1pub_titlename), author: text(row.jm1pub_authorname),
+        state: assetStatus(row) === 100000004 ? "MISSING" : "PARTIAL_OR_AMBIGUOUS",
+      })).slice(0, 20),
     },
     exceptions: founderExceptions.map((row) => ({
       name: text(row.jm1_name),

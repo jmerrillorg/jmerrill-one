@@ -103,6 +103,26 @@ export default async function MarketingCommandCenterPage() {
         </div>
       </section>
 
+      <section className={styles.band}>
+        <div className={styles.sectionHeading}><p>Production assets</p><h2>Catalog file coverage</h2></div>
+        <div className={styles.metricGrid}>
+          <article><span>Registered files</span><strong>{data.assets.registeredFiles}</strong></article>
+          <article><span>Works ready</span><strong>{data.assets.worksReady}</strong></article>
+          <article><span>Partial or ambiguous</span><strong>{data.assets.worksPartial}</strong></article>
+          <article><span>Missing</span><strong>{data.assets.worksMissing}</strong></article>
+          <article><span>Primary covers</span><strong>{data.assets.primaryCovers}</strong></article>
+        </div>
+      </section>
+
+      <section className={styles.tableSection}>
+        <div className={styles.sectionHeading}><p>Asset readiness</p><h2>Works needing review</h2></div>
+        {data.assets.attention.length ? (
+          <div className={styles.tableWrap}><table><thead><tr><th>Title</th><th>Author</th><th>State</th></tr></thead><tbody>
+            {data.assets.attention.map((item) => <tr key={`${item.author}-${item.title}`}><td>{item.title}</td><td>{item.author}</td><td>{item.state.replaceAll("_", " ")}</td></tr>)}
+          </tbody></table></div>
+        ) : <p className={styles.empty}>All canonical works have governed production assets.</p>}
+      </section>
+
       <section className={styles.tableSection}>
         <div className={styles.sectionHeading}><p>Attention</p><h2>Founder exceptions</h2></div>
         {data.exceptions.length ? (
