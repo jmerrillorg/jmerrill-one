@@ -5,7 +5,7 @@ export type MarketingCommandCenter = {
   current: { featuredAuthor: string; titleCampaigns: number; acquisition: string; reader: string; brand: string };
   upcoming: { nextFeaturedAuthor: string; launches: string[]; scheduledExecutions: number; reactivationCandidates: number };
   health: Array<{ name: string; state: string }>;
-  catalog: { sourceRows: number; canonicalWorks: number; formatProducts: number; reservedIsbns: number; marketingEligible: number; rightsHeld: number };
+  catalog: { sourceRows: number; canonicalWorks: number; formatProducts: number; reservedIsbns: number; marketingEligible: number; rightsHolds: number };
   assets: { registeredFiles: number; worksReady: number; worksPartial: number; worksMissing: number; primaryCovers: number; attention: Array<{ title: string; author: string; state: string }> };
   exceptions: Array<{ name: string; type: string; owner: string; state: string }>;
   executions: Array<{ name: string; platform: string; state: string; scheduled: string }>;
@@ -73,7 +73,7 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
       formatProducts: 300,
       reservedIsbns: 111,
       marketingEligible: catalogWorks.filter((row) => text(row.jm1pub_marketingauthoritystate) === "MARKETING_ELIGIBLE").length,
-      rightsHeld: catalogWorks.filter((row) => text(row.jm1pub_rightsholdstate) !== "NO_RIGHTS_HOLD_FOUND").length,
+      rightsHolds: catalogWorks.filter((row) => text(row.jm1pub_rightsholdstate) !== "NO_RIGHTS_HOLD_FOUND").length,
     },
     assets: {
       registeredFiles: Number(assetTotals[0]?.Total || 0),
