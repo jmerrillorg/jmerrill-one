@@ -67,6 +67,21 @@ export default async function MarketingCommandCenterPage() {
         </div>
       </section>
 
+      <section className={styles.band}>
+        <div className={styles.sectionHeading}><p>Marketing Health</p><h2>Full-catalog disposition</h2></div>
+        <div className={styles.metricGrid}>
+          <article><span>Works evaluated</span><strong>{data.marketingHealth.evaluated}</strong></article>
+          {Object.entries(data.marketingHealth.counts).map(([state, count]) => <article key={state}><span>{state.replaceAll("_", " ")}</span><strong>{count}</strong></article>)}
+        </div>
+      </section>
+
+      <section className={styles.tableSection}>
+        <div className={styles.sectionHeading}><p>Catalog drill-down</p><h2>Disposition, reason, and next action</h2></div>
+        <div className={styles.tableWrap}><table><thead><tr><th>Author / work</th><th>Disposition</th><th>Asset</th><th>Reason</th><th>Next action</th></tr></thead><tbody>
+          {data.marketingHealth.works.map((item) => <tr key={item.workId}><td><strong>{item.author}</strong><br /><Link href={`/marketing/assets/${item.workId}`}>{item.title}</Link></td><td>{item.disposition.replaceAll("_", " ")}</td><td>{item.assetReadiness}</td><td>{item.reason}</td><td>{item.nextAction.replaceAll("_", " ")}</td></tr>)}
+        </tbody></table></div>
+      </section>
+
       <section className={styles.twoColumn}>
         <div className={styles.panel}>
           <div className={styles.sectionHeading}><p>Runtime</p><h2>System health</h2></div>
