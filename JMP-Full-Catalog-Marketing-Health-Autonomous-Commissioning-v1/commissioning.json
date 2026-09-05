@@ -1,6 +1,6 @@
 {
   "artifact": "JMP-Full-Catalog-Marketing-Health-Autonomous-Commissioning-v1",
-  "generatedAt": "2026-09-05T19:40:17.843Z",
+  "generatedAt": "2026-09-05T19:59:39.792Z",
   "mode": "EXECUTE",
   "authority": {
     "canonicalWorks": 129,
@@ -45,7 +45,7 @@
     "lastMarketedAt": "",
     "currentCampaign": "Autonomous reactivation - Just What I Needed",
     "nextEligibleAction": "PRESERVE_CURRENT_CAMPAIGN_AUTHORITY",
-    "evaluatedAt": "2026-09-05T19:40:17.843Z",
+    "evaluatedAt": "2026-09-05T19:59:39.792Z",
     "governedPrimaryAsset": {
       "productionAssetKey": "b!mA37NWi8UEKdDYwH1o5AJNWKIBAoAPBIn_pxeBKSSDVm9PH59uWnQpr1oD4m79se:01DF3SEQOB7TQQILYOLVHLGYPP5NQ5N5D6",
       "driveId": "b!mA37NWi8UEKdDYwH1o5AJNWKIBAoAPBIn_pxeBKSSDVm9PH59uWnQpr1oD4m79se",
@@ -88,5 +88,18 @@
     "browserExecution": 0,
     "sintraExecution": 0,
     "publicPosts": 0
+  },
+  "productionProof": {
+    "functionApp": "func-jm1-marketing-runtime",
+    "runtimeRelease": "7754100480617dc2b19a24994092c1380c3740f2",
+    "timerInvocation": "SUCCESS",
+    "timerSelectedWorkId": null,
+    "registeredFunctions": 6,
+    "incrementalAssetDeliveries": 2,
+    "incrementalAssetStableKeyRows": 1,
+    "incrementalAssetDuplicates": 0,
+    "commandCenterRelease": "bd7b4e21c4ec4d9a180488f23bb02ab32ea1a050",
+    "commandCenterHealth": 200,
+    "commandCenterAuthenticationProtected": true
   }
 }
