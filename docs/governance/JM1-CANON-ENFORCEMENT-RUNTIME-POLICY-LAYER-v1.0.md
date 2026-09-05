@@ -51,6 +51,7 @@ Allowed decisions:
 - `resolveCadenceAuthority`
 - `resolveWaitingOnAuthority`
 - `resolveLegacySystemAuthority`
+- `assertHumanFirstWhyFirst`
 
 ## Execution Principle
 
@@ -68,6 +69,7 @@ Required Publishing enforcement domains:
 
 - payment authority;
 - communication authority;
+- human-first / why-first output enforcement;
 - author/title identity authority;
 - author-facing artifact safety;
 - artifact supersession;
@@ -106,4 +108,3 @@ NoReply and plain-text-only author-facing Publishing mail are prohibited.
 This canon document does not itself perform runtime mutation, schema mutation, Business Central posting, payment creation, author communication, or automation thaw.
 
 Runtime implementation remains division/repository-specific and must be validated before activation.
-

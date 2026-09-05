@@ -1,0 +1,229 @@
+{
+  "policyId": "JM1-HUMAN-FIRST-WHY-FIRST-v1",
+  "version": "1.0",
+  "status": "CANON",
+  "scope": "ENTERPRISE",
+  "owner": "J MERRILL ONE",
+  "authority": "Jackie Smith, Jr. — Governance Authority",
+  "effectiveDate": "2026-08-26",
+  "executablePolicy": true,
+  "brandOverlaysRequired": true,
+  "preSendEnforcement": true,
+  "prePublishEnforcement": true,
+  "driftMonitor": true,
+  "decisionOutcomes": ["ALLOW", "ALLOW_WITH_WARNING", "DENY", "HUMAN_REVIEW_REQUIRED"],
+  "requiredHumanContext": [
+    "divisionOrApplication",
+    "recipientIdentity",
+    "recipientRelationship",
+    "eventOrTrigger",
+    "recipientWhy",
+    "recipientAction",
+    "jm1NextStep",
+    "internalInformationNotNeeded"
+  ],
+  "internalLanguageExamples": [
+    "artifact",
+    "artifactId",
+    "canonical",
+    "runtime",
+    "correlation",
+    "manifest",
+    "workstream",
+    "execution state",
+    "package-grade",
+    "governed source",
+    "system attention",
+    "lifecycle event",
+    "technical validation",
+    "queue",
+    "GUID",
+    "checksum",
+    "worker",
+    "Dataverse row",
+    "state machine token"
+  ],
+  "domainLanguageAllowed": {
+    "publishing": [
+      "manuscript",
+      "developmental edit",
+      "line edit",
+      "copyedit",
+      "proof",
+      "cover",
+      "interior",
+      "publication",
+      "distribution",
+      "royalty statement"
+    ],
+    "financial": [
+      "appointment",
+      "beneficiary",
+      "document preparation",
+      "estate plan",
+      "insurance",
+      "legacy planning",
+      "planning session",
+      "reschedule",
+      "trust",
+      "will"
+    ],
+    "foundation": [
+      "donation",
+      "program",
+      "application",
+      "volunteer",
+      "event",
+      "grant",
+      "Story Hour",
+      "Reading Station"
+    ],
+    "productions": [
+      "production",
+      "talent",
+      "shoot",
+      "deliverable",
+      "release",
+      "call time",
+      "asset",
+      "edit"
+    ],
+    "aic": [
+      "worship",
+      "ministry",
+      "service",
+      "fellowship",
+      "prayer",
+      "volunteer",
+      "event",
+      "Bible study",
+      "giving"
+    ],
+    "jsj": [
+      "reflection",
+      "leadership",
+      "essay",
+      "personal note",
+      "speaking",
+      "writing",
+      "archive",
+      "founder perspective"
+    ]
+  },
+  "brandProfiles": {
+    "jm1": {
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "one@email.jmerrill.one",
+      "replyTo": "one@jmerrill.one",
+      "replyMailboxAuthority": "info@jmerrill.one",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
+    },
+    "publishing": {
+      "status": "FIRST_PROVING_IMPLEMENTATION",
+      "from": "publishing@email.jmerrill.one",
+      "replyTo": "publishing@jmerrill.one",
+      "cc": "publishing@jmerrill.one",
+      "format": "HTML"
+    },
+    "financial": {
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "financial@email.jmerrill.one",
+      "replyTo": "financial@jmerrill.one",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
+    },
+    "foundation": {
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "foundation@email.jmerrill.one",
+      "replyTo": "foundation@jmerrill.one",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
+    },
+    "productions": {
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "productions@email.jmerrill.one",
+      "replyTo": "productions@jmerrill.one",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL"
+    },
+    "aic": {
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "aic@email.agapeic.org",
+      "replyTo": "aic@agapeic.org",
+      "replyMailboxAuthority": "aic@agapeic.org",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL",
+      "organization": "Agape International Cathedral",
+      "voice": [
+        "faith-centered where appropriate",
+        "warm",
+        "clear",
+        "natural",
+        "community-aware",
+        "plain-English",
+        "not always sermon-like"
+      ],
+      "planningCenterBoundary": "PLANNING_CENTER_REMAINS_MINISTRY_EVENT_REGISTRATION_SOURCE_OF_RECORD",
+      "riskRouting": {
+        "routineLowRisk": "ALLOW_AFTER_VALIDATION",
+        "pastoralSensitiveLegalFinancial": "HUMAN_REVIEW_REQUIRED"
+      }
+    },
+    "jsj": {
+      "status": "ENTERPRISE_OUTBOUND_RUNTIME_COMMISSIONED",
+      "from": "jackie@email.jackiesmithjr.com",
+      "replyTo": "jackie@jmerrill.one",
+      "replyMailboxAuthority": "jackie@jmerrill.one",
+      "format": "HTML",
+      "runtimeClassification": "SHARED_ACS_RELAY_BOUND",
+      "liveOutboundCommissioning": "PROVEN_SYNTHETIC_INTERNAL",
+      "organization": "Jackie Smith Jr.",
+      "voice": [
+        "personal",
+        "reflective",
+        "direct",
+        "human",
+        "plain-English",
+        "not divisional"
+      ],
+      "personalBrandBoundary": "JSJ_MAIL_MUST_NOT_CARRY_DIVISIONAL_LEGAL_FINANCIAL_CONTRACT_OR_MINISTRY_AUTHORITY",
+      "riskRouting": {
+        "routineLowRisk": "ALLOW_AFTER_VALIDATION",
+        "divisionalLegalFinancialContractOrRights": "HUMAN_REVIEW_REQUIRED"
+      }
+    }
+  },
+  "artifactClassifications": [
+    "INTERNAL_ONLY",
+    "AUTHOR_REVIEW",
+    "AUTHOR_DELIVERABLE",
+    "PUBLIC_RELEASE",
+    "VENDOR_DELIVERABLE",
+    "EVIDENCE_ONLY"
+  ],
+  "negativeCaseFamilies": [
+    "wrong_recipient_identity",
+    "wrong_relationship_context",
+    "wrong_brand_voice",
+    "wrong_sender_identity",
+    "internal_runtime_language_exposed",
+    "artifact_identifier_exposed",
+    "checksum_or_guid_exposed",
+    "plain_english_rejected_for_missing_headings",
+    "domain_language_falsely_flagged",
+    "high_risk_financial_or_contractual_autosent",
+    "marketing_consent_blocks_required_service_message",
+    "missing_full_manuscript",
+    "memo_or_report_substituted_for_required_manuscript",
+    "internal_qa_artifact_sent",
+    "filename_used_as_artifact_type_authority",
+    "truncated_manuscript_passes",
+    "defective_send_starts_response_clock"
+  ]
+}
