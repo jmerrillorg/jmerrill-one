@@ -94,11 +94,12 @@ export default async function MarketingCommandCenterPage() {
       <section className={styles.band}>
         <div className={styles.sectionHeading}><p>Catalog</p><h2>Commercial coverage</h2></div>
         <div className={styles.metricGrid}>
-          <article><span>Connected titles</span><strong>{data.catalog.connectedTitles}</strong></article>
-          <article><span>Active campaigns</span><strong>{data.catalog.activeCampaigns}</strong></article>
-          <article><span>Fatigue held</span><strong>{data.catalog.fatigueHeld}</strong></article>
-          <article><span>Recent release held</span><strong>{data.catalog.recentReleaseHeld}</strong></article>
-          <article><span>Authority exceptions</span><strong>{data.catalog.exceptions}</strong></article>
+          <article><span>Source rows</span><strong>{data.catalog.sourceRows}</strong></article>
+          <article><span>Canonical works</span><strong>{data.catalog.canonicalWorks}</strong></article>
+          <article><span>Format products</span><strong>{data.catalog.formatProducts}</strong></article>
+          <article><span>Reserved ISBNs</span><strong>{data.catalog.reservedIsbns}</strong></article>
+          <article><span>Marketing eligible</span><strong>{data.catalog.marketingEligible}</strong></article>
+          <article><span>Rights held</span><strong>{data.catalog.rightsHeld}</strong></article>
         </div>
       </section>
 

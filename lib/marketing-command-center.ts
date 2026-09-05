@@ -5,7 +5,7 @@ export type MarketingCommandCenter = {
   current: { featuredAuthor: string; titleCampaigns: number; acquisition: string; reader: string; brand: string };
   upcoming: { nextFeaturedAuthor: string; launches: string[]; scheduledExecutions: number; reactivationCandidates: number };
   health: Array<{ name: string; state: string }>;
-  catalog: { connectedTitles: number; activeCampaigns: number; fatigueHeld: number; recentReleaseHeld: number; exceptions: number };
+  catalog: { sourceRows: number; canonicalWorks: number; formatProducts: number; reservedIsbns: number; marketingEligible: number; rightsHeld: number };
   exceptions: Array<{ name: string; type: string; owner: string; state: string }>;
   executions: Array<{ name: string; platform: string; state: string; scheduled: string }>;
 };
@@ -60,11 +60,12 @@ export async function loadMarketingCommandCenter(): Promise<MarketingCommandCent
       { name: "Media Registry", state: creatives.some((row) => text(row.jm1_assethash)) ? "HEALTHY" : "NO_ASSET_READBACK" },
     ],
     catalog: {
-      connectedTitles: 2,
-      activeCampaigns: 2,
-      fatigueHeld: 2,
-      recentReleaseHeld: 1,
-      exceptions: 5,
+      sourceRows: 411,
+      canonicalWorks: 129,
+      formatProducts: 300,
+      reservedIsbns: 111,
+      marketingEligible: 4,
+      rightsHeld: 125,
     },
     exceptions: founderExceptions.map((row) => ({
       name: text(row.jm1_name),
