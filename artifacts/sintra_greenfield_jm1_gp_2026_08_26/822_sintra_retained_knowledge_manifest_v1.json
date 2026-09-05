@@ -1,0 +1,34 @@
+{
+  "artifact": "SINTRA_RETAINED_KNOWLEDGE_MANIFEST",
+  "generatedAt": "2026-09-05",
+  "classification": "SINTRA_KNOWLEDGE_RETENTION_COMPLETE",
+  "retainedClasses": [
+    "source-checked strategy and research",
+    "approved brand and title positioning",
+    "People-First and Why-First public guidance",
+    "durable campaign concepts",
+    "marketing trigger taxonomy",
+    "role and execution-authority distinctions"
+  ],
+  "representativeRetainedEvidence": [
+    "69_sintra_unique_value_hypothesis.md",
+    "323_gp_social_real_usage_examples.md",
+    "519_sintra_branch_workspace_blueprint.md",
+    "565_publishing_gp_why_first_creative_gate.json",
+    "590_publishing_gp_strategies_release_creative_brief.md",
+    "600_publishing_gp_social_merchandising_standard.md",
+    "684_jmp_marketing_trigger_taxonomy.json",
+    "695_jmp_sintra_marketing_role.json"
+  ],
+  "excludedClasses": [
+    "rejected creatives",
+    "stale calendars",
+    "generic filler",
+    "duplicate schedules",
+    "superseded execution state",
+    "mechanical screenshots without durable knowledge value"
+  ],
+  "executionDependencyRetained": false,
+  "cancellationReadiness": "SINTRA_READY_FOR_CANCELLATION",
+  "cancellationExecuted": false
+}
