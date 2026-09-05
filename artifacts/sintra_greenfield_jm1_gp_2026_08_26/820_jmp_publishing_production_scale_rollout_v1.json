@@ -1,0 +1,103 @@
+{
+  "packageId": 820,
+  "artifact": "JMP-PUBLISHING-PRODUCTION-SCALE-ROLLOUT-v1",
+  "generatedAt": "2026-09-05T01:49:03Z",
+  "mode": "PRODUCTION_RUNTIME_DELTA_DEPLOYED_NON_PUBLISHING",
+  "sourceCommit": "6bb9bf209a1aac71882ed8acc315d3f58be464b0",
+  "deployment": {
+    "functionApp": "func-jm1-marketing-runtime",
+    "resourceGroup": "rg-jm1-ai",
+    "packageSha256": "a690bb5195b75bce8eeb9c06bc92fca4c179edcf2f0bb7e414f409d3435c967d",
+    "deploymentMethod": "Azure Function App zip deployment",
+    "releaseShaSetting": "6bb9bf209a1aac71882ed8acc315d3f58be464b0",
+    "runtimeState": "Running",
+    "httpsOnly": true,
+    "nodeRuntime": "Node|22",
+    "timersVisible": [
+      "creativeWorkProcessorTimer",
+      "credentialMonitorTimer",
+      "marketingControlLoopTimer",
+      "socialExecutionWorkerTimer"
+    ]
+  },
+  "productionScaleRuntimeDelta": {
+    "marketingLifecycleLibrary": [
+      "Strategies for Success launch governance with Sep. 22, 2026 priority and Founder CTA preserved.",
+      "September scheduled/published object reconciliation that preserves valid scheduled objects and suppresses duplicate owned-runtime attempts.",
+      "Exception-only governance filter that hides routine wait states and surfaces actionable marketing exceptions.",
+      "Publishing catalog health and autonomous reactivation selection with The Shift protected as new/recently released.",
+      "Acquisition lifecycle safety gate for consent, sender, suppression, duplicate communication, and joined-family exits.",
+      "Reader/audience signal evaluation based on eligible consent/fatigue/suppression state.",
+      "Enterprise branch reuse model preserving Publishing as the first runtime consumer and Financial as configured-not-activated.",
+      "Business outcome measurement baseline that does not fabricate unavailable revenue attribution."
+    ],
+    "marketingControlLoopTimer": [
+      "Adds a productionScale observation payload to the existing daily control loop.",
+      "Does not publish new platform objects.",
+      "Does not delete or disturb existing scheduled Publishing objects.",
+      "Does not activate LinkedIn autonomous execution while LinkedIn product review is pending.",
+      "Does not activate Financial, Foundation, One, or future branch publishing."
+    ]
+  },
+  "verification": {
+    "syntaxCheck": "PASS",
+    "marketingOsRegressionSuite": {
+      "status": "PASS",
+      "passed": 32,
+      "failed": 0,
+      "classifications": [
+        "JM1_MARKETING_OS_REGRESSION_SUITE_PASS",
+        "FEATURED_AUTHOR_PROGRAM_TRANSFERABILITY_PROVEN",
+        "JMP_PRODUCTION_SCALE_ROLLOUT_INVARIANTS_PROVEN"
+      ]
+    },
+    "linkedinRuntimeRegressionSuite": {
+      "status": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "classifications": [
+        "LINKEDIN_ADAPTER_PAYLOAD_READY",
+        "LINKEDIN_POST_PUBLISH_RECONCILIATION_PROVEN_OFFLINE",
+        "LINKEDIN_STALE_CLAIM_RECOVERY_PROVEN_OFFLINE"
+      ]
+    },
+    "azureSafeSettings": {
+      "JM1_MARKETING_AUTONOMOUS_META_EXECUTION_ENABLED": "true",
+      "JM1_LINKEDIN_AUTONOMOUS_EXECUTION_ENABLED": "false",
+      "JM1_LINKEDIN_PRODUCT_STATE": "COMMUNITY_MANAGEMENT_PRODUCT_REVIEW_PENDING",
+      "JM1_LINKEDIN_APP_VERIFICATION_STATE": "VERIFIED_WITH_PUBLISHING_PAGE",
+      "JM1_CREDENTIAL_MONITOR_SYNTHETIC_ENABLED": "false",
+      "JM1_META_GRAPH_VERSION": "v26.0",
+      "JM1_RELEASE_SHA": "6bb9bf209a1aac71882ed8acc315d3f58be464b0"
+    },
+    "appInsights": {
+      "exceptionsLast24Hours": 0,
+      "recentSocialWorkerState": "succeeded; Meta authority verified; LinkedIn held for product review; no eligible rows; zero platform objects created"
+    }
+  },
+  "businessBaselinePreserved": {
+    "currentFeaturedAuthor": "Sean A Crowley I",
+    "nextFeaturedAuthor": "Iyorwuese Hagher",
+    "octoberManualStartBlockedInSeptember": true,
+    "primaryTitleCampaign": "Strategies for Success in Educational Leadership",
+    "primaryReleaseDate": "2026-09-22",
+    "founderCta": "https://amzn.to/4y4udRZ",
+    "theShiftClassification": "NEW_RECENTLY_RELEASED_NOT_BACKLIST_NOT_DRAFT",
+    "linkedinRuntime": "LINKEDIN_EXTERNAL_REVIEW_ONLY",
+    "sintraRoutineExecution": "NOT USED",
+    "browserPublishing": "NOT USED"
+  },
+  "classification": [
+    "JMP_PUBLISHING_PRODUCTION_SCALE_ROLLOUT_RUNTIME_DEPLOYED",
+    "JMP_PRODUCTION_SCALE_CONTROL_SURFACE_IMPLEMENTED",
+    "JMP_EXCEPTION_ONLY_GOVERNANCE_IMPLEMENTED",
+    "JMP_SEPTEMBER_EXISTING_SCHEDULE_PRESERVATION_GUARD_IMPLEMENTED",
+    "JMP_THE_SHIFT_NEW_RELEASE_PROTECTION_PRESERVED",
+    "LINKEDIN_EXTERNAL_REVIEW_ONLY_PRESERVED"
+  ],
+  "notCertifiedYet": [
+    "JMP MARKETING LIFECYCLE - AUTONOMOUSLY OPERATIONAL AT PRODUCTION SCALE is not asserted by this package alone.",
+    "This package deploys production-scale operating controls and verifies runtime health; continued natural timer observation and real Dataverse row evidence remain required for final production-scale certification.",
+    "LinkedIn autonomous publishing remains false until LinkedIn completes external product review."
+  ]
+}
