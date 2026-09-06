@@ -12,6 +12,11 @@ app.storageQueue('productionAssetRegistrationQueue', {
     const stableKey = `${event.driveId}:${event.itemId}`;
     const filter = encodeURIComponent(`jm1pub_stablekey eq '${odata(stableKey)}'`);
     const existing = (await dv(`/${productionSet}?$select=jm1pub_productionassetid&$filter=${filter}&$top=1`)).value?.[0];
+    if (event.assetState === 'GOVERNED_PRIMARY') {
+      const previousFilter = encodeURIComponent(`jm1pub_canonicalworkid eq '${odata(event.canonicalWorkId)}' and jm1pub_assettype eq '${odata(event.assetType)}' and jm1pub_assetstate eq 'GOVERNED_PRIMARY' and jm1pub_stablekey ne '${odata(stableKey)}'`);
+      const previous = (await dv(`/${productionSet}?$select=jm1pub_productionassetid&$filter=${previousFilter}&$top=100`)).value || [];
+      for (const row of previous) await dv(`/${productionSet}(${row.jm1pub_productionassetid})`, { method: 'PATCH', body: JSON.stringify({ jm1pub_assetstate: 'HISTORICAL' }) });
+    }
     const payload = {
       jm1pub_name: event.fileName.slice(0, 300), jm1pub_stablekey: stableKey, jm1pub_driveid: event.driveId,
       jm1pub_itemid: event.itemId, jm1pub_filename: event.fileName, jm1pub_mimetype: event.mimeType || '',
@@ -26,7 +31,7 @@ app.storageQueue('productionAssetRegistrationQueue', {
     const healthFilter = encodeURIComponent(`jm1pub_canonicalworkid eq '${odata(event.canonicalWorkId)}'`);
     const health = (await dv(`/${healthSet}?$select=jm1pub_titlemarketinghealthid&$filter=${healthFilter}&$top=1`)).value?.[0];
     if (health) await dv(`/${healthSet}(${health.jm1pub_titlemarketinghealthid})`, { method: 'PATCH', body: JSON.stringify({
-      jm1pub_assetreadiness: event.readinessState, jm1pub_nexteligibleaction: 'REEVALUATE_ON_NEXT_CONTROL_LOOP', jm1pub_evaluatedat: new Date().toISOString()
+      ...(event.readinessState === 'UNCHANGED' ? {} : { jm1pub_assetreadiness: event.readinessState }), jm1pub_nexteligibleaction: 'REEVALUATE_ON_NEXT_CONTROL_LOOP', jm1pub_evaluatedat: new Date().toISOString()
     }) });
     context.log(JSON.stringify({ event: 'PRODUCTION_ASSET_REGISTERED', stableKeyHash: await digest(stableKey), canonicalWorkId: event.canonicalWorkId, action: existing ? 'UPDATED' : 'CREATED', healthRecalculationQueued: Boolean(health) }));
   }
@@ -34,7 +39,7 @@ app.storageQueue('productionAssetRegistrationQueue', {
 
 function validate(event) {
   for (const field of ['driveId', 'itemId', 'fileName', 'assetType', 'assetState', 'canonicalWorkId', 'webUrl', 'lastModified', 'readinessState']) if (!event?.[field]) throw new Error(`Missing governed production asset event field: ${field}`);
-  if (!['READY', 'PARTIAL', 'MISSING', 'AMBIGUOUS'].includes(event.readinessState)) throw new Error('Invalid readinessState.');
+  if (!['READY', 'PARTIAL', 'MISSING', 'AMBIGUOUS', 'UNCHANGED'].includes(event.readinessState)) throw new Error('Invalid readinessState.');
 }
 function odata(value) { return String(value).replaceAll("'", "''"); }
 async function digest(value) { const bytes = new TextEncoder().encode(value); const hash = await crypto.subtle.digest('SHA-256', bytes); return Buffer.from(hash).toString('hex'); }
