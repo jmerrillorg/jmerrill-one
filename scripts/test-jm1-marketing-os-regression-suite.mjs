@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 
 import {
   buildCreativeArtifact,
@@ -35,6 +36,10 @@ import {
 
 const OFFICIAL_LOGO_HASH = 'a7ab3ad897c2ae3e16f63c89b582a434d1b7f0442ab559ccd610312e8c9e912a';
 const nowIso = '2026-09-04T16:00:00.000Z';
+const marketingControlLoopSource = readFileSync(
+  new URL('../runtime/jm1-marketing-autonomous-functions/src/functions/marketingControlLoopTimer.js', import.meta.url),
+  'utf8'
+);
 
 const campaign = {
   jm1_name: 'October Featured Author - Iyorwuese Hagher',
@@ -77,6 +82,10 @@ const assetState = {
 };
 
 const tests = [
+  test('Featured Author control loop excludes unrelated title and reactivation programs', () => {
+    assert.match(marketingControlLoopSource, /jm1_campaigntype eq 'featured_author_month'/);
+    assert.doesNotMatch(marketingControlLoopSource, /contains\(jm1_program,'Author'\)/);
+  }),
   test('September Sean is the active current Featured Author on September 4', () => {
     const program = resolveCampaignProgram(septemberSeanCampaign, nowIso);
     assert.equal(program.temporalAuthority.state, 'ACTIVE_CURRENT_MONTH');
