@@ -1,5 +1,5 @@
 import { app } from '@azure/functions';
-import { QueueClient } from '@azure/storage-queue';
+import { QueueServiceClient } from '@azure/storage-queue';
 import { dv } from '../lib/dataverse.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { runEnvelope } from '../lib/runtime.js';
@@ -10,7 +10,7 @@ const EMISSION_EVENT = 'PRODUCTION_ASSET_EVENT_EMITTED_V1';
 app.timer('publishingAssetEventOutboxTimer', {
   schedule: process.env.JM1_PUBLISHING_ASSET_OUTBOX_CRON || '0 12,42 * * * *',
   handler: async (timer, context) => withDistributedTimerLease('publishing-asset-event-outbox', runEnvelope('PUBLISHING_ASSET_EVENT_OUTBOX', timer, context), context, async () => {
-    const queue = QueueClient.fromConnectionString(process.env.AzureWebJobsStorage, process.env.JM1_PRODUCTION_ASSET_EVENT_QUEUE || 'jmp-production-asset-events');
+    const queue = QueueServiceClient.fromConnectionString(process.env.AzureWebJobsStorage).getQueueClient(process.env.JM1_PRODUCTION_ASSET_EVENT_QUEUE || 'jmp-production-asset-events');
     await queue.createIfNotExists();
     const logs = (await dv(`/jm1_executionlogs?$select=jm1_executionlogid,jm1_name,jm1_actiontype,jm1_sourcerecordid,createdon&$filter=jm1_actiontype%20eq%20'${SOURCE_EVENT}'&$orderby=createdon%20asc&$top=100`)).value || [];
     const emitted = [];
