@@ -135,7 +135,7 @@ function productionCatalogSignals() {
 }
 
 async function activeCampaigns(campaignSet) {
-  const filter = encodeURIComponent("jm1_campaigntype eq 'featured_author_month' or contains(jm1_program,'Author')");
+  const filter = encodeURIComponent("jm1_campaigntype eq 'featured_author_month'");
   const response = await dv(`/${campaignSet}?$select=jm1_campaignauthorityid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_campaigntype,jm1_program,jm1_subject,jm1_audience,jm1_cta,jm1_journeyrequirement,jm1_start,jm1_stop,jm1_state&$filter=${filter}&$top=10`);
   return response.value || [];
 }
