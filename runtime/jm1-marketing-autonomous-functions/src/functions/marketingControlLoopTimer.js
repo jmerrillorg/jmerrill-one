@@ -4,11 +4,13 @@ import { buildContentWork, campaignMarker, resolveStageDecision } from '../lib/c
 import { dv, entitySet, queryByPrefix, safeCount, upsertByIdempotency } from '../lib/dataverse.js';
 import { evaluateFourLaneControlCycle, productionPublishingSignals } from '../lib/marketingLifecycle.js';
 import { activeBranches, runEnvelope } from '../lib/runtime.js';
+import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 
 app.timer('marketingControlLoopTimer', {
   schedule: process.env.JM1_MARKETING_CONTROL_LOOP_CRON || '0 17 12 * * *',
   handler: async (timer, context) => {
     const envelope = runEnvelope('AUTONOMOUS_DAILY_MARKETING_CONTROL_LOOP', timer, context);
+    return withDistributedTimerLease('marketing-control-loop', envelope, context, async () => {
     const controlSet = await entitySet('jm1_marketingcontrolloop');
     const socialSet = await entitySet('jm1_socialexecution');
     const credentialSet = await entitySet('jm1_credentialmonitor');
@@ -113,6 +115,7 @@ app.timer('marketingControlLoopTimer', {
       fourLaneCycle,
       decisions
     }));
+    });
   }
 });
 
@@ -132,7 +135,7 @@ function productionCatalogSignals() {
 }
 
 async function activeCampaigns(campaignSet) {
-  const filter = encodeURIComponent("jm1_campaigntype eq 'featured_author_month' or contains(jm1_program,'Author')");
+  const filter = encodeURIComponent("jm1_campaigntype eq 'featured_author_month'");
   const response = await dv(`/${campaignSet}?$select=jm1_campaignauthorityid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_campaigntype,jm1_program,jm1_subject,jm1_audience,jm1_cta,jm1_journeyrequirement,jm1_start,jm1_stop,jm1_state&$filter=${filter}&$top=10`);
   return response.value || [];
 }

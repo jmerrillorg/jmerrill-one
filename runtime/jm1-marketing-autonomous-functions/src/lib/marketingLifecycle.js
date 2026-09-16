@@ -335,6 +335,111 @@ export function evaluateCatalogMarketingHealth(titles, nowIso) {
   });
 }
 
+export const CATALOG_HEALTH_DISPOSITIONS = [
+  'ACTIVE_CAMPAIGN', 'LAUNCH_PRIORITY', 'FEATURED_AUTHOR_PRIORITY', 'RECENT_RELEASE_HELD',
+  'REACTIVATION_ELIGIBLE', 'EVERGREEN_ELIGIBLE', 'FATIGUE_HELD', 'COLLISION_HELD',
+  'ASSET_HELD', 'HEALTHY_NO_ACTION_REQUIRED', 'OTHER_POLICY_HELD'
+];
+
+export function evaluateFullCatalogMarketingHealth(titles, options = {}) {
+  const nowIso = options.nowIso || new Date().toISOString();
+  const currentFeaturedAuthor = options.currentFeaturedAuthor || '';
+  const nextFeaturedAuthor = options.nextFeaturedAuthor || '';
+  return titles.map((title) => {
+    const name = String(title.title || '');
+    const author = String(title.author || '');
+    const assetReadiness = normalizeAssetReadiness(title.assetReadiness);
+    const marketingEligible = title.marketingAuthorityState === 'MARKETING_ELIGIBLE';
+    const retirementText = String(title.retirementState || '').toUpperCase();
+    const catalogText = String(title.catalogState || '').toUpperCase();
+    const activeAuthority = (retirementText === 'NOT_RETIRED' || !/RETIRED|REVERTED/.test(retirementText)) && !/INACTIVE|REVERTED/.test(catalogText);
+    const rightsText = String(title.rightsState || '').toUpperCase();
+    const rightsClear = rightsText === 'NO_RIGHTS_HOLD_FOUND' || rightsText === 'RESOLVED' || !/HOLD|AMBIGUOUS|RESTRICTED|UNCLEAR/.test(rightsText);
+    const fatigueHeld = Number.isFinite(daysSince(title.lastMarketedAt, nowIso)) && daysSince(title.lastMarketedAt, nowIso) < Number(title.fatigueDays || 14);
+    const collisionHeld = Boolean(title.collisionHeld);
+    const isStrategies = /Strategies for Success/i.test(name);
+    const isShift = /The Shift/i.test(name) && /Sean A Crowley/i.test(author);
+    const isCurrentFeatured = author === currentFeaturedAuthor;
+    const hasActiveCampaign = Boolean(title.currentCampaign);
+    let disposition = 'HEALTHY_NO_ACTION_REQUIRED';
+    let reason = 'Governed and healthy; no higher-priority action is due.';
+
+    if (!marketingEligible || !activeAuthority || !rightsClear) {
+      disposition = 'OTHER_POLICY_HELD'; reason = 'Marketing authority, catalog lifecycle, retirement, or rights policy does not permit execution.';
+    } else if (hasActiveCampaign && !isStrategies && !isCurrentFeatured) {
+      disposition = 'ACTIVE_CAMPAIGN'; reason = 'An existing campaign already owns current title activity.';
+    } else if (isStrategies) {
+      disposition = 'LAUNCH_PRIORITY'; reason = 'Strategies for Success has protected September 22, 2026 launch authority.';
+    } else if (isShift) {
+      disposition = 'RECENT_RELEASE_HELD'; reason = 'The Shift is a new August 2026 release and is protected from backlist treatment.';
+    } else if (isCurrentFeatured) {
+      disposition = 'FEATURED_AUTHOR_PRIORITY'; reason = `${currentFeaturedAuthor} holds current Featured Author authority.`;
+    } else if (collisionHeld) {
+      disposition = 'COLLISION_HELD'; reason = 'A higher-priority campaign occupies the applicable cadence window.';
+    } else if (fatigueHeld) {
+      disposition = 'FATIGUE_HELD'; reason = 'The title or author is inside the governed repetition window.';
+    } else if (assetReadiness === 'MISSING' || assetReadiness === 'AMBIGUOUS') {
+      disposition = 'ASSET_HELD'; reason = assetReadiness === 'AMBIGUOUS' ? 'Primary cover authority is ambiguous.' : 'A governed primary cover is missing.';
+    } else if (assetReadiness === 'READY') {
+      disposition = 'REACTIVATION_ELIGIBLE'; reason = 'Active marketing authority, governed-primary cover, and no launch, recent-release, fatigue, collision, or rights hold.';
+    } else if (assetReadiness === 'PARTIAL' && title.compatibleArchetypeAvailable) {
+      disposition = 'EVERGREEN_ELIGIBLE'; reason = 'Available governed assets support a compatible non-fabricated creative archetype.';
+    } else {
+      disposition = 'ASSET_HELD'; reason = 'Partial assets do not support the selected title-cover archetype.';
+    }
+
+    const score = fullCatalogPriorityScore({ ...title, disposition, assetReadiness }, nowIso);
+    return {
+      titleId: title.titleId, title: name, author, assetReadiness, disposition, reason, score,
+      currentFeaturedAuthor, nextFeaturedAuthor, marketingEligible, rightsClear, activeAuthority,
+      lastMarketedAt: title.lastMarketedAt || '', currentCampaign: title.currentCampaign || '',
+      nextEligibleAction: nextActionForDisposition(disposition), evaluatedAt: nowIso,
+      governedPrimaryAsset: title.governedPrimaryAsset || null
+    };
+  });
+}
+
+export function summarizeFullCatalogMarketingHealth(rows) {
+  const dispositions = Object.fromEntries(CATALOG_HEALTH_DISPOSITIONS.map((key) => [key, 0]));
+  const assets = { READY: 0, PARTIAL: 0, MISSING: 0, AMBIGUOUS: 0 };
+  for (const row of rows) {
+    if (!(row.disposition in dispositions)) throw new Error(`Unknown catalog health disposition: ${row.disposition}`);
+    dispositions[row.disposition] += 1;
+    assets[row.assetReadiness] = (assets[row.assetReadiness] || 0) + 1;
+  }
+  return { total: rows.length, dispositions, assets };
+}
+
+export function selectFullCatalogCandidate(rows) {
+  return rows
+    .filter((row) => row.disposition === 'REACTIVATION_ELIGIBLE')
+    .sort((a, b) => b.score - a.score || a.author.localeCompare(b.author) || a.title.localeCompare(b.title))[0] || null;
+}
+
+function normalizeAssetReadiness(value) {
+  const normalized = String(value || '').toUpperCase();
+  if (normalized.includes('AMBIGUOUS')) return 'AMBIGUOUS';
+  if (normalized.includes('MISSING') || normalized.includes('EXCEPTION')) return 'MISSING';
+  if (normalized.includes('PARTIAL')) return 'PARTIAL';
+  if (normalized.includes('READY') || normalized.includes('RECONCILED') || normalized.includes('GOVERNED_PRIMARY')) return 'READY';
+  return 'MISSING';
+}
+
+function fullCatalogPriorityScore(title, nowIso) {
+  const dispositionWeight = { LAUNCH_PRIORITY: 1000, FEATURED_AUTHOR_PRIORITY: 900, REACTIVATION_ELIGIBLE: 500, EVERGREEN_ELIGIBLE: 400 };
+  const inactivity = Math.min(3650, daysSince(title.lastMarketedAt, nowIso));
+  const stableInactivity = Number.isFinite(inactivity) ? inactivity : 3650;
+  return (dispositionWeight[title.disposition] || 0) + stableInactivity / 3650;
+}
+
+function nextActionForDisposition(disposition) {
+  if (disposition === 'REACTIVATION_ELIGIBLE') return 'SELECT_WHEN_TITLE_AUTHOR_LANE_CAPACITY_AVAILABLE';
+  if (disposition === 'EVERGREEN_ELIGIBLE') return 'USE_ONLY_COMPATIBLE_APPROVED_ARCHETYPE';
+  if (disposition === 'LAUNCH_PRIORITY' || disposition === 'FEATURED_AUTHOR_PRIORITY' || disposition === 'ACTIVE_CAMPAIGN') return 'PRESERVE_CURRENT_CAMPAIGN_AUTHORITY';
+  if (disposition.endsWith('_HELD')) return 'REVIEW_WHEN_HOLD_SIGNAL_CHANGES';
+  return 'REEVALUATE_ON_NEXT_CONTROL_LOOP';
+}
+
 export function summarizeCatalogMarketingHealth(healthRows) {
   const counts = {
     titlesEvaluated: healthRows.length,

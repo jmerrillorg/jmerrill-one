@@ -1,0 +1,19 @@
+{
+  "migrationId": "001_marketing_resilience_fields",
+  "description": "Add bounded retry, correlation, worker, and exception-owner fields without altering existing marketing evidence.",
+  "environmentAllowlist": ["https://jm1hq.crm.dynamics.com"],
+  "strategy": "ADDITIVE_FORWARD_FIX_ONLY",
+  "operations": [
+    { "table": "jm1_socialexecution", "type": "Integer", "schemaName": "jm1_AttemptCount", "displayName": "Attempt Count" },
+    { "table": "jm1_socialexecution", "type": "DateTime", "schemaName": "jm1_LastAttemptAt", "displayName": "Last Attempt At" },
+    { "table": "jm1_socialexecution", "type": "DateTime", "schemaName": "jm1_NextRetryAt", "displayName": "Next Retry At" },
+    { "table": "jm1_socialexecution", "type": "String", "schemaName": "jm1_CorrelationId", "displayName": "Correlation ID", "maxLength": 200 },
+    { "table": "jm1_socialexecution", "type": "String", "schemaName": "jm1_FailureCategory", "displayName": "Failure Category", "maxLength": 160 },
+    { "table": "jm1_socialexecution", "type": "String", "schemaName": "jm1_ExceptionOwner", "displayName": "Exception Owner", "maxLength": 200 },
+    { "table": "jm1_marketingexception", "type": "Integer", "schemaName": "jm1_AttemptCount", "displayName": "Attempt Count" },
+    { "table": "jm1_marketingexception", "type": "String", "schemaName": "jm1_CorrelationId", "displayName": "Correlation ID", "maxLength": 200 },
+    { "table": "jm1_marketingexception", "type": "String", "schemaName": "jm1_Worker", "displayName": "Worker", "maxLength": 160 },
+    { "table": "jm1_marketingexception", "type": "DateTime", "schemaName": "jm1_LastFailureAt", "displayName": "Last Failure At" },
+    { "table": "jm1_marketingexception", "type": "String", "schemaName": "jm1_ExceptionOwner", "displayName": "Exception Owner", "maxLength": 200 }
+  ]
+}

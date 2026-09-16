@@ -4,11 +4,13 @@ import { BRANCH_CONFIG } from '../lib/config.js';
 import { dv, entitySet, patchById, queryByPrefix, upsertByIdempotency } from '../lib/dataverse.js';
 import { registerCampaignCreativeMedia } from '../lib/mediaRegistry.js';
 import { runEnvelope } from '../lib/runtime.js';
+import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 
 app.timer('creativeWorkProcessorTimer', {
   schedule: process.env.JM1_CREATIVE_WORKER_CRON || '0 22 12 * * *',
   handler: async (timer, context) => {
     const envelope = runEnvelope('AUTONOMOUS_CREATIVE_WORK_PROCESSOR', timer, context);
+    return withDistributedTimerLease('creative-work-processor', envelope, context, async () => {
     const campaignSet = await entitySet('jm1_campaignauthority');
     const contentSet = await entitySet('jm1_contentwork');
     const creativeSet = await entitySet('jm1_creativework');
@@ -100,6 +102,7 @@ app.timer('creativeWorkProcessorTimer', {
         writes.some((write) => write.type === 'social') ? 'SOCIAL_ROW_GENERATION_FROM_CAMPAIGN_AUTHORITY_PROVEN' : 'NO_SOCIAL_ROWS_CREATED'
       ]
     }));
+    });
   }
 });
 
