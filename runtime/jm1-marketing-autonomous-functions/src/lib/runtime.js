@@ -105,12 +105,127 @@ export function activeBranches(branchConfig) {
     .map(([key, config]) => ({ key, ...config }));
 }
 
+export const CREDENTIAL_STATES = Object.freeze({
+  KNOWN_VALID: 'KNOWN_VALID',
+  EXPIRING_60D: 'EXPIRING_60D',
+  EXPIRING_30D: 'EXPIRING_30D',
+  EXPIRING_14D: 'EXPIRING_14D',
+  EXPIRING_7D: 'EXPIRING_7D',
+  EXPIRED: 'EXPIRED',
+  EXPIRATION_UNKNOWN: 'EXPIRATION_UNKNOWN',
+  NONEXPIRING_PROVEN: 'NONEXPIRING_PROVEN',
+  INVALID_METADATA: 'INVALID_METADATA',
+  READBACK_FAILED: 'READBACK_FAILED',
+  NOT_ISSUED: 'NOT_ISSUED',
+  ROTATION_DUE: 'META_CREDENTIAL_ROTATION_DUE'
+});
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+const RFC3339_WITH_ZONE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/i;
+
+export function classifyCredentialMetadata(metadata = {}, now = new Date()) {
+  const evaluatedAt = asValidDate(now);
+  const issued = credentialTimestamp(metadata.issuedAt);
+  const expires = credentialTimestamp(metadata.expiresAt);
+  const rotationDue = credentialTimestamp(metadata.rotationDueAt);
+
+  if (!evaluatedAt || [issued, expires, rotationDue].some((item) => item.kind === 'invalid')) {
+    return credentialClassification(CREDENTIAL_STATES.INVALID_METADATA, issued, expires, rotationDue);
+  }
+
+  if (metadata.nonexpiringProven && expires.kind !== 'missing') {
+    return credentialClassification(CREDENTIAL_STATES.INVALID_METADATA, issued, expires, rotationDue);
+  }
+
+  if (metadata.notIssued && [issued, expires, rotationDue].some((item) => item.kind !== 'missing')) {
+    return credentialClassification(CREDENTIAL_STATES.INVALID_METADATA, issued, expires, rotationDue);
+  }
+
+  if (issued.kind === 'valid' && expires.kind === 'valid' && issued.epochMs > expires.epochMs) {
+    return credentialClassification(CREDENTIAL_STATES.INVALID_METADATA, issued, expires, rotationDue);
+  }
+
+  if (rotationDue.kind === 'valid' && expires.kind === 'valid' && rotationDue.epochMs > expires.epochMs) {
+    return credentialClassification(CREDENTIAL_STATES.INVALID_METADATA, issued, expires, rotationDue);
+  }
+
+  if (metadata.readbackAvailable === false) {
+    return credentialClassification(CREDENTIAL_STATES.READBACK_FAILED, issued, expires, rotationDue);
+  }
+
+  if (metadata.notIssued) {
+    return credentialClassification(CREDENTIAL_STATES.NOT_ISSUED, issued, expires, rotationDue);
+  }
+
+  if (metadata.nonexpiringProven) {
+    return credentialClassification(CREDENTIAL_STATES.NONEXPIRING_PROVEN, issued, expires, rotationDue);
+  }
+
+  if (expires.kind === 'missing') {
+    return credentialClassification(CREDENTIAL_STATES.EXPIRATION_UNKNOWN, issued, expires, rotationDue);
+  }
+
+  if (evaluatedAt.getTime() >= expires.epochMs) {
+    return credentialClassification(CREDENTIAL_STATES.EXPIRED, issued, expires, rotationDue);
+  }
+
+  if (rotationDue.kind === 'valid' && evaluatedAt.getTime() >= rotationDue.epochMs) {
+    return credentialClassification(CREDENTIAL_STATES.ROTATION_DUE, issued, expires, rotationDue);
+  }
+
+  const remainingMs = expires.epochMs - evaluatedAt.getTime();
+  if (remainingMs <= 7 * DAY_MS) return credentialClassification(CREDENTIAL_STATES.EXPIRING_7D, issued, expires, rotationDue);
+  if (remainingMs <= 14 * DAY_MS) return credentialClassification(CREDENTIAL_STATES.EXPIRING_14D, issued, expires, rotationDue);
+  if (remainingMs <= 30 * DAY_MS) return credentialClassification(CREDENTIAL_STATES.EXPIRING_30D, issued, expires, rotationDue);
+  if (remainingMs <= 60 * DAY_MS) return credentialClassification(CREDENTIAL_STATES.EXPIRING_60D, issued, expires, rotationDue);
+  return credentialClassification(CREDENTIAL_STATES.KNOWN_VALID, issued, expires, rotationDue);
+}
+
 export function credentialState(rotationDueAt, expiresAt, now = new Date()) {
-  const due = new Date(rotationDueAt);
-  const expires = new Date(expiresAt);
-  if (!Number.isNaN(expires.getTime()) && now >= expires) return 'EXPIRED';
-  if (!Number.isNaN(due.getTime()) && now >= due) return 'META_CREDENTIAL_ROTATION_DUE';
-  return 'VERIFIED_ACTIVE_ROTATION_TRACKED';
+  return classifyCredentialMetadata({ rotationDueAt, expiresAt }, now).state;
+}
+
+function credentialTimestamp(value) {
+  if (value == null || (typeof value === 'string' && value.trim() === '')) {
+    return { kind: 'missing', value: null, epochMs: null };
+  }
+
+  if (typeof value !== 'string' || !RFC3339_WITH_ZONE.test(value.trim())) {
+    return { kind: 'invalid', value: null, epochMs: null };
+  }
+
+  const timestamp = value.trim();
+  const epochMs = Date.parse(timestamp);
+  if (!Number.isFinite(epochMs)) return { kind: 'invalid', value: null, epochMs: null };
+  return { kind: 'valid', value: timestamp, epochMs };
+}
+
+function credentialClassification(state, issued, expires, rotationDue) {
+  const exceptionCodes = {
+    [CREDENTIAL_STATES.EXPIRING_60D]: 'CREDENTIAL_EXPIRING_60D',
+    [CREDENTIAL_STATES.EXPIRING_30D]: 'CREDENTIAL_EXPIRING_30D',
+    [CREDENTIAL_STATES.EXPIRING_14D]: 'CREDENTIAL_EXPIRING_14D',
+    [CREDENTIAL_STATES.EXPIRING_7D]: 'CREDENTIAL_EXPIRING_7D',
+    [CREDENTIAL_STATES.EXPIRED]: 'CREDENTIAL_EXPIRED',
+    [CREDENTIAL_STATES.EXPIRATION_UNKNOWN]: 'CREDENTIAL_EXPIRATION_UNKNOWN',
+    [CREDENTIAL_STATES.INVALID_METADATA]: 'CREDENTIAL_METADATA_INVALID',
+    [CREDENTIAL_STATES.READBACK_FAILED]: 'CREDENTIAL_READBACK_FAILED',
+    [CREDENTIAL_STATES.NOT_ISSUED]: 'CREDENTIAL_NOT_ISSUED',
+    [CREDENTIAL_STATES.ROTATION_DUE]: 'META_CREDENTIAL_ROTATION_DUE'
+  };
+
+  return {
+    state,
+    exceptionCode: exceptionCodes[state] || '',
+    issuedAt: issued.value,
+    expiresAt: expires.value,
+    rotationDueAt: rotationDue.value
+  };
+}
+
+function asValidDate(value) {
+  const date = value instanceof Date ? value : new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
 }
 
 function authorityView(authority, state) {

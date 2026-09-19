@@ -9,7 +9,8 @@
     "test:marketing-os": "node ../../scripts/test-jm1-marketing-os-regression-suite.mjs",
     "test:resilience": "node ../../scripts/test-jm1-marketing-resilience.mjs",
     "test:linkedin-runtime": "node ../../scripts/test-jm1-linkedin-runtime-regression-suite.mjs"
-    ,"test:catalog-health": "node ../../scripts/test-jmp-full-catalog-marketing-health.mjs"
+    ,"test:catalog-health": "node ../../scripts/test-jmp-full-catalog-marketing-health.mjs",
+    "test:credential-monitor": "node ../../scripts/test-jm1-credential-monitor-recovery.mjs"
   },
   "dependencies": {
     "@azure/functions": "^4.7.2",
