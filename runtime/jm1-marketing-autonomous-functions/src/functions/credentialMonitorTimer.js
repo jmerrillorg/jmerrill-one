@@ -5,6 +5,8 @@ import {
   META_TOKEN_ROTATION_DUE_AT,
   META_TOKEN_SECRET_REFERENCE,
   META_TOKEN_SECRET_VERSION,
+  META_SYSTEM_USER_TOKEN,
+  LINKEDIN_ACCESS_TOKEN,
   LINKEDIN_CLIENT_SECRET_REFERENCE,
   LINKEDIN_OAUTH_STATE_SECRET_REFERENCE,
   LINKEDIN_TOKEN_EXPIRES_AT,
@@ -12,7 +14,8 @@ import {
   SYNTHETIC_CREDENTIAL_MONITOR_ENABLED
 } from '../lib/config.js';
 import { entitySet, upsertByIdempotency } from '../lib/dataverse.js';
-import { credentialState, currentFeaturedAuthorMarker, deterministicId, isoNow, runEnvelope } from '../lib/runtime.js';
+import { buildCredentialMonitorRecords, executeCredentialMonitorScan } from '../lib/credentialMonitor.js';
+import { currentFeaturedAuthorMarker, deterministicId, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 
 app.timer('credentialMonitorTimer', {
@@ -23,44 +26,36 @@ app.timer('credentialMonitorTimer', {
     const credentialSet = await entitySet('jm1_credentialmonitor');
     const marker = currentFeaturedAuthorMarker(new Date(envelope.startedAt))
       || deterministicId('JM1_MARKETING', 'credential-monitor', 'global');
-    const state = credentialState(META_TOKEN_ROTATION_DUE_AT, META_TOKEN_EXPIRES_AT);
-    const linkedinState = LINKEDIN_TOKEN_EXPIRES_AT
-      ? 'LINKEDIN_CREDENTIAL_ISSUED_MONITORING_ACTIVE'
-      : 'LINKEDIN_CREDENTIAL_NOT_ISSUED_PRODUCT_REVIEW_PENDING';
-
-    const productionWrite = await upsertByIdempotency(credentialSet, 'jm1_credentialmonitorid', {
-      jm1_name: 'Meta Social Publisher system-user token',
-      jm1_branch: 'J Merrill Publishing',
-      jm1_platform: 'Meta',
-      jm1_credentialreference: META_TOKEN_SECRET_REFERENCE,
-      jm1_credentialtype: 'MetaSystemUserAccessToken',
-      jm1_secretversion: META_TOKEN_SECRET_VERSION,
-      jm1_issuedat: META_TOKEN_ISSUED_AT,
-      jm1_expiresat: META_TOKEN_EXPIRES_AT,
-      jm1_rotationdueat: META_TOKEN_ROTATION_DUE_AT,
-      jm1_lastverifiedat: envelope.startedAt,
-      jm1_currentcredentialstate: state,
-      jm1_replacementcredentialstate: 'NOT_STARTED',
-      jm1_exceptioncode: state === 'META_CREDENTIAL_ROTATION_DUE' ? 'META_CREDENTIAL_ROTATION_DUE' : '',
-      jm1_idempotencykey: `${marker}:credential:meta:system-user-token`
+    const records = buildCredentialMonitorRecords({
+      marker,
+      verifiedAt: envelope.startedAt,
+      meta: {
+        present: Boolean(META_SYSTEM_USER_TOKEN),
+        reference: META_TOKEN_SECRET_REFERENCE,
+        secretVersion: META_TOKEN_SECRET_VERSION,
+        issuedAt: META_TOKEN_ISSUED_AT,
+        expiresAt: META_TOKEN_EXPIRES_AT,
+        rotationDueAt: META_TOKEN_ROTATION_DUE_AT
+      },
+      linkedin: {
+        present: Boolean(LINKEDIN_ACCESS_TOKEN),
+        reference: LINKEDIN_TOKEN_SECRET_REFERENCE,
+        expiresAt: LINKEDIN_TOKEN_EXPIRES_AT
+      }
     });
-
-    const linkedInWrite = await upsertByIdempotency(credentialSet, 'jm1_credentialmonitorid', {
-      jm1_name: 'LinkedIn Organization Publisher OAuth credential contract',
-      jm1_branch: 'J Merrill Publishing',
-      jm1_platform: 'LinkedIn',
-      jm1_credentialreference: LINKEDIN_TOKEN_SECRET_REFERENCE,
-      jm1_credentialtype: 'LinkedInOrganizationOAuthAccessToken',
-      jm1_secretversion: '',
-      jm1_issuedat: '',
-      jm1_expiresat: LINKEDIN_TOKEN_EXPIRES_AT,
-      jm1_rotationdueat: '',
-      jm1_lastverifiedat: envelope.startedAt,
-      jm1_currentcredentialstate: linkedinState,
-      jm1_replacementcredentialstate: 'WAITING_FOR_LINKEDIN_PRODUCT_APPROVAL_AND_OAUTH',
-      jm1_exceptioncode: LINKEDIN_TOKEN_EXPIRES_AT ? '' : 'LINKEDIN_CREDENTIAL_NOT_ISSUED_PRODUCT_REVIEW_PENDING',
-      jm1_idempotencykey: `${marker}:credential:linkedin:organization-oauth-token`
-    });
+    const scan = await executeCredentialMonitorScan(
+      records,
+      (payload) => upsertByIdempotency(credentialSet, 'jm1_credentialmonitorid', payload)
+    );
+    const governedDebt = scan.results.filter((result) => /EXPIRING|EXPIRED|UNKNOWN|INVALID|FAILED/.test(result.state));
+    if (governedDebt.length > 0) {
+      context.warn(JSON.stringify({
+        event: 'CREDENTIAL_MONITOR_GOVERNED_DEBT',
+        credentials: governedDebt.map((result) => ({ key: result.key, state: result.state })),
+        founderAlertRequired: false,
+        tokenValueLogged: false
+      }));
+    }
 
     let syntheticWrite = null;
     let syntheticExceptionWrite = null;
@@ -103,19 +98,21 @@ app.timer('credentialMonitorTimer', {
       ...envelope,
       dataverseWrite: {
         entitySet: credentialSet,
-        production: productionWrite,
-        linkedin: {
-          token: linkedInWrite,
-          tokenSecretReference: LINKEDIN_TOKEN_SECRET_REFERENCE,
-          clientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
-          oauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE
-        },
+        credentials: scan.results,
         synthetic: syntheticWrite,
         syntheticException: syntheticExceptionWrite
       },
-      productionCredentialState: state,
+      credentialSummary: {
+        processed: scan.processed,
+        succeeded: scan.succeeded,
+        failed: scan.failed,
+        states: scan.results.map((result) => ({ key: result.key, state: result.state })),
+        linkedinClientSecretReference: LINKEDIN_CLIENT_SECRET_REFERENCE,
+        linkedinOauthStateSecretReference: LINKEDIN_OAUTH_STATE_SECRET_REFERENCE
+      },
       tokenValueLogged: false
     }));
+    if (scan.failed > 0) throw new Error(`Credential monitor completed with ${scan.failed} failed Dataverse write(s)`);
     });
   }
 });
