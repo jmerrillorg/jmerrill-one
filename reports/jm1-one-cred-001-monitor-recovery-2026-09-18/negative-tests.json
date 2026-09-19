@@ -1,0 +1,29 @@
+{
+  "suite": "scripts/test-jm1-credential-monitor-recovery.mjs",
+  "runtime": "Node 22",
+  "result": "PASS",
+  "passed": 29,
+  "failed": 0,
+  "covered": [
+    "null expiration",
+    "empty expiration",
+    "missing expiration",
+    "valid future expiration",
+    "7-day boundary",
+    "14-day boundary",
+    "30-day boundary",
+    "60-day boundary",
+    "expired",
+    "malformed timestamp",
+    "timestamp missing timezone",
+    "nonexpiring-proven credential",
+    "credential not issued",
+    "provider readback unavailable",
+    "contradictory metadata",
+    "provider timestamp precision preservation",
+    "nullable Dataverse payloads",
+    "Dataverse write failure isolation",
+    "unchanged scan idempotency"
+  ],
+  "secretValuesInOutput": false
+}
