@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "timestampUtc": "2026-09-19T01:15:00.0006787Z",
+  "triggerReason": "Timer fired at 2026-09-19T01:15:00.0004525+00:00",
+  "operationId": "07e27092fb1ac990d8d74e5925f8a28e",
+  "invocationId": "d2a96465-df53-4993-bca9-3d8533827b37",
+  "success": true,
+  "durationMs": 572.8615,
+  "recordsProcessed": 2,
+  "recordsSucceeded": 2,
+  "recordsFailed": 0,
+  "states": {
+    "meta": "EXPIRING_60D",
+    "linkedin": "NOT_ISSUED"
+  },
+  "dataverseWrites": {
+    "metaCreated": false,
+    "linkedinCreated": false,
+    "readbackVerifiedAtUtc": "2026-09-19T01:15:00Z"
+  },
+  "tokenValueLogged": false,
+  "governedDebtTelemetry": {
+    "credentials": [
+      {
+        "key": "meta",
+        "state": "EXPIRING_60D"
+      }
+    ],
+    "founderAlertRequired": false
+  },
+  "scheduleAfterProof": "0 7 12 * * *",
+  "scheduleRestoreVerification": "No invocation occurred at the former 2026-09-19T01:25:00Z five-minute boundary"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "offlineRegression": "PASS",
+  "productionNaturalRun": {
+    "operationId": "07e27092fb1ac990d8d74e5925f8a28e",
+    "recordsProcessed": 2,
+    "recordsSucceeded": 2,
+    "recordsFailed": 0,
+    "metaCreated": false,
+    "linkedinCreated": false
+  },
+  "duplicateBusinessEffects": 0,
+  "duplicateExceptionRecords": 0,
+  "notes": "The controlled invocation created the first LinkedIn monitor metadata row. The subsequent natural run updated both existing records and created none."
+}

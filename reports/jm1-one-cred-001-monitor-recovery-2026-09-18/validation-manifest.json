@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "validatedAtUtc": "2026-09-19T01:21:26Z",
+  "source": {
+    "codeMergeSha": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf",
+    "gitDiffCheck": "PASS",
+    "functionSyntaxChecks": "PASS"
+  },
+  "tests": {
+    "credentialMonitor": { "passed": 29, "failed": 0 },
+    "marketingOsRegression": { "passed": 33, "failed": 0 },
+    "linkedinRegression": { "passed": 7, "failed": 0 },
+    "catalogHealth": { "passed": 9, "failed": 0 },
+    "resilience": { "passed": 5, "failed": 0 },
+    "runtimeNpmAuditVulnerabilities": 0
+  },
+  "production": {
+    "controlledRun": "PASS",
+    "naturalScheduledRun": "PASS",
+    "scanIdempotency": "PASS",
+    "dataverseReadback": "PASS",
+    "functionRuntime": "HEALTHY",
+    "webHealth": "HEALTHY",
+    "otherMarketingWorkerRegressionCount": 0,
+    "postDeploymentExceptionCount": 0
+  },
+  "zeroBusinessEffectGate": {
+    "metaPostsCreated": 0,
+    "linkedinPostsCreated": 0,
+    "dynamicsJourneysCreated": 0,
+    "intakeRecordsCreatedByTest": 0,
+    "credentialsCreated": 0,
+    "credentialsRotated": 0,
+    "credentialsRetired": 0,
+    "azureRbacMutations": 0,
+    "dataverseSchemaMutations": 0,
+    "financialEffects": 0,
+    "communicationsSent": 0,
+    "businessContinuityInterruption": 0
+  },
+  "secretValuesExposed": false,
+  "notes": [
+    "A first resilience run raced a parallel dependency installation; the isolated rerun passed 5/5 and did not indicate a source defect.",
+    "The repository's existing web deployment workflow ran automatically after the code merge and completed successfully."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "readbackAtUtc": "2026-09-19T01:21:26Z",
+  "repository": "jmerrillorg/jmerrill-one",
+  "canonicalMainAtStart": "503fb2509125c0947c3ab4a5baa01113d6f5ff9c",
+  "codeMergeSha": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf",
+  "functionApp": {
+    "name": "func-jm1-marketing-runtime",
+    "resourceGroup": "rg-jm1-ai",
+    "runtime": "Node 22",
+    "runtimeReleaseMarker": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf",
+    "componentReleaseMarker": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf",
+    "credentialMonitorScheduleSetting": "0 7 12 * * *",
+    "registeredFunctionCount": 7,
+    "registeredFunctions": [
+      "catalogMarketingHealthTimer",
+      "creativeWorkProcessorTimer",
+      "credentialMonitorTimer",
+      "marketingControlLoopTimer",
+      "productionAssetRegistrationQueue",
+      "publishingAssetEventOutboxTimer",
+      "socialExecutionWorkerTimer"
+    ]
+  },
+  "web": {
+    "endpoint": "https://jmerrill.one/api/health",
+    "status": "ready",
+    "release": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf",
+    "deploymentWorkflowRun": 35411529302,
+    "deploymentWorkflowConclusion": "success"
+  },
+  "mainBranchProtected": false,
+  "secretValuesCaptured": false
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "deploymentTarget": "func-jm1-marketing-runtime",
+  "deploymentMethod": "Azure Functions config-zip",
+  "sourceCodeMergeSha": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf",
+  "packageSha256": "4a4fa48f6bcf5988403085d74fe527610ac7fe70692624d54b3cf0a62e0f7790",
+  "hostRestartObservedAtUtc": "2026-09-19T01:10:25Z",
+  "postScheduleRestoreWorkerStartUtc": "2026-09-19T01:18:42.6249309Z",
+  "runtimeReleaseMarker": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf",
+  "componentReleaseMarker": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf",
+  "attributionStatus": "ALIGNED_TO_CODE_MERGE",
+  "registeredFunctionCount": 7,
+  "productionScheduleRestored": "0 7 12 * * *",
+  "temporaryCadenceDisabledProof": "No credentialMonitorTimer invocation occurred at the former 2026-09-19T01:25:00Z five-minute boundary after the 2026-09-19T01:18:42Z worker restart",
+  "exceptionsAfterDeployment": 0,
+  "otherObservedWorkers": {
+    "publishingAssetEventOutboxTimer": "SUCCESS",
+    "socialExecutionWorkerTimer": "SUCCESS"
+  },
+  "webDeployment": {
+    "trigger": "existing repository push workflow after PR merge",
+    "workflowRun": 35411529302,
+    "conclusion": "success",
+    "health": "ready",
+    "release": "4c636acdbbbc414a465d7e29efcf2cc0dd5f25cf"
+  }
+}
