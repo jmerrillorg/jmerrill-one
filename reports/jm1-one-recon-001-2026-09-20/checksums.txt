@@ -1,0 +1,7 @@
+edb9a3cc2bc70b474f7fa694f2f8358e9f5e6eb13c0ced7e323e34989591f4c4  reports/jm1-one-recon-001-2026-09-20/active-work-register.csv
+8bc181f33103f6bc050a67c1da065bbb4e97320f8ce31ec42024947a0fade790  reports/jm1-one-recon-001-2026-09-20/canonical-main-readback.md
+0695e819acb3051df5f8a2e8328f7f8bd02a971f662ee70c1678cb46571ba001  reports/jm1-one-recon-001-2026-09-20/open-pr-register.csv
+2df5913d3dbf93f6a2d16c08aa0e0a231272ae18c1c37c19f982f93dd183601d  reports/jm1-one-recon-001-2026-09-20/production-release-readback.md
+804280345f4bc397e70f6ba2886d53c13ed4510441ce4a881fd73b29c2cb403a  reports/jm1-one-recon-001-2026-09-20/recommended-dispositions.md
+7225bc28679639df68d2595942cad5114151f5e05b44050937f4512ea87e8328  reports/jm1-one-recon-001-2026-09-20/repository-boundary-proof.md
+53a3ca09dc0e712daadba589bc27db99eef5180b698eb51bcd300156198a5bb5  reports/jm1-one-recon-001-2026-09-20/runtime-equivalence-proof.md
