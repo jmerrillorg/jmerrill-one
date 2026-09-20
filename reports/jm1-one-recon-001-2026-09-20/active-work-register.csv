@@ -1,0 +1,7 @@
+workstream,boundary,status,owner,next_action
+J Merrill One public application,BUSINESS_APPLICATION_WORK,BAU,jmerrillorg/jmerrill-one,"keep healthy runtime in normal operations; no deployment required"
+Dependency currency,BUSINESS_APPLICATION_WORK,NORMAL_MAINTENANCE_NOT_ACTIVE,jmerrillorg/jmerrill-one,"address one transitive moderate production advisory in the next routine currency packet"
+Meta credential rotation,ENTERPRISE_CONTROL_PLANE_WORK,QUEUED_EXTERNAL_OWNER,jmerrillorg/jm1-ops,"execute JM1-MPI-002 before 2026-10-17; use jmerrill-one only for runtime validation"
+LinkedIn product authorization,EXTERNAL_PROVIDER_WAIT,NOT_ISSUED,jmerrillorg/jm1-ops,"take no application action until provider review completes"
+PR 19 enterprise policy,STALE_REPOSITORY_RESIDUE,LEGACY_UNIQUE_SOURCE,jmerrillorg/jm1-ops,"selectively preserve through separate control-plane governance"
+PRs 7 and 6,STALE_REPOSITORY_RESIDUE,LEGACY_NO_UNIQUE_SOURCE,jmerrillorg/jmerrill-one,"retain until separately authorized nondestructive cleanup"
