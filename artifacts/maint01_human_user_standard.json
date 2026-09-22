@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "standard": "A licensed interactive Microsoft 365 user account represents a real person requiring interactive tenant access, except where Microsoft technically requires another pattern and that exception is documented.",
+  "preferred_alternatives": [
+    "managed identity",
+    "service principal",
+    "Dataverse application user",
+    "shared mailbox",
+    "application-specific identity"
+  ],
+  "non_human_license_rule": "Requires explicit justification and migration plan; do not remove automatically."
+}

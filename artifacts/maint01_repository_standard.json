@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "rules": [
+    "active production repo has one owner/entity",
+    "evidence remains with owning domain",
+    "branch/worktree hygiene",
+    "archive duplicate clones only after proof",
+    "no cross-brand dumping"
+  ],
+  "financial_preservation": "Financial artifacts/evidence/code remain Financial-owned."
+}

@@ -1,0 +1,40 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_teams_voice_dependency_map",
+  "created_at": "2026-08-20T11:45:00Z",
+  "result": "COMPLETE_WITH_API_LIMITATION",
+  "dependency_chain": [
+    "Phone Number",
+    "Resource Account",
+    "Teams Phone Resource Account License",
+    "Voice Application",
+    "Auto Attendant / Call Queue / Routing",
+    "Associated organizational purpose"
+  ],
+  "protected_dependency_rule": "Anything in the Teams Voice dependency chain is excluded from destructive MAINT-01 cleanup unless separately certified obsolete within the Voice project itself.",
+  "resource_accounts": [
+    "voice-financial@jmerrill.one",
+    "voice-foundation@jmerrill.one",
+    "voice-main-inbound@jmerrill.one",
+    "voice-productions@jmerrill.one",
+    "voice-publishing@jmerrill.one",
+    "voicebridge@jmerrill.one"
+  ],
+  "license": {
+    "skuPartNumber": "PHONESYSTEM_VIRTUALUSER",
+    "skuId": "440eaaa8-b3e0-484b-a8be-62870b9ba70a",
+    "consumedUnits": 6
+  },
+  "voicemail_team": {
+    "team": "Voicemail",
+    "team_id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+    "isArchived": false,
+    "classification": "KEEP - SYSTEM / VOICE ROUTING DEPENDENCY PENDING ROUTING REVIEW"
+  },
+  "voice_bridge": {
+    "identity": "voicebridge@jmerrill.one",
+    "object_id": "48badbfb-3a92-4fad-8a87-d50447c65f52",
+    "direct_number_assignment_visible": false,
+    "classification": "KEEP - POSSIBLE ROUTING BRIDGE / INSUFFICIENT EVIDENCE TO REMOVE"
+  }
+}

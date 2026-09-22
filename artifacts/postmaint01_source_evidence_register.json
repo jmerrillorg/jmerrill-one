@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "source_artifacts_used": {
+    "projects": [
+      "artifacts/maint01_projects_content_classification.json",
+      "artifacts/maint01_projects_github_sharepoint_authority.json",
+      "artifacts/maint01_projects_build_artifact_disposition.json",
+      "artifacts/maint01_projects_preservation_plan.json",
+      "artifacts/maint01_projects_archive_execution.json",
+      "artifacts/maint01_projects_archive_regression.json",
+      "artifacts/maint01_postcloseout_archive_addendum.json"
+    ],
+    "sales": [
+      "artifacts/maint01_sales_team_preservation_plan.json",
+      "artifacts/maint01_sales_residual_backlog.json",
+      "artifacts/maint01_sales_archive_execution.json",
+      "artifacts/maint01_sales_archive_regression.json"
+    ]
+  },
+  "superseded_preliminary_artifacts_avoided": true,
+  "evidence_basis": [
+    "final MAINT artifacts",
+    "live Graph checks for archived Teams/Groups/SharePoint",
+    "targeted repository reference search",
+    "Exchange FD-005 read",
+    "Voice account/license read"
+  ]
+}

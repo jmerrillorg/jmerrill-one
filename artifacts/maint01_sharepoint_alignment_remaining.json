@@ -1,0 +1,14 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_sharepoint_alignment_remaining",
+  "created_at": "2026-08-20T11:25:00Z",
+  "status": "MAINT-01 SHAREPOINT ALIGNMENT — PENDING SEPARATE EXECUTION AUTHORIZATION",
+  "not_authorized": [
+    "retiring foundation_comm",
+    "moving enterprise canon",
+    "deleting SharePoint sites",
+    "deleting/removing projects content",
+    "mass library restructuring"
+  ],
+  "cleanup_executed": false
+}

@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "rule": "A shared mailbox exists because a persistent organizational communication identity is required.",
+  "retained_mailboxes": [
+    {
+      "mailbox": "logging@jmerrill.one",
+      "purpose": "AUTOMATION IDENTITY",
+      "owner": "JM1/division inferred",
+      "delegates": [
+        {
+          "user": "jackie@jmerrill.pub",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_internal_use": "internal/automation",
+      "automation_dependency": true,
+      "division_entity": "inferred from address",
+      "review_date": "2026-08-17"
+    },
+    {
+      "mailbox": "info@jmerrill.one",
+      "purpose": "PUBLIC COMMUNICATION IDENTITY",
+      "owner": "JM1/division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_internal_use": "public",
+      "automation_dependency": false,
+      "division_entity": "inferred from address",
+      "review_date": "2026-08-17"
+    },
+    {
+      "mailbox": "notifications@jmerrill.one",
+      "purpose": "AUTOMATION IDENTITY",
+      "owner": "JM1/division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_internal_use": "internal/automation",
+      "automation_dependency": true,
+      "division_entity": "inferred from address",
+      "review_date": "2026-08-17"
+    },
+    {
+      "mailbox": "no-reply@jmerrill.one",
+      "purpose": "AUTOMATION IDENTITY",
+      "owner": "JM1/division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_internal_use": "internal/automation",
+      "automation_dependency": true,
+      "division_entity": "inferred from address",
+      "review_date": "2026-08-17"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "package": "MAINT-01",
+  "team": "Sales",
+  "result": "PASS",
+  "non_destructive_work_completed": [
+    "live inventory recorded",
+    "pricing/materials identified",
+    "owners/members documented",
+    "Planner empty confirmed",
+    "move/copy mapping prepared"
+  ],
+  "source_content_deleted_or_moved": false,
+  "archive_execution_manifest_required": true,
+  "move_copy_mapping": [
+    {
+      "source": "sites/sales/Shared Documents/03 Pricing Sheets/Financial Pricing",
+      "target": "governed Sales/pricing reference destination",
+      "action": "COPY_OR_MOVE ONLY AFTER ARCHIVE EXECUTION AUTHORIZATION"
+    },
+    {
+      "source": "sites/sales/Shared Documents/03 Pricing Sheets/Foundation Pricing",
+      "target": "governed Sales/pricing reference destination",
+      "action": "COPY_OR_MOVE ONLY AFTER ARCHIVE EXECUTION AUTHORIZATION"
+    },
+    {
+      "source": "sites/sales/Shared Documents/03 Pricing Sheets/One-Wide Pricing",
+      "target": "governed Sales/pricing reference destination",
+      "action": "COPY_OR_MOVE ONLY AFTER ARCHIVE EXECUTION AUTHORIZATION"
+    },
+    {
+      "source": "sites/sales/Shared Documents/03 Pricing Sheets/Productions Pricing",
+      "target": "governed Sales/pricing reference destination",
+      "action": "COPY_OR_MOVE ONLY AFTER ARCHIVE EXECUTION AUTHORIZATION"
+    },
+    {
+      "source": "sites/sales/Shared Documents/03 Pricing Sheets/Publishing Pricing",
+      "target": "governed Sales/pricing reference destination",
+      "action": "COPY_OR_MOVE ONLY AFTER ARCHIVE EXECUTION AUTHORIZATION"
+    }
+  ]
+}

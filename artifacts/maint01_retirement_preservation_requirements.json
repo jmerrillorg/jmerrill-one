@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "requirements": {
+    "user": [
+      "mailbox preserved",
+      "OneDrive preserved",
+      "ownership transferred",
+      "automation reassigned",
+      "license impact understood"
+    ],
+    "shared_mailbox": [
+      "aliases preserved",
+      "forwarding/rules addressed",
+      "public references updated",
+      "automation updated"
+    ],
+    "team_m365_group": [
+      "SharePoint retained",
+      "Planner/tasks retained or archived",
+      "ownership transferred",
+      "apps/flows resolved",
+      "Group mailbox assessed"
+    ],
+    "sharepoint_site": [
+      "records retained",
+      "canonical content moved",
+      "permissions remapped",
+      "links updated"
+    ],
+    "app_registration": [
+      "workload proven migrated/dead",
+      "secret/cert references removed",
+      "Azure roles cleared",
+      "Dataverse mapping cleared",
+      "GitHub federation checked"
+    ]
+  }
+}

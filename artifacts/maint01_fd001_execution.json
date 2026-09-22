@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_fd001_execution",
+  "generated": "2026-08-19",
+  "fd": "FD-001",
+  "approval": "APPROVE FD-001 — delete 1 stale guest",
+  "execution_status": "DEFERRED — M365 MCP connection unavailable in current session",
+  "m365_mcp_connected": false,
+  "reason": "Microsoft 365 MCP server disconnected during this session. Cleanup action requires Graph API access to verify guest identity, check dependencies, and execute deletion. No deletion attempted.",
+  "action_required": "Re-run in a session with active M365 MCP connection. Verify guest identity match, no active Team/SharePoint access, no ownership dependency, then delete."
+}

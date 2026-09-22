@@ -1,0 +1,42 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd001_target_certification",
+  "created_at": "2026-08-20T11:45:00Z",
+  "fd": "FD-001",
+  "classification": "FD-001 TARGET CERTIFICATION BLOCKED - FOUNDER IDENTIFICATION REQUIRED",
+  "approved_count": 1,
+  "selected_target": null,
+  "candidates": [
+    {
+      "display_name": "chosen2k7",
+      "upn": "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "object_id": "60468cde-ddf5-4f49-997e-dc19d9e405ac",
+      "createdDateTime": "2026-06-17T18:36:31Z",
+      "externalUserState": "PendingAcceptance",
+      "team_or_group_memberships": "No dependency certified in current evidence",
+      "business_relationship": "UNKNOWN",
+      "decision": "RETAIN - cannot prove this is the intended stale guest"
+    },
+    {
+      "display_name": "email",
+      "upn": "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "object_id": "d7cf8239-ea31-47a4-b731-27534bed4bc0",
+      "createdDateTime": "2026-05-04T12:41:57Z",
+      "externalUserState": "PendingAcceptance",
+      "team_or_group_memberships": "No dependency certified in current evidence",
+      "business_relationship": "UNKNOWN",
+      "decision": "RETAIN - cannot prove this is the intended stale guest"
+    },
+    {
+      "display_name": "lisataye",
+      "upn": "lisataye_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "object_id": "5db6067e-4b30-4dba-9816-e1bcea805f5d",
+      "createdDateTime": "2026-08-17T07:26:13Z",
+      "externalUserState": "Accepted",
+      "team_or_group_memberships": "No dependency certified in current evidence",
+      "business_relationship": "UNKNOWN",
+      "decision": "RETAIN - accepted guest and not identified as stale by original evidence"
+    }
+  ],
+  "ready_to_execute": false
+}

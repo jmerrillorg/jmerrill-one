@@ -1,0 +1,127 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "licenses": [
+    {
+      "upn": "a0338273-c879-452f-b539-a300faacbb66@jmerrillfoundation.onmicrosoft.com",
+      "license_count": 5,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "appointments@jmerrill.one",
+      "license_count": 2,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "financial@jmerrill.one",
+      "license_count": 4,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "foundation@jmerrill.one",
+      "license_count": 4,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "iCloud@jmerrill.one",
+      "license_count": 1,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "info@jmerrill.one",
+      "license_count": 3,
+      "classification": "REQUIRED TEMPORARILY",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "jackie@jmerrill.one",
+      "license_count": 7,
+      "classification": "REQUIRED",
+      "reason": "Interactive admin/human identity"
+    },
+    {
+      "upn": "jackie@jmerrill.pub",
+      "license_count": 2,
+      "classification": "REQUIRED",
+      "reason": "Interactive admin/human identity"
+    },
+    {
+      "upn": "jackie@jmerrillfoundation.onmicrosoft.com",
+      "license_count": 1,
+      "classification": "REQUIRED",
+      "reason": "Interactive admin/human identity"
+    },
+    {
+      "upn": "jm1-admin@jmerrill.one",
+      "license_count": 8,
+      "classification": "REQUIRED",
+      "reason": "Interactive admin/human identity"
+    },
+    {
+      "upn": "marla@jmerrill.one",
+      "license_count": 1,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "productions@jmerrill.one",
+      "license_count": 4,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "publishing@jmerrill.one",
+      "license_count": 4,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "scheduling@jmerrill.one",
+      "license_count": 2,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "voice-financial@jmerrill.one",
+      "license_count": 1,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "voice-foundation@jmerrill.one",
+      "license_count": 1,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "voice-main-inbound@jmerrill.one",
+      "license_count": 1,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "voice-productions@jmerrill.one",
+      "license_count": 1,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "voice-publishing@jmerrill.one",
+      "license_count": 1,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    },
+    {
+      "upn": "voicebridge@jmerrill.one",
+      "license_count": 1,
+      "classification": "UNKNOWN",
+      "reason": "Mailbox/service/workload dependency requires migration proof"
+    }
+  ],
+  "estimated_savings": "Not calculated; SKU unit prices not available in evidence."
+}

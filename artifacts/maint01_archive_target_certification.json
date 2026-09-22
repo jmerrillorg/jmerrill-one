@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "certification_basis": "Exact Team ID, M365 Group ID, and SharePoint site IDs were captured before mutation; no display-name-only archive target used.",
+  "targets": {
+    "sales": {
+      "teamId": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "m365GroupId": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "sharePointSite": {
+        "id": "jmerrillfoundation.sharepoint.com,650ed071-373a-49b4-b6b4-35dddda994bd,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "url": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+        "displayName": "Sales",
+        "lastModifiedDateTime": "2026-08-17T07:15:42Z"
+      }
+    },
+    "projects": {
+      "teamId": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "m365GroupId": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "sharePointSite": {
+        "id": "jmerrillfoundation.sharepoint.com,da5352c8-b294-42be-a973-f9772b9849dc,7431c5af-1fe6-49e9-83f4-802611c259e2",
+        "url": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+        "displayName": "Projects",
+        "lastModifiedDateTime": "2026-08-20T13:35:34Z"
+      }
+    }
+  }
+}

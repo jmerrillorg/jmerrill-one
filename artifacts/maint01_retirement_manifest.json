@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "FOUNDER_CONFIRMATION_REQUIRED_AFTER DISCOVERY",
+  "candidates": [
+    {
+      "object": "jm1-one",
+      "type": "GitHub repo",
+      "owner": "jmerrillorg",
+      "dependencies": "Unknown legacy history",
+      "data_retention_needs": "Retain until repo comparison complete",
+      "replacement": "jmerrill-one",
+      "risk": "History or references lost",
+      "rollback": "restore from GitHub if archived; delete irreversible",
+      "exact_proposed_action": "ARCHIVE after dependency proof, not delete"
+    },
+    {
+      "object": "Deprecated - All Company",
+      "type": "M365 Group",
+      "owner": "UNKNOWN",
+      "last_activity": "UNKNOWN",
+      "dependencies": "Mailbox/SharePoint unknown",
+      "data_retention_needs": "Unknown",
+      "replacement": "All Users dynamic/security groups where appropriate",
+      "risk": "Group mailbox/site data loss",
+      "rollback": "restore group if within Microsoft retention window",
+      "exact_proposed_action": "Retire only after dependency graph"
+    },
+    {
+      "object": "SharePoint duplicate canon/governance libraries",
+      "type": "SharePoint",
+      "owner": "UNKNOWN",
+      "last_activity": "UNKNOWN",
+      "dependencies": "UNKNOWN - discovery blocked",
+      "data_retention_needs": "Governance retention required",
+      "replacement": "One authoritative copy per artifact",
+      "risk": "Canon loss/duplication",
+      "rollback": "version history/restore if moved, but no action authorized",
+      "exact_proposed_action": "No action until SharePoint admin inventory"
+    }
+  ]
+}

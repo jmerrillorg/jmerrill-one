@@ -1,0 +1,10 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_teams_voice_preservation_directive",
+  "created_at": "2026-08-20T11:45:00Z",
+  "founder_clarification": "JM1 Teams Phone / Voice initiative is paused because other priorities took precedence. It is not abandoned. JM1 intends to resume the project.",
+  "classification": "KEEP - PAUSED PROJECT / REACTIVATION PLANNED",
+  "why_first_correction": "Teams Voice resource accounts, secured telephone numbers, assignments, resource-account licensing, and related configuration are preserved. Disabled interactive sign-in is expected for resource accounts and is not orphan evidence.",
+  "architecture_decision": "No new architecture decision; this corrects MAINT-01 cleanup interpretation.",
+  "mutation_allowed": false
+}

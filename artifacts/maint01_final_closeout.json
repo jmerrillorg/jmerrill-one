@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "final_classification": "MAINT-01 REMEDIATION REQUIRED",
+  "recovered_deferred_work": [
+    {
+      "item": "HOST-02 App Service migration",
+      "status": "COMPLETE",
+      "notes": "Closed: all six sites consolidated on P1mv3 and superseded hosting retired."
+    },
+    {
+      "item": "repository cleanup",
+      "status": "IN PROGRESS",
+      "notes": "Inventory and target architecture created; no repo deletion executed."
+    },
+    {
+      "item": "SharePoint alignment",
+      "status": "UNKNOWN - RESEARCH REQUIRED",
+      "notes": "Tenant-wide SharePoint enumeration denied; delegated search returned no governance results."
+    },
+    {
+      "item": "M365 identity/collaboration rationalization",
+      "status": "IN PROGRESS",
+      "notes": "Users/groups/apps inventoried via Graph; Teams connector lacks required scope."
+    },
+    {
+      "item": "Azure resource hygiene",
+      "status": "PARTIALLY COMPLETE",
+      "notes": "HOST-02 hosting cleanup complete; broader Azure hygiene not reopened."
+    },
+    {
+      "item": "Power Platform governance debt",
+      "status": "STILL REQUIRED",
+      "notes": "Separate backlog."
+    },
+    {
+      "item": "tenant/entity separation",
+      "status": "STILL REQUIRED",
+      "notes": "Future/separate unless directly relevant."
+    },
+    {
+      "item": "JRN-01",
+      "status": "STILL REQUIRED",
+      "notes": "Separate active package; not modified."
+    }
+  ],
+  "repository_estate": "Inventoried and ownership matrix passed; no repo deletion.",
+  "sharepoint_estate": "Blocked by SharePoint site enumeration access denied.",
+  "canon_alignment": "Rule defined; authoritative SharePoint canon location unverified.",
+  "users": "43 users inventoried via Graph.",
+  "licensing": "Reviewed assigned-license candidates; no licenses removed.",
+  "shared_mailboxes": "Partial only; Exchange mailbox inventory required.",
+  "teams": "Team-backed groups identified, Teams API list forbidden.",
+  "m365_groups": "17 Unified groups inventoried.",
+  "security_groups": "9 security groups inventoried.",
+  "service_accounts": "Inferred from mail/workload-style users; needs workload owner validation.",
+  "app_identities": "104 relevant app registrations inventoried; service principal relevant set captured.",
+  "dependency_graph": "Partial; destructive actions blocked.",
+  "safe_cleanup_completed": "Moved generated dist/ to /tmp/jm1-maint01-cleanup/dist-20260817T0117Z.",
+  "retirement_manifest": "Created for Founder review after missing dependency discovery is resolved.",
+  "sharepoint_target_architecture": "Created as blocked target principle.",
+  "repo_target_architecture": "Created.",
+  "m365_target_architecture": "Created.",
+  "cost_impact": "Review required; no automatic license cancellation.",
+  "security_impact": "Review required; admin discovery gaps remain.",
+  "remaining_human_decisions": [
+    "Provide/approve SharePoint tenant inventory access",
+    "Provide/approve Teams/Exchange discovery scope",
+    "Review retirement manifest after dependency proof"
+  ],
+  "jrn01_status": "Separate; not modified.",
+  "recommended_next_maintenance_action": "Resolve Microsoft discovery permissions, rerun MAINT-01 SharePoint/Teams/Exchange dependency inventory, then return exact destructive retirement manifest for Founder confirmation."
+}

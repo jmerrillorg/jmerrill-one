@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "NO SHAREPOINT DELETION AUTHORIZED",
+  "maps": [
+    {
+      "source": "HQ/JMerrillOne vs ImplementationHQ",
+      "content_staying": "all until canon decision",
+      "content_moving": "TBD",
+      "destination": "TBD",
+      "owner": "Founder/Enterprise",
+      "permissions": "preserve",
+      "retention": "preserve",
+      "canonical_references": "TBD",
+      "archive_path": "TBD"
+    }
+  ]
+}

@@ -1,0 +1,831 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE",
+  "mailboxes": [
+    {
+      "display_name": "Email Logging",
+      "primary_smtp": "logging@jmerrill.one",
+      "aliases": [
+        "logging@jmerrillfoundation.onmicrosoft.com",
+        "logging@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 8,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "jackie@jmerrill.pub",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "jackie@jmerrill.pub",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "jackie@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:jm1-admin@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "AUTOMATION IDENTITY",
+      "rationalization": "KEEP - AUTOMATION"
+    },
+    {
+      "display_name": "JM1 Accounting",
+      "primary_smtp": "accounting@jmerrill.one",
+      "aliases": [
+        "accounting@jmerrill.one",
+        "billing@jmerrill.one",
+        "finance@jmerrill.org",
+        "accounting@jmerrill.pub",
+        "finance-team@jmerrill.org",
+        "orders@jmerrill.pub",
+        "billing@jmerrill.org",
+        "billing@jmerrillfoundation.onmicrosoft.com",
+        "billing@jmerrill.pub",
+        "accounts@jmerrill.pub",
+        "billing@jmerrill.productions"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 1617,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "jackie@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "financial@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": null,
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Board",
+      "primary_smtp": "board@jmerrill.one",
+      "aliases": [
+        "leadership@jmerrill.org",
+        "board@jmerrill.org",
+        "board6143@jmerrillfoundation.onmicrosoft.com",
+        "board@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 18,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "foundation@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:foundation@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Donations",
+      "primary_smtp": "donations@jmerrill.one",
+      "aliases": [
+        "donations@jmerrill.org",
+        "donation@jmerrill.one",
+        "donations@jmerrill.one",
+        "donation@jmerrillfoundation.onmicrosoft.com"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 53,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "foundation@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:foundation@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Grants",
+      "primary_smtp": "grants@jmerrill.one",
+      "aliases": [
+        "grants-team@jmerrill.org",
+        "grants@jmerrill.org",
+        "grants2526@jmerrillfoundation.onmicrosoft.com",
+        "grants@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 794,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "foundation@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:foundation@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Info",
+      "primary_smtp": "info@jmerrill.one",
+      "aliases": [
+        "sip:info@jmerrill.one",
+        "info@jmerrill.productions",
+        "info@jmerrill.org",
+        "info@jmerrill.financial",
+        "info@jmerrill.pub",
+        "info5978@jmerrillfoundation.onmicrosoft.com",
+        "info@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 6937,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:appointments@jmerrill.one",
+      "public_references": [
+        "https://jmerrill.one/contact"
+      ],
+      "dependency_classification": "PUBLIC COMMUNICATION IDENTITY",
+      "rationalization": "KEEP - PUBLIC IDENTITY"
+    },
+    {
+      "display_name": "JM1 Legal",
+      "primary_smtp": "legal@jmerrill.one",
+      "aliases": [
+        "contracts@jmerrill.financial",
+        "legal@jmerrillfoundation.onmicrosoft.com",
+        "legal@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 61,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "jackie@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:jackie@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Media",
+      "primary_smtp": "media@jmerrill.one",
+      "aliases": [
+        "events@jmerrill.pub",
+        "social@jmerrill.org",
+        "socialmedia@jmerrill.pub",
+        "pr@jmerrill.pub",
+        "media@jmerrillfoundation.onmicrosoft.com",
+        "media@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 54,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "publishing@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "foundation@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:publishing@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Notifications",
+      "primary_smtp": "notifications@jmerrill.one",
+      "aliases": [
+        "notifications@jmerrillfoundation.onmicrosoft.com",
+        "notifications@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 40,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:jm1-admin@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "AUTOMATION IDENTITY",
+      "rationalization": "KEEP - AUTOMATION"
+    },
+    {
+      "display_name": "JM1 Pre-Needs",
+      "primary_smtp": "preneeds@jmerrill.one",
+      "aliases": [
+        "preneeds@jmerrillfoundation.onmicrosoft.com",
+        "preneeds@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 16,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "financial@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:financial@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Royalties",
+      "primary_smtp": "royalties@jmerrill.one",
+      "aliases": [
+        "royalties@jmerrillfoundation.onmicrosoft.com",
+        "royalties@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 17,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "publishing@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:publishing@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Submissions",
+      "primary_smtp": "submissions@jmerrill.one",
+      "aliases": [
+        "submissions@jmerrill.pub",
+        "newauthors@jmerrill.pub",
+        "submissions6805@jmerrillfoundation.onmicrosoft.com",
+        "submissions@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 136,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "publishing@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:publishing@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Tech",
+      "primary_smtp": "tech@jmerrill.one",
+      "aliases": [
+        "webadmin@jmerrill.org",
+        "security@jmerrill.org",
+        "tech@jmerrillfoundation.onmicrosoft.com",
+        "tech@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 63,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:jm1-admin@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Volunteers",
+      "primary_smtp": "volunteers@jmerrill.one",
+      "aliases": [
+        "volunteers-team@jmerrill.org",
+        "volunteers@jmerrill.org",
+        "volunteers7469@jmerrillfoundation.onmicrosoft.com",
+        "volunteers@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 18,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "foundation@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:foundation@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 Shared Contacts",
+      "primary_smtp": "contacts@jmerrill.one",
+      "aliases": [
+        "contacts@jmerrillfoundation.onmicrosoft.com",
+        "contacts@jmerrill.one"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 6,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "scheduling@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "jackie@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "publishing@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "financial@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "foundation@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "scheduling@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": null,
+      "public_references": [],
+      "dependency_classification": "INTERNAL OPERATIONS",
+      "rationalization": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "display_name": "JM1 No-reply",
+      "primary_smtp": "no-reply@jmerrill.one",
+      "aliases": [
+        "no-reply@jmerrill.productions",
+        "no-reply@jmerrill.pub",
+        "no-reply@jmerrill.org",
+        "no-reply@jmerrill.one",
+        "no-reply@jmerrill.financial",
+        "no-reply@jmerrillfoundation.onmicrosoft.com"
+      ],
+      "mailbox_size": {
+        "IsUnlimited": false,
+        "Value": {}
+      },
+      "item_count": 12,
+      "last_logon_time": null,
+      "delegates_full_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "send_as": [
+        {
+          "trustee": "S-1-5-21-1923091997-2169923992-120045913-50049962",
+          "accessRights": [
+            "SendAs"
+          ]
+        },
+        {
+          "trustee": "appointments@jmerrill.one",
+          "accessRights": [
+            "SendAs"
+          ]
+        }
+      ],
+      "send_on_behalf": [],
+      "forwarding": "smtp:jm1-admin@jmerrill.one",
+      "public_references": [],
+      "dependency_classification": "AUTOMATION IDENTITY",
+      "rationalization": "KEEP - AUTOMATION"
+    }
+  ]
+}

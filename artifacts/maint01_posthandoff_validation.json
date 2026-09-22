@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_posthandoff_validation",
+  "generated": "2026-08-19",
+  "result": "PASS",
+  "checks": {
+    "signed_commits_present": true,
+    "signed_commit_shas": ["efc50e4", "96d123e", "12e6298", "91937c6"],
+    "all_gpgsig": true,
+    "all_noreply_anthropic_committer": true,
+    "working_tree_clean_after_commit": true,
+    "fd001_through_fd006_all_present": true,
+    "fd005_all_7_mailboxes_named": true,
+    "sharepoint_counts_validated": true,
+    "cleanup_wave_order_validated": true,
+    "evidence_completeness_gate_passed": true,
+    "retirement_hard_gate_passed": true
+  },
+  "fd005_named_mailboxes": [
+    "accounting@jmerrill.one",
+    "board@jmerrill.one",
+    "donations@jmerrill.one",
+    "grants@jmerrill.one",
+    "media@jmerrill.one",
+    "volunteers@jmerrill.one",
+    "contacts@jmerrill.one"
+  ],
+  "sharepoint_final_counts": {
+    "total_surfaces": 17,
+    "team_connected": 14,
+    "standalone_communication": 1,
+    "admin_onedrive": 1,
+    "loop_workspace_storage": 1,
+    "in_scope": 15
+  },
+  "cleanup_wave_execution_order": [1,2,3,6,5,4,7,8],
+  "overall_result": "MAINT-01 COMPLETE — ESTATE RATIONALIZED"
+}

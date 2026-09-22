@@ -1,0 +1,82 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd004_target_certification",
+  "created_at": "2026-08-20T11:45:00Z",
+  "fd": "FD-004",
+  "classification": "FEWER THAN THREE SAFELY CERTIFIABLE TARGETS",
+  "approved_count": 3,
+  "safe_archive_targets": [],
+  "candidates": [
+    {
+      "team": "Sales",
+      "team_id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "m365_group_id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "owners": ["jackie@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "members": ["jackie@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "guests": [],
+      "isArchived": false,
+      "channels": ["General"],
+      "planner": [],
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+      "business_purpose": "Sales pricing/materials",
+      "archival_readiness": "NOT READY - pricing sheet migration prerequisite not certified"
+    },
+    {
+      "team": "Voicemail",
+      "team_id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "m365_group_id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "owners": ["appointments@jmerrill.one", "jackie@jmerrill.one", "jm1-admin@jmerrill.one", "scheduling@jmerrill.one"],
+      "members": ["appointments@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "guests": [],
+      "isArchived": false,
+      "channels": ["General"],
+      "planner": [],
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/voicemail",
+      "business_purpose": "Voicemail routing/system container",
+      "archival_readiness": "EXCLUDED - Teams Voice project is paused, not abandoned"
+    },
+    {
+      "team": "Projects",
+      "team_id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "m365_group_id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "owners": ["jackie@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "members": ["jackie@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "guests": [],
+      "isArchived": false,
+      "channels": ["General"],
+      "planner": [],
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+      "business_purpose": "Projects collaboration / legacy dev archive",
+      "archival_readiness": "NOT READY - SharePoint dev artifact cleanup prerequisite not certified complete"
+    },
+    {
+      "team": "Marketing",
+      "team_id": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "m365_group_id": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "owners": ["jackie@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "members": ["jackie@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "guests": [],
+      "isArchived": false,
+      "channels": ["General"],
+      "planner": [],
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/marketing",
+      "business_purpose": "Marketing",
+      "archival_readiness": "RETAIN - final disposition classifies as retained"
+    },
+    {
+      "team": "Events",
+      "team_id": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "m365_group_id": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "owners": ["jackie@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "members": ["jackie@jmerrill.one", "jm1-admin@jmerrill.one"],
+      "guests": [],
+      "isArchived": false,
+      "channels": ["General"],
+      "planner": [],
+      "sharepoint_site": "https://jmerrillfoundation.sharepoint.com/sites/events",
+      "business_purpose": "Events",
+      "archival_readiness": "RETAIN - final disposition classifies as retained"
+    }
+  ],
+  "ready_to_execute": false
+}

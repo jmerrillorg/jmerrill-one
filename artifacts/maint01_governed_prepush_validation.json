@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-08-20T10:24:36.700Z",
+  "result": "BLOCKED",
+  "parse_maint01_json": "NOT RUN AGAINST CLAUDE FINAL ARTIFACT SET",
+  "git_diff_check": "NOT APPLICABLE",
+  "secret_scan": "NOT APPLICABLE",
+  "mailbox_content_check": "NOT APPLICABLE",
+  "unrelated_file_check": "NOT APPLICABLE",
+  "reason": "Claude authoritative tip unavailable."
+}

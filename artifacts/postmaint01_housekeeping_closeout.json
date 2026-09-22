@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "final_classification": "POST-MAINT HOUSEKEEPING-01 COMPLETE — NO FURTHER CLEANUP JUSTIFIED",
+  "projects_review_result": "PROJECTS FILE CLEANUP REVIEW COMPLETE — NO SAFE DELETIONS CERTIFIED",
+  "certified_projects_delete_candidates": [],
+  "sales_review_result": "SALES RETAINED-FOLDER HOUSEKEEPING REVIEW COMPLETE — RETAIN / ARCHIVE IN PLACE",
+  "sales_consolidation_candidates": [],
+  "destructive_actions_executed": "NONE",
+  "archive_regression": "PASS",
+  "voice_regression": "PASS",
+  "exact_founder_decisions": [],
+  "remaining_maintenance_backlog": [
+    "Only perform future Projects file-level cleanup if a separate exact source/hash/reproducibility certification is authorized.",
+    "Only consolidate Sales pricing/material folders if an existing authoritative pricing library is explicitly certified."
+  ],
+  "decision_summary": {
+    "projects": {
+      "reviewed": 13,
+      "authoritative": 12,
+      "reproducible": 0,
+      "safe_delete_candidates": [],
+      "expected_benefit": "No immediate storage cleanup benefit certified; avoids evidence loss and source-of-truth ambiguity."
+    },
+    "sales": {
+      "reviewed": 6,
+      "remain": [
+        "/sites/sales/Shared Documents/01 Lead Tracking",
+        "/sites/sales/Shared Documents/02 Client Proposals",
+        "/sites/sales/Shared Documents/03 Pricing Sheets",
+        "/sites/sales/Shared Documents/04 Sales Reports",
+        "/sites/sales/Shared Documents/05 Archive"
+      ],
+      "duplicate": [],
+      "consolidate": [],
+      "safe_delete_candidates": [],
+      "expected_benefit": "Retains archived Sales records without unnecessary movement."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-08-20T10:24:36.700Z",
+  "final_classification": "MAINT-01 CLEANUP EXECUTION BLOCKED — GOVERNED GITHUB LANDING REQUIRED",
+  "claude_handoff_recovery": "FAIL - a38d8b4 unavailable",
+  "cody_governed_landing": "BLOCKED",
+  "pr6_status": {
+    "headRefOid": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+    "mergeStateStatus": "CLEAN",
+    "state": "OPEN",
+    "url": "https://github.com/jmerrillorg/jmerrill-one/pull/6"
+  },
+  "fd001_result": "NOT EXECUTED",
+  "fd002_result": "NOT EXECUTED",
+  "fd003_result": "NOT EXECUTED",
+  "fd005_result": "NOT EXECUTED",
+  "fd004_result": "NOT EXECUTED",
+  "fd006_certification_result": "NOT EXECUTED",
+  "mail_regression": "NOT EXECUTED",
+  "collaboration_regression": "NOT EXECUTED",
+  "security_regression": "NOT EXECUTED",
+  "license_regression": "NOT EXECUTED",
+  "final_user_estate": "UNCHANGED BY THIS RUN",
+  "final_licensing_estate": "UNCHANGED BY THIS RUN",
+  "final_mailbox_estate": "UNCHANGED BY THIS RUN",
+  "final_teams_groups_estate": "UNCHANGED BY THIS RUN",
+  "final_app_identity_estate": "UNCHANGED BY THIS RUN",
+  "cost_complexity_impact": "No new cost change; no tenant mutations performed.",
+  "remaining_sharepoint_alignment": "Pending per prior MAINT-01 evidence.",
+  "remaining_repo_work": "Provide/recover Claude a38d8b4 handoff and integrate into PR #6.",
+  "remaining_identity_debt": "Approved FD cleanup not executed because evidence landing gate blocked.",
+  "jrn01_state": "Separate; not modified.",
+  "exact_next_enterprise_maintenance_action": "Provide a reachable Git bundle or mounted repository containing Claude commit a38d8b4, then rerun Phase 1 through Phase 28 before any Microsoft admin cleanup."
+}

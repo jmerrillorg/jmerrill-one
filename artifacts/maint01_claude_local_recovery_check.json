@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "Verify Claude local commits are reachable in current working tree",
+  "result": "LOCAL CLAUDE COMMITS REACHABLE",
+  "commits": {
+    "1c8e366": {
+      "sha": "1c8e366c434be6faed78a780db5057fb5751cdb5",
+      "message": "Complete MAINT-01 SharePoint standalone discovery and v3 artifact set",
+      "author": "noreply@anthropic.com",
+      "committer": "noreply@anthropic.com",
+      "files_changed": 116,
+      "reachable": true
+    },
+    "d6b7d8a": {
+      "sha": "d6b7d8a51815c2d4472a5c455b73c14657d791fb",
+      "message": "Merge codex/maint01-estate-rationalization into claude/loving-planck-1cfoo2",
+      "author": "noreply@anthropic.com",
+      "committer": "noreply@anthropic.com",
+      "is_merge_commit": true,
+      "parents": ["1c8e366", "85cbc9c"],
+      "reachable": true
+    },
+    "e0d0241": {
+      "sha": "e0d0241eb4d14df53f877c408141d8417571ebe1",
+      "message": "MAINT-01 recovery, validation, reconciliation and Founder decision package",
+      "author": "noreply@anthropic.com",
+      "committer": "noreply@anthropic.com",
+      "files_changed": 43,
+      "reachable": true
+    }
+  },
+  "branch": "claude/loving-planck-1cfoo2",
+  "tip_sha": "e0d0241eb4d14df53f877c408141d8417571ebe1",
+  "working_tree_clean": true,
+  "total_maint01_json_artifacts": 138,
+  "recovery_method": "DIRECT — commits already present in local working tree; no worktree/alternate fetch required"
+}

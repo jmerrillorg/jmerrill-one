@@ -1,0 +1,122 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_disposition_matrix_reconciled",
+  "dispositions": [
+    {
+      "object": "voice-financial@jmerrill.one",
+      "type": "Teams Voice resource account",
+      "disposition": "KEEP - PAUSED VOICE PROJECT"
+    },
+    {
+      "object": "voice-foundation@jmerrill.one",
+      "type": "Teams Voice resource account",
+      "disposition": "KEEP - PAUSED VOICE PROJECT"
+    },
+    {
+      "object": "voice-main-inbound@jmerrill.one",
+      "type": "Teams Voice resource account",
+      "disposition": "KEEP - PAUSED VOICE PROJECT"
+    },
+    {
+      "object": "voice-productions@jmerrill.one",
+      "type": "Teams Voice resource account",
+      "disposition": "KEEP - PAUSED VOICE PROJECT"
+    },
+    {
+      "object": "voice-publishing@jmerrill.one",
+      "type": "Teams Voice resource account",
+      "disposition": "KEEP - PAUSED VOICE PROJECT"
+    },
+    {
+      "object": "voicebridge@jmerrill.one",
+      "type": "Teams Voice/resource bridge account",
+      "disposition": "KEEP - PAUSED VOICE PROJECT"
+    },
+    {
+      "object": "accounting@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "board@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "donations@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "grants@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "media@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - ALIAS"
+    },
+    {
+      "object": "volunteers@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - ALIAS"
+    },
+    {
+      "object": "contacts@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "CERTIFIED EXECUTION TARGET"
+    },
+    {
+      "object": "FD-002 license removals",
+      "type": "License cleanup",
+      "disposition": "CLOSED - NO ACTION"
+    },
+    {
+      "object": "FD-003 inactive users",
+      "type": "User cleanup",
+      "disposition": "CLOSED - NO ACTION"
+    },
+    {
+      "object": "FD-001 guest candidates",
+      "type": "Guest users",
+      "disposition": "PENDING FOUNDER TARGET CHOICE"
+    },
+    {
+      "object": "Sales Team",
+      "type": "Team/M365 Group",
+      "disposition": "PREP-FIRST ARCHIVE CANDIDATE"
+    },
+    {
+      "object": "Projects Team",
+      "type": "Team/M365 Group",
+      "disposition": "PREP-FIRST ARCHIVE CANDIDATE"
+    },
+    {
+      "object": "Voicemail Team",
+      "type": "Team/M365 Group",
+      "disposition": "KEEP - PAUSED VOICE PROJECT"
+    },
+    {
+      "object": "github-aic-deploy",
+      "type": "App registration",
+      "disposition": "RETAIN - ACTIVE DEPENDENCY"
+    },
+    {
+      "object": "BusinessCentralAPI",
+      "type": "App registration",
+      "disposition": "RETAIN - ACTIVE DEPENDENCY"
+    },
+    {
+      "object": "Portals-Site 1",
+      "type": "App registration",
+      "disposition": "RETAIN - REVIEW REQUIRED"
+    },
+    {
+      "object": "BusinessCentralSharePoint",
+      "type": "App registration",
+      "disposition": "RETAIN - REVIEW REQUIRED"
+    }
+  ]
+}
+

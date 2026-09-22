@@ -1,0 +1,358 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE",
+  "mailboxes": [
+    {
+      "primary_smtp": "logging@jmerrill.one",
+      "classification": "KEEP - AUTOMATION",
+      "purpose": "AUTOMATION IDENTITY",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "jackie@jmerrill.pub",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "accounting@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "board@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "donations@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "grants@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "info@jmerrill.one",
+      "classification": "KEEP - PUBLIC IDENTITY",
+      "purpose": "PUBLIC COMMUNICATION IDENTITY",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "public",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "legal@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "media@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "notifications@jmerrill.one",
+      "classification": "KEEP - AUTOMATION",
+      "purpose": "AUTOMATION IDENTITY",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "preneeds@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "royalties@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "submissions@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "tech@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "volunteers@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "contacts@jmerrill.one",
+      "classification": "FOUNDER DECISION REQUIRED",
+      "purpose": "INTERNAL OPERATIONS",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "scheduling@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    },
+    {
+      "primary_smtp": "no-reply@jmerrill.one",
+      "classification": "KEEP - AUTOMATION",
+      "purpose": "AUTOMATION IDENTITY",
+      "owner": "JM1 / division inferred",
+      "delegates": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "public_or_internal_use": "internal/automation",
+      "review_date": "2026-08-17"
+    }
+  ]
+}

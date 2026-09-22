@@ -1,0 +1,22 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_app_identity_review_backlog",
+  "status": "OPEN - OWNER/WORKLOAD REVIEW REQUIRED",
+  "items": [
+    {
+      "display_name": "Portals-Site 1",
+      "application_client_id": "3ddc8988-92ca-4993-b01b-a8a5e413a425",
+      "app_registration_object_id": "722f9d01-ddfe-4563-85df-c6a837e68874",
+      "classification": "RETAIN - REVIEW REQUIRED",
+      "review_question": "Confirm whether this app supports a Power Pages/portal workload or can be retired in a later app-identity wave."
+    },
+    {
+      "display_name": "BusinessCentralSharePoint",
+      "application_client_id": "767abadb-a4b9-4fc9-8a1c-0b62484c8c0c",
+      "app_registration_object_id": "7569a45d-0dcf-4424-b007-b1c38cf9070f",
+      "classification": "RETAIN - REVIEW REQUIRED",
+      "review_question": "Confirm whether Business Central still depends on this SharePoint integration before any future deletion."
+    }
+  ]
+}
+

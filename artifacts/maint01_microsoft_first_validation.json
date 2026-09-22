@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Microsoft-first validation — confirm proposed modernization uses native M365 capabilities",
+
+  "identity": {
+    "proposed": "Managed identities and service principals for workloads; licensed interactive users for humans; shared mailboxes for organizational communication",
+    "microsoft_native": true,
+    "third_party_required": false
+  },
+  "collaboration": {
+    "proposed": "Microsoft Teams retained for all active human collaboration",
+    "microsoft_native": true,
+    "third_party_required": false
+  },
+  "documents": {
+    "proposed": "SharePoint aligned to entity ownership; archive via SharePoint read-only and recycle bin",
+    "microsoft_native": true,
+    "third_party_required": false
+  },
+  "automation": {
+    "proposed": "Power Automate for business process automation; GitHub Actions for CI/CD via OIDC federation",
+    "microsoft_native": true,
+    "third_party_required": false,
+    "note": "GitHub Actions is Microsoft-owned. OIDC federation is the Microsoft-recommended pattern for GitHub-to-Azure/M365 CI/CD."
+  },
+  "data": {
+    "proposed": "Dataverse for structured operational data (pre-need, appointments, agents)",
+    "microsoft_native": true,
+    "third_party_required": false
+  },
+  "code": {
+    "proposed": "GitHub for all source code",
+    "microsoft_native": true,
+    "third_party_required": false,
+    "note": "GitHub is Microsoft-owned."
+  },
+  "conclusion": "All proposed modernization uses existing licensed Microsoft capabilities. No third-party replacements recommended. No new third-party services required."
+}

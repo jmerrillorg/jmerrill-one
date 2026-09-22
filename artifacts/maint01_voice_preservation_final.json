@@ -1,0 +1,29 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_voice_preservation_final",
+  "created_at": "2026-08-20T00:00:00-04:00",
+  "classification": "KEEP - PAUSED VOICE PROJECT / REACTIVATION PLANNED",
+  "mutation_executed": false,
+  "protected_resource_accounts": [
+    "voice-financial@jmerrill.one",
+    "voice-foundation@jmerrill.one",
+    "voice-main-inbound@jmerrill.one",
+    "voice-productions@jmerrill.one",
+    "voice-publishing@jmerrill.one",
+    "voicebridge@jmerrill.one"
+  ],
+  "protected_infrastructure": [
+    "assigned/securable phone numbers",
+    "PHONESYSTEM_VIRTUALUSER licenses",
+    "resource-account identities",
+    "call queues",
+    "auto attendants",
+    "routing",
+    "emergency/location configuration",
+    "related voice application objects",
+    "Voicemail Team"
+  ],
+  "rule": "Disabled interactive sign-in is not inactivity for Teams Phone resource accounts.",
+  "validation": "Current Graph user inventory still contains all six protected voice/resource accounts; this pass made no license, user, Teams Phone, call queue, auto attendant, phone number, or voice routing mutation."
+}
+

@@ -1,0 +1,67 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "REVIEW_REQUIRED",
+  "standard": "A Team exists for meaningful human collaboration, not merely because a department exists.",
+  "teams": [
+    {
+      "team": "Projects",
+      "classification": "KEEP - ACTIVE pending activity verification"
+    },
+    {
+      "team": "Financial Team",
+      "classification": "KEEP - ACTIVE pending activity verification"
+    },
+    {
+      "team": "Foundation Team",
+      "classification": "KEEP - ACTIVE pending activity verification"
+    },
+    {
+      "team": "Support",
+      "classification": "KEEP - ACTIVE pending activity verification"
+    },
+    {
+      "team": "Marketing",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Security & Compliance",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Productions Team",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Agape International Cathedral",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Sales",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Voicemail",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Events",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "HQ",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Publishing Team",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Marlan Gary Coordination",
+      "classification": "REQUIRES FOUNDER DECISION"
+    },
+    {
+      "team": "Implementation HQ",
+      "classification": "REQUIRES FOUNDER DECISION"
+    }
+  ]
+}

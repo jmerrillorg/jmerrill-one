@@ -1,0 +1,72 @@
+{
+  "package": "MAINT-01",
+  "team": "Projects",
+  "result": "PASS - DISPOSITION RECORDED",
+  "build_artifacts": [
+    {
+      "name": "Automation",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "disposition": "Verify against GitHub authority; retain unique automation evidence before archive execution.",
+      "childCount": 3,
+      "size": 1501187169
+    },
+    {
+      "name": "Diagnostics",
+      "classification": "TEMPORARY",
+      "disposition": "Eligible for later cleanup if empty and not required for evidence.",
+      "childCount": 0,
+      "size": 0
+    },
+    {
+      "name": "Docs",
+      "classification": "UNKNOWN",
+      "disposition": "Empty in live listing; retain until confirmed no unique documentation.",
+      "childCount": 0,
+      "size": 0
+    },
+    {
+      "name": "Infrastructure",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "disposition": "Verify against GitHub authority before any move/delete.",
+      "childCount": 3,
+      "size": 0
+    },
+    {
+      "name": "JM1-Core",
+      "classification": "DUPLICATE",
+      "disposition": "Likely repo mirror/build content; GitHub is authoritative, but retain until manifest confirms no unique files.",
+      "childCount": 7,
+      "size": 2797
+    },
+    {
+      "name": "JM1-Implementation-HQ",
+      "classification": "DUPLICATE",
+      "disposition": "Likely repo mirror/build content; GitHub is authoritative, but retain until manifest confirms no unique files.",
+      "childCount": 1,
+      "size": 1168104078
+    },
+    {
+      "name": "publishSettings.txt",
+      "classification": "TEMPORARY",
+      "disposition": "Potential sensitive deployment artifact; preserve evidence and queue for secure cleanup approval.",
+      "childCount": null,
+      "size": 0
+    },
+    {
+      "name": "reset-live-sites.sh",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "disposition": "Compare against GitHub before archive/delete.",
+      "childCount": null,
+      "size": 1918
+    },
+    {
+      "name": "sync-live-sites.sh",
+      "classification": "CANON / GOVERNED REFERENCE",
+      "disposition": "Compare against GitHub before archive/delete.",
+      "childCount": null,
+      "size": 2424
+    }
+  ],
+  "destructive_cleanup_executed": false,
+  "next_archival_manifest_requirement": "Before any deletion/move, produce a file-level manifest comparing SharePoint project/build artifacts to GitHub authority and preserving unique business/reference evidence."
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_fd003_execution",
+  "generated": "2026-08-19",
+  "fd": "FD-003",
+  "approval": "APPROVE FD-003 — disable 2 inactive internal accounts",
+  "execution_status": "DEFERRED — M365 MCP connection unavailable in current session",
+  "m365_mcp_connected": false,
+  "reason": "Microsoft 365 MCP server disconnected during this session. Account disablement requires Graph API to verify workload identity use, Power Automate ownership, Azure/Dataverse ownership, then block sign-in.",
+  "action_required": "Re-run in a session with active M365 MCP connection. Verify no active dependencies, then disable sign-in only (do not delete)."
+}

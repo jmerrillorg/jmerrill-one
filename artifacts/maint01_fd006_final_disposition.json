@@ -1,0 +1,37 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-006",
+  "final_disposition": "CLOSED FOR CURRENT DELETION WAVE - ZERO CERTIFIED ORPHANS",
+  "replacement_app_search": "NOT PERFORMED",
+  "applications": [
+    {
+      "display_name": "github-aic-deploy",
+      "application_client_id": "746b3307-1432-4ff8-ac36-e82fc1c9c021",
+      "app_registration_object_id": "4ba6f665-6e75-45f3-8011-c36ccee3fdb1",
+      "classification": "RETAIN - ACTIVE DEPENDENCY",
+      "reason": "Azure Contributor role assignment is an active dependency signal."
+    },
+    {
+      "display_name": "BusinessCentralAPI",
+      "application_client_id": "6dc1ffb9-363b-48ad-9a35-e9cbd8e94b2f",
+      "app_registration_object_id": "f942c040-53d8-43a1-ad68-b5bf178bcee7",
+      "classification": "RETAIN - ACTIVE DEPENDENCY",
+      "reason": "Business Central API permissions indicate a named workload; expiration alone is not orphan proof."
+    },
+    {
+      "display_name": "Portals-Site 1",
+      "application_client_id": "3ddc8988-92ca-4993-b01b-a8a5e413a425",
+      "app_registration_object_id": "722f9d01-ddfe-4563-85df-c6a837e68874",
+      "classification": "RETAIN PENDING OWNER/WORKLOAD REVIEW",
+      "reason": "Portal/Power Pages naming and certificate credential require workload-owner confirmation before deletion."
+    },
+    {
+      "display_name": "BusinessCentralSharePoint",
+      "application_client_id": "767abadb-a4b9-4fc9-8a1c-0b62484c8c0c",
+      "app_registration_object_id": "7569a45d-0dcf-4424-b007-b1c38cf9070f",
+      "classification": "RETAIN PENDING OWNER/WORKLOAD REVIEW",
+      "reason": "Business Central to SharePoint permission set is a plausible workload dependency."
+    }
+  ]
+}
+

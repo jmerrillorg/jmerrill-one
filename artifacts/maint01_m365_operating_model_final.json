@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Final M365 target operating model — resource assignment by type",
+
+  "humans": {
+    "description": "Licensed interactive users",
+    "count": 43,
+    "license_model": "Microsoft 365 E3/Business Premium per licensed user",
+    "note": "43 users inventoried. Per-user license assignment not audited at line-item level. No license removals proposed without Founder direction."
+  },
+
+  "communication": {
+    "description": "Shared mailboxes for organizational communication",
+    "total_mailboxes": 16,
+    "classified_keep_core_system": 9,
+    "classified_founder_decision": 7,
+    "mailboxes_keep": ["logging@", "info@", "notifications@", "no-reply@", "legal@", "preneeds@", "royalties@", "submissions@", "tech@"],
+    "mailboxes_pending_fd005": ["accounting@", "board@", "donations@", "grants@", "media@", "volunteers@", "contacts@"]
+  },
+
+  "collaboration": {
+    "description": "Microsoft Teams and M365 Groups",
+    "teams_count": 14,
+    "m365_groups_count": 26,
+    "all_retained": true,
+    "founder_decisions_pending": ["teams/Sales (FD-004)", "teams/Voicemail (FD-004)", "teams/Projects (FD-006)"]
+  },
+
+  "authorization": {
+    "description": "Security groups for durable authorization boundaries",
+    "count": 9,
+    "all_retained": true,
+    "no_retirement_candidates": true
+  },
+
+  "workloads": {
+    "description": "App registrations and service principals for non-human workload identities",
+    "app_registrations": 112,
+    "primary_types": ["Copilot Studio agents", "GitHub OIDC federated identities for GitHub Actions", "Dataverse/Power Platform identities", "Microsoft system"],
+    "retirement_candidates": 0,
+    "no_action_without_dependency_audit": true
+  },
+
+  "documents": {
+    "description": "SharePoint — document stores aligned to entities",
+    "total_sites": 16,
+    "team_connected": 14,
+    "standalone": 1,
+    "onedrive_admin": 1
+  },
+
+  "data": {
+    "description": "Dataverse — structured operational data",
+    "entities_confirmed": ["jm1_appointments", "jm1_preneed", "jm1_agentregistry", "jm1_aiprompttemplate"],
+    "note": "Dataverse estate not separately rationalized in MAINT-01 scope"
+  },
+
+  "code": {
+    "description": "GitHub — authoritative code stores",
+    "repos": 19,
+    "all_retained": true
+  }
+}

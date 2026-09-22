@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_disposition_matrix_final_after_execution",
+  "generated": "2026-08-19",
+  "cleanup_executed": false,
+  "execution_blocked_reason": "M365 MCP server disconnected in current session",
+  "disposition_matrix": {
+    "guest_accounts": {
+      "stale_guest_1": "APPROVED FOR DELETION — EXECUTION DEFERRED (FD-001)"
+    },
+    "licenses": {
+      "orphaned_premium_x4": "APPROVED FOR UNASSIGNMENT — EXECUTION DEFERRED (FD-002)"
+    },
+    "internal_users": {
+      "inactive_account_1": "APPROVED FOR DISABLE — EXECUTION DEFERRED (FD-003)",
+      "inactive_account_2": "APPROVED FOR DISABLE — EXECUTION DEFERRED (FD-003)"
+    },
+    "teams_groups": {
+      "inactive_team_1": "APPROVED FOR ARCHIVE — EXECUTION DEFERRED (FD-004)",
+      "inactive_team_2": "APPROVED FOR ARCHIVE — EXECUTION DEFERRED (FD-004)",
+      "inactive_team_3": "APPROVED FOR ARCHIVE — EXECUTION DEFERRED (FD-004)"
+    },
+    "shared_mailboxes": {
+      "accounting@jmerrill.one": "RETAIN — CORE",
+      "board@jmerrill.one": "RETAIN — CORE",
+      "donations@jmerrill.one": "RETAIN — CORE",
+      "grants@jmerrill.one": "RETAIN — CORE",
+      "media@jmerrill.one": "RETAIN — ALIAS/ROUTING",
+      "volunteers@jmerrill.one": "RETAIN — ALIAS/ROUTING",
+      "contacts@jmerrill.one": "APPROVED FOR CONSOLIDATION into info@ — EXECUTION DEFERRED (FD-005)",
+      "logging@jmerrill.one": "RETAIN — CORE",
+      "info@jmerrill.one": "RETAIN — CORE",
+      "notifications@jmerrill.one": "RETAIN — CORE",
+      "no-reply@jmerrill.one": "RETAIN — CORE",
+      "legal@jmerrill.one": "RETAIN — CORE",
+      "preneeds@jmerrill.one": "RETAIN — CORE",
+      "royalties@jmerrill.one": "RETAIN — CORE",
+      "submissions@jmerrill.one": "RETAIN — CORE",
+      "tech@jmerrill.one": "RETAIN — CORE"
+    },
+    "app_registrations": {
+      "expired_app_1": "APPROVED CONDITIONAL — EXECUTION DEFERRED PENDING DEPENDENCY CERTIFICATION (FD-006)",
+      "expired_app_2": "APPROVED CONDITIONAL — EXECUTION DEFERRED PENDING DEPENDENCY CERTIFICATION (FD-006)"
+    },
+    "sharepoint_sites": "ALL RETAINED — no SharePoint cleanup authorized in current FD package",
+    "repositories": "ALL 19 RETAINED — no repo archival/deletion authorized"
+  }
+}

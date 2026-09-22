@@ -1,0 +1,190 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Ordered cleanup execution waves — prepared but not yet authorized to execute",
+  "status": "PREPARED — awaiting Founder decisions FD-001 through FD-006 for waves 4-6",
+
+  "waves": [
+    {
+      "wave": 1,
+      "name": "Security / Credential Risk",
+      "founder_decision_required": false,
+      "prerequisite": "None — runs before other waves",
+      "objects": ["All 112 app registrations — credential expiry sweep only"],
+      "actions": [
+        "Query Graph API for passwordCredentials and keyCredentials expiration dates across all 112 app registrations",
+        "Flag P0 (expired) and P1 (<30 days) credentials for immediate rotation",
+        "Flag P2 (<90 days) for scheduled rotation",
+        "Flag password-based workload identities for eventual migration to OIDC/managed identity",
+        "No credential rotation executed in this wave unless an active P0 failure is confirmed"
+      ],
+      "validation": "Confirm no active production failures caused by expired credentials",
+      "rollback": "N/A — this wave is audit-only unless a P0 active failure requires remediation",
+      "stop_conditions": ["P0 credential on production GitHub Actions or publishing automation — escalate immediately"]
+    },
+    {
+      "wave": 2,
+      "name": "License Rationalization",
+      "founder_decision_required": false,
+      "prerequisite": "Wave 1 complete; no license changes until FD-004/FD-006 outcomes clarify any account retirements",
+      "objects": [],
+      "actions": [
+        "After FD-004 and FD-006 are answered: identify users whose Teams/collaboration need is eliminated by Sales/Voicemail/Projects Team archival",
+        "Perform per-user license dependency check (mailbox, OneDrive, Teams, Power Platform usage)",
+        "Present removal candidates to Founder for explicit approval"
+      ],
+      "validation": "Confirm removed license user retains necessary mailbox/OneDrive access if required",
+      "rollback": "Reassign license",
+      "stop_conditions": ["Any user with active mail delivery, Power Automate flow, or active client relationship"]
+    },
+    {
+      "wave": 3,
+      "name": "Service Account Modernization",
+      "founder_decision_required": false,
+      "prerequisite": "Wave 1 complete",
+      "objects": ["jm1-admin@jmerrill.one (review only — no migration proposed yet)"],
+      "actions": [
+        "Confirm jm1-admin@jmerrill.one is a shared service account, not an interactive user with a license",
+        "Review whether any workload relies on jm1-admin in a way that should transition to a managed identity or dedicated service principal",
+        "No migration executed — this wave is assessment only"
+      ],
+      "validation": "No active automation breaks",
+      "rollback": "N/A — assessment only",
+      "stop_conditions": []
+    },
+    {
+      "wave": 4,
+      "name": "Mailbox Rationalization",
+      "founder_decision_required": true,
+      "requires": "FD-005",
+      "prerequisite": "FD-005 answers received",
+      "objects_per_fd005_answer": {
+        "KEEP_CORE": "No action — retain as-is",
+        "KEEP_ALIAS": "Set up forwarding rule to primary monitored mailbox; document alias in M365 admin center",
+        "RETIRE": "Step 1: Set forwarding to info@ for 90-day grace period. Step 2: After 90 days, confirm no active use. Step 3: Remove mailbox."
+      },
+      "per_mailbox_prerequisites": [
+        "Confirm no Power Automate flows send to or receive from the mailbox",
+        "Confirm no Dynamics/Customer Voice/Bookings references the mailbox",
+        "Confirm no public website contact form routes to the mailbox",
+        "Confirm no external partner has this address as a known contact",
+        "Preserve any existing email rules/delegates"
+      ],
+      "validation": "Send test email to retired/aliased address and confirm routing works as expected",
+      "rollback": "Restore mailbox from Exchange Online recovery (30-day window)",
+      "stop_conditions": ["Any active external email confirmed to the address within grace period"]
+    },
+    {
+      "wave": 5,
+      "name": "Teams / M365 Group Rationalization",
+      "founder_decision_required": true,
+      "requires": ["FD-004 (Sales and Voicemail)", "FD-006 (Projects Team)"],
+      "prerequisite": "FD-004 and FD-006 answers received; Wave 6 SharePoint steps for affected sites should complete first",
+      "steps": [
+        {
+          "step": "5.1 — Sales Team (if FD-004 approved archive)",
+          "actions": [
+            "Migrate pricing sheets from sites/sales to shared library (marketing or support)",
+            "Remove all members from Sales Team",
+            "Archive Sales Team via Teams admin center",
+            "Place sites/sales in read-only",
+            "Archive M365 Group after 30-day hold"
+          ],
+          "rollback": "Teams archive is reversible within tenant retention window"
+        },
+        {
+          "step": "5.2 — Voicemail Team (only if routing decouple confirmed)",
+          "actions": [
+            "Confirm voicemail routing does not require Team identity (test via Teams admin center calling policies)",
+            "If routing is decoupled: archive Voicemail Team and place sites/voicemail in read-only",
+            "Retain Voicemail Team if routing dependency cannot be eliminated"
+          ],
+          "rollback": "Teams archive reversible; routing reconfiguration may require Microsoft support"
+        },
+        {
+          "step": "5.3 — Projects Team (if FD-006 approved archive)",
+          "prerequisite": "FD-003 content cleanup (Wave 6 Step 2) complete",
+          "actions": [
+            "Archive Projects Team via Teams admin center",
+            "Place sites/projects in read-only",
+            "Archive M365 Group after 30-day hold"
+          ],
+          "rollback": "Teams archive reversible"
+        }
+      ],
+      "stop_conditions": [
+        "Active meeting scheduled in any Team being archived",
+        "Active Power Automate flow referencing Team/Group",
+        "Voicemail delivery failure detected"
+      ]
+    },
+    {
+      "wave": 6,
+      "name": "SharePoint Alignment",
+      "founder_decision_required": true,
+      "requires": ["FD-001 (foundation_comm)", "FD-002 (canon label)", "FD-003 (projects content)"],
+      "prerequisite": "FD-001, FD-002, FD-003 answers received",
+      "steps": [
+        {
+          "step": "6.1 — foundation_comm consolidation (if FD-001 CONSOLIDATE approved)",
+          "actions": [
+            "Enumerate all files in sites/foundation_comm (not just folder structure)",
+            "Identify owner of foundation_comm",
+            "Migrate Programs & Events content to sites/foundation_div",
+            "Verify all content accessible in foundation_div",
+            "Set foundation_comm to read-only for 30 days",
+            "After 30-day hold with no access: retire site"
+          ],
+          "rollback": "Content remains in foundation_div; foundation_comm site recovery from SharePoint admin recycle (limited window)"
+        },
+        {
+          "step": "6.2 — projects dev artifact cleanup (if FD-003 approved)",
+          "actions": [
+            "Verify no CI/CD pipelines reference sites/projects",
+            "Verify no Power Automate flows reference sites/projects",
+            "Create archive ZIP of any unique files not in GitHub",
+            "Remove JS bundles, build outputs, repo mirrors from Shared Documents",
+            "Retain Team shell pending FD-006"
+          ],
+          "rollback": "Archive ZIP is the rollback — restore to SharePoint if needed"
+        },
+        {
+          "step": "6.3 — enterprise canon label (if FD-002 approved)",
+          "actions": [
+            "Add header note to publishing/JM1 Shared Services/Enterprise Governance folder: 'Reference copy — authoritative source: ImplementationHQ/Architecture/00_CANON'",
+            "No files moved or deleted"
+          ],
+          "rollback": "Remove the header note"
+        }
+      ],
+      "stop_conditions": [
+        "Any active external link confirmed to foundation_comm URL",
+        "Any automation confirmed reading from sites/projects before cleanup"
+      ]
+    },
+    {
+      "wave": 7,
+      "name": "App Registration / Service Principal Retirement",
+      "founder_decision_required": false,
+      "prerequisite": "Full line-item dependency audit of 112 app registrations (not yet performed)",
+      "objects": [],
+      "actions": [
+        "Complete Graph API sweep of all app registrations for last sign-in, permissions, Azure role assignments",
+        "Identify registrations with no sign-in activity in 180+ days and no Azure role assignments",
+        "Cross-check against GitHub OIDC federated identity list, Dataverse app user list, Power Platform connections",
+        "Present retirement candidates to Founder for explicit approval"
+      ],
+      "note": "No retirements authorized until dependency audit complete",
+      "rollback": "App registration soft-deletion has a 30-day recovery window in Entra",
+      "stop_conditions": ["Any active GitHub Action or Power Automate flow using the registration"]
+    },
+    {
+      "wave": 8,
+      "name": "Repository Archive / Retirement",
+      "founder_decision_required": false,
+      "prerequisite": "No action required — all 19 repos classified KEEP",
+      "objects": [],
+      "actions": ["No action — all repos retained"],
+      "note": "Repository estate is clean. No archive or retirement candidates identified."
+    }
+  ]
+}

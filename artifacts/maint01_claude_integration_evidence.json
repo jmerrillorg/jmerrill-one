@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "Evidence of Claude commit integration into governed branch",
+  "source_commits": ["1c8e366", "d6b7d8a", "e0d0241"],
+  "source_branch": "claude/loving-planck-1cfoo2",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "integration_method": "MERGE — d6b7d8a already contains both Claude work (1c8e366) and Cody lineage (85cbc9c, 045e9a2) as merge parents. No additional cherry-pick needed; complete history in single branch.",
+  "resulting_branch_sha": "e0d0241eb4d14df53f877c408141d8417571ebe1",
+  "conflict_resolution": "NONE — ort strategy, clean merge",
+  "cody_lineage_preserved": true,
+  "claude_authorship_preserved": true,
+  "current_artifact_versions_preserved": true,
+  "pr_continuity": "PR #6 targets codex/maint01-estate-rationalization — no competing PR created",
+  "push_status": "PENDING — GitHub App write permission required; all prior MCP push_files calls returned 403"
+}

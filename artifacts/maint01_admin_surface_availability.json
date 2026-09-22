@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "surfaces": [
+    {
+      "surface": "Microsoft Graph users/groups/apps",
+      "classification": "API ACCESS",
+      "evidence": "users/groups/applications/group-linked sites succeeded"
+    },
+    {
+      "surface": "SharePoint tenant site search",
+      "classification": "UNAVAILABLE",
+      "evidence": "Graph /sites?search=* returned 403 accessDenied; no browser/admin UI tool available in current callable toolset"
+    },
+    {
+      "surface": "SharePoint group-linked sites/drives",
+      "classification": "API ACCESS",
+      "evidence": "16 group-linked sites and 27 drives/libraries mapped"
+    },
+    {
+      "surface": "Teams actual joined teams",
+      "classification": "API ACCESS",
+      "evidence": "me/joinedTeams plus team channels/group/site/drive returned 14 Teams"
+    },
+    {
+      "surface": "Teams tenant-wide list",
+      "classification": "UNAVAILABLE",
+      "evidence": "Graph /teams returned 403; joinedTeams used as authenticated admin-visible set"
+    },
+    {
+      "surface": "Exchange Online PowerShell",
+      "classification": "API ACCESS",
+      "evidence": "Connect-ExchangeOnline succeeded as jm1-admin@jmerrill.one"
+    },
+    {
+      "surface": "Entra Admin Center",
+      "classification": "API ACCESS",
+      "evidence": "Graph directory/app endpoints worked through Azure auth"
+    },
+    {
+      "surface": "Microsoft 365 Admin Center UI",
+      "classification": "UNAVAILABLE",
+      "evidence": "No callable browser/admin UI session exposed for this task"
+    }
+  ]
+}

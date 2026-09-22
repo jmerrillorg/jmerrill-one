@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_final_github_push",
+  "generated": "2026-08-19",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "push_via_git": "403 Forbidden — GitHub App lacks write permission",
+  "push_via_mcp": "403 Resource not accessible by integration",
+  "result": "BLOCKED",
+  "resolution": "Org owner must grant GitHub App write access at https://github.com/organizations/jmerrillorg/settings/installations OR Cody must push from /home/user/jmerrill-one using its working authorization"
+}

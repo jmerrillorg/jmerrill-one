@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "Definitive deduplicated SharePoint surface count",
+  "total_sharepoint_surfaces": 17,
+  "breakdown": {
+    "team_connected_sites": 14,
+    "group_connected_sites": 0,
+    "standalone_communication_sites": 1,
+    "loop_workspace_storage": 1,
+    "admin_onedrive": 1
+  },
+  "in_cleanup_scope": 15,
+  "out_of_scope": 2,
+  "libraries_drives_confirmed": 13,
+  "root_items_mapped": "Partial — available via drive enumeration",
+  "duplicate_purpose_candidates": 1,
+  "consolidation_candidates": 1,
+  "retirement_candidates": 0,
+  "dedup_note": "No double-counting — each site appears once. foundation_div/projects/support enumerated via Teams map + Claude URL confirmation, not as separate standalone sites."
+}

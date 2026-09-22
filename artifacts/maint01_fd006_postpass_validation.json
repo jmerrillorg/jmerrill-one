@@ -1,0 +1,33 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-006",
+  "result": "PASS - RETAIN/REVIEW",
+  "live_query_note": "Direct GET using earlier shortened IDs returned Request_ResourceNotFound; display-name reconciliation found the retained applications with full current object IDs.",
+  "applications": [
+    {
+      "displayName": "github-aic-deploy",
+      "appId": "746b3307-1432-4ff8-ac36-e82fc1c9c021",
+      "id": "4ba6f665-6e75-45f3-8011-c36ccee3fdb1",
+      "disposition": "RETAIN - ACTIVE DEPENDENCY"
+    },
+    {
+      "displayName": "BusinessCentralAPI",
+      "appId": "6dc1ffb9-363b-48ad-9a35-e9cbd8e94b2f",
+      "id": "f942c040-53d8-43a1-ad68-b5bf178bcee7",
+      "disposition": "RETAIN - ACTIVE DEPENDENCY"
+    },
+    {
+      "displayName": "Portals-Site 1",
+      "appId": "3ddc8988-92ca-4993-b01b-a8a5e413a425",
+      "id": "722f9d01-ddfe-4563-85df-c6a837e68874",
+      "disposition": "RETAIN PENDING OWNER/WORKLOAD REVIEW"
+    },
+    {
+      "displayName": "BusinessCentralSharePoint",
+      "appId": "767abadb-a4b9-4fc9-8a1c-0b62484c8c0c",
+      "id": "7569a45d-0dcf-4424-b007-b1c38cf9070f",
+      "disposition": "RETAIN PENDING OWNER/WORKLOAD REVIEW"
+    }
+  ],
+  "deleted_app_registrations_this_pass": []
+}

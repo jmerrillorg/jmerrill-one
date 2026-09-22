@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Final shared mailbox disposition — 16 mailboxes",
+  "total_mailboxes": 16,
+
+  "mailboxes": [
+    { "mailbox": "logging@jmerrill.one", "classification": "CORE INTERNAL OPERATIONS", "disposition": "KEEP", "reason": "Automation identity for logging workflows" },
+    { "mailbox": "info@jmerrill.one", "classification": "CORE PUBLIC IDENTITY", "disposition": "KEEP", "reason": "Primary public information contact" },
+    { "mailbox": "notifications@jmerrill.one", "classification": "AUTOMATION / BOOKINGS", "disposition": "KEEP", "reason": "Automation notification sender" },
+    { "mailbox": "no-reply@jmerrill.one", "classification": "AUTOMATION / BOOKINGS", "disposition": "KEEP", "reason": "Outbound automation sender identity" },
+    { "mailbox": "legal@jmerrill.one", "classification": "CORE PUBLIC IDENTITY", "disposition": "KEEP", "reason": "Legal identity — retain always regardless of activity" },
+    { "mailbox": "preneeds@jmerrill.one", "classification": "CORE INTERNAL OPERATIONS", "disposition": "KEEP", "reason": "Active pre-need intake for Financial division" },
+    { "mailbox": "royalties@jmerrill.one", "classification": "CORE INTERNAL OPERATIONS", "disposition": "KEEP", "reason": "Publishing royalty administration — critical" },
+    { "mailbox": "submissions@jmerrill.one", "classification": "CORE PUBLIC IDENTITY", "disposition": "KEEP", "reason": "Author submission intake — external-facing" },
+    { "mailbox": "tech@jmerrill.one", "classification": "CORE INTERNAL OPERATIONS", "disposition": "KEEP", "reason": "Technical operations identity" },
+    { "mailbox": "accounting@jmerrill.one", "classification": "FOUNDER DECISION REQUIRED", "disposition": "PENDING FD-005", "recommendation": "KEEP if actively used for financial correspondence; ALIAS if rarely staffed" },
+    { "mailbox": "board@jmerrill.one", "classification": "FOUNDER DECISION REQUIRED", "disposition": "PENDING FD-005", "recommendation": "KEEP — CORE (Foundation governance/nonprofit credibility)" },
+    { "mailbox": "donations@jmerrill.one", "classification": "FOUNDER DECISION REQUIRED", "disposition": "PENDING FD-005", "recommendation": "KEEP — CORE (donor-facing; retiring creates external confusion)" },
+    { "mailbox": "grants@jmerrill.one", "classification": "FOUNDER DECISION REQUIRED", "disposition": "PENDING FD-005", "recommendation": "KEEP — CORE (Foundation grants program; external grantors may email here)" },
+    { "mailbox": "media@jmerrill.one", "classification": "FOUNDER DECISION REQUIRED", "disposition": "PENDING FD-005", "recommendation": "KEEP if press/PR inquiries active; ALIAS if not actively monitored" },
+    { "mailbox": "volunteers@jmerrill.one", "classification": "FOUNDER DECISION REQUIRED", "disposition": "PENDING FD-005", "recommendation": "KEEP if volunteer coordination is active; ALIAS if moved to another channel" },
+    { "mailbox": "contacts@jmerrill.one", "classification": "FOUNDER DECISION REQUIRED", "disposition": "PENDING FD-005", "recommendation": "CONSOLIDATE into info@ if overlapping; otherwise KEEP as general alias" }
+  ],
+
+  "summary": {
+    "KEEP_CONFIRMED": 9,
+    "FOUNDER_DECISION_REQUIRED": 7,
+    "RETIRE_CANDIDATES": 0
+  }
+}

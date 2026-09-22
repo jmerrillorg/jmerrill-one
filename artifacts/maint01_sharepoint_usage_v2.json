@@ -1,0 +1,111 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "method": "Last-modified timestamps from M365 connector search results (jm1-admin@jmerrill.one)",
+  "limitation": "Microsoft usage reports API returned 403 during prior attempts. Formal metrics (page views, active file count, storage bytes) unavailable. Activity classification derived from latest observed document modification dates from search index.",
+  "limitation_affects_cleanup_safety": false,
+  "limitation_reason": "Activity alone is not deletion proof per MAINT-01 rules. No site is proposed for deletion solely on inactivity. Classification is used to triage Founder decisions only.",
+  "sites": [
+    {
+      "site": "sites/ImplementationHQ",
+      "last_observed_activity": "2026-07-22",
+      "activity_class": "ACTIVE",
+      "activity_basis": "Architecture documents, ADR registers, program files modified July 2026"
+    },
+    {
+      "site": "sites/publishing",
+      "last_observed_activity": "2026-08-15",
+      "activity_class": "ACTIVE",
+      "activity_basis": "Developmental editing packages, pipeline automation artifacts modified August 2026"
+    },
+    {
+      "site": "sites/financial",
+      "last_observed_activity": "2026-08-11",
+      "activity_class": "ACTIVE",
+      "activity_basis": "Pre-need planning docs, marketing materials modified August 2026"
+    },
+    {
+      "site": "sites/marketing",
+      "last_observed_activity": "2026-04-20",
+      "activity_class": "LOW ACTIVITY",
+      "activity_basis": "Media asset folders last touched April 2026"
+    },
+    {
+      "site": "sites/sales",
+      "last_observed_activity": "2025-09-11",
+      "activity_class": "LOW ACTIVITY",
+      "activity_basis": "Pricing sheets last modified September 2025"
+    },
+    {
+      "site": "sites/voicemail",
+      "last_observed_activity": "2025-03-19",
+      "activity_class": "INACTIVE",
+      "activity_basis": "Only General folder visible, last modified March 2025"
+    },
+    {
+      "site": "sites/support",
+      "last_observed_activity": "2025-04-04",
+      "activity_class": "LOW ACTIVITY",
+      "activity_basis": "Support notebook last modified April 2025"
+    },
+    {
+      "site": "sites/security",
+      "last_observed_activity": "2025-11-06",
+      "activity_class": "LOW ACTIVITY",
+      "activity_basis": "Security notebook last modified November 2025"
+    },
+    {
+      "site": "sites/AgapeIC",
+      "last_observed_activity": "2026-04-20",
+      "activity_class": "LOW ACTIVITY",
+      "activity_basis": "Programs and events folders last touched April 2026"
+    },
+    {
+      "site": "sites/foundation_div",
+      "last_observed_activity": "2026-04-20",
+      "activity_class": "LOW ACTIVITY",
+      "activity_basis": "Operations, grants, programs folders last touched April 2026"
+    },
+    {
+      "site": "sites/JMerrillOne",
+      "last_observed_activity": "UNKNOWN",
+      "activity_class": "UNKNOWN",
+      "activity_basis": "Drive not directly observed; no indexed content surfaced"
+    },
+    {
+      "site": "sites/events",
+      "last_observed_activity": "UNKNOWN",
+      "activity_class": "UNKNOWN",
+      "activity_basis": "Drive not directly observed"
+    },
+    {
+      "site": "sites/productions",
+      "last_observed_activity": "UNKNOWN",
+      "activity_class": "UNKNOWN",
+      "activity_basis": "Drive not directly observed"
+    },
+    {
+      "site": "sites/projects",
+      "last_observed_activity": "2026-01-09",
+      "activity_class": "LOW ACTIVITY",
+      "activity_basis": "Dev/repo artifact files last modified January 2026"
+    },
+    {
+      "site": "sites/foundation_comm",
+      "last_observed_activity": "2025-09-11",
+      "activity_class": "LOW ACTIVITY",
+      "activity_basis": "Programs & Events folders last touched September 2025"
+    },
+    {
+      "site": "personal/jm1-admin_jmerrill_one",
+      "last_observed_activity": "2026-04-14",
+      "activity_class": "ACTIVE",
+      "activity_basis": "Recordings folder; admin working files"
+    }
+  ],
+  "summary": {
+    "ACTIVE": ["sites/ImplementationHQ", "sites/publishing", "sites/financial", "personal/jm1-admin_jmerrill_one"],
+    "LOW_ACTIVITY": ["sites/marketing", "sites/sales", "sites/support", "sites/security", "sites/AgapeIC", "sites/foundation_div", "sites/projects", "sites/foundation_comm"],
+    "INACTIVE": ["sites/voicemail"],
+    "UNKNOWN": ["sites/JMerrillOne", "sites/events", "sites/productions"]
+  }
+}

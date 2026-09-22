@@ -1,0 +1,61 @@
+{
+  "package": "MAINT-01",
+  "team": "Projects",
+  "classification": "ARCHIVE READY - PRESERVATION MAP CERTIFIED",
+  "inventory": {
+    "teamId": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+    "m365GroupId": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+    "mail": "projects@jmerrill.one",
+    "visibility": "Private",
+    "sharePointSite": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+    "primaryLibrary": "Shared Documents",
+    "plannerPlans": [],
+    "channels": [
+      {
+        "id": "19:UsHfAKQMei6nNmat2Eh8FvxLd-hpm938y-jUDVrjQwQ1@thread.tacv2",
+        "displayName": "General",
+        "membershipType": "standard"
+      }
+    ],
+    "appsTabs": [
+      "Notes",
+      "Files"
+    ],
+    "owners": [
+      {
+        "displayName": "Jackie Smith, Jr.",
+        "userPrincipalName": "jackie@jmerrill.one",
+        "id": "9586f34b-b5f3-437b-bc64-3e44d2518427",
+        "userType": "Member"
+      },
+      {
+        "displayName": "JM1 Admin",
+        "userPrincipalName": "jm1-admin@jmerrill.one",
+        "id": "9750d862-2024-42bc-9707-f84b325dfb19",
+        "userType": "Member"
+      }
+    ],
+    "members": [
+      {
+        "displayName": "Jackie Smith, Jr.",
+        "userPrincipalName": "jackie@jmerrill.one",
+        "id": "9586f34b-b5f3-437b-bc64-3e44d2518427",
+        "userType": "Member"
+      },
+      {
+        "displayName": "JM1 Admin",
+        "userPrincipalName": "jm1-admin@jmerrill.one",
+        "id": "9750d862-2024-42bc-9707-f84b325dfb19",
+        "userType": "Member"
+      }
+    ],
+    "guests": []
+  },
+  "preservation_destination": "Governed Projects SharePoint estate for business records; GitHub/source-control authority for source/build artifacts; no source deletion until file-level archive execution manifest is approved.",
+  "content_classification_files": [
+    "maint01_projects_content_classification.json",
+    "maint01_projects_github_sharepoint_authority.json",
+    "maint01_projects_build_artifact_disposition.json"
+  ],
+  "destructive_actions": "NONE"
+}

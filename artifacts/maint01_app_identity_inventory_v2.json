@@ -1,0 +1,3976 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "applications": [
+    {
+      "application_id": "734157cd-6fe0-47cf-87aa-0eb05b57be9a",
+      "object_id": "021c63cb-5b8b-4cf1-a206-405e674612df",
+      "display_name": "JM1-Bookings-AppPublic",
+      "owners": [],
+      "created": "2025-09-19T12:57:56Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "Bookings",
+          "endDateTime": "2026-03-18T12:58:26.339Z",
+          "keyId": "72af1c4a-dddf-4f40-825f-91b1abe5446e"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "91de177b-5866-4448-8d63-75384746e182",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "d396d263-ceb3-49af-b8cc-d8e60c15f2ac",
+      "object_id": "02ce5b60-c3c8-42d8-8084-d1866c80653e",
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-02-27T05:41:52Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_cfb11e9d-28a5-f37c-a7c9-c8ac9e5343c5",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/cfb11e9d-28a5-f37c-a7c9-c8ac9e5343c5",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_cfb11e9d-28a5-f37c-a7c9-c8ac9e5343c5",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/cfb11e9d-28a5-f37c-a7c9-c8ac9e5343c5",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "e9fd2a6c-063b-4307-add9-9f5decbdc139",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "ea9e5801-044c-45de-9804-79bede3e2350",
+      "object_id": "0578b284-961f-42a8-b8ae-5ab7682c4139",
+      "display_name": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-31T10:10:21Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_03995f80-5fdc-4dba-7e9b-ab3383b477e3",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/03995f80-5fdc-4dba-7e9b-ab3383b477e3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_03995f80-5fdc-4dba-7e9b-ab3383b477e3",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/03995f80-5fdc-4dba-7e9b-ab3383b477e3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "091c63d8-bbc7-4c4b-b3b8-ac32fa0fd765",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "f5f88572-d57c-4d4c-bb0e-c4db0ebfa036",
+      "object_id": "06a532a2-8fb8-40a5-85e5-6cd58a597575",
+      "display_name": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-31T10:09:56Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_75b2d5fc-bf9e-37c6-4f88-ac22c5f765d4",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/75b2d5fc-bf9e-37c6-4f88-ac22c5f765d4",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_75b2d5fc-bf9e-37c6-4f88-ac22c5f765d4",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/75b2d5fc-bf9e-37c6-4f88-ac22c5f765d4",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "887cceae-d7d8-43b7-8cbb-3d618a1c50d1",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "0cf06f51-cee9-45ee-9da0-9924b63579ef",
+      "object_id": "076bf113-6c40-4182-a49b-d60ce9aefa39",
+      "display_name": "JM1-WEB-INTAKE-API",
+      "owners": [],
+      "created": "2026-08-12T11:40:05Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "6762a5f6-e954-4eb1-a9ca-6c71b34ddc6e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "3d69ef01-c168-4fde-b861-5faaad32e20b",
+      "object_id": "088bfdfd-8498-4f8a-abb3-a437d6dd1d22",
+      "display_name": "Site 1 bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service",
+        "jackie@jmerrill.pub"
+      ],
+      "created": "2025-04-21T01:19:57Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_8373acce-0b3c-6e9b-37a9-5af40b8e022c",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8373acce-0b3c-6e9b-37a9-5af40b8e022c",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_8373acce-0b3c-6e9b-37a9-5af40b8e022c",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8373acce-0b3c-6e9b-37a9-5af40b8e022c",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "b9bc914e-47fe-4f63-abb0-9b13a825a100",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "cfaabd68-eba8-47f3-8fee-6f29ea49a78a",
+      "object_id": "0b4f07ac-b936-4f76-997b-265dbdb636b8",
+      "display_name": "JM1 Operations Copilot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service",
+        "jm1-admin@jmerrill.one"
+      ],
+      "created": "2025-11-25T12:08:36Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_2852e7c9-47c0-c56d-8a8b-92504ca19113",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/2852e7c9-47c0-c56d-8a8b-92504ca19113",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_2852e7c9-47c0-c56d-8a8b-92504ca19113",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/2852e7c9-47c0-c56d-8a8b-92504ca19113",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "aeb0d80b-fd4d-4d5d-bb18-62a383433228",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "39102281-e5c2-4830-bc80-4705eabc5904",
+      "object_id": "0bf58583-b2ea-48e5-b955-90a71ab74c53",
+      "display_name": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-06-09T08:37:37Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_8be557da-244c-b116-3678-b39f2224bfa9",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8be557da-244c-b116-3678-b39f2224bfa9",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_8be557da-244c-b116-3678-b39f2224bfa9",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8be557da-244c-b116-3678-b39f2224bfa9",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "94d616a7-2967-47da-995b-746318f48d98",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "425e62c0-70e3-4922-90f0-38600e9c4bde",
+      "object_id": "10c6fbc7-bd0b-4863-8e39-616138fc15ec",
+      "display_name": "Microsoft Bookings",
+      "owners": [],
+      "created": "2025-02-25T12:44:00Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "ca132655-c4b3-4bfc-8708-385bb89aaac4",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "b53a6e98-b717-451d-a9c9-f602d105fd8d",
+      "object_id": "16226154-f522-4e14-b178-851bcfba7268",
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-09-20T07:41:22Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_d866119a-95e4-ab21-5cb4-53a9aa07f605",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/d866119a-95e4-ab21-5cb4-53a9aa07f605",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_d866119a-95e4-ab21-5cb4-53a9aa07f605",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/d866119a-95e4-ab21-5cb4-53a9aa07f605",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "bb143825-1c2b-47b1-b4ec-e0ab23fcc096",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "b0de42f7-f76c-4a15-8bb1-fbc82fb304dc",
+      "object_id": "177fce43-4358-4699-b66b-c901f16bacbc",
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-02-24T08:41:27Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_c4c56768-48ec-4aff-c328-37ac4638370b",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/c4c56768-48ec-4aff-c328-37ac4638370b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_c4c56768-48ec-4aff-c328-37ac4638370b",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/c4c56768-48ec-4aff-c328-37ac4638370b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "22f55b4b-6c2c-449e-8675-6ecb2f96d675",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8a52cdb4-a0e5-40bc-9960-f214e3a1d454",
+      "object_id": "24cc7f0c-31cd-47d5-b903-a92b4d49aea4",
+      "display_name": "Copilot in Dynamics 365 Sales (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-09T08:33:45Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_52c733a9-f30a-50b8-bd91-db2d8427e454",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/52c733a9-f30a-50b8-bd91-db2d8427e454",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_52c733a9-f30a-50b8-bd91-db2d8427e454",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/52c733a9-f30a-50b8-bd91-db2d8427e454",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "6852f5f7-c009-473d-aa08-dc58e47f5983",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "f351b554-e1d1-446a-9592-6cdb9f422d6c",
+      "object_id": "26086808-a8fc-46d9-8b79-0936f584cd2d",
+      "display_name": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-08-02T05:31:10Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_4350214b-fbaa-3e72-2bcf-64ce77a92daf",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/4350214b-fbaa-3e72-2bcf-64ce77a92daf",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_4350214b-fbaa-3e72-2bcf-64ce77a92daf",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/4350214b-fbaa-3e72-2bcf-64ce77a92daf",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "df2cc755-ae3d-4c93-bc9e-23c04699446e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "32471baa-c4e8-4592-b3e3-e38312d81978",
+      "object_id": "28abf57a-9db4-4a20-a31d-fb0cb880fb84",
+      "display_name": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:27Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_0c0bfafd-bb25-7534-c420-ce6819f69459",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/0c0bfafd-bb25-7534-c420-ce6819f69459",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_0c0bfafd-bb25-7534-c420-ce6819f69459",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/0c0bfafd-bb25-7534-c420-ce6819f69459",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "fb9c1f03-1620-4598-b9d0-4efcf12fb5dd",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "350b2859-f4ba-47b6-b2ae-6576424f5bd1",
+      "object_id": "2c2dbee6-67cd-4e7f-88ff-649d0aebd881",
+      "display_name": "JMF Financial Advisor Workspace App Service Auth",
+      "owners": [],
+      "created": "2026-08-16T11:39:47Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "6d654243-8d71-4241-9cda-da1c999f20d6",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8d55bdb0-9fae-4f4d-abbb-4f68451a581f",
+      "object_id": "2e2ce081-521f-4ff7-b678-517ebf833d56",
+      "display_name": "Grammarly for Microsoft Word",
+      "owners": [],
+      "created": "2025-02-24T17:39:44Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "622fa2a4-0893-485c-b728-e3810f5a92b9",
+        "accountEnabled": false,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "6078abb5-139d-46c3-9046-6d5b0a8cdd8c",
+      "object_id": "2fb20148-325a-47e8-b5a8-2bc5ab0aceb1",
+      "display_name": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-17T07:00:15Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_cef8bd2d-a808-f34c-2fae-1837b7e85451",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/cef8bd2d-a808-f34c-2fae-1837b7e85451",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_cef8bd2d-a808-f34c-2fae-1837b7e85451",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/cef8bd2d-a808-f34c-2fae-1837b7e85451",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "1ab0a0ff-1bfc-4299-b62e-da7c06fe038c",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "e08e2032-1ec8-4641-ba81-bf31fb507f52",
+      "object_id": "3179e045-e636-4c15-97c8-82020b74bcf7",
+      "display_name": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-08-27T07:23:47Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_42528262-6a25-e8ef-f82d-cd0bce583de9",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/42528262-6a25-e8ef-f82d-cd0bce583de9",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_42528262-6a25-e8ef-f82d-cd0bce583de9",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/42528262-6a25-e8ef-f82d-cd0bce583de9",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "ae9d8d91-5487-49a0-b49f-64d66380fef1",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "f925efcf-162e-476d-b490-d9a1cf687453",
+      "object_id": "35c1da36-b0dc-4202-a88b-115480bd2b4d",
+      "display_name": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:27Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_5b13d377-985b-b8f9-e107-284d5d061efc",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/5b13d377-985b-b8f9-e107-284d5d061efc",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_5b13d377-985b-b8f9-e107-284d5d061efc",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/5b13d377-985b-b8f9-e107-284d5d061efc",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "38c05c65-df4a-41b1-8ec1-d95d2afad3e1",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "4a684eb6-7cfe-4c3a-8d09-3e1b362171ad",
+      "object_id": "366529be-5104-4edc-bffc-4fccd66f8949",
+      "display_name": "PowerPlatform-JM1-Core",
+      "owners": [],
+      "created": "2026-08-11T18:36:04Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "c4d65b7c-4cd2-45b3-92b6-061bbfd9394f",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8df442ae-81d6-49c2-b6af-bb6a2eacba76",
+      "object_id": "39cb8c02-4c90-4edb-adca-8335b5c58fef",
+      "display_name": "Customization Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:26Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_a537d5f1-5929-1f2f-03fa-ab0dc0ac5cb0",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/a537d5f1-5929-1f2f-03fa-ab0dc0ac5cb0",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_a537d5f1-5929-1f2f-03fa-ab0dc0ac5cb0",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/a537d5f1-5929-1f2f-03fa-ab0dc0ac5cb0",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "2d632de8-7fde-4481-94c5-4ba95638c30b",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "c5082d1d-bda3-4d0d-9560-da125dbb83b0",
+      "object_id": "3a5eebc4-c0b1-4e57-ae7f-4833b7fc1bbb",
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-04-23T09:07:15Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_da011fc5-e97a-5d8c-19de-12f3bca65820",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/da011fc5-e97a-5d8c-19de-12f3bca65820",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_da011fc5-e97a-5d8c-19de-12f3bca65820",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/da011fc5-e97a-5d8c-19de-12f3bca65820",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "2de41b30-3a5a-4846-830a-d42f40c5bce7",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "33f8e9f0-f982-4e88-98c4-97a44fcf8a1a",
+      "object_id": "3bba7e4f-6ea7-4cae-b97c-416968d6dd09",
+      "display_name": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-21T07:15:09Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_465003ca-e074-8c99-c618-3d8e4eb1bd23",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/465003ca-e074-8c99-c618-3d8e4eb1bd23",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_465003ca-e074-8c99-c618-3d8e4eb1bd23",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/465003ca-e074-8c99-c618-3d8e4eb1bd23",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "4c5e56e6-b17a-4f13-9595-ca9e99f730f0",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "85d56cc8-b453-46eb-ae83-18ae66357fb3",
+      "object_id": "3bc88d05-3cb3-4b27-ac52-502d0160c0b3",
+      "display_name": "jm1-kv-audit",
+      "owners": [],
+      "created": "2025-11-06T12:17:08Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "036503ef-d787-4727-b24f-d00bb1a79338",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "0fbf4a5c-b8ac-4572-aecd-128539a698d9",
+      "object_id": "3c804a1f-fa5b-4c7a-b7e4-4d06f3b867e3",
+      "display_name": "AIC Website GitHub Actions",
+      "owners": [],
+      "created": "2026-04-05T12:04:56Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "aic-online-main-deploy",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/aic-online:ref:refs/heads/main",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "1c97c804-a97d-458b-bede-70760f9bbd4f",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "GITHUB/OIDC",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "97891ed1-6623-487c-b890-633bea440e22",
+      "object_id": "3c9a6958-fa15-4beb-a0db-3e913019e103",
+      "display_name": "jm1-pub-github-actions-oidc",
+      "owners": [],
+      "created": "2026-07-29T12:53:14Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "jackiesmithjr-premium-production",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jackiesmithjr:environment:production",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "jmerrill-productions-premium-production",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jmerrill-productions:environment:production",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "jmerrillfoundation-premium-production",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jmerrillfoundation:environment:production",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "jmerrill-financial-premium-production",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jmerrill-financial:environment:production",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "jmerrill-pub-premium-production",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jmerrill-pub:environment:production",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "jmerrill-one-premium-production",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jmerrill-one:environment:production",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "jm1-power-platform-production",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jmerrill-pub:environment:jm1-power-platform-production",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "jmerrill-pub-production",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jmerrill-pub:environment:jmerrill-pub-production",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "jmerrill-pub-staging",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/jmerrill-pub:environment:jmerrill-pub-staging",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "d2b5709c-187a-44b4-a57a-132e2a2c1bfd",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "GITHUB/OIDC",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "7bd27a68-fda7-4330-9198-d493f2a0a5ef",
+      "object_id": "41049585-dc3d-405b-8ac3-b052fb236386",
+      "display_name": "JM1 Publisher Operating Center",
+      "owners": [],
+      "created": "2026-07-15T08:07:20Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "afd40155-c25d-4269-a35f-fc41f68ea5a2",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "2c316bc5-d30a-4bd3-a9ff-a6a5be715362",
+      "object_id": "43ec3bd8-8a8a-4963-8a18-c9cdd8740271",
+      "display_name": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service",
+        "jm1-admin@jmerrill.one"
+      ],
+      "created": "2025-11-29T01:04:42Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_3113caf8-93aa-b639-04fe-979432ff569d",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/3113caf8-93aa-b639-04fe-979432ff569d",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_3113caf8-93aa-b639-04fe-979432ff569d",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/3113caf8-93aa-b639-04fe-979432ff569d",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "2f9fa578-bf12-4e32-b69b-6eee98018b35",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8d883f37-c6a2-4de5-b8df-7d7c52b44bb7",
+      "object_id": "449c551a-aa19-4729-b9d4-0939800f5e35",
+      "display_name": "Customization Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T03:20:50Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_17201fb2-714d-c2c0-dc36-4e8cfad22ddc",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/17201fb2-714d-c2c0-dc36-4e8cfad22ddc",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_17201fb2-714d-c2c0-dc36-4e8cfad22ddc",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/17201fb2-714d-c2c0-dc36-4e8cfad22ddc",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "0715705c-7ea3-482e-aa35-02a7aa9f78eb",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "cc0f90de-5451-45ee-bac2-401d67287c4a",
+      "object_id": "46af9707-7c6e-4cb6-82ac-9ff520b31327",
+      "display_name": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-21T08:38:59Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_68ad7b29-748a-b493-2ed5-88d24597562c",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/68ad7b29-748a-b493-2ed5-88d24597562c",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_68ad7b29-748a-b493-2ed5-88d24597562c",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/68ad7b29-748a-b493-2ed5-88d24597562c",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "9a12528a-756d-4046-9b19-117bdcca87e0",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "1e60cddf-dd28-4933-a927-dbc03bb89737",
+      "object_id": "479812a3-4f17-4d6d-978b-1effc439673f",
+      "display_name": "JM1-INFRA-PAM-Automation",
+      "owners": [],
+      "created": "2026-07-08T01:58:02Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "cefcfa8f-5a3c-4fc7-afcb-8c76cfa77c8f",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "80c16230-3536-4eda-a19c-6d4e4bc566b5",
+      "object_id": "48b63377-9b53-48a1-902f-9eeaa12b80c1",
+      "display_name": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-08-13T06:44:51Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_0d5ad8f7-2a0a-95e1-a33d-b7df7ca7dd8b",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/0d5ad8f7-2a0a-95e1-a33d-b7df7ca7dd8b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_0d5ad8f7-2a0a-95e1-a33d-b7df7ca7dd8b",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/0d5ad8f7-2a0a-95e1-a33d-b7df7ca7dd8b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "79957a85-67c5-4989-b5dd-1301ad7795c7",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "276efa2c-67ce-4aea-8142-5ca3b2166209",
+      "object_id": "4b1de959-dd9a-4df7-baf7-62d3d89dc8ec",
+      "display_name": "Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service",
+        "jm1-admin@jmerrill.one"
+      ],
+      "created": "2025-12-15T11:43:51Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_a38ed9e2-b45f-4ab4-7f1c-026f730d182f",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/a38ed9e2-b45f-4ab4-7f1c-026f730d182f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_a38ed9e2-b45f-4ab4-7f1c-026f730d182f",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/a38ed9e2-b45f-4ab4-7f1c-026f730d182f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "107a8600-6a57-4ea5-a0d6-8e26a5c948a7",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "e463973c-8abd-4f4b-8c2a-d858227b1998",
+      "object_id": "4b4dbf77-c1e2-490b-aa7b-aeb8dbe84250",
+      "display_name": "ProWritingAid for Microsoft Word",
+      "owners": [],
+      "created": "2025-02-24T17:44:54Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "5a8c7794-0653-46ee-b1a8-9bc7c0a5627b",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "746b3307-1432-4ff8-ac36-e82fc1c9c021",
+      "object_id": "4ba6f665-6e75-45f3-8011-c36ccee3fdb1",
+      "display_name": "github-aic-deploy",
+      "owners": [],
+      "created": "2025-10-05T00:26:02Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "GitHub Actions key",
+          "endDateTime": "2026-04-03T00:29:15.648Z",
+          "keyId": "560a805a-cd08-4c01-852f-150f8090b8e1"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "9553fc9e-ad2d-4f87-8e87-fb282db171b3",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "NO ACTIVITY / NO DEPENDENCY",
+      "retirement_candidate": true
+    },
+    {
+      "application_id": "1b36bdf5-39b8-4376-b7b7-7872edfa094b",
+      "object_id": "4bf990db-4158-42d5-b913-0242eb610195",
+      "display_name": "Stakeholder Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:09:57Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_2f5d28ef-a6eb-6e4a-c97b-db9a190dc6e5",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/2f5d28ef-a6eb-6e4a-c97b-db9a190dc6e5",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_2f5d28ef-a6eb-6e4a-c97b-db9a190dc6e5",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/2f5d28ef-a6eb-6e4a-c97b-db9a190dc6e5",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "d0df6fd9-c200-4ab4-84ab-69a0edc96cef",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "5f9fab8f-be53-41c0-93ba-a5de5a7264c3",
+      "object_id": "4c09e74b-c635-428f-a795-3af5b7d8b2cb",
+      "display_name": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-31T10:10:18Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_3789f23c-bda7-bf4d-2612-6ba17d58d6b3",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/3789f23c-bda7-bf4d-2612-6ba17d58d6b3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_3789f23c-bda7-bf4d-2612-6ba17d58d6b3",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/3789f23c-bda7-bf4d-2612-6ba17d58d6b3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "032757bc-b8af-476b-8d4b-287c14d63cca",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "b7c6454b-f04f-4df7-841e-d8c9af4481e8",
+      "object_id": "5420ef57-2438-49d9-979d-10202dad494d",
+      "display_name": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-21T06:44:05Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_c9a822f2-e133-9b5a-97d7-d87676a21d81",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/c9a822f2-e133-9b5a-97d7-d87676a21d81",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_c9a822f2-e133-9b5a-97d7-d87676a21d81",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/c9a822f2-e133-9b5a-97d7-d87676a21d81",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "2bcbb92d-d187-49ae-8761-4c23effb4277",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "dcf1e4cf-6354-49ac-9ce2-d8c65776bb09",
+      "object_id": "5594ef1f-650e-4b3d-85a8-47d5eeb95589",
+      "display_name": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-31T09:47:54Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_6f440080-3449-85ff-bab3-819bea2f34ae",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6f440080-3449-85ff-bab3-819bea2f34ae",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_6f440080-3449-85ff-bab3-819bea2f34ae",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6f440080-3449-85ff-bab3-819bea2f34ae",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "eb927171-1a8a-40fb-b5a1-125cce0ea86e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "cc446f3a-6d79-4840-b5dc-a373be459a8b",
+      "object_id": "56507c87-32d9-4a6f-a99c-6a8782e1c015",
+      "display_name": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:28Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_6959e1d4-607b-0d9d-0bc1-be42e5cd6184",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6959e1d4-607b-0d9d-0bc1-be42e5cd6184",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_6959e1d4-607b-0d9d-0bc1-be42e5cd6184",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6959e1d4-607b-0d9d-0bc1-be42e5cd6184",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "ba83809d-49ce-43ef-a682-78ab87ad6caa",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "c7728890-62ff-4f3a-8cb8-8f3965c109c3",
+      "object_id": "57d9cb5c-5030-42dc-a4d9-4bbd60a9d6f1",
+      "display_name": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-05-26T07:03:31Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_e5e19206-d5fb-a7c0-5bef-48c7e57c446e",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/e5e19206-d5fb-a7c0-5bef-48c7e57c446e",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_e5e19206-d5fb-a7c0-5bef-48c7e57c446e",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/e5e19206-d5fb-a7c0-5bef-48c7e57c446e",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "1ee18fc4-fa8b-46b5-9c9f-b9cc10991a3e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "cea336f7-119c-4cc2-a195-0616a571f400",
+      "object_id": "5d722256-d7fa-4686-8505-40566f7fe0d3",
+      "display_name": "Portals-J Merrill Publishing Inquiry",
+      "owners": [
+        "jackie@jmerrill.pub"
+      ],
+      "created": "2025-03-02T09:44:00Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "CN=b88190b0-3394-4f3c-b1b6-1511863cfe73",
+          "endDateTime": "2026-02-28T04:00:51Z",
+          "keyId": "644887dc-8036-4c69-a9a6-7423a2860565"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "617c9df8-07a6-45c5-82af-58a4e7dd9fee",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "71ec4dd0-d261-4ffc-9f5a-626d885ecc85",
+      "object_id": "5fccb406-d90f-49b6-8987-3fbd11267e22",
+      "display_name": "JM1-PUB-INTAKE-WEBAPI",
+      "owners": [],
+      "created": "2026-06-11T07:55:16Z",
+      "credential_count": 2,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "ecc93d0c-029c-4a4a-9961-e0ba53492e99",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "64af6dfb-4c1b-4081-bebc-635251b495f8",
+      "object_id": "60c0c05d-dcfd-4edf-a23d-c9ee6802868e",
+      "display_name": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:28Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_83469fd6-9e54-e74d-2834-c541f7b2cb1b",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/83469fd6-9e54-e74d-2834-c541f7b2cb1b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_83469fd6-9e54-e74d-2834-c541f7b2cb1b",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/83469fd6-9e54-e74d-2834-c541f7b2cb1b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "6fecd74f-dc13-4997-8937-44ad826e072a",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "71ef71ac-fa1b-480f-b70d-3d231f77477f",
+      "object_id": "62bac149-9216-4ed8-b8dd-a00fd6e13c6c",
+      "display_name": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:27Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_6ff22a9b-a188-4f82-5ca9-7c6ed695871f",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6ff22a9b-a188-4f82-5ca9-7c6ed695871f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_6ff22a9b-a188-4f82-5ca9-7c6ed695871f",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6ff22a9b-a188-4f82-5ca9-7c6ed695871f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "95832975-50d1-47b0-a91a-e00a1f39489b",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "c24cf2eb-f3a8-43f1-a616-8c5299bbfd37",
+      "object_id": "6452f812-6d8e-4e53-8427-1a79c9f84a29",
+      "display_name": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service",
+        "jm1-admin@jmerrill.one"
+      ],
+      "created": "2025-11-29T01:09:10Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_d8c8700b-e5ce-2f97-6455-b030680d2646",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/d8c8700b-e5ce-2f97-6455-b030680d2646",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_d8c8700b-e5ce-2f97-6455-b030680d2646",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/d8c8700b-e5ce-2f97-6455-b030680d2646",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "bcc29fb2-7b8b-4b05-929b-4925da2818a0",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8b78083f-b445-402d-9a37-d2c429e183eb",
+      "object_id": "64b9c5f4-5fbd-4363-b219-4c939bf03bba",
+      "display_name": "Bookings API",
+      "owners": [],
+      "created": "2025-09-25T18:56:30Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "643f0e25-8fec-4ad7-84ce-797b3532b0bc",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "57da823e-ecf4-4bfd-a378-180aed817778",
+      "object_id": "66a9323d-4c7d-4393-adcb-305ed0baae76",
+      "display_name": "Stakeholder Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-08-27T07:23:34Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_ae76234a-cce4-143f-a3af-3df3d2e49363",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/ae76234a-cce4-143f-a3af-3df3d2e49363",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_ae76234a-cce4-143f-a3af-3df3d2e49363",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/ae76234a-cce4-143f-a3af-3df3d2e49363",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "d750cbaf-c042-4c2f-b9e4-0ff21d553790",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "d6cfd112-cc56-4431-8897-a43394d17251",
+      "object_id": "69dc1526-1fcc-4294-b5ff-525862d2d0fe",
+      "display_name": "JM1 - Author Portal W-9 ",
+      "owners": [],
+      "created": "2025-04-22T14:16:51Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "2ab71bcf-1f93-476e-a9a4-7f151f95400c",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "1aa1e913-e480-4acd-b603-2f7e89c9aa89",
+      "object_id": "6e5f2437-97be-4663-b761-30c3ea3bd575",
+      "display_name": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service",
+        "jm1-admin@jmerrill.one"
+      ],
+      "created": "2025-11-29T01:04:42Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_1a62c64d-5a71-aba2-434f-fb0dafb88423",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/1a62c64d-5a71-aba2-434f-fb0dafb88423",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_1a62c64d-5a71-aba2-434f-fb0dafb88423",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/1a62c64d-5a71-aba2-434f-fb0dafb88423",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "fe44d07b-7e94-4f2b-839b-a413c2f3237c",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "3ddc8988-92ca-4993-b01b-a8a5e413a425",
+      "object_id": "722f9d01-ddfe-4563-85df-c6a837e68874",
+      "display_name": "Portals-Site 1",
+      "owners": [
+        "jackie@jmerrill.pub"
+      ],
+      "created": "2025-04-21T01:19:01Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "CN=c7b0e701-bb21-4f87-89d5-6715e542fed8",
+          "endDateTime": "2026-04-19T21:00:16Z",
+          "keyId": "9b72d6e1-ca19-49bc-aed4-710c0980168c"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "a492d337-4ac7-4d7a-8607-190c13e49e4f",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "NO ACTIVITY / NO DEPENDENCY",
+      "retirement_candidate": true
+    },
+    {
+      "application_id": "abaed7aa-944f-4c41-8947-bf1bb6b9b111",
+      "object_id": "737e00fc-5ea0-4baf-861b-5ff280ba1ace",
+      "display_name": "JM1-Dataverse-ServicePrincipal",
+      "owners": [],
+      "created": "2025-11-08T18:51:06Z",
+      "credential_count": 2,
+      "expired_credentials": [
+        {
+          "displayName": "JM1 Dataverse-ServicePrincipal Key",
+          "endDateTime": "2026-06-07T12:09:24.701Z",
+          "keyId": "906b217d-20aa-4c14-a285-5f5015f2ceab"
+        }
+      ],
+      "credentials_expiring_90_days": [
+        {
+          "displayName": "Dataverse Access Key",
+          "endDateTime": "2026-11-08T18:51:37.245Z",
+          "keyId": "469dd743-604a-49ca-b463-2fa2b7db13df"
+        }
+      ],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "f3f30821-f738-4657-8078-63937abbecaf",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "cb3e6387-8607-43c0-bb9c-ace2d75b5af2",
+      "object_id": "73fc45b8-3996-410a-8b0e-a3f65456ec1d",
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-03-13T06:23:22Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_d0b6848d-55f0-f013-de11-46d839a4af21",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/d0b6848d-55f0-f013-de11-46d839a4af21",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_d0b6848d-55f0-f013-de11-46d839a4af21",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/d0b6848d-55f0-f013-de11-46d839a4af21",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "316a9ea8-9adc-46ac-9fa2-04b4aaa1727d",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "767abadb-a4b9-4fc9-8a1c-0b62484c8c0c",
+      "object_id": "7569a45d-0dcf-4424-b007-b1c38cf9070f",
+      "display_name": "BusinessCentralSharePoint",
+      "owners": [],
+      "created": "2025-04-24T05:38:59Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "BC Connector",
+          "endDateTime": "2025-10-21T05:40:10.634Z",
+          "keyId": "cab40e75-6fa1-4cdb-aa7c-ddcf4fecf7ca"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "56fb4087-3719-42e3-aa78-2ad43a918461",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "NO ACTIVITY / NO DEPENDENCY",
+      "retirement_candidate": true
+    },
+    {
+      "application_id": "01008d41-c09d-42cb-8631-ebef5cf8ae49",
+      "object_id": "7ceddbbd-d0f8-4dbe-b499-557ccd645313",
+      "display_name": "Microsoft Dynamics Office Add-in",
+      "owners": [],
+      "created": "2025-02-20T16:37:56Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "3314a91e-283b-42a7-a00c-376b15eb356a",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "b83a1cff-d89b-4d99-9ccd-be0f248de273",
+      "object_id": "7ee89420-07c5-46a2-bfab-fc958d0f5e7b",
+      "display_name": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-18T04:48:51Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_77175b05-d15d-dbb1-56bc-a3f9ae0df2ad",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/77175b05-d15d-dbb1-56bc-a3f9ae0df2ad",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_77175b05-d15d-dbb1-56bc-a3f9ae0df2ad",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/77175b05-d15d-dbb1-56bc-a3f9ae0df2ad",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "2452135d-f534-468f-972d-9a7ee834525d",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "1f88a277-760e-4140-b8ed-b184b2032ab6",
+      "object_id": "7ff9f96f-27e2-4884-9c68-8a72097ed290",
+      "display_name": "JM1 PnP Scaffold",
+      "owners": [],
+      "created": "2026-04-20T06:27:18Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "ea7ce87a-be3f-4381-883d-f9436d836fb9",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "f3c919ee-c77d-4a6d-80da-6ea30b35623b",
+      "object_id": "84bd011b-f7b8-4c15-864c-7daca66ee4c1",
+      "display_name": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-02-28T04:36:46Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_47454836-9897-d9dd-20f9-43bca5ebc46b",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/47454836-9897-d9dd-20f9-43bca5ebc46b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_47454836-9897-d9dd-20f9-43bca5ebc46b",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/47454836-9897-d9dd-20f9-43bca5ebc46b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "b61d424f-3d08-40fa-becd-b67f9f88185f",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "d8da73f7-c356-44ee-a312-a6d3096d5081",
+      "object_id": "85685216-097b-485e-bb0b-f40a865a996d",
+      "display_name": "jm1-publishing-intake-api",
+      "owners": [],
+      "created": "2025-11-24T11:28:14Z",
+      "credential_count": 3,
+      "expired_credentials": [
+        {
+          "displayName": "jm1-publishing-intake",
+          "endDateTime": "2026-05-23T10:34:29.331Z",
+          "keyId": "eb62f629-a371-4b31-b651-7e21d0e35d6d"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "43397b7a-13f0-4598-8af9-4f6427bfd2eb",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "d58c481d-b994-4145-8297-942109d17141",
+      "object_id": "857a297e-55e4-405d-ab0a-f024311c34dc",
+      "display_name": "J Merrill Publishing Inquiry bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-03-02T09:44:59Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_6f2c6a61-49f1-deb9-fc8c-5a6477c8471b",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6f2c6a61-49f1-deb9-fc8c-5a6477c8471b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_6f2c6a61-49f1-deb9-fc8c-5a6477c8471b",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6f2c6a61-49f1-deb9-fc8c-5a6477c8471b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "e33ba91a-8f2d-491c-bb8e-725d533b38b3",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "73169471-c55d-44c4-95de-4cb8ac540b39",
+      "object_id": "88c95b7f-7859-4f40-8303-ecdcadd7f746",
+      "display_name": "Document View",
+      "owners": [],
+      "created": "2025-02-20T16:47:46Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "f941d6ed-9aeb-4519-9a4f-7799141d6654",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "UNKNOWN",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "e4a6e8cf-531f-4d8d-a704-32ba64d6fc59",
+      "object_id": "8914e4e0-2eec-4d13-b77d-ebb47dfd01dd",
+      "display_name": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-02-11T09:25:11Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_35802e95-c1a1-a2e8-2745-8f4e488779b8",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/35802e95-c1a1-a2e8-2745-8f4e488779b8",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_35802e95-c1a1-a2e8-2745-8f4e488779b8",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/35802e95-c1a1-a2e8-2745-8f4e488779b8",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "40260f54-b70e-49bf-a804-fefe92931144",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "ca71cf22-1dde-4c25-9697-b358e65e07d5",
+      "object_id": "893fa75f-e6f8-42ff-8e39-ebb00b157171",
+      "display_name": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:05:26Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_a760e5a7-b5aa-3735-36e3-80c4f51bc574",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/a760e5a7-b5aa-3735-36e3-80c4f51bc574",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_a760e5a7-b5aa-3735-36e3-80c4f51bc574",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/a760e5a7-b5aa-3735-36e3-80c4f51bc574",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "60de09f3-0ff4-474c-9c1a-93c15f4f469a",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8f1ebb31-d7a7-4872-8e42-d49c296d5759",
+      "object_id": "8acb0646-94c3-41de-8584-dbacd57ef885",
+      "display_name": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-06-15T07:31:04Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_55c97b8a-8dc1-fd1f-eeba-57b76be80e9f",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/55c97b8a-8dc1-fd1f-eeba-57b76be80e9f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_55c97b8a-8dc1-fd1f-eeba-57b76be80e9f",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/55c97b8a-8dc1-fd1f-eeba-57b76be80e9f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "d9e62641-3a09-41ca-9a99-7df1a4006f75",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "d4e38a4f-50cf-44ae-90d4-1928312298a8",
+      "object_id": "91d44872-9ddd-478f-b67b-6c343f525686",
+      "display_name": "JM1-Bookings-AppPublic",
+      "owners": [],
+      "created": "2025-09-22T11:47:00Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "Bookings",
+          "endDateTime": "2026-03-21T11:50:07.452Z",
+          "keyId": "ea8bb1f9-a58f-41d2-9af9-d027a71b576b"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "683af849-d2ae-4cb3-917f-d1f493b6f72b",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "11f925d2-bdf6-40a0-baeb-511fe71b24ec",
+      "object_id": "93fcec28-ce55-460a-97b7-6b9a5f4742ee",
+      "display_name": "github-deploy-aic",
+      "owners": [],
+      "created": "2025-10-05T00:49:29Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [
+        {
+          "displayName": "rbac",
+          "endDateTime": "2026-10-05T00:49:28Z",
+          "keyId": "5e2d7f56-9925-4970-89be-84eafb630370"
+        }
+      ],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "1eb77e86-e009-4bb2-8d34-f200a2fa74f3",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "UNKNOWN",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "edc80b21-23b1-4de8-911a-994d579f9d95",
+      "object_id": "9403155d-f1b7-4c74-bfb0-9168deebed24",
+      "display_name": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-02-24T08:39:46Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_9d1dd507-7de5-b498-4ea3-80251445777b",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/9d1dd507-7de5-b498-4ea3-80251445777b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_9d1dd507-7de5-b498-4ea3-80251445777b",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/9d1dd507-7de5-b498-4ea3-80251445777b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "85ac8de3-ff4f-4bbe-b5b7-bf7bf4c3b3fe",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "829a7932-1824-471e-a71a-e1492f083745",
+      "object_id": "997b2404-bb7b-4d13-a2a6-1b9165ca1ea5",
+      "display_name": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-03-27T11:37:09Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_e119a779-48bc-9b95-1a66-2211f6599cf5",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/e119a779-48bc-9b95-1a66-2211f6599cf5",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_e119a779-48bc-9b95-1a66-2211f6599cf5",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/e119a779-48bc-9b95-1a66-2211f6599cf5",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "a1e4dc1a-a706-457b-b340-52b6090133e9",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8dbb2f4e-377e-4c0b-9c7e-b51b0a55502d",
+      "object_id": "9ef6f96c-bac3-47e1-862f-4c9c958e61b4",
+      "display_name": "JM1 Web Presence Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service",
+        "jm1-admin@jmerrill.one"
+      ],
+      "created": "2025-12-14T14:37:13Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_cd71e40a-0031-6387-c74d-35729af6b34f",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/cd71e40a-0031-6387-c74d-35729af6b34f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_cd71e40a-0031-6387-c74d-35729af6b34f",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/cd71e40a-0031-6387-c74d-35729af6b34f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "24833fe5-3265-4cb9-97e0-86755d2aeeec",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8be564e9-b96a-4173-b170-7f1da7c1477c",
+      "object_id": "a4c87111-f41b-4cf8-a6aa-48adbf32cc12",
+      "display_name": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-03-13T06:26:45Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_87d8d191-34ee-3048-eedb-ded6131f794b",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/87d8d191-34ee-3048-eedb-ded6131f794b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_87d8d191-34ee-3048-eedb-ded6131f794b",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/87d8d191-34ee-3048-eedb-ded6131f794b",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "cfa62b9e-d3a6-4760-b492-49c0e0f76635",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "c6605cb7-6058-41b8-a080-d2412600f81c",
+      "object_id": "a891c77f-09dd-4001-b12e-26b38f786b1c",
+      "display_name": "J Merrill One HQ – Power BI",
+      "owners": [],
+      "created": "2025-10-12T03:57:13Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "J Merrill One HQ – Power BI Service",
+          "endDateTime": "2026-04-10T03:58:58.342Z",
+          "keyId": "2d961c3d-63f3-4e13-a560-24342d7b7a32"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "eb529b53-acd6-4fad-a218-4f9c1d8b8117",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "3d969589-8a0c-475b-960c-49554378adc2",
+      "object_id": "a952f5f6-2aaa-4d5c-b8d4-38a79ac0ac99",
+      "display_name": "D365 Sales FIRE Agent - Rating Generator (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-07-06T07:18:53Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_e605f304-bcba-ed0b-8c37-733c271e7a58",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/e605f304-bcba-ed0b-8c37-733c271e7a58",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_e605f304-bcba-ed0b-8c37-733c271e7a58",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/e605f304-bcba-ed0b-8c37-733c271e7a58",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "1dc7cdbb-e518-4db1-b52f-5621c435d434",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "b1e71c43-6bbb-4624-af06-90db5214826e",
+      "object_id": "a9a7cf62-3765-4ed6-85a3-da30710eca09",
+      "display_name": "Galicia (Preview) (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service",
+        "jm1-admin@jmerrill.one"
+      ],
+      "created": "2026-04-01T12:28:13Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_72a43736-01dd-21b5-520f-a46773e6c2d2",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/72a43736-01dd-21b5-520f-a46773e6c2d2",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_72a43736-01dd-21b5-520f-a46773e6c2d2",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/72a43736-01dd-21b5-520f-a46773e6c2d2",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "ba4a7bfc-ab9d-427b-826e-2fac6568fe26",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "1ac38ad6-c894-4278-a701-a1560d916e49",
+      "object_id": "a9ac9ba8-f31e-4ab9-b75b-9d652b5ab919",
+      "display_name": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:27Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_18e362f5-0ff5-05ee-95e7-335cbaea7141",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/18e362f5-0ff5-05ee-95e7-335cbaea7141",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_18e362f5-0ff5-05ee-95e7-335cbaea7141",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/18e362f5-0ff5-05ee-95e7-335cbaea7141",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "281835a8-7992-46a0-b3fc-11b05e41972e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "552a8a2a-8fb5-4e95-be16-89cab14f926b",
+      "object_id": "aa07a0eb-af83-4ad6-9201-9de8c030d329",
+      "display_name": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-31T09:54:44Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_9715162f-d2cb-c4c7-656b-bb4d436f0f42",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/9715162f-d2cb-c4c7-656b-bb4d436f0f42",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_9715162f-d2cb-c4c7-656b-bb4d436f0f42",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/9715162f-d2cb-c4c7-656b-bb4d436f0f42",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "99ee1720-55d0-48af-a5ae-3fb122c7cd62",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "7390d6aa-aafc-469d-9851-ecfdc11d88b3",
+      "object_id": "ab6159a1-45fa-46d5-98c9-f4f2ff665e92",
+      "display_name": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-05-26T07:03:31Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_0a25ea6b-058c-da4a-a720-09cac549db37",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/0a25ea6b-058c-da4a-a720-09cac549db37",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_0a25ea6b-058c-da4a-a720-09cac549db37",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/0a25ea6b-058c-da4a-a720-09cac549db37",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "7d90d64e-bbc4-48cd-ba1c-0dd747f42fc5",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "a4bfc093-a5d1-4949-b4c7-0fbc065bf041",
+      "object_id": "ac7e370c-b7e8-40fc-9994-aac632e60ad2",
+      "display_name": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-02-13T05:42:05Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_f10d8158-beda-d2de-3a54-4792c2e3d95f",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/f10d8158-beda-d2de-3a54-4792c2e3d95f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_f10d8158-beda-d2de-3a54-4792c2e3d95f",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/f10d8158-beda-d2de-3a54-4792c2e3d95f",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "29abe0e7-319f-464b-9bb1-0bf0f09a35ca",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "2d502402-6d3c-48c9-97c6-946f036629e7",
+      "object_id": "b0f9b02b-4f13-4adf-844a-ffb006842b80",
+      "display_name": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-06-09T08:34:16Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_73139b22-e8fd-145e-aeb1-814bedbb0f00",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/73139b22-e8fd-145e-aeb1-814bedbb0f00",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_73139b22-e8fd-145e-aeb1-814bedbb0f00",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/73139b22-e8fd-145e-aeb1-814bedbb0f00",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "d648ed48-0dbb-468b-83ae-52ba481fdd95",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "29032ff7-338a-4f12-b99e-f8d72a04a6a9",
+      "object_id": "b53c26c7-766e-4202-b0c5-7fba2512348c",
+      "display_name": "Case Processing Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-09-20T07:39:43Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_be7c6d0c-e4e4-6c78-27a5-20af8f0128ac",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/be7c6d0c-e4e4-6c78-27a5-20af8f0128ac",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_be7c6d0c-e4e4-6c78-27a5-20af8f0128ac",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/be7c6d0c-e4e4-6c78-27a5-20af8f0128ac",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "63fd7879-e160-4bac-8db9-769b6d4d8198",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "91902eb7-eb43-4315-9b65-0b35fbd44b6d",
+      "object_id": "b83b3beb-e65f-4c05-b565-79d4960c8334",
+      "display_name": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-31T09:54:18Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_8c0f3058-1bb1-981e-1c87-2fbfad24ade3",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8c0f3058-1bb1-981e-1c87-2fbfad24ade3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_8c0f3058-1bb1-981e-1c87-2fbfad24ade3",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8c0f3058-1bb1-981e-1c87-2fbfad24ade3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "c042af34-08dd-43ab-ac79-c0becbc5c1d8",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "1601c074-0566-458f-bc46-ec10b9fcadbe",
+      "object_id": "b9ef85f7-ccbd-46cd-8b6e-1d74e5c6e4f4",
+      "display_name": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-03T05:44:33Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_17a071c1-0a6e-a59f-a86d-6b2863894bcd",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/17a071c1-0a6e-a59f-a86d-6b2863894bcd",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_17a071c1-0a6e-a59f-a86d-6b2863894bcd",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/17a071c1-0a6e-a59f-a86d-6b2863894bcd",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "3072c93c-6ed4-4ffe-a525-24609c7f1584",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "f3c5e97b-8c4c-4991-b389-2084c46f4d78",
+      "object_id": "ba8bde58-5b82-439f-b413-9aac1dd9327e",
+      "display_name": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-31T10:11:09Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_91805da9-0358-cf78-cc6b-32885173465e",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/91805da9-0358-cf78-cc6b-32885173465e",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_91805da9-0358-cf78-cc6b-32885173465e",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/91805da9-0358-cf78-cc6b-32885173465e",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "e943c7af-d5a6-4fa2-a989-684c6163a773",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "67ee1148-cef4-454a-a9ff-132a907f11a2",
+      "object_id": "bcbf5db1-560e-472f-954d-01eced807731",
+      "display_name": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-02-25T05:05:02Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_8b13e85d-92fa-c996-2381-c2ff10b565c3",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8b13e85d-92fa-c996-2381-c2ff10b565c3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_8b13e85d-92fa-c996-2381-c2ff10b565c3",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8b13e85d-92fa-c996-2381-c2ff10b565c3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "0186d283-73a0-4e42-8a69-47911472f97e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "93b14ed8-ab0f-4bef-b3f8-2561c3fbec62",
+      "object_id": "bf483832-0e86-4b85-87a4-47bcb9ac945f",
+      "display_name": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-31T09:55:31Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_63e590c7-2582-36b4-c423-3d20f87922aa",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/63e590c7-2582-36b4-c423-3d20f87922aa",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_63e590c7-2582-36b4-c423-3d20f87922aa",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/63e590c7-2582-36b4-c423-3d20f87922aa",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "d5647f69-f224-4a94-b8cf-e73d110b4785",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "2fcd0f2e-59bb-4581-a27b-6cf1387beafb",
+      "object_id": "c087f019-2c5f-423e-8055-e7a3139228ac",
+      "display_name": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-01-21T06:10:52Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_78413d97-dccd-7f6d-21ff-66a68ae25f28",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/78413d97-dccd-7f6d-21ff-66a68ae25f28",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_78413d97-dccd-7f6d-21ff-66a68ae25f28",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/78413d97-dccd-7f6d-21ff-66a68ae25f28",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "ca8bc9f8-7fe3-42a6-976b-8308218f468d",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "bc65334d-45f9-4be2-8b06-a0231c687720",
+      "object_id": "c61a9fba-5b3c-41b7-8f01-af722b90b374",
+      "display_name": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-04-09T02:41:59Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_8b9f3bb2-f8a7-e0a7-7b3d-2be2353395ba",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8b9f3bb2-f8a7-e0a7-7b3d-2be2353395ba",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_8b9f3bb2-f8a7-e0a7-7b3d-2be2353395ba",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8b9f3bb2-f8a7-e0a7-7b3d-2be2353395ba",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "07a1d079-b471-4887-b803-68e443e1427e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "d4870154-1dff-4952-a414-5bbba8eb0e19",
+      "object_id": "cf85e98b-4602-4676-b80a-b9ab964651f7",
+      "display_name": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:27Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_c940677f-5185-19ff-0169-f4af118ab908",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/c940677f-5185-19ff-0169-f4af118ab908",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_c940677f-5185-19ff-0169-f4af118ab908",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/c940677f-5185-19ff-0169-f4af118ab908",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "06891731-6948-469f-9ebb-b008387be2b0",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "b20ecd76-41d8-410d-a811-f1dc285bad6b",
+      "object_id": "cf8f3f4d-0e6e-4508-af3f-852bb0bf6eaa",
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-09-23T04:29:41Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_f3e98765-1fe5-865b-50cc-d7b062b50c0c",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/f3e98765-1fe5-865b-50cc-d7b062b50c0c",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_f3e98765-1fe5-865b-50cc-d7b062b50c0c",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/f3e98765-1fe5-865b-50cc-d7b062b50c0c",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "2cd78912-120d-407d-8f6a-ea87a5f691e6",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "dc3a84fb-4b32-480a-a5ae-381e16e6622c",
+      "object_id": "d14c599a-a2cb-439f-989e-1dd016b91e6d",
+      "display_name": "JM1 Author Operating Center",
+      "owners": [],
+      "created": "2026-07-12T00:06:45Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "a6984148-9ba3-4413-ab87-92cc5b424eac",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "9af50801-ae38-4663-94b4-8681e87e00d7",
+      "object_id": "d26ea220-9dbe-41df-96c6-e51eabbf4a59",
+      "display_name": "Business Central",
+      "owners": [],
+      "created": "2025-02-20T16:47:08Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "8bdcf20d-42c2-4c88-b19a-4a0d54a5cfd2",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "UNKNOWN",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "e7247177-976d-4176-ac4f-7a726e77fe13",
+      "object_id": "d6c0b98d-fbfb-48af-8e34-ec3b08fdc9f6",
+      "display_name": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-03-04T06:08:52Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_22dffe3f-0324-d5a1-4752-bd17bfd74df0",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/22dffe3f-0324-d5a1-4752-bd17bfd74df0",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_22dffe3f-0324-d5a1-4752-bd17bfd74df0",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/22dffe3f-0324-d5a1-4752-bd17bfd74df0",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "45e02d9e-10a0-4eeb-a34f-5dc2928cb822",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "0b9c2e3f-f4fb-421c-a1aa-0d47133d0bfd",
+      "object_id": "d74ca654-d52e-406b-a268-5df642e01273",
+      "display_name": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-08-02T05:30:57Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_a054df40-dc0c-6505-a31d-667e8b6e5b61",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/a054df40-dc0c-6505-a31d-667e8b6e5b61",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_a054df40-dc0c-6505-a31d-667e8b6e5b61",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/a054df40-dc0c-6505-a31d-667e8b6e5b61",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "d25b3e8c-9035-4be1-b098-8e8a4469b519",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "f8950092-88d4-4c64-b46e-ea2f084a6009",
+      "object_id": "dcfdab0c-569f-4c64-9256-4c60a5f920fd",
+      "display_name": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-05-26T07:03:31Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_6f999dac-5fa3-46dc-bd5e-e1a6a1fd5353",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/6f999dac-5fa3-46dc-bd5e-e1a6a1fd5353",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_6f999dac-5fa3-46dc-bd5e-e1a6a1fd5353",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/6f999dac-5fa3-46dc-bd5e-e1a6a1fd5353",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "1cd3dcdf-c188-4246-8b33-ae97926780dc",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "828377be-db77-416d-8fd6-591eacac8ff6",
+      "object_id": "ddaf7392-3fd8-43e4-87a9-0efc2a2be852",
+      "display_name": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-02-13T05:42:05Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_2c647473-ab8a-5e5d-5fce-5823ebb0feb5",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/2c647473-ab8a-5e5d-5fce-5823ebb0feb5",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_2c647473-ab8a-5e5d-5fce-5823ebb0feb5",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/2c647473-ab8a-5e5d-5fce-5823ebb0feb5",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "ee7a86c9-f4d0-4127-9991-ebe5c79e4d0a",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "aaabfafa-635f-444b-b4a5-e684edf831c0",
+      "object_id": "e0a11faf-a0dd-40d6-807e-39969364489a",
+      "display_name": "jm1-hq-app-sp",
+      "owners": [],
+      "created": "2025-11-03T18:01:52Z",
+      "credential_count": 1,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [
+        {
+          "displayName": "rbac",
+          "endDateTime": "2026-11-03T18:01:51Z",
+          "keyId": "8cbba58b-5367-4858-99df-f8529478d827"
+        }
+      ],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "8dff5969-7487-4bbe-8318-b59b9cdce77b",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "a030d5c4-3c49-40f5-b7ff-988e9363f24c",
+      "object_id": "e185e7dd-813a-479e-ada5-3b9192d1dffe",
+      "display_name": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-02-23T07:35:20Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_d282f446-d6a4-97ba-ec71-785e4245c37d",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/d282f446-d6a4-97ba-ec71-785e4245c37d",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_d282f446-d6a4-97ba-ec71-785e4245c37d",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/d282f446-d6a4-97ba-ec71-785e4245c37d",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "c596e94f-7148-477b-bcba-52b8b90feddc",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "38e16af0-bde0-4e99-9ab1-c6b1052502bb",
+      "object_id": "e25d8116-6223-43b6-a115-4b9c3e737e70",
+      "display_name": "JM1 â€“ BC SharePoint Integration",
+      "owners": [],
+      "created": "2025-04-24T11:45:15Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "BC to SharePoint Access",
+          "endDateTime": "2025-10-21T11:46:46.813Z",
+          "keyId": "abfba5bf-eac0-462f-a302-970b7256326f"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "6dfbd1af-567e-4218-98b6-d0545d3f795c",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "2f460f4a-bce8-4929-b365-71cb7c493bcf",
+      "object_id": "e479fed7-3554-4b1f-8d32-1ed3b062cacd",
+      "display_name": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-08-27T07:10:13Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_ce6be1a9-36e4-1d16-3382-e12ae4fa7e38",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/ce6be1a9-36e4-1d16-3382-e12ae4fa7e38",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_ce6be1a9-36e4-1d16-3382-e12ae4fa7e38",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/ce6be1a9-36e4-1d16-3382-e12ae4fa7e38",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "f86bbedf-94a1-4f18-b7e8-051c65414b97",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "7502ba5f-d187-4ba7-a185-cf9022c0b79e",
+      "object_id": "e4b3463b-c703-4714-b493-163590f9cffe",
+      "display_name": "jm1-ed-functions",
+      "owners": [],
+      "created": "2025-10-29T09:12:07Z",
+      "credential_count": 3,
+      "expired_credentials": [
+        {
+          "displayName": "Generated by App Service",
+          "endDateTime": "2026-04-27T11:30:23.734Z",
+          "keyId": "ebc033b8-767c-4d9e-adf4-44e0af76219b"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "b25b4edb-7373-457a-b519-2c8f2c694e74",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "84942a9f-9131-4deb-ae98-62a077ea5939",
+      "object_id": "eb5b933b-cbb3-4593-815e-4eeaa573f844",
+      "display_name": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-03T05:44:12Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_8ee85698-b1fd-ad14-a7ce-4e016ede0a26",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/8ee85698-b1fd-ad14-a7ce-4e016ede0a26",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_8ee85698-b1fd-ad14-a7ce-4e016ede0a26",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/8ee85698-b1fd-ad14-a7ce-4e016ede0a26",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "5c4bbf33-40b5-4553-af3b-2332f834aa4e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "8d0ccfbb-fce3-4821-b1cb-79b599d9a6e4",
+      "object_id": "ec2d3b66-f7fb-49b6-b4a0-b6d4e0f1cae9",
+      "display_name": "J Merrill Foundation Integration",
+      "owners": [],
+      "created": "2025-04-10T17:16:12Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "Service API Key",
+          "endDateTime": "2025-10-07T17:36:20.811Z",
+          "keyId": "e6b052a1-0cbb-4889-8961-70b6daeec646"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "8427d160-8991-40ee-a0bb-5164cc7a996e",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "eb04b1b5-495b-4796-bbaa-577be58d2161",
+      "object_id": "efd9f88d-f6d9-4f56-9656-c74dfad76585",
+      "display_name": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:09:59Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_3c02f5c0-058a-fb08-195d-f0686a048ca3",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/3c02f5c0-058a-fb08-195d-f0686a048ca3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_3c02f5c0-058a-fb08-195d-f0686a048ca3",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/3c02f5c0-058a-fb08-195d-f0686a048ca3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "aab3eb65-fbf0-4e8e-bb17-1959638f1ba9",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "4ab8c956-0f80-4574-8ca1-731f59acf76d",
+      "object_id": "f0335113-a3a5-4f32-a9c9-994cbd95ac39",
+      "display_name": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-02-25T05:56:59Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_3e67c416-0e71-8937-55a1-a7ba2aebe652",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/3e67c416-0e71-8937-55a1-a7ba2aebe652",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_3e67c416-0e71-8937-55a1-a7ba2aebe652",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/3e67c416-0e71-8937-55a1-a7ba2aebe652",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "70f1e7bd-e86d-4dcb-bf22-b58d089ebfdf",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "18296216-0fad-4ed4-a906-205b2c1779aa",
+      "object_id": "f11e71da-b7d6-4783-acf2-7430c8fc67c1",
+      "display_name": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-05-26T07:03:31Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_c7de8b61-1b65-684b-8064-1e03507a8a42",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/c7de8b61-1b65-684b-8064-1e03507a8a42",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_c7de8b61-1b65-684b-8064-1e03507a8a42",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/c7de8b61-1b65-684b-8064-1e03507a8a42",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "d30f0deb-ab6d-4390-898e-7226fa6f772d",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "49868769-b78f-4f93-8bf5-973102092932",
+      "object_id": "f136b432-ee83-4867-a2fe-9d2166c198c9",
+      "display_name": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2026-02-11T07:40:18Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_bd58031a-9f61-b82e-5386-798c26c65ee3",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/bd58031a-9f61-b82e-5386-798c26c65ee3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_bd58031a-9f61-b82e-5386-798c26c65ee3",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/bd58031a-9f61-b82e-5386-798c26c65ee3",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "8da3d34c-907e-4393-9d1b-ac6a06926be6",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "c1ec1c83-5a40-44f8-8896-e1273f2f5a0d",
+      "object_id": "f256ae2e-0a86-4bb4-8c02-40ccc9847e00",
+      "display_name": "Bookings",
+      "owners": [],
+      "created": "2025-02-25T12:24:22Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "NewBookingsCert",
+          "endDateTime": "2026-03-18T17:15:15.978Z",
+          "keyId": "31609184-5f75-4e41-b317-5c7b5872fb4a"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "54fecbbb-b40a-4e6a-a8a4-0b21ee8d5737",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "4b3d919a-677a-4bf4-b2a3-ff5e21348b30",
+      "object_id": "f4086c60-6132-4638-87a0-92bdbf2db313",
+      "display_name": "JM1 Graph Directory",
+      "owners": [],
+      "created": "2025-07-10T13:14:45Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "DirectoryTeamAccess",
+          "endDateTime": "2026-01-06T15:38:54.417Z",
+          "keyId": "5d7af079-e126-4058-8da5-a04c53f320c7"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "ea793602-b845-4278-937c-c9a2357e1403",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "ACTIVE PRODUCTION WORKLOAD",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "9f5f8e13-b216-4776-aa99-1b4bcd63d315",
+      "object_id": "f60eaee8-810e-45c5-b306-9a508f3dce22",
+      "display_name": "jm1-github-oidc-deployer",
+      "owners": [],
+      "created": "2025-10-17T19:35:32Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "aic-online-main",
+          "issuer": "https://token.actions.githubusercontent.com",
+          "subject": "repo:jmerrillorg/aic-online:ref:refs/heads/main",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "6be09030-bc4d-4147-bdb0-3731b096dd12",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "GITHUB/OIDC",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "6dc1ffb9-363b-48ad-9a35-e9cbd8e94b2f",
+      "object_id": "f942c040-53d8-43a1-ad68-b5bf178bcee7",
+      "display_name": "BusinessCentralAPI",
+      "owners": [],
+      "created": "2025-03-07T10:38:39Z",
+      "credential_count": 1,
+      "expired_credentials": [
+        {
+          "displayName": "Password uploaded on Fri Mar 07 2025",
+          "endDateTime": "2025-09-03T09:41:04.09Z",
+          "keyId": "78aea30b-5a2d-41ec-9ec9-547dc5854133"
+        }
+      ],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "09a74afb-92d2-4ef3-a288-c79f471d4af1",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "NO ACTIVITY / NO DEPENDENCY",
+      "retirement_candidate": true
+    },
+    {
+      "application_id": "3efda1b7-be89-40ab-8b59-bb805f1e3651",
+      "object_id": "fb4abe07-daf7-43a9-82af-800e53b791e1",
+      "display_name": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-11-04T02:07:27Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_f77e96d8-d740-cd60-be62-50d7c116f3e0",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/f77e96d8-d740-cd60-be62-50d7c116f3e0",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_f77e96d8-d740-cd60-be62-50d7c116f3e0",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/f77e96d8-d740-cd60-be62-50d7c116f3e0",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "ebe50c98-6761-4bb1-aff1-fe3a4bede8cd",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "f91685fd-74a7-4525-b6c0-61e6cac4c3ae",
+      "object_id": "fbdef67c-44f3-426f-b9c7-6c6535903871",
+      "display_name": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "owners": [
+        "Power Virtual Agents Service"
+      ],
+      "created": "2025-08-13T06:46:13Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [
+        {
+          "name": "AzureADMultipleOrgs_f5140f12-8c27-e17c-51b3-bd7d996ef610",
+          "issuer": "https://login.microsoftonline.com/{tenantId}/v2.0",
+          "subject": "/eid1/c/pub/t/{tenantId}/a/m1WPnYRZpEaQKq1Cceg--g/f5140f12-8c27-e17c-51b3-bd7d996ef610",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        },
+        {
+          "name": "AzureADMyOrg_f5140f12-8c27-e17c-51b3-bd7d996ef610",
+          "issuer": "https://login.microsoftonline.com/352d075e-8e17-4169-9f8e-22e6946ce66d/v2.0",
+          "subject": "/eid1/c/pub/t/XgctNReOaUGfjiLmlGzmbQ/a/m1WPnYRZpEaQKq1Cceg--g/f5140f12-8c27-e17c-51b3-bd7d996ef610",
+          "audiences": [
+            "api://AzureADTokenExchange"
+          ]
+        }
+      ],
+      "service_principal": {
+        "id": "fe6f601d-91a2-4fc5-9677-d73c8fe458c7",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "MICROSOFT/SYSTEM MANAGED",
+      "retirement_candidate": false
+    },
+    {
+      "application_id": "a6b0738c-c1b9-42e7-a13f-686d0398bd32",
+      "object_id": "fdb671b3-ebbb-490e-b2eb-ae46b4bbde8e",
+      "display_name": "P2P Server",
+      "owners": [],
+      "created": "2025-02-21T15:11:34Z",
+      "credential_count": 0,
+      "expired_credentials": [],
+      "credentials_expiring_90_days": [],
+      "federated_credentials": [],
+      "service_principal": {
+        "id": "a7e4a30e-42e7-4494-9dfe-aed20b46e32f",
+        "accountEnabled": true,
+        "type": "Application"
+      },
+      "api_permissions": "NOT EXPANDED - application permission grants not fetched in this pass",
+      "azure_role_assignments": "NOT EXPANDED - Azure RBAC crosscheck remains future-safe gate",
+      "dataverse_app_user_mapping": "UNKNOWN unless named in prior BP/HOST evidence",
+      "dependency_classification": "UNKNOWN",
+      "retirement_candidate": false
+    }
+  ],
+  "limitation": "API permissions/Azure RBAC/Dataverse app-user mappings are summarized where name evidence exists; no app identity is proposed for deletion without full workload proof."
+}

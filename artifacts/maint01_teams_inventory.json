@@ -1,0 +1,157 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PARTIAL - TEAMS CONNECTOR FORBIDDEN",
+  "teams": [
+    {
+      "name": "Projects",
+      "mail": "projects@jmerrill.one",
+      "connected_m365_group": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "ACTIVE COLLABORATION SPACE - VERIFY"
+    },
+    {
+      "name": "Financial Team",
+      "mail": "financial-team@jmerrill.one",
+      "connected_m365_group": "2bab67a1-48de-4bde-aaa9-8094e2314f25",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "ACTIVE COLLABORATION SPACE - VERIFY"
+    },
+    {
+      "name": "Foundation Team",
+      "mail": "foundation-team@jmerrill.one",
+      "connected_m365_group": "46e10463-2d7a-44a6-a238-71829f3e8650",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "ACTIVE COLLABORATION SPACE - VERIFY"
+    },
+    {
+      "name": "Support",
+      "mail": "support@jmerrill.one",
+      "connected_m365_group": "5d87be95-7d8a-46bd-a9ce-13830496462f",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "ACTIVE COLLABORATION SPACE - VERIFY"
+    },
+    {
+      "name": "Marketing",
+      "mail": "marketing@jmerrill.one",
+      "connected_m365_group": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Security & Compliance",
+      "mail": "security@jmerrill.one",
+      "connected_m365_group": "67d9ef01-be93-42c6-a9d8-fa6c0597d936",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Productions Team",
+      "mail": "productions-team@jmerrill.one",
+      "connected_m365_group": "69104c8b-a1dc-4943-a18d-0d823324a7ab",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Agape International Cathedral",
+      "mail": "AgapeIC@jmerrill.one",
+      "connected_m365_group": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Sales",
+      "mail": "sales@jmerrill.one",
+      "connected_m365_group": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Voicemail",
+      "mail": "voicemail@jmerrill.pub",
+      "connected_m365_group": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Events",
+      "mail": "events@jmerrill.one",
+      "connected_m365_group": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "HQ",
+      "mail": "JMerrillOne@jmerrill.one",
+      "connected_m365_group": "abcd0663-047e-4335-97dc-4836a3cf7600",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Publishing Team",
+      "mail": "publishing-team@jmerrill.one",
+      "connected_m365_group": "b650caa6-324c-4be1-b491-57ab1aee7c4e",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Marlan Gary Coordination",
+      "mail": "MarlanGaryCoordination@jmerrill.one",
+      "connected_m365_group": "f86d0f6a-2f2b-4b3b-83a6-db3cbb42a7bf",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    },
+    {
+      "name": "Implementation HQ",
+      "mail": "ImplementationHQ@jmerrill.one",
+      "connected_m365_group": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a",
+      "channels": "UNKNOWN - Team.ReadBasic.All missing",
+      "members": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "connected_sharepoint_site": "UNKNOWN - SharePoint enumeration blocked",
+      "classification": "LOW ACTIVITY BUT REQUIRED - VERIFY"
+    }
+  ],
+  "connector_error": "403 missing Team.ReadBasic.All/Directory.Read.All scope"
+}

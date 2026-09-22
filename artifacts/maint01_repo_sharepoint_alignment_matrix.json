@@ -1,0 +1,60 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "UNKNOWN - SHAREPOINT DISCOVERY REQUIRED",
+  "matrix": [
+    {
+      "surface": "jmerrill-one",
+      "repo": "jmerrill-one",
+      "sharepoint_site_or_library": "UNKNOWN - SharePoint enumeration blocked",
+      "website_or_app": "https://jmerrill.one",
+      "dataverse_or_domain_system": "One intake / enterprise governance",
+      "owner": "Enterprise/shared governance, shared platform standards, enterprise orchestration, One website.",
+      "alignment_result": "UNKNOWN - SHAREPOINT DISCOVERY REQUIRED"
+    },
+    {
+      "surface": "jmerrill-pub",
+      "repo": "jmerrill-pub",
+      "sharepoint_site_or_library": "UNKNOWN - SharePoint enumeration blocked",
+      "website_or_app": "https://jmerrill.pub",
+      "dataverse_or_domain_system": "domain-specific systems where applicable",
+      "owner": "Publishing-owned code, workflow, evidence, canon, artifacts.",
+      "alignment_result": "UNKNOWN - SHAREPOINT DISCOVERY REQUIRED"
+    },
+    {
+      "surface": "jmerrill-financial",
+      "repo": "jmerrill-financial",
+      "sharepoint_site_or_library": "UNKNOWN - SharePoint enumeration blocked",
+      "website_or_app": "https://jmerrill.financial",
+      "dataverse_or_domain_system": "Financial Dataverse/Functions boundary",
+      "owner": "Financial-owned code, evidence, governance, runtime, operations.",
+      "alignment_result": "UNKNOWN - SHAREPOINT DISCOVERY REQUIRED"
+    },
+    {
+      "surface": "jmerrillfoundation",
+      "repo": "jmerrillfoundation",
+      "sharepoint_site_or_library": "UNKNOWN - SharePoint enumeration blocked",
+      "website_or_app": "https://jmerrill.foundation",
+      "dataverse_or_domain_system": "domain-specific systems where applicable",
+      "owner": "Foundation-owned code, evidence, domain artifacts.",
+      "alignment_result": "UNKNOWN - SHAREPOINT DISCOVERY REQUIRED"
+    },
+    {
+      "surface": "jmerrill-productions",
+      "repo": "jmerrill-productions",
+      "sharepoint_site_or_library": "UNKNOWN - SharePoint enumeration blocked",
+      "website_or_app": "https://jmerrill.productions",
+      "dataverse_or_domain_system": "domain-specific systems where applicable",
+      "owner": "Productions-owned code, evidence, domain artifacts.",
+      "alignment_result": "UNKNOWN - SHAREPOINT DISCOVERY REQUIRED"
+    },
+    {
+      "surface": "jackiesmithjr",
+      "repo": "jackiesmithjr",
+      "sharepoint_site_or_library": "UNKNOWN - SharePoint enumeration blocked",
+      "website_or_app": "https://jackiesmithjr.com",
+      "dataverse_or_domain_system": "domain-specific systems where applicable",
+      "owner": "Founder Brand-owned public site/content/artifacts.",
+      "alignment_result": "UNKNOWN - SHAREPOINT DISCOVERY REQUIRED"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "matrix": [
+    {
+      "repo": "jmerrill-one",
+      "sharepoint": "HQ / JMerrillOne and ImplementationHQ require Founder canon decision",
+      "website": "jmerrill.one",
+      "owner": "Enterprise"
+    },
+    {
+      "repo": "jmerrill-pub",
+      "sharepoint": "Publishing Team site /sites/publishing",
+      "website": "jmerrill.pub",
+      "owner": "Publishing"
+    },
+    {
+      "repo": "jmerrill-financial",
+      "sharepoint": "Financial Team site /sites/financial",
+      "website": "jmerrill.financial",
+      "owner": "Financial"
+    },
+    {
+      "repo": "jmerrillfoundation",
+      "sharepoint": "Foundation Team site /sites/foundation_div",
+      "website": "jmerrill.foundation",
+      "owner": "Foundation"
+    },
+    {
+      "repo": "jmerrill-productions",
+      "sharepoint": "Productions Team site /sites/productions",
+      "website": "jmerrill.productions",
+      "owner": "Productions"
+    },
+    {
+      "repo": "jackiesmithjr",
+      "sharepoint": "No dedicated Founder Brand site observed in joined/team-linked inventory",
+      "website": "jackiesmithjr.com",
+      "owner": "Founder Brand"
+    }
+  ]
+}

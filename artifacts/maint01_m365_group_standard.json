@@ -1,0 +1,8 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "rule": "A Microsoft 365 Group should exist because a Microsoft workload requires the group.",
+  "implications": [
+    "Team -> M365 Group -> SharePoint -> Group mailbox -> Planner / connected services"
+  ],
+  "guidance": "Do not retain Group objects just as organizational labels."
+}

@@ -1,0 +1,64 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd006_target_certification",
+  "created_at": "2026-08-20T11:45:00Z",
+  "fd": "FD-006",
+  "classification": "FD-006 TARGET CERTIFICATION PARTIAL - NO EXACT TWO CERTIFIED ORPHANS",
+  "approved_count": 2,
+  "candidates": [
+    {
+      "display_name": "github-aic-deploy",
+      "application_client_id": "746b3307-1432-4ff8-ac36-e82fc1c9c021",
+      "app_registration_object_id": "4ba6f665-6e75-45f3-8011-c36ccee3fdb1",
+      "service_principal_object_id": "9553fc9e-ad2d-4f87-8e87-fb282db171b3",
+      "created": "2025-10-05T00:26:02Z",
+      "credentials": ["GitHub Actions key expires 2026-04-03T00:29:15.648Z"],
+      "api_permissions": "Microsoft Graph User.Read delegated scope",
+      "azure_role_assignments": ["Contributor on /subscriptions/9ee13245-2303-4010-8b6d-35f7cbcfdc0e/resourceGroups/agape-international-cathedral-rg"],
+      "service_principal_sign_ins": "No recent sign-in returned by auditLogs/signIns query",
+      "classification": "ACTIVE DEPENDENCY - RETAIN",
+      "reason": "Azure Contributor role assignment is an active dependency."
+    },
+    {
+      "display_name": "Portals-Site 1",
+      "application_client_id": "3ddc8988-92ca-4993-b01b-a8a5e413a425",
+      "app_registration_object_id": "722f9d01-ddfe-4563-85df-c6a837e68874",
+      "service_principal_object_id": "a492d337-4ac7-4d7a-8607-190c13e49e4f",
+      "created": "2025-04-21T01:19:01Z",
+      "credentials": ["X509 credential expires 2026-04-19T21:00:16Z"],
+      "api_permissions": "Microsoft Graph User.Read delegated scope",
+      "azure_role_assignments": [],
+      "service_principal_sign_ins": "No recent sign-in returned by auditLogs/signIns query",
+      "classification": "INSUFFICIENT EVIDENCE - RETAIN PENDING REVIEW",
+      "reason": "Portal/Power Pages naming and certificate credential require workload-owner confirmation before deletion."
+    },
+    {
+      "display_name": "BusinessCentralSharePoint",
+      "application_client_id": "767abadb-a4b9-4fc9-8a1c-0b62484c8c0c",
+      "app_registration_object_id": "7569a45d-0dcf-4424-b007-b1c38cf9070f",
+      "service_principal_object_id": "56fb4087-3719-42e3-aa78-2ad43a918461",
+      "created": "2025-04-24T05:38:59Z",
+      "credentials": ["BC Connector expires 2025-10-21T05:40:10.634Z"],
+      "api_permissions": "Microsoft Graph Files.Read.All, Sites.Read.All, User.Read delegated scopes",
+      "azure_role_assignments": [],
+      "service_principal_sign_ins": "No recent sign-in returned by auditLogs/signIns query",
+      "classification": "INSUFFICIENT EVIDENCE - RETAIN PENDING REVIEW",
+      "reason": "Business Central to SharePoint permission set is a plausible workload dependency; no deletion without Business Central owner confirmation."
+    },
+    {
+      "display_name": "BusinessCentralAPI",
+      "application_client_id": "6dc1ffb9-363b-48ad-9a35-e9cbd8e94b2f",
+      "app_registration_object_id": "f942c040-53d8-43a1-ad68-b5bf178bcee7",
+      "service_principal_object_id": "09a74afb-92d2-4ef3-a288-c79f471d4af1",
+      "created": "2025-03-07T10:38:39Z",
+      "credentials": ["Password uploaded on Fri Mar 07 2025 expires 2025-09-03T09:41:04.09Z"],
+      "api_permissions": "Business Central API Automation.ReadWrite.All, API.ReadWrite.All, plus Microsoft Graph User.Read delegated scope",
+      "azure_role_assignments": [],
+      "service_principal_sign_ins": "No recent sign-in returned by auditLogs/signIns query",
+      "classification": "ACTIVE DEPENDENCY - RETAIN",
+      "reason": "Business Central API permissions indicate a named workload; expiration alone is not orphan proof."
+    }
+  ],
+  "certified_orphans": [],
+  "ready_to_execute": false
+}

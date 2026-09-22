@@ -1,0 +1,108 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "captured_scope": [
+    "Team state",
+    "owners",
+    "members",
+    "guests",
+    "channels",
+    "Group state",
+    "SharePoint state",
+    "Planner count",
+    "Group mailbox address",
+    "tabs/apps where available"
+  ],
+  "team": {
+    "id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+    "displayName": "Projects",
+    "isArchived": false,
+    "webUrl": "https://teams.microsoft.com/l/team/19%3aUsHfAKQMei6nNmat2Eh8FvxLd-hpm938y-jUDVrjQwQ1%40thread.tacv2/conversations?groupId=1d17efe8-bc55-49f8-83a5-54706b47ea33&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d"
+  },
+  "group": {
+    "id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+    "displayName": "Projects",
+    "mail": "projects@jmerrill.one",
+    "groupTypes": [
+      "Unified"
+    ],
+    "resourceProvisioningOptions": [
+      "Team"
+    ],
+    "visibility": "Private",
+    "mailEnabled": true,
+    "securityEnabled": false,
+    "createdDateTime": "2025-04-19T01:49:22Z"
+  },
+  "owners": [
+    {
+      "displayName": "Jackie Smith, Jr.",
+      "userPrincipalName": "jackie@jmerrill.one",
+      "id": "9586f34b-b5f3-437b-bc64-3e44d2518427"
+    },
+    {
+      "displayName": "JM1 Admin",
+      "userPrincipalName": "jm1-admin@jmerrill.one",
+      "id": "9750d862-2024-42bc-9707-f84b325dfb19"
+    }
+  ],
+  "members": [
+    {
+      "displayName": "Jackie Smith, Jr.",
+      "userPrincipalName": "jackie@jmerrill.one",
+      "id": "9586f34b-b5f3-437b-bc64-3e44d2518427"
+    },
+    {
+      "displayName": "JM1 Admin",
+      "userPrincipalName": "jm1-admin@jmerrill.one",
+      "id": "9750d862-2024-42bc-9707-f84b325dfb19"
+    }
+  ],
+  "guests": [],
+  "channels": [
+    {
+      "displayName": "General",
+      "id": "19:UsHfAKQMei6nNmat2Eh8FvxLd-hpm938y-jUDVrjQwQ1@thread.tacv2",
+      "membershipType": "standard",
+      "createdDateTime": "2025-04-19T01:49:27.328Z"
+    }
+  ],
+  "sharePoint": {
+    "id": "jmerrillfoundation.sharepoint.com,da5352c8-b294-42be-a973-f9772b9849dc,7431c5af-1fe6-49e9-83f4-802611c259e2",
+    "url": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+    "displayName": "Projects",
+    "lastModifiedDateTime": "2026-08-20T13:35:34Z"
+  },
+  "planner": {
+    "count": 0
+  },
+  "groupMailbox": {
+    "mail": "projects@jmerrill.one",
+    "state": "preserved"
+  },
+  "appsTabs": {
+    "state": "resolved_after_archive",
+    "count": 2,
+    "displayNames": [
+      "Notes",
+      "Files"
+    ]
+  },
+  "preservationReferences": [
+    "Archive",
+    "Automation",
+    "Brands",
+    "Diagnostics",
+    "Docs",
+    "Infrastructure",
+    "JM1-Core",
+    "JM1-Implementation-HQ",
+    "logs",
+    "publishSettings.txt",
+    "reset-live-sites.sh",
+    "sync-live-sites.sh"
+  ]
+}

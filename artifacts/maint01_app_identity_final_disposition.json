@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "App registration rationalization — 112 total",
+  "total_app_registrations": 112,
+  "source": "maint01_app_identity_inventory_v2.json (Cody)",
+
+  "by_category": {
+    "copilot_studio_agents": {
+      "count": "Majority — estimated 60-70+",
+      "classification": "ACTIVE PRODUCTION",
+      "note": "Copilot Studio agents registered as app identities. All retain unless specific agent is decommissioned.",
+      "retirement_candidates": 0
+    },
+    "github_oidc_federated": {
+      "count": "Confirmed: jm1-github-oidc-deployer, AIC Website GitHub Actions, jm1-pub-github-actions-oidc; likely more",
+      "classification": "ACTIVE PRODUCTION",
+      "note": "GitHub OIDC federated identities for GitHub Actions deployments. Must retain; removing breaks CI/CD.",
+      "retirement_candidates": 0
+    },
+    "dataverse_power_platform": {
+      "count": "Multiple — exact breakdown not available at line-item level",
+      "classification": "ACTIVE PRODUCTION or ACTIVE DEVELOPMENT",
+      "note": "Power Automate, Power Apps, Dataverse service identities.",
+      "retirement_candidates": 0
+    },
+    "microsoft_system": {
+      "count": "Multiple — Microsoft-registered first-party apps",
+      "classification": "SYSTEM",
+      "note": "Microsoft-registered; not candidates for retirement.",
+      "retirement_candidates": 0
+    },
+    "legacy_duplicate_orphan": {
+      "count": 0,
+      "note": "No legacy/duplicate/orphan identities identified without a full dependency audit. A dependency audit would require enumerating all service principal last sign-in dates and Azure role assignments — not completed in current scope.",
+      "retirement_candidates": 0
+    },
+    "unknown": {
+      "count": "Remainder after above categories",
+      "classification": "UNKNOWN — requires line-item audit",
+      "note": "A complete app registration line-item audit (last sign-in, permissions, Azure assignments, Dataverse mapping) was not performed. No retirements from this group without that audit."
+    }
+  },
+
+  "retirement_candidates": 0,
+  "retirement_note": "No app registration or service principal retirement is authorized by this package. A full dependency audit is required before any retirement.",
+  "next_action": "None until Founder authorizes a line-item app identity audit as a separate work item"
+}

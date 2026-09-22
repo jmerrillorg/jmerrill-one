@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "BLOCKED",
+  "classification_basis": "No tenant site/library enumeration available.",
+  "content_classes": [
+    "ACTIVE OPERATIONS",
+    "CANON",
+    "GOVERNANCE EVIDENCE",
+    "HISTORICAL ARCHIVE",
+    "DUPLICATE",
+    "TEMPORARY",
+    "MISPLACED",
+    "ORPHANED",
+    "UNKNOWN"
+  ],
+  "next_required": "Grant Sites.Read.All tenant/site enumeration or provide SharePoint export."
+}

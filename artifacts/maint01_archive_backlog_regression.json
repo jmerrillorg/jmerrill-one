@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "checks": {
+    "salesArchivedCorrectly": true,
+    "projectsArchivedCorrectly": true,
+    "sharePointPreserved": true,
+    "plannerContentPreserved": true,
+    "githubUnaffected": true,
+    "voiceUntouched": true,
+    "exchangeFd005Unchanged": true,
+    "usersLicensesUnchanged": true,
+    "appIdentitiesUnchanged": true,
+    "unrelatedTeamGroupMutation": false
+  },
+  "finalClassification": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED"
+}

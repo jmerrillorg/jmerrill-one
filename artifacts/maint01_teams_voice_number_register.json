@@ -1,0 +1,49 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_teams_voice_number_register",
+  "created_at": "2026-08-20T11:45:00Z",
+  "result": "COMPLETE_WITH_PHONE_NUMBER_API_LIMITATION",
+  "source": "Founder Teams Admin Center evidence plus Graph-confirmed resource accounts",
+  "graph_phone_number_api_result": "Microsoft Graph /beta/communications/phoneNumbers returned BadRequest: Resource not found for the segment phoneNumbers.",
+  "numbers": [
+    {
+      "assignment": "Productions",
+      "assigned_identity": "voice-productions@jmerrill.one",
+      "identity_object_id": "25cc94bc-1669-4cb9-93b9-ae5c90bf48ec",
+      "classification": "RETAIN - SECURED FOR JM1 VOICE PROJECT"
+    },
+    {
+      "assignment": "Main Inbound",
+      "assigned_identity": "voice-main-inbound@jmerrill.one",
+      "identity_object_id": "8adf4f22-f0f0-4415-b9c3-8b890fab2e59",
+      "classification": "RETAIN - SECURED FOR JM1 VOICE PROJECT"
+    },
+    {
+      "assignment": "Financial",
+      "assigned_identity": "voice-financial@jmerrill.one",
+      "identity_object_id": "f74e11a5-2ea6-4040-b7df-2975e71cb690",
+      "classification": "RETAIN - SECURED FOR JM1 VOICE PROJECT"
+    },
+    {
+      "assignment": "Publishing",
+      "assigned_identity": "voice-publishing@jmerrill.one",
+      "identity_object_id": "2acdbbd5-df66-459d-8277-f91f55e97f0e",
+      "classification": "RETAIN - SECURED FOR JM1 VOICE PROJECT"
+    },
+    {
+      "assignment": "Foundation",
+      "assigned_identity": "voice-foundation@jmerrill.one",
+      "identity_object_id": "31c29f77-40be-48d9-b40e-7a7474387810",
+      "classification": "RETAIN - SECURED FOR JM1 VOICE PROJECT"
+    },
+    {
+      "assignment": "JM1 Info",
+      "assigned_identity": "info@jmerrill.one",
+      "identity_object_id": "f4094597-9b48-43b6-b238-4dc0cd308b0c",
+      "classification": "RETAIN - SECURED FOR JM1 VOICE PROJECT"
+    }
+  ],
+  "do_not_release_numbers": true,
+  "do_not_unassign_numbers": true,
+  "do_not_change_routing": true
+}

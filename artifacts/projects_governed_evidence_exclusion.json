@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "protected_roles": [
+    "production evidence",
+    "deployment evidence",
+    "final release packages",
+    "canonical specifications",
+    "signed/final documents",
+    "audit artifacts",
+    "records needed to reconstruct a business decision"
+  ],
+  "excluded_from_delete_candidate": [
+    {
+      "path": "/sites/projects/Shared Documents/projects/Archive",
+      "reason": "historical evidence"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Automation",
+      "reason": "possible canon/governed reference"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Brands",
+      "reason": "business/brand asset retention"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Docs",
+      "reason": "unknown documentation risk"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Infrastructure",
+      "reason": "possible canon/governed reference"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Core",
+      "reason": "possible governed environment/deployment context"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Implementation-HQ",
+      "reason": "possible implementation evidence"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/logs",
+      "reason": "audit/execution evidence"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/publishSettings.txt",
+      "reason": "security/audit handling required"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/reset-live-sites.sh",
+      "reason": "possible deployment procedure evidence"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/sync-live-sites.sh",
+      "reason": "possible deployment procedure evidence"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/JM1_Migration_1_0_0_1_managed.zip",
+      "reason": "final release/deployment package protection"
+    }
+  ],
+  "deletion_candidates_after_exclusion": []
+}

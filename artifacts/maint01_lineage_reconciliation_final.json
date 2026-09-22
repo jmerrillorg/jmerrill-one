@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-08-19T00:00:00.000Z",
+  "purpose": "Verify Claude lineage against governed Cody branch",
+  "remote_governed_sha": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+  "claude_tip": "91937c6ea42cb770016e61d1a892efd7c641f7ce",
+  "common_ancestor": "85cbc9c672b005269a8f6ba4048fa217ea1690a7",
+  "cody_lineage_already_incorporated": true,
+  "evidence": "96d123e is a merge commit with parents [efc50e4, 85cbc9c]. 85cbc9c is the tip of origin/codex/maint01-estate-rationalization as of Phase 1. Cody history is fully contained in Claude branch via this merge.",
+  "safest_integration_method": "Fast-forward codex/maint01-estate-rationalization to 91937c6 (Claude tip already contains all Cody history)",
+  "integration_status": "PENDING PUSH — commits locally ready, GitHub App write permission required"
+}

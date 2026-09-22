@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "FAIL - DISCOVERY INCOMPLETE",
+  "validated": [
+    "GitHub repo inventory",
+    "Entra users/groups/app registrations",
+    "HOST-02 deployment state already closed"
+  ],
+  "not_validated": [
+    "SharePoint content access and site ownership",
+    "Teams channel/member/activity dependencies",
+    "Exchange shared mailbox delegates/rules/activity",
+    "Planner dependencies",
+    "Power Automate mailbox dependencies"
+  ],
+  "decision": "Destructive cleanup is blocked."
+}

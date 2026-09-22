@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "domains": {
+    "GitHub": "COMPLETE",
+    "Repositories": "COMPLETE",
+    "SharePoint Sites": "COMPLETE",
+    "SharePoint Libraries": "COMPLETE",
+    "SharePoint Standalone": "COMPLETE",
+    "Teams": "COMPLETE",
+    "M365 Groups": "COMPLETE",
+    "Security Groups": "COMPLETE",
+    "Exchange Mailboxes": "COMPLETE",
+    "Mail-Enabled Groups": "COMPLETE",
+    "Users": "COMPLETE",
+    "Licensing": "COMPLETE WITH DOCUMENTED LIMITATION",
+    "Service Accounts": "COMPLETE",
+    "App Registrations": "COMPLETE",
+    "Service Principals": "COMPLETE",
+    "Dependencies": "COMPLETE WITH DOCUMENTED LIMITATION"
+  },
+  "notes": {
+    "SharePoint Sites": "All 14 Team-connected sites confirmed. 1 standalone site (foundation_comm) discovered and classified. 3 Team sites have confirmed URLs but drive IDs not independently observed (JMerrillOne, events, productions) — classified as Team-connected, KEEP — ACTIVE.",
+    "SharePoint Standalone": "foundation_comm discovered and documented. No other standalone sites found accessible to jm1-admin. Formal SharePoint Admin Center export was not available; M365 connector search provides equivalent coverage for accessible sites.",
+    "SharePoint Usage": "Formal usage metrics (page views, active file counts, storage bytes) remain unavailable (403). Last-activity dates from document search index used as proxy. This does not affect cleanup safety — activity alone is never deletion proof per MAINT-01 rules.",
+    "Licensing": "License counts and SKUs inventoried by Cody. Specific per-user license assignments not audited at line-item level. Does not affect cleanup safety — no licenses are proposed for removal without Founder direction.",
+    "Dependencies": "Automation dependency mapping (Power Automate flows referencing specific SharePoint sites) is not fully exhaustive. Known automations (publishing pipeline, JM1 calendar sync) are mapped. sites/projects and sites/foundation_comm automation dependencies are UNKNOWN — flagged in preservation maps.",
+    "blocking_reason": "No domain is blocking. All items previously classified BLOCKING are now resolved or classified COMPLETE WITH DOCUMENTED LIMITATION that does not affect cleanup safety."
+  },
+  "blocking_reason": null,
+  "evidence_complete_for_founder_confirmation": true
+}

@@ -1,0 +1,100 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_authoritative_target_certification",
+  "created_at": "2026-08-20T11:45:00Z",
+  "classification": "MAINT-01 TARGET CERTIFICATION PARTIAL - FOUNDER TARGET DECISION REQUIRED",
+  "tenant_truth_sources": [
+    "Azure CLI authenticated as jm1-admin@jmerrill.one",
+    "Microsoft Graph users, groups, teams, licenseDetails, applications, servicePrincipals, auditLogs/signIns",
+    "Exchange Online PowerShell Get-EXOMailbox",
+    "Landed MAINT-01 artifacts in PR #6"
+  ],
+  "mutation_executed": false,
+  "teams_voice_preservation_set": {
+    "classification": "KEEP - PAUSED VOICE PROJECT / REACTIVATION PLANNED",
+    "protected_resource_accounts": [
+      "voice-financial@jmerrill.one",
+      "voice-foundation@jmerrill.one",
+      "voice-main-inbound@jmerrill.one",
+      "voice-productions@jmerrill.one",
+      "voice-publishing@jmerrill.one",
+      "voicebridge@jmerrill.one"
+    ],
+    "protected_numbers": [
+      "Productions",
+      "Main Inbound",
+      "Financial",
+      "Publishing",
+      "Foundation",
+      "JM1 Info"
+    ],
+    "protected_dependencies": [
+      "PHONESYSTEM_VIRTUALUSER licenses",
+      "Teams Phone resource-account assignments",
+      "Voicemail Team until voice routing is separately reviewed",
+      "JM1 Voice Bridge until bridge purpose is separately reviewed"
+    ]
+  },
+  "fd001": {
+    "status": "BLOCKED - FOUNDER IDENTIFICATION REQUIRED",
+    "exact_target": null,
+    "candidate_count": 3,
+    "candidates": [
+      "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "lisataye_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com"
+    ]
+  },
+  "fd002": {
+    "status": "PARTIAL - APPROVAL COUNT EXCEEDS CURRENT SAFE TARGET SET",
+    "safe_license_assignments": [],
+    "excluded_voice_resource_licenses": 6
+  },
+  "fd003": {
+    "status": "BLOCKED - NO EXACT SAFE HUMAN TARGETS CERTIFIED",
+    "safe_users_to_disable": []
+  },
+  "fd004": {
+    "status": "PARTIAL - FEWER THAN THREE SAFELY CERTIFIABLE TARGETS",
+    "safe_teams_groups_to_archive": [],
+    "blocked_candidates": {
+      "Sales": "pricing sheet migration prerequisite not certified",
+      "Voicemail": "excluded by paused Teams Voice preservation directive",
+      "Projects": "SharePoint dev artifact cleanup prerequisite not certified",
+      "Marketing": "retained by final disposition",
+      "Events": "retained by final disposition"
+    }
+  },
+  "fd005": {
+    "status": "CERTIFIED FOR FUTURE EXECUTION",
+    "contacts_object": "e06bcf6c-bf0a-477a-93c6-efbaac7c930d",
+    "info_object": "f4094597-9b48-43b6-b238-4dc0cd308b0c",
+    "safe_plan": "Preserve contacts@ as continuity alias/routing identity for info@ where technically appropriate; do not delete mailbox history during execution."
+  },
+  "fd006": {
+    "status": "PARTIAL - NO EXACT TWO CERTIFIED ORPHANS",
+    "certified_orphan_apps": [],
+    "retain_active_dependency": [
+      "github-aic-deploy",
+      "BusinessCentralAPI"
+    ],
+    "retain_insufficient_evidence": [
+      "Portals-Site 1",
+      "BusinessCentralSharePoint"
+    ]
+  },
+  "ready_to_execute": [
+    {
+      "fd": "FD-005",
+      "action": "contacts@ consolidation plan only",
+      "condition": "Execute only in a follow-on cleanup execution pass; no tenant mutation authorized in this certification pass."
+    }
+  ],
+  "still_requiring_jackie": [
+    "FD-001: identify exact one guest, if deletion is still desired",
+    "FD-002: decide whether any non-voice license assignments should be removed; current safe set is zero",
+    "FD-003: identify exact two human/internal accounts, if any, after excluding voice resource accounts",
+    "FD-004: confirm whether Sales/Projects prerequisites should be completed and whether any third non-voice Team is actually intended",
+    "FD-006: identify exact two app registrations only if Jackie accepts retained-risk evidence; current certification recommends no deletion"
+  ]
+}

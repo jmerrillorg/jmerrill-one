@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "exactTeamId": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+  "preState": {
+    "isArchived": false
+  },
+  "operation": {
+    "endpoint": "POST /teams/1d17efe8-bc55-49f8-83a5-54706b47ea33/archive",
+    "body": {
+      "shouldSetSpoSiteReadOnlyForMembers": true
+    },
+    "httpStatus": 202,
+    "operationId": "71774d71-7870-45d7-a352-4c94d65d480f",
+    "requestId": "158f08c7-7094-4429-aa8b-f07654bd1bad",
+    "operationStatus": "succeeded",
+    "workflowId": "eastus2.a84ff4b3-3eaa-4017-8013-8bfc1f4f704d",
+    "operationCreatedDateTime": "2026-08-20T13:35:28.8315788Z"
+  },
+  "postState": {
+    "isArchived": true
+  },
+  "validation": [
+    "Team reports archived",
+    "Group preserved",
+    "SharePoint preserved",
+    "Project files preserved",
+    "No file cleanup performed"
+  ]
+}

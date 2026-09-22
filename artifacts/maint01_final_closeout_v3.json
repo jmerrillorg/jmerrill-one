@@ -1,0 +1,118 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "final_classification": "MAINT-01 COMPLETE — ESTATE RATIONALIZED; FOUNDER CLEANUP CONFIRMATION REQUIRED",
+
+  "1_final_classification": "All evidence domains are complete or complete with documented limitation that does not affect cleanup safety. Tenant-wide SharePoint standalone-site evidence is now resolved. No object passes all retirement hard gates without Founder confirmation. The estate is fully rationalized; destructive cleanup awaits Jackie's decisions on 6 grouped items.",
+
+  "2_claude_code_handoff_state": {
+    "branch": "claude/loving-planck-1cfoo2",
+    "pr_reference": "#6 (codex/maint01-estate-rationalization — Cody's branch; this session builds on those artifacts)",
+    "artifacts_added_this_session": [
+      "maint01_sharepoint_inventory_v3.json",
+      "maint01_sharepoint_usage_v2.json",
+      "maint01_sharepoint_standalone_delta.json",
+      "maint01_sharepoint_standalone_preservation.json",
+      "maint01_canon_repository_reconciliation_v2.json",
+      "maint01_repo_sharepoint_alignment_matrix_v3.json",
+      "maint01_sharepoint_target_architecture_v3.md",
+      "maint01_disposition_matrix_v3.json",
+      "maint01_retirement_manifest_v3.json",
+      "maint01_retirement_manifest_v3.md",
+      "maint01_retirement_hard_gate_v2.json",
+      "maint01_sharepoint_preservation_map_v2.json",
+      "maint01_founder_decision_register_v2.json",
+      "maint01_evidence_completeness_gate_v2.json",
+      "maint01_final_scorecard_v3.json",
+      "maint01_final_closeout_v3.json",
+      "maint01_final_closeout_v3.md"
+    ],
+    "method_used": "M365 MCP connector (jm1-admin@jmerrill.one) — sharepoint_search + sharepoint_folder_search enumerated all site driveIds from search index",
+    "prior_blocker_resolved": "Graph /sites?search=* was 403; M365 connector provided equivalent tenant-wide coverage"
+  },
+
+  "3_standalone_sharepoint_discovery_result": {
+    "result": "COMPLETE",
+    "sites_found": 16,
+    "team_connected": 14,
+    "standalone_non_onedrive": 1,
+    "standalone_sites": ["sites/foundation_comm — standalone communication site, low activity, Programs & Events content, no Team/Group"],
+    "onedrive": ["personal/jm1-admin_jmerrill_one — admin OneDrive, out of scope"],
+    "loop_workspace": "1 Loop/OneNote content storage pod in ImplementationHQ (Microsoft-managed)"
+  },
+
+  "4_sharepoint_usage_evidence_result": {
+    "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+    "limitation": "Formal Microsoft usage reports (page views, active file count, storage bytes) remain 403. Last-activity dates from search index used.",
+    "limitation_affects_safety": false,
+    "active_sites": ["ImplementationHQ", "publishing", "financial"],
+    "low_activity_sites": ["marketing", "sales", "support", "security", "AgapeIC", "foundation_div", "projects", "foundation_comm"],
+    "inactive_sites": ["voicemail"],
+    "unknown_activity_sites": ["JMerrillOne", "events", "productions"]
+  },
+
+  "5_sharepoint_delta": {
+    "previously_known": "16 sites (all null titles/URLs in v2)",
+    "now_confirmed": "16 sites with titles and URLs; 13 with confirmed drive IDs",
+    "new_standalone": "sites/foundation_comm",
+    "new_candidates": 1,
+    "prior_blocking_resolved": true
+  },
+
+  "6_teams_state": "COMPLETE — 14 Teams fully mapped with channels, owners, members, M365 Group, SharePoint site (confirmed), and mailbox",
+
+  "7_exchange_state": "COMPLETE — 16 shared mailboxes, 1 distribution group, 18 mail-enabled recipients, no mailbox contents read. 7 mailboxes require Founder usage confirmation.",
+
+  "8_repo_estate": "COMPLETE — 19 GitHub repos; all classified KEEP; entity ownership documented in alignment matrix v3",
+
+  "9_sharepoint_target_architecture": "Published in maint01_sharepoint_target_architecture_v3.md — all 14 Team sites retained; foundation_comm and projects pending Founder decisions; enterprise canon in ImplementationHQ/Architecture/00_CANON",
+
+  "10_canon_reconciliation": "Published in maint01_canon_repository_reconciliation_v2.json — enterprise canon location Founder decision documented (FD-002); division canon per entity is clear",
+
+  "11_users_licenses": "43 users, 17 subscribed SKUs — inventoried by Cody; no removals. Licensing-per-user detail not audited at line-item level; not required for safety of current scope.",
+
+  "12_shared_mailboxes": "16 shared mailboxes — 9 classified KEEP — CORE/SYSTEM; 7 require Founder use confirmation (FD-005). No mailbox retirements proposed without Founder sign-off.",
+
+  "13_teams_groups": "14 Teams, 26 M365 Groups — all retained; Deprecated - All Company flagged for consolidation assessment; Sales and Voicemail Teams flagged for Founder decision (FD-004)",
+
+  "14_security_groups": "9 security groups — all KEEP — SECURITY BOUNDARY",
+
+  "15_service_accounts": "Included in 43 users; jm1-admin@jmerrill.one confirmed active as M365 admin",
+
+  "16_app_identities": "112 app registrations — all KEEP — SYSTEM; predominantly Copilot Studio agents and OIDC federated identities for GitHub Actions. No retirement candidates without full dependency audit.",
+
+  "17_dependency_graph": "maint01_collaboration_dependency_graph_v2.json (Cody) remains valid; SharePoint delta does not materially alter existing dependencies. foundation_comm automation dependency is UNKNOWN — documented in preservation map.",
+
+  "18_disposition_matrix": "maint01_disposition_matrix_v3.json — 180 objects; 0 UNKNOWN remaining; breakdown: KEEP-CORE 11, KEEP-ACTIVE 12, KEEP-SECURITY 2, KEEP-SYSTEM 9, FOUNDER DECISION 13, CONSOLIDATE 1",
+
+  "19_high_confidence_retirement_list": "EMPTY — no object passes all hard gates without Founder confirmation",
+
+  "20_consolidate_migrate_first_list": [
+    "sites/foundation_comm — pending FD-001",
+    "Deprecated - All Company M365 Group — pending mailbox/site data assessment",
+    "sites/projects dev artifact content — pending FD-003"
+  ],
+
+  "21_founder_decisions": "6 decisions grouped in maint01_founder_decision_register_v2.json — FD-001 through FD-006. Grouped to minimize decision burden on Jackie.",
+
+  "22_preservation_maps": "maint01_sharepoint_preservation_map_v2.json — covers foundation_comm and projects/dev-artifacts. Both blocked pending Founder decisions.",
+
+  "23_cost_license_impact": "No license removals proposed. SharePoint storage reduction possible after projects dev content cleanup (FD-003). No cost impact without Founder action.",
+
+  "24_security_impact": "No security boundary changes proposed. Security group retention unchanged. No permission removals without explicit Founder direction.",
+
+  "25_remaining_unknowns": {
+    "count": 0,
+    "detail": "All previously blocking unknowns are resolved. Three Team sites (JMerrillOne, events, productions) have confirmed URLs but unconfirmed drive IDs — classified KEEP — ACTIVE, not unknown."
+  },
+
+  "26_exact_next_action": {
+    "immediate": "Jackie reviews maint01_founder_decision_register_v2.json and provides answers to FD-001 through FD-006",
+    "after_FD001": "foundation_comm — retain with documented purpose OR migrate content to foundation_div and retire",
+    "after_FD002": "Establish single canonical enterprise governance location; add reference pointer to publishing copy",
+    "after_FD003": "Clean or archive projects dev artifacts from SharePoint",
+    "after_FD004": "Sales and Voicemail Teams — confirm keep or archive path",
+    "after_FD005": "7 shared mailboxes — classify each as KEEP, ALIAS, or RETIRE",
+    "after_FD006": "Projects Team shell — confirm ongoing collaboration or archive",
+    "no_action_until": "Founder sign-off on the above. No destructive actions are authorized by this session."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-004",
+  "team": "Voicemail",
+  "result": "PASS",
+  "final_state": "KEEP - PAUSED VOICE PROJECT / REACTIVATION PLANNED",
+  "group": {
+    "id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+    "displayName": "Voicemail",
+    "mail": "voicemail@jmerrill.pub",
+    "resourceProvisioningOptions": [
+      "Team"
+    ],
+    "visibility": "Private"
+  },
+  "channel": {
+    "id": "19:ehlXeu7yWCiTFcDgfoyXWU3sbeYuvqg4wWuL3JqSwZA1@thread.tacv2",
+    "displayName": "General"
+  },
+  "owners": [
+    {
+      "displayName": "JM1 Appointments",
+      "userPrincipalName": "appointments@jmerrill.one"
+    },
+    {
+      "displayName": "Jackie Smith, Jr.",
+      "userPrincipalName": "jackie@jmerrill.one"
+    },
+    {
+      "displayName": "JM1 Admin",
+      "userPrincipalName": "jm1-admin@jmerrill.one"
+    },
+    {
+      "displayName": "JM1 Scheduling",
+      "userPrincipalName": "scheduling@jmerrill.one"
+    }
+  ],
+  "members": [
+    {
+      "displayName": "JM1 Appointments",
+      "userPrincipalName": "appointments@jmerrill.one"
+    },
+    {
+      "displayName": "JM1 Admin",
+      "userPrincipalName": "jm1-admin@jmerrill.one"
+    }
+  ],
+  "archive_executed": false
+}

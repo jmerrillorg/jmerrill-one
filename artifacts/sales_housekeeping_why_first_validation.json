@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "unnecessary_file_movement_avoided": true,
+  "moves_executed": false,
+  "deletion_executed": false,
+  "validation": [
+    {
+      "path": "/sites/sales/Shared Documents/01 Lead Tracking",
+      "proposed_action": "RETAIN",
+      "why": "Retain because folder has business/history value or duplicate status is not proven."
+    },
+    {
+      "path": "/sites/sales/Shared Documents/02 Client Proposals",
+      "proposed_action": "RETAIN",
+      "why": "Retain because folder has business/history value or duplicate status is not proven."
+    },
+    {
+      "path": "/sites/sales/Shared Documents/03 Pricing Sheets",
+      "proposed_action": "ARCHIVE IN PLACE",
+      "why": "Keeps records available without creating duplicate authority or unnecessary movement."
+    },
+    {
+      "path": "/sites/sales/Shared Documents/04 Sales Reports",
+      "proposed_action": "ARCHIVE IN PLACE",
+      "why": "Keeps records available without creating duplicate authority or unnecessary movement."
+    },
+    {
+      "path": "/sites/sales/Shared Documents/05 Archive",
+      "proposed_action": "RETAIN",
+      "why": "Retain because folder has business/history value or duplicate status is not proven."
+    },
+    {
+      "path": "/sites/sales/Shared Documents/General",
+      "proposed_action": "REVIEW REQUIRED",
+      "why": "Empty channel folder has no material cleanup benefit and no current authorization."
+    }
+  ]
+}

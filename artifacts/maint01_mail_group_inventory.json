@@ -1,0 +1,184 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS",
+  "groups": [
+    {
+      "display_name": "Projects",
+      "mail": "projects@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Financial Team",
+      "mail": "financial-team@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Foundation Team",
+      "mail": "foundation-team@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "JM1 Publishing Mail Read Scope",
+      "mail": "jm1-publishing-mail-read-scope@jmerrillfoundation.onmicrosoft.com",
+      "group_types": [],
+      "team_backed": false,
+      "security_enabled": true,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Support",
+      "mail": "support@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Deprecated - All Company",
+      "mail": "AllCompany.49360240640.zmaasxan@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": false,
+      "security_enabled": false,
+      "classification": "RETIREMENT CANDIDATE"
+    },
+    {
+      "display_name": "Marketing",
+      "mail": "marketing@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Security & Compliance",
+      "mail": "security@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Productions Team",
+      "mail": "productions-team@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Agape International Cathedral",
+      "mail": "AgapeIC@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Sales",
+      "mail": "sales@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Voicemail",
+      "mail": "voicemail@jmerrill.pub",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Events",
+      "mail": "events@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "HQ",
+      "mail": "JMerrillOne@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Bid & Contract Command Center",
+      "mail": "BidContractCommandCenter@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": false,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Publishing Team",
+      "mail": "publishing-team@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Marlan Gary Coordination",
+      "mail": "MarlanGaryCoordination@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    },
+    {
+      "display_name": "Implementation HQ",
+      "mail": "ImplementationHQ@jmerrill.one",
+      "group_types": [
+        "Unified"
+      ],
+      "team_backed": true,
+      "security_enabled": false,
+      "classification": "RETAIN"
+    }
+  ]
+}

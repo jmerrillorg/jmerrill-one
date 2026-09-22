@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "parent_package_status": "MAINT-01 COMPLETE — CLEANUP RATIONALIZED AND VALIDATED; ARCHIVE EXECUTION BACKLOG RECORDED",
+  "parent_commit": "289d7380f16a746670e41e49a8c94d6a9c64a210",
+  "source_artifacts_used": [
+    "artifacts/maint01_sales_team_archive_readiness_final.json",
+    "artifacts/maint01_sales_team_preservation_plan.json",
+    "artifacts/maint01_sales_team_preservation_evidence.json",
+    "artifacts/maint01_projects_team_archive_readiness_final.json",
+    "artifacts/maint01_projects_content_classification.json",
+    "artifacts/maint01_projects_github_sharepoint_authority.json",
+    "artifacts/maint01_projects_build_artifact_disposition.json",
+    "artifacts/maint01_projects_preservation_plan.json",
+    "artifacts/maint01_fd004_final_prep_scope.json",
+    "artifacts/maint01_fd_ledger_final.json",
+    "artifacts/maint01_closeout_boundary_decision.json"
+  ],
+  "execution_scope": [
+    "Archive Sales Team",
+    "Archive Projects Team"
+  ],
+  "excluded_scope": [
+    "Voicemail Team",
+    "Teams Voice resource accounts",
+    "Teams Phone numbers",
+    "Voice licensing/routing",
+    "unrelated Teams/sites/repos/apps/mailboxes/users/licenses",
+    "HOST-02",
+    "JRN-01"
+  ],
+  "note": "Consumed final MAINT-01 evidence; no MAINT-01 discovery reopened."
+}

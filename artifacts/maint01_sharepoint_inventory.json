@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "BLOCKED",
+  "blocker": "Tenant-wide SharePoint site enumeration denied by Microsoft Graph; SharePoint connector only exposed admin OneDrive drives and search returned no governance/canon results.",
+  "evidence": {
+    "graph_sites": "403 accessDenied",
+    "connector_drives": "PersonalCacheLibrary and OneDrive only",
+    "search": "0 results for JM1/Canon/ImplementationHQ/Architecture"
+  },
+  "sites": []
+}

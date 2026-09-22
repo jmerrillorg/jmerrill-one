@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_crossenv_integration_evidence",
+  "generated": "2026-08-19",
+  "environment": "DIRECT LOCAL ACCESS — same container, no cross-environment transfer needed",
+  "claude_final_signed_commits": ["efc50e4", "96d123e", "12e6298", "91937c6"],
+  "lineage_verified": true,
+  "merge_commit": "96d123e",
+  "merge_parents": {
+    "claude_work": "efc50e4",
+    "cody_governed_branch": "85cbc9c"
+  },
+  "artifacts_validated": {
+    "maint01_crossenv_visibility_check": "DIRECT LOCAL ACCESS",
+    "maint01_crossenv_local_fetch": "PASS",
+    "maint01_claude_signed_history_validation": "PASS",
+    "maint01_lineage_reconciliation_final": "cody lineage incorporated via merge 96d123e"
+  },
+  "push_attempted": true,
+  "push_result": "403 — GitHub App lacks write permission; Cody push required",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "pr_number": 6
+}

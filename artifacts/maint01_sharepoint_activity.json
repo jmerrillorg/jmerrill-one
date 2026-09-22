@@ -1,0 +1,103 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "reports": {
+    "sharepointUsage": {
+      "ok": false,
+      "status": 403,
+      "body": "{\"error\":{\"code\":\"UnknownError\",\"message\":\"{\\\"error\\\":{\\\"code\\\":\\\"S2SUnauthorized\\\",\\\"message\\\":\\\"Invalid permission.\\\"}}\",\"innerError\":{\"date\":\"2026-08-17T02:15:05\",\"request-id\":\"b2609c13-6e66-460e-a9eb-a5f062d9d16d\",\"client-request-id\":\"b2609c13-6e66-460e-a9eb-a5f062d9d16d\"}}}"
+    },
+    "teamsActivity": {
+      "ok": false,
+      "status": 403,
+      "body": "{\"error\":{\"code\":\"UnknownError\",\"message\":\"{\\\"error\\\":{\\\"code\\\":\\\"S2SUnauthorized\\\",\\\"message\\\":\\\"Invalid permission.\\\"}}\",\"innerError\":{\"date\":\"2026-08-17T02:15:05\",\"request-id\":\"1e67454f-dd88-434b-aec3-307bda07cdf7\",\"client-request-id\":\"1e67454f-dd88-434b-aec3-307bda07cdf7\"}}}"
+    },
+    "mailboxUsage": {
+      "ok": false,
+      "status": 403,
+      "body": "{\"error\":{\"code\":\"UnknownError\",\"message\":\"{\\\"error\\\":{\\\"code\\\":\\\"S2SUnauthorized\\\",\\\"message\\\":\\\"Invalid permission.\\\"}}\",\"innerError\":{\"date\":\"2026-08-17T02:15:05\",\"request-id\":\"9f7fc4e9-31d6-4844-9395-4737910ba325\",\"client-request-id\":\"9f7fc4e9-31d6-4844-9395-4737910ba325\"}}}"
+    }
+  },
+  "activity": [
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/financial",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/support",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/AllCompany.49360240640.zmaasxan",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/marketing",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/security",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/productions",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/voicemail",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/events",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/BidContractCommandCenter",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/publishing",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    },
+    {
+      "site": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ",
+      "activity_classification": "UNKNOWN",
+      "reason": "Microsoft SharePoint usage report denied; do not use inactivity as deletion proof"
+    }
+  ]
+}

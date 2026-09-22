@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-08-20T13:57:04.664Z",
+  "target_repository": "J Merrill One",
+  "package": "POST-MAINT HOUSEKEEPING-01 — PROJECTS FILE-CLEANUP CERTIFICATION + SALES RETAINED-FOLDER HOUSEKEEPING",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "parent_package": "MAINT-01",
+  "parent_final_status": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED",
+  "parent_final_commit": "3b3b19a8c2274ecbdd332ac0ff9545344570120c",
+  "status": "PASS",
+  "search_scope": "Targeted current repo/documentation/artifacts plus live Microsoft state; no broad enterprise rediscovery.",
+  "checked": [
+    "GitHub/local governed repo",
+    "documentation/artifacts",
+    "SharePoint live item URLs",
+    "Teams archived state",
+    "M365 Group state",
+    "Voice exclusion",
+    "Exchange FD-005"
+  ],
+  "not_checked_destructively": [
+    "Power Automate mutation",
+    "Azure/App Service mutation",
+    "Dataverse mutation",
+    "Teams tab/link mutation"
+  ],
+  "results": [
+    {
+      "path": "/sites/projects/Shared Documents/projects/Archive",
+      "repo_reference_result": "MAINT evidence references; no live operational reference found in repo search",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Automation",
+      "repo_reference_result": "MAINT evidence references; source/content not verified against GitHub in this pass",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Brands",
+      "repo_reference_result": "MAINT evidence classifies as active business record",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Diagnostics",
+      "repo_reference_result": "no current repo reference found except MAINT evidence",
+      "live_reference_result": "NO LIVE REFERENCE FOUND, BUT DELETION NOT AUTHORIZED/NOT FULLY HARD-GATED"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Docs",
+      "repo_reference_result": "MAINT evidence explicitly says confirm no unique documentation",
+      "live_reference_result": "NO LIVE REFERENCE FOUND, BUT DELETION NOT AUTHORIZED/NOT FULLY HARD-GATED"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/Infrastructure",
+      "repo_reference_result": "MAINT evidence references; no file-level GitHub comparison completed",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Core",
+      "repo_reference_result": "JM1-Core is a live production environment name across repo artifacts; SharePoint folder content not proven reproducible",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/JM1-Implementation-HQ",
+      "repo_reference_result": "MAINT evidence references; no exact repository/commit/source proof completed",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/logs",
+      "repo_reference_result": "MAINT evidence classifies as operational/evidence material",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/publishSettings.txt",
+      "repo_reference_result": "MAINT authority artifact says confirm handling as sensitive deployment artifact",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/reset-live-sites.sh",
+      "repo_reference_result": "referenced by MAINT evidence; no local source file found in governed repo branch",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/projects/sync-live-sites.sh",
+      "repo_reference_result": "referenced by MAINT evidence; no local source file found in governed repo branch",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    },
+    {
+      "path": "/sites/projects/Shared Documents/JM1_Migration_1_0_0_1_managed.zip",
+      "repo_reference_result": "MAINT source classifies as duplicate candidate only if governed release evidence exists; release role not disproven",
+      "live_reference_result": "REFERENCE OR GOVERNED ROLE PRESENT/UNKNOWN — RETAIN"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "final_classification": "MAINT-01 REMEDIATION REQUIRED",
+  "previous_evidence_gaps": {
+    "SharePoint": "tenant site/library inventory blocked",
+    "Teams": "actual Teams blocked",
+    "Exchange": "shared mailbox inventory blocked"
+  },
+  "sharepoint_discovery_result": "Group/Team-linked sites and libraries mapped; tenant-wide standalone sites and usage reports still blocked.",
+  "teams_discovery_result": "Actual joined Teams mapped with channels, owners, members, group, SharePoint site, drive, and Planner where visible.",
+  "exchange_discovery_result": "Exchange Online connected; shared mailboxes/distribution/mail-enabled recipients inventoried without content.",
+  "repo_estate": "19 repos retained from prior inventory",
+  "sharepoint_estate": "16 group/team-linked sites, 27 libraries/drives",
+  "users": "43 users from prior Graph inventory",
+  "licensing": "reviewed; no removals",
+  "shared_mailboxes": "16 shared mailboxes",
+  "mail_groups": "18 mail-enabled recipients",
+  "teams": "14 Teams",
+  "m365_groups": "26 groups reconciled",
+  "security_groups": "9 security groups retained",
+  "service_accounts": "reconciled with mailbox/license evidence",
+  "app_registrations": "112 app registrations deep reviewed",
+  "service_principals": "service principal mapping captured per app where available",
+  "credential_health": "expired/expiring credential register created",
+  "dependency_graph": "rebuilt with documented SharePoint standalone limitation",
+  "repo_sharepoint_alignment": "v2 matrix created",
+  "canon_reconciliation": "Founder decision required for enterprise canon SharePoint location",
+  "safe_cleanup_completed": "no new destructive cleanup; prior generated dist move retained",
+  "target_repo_architecture": "created in prior plus execution plan",
+  "target_sharepoint_architecture": "v2 target created",
+  "target_m365_architecture": "v2 target created",
+  "cost_impact": "no immediate savings; possible removals after conversion/migration",
+  "security_impact": "credential and governance sprawl findings ranked",
+  "high_confidence_retirement_manifest": "empty; no destructive action clears hard gate",
+  "migrate_consolidate_first_items": [
+    {
+      "object": "HQ/JMerrillOne vs ImplementationHQ",
+      "type": "SharePoint governance/canon locations",
+      "proposed_action": "CONSOLIDATE AFTER FOUNDER CANON LOCATION DECISION",
+      "risk": "canon duplication or broken references",
+      "replacement": "one authoritative enterprise governance location"
+    },
+    {
+      "object": "Deprecated - All Company",
+      "type": "M365 Group",
+      "proposed_action": "ASSESS GROUP MAILBOX/SITE THEN RETIRE IF NO RETENTION",
+      "risk": "group mailbox/site data loss",
+      "replacement": "All Users/security groups if needed"
+    }
+  ],
+  "founder_decision_items": [
+    {
+      "decision": "Enterprise canon SharePoint location",
+      "affected_objects": [
+        "HQ/JMerrillOne",
+        "ImplementationHQ"
+      ],
+      "recommendation": "Choose one authoritative location; archive/reference the other."
+    },
+    {
+      "decision": "Core shared mailbox set",
+      "affected_objects": [
+        "accounting@jmerrill.one",
+        "board@jmerrill.one",
+        "donations@jmerrill.one",
+        "grants@jmerrill.one",
+        "legal@jmerrill.one",
+        "media@jmerrill.one",
+        "preneeds@jmerrill.one",
+        "royalties@jmerrill.one",
+        "submissions@jmerrill.one",
+        "tech@jmerrill.one",
+        "volunteers@jmerrill.one",
+        "contacts@jmerrill.one"
+      ],
+      "recommendation": "Retain public/automation identities; decide internal operational aliases."
+    },
+    {
+      "decision": "One-person Teams",
+      "affected_objects": [
+        "Voicemail",
+        "Marketing",
+        "Sales",
+        "Events",
+        "Projects"
+      ],
+      "recommendation": "Preserve until files/mailbox/planner reviewed, then archive if no collaboration need."
+    }
+  ],
+  "remaining_unknowns": [
+    {
+      "object": "Standalone SharePoint sites",
+      "type": "SharePoint",
+      "reason": "Tenant-wide /sites search and usage reports denied; no deletion proposed."
+    },
+    {
+      "object": "Mailbox usage reports",
+      "type": "Exchange reports",
+      "reason": "Usage report API 403; EXO mailbox statistics captured where available."
+    }
+  ],
+  "jrn01_state": "Separate; not modified.",
+  "exact_next_action": "Provide SharePoint Admin Center tenant-wide site export or grant Sites.Read.All/Reports.Read.All evidence path, then rerun only SharePoint standalone/usage delta before Founder cleanup confirmation."
+}

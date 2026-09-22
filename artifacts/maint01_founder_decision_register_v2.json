@@ -1,0 +1,101 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Grouped Founder decisions required before any destructive cleanup proceeds",
+  "total_decisions": 6,
+  "decisions": [
+    {
+      "id": "FD-001",
+      "topic": "Foundation Communication Site — retain or consolidate",
+      "current_state": "sites/foundation_comm exists as a standalone communication site. No Team or Group. Low activity (last September 2025). Has Programs & Events folder structure.",
+      "decision_options": {
+        "A": "RETAIN — this is the public-facing or informational communication site for the JM Merrill Foundation (e.g., intranet landing page or external-facing portal). Document its purpose and distinguish it from foundation_div.",
+        "B": "CONSOLIDATE — this site is an orphaned legacy build. Migrate Programs & Events content to sites/foundation_div and retire the standalone site."
+      },
+      "recommendation": "Option B if the site has no active external audience. Option A if it serves as the Foundation's public communication presence.",
+      "consequence": "Option A: Two Foundation sites; must document distinct purposes clearly. Option B: One Foundation site; requires content migration and owner confirmation.",
+      "affected_objects": ["sites/foundation_comm"],
+      "cost_security_impact": "Low — no licensing or security-boundary implication",
+      "blocker_if_deferred": "foundation_comm remains unclassified; no cleanup action is safe"
+    },
+    {
+      "id": "FD-002",
+      "topic": "Enterprise canon location — ImplementationHQ vs. publishing dual presence",
+      "current_state": "PROGRAM-004 entity evidence and enterprise governance documents exist in both sites/ImplementationHQ/Architecture/00_CANON and sites/publishing/JM1 Shared Services/Enterprise Governance.",
+      "decision_options": {
+        "A": "ImplementationHQ/Architecture/00_CANON is the single authoritative enterprise canon location. Publishing site's Enterprise Governance folder becomes a reference copy with a clear header note pointing to ImplementationHQ.",
+        "B": "Both are authoritative for their respective scopes — ImplementationHQ for architecture/governance, Publishing for publishing-specific entity evidence. Document the split scope explicitly."
+      },
+      "recommendation": "Option A — simpler canonical rule. Option B is acceptable if Publishing regularly needs to update entity evidence independently.",
+      "consequence": "Without a decision: automation or editors may write to the wrong location, creating version drift.",
+      "affected_objects": ["sites/ImplementationHQ — Architecture/00_CANON", "sites/publishing — JM1 Shared Services/Enterprise Governance"],
+      "cost_security_impact": "None — governance/labeling decision only",
+      "blocker_if_deferred": "Canon duplication continues; document authority unclear"
+    },
+    {
+      "id": "FD-003",
+      "topic": "sites/projects — legacy dev artifact store",
+      "current_state": "sites/projects is a large Team-connected site containing mirrored dev repo content (JS bundles, Next.js build outputs, branch checkouts for jm1-agape, jmerrill-pub, etc.). Last significant activity January 2026. GitHub and the HOST-02 App Service estate are now authoritative for all code.",
+      "decision_options": {
+        "A": "ARCHIVE and CLEAN — remove build artifacts and repo mirrors from SharePoint. Keep the Projects Team shell if Projects collaboration continues. Retain any unique files not in GitHub.",
+        "B": "RETAIN AS-IS — leave the SharePoint dev store intact as a historical snapshot archive.",
+        "C": "RETIRE FULLY — retire both the content and the Projects Team/site if Projects collaboration has ended."
+      },
+      "recommendation": "Option A — clean artifacts, retain Team shell until Projects Team need is confirmed.",
+      "consequence": "Option B: ongoing storage waste and ambiguity about canonical code location. Option C: loss of any unique archived state not captured in GitHub.",
+      "affected_objects": ["sites/projects", "teams/Projects"],
+      "cost_security_impact": "Storage reduction; no licensing or security boundary impact",
+      "blocker_if_deferred": "Dev artifact confusion continues; SharePoint and GitHub may diverge further"
+    },
+    {
+      "id": "FD-004",
+      "topic": "Sales Team and Voicemail Team — confirm active collaboration need",
+      "current_state": "Sales Team: last SharePoint activity September 2025 (pricing sheets only). Voicemail Team: last SharePoint activity March 2025; functional voicemail routing may depend on the Team identity.",
+      "decision_options": {
+        "Sales": {
+          "A": "RETAIN — Sales Team is actively used for collaboration or will be in near future.",
+          "B": "ARCHIVE — Sales collaboration has ended; retire Team, site, and Group after confirming no dependency."
+        },
+        "Voicemail": {
+          "A": "RETAIN — voicemail routing requires the Team identity or the mailbox. Do not touch.",
+          "B": "DECOUPLE AND ARCHIVE — if routing can be moved to a standalone shared mailbox (voicemail@jmerrill.pub already exists), retire the Team shell."
+        }
+      },
+      "recommendation": "Sales: Jackie confirms. Voicemail: confirm technical routing dependency before any action.",
+      "consequence": "Premature archival of Voicemail Team could break voicemail delivery. Premature Sales archival loses the Team if collaboration restarts.",
+      "affected_objects": ["teams/Sales", "sites/sales", "teams/Voicemail", "sites/voicemail"],
+      "cost_security_impact": "Minor — two Teams/Groups/sites if retired",
+      "blocker_if_deferred": "Teams remain in LOW/INACTIVE state with unclear destiny"
+    },
+    {
+      "id": "FD-005",
+      "topic": "Shared mailbox set — confirm operational use",
+      "current_state": "Seven shared mailboxes exist whose active use is unconfirmed (usage reports 403): accounting@, board@, donations@, grants@, media@, volunteers@, contacts@. Legal, preneeds, royalties, submissions, tech, info, no-reply, notifications, logging already classified KEEP — CORE.",
+      "decision_options": {
+        "For each mailbox": {
+          "A": "KEEP — CORE: receives external email, serves a distinct operational audience, or is an automation target.",
+          "B": "KEEP — ALIAS: retained as a vanity/forwarding alias but not actively managed. No cleanup needed but no staffing required.",
+          "C": "RETIRE: no active use, no external audience, no automation dependency. Remove or redirect."
+        }
+      },
+      "recommendation": "Jackie reviews each. Suggest keeping board@, donations@, grants@ at minimum for Foundation credibility. accounting@ and media@ depend on active use.",
+      "consequence": "Unused mailboxes are low-cost but may create confusion for external parties. Retiring an active mailbox breaks incoming mail.",
+      "affected_objects": ["accounting@jmerrill.one", "board@jmerrill.one", "donations@jmerrill.one", "grants@jmerrill.one", "media@jmerrill.one", "volunteers@jmerrill.one", "contacts@jmerrill.one"],
+      "cost_security_impact": "Shared mailboxes are typically unlicensed; low cost impact",
+      "blocker_if_deferred": "Mailbox estate remains partially unclassified"
+    },
+    {
+      "id": "FD-006",
+      "topic": "Projects Team — confirm ongoing collaboration need",
+      "current_state": "Projects Team has a SharePoint site with legacy dev content. The Team itself may or may not have active collaboration (meetings, channel posts) beyond the document store.",
+      "decision_options": {
+        "A": "RETAIN Team — Projects collaboration is ongoing (planning, coordination) regardless of SharePoint content state.",
+        "B": "ARCHIVE Team — Projects collaboration has moved to GitHub Issues/Projects or other tools; retire the Team shell."
+      },
+      "recommendation": "Confirm with Jackie whether active planning or coordination happens in the Projects Team channel.",
+      "consequence": "Premature archival removes a collaboration space. Retention of an empty Team adds clutter.",
+      "affected_objects": ["teams/Projects", "sites/projects"],
+      "cost_security_impact": "Minor",
+      "blocker_if_deferred": "Tied to FD-003"
+    }
+  ]
+}

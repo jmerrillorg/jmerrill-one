@@ -1,0 +1,25 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_revised_execution_pr_evidence",
+  "branch": "codex/maint01-estate-rationalization",
+  "pr": 6,
+  "current_instruction": "TARGET-CERTIFIED CLEANUP CONTINUATION",
+  "status": "READY_FOR_COMMIT_AND_PUSH",
+  "tenant_mutations": [
+    {
+      "fd": "FD-005",
+      "result": "PASS",
+      "mutation": "contacts@jmerrill.one now forwards to info@jmerrill.one while retaining local delivery"
+    }
+  ],
+  "non_mutation_results": [
+    "FD-001 founder choice packet created",
+    "FD-002 closed with no action",
+    "FD-003 closed with no action",
+    "FD-004 revised to Sales/Projects prep-first and Voicemail retained",
+    "FD-006 closed current delete wave and app review backlog created",
+    "No unintended mutations validation passed"
+  ],
+  "commit": "See pushed Git HEAD for codex/maint01-estate-rationalization; this artifact is included in that commit.",
+  "push": "PENDING"
+}

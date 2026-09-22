@@ -1,0 +1,386 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "NO MAILBOX DELETION AUTHORIZED",
+  "maps": [
+    {
+      "mailbox": "accounting@jmerrill.one",
+      "aliases": [
+        "accounting@jmerrill.one",
+        "billing@jmerrill.one",
+        "finance@jmerrill.org",
+        "accounting@jmerrill.pub",
+        "finance-team@jmerrill.org",
+        "orders@jmerrill.pub",
+        "billing@jmerrill.org",
+        "billing@jmerrillfoundation.onmicrosoft.com",
+        "billing@jmerrill.pub",
+        "accounts@jmerrill.pub",
+        "billing@jmerrill.productions"
+      ],
+      "forwarding": null,
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "board@jmerrill.one",
+      "aliases": [
+        "leadership@jmerrill.org",
+        "board@jmerrill.org",
+        "board6143@jmerrillfoundation.onmicrosoft.com",
+        "board@jmerrill.one"
+      ],
+      "forwarding": "smtp:foundation@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "donations@jmerrill.one",
+      "aliases": [
+        "donations@jmerrill.org",
+        "donation@jmerrill.one",
+        "donations@jmerrill.one",
+        "donation@jmerrillfoundation.onmicrosoft.com"
+      ],
+      "forwarding": "smtp:foundation@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "grants@jmerrill.one",
+      "aliases": [
+        "grants-team@jmerrill.org",
+        "grants@jmerrill.org",
+        "grants2526@jmerrillfoundation.onmicrosoft.com",
+        "grants@jmerrill.one"
+      ],
+      "forwarding": "smtp:foundation@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "legal@jmerrill.one",
+      "aliases": [
+        "contracts@jmerrill.financial",
+        "legal@jmerrillfoundation.onmicrosoft.com",
+        "legal@jmerrill.one"
+      ],
+      "forwarding": "smtp:jackie@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "media@jmerrill.one",
+      "aliases": [
+        "events@jmerrill.pub",
+        "social@jmerrill.org",
+        "socialmedia@jmerrill.pub",
+        "pr@jmerrill.pub",
+        "media@jmerrillfoundation.onmicrosoft.com",
+        "media@jmerrill.one"
+      ],
+      "forwarding": "smtp:publishing@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "preneeds@jmerrill.one",
+      "aliases": [
+        "preneeds@jmerrillfoundation.onmicrosoft.com",
+        "preneeds@jmerrill.one"
+      ],
+      "forwarding": "smtp:financial@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "royalties@jmerrill.one",
+      "aliases": [
+        "royalties@jmerrillfoundation.onmicrosoft.com",
+        "royalties@jmerrill.one"
+      ],
+      "forwarding": "smtp:publishing@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "submissions@jmerrill.one",
+      "aliases": [
+        "submissions@jmerrill.pub",
+        "newauthors@jmerrill.pub",
+        "submissions6805@jmerrillfoundation.onmicrosoft.com",
+        "submissions@jmerrill.one"
+      ],
+      "forwarding": "smtp:publishing@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "tech@jmerrill.one",
+      "aliases": [
+        "webadmin@jmerrill.org",
+        "security@jmerrill.org",
+        "tech@jmerrillfoundation.onmicrosoft.com",
+        "tech@jmerrill.one"
+      ],
+      "forwarding": "smtp:jm1-admin@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "volunteers@jmerrill.one",
+      "aliases": [
+        "volunteers-team@jmerrill.org",
+        "volunteers@jmerrill.org",
+        "volunteers7469@jmerrillfoundation.onmicrosoft.com",
+        "volunteers@jmerrill.one"
+      ],
+      "forwarding": "smtp:foundation@jmerrill.one",
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    },
+    {
+      "mailbox": "contacts@jmerrill.one",
+      "aliases": [
+        "contacts@jmerrillfoundation.onmicrosoft.com",
+        "contacts@jmerrill.one"
+      ],
+      "forwarding": null,
+      "rules": "not exposed",
+      "public_references": [],
+      "bookings": false,
+      "dynamics": "unknown",
+      "power_automate": "unknown",
+      "delegate_access": [
+        {
+          "user": "appointments@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jackie@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "publishing@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "financial@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "foundation@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "jm1-admin@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        },
+        {
+          "user": "scheduling@jmerrill.one",
+          "accessRights": [
+            "FullAccess"
+          ]
+        }
+      ],
+      "destination_replacement": "TBD"
+    }
+  ]
+}

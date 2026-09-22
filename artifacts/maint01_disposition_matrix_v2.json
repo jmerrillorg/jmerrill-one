@@ -1,0 +1,871 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "objects": [
+    {
+      "object": "jmerrill-financial",
+      "type": "GitHub repo",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "jmerrill-one",
+      "type": "GitHub repo",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "jmerrill-pub",
+      "type": "GitHub repo",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "jmerrill-productions",
+      "type": "GitHub repo",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "jmerrillfoundation",
+      "type": "GitHub repo",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "jackiesmithjr",
+      "type": "GitHub repo",
+      "disposition": "KEEP - CORE"
+    },
+    {
+      "object": "jm1-terminal-config",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "jm1-ops",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "aic-online",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "jm1-book-redirector",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "jm1-one",
+      "type": "GitHub repo",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "jm-productions-redirect",
+      "type": "GitHub repo",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "jm1-core",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "infra",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "org-to-foundation-redirect",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "agape-international-cathedral",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "jm1-dotfiles",
+      "type": "GitHub repo",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "jm-www-redirect",
+      "type": "GitHub repo",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "jm-redirect-foundation",
+      "type": "GitHub repo",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "All Users",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "Projects",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "Financial Team",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "JM1-Foundation-Operators",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "JM1-Publishing-Operators",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "Foundation Team",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "JM1 Publishing Mail Read Scope",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "JM1-Enterprise-Owners",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "Support",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "Deprecated - All Company",
+      "type": "M365 group",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "Marketing",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "Security & Compliance",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "Productions Team",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "JM1_BC_Admins",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "Agape International Cathedral",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "Sales",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "Voicemail",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "Events",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "HQ",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "AI Assistant Admins",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "Bid & Contract Command Center",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "JM1-Financial-Operators",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "Publishing Team",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "JM1-Productions-Operators",
+      "type": "Security group",
+      "disposition": "KEEP - SECURITY BOUNDARY"
+    },
+    {
+      "object": "Marlan Gary Coordination",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "Implementation HQ",
+      "type": "M365 group",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "logging@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "accounting@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "board@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "donations@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "grants@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "info@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "legal@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "media@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "notifications@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "preneeds@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "royalties@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "submissions@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "tech@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "volunteers@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "contacts@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "FOUNDER DECISION REQUIRED"
+    },
+    {
+      "object": "no-reply@jmerrill.one",
+      "type": "Shared mailbox",
+      "disposition": "KEEP - ACTIVE"
+    },
+    {
+      "object": "JM1-Bookings-AppPublic",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1-WEB-INTAKE-API",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Site 1 bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 Operations Copilot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Microsoft Bookings",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Copilot in Dynamics 365 Sales (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JMF Financial Advisor Workspace App Service Auth",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Grammarly for Microsoft Word",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "PowerPlatform-JM1-Core",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customization Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "jm1-kv-audit",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "AIC Website GitHub Actions",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "jm1-pub-github-actions-oidc",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 Publisher Operating Center",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customization Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1-INFRA-PAM-Automation",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "ProWritingAid for Microsoft Word",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "github-aic-deploy",
+      "type": "App registration",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "Stakeholder Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Portals-J Merrill Publishing Inquiry",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1-PUB-INTAKE-WEBAPI",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Bookings API",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Stakeholder Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 - Author Portal W-9 ",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Portals-Site 1",
+      "type": "App registration",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "JM1-Dataverse-ServicePrincipal",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "BusinessCentralSharePoint",
+      "type": "App registration",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "Microsoft Dynamics Office Add-in",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 PnP Scaffold",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "jm1-publishing-intake-api",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "J Merrill Publishing Inquiry bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Document View",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1-Bookings-AppPublic",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "github-deploy-aic",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 Web Presence Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "J Merrill One HQ – Power BI",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales FIRE Agent - Rating Generator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Galicia (Preview) (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Case Processing Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 Author Operating Center",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Business Central",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "jm1-hq-app-sp",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 â€“ BC SharePoint Integration",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "jm1-ed-functions",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "J Merrill Foundation Integration",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "Bookings",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "JM1 Graph Directory",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "jm1-github-oidc-deployer",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "BusinessCentralAPI",
+      "type": "App registration",
+      "disposition": "UNKNOWN"
+    },
+    {
+      "object": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    },
+    {
+      "object": "P2P Server",
+      "type": "App registration",
+      "disposition": "KEEP - SYSTEM"
+    }
+  ]
+}

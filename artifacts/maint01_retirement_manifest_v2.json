@@ -1,0 +1,524 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "FOUNDER CLEANUP CONFIRMATION NOT READY FOR DESTRUCTIVE ACTIONS",
+  "section_1_high_confidence_retirement": [],
+  "section_2_consolidate_migrate_first": [
+    {
+      "object": "HQ/JMerrillOne vs ImplementationHQ",
+      "type": "SharePoint governance/canon locations",
+      "proposed_action": "CONSOLIDATE AFTER FOUNDER CANON LOCATION DECISION",
+      "risk": "canon duplication or broken references",
+      "replacement": "one authoritative enterprise governance location"
+    },
+    {
+      "object": "Deprecated - All Company",
+      "type": "M365 Group",
+      "proposed_action": "ASSESS GROUP MAILBOX/SITE THEN RETIRE IF NO RETENTION",
+      "risk": "group mailbox/site data loss",
+      "replacement": "All Users/security groups if needed"
+    }
+  ],
+  "section_3_founder_decision_required": [
+    {
+      "decision": "Enterprise canon SharePoint location",
+      "affected_objects": [
+        "HQ/JMerrillOne",
+        "ImplementationHQ"
+      ],
+      "recommendation": "Choose one authoritative location; archive/reference the other."
+    },
+    {
+      "decision": "Core shared mailbox set",
+      "affected_objects": [
+        "accounting@jmerrill.one",
+        "board@jmerrill.one",
+        "donations@jmerrill.one",
+        "grants@jmerrill.one",
+        "legal@jmerrill.one",
+        "media@jmerrill.one",
+        "preneeds@jmerrill.one",
+        "royalties@jmerrill.one",
+        "submissions@jmerrill.one",
+        "tech@jmerrill.one",
+        "volunteers@jmerrill.one",
+        "contacts@jmerrill.one"
+      ],
+      "recommendation": "Retain public/automation identities; decide internal operational aliases."
+    },
+    {
+      "decision": "One-person Teams",
+      "affected_objects": [
+        "Voicemail",
+        "Marketing",
+        "Sales",
+        "Events",
+        "Projects"
+      ],
+      "recommendation": "Preserve until files/mailbox/planner reviewed, then archive if no collaboration need."
+    }
+  ],
+  "section_4_retain": [
+    {
+      "object": "logging@jmerrill.one",
+      "type": "Shared mailbox",
+      "reason": "AUTOMATION IDENTITY"
+    },
+    {
+      "object": "info@jmerrill.one",
+      "type": "Shared mailbox",
+      "reason": "PUBLIC COMMUNICATION IDENTITY"
+    },
+    {
+      "object": "notifications@jmerrill.one",
+      "type": "Shared mailbox",
+      "reason": "AUTOMATION IDENTITY"
+    },
+    {
+      "object": "no-reply@jmerrill.one",
+      "type": "Shared mailbox",
+      "reason": "AUTOMATION IDENTITY"
+    },
+    {
+      "object": "Publishing Team",
+      "type": "Team",
+      "reason": "ACTIVE HUMAN COLLABORATION"
+    },
+    {
+      "object": "Support",
+      "type": "Team",
+      "reason": "LOW ACTIVITY - REQUIRED"
+    },
+    {
+      "object": "Financial Team",
+      "type": "Team",
+      "reason": "ACTIVE HUMAN COLLABORATION"
+    },
+    {
+      "object": "Productions Team",
+      "type": "Team",
+      "reason": "ACTIVE HUMAN COLLABORATION"
+    },
+    {
+      "object": "Foundation Team",
+      "type": "Team",
+      "reason": "ACTIVE HUMAN COLLABORATION"
+    },
+    {
+      "object": "HQ",
+      "type": "Team",
+      "reason": "LOW ACTIVITY - REQUIRED"
+    },
+    {
+      "object": "Implementation HQ",
+      "type": "Team",
+      "reason": "LOW ACTIVITY - REQUIRED"
+    },
+    {
+      "object": "Agape International Cathedral",
+      "type": "Team",
+      "reason": "MISSION COLLABORATION"
+    },
+    {
+      "object": "Security & Compliance",
+      "type": "Team",
+      "reason": "LOW ACTIVITY - REQUIRED"
+    },
+    {
+      "object": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Site 1 bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "JM1 Operations Copilot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Copilot in Dynamics 365 Sales (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customization Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "AIC Website GitHub Actions",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "jm1-pub-github-actions-oidc",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customization Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Stakeholder Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Company Resolver (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales - Configuration Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Email Validation (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Stakeholder Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "JM1 HQ Orchestrator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Quality Evaluation Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "J Merrill Publishing Inquiry bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "JM1 Web Presence Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "CS Case Followup and Closure (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales FIRE Agent - Rating Generator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Galicia (Preview) (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Summary Synthesizer (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Close Agent - Account Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Engage Autonomous (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Case Processing Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Close Agent - Custom Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Close Agent - Compete Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Email Sentiment Generator (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Copilot Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Stakeholder Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales - Data Enrichment (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Competitor (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Outreach (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Onboarding Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "CustomerServiceKnowledgeHarvest (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - TCP Prefill Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Quality Evaluation Agent - Incident (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Opportunity Research (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Sales Copilot Power Virtual Agents Bot (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "Customer Service Operations Agent (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "jm1-github-oidc-deployer",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "D365 Sales Agent - Readiness (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    },
+    {
+      "object": "QualityEvaluationAgentForConversation (Microsoft Copilot Studio)",
+      "type": "App registration",
+      "reason": "GitHub/OIDC federated identity"
+    }
+  ],
+  "section_5_unknown_blocked": [
+    {
+      "object": "Standalone SharePoint sites",
+      "type": "SharePoint",
+      "reason": "Tenant-wide /sites search and usage reports denied; no deletion proposed."
+    },
+    {
+      "object": "Mailbox usage reports",
+      "type": "Exchange reports",
+      "reason": "Usage report API 403; EXO mailbox statistics captured where available."
+    }
+  ]
+}

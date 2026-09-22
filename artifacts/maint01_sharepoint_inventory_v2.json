@@ -1,0 +1,525 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "limitation": "Tenant-wide standalone site enumeration remains blocked by Graph 403; actual group/team-linked SharePoint sites available through Group/Team APIs are inventoried.",
+  "sites": [
+    {
+      "site_name": "Projects",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+      "site_id": "jmerrillfoundation.sharepoint.com,da5352c8-b294-42be-a973-f9772b9849dc,7431c5af-1fe6-49e9-83f4-802611c259e2",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Projects",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "connected_team": "Projects",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Projects",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeLed3iNVYS2QY07EIC6vYvd",
+          "name": "Quote",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/quote",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeKCSKe_HeFWQ57zFb61SMMT",
+          "name": "Task",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/task",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeKvs2d9ioTiQ7StHCzfMZhq",
+          "name": "Appointment",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/appointment",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeK8LhXcRONqTI_2IGKsLywI",
+          "name": "Lead",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/lead",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeKe6lB1tGx8SZ1xXxxIdKSx",
+          "name": "Invoice",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/invoice",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeI4eTWdgfNjQZrsYfM7KjLf",
+          "name": "Contact",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/contact",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeJIfj5JV92pTaO2darIqVZx",
+          "name": "Phone Call",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/phonecall",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeJWS2xnZDUMRIMhnF7OrTpt",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/Shared%20Documents",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeIyC7yteMsTSIf0rybIFUzp",
+          "name": "Opportunity",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/opportunity",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeKaBwvm4IoOQ7IlvF7TfPEU",
+          "name": "Product",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/product",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeL7mwQz8gSrQr6r7kFInzdL",
+          "name": "Account",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/account",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 12,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Financial Team",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/financial",
+      "site_id": "jmerrillfoundation.sharepoint.com,7b33dd0e-533b-42cb-9052-e3f22d5bb24e,4cf9def7-fded-47b6-b73b-af760812be3d",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Financial Team",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "2bab67a1-48de-4bde-aaa9-8094e2314f25",
+      "connected_team": "Financial Team",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Financial Team",
+      "division": "Financial",
+      "drives": [
+        {
+          "id": "b!Dt0zeztTy0KQUuPyLVuyTvfe-Uzt_bZHtzuvdggSvj1vojmAl4qES7KBk3fdWazN",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/financial/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 16,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Foundation Team",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div",
+      "site_id": "jmerrillfoundation.sharepoint.com,40e74769-0934-4275-8eb8-e2aa2966c2fb,6f929a6e-ecb5-4f01-8d0f-198cfc326323",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Foundation Team",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "46e10463-2d7a-44a6-a238-71829f3e8650",
+      "connected_team": "Foundation Team",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Foundation Team",
+      "division": "Foundation",
+      "drives": [
+        {
+          "id": "b!aUfnQDQJdUKOuOKqKWbC-26akm-17AFPjQ8ZjPwyYyOw85OwOK4LRJyY8YnpHITN",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 15,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Support",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/support",
+      "site_id": "jmerrillfoundation.sharepoint.com,96848a4d-d06d-4ed8-9c19-bc247a6c6a1d,763f8a5b-245c-4682-9ba9-b4a225499d75",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Support",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "5d87be95-7d8a-46bd-a9ce-13830496462f",
+      "connected_team": "Support",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Support",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!TYqElm3Q2E6cGbwkemxqHVuKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/support/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 8,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "All Company",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/AllCompany.49360240640.zmaasxan",
+      "site_id": "jmerrillfoundation.sharepoint.com,b32726bf-9c33-41de-841a-b1945fb28c00,c2cebc8c-b1de-4636-a592-69ab7ecfedad",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Deprecated - All Company",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "64a52997-c497-4a26-8aca-84190f416f46",
+      "connected_team": null,
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Deprecated - All Company",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!vyYnszOc3kGEGrGUX7KMAIy8zsLesTZGpZJpq37P7a3oYt8oBNgiTo9gHivGAFc0",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/AllCompany.49360240640.zmaasxan/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 0,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Marketing",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/marketing",
+      "site_id": "jmerrillfoundation.sharepoint.com,8b6fa220-e446-4e21-bed8-54a6f9ea0943,763f8a5b-245c-4682-9ba9-b4a225499d75",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Marketing",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "connected_team": "Marketing",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Marketing",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!IKJvi0bkIU6-2FSm-eoJQ1uKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/marketing/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 14,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Security & Compliance",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/security",
+      "site_id": "jmerrillfoundation.sharepoint.com,e9969228-7830-4cdd-b44c-4a392b5bcb74,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Security & Compliance",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "67d9ef01-be93-42c6-a9d8-fa6c0597d936",
+      "connected_team": "Security & Compliance",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Security & Compliance",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!KJKW6TB43Uy0TEo5K1vLdCXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/security/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 1,
+      "authoritative_status": "GOVERNANCE / ENTERPRISE REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Productions Team",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/productions",
+      "site_id": "jmerrillfoundation.sharepoint.com,ba7ba85d-bd31-4951-b2a0-1df4adfbb3e1,6f929a6e-ecb5-4f01-8d0f-198cfc326323",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Productions Team",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "69104c8b-a1dc-4943-a18d-0d823324a7ab",
+      "connected_team": "Productions Team",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Productions Team",
+      "division": "Productions",
+      "drives": [
+        {
+          "id": "b!Xah7ujG9UUmyoB30rfuz4W6akm-17AFPjQ8ZjPwyYyOw85OwOK4LRJyY8YnpHITN",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/productions/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 13,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Agape International Cathedral",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC",
+      "site_id": "jmerrillfoundation.sharepoint.com,99f1230e-0535-4067-99cd-2f0b9d051c76,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Agape International Cathedral",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec",
+      "connected_team": "Agape International Cathedral",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Agape International Cathedral",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!DiPxmTUFZ0CZzS8LnQUcdiXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 15,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Sales",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+      "site_id": "jmerrillfoundation.sharepoint.com,650ed071-373a-49b4-b6b4-35dddda994bd,763f8a5b-245c-4682-9ba9-b4a225499d75",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Sales",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "connected_team": "Sales",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Sales",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!cdAOZTo3tEm2tDXd3amUvVuKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/sales/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 6,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Voicemail",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/voicemail",
+      "site_id": "jmerrillfoundation.sharepoint.com,d4392952-206a-4a01-acd0-3fca90f2a869,30361b9d-6a77-40e5-ac93-1e46db97607e",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Voicemail",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "connected_team": "Voicemail",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Voicemail",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!Uik51GogAUqs0D_KkPKoaZ0bNjB3auVArJMeRtuXYH6JX5mqNvdEQaWtPweeIYDA",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/voicemail/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 1,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Events",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/events",
+      "site_id": "jmerrillfoundation.sharepoint.com,af1365df-cf90-4c2c-b967-d1f3f8f54a77,763f8a5b-245c-4682-9ba9-b4a225499d75",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Events",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "connected_team": "Events",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Events",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!32UTr5DPLEy5Z9Hz-PVKd1uKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/events/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 7,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "HQ",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne",
+      "site_id": "jmerrillfoundation.sharepoint.com,207281c6-a555-4a6a-9180-d8deaf24baa0,2c1079de-b0a3-42b2-ac81-ac315a3c5b31",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "HQ",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "abcd0663-047e-4335-97dc-4836a3cf7600",
+      "connected_team": "HQ",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "HQ",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!xoFyIFWlakqRgNjeryS6oN55ECyjsLJCrIGsMVo8WzH0U8dOplfpSo17L_E7V6YI",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 0,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Bid & Contract Command Center",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/BidContractCommandCenter",
+      "site_id": "jmerrillfoundation.sharepoint.com,9d1e6083-c9cf-4666-a259-118a6db949fc,a394d710-61e4-4c62-bdfa-e4dfc18de597",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Bid & Contract Command Center",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "ae4267f8-a0d2-46fd-a828-dde093900788",
+      "connected_team": null,
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Bid & Contract Command Center",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!g2Aenc_JZkaiWRGKbblJ_BDXlKPkYWJMvfrk38GN5ZfB0Fh-KNTfSrGupsmMuZ87",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/BidContractCommandCenter/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 3,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Publishing Team",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/publishing",
+      "site_id": "jmerrillfoundation.sharepoint.com,35fb0d98-bc68-4250-9d0d-8c07d68e4024,10208ad5-0028-48f0-9ffa-717812924835",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Publishing Team",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "b650caa6-324c-4be1-b491-57ab1aee7c4e",
+      "connected_team": "Publishing Team",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Publishing Team",
+      "division": "Publishing",
+      "drives": [
+        {
+          "id": "b!mA37NWi8UEKdDYwH1o5AJNWKIBAoAPBIn_pxeBKSSDVm9PH59uWnQpr1oD4m79se",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/publishing/Shared%20Documents",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 23,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    },
+    {
+      "site_name": "Implementation HQ",
+      "site_url": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ",
+      "site_id": "jmerrillfoundation.sharepoint.com,dcb72ff0-ec3f-475d-8f17-6aede943f512,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+      "site_type": "Group/Team-connected SharePoint site",
+      "owner": "Implementation HQ",
+      "storage": "UNKNOWN - usage report denied",
+      "activity": "UNKNOWN - Microsoft usage report denied",
+      "creation_date": "UNKNOWN from current endpoint",
+      "connected_m365_group": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a",
+      "connected_team": "Implementation HQ",
+      "template_type": "Group-connected site",
+      "hub_association": "UNKNOWN",
+      "external_sharing_state": "UNKNOWN",
+      "business_purpose": "Implementation HQ",
+      "division": "Enterprise/Other",
+      "drives": [
+        {
+          "id": "b!8C-33D_sXUePF2rt6UP1EiXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+          "name": "Documents",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ/Shared%20Documents",
+          "driveType": "documentLibrary"
+        },
+        {
+          "id": "b!8C-33D_sXUePF2rt6UP1EiXvgX0zjxtCicndH3uFM4AKk76KFon6Qq8dUpE_oYnT",
+          "name": "Architecture",
+          "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ/Architecture",
+          "driveType": "documentLibrary"
+        }
+      ],
+      "root_item_count": 12,
+      "authoritative_status": "DIVISION/OPERATIONS REVIEW",
+      "cleanup_candidate": false
+    }
+  ],
+  "blocked_surfaces": {
+    "graph_sites_search": "403 accessDenied",
+    "usage_reports": "403 accessDenied"
+  }
+}

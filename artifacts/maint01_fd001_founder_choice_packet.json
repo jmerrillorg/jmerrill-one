@@ -1,0 +1,52 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-001",
+  "status": "FOUNDER TARGET CHOICE REQUIRED",
+  "mutation_executed": false,
+  "instruction": "Do not delete any guest until Jackie selects the exact target in human-readable form.",
+  "candidates": [
+    {
+      "display_name": "chosen2k7",
+      "email_or_upn": "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "object_id": "60468cde-ddf5-4f49-997e-dc19d9e405ac",
+      "guest_source_or_relationship": "Unknown",
+      "creation_date": "2026-06-17T18:36:31Z",
+      "external_user_state": "PendingAcceptance",
+      "last_sign_in": "Unavailable from current tenant licensing/audit query",
+      "teams_groups": "No dependency certified in current evidence",
+      "sharepoint_dependency": "No dependency certified in current evidence",
+      "current_business_purpose": "Unknown",
+      "cody_recommendation": "Possible stale guest, but retain until Jackie confirms this exact person/account is the intended FD-001 target.",
+      "reason": "PendingAcceptance can indicate unused invitation, but relationship and purpose are not known."
+    },
+    {
+      "display_name": "email",
+      "email_or_upn": "email_thechapelofpeace.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "object_id": "d7cf8239-ea31-47a4-b731-27534bed4bc0",
+      "guest_source_or_relationship": "The Chapel of Peace domain signal; exact relationship unknown",
+      "creation_date": "2026-05-04T12:41:57Z",
+      "external_user_state": "PendingAcceptance",
+      "last_sign_in": "Unavailable from current tenant licensing/audit query",
+      "teams_groups": "No dependency certified in current evidence",
+      "sharepoint_dependency": "No dependency certified in current evidence",
+      "current_business_purpose": "Unknown",
+      "cody_recommendation": "Possible stale guest, but retain until Jackie confirms whether this partner/vendor/church-related identity is safe to remove.",
+      "reason": "PendingAcceptance suggests no completed guest redemption, but the domain may represent an actual business relationship."
+    },
+    {
+      "display_name": "lisataye",
+      "email_or_upn": "lisataye_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+      "object_id": "5db6067e-4b30-4dba-9816-e1bcea805f5d",
+      "guest_source_or_relationship": "Unknown",
+      "creation_date": "2026-08-17T07:26:13Z",
+      "external_user_state": "Accepted",
+      "last_sign_in": "Unavailable from current tenant licensing/audit query",
+      "teams_groups": "No dependency certified in current evidence",
+      "sharepoint_dependency": "No dependency certified in current evidence",
+      "current_business_purpose": "Unknown",
+      "cody_recommendation": "Retain unless Jackie specifically identifies this accepted guest as the intended target.",
+      "reason": "Accepted and recently created; not a strong stale-target candidate from current evidence."
+    }
+  ]
+}
+

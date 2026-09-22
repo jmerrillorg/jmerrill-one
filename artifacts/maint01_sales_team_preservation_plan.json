@@ -1,0 +1,142 @@
+{
+  "package": "MAINT-01",
+  "team": "Sales",
+  "classification": "ARCHIVE READY - PRESERVATION PLAN CERTIFIED",
+  "inventory": {
+    "teamId": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+    "m365GroupId": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+    "mail": "sales@jmerrill.one",
+    "visibility": "Private",
+    "sharePointSite": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+    "library": "Shared Documents",
+    "plannerPlans": [],
+    "channels": [
+      {
+        "id": "19:a50mnTihNcQAKY9Jdh2kBmRQVPWIqkQ887uStlB3CVc1@thread.tacv2",
+        "displayName": "General",
+        "membershipType": "standard"
+      }
+    ],
+    "appsTabs": {
+      "current_call": "Gateway Timeout on tab endpoint",
+      "prior_certified_tabs": [
+        "Notes",
+        "Files"
+      ]
+    },
+    "owners": [
+      {
+        "displayName": "Jackie Smith, Jr.",
+        "userPrincipalName": "jackie@jmerrill.one",
+        "id": "9586f34b-b5f3-437b-bc64-3e44d2518427",
+        "userType": "Member"
+      },
+      {
+        "displayName": "JM1 Admin",
+        "userPrincipalName": "jm1-admin@jmerrill.one",
+        "id": "9750d862-2024-42bc-9707-f84b325dfb19",
+        "userType": "Member"
+      }
+    ],
+    "members": [
+      {
+        "displayName": "Jackie Smith, Jr.",
+        "userPrincipalName": "jackie@jmerrill.one",
+        "id": "9586f34b-b5f3-437b-bc64-3e44d2518427",
+        "userType": "Member"
+      },
+      {
+        "displayName": "JM1 Admin",
+        "userPrincipalName": "jm1-admin@jmerrill.one",
+        "id": "9750d862-2024-42bc-9707-f84b325dfb19",
+        "userType": "Member"
+      }
+    ],
+    "guests": []
+  },
+  "content_classification": {
+    "root": [
+      {
+        "name": "01 Lead Tracking",
+        "classification": "ACTIVE BUSINESS RECORD",
+        "destination": "Retain in governed Sales SharePoint document estate; inventory before archive execution.",
+        "childCount": 6,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "02 Client Proposals",
+        "classification": "ACTIVE BUSINESS RECORD",
+        "destination": "Retain in governed Sales SharePoint document estate; inventory before archive execution.",
+        "childCount": 6,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "03 Pricing Sheets",
+        "classification": "ACTIVE BUSINESS RECORD",
+        "destination": "Retain as governed pricing material; map to enterprise/division pricing reference library before archive execution.",
+        "childCount": 5,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "04 Sales Reports",
+        "classification": "OPERATIONAL MATERIAL",
+        "destination": "Retain in Sales records/library or archive folder with inventory.",
+        "childCount": 4,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "05 Archive",
+        "classification": "OPERATIONAL MATERIAL",
+        "destination": "Retain as historical archive evidence; no deletion.",
+        "childCount": 3,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "General",
+        "classification": "TEMPORARY",
+        "destination": "Empty Teams channel folder; no preservation move required.",
+        "childCount": 0,
+        "lastModifiedDateTime": "2025-04-05T12:31:42Z"
+      }
+    ],
+    "pricing_materials": [
+      {
+        "name": "Financial Pricing",
+        "classification": "ACTIVE BUSINESS RECORD",
+        "destination": "Retain as governed pricing/material reference; do not delete source during archive prep.",
+        "childCount": 0,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "Foundation Pricing",
+        "classification": "ACTIVE BUSINESS RECORD",
+        "destination": "Retain as governed pricing/material reference; do not delete source during archive prep.",
+        "childCount": 0,
+        "lastModifiedDateTime": "2025-09-11T13:08:14Z"
+      },
+      {
+        "name": "One-Wide Pricing",
+        "classification": "ACTIVE BUSINESS RECORD",
+        "destination": "Retain as governed pricing/material reference; do not delete source during archive prep.",
+        "childCount": 0,
+        "lastModifiedDateTime": "2025-09-11T13:08:14Z"
+      },
+      {
+        "name": "Productions Pricing",
+        "classification": "ACTIVE BUSINESS RECORD",
+        "destination": "Retain as governed pricing/material reference; do not delete source during archive prep.",
+        "childCount": 0,
+        "lastModifiedDateTime": "2025-09-11T13:08:14Z"
+      },
+      {
+        "name": "Publishing Pricing",
+        "classification": "ACTIVE BUSINESS RECORD",
+        "destination": "Retain as governed pricing/material reference; do not delete source during archive prep.",
+        "childCount": 0,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      }
+    ]
+  },
+  "preservation_destination": "Governed Sales SharePoint/document estate; pricing materials to enterprise/division pricing reference location before archival execution if a move is separately authorized.",
+  "destructive_actions": "NONE"
+}

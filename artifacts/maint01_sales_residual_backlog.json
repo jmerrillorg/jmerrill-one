@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "BACKLOG_RECORDED",
+  "deletionPerformed": false,
+  "residualItems": [
+    {
+      "path": "/sites/sales/Shared Documents/01 Lead Tracking",
+      "contentType": "Sales SharePoint retained folder",
+      "archiveBlocking": false,
+      "proposedAction": "retain; review only if a future housekeeping action is explicitly authorized",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/sales/Shared Documents/02 Client Proposals",
+      "contentType": "Sales SharePoint retained folder",
+      "archiveBlocking": false,
+      "proposedAction": "retain; review only if a future housekeeping action is explicitly authorized",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/sales/Shared Documents/03 Pricing Sheets",
+      "contentType": "Sales SharePoint retained folder",
+      "archiveBlocking": false,
+      "proposedAction": "retain; review only if a future housekeeping action is explicitly authorized",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/sales/Shared Documents/04 Sales Reports",
+      "contentType": "Sales SharePoint retained folder",
+      "archiveBlocking": false,
+      "proposedAction": "retain; review only if a future housekeeping action is explicitly authorized",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/sales/Shared Documents/05 Archive",
+      "contentType": "Sales SharePoint retained folder",
+      "archiveBlocking": false,
+      "proposedAction": "retain; review only if a future housekeeping action is explicitly authorized",
+      "approvalRequired": true
+    },
+    {
+      "path": "/sites/sales/Shared Documents/General",
+      "contentType": "Sales SharePoint retained folder",
+      "archiveBlocking": false,
+      "proposedAction": "retain; review only if a future housekeeping action is explicitly authorized",
+      "approvalRequired": true
+    }
+  ]
+}

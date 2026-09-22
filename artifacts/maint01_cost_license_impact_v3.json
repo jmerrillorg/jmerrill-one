@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "current_licensed_user_count": 20,
+  "license_removals_immediately_possible": 0,
+  "removals_possible_after_conversion": 16,
+  "cost_impact": "No SKU pricing asserted.",
+  "no_cost_complexity_reductions": [
+    "HQ/JMerrillOne vs ImplementationHQ",
+    "Deprecated - All Company"
+  ],
+  "security_reductions": [
+    "credential review",
+    "reduce one-person collaboration sprawl after preservation"
+  ],
+  "administrative_simplification": [
+    "canon location decision",
+    "mailbox core set decision"
+  ]
+}

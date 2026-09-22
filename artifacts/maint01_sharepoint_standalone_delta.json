@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "Delta: tenant-wide site inventory v3 vs. Cody's prior 16 Group/Team-linked sites (v2 — all null titles)",
+  "prior_known_count": 16,
+  "prior_known_note": "All 16 prior records had null titles and null URLs — inventory confirmed site count from Teams but could not enumerate. v3 resolves all identities.",
+  "confirmed_team_sites": {
+    "count": 14,
+    "sites": [
+      "sites/publishing (Publishing Team)",
+      "sites/voicemail (Voicemail)",
+      "sites/support (Support)",
+      "sites/marketing (Marketing)",
+      "sites/sales (Sales)",
+      "sites/events (Events — URL confirmed, drive not indexed)",
+      "sites/projects (Projects — Team-connected, large dev archive)",
+      "sites/financial (Financial Team)",
+      "sites/productions (Productions Team — URL confirmed, drive not indexed)",
+      "sites/foundation_div (Foundation Team)",
+      "sites/JMerrillOne (HQ — URL confirmed, drive not indexed)",
+      "sites/ImplementationHQ (Implementation HQ)",
+      "sites/AgapeIC (Agape International Cathedral)",
+      "sites/security (Security & Compliance)"
+    ]
+  },
+  "standalone_sites_discovered": [
+    {
+      "site": "sites/foundation_comm",
+      "title": "Foundation Communication Site",
+      "url": "https://jmerrillfoundation.sharepoint.com/sites/foundation_comm",
+      "type": "STANDALONE COMMUNICATION SITE",
+      "group_connected": false,
+      "team_connected": false,
+      "last_activity": "2025-09-11",
+      "content_observed": "Programs & Events folders",
+      "disposition_question": "Is this site the public-facing communication site for the Foundation entity, or is it an orphaned duplicate of foundation_div? Founder decision required.",
+      "safe_to_delete_without_review": false
+    }
+  ],
+  "onedrive_discovered": [
+    {
+      "site": "personal/jm1-admin_jmerrill_one",
+      "title": "jm1-admin OneDrive",
+      "type": "Admin personal OneDrive",
+      "note": "Out of scope for site cleanup. Retain."
+    }
+  ],
+  "loop_workspace_discovered": [
+    {
+      "type": "Loop/content storage",
+      "storage_id": "CSP_2c7d4e67-aa15-4c6a-8864-aa7f0a6b3967",
+      "associated_with": "ImplementationHQ OneNote/Loop pod",
+      "note": "Microsoft-managed; not a candidate for manual cleanup."
+    }
+  ],
+  "sites_not_previously_seen_that_need_review": ["foundation_comm"],
+  "sites_previously_flagged_unknown_now_resolved": [
+    "All 14 Teams' SharePoint sites now have confirmed URLs (13 with drive IDs, 3 with URL only)"
+  ],
+  "net_new_cleanup_candidates": 1,
+  "net_new_candidate_detail": "foundation_comm — standalone communication site, low activity, no Team/Group, Founder decision required before any action"
+}

@@ -1,0 +1,11 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_app_identity_estate_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "cleanup_executed": false,
+  "graph_applications_seen": 112,
+  "app_deletions_executed": 0,
+  "fd006_candidate_count_in_evidence": 4,
+  "fd006_approved_count": 2,
+  "status": "UNCHANGED - exact two candidates not certified"
+}

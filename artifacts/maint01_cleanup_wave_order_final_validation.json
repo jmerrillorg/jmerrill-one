@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_cleanup_wave_order_final_validation",
+  "generated": "2026-08-19",
+  "result": "PASS",
+  "execution_order": [1, 2, 3, 6, 5, 4, 7, 8],
+  "rationale": "Wave 6 (SharePoint) executes before Wave 5 (Teams) because Teams archival marks connected SP sites read-only; SP decommission must precede Teams archival to avoid locking sites that need cleanup",
+  "waves": [
+    {"wave": 1, "name": "Guest User Removal", "gates": ["FD-001"]},
+    {"wave": 2, "name": "License Reassignment", "gates": ["FD-002"]},
+    {"wave": 3, "name": "Internal User Disable/Delete", "gates": ["FD-003"]},
+    {"wave": 6, "name": "SharePoint Decommission", "gates": ["FD-004"]},
+    {"wave": 5, "name": "Teams and Groups Archival", "gates": ["FD-004"]},
+    {"wave": 4, "name": "Shared Mailbox Consolidation", "gates": ["FD-005"]},
+    {"wave": 7, "name": "App Registration Cleanup", "gates": ["FD-006"]},
+    {"wave": 8, "name": "Final Audit and Sign-off", "gates": ["FD-001","FD-002","FD-003","FD-004","FD-005","FD-006"]}
+  ],
+  "no_cleanup_executed": true
+}

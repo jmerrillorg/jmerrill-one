@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "purpose": "License rationalization — 43 users, 17 SKUs",
+  "source": "Cody's prior license inventory — maint01_license_rationalization_v2.json",
+  "total_users": 43,
+  "licensed_skus": 17,
+
+  "license_categories": {
+    "required_human_licenses": {
+      "classification": "RETAIN",
+      "note": "Licensed interactive users performing human collaboration. No removal proposed."
+    },
+    "justified_non_human_licenses": {
+      "classification": "RETAIN",
+      "note": "Service accounts or functional identities requiring licensed features (e.g., Exchange Online for shared mailbox access, Teams for voicemail routing)."
+    },
+    "removable_licenses": {
+      "count": 0,
+      "note": "No license removal candidates identified. Per-user license-to-feature dependency was not audited at line-item level. A line-item audit is required before any removal."
+    },
+    "removable_after_migration": {
+      "count": 0,
+      "note": "None identified — would depend on FD-004/FD-006 results (if Sales/Voicemail/Projects Team members have no other licensed feature use)"
+    },
+    "duplicate_unused": {
+      "count": 0,
+      "note": "Not confirmed without line-item audit"
+    },
+    "unknown": {
+      "note": "Specific per-user license assignments not audited at line-item level. MAINT-01 rule: no license removed without Founder direction."
+    }
+  },
+
+  "next_action": "None until Founder authorizes a line-item license audit and directs specific removals",
+  "do_not_remove": true
+}

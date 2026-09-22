@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "repos_inventoried": 19,
+  "stale_worktrees_removed": 0,
+  "sharepoint_sites_inventoried": 0,
+  "duplicate_libraries_found": "UNKNOWN",
+  "users_inventoried": 43,
+  "licenses_reviewed": 20,
+  "shared_mailboxes_inventoried": "PARTIAL - mailbox type unavailable",
+  "teams_inventoried": 15,
+  "m365_groups_inventoried": 17,
+  "security_groups_inventoried": 9,
+  "service_accounts_inventoried": 14,
+  "app_identities_inventoried": 104,
+  "safe_cleanup_completed": 1,
+  "retirement_candidates": 3,
+  "cost_impact": "Review required; no licenses removed",
+  "security_impact": "Review required due SharePoint/Teams/Exchange gaps",
+  "unresolved_decisions": [
+    "Grant Teams/SharePoint/Exchange discovery scopes or export inventories",
+    "Founder decision on retirement manifest after dependency proof"
+  ],
+  "final_classification": "MAINT-01 REMEDIATION REQUIRED"
+}

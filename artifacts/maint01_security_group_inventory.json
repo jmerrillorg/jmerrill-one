@@ -1,0 +1,96 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS_WITH_LIMITATIONS",
+  "groups": [
+    {
+      "display_name": "All Users",
+      "mail": null,
+      "description": null,
+      "dynamic": true,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "AUTHORIZATION BOUNDARY - RETAIN"
+    },
+    {
+      "display_name": "JM1-Foundation-Operators",
+      "mail": null,
+      "description": null,
+      "dynamic": false,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "AUTHORIZATION BOUNDARY - RETAIN"
+    },
+    {
+      "display_name": "JM1-Publishing-Operators",
+      "mail": null,
+      "description": null,
+      "dynamic": false,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "AUTHORIZATION BOUNDARY - RETAIN"
+    },
+    {
+      "display_name": "JM1 Publishing Mail Read Scope",
+      "mail": "jm1-publishing-mail-read-scope@jmerrillfoundation.onmicrosoft.com",
+      "description": null,
+      "dynamic": false,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "AUTHORIZATION BOUNDARY - RETAIN"
+    },
+    {
+      "display_name": "JM1-Enterprise-Owners",
+      "mail": null,
+      "description": null,
+      "dynamic": false,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "AUTHORIZATION BOUNDARY - RETAIN"
+    },
+    {
+      "display_name": "JM1_BC_Admins",
+      "mail": null,
+      "description": "Primary administrative security group for the JM1_Core_HQ Business Central Production Environment. Members of this group manage financial configurations, integrations, and system-level settings across all J Merrill One entities.",
+      "dynamic": false,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "RENAME/CLARIFY"
+    },
+    {
+      "display_name": "AI Assistant Admins",
+      "mail": null,
+      "description": "AI Assistant Admins",
+      "dynamic": false,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "RENAME/CLARIFY"
+    },
+    {
+      "display_name": "JM1-Financial-Operators",
+      "mail": null,
+      "description": null,
+      "dynamic": false,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "AUTHORIZATION BOUNDARY - RETAIN"
+    },
+    {
+      "display_name": "JM1-Productions-Operators",
+      "mail": null,
+      "description": null,
+      "dynamic": false,
+      "membership": "NOT EXPANDED",
+      "azure_assignments": "NOT EXPANDED",
+      "dataverse_roles": "UNKNOWN",
+      "classification": "AUTHORIZATION BOUNDARY - RETAIN"
+    }
+  ]
+}

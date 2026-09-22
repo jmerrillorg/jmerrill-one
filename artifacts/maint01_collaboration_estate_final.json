@@ -1,0 +1,15 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_collaboration_estate_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "cleanup_executed": false,
+  "graph_groups_seen": 26,
+  "teams_from_landed_evidence": 14,
+  "archived_teams_executed": 0,
+  "fd004_pending_candidates": [
+    "Sales",
+    "Voicemail",
+    "Projects"
+  ],
+  "status": "UNCHANGED - archival prerequisites and exact target certification blocked"
+}

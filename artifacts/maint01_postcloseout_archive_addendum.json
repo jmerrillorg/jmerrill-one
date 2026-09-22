@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "parentMaint01Closeout": "MAINT-01 COMPLETE — CLEANUP RATIONALIZED AND VALIDATED; ARCHIVE EXECUTION BACKLOG RECORDED",
+  "salesTarget": {
+    "teamId": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+    "displayName": "Sales",
+    "groupId": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+    "siteUrl": "https://jmerrillfoundation.sharepoint.com/sites/sales"
+  },
+  "salesExecution": "ARCHIVED — VALIDATED",
+  "salesValidation": "PASS",
+  "projectsTarget": {
+    "teamId": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+    "displayName": "Projects",
+    "groupId": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+    "siteUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects"
+  },
+  "projectsExecution": "ARCHIVED — VALIDATED",
+  "projectsValidation": "PASS",
+  "voicemailRetention": "RETAIN — PAUSED VOICE PROJECT / REACTIVATION PLANNED",
+  "voicePreservation": "PASS",
+  "projectsFileCleanupBacklog": "Recorded separately; no deletion performed.",
+  "salesResidualBacklog": "Recorded separately; no deletion performed.",
+  "regression": "PASS",
+  "finalFd004State": {
+    "sales": "ARCHIVED — VALIDATED",
+    "projects": "ARCHIVED — VALIDATED",
+    "voicemail": "RETAIN — PAUSED VOICE PROJECT / REACTIVATION PLANNED"
+  },
+  "remainingEnterpriseMaintenanceBacklog": [
+    "Projects file-cleanup candidates require separate source-of-truth/reproducibility certification before deletion.",
+    "Sales retained content may be reviewed only under future explicit housekeeping authorization."
+  ],
+  "microsoftGraphArchiveReference": "https://learn.microsoft.com/en-us/graph/api/team-archive?view=graph-rest-1.0",
+  "finalClassification": "MAINT-01 POST-CLOSEOUT ARCHIVE BACKLOG COMPLETE — SALES AND PROJECTS ARCHIVED; VOICE PRESERVED"
+}

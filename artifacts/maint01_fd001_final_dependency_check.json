@@ -1,0 +1,62 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-001",
+  "checked_at": "2026-08-20T13:08:00Z",
+  "classification": "SAFE TO DELETE",
+  "target": {
+    "id": "60468cde-ddf5-4f49-997e-dc19d9e405ac",
+    "displayName": "chosen2k7",
+    "upn": "chosen2k7_gmail.com#EXT#@jmerrillfoundation.onmicrosoft.com",
+    "mail": "chosen2k7@gmail.com",
+    "userType": "Guest",
+    "accountEnabled": true,
+    "createdDateTime": "2026-06-17T18:36:31Z",
+    "externalUserState": "PendingAcceptance"
+  },
+  "dependency_results": {
+    "last_sign_in": {
+      "result": "UNAVAILABLE",
+      "reason": "Graph beta signInActivity returned Authentication_RequestFromNonPremiumTenantOrB2CTenant; tenant does not have premium license."
+    },
+    "team_memberships": {
+      "result": "NONE DISCOVERED",
+      "evidence": "memberOf/transitiveMemberOf returned only dynamic security group All Users; no Team-backed group."
+    },
+    "m365_group_memberships": {
+      "result": "NONE DISCOVERED",
+      "evidence": "No Unified group membership returned."
+    },
+    "security_group_memberships": [
+      {
+        "id": "138a4df3-7e62-4102-b68c-3e077620f2e0",
+        "displayName": "All Users",
+        "groupTypes": [
+          "DynamicMembership"
+        ],
+        "securityEnabled": true,
+        "membershipRule": "All Users"
+      }
+    ],
+    "sharepoint_permissions_or_ownership": {
+      "result": "NONE DISCOVERED THROUGH AVAILABLE GRAPH DEPENDENCY EDGES",
+      "evidence": "No Team/M365 group membership and no ownedObjects; tenant-wide direct SharePoint permissions were not separately enumerable through this Graph pass."
+    },
+    "app_assignments": {
+      "result": "NONE",
+      "evidence": "appRoleAssignments returned empty value."
+    },
+    "directory_roles": {
+      "result": "NONE",
+      "evidence": "memberOf/microsoft.graph.directoryRole returned empty value."
+    },
+    "owned_microsoft_objects": {
+      "result": "NONE",
+      "evidence": "ownedObjects returned empty value."
+    },
+    "current_external_business_relationship": {
+      "result": "NONE DISCOVERED",
+      "evidence": "Founder selected this target for deletion; repo search and Graph dependency edges found no active relationship evidence."
+    }
+  },
+  "destructive_action_gate": "PASSED"
+}

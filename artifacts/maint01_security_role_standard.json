@@ -1,0 +1,6 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS",
+  "standard": "Preserve role-based security groups even with one current member when they support Dataverse, SharePoint, Power Platform, Azure, app permissions, or future staff scaling.",
+  "guidance": "Avoid direct-Jackie permissions where durable role boundaries can safely be used. No mass repermissioning executed."
+}

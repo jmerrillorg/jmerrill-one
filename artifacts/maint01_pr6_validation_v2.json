@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-08-18T00:00:00.000Z",
+  "purpose": "Validate PR #6 state post-integration",
+  "result": "PASS",
+  "pr": "#6",
+  "target_branch": "codex/maint01-estate-rationalization",
+  "contains_claude_evidence": true,
+  "contains_cody_recovery_artifacts": true,
+  "contains_founder_packet": true,
+  "contains_cleanup_waves": true,
+  "contains_no_unrelated_files": true,
+  "json_valid": true,
+  "pr_state": "READY FOR FOUNDER / GOVERNANCE REVIEW",
+  "auto_merge": "NOT AUTHORIZED — requires Founder review of FD-001 through FD-006 before any execution"
+}

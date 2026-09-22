@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "boundary": "Projects Team archival does not authorize deletion of dev/build artifacts or SharePoint content.",
+  "required_future_gate": "Exact source-of-truth and reproducibility certification before any file-level cleanup.",
+  "prohibited_in_this_instruction": [
+    "delete SharePoint files",
+    "delete dev/build artifacts",
+    "delete repository content",
+    "delete M365 Group"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_final_closeout_v10",
+  "created_at": "2026-08-20T11:25:00Z",
+  "final_classification": "MAINT-01 CLEANUP EXECUTION BLOCKED — AUTHORITATIVE TARGET CERTIFICATION REQUIRED",
+  "governed_pr": {
+    "number": 6,
+    "branch": "codex/maint01-estate-rationalization",
+    "head_at_start": "5e7dfb37e57d5716406ceef275f774f3f6237624"
+  },
+  "admin_execution_surface": "AVAILABLE - Azure CLI authenticated as jm1-admin@jmerrill.one; Microsoft Graph and Exchange PowerShell modules installed",
+  "fd001_result": "NOT EXECUTED - exact stale guest not certified",
+  "fd002_result": "NOT EXECUTED - exact four license assignments not certified",
+  "fd003_result": "NOT EXECUTED - exact two inactive internal accounts not certified",
+  "fd005_result": "NOT EXECUTED - contacts@ dependency certification not complete",
+  "fd004_result": "NOT EXECUTED - exact three Teams/Groups and prerequisites not certified",
+  "fd006_certification_result": "BLOCKED - four candidate app registrations found for two approved slots",
+  "fd006_execution_result": "NOT EXECUTED",
+  "mail_regression": "NOT RUN - no mail mutation",
+  "collaboration_regression": "NOT RUN - no Teams/Group mutation",
+  "security_regression": "NOT RUN - no identity/app mutation",
+  "license_regression": "NOT RUN - no license mutation",
+  "final_users_licenses": "UNCHANGED - Graph read-only check saw 44 users, 3 guests, 6 disabled licensed members",
+  "final_shared_mailbox_state": "UNCHANGED - 16 shared mailboxes from landed evidence; contacts@ consolidation pending",
+  "final_teams_groups_state": "UNCHANGED - 26 groups, 14 Teams from landed evidence",
+  "final_app_registration_service_principal_state": "UNCHANGED - 112 applications seen; no deletion",
+  "cost_complexity_impact": "No savings or complexity reduction realized because no tenant mutation executed.",
+  "remaining_sharepoint_alignment": "MAINT-01 SHAREPOINT ALIGNMENT — PENDING SEPARATE EXECUTION AUTHORIZATION",
+  "remaining_repository_work": "None - all 19 repositories retained",
+  "remaining_identity_app_debt": "Provide exact certified FD-001/FD-002/FD-003/FD-004/FD-006 target list or update canon evidence to resolve count/object ambiguity.",
+  "jrn01_state": "SEPARATE - NOT MODIFIED",
+  "exact_next_enterprise_action": "Issue an authoritative target certification packet with exact object IDs for the one guest, four license assignments, two inactive users, three Teams/Groups, contacts@ routing decision dependencies, and the two FD-006 app registrations; then rerun cleanup execution."
+}

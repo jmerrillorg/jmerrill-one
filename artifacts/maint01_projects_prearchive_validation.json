@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "source_plan": "artifacts/maint01_projects_preservation_plan.json",
+  "source_authority": "artifacts/maint01_projects_github_sharepoint_authority.json",
+  "checks": {
+    "githubAuthority": "represented in authoritative repository evidence; GitHub mutation not performed",
+    "sharePointAuthority": "Projects SharePoint site and /projects folder resolved after archive",
+    "buildArtifacts": "preserved; no deletion authorized"
+  },
+  "action": "Archive permitted; destructive content cleanup not performed."
+}

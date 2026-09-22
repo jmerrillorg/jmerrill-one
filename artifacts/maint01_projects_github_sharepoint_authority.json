@@ -1,0 +1,31 @@
+{
+  "package": "MAINT-01",
+  "team": "Projects",
+  "result": "PASS",
+  "authority_rule": "GitHub is authoritative for source code and build/repository artifacts; SharePoint remains authoritative only for unique business records, brand assets, templates, compliance records, and execution evidence not present in GitHub.",
+  "sharepoint_authoritative": [
+    "00_Operations",
+    "01_Programs-Services",
+    "02_People",
+    "03_Marketing",
+    "04_Financials",
+    "05_Legal-Compliance",
+    "06_Media-Assets",
+    "07_Archive",
+    "08_Templates",
+    "Brands when unique"
+  ],
+  "github_authoritative_candidates": [
+    "JM1-Core",
+    "JM1-Implementation-HQ",
+    "Automation when code-only",
+    "Infrastructure when code-only",
+    "reset-live-sites.sh",
+    "sync-live-sites.sh",
+    "JM1_Migration_1_0_0_1_managed.zip"
+  ],
+  "unresolved_before_destructive_cleanup": [
+    "Confirm no unique documentation in empty Docs folder metadata",
+    "Confirm publishSettings.txt handling as sensitive deployment artifact"
+  ]
+}

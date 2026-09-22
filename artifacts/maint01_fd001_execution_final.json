@@ -1,0 +1,12 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd001_execution_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "fd": "FD-001",
+  "approval": "APPROVE FD-001 — delete 1 stale guest",
+  "execution_status": "NOT EXECUTED",
+  "result": "BLOCKED",
+  "blocker": "Exact stale guest object ID is not certified. Graph currently shows three enabled guest candidates.",
+  "post_state": "UNCHANGED",
+  "validation_result": "NOT APPLICABLE - no deletion performed"
+}

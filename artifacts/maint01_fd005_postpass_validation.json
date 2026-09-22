@@ -1,0 +1,12 @@
+{
+  "package": "MAINT-01",
+  "fd": "FD-005",
+  "result": "PASS",
+  "contacts_mailbox": {
+    "displayName": "JM1 Shared Contacts",
+    "primarySmtpAddress": "contacts@jmerrill.one",
+    "forwardingSmtpAddress": "smtp:info@jmerrill.one",
+    "deliverToMailboxAndForward": true
+  },
+  "no_new_mailbox_mutation_this_pass": true
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_github_push_result",
+  "generated": "2026-08-19",
+  "push_target_branch": "codex/maint01-estate-rationalization",
+  "push_source_branch": "claude/loving-planck-1cfoo2",
+  "push_attempted_by": "Claude Code (GitHub App integration)",
+  "push_result": "BLOCKED",
+  "http_status": 403,
+  "error": "Resource not accessible by integration",
+  "root_cause": "GitHub App installation lacks write permission to jmerrillorg/jmerrill-one",
+  "resolution": "Cody must push using its working GitHub authorization",
+  "commits_to_land": ["efc50e4", "96d123e", "12e6298", "91937c6"],
+  "tip_commit": "91937c6",
+  "action_required": "Cody: git push origin claude/loving-planck-1cfoo2 OR cherry-pick commits onto codex/maint01-estate-rationalization"
+}

@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-08-17T00:00:00.000Z",
+  "before_remediation": {
+    "github_repos": 19,
+    "sharepoint_sites": "16 (all null titles — Team-connected confirmed by count only)",
+    "sharepoint_libraries": "27",
+    "standalone_sites": "0 confirmed",
+    "teams": 14,
+    "m365_groups": 26,
+    "security_groups": 9,
+    "shared_mailboxes": 16,
+    "mail_groups": "1 distribution + 18 mail-enabled recipients",
+    "users": 43,
+    "licensed_users": "Not separately counted in prior scorecard",
+    "service_accounts": "Included in 43 users",
+    "app_registrations": 112,
+    "service_principals": "Mapped",
+    "retirement_candidates": 0,
+    "consolidation_candidates": 2,
+    "founder_decision_items": 3,
+    "remaining_unknowns": "Standalone SharePoint sites — BLOCKING"
+  },
+  "after_sharepoint_delta": {
+    "github_repos": 19,
+    "sharepoint_sites": 16,
+    "sharepoint_sites_fully_identified": 16,
+    "sharepoint_libraries": "27 (prior) + libraries in newly confirmed sites",
+    "standalone_sites": 1,
+    "standalone_site_names": ["sites/foundation_comm"],
+    "teams": 14,
+    "m365_groups": 26,
+    "security_groups": 9,
+    "shared_mailboxes": 16,
+    "mail_groups": "1 distribution + 18 mail-enabled recipients",
+    "users": 43,
+    "app_registrations": 112,
+    "service_principals": "Mapped",
+    "retirement_candidates": 0,
+    "consolidation_candidates": 3,
+    "consolidation_candidates_list": ["sites/foundation_comm", "Deprecated - All Company M365 Group", "sites/projects dev content"],
+    "founder_decision_items": 6,
+    "founder_decision_ids": ["FD-001", "FD-002", "FD-003", "FD-004", "FD-005", "FD-006"],
+    "remaining_unknowns": 0,
+    "evidence_blocking": false
+  },
+  "delta_summary": {
+    "sites_newly_identified": "All 14 Team sites now have confirmed URLs; foundation_comm standalone discovered",
+    "new_consolidation_candidates": 1,
+    "new_founder_decisions": 3,
+    "blocking_unknowns_resolved": 1,
+    "high_confidence_retirement": 0
+  }
+}

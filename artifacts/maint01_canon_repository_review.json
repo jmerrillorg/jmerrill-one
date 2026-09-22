@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "UNKNOWN - SHAREPOINT DISCOVERY REQUIRED",
+  "enterprise_canon_current": "J Merrill One repo artifacts contain enterprise standards/evidence; SharePoint authoritative canon location could not be verified.",
+  "division_canon_current": "Division repo artifacts/evidence remain division-owned.",
+  "duplicate_governance_libraries": "UNKNOWN",
+  "stable_document_ids": "UNKNOWN",
+  "rule": "One authoritative copy per governed artifact; references elsewhere; no mass moves until SharePoint ownership is proven."
+}

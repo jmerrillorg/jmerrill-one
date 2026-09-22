@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "preferred_hierarchy": [
+    "Managed Identity",
+    "Service Principal / App Registration",
+    "Dataverse Application User where applicable",
+    "Interactive Service Account only where technically required"
+  ],
+  "exceptions": "Document production constraints; do not force migration during MAINT-01 if risk is material."
+}

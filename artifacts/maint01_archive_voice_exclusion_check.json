@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "target_comparison": {
+    "sales_is_voicemail_or_voice_dependency": false,
+    "projects_is_voicemail_or_voice_dependency": false
+  },
+  "protected_voice_estate": {
+    "voicemail": {
+      "teamId": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "groupId": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "displayName": "Voicemail",
+      "mail": "voicemail@jmerrill.pub",
+      "isArchived": false,
+      "decision": "RETAIN — PAUSED VOICE PROJECT / REACTIVATION PLANNED",
+      "mutation": "none"
+    },
+    "voiceAccounts": [
+      {
+        "userPrincipalName": "voice-financial@jmerrill.one",
+        "displayName": "JM1-Voice Financial",
+        "id": "f74e11a5-2ea6-4040-b7df-2975e71cb690",
+        "accountEnabled": false,
+        "skuPartNumbers": [
+          "PHONESYSTEM_VIRTUALUSER"
+        ],
+        "servicePlans": [
+          "MCOEV_VIRTUALUSER"
+        ],
+        "mutation": "none"
+      },
+      {
+        "userPrincipalName": "voice-foundation@jmerrill.one",
+        "displayName": "JM1-Voice Foundation",
+        "id": "31c29f77-40be-48d9-b40e-7a7474387810",
+        "accountEnabled": false,
+        "skuPartNumbers": [
+          "PHONESYSTEM_VIRTUALUSER"
+        ],
+        "servicePlans": [
+          "MCOEV_VIRTUALUSER"
+        ],
+        "mutation": "none"
+      },
+      {
+        "userPrincipalName": "voice-main-inbound@jmerrill.one",
+        "displayName": "JM1-Voice Main Inbound",
+        "id": "8adf4f22-f0f0-4415-b9c3-8b890fab2e59",
+        "accountEnabled": false,
+        "skuPartNumbers": [
+          "PHONESYSTEM_VIRTUALUSER"
+        ],
+        "servicePlans": [
+          "MCOEV_VIRTUALUSER"
+        ],
+        "mutation": "none"
+      },
+      {
+        "userPrincipalName": "voice-productions@jmerrill.one",
+        "displayName": "JM1-Voice Productions",
+        "id": "25cc94bc-1669-4cb9-93b9-ae5c90bf48ec",
+        "accountEnabled": false,
+        "skuPartNumbers": [
+          "PHONESYSTEM_VIRTUALUSER"
+        ],
+        "servicePlans": [
+          "MCOEV_VIRTUALUSER"
+        ],
+        "mutation": "none"
+      },
+      {
+        "userPrincipalName": "voice-publishing@jmerrill.one",
+        "displayName": "JM1-Voice Publishing",
+        "id": "2acdbbd5-df66-459d-8277-f91f55e97f0e",
+        "accountEnabled": false,
+        "skuPartNumbers": [
+          "PHONESYSTEM_VIRTUALUSER"
+        ],
+        "servicePlans": [
+          "MCOEV_VIRTUALUSER"
+        ],
+        "mutation": "none"
+      },
+      {
+        "userPrincipalName": "voicebridge@jmerrill.one",
+        "displayName": "JM1 Voice Bridge",
+        "id": "48badbfb-3a92-4fad-8a87-d50447c65f52",
+        "accountEnabled": false,
+        "skuPartNumbers": [
+          "PHONESYSTEM_VIRTUALUSER"
+        ],
+        "servicePlans": [
+          "MCOEV_VIRTUALUSER"
+        ],
+        "mutation": "none"
+      }
+    ]
+  },
+  "result": "No Voice mutation authorized or performed."
+}

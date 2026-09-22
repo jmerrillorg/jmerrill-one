@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE",
+  "actions": [
+    {
+      "object": "dist/",
+      "action": "Previously moved to /tmp/jm1-maint01-cleanup/dist-20260817T0117Z",
+      "type": "reversible generated artifact cleanup"
+    }
+  ],
+  "no_destructive_tenant_changes": true
+}

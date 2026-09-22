@@ -1,0 +1,11 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_fd006_execution_final",
+  "created_at": "2026-08-20T11:25:00Z",
+  "fd": "FD-006",
+  "execution_status": "NOT EXECUTED",
+  "result": "BLOCKED",
+  "blocker": "Dependency certification did not pass because the exact two candidates are ambiguous.",
+  "deletion_executed": false,
+  "post_state": "UNCHANGED"
+}

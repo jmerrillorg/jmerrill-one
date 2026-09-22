@@ -1,0 +1,66 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "result": "PASS",
+  "matrix": [
+    {
+      "repo": "jmerrill-one",
+      "purpose": "Enterprise/shared governance, shared platform standards, enterprise orchestration, One website.",
+      "website": "https://jmerrill.one",
+      "deployment_target": "app-jm1-one-prod-v2",
+      "result": "PASS"
+    },
+    {
+      "repo": "jmerrill-pub",
+      "purpose": "Publishing-owned code, workflow, evidence, canon, artifacts.",
+      "website": "https://jmerrill.pub",
+      "deployment_target": "app-jm1-pub-prod-v2",
+      "result": "PASS"
+    },
+    {
+      "repo": "jmerrill-financial",
+      "purpose": "Financial-owned code, evidence, governance, runtime, operations.",
+      "website": "https://jmerrill.financial",
+      "deployment_target": "app-jm1-fin-prod-v2 + func-jm1-fin-prod backend",
+      "result": "PASS"
+    },
+    {
+      "repo": "jmerrillfoundation",
+      "purpose": "Foundation-owned code, evidence, domain artifacts.",
+      "website": "https://jmerrill.foundation",
+      "deployment_target": "app-jm1-foundation-prod-v2",
+      "result": "PASS"
+    },
+    {
+      "repo": "jmerrill-productions",
+      "purpose": "Productions-owned code, evidence, domain artifacts.",
+      "website": "https://jmerrill.productions",
+      "deployment_target": "app-jm1-productions-prod-v2",
+      "result": "PASS"
+    },
+    {
+      "repo": "jackiesmithjr",
+      "purpose": "Founder Brand-owned public site/content/artifacts.",
+      "website": "https://jackiesmithjr.com",
+      "deployment_target": "app-jm1-jackiesmithjr-prod-v2",
+      "result": "PASS"
+    }
+  ],
+  "exceptions": [
+    {
+      "repo": "jm1-one",
+      "note": "Possible legacy duplicate of jmerrill-one; requires Founder review before archive/delete."
+    },
+    {
+      "repo": "jm-productions-redirect",
+      "note": "archive/legacy review candidate"
+    },
+    {
+      "repo": "jm-www-redirect",
+      "note": "archive/legacy review candidate"
+    },
+    {
+      "repo": "jm-redirect-foundation",
+      "note": "archive/legacy review candidate"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "checks": {
+    "teamReportsArchived": true,
+    "historicalTeamContentAccessible": "Team/channel retained; channel tabs and SharePoint drive accessible",
+    "sharePointAccessible": true,
+    "businessProjectRecordsRemain": true,
+    "githubRepositoriesUnaffected": true,
+    "fileLevelCleanupOccurred": false,
+    "unrelatedTeamAffected": false
+  },
+  "evidence": {
+    "team": {
+      "id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "isArchived": true
+    },
+    "groupMail": "projects@jmerrill.one",
+    "siteUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+    "driveRootChildren": [
+      {
+        "name": "00_Operations",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "01_Programs-Services",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "02_People",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "03_Marketing",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "04_Financials",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "05_Legal-Compliance",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "06_Media-Assets",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "07_Archive",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "08_Templates",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "General",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "projects",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "JM1_Migration_1_0_0_1_managed.zip",
+        "accessibility": "resolved_after_archive"
+      }
+    ],
+    "projectFolderChildren": [
+      {
+        "name": "Archive",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "Automation",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "Brands",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "Diagnostics",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "Docs",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "Infrastructure",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "JM1-Core",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "JM1-Implementation-HQ",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "logs",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "publishSettings.txt",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "reset-live-sites.sh",
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "sync-live-sites.sh",
+        "accessibility": "resolved_after_archive"
+      }
+    ],
+    "tabs": {
+      "state": "resolved_after_archive",
+      "count": 2,
+      "displayNames": [
+        "Notes",
+        "Files"
+      ]
+    }
+  }
+}

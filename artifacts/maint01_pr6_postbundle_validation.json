@@ -1,0 +1,18 @@
+{
+  "package": "MAINT-01",
+  "artifact": "maint01_pr6_postbundle_validation",
+  "created_at": "2026-08-20T10:50:59Z",
+  "target_repository": "J Merrill One",
+  "target_pr": 6,
+  "pr_url": "https://github.com/jmerrillorg/jmerrill-one/pull/6",
+  "head_branch": "codex/maint01-estate-rationalization",
+  "merge_commit": "dfeae8a62896ced48ac9ef14a76ccbfa77209a2f",
+  "head_sha": "63fdda7832fa592dcb9b68e7419c60f3f538a882",
+  "cece_bundle_history_included": true,
+  "founder_decision_packet_present": true,
+  "cleanup_wave_artifacts_present": true,
+  "no_unrelated_files": true,
+  "state": "OPEN",
+  "merge_state": "CLEAN",
+  "result": "PASS"
+}

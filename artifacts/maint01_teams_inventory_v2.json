@@ -1,0 +1,687 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE",
+  "teams": [
+    {
+      "team_id": "b650caa6-324c-4be1-b491-57ab1aee7c4e",
+      "display_name": "Publishing Team",
+      "description": "JM1 Publishing Team",
+      "owners": [
+        "publishing@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "J Merrill Publishing",
+          "upn": "publishing@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:ZvZcMwOxPBZhUZfoGBIRt9YaFxpwLSgxZcuh5r1xeQ81@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3AZvZcMwOxPBZhUZfoGBIRt9YaFxpwLSgxZcuh5r1xeQ81%40thread.tacv2/Publishing%20Team?groupId=b650caa6-324c-4be1-b491-57ab1aee7c4e&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "b650caa6-324c-4be1-b491-57ab1aee7c4e",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,35fb0d98-bc68-4250-9d0d-8c07d68e4024,10208ad5-0028-48f0-9ffa-717812924835",
+        "name": "publishing",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/publishing",
+        "displayName": "Publishing Team"
+      },
+      "drive": {
+        "id": "b!mA37NWi8UEKdDYwH1o5AJNWKIBAoAPBIn_pxeBKSSDVm9PH59uWnQpr1oD4m79se",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/publishing/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Publishing Team",
+      "division": "Publishing",
+      "classification": "ACTIVE HUMAN COLLABORATION"
+    },
+    {
+      "team_id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "display_name": "Voicemail",
+      "description": "JM1 Voicemail",
+      "owners": [
+        "appointments@jmerrill.one",
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one",
+        "scheduling@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "JM1 Appointments",
+          "upn": "appointments@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:ehlXeu7yWCiTFcDgfoyXWU3sbeYuvqg4wWuL3JqSwZA1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3AehlXeu7yWCiTFcDgfoyXWU3sbeYuvqg4wWuL3JqSwZA1%40thread.tacv2/Voicemail?groupId=8876abb0-9a18-47ad-99ea-7381912a6785&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,d4392952-206a-4a01-acd0-3fca90f2a869,30361b9d-6a77-40e5-ac93-1e46db97607e",
+        "name": "voicemail",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/voicemail",
+        "displayName": "Voicemail"
+      },
+      "drive": {
+        "id": "b!Uik51GogAUqs0D_KkPKoaZ0bNjB3auVArJMeRtuXYH6JX5mqNvdEQaWtPweeIYDA",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/voicemail/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Voicemail",
+      "division": "Enterprise/Other",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER"
+    },
+    {
+      "team_id": "5d87be95-7d8a-46bd-a9ce-13830496462f",
+      "display_name": "Support",
+      "description": "JM1 Support",
+      "owners": [
+        "appointments@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Scheduling",
+          "upn": "scheduling@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:1db3fc8bd7224217837a1d779bd82acd@thread.tacv2",
+          "displayName": "SMS Inbox",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3A1db3fc8bd7224217837a1d779bd82acd%40thread.tacv2/SMS%20Inbox?groupId=5d87be95-7d8a-46bd-a9ce-13830496462f&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        },
+        {
+          "id": "19:K_dJanQTMltO6E6Tjul6k-vMF-bmAWMMJ3Y5tJdxHNg1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3AK_dJanQTMltO6E6Tjul6k-vMF-bmAWMMJ3Y5tJdxHNg1%40thread.tacv2/Support?groupId=5d87be95-7d8a-46bd-a9ce-13830496462f&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "5d87be95-7d8a-46bd-a9ce-13830496462f",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,96848a4d-d06d-4ed8-9c19-bc247a6c6a1d,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "name": "support",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/support",
+        "displayName": "Support"
+      },
+      "drive": {
+        "id": "b!TYqElm3Q2E6cGbwkemxqHVuKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/support/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Support",
+      "division": "Enterprise",
+      "classification": "LOW ACTIVITY - REQUIRED"
+    },
+    {
+      "team_id": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "display_name": "Marketing",
+      "description": "JM1 Marketing",
+      "owners": [
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:BFr4lD6Y8bNVCHS84MpQCgJlpQoaa8Zyn5coUY1uvNk1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3ABFr4lD6Y8bNVCHS84MpQCgJlpQoaa8Zyn5coUY1uvNk1%40thread.tacv2/Marketing?groupId=67cb27b1-ff42-4e5c-bc03-d1dcb720200b&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,8b6fa220-e446-4e21-bed8-54a6f9ea0943,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "name": "marketing",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/marketing",
+        "displayName": "Marketing"
+      },
+      "drive": {
+        "id": "b!IKJvi0bkIU6-2FSm-eoJQ1uKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/marketing/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Marketing",
+      "division": "Enterprise/Other",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER"
+    },
+    {
+      "team_id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "display_name": "Sales",
+      "description": "JM1 Sales",
+      "owners": [
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:a50mnTihNcQAKY9Jdh2kBmRQVPWIqkQ887uStlB3CVc1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3Aa50mnTihNcQAKY9Jdh2kBmRQVPWIqkQ887uStlB3CVc1%40thread.tacv2/Sales?groupId=768e418f-d252-4f5f-96a0-8b6d2c18b962&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,650ed071-373a-49b4-b6b4-35dddda994bd,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "name": "sales",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+        "displayName": "Sales"
+      },
+      "drive": {
+        "id": "b!cdAOZTo3tEm2tDXd3amUvVuKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/sales/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Sales",
+      "division": "Enterprise/Other",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER"
+    },
+    {
+      "team_id": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "display_name": "Events",
+      "description": "JM1 Events",
+      "owners": [
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:qZnqJqLrZURpU9Fu4fHr3lbB8yLClzgJFFmlpurEiO41@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3AqZnqJqLrZURpU9Fu4fHr3lbB8yLClzgJFFmlpurEiO41%40thread.tacv2/Events?groupId=91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,af1365df-cf90-4c2c-b967-d1f3f8f54a77,763f8a5b-245c-4682-9ba9-b4a225499d75",
+        "name": "events",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/events",
+        "displayName": "Events"
+      },
+      "drive": {
+        "id": "b!32UTr5DPLEy5Z9Hz-PVKd1uKP3ZcJIJGm6m0oiVJnXVjn0l_YnEQRru324PpDgxI",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/events/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Events",
+      "division": "Enterprise/Other",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER"
+    },
+    {
+      "team_id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "display_name": "Projects",
+      "description": "JM1 Projects",
+      "owners": [
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:UsHfAKQMei6nNmat2Eh8FvxLd-hpm938y-jUDVrjQwQ1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3AUsHfAKQMei6nNmat2Eh8FvxLd-hpm938y-jUDVrjQwQ1%40thread.tacv2/Projects?groupId=1d17efe8-bc55-49f8-83a5-54706b47ea33&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,da5352c8-b294-42be-a973-f9772b9849dc,7431c5af-1fe6-49e9-83f4-802611c259e2",
+        "name": "projects",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects",
+        "displayName": "Projects"
+      },
+      "drive": {
+        "id": "b!yFJT2pSyvkKpc_l3K5hJ3K_FMXTmH-lJg_SAJhHCWeJWS2xnZDUMRIMhnF7OrTpt",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/projects/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Projects",
+      "division": "Enterprise/Other",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER"
+    },
+    {
+      "team_id": "2bab67a1-48de-4bde-aaa9-8094e2314f25",
+      "display_name": "Financial Team",
+      "description": "JM1 Financial Team",
+      "owners": [
+        "financial@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "J Merrill Financial",
+          "upn": "financial@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:y7cGQJZzaQnfqXO2xL85u-iJSpczLwYzbDvwsNWD4sQ1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3Ay7cGQJZzaQnfqXO2xL85u-iJSpczLwYzbDvwsNWD4sQ1%40thread.tacv2/Financial%20Team?groupId=2bab67a1-48de-4bde-aaa9-8094e2314f25&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "2bab67a1-48de-4bde-aaa9-8094e2314f25",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,7b33dd0e-533b-42cb-9052-e3f22d5bb24e,4cf9def7-fded-47b6-b73b-af760812be3d",
+        "name": "financial",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/financial",
+        "displayName": "Financial Team"
+      },
+      "drive": {
+        "id": "b!Dt0zeztTy0KQUuPyLVuyTvfe-Uzt_bZHtzuvdggSvj1vojmAl4qES7KBk3fdWazN",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/financial/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Financial Team",
+      "division": "Financial",
+      "classification": "ACTIVE HUMAN COLLABORATION"
+    },
+    {
+      "team_id": "69104c8b-a1dc-4943-a18d-0d823324a7ab",
+      "display_name": "Productions Team",
+      "description": "JM1 Productions Team",
+      "owners": [
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:hmxCr0RV87gTlKRy-uNRk_AhIfG40mn-QdN9ApEBlFw1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3AhmxCr0RV87gTlKRy-uNRk_AhIfG40mn-QdN9ApEBlFw1%40thread.tacv2/Productions%20Team?groupId=69104c8b-a1dc-4943-a18d-0d823324a7ab&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "69104c8b-a1dc-4943-a18d-0d823324a7ab",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,ba7ba85d-bd31-4951-b2a0-1df4adfbb3e1,6f929a6e-ecb5-4f01-8d0f-198cfc326323",
+        "name": "productions",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/productions",
+        "displayName": "Productions Team"
+      },
+      "drive": {
+        "id": "b!Xah7ujG9UUmyoB30rfuz4W6akm-17AFPjQ8ZjPwyYyOw85OwOK4LRJyY8YnpHITN",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/productions/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Productions Team",
+      "division": "Productions",
+      "classification": "ACTIVE HUMAN COLLABORATION"
+    },
+    {
+      "team_id": "46e10463-2d7a-44a6-a238-71829f3e8650",
+      "display_name": "Foundation Team",
+      "description": "JM1 Foundation Team",
+      "owners": [
+        "foundation@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "J Merrill Foundation",
+          "upn": "foundation@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:YllBqIgWm-dec735xAYYrj48zYPkWDs-Js-hk4qquiE1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3AYllBqIgWm-dec735xAYYrj48zYPkWDs-Js-hk4qquiE1%40thread.tacv2/Foundation%20Team?groupId=46e10463-2d7a-44a6-a238-71829f3e8650&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "46e10463-2d7a-44a6-a238-71829f3e8650",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,40e74769-0934-4275-8eb8-e2aa2966c2fb,6f929a6e-ecb5-4f01-8d0f-198cfc326323",
+        "name": "foundation_div",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div",
+        "displayName": "Foundation Team"
+      },
+      "drive": {
+        "id": "b!aUfnQDQJdUKOuOKqKWbC-26akm-17AFPjQ8ZjPwyYyOw85OwOK4LRJyY8YnpHITN",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/foundation_div/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Foundation Team",
+      "division": "Foundation",
+      "classification": "ACTIVE HUMAN COLLABORATION"
+    },
+    {
+      "team_id": "abcd0663-047e-4335-97dc-4836a3cf7600",
+      "display_name": "HQ",
+      "description": "JM1 HQ",
+      "owners": [
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:ufwvck-WtcZqBu2YZiFTUc8C3NO02LKR3358PnWEbOM1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3Aufwvck-WtcZqBu2YZiFTUc8C3NO02LKR3358PnWEbOM1%40thread.tacv2/HQ?groupId=abcd0663-047e-4335-97dc-4836a3cf7600&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "abcd0663-047e-4335-97dc-4836a3cf7600",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,207281c6-a555-4a6a-9180-d8deaf24baa0,2c1079de-b0a3-42b2-ac81-ac315a3c5b31",
+        "name": "JMerrillOne",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne",
+        "displayName": "HQ"
+      },
+      "drive": {
+        "id": "b!xoFyIFWlakqRgNjeryS6oN55ECyjsLJCrIGsMVo8WzH0U8dOplfpSo17L_E7V6YI",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/JMerrillOne/Shared%20Documents"
+      },
+      "planner_plans": [
+        {
+          "id": "JbReGWGTGUSRFM7eoVnVaGUACVsz",
+          "title": "J Merrill One",
+          "owner": "abcd0663-047e-4335-97dc-4836a3cf7600"
+        }
+      ],
+      "is_archived": false,
+      "business_purpose": "JM1 HQ",
+      "division": "Enterprise",
+      "classification": "LOW ACTIVITY - REQUIRED"
+    },
+    {
+      "team_id": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a",
+      "display_name": "Implementation HQ",
+      "description": "“Central command for system implementation, automation, and AI operations across the J Merrill One enterprise. Home of the JM1 Core, HQ, Data, Insights, AI, and Automation blueprints.”",
+      "owners": [
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:26bc12b340cc447cb6f64ce7f1dfb59b@thread.tacv2",
+          "displayName": "Architecture",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3A26bc12b340cc447cb6f64ce7f1dfb59b%40thread.tacv2/Architecture?groupId=ff124f1e-a026-47eb-8f7b-4f75e37bc53a&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        },
+        {
+          "id": "19:3YrL6FE6AD2s-cXzSJyiAzeDUyyJj6tPvRVCO9HDKkM1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3A3YrL6FE6AD2s-cXzSJyiAzeDUyyJj6tPvRVCO9HDKkM1%40thread.tacv2/Implementation%20HQ?groupId=ff124f1e-a026-47eb-8f7b-4f75e37bc53a&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,dcb72ff0-ec3f-475d-8f17-6aede943f512,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+        "name": "ImplementationHQ",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ",
+        "displayName": "Implementation HQ"
+      },
+      "drive": {
+        "id": "b!8C-33D_sXUePF2rt6UP1EiXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/ImplementationHQ/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "“Central command for system implementation, automation, and AI operations across the J Merrill One enterprise. Home of the JM1 Core, HQ, Data, Insights, AI, and Automation blueprints.”",
+      "division": "Enterprise",
+      "classification": "LOW ACTIVITY - REQUIRED"
+    },
+    {
+      "team_id": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec",
+      "display_name": "Agape International Cathedral",
+      "description": "“Operational hub for Agape International Cathedral — centralizing ministry resources, events, service coordination, media production, and volunteer management.”",
+      "owners": [
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:DAjbmiqvLdVuj_RFuvJbbG4fvGvoE7XS3u2u_FWCTp41@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3ADAjbmiqvLdVuj_RFuvJbbG4fvGvoE7XS3u2u_FWCTp41%40thread.tacv2/Agape%20International%20Cathedral?groupId=6cf85adb-c9d7-4375-87a4-bc4c0f17faec&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,99f1230e-0535-4067-99cd-2f0b9d051c76,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+        "name": "AgapeIC",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC",
+        "displayName": "Agape International Cathedral"
+      },
+      "drive": {
+        "id": "b!DiPxmTUFZ0CZzS8LnQUcdiXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/AgapeIC/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "“Operational hub for Agape International Cathedral — centralizing ministry resources, events, service coordination, media production, and volunteer management.”",
+      "division": "Enterprise/Other",
+      "classification": "MISSION COLLABORATION"
+    },
+    {
+      "team_id": "67d9ef01-be93-42c6-a9d8-fa6c0597d936",
+      "display_name": "Security & Compliance",
+      "description": "JM1 Security & Compliance",
+      "owners": [
+        "jackie@jmerrill.one",
+        "jm1-admin@jmerrill.one"
+      ],
+      "members": [
+        {
+          "displayName": "Jackie Smith, Jr.",
+          "upn": "jackie@jmerrill.one",
+          "type": "Member"
+        },
+        {
+          "displayName": "JM1 Admin",
+          "upn": "jm1-admin@jmerrill.one",
+          "type": "Member"
+        }
+      ],
+      "guest_members": [],
+      "channels": [
+        {
+          "id": "19:opZeDmMNEkVql6NjbEyWxf82rXn0m2e3iKdBUulYVBk1@thread.tacv2",
+          "displayName": "General",
+          "webUrl": "https://teams.cloud.microsoft/l/channel/19%3AopZeDmMNEkVql6NjbEyWxf82rXn0m2e3iKdBUulYVBk1%40thread.tacv2/Security%20%26%20Compliance?groupId=67d9ef01-be93-42c6-a9d8-fa6c0597d936&tenantId=352d075e-8e17-4169-9f8e-22e6946ce66d&allowXTenantAccess=False"
+        }
+      ],
+      "connected_m365_group_id": "67d9ef01-be93-42c6-a9d8-fa6c0597d936",
+      "connected_sharepoint_site": {
+        "id": "jmerrillfoundation.sharepoint.com,e9969228-7830-4cdd-b44c-4a392b5bcb74,7d81ef25-8f33-421b-89c9-dd1f7b853380",
+        "name": "security",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/security",
+        "displayName": "Security & Compliance"
+      },
+      "drive": {
+        "id": "b!KJKW6TB43Uy0TEo5K1vLdCXvgX0zjxtCicndH3uFM4C_msyznTQcSpMdK4GlVJ85",
+        "name": "Documents",
+        "webUrl": "https://jmerrillfoundation.sharepoint.com/sites/security/Shared%20Documents"
+      },
+      "planner_plans": [],
+      "is_archived": false,
+      "business_purpose": "JM1 Security & Compliance",
+      "division": "Enterprise",
+      "classification": "LOW ACTIVITY - REQUIRED"
+    }
+  ]
+}

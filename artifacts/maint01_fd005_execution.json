@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "artifact": "maint01_fd005_execution",
+  "generated": "2026-08-19",
+  "fd": "FD-005",
+  "approval": "APPROVE FD-005 — accounting@ KEEP-CORE, board@ KEEP-CORE, donations@ KEEP-CORE, grants@ KEEP-CORE, media@ KEEP-ALIAS, volunteers@ KEEP-ALIAS, contacts@ CONSOLIDATE into info@",
+  "execution_status": "DEFERRED — M365 MCP connection unavailable in current session",
+  "m365_mcp_connected": false,
+  "dispositions": {
+    "accounting@jmerrill.one": "KEEP-CORE — no action",
+    "board@jmerrill.one": "KEEP-CORE — no action",
+    "donations@jmerrill.one": "KEEP-CORE — no action",
+    "grants@jmerrill.one": "KEEP-CORE — no action",
+    "media@jmerrill.one": "KEEP-ALIAS — preserve events@, social@, pr@ aliases, no action",
+    "volunteers@jmerrill.one": "KEEP-ALIAS — preserve foundation routing, no action",
+    "contacts@jmerrill.one": "CONSOLIDATE into info@ — DEFERRED; requires dependency verification first"
+  },
+  "reason": "The 6 KEEP mailboxes require no destructive action. The contacts@ consolidation requires Graph API to check public website refs, aliases, forwarding, Bookings, Power Automate, Dynamics, Teams, and distribution list dependencies before executing.",
+  "action_required": "Re-run in a session with active M365 MCP connection for contacts@ consolidation verification and execution."
+}

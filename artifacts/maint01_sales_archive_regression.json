@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-08-20T13:41:55.359Z",
+  "target_repository": "J Merrill One",
+  "package": "MAINT-01 — POST-CLOSEOUT ARCHIVE EXECUTION BACKLOG",
+  "governed_branch": "codex/maint01-estate-rationalization",
+  "status": "PASS",
+  "checks": {
+    "teamReportsArchived": true,
+    "teamDiscoverable": true,
+    "historicalContentAccessible": "Team/channel retained; SharePoint drive accessible",
+    "sharePointAccessible": true,
+    "retainedPricingMaterialsAccessible": true,
+    "ownersUnderstood": [
+      "jackie@jmerrill.one",
+      "jm1-admin@jmerrill.one"
+    ],
+    "unrelatedTeamAffected": false
+  },
+  "evidence": {
+    "team": {
+      "id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "isArchived": true
+    },
+    "groupMail": "sales@jmerrill.one",
+    "siteUrl": "https://jmerrillfoundation.sharepoint.com/sites/sales",
+    "driveRootChildren": [
+      {
+        "name": "01 Lead Tracking",
+        "type": "folder",
+        "childCount": 6,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "02 Client Proposals",
+        "type": "folder",
+        "childCount": 6,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "03 Pricing Sheets",
+        "type": "folder",
+        "childCount": 5,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "04 Sales Reports",
+        "type": "folder",
+        "childCount": 4,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "05 Archive",
+        "type": "folder",
+        "childCount": 3,
+        "lastModifiedDateTime": "2025-09-11T13:08:13Z"
+      },
+      {
+        "name": "General",
+        "type": "folder",
+        "childCount": 0,
+        "lastModifiedDateTime": "2025-04-05T12:31:42Z"
+      }
+    ],
+    "pricingFolders": [
+      {
+        "name": "Financial Pricing",
+        "type": "folder",
+        "childCount": 0,
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "Foundation Pricing",
+        "type": "folder",
+        "childCount": 0,
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "One-Wide Pricing",
+        "type": "folder",
+        "childCount": 0,
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "Productions Pricing",
+        "type": "folder",
+        "childCount": 0,
+        "accessibility": "resolved_after_archive"
+      },
+      {
+        "name": "Publishing Pricing",
+        "type": "folder",
+        "childCount": 0,
+        "accessibility": "resolved_after_archive"
+      }
+    ]
+  }
+}

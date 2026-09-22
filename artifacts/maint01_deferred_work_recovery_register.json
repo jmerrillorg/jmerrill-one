@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-08-17T01:18:40.978Z",
+  "items": [
+    {
+      "item": "HOST-02 App Service migration",
+      "status": "COMPLETE",
+      "notes": "Closed: all six sites consolidated on P1mv3 and superseded hosting retired."
+    },
+    {
+      "item": "repository cleanup",
+      "status": "IN PROGRESS",
+      "notes": "Inventory and target architecture created; no repo deletion executed."
+    },
+    {
+      "item": "SharePoint alignment",
+      "status": "UNKNOWN - RESEARCH REQUIRED",
+      "notes": "Tenant-wide SharePoint enumeration denied; delegated search returned no governance results."
+    },
+    {
+      "item": "M365 identity/collaboration rationalization",
+      "status": "IN PROGRESS",
+      "notes": "Users/groups/apps inventoried via Graph; Teams connector lacks required scope."
+    },
+    {
+      "item": "Azure resource hygiene",
+      "status": "PARTIALLY COMPLETE",
+      "notes": "HOST-02 hosting cleanup complete; broader Azure hygiene not reopened."
+    },
+    {
+      "item": "Power Platform governance debt",
+      "status": "STILL REQUIRED",
+      "notes": "Separate backlog."
+    },
+    {
+      "item": "tenant/entity separation",
+      "status": "STILL REQUIRED",
+      "notes": "Future/separate unless directly relevant."
+    },
+    {
+      "item": "JRN-01",
+      "status": "STILL REQUIRED",
+      "notes": "Separate active package; not modified."
+    }
+  ]
+}

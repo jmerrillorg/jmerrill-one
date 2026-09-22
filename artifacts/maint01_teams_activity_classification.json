@@ -1,0 +1,132 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "COMPLETE WITH DOCUMENTED LIMITATION",
+  "teams": [
+    {
+      "team": "Publishing Team",
+      "id": "b650caa6-324c-4be1-b491-57ab1aee7c4e",
+      "classification": "ACTIVE HUMAN COLLABORATION",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 3,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Voicemail",
+      "id": "8876abb0-9a18-47ad-99ea-7381912a6785",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Support",
+      "id": "5d87be95-7d8a-46bd-a9ce-13830496462f",
+      "classification": "LOW ACTIVITY - REQUIRED",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 3,
+      "channel_count": 2,
+      "guest_count": 0
+    },
+    {
+      "team": "Marketing",
+      "id": "67cb27b1-ff42-4e5c-bc03-d1dcb720200b",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Sales",
+      "id": "768e418f-d252-4f5f-96a0-8b6d2c18b962",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Events",
+      "id": "91bb13f5-ecfe-4b10-af98-3e8bfd1c16ad",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Projects",
+      "id": "1d17efe8-bc55-49f8-83a5-54706b47ea33",
+      "classification": "ONE-PERSON ORGANIZATIONAL CONTAINER",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Financial Team",
+      "id": "2bab67a1-48de-4bde-aaa9-8094e2314f25",
+      "classification": "ACTIVE HUMAN COLLABORATION",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 3,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Productions Team",
+      "id": "69104c8b-a1dc-4943-a18d-0d823324a7ab",
+      "classification": "ACTIVE HUMAN COLLABORATION",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Foundation Team",
+      "id": "46e10463-2d7a-44a6-a238-71829f3e8650",
+      "classification": "ACTIVE HUMAN COLLABORATION",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 3,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "HQ",
+      "id": "abcd0663-047e-4335-97dc-4836a3cf7600",
+      "classification": "LOW ACTIVITY - REQUIRED",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Implementation HQ",
+      "id": "ff124f1e-a026-47eb-8f7b-4f75e37bc53a",
+      "classification": "LOW ACTIVITY - REQUIRED",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 2,
+      "guest_count": 0
+    },
+    {
+      "team": "Agape International Cathedral",
+      "id": "6cf85adb-c9d7-4375-87a4-bc4c0f17faec",
+      "classification": "MISSION COLLABORATION",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    },
+    {
+      "team": "Security & Compliance",
+      "id": "67d9ef01-be93-42c6-a9d8-fa6c0597d936",
+      "classification": "LOW ACTIVITY - REQUIRED",
+      "activity_signal": "Channels/members/site mapped; Microsoft usage report denied",
+      "member_count": 2,
+      "channel_count": 1,
+      "guest_count": 0
+    }
+  ]
+}

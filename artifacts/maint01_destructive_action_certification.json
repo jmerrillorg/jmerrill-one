@@ -1,0 +1,6 @@
+{
+  "created_at": "2026-08-17T02:22:21.683Z",
+  "result": "NO CERTIFIED DESTRUCTIVE ACTIONS",
+  "certified_actions": [],
+  "failed_reason": "No candidate clears every identity/owner/purpose/activity/dependency/retention/replacement/public-reference criterion."
+}
