@@ -1,0 +1,12 @@
+{
+  "status": "ACTIVE_BASELINE_PENDING_APPROVAL",
+  "timezone": "America/New_York",
+  "cadence": {
+    "J Merrill Publishing": 4,
+    "J Merrill Financial": 3,
+    "J Merrill Foundation": 3,
+    "J Merrill Productions": 2,
+    "J Merrill One": 2
+  },
+  "rule": "Quality outranks volume; do not publish filler merely to satisfy cadence."
+}

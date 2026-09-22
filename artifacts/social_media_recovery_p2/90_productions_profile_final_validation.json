@@ -1,0 +1,16 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "PASS",
+  "facebook": {
+    "website": "PASS - https://jmerrill.productions/",
+    "bio": "PASS - no obsolete Spotlight identity visible"
+  },
+  "instagram": {
+    "handle": "@jmerrillprod",
+    "instagram_id": "17841467582710441",
+    "bio": "Meet J Merrill Productions! We bring stories to life through podcasts, live streams, and videos.",
+    "spotlight_wording": "PASS - removed"
+  },
+  "canonical_brand_identity": "PASS",
+  "evidence_basis": "Founder-reported current screenshot plus prior Facebook remediation evidence; no separate new profile defect introduced."
+}

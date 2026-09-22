@@ -1,0 +1,69 @@
+{
+  "brands": [
+    {
+      "brand": "J Merrill One",
+      "platforms": [
+        "Facebook",
+        "Instagram"
+      ],
+      "audience": "Enterprise audience",
+      "purpose": "Recovery publishing and engagement through native Meta surfaces after ownership verification.",
+      "content_type": "Useful short-form education, story, invitation, and proof.",
+      "cta": "Explore JM1",
+      "posting_frequency": "2/week",
+      "engagement_expectation": "Monitor comments/DMs; route to division owner; avoid sensitive advice in public."
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "platforms": [
+        "Facebook",
+        "Instagram"
+      ],
+      "audience": "Authors",
+      "purpose": "Recovery publishing and engagement through native Meta surfaces after ownership verification.",
+      "content_type": "Useful short-form education, story, invitation, and proof.",
+      "cta": "Start a Publishing Inquiry",
+      "posting_frequency": "4/week",
+      "engagement_expectation": "Monitor comments/DMs; route to division owner; avoid sensitive advice in public."
+    },
+    {
+      "brand": "J Merrill Financial",
+      "platforms": [
+        "Facebook",
+        "Instagram"
+      ],
+      "audience": "Families and planning clients",
+      "purpose": "Recovery publishing and engagement through native Meta surfaces after ownership verification.",
+      "content_type": "Useful short-form education, story, invitation, and proof.",
+      "cta": "Schedule a Planning Conversation",
+      "posting_frequency": "3/week",
+      "engagement_expectation": "Monitor comments/DMs; route to division owner; avoid sensitive advice in public."
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "platforms": [
+        "Facebook",
+        "Instagram"
+      ],
+      "audience": "Donors, volunteers, partners, community",
+      "purpose": "Recovery publishing and engagement through native Meta surfaces after ownership verification.",
+      "content_type": "Useful short-form education, story, invitation, and proof.",
+      "cta": "Learn, Volunteer, or Give",
+      "posting_frequency": "3/week",
+      "engagement_expectation": "Monitor comments/DMs; route to division owner; avoid sensitive advice in public."
+    },
+    {
+      "brand": "J Merrill Productions",
+      "platforms": [
+        "Facebook",
+        "Instagram"
+      ],
+      "audience": "Clients, authors, community partners",
+      "purpose": "Recovery publishing and engagement through native Meta surfaces after ownership verification.",
+      "content_type": "Useful short-form education, story, invitation, and proof.",
+      "cta": "Work With Productions",
+      "posting_frequency": "2/week",
+      "engagement_expectation": "Monitor comments/DMs; route to division owner; avoid sensitive advice in public."
+    }
+  ]
+}

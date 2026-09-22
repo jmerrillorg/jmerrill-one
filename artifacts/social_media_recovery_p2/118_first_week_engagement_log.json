@@ -1,0 +1,14 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "NOT STARTED - NO LIVE ENGAGEMENT YET",
+  "records": [],
+  "classification_options": [
+    "ROUTINE RESPONSE",
+    "DIVISION REVIEW",
+    "COMPLIANCE REVIEW",
+    "PRIVACY REVIEW",
+    "SERVICE RECOVERY",
+    "SPAM / NO RESPONSE"
+  ],
+  "financial_guidance_rule": "Do not improvise regulated Financial guidance in public comments or DMs."
+}

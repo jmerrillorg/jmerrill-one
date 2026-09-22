@@ -1,0 +1,95 @@
+{
+  "status": "PASS - FIRST-WEEK PUBLISHING RIGHTS CLEARED WITH OWNED/TEXT-ONLY CREATIVE",
+  "rules": [
+    "Check book covers",
+    "author photos",
+    "excerpts",
+    "testimonials",
+    "narrator/media assets",
+    "release graphics"
+  ],
+  "publishing_posts": [
+    {
+      "SocialContentId": "SRP2-001",
+      "rights_gate": "PASS - owned/text-only branded creative; no third-party author/title assets used"
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "rights_gate": "PASS - owned/text-only branded creative; no third-party author/title assets used"
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "rights_gate": "PASS - owned/text-only branded creative; no third-party author/title assets used"
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "rights_gate": "PASS - owned/text-only branded creative; no third-party author/title assets used"
+    },
+    {
+      "SocialContentId": "SRP2-015",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-019",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-024",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-027",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-029",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-033",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-038",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-041",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-043",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-047",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-052",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-055",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    },
+    {
+      "SocialContentId": "SRP2-057",
+      "rights_gate": "PASS IF TEXT-ONLY/OWNED BRANDED CREATIVE; otherwise specific asset rights proof required"
+    }
+  ],
+  "updated_at": "2026-08-21T07:42:14.444Z",
+  "profile_defect_result": {
+    "status": "PASS - PROFILE INTEGRITY RESTORED",
+    "facebook": {
+      "bio": "Hybrid publishing support from manuscript readiness to launch.",
+      "website": "https://jmerrill.pub/",
+      "forex_trader_defect": "ABSENT"
+    },
+    "evidence": {
+      "bio": "/tmp/social_p2_pub_bio_fix_dom.txt",
+      "website": "/tmp/social_p2_pub_website_dom.txt"
+    }
+  },
+  "analysis": "First-week Publishing copy is distinct and uses no specific author/title, covers, excerpts, photos, testimonials, narrator/media assets, or release graphics. SRP2-013 uses the generic service/author-journey version because no specific author/title rights evidence is being used."
+}

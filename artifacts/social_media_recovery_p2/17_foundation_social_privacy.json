@@ -1,0 +1,67 @@
+{
+  "status": "PASS - FIRST-WEEK FOUNDATION PRIVACY CLEARED WITH PRIVACY-SAFE CREATIVE",
+  "rules": [
+    "No unnecessary participant identification",
+    "No sensitive beneficiary info",
+    "Minors require explicit approval",
+    "Donor/volunteer privacy protected"
+  ],
+  "foundation_posts": [
+    {
+      "SocialContentId": "SRP2-002",
+      "privacy_gate": "PASS - privacy-safe copy and owned/text-only or abstract creative"
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "privacy_gate": "PASS - privacy-safe copy and owned/text-only or abstract creative"
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "privacy_gate": "PASS - privacy-safe copy and owned/text-only or abstract creative"
+    },
+    {
+      "SocialContentId": "SRP2-016",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-022",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-028",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-030",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-036",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-042",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-044",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-050",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-056",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    },
+    {
+      "SocialContentId": "SRP2-058",
+      "privacy_gate": "COPY PASS - OWNED/TEXT-ONLY CREATIVE OR LIKENESS REVIEW REQUIRED"
+    }
+  ],
+  "updated_at": "2026-08-21T07:42:14.444Z",
+  "copy_gate": "PASS - revised mission, participation, and impact copy contain no identifiable beneficiary, minor, donor, volunteer, testimonial, or sensitive program detail.",
+  "creative_gate": "PASS IF EXECUTED WITH OWNED/TEXT-ONLY OR ABSTRACT CREATIVE; photos require documented likeness rights.",
+  "analysis": "Foundation first-week posts are distinct and privacy-safe; no statistics or impact numbers invented."
+}

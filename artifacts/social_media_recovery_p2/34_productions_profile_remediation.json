@@ -1,0 +1,22 @@
+{
+  "status": "FACTUAL REMEDIATION REQUIRED - NOT EXECUTED",
+  "captured_at": "2026-08-20T13:35:00Z",
+  "canonical_website": "https://jmerrill.productions/",
+  "findings": [
+    {
+      "platform": "Facebook",
+      "defect": "Bio includes Formerly J Merrill Spotlight",
+      "current_copy": "Discover J Merrill Productions! Formerly J Merrill Spotlight, we spotlight authors through engaging podcasts, live event streaming, and dynamic video production. Dive into the stories that shape us!"
+    },
+    {
+      "platform": "Instagram",
+      "defect": "Bio includes Formerly J Merrill Spotlight wording",
+      "current_copy": "Meet J Merrill Productions! Formerly J Merrill Spotlight, we bring stories to life through podcasts, live streams, and..."
+    }
+  ],
+  "held_changes": [
+    "Remove legacy Spotlight wording",
+    "Confirm/correct website to https://jmerrill.productions/"
+  ],
+  "broader_positioning_copy": "FOUNDER APPROVAL REQUIRED"
+}

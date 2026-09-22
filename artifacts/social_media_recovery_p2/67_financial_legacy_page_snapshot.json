@@ -1,0 +1,19 @@
+{
+  "status": "HOLD - LIVE META REQUIRED",
+  "updated_at": "2026-08-20T13:49:26.063Z",
+  "target_repository": "J Merrill One",
+  "package": "SOCIAL RECOVERY P2",
+  "old_financial_page": {
+    "classification": "LEGACY / FLAGGED / RESTRICTED — DO NOT USE AS CANONICAL OPERATING PAGE",
+    "deletion_authorized": false,
+    "page_name": "UNKNOWN - LIVE META REQUIRED",
+    "page_id": "UNKNOWN - LIVE META REQUIRED",
+    "url": "UNKNOWN - LIVE META REQUIRED",
+    "restriction_flag_state": "Founder direction states flagged/restricted; exact enforcement details require live Meta admin session capture",
+    "business_portfolio_relationship": "UNKNOWN - LIVE META REQUIRED",
+    "connected_instagram_relationship": "UNKNOWN - LIVE META REQUIRED",
+    "administrators_access": "UNKNOWN - LIVE META REQUIRED",
+    "controls_username_domain_ad_pixel_dependency": "UNKNOWN - LIVE META REQUIRED"
+  },
+  "note": "Founder direction provides flagged/restricted classification, but exact Page identifiers and dependency state were not available from repository evidence and could not be captured without a usable authenticated Meta admin UI."
+}

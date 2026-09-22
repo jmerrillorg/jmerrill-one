@@ -1,0 +1,129 @@
+{
+  "status": "SOCIAL RECOVERY P2 IMPLEMENTATION READY — FOUNDER FIRST-BATCH APPROVAL REQUIRED",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "summary": {
+    "pass": 14,
+    "hold": 0,
+    "technical_hold": 0,
+    "manual_hold": 0,
+    "revise": 0,
+    "founder_decision_required": 0,
+    "drop": 0,
+    "defer": 0
+  },
+  "posts": [
+    {
+      "SocialContentId": "SRP2-001",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "brand": "J Merrill One",
+      "platform": "Instagram",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "J Merrill Productions",
+      "platform": "Facebook",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "brand": "J Merrill One",
+      "platform": "Facebook",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "result": "PASS",
+      "reason": "All content, destination, execution surface, rights/privacy/compliance, creative, CTA, and UTM gates pass.",
+      "scheduling_state": "NOT SCHEDULED - AWAITING FOUNDER FIRST-BATCH APPROVAL"
+    }
+  ],
+  "scheduling_authorized": false
+}

@@ -1,0 +1,51 @@
+{
+  "updated_at": "2026-08-20T23:48:05.244Z",
+  "status": "COMPLETE - MULTISURFACE DIAGNOSTIC CAPTURED",
+  "surfaces": {
+    "A_facebook_page_business_suite": {
+      "result": "NOT PAIRED / CONFIRMATION REQUIRED",
+      "signals": [
+        "Business Suite Page home shows Connect Instagram",
+        "To-do shows Connect to Instagram 0/1",
+        "visible disclosure says some features unavailable until people who manage the Facebook Page can also manage the Instagram profile",
+        "confirmation dialog text names J Merrill Financial Facebook Page and Instagram but does not show a completed connection"
+      ],
+      "evidence": "/tmp/p2_surface_a_fin_page_bsuite.dom.txt"
+    },
+    "B_instagram_connected_assets": {
+      "result": "NOT PAIRED",
+      "signals": [
+        "@jmerrillfin / 17841438473100276 visible",
+        "Owned by J Merrill One",
+        "Connected assets tab says You do not have any connected assets"
+      ],
+      "evidence": "/tmp/p2_surface_b_ig_connected.dom.txt"
+    },
+    "C_page_connected_assets": {
+      "result": "NOT PAIRED",
+      "signals": [
+        "J Merrill Financial / 1270611542802820 visible",
+        "Connected assets tab says You do not have any connected assets"
+      ],
+      "evidence": "/tmp/p2_surface_c_page_connected.dom.txt"
+    },
+    "D_business_assets": {
+      "result": "BOTH ASSETS PRESENT / CONNECTION NOT SHOWN",
+      "signals": [
+        "J Merrill Financial Page and @jmerrillfin both listed in Business assets",
+        "No paired/connected state shown in captured list"
+      ],
+      "evidence": "/tmp/p2_surface_d_business_assets.dom.txt"
+    },
+    "composer_selector": {
+      "result": "FACEBOOK ONLY",
+      "signals": [
+        "Post to selector shows J Merrill Financial Facebook selected",
+        "Instagram Profile option disabled with Connect Instagram link",
+        "No @jmerrillfin destination selectable"
+      ],
+      "evidence": "/tmp/p2_financial_composer_selector.dom.txt"
+    }
+  },
+  "conclusion": "PAIRING BLOCKED BY META / REQUIRES MANUAL FOUNDER INTERACTION"
+}

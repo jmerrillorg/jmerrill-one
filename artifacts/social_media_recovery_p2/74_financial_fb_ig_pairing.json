@@ -1,0 +1,59 @@
+{
+  "status": "HOLD - PAIRING ATTEMPTED BUT NOT VERIFIED",
+  "required_target": "PAIRED - VERIFIED",
+  "mutation_performed": true,
+  "updated_at": "2026-08-20T19:46:46.941Z",
+  "facebook_page": {
+    "page_name": "J Merrill Financial",
+    "business_suite_asset_id": "1270611542802820",
+    "facebook_public_profile_id": "61593286063626",
+    "business_suite_url": "https://business.facebook.com/latest/?business_id=846921439784613&asset_id=1270611542802820",
+    "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+    "classification": "CANONICAL - J MERRILL FINANCIAL FACEBOOK",
+    "followers_observed": 0,
+    "category_observed": "Financial service",
+    "category_context": "Founder clarified J Merrill Financial includes estate planning and advanced planning/funeral planning; funeral planning is an insurance product. Do not force a second category when Meta retains only Financial service; reflect full scope in compliant About/service copy.",
+    "bio_observed": "Advanced planning for life, legacy, and the people who matter most.",
+    "website_observed": "https://jmerrill.financial/",
+    "hq_street_address_exposed": false
+  },
+  "instagram": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "meta_selected_asset_id": "676716152193798",
+    "public_profile_observed": {
+      "display_name": "J Merrill Financial, LLC.",
+      "followers_observed": 12,
+      "website_observed": "jmerrill.financial",
+      "professional_dashboard_visible": true
+    },
+    "business_settings_state": {
+      "owned_by": "J Merrill Financial, LLC",
+      "access_request_state": "Request Sent - Your request for access is pending",
+      "requests_page_state": "No requests need review; Sent tab showed no sent requests",
+      "assign_people_button": "DISABLED",
+      "assign_partner_button": "DISABLED",
+      "connect_assets_button": "ENABLED"
+    },
+    "pairing_attempt": {
+      "result": "ATTEMPTED - NOT VERIFIED",
+      "observed_flow": "Page-side Connect assets allowed Instagram account selection, Confirm connection, then Continue through Instagram message settings.",
+      "after_state": "Instagram settings still showed Request Sent/pending access and Connect assets remained enabled; no verified paired-state evidence was visible."
+    },
+    "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED"
+  },
+  "exact_blocker": "After Confirm connection and Continue, Business Settings still showed Request Sent/pending access and no verified paired state.",
+  "scheduling_eligibility": "BLOCKED UNTIL IG ACCESS/PAIRING IS VERIFIED",
+  "evidence": {
+    "financialInstagramPublicDom": "/tmp/social_p2_ig_public_dom.txt",
+    "financialInstagramBusinessSettingsDom": "/tmp/social_p2_fin_ig_after_pair_dom.txt",
+    "financialPageSettingsDom": "/tmp/social_p2_fin_page_settings_dom2.txt",
+    "publishingBioDom": "/tmp/social_p2_pub_bio_fix_dom.txt",
+    "publishingWebsiteDom": "/tmp/social_p2_pub_website_dom.txt",
+    "productionsFacebookPublicBeforeDom": "/tmp/social_p2_prod_public_fb_dom.txt",
+    "productionsFacebookBioAfterDom": "/tmp/social_p2_prod_bio_update_dom.txt",
+    "productionsFacebookLinksDom": "/tmp/social_p2_prod_links_dom.txt",
+    "productionsInstagramDom": "/tmp/social_p2_prod_ig_dom.txt",
+    "securityCenterDom": "/tmp/social_p2_security_dom.txt"
+  }
+}

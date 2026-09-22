@@ -1,0 +1,119 @@
+{
+  "updated_at": "2026-08-21T08:28:47.134222Z",
+  "status": "READY",
+  "asset_count": 14,
+  "assets": [
+    {
+      "SocialContentId": "SRP2-001",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-001_j_merrill_publishing_facebook.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-002",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-002_j_merrill_foundation_facebook.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-003",
+      "brand": "J Merrill One",
+      "platform": "Instagram",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-003_j_merrill_one_instagram.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-004",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-004_j_merrill_financial_instagram.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-005",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-005_j_merrill_publishing_facebook.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-006",
+      "brand": "J Merrill Productions",
+      "platform": "Facebook",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-006_j_merrill_productions_facebook.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-007_j_merrill_financial_instagram.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-008",
+      "brand": "J Merrill Foundation",
+      "platform": "Instagram",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-008_j_merrill_foundation_instagram.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-009",
+      "brand": "J Merrill One",
+      "platform": "Facebook",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-009_j_merrill_one_facebook.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-010",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-010_j_merrill_publishing_facebook.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "brand": "J Merrill Financial",
+      "platform": "Instagram",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-011_j_merrill_financial_instagram.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-012",
+      "brand": "J Merrill Productions",
+      "platform": "Instagram",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-012_j_merrill_productions_instagram.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-013",
+      "brand": "J Merrill Publishing",
+      "platform": "Facebook",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-013_j_merrill_publishing_facebook.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    },
+    {
+      "SocialContentId": "SRP2-014",
+      "brand": "J Merrill Foundation",
+      "platform": "Facebook",
+      "file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-014_j_merrill_foundation_facebook.png",
+      "rights_status": "OWNED GENERATED TEXT GRAPHIC",
+      "accessibility": "Alt text required at scheduling/publishing."
+    }
+  ]
+}

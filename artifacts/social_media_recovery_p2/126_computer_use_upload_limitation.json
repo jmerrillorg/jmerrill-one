@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-08-21T08:58:16.808Z",
+  "classification": "CODEX COMPUTER-USE FILE-UPLOAD LIMITATION — MANUAL PLATFORM EXECUTION REQUIRED",
+  "authenticated_meta_business_suite_reachable": true,
+  "composer_reachable": true,
+  "destination_selection_available": true,
+  "file_chooser_result": "Not allowed",
+  "post_or_schedule_record_created": false,
+  "meta_content_rejection_evidence": false,
+  "account_restriction_evidence": false,
+  "content_failure": false,
+  "evidence": {
+    "edge_composer_status": "/tmp/p2_edge_test_composer_status.txt",
+    "edge_composer_url": "/tmp/p2_edge_composer_url.txt",
+    "edge_composer_dom": "/tmp/p2_edge_composer_dom.txt"
+  },
+  "do_not_classify_as": [
+    "Meta outage",
+    "account restriction",
+    "content rejection",
+    "P2 remediation defect"
+  ]
+}

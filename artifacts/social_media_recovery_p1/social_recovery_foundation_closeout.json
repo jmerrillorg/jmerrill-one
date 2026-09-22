@@ -1,0 +1,54 @@
+{
+  "package": "JM1 Social Media Recovery & Marketing Operations P1",
+  "date": "2026-08-20",
+  "final_classification": "SOCIAL RECOVERY FOUNDATION COMPLETE - FOUNDER REVIEW REQUIRED",
+  "target_repository": "J Merrill One",
+  "canonical_location": "artifacts/social_media_recovery_p1/",
+  "repository_routing_result": "Enterprise cross-brand social and marketing governance belongs in J Merrill One. Division implementation artifacts remain in their respective division repositories.",
+  "external_changes_made": false,
+  "schema_changes_made": false,
+  "automation_changes_made": false,
+  "publishing_changes_made": false,
+  "architecture_result": {
+    "microsoft_role": [
+      "canonical content records",
+      "audience/customer records",
+      "consent",
+      "campaign governance",
+      "lead/opportunity management",
+      "Customer Insights journeys",
+      "attribution",
+      "analytics",
+      "AI orchestration",
+      "approval workflows where practical",
+      "enterprise reporting"
+    ],
+    "meta_business_suite_role": [
+      "Facebook publishing and scheduling",
+      "Instagram publishing and scheduling",
+      "Reels",
+      "Stories where supported",
+      "Meta inbox/community management",
+      "native Meta analytics",
+      "page/account administration",
+      "campaign/ad execution when separately authorized"
+    ],
+    "journeys_boundary": "Customer Insights - Journeys is not the Facebook/Instagram social publishing engine."
+  },
+  "current_readiness": {
+    "profile_remediation": "FOUNDER_REVIEW_REQUIRED",
+    "content_launch": "NOT_READY_PENDING_APPROVAL_AND_ADMIN_AUDIT",
+    "meta_admin_audit": "REQUIRED",
+    "dataverse_build": "NOT_STARTED_NOT_AUTHORIZED"
+  },
+  "blockers": [
+    "Founder approval of profile remediation values and address policy.",
+    "Meta Business Portfolio/admin evidence for Facebook and Instagram assets.",
+    "LinkedIn/YouTube admin ownership evidence where applicable.",
+    "Approved public emails, phones, websites, and CTAs.",
+    "Approved asset inventory and content permissions.",
+    "Financial compliance review for planning-led content.",
+    "Foundation privacy review for donor, volunteer, recipient, and minor-related content."
+  ],
+  "recommended_next_action": "Founder approval to proceed to Meta Business Suite/admin audit and prepare profile remediation plus first 30-day approved content batch; do not publish until individual profile edits and scheduled content are approved."
+}

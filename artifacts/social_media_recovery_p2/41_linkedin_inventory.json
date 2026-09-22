@@ -1,0 +1,30 @@
+{
+  "status": "PARTIAL_PUBLIC_SEARCH",
+  "inventory": [
+    {
+      "brand": "J Merrill Publishing",
+      "classification": "ACTIVE - INCLUDE",
+      "evidence": "LinkedIn company page previously found; profile modernization/address review needed."
+    },
+    {
+      "brand": "J Merrill One",
+      "classification": "NO VERIFIED OFFICIAL PAGE",
+      "evidence": "No verified public LinkedIn page confirmed in current public search."
+    },
+    {
+      "brand": "J Merrill Financial",
+      "classification": "NO VERIFIED OFFICIAL PAGE",
+      "evidence": "No verified public LinkedIn page confirmed in current public search."
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "classification": "NO VERIFIED OFFICIAL PAGE",
+      "evidence": "No verified public LinkedIn page confirmed in current public search."
+    },
+    {
+      "brand": "J Merrill Productions",
+      "classification": "NO VERIFIED OFFICIAL PAGE",
+      "evidence": "No verified public LinkedIn page confirmed in current public search."
+    }
+  ]
+}

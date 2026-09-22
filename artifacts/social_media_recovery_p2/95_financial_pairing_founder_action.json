@@ -1,0 +1,33 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "SUPERSEDED — NO FURTHER P2 PAIRING ACTION",
+  "reason": "Founder terminated further Financial FB/IG pairing remediation after Meta manual attempt returned Can't confirm. Independent execution is adopted.",
+  "steps": [
+    "Open Meta Business Suite.",
+    "Select J Merrill Financial.",
+    "Open Settings / Linked accounts / Connect Instagram.",
+    "Select or authenticate @jmerrillfin.",
+    "Confirm the connection.",
+    "Return to Business Suite composer/Planner.",
+    "Verify both J Merrill Financial and @jmerrillfin appear as selectable destinations."
+  ],
+  "do_not_use": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "status": "LEGACY / HOLD - DO NOT USE"
+  },
+  "current_certified_state": {
+    "facebook": {
+      "name": "J Merrill Financial",
+      "profile_id": "61593286063626"
+    },
+    "instagram": {
+      "handle": "@jmerrillfin",
+      "instagram_id": "17841438473100276"
+    },
+    "pairing": "NOT PAIRED",
+    "composer_eligibility": "FACEBOOK ONLY"
+  },
+  "stop_condition": "If Meta prompts for Instagram authentication, security verification, or Accounts Center confirmation, Jackie completes it directly. Do not request passwords or codes.",
+  "superseded_by": "108_financial_independent_channel_execution_decision.json"
+}

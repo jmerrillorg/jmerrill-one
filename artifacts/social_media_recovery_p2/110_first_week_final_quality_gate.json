@@ -1,0 +1,81 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "Human-First",
+      "result": "PASS"
+    },
+    {
+      "check": "Why-First",
+      "result": "PASS"
+    },
+    {
+      "check": "distinct content",
+      "result": "PASS"
+    },
+    {
+      "check": "factual accuracy",
+      "result": "PASS"
+    },
+    {
+      "check": "brand",
+      "result": "PASS"
+    },
+    {
+      "check": "rights",
+      "result": "PASS"
+    },
+    {
+      "check": "privacy",
+      "result": "PASS"
+    },
+    {
+      "check": "compliance",
+      "result": "PASS"
+    },
+    {
+      "check": "creative",
+      "result": "PASS"
+    },
+    {
+      "check": "accessibility",
+      "result": "PASS"
+    },
+    {
+      "check": "CTA",
+      "result": "PASS"
+    },
+    {
+      "check": "destination",
+      "result": "PASS"
+    },
+    {
+      "check": "UTM",
+      "result": "PASS"
+    },
+    {
+      "check": "execution surface",
+      "result": "PASS"
+    }
+  ],
+  "included_posts": [
+    "SRP2-001",
+    "SRP2-002",
+    "SRP2-003",
+    "SRP2-004",
+    "SRP2-005",
+    "SRP2-006",
+    "SRP2-007",
+    "SRP2-008",
+    "SRP2-009",
+    "SRP2-010",
+    "SRP2-011",
+    "SRP2-012",
+    "SRP2-013",
+    "SRP2-014"
+  ],
+  "pass_count": 14,
+  "holds": 0,
+  "note": "Financial independent channel execution is certified and not treated as a defect."
+}

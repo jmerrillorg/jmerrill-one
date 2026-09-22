@@ -1,0 +1,78 @@
+{
+  "updated_at": "2026-08-21T07:42:14.444Z",
+  "status": "10/10 IMPLEMENTED",
+  "execution_rule": "Founder concepts approved; all 10 content decisions marked APPROVED - REVISION REQUIRED and revised copy implemented. No scheduling or publishing authorized.",
+  "decisions": [
+    {
+      "decision_number": "SOC-FD-001",
+      "SocialContentId": "SRP2-001",
+      "concept_set": "Publishing 4-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "102_publishing_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-002",
+      "SocialContentId": "SRP2-002",
+      "concept_set": "Foundation 3-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "103_foundation_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-003",
+      "SocialContentId": "SRP2-003",
+      "concept_set": "J Merrill One 2-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "104_one_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-004",
+      "SocialContentId": "SRP2-005",
+      "concept_set": "Publishing 4-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "102_publishing_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-005",
+      "SocialContentId": "SRP2-008",
+      "concept_set": "Foundation 3-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "103_foundation_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-006",
+      "SocialContentId": "SRP2-009",
+      "concept_set": "J Merrill One 2-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "104_one_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-007",
+      "SocialContentId": "SRP2-010",
+      "concept_set": "Publishing 4-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "102_publishing_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-008",
+      "SocialContentId": "SRP2-013",
+      "concept_set": "Publishing 4-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "102_publishing_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-009",
+      "SocialContentId": "SRP2-014",
+      "concept_set": "Foundation 3-post concept set",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "103_foundation_distinct_launch_copy.json"
+    },
+    {
+      "decision_number": "SOC-FD-010",
+      "SocialContentId": "SRP2-006",
+      "concept_set": "Productions 1-post concept",
+      "result": "APPROVED - REVISION IMPLEMENTED",
+      "final_copy_artifact": "105_productions_launch_copy.json"
+    }
+  ],
+  "remaining_approval": "No Founder content decisions remain. Final scheduling approval must not be requested until manual Meta actions clear and the batch is PASS-only."
+}

@@ -1,0 +1,4 @@
+{
+  "classification": "DEFER",
+  "reason": "P2 can operate from artifact-backed content register and Meta Business Suite until first-week proof validates the workflow. No production Dataverse schema created."
+}

@@ -1,0 +1,30 @@
+{
+  "routes": [
+    {
+      "brand": "J Merrill Publishing",
+      "inquiry": "author inquiry",
+      "route": "Publishing intake path"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "inquiry": "appointment/service inquiry",
+      "route": "Financial scheduling/intake"
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "inquiry": "volunteer/donor/program inquiry",
+      "route": "Foundation contact/donation/volunteer path"
+    },
+    {
+      "brand": "J Merrill Productions",
+      "inquiry": "project inquiry",
+      "route": "Productions contact/intake"
+    },
+    {
+      "brand": "J Merrill One",
+      "inquiry": "general enterprise inquiry",
+      "route": "One routing via info/contact"
+    }
+  ],
+  "rule": "Do not shift a person between divisions unnecessarily."
+}

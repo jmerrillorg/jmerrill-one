@@ -1,0 +1,48 @@
+{
+  "status": "UPDATED_FROM_LIVE_META_AUDIT",
+  "captured_at": "2026-08-20T13:35:00Z",
+  "matrix": [
+    {
+      "brand": "J Merrill One",
+      "proposed_change": "Canonical bio/category/CTA",
+      "classification": "MATERIAL POSITIONING - FOUNDER APPROVAL REQUIRED",
+      "factual_executed": false
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "proposed_change": "Remove unrelated forex/trader Facebook bio",
+      "classification": "FACTUAL - REQUIRED; HELD FOR SAFE PROFILE REMEDIATION",
+      "factual_executed": false
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "proposed_change": "New publishing positioning copy",
+      "classification": "MATERIAL POSITIONING - FOUNDER APPROVAL REQUIRED",
+      "factual_executed": false
+    },
+    {
+      "brand": "J Merrill Financial",
+      "proposed_change": "Financial profile copy and posts",
+      "classification": "COMPLIANCE REVIEW REQUIRED; META ACCESS REMEDIATION REQUIRED",
+      "factual_executed": false
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "proposed_change": "Foundation profile copy/posts and Instagram URL correction",
+      "classification": "PRIVACY REVIEW REQUIRED; FACTUAL URL CORRECTION HELD",
+      "factual_executed": false
+    },
+    {
+      "brand": "J Merrill Productions",
+      "proposed_change": "Remove legacy Spotlight references",
+      "classification": "FACTUAL - REQUIRED; HELD FOR SAFE PROFILE REMEDIATION",
+      "factual_executed": false
+    },
+    {
+      "brand": "J Merrill Productions",
+      "proposed_change": "Broader Productions positioning copy",
+      "classification": "MATERIAL POSITIONING - FOUNDER APPROVAL REQUIRED",
+      "factual_executed": false
+    }
+  ]
+}

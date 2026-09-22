@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "business_portfolio": {
+    "name": "J Merrill One",
+    "id": "846921439784613"
+  },
+  "instagram_id": "17841438473100276",
+  "handle": "@jmerrillfin",
+  "assigned_identity": "J Merrill Financial LLC",
+  "access_level": "Full access",
+  "remediation_performed": false,
+  "evidence": "/tmp/social_p2_clean_ig_accounts_dom.txt"
+}

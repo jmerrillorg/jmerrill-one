@@ -1,0 +1,71 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "plan": [
+    {
+      "brand": "J Merrill One",
+      "website": "https://jmerrill.one/",
+      "short_bio": "Building what lasts across publishing, planning, community impact, media, and enterprise systems. Headquartered in Columbus, Ohio.",
+      "long_about": "J Merrill One is the enterprise home for a family of human-first brands working across publishing, planning, community impact, media, and technology. We build durable systems, useful services, and responsible operating capacity so each division can serve people clearly and well.",
+      "category": "Company / Business service",
+      "cta": "Explore JM1",
+      "contact": "Use jmerrill.one/contact and info@jmerrill.one.",
+      "authority": "FOUNDER COPY APPROVAL REQUIRED",
+      "factual_corrections": [
+        "Remove public street address where present"
+      ]
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "website": "https://jmerrill.pub/",
+      "short_bio": "Hybrid publishing support for authors who want clarity, care, and a real path from manuscript to launch.",
+      "long_about": "J Merrill Publishing helps authors move from manuscript readiness through editing, design, distribution, launch preparation, and author-platform support. We educate, prepare, and support authors without promising acceptance, publication, sales, or commercial outcomes.",
+      "category": "Publisher / Book publisher",
+      "cta": "Start a Publishing Inquiry",
+      "contact": "Use jmerrill.pub inquiry path.",
+      "authority": "FOUNDER COPY APPROVAL REQUIRED",
+      "factual_corrections": [
+        "Remove public street address where present"
+      ]
+    },
+    {
+      "brand": "J Merrill Financial",
+      "website": "https://jmerrill.financial/",
+      "short_bio": "Planning support for families and organizations preparing documents, decisions, legacy, and next steps.",
+      "long_about": "J Merrill Financial helps families and organizations get organized around advanced planning, estate readiness, executor preparation, digital assets, document organization, legacy planning, and ongoing review. Educational content is not legal advice, tax advice, investment advice, or legal representation.",
+      "category": "Financial planning service / Estate planning service subject to compliance review",
+      "cta": "Schedule a Planning Conversation",
+      "contact": "Use approved Financial scheduling/intake path.",
+      "authority": "COMPLIANCE REVIEW REQUIRED",
+      "factual_corrections": [
+        "Remove public street address where present"
+      ]
+    },
+    {
+      "brand": "J Merrill Foundation",
+      "website": "https://jmerrill.foundation/",
+      "short_bio": "Connecting need, people, action, and impact in the communities we serve. Headquartered in Columbus, Ohio.",
+      "long_about": "J Merrill Foundation brings people, resources, volunteers, donors, partners, and programs together around real community needs. Public content should lead with mission, action, people, impact, and safe ways to participate, not walk-in office assumptions or registration-first language.",
+      "category": "Nonprofit organization / Community organization",
+      "cta": "Learn, Volunteer, or Give",
+      "contact": "Use approved Foundation contact, donation, and volunteer paths.",
+      "authority": "PRIVACY REVIEW REQUIRED",
+      "factual_corrections": [
+        "Remove public street address where present"
+      ]
+    },
+    {
+      "brand": "J Merrill Productions",
+      "website": "https://jmerrill.productions/",
+      "short_bio": "Video, audio, interviews, live media, and storytelling for clients, campaigns, authors, community impact, and JM1 communications.",
+      "long_about": "J Merrill Productions creates and supports video, audio, interviews, live media, storytelling, campaign assets, launch media, and enterprise communications. The current canonical web destination is https://jmerrill.productions/. Legacy Spotlight references should be removed where still present.",
+      "category": "Media production / Video production service",
+      "cta": "Work With Productions",
+      "contact": "Use jmerrill.productions contact path.",
+      "authority": "FOUNDER COPY APPROVAL REQUIRED",
+      "factual_corrections": [
+        "Correct website to https://jmerrill.productions/",
+        "Remove legacy Spotlight branding if present"
+      ]
+    }
+  ]
+}

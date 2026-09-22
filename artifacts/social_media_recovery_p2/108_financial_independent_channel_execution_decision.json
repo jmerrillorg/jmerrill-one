@@ -1,0 +1,28 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "ACCEPTED OPERATING CONDITION — INDEPENDENT FB/IG EXECUTION",
+  "founder_decision": "Stop Financial Facebook-to-Instagram pairing remediation permanently for SOCIAL RECOVERY P2.",
+  "manual_attempt_result": "Meta returned: Can't confirm — The username you entered doesn't belong to the Instagram account connected to this Facebook Page. Please check your username.",
+  "superseded_requirement": "Financial Facebook ↔ Financial Instagram must be paired",
+  "adopted_architecture": {
+    "facebook": {
+      "asset": "J Merrill Financial",
+      "profile_id": "61593286063626",
+      "execution_surface": "META_BUSINESS_SUITE_FACEBOOK"
+    },
+    "instagram": {
+      "asset": "@jmerrillfin",
+      "instagram_id": "17841438473100276",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    "brand_interpretation": "The two assets remain the same Financial social brand even though Meta does not maintain the desired connected-assets relationship."
+  },
+  "non_actions": [
+    "Do not create another Facebook Page",
+    "Do not create another Instagram account",
+    "Do not reconnect to @jmerrillfinancial",
+    "Do not rename @jmerrillfin",
+    "Do not attempt additional pairing workflows",
+    "Do not treat pairing as a launch prerequisite"
+  ]
+}

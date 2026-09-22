@@ -1,0 +1,41 @@
+{
+  "status": "PARTIAL PASS - BIO CONFIGURED / WEBSITE FIELD HOLD",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "handle": "@jmerrillfin",
+  "instagram_id": "17841438473100276",
+  "before": {
+    "display_name": "J Merrill Financial, LLC",
+    "bio": "No public bio visible",
+    "website": "No public website visible"
+  },
+  "after": {
+    "display_name": "J Merrill Financial, LLC",
+    "bio": "Advanced planning for life, legacy, and the people who matter most.",
+    "website": "HOLD - Instagram Website field disabled in live edit surface; no public website visible after bio update"
+  },
+  "no_hq_street_address": true,
+  "prohibited_implications_absent": [
+    "attorney representation",
+    "guaranteed outcomes",
+    "investment-performance services",
+    "legal advice"
+  ],
+  "evidence": {
+    "jmerrillfinBusinessSettings": "/tmp/social_p2_clean_ig_accounts_dom.txt",
+    "jmerrillfinConnectedBefore": "/tmp/social_p2_clean_jmerrillfin_connected_dom.txt",
+    "financialPageConnectedBefore": "/tmp/social_p2_clean_fin_page_connected_dom.txt",
+    "pairingConfirm": "/tmp/social_p2_clean_pair_after_continue_dom.txt",
+    "pairingMessage": "/tmp/social_p2_clean_pair_confirm_after_dom.txt",
+    "pairingPageVerify": "/tmp/social_p2_clean_pair_page_verify_dom.txt",
+    "pairingIgVerify": "/tmp/social_p2_clean_pair_ig_verify_dom.txt",
+    "jmerrillfinPublicBefore": "/tmp/social_p2_clean_jmerrillfin_public_dom.txt",
+    "jmerrillfinEdit": "/tmp/social_p2_clean_jmerrillfin_edit_dom.txt",
+    "jmerrillfinPublicAfterBio": "/tmp/social_p2_clean_jmerrillfin_public_after_bio_dom.txt",
+    "productionsIgBefore": "/tmp/social_p2_clean_prod_ig_before_dom.txt",
+    "productionsFacebookLinksBefore": "/tmp/social_p2_clean_prod_fb_links_dom.txt",
+    "productionsFacebookUrlAfter": "/tmp/social_p2_clean_prod_fb_url_save_dom.txt",
+    "publishingBio": "/tmp/social_p2_pub_bio_fix_dom.txt",
+    "publishingWebsite": "/tmp/social_p2_pub_website_dom.txt",
+    "securityCenter": "/tmp/social_p2_security_dom.txt"
+  }
+}

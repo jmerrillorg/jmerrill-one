@@ -1,0 +1,17 @@
+{
+  "updated_at": "2026-08-21T08:58:16.808Z",
+  "status": "PASS",
+  "all_14_posts_have_exact_destinations": true,
+  "all_creatives_locatable": true,
+  "all_dates_times_future_valid_at_handoff": true,
+  "all_copy_frozen": true,
+  "all_links_valid_from_prior_certification": true,
+  "all_execution_instructions_complete": true,
+  "date_shift_required": false,
+  "execution_guides": [
+    "127_first_week_manual_scheduling_packet.md",
+    "130_financial_instagram_founder_execution.md",
+    "131_meta_business_suite_founder_execution.md",
+    "133_first_week_execution_timeline.md"
+  ]
+}

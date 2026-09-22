@@ -1,0 +1,26 @@
+{
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "status": "FOUNDER RECOVERY ACTION REQUIRED",
+  "classification": "FOUNDER RECOVERY ACTION REQUIRED - FOLLOW-UP UNLESS META REQUIRES ENFORCEMENT",
+  "checks": {
+    "jackie_can_authenticate_to_facebook_meta": "NOT PROVEN BY CODEX; current session is authenticated but recovery safety was not verified",
+    "mfa_enabled_on_primary_meta_identity": "NOT PROVEN",
+    "recovery_email_access": "NOT PROVEN",
+    "recovery_phone_access": "NOT PROVEN",
+    "backup_recovery_path": "NOT PROVEN",
+    "current_session_stable": "PASS - Meta session usable for Business Suite inspection"
+  },
+  "do_not_record": [
+    "passwords",
+    "MFA codes",
+    "recovery codes"
+  ],
+  "jackie_checklist": [
+    "Confirm you can sign in to Facebook/Meta without this current browser session.",
+    "Confirm MFA/passkey is enabled on the primary Jackie-controlled Meta identity.",
+    "Confirm you can access the registered recovery email.",
+    "Confirm you can access the registered recovery phone, if present.",
+    "Confirm at least one backup/recovery method exists.",
+    "After those checks, authorize portfolio-wide 2FA/passkey enforcement if desired."
+  ]
+}

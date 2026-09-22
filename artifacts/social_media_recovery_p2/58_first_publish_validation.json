@@ -1,0 +1,7 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "result": "NOT STARTED - NO POSTS PUBLISHED",
+  "status": "PENDING_FIRST_PUBLISH",
+  "records": [],
+  "reason": "No post was scheduled or published from Codex because Edge file upload was blocked before schedule submission."
+}

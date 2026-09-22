@@ -1,0 +1,39 @@
+{
+  "status": "PASS - DECISION RECORDED",
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "decision": "Use clean replacement Financial Instagram for active operations",
+  "canonical_instagram": {
+    "handle": "@jmerrillfin",
+    "instagram_id": "17841438473100276",
+    "status": "CANONICAL - ACTIVE / NEW FINANCIAL INSTAGRAM",
+    "display_name": "J Merrill Financial, LLC",
+    "business_portfolio": {
+      "name": "J Merrill One",
+      "id": "846921439784613"
+    },
+    "assigned_people": [
+      {
+        "identity": "J Merrill Financial LLC",
+        "access_level": "Full access",
+        "selected_user_id": "61593415808532"
+      }
+    ],
+    "professional_account_type": "Professional account visible; exact subtype not exposed in captured Meta DOM",
+    "profile": {
+      "bio": "Advanced planning for life, legacy, and the people who matter most.",
+      "website": "HOLD - Instagram Website field disabled in live edit surface; no public website visible after bio update",
+      "followers": 0,
+      "posts": 0,
+      "no_hq_street_address": true
+    },
+    "pairing": "NOT PAIRED - verification after connection flow still showed no connected assets",
+    "scheduling_eligibility": "BLOCKED - FB/IG pair not verified"
+  },
+  "legacy_instagram": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "status": "LEGACY / HOLD - DO NOT USE FOR ACTIVE OPERATIONS"
+  },
+  "rationale": "A clean replacement Financial Instagram was created as part of Financial social recovery rather than anchoring the new operation to the legacy/restricted asset relationship.",
+  "deletion_performed": false
+}

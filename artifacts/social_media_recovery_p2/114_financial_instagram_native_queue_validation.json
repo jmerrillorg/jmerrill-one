@@ -1,0 +1,39 @@
+{
+  "updated_at": "2026-08-21T08:32:36.916Z",
+  "status": "PASS",
+  "account": "@jmerrillfin",
+  "instagram_id": "17841438473100276",
+  "items": [
+    {
+      "SocialContentId": "SRP2-004",
+      "result": "PASS",
+      "copy_matches_frozen_batch": true,
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-004_j_merrill_financial_instagram.png",
+      "destination": "https://jmerrill.financial/",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-004",
+      "publish_time": "2026-08-22 11:30 AM America/New_York",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-007",
+      "result": "PASS",
+      "copy_matches_frozen_batch": true,
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-007_j_merrill_financial_instagram.png",
+      "destination": "https://jmerrill.financial/",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-007",
+      "publish_time": "2026-08-24 11:30 AM America/New_York",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    },
+    {
+      "SocialContentId": "SRP2-011",
+      "result": "PASS",
+      "copy_matches_frozen_batch": true,
+      "creative_asset_file": "artifacts/social_media_recovery_p2/creative_assets/SRP2-011_j_merrill_financial_instagram.png",
+      "destination": "https://jmerrill.financial/",
+      "UTM": "utm_source=instagram&utm_medium=social&utm_campaign=social_recovery_p2&utm_content=srp2-011",
+      "publish_time": "2026-08-26 11:30 AM America/New_York",
+      "execution_surface": "INSTAGRAM_NATIVE"
+    }
+  ],
+  "note": "Native queue is validated and ready. It was not scheduled from Codex because Instagram native scheduling was not verifiably available in this run."
+}

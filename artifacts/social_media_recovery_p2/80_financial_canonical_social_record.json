@@ -1,0 +1,31 @@
+{
+  "status": "CANONICAL RECORD UPDATED - DUAL EXECUTION SURFACES ACTIVE",
+  "updated_at": "2026-08-21T08:16:52.055Z",
+  "facebook": {
+    "name": "J Merrill Financial",
+    "business_suite_asset_id": "1270611542802820",
+    "public_profile_id": "61593286063626",
+    "public_url": "https://www.facebook.com/profile.php?id=61593286063626",
+    "website": "https://jmerrill.financial/",
+    "category": "Financial service",
+    "bio": "Advanced planning for life, legacy, and the people who matter most.",
+    "status": "CANONICAL",
+    "execution": "META_BUSINESS_SUITE_FACEBOOK"
+  },
+  "instagram": {
+    "handle": "@jmerrillfin",
+    "instagram_id": "17841438473100276",
+    "status": "CANONICAL",
+    "execution": "INSTAGRAM_NATIVE"
+  },
+  "pairing": "NOT PAIRED — ACCEPTED OPERATING CONDITION",
+  "legacy_facebook": {
+    "status": "LEGACY / RESTRICTED — DO NOT PUBLISH"
+  },
+  "legacy_instagram": {
+    "handle": "@jmerrillfinancial",
+    "instagram_id": "17841475196277020",
+    "status": "LEGACY / HOLD — DO NOT USE"
+  },
+  "authoritative_routing_state": "Financial Facebook uses Meta Business Suite. Financial Instagram @jmerrillfin uses native Instagram execution. Pairing is not required for SOCIAL RECOVERY P2 launch."
+}

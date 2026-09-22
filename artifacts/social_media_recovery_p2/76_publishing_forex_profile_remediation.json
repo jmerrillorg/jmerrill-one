@@ -1,0 +1,33 @@
+{
+  "status": "PASS - PROFILE INTEGRITY RESTORED",
+  "required_result": "PASS",
+  "mutation_performed": true,
+  "updated_at": "2026-08-20T20:49:30.184Z",
+  "before_state_evidence": "Live edit dialog did not show forex/trader wording; existing bio was legacy author-help copy and website was http://www.JMerrill.pub/.",
+  "result": "REMEDIATED",
+  "remediation": {
+    "status": "PASS - PROFILE INTEGRITY RESTORED",
+    "facebook": {
+      "bio": "Hybrid publishing support from manuscript readiness to launch.",
+      "website": "https://jmerrill.pub/",
+      "forex_trader_defect": "ABSENT"
+    },
+    "evidence": {
+      "bio": "/tmp/social_p2_pub_bio_fix_dom.txt",
+      "website": "/tmp/social_p2_pub_website_dom.txt"
+    }
+  },
+  "evidence": {
+    "financialInstagramPublicDom": "/tmp/social_p2_ig_public_dom.txt",
+    "financialInstagramBusinessSettingsDom": "/tmp/social_p2_fin_ig_after_pair_dom.txt",
+    "financialPageSettingsDom": "/tmp/social_p2_fin_page_settings_dom2.txt",
+    "publishingBioDom": "/tmp/social_p2_pub_bio_fix_dom.txt",
+    "publishingWebsiteDom": "/tmp/social_p2_pub_website_dom.txt",
+    "productionsFacebookPublicBeforeDom": "/tmp/social_p2_prod_public_fb_dom.txt",
+    "productionsFacebookBioAfterDom": "/tmp/social_p2_prod_bio_update_dom.txt",
+    "productionsFacebookLinksDom": "/tmp/social_p2_prod_links_dom.txt",
+    "productionsInstagramDom": "/tmp/social_p2_prod_ig_dom.txt",
+    "securityCenterDom": "/tmp/social_p2_security_dom.txt"
+  },
+  "final": "PASS - PROFILE INTEGRITY RESTORED"
+}
