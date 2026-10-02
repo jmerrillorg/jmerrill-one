@@ -40,18 +40,33 @@ jobs:
           client-id: ${{ vars.AZURE_CLIENT_ID }}
           tenant-id: ${{ vars.AZURE_TENANT_ID }}
           subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
-      - name: Deploy and verify Functions
+      - name: Stage private package and verify Functions
         env:
           RESOURCE_GROUP: rg-jm1-ai
           FUNCTION_APP: func-jm1-marketing-runtime
+          STORAGE_ACCOUNT: stjm1diagrunner
+          RELEASE_CONTAINER: function-releases
         run: |
-          az functionapp deployment source config-zip --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --src "$GITHUB_WORKSPACE/jm1-marketing-functions-$GITHUB_SHA.zip" --output none
-          az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings JM1_RELEASE_SHA="$GITHUB_SHA" --output none
-          for attempt in {1..12}; do
+          package_name="jm1-marketing-functions-$GITHUB_SHA.zip"
+          package_url="https://$STORAGE_ACCOUNT.blob.core.windows.net/$RELEASE_CONTAINER/$package_name"
+          exists="$(az storage blob exists --account-name "$STORAGE_ACCOUNT" --container-name "$RELEASE_CONTAINER" --name "$package_name" --auth-mode login --query exists -o tsv)"
+          if [ "$exists" != "True" ] && [ "$exists" != "true" ]; then
+            az storage blob upload --account-name "$STORAGE_ACCOUNT" --container-name "$RELEASE_CONTAINER" --name "$package_name" --file "$GITHUB_WORKSPACE/$package_name" --auth-mode login --overwrite false --only-show-errors --output none
+          fi
+          old_package="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE'].value | [0]" -o tsv)"
+          old_sha="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_RELEASE_SHA'].value | [0]" -o tsv)"
+          rollback() {
+            az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings WEBSITE_RUN_FROM_PACKAGE="$old_package" JM1_RELEASE_SHA="$old_sha" --output none
+          }
+          trap rollback ERR
+          az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings WEBSITE_RUN_FROM_PACKAGE="$package_url" WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID=SystemAssigned JM1_RELEASE_SHA="$GITHUB_SHA" --output none
+          for attempt in {1..18}; do
+            az rest --method post --url "https://management.azure.com/subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/resourceGroups/$RESOURCE_GROUP/providers/Microsoft.Web/sites/$FUNCTION_APP/syncfunctiontriggers?api-version=2024-11-01" --output none || true
             names="$(az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query '[].name' -o tsv || true)"
             if printf '%s\n' "$names" | grep -q '/websiteIntakeReconciliationTimer$' && printf '%s\n' "$names" | grep -q '/credentialMonitorTimer$'; then
+              trap - ERR
               exit 0
             fi
             sleep 10
           done
-          exit 1
+          false

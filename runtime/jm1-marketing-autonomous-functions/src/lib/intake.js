@@ -177,16 +177,20 @@ export async function processIntake(adapter, id) {
       return detail;
     }
     let contactId = contacts[0]?.contactid;
+    let contactOwnsMessage = false;
     if (!contactId) {
       contactId = guid('contact-email', input.email);
-      await createOrRead(adapter, 'contacts', contactId, {
+      const contact = await createOrRead(adapter, 'contacts', contactId, {
         contactid: contactId,
         firstname: input.firstName,
         lastname: input.lastName,
         emailaddress1: input.email,
         telephone1: input.phone || undefined,
-        description: `JM1 website contact. Intake receipt: ${id}`
+        description: LEAD_INTENTS.has(input.intent)
+          ? `JM1 website contact. Intake receipt: ${id}`
+          : `JM1 website inquiry for ${detail.routingDestination}. Intake receipt: ${id}\n\n${input.message}`
       });
+      contactOwnsMessage = !LEAD_INTENTS.has(input.intent) && contact.description?.includes(`Intake receipt: ${id}`);
     }
     detail.contactReference = contactId;
     await saveReceipt(adapter, detail);
@@ -199,7 +203,7 @@ export async function processIntake(adapter, id) {
         lastname: input.lastName,
         emailaddress1: input.email,
         telephone1: input.phone || undefined,
-        description: input.message,
+        description: `Source: ${input.source || 'Website'}\nIntake receipt: ${id}\n\n${input.message}`,
         'parentcontactid@odata.bind': `/contacts(${contactId})`
       });
       detail.leadReference = leadId;
@@ -207,8 +211,8 @@ export async function processIntake(adapter, id) {
     }
     detail.state = INTAKE_STATES.COMPLETED;
     detail.finalState = LEAD_INTENTS.has(input.intent) ? 'LEAD_CREATED' : 'CONTACT_REVIEW';
-    // Lead already owns its message. Contact-only inquiries retain theirs in the receipt.
-    if (LEAD_INTENTS.has(input.intent)) detail.submission = { ...input, message: '' };
+    // Retain a message in the receipt only when no business record owns it.
+    if (LEAD_INTENTS.has(input.intent) || contactOwnsMessage) detail.submission = { ...input, message: '' };
     await saveReceipt(adapter, detail);
     return detail;
   } catch (error) {

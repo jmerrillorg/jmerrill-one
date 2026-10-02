@@ -66,7 +66,7 @@ for (const [intent, route] of Object.entries(expectedRoutes)) {
   const mock = createMock();
   const submission = {
     requestId: randomUUID(), intent, firstName: 'Synthetic', lastName: 'Visitor',
-    email: `${intent}@example.invalid`, phone: '', message: 'Controlled intake proof', source: 'test'
+    email: `${intent}@example.invalid`, phone: '', message: 'Controlled intake proof', source: 'test', sourceUrl: 'https://jmerrill.one/contact'
   };
   const accepted = await acceptIntake(mock, submission);
   assert.equal(accepted.replay, false);
@@ -79,8 +79,12 @@ for (const [intent, route] of Object.entries(expectedRoutes)) {
   const processed = await processIntake(mock, accepted.receipt.id);
   assert.equal(processed.state, INTAKE_STATES.COMPLETED);
   assert.equal(processed.routingDestination, route);
+  assert.equal(processed.submission.sourceUrl, 'https://jmerrill.one/contact');
   assert.equal(mock.counts.contacts, 1);
   assert.equal(mock.counts.leads, ['publishing', 'financial', 'productions'].includes(intent) ? 1 : 0);
+  if (['general', 'foundation'].includes(intent)) {
+    assert.equal([...mock.tables.contacts.values()][0].description.includes('Controlled intake proof'), true);
+  }
   const replay = await acceptIntake(mock, submission);
   assert.equal(replay.replay, true);
   await processIntake(mock, replay.receipt.id);
