@@ -14,6 +14,7 @@ import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
 import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
+import { approvedContentForSocial } from '../lib/socialContentApproval.js';
 
 app.timer('socialExecutionWorkerTimer', {
   schedule: process.env.JM1_SOCIAL_EXECUTION_WORKER_CRON || '0 */15 * * * *',
@@ -167,6 +168,16 @@ app.timer('socialExecutionWorkerTimer', {
       const scheduledFor = new Date(row.jm1_requestedschedule);
       if (!Number.isNaN(scheduledFor.getTime()) && scheduledFor > new Date(envelope.startedAt)) {
         writes.push({ id: row.jm1_socialexecutionid, state: 'SCHEDULED_NOT_DUE', scheduledFor: row.jm1_requestedschedule });
+        continue;
+      }
+
+      if (!approvedContentForSocial(row, contentRows)) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_readbackstate: 'CONTENT_PUBLIC_READY_APPROVAL_REQUIRED',
+          jm1_errorcode: 'CONTENT_PUBLIC_READY_APPROVAL_REQUIRED',
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state: 'CONTENT_PUBLIC_READY_APPROVAL_REQUIRED' });
         continue;
       }
 
