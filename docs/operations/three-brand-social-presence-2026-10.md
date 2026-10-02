@@ -29,7 +29,7 @@ The requested destination text differs across rows and is not proof of exact nat
 
 ## Author coverage
 
-Only posts actually published or booked in the correct calendar month count. The September 2 Meta publication of the October introduction does not count toward October. The October 1 Publishing LinkedIn post is not an Iyorwuese Hagher spotlight. Verified October Iyorwuese weeks covered: **0/5** (Oct 1-7, 8-14, 15-21, 22-28, 29-31). Verified November Kimberly Reeder weeks covered: **0/5** (Nov 1-7, 8-14, 15-21, 22-28, 29-30). These are coverage gaps, not authorization to publish ten posts. Confirm author identity (including Reeder/Reeder-Heard ambiguity), title facts, image/license and likeness rights, stage copy, and approvals before booking. Do not invent biographies, endorsements, or book details.
+Only posts actually published or booked in the correct calendar month count. The September 2 Meta publication of the October introduction does not count toward October. The October 1 Publishing LinkedIn post is not an Iyorwuese Hagher spotlight. Using Monday-Sunday calendar weeks, verified October Iyorwuese coverage is **0/5** (Sep 28-Oct 4, Oct 5-11, Oct 12-18, Oct 19-25, Oct 26-Nov 1). Verified November Kimberly Reeder coverage is **0/6** (Oct 26-Nov 1, Nov 2-8, Nov 9-15, Nov 16-22, Nov 23-29, Nov 30-Dec 6). Only dates inside the named month count. These are coverage gaps, not authorization to publish eleven posts or backdate a missed week. Confirm author identity, title facts, image/license and likeness rights, stage copy, and approvals before booking. Do not invent biographies, endorsements, or book details.
 
 ## Draft queue, not scheduled
 

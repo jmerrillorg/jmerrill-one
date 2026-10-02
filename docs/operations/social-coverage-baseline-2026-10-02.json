@@ -1,0 +1,33 @@
+{
+  "asOf": "2026-10-02T18:19:27Z",
+  "dataverseUrl": "https://jm1hq.crm.dynamics.com",
+  "dataverseMarker": "e60c47b5da7824de99976e0a",
+  "evidenceNote": "Native calendar readback observed October 2; no future bookings verified. Dataverse rows read separately. This is a dated input, not a live native connector.",
+  "channels": [
+    { "brand": "J Merrill One", "platform": "facebook", "destinationId": "101196349506906", "executionOwner": "META_NATIVE", "nativeReadback": { "state": "VERIFIED", "observedDateET": "2026-10-02" } },
+    { "brand": "J Merrill One", "platform": "instagram", "destinationId": null, "executionOwner": "META_NATIVE", "nativeReadback": { "state": "VERIFIED", "observedDateET": "2026-10-02" } },
+    { "brand": "J Merrill One", "platform": "linkedin", "destinationId": "106683183", "executionOwner": "LINKEDIN_NATIVE", "nativeReadback": { "state": "VERIFIED", "observedDateET": "2026-10-02" } },
+    { "brand": "J Merrill Publishing", "platform": "facebook", "destinationId": "307480763084670", "executionOwner": "AZURE_WORKER", "nativeReadback": { "state": "VERIFIED", "observedDateET": "2026-10-02" } },
+    { "brand": "J Merrill Publishing", "platform": "instagram", "destinationId": "17841410046020869", "executionOwner": "AZURE_WORKER", "nativeReadback": { "state": "VERIFIED", "observedDateET": "2026-10-02" } },
+    { "brand": "J Merrill Publishing", "platform": "linkedin", "destinationId": "13048648", "executionOwner": "LINKEDIN_NATIVE", "nativeReadback": { "state": "VERIFIED", "observedDateET": "2026-10-02" } },
+    { "brand": "J Merrill Financial", "platform": "facebook", "destinationId": null, "executionOwner": "META_NATIVE", "nativeReadback": { "state": "VERIFIED", "observedDateET": "2026-10-02", "candidatePageIds": ["1270611542802820", "104395329284856"] } },
+    { "brand": "J Merrill Financial", "platform": "instagram", "destinationId": null, "executionOwner": "META_NATIVE", "nativeReadback": { "state": "UNVERIFIED", "observedDateET": "2026-10-02", "publicHandle": "jmerrillfinancial" } },
+    { "brand": "J Merrill Financial", "platform": "linkedin", "destinationId": "146207089", "executionOwner": "LINKEDIN_NATIVE", "nativeReadback": { "state": "VERIFIED", "observedDateET": "2026-10-02" } }
+  ],
+  "authorPrograms": [
+    { "brand": "J Merrill Publishing", "author": "Iyorwuese Hagher", "month": "2026-10" },
+    { "brand": "J Merrill Publishing", "author": "Kimberly Reeder", "month": "2026-11" }
+  ],
+  "items": [
+    { "id": "8668125b-baa6-f111-b8de-6045bdd69435", "kind": "API_REQUEST", "brand": "J Merrill Publishing", "platform": "facebook", "destinationId": null, "expectedDestinationId": "307480763084670", "requestedDestinationText": "J Merrill Publishing, Inc.", "scheduledAt": "2026-10-03T14:00:00Z", "status": "HELD_CAMPAIGN", "approvalState": "HELD", "contentKey": "october:title_discovery" },
+    { "id": "d8f0155e-baa6-f111-b8de-6045bdd69678", "kind": "API_REQUEST", "brand": "J Merrill Publishing", "platform": "instagram", "destinationId": null, "expectedDestinationId": "17841410046020869", "requestedDestinationText": "J Merrill Publishing, Inc.", "scheduledAt": "2026-10-03T16:00:00Z", "status": "HELD_CAMPAIGN", "approvalState": "HELD", "contentKey": "october:title_discovery" },
+    { "id": "c4510039-92a7-f111-b8de-00224820105b", "kind": "API_REQUEST", "brand": "J Merrill Publishing", "platform": "facebook", "destinationId": null, "expectedDestinationId": "307480763084670", "requestedDestinationText": "J Merrill Publishing Inc", "scheduledAt": "2026-10-21T14:00:00Z", "status": "HELD_CAMPAIGN", "approvalState": "HELD", "contentKey": "october:additional_title_discovery" },
+    { "id": "6495ca3c-92a7-f111-b8de-7c1e525b15c2", "kind": "API_REQUEST", "brand": "J Merrill Publishing", "platform": "instagram", "destinationId": null, "expectedDestinationId": "17841410046020869", "requestedDestinationText": "jmerrillpub", "scheduledAt": "2026-10-21T16:00:00Z", "status": "HELD_CAMPAIGN", "approvalState": "HELD", "contentKey": "october:additional_title_discovery" },
+    { "id": "october:title_discovery:facebook", "kind": "CONTENT", "brand": "J Merrill Publishing", "platform": "facebook", "approvalState": "HELD" },
+    { "id": "october:title_discovery:instagram", "kind": "CONTENT", "brand": "J Merrill Publishing", "platform": "instagram", "approvalState": "HELD" },
+    { "id": "october:additional_title_discovery:facebook", "kind": "CONTENT", "brand": "J Merrill Publishing", "platform": "facebook", "approvalState": "APPROVED" },
+    { "id": "october:additional_title_discovery:instagram", "kind": "CONTENT", "brand": "J Merrill Publishing", "platform": "instagram", "approvalState": "APPROVED" },
+    { "id": "1398847435587037", "kind": "PUBLISHED", "source": "NATIVE_READBACK", "brand": "J Merrill Publishing", "platform": "facebook", "destinationId": "307480763084670", "platformPostId": "1398847435587037", "publishedDateET": "2026-09-02", "theme": "AUTHOR_SPOTLIGHT", "author": "Iyorwuese Hagher" },
+    { "id": "18015844355734287", "kind": "PUBLISHED", "source": "NATIVE_READBACK", "brand": "J Merrill Publishing", "platform": "instagram", "destinationId": "17841410046020869", "platformPostId": "18015844355734287", "publishedDateET": "2026-09-02", "theme": "AUTHOR_SPOTLIGHT", "author": "Iyorwuese Hagher" }
+  ]
+}
