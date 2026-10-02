@@ -7,7 +7,7 @@ import {
   META_MEDIA_URL_REGISTRY,
   SOCIAL_EXECUTION_CLAIM_LEASE_MINUTES
 } from '../lib/config.js';
-import { entitySet, patchById, queryByPrefix, upsertByIdempotency } from '../lib/dataverse.js';
+import { entitySet, patchById, queryByIdempotency, queryByPrefix, upsertByIdempotency } from '../lib/dataverse.js';
 import { classifyFailure, deadLetterRecord } from '../lib/failurePolicy.js';
 import { checkLinkedInAuthority, findRecentMatchingLinkedInPost, publishLinkedInOrganizationImagePost } from '../lib/linkedin.js';
 import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
@@ -15,6 +15,7 @@ import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPho
 import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { approvedContentForSocial } from '../lib/socialContentApproval.js';
+import { approvedCampaignForSocial } from '../lib/socialCampaignAuthority.js';
 
 app.timer('socialExecutionWorkerTimer', {
   schedule: process.env.JM1_SOCIAL_EXECUTION_WORKER_CRON || '0 */15 * * * *',
@@ -44,6 +45,16 @@ app.timer('socialExecutionWorkerTimer', {
       'jm1_contentworkid,jm1_idempotencykey,jm1_stage,jm1_draftcopy,jm1_publicreadystate',
       100
     );
+    const campaignRows = await queryByIdempotency(
+      await entitySet('jm1_campaignauthority'),
+      `${marker}:campaign`,
+      'jm1_campaignauthorityid,jm1_idempotencykey,jm1_branch,jm1_state',
+      2
+    ).catch((error) => {
+      context.error(`Campaign authority lookup failed: ${error.message}`);
+      return [];
+    });
+    const approvedCampaign = approvedCampaignForSocial(marker, campaignRows);
 
     const metaAuthority = await verifyMetaAuthority(publishing);
     const linkedinAuthority = checkLinkedInAuthority(publishing);
@@ -168,6 +179,16 @@ app.timer('socialExecutionWorkerTimer', {
       const scheduledFor = new Date(row.jm1_requestedschedule);
       if (!Number.isNaN(scheduledFor.getTime()) && scheduledFor > new Date(envelope.startedAt)) {
         writes.push({ id: row.jm1_socialexecutionid, state: 'SCHEDULED_NOT_DUE', scheduledFor: row.jm1_requestedschedule });
+        continue;
+      }
+
+      if (!approvedCampaign) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_readbackstate: 'CAMPAIGN_PUBLIC_EXECUTION_APPROVAL_REQUIRED',
+          jm1_errorcode: 'CAMPAIGN_PUBLIC_EXECUTION_APPROVAL_REQUIRED',
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state: 'CAMPAIGN_PUBLIC_EXECUTION_APPROVAL_REQUIRED' });
         continue;
       }
 
@@ -370,6 +391,19 @@ app.timer('socialExecutionWorkerTimer', {
       const scheduledFor = new Date(row.jm1_requestedschedule);
       if (!Number.isNaN(scheduledFor.getTime()) && scheduledFor > new Date(envelope.startedAt)) {
         writes.push({ id: row.jm1_socialexecutionid, state: 'LINKEDIN_SCHEDULED_NOT_DUE', scheduledFor: row.jm1_requestedschedule });
+        continue;
+      }
+
+      if (!approvedCampaign || !approvedContentForSocial(row, contentRows)) {
+        const state = !approvedCampaign
+          ? 'CAMPAIGN_PUBLIC_EXECUTION_APPROVAL_REQUIRED'
+          : 'CONTENT_PUBLIC_READY_APPROVAL_REQUIRED';
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_readbackstate: state,
+          jm1_errorcode: state,
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state });
         continue;
       }
 
