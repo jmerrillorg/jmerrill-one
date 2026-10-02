@@ -17,6 +17,12 @@ JM1-Core owns the proposed `jm1_jsjinquiry` table. JSJ owns the business meaning
 
 No application identity or role was provisioned by this migration script. These are deployment preconditions, not inferred results.
 
+## Live access readback, 2026-10-02
+
+The JSJ App Service now has a system-assigned managed identity. Its JM1-Core application user `bc73ca60-91be-f111-aaaf-00224820105b` has exactly one assigned role, `JSJ Inquiry Service`, and that role has only organization-depth Create, Read, Write, and Delete privileges on `jm1_JSJInquiry`. A token obtained inside the production App Service returned HTTP 200 for an empty JSJ inquiry read, HTTP 403 for Contact, and HTTP 403 for the enterprise execution log. This proves the JSJ identity cannot read those two cross-brand tables. It does not prove reciprocal denial for every other enterprise service identity.
+
+JM1-Core created the table with an active unique submission key and a `jm1_message` Memo field with `MaxLength=5000`. Production row count was zero at readback. System Customizer access to the new table was removed. The built-in Support User role (`accessmode=3`) and Microsoft `AuthorizationCore` Service Reader/Writer/Deleter roles retain table privileges; Dataverse rejected changes to those managed roles. Their observed assignees were non-interactive application users, not ordinary human reviewers. This is a platform-reserved access exception, not strict cross-brand isolation, and must remain visible in privacy/security review. No synthetic inquiry has been sent.
+
 ## Retention
 
 An inquiry is eligible for physical Dataverse row deletion 12 calendar months after `jm1_closedat` only when `jm1_retentionhold`, `jm1_transferredat`, and `jm1_authoritativerecord` are all empty. A transfer or hold must be recorded before the due date. `scripts/reconcile-jsj-inquiry-retention.mjs` dry-runs by default and deletes eligible rows only with `--apply`. A scheduled system-owned run, deletion readback, failure alert, and hold/transfer tests are still required before commissioning. Purview policy alone does not delete Dataverse rows.
