@@ -124,28 +124,30 @@ export async function acceptIntake(adapter, submission) {
     return { receipt: existing, replay: true };
   }
   const now = new Date().toISOString();
+  const storedSubmission = { ...submission };
+  delete storedSubmission.requestId;
+  delete storedSubmission.followUpOwnerId;
   const detail = {
     version: 2,
     id,
     requestId,
-    idempotencyKey: requestId,
     digest: submissionDigest,
     receivedAt: now,
-    channel: 'jmerrill.one/contact',
+    channel: submission.sourceUrl === 'https://jmerrill.productions/contact'
+      ? 'jmerrill.productions/contact' : 'jmerrill.one/contact',
     consent: { given: true, version: 'JM1-CONTACT-2026-10-02', timestamp: now, purpose: 'respond_to_inquiry' },
-    contactReference: null,
-    leadReference: null,
     routingDestination: ROUTES[submission.intent],
+    followUpOwnerId: submission.intent === 'productions' ? submission.followUpOwnerId || null : null,
     state: INTAKE_STATES.RECEIVED,
-    lastAttempt: null,
-    finalState: null,
     attempts: 0,
-    submission
+    submission: storedSubmission
   };
-  assertReceiptFits(detail, 1600);
+  assertReceiptFits(detail);
   try {
     await adapter.request('/jm1_executionlogs', 'POST', receiptBody(detail));
-    return { receipt: detail, replay: false };
+    const committed = parseReceipt(await getById(adapter, 'jm1_executionlogs', id));
+    if (!committed || committed.digest !== submissionDigest) throw new Error('Intake receipt readback did not match.');
+    return { receipt: committed, replay: false };
   } catch (error) {
     const committed = parseReceipt(await getById(adapter, 'jm1_executionlogs', id));
     if (committed && committed.digest === submissionDigest) return { receipt: committed, replay: true };
@@ -204,6 +206,8 @@ export async function processIntake(adapter, id) {
         emailaddress1: input.email,
         telephone1: input.phone || undefined,
         description: `Source: ${input.source || 'Website'}\nIntake receipt: ${id}\n\n${input.message}`,
+        ...(input.intent === 'productions' && detail.followUpOwnerId
+          ? { 'ownerid@odata.bind': `/systemusers(${detail.followUpOwnerId})` } : {}),
         'parentcontactid@odata.bind': `/contacts(${contactId})`
       });
       detail.leadReference = leadId;
