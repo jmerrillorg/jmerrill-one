@@ -65,7 +65,11 @@ for (const column of columns) {
   let existing = await get(`/EntityDefinitions(LogicalName='${table}')/Attributes(LogicalName='${logical}')?$select=LogicalName`, true);
   if (!existing && apply) {
     await request(`/EntityDefinitions(LogicalName='${table}')/Attributes`, { method: 'POST', body: JSON.stringify(column) });
-    existing = await get(`/EntityDefinitions(LogicalName='${table}')/Attributes(LogicalName='${logical}')?$select=LogicalName`);
+    for (let attempt = 0; attempt < 12 && !existing; attempt += 1) {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      existing = await get(`/EntityDefinitions(LogicalName='${table}')/Attributes(LogicalName='${logical}')?$select=LogicalName`, true);
+    }
+    if (!existing) throw new Error(`Dataverse did not expose created column ${logical} after 12 seconds`);
   }
   result.columns.push({ logical, status: existing ? 'PRESENT' : 'MISSING' });
 }
