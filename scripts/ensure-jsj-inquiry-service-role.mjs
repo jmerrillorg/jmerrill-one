@@ -4,6 +4,8 @@ const url = 'https://jm1hq.crm.dynamics.com';
 const api = `${url}/api/data/v9.2`;
 const appId = process.env.JSJ_MANAGED_IDENTITY_APP_ID;
 if (!appId || !/^[0-9a-f-]{36}$/i.test(appId)) throw new Error('JSJ_MANAGED_IDENTITY_APP_ID is required');
+const objectId = process.env.JSJ_MANAGED_IDENTITY_OBJECT_ID;
+if (process.argv.includes('--apply') && (!objectId || !/^[0-9a-f-]{36}$/i.test(objectId))) throw new Error('JSJ_MANAGED_IDENTITY_OBJECT_ID is required for apply');
 const apply = process.argv.includes('--apply');
 const token = execFileSync('az', ['account', 'get-access-token', '--resource', url, '--query', 'accessToken', '-o', 'tsv'], { encoding: 'utf8' }).trim();
 const roleName = 'JSJ Inquiry Service';
@@ -35,12 +37,23 @@ if (roleId && apply) {
       body: JSON.stringify({ Privileges: selected.map((item) => ({ Depth: 'Global', PrivilegeId: item.privilegeid, PrivilegeName: item.name, BusinessUnitId: businessUnitId })) })
     });
   }
+  for (const name of (await rolePrivileges(roleId)).filter((item) => !expected.includes(item))) {
+    const found = (await request(`/privileges?$select=name,privilegeid&$filter=${encodeURIComponent(`name eq '${name}'`)}`)).value;
+    if (found.length !== 1) throw new Error(`Cannot resolve unexpected privilege ${name}`);
+    await request(`/roles(${roleId})/Microsoft.Dynamics.CRM.RemovePrivilegeRole`, {
+      method: 'POST', body: JSON.stringify({ Privilege: { privilegeid: found[0].privilegeid, name } })
+    });
+  }
+  const narrowed = await rolePrivileges(roleId);
+  if (narrowed.length !== expected.length || expected.some((name) => !narrowed.includes(name))) {
+    throw new Error('JSJ service role remains broader than inquiry CRUD');
+  }
 }
 let appUsers = (await request(`/systemusers?$select=systemuserid,applicationid,accessmode&$filter=${encodeURIComponent(`applicationid eq ${appId}`)}`)).value;
 if (!appUsers.length && apply) {
-  await request('/applicationusers', {
+  await request('/systemusers', {
     method: 'POST',
-    body: JSON.stringify({ applicationid: appId, applicationname: 'JSJ App Service inquiry identity', applicationtype: 2, canimpersonateassystemuser: false, 'businessunitid@odata.bind': `businessunits(${businessUnitId})` })
+    body: JSON.stringify({ applicationid: appId, azureactivedirectoryobjectid: objectId, accessmode: 4, 'businessunitid@odata.bind': `businessunits(${businessUnitId})` })
   });
   appUsers = (await request(`/systemusers?$select=systemuserid,applicationid,accessmode&$filter=${encodeURIComponent(`applicationid eq ${appId}`)}`)).value;
 }
