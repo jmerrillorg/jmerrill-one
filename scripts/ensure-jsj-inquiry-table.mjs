@@ -93,13 +93,17 @@ async function request(path, init = {}) {
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/json', 'Content-Type': 'application/json', 'OData-Version': '4.0', 'OData-MaxVersion': '4.0', 'MSCRM.SolutionUniqueName': 'JMerrillOne', ...init.headers }
   });
   const body = await response.text();
-  if (!response.ok) throw new Error(`Dataverse ${init.method || 'GET'} ${path}: ${response.status} ${body.slice(0, 600)}`);
+  if (!response.ok) {
+    const error = new Error(`Dataverse ${init.method || 'GET'} ${path}: ${response.status} ${body.slice(0, 600)}`);
+    error.status = response.status;
+    throw error;
+  }
   return body ? JSON.parse(body) : {};
 }
 
 async function get(path, optional = false) {
   try { return await request(path); }
-  catch (error) { if (optional && /: 404 /.test(String(error))) return null; throw error; }
+  catch (error) { if (optional && error.status === 404) return null; throw error; }
 }
 
 async function publish() {
