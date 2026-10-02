@@ -4,18 +4,6 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - "app/**"
-      - "components/**"
-      - "content/**"
-      - "lib/**"
-      - "public/**"
-      - "runtime/jm1-marketing-autonomous-functions/**"
-      - "scripts/**"
-      - "package.json"
-      - "package-lock.json"
-      - "next.config.*"
-      - ".github/workflows/validate-front-door.yml"
   workflow_dispatch:
 
 permissions:
