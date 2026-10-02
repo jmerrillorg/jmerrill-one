@@ -12,6 +12,7 @@ on:
       - "lib/**"
       - "public/**"
       - "scripts/**"
+      - "runtime/jm1-marketing-autonomous-functions/src/lib/intake.js"
       - "package.json"
       - "package-lock.json"
       - "next.config.*"

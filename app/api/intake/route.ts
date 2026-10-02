@@ -33,7 +33,32 @@ function fallbackEmail(intent: Intent) {
 }
 
 function response(status: number, body: Record<string, unknown>) {
-  return NextResponse.json(body, { status });
+  return NextResponse.json(body, { status, headers: { "Cache-Control": "no-store" } });
+}
+
+const productionsOrigin = "https://jmerrill.productions";
+
+function withCors(result: NextResponse, origin: string | null) {
+  if (origin === productionsOrigin) {
+    result.headers.set("Access-Control-Allow-Origin", productionsOrigin);
+    result.headers.set("Vary", "Origin");
+  }
+  return result;
+}
+
+export async function OPTIONS(request: NextRequest) {
+  if (request.headers.get("origin") !== productionsOrigin) return new NextResponse(null, { status: 403 });
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": productionsOrigin,
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Idempotency-Key",
+      "Access-Control-Max-Age": "3600",
+      "Cache-Control": "no-store",
+      Vary: "Origin",
+    },
+  });
 }
 
 function rateLimitAllows(request: NextRequest) {
@@ -75,7 +100,7 @@ async function tokenFor(config: NonNullable<ReturnType<typeof dataverseConfig>>)
   return token.access_token;
 }
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   if (!rateLimitAllows(request)) {
     return response(429, { success: false, message: "Please wait a moment before trying again.", fallbackEmail: fallbackEmail("general") });
   }
@@ -89,15 +114,16 @@ export async function POST(request: NextRequest) {
   }
 
   if (clean(body.companyWebsite, 200)) return response(202, { success: true, status: "received" });
-  const intent = intents.has(body.intent as Intent) ? body.intent as Intent : "general";
+  const fromProductions = request.headers.get("origin") === productionsOrigin;
+  const intent = fromProductions ? "productions" : intents.has(body.intent as Intent) ? body.intent as Intent : "general";
   const requestId = clean(request.headers.get("Idempotency-Key") || body.correlationId, 80).toLowerCase();
   const firstName = clean(body.firstName, 80);
   const lastName = clean(body.lastName, 80);
   const email = clean(body.email, 254).toLowerCase();
   const phone = clean(body.phone, 40);
   const message = cleanMessage(body.message);
-  const source = clean(body.source, 120);
-  const sourceUrl = clean(body.sourceUrl, 180);
+  const source = fromProductions ? "jmerrill.productions/contact" : clean(body.source, 120);
+  const sourceUrl = fromProductions ? `${productionsOrigin}/contact` : clean(body.sourceUrl, 180);
 
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(requestId)) {
     return response(400, { success: false, message: "Please refresh the form and try again.", fallbackEmail: fallbackEmail(intent) });
@@ -116,7 +142,12 @@ export async function POST(request: NextRequest) {
   if (!config) {
     return response(503, { success: false, message: "We can't receive this request right now.", fallbackEmail: fallbackEmail(intent) });
   }
-  const submission = { requestId, intent, firstName, lastName, email, phone, message, source, sourceUrl };
+  const productionsOwnerId = process.env.JM1_PRODUCTIONS_FOLLOWUP_OWNER_ID || "";
+  if (intent === "productions" && !/^[0-9a-f]{8}-[0-9a-f-]{27}$/i.test(productionsOwnerId)) {
+    return response(503, { success: false, message: "We can't receive this request right now.", fallbackEmail: fallbackEmail(intent) });
+  }
+  const submission = { requestId, intent, firstName, lastName, email, phone, message, source, sourceUrl,
+    ...(intent === "productions" ? { followUpOwnerId: productionsOwnerId.toLowerCase() } : {}) };
   try {
     const token = await tokenFor(config);
     const adapter = createIntakeDataverseAdapter({ apiBase: config.apiBase, getToken: async () => token });
@@ -126,7 +157,7 @@ export async function POST(request: NextRequest) {
     } catch (error) {
       console.error("JM1 intake will retry from durable receipt", error instanceof Error ? error.message : "unknown");
     }
-    return response(202, { success: true, status: "received", idempotentReplay: replay });
+    return response(202, { success: true, status: "received", referenceId: receipt.id, idempotentReplay: replay });
   } catch (error) {
     if (error instanceof Error && "code" in error) {
       if (error.code === "KEY_REUSED") return response(409, { success: false, message: "Please refresh the form and try again.", fallbackEmail: fallbackEmail(intent) });
@@ -135,4 +166,8 @@ export async function POST(request: NextRequest) {
     console.error("JM1 intake could not create durable receipt", error instanceof Error ? error.message : "unknown");
     return response(503, { success: false, message: "We can't receive this request right now.", fallbackEmail: fallbackEmail(intent) });
   }
+}
+
+export async function POST(request: NextRequest) {
+  return withCors(await handlePost(request), request.headers.get("origin"));
 }

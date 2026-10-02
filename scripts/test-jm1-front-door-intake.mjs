@@ -68,6 +68,11 @@ for (const [intent, route] of Object.entries(expectedRoutes)) {
     requestId: randomUUID(), intent, firstName: 'Synthetic', lastName: 'Visitor',
     email: `${intent}@example.invalid`, phone: '', message: 'Controlled intake proof', source: 'test', sourceUrl: 'https://jmerrill.one/contact'
   };
+  if (intent === 'productions') {
+    submission.source = 'jmerrill.productions/contact';
+    submission.sourceUrl = 'https://jmerrill.productions/contact';
+    submission.followUpOwnerId = '5adf7e12-f093-f011-b4cb-6045bdeb7c0e';
+  }
   const accepted = await acceptIntake(mock, submission);
   assert.equal(accepted.replay, false);
   assert.equal(accepted.receipt.state, INTAKE_STATES.RECEIVED);
@@ -79,7 +84,11 @@ for (const [intent, route] of Object.entries(expectedRoutes)) {
   const processed = await processIntake(mock, accepted.receipt.id);
   assert.equal(processed.state, INTAKE_STATES.COMPLETED);
   assert.equal(processed.routingDestination, route);
-  assert.equal(processed.submission.sourceUrl, 'https://jmerrill.one/contact');
+  assert.equal(processed.submission.sourceUrl, submission.sourceUrl);
+  if (intent === 'productions') {
+    assert.equal(processed.channel, 'jmerrill.productions/contact');
+    assert.equal([...mock.tables.leads.values()][0]['ownerid@odata.bind'], `/systemusers(${submission.followUpOwnerId})`);
+  }
   assert.equal(mock.counts.contacts, 1);
   assert.equal(mock.counts.leads, ['publishing', 'financial', 'productions'].includes(intent) ? 1 : 0);
   if (['general', 'foundation'].includes(intent)) {
@@ -123,5 +132,15 @@ assert.equal(final.state, INTAKE_STATES.COMPLETED);
 assert.equal(postWrite.counts.jm1_executionlogs, 1);
 assert.equal(postWrite.counts.contacts, 1);
 assert.equal(postWrite.counts.leads, 1);
+
+const longMessage = createMock();
+const longSubmission = {
+  requestId: randomUUID(), intent: 'productions', firstName: 'Jane', lastName: 'Smith',
+  email: 'long@example.invalid', phone: '', message: 'M'.repeat(700),
+  source: 'jmerrill.productions/contact', sourceUrl: 'https://jmerrill.productions/contact',
+  followUpOwnerId: '5adf7e12-f093-f011-b4cb-6045bdeb7c0e'
+};
+const longReceipt = (await acceptIntake(longMessage, longSubmission)).receipt;
+assert.equal((await processIntake(longMessage, longReceipt.id)).state, INTAKE_STATES.COMPLETED);
 
 console.log('JM1 front-door intake: 5/5 brand matrix, durable receipt, replay, post-write failure, and timer recovery PASS');
