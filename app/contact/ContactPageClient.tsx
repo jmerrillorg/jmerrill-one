@@ -7,14 +7,18 @@ import Footer from "@/components/Footer";
 import { divisions } from "@/lib/tokens";
 import { canon } from "@/content/canon";
 
-type Intent = "publishing" | "financial" | "foundation" | "productions" | null;
+type Intent = "publishing" | "financial" | "foundation" | "productions" | "general" | null;
+
+const contactPaths = [
+  ...divisions,
+  { id: "general", label: "J Merrill One", why: "Something else", heroBridge: "Reach the J Merrill One team directly.", accent: "#002C54" },
+];
 
 type IntakeResponse = {
   success: boolean;
   status?: string;
   code?: string;
   message?: string;
-  correlationId?: string;
   fallbackEmail?: string;
 };
 
@@ -30,9 +34,9 @@ export default function ContactPageClient() {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [fallbackEmail, setFallbackEmail] = useState("");
-  const [receiptId, setReceiptId] = useState("");
+  const pendingRequestRef = useRef<{ signature: string; key: string } | null>(null);
   const formRef = useRef<HTMLDivElement>(null);
-  const selectedDiv = divisions.find(d => d.id === intent);
+  const selectedDiv = contactPaths.find(d => d.id === intent);
 
   function selectIntent(id: Intent) {
     setIntent(id);
@@ -54,12 +58,22 @@ export default function ContactPageClient() {
     const source    = fd.get("source") as string;
     const consent = fd.get("consent") === "on";
     const companyWebsite = fd.get("companyWebsite") as string;
-    const correlationId = globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-
     try {
+    const fields = JSON.stringify({ intent: intent ?? "general", firstName, lastName, email, phone, message, source, consent });
+    const signature = Array.from(new Uint8Array(await globalThis.crypto.subtle.digest("SHA-256", new TextEncoder().encode(fields))))
+      .map(byte => byte.toString(16).padStart(2, "0")).join("");
+    let pending = pendingRequestRef.current;
+    try {
+      const saved = window.sessionStorage.getItem("jm1-intake-pending");
+      if (saved) pending = JSON.parse(saved) as { signature: string; key: string };
+    } catch { /* Storage can be disabled; the in-memory key still covers immediate retry. */ }
+    const correlationId = pending?.signature === signature ? pending.key : globalThis.crypto.randomUUID();
+    pendingRequestRef.current = { signature, key: correlationId };
+    try { window.sessionStorage.setItem("jm1-intake-pending", JSON.stringify(pendingRequestRef.current)); } catch { /* Optional persistence. */ }
+
       const response = await fetch("/api/intake", {
         method:"POST",
-        headers:{ "Content-Type":"application/json" },
+        headers:{ "Content-Type":"application/json", "Idempotency-Key": correlationId },
         body:JSON.stringify({
           intent: intent ?? "general",
           firstName,
@@ -78,13 +92,18 @@ export default function ContactPageClient() {
       const result = (await response.json()) as IntakeResponse;
 
       if (!response.ok || !result.success) {
+        if (response.status === 400 || response.status === 409) {
+          pendingRequestRef.current = null;
+          try { window.sessionStorage.removeItem("jm1-intake-pending"); } catch { /* Optional persistence. */ }
+        }
         setSubmitError(result.message || "JM1 could not receive this request right now.");
         setFallbackEmail(result.fallbackEmail || ((canon.intake.emailRoutes as Record<string,string>)[intent ?? "fallback"] ?? canon.intake.emailRoutes.fallback));
         return;
       }
 
       setSubmittedName(firstName);
-      setReceiptId(result.correlationId || correlationId);
+      pendingRequestRef.current = null;
+      try { window.sessionStorage.removeItem("jm1-intake-pending"); } catch { /* Optional persistence. */ }
       setSubmitted(true);
     } catch {
       setSubmitError("JM1 could not receive this request right now.");
@@ -120,7 +139,7 @@ export default function ContactPageClient() {
           Select what best matches what you&apos;re working toward. We&apos;ll make sure your message reaches the right team.
         </p>
         <div className="contact-intent-grid">
-          {divisions.map(d => (
+          {contactPaths.map(d => (
             <button key={d.id} onClick={()=>selectIntent(d.id as Intent)} style={{ textAlign:"left",padding:"2.25rem 2rem",background:"#fff",position:"relative",overflow:"hidden",cursor:"pointer",border:"none" }}>
               <div style={{ position:"absolute",top:0,left:0,right:0,height:"3px",background:d.accent,opacity:intent===d.id?1:0,transition:"opacity 0.2s" }} />
               {intent===d.id && <div style={{ position:"absolute",top:"1rem",right:"1rem",width:"20px",height:"20px",background:"#002C54",display:"flex",alignItems:"center",justifyContent:"center" }}><span style={{ color:"#fff",fontSize:"10px" }}>✓</span></div>}
@@ -148,8 +167,8 @@ export default function ContactPageClient() {
             <div style={{ border:"1px solid rgba(0,44,84,0.09)",padding:"4rem 3rem",textAlign:"center",maxWidth:"560px" }}>
               <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.22em",textTransform:"uppercase",color:selectedDiv?.accent,marginBottom:"1.5rem" }}>Request Received</div>
               <div style={{ fontFamily:"'Instrument Serif',serif",fontSize:"36px",color:"#05111F",marginBottom:"1rem" }}>Thank you, {submittedName}.</div>
-              <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginBottom:"1rem" }}>Your request has been received by the {selectedDiv?.label} team. Someone will follow up shortly.</p>
-              {receiptId && <p style={{ fontFamily:"'DM Mono',monospace",fontSize:"9px",letterSpacing:"0.08em",textTransform:"uppercase",color:"#A3C4DC",marginBottom:"2rem" }}>Receipt {receiptId}</p>}
+              <p style={{ fontSize:"15px",color:"#4A5568",lineHeight:1.8,marginBottom:"1rem" }}>We&apos;ve received your request. The right team will review it and follow up.</p>
+              <p style={{ fontSize:"13px",color:"#4A5568",lineHeight:1.7,marginBottom:"2rem" }}>Need to reach us in the meantime? Email <a href="mailto:info@jmerrill.one">info@jmerrill.one</a>.</p>
               <Link href="/" style={{ background:selectedDiv?.accent,color:"#fff",padding:"0.9rem 2.25rem",fontFamily:"'Syne',sans-serif",fontSize:"11px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",textDecoration:"none",display:"inline-block" }}>Return to J Merrill One</Link>
             </div>
           ) : (
@@ -166,7 +185,7 @@ export default function ContactPageClient() {
               </div>
               <div style={{ marginBottom:"1rem" }}>
                 <label style={S.label}>What are you trying to move forward? *</label>
-                <textarea name="message" required rows={5} placeholder="Tell us about your situation and goals. The more you share, the better we can help." style={{ ...S.input,resize:"none" }} />
+                <textarea name="message" required maxLength={1000} rows={5} placeholder="Tell us about your situation and goals. The more you share, the better we can help." style={{ ...S.input,resize:"none" }} />
               </div>
               <div style={{ marginBottom:"2rem" }}>
                 <label style={S.label}>How did you hear about us?</label>

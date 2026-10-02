@@ -1,0 +1,36 @@
+name: Validate JM1 One Front Door
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "app/**"
+      - "components/**"
+      - "content/**"
+      - "lib/**"
+      - "public/**"
+      - "runtime/jm1-marketing-autonomous-functions/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - "next.config.*"
+      - ".github/workflows/validate-front-door.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: node scripts/test-jm1-front-door-intake.mjs
+      - run: npm --prefix runtime/jm1-marketing-autonomous-functions run check
+      - run: npm run build
