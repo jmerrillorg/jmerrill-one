@@ -1,0 +1,115 @@
+{
+  "policyId": "JM1-HUMAN-FACING-LAST-MILE-CERTIFICATION-v1",
+  "version": "1.0",
+  "status": "CANON",
+  "scope": "ENTERPRISE",
+  "owner": "J MERRILL ONE",
+  "authority": "Jackie Smith, Jr. — Governance Authority",
+  "effectiveDate": "2026-08-27",
+  "executablePolicy": true,
+  "humanFacingOnly": true,
+  "requiresActualRecipientSurfaceProof": true,
+  "requiresActualAttachmentOpenProof": true,
+  "decisionOutcomes": [
+    "ALLOW",
+    "ALLOW_WITH_WARNING",
+    "DENY",
+    "HUMAN_REVIEW_REQUIRED"
+  ],
+  "commissioningResults": [
+    "NOT_PROVEN",
+    "TECHNICALLY_PROVEN",
+    "HUMAN_LAST_MILE_PROVEN"
+  ],
+  "statusDimension": [
+    "TECHNICALLY_COMMISSIONED",
+    "HUMAN_LAST_MILE_NOT_PROVEN",
+    "HUMAN_LAST_MILE_COMMISSIONED"
+  ],
+  "requiredCommissioningChain": [
+    "POLICY_PASS",
+    "RUNTIME_PASS",
+    "DATA_IDENTITY_PASS",
+    "ARTIFACT_PASS",
+    "RENDER_PASS",
+    "HUMAN_FIRST_WHY_FIRST_PASS",
+    "CONTROLLED_SEND_OR_PUBLISH",
+    "RECIPIENT_SURFACE_READBACK",
+    "ACTUAL_OUTPUT_OPENED",
+    "DEFECTS_RESOLVED_OR_CLASSIFIED"
+  ],
+  "emailRequirements": {
+    "naturalGreeting": true,
+    "plainLanguage": true,
+    "humanFirstWhyFirst": true,
+    "internalSystemTerminologyAllowed": false,
+    "routineHeadingMaximum": 2,
+    "clearAction": true,
+    "clearNextStep": true,
+    "correctBrand": true,
+    "correctSender": true,
+    "correctReplyTo": true,
+    "duplicateFooterAllowed": false,
+    "brokenPlaceholderAllowed": false,
+    "brokenHtmlAllowed": false
+  },
+  "documentRequirements": {
+    "authorManuscript": {
+      "fullBookContent": true,
+      "expectedOpeningContent": true,
+      "expectedEndingContent": true,
+      "reasonableWordCount": true,
+      "chapterOrSectionContinuity": true,
+      "internalCoverPageAllowed": false,
+      "automationMetadataAllowed": false,
+      "artifactIdsAllowed": false,
+      "checksumsAllowed": false,
+      "correlationIdsAllowed": false,
+      "publisherOnlyNotesAllowed": false,
+      "rawQaEvidenceAllowed": false
+    }
+  },
+  "invalidatingChanges": [
+    "template",
+    "brandOverlay",
+    "senderIdentity",
+    "replyRouting",
+    "attachmentGenerator",
+    "artifactSelectionLogic",
+    "acsRelayTransformation",
+    "portalRenderer",
+    "websiteRenderer",
+    "signatureOrFooter",
+    "documentRenderer"
+  ],
+  "defectiveDeliveryRule": {
+    "preserveHistoricalSend": true,
+    "defectiveDeliveryStartsClock": false,
+    "correctedDeliveryStartsClock": true,
+    "duplicateCorrectedDeliveryAllowed": false
+  },
+  "firstProvingImplementation": {
+    "brand": "J Merrill Publishing",
+    "repository": "jmerrillorg/jmerrill-pub",
+    "surface": "Author-review email with manuscript attachment",
+    "case": "Establishing Glory: The Library"
+  },
+  "negativeProofRequired": [
+    "human_facing_capability_fully_commissioned_without_actual_output_proof",
+    "ACS_202_treated_as_sufficient_human_commissioning",
+    "attachment_filename_used_as_content_authority",
+    "internal_automation_artifact_sent_as_manuscript",
+    "Generated_by_JM1_Automation_exposed_to_author",
+    "source_artifact_exposed_to_author",
+    "checksum_exposed_to_author",
+    "correlation_exposed_to_author",
+    "publisher_review_note_exposed_to_author",
+    "system_language_exposed_in_routine_author_email",
+    "bad_greeting_punctuation_allowed",
+    "routine_email_template_bloat_allowed",
+    "defective_delivery_clock_left_active",
+    "historical_defective_send_rewritten_as_valid",
+    "valid_corrected_package_duplicated",
+    "Publishing_human_last_mile_regression_hidden"
+  ]
+}
