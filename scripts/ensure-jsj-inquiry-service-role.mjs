@@ -11,7 +11,7 @@ const expected = ['Create', 'Read', 'Write', 'Delete'].map((action) => `prv${act
 const who = await request('/WhoAmI()');
 const businessUnitId = who.BusinessUnitId;
 const roleFilter = encodeURIComponent(`name eq '${roleName}'`);
-const roles = (await request(`/roles?$select=roleid,name&$filter=${roleFilter}`)).value;
+const roles = (await request(`/roles?$select=roleid,name,_businessunitid_value&$filter=${roleFilter}`)).value.filter((item) => item._businessunitid_value === businessUnitId);
 if (roles.length > 1) throw new Error('Duplicate JSJ service roles');
 let roleId = roles[0]?.roleid;
 if (!roleId && apply) {
@@ -29,12 +29,10 @@ const selected = expected.map((name) => {
 });
 if (roleId && apply) {
   const current = await rolePrivileges(roleId);
-  if (current.some((name) => !expected.includes(name))) throw new Error('JSJ service role has unexpected privileges');
-  const missing = selected.filter((item) => !current.includes(item.name));
-  if (missing.length) {
-    await request(`/roles(${roleId})/Microsoft.Dynamics.CRM.AddPrivilegesRole`, {
+  if (current.length !== expected.length || expected.some((name) => !current.includes(name))) {
+    await request(`/roles(${roleId})/Microsoft.Dynamics.CRM.ReplacePrivilegesRole`, {
       method: 'POST',
-      body: JSON.stringify({ Privileges: missing.map((item) => ({ Depth: 'Global', PrivilegeId: item.privilegeid, PrivilegeName: item.name, BusinessUnitId: businessUnitId })) })
+      body: JSON.stringify({ Privileges: selected.map((item) => ({ Depth: 'Global', PrivilegeId: item.privilegeid, PrivilegeName: item.name, BusinessUnitId: businessUnitId })) })
     });
   }
 }
