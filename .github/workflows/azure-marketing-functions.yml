@@ -1,0 +1,57 @@
+name: Deploy JM1 Marketing Functions
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "runtime/jm1-marketing-autonomous-functions/**"
+      - ".github/workflows/azure-marketing-functions.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: jm1-marketing-functions-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: runtime/jm1-marketing-autonomous-functions/package-lock.json
+      - name: Validate and package
+        run: |
+          npm ci --omit=dev --prefix runtime/jm1-marketing-autonomous-functions
+          npm --prefix runtime/jm1-marketing-autonomous-functions run check
+          node scripts/test-jm1-front-door-intake.mjs
+          cd runtime/jm1-marketing-autonomous-functions
+          zip -qr "$GITHUB_WORKSPACE/jm1-marketing-functions-$GITHUB_SHA.zip" host.json package.json src node_modules
+      - uses: azure/login@v3
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy and verify Functions
+        env:
+          RESOURCE_GROUP: rg-jm1-ai
+          FUNCTION_APP: func-jm1-marketing-runtime
+        run: |
+          az functionapp deployment source config-zip --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --src "$GITHUB_WORKSPACE/jm1-marketing-functions-$GITHUB_SHA.zip" --output none
+          az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings JM1_RELEASE_SHA="$GITHUB_SHA" --output none
+          for attempt in {1..12}; do
+            names="$(az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query '[].name' -o tsv || true)"
+            if printf '%s\n' "$names" | grep -q '/websiteIntakeReconciliationTimer$' && printf '%s\n' "$names" | grep -q '/credentialMonitorTimer$'; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
