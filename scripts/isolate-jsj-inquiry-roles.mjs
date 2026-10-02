@@ -5,6 +5,7 @@ const api = `${url}/api/data/v9.2`;
 const apply = process.argv.includes('--apply');
 const token = execFileSync('az', ['account', 'get-access-token', '--resource', url, '--query', 'accessToken', '-o', 'tsv'], { encoding: 'utf8' }).trim();
 const allowed = new Set(['System Administrator', 'JSJ Inquiry Service']);
+const platformReserved = new Set(['Support User']);
 const privilegeRows = (await request(`/privileges?$select=name,privilegeid&$filter=${encodeURIComponent("contains(name,'jm1_JSJInquiry')")}`)).value;
 if (privilegeRows.length !== 8) throw new Error(`Expected 8 JSJ table privileges, found ${privilegeRows.length}`);
 const privilegeById = new Map(privilegeRows.map((item) => [item.privilegeid, item.name]));
@@ -20,7 +21,7 @@ async function assignments() {
 }
 
 const before = await assignments();
-const excess = before.filter((item) => !allowed.has(item.role));
+const excess = before.filter((item) => !allowed.has(item.role) && !platformReserved.has(item.role));
 if (apply) {
   for (const item of excess) {
     await request(`/roles(${item.roleId})/Microsoft.Dynamics.CRM.RemovePrivilegeRole`, {
@@ -29,8 +30,9 @@ if (apply) {
   }
 }
 const after = await assignments();
-const remaining = after.filter((item) => !allowed.has(item.role));
-console.log(JSON.stringify({ mode: apply ? 'APPLY' : 'READ_ONLY', found: before.length, excessBefore: excess.map(({ role, privilege }) => ({ role, privilege })), remainingExcess: remaining.map(({ role, privilege }) => ({ role, privilege })), isolated: remaining.length === 0 }, null, 2));
+const remaining = after.filter((item) => !allowed.has(item.role) && !platformReserved.has(item.role));
+const reserved = after.filter((item) => platformReserved.has(item.role));
+console.log(JSON.stringify({ mode: apply ? 'APPLY' : 'READ_ONLY', found: before.length, excessBefore: excess.map(({ role, privilege }) => ({ role, privilege })), remainingExcess: remaining.map(({ role, privilege }) => ({ role, privilege })), platformReserved: reserved.map(({ role, privilege }) => ({ role, privilege })), isolatedWithPlatformException: remaining.length === 0 }, null, 2));
 if (apply && remaining.length) process.exitCode = 1;
 
 async function request(path, init = {}) {
