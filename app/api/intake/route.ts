@@ -97,6 +97,7 @@ export async function POST(request: NextRequest) {
   const phone = clean(body.phone, 40);
   const message = cleanMessage(body.message);
   const source = clean(body.source, 120);
+  const sourceUrl = clean(body.sourceUrl, 180);
 
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(requestId)) {
     return response(400, { success: false, message: "Please refresh the form and try again.", fallbackEmail: fallbackEmail(intent) });
@@ -104,8 +105,8 @@ export async function POST(request: NextRequest) {
   if (!firstName || !lastName || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return response(400, { success: false, message: "Please complete your name, email, and message.", fallbackEmail: fallbackEmail(intent) });
   }
-  if (message.length > 1000) {
-    return response(400, { success: false, message: "Please shorten your message to 1,000 characters.", fallbackEmail: fallbackEmail(intent) });
+  if (message.length > 700) {
+    return response(400, { success: false, message: "Please shorten your message to 700 characters.", fallbackEmail: fallbackEmail(intent) });
   }
   if (body.consent !== true) {
     return response(400, { success: false, message: "Please agree to let us respond to your request.", fallbackEmail: fallbackEmail(intent) });
@@ -115,7 +116,7 @@ export async function POST(request: NextRequest) {
   if (!config) {
     return response(503, { success: false, message: "We can't receive this request right now.", fallbackEmail: fallbackEmail(intent) });
   }
-  const submission = { requestId, intent, firstName, lastName, email, phone, message, source };
+  const submission = { requestId, intent, firstName, lastName, email, phone, message, source, sourceUrl };
   try {
     const token = await tokenFor(config);
     const adapter = createIntakeDataverseAdapter({ apiBase: config.apiBase, getToken: async () => token });

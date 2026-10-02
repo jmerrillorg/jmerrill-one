@@ -185,7 +185,7 @@ export default function ContactPageClient() {
               </div>
               <div style={{ marginBottom:"1rem" }}>
                 <label style={S.label}>What are you trying to move forward? *</label>
-                <textarea name="message" required maxLength={1000} rows={5} placeholder="Tell us about your situation and goals. The more you share, the better we can help." style={{ ...S.input,resize:"none" }} />
+                <textarea name="message" required maxLength={700} rows={5} placeholder="Tell us about your situation and goals. The more you share, the better we can help." style={{ ...S.input,resize:"none" }} />
               </div>
               <div style={{ marginBottom:"2rem" }}>
                 <label style={S.label}>How did you hear about us?</label>
