@@ -88,6 +88,7 @@ for (const [intent, route] of Object.entries(expectedRoutes)) {
   if (intent === 'productions') {
     assert.equal(processed.channel, 'jmerrill.productions/contact');
     assert.equal([...mock.tables.leads.values()][0]['ownerid@odata.bind'], `/systemusers(${submission.followUpOwnerId})`);
+    assert.equal([...mock.tables.leads.values()][0].description.includes(`Intake receipt: ${accepted.receipt.id}`), true);
   }
   assert.equal(mock.counts.contacts, 1);
   assert.equal(mock.counts.leads, ['publishing', 'financial', 'productions'].includes(intent) ? 1 : 0);

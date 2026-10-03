@@ -201,9 +201,9 @@ export async function processIntake(adapter, id) {
     detail.contactReference = contactId;
     await saveReceipt(adapter, detail);
     if (LEAD_INTENTS.has(input.intent)) {
-      const id = leadId(detail.requestId);
-      await createOrRead(adapter, 'leads', id, {
-        leadid: id,
+      const leadRecordId = leadId(detail.requestId);
+      await createOrRead(adapter, 'leads', leadRecordId, {
+        leadid: leadRecordId,
         subject: `JM1 Website Intake - ${detail.routingDestination}`,
         firstname: input.firstName,
         lastname: input.lastName,
@@ -214,7 +214,7 @@ export async function processIntake(adapter, id) {
           ? { 'ownerid@odata.bind': `/systemusers(${detail.followUpOwnerId})` } : {}),
         'parentcontactid@odata.bind': `/contacts(${contactId})`
       });
-      detail.leadReference = id;
+      detail.leadReference = leadRecordId;
       await saveReceipt(adapter, detail);
     }
     detail.state = INTAKE_STATES.COMPLETED;
