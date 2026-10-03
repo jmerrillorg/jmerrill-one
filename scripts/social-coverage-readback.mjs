@@ -28,11 +28,12 @@ if (process.argv.includes('--live-dataverse')) {
     return values;
   };
   const marker = snapshot.dataverseMarker;
+  const overdueLookbackDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
   const [campaigns, content, rows, futureRows] = await Promise.all([
     query('jm1_campaignauthorities', 'jm1_idempotencykey,jm1_state,jm1_branch', `jm1_idempotencykey eq '${marker}:campaign'`),
     query('jm1_contentworks', 'jm1_idempotencykey,jm1_publicreadystate', `startswith(jm1_idempotencykey,'${marker}:content')`),
     query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate', `startswith(jm1_idempotencykey,'${marker}:social')`),
-    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid', `jm1_requestedschedule ge ${new Date(snapshot.asOf).toISOString().slice(0, 10)}T00:00:00Z`)
+    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid', `jm1_requestedschedule ge ${overdueLookbackDate}T00:00:00Z`)
   ]);
   const campaignApproved = campaigns.length === 1 && campaigns[0].jm1_state === 'PUBLIC_EXECUTION_APPROVED';
   const current = rows.map((row) => {
