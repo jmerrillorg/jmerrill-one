@@ -12,7 +12,7 @@ JM1-Core owns the proposed `jm1_jsjinquiry` table. JSJ owns the business meaning
 
 - Jackie Smith Jr. (`jackie@jmerrill.one`): initial human reviewer and follow-up owner. Verify effective read and update on JSJ inquiry rows.
 - JM1 administrators: break-glass access, with audit and role governance. Existing System Administrator access must be acknowledged, not mistaken for a JSJ-specific role.
-- JSJ App Service managed identity: application user with create/read/update only on the JSJ table and no cross-brand table access. Do not grant System Administrator or broad environment roles.
+- JSJ App Service managed identity: application user with create/read/update/delete and owner assignment only on the JSJ table and no cross-brand table access. Do not grant System Administrator or broad environment roles.
 - Cross-brand negative test: use the JSJ application identity to attempt reads of a non-JSJ business table and confirm denial. Also confirm another brand's application identity cannot read `jm1_jsjinquiry`.
 
 No application identity or role was provisioned by this migration script. These are deployment preconditions, not inferred results.
