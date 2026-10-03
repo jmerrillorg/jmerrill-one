@@ -33,6 +33,7 @@ jobs:
           npm ci --omit=dev --prefix runtime/jm1-marketing-autonomous-functions
           npm --prefix runtime/jm1-marketing-autonomous-functions run check
           node scripts/test-jm1-front-door-intake.mjs
+          node scripts/test-jm1-productions-bp09-notice.mjs
           cd runtime/jm1-marketing-autonomous-functions
           zip -qr "$GITHUB_WORKSPACE/jm1-marketing-functions-$GITHUB_SHA.zip" host.json package.json src node_modules
       - uses: azure/login@v3
