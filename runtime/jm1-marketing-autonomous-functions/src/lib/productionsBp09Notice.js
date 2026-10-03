@@ -108,10 +108,37 @@ async function saveNotice(adapter, receipt, notice) {
 }
 
 export async function reconcileProductionsBp09Notice({ adapter, relay, id, mode, now = new Date() }) {
-  if (mode !== 'probe' && mode !== 'send') return { state: 'OFF' };
+  if (!['probe', 'send', 'replay'].includes(mode)) return { state: 'OFF' };
   const receipt = await verifiedBinding(adapter, id);
   const payload = payloadFor(receipt);
   const prior = receipt.notice || {};
+  if (mode === 'replay') {
+    if (prior.state !== 'PROVIDER_ACCEPTED' || !prior.relayMessageId || !prior.providerMessageId) {
+      throw hold('NOTICE_REPLAY_NOT_READY');
+    }
+    if (prior.replayState === 'VERIFIED') return { state: 'REPLAY_VERIFIED' };
+    if (prior.replayState === 'ATTEMPTING' || prior.replayState === 'HELD') {
+      return { state: 'HELD', code: 'NOTICE_REPLAY_RECONCILIATION_REQUIRED', newlyHeld: false };
+    }
+    const probe = await relay.probe(payload);
+    if (!probeAccepted(probe, id)) throw hold('NOTICE_PROBE_DENIED');
+    const started = await saveNotice(adapter, receipt, { ...prior, replayState: 'ATTEMPTING' });
+    let result;
+    try {
+      result = await relay.send(payload);
+    } catch {
+      await saveNotice(adapter, started, { ...prior, replayState: 'HELD' });
+      return { state: 'HELD', code: 'NOTICE_REPLAY_UNCERTAIN', newlyHeld: true };
+    }
+    if (result.status !== 200 || result.body.accepted !== true || result.body.replay !== true ||
+        result.body.deliveryState !== 'ACCEPTED' || result.body.jm1MessageId !== prior.relayMessageId ||
+        result.body.providerMessageId !== prior.providerMessageId) {
+      await saveNotice(adapter, started, { ...prior, replayState: 'HELD' });
+      return { state: 'HELD', code: 'NOTICE_REPLAY_MISMATCH', newlyHeld: true };
+    }
+    await saveNotice(adapter, started, { ...prior, replayState: 'VERIFIED' });
+    return { state: 'REPLAY_VERIFIED' };
+  }
   if (prior.state === 'PROVIDER_ACCEPTED') return { state: prior.state, relayMessageId: prior.relayMessageId };
   if (prior.state === 'HELD' || prior.state === 'FAILED') return { state: prior.state, code: prior.code, newlyHeld: false };
   if (mode === 'probe') {
