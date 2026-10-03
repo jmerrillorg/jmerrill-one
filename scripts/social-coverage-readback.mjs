@@ -28,10 +28,11 @@ if (process.argv.includes('--live-dataverse')) {
     return values;
   };
   const marker = snapshot.dataverseMarker;
-  const [campaigns, content, rows] = await Promise.all([
+  const [campaigns, content, rows, futureRows] = await Promise.all([
     query('jm1_campaignauthorities', 'jm1_idempotencykey,jm1_state,jm1_branch', `jm1_idempotencykey eq '${marker}:campaign'`),
     query('jm1_contentworks', 'jm1_idempotencykey,jm1_publicreadystate', `startswith(jm1_idempotencykey,'${marker}:content')`),
-    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate', `startswith(jm1_idempotencykey,'${marker}:social')`)
+    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate', `startswith(jm1_idempotencykey,'${marker}:social')`),
+    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid', `jm1_requestedschedule ge ${new Date(snapshot.asOf).toISOString().slice(0, 10)}T00:00:00Z`)
   ]);
   const campaignApproved = campaigns.length === 1 && campaigns[0].jm1_state === 'PUBLIC_EXECUTION_APPROVED';
   const current = rows.map((row) => {
@@ -71,6 +72,21 @@ if (process.argv.includes('--live-dataverse')) {
   const nativeItems = snapshot.items.filter((item) => item.kind === 'NATIVE_BOOKING' || item.source === 'NATIVE_READBACK');
   snapshot.items = [...nativeItems, ...current.filter((row) => !nativeItems.some((item) =>
     row.platformPostId && row.platformPostId === item.platformPostId)), ...contentItems];
+  snapshot.unclassifiedDataverseRows = futureRows.filter((row) =>
+    !row.jm1_idempotencykey?.startsWith(`${marker}:social`)
+    && !(row.jm1_platformpostid && row.jm1_status === 'PUBLISHED_VERIFIED')
+  ).map((row) => ({
+    id: row.jm1_socialexecutionid,
+    idempotencyKey: row.jm1_idempotencykey,
+    platform: row.jm1_platform,
+    status: row.jm1_status,
+    requestedSchedule: row.jm1_requestedschedule,
+    requestedDestination: row.jm1_requesteddestination,
+    platformPostId: row.jm1_platformpostid
+  }));
   snapshot.asOf = new Date().toISOString();
 }
-process.stdout.write(`${JSON.stringify(buildSocialCoverageReadback(snapshot), null, 2)}\n`);
+process.stdout.write(`${JSON.stringify({
+  ...buildSocialCoverageReadback(snapshot),
+  ...(snapshot.unclassifiedDataverseRows ? { unclassifiedDataverseRows: snapshot.unclassifiedDataverseRows } : {})
+}, null, 2)}\n`);
