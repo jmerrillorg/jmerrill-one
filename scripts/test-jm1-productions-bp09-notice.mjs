@@ -80,6 +80,18 @@ assert.equal((await reconcileProductionsBp09Notice({ ...baseline, mode: 'send' }
 assert.equal(baseline.calls.send.length, 1);
 assert.equal(JSON.parse(baseline.receipt.jm1_actiondescription).notice.providerMessageId.length, 36);
 
+const reordered = fixture();
+const reorderedDetail = JSON.parse(reordered.receipt.jm1_actiondescription);
+reorderedDetail.digest = createHash('sha256').update(JSON.stringify({
+  ...reorderedDetail.submission, message: 'Synthetic body', requestId: reorderedDetail.requestId
+})).digest('hex');
+reordered.receipt.jm1_actiondescription = JSON.stringify(reorderedDetail);
+assert.equal((await reconcileProductionsBp09Notice({ ...reordered, mode: 'probe' })).state, 'PROBE_OK');
+const tampered = fixture();
+tampered.lead.description += ' changed';
+await assert.rejects(() => reconcileProductionsBp09Notice({ ...tampered, mode: 'send' }), /NOTICE_DIGEST_MISMATCH/);
+assert.equal(tampered.calls.send.length, 0);
+
 for (const override of [
   { channel: 'jmerrill.one/contact' }, { routingDestination: 'J Merrill Publishing' },
   { leadReference: randomUUID() }, { state: 'RETRY_PENDING' }

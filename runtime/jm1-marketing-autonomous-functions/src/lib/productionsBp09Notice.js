@@ -13,6 +13,22 @@ function hold(code) {
   return error;
 }
 
+function digestMatches(receipt, message) {
+  const stored = Object.entries(receipt.submission).map(([key, value]) => [key, key === 'message' ? message : value]);
+  for (let requestPosition = 0; requestPosition <= stored.length; requestPosition++) {
+    const withRequest = [...stored];
+    withRequest.splice(requestPosition, 0, ['requestId', receipt.requestId]);
+    const ownerPositions = receipt.followUpOwnerId ? withRequest.length + 1 : 1;
+    for (let ownerPosition = 0; ownerPosition < ownerPositions; ownerPosition++) {
+      const entries = [...withRequest];
+      if (receipt.followUpOwnerId) entries.splice(ownerPosition, 0, ['followUpOwnerId', receipt.followUpOwnerId]);
+      const candidate = createHash('sha256').update(JSON.stringify(Object.fromEntries(entries))).digest('hex');
+      if (candidate === receipt.digest) return true;
+    }
+  }
+  return false;
+}
+
 export function createProductionsRelay({ fetchImpl = fetch, credential } = {}) {
   let managedCredential = credential;
   async function request(route, payload) {
@@ -55,11 +71,7 @@ async function verifiedBinding(adapter, id) {
       lead.subject !== 'JM1 Website Intake - J Merrill Productions' || !lead.description?.startsWith(prefix) ||
       !lead.description.slice(prefix.length).trim() ||
       contact?.contactid !== receipt.contactReference) throw hold('NOTICE_BINDING_MISMATCH');
-  const original = { requestId: receipt.requestId, ...receipt.submission,
-    message: lead.description.slice(prefix.length),
-    ...(receipt.followUpOwnerId ? { followUpOwnerId: receipt.followUpOwnerId } : {}) };
-  const digest = createHash('sha256').update(JSON.stringify(original)).digest('hex');
-  if (digest !== receipt.digest) throw hold('NOTICE_DIGEST_MISMATCH');
+  if (!digestMatches(receipt, lead.description.slice(prefix.length))) throw hold('NOTICE_DIGEST_MISMATCH');
   const filter = encodeURIComponent(`contains(description,'${marker}')`);
   const matches = await adapter.request(`/leads?$select=leadid&$filter=${filter}&$top=2`);
   if (matches?.value?.length !== 1 || matches.value[0].leadid !== receipt.leadReference) {
