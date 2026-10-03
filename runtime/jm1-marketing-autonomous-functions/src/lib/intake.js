@@ -27,7 +27,7 @@ function digest(value) {
   return createHash('sha256').update(JSON.stringify(value)).digest('hex');
 }
 
-function parseReceipt(row) {
+export function parseReceipt(row) {
   if (!row || row.jm1_actiontype !== INTAKE_ACTION) return null;
   const detail = JSON.parse(row.jm1_actiondescription || '{}');
   if (detail.version !== 2 || !detail.requestId || !detail.digest || !detail.submission) return null;
@@ -36,6 +36,10 @@ function parseReceipt(row) {
 
 export function receiptId(requestId) {
   return guid('receipt', requestId);
+}
+
+export function leadId(requestId) {
+  return guid('lead', requestId);
 }
 
 export function createIntakeDataverseAdapter({ apiBase, getToken, fetchImpl = fetch }) {
@@ -197,9 +201,9 @@ export async function processIntake(adapter, id) {
     detail.contactReference = contactId;
     await saveReceipt(adapter, detail);
     if (LEAD_INTENTS.has(input.intent)) {
-      const leadId = guid('lead', detail.requestId);
-      await createOrRead(adapter, 'leads', leadId, {
-        leadid: leadId,
+      const id = leadId(detail.requestId);
+      await createOrRead(adapter, 'leads', id, {
+        leadid: id,
         subject: `JM1 Website Intake - ${detail.routingDestination}`,
         firstname: input.firstName,
         lastname: input.lastName,
@@ -210,7 +214,7 @@ export async function processIntake(adapter, id) {
           ? { 'ownerid@odata.bind': `/systemusers(${detail.followUpOwnerId})` } : {}),
         'parentcontactid@odata.bind': `/contacts(${contactId})`
       });
-      detail.leadReference = leadId;
+      detail.leadReference = id;
       await saveReceipt(adapter, detail);
     }
     detail.state = INTAKE_STATES.COMPLETED;
