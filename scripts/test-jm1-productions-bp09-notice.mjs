@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash, randomUUID } from 'node:crypto';
 import { leadId, receiptId } from '../runtime/jm1-marketing-autonomous-functions/src/lib/intake.js';
-import { reconcileProductionsBp09Notice } from '../runtime/jm1-marketing-autonomous-functions/src/lib/productionsBp09Notice.js';
+import { reconcileProductionsBp09Notice, reconcileProductionsBp09Notices } from '../runtime/jm1-marketing-autonomous-functions/src/lib/productionsBp09Notice.js';
 
 function fixture(overrides = {}) {
   const requestId = randomUUID();
@@ -14,6 +14,8 @@ function fixture(overrides = {}) {
   const digest = createHash('sha256').update(JSON.stringify({ requestId, ...submission })).digest('hex');
   const detail = {
     version: 2, id, requestId, digest,
+    receivedAt: new Date().toISOString(),
+    consent: { given: true, purpose: 'respond_to_inquiry' },
     state: 'COMPLETED', finalState: 'LEAD_CREATED',
     channel: 'jmerrill.productions/contact', routingDestination: 'J Merrill Productions',
     leadReference: linkedLead, contactReference: contactId,
@@ -114,6 +116,12 @@ reorderedDetail.digest = createHash('sha256').update(JSON.stringify({
 })).digest('hex');
 reordered.receipt.jm1_actiondescription = JSON.stringify(reorderedDetail);
 assert.equal((await reconcileProductionsBp09Notice({ ...reordered, mode: 'probe' })).state, 'PROBE_OK');
+const teamOwned = fixture({ followUpTeamId: '36ee36cf-6ebf-f111-aaaf-6045bdd69435' });
+const teamDetail = JSON.parse(teamOwned.receipt.jm1_actiondescription);
+teamDetail.digest = createHash('sha256').update(JSON.stringify({ requestId: teamDetail.requestId,
+  ...teamDetail.submission, message: 'Synthetic body', followUpTeamId: teamDetail.followUpTeamId })).digest('hex');
+teamOwned.receipt.jm1_actiondescription = JSON.stringify(teamDetail);
+assert.equal((await reconcileProductionsBp09Notice({ ...teamOwned, mode: 'probe' })).state, 'PROBE_OK');
 const tampered = fixture();
 tampered.lead.description += ' changed';
 await assert.rejects(() => reconcileProductionsBp09Notice({ ...tampered, mode: 'send' }), /NOTICE_DIGEST_MISMATCH/);
@@ -160,4 +168,58 @@ assert.equal((await reconcileProductionsBp09Notice({ ...postWrite, mode: 'send',
 assert.equal(postWrite.calls.send.length, 2);
 assert.deepEqual(postWrite.calls.send[0], postWrite.calls.send[1]);
 
-console.log('Productions BP-09 notice: source binding, no-send probe, exact replay, uncertain hold, and cross-brand denial PASS');
+function scanningFixture(overrides = {}) {
+  const record = fixture(overrides);
+  const request = record.adapter.request;
+  record.adapter.request = async (path, method, body) => path.startsWith('/jm1_executionlogs?')
+    ? { value: [record.receipt] } : request(path, method, body);
+  return record;
+}
+
+const continuous = scanningFixture();
+const startAt = new Date(Date.now() - 60_000).toISOString();
+assert.deepEqual((await reconcileProductionsBp09Notices({ adapter: continuous.adapter, relay: continuous.relay, startAt }))
+  .map(({ state }) => state), ['PROVIDER_ACCEPTED']);
+assert.equal(continuous.calls.send.length, 1);
+assert.deepEqual(await reconcileProductionsBp09Notices({ adapter: continuous.adapter, relay: continuous.relay, startAt }), []);
+assert.equal(continuous.calls.send.length, 1);
+
+const wrongSource = scanningFixture({ channel: 'jmerrill.one/contact' });
+assert.deepEqual(await reconcileProductionsBp09Notices({ adapter: wrongSource.adapter, relay: wrongSource.relay, startAt }), []);
+assert.equal(wrongSource.calls.send.length, 0);
+
+const oldReceipt = scanningFixture({ receivedAt: new Date(Date.now() - 2 * 60_000).toISOString() });
+assert.deepEqual(await reconcileProductionsBp09Notices({ adapter: oldReceipt.adapter, relay: oldReceipt.relay, startAt }), []);
+
+const noConsent = scanningFixture({ consent: { given: false, purpose: 'respond_to_inquiry' } });
+assert.deepEqual((await reconcileProductionsBp09Notices({ adapter: noConsent.adapter, relay: noConsent.relay, startAt }))
+  .map(({ state, code }) => [state, code]), [['FAILED', 'NOTICE_SOURCE_NOT_ELIGIBLE']]);
+assert.equal(noConsent.calls.send.length, 0);
+
+const invalidReceipt = scanningFixture({ receivedAt: 'invalid' });
+assert.deepEqual((await reconcileProductionsBp09Notices({ adapter: invalidReceipt.adapter, relay: invalidReceipt.relay, startAt }))
+  .map(({ state, code }) => [state, code]), [['FAILED', 'NOTICE_RECEIPT_INVALID']]);
+assert.equal(invalidReceipt.calls.send.length, 0);
+
+const held = scanningFixture({ notice: { state: 'HELD', code: 'NOTICE_SEND_UNCERTAIN' } });
+assert.deepEqual((await reconcileProductionsBp09Notices({ adapter: held.adapter, relay: held.relay, startAt }))
+  .map(({ state, code }) => [state, code]), [['HELD', 'NOTICE_SEND_UNCERTAIN']]);
+assert.equal(held.calls.send.length, 0);
+
+const overdue = scanningFixture({ receivedAt: new Date(Date.now() - 20 * 60_000).toISOString(),
+  notice: { state: 'ATTEMPTING', attempts: 1, nextAt: new Date(Date.now() + 60_000).toISOString() } });
+assert.deepEqual((await reconcileProductionsBp09Notices({ adapter: overdue.adapter, relay: overdue.relay,
+  startAt: new Date(Date.now() - 30 * 60_000).toISOString() })).map(({ state, code }) => [state, code]),
+[['OVERDUE', 'NOTICE_OVERDUE']]);
+assert.equal(overdue.calls.send.length, 0);
+
+await assert.rejects(() => reconcileProductionsBp09Notices({ adapter: continuous.adapter, relay: continuous.relay,
+  startAt: 'invalid' }), /NOTICE_CONTINUOUS_CONFIG_INVALID/);
+
+const overflow = scanningFixture();
+overflow.adapter.request = async (path) => path.startsWith('/jm1_executionlogs?')
+  ? { value: [], '@odata.nextLink': `https://example.crm.dynamics.com/api/data/v9.2${path}` } : null;
+await assert.rejects(() => reconcileProductionsBp09Notices({ adapter: overflow.adapter, relay: overflow.relay,
+  startAt, maxPages: 1 }), /NOTICE_SCAN_CAPACITY_EXCEEDED/);
+
+console.log('Productions BP-09 notice: source/consent binding, replay, continuous scan, held signal, and cross-brand denial PASS');

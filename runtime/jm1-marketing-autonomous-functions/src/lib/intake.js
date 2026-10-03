@@ -120,7 +120,14 @@ export async function acceptIntake(adapter, submission) {
   const submissionDigest = digest(submission);
   const existing = parseReceipt(await getById(adapter, 'jm1_executionlogs', id));
   if (existing) {
-    if (existing.digest !== submissionDigest) {
+    const originalOwner = existing.followUpTeamId
+      ? { followUpTeamId: existing.followUpTeamId }
+      : existing.followUpOwnerId ? { followUpOwnerId: existing.followUpOwnerId } : {};
+    const samePayloadWithOriginalOwner = { ...submission };
+    delete samePayloadWithOriginalOwner.followUpOwnerId;
+    delete samePayloadWithOriginalOwner.followUpTeamId;
+    Object.assign(samePayloadWithOriginalOwner, originalOwner);
+    if (existing.digest !== submissionDigest && existing.digest !== digest(samePayloadWithOriginalOwner)) {
       const error = new Error('Idempotency key is already bound to another submission.');
       error.code = 'KEY_REUSED';
       throw error;
@@ -131,6 +138,7 @@ export async function acceptIntake(adapter, submission) {
   const storedSubmission = { ...submission };
   delete storedSubmission.requestId;
   delete storedSubmission.followUpOwnerId;
+  delete storedSubmission.followUpTeamId;
   const detail = {
     version: 2,
     id,
@@ -142,6 +150,7 @@ export async function acceptIntake(adapter, submission) {
     consent: { given: true, version: 'JM1-CONTACT-2026-10-02', timestamp: now, purpose: 'respond_to_inquiry' },
     routingDestination: ROUTES[submission.intent],
     followUpOwnerId: submission.intent === 'productions' ? submission.followUpOwnerId || null : null,
+    followUpTeamId: submission.intent === 'productions' ? submission.followUpTeamId || null : null,
     state: INTAKE_STATES.RECEIVED,
     attempts: 0,
     submission: storedSubmission
@@ -210,8 +219,10 @@ export async function processIntake(adapter, id) {
         emailaddress1: input.email,
         telephone1: input.phone || undefined,
         description: `Source: ${input.source || 'Website'}\nIntake receipt: ${id}\n\n${input.message}`,
-        ...(input.intent === 'productions' && detail.followUpOwnerId
-          ? { 'ownerid@odata.bind': `/systemusers(${detail.followUpOwnerId})` } : {}),
+        ...(input.intent === 'productions' && detail.followUpTeamId
+          ? { 'ownerid@odata.bind': `/teams(${detail.followUpTeamId})` }
+          : input.intent === 'productions' && detail.followUpOwnerId
+            ? { 'ownerid@odata.bind': `/systemusers(${detail.followUpOwnerId})` } : {}),
         'parentcontactid@odata.bind': `/contacts(${contactId})`
       });
       detail.leadReference = leadRecordId;

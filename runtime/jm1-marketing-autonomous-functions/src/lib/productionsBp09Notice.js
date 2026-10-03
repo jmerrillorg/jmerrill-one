@@ -22,8 +22,13 @@ function digestMatches(receipt, message) {
     for (let ownerPosition = 0; ownerPosition < ownerPositions; ownerPosition++) {
       const entries = [...withRequest];
       if (receipt.followUpOwnerId) entries.splice(ownerPosition, 0, ['followUpOwnerId', receipt.followUpOwnerId]);
-      const candidate = createHash('sha256').update(JSON.stringify(Object.fromEntries(entries))).digest('hex');
-      if (candidate === receipt.digest) return true;
+      const teamPositions = receipt.followUpTeamId ? entries.length + 1 : 1;
+      for (let teamPosition = 0; teamPosition < teamPositions; teamPosition++) {
+        const withTeam = [...entries];
+        if (receipt.followUpTeamId) withTeam.splice(teamPosition, 0, ['followUpTeamId', receipt.followUpTeamId]);
+        const candidate = createHash('sha256').update(JSON.stringify(Object.fromEntries(withTeam))).digest('hex');
+        if (candidate === receipt.digest) return true;
+      }
     }
   }
   return false;
@@ -59,6 +64,7 @@ async function verifiedBinding(adapter, id) {
       !/^[0-9a-f]{64}$/.test(receipt.digest) || receipt.state !== 'COMPLETED' ||
       receipt.finalState !== 'LEAD_CREATED' || receipt.channel !== 'jmerrill.productions/contact' ||
       receipt.routingDestination !== 'J Merrill Productions' || receipt.submission.intent !== 'productions' ||
+      receipt.consent?.given !== true || receipt.consent?.purpose !== 'respond_to_inquiry' ||
       receipt.submission.message !== '' || !GUID.test(receipt.leadReference || '') ||
       !GUID.test(receipt.contactReference || '') || leadId(receipt.requestId) !== receipt.leadReference) {
     throw hold('NOTICE_SOURCE_NOT_ELIGIBLE');
@@ -180,4 +186,56 @@ export async function reconcileProductionsBp09Notice({ adapter, relay, id, mode,
     : result.body.inProgress ? 'NOTICE_RELAY_UNCERTAIN' : 'NOTICE_RELAY_REJECTED';
   await saveNotice(adapter, started, { state: 'HELD', attempts: attempt, code });
   return { state: 'HELD', code, newlyHeld: true };
+}
+
+function nextReceiptPath(nextLink) {
+  const url = new URL(nextLink);
+  const path = url.pathname.match(/\/api\/data\/v\d+\.\d+(\/jm1_executionlogs)$/);
+  if (!path) throw hold('NOTICE_SCAN_NEXTLINK_INVALID');
+  return `${path[1]}${url.search}`;
+}
+
+export async function reconcileProductionsBp09Notices({ adapter, relay, startAt, now = new Date(), maxPages = 20 }) {
+  const start = Date.parse(startAt);
+  if (!Number.isFinite(start) || new Date(start).toISOString() !== startAt || maxPages < 1) {
+    throw hold('NOTICE_CONTINUOUS_CONFIG_INVALID');
+  }
+  const filter = encodeURIComponent(`jm1_actiontype eq 'BP09WebsiteIntakeV2' and jm1_executionstatus eq 835500001 and jm1_startedon ge ${startAt}`);
+  let path = `/jm1_executionlogs?$select=jm1_executionlogid,jm1_actiondescription,jm1_actiontype,jm1_startedon&$filter=${filter}&$orderby=jm1_startedon asc&$top=100`;
+  const outcomes = [];
+  let pages = 0;
+  while (path) {
+    if (++pages > maxPages) throw hold('NOTICE_SCAN_CAPACITY_EXCEEDED');
+    const page = await adapter.request(path);
+    for (const row of page?.value || []) {
+      let receipt;
+      try {
+        receipt = parseReceipt(row);
+      } catch {
+        outcomes.push({ id: row.jm1_executionlogid, state: 'FAILED', code: 'NOTICE_RECEIPT_INVALID' });
+        continue;
+      }
+      if (!receipt || !Number.isFinite(Date.parse(receipt.receivedAt))) {
+        outcomes.push({ id: row.jm1_executionlogid, state: 'FAILED', code: 'NOTICE_RECEIPT_INVALID' });
+        continue;
+      }
+      if (Date.parse(receipt.receivedAt) < start || receipt.channel !== 'jmerrill.productions/contact' ||
+          receipt.routingDestination !== 'J Merrill Productions' || receipt.submission.intent !== 'productions') continue;
+      if (receipt.state !== 'COMPLETED' || receipt.finalState !== 'LEAD_CREATED') {
+        outcomes.push({ id: receipt.id, state: 'FAILED', code: 'NOTICE_RECEIPT_STATE_MISMATCH' });
+        continue;
+      }
+      if (receipt.notice?.state === 'PROVIDER_ACCEPTED') continue;
+      try {
+        const result = await reconcileProductionsBp09Notice({ adapter, relay, id: receipt.id, mode: 'send', now });
+        const overdue = result.state !== 'PROVIDER_ACCEPTED' && now.getTime() - Date.parse(receipt.receivedAt) > 15 * 60_000;
+        outcomes.push({ id: receipt.id, state: overdue && result.state === 'WAITING' ? 'OVERDUE' : result.state,
+          code: result.code || (overdue ? 'NOTICE_OVERDUE' : null) });
+      } catch (error) {
+        outcomes.push({ id: receipt.id, state: 'FAILED', code: error.code || 'NOTICE_UNCLASSIFIED' });
+      }
+    }
+    path = page?.['@odata.nextLink'] ? nextReceiptPath(page['@odata.nextLink']) : null;
+  }
+  return outcomes;
 }
