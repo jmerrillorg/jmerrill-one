@@ -40,6 +40,13 @@ if (roleId && apply) {
       Depth: 'Global', PrivilegeId: item.privilegeid, PrivilegeName: item.name, BusinessUnitId: reviewer._businessunitid_value
     })) })
   });
+  const currentPrivileges = (await request(`/roles(${roleId})?$select=roleid&$expand=roleprivileges_association($select=name,privilegeid)`)).roleprivileges_association;
+  for (const privilege of currentPrivileges.filter((item) => !expected.includes(item.name))) {
+    await request(`/roles(${roleId})/Microsoft.Dynamics.CRM.RemovePrivilegeRole`, {
+      method: 'POST',
+      body: JSON.stringify({ Privilege: { privilegeid: privilege.privilegeid, name: privilege.name } })
+    });
+  }
   const assigned = await userRoles(reviewer.systemuserid);
   if (!assigned.some((item) => item.roleid === roleId)) {
     await request(`/systemusers(${reviewer.systemuserid})/systemuserroles_association/$ref`, {
