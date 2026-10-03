@@ -71,7 +71,7 @@ for (const [intent, route] of Object.entries(expectedRoutes)) {
   if (intent === 'productions') {
     submission.source = 'jmerrill.productions/contact';
     submission.sourceUrl = 'https://jmerrill.productions/contact';
-    submission.followUpOwnerId = '5adf7e12-f093-f011-b4cb-6045bdeb7c0e';
+    submission.followUpTeamId = '36ee36cf-6ebf-f111-aaaf-6045bdd69435';
   }
   const accepted = await acceptIntake(mock, submission);
   assert.equal(accepted.replay, false);
@@ -87,7 +87,7 @@ for (const [intent, route] of Object.entries(expectedRoutes)) {
   assert.equal(processed.submission.sourceUrl, submission.sourceUrl);
   if (intent === 'productions') {
     assert.equal(processed.channel, 'jmerrill.productions/contact');
-    assert.equal([...mock.tables.leads.values()][0]['ownerid@odata.bind'], `/systemusers(${submission.followUpOwnerId})`);
+    assert.equal([...mock.tables.leads.values()][0]['ownerid@odata.bind'], `/teams(${submission.followUpTeamId})`);
     assert.equal([...mock.tables.leads.values()][0].description.includes(`Intake receipt: ${accepted.receipt.id}`), true);
   }
   assert.equal(mock.counts.contacts, 1);
@@ -139,9 +139,25 @@ const longSubmission = {
   requestId: randomUUID(), intent: 'productions', firstName: 'Jane', lastName: 'Smith',
   email: 'long@example.invalid', phone: '', message: 'M'.repeat(700),
   source: 'jmerrill.productions/contact', sourceUrl: 'https://jmerrill.productions/contact',
-  followUpOwnerId: '5adf7e12-f093-f011-b4cb-6045bdeb7c0e'
+  followUpTeamId: '36ee36cf-6ebf-f111-aaaf-6045bdd69435'
 };
 const longReceipt = (await acceptIntake(longMessage, longSubmission)).receipt;
 assert.equal((await processIntake(longMessage, longReceipt.id)).state, INTAKE_STATES.COMPLETED);
+
+const legacyOwner = createMock();
+const legacySubmission = { ...longSubmission, requestId: randomUUID(), email: 'legacy@example.invalid',
+  followUpOwnerId: '5adf7e12-f093-f011-b4cb-6045bdeb7c0e' };
+delete legacySubmission.followUpTeamId;
+const legacyReceipt = (await acceptIntake(legacyOwner, legacySubmission)).receipt;
+assert.equal((await processIntake(legacyOwner, legacyReceipt.id)).state, INTAKE_STATES.COMPLETED);
+assert.equal([...legacyOwner.tables.leads.values()][0]['ownerid@odata.bind'],
+  `/systemusers(${legacySubmission.followUpOwnerId})`);
+const teamAfterCutover = { ...legacySubmission, followUpTeamId: '36ee36cf-6ebf-f111-aaaf-6045bdd69435' };
+delete teamAfterCutover.followUpOwnerId;
+assert.equal((await acceptIntake(legacyOwner, teamAfterCutover)).replay, true);
+assert.equal(legacyOwner.counts.jm1_executionlogs, 1);
+assert.equal(legacyOwner.counts.leads, 1);
+await assert.rejects(() => acceptIntake(legacyOwner, { ...teamAfterCutover, message: 'Changed after cutover' }),
+  /already bound/);
 
 console.log('JM1 front-door intake: 5/5 brand matrix, durable receipt, replay, post-write failure, and timer recovery PASS');

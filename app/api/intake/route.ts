@@ -143,11 +143,15 @@ async function handlePost(request: NextRequest) {
     return response(503, { success: false, message: "We can't receive this request right now.", fallbackEmail: fallbackEmail(intent) });
   }
   const productionsOwnerId = process.env.JM1_PRODUCTIONS_FOLLOWUP_OWNER_ID || "";
-  if (intent === "productions" && !/^[0-9a-f]{8}-[0-9a-f-]{27}$/i.test(productionsOwnerId)) {
+  const productionsTeamId = process.env.JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID || "";
+  const validGuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  if (intent === "productions" && !validGuid.test(productionsTeamId) && !validGuid.test(productionsOwnerId)) {
     return response(503, { success: false, message: "We can't receive this request right now.", fallbackEmail: fallbackEmail(intent) });
   }
   const submission = { requestId, intent, firstName, lastName, email, phone, message, source, sourceUrl,
-    ...(intent === "productions" ? { followUpOwnerId: productionsOwnerId.toLowerCase() } : {}) };
+    ...(intent === "productions" && validGuid.test(productionsTeamId)
+      ? { followUpTeamId: productionsTeamId.toLowerCase() }
+      : intent === "productions" ? { followUpOwnerId: productionsOwnerId.toLowerCase() } : {}) };
   try {
     const token = await tokenFor(config);
     const adapter = createIntakeDataverseAdapter({ apiBase: config.apiBase, getToken: async () => token });
