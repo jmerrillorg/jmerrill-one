@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import test from 'node:test';
 import { buildSocialCoverageReadback } from './lib/social-coverage-readback.mjs';
 
@@ -35,14 +36,36 @@ test('only exact approved native bookings count and collide with matching API re
   assert.deepEqual(result.duplicateRisk, ['native-1']);
 });
 
-test('native booking on worker-owned channel is a collision, not authorized coverage', () => {
+test('native booking on worker-owned channel is counted but exposes mixed authority', () => {
   const result = buildSocialCoverageReadback({ ...base, items: [
     { id: 'native-2', brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId,
       kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', nativeBookingId: 'meta-2',
       scheduledAt: '2026-10-03T14:00:00Z', contentKey: 'other' }
   ] }).channels[0];
+  assert.equal(result.nativeScheduled, 1);
+  assert.equal(result.verifiedBookings, 1);
+  assert.deepEqual(result.duplicateRisk, []);
+  assert.deepEqual(result.mixedChannelAuthority, ['native-2']);
+  assert.ok(result.states.includes('MIXED_CHANNEL_EXECUTION_AUTHORITY'));
+});
+
+test('LinkedIn UI proof counts a schedule but not unapproved coverage', () => {
+  const captionText = 'Exact observed caption';
+  const item = { id: 'li-1', brand: channel.brand, platform: 'linkedin', destinationId: '13048648',
+    kind: 'NATIVE_BOOKING', approvalState: 'HELD', scheduledAt: '2026-10-08T15:00:00Z', captionText,
+    nativeEvidence: { source: 'LINKEDIN_NATIVE_UI', observedDateET: '2026-10-02',
+      scheduledAt: '2026-10-08T15:00:00Z',
+      captionSha256: createHash('sha256').update(captionText).digest('hex') } };
+  const result = buildSocialCoverageReadback({ ...base, channels: [{ ...channel,
+    platform: 'linkedin', destinationId: '13048648', executionOwner: 'LINKEDIN_NATIVE' }],
+  items: [item, { ...item, id: 'draft', kind: 'NATIVE_DRAFT' },
+    { ...item, id: 'missing-proof', nativeEvidence: null },
+    { ...item, id: 'wrong-hash', captionText: 'Changed caption' }] }).channels[0];
+  assert.equal(result.nativeScheduled, 1);
   assert.equal(result.verifiedBookings, 0);
-  assert.deepEqual(result.duplicateRisk, ['native-2']);
+  assert.deepEqual(result.unapprovedScheduled, ['li-1']);
+  assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
+  assert.ok(result.states.includes('UNAPPROVED_NATIVE_SCHEDULE'));
 });
 
 test('stale native evidence and published platform IDs cannot prove future coverage', () => {

@@ -1,3 +1,5 @@
+import { createHash } from 'node:crypto';
+
 const ZONE = 'America/New_York';
 const DAY = 24 * 60 * 60 * 1000;
 
@@ -26,6 +28,19 @@ function publishedDateET(item) {
   return item.publishedDateET || (item.publishedAt ? easternDate(item.publishedAt) : null);
 }
 
+function nativeOwner(platform) {
+  return platform === 'linkedin' ? 'LINKEDIN_NATIVE' : 'META_NATIVE';
+}
+
+function hasNativeBookingProof(item, asOf) {
+  return Boolean(item.nativeBookingId || (item.platform === 'linkedin'
+    && item.nativeEvidence?.source === 'LINKEDIN_NATIVE_UI'
+    && item.nativeEvidence.observedDateET === asOf
+    && item.captionText
+    && item.nativeEvidence.captionSha256 === createHash('sha256').update(item.captionText).digest('hex')
+    && item.nativeEvidence.scheduledAt === item.scheduledAt));
+}
+
 export function buildSocialCoverageReadback(snapshot) {
   const asOf = easternDate(snapshot.asOf);
   const end = addDays(asOf, 14);
@@ -37,17 +52,17 @@ export function buildSocialCoverageReadback(snapshot) {
     const related = items.filter((item) => channelKey(item) === channelKey(channel));
     const nativeEvidenceFresh = channel.nativeReadback?.observedDateET === asOf;
     const verifiedNative = nativeEvidenceFresh && channel.nativeReadback?.state === 'VERIFIED';
-    const nativeBookings = related.filter((item) =>
+    const nativeScheduled = related.filter((item) =>
       item.kind === 'NATIVE_BOOKING'
       && verifiedNative
       && item.destinationId === channel.destinationId
-      && item.approvalState === 'APPROVED'
-      && item.nativeBookingId
+      && hasNativeBookingProof(item, asOf)
       && item.scheduledAt
       && easternDate(item.scheduledAt) >= asOf
       && easternDate(item.scheduledAt) < end
     );
-    const booked = channel.executionOwner === 'AZURE_WORKER' ? [] : nativeBookings;
+    const booked = nativeScheduled.filter((item) => item.approvalState === 'APPROVED');
+    const unapprovedScheduled = nativeScheduled.filter((item) => item.approvalState !== 'APPROVED');
     const published = related.filter((item) =>
       item.kind === 'PUBLISHED'
       && item.destinationId === channel.destinationId
@@ -59,11 +74,12 @@ export function buildSocialCoverageReadback(snapshot) {
     const approvedContent = related.filter((item) => item.kind === 'CONTENT' && item.approvalState === 'APPROVED');
     const held = related.filter((item) => item.status?.startsWith('HELD') || item.approvalState === 'HELD');
     const failures = related.filter((item) => /FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED/.test(item.status || ''));
-    const duplicateRisk = nativeBookings.filter((native) =>
-      channel.executionOwner === 'AZURE_WORKER'
-      || apiRequests.some((request) => request.contentKey
+    const duplicateRisk = nativeScheduled.filter((native) =>
+      apiRequests.some((request) => request.contentKey
         && request.contentKey === native.contentKey)
     );
+    const mixedChannelAuthority = nativeScheduled.filter((native) =>
+      channel.executionOwner !== nativeOwner(native.platform));
     const weeks = [0, 1].map((week) => {
       const start = addDays(asOf, week * 7);
       const stop = addDays(start, 7);
@@ -80,13 +96,25 @@ export function buildSocialCoverageReadback(snapshot) {
     if (failures.length) states.push('EXECUTION_FAILURE');
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
     if (duplicateRisk.length) states.push('DUAL_SCHEDULER_RISK');
+    if (mixedChannelAuthority.length) states.push('MIXED_CHANNEL_EXECUTION_AUTHORITY');
+    if (unapprovedScheduled.length) states.push('UNAPPROVED_NATIVE_SCHEDULE');
     return {
       brand: channel.brand,
       platform: channel.platform,
       destinationId: channel.destinationId || null,
       executionOwner: channel.executionOwner,
       nativeReadback: channel.nativeReadback || null,
+      nativeScheduled: nativeScheduled.length,
+      nativeBookingRows: nativeScheduled.map((item) => ({
+        id: item.id,
+        nativeBookingId: item.nativeBookingId || null,
+        proof: item.nativeBookingId ? 'NATIVE_ID' : 'LINKEDIN_NATIVE_UI',
+        scheduledAt: item.scheduledAt,
+        approvalState: item.approvalState || null,
+        executionOwner: nativeOwner(item.platform)
+      })),
       verifiedBookings: booked.length,
+      unapprovedScheduled: unapprovedScheduled.map((item) => item.id),
       nextVerifiedBooking: booked.sort((a, b) => a.scheduledAt.localeCompare(b.scheduledAt))[0]?.scheduledAt || null,
       apiRequests: apiRequests.length,
       apiRequestRows: apiRequests.map((item) => ({
@@ -106,6 +134,7 @@ export function buildSocialCoverageReadback(snapshot) {
       heldItems: held.map((item) => item.id),
       failures: failures.map((item) => item.id),
       duplicateRisk: duplicateRisk.map((item) => item.id),
+      mixedChannelAuthority: mixedChannelAuthority.map((item) => item.id),
       weeks,
       states
     };
@@ -126,10 +155,9 @@ export function buildSocialCoverageReadback(snapshot) {
         && channels.some((channel) => channelKey(channel) === channelKey(item)
           && channel.destinationId === item.destinationId
           && ((item.kind === 'PUBLISHED' && item.platformPostId && publishedDateET(item))
-            || (item.kind === 'NATIVE_BOOKING' && item.nativeBookingId
+            || (item.kind === 'NATIVE_BOOKING' && hasNativeBookingProof(item, asOf)
               && item.approvalState === 'APPROVED' && item.scheduledAt
               && easternDate(item.scheduledAt) >= asOf
-              && channel.executionOwner !== 'AZURE_WORKER'
               && channel.nativeReadback?.state === 'VERIFIED'
               && channel.nativeReadback.observedDateET === asOf)))
       ).filter((item) => {
