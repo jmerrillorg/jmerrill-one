@@ -79,6 +79,18 @@ assert.equal(JSON.stringify(baseline.calls.send[0]).includes('Synthetic body'), 
 assert.equal((await reconcileProductionsBp09Notice({ ...baseline, mode: 'send' })).state, 'PROVIDER_ACCEPTED');
 assert.equal(baseline.calls.send.length, 1);
 assert.equal(JSON.parse(baseline.receipt.jm1_actiondescription).notice.providerMessageId.length, 36);
+const acceptedNotice = JSON.parse(baseline.receipt.jm1_actiondescription).notice;
+baseline.relay.send = async (payload) => {
+  baseline.calls.send.push(payload);
+  return { status: 200, body: { accepted: true, replay: true, deliveryState: 'ACCEPTED',
+    jm1MessageId: acceptedNotice.relayMessageId, providerMessageId: acceptedNotice.providerMessageId } };
+};
+assert.equal((await reconcileProductionsBp09Notice({ ...baseline, mode: 'replay' })).state, 'REPLAY_VERIFIED');
+assert.deepEqual(baseline.calls.send[0], baseline.calls.send[1]);
+assert.equal(JSON.parse(baseline.receipt.jm1_actiondescription).notice.providerMessageId, acceptedNotice.providerMessageId);
+const notReady = fixture();
+await assert.rejects(() => reconcileProductionsBp09Notice({ ...notReady, mode: 'replay' }), /NOTICE_REPLAY_NOT_READY/);
+assert.equal(notReady.calls.send.length, 0);
 
 const reordered = fixture();
 const reorderedDetail = JSON.parse(reordered.receipt.jm1_actiondescription);

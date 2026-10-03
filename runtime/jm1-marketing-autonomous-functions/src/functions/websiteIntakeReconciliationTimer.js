@@ -23,7 +23,7 @@ app.timer('websiteIntakeReconciliationTimer', {
       const mode = process.env.JM1_PRODUCTIONS_BP09_NOTICE_MODE || 'off';
       let noticeFailure = null;
       if (mode !== 'off') {
-        if (!['probe', 'send'].includes(mode) || !process.env.JM1_PRODUCTIONS_BP09_NOTICE_RECEIPT_ID) {
+        if (!['probe', 'send', 'replay'].includes(mode) || !process.env.JM1_PRODUCTIONS_BP09_NOTICE_RECEIPT_ID) {
           throw new Error('Productions BP-09 notice pilot configuration is invalid');
         }
         try {

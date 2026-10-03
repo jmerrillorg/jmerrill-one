@@ -108,10 +108,22 @@ async function saveNotice(adapter, receipt, notice) {
 }
 
 export async function reconcileProductionsBp09Notice({ adapter, relay, id, mode, now = new Date() }) {
-  if (mode !== 'probe' && mode !== 'send') return { state: 'OFF' };
+  if (!['probe', 'send', 'replay'].includes(mode)) return { state: 'OFF' };
   const receipt = await verifiedBinding(adapter, id);
   const payload = payloadFor(receipt);
   const prior = receipt.notice || {};
+  if (mode === 'replay') {
+    if (prior.state !== 'PROVIDER_ACCEPTED' || !prior.relayMessageId || !prior.providerMessageId) {
+      throw hold('NOTICE_REPLAY_NOT_READY');
+    }
+    const probe = await relay.probe(payload);
+    if (!probeAccepted(probe, id)) throw hold('NOTICE_PROBE_DENIED');
+    const result = await relay.send(payload);
+    if (result.status !== 200 || result.body.accepted !== true || result.body.replay !== true ||
+        result.body.deliveryState !== 'ACCEPTED' || result.body.jm1MessageId !== prior.relayMessageId ||
+        result.body.providerMessageId !== prior.providerMessageId) throw hold('NOTICE_REPLAY_MISMATCH');
+    return { state: 'REPLAY_VERIFIED' };
+  }
   if (prior.state === 'PROVIDER_ACCEPTED') return { state: prior.state, relayMessageId: prior.relayMessageId };
   if (prior.state === 'HELD' || prior.state === 'FAILED') return { state: prior.state, code: prior.code, newlyHeld: false };
   if (mode === 'probe') {
