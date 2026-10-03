@@ -9,7 +9,7 @@ if (process.argv.includes('--apply') && (!objectId || !/^[0-9a-f-]{36}$/i.test(o
 const apply = process.argv.includes('--apply');
 const token = execFileSync('az', ['account', 'get-access-token', '--resource', url, '--query', 'accessToken', '-o', 'tsv'], { encoding: 'utf8' }).trim();
 const roleName = 'JSJ Inquiry Service';
-const expected = ['Create', 'Read', 'Write', 'Delete'].map((action) => `prv${action}jm1_JSJInquiry`);
+const expected = ['Create', 'Read', 'Write', 'Delete', 'Assign'].map((action) => `prv${action}jm1_JSJInquiry`);
 const who = await request('/WhoAmI()');
 const businessUnitId = who.BusinessUnitId;
 const roleFilter = encodeURIComponent(`name eq '${roleName}'`);
