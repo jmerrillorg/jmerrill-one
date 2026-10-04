@@ -1,6 +1,6 @@
 # Three-brand exact social batch: October-November 2026
 
-Standing authority: Jackie confirmed enterprise marketing and social publication are authorized without per-post founder signoff. This batch still requires source/claim checks, a durable delegated content decision, exact media binding, unique scheduler ownership, and platform readback. It is **not** a record of ten bookings or ten publications. Times are Eastern. The [earlier native-item sheet](three-brand-native-booking-review-2026-10-02.md) preserves the original draft and booking identities.
+Standing authority: Jackie confirmed enterprise marketing and social publication are authorized without per-post founder signoff. This batch still requires source/claim checks, a durable delegated content decision, exact media binding, unique scheduler ownership, and platform readback. The native-state column is the preparation baseline, not a current booking count; use the [October 4 verified readback](social-coverage-native-audit-2026-10-04.json) for current state. Times are Eastern. The [earlier native-item sheet](three-brand-native-booking-review-2026-10-02.md) preserves the original draft and booking identities.
 
 The asset paths below are relative to the repository root. Book covers are exact copies of Publishing production/distribution files, not generated author likenesses. The four non-cover graphics are original packet artwork. Their identity is the SHA-256, not an editable filename. A single cover may be reused across a calendar, but each post retains its own caption, approval, destination, and publication ID.
 
@@ -16,6 +16,7 @@ The asset paths below are relative to the repository root. Book covers are exact
 | O-LI | One LI org `106683183` / LinkedIn native | Oct 9 10:00 | `artifacts/social-creative-2026-10/one-four-paths.png` `4368a1b662add171062e295c69ff146d5f28beeddab033a3311b43099bac1320` | [One divisions](https://www.jmerrill.one/) | Native text/link booking exists; image not attached |
 | F-LI | Financial LI org `146207089` / LinkedIn native | Oct 12 10:00 | `artifacts/social-creative-2026-10/financial-preparation-folders.png` `7448f4209a84cb8010c762971f4f0716cd7c3e18c028b4a5be00551e71ec8ef6` | [Financial services](https://www.jmerrill.financial/services); educational/document support only | Native text/link booking exists; image not attached |
 | P-LI2 | Publishing LI org `13048648` / LinkedIn native | Nov 3 11:00 | `artifacts/social-creative-2026-10/reeder-girl-did-you-know-front-cover.jpg` `7d60c7dbc7052a033370797c5b77ddf0e968d7bb8316cc02eb4ee86f919b342e` | [Reeder author page](https://jmerrill.pub/authors/kimberly-reeder) verifies byline/title | Native text/link booking exists; image not attached |
+| P-LI3 | Publishing LI org `13048648` / LinkedIn native | Oct 10 11:00 | `artifacts/social-creative-2026-10/publishing-revision-desk.png` `e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8` | [Conquest title page](https://jmerrill.pub/books/the-conquest-of-azenga) verifies byline, title, imprint; visual is illustrative, not a book cover | New visual booking verified Oct 4; no published ID |
 
 ## Exact captions and accessibility
 
@@ -61,6 +62,10 @@ Alt: Teal planning folder with three pockets of blank documents, contact symbols
 
 Alt: Cover of Girl, Did You Know...?: A Journey of Healing, Truth, and God's Restoration by Kimberly Reeder, showing a woman and two children in a warmly lit room.
 
+**P-LI3 / v1.** October Author of the Month: Iyorwuese Hagher. The Conquest of Azenga is listed in J Merrill Publishing's JM Signature catalog. Explore the title and his author profile: https://jmerrill.pub/books/the-conquest-of-azenga
+
+Alt: Illustrative editorial desk with annotated pages, colorful sticky notes, pens, notebooks, stacked books, a plant, and coffee.
+
 ## Execution boundary
 
-The ten current placements use seven unique visual files. Source checking and the founder's standing marketing authorization do not themselves prove that a Dataverse content/creative decision or native booking was persisted. Before any live action, bind the exact caption version, SHA-256, source and delegated reviewer to governed content/creative records. For Publishing Facebook, **do not** simply flip the existing held campaign: its older October 3/21 rows need individual media, destination, idempotency and duplicate reconciliation. Retire the four native Publishing drafts only through a reviewed single-owner disposition, not by posting them while the API worker owns that channel. Preserve the existing four LinkedIn bookings when attaching media; verify the modified native item and later platform publication ID. F-FB and O-FB may use their existing drafts after the governed record is bound and the final scheduled time is read back. Financial's separate LLC Page `104395329284856` stays untouched.
+The eleven placements use eight unique visual files. Source checking and the founder's standing marketing authorization do not themselves prove that a Dataverse content/creative decision or native booking was persisted; use the linked current readback for that proof. For Publishing Facebook, **do not** simply flip the existing held campaign: its older October 3/21 rows need individual media, destination, idempotency and duplicate reconciliation. Retire the four native Publishing drafts only through a reviewed single-owner disposition, not by posting them while the API worker owns that channel. Financial's separate LLC Page `104395329284856` stays untouched.
