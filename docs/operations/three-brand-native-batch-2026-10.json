@@ -99,6 +99,20 @@
       "dimensions": "1763x2560",
       "source": "https://jmerrill.pub/authors/kimberly-reeder",
       "caption": "November Author of the Month: Kimberly Reeder. Explore her J Merrill Publishing author page and Girl, Did You Know... ? in the catalog: https://jmerrill.pub/authors/kimberly-reeder"
+    },
+    {
+      "ref": "P-LI3",
+      "brand": "J Merrill Publishing",
+      "platform": "linkedin",
+      "executor": "LINKEDIN_NATIVE",
+      "destinationId": "13048648",
+      "scheduledAt": "2026-10-10T15:00:00Z",
+      "nativeState": "NATIVE_BOOKING_PENDING",
+      "asset": "artifacts/social-creative-2026-10/publishing-revision-desk.png",
+      "sha256": "e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8",
+      "dimensions": "1254x1254",
+      "source": "https://jmerrill.pub/books/the-conquest-of-azenga",
+      "caption": "October Author of the Month: Iyorwuese Hagher. The Conquest of Azenga is listed in J Merrill Publishing's JM Signature catalog. Explore the title and his author profile: https://jmerrill.pub/books/the-conquest-of-azenga"
     }
   ]
 }
