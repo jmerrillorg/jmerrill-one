@@ -64,6 +64,10 @@ app.timer('websiteIntakeReconciliationTimer', {
           }
         }
       }
+      if (noticeFailure) context.error(JSON.stringify({ event: 'PRODUCTIONS_BP09_NOTICE_FAILURE',
+        detail: noticeFailure }));
+      if (retentionFailure) context.error(JSON.stringify({ event: 'PRODUCTIONS_BP09_DISPOSITION_FAILURE',
+        detail: retentionFailure }));
       if (failed.length || noticeFailure || retentionFailure) throw new Error([
         ...(failed.length ? [`${failed.length} website intake receipt(s) remain pending reconciliation`] : []),
         ...(noticeFailure ? [noticeFailure] : []),
