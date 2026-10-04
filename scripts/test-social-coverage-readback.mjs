@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { buildSocialCoverageReadback } from './lib/social-coverage-readback.mjs';
+import { buildSocialCoverageReadback, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 
 const channel = {
   brand: 'J Merrill Publishing', platform: 'facebook', destinationId: '307480763084670',
@@ -103,4 +103,14 @@ test('failure readback exposes retry work without treating it as coverage', () =
   assert.equal(result.verifiedBookings, 0);
   assert.deepEqual(result.failures, ['retry-1']);
   assert.ok(result.states.includes('EXECUTION_FAILURE'));
+});
+
+test('live Dataverse refresh preserves platform-proven native publications only', () => {
+  const native = retainNativeEvidenceItems([
+    { id: 'hagher', kind: 'PUBLISHED', platformPostId: 'urn:li:share:1' },
+    { id: 'unproved', kind: 'PUBLISHED', platformPostId: null },
+    { id: 'booked', kind: 'NATIVE_BOOKING' },
+    { id: 'draft', kind: 'NATIVE_DRAFT' }
+  ]);
+  assert.deepEqual(native.map((item) => item.id), ['hagher', 'booked']);
 });

@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { buildSocialCoverageReadback } from './lib/social-coverage-readback.mjs';
+import { buildSocialCoverageReadback, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
@@ -70,7 +70,7 @@ if (process.argv.includes('--live-dataverse')) {
     approvalState: item.jm1_publicreadystate === 'PASS' ? 'APPROVED' : 'HELD',
     source: 'LIVE_DATAVERSE'
   })));
-  const nativeItems = snapshot.items.filter((item) => item.kind === 'NATIVE_BOOKING' || item.source === 'NATIVE_READBACK');
+  const nativeItems = retainNativeEvidenceItems(snapshot.items);
   snapshot.items = [...nativeItems, ...current.filter((row) => !nativeItems.some((item) =>
     row.platformPostId && row.platformPostId === item.platformPostId)), ...contentItems];
   snapshot.unclassifiedDataverseRows = futureRows.filter((row) =>
