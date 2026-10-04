@@ -1,0 +1,72 @@
+# Productions BP-09 reviewer implementation handoff
+
+Status: ONE-owned execution required; public Productions contact form remains
+off. No current ONE BP-09 execution chat was identified on 2026-10-04. The
+existing ONE chat is dedicated to social commissioning and is not this owner
+channel. This record assigns work to the canonical ONE repository without
+repurposing that chat or moving business policy into ONE.
+
+## Existing authority
+
+- [ONE PR #58](https://github.com/jmerrillorg/jmerrill-one/pull/58)
+  implemented strict Productions-origin intake, a durable `jm1_executionlogs`
+  receipt, replay/payload-conflict behavior, and one linked Lead per eligible
+  accepted receipt. This is producer proof, not reviewer-action proof.
+- [Productions PR #18](https://github.com/jmerrillorg/jmerrill-productions/pull/18)
+  authorizes only `ACCEPT_FOR_FOLLOW_UP`: an eligible `NEW` Lead moves to
+  `FOLLOW_UP_REQUIRED`. It does not mean client contact, conversion, project
+  approval, or retention disposition.
+- [OPS scoped audit contract](https://github.com/jmerrillorg/jm1-ops/blob/main/docs/governance/enterprise-orchestration/productions-bp09-audit-equivalence.md)
+  permits an attributable application-level action trail after its proof;
+  JM1-Core global Dataverse Audit stays off.
+- OPS team `36ee36cf-6ebf-f111-aaaf-6045bdd69435` and role
+  `654979be-6ebf-f111-aaaf-7c1e525b15c2` exist. The role has only Basic
+  Lead Read/Write. Its current member is Jackie's administrator system user,
+  which cannot prove non-admin isolation. OPS staged separate Entra principal
+  `da2195e5-8369-4a08-aa67-bc80aaa1160a` disabled, unlicensed, and without
+  directory roles; it has no current Dataverse/app access.
+
+## ONE-owned implementation
+
+1. Keep the existing receipt-first intake and its timer reconciliation.
+   Bind the accepted Productions Lead to the exact reviewer team through
+   `JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID` after source/config validation. Current
+   code also accepts `JM1_PRODUCTIONS_FOLLOWUP_OWNER_ID` as a user fallback;
+   do not use administrator ownership as ordinary reviewer authority.
+2. Establish a version-controlled, Productions-scoped reviewer app/action
+   surface in the ONE-owned Dataverse/runtime solution. Return exact solution,
+   appmodule, action endpoint, and table/column IDs to OPS before app sharing
+   or license allocation. Do not reuse the empty historical
+   `JM1ProductionCommandCenter` solution by name alone or assume the
+   first-party Sales app is covered by a Power Apps per-app pass.
+3. Accept only a completed, response-consented BP-09 receipt for channel
+   `jmerrill.productions/contact` linked to exactly one team-owned Productions
+   Lead. Derive the actor from authenticated context, not a caller field.
+   Enforce expected `NEW` state, row version, exact action ID, and an
+   idempotency key. Duplicate requests must not produce a second transition;
+   stale, revoked, other-brand, and changed-key requests fail closed.
+4. Persist the Lead transition with a minimal append-only action receipt in
+   the same transaction, or prove an equivalent no-gap recovery model.
+   Preserve actor, Lead/accepted-receipt IDs, before/after state, timestamp,
+   correlation, and outcome; do not copy inquiry body or Contact data into
+   general telemetry. Follow the OPS audit-equivalence contract and prove
+   write failure rollback, replay, and independent readback.
+5. Build a reference-only internal notice after the accepted receipt, with
+   `productions@jmerrill.one` derived from governed sender/routing authority.
+   Keep the private body out of email and alerts. Prove caller grant,
+   idempotency, bounded retry, terminal alert, transport readback, and owner
+   work-item visibility. A mailbox test alone is not notice commissioning.
+
+## Cross-owner acceptance and cutover
+
+OPS owns the exact non-admin principal, team/role, app share, existing per-app
+capacity allocation, and allow/deny/revoke proof after ONE returns the app
+identity. Productions owns public form, action semantics, business follow-up,
+and the cutover decision. ONE owns the receipt/Lead producer and reviewer
+runtime; the shared communications owner owns relay transport authority.
+
+Use synthetic records first. Require own Lead allow, other-brand Lead and
+unrelated Activity denial, revoked-team denial, replay, failure recovery,
+reference-only notice, and audit readback. Keep email/phone public continuity;
+do not enable the form, message a client, or count a synthetic acceptance as
+follow-up until all owning gates pass.
