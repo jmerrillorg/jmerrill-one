@@ -1,0 +1,70 @@
+# Three-brand social commissioning readback: October 3, 2026
+
+Packet: `JM1-THREE-BRAND-SOCIAL-PRESENCE-001`. Times below are Eastern. This is a native-platform and Dataverse checkpoint, not a claim that the rolling calendar is commissioned. The [October-November proposal](three-brand-calendar-approval-2026-10-11.md) is placement inventory, not approval or a native booking. Sintra is retired.
+
+## October 4 production update
+
+Founder's standing enterprise marketing authorization now governs routine, truthful, source-checked social content; it does not release the separately held Publishing Meta campaign or waive exact content, creative, destination, and readback checks. The [seven-item native batch](three-brand-native-batch-2026-10.json) bound exact captions and SHA-256 media hashes to Dataverse campaign, content, creative, and execution records. Its apply was replayed without creating duplicate authority records. An item in this batch is not a native booking until the owning scheduler confirms it.
+
+The official Financial Facebook Page `1270611542802820` in Meta business `846921439784613` now has **two scheduled visual posts**, verified in Meta Business Suite's Scheduled register:
+
+| Eastern schedule | Meta business content ID | Dataverse social execution | Status | Visual / alt proof |
+| --- | --- | --- | --- | --- |
+| Oct 5, 10:00 am | `2145183373031235` (Facebook target `1570503061517776`) | `1e51200b-97bf-f111-aaaf-6045bdd69678` | `NATIVE_BOOKED_VERIFIED`; no published post ID yet | `financial-estate-readiness-desk.png`, SHA-256 `8434350433980461cb4ef66bf755b0509b4410358fa6df0ee6fb9adee5522b2c`; native alt text describes the folder, checklist, pen, envelope, and key |
+| Oct 14, 10:00 am | `1070259245634331` | `00d6a510-afbf-f111-aaaf-000d3a14673b` | `NATIVE_BOOKED_VERIFIED`; no published post ID yet | `financial-preparation-folders.png`, SHA-256 `7448f4209a84cb8010c762971f4f0716cd7c3e18c028b4a5be00551e71ec8ef6`; native alt text describes three folder pockets |
+
+These are estate/document-readiness education, not an `ADM-300` funeral-service claim. The separate Financial LLC Page `104395329284856` was untouched. The four preexisting LinkedIn native bookings remain scheduled with text/link previews; the Oct 12 Financial booking was re-read in its exact organization `146207089` and was **not** duplicated or edited. LinkedIn exposes its date/copy in the scheduler but no prepublication post ID in this view. Its prepared visual could not be attached because Edge's ChatGPT extension denied local file upload until its `Allow access to file URLs` setting is enabled by the user. The unsaved edit was discarded, preserving the original scheduled post. This upload gate also blocks the prepared visuals for the other LinkedIn items and the remaining Meta drafts. No new LinkedIn booking or publication is claimed by this update.
+
+The original October 3 readback and table below are historical. For the Financial Facebook row, the two October 4 Scheduled-register entries above supersede its former draft-only/zero-booking state. The rolling 14-day requirement remains uncommissioned across the nine channels; two future bookings in one channel do not establish continuous coverage or a monthly replenishment run.
+
+Late Oct 3 (about 9:40 pm Eastern) native recheck: the `Scheduled` view in Meta Business Suite showed "No scheduled posts" when selected separately for Financial Page `1270611542802820`, One Page `101196349506906`, and Publishing Page `307480763084670` within business portfolio `846921439784613`. Each selected asset displayed paired Facebook/Instagram icons, but those icons do not establish the exact Instagram account ID or publishing permission. Financial's two visual posts were still visible as drafts in its home view. In the three exact LinkedIn organization admin scheduling lists, Publishing `13048648` showed Oct 8 11:00 am and Nov 3 11:00 am, One `106683183` showed Oct 9 10:00 am, and Financial `146207089` showed Oct 12 10:00 am. The platform exposed scheduled dates but no prepublication post IDs in those lists. The Oct 3 Hagher post remained visible on Publishing's published feed with its platform share ID. These native results supersede the stale Oct 2 snapshot for queue counts, not the unresolved approval states.
+
+## Publication and queue truth
+
+| Brand | Channel and destination | Execution owner | Current verified state | Next booked item | Approval / coverage |
+| --- | --- | --- | --- | --- | --- |
+| One | Facebook Page `101196349506906` | Meta native | No scheduled posts after Oct 7 item `2137055240571356` returned to Drafts | None | Exact-copy approval and visual needed; 14-day approved coverage absent |
+| One | Instagram | Meta native | Connected account indicated in Meta; exact destination ID and future queue not proved in this readback | None proved | Identity/readback gate |
+| One | LinkedIn org `106683183` | LinkedIn native | Oct 9 10:00 booking preserved, text/link preview, prepublication ID not exposed | Oct 9 10:00 | Exact-copy approval unverified; not approved coverage |
+| Publishing | Facebook Page `307480763084670` | Guarded Azure worker | Native author posts remain Drafts; Oct 3/21 API rows held | None approved | Campaign/content/media/destination and duplicate checks required |
+| Publishing | Instagram Graph account `17841410046020869` | Guarded Azure worker | No approved future booking proved; held API requests are not bookings | None approved | Same campaign gate; do not native-book duplicates |
+| Publishing | LinkedIn org `13048648` | LinkedIn native | Hagher visual post published Oct 3; Oct 8 writer tip and Nov 3 Reeder item still native-scheduled | Oct 8 11:00 | Future exact-copy approval unverified; no weekly coverage beyond first October week |
+| Financial | Official Facebook Page `1270611542802820` in One portfolio `846921439784613` | Meta native | Oct 5 item `2145183373031235` and Oct 14 visual item `1408327554100595` retained as Drafts; no scheduled posts | None | Financial Dataverse campaign authority not found; no approved 14-day coverage |
+| Financial | Instagram handle `jmerrillfinancial` | Meta native, if connected under approved access | Connection/permissions not proved; no booking proved | None | Do not click cross-account connection prompt without authorization |
+| Financial | LinkedIn org `146207089` | LinkedIn native | Oct 12 10:00 booking preserved, text/link preview, prepublication ID not exposed | Oct 12 10:00 | Exact-copy/JMF claims approval unverified; not approved coverage |
+
+The separate Financial LLC Facebook Page `104395329284856` was not posted to or migrated. LinkedIn API permission remains held; native LinkedIn is the only authorized LinkedIn execution path. Meta native is not a Publishing fallback while the guarded worker owns Publishing Facebook and Instagram. The Oct 3/21 Publishing requests remain held, and the Oct 21 row was not treated as approved by proximity to an earlier campaign.
+
+## Proven publication
+
+- [Publishing LinkedIn October Hagher post](https://www.linkedin.com/feed/update/urn:li:activity:7512083179911168000/) was read back live on Oct 3 with platform share ID `urn:li:share:7512083179101601792`, exact October Author of the Month caption, *A Portrait of Paradise* cover, and alt text. This counts for the Sep 28-Oct 4 calendar week only. The former Oct 4 native schedule was published now, not duplicated.
+- Source: [Hagher public author page](https://jmerrill.pub/authors/iyorwuese-hagher) and OneDrive distribution cover `JM1-PUB/08_Backlist/Hagher, Iyorwuese/2025-Hagher-APortraitOfParadise/08 Distribution Records/9781961475670_FC.jpg`, SHA-256 `5cf31e28bfd3eb7dbd091445a4ccbce5f9c65b5d3eb5d039fafae3d642033be3`. Founder confirmed general promotional name/image/likeness rights. No new blanket rights approval is needed.
+- The post is live, but an exact-copy/content approval binding in Dataverse was **not** verified. Do not represent this publication as an approved campaign result until that evidence is reconciled.
+
+The November Reeder spotlight now has a specific existing cover candidate, not a new blanket rights question. The [public author page](https://jmerrill.pub/authors/kimberly-reeder) identifies Kimberly Reeder and *Girl, Did You Know...?: A Journey of Healing, Truth, and God's Restoration*; the [book page](https://jmerrill.pub/books/girl-did-you-know) gives the same author and short title but still says its description and catalog record are pending. The OneDrive production-output file `JM1-PUB/08_Backlist/Reeder, Kimberly/2025-Reeder-GirlDidYouKnow/08-Publishing Output (Print, eBook, Audiobook)/9781961475755_FC.jpg` visibly carries that title and byline, SHA-256 `7d60c7dbc7052a033370797c5b77ddf0e968d7bb8316cc02eb4ee86f919b342e`. Use the public author link; do not infer an ISBN or a book description from the filename. Candidate alt text: "Cover of Girl, Did You Know...?: A Journey of Healing, Truth, and God's Restoration by Kimberly Reeder, showing a woman and two children in a warmly lit room." The exact image/caption/link choice still needs item-level Publishing review and Dataverse binding before the Nov 3 LinkedIn booking counts as approved coverage; the cover was not uploaded or attached to that booking in this readback.
+
+## Creative and holds
+
+| Asset | SHA-256 | Intended use | Current disposition |
+| --- | --- | --- | --- |
+| `financial-estate-readiness-desk.png` | `8434350433980461cb4ef66bf755b0509b4410358fa6df0ee6fb9adee5522b2c` | Oct 5 Financial estate-readiness caption, with alt text describing folder, checklist, pen, envelope and key | Uploaded in Meta; post `2145183373031235` is Draft pending review |
+| `financial-preparation-folders.png` | `7448f4209a84cb8010c762971f4f0716cd7c3e18c028b4a5be00551e71ec8ef6` | Financial planning checklist caption, with alt text describing three folder pockets | Uploaded in Meta; post `1408327554100595` is Draft pending review |
+| `one-four-paths.png` | `4368a1b662add171062e295c69ff146d5f28beeddab033a3311b43099bac1320` | Distinct One umbrella-brand visual | Prepared locally; not uploaded/booked |
+| `publishing-revision-desk.png` | `e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8` | Writer-tip visual for non-author Publishing slots | Prepared locally; not uploaded/booked |
+
+All four illustrations were generated for this packet and have no third-party stock licensing dependency. `one-wayfinding.png` is preserved locally but excluded from publication because small invented text appears in the image. No Azure `jm1media` registration was made: a non-overwriting Azure Blob upload using signed-in identity was denied for lack of `Storage Blob Data Contributor`. No account-key fallback or IAM change was attempted. Native platform uploads do not establish a governed Dataverse media asset by themselves.
+
+## Required review and operating rule
+
+The [October 2 exact-item review](three-brand-native-booking-review-2026-10-02.md) remains the consolidated caption review baseline, amended by today's artwork and the shortened Reeder LinkedIn wording. Financial's Oct 5 and Oct 14 captions, One's Oct 7 caption, and the four future LinkedIn captions need named review, timestamp, exact caption/link/creative identity, and Dataverse binding before they may count as approved coverage. The Nov 3 Reeder item is still a native booking, not proof of November weekly coverage. Additional Hagher weeks and Reeder weeks cannot be backdated or counted from proposals.
+
+The two exact-copy amendments for that single batch are:
+
+- Financial Facebook, proposed Oct 14 10:00, Page `1270611542802820`, draft `1408327554100595`, `financial-preparation-folders.png`: “One folder can make a difficult conversation easier. Start with three lists: important documents, people to contact, and questions you want to ask. Keep the location of the folder known to someone you trust. Save this checklist for a future planning conversation. Educational information, not legal or insurance advice.” Alt text: “Top-down illustration of a teal planning folder with three pockets containing blank documents, contact cards, and question cards, beside a pen and a blank calendar.” The proposed date is no longer a booking.
+- Publishing LinkedIn, Nov 3 11:00, org `13048648`: “November Author of the Month: Kimberly Reeder. Explore her J Merrill Publishing author page and Girl, Did You Know... ? in the catalog: https://jmerrill.pub/authors/kimberly-reeder”. This replaced the unverified subtitle in the earlier review sheet. Native schedule remains, but prepublication ID and approved creative are not proved.
+
+The live Dataverse campaign marker `e60c47b5da7824de99976e0a` remains `SYSTEM_AUTHORITY_CREATED_HELD_FOR_DOWNSTREAM_PROOF`. A Financial campaign-authority search returned zero rows. Each daily 14-day readback must join approved content, native booking ID or LinkedIn caption/time proof, held API request, and later platform publication ID. Flag a gap where no approved booking exists, and page the named channel owner on failed publication or a missing platform ID; drafts, proposals, API requests and historical posts do not fill the gap. A monthly replenishment owner and failure-alert recipient have not been evidenced, so this operating loop is not commissioned.
+
+JMF `ADM-300` stays publicly visible; draft JMF PR #184 must not hide it. The sales-only registry designation and website-disclosure rule still require the normal JMF compliance decision. That issue must not be generalized into a ban on independently reviewed estate-readiness or provider-neutral funeral-preplanning education. No Blue Nebula, Marlan Gary, Precoa or Funeral Directors Life relationship claim is approved for JMF social copy by this readback.
+
+**Commissioning state:** PARTIAL. Publishing LinkedIn has one real visual publication. Approved rolling 14-day coverage is not proved for any of the nine channels. Do not release the guarded Publishing rows, schedule native duplicates, or count drafts as bookings.
