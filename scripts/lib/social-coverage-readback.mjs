@@ -41,6 +41,12 @@ function hasNativeBookingProof(item, asOf) {
     && item.nativeEvidence.scheduledAt === item.scheduledAt));
 }
 
+export function retainNativeEvidenceItems(items) {
+  return items.filter((item) => item.kind === 'NATIVE_BOOKING'
+    || item.source === 'NATIVE_READBACK'
+    || (item.kind === 'PUBLISHED' && item.platformPostId));
+}
+
 export function buildSocialCoverageReadback(snapshot) {
   const asOf = easternDate(snapshot.asOf);
   const end = addDays(asOf, 14);

@@ -20,5 +20,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/test-jm1-front-door-intake.mjs
+      - run: node scripts/test-social-coverage-readback.mjs
       - run: npm --prefix runtime/jm1-marketing-autonomous-functions run check
       - run: npm run build
