@@ -15,7 +15,7 @@ if (batch.version !== 1 || !Array.isArray(batch.items) || batch.items.length ===
 
 const validated = batch.items.map((item) => {
   if (!['J Merrill One', 'J Merrill Publishing', 'J Merrill Financial'].includes(item.brand)) throw new Error(`Invalid brand ${item.ref}`);
-  if (!['facebook', 'linkedin'].includes(item.platform)) throw new Error(`Invalid platform ${item.ref}`);
+  if (!['facebook', 'instagram', 'linkedin'].includes(item.platform)) throw new Error(`Invalid platform ${item.ref}`);
   if (!item.ref || !item.caption || !item.asset || !item.sha256 || !item.source || !item.destinationId) throw new Error(`Incomplete item ${item.ref}`);
   if (!new URL(item.source).hostname.match(/^(www\.)?(jmerrill\.one|jmerrill\.financial|jmerrill\.pub)$/)) throw new Error(`Untrusted source ${item.ref}`);
   const actualHash = createHash('sha256').update(readFileSync(resolve(item.asset))).digest('hex');
