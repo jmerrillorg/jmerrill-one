@@ -40,6 +40,7 @@ namespace Jm1.Productions.Bp09
                 new ColumnSet("azureactivedirectoryobjectid", "isdisabled", "accessmode"));
             var objectId = actor.GetAttributeValue<Guid?>("azureactivedirectoryobjectid");
             if (actor.GetAttributeValue<bool>("isdisabled") || !objectId.HasValue ||
+                actor.GetAttributeValue<OptionSetValue>("accessmode")?.Value != 0 ||
                 !IsTeamMember(service, actorId))
                 Deny(trace, "ACTOR_DENIED");
 
