@@ -3,6 +3,7 @@ import { DATAVERSE_WEB_API_BASE_URL } from '../lib/config.js';
 import { getDataverseToken } from '../lib/dataverse.js';
 import { createIntakeDataverseAdapter, reconcileIntake } from '../lib/intake.js';
 import { createProductionsRelay, reconcileProductionsBp09Notice, reconcileProductionsBp09Notices } from '../lib/productionsBp09Notice.js';
+import { scanProductionsBp09DispositionCandidates } from '../lib/productionsBp09Disposition.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { runEnvelope } from '../lib/runtime.js';
 
@@ -22,6 +23,18 @@ app.timer('websiteIntakeReconciliationTimer', {
       context.log(JSON.stringify({ event: 'WEBSITE_INTAKE_RECONCILIATION', scanned: outcomes.length, failed: failed.length }));
       const mode = process.env.JM1_PRODUCTIONS_BP09_NOTICE_MODE || 'off';
       let noticeFailure = null;
+      const retentionMode = process.env.JM1_PRODUCTIONS_BP09_RETENTION_MODE || 'off';
+      let retentionFailure = null;
+      if (retentionMode === 'prepare') {
+        const candidates = await scanProductionsBp09DispositionCandidates({ adapter });
+        const exceptions = candidates.filter((item) => item.state === 'FAILED');
+        context.log(JSON.stringify({ event: 'PRODUCTIONS_BP09_DISPOSITION_PREPARE', scanned: candidates.length,
+          pending: candidates.filter((item) => item.state.startsWith('PENDING_')).length,
+          exceptions: exceptions.map(({ id, code }) => ({ id, code })) }));
+        if (exceptions.length) retentionFailure = `${exceptions.length} Productions BP-09 disposition candidate(s) require reconciliation`;
+      } else if (retentionMode !== 'off') {
+        throw new Error('Productions BP-09 retention mode is invalid');
+      }
       if (mode !== 'off') {
         if (mode === 'continuous') {
           const outcomes = await reconcileProductionsBp09Notices({
@@ -51,9 +64,10 @@ app.timer('websiteIntakeReconciliationTimer', {
           }
         }
       }
-      if (failed.length || noticeFailure) throw new Error([
+      if (failed.length || noticeFailure || retentionFailure) throw new Error([
         ...(failed.length ? [`${failed.length} website intake receipt(s) remain pending reconciliation`] : []),
-        ...(noticeFailure ? [noticeFailure] : [])
+        ...(noticeFailure ? [noticeFailure] : []),
+        ...(retentionFailure ? [retentionFailure] : [])
       ].join('; '));
     }
   )
