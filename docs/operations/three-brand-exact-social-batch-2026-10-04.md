@@ -17,6 +17,7 @@ The asset paths below are relative to the repository root. Book covers are exact
 | F-LI | Financial LI org `146207089` / LinkedIn native | Oct 12 10:00 | `artifacts/social-creative-2026-10/financial-preparation-folders.png` `7448f4209a84cb8010c762971f4f0716cd7c3e18c028b4a5be00551e71ec8ef6` | [Financial services](https://www.jmerrill.financial/services); educational/document support only | Native text/link booking exists; image not attached |
 | P-LI2 | Publishing LI org `13048648` / LinkedIn native | Nov 3 11:00 | `artifacts/social-creative-2026-10/reeder-girl-did-you-know-front-cover.jpg` `7d60c7dbc7052a033370797c5b77ddf0e968d7bb8316cc02eb4ee86f919b342e` | [Reeder author page](https://jmerrill.pub/authors/kimberly-reeder) verifies byline/title | Native text/link booking exists; image not attached |
 | P-LI3 | Publishing LI org `13048648` / LinkedIn native | Oct 10 11:00 | `artifacts/social-creative-2026-10/publishing-revision-desk.png` `e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8` | [Conquest title page](https://jmerrill.pub/books/the-conquest-of-azenga) verifies byline, title, imprint; visual is illustrative, not a book cover | New visual booking verified Oct 4; no published ID |
+| P-LI4 | Publishing LI org `13048648` / LinkedIn native | Oct 15 11:00 | `artifacts/social-creative-2026-10/hagher-paradise-front-cover.jpg` `5cf31e28bfd3eb7dbd091445a4ccbce5f9c65b5d3eb5d039fafae3d642033be3` | [Paradise title page](https://jmerrill.pub/books/a-portrait-of-paradise) verifies byline, title, imprint; same source-checked copy as P-FB2 | Prepared in Dataverse; **not booked** because native media upload was blocked |
 
 ## Exact captions and accessibility
 
@@ -65,6 +66,10 @@ Alt: Cover of Girl, Did You Know...?: A Journey of Healing, Truth, and God's Res
 **P-LI3 / v1.** October Author of the Month: Iyorwuese Hagher. The Conquest of Azenga is listed in J Merrill Publishing's JM Signature catalog. Explore the title and his author profile: https://jmerrill.pub/books/the-conquest-of-azenga
 
 Alt: Illustrative editorial desk with annotated pages, colorful sticky notes, pens, notebooks, stacked books, a plant, and coffee.
+
+**P-LI4 / v1.** October Author of the Month: Iyorwuese Hagher. A Portrait of Paradise is another JM Signature title in the J Merrill Publishing catalog. Discover the book and its public author profile: https://jmerrill.pub/books/a-portrait-of-paradise
+
+Alt: Front cover of A Portrait of Paradise by Iyorwuese Hagher, showing a seated woman near a city skyline at dusk.
 
 ## Execution boundary
 

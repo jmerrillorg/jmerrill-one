@@ -127,6 +127,20 @@
       "dimensions": "1254x1254",
       "source": "https://jmerrill.pub/books/the-conquest-of-azenga",
       "caption": "October Author of the Month: Iyorwuese Hagher. The Conquest of Azenga is listed in J Merrill Publishing's JM Signature catalog. Explore the title and his author profile: https://jmerrill.pub/books/the-conquest-of-azenga"
+    },
+    {
+      "ref": "P-LI4",
+      "brand": "J Merrill Publishing",
+      "platform": "linkedin",
+      "executor": "LINKEDIN_NATIVE",
+      "destinationId": "13048648",
+      "scheduledAt": "2026-10-15T15:00:00Z",
+      "nativeState": "NATIVE_UPLOAD_BLOCKED",
+      "asset": "artifacts/social-creative-2026-10/hagher-paradise-front-cover.jpg",
+      "sha256": "5cf31e28bfd3eb7dbd091445a4ccbce5f9c65b5d3eb5d039fafae3d642033be3",
+      "dimensions": "1707x2560",
+      "source": "https://jmerrill.pub/books/a-portrait-of-paradise",
+      "caption": "October Author of the Month: Iyorwuese Hagher. A Portrait of Paradise is another JM Signature title in the J Merrill Publishing catalog. Discover the book and its public author profile: https://jmerrill.pub/books/a-portrait-of-paradise"
     }
   ]
 }
