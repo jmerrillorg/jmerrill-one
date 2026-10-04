@@ -68,6 +68,22 @@ test('LinkedIn UI proof counts a schedule but not unapproved coverage', () => {
   assert.ok(result.states.includes('UNAPPROVED_NATIVE_SCHEDULE'));
 });
 
+test('native Instagram handle proof counts without equating two unresolved numeric IDs', () => {
+  const instagram = { brand: 'J Merrill One', platform: 'instagram', destinationId: null,
+    destinationHandle: 'jmerrillone', executionOwner: 'META_NATIVE',
+    nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' } };
+  const booking = { brand: instagram.brand, platform: instagram.platform, destinationId: null,
+    destinationHandle: instagram.destinationHandle, kind: 'NATIVE_BOOKING', approvalState: 'APPROVED',
+    nativeBookingId: 'ig-1', scheduledAt: '2026-10-07T16:00:00Z' };
+  const result = buildSocialCoverageReadback({ ...base, channels: [instagram], items: [booking,
+    { ...booking, nativeBookingId: 'wrong-ig', destinationHandle: 'other' },
+    { ...booking, nativeBookingId: 'no-handle', destinationHandle: null }] }).channels[0];
+  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.destinationHandle, 'jmerrillone');
+  assert.ok(result.states.includes('NUMERIC_DESTINATION_ID_UNVERIFIED'));
+  assert.ok(!result.states.includes('DESTINATION_AUTHORITY_UNRESOLVED'));
+});
+
 test('stale native evidence and published platform IDs cannot prove future coverage', () => {
   const result = buildSocialCoverageReadback({ ...base,
     channels: [{ ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-01' } }],

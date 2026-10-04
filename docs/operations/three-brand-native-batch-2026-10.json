@@ -45,6 +45,20 @@
       "caption": "One commitment, different paths. J Merrill One helps people find the right starting point across Publishing, Financial, Foundation, and Productions. Explore the path that fits what you are building: https://www.jmerrill.one/"
     },
     {
+      "ref": "O-IG",
+      "brand": "J Merrill One",
+      "platform": "instagram",
+      "executor": "META_NATIVE",
+      "destinationId": "@jmerrillone",
+      "scheduledAt": "2026-10-07T16:00:00Z",
+      "nativeState": "NATIVE_BOOKING_PENDING",
+      "asset": "artifacts/social-creative-2026-10/one-four-paths.png",
+      "sha256": "4368a1b662add171062e295c69ff146d5f28beeddab033a3311b43099bac1320",
+      "dimensions": "1254x1254",
+      "source": "https://www.jmerrill.one/",
+      "caption": "One commitment, different paths. J Merrill One helps people find the right starting point across Publishing, Financial, Foundation, and Productions. Explore the path that fits what you are building: https://www.jmerrill.one/"
+    },
+    {
       "ref": "P-LI1",
       "brand": "J Merrill Publishing",
       "platform": "linkedin",

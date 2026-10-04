@@ -24,6 +24,12 @@ function channelKey(value) {
   return `${value.brand}:${value.platform}`;
 }
 
+function matchesDestination(item, channel) {
+  return Boolean((channel.destinationId && item.destinationId === channel.destinationId)
+    || (channel.platform === 'instagram' && channel.destinationHandle
+      && item.destinationHandle === channel.destinationHandle));
+}
+
 function publishedDateET(item) {
   return item.publishedDateET || (item.publishedAt ? easternDate(item.publishedAt) : null);
 }
@@ -61,7 +67,7 @@ export function buildSocialCoverageReadback(snapshot) {
     const nativeScheduled = related.filter((item) =>
       item.kind === 'NATIVE_BOOKING'
       && verifiedNative
-      && item.destinationId === channel.destinationId
+      && matchesDestination(item, channel)
       && hasNativeBookingProof(item, asOf)
       && item.scheduledAt
       && easternDate(item.scheduledAt) >= asOf
@@ -71,7 +77,7 @@ export function buildSocialCoverageReadback(snapshot) {
     const unapprovedScheduled = nativeScheduled.filter((item) => item.approvalState !== 'APPROVED');
     const published = related.filter((item) =>
       item.kind === 'PUBLISHED'
-      && item.destinationId === channel.destinationId
+      && matchesDestination(item, channel)
       && item.platformPostId
       && publishedDateET(item)
     );
@@ -96,7 +102,8 @@ export function buildSocialCoverageReadback(snapshot) {
     });
     const states = [];
     if (!verifiedNative) states.push('NATIVE_READBACK_UNVERIFIED');
-    if (!channel.destinationId || channel.executionOwner === 'UNRESOLVED') states.push('DESTINATION_AUTHORITY_UNRESOLVED');
+    if ((!channel.destinationId && !channel.destinationHandle) || channel.executionOwner === 'UNRESOLVED') states.push('DESTINATION_AUTHORITY_UNRESOLVED');
+    if (!channel.destinationId && channel.destinationHandle) states.push('NUMERIC_DESTINATION_ID_UNVERIFIED');
     if (weeks.some((week) => week.verifiedBookings === 0)) states.push('ROLLING_COVERAGE_GAP');
     if (held.length) states.push('HELD_ITEMS');
     if (failures.length) states.push('EXECUTION_FAILURE');
@@ -108,6 +115,7 @@ export function buildSocialCoverageReadback(snapshot) {
       brand: channel.brand,
       platform: channel.platform,
       destinationId: channel.destinationId || null,
+      destinationHandle: channel.destinationHandle || null,
       executionOwner: channel.executionOwner,
       nativeReadback: channel.nativeReadback || null,
       nativeScheduled: nativeScheduled.length,
@@ -159,7 +167,7 @@ export function buildSocialCoverageReadback(snapshot) {
         && item.author === program.author
         && item.theme === 'AUTHOR_SPOTLIGHT'
         && channels.some((channel) => channelKey(channel) === channelKey(item)
-          && channel.destinationId === item.destinationId
+          && matchesDestination(item, channel)
           && ((item.kind === 'PUBLISHED' && item.platformPostId && publishedDateET(item))
             || (item.kind === 'NATIVE_BOOKING' && hasNativeBookingProof(item, asOf)
               && item.approvalState === 'APPROVED' && item.scheduledAt
