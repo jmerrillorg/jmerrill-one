@@ -2,6 +2,21 @@
 
 Packet: `JM1-THREE-BRAND-SOCIAL-PRESENCE-001`. Times below are Eastern. This is a native-platform and Dataverse checkpoint, not a claim that the rolling calendar is commissioned. The [October-November proposal](three-brand-calendar-approval-2026-10-11.md) is placement inventory, not approval or a native booking. Sintra is retired.
 
+## October 4 production update
+
+Founder's standing enterprise marketing authorization now governs routine, truthful, source-checked social content; it does not release the separately held Publishing Meta campaign or waive exact content, creative, destination, and readback checks. The [seven-item native batch](three-brand-native-batch-2026-10.json) bound exact captions and SHA-256 media hashes to Dataverse campaign, content, creative, and execution records. Its apply was replayed without creating duplicate authority records. An item in this batch is not a native booking until the owning scheduler confirms it.
+
+The official Financial Facebook Page `1270611542802820` in Meta business `846921439784613` now has **two scheduled visual posts**, verified in Meta Business Suite's Scheduled register:
+
+| Eastern schedule | Meta business content ID | Dataverse social execution | Status | Visual / alt proof |
+| --- | --- | --- | --- | --- |
+| Oct 5, 10:00 am | `2145183373031235` (Facebook target `1570503061517776`) | `1e51200b-97bf-f111-aaaf-6045bdd69678` | `NATIVE_BOOKED_VERIFIED`; no published post ID yet | `financial-estate-readiness-desk.png`, SHA-256 `8434350433980461cb4ef66bf755b0509b4410358fa6df0ee6fb9adee5522b2c`; native alt text describes the folder, checklist, pen, envelope, and key |
+| Oct 14, 10:00 am | `1070259245634331` | `00d6a510-afbf-f111-aaaf-000d3a14673b` | `NATIVE_BOOKED_VERIFIED`; no published post ID yet | `financial-preparation-folders.png`, SHA-256 `7448f4209a84cb8010c762971f4f0716cd7c3e18c028b4a5be00551e71ec8ef6`; native alt text describes three folder pockets |
+
+These are estate/document-readiness education, not an `ADM-300` funeral-service claim. The separate Financial LLC Page `104395329284856` was untouched. The four preexisting LinkedIn native bookings remain scheduled with text/link previews; the Oct 12 Financial booking was re-read in its exact organization `146207089` and was **not** duplicated or edited. LinkedIn exposes its date/copy in the scheduler but no prepublication post ID in this view. Its prepared visual could not be attached because Edge's ChatGPT extension denied local file upload until its `Allow access to file URLs` setting is enabled by the user. The unsaved edit was discarded, preserving the original scheduled post. This upload gate also blocks the prepared visuals for the other LinkedIn items and the remaining Meta drafts. No new LinkedIn booking or publication is claimed by this update.
+
+The original October 3 readback and table below are historical. For the Financial Facebook row, the two October 4 Scheduled-register entries above supersede its former draft-only/zero-booking state. The rolling 14-day requirement remains uncommissioned across the nine channels; two future bookings in one channel do not establish continuous coverage or a monthly replenishment run.
+
 Late Oct 3 (about 9:40 pm Eastern) native recheck: the `Scheduled` view in Meta Business Suite showed "No scheduled posts" when selected separately for Financial Page `1270611542802820`, One Page `101196349506906`, and Publishing Page `307480763084670` within business portfolio `846921439784613`. Each selected asset displayed paired Facebook/Instagram icons, but those icons do not establish the exact Instagram account ID or publishing permission. Financial's two visual posts were still visible as drafts in its home view. In the three exact LinkedIn organization admin scheduling lists, Publishing `13048648` showed Oct 8 11:00 am and Nov 3 11:00 am, One `106683183` showed Oct 9 10:00 am, and Financial `146207089` showed Oct 12 10:00 am. The platform exposed scheduled dates but no prepublication post IDs in those lists. The Oct 3 Hagher post remained visible on Publishing's published feed with its platform share ID. These native results supersede the stale Oct 2 snapshot for queue counts, not the unresolved approval states.
 
 ## Publication and queue truth

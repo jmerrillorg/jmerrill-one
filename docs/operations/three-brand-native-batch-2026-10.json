@@ -17,6 +17,20 @@
       "caption": "An estate-readiness check for this week: list your key planning documents and note where they are kept. Make sure the people who may need them know how to find them. J Merrill Financial helps families organize information, prepare essential documents, and clarify next steps. Learn more: https://www.jmerrill.financial/services Educational information and document-preparation support, not legal advice."
     },
     {
+      "ref": "F-FB2",
+      "brand": "J Merrill Financial",
+      "platform": "facebook",
+      "executor": "META_NATIVE",
+      "destinationId": "1270611542802820",
+      "scheduledAt": "2026-10-14T14:00:00Z",
+      "nativeState": "NATIVE_DRAFT",
+      "asset": "artifacts/social-creative-2026-10/financial-preparation-folders.png",
+      "sha256": "7448f4209a84cb8010c762971f4f0716cd7c3e18c028b4a5be00551e71ec8ef6",
+      "dimensions": "1254x1254",
+      "source": "https://www.jmerrill.financial/services",
+      "caption": "One folder can make a difficult conversation easier. Start with three lists: important documents, people to contact, and questions you want to ask. Keep the location of the folder known to someone you trust. Save this checklist for a future planning conversation. Educational information, not legal or insurance advice."
+    },
+    {
       "ref": "O-FB",
       "brand": "J Merrill One",
       "platform": "facebook",
