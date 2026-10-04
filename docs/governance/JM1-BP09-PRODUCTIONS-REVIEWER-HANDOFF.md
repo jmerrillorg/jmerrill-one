@@ -1,10 +1,44 @@
 # Productions BP-09 reviewer implementation handoff
 
-Status: ONE-owned execution required; public Productions contact form remains
-off. No current ONE BP-09 execution chat was identified on 2026-10-04. The
-existing ONE chat is dedicated to social commissioning and is not this owner
-channel. This record assigns work to the canonical ONE repository without
-repurposing that chat or moving business policy into ONE.
+Status: ONE-owned reviewer solution staged in Enterprise-Dev on 2026-10-04;
+public Productions contact form remains off. Core import, non-admin access
+proof, and human sign-in are not yet complete. This record assigns producer
+and reviewer runtime to ONE without moving business policy into ONE.
+
+## Current implementation and proof
+
+- Source: `powerplatform/solutions/JM1ProductionsBP09InquiryReview`,
+  `runtime/jm1-productions-bp09-reviewer-plugin`, and
+  `powerplatform/webresources/jm1_prd_bp09_review.js`.
+- Enterprise-Dev solution ID `9629f740-99bf-f111-aaaf-0022480b3175`;
+  model-driven app ID `3b9e5a4d-99bf-f111-aaaf-000d3a5c9558`;
+  Custom API `jm1_AcceptProductionsInquiry`. The app shows only Leads in its
+  navigation; scoped role enforcement is still required.
+- A synthetic button run changed Lead
+  `da7a11de-c441-4318-9643-093fd8dd8599` from New to Follow-up Required,
+  and action row `1483110f-011d-ec0e-bdd4-07fd76256e73` names its receipt,
+  actor, expected version, correlation, and outcome. Direct sandbox tests
+  covered wrong action, stale version, unlinked receipt, replay, changed key,
+  and other-brand denial. These used an administrator and do not prove the
+  non-admin boundary or production readiness.
+- The app-specific command calls the Custom API. The API checks authenticated
+  team membership, exact team ownership, completed consented Productions
+  receipt, linked Lead, state, expected row version, and idempotency key. The
+  Lead transition and minimal action row run in one Dataverse transaction.
+  No inquiry body is copied into the action row.
+- The solution has a `msdynce_LeadManagement` dependency. Enterprise-Dev has
+  that package; JM1-Core readback showed version `9.0.4.0066`. JM1-Dev lacks
+  Lead and cannot host this solution as currently configured. The test-only
+  execution-log fixture table in Enterprise-Dev is not part of the exported
+  reviewer solution.
+
+Do not deploy the ONE producer change before the Core Lead receipt column is
+imported. Do not enable public contact or continuous internal notices until
+OPS has proved the least-privilege human reviewer path and the owner can see
+and accept a synthetic Core inquiry. OPS owns the staged non-admin principal,
+role, app share, and revocation tests. Initial sign-in/MFA for that principal
+requires the human operator. Production cutover still requires the governed
+notice and live release readbacks.
 
 ## Existing authority
 

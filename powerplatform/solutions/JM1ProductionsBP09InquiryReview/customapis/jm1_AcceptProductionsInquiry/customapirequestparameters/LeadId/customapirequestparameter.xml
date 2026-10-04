@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="LeadId">
+  <displayname default="LeadId">
+    <label description="LeadId" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>jm1_AcceptProductionsInquiry.LeadId</name>
+  <type>12</type>
+</customapirequestparameter>

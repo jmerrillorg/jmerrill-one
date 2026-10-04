@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="ActionId">
+  <displayname default="ActionId">
+    <label description="ActionId" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>jm1_AcceptProductionsInquiry.ActionId</name>
+  <type>10</type>
+</customapirequestparameter>

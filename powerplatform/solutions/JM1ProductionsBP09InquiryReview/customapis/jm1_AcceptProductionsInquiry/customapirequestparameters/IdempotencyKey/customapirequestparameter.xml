@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="IdempotencyKey">
+  <displayname default="IdempotencyKey">
+    <label description="IdempotencyKey" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>jm1_AcceptProductionsInquiry.IdempotencyKey</name>
+  <type>12</type>
+</customapirequestparameter>
