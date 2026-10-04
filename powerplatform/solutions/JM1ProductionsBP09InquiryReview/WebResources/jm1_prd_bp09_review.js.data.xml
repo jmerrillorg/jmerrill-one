@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{c54a6f92-f1bf-f111-aaad-00224805c62d}</WebResourceId>
+  <Name>jm1_prd_bp09_review.js</Name>
+  <DisplayName>Productions BP-09 reviewer command</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/jm1_prd_bp09_reviewjsC54A6F92-F1BF-F111-AAAD-00224805C62D</FileName>
+</WebResource>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="lk_jm1_productionsinquiryaction_createdby" />
+  <EntityRelationship Name="lk_jm1_productionsinquiryaction_modifiedby" />
+  <EntityRelationship Name="lk_jm1_productionsreviewpermit_createdby" />
+  <EntityRelationship Name="lk_jm1_productionsreviewpermit_modifiedby" />
+  <EntityRelationship Name="organization_jm1_productionsinquiryaction" />
+  <EntityRelationship Name="organization_jm1_productionsreviewpermit" />
+</EntityRelationships>

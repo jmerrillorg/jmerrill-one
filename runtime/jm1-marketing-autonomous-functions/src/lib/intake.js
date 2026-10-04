@@ -219,6 +219,7 @@ export async function processIntake(adapter, id) {
         emailaddress1: input.email,
         telephone1: input.phone || undefined,
         description: `Source: ${input.source || 'Website'}\nIntake receipt: ${id}\n\n${input.message}`,
+        ...(input.intent === 'productions' ? { jm1_bp09intakereceiptid: id } : {}),
         ...(input.intent === 'productions' && detail.followUpTeamId
           ? { 'ownerid@odata.bind': `/teams(${detail.followUpTeamId})` }
           : input.intent === 'productions' && detail.followUpOwnerId

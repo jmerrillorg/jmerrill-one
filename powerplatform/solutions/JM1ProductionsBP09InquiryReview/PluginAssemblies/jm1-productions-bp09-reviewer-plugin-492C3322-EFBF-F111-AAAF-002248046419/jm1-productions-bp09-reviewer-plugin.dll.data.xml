@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="jm1-productions-bp09-reviewer-plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=54aee7a4b2c505ef" PluginAssemblyId="492c3322-efbf-f111-aaaf-002248046419" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Description>Bounded Productions BP-09 reviewer action</Description>
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/jm1-productions-bp09-reviewer-plugin-492C3322-EFBF-F111-AAAF-002248046419/jm1-productions-bp09-reviewer-plugin.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="Jm1.Productions.Bp09.AcceptProductionsInquiry, jm1-productions-bp09-reviewer-plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=54aee7a4b2c505ef" PluginTypeId="cdc19543-efbf-f111-aaaf-000d3a5c9558" Name="Jm1.Productions.Bp09.AcceptProductionsInquiry">
+      <FriendlyName>Accept Productions Inquiry</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

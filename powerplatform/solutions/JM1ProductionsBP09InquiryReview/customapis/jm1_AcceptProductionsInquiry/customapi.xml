@@ -1,0 +1,19 @@
+<customapi uniquename="jm1_AcceptProductionsInquiry">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Only NEW to FOLLOW_UP_REQUIRED for a completed, consented, team-owned BP-09 Productions Lead.">
+    <label description="Only NEW to FOLLOW_UP_REQUIRED for a completed, consented, team-owned BP-09 Productions Lead." languagecode="1033" />
+  </description>
+  <displayname default="Accept Productions Inquiry">
+    <label description="Accept Productions Inquiry" languagecode="1033" />
+  </displayname>
+  <executeprivilegename>prvReadjm1_ProductionsReviewPermit</executeprivilegename>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>jm1_AcceptProductionsInquiry</name>
+  <plugintypeid>
+    <plugintypeexportkey>cdc19543-efbf-f111-aaaf-000d3a5c9558</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>
