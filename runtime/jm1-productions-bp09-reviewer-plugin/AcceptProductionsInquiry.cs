@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
+using System.ServiceModel;
 using System.Text;
 
 namespace Jm1.Productions.Bp09
@@ -20,15 +21,43 @@ namespace Jm1.Productions.Bp09
 
         public void Execute(IServiceProvider provider)
         {
-            var context = (IPluginExecutionContext)provider.GetService(typeof(IPluginExecutionContext));
-            var factory = (IOrganizationServiceFactory)provider.GetService(typeof(IOrganizationServiceFactory));
-            var trace = (ITracingService)provider.GetService(typeof(ITracingService));
+            ITracingService trace = null;
+            var stage = "context";
+            try
+            {
+                if (provider == null)
+                    throw new InvalidPluginExecutionException("PRD_REVIEW_CONTEXT_INVALID");
+                trace = (ITracingService)provider.GetService(typeof(ITracingService));
+                var context = (IPluginExecutionContext)provider.GetService(typeof(IPluginExecutionContext));
+                var factory = (IOrganizationServiceFactory)provider.GetService(typeof(IOrganizationServiceFactory));
+                ExecuteCore(context, factory, trace, ref stage);
+            }
+            catch (InvalidPluginExecutionException ex)
+            {
+                if (ex.Message != null && ex.Message.StartsWith("PRD_REVIEW_", StringComparison.Ordinal))
+                    throw;
+                throw DiagnosticFailure(stage, ex, trace);
+            }
+            catch (Exception ex)
+            {
+                throw DiagnosticFailure(stage, ex, trace);
+            }
+        }
+
+        private static void ExecuteCore(IPluginExecutionContext context, IOrganizationServiceFactory factory,
+            ITracingService trace, ref string stage)
+        {
             if (context == null || factory == null || context.MessageName != Message || !context.IsInTransaction)
                 throw new InvalidPluginExecutionException("PRD_REVIEW_CONTEXT_INVALID");
+            trace?.Trace("PRD_REVIEW_CONTEXT stage={0} message={1} transaction={2}", context.Stage,
+                context.MessageName, context.IsInTransaction);
 
             // This service is privileged only inside the transaction; caller identity is checked below.
+            stage = "actor_read";
             var service = factory.CreateOrganizationService(null);
             var actorId = context.InitiatingUserId;
+
+            stage = "parameter_validation";
             var leadId = RequiredGuid(context, "LeadId");
             var receiptId = RequiredGuid(context, "ReceiptId");
             var key = RequiredGuid(context, "IdempotencyKey");
@@ -36,14 +65,21 @@ namespace Jm1.Productions.Bp09
             if (RequiredString(context, "ActionId") != Action)
                 Deny(trace, "ACTION_DENIED");
 
+            stage = "actor_lookup";
             var actor = service.Retrieve("systemuser", actorId,
                 new ColumnSet("azureactivedirectoryobjectid", "isdisabled", "accessmode"));
             var objectId = actor.GetAttributeValue<Guid?>("azureactivedirectoryobjectid");
-            if (actor.GetAttributeValue<bool>("isdisabled") || !objectId.HasValue ||
-                actor.GetAttributeValue<OptionSetValue>("accessmode")?.Value != 0 ||
-                !IsTeamMember(service, actorId))
+            var actorDenied = actor.GetAttributeValue<bool>("isdisabled") || !objectId.HasValue ||
+                actor.GetAttributeValue<OptionSetValue>("accessmode")?.Value != 0;
+            if (!actorDenied)
+            {
+                stage = "reviewer_team_membership";
+                actorDenied = !IsTeamMember(service, actorId);
+            }
+            if (actorDenied)
                 Deny(trace, "ACTOR_DENIED");
 
+            stage = "idempotency_lookup";
             var auditId = DeterministicId(key);
             var priorAudit = TryRetrieve(service, "jm1_productionsinquiryaction", auditId,
                 new ColumnSet("jm1_leadid", "jm1_receiptid", "jm1_actorid", "jm1_actionid", "jm1_key"));
@@ -55,6 +91,7 @@ namespace Jm1.Productions.Bp09
                     priorAudit.GetAttributeValue<string>("jm1_actionid") != Action ||
                     priorAudit.GetAttributeValue<string>("jm1_key") != key.ToString("D"))
                     Deny(trace, "KEY_REUSED");
+                stage = "replay_lead_read";
                 var replayLead = service.Retrieve("lead", leadId,
                     new ColumnSet("ownerid", "statuscode", "statecode", "jm1_bp09intakereceiptid"));
                 var replayOwner = replayLead.GetAttributeValue<EntityReference>("ownerid");
@@ -68,6 +105,7 @@ namespace Jm1.Productions.Bp09
                 return;
             }
 
+            stage = "receipt_read";
             var receipt = service.Retrieve("jm1_executionlog", receiptId,
                 new ColumnSet("jm1_actiontype", "jm1_actiondescription"));
             if (receipt.GetAttributeValue<string>("jm1_actiontype") != "BP09WebsiteIntakeV2")
@@ -89,6 +127,7 @@ namespace Jm1.Productions.Bp09
                 detail.Id != receiptId.ToString("D"))
                 Deny(trace, "RECEIPT_DENIED");
 
+            stage = "lead_read";
             var lead = service.Retrieve("lead", leadId,
                 new ColumnSet("ownerid", "statuscode", "statecode", "versionnumber", "subject", "jm1_bp09intakereceiptid"));
             var owner = lead.GetAttributeValue<EntityReference>("ownerid");
@@ -101,6 +140,7 @@ namespace Jm1.Productions.Bp09
             if (lead.RowVersion != version)
                 Deny(trace, "STALE_VERSION");
 
+            stage = "lead_update";
             var update = new Entity("lead", leadId) { RowVersion = version };
             update["statuscode"] = new OptionSetValue(FollowUpRequired);
             service.Execute(new UpdateRequest
@@ -110,6 +150,7 @@ namespace Jm1.Productions.Bp09
             });
 
             // Create failure rolls back the Lead update because this custom API must run in a transaction.
+            stage = "action_audit_create";
             var audit = new Entity("jm1_productionsinquiryaction", auditId);
             audit["jm1_name"] = "PRD BP09 " + key.ToString("D");
             audit["jm1_leadid"] = leadId.ToString("D");
@@ -126,6 +167,19 @@ namespace Jm1.Productions.Bp09
             service.Create(audit);
             context.OutputParameters["Outcome"] = "ACCEPTED";
             context.OutputParameters["AuditId"] = auditId;
+        }
+
+        private static InvalidPluginExecutionException DiagnosticFailure(string stage, Exception exception,
+            ITracingService trace)
+        {
+            var code = exception is FaultException<OrganizationServiceFault> fault && fault.Detail != null
+                ? fault.Detail.ErrorCode
+                : exception.HResult;
+            var type = exception.GetType().Name;
+            var message = "PRD_REVIEW_INTERNAL_FAILURE stage=" + stage + " type=" + type +
+                " code=0x" + code.ToString("X8");
+            trace?.Trace(message);
+            return new InvalidPluginExecutionException(message);
         }
 
         private static bool IsTeamMember(IOrganizationService service, Guid actorId)

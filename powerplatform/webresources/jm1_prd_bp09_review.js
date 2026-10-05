@@ -63,7 +63,10 @@ var Jm1ProductionsBp09Review = (function () {
           : "Inquiry accepted for follow-up. The action is recorded."
       });
     } catch (error) {
-      console.error("PRD_REVIEW_ACTION_FAILED", error && error.errorCode);
+      var diagnostic = String(error && error.message || "").match(
+        /PRD_REVIEW_INTERNAL_FAILURE stage=[a-z_]+ type=[A-Za-z0-9`]+ code=0x[0-9A-Fa-f]{8}/);
+      console.error("PRD_REVIEW_ACTION_FAILED", error && error.errorCode,
+        diagnostic ? diagnostic[0] : "diagnostic unavailable");
       await Xrm.Navigation.openAlertDialog({
         text: "The action could not be verified. Refresh the inquiry before retrying or contact operations."
       });
