@@ -55,6 +55,55 @@ export function retainNativeEvidenceItems(items) {
     || (item.kind === 'PUBLISHED' && item.platformPostId));
 }
 
+export function mapDataverseSocialRows(rows, channels) {
+  const mapped = [];
+  const unclassified = [];
+  for (const row of rows) {
+    const platform = String(row.jm1_platform || '').toLowerCase();
+    const branch = String(row.jm1_branch || '').trim();
+    const destination = String(row.jm1_actualdestination || row.jm1_requesteddestination || '').trim();
+    let matches = channels.filter((channel) => channel.platform === platform
+      && branch && channel.brand === branch);
+    if (matches.length !== 1) {
+      const byDestination = channels.filter((channel) => channel.platform === platform
+        && destination
+        && (destination === channel.destinationId
+          || destination.replace(/^@/, '') === channel.destinationHandle));
+      if (byDestination.length === 1) matches = byDestination;
+    }
+    if (matches.length !== 1) {
+      unclassified.push(row);
+      continue;
+    }
+    const channel = matches[0];
+    const isPublished = row.jm1_status === 'PUBLISHED_VERIFIED' && Boolean(row.jm1_platformpostid);
+    const isNativeBooking = row.jm1_status === 'NATIVE_BOOKED_VERIFIED';
+    const destinationId = /^\d+$/.test(destination) ? destination : null;
+    const destinationHandle = /^@?[a-z0-9._]+$/i.test(destination) && !destinationId
+      ? destination.replace(/^@/, '')
+      : null;
+    mapped.push({
+      id: row.jm1_socialexecutionid,
+      kind: isPublished ? 'PUBLISHED' : isNativeBooking ? 'NATIVE_BOOKING' : 'API_REQUEST',
+      brand: channel.brand,
+      platform,
+      destinationId,
+      destinationHandle,
+      expectedDestinationId: channel.destinationId || null,
+      requestedDestinationText: destination || null,
+      scheduledAt: row.jm1_requestedschedule || null,
+      publishedAt: isPublished ? row.jm1_actualschedule || null : null,
+      platformPostId: isPublished ? row.jm1_platformpostid : null,
+      status: row.jm1_status || null,
+      approvalState: isNativeBooking ? 'APPROVED' : /^HELD/.test(row.jm1_status || '') ? 'HELD' : 'UNKNOWN',
+      readbackState: row.jm1_readbackstate || null,
+      executor: row.jm1_executor || null,
+      contentKey: row.jm1_captionversion ? `${channel.brand}:${row.jm1_captionversion}` : null
+    });
+  }
+  return { mapped, unclassified };
+}
+
 export function classifyDataverseExecutionRow(row, asOf) {
   const status = row.status || '';
   if (/^HELD/.test(status)) return { classification: 'HELD_NOT_BOOKED', actionRequired: false };
@@ -100,6 +149,10 @@ export function buildSocialCoverageReadback(snapshot) {
       && easternDate(item.scheduledAt) < end
     );
     const booked = nativeScheduled.filter((item) => item.approvalState === 'APPROVED');
+    const bookingClaims = related.filter((item) => item.kind === 'NATIVE_BOOKING');
+    const unverifiedBookingClaims = bookingClaims.filter((item) => !nativeScheduled.includes(item));
+    const pastDueBookingClaims = unverifiedBookingClaims.filter((item) => item.scheduledAt
+      && Date.parse(item.scheduledAt) < Date.parse(snapshot.asOf));
     const unapprovedScheduled = nativeScheduled.filter((item) => item.approvalState !== 'APPROVED');
     const published = related.filter((item) =>
       item.kind === 'PUBLISHED'
@@ -127,13 +180,15 @@ export function buildSocialCoverageReadback(snapshot) {
       }).length };
     });
     const states = [];
-    if (!verifiedNative) states.push('NATIVE_READBACK_UNVERIFIED');
+    if (!verifiedNative) states.push(nativeEvidenceFresh ? 'NATIVE_READBACK_UNVERIFIED' : 'NATIVE_READBACK_STALE');
     if ((!channel.destinationId && !channel.destinationHandle) || channel.executionOwner === 'UNRESOLVED') states.push('DESTINATION_AUTHORITY_UNRESOLVED');
     if (!channel.destinationId && channel.destinationHandle) states.push('NUMERIC_DESTINATION_ID_UNVERIFIED');
     if (weeks.some((week) => week.verifiedBookings === 0)) states.push('ROLLING_COVERAGE_GAP');
     if (held.length) states.push('HELD_ITEMS');
     if (failures.length) states.push('EXECUTION_FAILURE');
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
+    if (pastDueBookingClaims.length) states.push('PAST_DUE_NATIVE_BOOKING_CLAIM');
+    if (unverifiedBookingClaims.length) states.push('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION');
     if (duplicateRisk.length) states.push('DUAL_SCHEDULER_RISK');
     if (mixedChannelAuthority.length) states.push('MIXED_CHANNEL_EXECUTION_AUTHORITY');
     if (unapprovedScheduled.length) states.push('UNAPPROVED_NATIVE_SCHEDULE');
@@ -144,7 +199,18 @@ export function buildSocialCoverageReadback(snapshot) {
       destinationHandle: channel.destinationHandle || null,
       executionOwner: channel.executionOwner,
       nativeReadback: channel.nativeReadback || null,
+      nativeReadbackFresh: nativeEvidenceFresh,
       nativeScheduled: nativeScheduled.length,
+      nativeBookingClaims: bookingClaims.length,
+      unverifiedBookingClaims: unverifiedBookingClaims.map((item) => ({
+        id: item.id,
+        scheduledAt: item.scheduledAt || null,
+        destinationId: item.destinationId || null,
+        destinationHandle: item.destinationHandle || null,
+        status: item.status || null,
+        readbackState: item.readbackState || null,
+        pastDue: Boolean(item.scheduledAt && Date.parse(item.scheduledAt) < Date.parse(snapshot.asOf))
+      })),
       nativeBookingRows: nativeScheduled.map((item) => ({
         id: item.id,
         nativeBookingId: item.nativeBookingId || null,
