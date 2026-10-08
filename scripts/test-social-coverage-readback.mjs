@@ -22,6 +22,27 @@ test('API requests and approved content never count as native bookings', () => {
   assert.ok(result.states.includes('ROLLING_COVERAGE_GAP'));
 });
 
+test('rolling coverage uses a half-open 14-day Eastern window and two weekly cadence slots', () => {
+  const datedChannel = { ...channel, executionOwner: 'META_NATIVE',
+    nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08' } };
+  const items = [
+    { id: 'week-one', brand: channel.brand, platform: channel.platform,
+      destinationId: channel.destinationId, kind: 'NATIVE_BOOKING', approvalState: 'APPROVED',
+      nativeBookingId: 'meta-content-1', scheduledAt: '2026-10-14T14:00:00Z' },
+    { id: 'week-two', brand: channel.brand, platform: channel.platform,
+      destinationId: channel.destinationId, kind: 'NATIVE_BOOKING', approvalState: 'APPROVED',
+      nativeBookingId: 'meta-content-2', scheduledAt: '2026-10-21T14:00:00Z' },
+    { id: 'exclusive-end', brand: channel.brand, platform: channel.platform,
+      destinationId: channel.destinationId, kind: 'NATIVE_BOOKING', approvalState: 'APPROVED',
+      nativeBookingId: 'meta-content-3', scheduledAt: '2026-10-22T14:00:00Z' }
+  ];
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-08T16:00:00Z',
+    channels: [datedChannel], items }).channels[0];
+  assert.equal(result.nativeScheduled, 2);
+  assert.equal(result.verifiedBookings, 2);
+  assert.deepEqual(result.weeks.map((week) => week.verifiedBookings), [1, 1]);
+});
+
 test('only exact approved native bookings count and collide with matching API request', () => {
   const booking = { id: 'native-1', brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId,
     kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', nativeBookingId: 'meta-1',
@@ -182,6 +203,34 @@ test('live Dataverse rows map by exact branch and platform without inventing des
   assert.equal(result.mapped[1].nativeBookingId, undefined);
   assert.equal(result.mapped[1].contentKey, 'J Merrill One:v1');
   assert.deepEqual(result.unclassified.map((row) => row.jm1_socialexecutionid), ['bad-branch']);
+});
+
+test('native reservation rows are distinct from API requests and do not count as verified bookings', () => {
+  const reservation = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'native-reservation-1',
+    jm1_name: 'J Merrill One instagram native reservation 2026-10-21 12:00 PM',
+    jm1_branch: 'J Merrill One',
+    jm1_platform: 'instagram',
+    jm1_status: 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED',
+    jm1_requesteddestination: 'jmerrillone',
+    jm1_requestedschedule: null,
+    jm1_captionversion: 'caption-sha256',
+    jm1_requestedmediahash: 'media-sha256',
+    jm1_readbackstate: 'NATIVE_POST_SCHEDULED;TZ_UNVERIFIED;NO_EXTERNAL_BOOKING_ID;NO_PUBLICATION_ID'
+  }], [{ brand: 'J Merrill One', platform: 'instagram', destinationHandle: 'jmerrillone' }]).mapped[0];
+  const result = buildSocialCoverageReadback({ ...base,
+    channels: [{ brand: 'J Merrill One', platform: 'instagram', destinationHandle: 'jmerrillone',
+      executionOwner: 'META_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' } }],
+    items: [reservation]
+  }).channels[0];
+  assert.equal(reservation.kind, 'NATIVE_RESERVATION');
+  assert.equal(reservation.nativeReservationLocalDate, '2026-10-21');
+  assert.equal(reservation.nativeReservationTimeZone, 'UNVERIFIED');
+  assert.equal(result.apiRequests, 0);
+  assert.equal(result.nativeScheduled, 0);
+  assert.equal(result.verifiedBookings, 0);
+  assert.equal(result.nativeReservations.length, 1);
+  assert.ok(result.states.includes('NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'));
 });
 
 test('Dataverse native-booking claims are visible but never count as verified coverage alone', () => {

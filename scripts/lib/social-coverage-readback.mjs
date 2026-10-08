@@ -2,6 +2,10 @@ import { createHash } from 'node:crypto';
 
 const ZONE = 'America/New_York';
 const DAY = 24 * 60 * 60 * 1000;
+const NATIVE_RESERVATION_STATUSES = new Set([
+  'NATIVE_RESERVATION_VERIFIED',
+  'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'
+]);
 
 function easternDate(value) {
   const date = new Date(value);
@@ -78,13 +82,15 @@ export function mapDataverseSocialRows(rows, channels) {
     const channel = matches[0];
     const isPublished = row.jm1_status === 'PUBLISHED_VERIFIED' && Boolean(row.jm1_platformpostid);
     const isNativeBooking = row.jm1_status === 'NATIVE_BOOKED_VERIFIED';
+    const isNativeReservation = NATIVE_RESERVATION_STATUSES.has(row.jm1_status);
     const destinationId = /^\d+$/.test(destination) ? destination : null;
     const destinationHandle = /^@?[a-z0-9._]+$/i.test(destination) && !destinationId
       ? destination.replace(/^@/, '')
       : null;
+    const localReservation = isNativeReservation ? parseNativeReservationName(row.jm1_name) : null;
     mapped.push({
       id: row.jm1_socialexecutionid,
-      kind: isPublished ? 'PUBLISHED' : isNativeBooking ? 'NATIVE_BOOKING' : 'API_REQUEST',
+      kind: isPublished ? 'PUBLISHED' : isNativeBooking ? 'NATIVE_BOOKING' : isNativeReservation ? 'NATIVE_RESERVATION' : 'API_REQUEST',
       brand: channel.brand,
       platform,
       destinationId,
@@ -95,6 +101,15 @@ export function mapDataverseSocialRows(rows, channels) {
       publishedAt: isPublished ? row.jm1_actualschedule || null : null,
       platformPostId: isPublished ? row.jm1_platformpostid : null,
       status: row.jm1_status || null,
+      nativeReservationStatus: isNativeReservation ? row.jm1_status : null,
+      nativeReservationLocalDate: localReservation?.date || null,
+      nativeReservationLocalTime: localReservation?.time || null,
+      nativeReservationTimeZone: row.jm1_status === 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'
+        ? 'UNVERIFIED'
+        : isNativeReservation && row.jm1_requestedschedule ? 'LOCAL_ZONE_NOT_STORED' : null,
+      captionFingerprint: isNativeReservation ? row.jm1_captionversion || null : null,
+      mediaSha256: isNativeReservation ? row.jm1_requestedmediahash || null : null,
+      reservationReadbackState: isNativeReservation ? row.jm1_readbackstate || null : null,
       approvalState: isNativeBooking ? 'APPROVED' : /^HELD/.test(row.jm1_status || '') ? 'HELD' : 'UNKNOWN',
       readbackState: row.jm1_readbackstate || null,
       executor: row.jm1_executor || null,
@@ -102,6 +117,11 @@ export function mapDataverseSocialRows(rows, channels) {
     });
   }
   return { mapped, unclassified };
+}
+
+function parseNativeReservationName(value) {
+  const match = String(value || '').match(/native reservation (\d{4}-\d{2}-\d{2}) (.+)$/i);
+  return match ? { date: match[1], time: match[2] } : null;
 }
 
 export function classifyDataverseExecutionRow(row, asOf) {
@@ -161,6 +181,7 @@ export function buildSocialCoverageReadback(snapshot) {
       && publishedDateET(item)
     );
     const apiRequests = related.filter((item) => item.kind === 'API_REQUEST');
+    const nativeReservations = related.filter((item) => item.kind === 'NATIVE_RESERVATION');
     const pastDueRequests = apiRequests.filter((item) => item.scheduledAt && easternDate(item.scheduledAt) < asOf);
     const approvedContent = related.filter((item) => item.kind === 'CONTENT' && item.approvalState === 'APPROVED');
     const held = related.filter((item) => item.status?.startsWith('HELD') || item.approvalState === 'HELD');
@@ -189,6 +210,10 @@ export function buildSocialCoverageReadback(snapshot) {
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
     if (pastDueBookingClaims.length) states.push('PAST_DUE_NATIVE_BOOKING_CLAIM');
     if (unverifiedBookingClaims.length) states.push('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION');
+    if (nativeReservations.length) states.push('NATIVE_RESERVATION_REQUIRES_PUBLICATION_READBACK');
+    if (nativeReservations.some((item) => item.nativeReservationTimeZone === 'UNVERIFIED')) {
+      states.push('NATIVE_RESERVATION_TIMEZONE_UNVERIFIED');
+    }
     if (duplicateRisk.length) states.push('DUAL_SCHEDULER_RISK');
     if (mixedChannelAuthority.length) states.push('MIXED_CHANNEL_EXECUTION_AUTHORITY');
     if (unapprovedScheduled.length) states.push('UNAPPROVED_NATIVE_SCHEDULE');
@@ -223,6 +248,19 @@ export function buildSocialCoverageReadback(snapshot) {
       unapprovedScheduled: unapprovedScheduled.map((item) => item.id),
       nextVerifiedBooking: booked.sort((a, b) => a.scheduledAt.localeCompare(b.scheduledAt))[0]?.scheduledAt || null,
       apiRequests: apiRequests.length,
+      nativeReservations: nativeReservations.map((item) => ({
+        id: item.id,
+        status: item.nativeReservationStatus,
+        destinationId: item.destinationId || null,
+        destinationHandle: item.destinationHandle || null,
+        scheduledAtUtc: item.scheduledAt || null,
+        localDate: item.nativeReservationLocalDate || null,
+        localTime: item.nativeReservationLocalTime || null,
+        timeZone: item.nativeReservationTimeZone || null,
+        captionFingerprint: item.captionFingerprint || null,
+        mediaSha256: item.mediaSha256 || null,
+        readbackState: item.reservationReadbackState || null
+      })),
       apiRequestRows: apiRequests.map((item) => ({
         id: item.id,
         requestedAt: item.scheduledAt || null,
