@@ -41,7 +41,8 @@ export const BRANCH_CONFIG = parseJsonEnv('JM1_MARKETING_BRANCH_CONFIG', {
     facebookPageName: 'J Merrill Publishing Inc',
     instagramGraphId: '17841410046020869',
     instagramHandle: 'jmerrillpub',
-    linkedinOrganizationId: '13048648'
+    linkedinOrganizationId: '13048648',
+    linkedinOrganizationName: 'J Merrill Publishing, Inc.'
   },
   one: { active: false, branchName: 'J Merrill One' },
   financial: { active: false, branchName: 'J Merrill Financial' },

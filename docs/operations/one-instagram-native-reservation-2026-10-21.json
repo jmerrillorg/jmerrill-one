@@ -1,0 +1,21 @@
+{
+  "brand": "J Merrill One",
+  "platform": "instagram",
+  "destination": "jmerrillone",
+  "localDate": "2026-10-21",
+  "localTime": "12:00 PM",
+  "timeZone": "UNVERIFIED",
+  "evidenceCapturedAt": "2026-10-08T21:11:23Z",
+  "caption": "A clear starting point can make a complex request easier. Start with the question you need answered, the people it affects, and the next decision. J Merrill One brings distinct organizations together; each brand remains responsible for its own work. Find your path: https://www.jmerrill.one/",
+  "captionSha256": "dfcc285b4a8dce8e36460cbe00362cc4b7c8d059b76794754bc0a35d51001afa",
+  "mediaPath": "artifacts/social-creative-2026-10/one-four-paths.png",
+  "mediaSha256": "4368a1b662add171062e295c69ff146d5f28beeddab033a3311b43099bac1320",
+  "externalBookingId": null,
+  "platformPublicationId": null,
+  "verification": {
+    "metaConfirmation": "Your post is scheduled",
+    "plannerWeek": "2026-10-18/2026-10-24",
+    "plannerCard": "Exact caption, Instagram destination, 12:00 PM on 2026-10-21",
+    "noFacebookDestinationSelected": true
+  }
+}
