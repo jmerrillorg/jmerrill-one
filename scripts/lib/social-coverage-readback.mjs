@@ -39,8 +39,10 @@ function nativeOwner(platform) {
 }
 
 function hasNativeBookingProof(item, asOf) {
-  return Boolean(item.nativeBookingId || (item.platform === 'linkedin'
-    && item.nativeEvidence?.source === 'LINKEDIN_NATIVE_UI'
+  const source = item.nativeEvidence?.source;
+  const uiSourceMatchesPlatform = (item.platform === 'linkedin' && source === 'LINKEDIN_NATIVE_UI')
+    || (['facebook', 'instagram'].includes(item.platform) && source === 'META_NATIVE_UI');
+  return Boolean(item.nativeBookingId || (uiSourceMatchesPlatform
     && item.nativeEvidence.observedDateET === asOf
     && item.captionText
     && item.nativeEvidence.captionSha256 === createHash('sha256').update(item.captionText).digest('hex')
@@ -51,6 +53,30 @@ export function retainNativeEvidenceItems(items) {
   return items.filter((item) => item.kind === 'NATIVE_BOOKING'
     || item.source === 'NATIVE_READBACK'
     || (item.kind === 'PUBLISHED' && item.platformPostId));
+}
+
+export function classifyDataverseExecutionRow(row, asOf) {
+  const status = row.status || '';
+  if (/^HELD/.test(status)) return { classification: 'HELD_NOT_BOOKED', actionRequired: false };
+  if (/FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED/.test(status)) {
+    return { classification: 'EXECUTION_FAILURE', actionRequired: true };
+  }
+  if (status === 'PUBLISHED_VERIFIED' && !row.platformPostId) {
+    return { classification: 'PUBLISHED_STATE_MISSING_PLATFORM_ID', actionRequired: true };
+  }
+  if (status !== 'NATIVE_BOOKED_VERIFIED') return null;
+  if (!row.requestedSchedule) {
+    return { classification: 'NATIVE_BOOKING_CLAIM_MISSING_SCHEDULE', actionRequired: true };
+  }
+  if (row.platformPostId) {
+    return { classification: 'NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION', actionRequired: true };
+  }
+  return {
+    classification: Date.parse(row.requestedSchedule) <= Date.parse(asOf)
+      ? 'PAST_DUE_NATIVE_BOOKING_CLAIM'
+      : 'NATIVE_BOOKING_CLAIM_REQUIRES_FRESH_UI_PROOF',
+    actionRequired: true
+  };
 }
 
 export function buildSocialCoverageReadback(snapshot) {
@@ -122,7 +148,7 @@ export function buildSocialCoverageReadback(snapshot) {
       nativeBookingRows: nativeScheduled.map((item) => ({
         id: item.id,
         nativeBookingId: item.nativeBookingId || null,
-        proof: item.nativeBookingId ? 'NATIVE_ID' : 'LINKEDIN_NATIVE_UI',
+        proof: item.nativeBookingId ? 'NATIVE_ID' : item.nativeEvidence.source,
         scheduledAt: item.scheduledAt,
         approvalState: item.approvalState || null,
         executionOwner: nativeOwner(item.platform)

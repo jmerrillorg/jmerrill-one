@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { buildSocialCoverageReadback, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildSocialCoverageReadback, classifyDataverseExecutionRow, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
@@ -87,7 +87,14 @@ if (process.argv.includes('--live-dataverse')) {
   }));
   snapshot.asOf = new Date().toISOString();
 }
+const report = buildSocialCoverageReadback(snapshot);
+const reconciliationFindings = (snapshot.unclassifiedDataverseRows || []).flatMap((row) => {
+  const finding = classifyDataverseExecutionRow(row, snapshot.asOf);
+  return finding ? [{ id: row.id, platform: row.platform, status: row.status,
+    requestedSchedule: row.requestedSchedule, requestedDestination: row.requestedDestination, ...finding }] : [];
+});
 process.stdout.write(`${JSON.stringify({
-  ...buildSocialCoverageReadback(snapshot),
-  ...(snapshot.unclassifiedDataverseRows ? { unclassifiedDataverseRows: snapshot.unclassifiedDataverseRows } : {})
+  ...report,
+  ...(snapshot.unclassifiedDataverseRows ? { unclassifiedDataverseRows: snapshot.unclassifiedDataverseRows } : {}),
+  ...(snapshot.unclassifiedDataverseRows ? { reconciliationFindings } : {})
 }, null, 2)}\n`);

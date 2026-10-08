@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { buildSocialCoverageReadback, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildSocialCoverageReadback, classifyDataverseExecutionRow, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 
 const channel = {
   brand: 'J Merrill Publishing', platform: 'facebook', destinationId: '307480763084670',
@@ -68,6 +68,19 @@ test('LinkedIn UI proof counts a schedule but not unapproved coverage', () => {
   assert.ok(result.states.includes('UNAPPROVED_NATIVE_SCHEDULE'));
 });
 
+test('same-day Meta UI proof counts only the exact destination, caption, and time', () => {
+  const captionText = 'Exact scheduled Meta caption';
+  const item = { id: 'meta-1', brand: channel.brand, platform: 'facebook', destinationId: channel.destinationId,
+    kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', scheduledAt: '2026-10-03T14:00:00Z', captionText,
+    nativeEvidence: { source: 'META_NATIVE_UI', observedDateET: '2026-10-02',
+      scheduledAt: '2026-10-03T14:00:00Z', captionSha256: createHash('sha256').update(captionText).digest('hex') } };
+  const result = buildSocialCoverageReadback({ ...base, channels: [{ ...channel, executionOwner: 'META_NATIVE' }],
+    items: [item, { ...item, id: 'wrong-caption', captionText: 'Different caption' },
+      { ...item, id: 'stale-ui', nativeEvidence: { ...item.nativeEvidence, observedDateET: '2026-10-01' } }] }).channels[0];
+  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.nativeBookingRows[0].proof, 'META_NATIVE_UI');
+});
+
 test('native Instagram handle proof counts without equating two unresolved numeric IDs', () => {
   const instagram = { brand: 'J Merrill One', platform: 'instagram', destinationId: null,
     destinationHandle: 'jmerrillone', executionOwner: 'META_NATIVE',
@@ -82,6 +95,23 @@ test('native Instagram handle proof counts without equating two unresolved numer
   assert.equal(result.destinationHandle, 'jmerrillone');
   assert.ok(result.states.includes('NUMERIC_DESTINATION_ID_UNVERIFIED'));
   assert.ok(!result.states.includes('DESTINATION_AUTHORITY_UNRESOLVED'));
+});
+
+test('fresh Meta UI proof can verify Instagram by exact handle when numeric ID is hidden', () => {
+  const instagram = { brand: 'J Merrill Financial', platform: 'instagram', destinationId: null,
+    destinationHandle: 'jmerrillfin', executionOwner: 'META_NATIVE',
+    nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08' } };
+  const captionText = 'Exact Financial Instagram caption';
+  const booking = { id: 'fin-ig-1', brand: instagram.brand, platform: instagram.platform,
+    destinationId: null, destinationHandle: instagram.destinationHandle, kind: 'NATIVE_BOOKING',
+    approvalState: 'APPROVED', scheduledAt: '2026-10-16T16:00:00Z', captionText,
+    nativeEvidence: { source: 'META_NATIVE_UI', observedDateET: '2026-10-08',
+      scheduledAt: '2026-10-16T16:00:00Z', captionSha256: createHash('sha256').update(captionText).digest('hex') } };
+  const result = buildSocialCoverageReadback({ ...base, asOf: '2026-10-08T16:00:00Z',
+    channels: [instagram], items: [booking] }).channels[0];
+  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.nativeBookingRows[0].proof, 'META_NATIVE_UI');
+  assert.ok(result.states.includes('NUMERIC_DESTINATION_ID_UNVERIFIED'));
 });
 
 test('stale native evidence and published platform IDs cannot prove future coverage', () => {
@@ -129,4 +159,32 @@ test('live Dataverse refresh preserves platform-proven native publications only'
     { id: 'draft', kind: 'NATIVE_DRAFT' }
   ]);
   assert.deepEqual(native.map((item) => item.id), ['hagher', 'booked']);
+});
+
+test('Dataverse booking claims without publication proof are surfaced for reconciliation', () => {
+  assert.deepEqual(classifyDataverseExecutionRow({
+    status: 'NATIVE_BOOKED_VERIFIED', requestedSchedule: '2026-10-05T14:00:00Z', platformPostId: null
+  }, '2026-10-08T16:00:00Z'), {
+    classification: 'PAST_DUE_NATIVE_BOOKING_CLAIM', actionRequired: true
+  });
+  assert.deepEqual(classifyDataverseExecutionRow({
+    status: 'NATIVE_BOOKED_VERIFIED', requestedSchedule: '2026-10-14T14:00:00Z', platformPostId: null
+  }, '2026-10-08T16:00:00Z'), {
+    classification: 'NATIVE_BOOKING_CLAIM_REQUIRES_FRESH_UI_PROOF', actionRequired: true
+  });
+  assert.deepEqual(classifyDataverseExecutionRow({
+    status: 'FAILED_TO_PUBLISH', requestedSchedule: '2026-10-05T14:00:00Z', platformPostId: null
+  }, '2026-10-08T16:00:00Z'), {
+    classification: 'EXECUTION_FAILURE', actionRequired: true
+  });
+  assert.deepEqual(classifyDataverseExecutionRow({
+    status: 'HELD_CAMPAIGN', requestedSchedule: '2026-10-21T14:00:00Z', platformPostId: null
+  }, '2026-10-08T16:00:00Z'), {
+    classification: 'HELD_NOT_BOOKED', actionRequired: false
+  });
+  assert.deepEqual(classifyDataverseExecutionRow({
+    status: 'NATIVE_BOOKED_VERIFIED', requestedSchedule: '2026-10-08T15:00:00Z', platformPostId: null
+  }, '2026-10-08T16:00:00Z'), {
+    classification: 'PAST_DUE_NATIVE_BOOKING_CLAIM', actionRequired: true
+  });
 });
