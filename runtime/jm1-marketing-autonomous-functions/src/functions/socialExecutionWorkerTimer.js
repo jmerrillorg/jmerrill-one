@@ -16,7 +16,12 @@ import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { approvedContentForSocial } from '../lib/socialContentApproval.js';
 import { approvedCampaignForSocial } from '../lib/socialCampaignAuthority.js';
-import { matchingNativeReservation, NATIVE_RESERVATION_STATUSES } from '../lib/nativeReservationGuard.js';
+import {
+  matchingNativeReservation,
+  nativeReservationAliases,
+  NATIVE_RESERVATION_STATUSES,
+  reservationReadbackComplete
+} from '../lib/nativeReservationGuard.js';
 
 app.timer('socialExecutionWorkerTimer', {
   schedule: process.env.JM1_SOCIAL_EXECUTION_WORKER_CRON || '0 */15 * * * *',
@@ -224,10 +229,22 @@ app.timer('socialExecutionWorkerTimer', {
         + ` and jm1_platform eq '${row.jm1_platform}'`
         + ` and (${NATIVE_RESERVATION_STATUSES.map((status) => `jm1_status eq '${status}'`).join(' or ')})`
       );
-      const reservations = await dv(
-        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_status&$filter=${reservationFilter}&$top=100`
+      const reservationResponse = await dv(
+        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_status&$filter=${reservationFilter}&$top=5000`
       );
-      const nativeReservation = matchingNativeReservation(row, caption, reservations.value || []);
+      if (!reservationReadbackComplete(reservationResponse)) {
+        writes.push({ id: row.jm1_socialexecutionid, state: 'NATIVE_RESERVATION_READBACK_INCOMPLETE', platform: row.jm1_platform });
+        continue;
+      }
+      const destination = row.jm1_platform === 'facebook'
+        ? { id: publishing.facebookPageId, name: publishing.facebookPageName }
+        : { id: publishing.instagramGraphId, handle: publishing.instagramHandle };
+      const nativeReservation = matchingNativeReservation(
+        row,
+        caption,
+        reservationResponse.value || [],
+        nativeReservationAliases(destination)
+      );
       if (nativeReservation) {
         writes.push({
           id: row.jm1_socialexecutionid,
@@ -445,10 +462,19 @@ app.timer('socialExecutionWorkerTimer', {
         + ` and jm1_platform eq 'linkedin'`
         + ` and (${NATIVE_RESERVATION_STATUSES.map((status) => `jm1_status eq '${status}'`).join(' or ')})`
       );
-      const reservations = await dv(
-        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_status&$filter=${reservationFilter}&$top=100`
+      const reservationResponse = await dv(
+        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_status&$filter=${reservationFilter}&$top=5000`
       );
-      const nativeReservation = matchingNativeReservation(row, caption, reservations.value || []);
+      if (!reservationReadbackComplete(reservationResponse)) {
+        writes.push({ id: row.jm1_socialexecutionid, state: 'NATIVE_RESERVATION_READBACK_INCOMPLETE', platform: row.jm1_platform });
+        continue;
+      }
+      const nativeReservation = matchingNativeReservation(
+        row,
+        caption,
+        reservationResponse.value || [],
+        nativeReservationAliases({ id: publishing.linkedinOrganizationId, name: publishing.linkedinOrganizationName || publishing.linkedinOrganizationId })
+      );
       if (nativeReservation) {
         writes.push({
           id: row.jm1_socialexecutionid,
