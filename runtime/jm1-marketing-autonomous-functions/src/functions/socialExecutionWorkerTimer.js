@@ -16,7 +16,7 @@ import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { approvedContentForSocial } from '../lib/socialContentApproval.js';
 import { approvedCampaignForSocial } from '../lib/socialCampaignAuthority.js';
-import { matchingNativeReservation, NATIVE_RESERVATION_STATUS } from '../lib/nativeReservationGuard.js';
+import { matchingNativeReservation, NATIVE_RESERVATION_STATUSES } from '../lib/nativeReservationGuard.js';
 
 app.timer('socialExecutionWorkerTimer', {
   schedule: process.env.JM1_SOCIAL_EXECUTION_WORKER_CRON || '0 */15 * * * *',
@@ -222,7 +222,7 @@ app.timer('socialExecutionWorkerTimer', {
       const reservationFilter = encodeURIComponent(
         `jm1_branch eq '${String(row.jm1_branch || '').replaceAll("'", "''")}'`
         + ` and jm1_platform eq '${row.jm1_platform}'`
-        + ` and jm1_status eq '${NATIVE_RESERVATION_STATUS}'`
+        + ` and (${NATIVE_RESERVATION_STATUSES.map((status) => `jm1_status eq '${status}'`).join(' or ')})`
       );
       const reservations = await dv(
         `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_status&$filter=${reservationFilter}&$top=100`
@@ -437,6 +437,25 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_verifiedat: envelope.startedAt
         });
         writes.push({ id: row.jm1_socialexecutionid, state: 'LINKEDIN_EXACT_MEDIA_OR_CAPTION_REGISTRY_MISSING' });
+        continue;
+      }
+
+      const reservationFilter = encodeURIComponent(
+        `jm1_branch eq '${String(row.jm1_branch || '').replaceAll("'", "''")}'`
+        + ` and jm1_platform eq 'linkedin'`
+        + ` and (${NATIVE_RESERVATION_STATUSES.map((status) => `jm1_status eq '${status}'`).join(' or ')})`
+      );
+      const reservations = await dv(
+        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_status&$filter=${reservationFilter}&$top=100`
+      );
+      const nativeReservation = matchingNativeReservation(row, caption, reservations.value || []);
+      if (nativeReservation) {
+        writes.push({
+          id: row.jm1_socialexecutionid,
+          state: 'NATIVE_BOOKING_DUPLICATE_SUPPRESSED',
+          reservedBy: nativeReservation.jm1_socialexecutionid,
+          platform: row.jm1_platform
+        });
         continue;
       }
 

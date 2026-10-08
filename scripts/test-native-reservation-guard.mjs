@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { captionFingerprint, matchingNativeReservation, NATIVE_RESERVATION_STATUS } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeReservationGuard.js';
+import { captionFingerprint, matchingNativeReservation, NATIVE_RESERVATION_STATUS, VERIFIED_NATIVE_RESERVATION_STATUS } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeReservationGuard.js';
 
 const row = {
   jm1_branch: 'J Merrill One',
@@ -21,4 +21,5 @@ assert.equal(matchingNativeReservation({ ...row, jm1_platform: 'facebook' }, cap
 assert.equal(matchingNativeReservation({ ...row, jm1_requestedmediahash: 'b'.repeat(64) }, caption, [reservation]), null);
 assert.equal(matchingNativeReservation({ ...row, jm1_branch: 'J Merrill Financial' }, caption, [reservation]), null);
 assert.equal(matchingNativeReservation(row, caption, [{ ...reservation, jm1_status: 'PUBLISHED_VERIFIED' }]), null);
-process.stdout.write('native reservation guard: 6 assertions passed\n');
+assert.equal(matchingNativeReservation(row, caption, [{ ...reservation, jm1_status: VERIFIED_NATIVE_RESERVATION_STATUS }]).jm1_status, VERIFIED_NATIVE_RESERVATION_STATUS);
+process.stdout.write('native reservation guard: 7 assertions passed\n');

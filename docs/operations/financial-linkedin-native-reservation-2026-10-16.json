@@ -1,0 +1,20 @@
+{
+  "brand": "J Merrill Financial",
+  "platform": "linkedin",
+  "destination": "146207089",
+  "localDate": "2026-10-16",
+  "localTime": "11:00 AM",
+  "timeZone": "America/New_York",
+  "requestedScheduleUtc": "2026-10-16T15:00:00Z",
+  "evidenceCapturedAt": "2026-10-08T21:25:00Z",
+  "caption": "A practical estate-readiness check: confirm where important documents are kept, who should be included in planning conversations, and which questions need a licensed professional's advice. Keep account numbers and private documents out of public posts. J Merrill Financial offers estate planning education and document-preparation support; it does not provide legal advice. Learn more: https://jmerrill.financial/services",
+  "mediaSha256": null,
+  "externalBookingId": null,
+  "platformPublicationId": null,
+  "verification": {
+    "nativeScheduledPostsModal": "J Merrill Financial's scheduled posts",
+    "bookingShownAs": "Fri October 16, 2026 at 11:00 AM",
+    "successToast": "Post scheduled.",
+    "postType": "text with linked services-page preview"
+  }
+}
