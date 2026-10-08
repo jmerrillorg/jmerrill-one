@@ -200,7 +200,7 @@ test('live Dataverse rows map by exact branch and platform without inventing des
   assert.equal(result.mapped[0].kind, 'PUBLISHED');
   assert.equal(result.mapped[0].destinationId, '1270611542802820');
   assert.equal(result.mapped[1].kind, 'NATIVE_BOOKING');
-  assert.equal(result.mapped[1].nativeBookingId, undefined);
+  assert.equal(result.mapped[1].nativeBookingId, null);
   assert.equal(result.mapped[1].contentKey, 'J Merrill One:v1');
   assert.deepEqual(result.unclassified.map((row) => row.jm1_socialexecutionid), ['bad-branch']);
 });
@@ -231,6 +231,31 @@ test('native reservation rows are distinct from API requests and do not count as
   assert.equal(result.verifiedBookings, 0);
   assert.equal(result.nativeReservations.length, 1);
   assert.ok(result.states.includes('NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'));
+});
+
+test('Dataverse native booking readback verifies exact UI observation without misusing publication ID', () => {
+  const caption = 'An exact post caption';
+  const captionSha256 = createHash('sha256').update(caption).digest('hex');
+  const row = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'native-booked-1',
+    jm1_branch: 'J Merrill Publishing',
+    jm1_platform: 'instagram',
+    jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requesteddestination: 'jmerrillpub',
+    jm1_requestedschedule: '2026-10-20T16:00:00Z',
+    jm1_captionversion: captionSha256,
+    jm1_platformpostid: null,
+    jm1_readbackstate: 'NATIVE_UI|META|AT=2026-10-08T16:00:00.000Z|BOOKING=NOT_EXPOSED'
+  }], [{ brand: 'J Merrill Publishing', platform: 'instagram', destinationHandle: 'jmerrillpub' }]).mapped[0];
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-08T16:00:00Z', channels: [{
+    brand: 'J Merrill Publishing', platform: 'instagram', destinationHandle: 'jmerrillpub',
+    executionOwner: 'META_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08' }
+  }], items: [{ ...row, brand: 'J Merrill Publishing', platform: 'instagram', destinationHandle: 'jmerrillpub' }] }).channels[0];
+  assert.equal(row.kind, 'NATIVE_BOOKING');
+  assert.equal(row.platformPostId, null);
+  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.nativeBookingRows[0].proof, 'META_NATIVE_UI');
+  assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
 });
 
 test('Dataverse native-booking claims are visible but never count as verified coverage alone', () => {

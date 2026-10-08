@@ -48,8 +48,9 @@ function hasNativeBookingProof(item, asOf) {
     || (['facebook', 'instagram'].includes(item.platform) && source === 'META_NATIVE_UI');
   return Boolean(item.nativeBookingId || (uiSourceMatchesPlatform
     && item.nativeEvidence.observedDateET === asOf
-    && item.captionText
-    && item.nativeEvidence.captionSha256 === createHash('sha256').update(item.captionText).digest('hex')
+    && (item.captionText
+      ? item.nativeEvidence.captionSha256 === createHash('sha256').update(item.captionText).digest('hex')
+      : item.captionSha256 === item.nativeEvidence.captionSha256)
     && item.nativeEvidence.scheduledAt === item.scheduledAt));
 }
 
@@ -100,6 +101,9 @@ export function mapDataverseSocialRows(rows, channels) {
       scheduledAt: row.jm1_requestedschedule || null,
       publishedAt: isPublished ? row.jm1_actualschedule || null : null,
       platformPostId: isPublished ? row.jm1_platformpostid : null,
+      nativeBookingId: isNativeBooking ? nativeBookingIdFromReadback(row.jm1_readbackstate) : null,
+      captionSha256: isNativeBooking ? row.jm1_captionversion || null : null,
+      nativeEvidence: isNativeBooking ? nativeEvidenceFromReadback(row.jm1_readbackstate, row) : null,
       status: row.jm1_status || null,
       nativeReservationStatus: isNativeReservation ? row.jm1_status : null,
       nativeReservationLocalDate: localReservation?.date || null,
@@ -117,6 +121,35 @@ export function mapDataverseSocialRows(rows, channels) {
     });
   }
   return { mapped, unclassified };
+}
+
+function readbackValue(value, key) {
+  const prefix = `${key}=`;
+  const segment = String(value || '').split(';').map((part) => part.trim()).find((part) => part.startsWith(prefix));
+  const result = segment?.slice(prefix.length);
+  return result && result !== 'NOT_EXPOSED_BY_UI' ? result : null;
+}
+
+function nativeBookingIdFromReadback(value) {
+  const compact = String(value || '').match(/\|BOOKING=([^|]+)/);
+  if (compact) return compact[1] === 'NOT_EXPOSED' ? null : compact[1];
+  const legacy = readbackValue(value, 'NATIVE_BOOKING_ID');
+  return legacy === 'NOT_EXPOSED_BY_UI' ? null : legacy;
+}
+
+function nativeEvidenceFromReadback(value, row) {
+  const compact = String(value || '').match(/^NATIVE_UI\|(META|LINKEDIN)\|AT=([^|]+)\|BOOKING=([^|]+)$/);
+  const source = compact ? `${compact[1]}_NATIVE_UI` : readbackValue(value, 'SOURCE');
+  const observedAt = compact ? compact[2] : readbackValue(value, 'OBSERVED_AT');
+  const scheduledAt = compact ? row.jm1_requestedschedule : readbackValue(value, 'SCHEDULED_AT');
+  const captionSha256 = compact ? row.jm1_captionversion : readbackValue(value, 'CAPTION_SHA256');
+  if (!source || !observedAt || !scheduledAt || !captionSha256) return null;
+  return {
+    source,
+    observedDateET: easternDate(observedAt),
+    scheduledAt,
+    captionSha256
+  };
 }
 
 function parseNativeReservationName(value) {
