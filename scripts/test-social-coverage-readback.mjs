@@ -136,15 +136,55 @@ test('fresh Meta UI proof can verify Instagram by exact handle when numeric ID i
 });
 
 test('stale native evidence and published platform IDs cannot prove future coverage', () => {
-  const result = buildSocialCoverageReadback({ ...base,
+  const snapshot = { ...base,
     channels: [{ ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-01' } }],
     items: [{ id: 'published-1', brand: channel.brand, platform: channel.platform,
       destinationId: channel.destinationId, kind: 'PUBLISHED', platformPostId: 'fb-1', publishedAt: '2026-10-01T16:00:00Z' }]
-  }).channels[0];
-  assert.equal(result.verifiedBookings, 0);
+  };
+  const report = buildSocialCoverageReadback(snapshot);
+  const result = report.channels[0];
+  assert.equal(result.verifiedBookings, null);
+  assert.equal(result.nativeScheduled, null);
+  assert.equal(result.coverageStatus, 'UNKNOWN');
+  assert.deepEqual(result.weeks.map((week) => week.verifiedBookings), [null, null]);
   assert.equal(result.publishedWithPlatformId, 1);
   assert.equal(result.nativeReadbackFresh, false);
   assert.ok(result.states.includes('NATIVE_READBACK_STALE'));
+  assert.ok(result.states.includes('COVERAGE_STATUS_UNKNOWN'));
+  assert.ok(!result.states.includes('ROLLING_COVERAGE_GAP'));
+});
+
+test('stale readback is unknown, preserves live publication evidence, and emits stable dedupe keys', () => {
+  const snapshot = { asOf: '2026-10-09T16:00:00Z', channels: [{ ...channel,
+    nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-04' } }], items: [
+    { id: 'live-publication', brand: channel.brand, platform: channel.platform,
+      destinationId: channel.destinationId, kind: 'PUBLISHED', platformPostId: 'fb-live-1', publishedAt: '2026-10-08T16:00:00Z' }
+  ] };
+  const first = buildSocialCoverageReadback(snapshot);
+  const later = buildSocialCoverageReadback({ ...snapshot, asOf: '2026-10-10T16:00:00Z' });
+  assert.equal(first.channels[0].coverageStatus, 'UNKNOWN');
+  assert.equal(first.channels[0].verifiedBookings, null);
+  assert.equal(first.channels[0].publishedWithPlatformId, 1);
+  assert.ok(first.alertFindings.some((finding) => finding.action === 'REFRESH_NATIVE_SCHEDULER_READBACK'));
+  assert.equal(first.alertFindings[0].dedupeKey, later.alertFindings[0].dedupeKey);
+  assert.equal(first.alertFindings[0].delivery, 'REPORT_ONLY');
+});
+
+test('fresh verified empty native readback is a real coverage gap, distinct from stale unknown', () => {
+  const report = buildSocialCoverageReadback({ ...base,
+    channels: [{ ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' } }], items: [] });
+  const result = report.channels[0];
+  assert.equal(result.nativeReadbackStatus, 'CURRENT');
+  assert.equal(result.coverageStatus, 'VERIFIED_GAP');
+  assert.equal(result.verifiedBookings, 0);
+  assert.deepEqual(result.weeks.map((week) => week.verifiedBookings), [0, 0]);
+  assert.ok(result.states.includes('ROLLING_COVERAGE_GAP'));
+  assert.ok(!result.states.includes('COVERAGE_STATUS_UNKNOWN'));
+  const keys = report.alertFindings.filter((finding) => finding.state === 'ROLLING_COVERAGE_GAP').map((finding) => finding.dedupeKey);
+  const nextDay = buildSocialCoverageReadback({ ...base, asOf: '2026-10-03T16:00:00Z',
+    channels: [{ ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-03' } }], items: [] });
+  assert.deepEqual(nextDay.alertFindings.filter((finding) => finding.state === 'ROLLING_COVERAGE_GAP')
+    .map((finding) => finding.dedupeKey), keys);
 });
 
 test('author weeks use Monday-Sunday calendar weeks and correct publication month', () => {
