@@ -35,6 +35,9 @@ assert.match(roleScript, /const allowedPrivilege = 'prvWritejm1_ProductionsRevie
 assert.match(roleScript, /if \(teams\.length\) throw new Error/);
 assert.match(roleScript, /unexpectedRoles/);
 assert.match(roleScript, /RetrieveUserPrivileges\(\)/);
+assert.match(roleScript, /RetrieveRolePrivilegesRole\(RoleId=\$\{roleId\}\)/);
+assert.match(roleScript, /teamroles_association/);
+assert.match(roleScript, /RemovePrivilegeRole/);
 assert.match(roleScript, /effectiveAccessExact/);
 assert.match(roleScript, /apply && !exactPrivileges/);
 assert.match(roleScript, /System Administrator.*System Customizer/);

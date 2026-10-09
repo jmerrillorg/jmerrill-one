@@ -35,6 +35,11 @@ if (matches.length > 1) throw new Error('Duplicate checkpoint runtime roles in t
 let role = matches[0] || null;
 const unexpectedRoles = roles.filter((item) => item.roleid !== role?.roleid);
 if (unexpectedRoles.length) throw new Error(`Function identity has other assigned roles (${unexpectedRoles.map(({ name, roleid }) => `${name}:${roleid}`).join(', ')}); refusing role mutation`);
+if (roleOnly && role) {
+  const assignments = await request(`/roles(${role.roleid})?$select=roleid&$expand=systemuserroles_association($select=systemuserid),teamroles_association($select=teamid)`);
+  if (assignments.systemuserroles_association.length || assignments.teamroles_association.length)
+    throw new Error('Checkpoint role has user or team assignments; refusing role-only provisioning');
+}
 if (!role && apply) {
   const created = await request('/roles', { method: 'POST', body: {
     name: roleName, 'businessunitid@odata.bind': `businessunits(${rootBusinessUnitId})`
@@ -44,17 +49,25 @@ if (!role && apply) {
 if (role && apply) {
   const privilege = (await request(`/privileges?$select=privilegeid,name&$filter=name eq '${allowedPrivilege}'`)).value;
   if (privilege.length !== 1) throw new Error('Checkpoint Custom API execute privilege is not uniquely provisioned');
-  const current = (await request(`/roles(${role.roleid})/Microsoft.Dynamics.CRM.RetrieveRolePrivilegesRole()`)).RolePrivileges || [];
-  if (current.length === 0) {
+  const current = await rolePrivileges(role.roleid);
+  const currentExact = current.length === 1 && current[0].PrivilegeName === allowedPrivilege && depthName(current[0].Depth) === 'Global';
+  if (!currentExact) {
+    if (!roleOnly) throw new Error('Existing checkpoint role has unexpected privileges; refusing to replace them outside role-only provisioning');
     await request(`/roles(${role.roleid})/Microsoft.Dynamics.CRM.ReplacePrivilegesRole`, { method: 'POST', body: {
       Privileges: [{ Depth: 'Global', PrivilegeId: privilege[0].privilegeid,
         PrivilegeName: allowedPrivilege, BusinessUnitId: rootBusinessUnitId }]
     } });
+    const replaced = await rolePrivileges(role.roleid);
+    for (const extra of replaced.filter((item) => item.PrivilegeName !== allowedPrivilege)) {
+      await request(`/roles(${role.roleid})/Microsoft.Dynamics.CRM.RemovePrivilegeRole`, { method: 'POST', body: {
+        Privilege: { privilegeid: extra.PrivilegeId }
+      } });
+    }
   }
 }
 
 const actualPrivileges = role
-  ? (await request(`/roles(${role.roleid})/Microsoft.Dynamics.CRM.RetrieveRolePrivilegesRole()`)).RolePrivileges || []
+  ? await rolePrivileges(role.roleid)
   : [];
 const rolePrivilegeSet = actualPrivileges.map(({ PrivilegeName, Depth }) => ({ name: PrivilegeName, depth: depthName(Depth) }));
 const exactPrivileges = rolePrivilegeSet.length === 1 && rolePrivilegeSet[0].name === allowedPrivilege && rolePrivilegeSet[0].depth === 'Global';
@@ -101,4 +114,8 @@ async function request(path, init = {}) {
   const text = await response.text();
   if (!response.ok) throw new Error(`Dataverse checkpoint role ${init.method || 'GET'} failed (${response.status}): ${text.slice(0, 250)}`);
   return { ...(text ? JSON.parse(text) : {}), id: response.headers.get('OData-EntityId')?.match(/\(([0-9a-f-]{36})\)/i)?.[1] };
+}
+
+async function rolePrivileges(roleId) {
+  return (await request(`/RetrieveRolePrivilegesRole(RoleId=${roleId})`)).RolePrivileges || [];
 }
