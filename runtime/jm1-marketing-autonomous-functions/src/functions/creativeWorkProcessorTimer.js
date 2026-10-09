@@ -5,6 +5,7 @@ import { dv, entitySet, patchById, queryByPrefix, upsertByIdempotency } from '..
 import { registerCampaignCreativeMedia } from '../lib/mediaRegistry.js';
 import { runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
+import { buildNativeSocialCreative, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, nativeSocialScheduledAt } from '../lib/nativeSocialProgram.js';
 
 app.timer('creativeWorkProcessorTimer', {
   schedule: process.env.JM1_CREATIVE_WORKER_CRON || '0 22 12 * * *',
@@ -34,6 +35,29 @@ app.timer('creativeWorkProcessorTimer', {
       );
 
       for (const content of pendingContent) {
+        if (isApprovedNativeSocialCampaign(campaign)) {
+          const nativeCreative = await buildNativeSocialCreative({ campaign, content, slot: content.jm1_stage });
+          if (!nativeCreative.ok) {
+            writes.push({ type: 'creative', stage: content.jm1_stage, state: nativeCreative.reason });
+            continue;
+          }
+          const creativePayload = {
+            jm1_name: `${content.jm1_name} approved brand creative`,
+            jm1_branch: campaign.jm1_branch,
+            jm1_stage: content.jm1_stage,
+            jm1_assetpath: nativeCreative.assetPath,
+            jm1_assethash: nativeCreative.sha256,
+            jm1_logohash: nativeCreative.logoHash,
+            jm1_dimensions: nativeCreative.dimensions,
+            jm1_publicreadystate: nativeCreative.publicReady,
+            jm1_idempotencykey: `${marker}:creative:${content.jm1_stage}`,
+            ...campaignBind
+          };
+          const creativeWrite = await upsertByIdempotency(creativeSet, 'jm1_creativeworkid', creativePayload);
+          writes.push({ type: 'nativeSocialCreative', id: creativeWrite.id, created: creativeWrite.created, stage: content.jm1_stage, state: nativeCreative.publicReady });
+          await createSocialRows({ socialSet, campaign, campaignBind, content, creative: nativeCreative, marker, envelope, writes });
+          continue;
+        }
         const archetype = selectCreativeArchetype({
           stageKey: content.jm1_stage,
           recentCreativeRows: creativeRows,
@@ -107,6 +131,44 @@ app.timer('creativeWorkProcessorTimer', {
 });
 
 async function createSocialRows({ socialSet, campaign, campaignBind, content, creative, marker, envelope, writes }) {
+  if (isApprovedNativeSocialCampaign(campaign)) {
+    const platforms = String(content.jm1_copybrief || '').match(/platforms=([a-z,]+)/)?.[1]?.split(',') || [];
+    const marker = nativeSocialCampaignMarker(campaign);
+    const branch = Object.values(BRANCH_CONFIG).find((item) => item.active && item.branchName === campaign.jm1_branch);
+    if (!branch) return;
+    for (const platform of platforms.filter((item) => ['facebook', 'instagram', 'linkedin'].includes(item))) {
+      const isLinkedIn = platform === 'linkedin';
+      const destination = platform === 'facebook' ? branch.facebookPageId
+        : platform === 'instagram' ? branch.instagramGraphId || branch.instagramHandle
+          : branch.linkedinOrganizationId;
+      const scheduledAt = nativeSocialScheduledAt(content.jm1_stage, platform);
+      if (!destination || !scheduledAt) continue;
+      const status = isLinkedIn ? 'HELD_NATIVE_LINKEDIN_BOOKING_REQUIRED' : 'PUBLIC_READY_SCHEDULED_ELIGIBLE';
+      const payload = {
+        jm1_name: `${campaign.jm1_branch} ${content.jm1_name} - ${platform}`,
+        jm1_branch: campaign.jm1_branch,
+        jm1_platform: platform,
+        jm1_executor: isLinkedIn ? 'LINKEDIN_NATIVE_REQUIRED' : 'META_API',
+        jm1_requesteddestination: destination,
+        jm1_actualdestination: '',
+        jm1_requestedmediahash: creative.sha256,
+        jm1_actualmediareference: '',
+        jm1_captionversion: `${marker}:caption:${content.jm1_stage}:v1`,
+        jm1_platformpostid: '',
+        jm1_status: status,
+        jm1_errorcode: isLinkedIn ? 'LINKEDIN_NATIVE_BOOKING_REQUIRED' : '',
+        jm1_errormessage: isLinkedIn ? 'LinkedIn API product authority is pending; use the authorized native scheduler.' : '',
+        jm1_readbackstate: isLinkedIn ? 'LINKEDIN_NATIVE_SCHEDULE_REQUIRED_NO_API_DISPATCH' : 'APPROVED_TEMPLATE_AND_DURABLE_MEDIA_REQUIRED',
+        jm1_idempotencykey: `${marker}:social:${content.jm1_stage}:${platform}`,
+        jm1_requestedschedule: scheduledAt,
+        jm1_verifiedat: envelope.startedAt,
+        ...campaignBind
+      };
+      const write = await upsertByIdempotency(socialSet, 'jm1_socialexecutionid', payload);
+      writes.push({ type: 'nativeSocialRequest', platform, id: write.id, created: write.created, status, scheduledAt });
+    }
+    return;
+  }
   const schedules = {
     facebook: stageSchedule(campaign.jm1_start, content.jm1_stage, 14),
     instagram: stageSchedule(campaign.jm1_start, content.jm1_stage, 16),
@@ -140,8 +202,8 @@ async function createSocialRows({ socialSet, campaign, campaignBind, content, cr
 }
 
 async function activeCampaigns(campaignSet) {
-  const filter = encodeURIComponent("jm1_campaigntype eq 'featured_author_month' or contains(jm1_program,'Author')");
-  const response = await dv(`/${campaignSet}?$select=jm1_campaignauthorityid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_campaigntype,jm1_program,jm1_subject,jm1_audience,jm1_cta,jm1_start,jm1_stop,jm1_state&$filter=${filter}&$top=10`);
+  const filter = encodeURIComponent("((jm1_campaigntype eq 'featured_author_month' or contains(jm1_program,'Author')) or jm1_campaigntype eq 'native_social') and jm1_state eq 'PUBLIC_EXECUTION_APPROVED'");
+  const response = await dv(`/${campaignSet}?$select=jm1_campaignauthorityid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_campaigntype,jm1_program,jm1_subject,jm1_audience,jm1_cta,jm1_start,jm1_stop,jm1_state&$filter=${filter}&$top=50`);
   return response.value || [];
 }
 

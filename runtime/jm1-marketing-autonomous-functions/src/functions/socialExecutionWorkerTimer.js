@@ -29,38 +29,43 @@ app.timer('socialExecutionWorkerTimer', {
     const envelope = runEnvelope('AUTONOMOUS_SOCIAL_EXECUTION_WORKER', timer, context);
     return withDistributedTimerLease('social-execution-worker', envelope, context, async () => {
     const socialSet = await entitySet('jm1_socialexecution');
-    const marker = process.env.JM1_SOCIAL_EXECUTION_MARKER || currentFeaturedAuthorMarker(new Date(envelope.startedAt));
-    if (!marker) {
+    const campaignSet = await entitySet('jm1_campaignauthority');
+    const markers = process.env.JM1_SOCIAL_EXECUTION_MARKER
+      ? [process.env.JM1_SOCIAL_EXECUTION_MARKER]
+      : await activeSocialCampaignMarkers(campaignSet, envelope.startedAt);
+    if (!markers.length) {
       context.log(JSON.stringify({
         ...envelope,
-        state: 'NO_CURRENT_FEATURED_AUTHOR_AUTHORITY',
+        state: 'NO_APPROVED_SOCIAL_CAMPAIGN_AUTHORITY',
         dataverseWrite: []
       }));
       return;
     }
-    const publishing = BRANCH_CONFIG.publishing;
-    const rows = await queryByPrefix(
-      socialSet,
-      `${marker}:social`,
-      'jm1_socialexecutionid,jm1_name,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_actualmediareference,jm1_captionversion,jm1_verifiedat,jm1_executor,jm1_attemptcount,jm1_lastattemptat,jm1_nextretryat,jm1_correlationid,jm1_failurecategory,jm1_exceptionowner',
-      100
-    );
-    const contentRows = await queryByPrefix(
-      await entitySet('jm1_contentwork'),
-      `${marker}:content`,
-      'jm1_contentworkid,jm1_idempotencykey,jm1_stage,jm1_draftcopy,jm1_publicreadystate',
-      100
-    );
+    for (const marker of markers) {
     const campaignRows = await queryByIdempotency(
-      await entitySet('jm1_campaignauthority'),
+      campaignSet,
       `${marker}:campaign`,
-      'jm1_campaignauthorityid,jm1_idempotencykey,jm1_branch,jm1_state',
+      'jm1_campaignauthorityid,jm1_idempotencykey,jm1_branch,jm1_campaigntype,jm1_program,jm1_state',
       2
     ).catch((error) => {
       context.error(`Campaign authority lookup failed: ${error.message}`);
       return [];
     });
-    const approvedCampaign = approvedCampaignForSocial(marker, campaignRows);
+    const branchConfig = Object.values(BRANCH_CONFIG).find((item) => item.active && item.branchName === campaignRows[0]?.jm1_branch);
+    const publishing = branchConfig || {};
+    const rows = await queryByPrefix(
+      socialSet,
+      `${marker}:social`,
+      'jm1_socialexecutionid,jm1_name,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_requesteddestination,jm1_requestedmediahash,jm1_actualmediareference,jm1_captionversion,jm1_verifiedat,jm1_executor,jm1_attemptcount,jm1_lastattemptat,jm1_nextretryat,jm1_correlationid,jm1_failurecategory,jm1_exceptionowner',
+      100
+    );
+    const contentRows = await queryByPrefix(
+      await entitySet('jm1_contentwork'),
+      `${marker}:content`,
+      'jm1_contentworkid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_stage,jm1_draftcopy,jm1_copybrief,jm1_publicreadystate',
+      100
+    );
+    const approvedCampaign = approvedCampaignForSocial(marker, campaignRows, BRANCH_CONFIG);
 
     const metaAuthority = await verifyMetaAuthority(publishing);
     const linkedinAuthority = checkLinkedInAuthority(publishing);
@@ -198,7 +203,7 @@ app.timer('socialExecutionWorkerTimer', {
         continue;
       }
 
-      if (!approvedContentForSocial(row, contentRows)) {
+      if (!approvedContentForSocial(row, contentRows, approvedCampaign)) {
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_readbackstate: 'CONTENT_PUBLIC_READY_APPROVAL_REQUIRED',
           jm1_errorcode: 'CONTENT_PUBLIC_READY_APPROVAL_REQUIRED',
@@ -431,7 +436,7 @@ app.timer('socialExecutionWorkerTimer', {
         continue;
       }
 
-      if (!approvedCampaign || !approvedContentForSocial(row, contentRows)) {
+      if (!approvedCampaign || !approvedContentForSocial(row, contentRows, approvedCampaign)) {
         const state = !approvedCampaign
           ? 'CAMPAIGN_PUBLIC_EXECUTION_APPROVAL_REQUIRED'
           : 'CONTENT_PUBLIC_READY_APPROVAL_REQUIRED';
@@ -498,7 +503,7 @@ app.timer('socialExecutionWorkerTimer', {
         expected: publishing,
         caption,
         imageUrl: mediaUrl,
-        altText: `J Merrill Publishing approved social creative for ${row.jm1_name || row.jm1_captionversion || 'campaign post'}.`
+        altText: resolveAltText(row, contentRows)
       });
       const patch = result.ok
         ? {
@@ -557,6 +562,19 @@ app.timer('socialExecutionWorkerTimer', {
     }
 
     const platformObjectsCreated = writes.filter((write) => write.createdPlatformObject).length;
+    const actionableFailures = writes.filter((write) => [
+      'RETRY_REQUIRED', 'DEAD_LETTERED', 'READBACK_MISMATCH',
+      'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
+      'LINKEDIN_PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'
+    ].includes(write.state)).map((write) => ({
+      event: 'SOCIAL_FAILURE_ACTION_REQUIRED',
+      rowId: write.id,
+      branch: rows.find((row) => row.jm1_socialexecutionid === write.id)?.jm1_branch || null,
+      platform: write.platform || null,
+      state: write.state,
+      correlationId: envelope.correlationId
+    }));
+    for (const failureEvent of actionableFailures) context.error(JSON.stringify(failureEvent));
 
     context.log(JSON.stringify({
       ...envelope,
@@ -570,6 +588,7 @@ app.timer('socialExecutionWorkerTimer', {
         linkedinRows: linkedinRows.length
       },
       dataverseWrite: writes,
+      actionableFailures,
       executionEnabled: {
         meta: AUTONOMOUS_META_EXECUTION_ENABLED,
         linkedin: AUTONOMOUS_LINKEDIN_EXECUTION_ENABLED
@@ -579,6 +598,7 @@ app.timer('socialExecutionWorkerTimer', {
         ? 'One or more execution flags enabled; adapters still gate on exact row authority and platform product approval.'
         : 'Execution flag held to avoid unintended live posts while autonomous trigger proof is established.'
     }));
+    }
     });
   }
 });
@@ -612,4 +632,25 @@ function resolveCaption(row, contentRows) {
   const stage = String(row.jm1_idempotencykey || '').split(':social:')[1]?.split(':')[0] || '';
   const content = contentRows.find((item) => item.jm1_stage === stage && item.jm1_publicreadystate === 'PASS');
   return content?.jm1_draftcopy || '';
+}
+
+function resolveAltText(row, contentRows) {
+  const stage = String(row.jm1_idempotencykey || '').split(':social:')[1]?.split(':')[0] || '';
+  const content = contentRows.find((item) => item.jm1_stage === stage && item.jm1_branch === row.jm1_branch);
+  const alt = String(content?.jm1_copybrief || '').match(/Alt=([^\n]+)/)?.[1];
+  return alt || `${row.jm1_branch || 'J Merrill'} approved social creative; full caption accompanies the post.`;
+}
+
+async function activeSocialCampaignMarkers(campaignSet, nowIso) {
+  const filter = encodeURIComponent("(jm1_campaigntype eq 'native_social' or jm1_campaigntype eq 'featured_author_month') and jm1_state eq 'PUBLIC_EXECUTION_APPROVED'");
+  const response = await dv(`/${campaignSet}?$select=jm1_idempotencykey,jm1_branch,jm1_campaigntype,jm1_state&$filter=${filter}&$top=100`);
+  const currentFeatured = currentFeaturedAuthorMarker(new Date(nowIso));
+  return [...new Set((response.value || []).filter((campaign) => {
+    const marker = String(campaign.jm1_idempotencykey || '').replace(/:campaign$/, '');
+    if (campaign.jm1_campaigntype === 'native_social') {
+      return campaign.jm1_state === 'PUBLIC_EXECUTION_APPROVED'
+        && Object.values(BRANCH_CONFIG).some((branch) => branch.active && branch.branchName === campaign.jm1_branch);
+    }
+    return marker === currentFeatured && campaign.jm1_branch === BRANCH_CONFIG.publishing.branchName;
+  }).map((campaign) => String(campaign.jm1_idempotencykey).replace(/:campaign$/, '')))];
 }
