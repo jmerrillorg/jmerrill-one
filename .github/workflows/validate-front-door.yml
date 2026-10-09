@@ -24,6 +24,7 @@ jobs:
       - run: node scripts/test-jm1-productions-bp09-notice.mjs
       - run: node scripts/test-jm1-productions-bp09-review-checkpoint.mjs
       - run: node scripts/test-jm1-productions-bp09-review-checkpoint-dataverse.mjs
+      - run: node scripts/test-prd-checkpoint-access-contract.mjs
       - run: node scripts/test-jm1-productions-bp09-retention.mjs
       - run: node scripts/test-jm1-productions-bp09-disposition.mjs
       - run: node --test tests/jsj-inquiry-review-form.test.mjs tests/jsj-inquiry-disposition.test.mjs

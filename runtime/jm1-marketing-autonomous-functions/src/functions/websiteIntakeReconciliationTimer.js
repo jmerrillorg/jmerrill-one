@@ -45,8 +45,8 @@ app.timer('websiteIntakeReconciliationTimer', {
             now: new Date()
           });
           const exceptions = checkpointOutcomes.filter((item) => item.state === 'HELD' ||
-            ['ATTEMPTING', 'PROVIDER_ACCEPTED', 'RETRY_WAIT', 'HELD'].includes(item.overdueAlert) ||
-            ['ATTEMPTING', 'PROVIDER_ACCEPTED', 'RETRY_WAIT', 'HELD'].includes(item.resolutionAlert));
+            ['ATTEMPTING', 'RECEIPT_PENDING', 'PROVIDER_ACCEPTED', 'RETRY_WAIT', 'HELD'].includes(item.overdueAlert) ||
+            ['ATTEMPTING', 'RECEIPT_PENDING', 'PROVIDER_ACCEPTED', 'RETRY_WAIT', 'HELD'].includes(item.resolutionAlert));
           context.log(JSON.stringify({ event: 'PRODUCTIONS_BP09_REVIEW_CHECKPOINT', scanned: checkpointOutcomes.length,
             pending: checkpointOutcomes.filter((item) => item.state === 'PENDING').length,
             overdue: checkpointOutcomes.filter((item) => item.state === 'OVERDUE').length,

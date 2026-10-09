@@ -21,29 +21,23 @@ function mockFetch(calls) {
     calls.push({ url: String(url), options });
     const path = new URL(url).pathname;
     if (path.endsWith('/WhoAmI()')) return response(200, { UserId: runtimeUserId });
-    if (path.endsWith('/leads')) return response(200, { value: [{
-      leadid: leadId, subject: 'JM1 Website Intake - J Merrill Productions', statecode: 0, statuscode: 1,
-      jm1_bp09intakereceiptid: receiptId, jm1_bp09receivedat: '2026-10-09T13:00:00.000Z', jm1_bp09reviewcheckpoint: JSON.stringify({ version: 2, receiptId, leadId,
-        acceptedAt: '2026-10-09T13:00:00.000Z', dueAt: '2026-10-09T21:00:00.000Z', state: 'PENDING' }),
-      _ownerid_value: teamId, versionnumber: 19, createdon: '2026-10-09T13:00:01Z', '@odata.etag': 'W/"1"'
-    }] });
-    if (path.endsWith(`/leads(${leadId})`) && options.method === 'PATCH') return response(200, {}, 'W/"2"');
-    if (path.endsWith(`/leads(${leadId})`)) return response(200, {
-      leadid: leadId, subject: 'JM1 Website Intake - J Merrill Productions', statecode: 0, statuscode: 1,
-      jm1_bp09intakereceiptid: receiptId, jm1_bp09receivedat: '2026-10-09T13:00:00.000Z', jm1_bp09reviewcheckpoint: null, _ownerid_value: teamId,
-      versionnumber: 19, '@odata.etag': 'W/"1"'
+    if (path.endsWith('/jm1_ListProductionsReviewCheckpointCandidates')) return response(200, {
+      RowsJson: JSON.stringify([{ receiptId, leadId, acceptedAt: '2026-10-09T13:00:00.000Z' }]), MoreRecords: false
     });
-    if (path.endsWith('/jm1_productionsinquiryactions')) return response(200, { value: [{
-      jm1_productionsinquiryactionid: actionId, jm1_receiptid: receiptId, jm1_leadid: leadId,
-      jm1_actionid: 'ACCEPT_FOR_FOLLOW_UP', jm1_outcome: 'ACCEPTED', jm1_before: 'NEW', jm1_after: 'FOLLOW_UP_REQUIRED',
-      jm1_actorid: reviewerSystemUserId, jm1_actorobjectid: reviewerObjectId, jm1_key: receiptId,
-      createdon: '2026-10-09T14:00:00Z', _createdby_value: runtimeUserId
-    }] });
+    if (path.endsWith('/jm1_GetProductionsReviewCheckpoint')) return response(200, { EvidenceJson: JSON.stringify({
+      receiptId, leadId, acceptedAt: '2026-10-09T13:00:00.000Z', checkpoint: JSON.stringify({ version: 2, receiptId, leadId,
+        acceptedAt: '2026-10-09T13:00:00.000Z', dueAt: '2026-10-09T21:00:00.000Z', state: 'PENDING' }),
+      subject: 'JM1 Website Intake - J Merrill Productions', ownerId: teamId, stateCode: 0, statusCode: 1,
+      version: '19', actions: [{ id: actionId, receiptId, leadId, actionId: 'ACCEPT_FOR_FOLLOW_UP', outcome: 'ACCEPTED',
+        before: 'NEW', after: 'FOLLOW_UP_REQUIRED', actorUserId: reviewerSystemUserId, actorObjectId: reviewerObjectId,
+        idempotencyKey: receiptId, recordedAt: '2026-10-09T14:00:00.000Z', recordingActorId: runtimeUserId }]
+    }) });
+    if (path.endsWith('/jm1_SaveProductionsReviewCheckpoint')) return response(200, { RowVersion: '20' });
     return response(404, { error: { message: `Unexpected request ${url}` } });
   };
 }
 
-test('adapter uses the managed-identity projection and exact existing reviewer-action schema', async () => {
+test('adapter uses only the identity-gated Productions checkpoint APIs and exact action projection', async () => {
   const calls = [];
   const adapter = createProductionsReviewCheckpointDataverseAdapter({ apiBase, teamId, runtimeUserId,
     reviewerSystemUserId, reviewerObjectId, getToken: async () => 'test-token', fetchImpl: mockFetch(calls) });
@@ -54,24 +48,23 @@ test('adapter uses the managed-identity projection and exact existing reviewer-a
   assert.equal(leads[0].ownerId, teamId);
   assert.equal(leads[0].acceptedAt, '2026-10-09T13:00:00.000Z');
   const lead = await adapter.getLead(leadId);
-  assert.equal(lead.etag, 'W/"1"');
+  assert.equal(lead.etag, '19');
   const actions = await adapter.listReviewerActions({ receiptId, leadId, limit: 10 });
   assert.deepEqual(actions[0], {
     id: actionId, receiptId, leadId, actionId: 'ACCEPT_FOR_FOLLOW_UP', outcome: 'ACCEPTED', before: 'NEW',
     after: 'FOLLOW_UP_REQUIRED', actorUserId: reviewerSystemUserId, actorObjectId: reviewerObjectId,
-    idempotencyKey: receiptId, recordedAt: '2026-10-09T14:00:00Z', recordingActorId: runtimeUserId
+    idempotencyKey: receiptId, recordedAt: '2026-10-09T14:00:00.000Z', recordingActorId: runtimeUserId
   });
   await adapter.saveCheckpoint({ receiptId, leadId, checkpoint: { version: 2, receiptId, leadId } });
-  const leadRead = calls.find((call) => new URL(call.url).pathname.endsWith('/leads'));
-  const actionRead = calls.find((call) => new URL(call.url).pathname.endsWith('/jm1_productionsinquiryactions'));
-  const patch = calls.find((call) => call.options.method === 'PATCH');
-  assert.match(leadRead.url, /subject%20eq%20'JM1%20Website%20Intake/);
-  assert.match(leadRead.url, new RegExp(teamId));
-  assert.doesNotMatch(decodeURIComponent(leadRead.url), /description|emailaddress1|telephone1/);
-  assert.match(decodeURIComponent(actionRead.url), /jm1_receiptid eq/);
-  assert.match(decodeURIComponent(actionRead.url), /jm1_leadid eq/);
-  assert.equal(patch.options.headers['If-Match'], 'W/"1"');
-  assert.deepEqual(Object.keys(JSON.parse(patch.options.body)), ['jm1_bp09reviewcheckpoint']);
+  const listCall = calls.find((call) => new URL(call.url).pathname.endsWith('/jm1_ListProductionsReviewCheckpointCandidates'));
+  const readCall = calls.find((call) => new URL(call.url).pathname.endsWith('/jm1_GetProductionsReviewCheckpoint'));
+  const saveCall = calls.find((call) => new URL(call.url).pathname.endsWith('/jm1_SaveProductionsReviewCheckpoint'));
+  assert.deepEqual(JSON.parse(listCall.options.body), { PageNumber: 1 });
+  assert.deepEqual(JSON.parse(readCall.options.body), { LeadId: leadId, ReceiptId: receiptId });
+  assert.equal(JSON.parse(saveCall.options.body).ExpectedVersion, '19');
+  assert.deepEqual(Object.keys(JSON.parse(saveCall.options.body)).sort(), ['CheckpointJson', 'ExpectedVersion', 'LeadId', 'ReceiptId']);
+  assert.equal(calls.some((call) => /\/leads|\/jm1_productionsinquiryactions|\/jm1_executionlogs/.test(new URL(call.url).pathname)), false);
+  assert.equal(adapter.runtimeUserId, runtimeUserId);
 });
 
 test('adapter fails closed when configured identity or team is malformed', () => {

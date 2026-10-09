@@ -6,12 +6,18 @@ const AUDIENCE = 'api://84530e9b-2842-4ca6-8fe6-1a11eed051d1/.default';
 const DESTINATION = 'productions@jmerrill.one';
 const GUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const DATAVERSE_GUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const ISO_INSTANT = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/;
 const MAX_ATTEMPTS = 3;
 
 function hold(code) {
   const error = new Error(code);
   error.code = code;
   return error;
+}
+
+function exactKeys(value, keys) {
+  return value && typeof value === 'object' && !Array.isArray(value) &&
+    Object.keys(value).sort().join(',') === [...keys].sort().join(',');
 }
 
 function digestMatches(receipt, message) {
@@ -53,7 +59,8 @@ export function createProductionsRelay({ fetchImpl = fetch, credential } = {}) {
   }
   return {
     probe: (payload) => request('relay-authority-probe', payload),
-    send: (payload) => request('send-enterprise-governed-email', payload)
+    send: (payload) => request('send-enterprise-governed-email', payload),
+    lookup: (payload) => request('lookup-productions-review-notice', payload)
   };
 }
 
@@ -62,19 +69,19 @@ export function createProductionsReviewCheckpointNotifier(relay) {
     OVERDUE: 'PRODUCTIONS.BP09_REVIEW_OVERDUE',
     RESOLVED: 'PRODUCTIONS.BP09_REVIEW_RESOLVED'
   };
-  async function send({ type, receiptId, leadId, eventId }) {
+  function payloadFor({ type, receiptId, leadId, transitionId, eventId }) {
     const templateId = templates[type];
-    const eventPrefix = `bp09:productions:review-${type?.toLowerCase()}:${receiptId}`;
-    const validEventId = type === 'OVERDUE' ? eventId === eventPrefix
-      : type === 'RESOLVED' && eventId?.startsWith(`${eventPrefix}:`) && DATAVERSE_GUID.test(eventId.slice(eventPrefix.length + 1));
+    const expectedKey = `bp09:productions:review:${type?.toLowerCase()}:${receiptId}:${transitionId}`;
     if (!templateId || !GUID.test(receiptId || '') || !GUID.test(leadId || '') ||
-        !validEventId) {
-      throw hold('CHECKPOINT_NOTICE_INPUT_INVALID');
-    }
-    const payload = {
+        !DATAVERSE_GUID.test(transitionId || '') || eventId !== expectedKey) throw hold('CHECKPOINT_NOTICE_INPUT_INVALID');
+    return {
       brand: 'JMPRODUCTIONS', to: DESTINATION, templateId, templateVersion: '1.0.0',
-      idempotencyKey: eventId, templateData: { referenceId: receiptId, leadId }
+      idempotencyKey: eventId, templateData: { referenceId: receiptId, leadId, transitionId }
     };
+  }
+  async function send({ type, receiptId, leadId, transitionId, eventId }) {
+    const payload = payloadFor({ type, receiptId, leadId, transitionId, eventId });
+    const { templateId } = payload;
     const authority = await relay.probe(payload);
     if (authority.status !== 200 || authority.body.authorized !== true || authority.body.noSend !== true ||
         authority.body.callerId !== 'one-bp09-productions-prod' || authority.body.brand !== 'JMPRODUCTIONS' ||
@@ -83,11 +90,39 @@ export function createProductionsReviewCheckpointNotifier(relay) {
     const result = await relay.send(payload);
     if (![200, 202].includes(result.status) || result.body.accepted !== true ||
         result.body.deliveryState !== 'ACCEPTED' || !result.body.jm1MessageId ||
+        !GUID.test(result.body.jm1MessageId) ||
         result.body.recipient !== DESTINATION || result.body.idempotencyKey !== eventId) throw hold('CHECKPOINT_NOTICE_ACCEPTANCE_UNPROVEN');
-    return { accepted: true, messageId: result.body.jm1MessageId, idempotencyKey: eventId,
+    return { accepted: true, receiptId: result.body.jm1MessageId, idempotencyKey: eventId,
       recipient: DESTINATION, privacySafe: true };
   }
-  return { send };
+  async function getDelivery({ type, receiptId, leadId, transitionId, eventId, relayReceiptId }) {
+    if (!GUID.test(relayReceiptId || '')) return { state: 'UNKNOWN', retryAuthorized: false };
+    const envelope = payloadFor({ type, receiptId, leadId, transitionId, eventId });
+    const result = await relay.lookup({ ...envelope, receiptId: relayReceiptId });
+    if (result.status === 200 && exactKeys(result.body, ['status', 'receiptId', 'providerMessageId', 'acceptedAt', 'deliveryEvidenceAvailable', 'retryAuthorized']) &&
+        result.body.status === 'accepted' &&
+        result.body.receiptId === relayReceiptId && typeof result.body.providerMessageId === 'string' &&
+        result.body.providerMessageId.length > 0 && ISO_INSTANT.test(result.body.acceptedAt || '') && Number.isFinite(Date.parse(result.body.acceptedAt)) &&
+        result.body.deliveryEvidenceAvailable === false && result.body.retryAuthorized === false) {
+      return { state: 'ACCEPTED', receiptId: relayReceiptId, providerMessageId: result.body.providerMessageId,
+        acceptedAt: result.body.acceptedAt, retryAuthorized: false, deliveryEvidenceAvailable: false };
+    }
+    if (result.status === 200 && exactKeys(result.body, ['status', 'receiptId', 'failedAt', 'retryAuthorized']) &&
+        result.body.status === 'failed' && result.body.receiptId === relayReceiptId &&
+        ISO_INSTANT.test(result.body.failedAt || '') && Number.isFinite(Date.parse(result.body.failedAt)) && result.body.retryAuthorized === false) {
+      return { state: 'FAILED', receiptId: relayReceiptId, failedAt: result.body.failedAt, retryAuthorized: false };
+    }
+    const unknownKeys = result.body?.code ? ['status', 'code', 'retryAuthorized'] : ['status', 'retryAuthorized'];
+    const codeMatchesStatus = result.status === 200 || result.status === 503 && !result.body?.code ||
+      result.status === 403 && result.body?.code === 'LOOKUP_CALLER_DENIED' ||
+      result.status === 400 && ['LOOKUP_REQUEST_INVALID', 'LOOKUP_RECEIPT_REQUIRED'].includes(result.body?.code);
+    if ([200, 400, 403, 503].includes(result.status) && exactKeys(result.body, unknownKeys) && codeMatchesStatus &&
+        result.body.status === 'unknown' && result.body.retryAuthorized === false) {
+      return { state: 'UNKNOWN', retryAuthorized: false };
+    }
+    throw hold('CHECKPOINT_NOTICE_LOOKUP_RESPONSE_INVALID');
+  }
+  return { send, getDelivery };
 }
 
 async function verifiedBinding(adapter, id) {

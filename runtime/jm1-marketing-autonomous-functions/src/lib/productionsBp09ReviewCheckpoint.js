@@ -5,7 +5,7 @@ const ZONE = 'America/New_York';
 const OPEN_MINUTE = 9 * 60;
 const CLOSE_MINUTE = 17 * 60;
 const holidays = new Holidays('US');
-const ALERT_STATES = ['NOT_DUE', 'ATTEMPTING', 'PROVIDER_ACCEPTED', 'DELIVERED', 'RETRY_WAIT', 'HELD'];
+const ALERT_STATES = ['NOT_DUE', 'ATTEMPTING', 'RECEIPT_PENDING', 'PROVIDER_ACCEPTED', 'RETRY_WAIT', 'HELD'];
 const ALERT_MAX_ATTEMPTS = 3;
 
 function fail(code) { const error = new Error(code); error.code = code; return error; }
@@ -67,10 +67,10 @@ export function calculateProductionsReviewDueAt(acceptedAt) {
 }
 
 function alertFor(type, receiptId, decisionId = null) {
-  const suffix = type === 'RESOLVED' ? `:${decisionId}` : '';
-  return { eventId: `bp09:productions:review-${type.toLowerCase()}:${receiptId}${suffix}`,
-    state: 'NOT_DUE', attempts: 0, lastAttemptAt: null, nextAttemptAt: null,
-    messageId: null, deliveredAt: null, failureCode: null };
+  const transitionId = type === 'RESOLVED' ? decisionId : receiptId;
+  return { transitionId, eventId: `bp09:productions:review:${type.toLowerCase()}:${receiptId}:${transitionId}`,
+    state: 'NOT_DUE', attempts: 0, lastAttemptAt: null, nextAttemptAt: null, relayReceiptId: null,
+    messageId: null, providerAcceptedAt: null, failureAt: null, failureCode: null };
 }
 
 export function createInitialProductionsReviewCheckpoint({ receiptId, leadId, acceptedAt }) {
@@ -84,20 +84,23 @@ export function createInitialProductionsReviewCheckpoint({ receiptId, leadId, ac
   return checkpoint;
 }
 
-function validAlert(alert, expectedEventId) {
-  if (!alert || alert.eventId !== expectedEventId || !ALERT_STATES.includes(alert.state) ||
+function validAlert(alert, expected) {
+  if (!alert || alert.transitionId !== expected.transitionId || alert.eventId !== expected.eventId || !ALERT_STATES.includes(alert.state) ||
       !Number.isInteger(alert.attempts) || alert.attempts < 0 || alert.attempts > ALERT_MAX_ATTEMPTS ||
       !(alert.lastAttemptAt === null || instant(alert.lastAttemptAt)) ||
       !(alert.nextAttemptAt === null || instant(alert.nextAttemptAt)) ||
+      !(alert.relayReceiptId === null || GUID.test(alert.relayReceiptId)) ||
       !(alert.messageId === null || (typeof alert.messageId === 'string' && alert.messageId.length <= 200)) ||
-      !(alert.deliveredAt === null || instant(alert.deliveredAt)) ||
+      !(alert.providerAcceptedAt === null || instant(alert.providerAcceptedAt)) ||
+      !(alert.failureAt === null || instant(alert.failureAt)) ||
       !(alert.failureCode === null || /^[A-Z0-9_:-]{1,100}$/.test(alert.failureCode))) return false;
   if (alert.state === 'ATTEMPTING') return alert.attempts > 0 && Boolean(alert.lastAttemptAt) && !alert.nextAttemptAt;
-  if (alert.state === 'PROVIDER_ACCEPTED') return Boolean(alert.messageId) && !alert.nextAttemptAt && !alert.failureCode;
-  if (alert.state === 'DELIVERED') return Boolean(alert.messageId && alert.deliveredAt) && !alert.nextAttemptAt && !alert.failureCode;
-  if (alert.state === 'RETRY_WAIT') return Boolean(alert.nextAttemptAt && alert.failureCode && alert.attempts > 0);
+  if (alert.state === 'RECEIPT_PENDING') return Boolean(alert.relayReceiptId) && !alert.messageId && !alert.nextAttemptAt && !alert.failureCode;
+  if (alert.state === 'PROVIDER_ACCEPTED') return Boolean(alert.relayReceiptId && alert.messageId && alert.providerAcceptedAt) && !alert.nextAttemptAt && !alert.failureCode;
+  if (alert.state === 'RETRY_WAIT') return Boolean(alert.relayReceiptId && alert.nextAttemptAt && alert.failureCode && alert.failureAt && alert.attempts > 0);
   if (alert.state === 'HELD') return Boolean(alert.failureCode) && !alert.nextAttemptAt;
-  return !alert.nextAttemptAt && !alert.failureCode && !alert.messageId && !alert.deliveredAt;
+  return !alert.nextAttemptAt && !alert.failureCode && !alert.relayReceiptId && !alert.messageId &&
+    !alert.providerAcceptedAt && !alert.failureAt;
 }
 
 export function validateProductionsReviewCheckpoint(value, expected) {
@@ -107,14 +110,14 @@ export function validateProductionsReviewCheckpoint(value, expected) {
       c.receiptId.toLowerCase() !== expected.receiptId.toLowerCase() || c.leadId.toLowerCase() !== expected.leadId.toLowerCase() ||
       !instant(c.acceptedAt) || !instant(c.dueAt) || Date.parse(c.dueAt) < Date.parse(c.acceptedAt) ||
       !['PENDING', 'OVERDUE', 'RESOLVED'].includes(c.state) || !c.alerts || typeof c.alerts !== 'object' ||
-      !validAlert(c.alerts.overdue, alertFor('OVERDUE', c.receiptId).eventId)) return false;
+      !validAlert(c.alerts.overdue, alertFor('OVERDUE', c.receiptId))) return false;
   if (c.state === 'RESOLVED') {
     if (!c.decision || !GUID.test(c.decision.id || '') || c.decision.actionId !== 'ACCEPT_FOR_FOLLOW_UP' ||
         c.decision.outcome !== 'ACCEPTED' || c.decision.before !== 'NEW' || c.decision.after !== 'FOLLOW_UP_REQUIRED' ||
         !GUID.test(c.decision.actorUserId || '') || !GUID.test(c.decision.actorObjectId || '') ||
         !GUID.test(c.decision.recordingActorId || '') || !instant(c.decision.recordedAt) ||
         typeof c.decision.idempotencyKey !== 'string' || !GUID.test(c.decision.idempotencyKey)) return false;
-    if (!validAlert(c.alerts.resolved, alertFor('RESOLVED', c.receiptId, c.decision.id).eventId)) return false;
+    if (!validAlert(c.alerts.resolved, alertFor('RESOLVED', c.receiptId, c.decision.id))) return false;
   } else if (c.decision !== null || c.alerts.resolved !== null) return false;
   return JSON.stringify(c).length <= 3500;
 }
@@ -137,29 +140,38 @@ function sameDecision(action, decision) {
 async function progressAlert({ checkpoint, type, notify, now, save }) {
   const alertKey = type === 'OVERDUE' ? 'overdue' : 'resolved';
   let alert = checkpoint.alerts[alertKey];
-  if (alert.state === 'DELIVERED' || alert.state === 'HELD') return { checkpoint, unresolved: alert.state === 'HELD' };
-  if (alert.state === 'PROVIDER_ACCEPTED' || alert.state === 'ATTEMPTING') {
-    if (!notify?.getDelivery) return { checkpoint, unresolved: true };
+  if (alert.state === 'HELD') return { checkpoint, unresolved: true };
+  if (['RECEIPT_PENDING', 'PROVIDER_ACCEPTED', 'ATTEMPTING'].includes(alert.state)) {
+    if (!notify?.getDelivery || !alert.relayReceiptId) return { checkpoint, unresolved: true };
     let delivery;
-    try { delivery = await notify.getDelivery({ eventId: alert.eventId, messageId: alert.messageId }); }
+    try { delivery = await notify.getDelivery({ type, receiptId: checkpoint.receiptId, leadId: checkpoint.leadId,
+      transitionId: alert.transitionId, eventId: alert.eventId, relayReceiptId: alert.relayReceiptId }); }
     catch { return { checkpoint, unresolved: true }; }
-    if (delivery?.state === 'DELIVERED' && delivery.messageId === alert.messageId && instant(delivery.deliveredAt)) {
-      alert = { ...alert, state: 'DELIVERED', deliveredAt: delivery.deliveredAt };
-      checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
-      await save(checkpoint);
-      return { checkpoint, unresolved: false };
-    }
-    if (alert.state === 'PROVIDER_ACCEPTED') return { checkpoint, unresolved: true };
-    if (delivery?.state === 'ACCEPTED' && delivery.messageId) {
-      alert = { ...alert, state: 'PROVIDER_ACCEPTED', messageId: delivery.messageId };
+    if (delivery?.state === 'ACCEPTED' && delivery.receiptId === alert.relayReceiptId &&
+        delivery.retryAuthorized === false && delivery.deliveryEvidenceAvailable === false &&
+        delivery.providerMessageId && instant(delivery.acceptedAt)) {
+      alert = { ...alert, state: 'PROVIDER_ACCEPTED', messageId: delivery.providerMessageId,
+        providerAcceptedAt: delivery.acceptedAt, failureAt: null, failureCode: null, nextAttemptAt: null };
       checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
       await save(checkpoint);
       return { checkpoint, unresolved: true };
     }
-    if (delivery?.state !== 'NOT_FOUND') return { checkpoint, unresolved: true };
-    alert = { ...alert, state: 'RETRY_WAIT', nextAttemptAt: now.toISOString(), failureCode: 'CHECKPOINT_SEND_NOT_ACCEPTED' };
-    checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
-    await save(checkpoint);
+    if (delivery?.state === 'FAILED' && delivery.receiptId === alert.relayReceiptId &&
+        delivery.retryAuthorized === false && instant(delivery.failedAt)) {
+      if (alert.messageId || alert.providerAcceptedAt) throw fail('CHECKPOINT_RELAY_STATE_DRIFT');
+      if (alert.attempts >= ALERT_MAX_ATTEMPTS) {
+        alert = { ...alert, state: 'HELD', nextAttemptAt: null, failureAt: delivery.failedAt,
+          failureCode: 'RELAY_FAILURE_ATTEMPTS_EXHAUSTED' };
+      } else {
+      alert = { ...alert, state: 'RETRY_WAIT', nextAttemptAt: new Date(now.getTime() + alert.attempts * 5 * 60_000).toISOString(),
+          messageId: null, providerAcceptedAt: null, failureAt: delivery.failedAt,
+          failureCode: 'RELAY_FAILURE_CONFIRMED' };
+      }
+      checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
+      await save(checkpoint);
+      return { checkpoint, unresolved: true };
+    }
+    return { checkpoint, unresolved: true };
   }
   if (alert.state === 'RETRY_WAIT' && Date.parse(alert.nextAttemptAt) > now.getTime()) return { checkpoint, unresolved: true };
   if (!notify?.send) {
@@ -175,23 +187,24 @@ async function progressAlert({ checkpoint, type, notify, now, save }) {
     return { checkpoint, unresolved: true };
   }
   const attempting = { ...alert, state: 'ATTEMPTING', attempts: alert.attempts + 1,
-    lastAttemptAt: now.toISOString(), nextAttemptAt: null, failureCode: null };
+    lastAttemptAt: now.toISOString(), nextAttemptAt: null, failureAt: null, failureCode: null };
   checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: attempting } };
   await save(checkpoint);
   try {
-    const result = await notify.send({ type, receiptId: checkpoint.receiptId, leadId: checkpoint.leadId, eventId: alert.eventId });
-    if (result?.accepted !== true || !result.messageId || result.idempotencyKey !== alert.eventId ||
+    const result = await notify.send({ type, receiptId: checkpoint.receiptId, leadId: checkpoint.leadId,
+      transitionId: alert.transitionId, eventId: alert.eventId });
+    if (result?.accepted !== true || !GUID.test(result.receiptId || '') || result.idempotencyKey !== alert.eventId ||
+        alert.relayReceiptId && result.receiptId !== alert.relayReceiptId ||
         result.recipient !== 'productions@jmerrill.one' || result.privacySafe !== true) throw fail('CHECKPOINT_ALERT_ACCEPTANCE_UNPROVEN');
-    alert = { ...attempting, state: 'PROVIDER_ACCEPTED', messageId: result.messageId };
+    alert = { ...attempting, state: 'RECEIPT_PENDING', relayReceiptId: result.receiptId, messageId: null,
+      providerAcceptedAt: null };
   } catch (error) {
-    const exhausted = attempting.attempts >= ALERT_MAX_ATTEMPTS;
-    alert = { ...attempting, state: exhausted ? 'HELD' : 'RETRY_WAIT',
-      nextAttemptAt: exhausted ? null : new Date(now.getTime() + attempting.attempts * 5 * 60_000).toISOString(),
-      failureCode: error.code || 'CHECKPOINT_ALERT_FAILURE' };
+    alert = { ...attempting, state: 'ATTEMPTING', nextAttemptAt: null,
+      failureAt: now.toISOString(), failureCode: error.code || 'CHECKPOINT_ALERT_FAILURE' };
   }
   checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
   await save(checkpoint);
-  return { checkpoint, unresolved: alert.state !== 'DELIVERED' };
+  return { checkpoint, unresolved: true };
 }
 
 export async function reconcileProductionsReviewCheckpoints({ adapter, notify, now = new Date(), limit = 100 }) {
@@ -209,9 +222,9 @@ export async function reconcileProductionsReviewCheckpoints({ adapter, notify, n
       if (!lead || lead.id?.toLowerCase() !== receipt.leadId.toLowerCase() || lead.brand !== 'JMPRODUCTIONS' ||
           lead.receiptId?.toLowerCase() !== receipt.id.toLowerCase() || lead.ownerId?.toLowerCase() !== adapter.teamId.toLowerCase() ||
           lead.acceptedAt !== receipt.acceptedAt) throw fail('CHECKPOINT_RECEIPT_LEAD_MISMATCH');
-      let checkpoint = receipt.checkpoint || createInitialProductionsReviewCheckpoint({ receiptId: receipt.id, leadId: lead.id, acceptedAt: receipt.acceptedAt });
+      let checkpoint = lead.checkpoint || createInitialProductionsReviewCheckpoint({ receiptId: receipt.id, leadId: lead.id, acceptedAt: receipt.acceptedAt });
       if (!validateProductionsReviewCheckpoint(checkpoint, { receiptId: receipt.id, leadId: lead.id })) throw fail('CHECKPOINT_STATE_INVALID');
-      let persisted = receipt.checkpoint;
+      let persisted = lead.checkpoint;
       const save = async (next) => {
         if (JSON.stringify(next) === JSON.stringify(persisted)) return;
         await adapter.saveCheckpoint({ receiptId: receipt.id, leadId: lead.id, checkpoint: next, etag: lead.etag });

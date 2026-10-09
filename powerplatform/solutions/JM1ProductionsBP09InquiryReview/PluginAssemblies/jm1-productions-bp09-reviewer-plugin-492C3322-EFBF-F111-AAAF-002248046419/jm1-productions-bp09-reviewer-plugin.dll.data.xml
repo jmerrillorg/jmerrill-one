@@ -9,5 +9,14 @@
     <PluginType AssemblyQualifiedName="Jm1.Productions.Bp09.AcceptProductionsInquiry, jm1-productions-bp09-reviewer-plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=54aee7a4b2c505ef" PluginTypeId="cdc19543-efbf-f111-aaaf-000d3a5c9558" Name="Jm1.Productions.Bp09.AcceptProductionsInquiry">
       <FriendlyName>Accept Productions Inquiry</FriendlyName>
     </PluginType>
+    <PluginType AssemblyQualifiedName="Jm1.Productions.Bp09.ListProductionsReviewCheckpointCandidates, jm1-productions-bp09-reviewer-plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=54aee7a4b2c505ef" PluginTypeId="0e50c9e5-c3c6-4a13-a372-d56ab16ba75a" Name="Jm1.Productions.Bp09.ListProductionsReviewCheckpointCandidates">
+      <FriendlyName>List Productions Review Checkpoint Candidates</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="Jm1.Productions.Bp09.GetProductionsReviewCheckpoint, jm1-productions-bp09-reviewer-plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=54aee7a4b2c505ef" PluginTypeId="dd30e06f-b9d0-4793-8215-e54f31fb4d18" Name="Jm1.Productions.Bp09.GetProductionsReviewCheckpoint">
+      <FriendlyName>Get Productions Review Checkpoint</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="Jm1.Productions.Bp09.SaveProductionsReviewCheckpoint, jm1-productions-bp09-reviewer-plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=54aee7a4b2c505ef" PluginTypeId="485ef7f8-bb61-4e0e-ae84-837672291259" Name="Jm1.Productions.Bp09.SaveProductionsReviewCheckpoint">
+      <FriendlyName>Save Productions Review Checkpoint</FriendlyName>
+    </PluginType>
   </PluginTypes>
 </PluginAssembly>
