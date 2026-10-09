@@ -21,6 +21,7 @@ jobs:
       - run: npm ci
       - run: node scripts/test-jm1-front-door-intake.mjs
       - run: node scripts/test-jm1-productions-bp09-notice.mjs
+      - run: node scripts/test-jm1-productions-bp09-review-checkpoint.mjs
       - run: node scripts/test-jm1-productions-bp09-retention.mjs
       - run: node scripts/test-jm1-productions-bp09-disposition.mjs
       - run: node scripts/test-social-coverage-readback.mjs
