@@ -47,14 +47,16 @@ if (apply && !web) {
   });
   web = await resource();
 }
+if (apply) await request('/PublishXml', { method: 'POST', body: JSON.stringify({
+  ParameterXml: `<importexportxml><webresources><webresource>${web.webresourceid}</webresource></webresources></importexportxml>`,
+}) });
+// Dataverse returns the published layer from webresourceset after PATCH.
+if (apply) web = await resource();
 if ((apply || restore) && (!web || web.content !== content)) throw new Error('JSJ review resource readback mismatch');
 if (!web) {
   console.log(JSON.stringify({ mode: 'READ_ONLY', resourcePresent: false, sourceHash }, null, 2));
   process.exit(0);
 }
-if (apply) await request('/PublishXml', { method: 'POST', body: JSON.stringify({
-  ParameterXml: `<importexportxml><webresources><webresource>${web.webresourceid}</webresource></webresources></importexportxml>`,
-}) });
 const path = `/systemforms(${formId})?$select=formid,name,type,objecttypecode,formactivationstate,ismanaged,iscustomizable,formxml`;
 const before = await request(path);
 const form = before.value;
