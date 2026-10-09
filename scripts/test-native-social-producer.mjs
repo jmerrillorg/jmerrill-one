@@ -114,9 +114,9 @@ test('coverage planning moves a slot when a verified booking already occupies it
     jm1_platform: platform,
     jm1_requesteddestination: branchDestinations[platform],
     jm1_status: 'NATIVE_BOOKED_VERIFIED',
-    jm1_requestedschedule: '2026-10-14T14:00:00Z'
+    jm1_requestedschedule: '2026-10-13T14:00:00Z'
   }));
-  const plans = planNativeSocialGaps({ campaign: one, socialRows: existing, nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations });
+  const plans = planNativeSocialGaps({ campaign: one, socialRows: existing, nowIso: '2026-10-12T12:00:00Z', destinationByPlatform: branchDestinations });
   const currentWeek = plans.filter((item) => item.weekKey === '2026-10-12');
   assert.equal(currentWeek.length, 1);
   assert.equal(currentWeek[0].slot, 2);
@@ -132,19 +132,20 @@ test('a scheduled-looking API request consumes cadence only under live-approved 
     jm1_platform: 'facebook',
     jm1_requesteddestination: branchDestinations.facebook,
     jm1_status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE',
-    jm1_requestedschedule: '2026-10-14T14:00:00Z',
+    jm1_requestedschedule: '2026-10-13T14:00:00Z',
     jm1_idempotencykey: 'held-author-campaign:social:feature-intro:facebook'
   };
-  const withoutApproval = planNativeSocialGaps({ campaign: one, socialRows: [heldCampaignRequest], nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations });
+  const withoutApproval = planNativeSocialGaps({ campaign: one, socialRows: [heldCampaignRequest], nowIso: '2026-10-12T12:00:00Z', destinationByPlatform: branchDestinations });
   assert.equal(withoutApproval.find((item) => item.weekKey === '2026-10-12' && item.platforms.includes('facebook'))?.slot, 1);
-  const withApproval = planNativeSocialGaps({ campaign: one, socialRows: [heldCampaignRequest], approvedRequestMarkers: ['held-author-campaign'], nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations });
+  const withApproval = planNativeSocialGaps({ campaign: one, socialRows: [heldCampaignRequest], approvedRequestMarkers: ['held-author-campaign'], nowIso: '2026-10-12T12:00:00Z', destinationByPlatform: branchDestinations });
   assert.equal(withApproval.find((item) => item.weekKey === '2026-10-12' && item.platforms.includes('facebook'))?.slot, 2);
 });
 
 test('scheduled timestamps preserve Eastern wall-clock time across daylight transition', () => {
   const before = nativeSocialScheduledAt('rolling-2026-10-26-1', 'facebook');
   const after = nativeSocialScheduledAt('rolling-2026-11-02-1', 'facebook');
-  assert.equal(before, '2026-10-26T14:00:00.000Z');
-  assert.equal(after, '2026-11-02T15:00:00.000Z');
-  assert.equal(nativeSocialScheduledAt('rolling-2026-10-14-1', 'facebook'), '2026-10-14T14:00:00.000Z');
+  assert.equal(before, '2026-10-27T14:00:00.000Z');
+  assert.equal(nativeSocialScheduledAt('rolling-2026-10-26-2', 'facebook'), '2026-10-30T18:00:00.000Z');
+  assert.equal(after, '2026-11-03T15:00:00.000Z');
+  assert.equal(nativeSocialScheduledAt('rolling-2026-10-12-1', 'facebook'), '2026-10-13T14:00:00.000Z');
 });
