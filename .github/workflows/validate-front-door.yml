@@ -31,4 +31,5 @@ jobs:
       - run: node scripts/test-social-coverage-readback.mjs
       - run: npm --prefix runtime/jm1-marketing-autonomous-functions run check
       - run: npm --prefix runtime/jm1-marketing-autonomous-functions run test:native-reservation
+      - run: npm --prefix runtime/jm1-marketing-autonomous-functions run test:productions-review-checkpoint
       - run: npm run build
