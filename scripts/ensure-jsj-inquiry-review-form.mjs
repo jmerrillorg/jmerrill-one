@@ -48,7 +48,14 @@ if ((apply || restore) && changed) {
     body: JSON.stringify({ ParameterXml: `<importexportxml><entities><entity>${table}</entity></entities></importexportxml>` }),
   });
 }
-const after = (apply || restore) ? (await request(path)).value : form;
+let after = form;
+if (apply || restore) {
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    after = (await request(path)).value;
+    if (after.formxml === target) break;
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+}
 if ((apply || restore) && after.formxml !== target) throw new Error('Published JSJ form readback did not match the target');
 reviewFormXml(after.formxml);
 console.log(JSON.stringify({ environment: url, formId, table, mode: restore ? 'RESTORE' : apply ? 'APPLY' : 'READ_ONLY', changed: (apply || restore) && changed, reviewFieldsPresent: after.formxml.includes(addedRows) }, null, 2));
