@@ -32,6 +32,7 @@ jobs:
         run: |
           npm ci --omit=dev --prefix runtime/jm1-marketing-autonomous-functions
           npm --prefix runtime/jm1-marketing-autonomous-functions run check
+          npm --prefix runtime/jm1-marketing-autonomous-functions run test:function-inventory
           npm --prefix runtime/jm1-marketing-autonomous-functions run test:native-reservation
           npm --prefix runtime/jm1-marketing-autonomous-functions run test:native-social-producer
           node scripts/test-jm1-front-door-intake.mjs
@@ -39,7 +40,7 @@ jobs:
           node scripts/test-jm1-productions-bp09-retention.mjs
           node scripts/test-jm1-productions-bp09-disposition.mjs
           cd runtime/jm1-marketing-autonomous-functions
-          zip -qr "$GITHUB_WORKSPACE/jm1-marketing-functions-$GITHUB_SHA.zip" host.json package.json src node_modules
+          zip -qr "$GITHUB_WORKSPACE/jm1-marketing-functions-$GITHUB_SHA.zip" host.json package.json function-inventory.json src node_modules
       - uses: azure/login@v3
         with:
           client-id: ${{ vars.AZURE_CLIENT_ID }}
@@ -54,21 +55,81 @@ jobs:
         run: |
           package_name="jm1-marketing-functions-$GITHUB_SHA.zip"
           package_url="https://$STORAGE_ACCOUNT.blob.core.windows.net/$RELEASE_CONTAINER/$package_name"
+          package_file="$GITHUB_WORKSPACE/$package_name"
+          package_hash="$(shasum -a 256 "$package_file" | awk '{print $1}')"
+          runtime_readback="$RUNNER_TEMP/marketing-functions-current.json"
+          previous_inventory="$RUNNER_TEMP/marketing-functions-previous-inventory.json"
           exists="$(az storage blob exists --account-name "$STORAGE_ACCOUNT" --container-name "$RELEASE_CONTAINER" --name "$package_name" --auth-mode login --query exists -o tsv)"
-          if [ "$exists" != "True" ] && [ "$exists" != "true" ]; then
-            az storage blob upload --account-name "$STORAGE_ACCOUNT" --container-name "$RELEASE_CONTAINER" --name "$package_name" --file "$GITHUB_WORKSPACE/$package_name" --auth-mode login --overwrite false --only-show-errors --output none
+          if [ "$exists" = "True" ] || [ "$exists" = "true" ]; then
+            az storage blob download --account-name "$STORAGE_ACCOUNT" --container-name "$RELEASE_CONTAINER" --name "$package_name" --file "$RUNNER_TEMP/$package_name" --auth-mode login --overwrite true --only-show-errors --output none
+            stored_hash="$(shasum -a 256 "$RUNNER_TEMP/$package_name" | awk '{print $1}')"
+            if [ "$stored_hash" != "$package_hash" ]; then
+              echo "Immutable release blob exists with different bytes; refusing deployment."
+              exit 1
+            fi
+          else
+            az storage blob upload --account-name "$STORAGE_ACCOUNT" --container-name "$RELEASE_CONTAINER" --name "$package_name" --file "$package_file" --auth-mode login --overwrite false --only-show-errors --output none
           fi
           old_package="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE'].value | [0]" -o tsv)"
           old_sha="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_RELEASE_SHA'].value | [0]" -o tsv)"
+          old_blob_mi="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID'].value | [0]" -o tsv)"
+          if [ -z "$old_package" ] || [ -z "$old_sha" ]; then
+            echo "Previous immutable package and release SHA are required for rollback; refusing deployment."
+            exit 1
+          fi
+          expected_package_prefix="https://$STORAGE_ACCOUNT.blob.core.windows.net/$RELEASE_CONTAINER/"
+          case "$old_package" in
+            "$expected_package_prefix"*) old_package_name="${old_package#"$expected_package_prefix"}" ;;
+            *) echo "Previous package is not in the immutable release container; refusing deployment."; exit 1 ;;
+          esac
+          if ! printf '%s' "$old_package_name" | grep -Eq "^jm1-marketing-functions-$old_sha\\.zip$" || ! printf '%s' "$old_sha" | grep -Eq '^[0-9a-f]{40}$'; then
+            echo "Previous package URL is not an immutable SHA-named marketing package; refusing deployment."
+            exit 1
+          fi
+          az storage blob download --account-name "$STORAGE_ACCOUNT" --container-name "$RELEASE_CONTAINER" --name "$old_package_name" --file "$RUNNER_TEMP/previous-marketing-functions.zip" --auth-mode login --overwrite true --only-show-errors --output none
+          previous_package_hash="$(shasum -a 256 "$RUNNER_TEMP/previous-marketing-functions.zip" | awk '{print $1}')"
+          echo "Verified immutable rollback package SHA-256: $previous_package_hash"
+          az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" -o json > "$runtime_readback"
+          node scripts/verify-marketing-function-inventory.mjs --source-root runtime/jm1-marketing-autonomous-functions --inventory runtime/jm1-marketing-autonomous-functions/function-inventory.json --runtime-json "$runtime_readback" --capture-runtime "$previous_inventory"
           rollback() {
+            status=$?
+            trap - ERR
             az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings WEBSITE_RUN_FROM_PACKAGE="$old_package" JM1_RELEASE_SHA="$old_sha" --output none
+            if [ -n "$old_blob_mi" ]; then
+              az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID="$old_blob_mi" --output none
+            else
+              az functionapp config appsettings delete --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --setting-names WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID --output none
+            fi
+            for attempt in {1..18}; do
+              az rest --method post --url "https://management.azure.com/subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/resourceGroups/$RESOURCE_GROUP/providers/Microsoft.Web/sites/$FUNCTION_APP/syncfunctiontriggers?api-version=2024-11-01" --output none || true
+              az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" -o json > "$runtime_readback" || true
+              if node scripts/verify-marketing-function-inventory.mjs --source-root runtime/jm1-marketing-autonomous-functions --inventory runtime/jm1-marketing-autonomous-functions/function-inventory.json --runtime-json "$runtime_readback" --compare-runtime "$previous_inventory"; then
+                restored_sha="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_RELEASE_SHA'].value | [0]" -o tsv)"
+                restored_package="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE'].value | [0]" -o tsv)"
+                if [ "$restored_sha" != "$old_sha" ] || [ "$restored_package" != "$old_package" ]; then
+                  echo "Restored Function inventory is present but package/SHA settings do not match the captured pre-release values."
+                  return 1
+                fi
+                echo "Previous immutable package settings and trigger inventory restored and verified."
+                return "$status"
+              fi
+              sleep 10
+            done
+            echo "Rollback did not restore the captured pre-release trigger inventory."
+            return 1
           }
           trap rollback ERR
           az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings WEBSITE_RUN_FROM_PACKAGE="$package_url" WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID=SystemAssigned JM1_RELEASE_SHA="$GITHUB_SHA" --output none
           for attempt in {1..18}; do
             az rest --method post --url "https://management.azure.com/subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/resourceGroups/$RESOURCE_GROUP/providers/Microsoft.Web/sites/$FUNCTION_APP/syncfunctiontriggers?api-version=2024-11-01" --output none || true
-            names="$(az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query '[].name' -o tsv || true)"
-            if printf '%s\n' "$names" | grep -q '/websiteIntakeReconciliationTimer$' && printf '%s\n' "$names" | grep -q '/credentialMonitorTimer$'; then
+            az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" -o json > "$runtime_readback" || true
+            if node scripts/verify-marketing-function-inventory.mjs --source-root runtime/jm1-marketing-autonomous-functions --inventory runtime/jm1-marketing-autonomous-functions/function-inventory.json --runtime-json "$runtime_readback"; then
+              active_sha="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_RELEASE_SHA'].value | [0]" -o tsv)"
+              active_package="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE'].value | [0]" -o tsv)"
+              if [ "$active_sha" != "$GITHUB_SHA" ] || [ "$active_package" != "$package_url" ]; then
+                echo "Function inventory loaded but release SHA/package readback does not match this deployment."
+                false
+              fi
               trap - ERR
               exit 0
             fi
