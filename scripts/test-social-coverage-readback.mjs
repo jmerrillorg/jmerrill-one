@@ -258,6 +258,30 @@ test('Dataverse native booking readback verifies exact UI observation without mi
   assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
 });
 
+test('verified Instagram portfolio handle resolves a native booking without a duplicate ID', () => {
+  const caption = 'An estate-readiness step for this week.';
+  const captionSha256 = createHash('sha256').update(caption).digest('hex');
+  const row = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'financial-instagram-booked',
+    jm1_branch: 'J Merrill Financial',
+    jm1_platform: 'instagram',
+    jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requesteddestination: '@jmerrillfin',
+    jm1_requestedschedule: '2026-10-10T16:00:00Z',
+    jm1_captionversion: captionSha256,
+    jm1_readbackstate: 'NATIVE_UI|META|AT=2026-10-09T00:44:31.000Z|BOOKING=NOT_EXPOSED'
+  }], [{ brand: 'J Merrill Financial', platform: 'instagram', executionOwner: 'META_NATIVE',
+    nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08', portfolioHandle: 'jmerrillfin' } }]).mapped[0];
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-09T00:52:00Z', channels: [{
+    brand: 'J Merrill Financial', platform: 'instagram', executionOwner: 'META_NATIVE',
+    nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08', portfolioHandle: 'jmerrillfin' }
+  }], items: [row] }).channels[0];
+  assert.equal(row.kind, 'NATIVE_BOOKING');
+  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.nextVerifiedBooking, '2026-10-10T16:00:00Z');
+  assert.deepEqual(result.unverifiedBookingClaims, []);
+});
+
 test('current MBS_BOOKED evidence verifies the observed content ID separately from publication ID', () => {
   const caption = 'A current Meta Business Suite post with an exact caption.';
   const captionSha256 = createHash('sha256').update(caption).digest('hex');

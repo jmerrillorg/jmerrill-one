@@ -30,8 +30,9 @@ function channelKey(value) {
 
 function matchesDestination(item, channel) {
   return Boolean((channel.destinationId && item.destinationId === channel.destinationId)
-    || (channel.platform === 'instagram' && channel.destinationHandle
-      && item.destinationHandle === channel.destinationHandle));
+    || (channel.platform === 'instagram'
+      && (channel.destinationHandle || channel.nativeReadback?.portfolioHandle)
+      && item.destinationHandle === (channel.destinationHandle || channel.nativeReadback.portfolioHandle)));
 }
 
 function publishedDateET(item) {
