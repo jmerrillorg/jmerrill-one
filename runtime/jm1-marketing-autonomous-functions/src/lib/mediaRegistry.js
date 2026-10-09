@@ -4,6 +4,7 @@ import { BlobServiceClient } from '@azure/storage-blob';
 import { buildCreativeArtifact, campaignMarker, inferAssetState } from './campaignProgram.js';
 import { BRANCH_CONFIG, MEDIA_PUBLIC_BASE_URL, MEDIA_STORAGE_ACCOUNT_NAME, MEDIA_STORAGE_CONTAINER, MEDIA_STORAGE_PREFIX } from './config.js';
 import { dv, entitySet, patchById, queryByPrefix, upsertByIdempotency } from './dataverse.js';
+import { buildNativeSocialCreative, isApprovedNativeSocialCampaign } from './nativeSocialProgram.js';
 
 let cachedContainerClient = null;
 
@@ -25,7 +26,14 @@ export async function registerCampaignCreativeMedia({ campaign, contentRows, cre
     }
 
     const archetype = archetypeFromAssetPath(creative.jm1_assetpath);
-    const artifact = buildCreativeArtifact({ campaign, content, archetype, assetState, forceLogoFailure: false });
+    const mimeType = artifactMimeTypeFor(campaign, creative.jm1_assetpath);
+    const artifact = isApprovedNativeSocialCampaign(campaign)
+      ? await buildNativeSocialCreative({ campaign, content, slot: creative.jm1_stage })
+      : buildCreativeArtifact({ campaign, content, archetype, assetState, forceLogoFailure: false });
+    if (!artifact.ok && artifact.ok !== undefined) {
+      writes.push({ type: 'media', state: artifact.reason || 'NATIVE_CREATIVE_RECONSTRUCTION_FAILED', creativeId: creative.jm1_creativeworkid, stage: creative.jm1_stage });
+      continue;
+    }
     if (artifact.sha256 !== creative.jm1_assethash) {
       writes.push({
         type: 'media',
@@ -40,18 +48,18 @@ export async function registerCampaignCreativeMedia({ campaign, contentRows, cre
     const uploaded = await uploadPublicMedia({
       marker,
       stage: creative.jm1_stage,
-      fileName: `${archetype.toLowerCase()}-${artifact.sha256.slice(0, 16)}.svg`,
-      body: artifact.svg,
-      mimeType: 'image/svg+xml'
+      fileName: `${archetype.toLowerCase()}-${artifact.sha256.slice(0, 16)}.${mimeType === 'image/png' ? 'png' : 'svg'}`,
+      body: artifact.pngBytes || artifact.svg,
+      mimeType
     });
     const remote = await verifyRemoteHash(uploaded.publicUrl, artifact.sha256);
     const publicState = remote.ok ? 'PUBLIC_HTTPS_HASH_VERIFIED' : 'PUBLIC_HTTPS_HASH_MISMATCH';
     const mediaPayload = {
       jm1_name: `${content.jm1_name} durable media`,
       jm1_mediabranch: campaign.jm1_branch || BRANCH_CONFIG.publishing.branchName,
-      jm1_assettype: 'social_creative_svg',
+      jm1_assettype: mimeType === 'image/png' ? 'social_creative_png' : 'social_creative_svg',
       jm1_filename: uploaded.fileName,
-      jm1_mimetype: 'image/svg+xml',
+      jm1_mimetype: mimeType,
       jm1_dimensions: artifact.dimensions,
       jm1_sha256local: artifact.sha256,
       jm1_sha256remote: remote.sha256 || '',
@@ -60,8 +68,8 @@ export async function registerCampaignCreativeMedia({ campaign, contentRows, cre
       jm1_storagepath: uploaded.path,
       jm1_durableurl: uploaded.publicUrl,
       jm1_publicaccessibilitystate: publicState,
-      jm1_rightsprovenancestate: 'JM1_GENERATED_WITH_OFFICIAL_LOGO_AND_PUBLIC_READY_GATE',
-      jm1_publicreadystate: artifact.publicReady.state,
+      jm1_rightsprovenancestate: artifact.rightsProvenance || 'JM1_GENERATED_WITH_OFFICIAL_LOGO_AND_PUBLIC_READY_GATE',
+      jm1_publicreadystate: publicReadyState(artifact),
       jm1_supersededstate: 'CURRENT',
       jm1_creativeworkidtext: creative.jm1_creativeworkid,
       jm1_campaignauthorityidtext: campaign.jm1_campaignauthorityid,
@@ -78,7 +86,7 @@ export async function registerCampaignCreativeMedia({ campaign, contentRows, cre
       publicState
     });
 
-    if (!remote.ok || artifact.publicReady.state !== 'PASS') continue;
+    if (!remote.ok || publicReadyState(artifact) !== 'PASS') continue;
 
     const socialRows = await queryByPrefix(
       socialSet,
@@ -86,7 +94,9 @@ export async function registerCampaignCreativeMedia({ campaign, contentRows, cre
       'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_requestedschedule,jm1_requestedmediahash',
       10
     );
-    for (const row of socialRows.filter((item) => ['facebook', 'instagram'].includes(item.jm1_platform) && !item.jm1_platformpostid)) {
+    for (const row of socialRows.filter((item) => ['facebook', 'instagram'].includes(item.jm1_platform)
+      && !item.jm1_platformpostid
+      && ['PUBLIC_READY_SCHEDULED_ELIGIBLE', 'WAIT_CREATIVE_RUNTIME_REGISTRY_REQUIRED', 'HELD_CREATIVE_REFERENCE_REQUIRED', 'HELD_SCHEDULE_REVIEW_REQUIRED'].includes(item.jm1_status))) {
       if (row.jm1_requestedmediahash !== artifact.sha256) {
         writes.push({ type: 'social', id: row.jm1_socialexecutionid, state: 'HELD_REQUESTED_MEDIA_HASH_MISMATCH', platform: row.jm1_platform });
         continue;
@@ -135,7 +145,16 @@ export async function lookupMediaUrlByHash(hash) {
 
 function archetypeFromAssetPath(assetPath) {
   const file = String(assetPath || '').split('/').pop() || 'TYPOGRAPHIC_PRE_COVER.svg';
-  return file.replace(/\.svg$/i, '').toUpperCase();
+  return file.replace(/\.(svg|png)$/i, '').toUpperCase();
+}
+
+function artifactMimeTypeFor(campaign, assetPath) {
+  if (isApprovedNativeSocialCampaign(campaign) && String(assetPath || '').endsWith('.png')) return 'image/png';
+  return 'image/svg+xml';
+}
+
+function publicReadyState(artifact) {
+  return typeof artifact.publicReady === 'string' ? artifact.publicReady : artifact.publicReady?.state || 'REWORK';
 }
 
 async function uploadPublicMedia({ marker, stage, fileName, body, mimeType }) {

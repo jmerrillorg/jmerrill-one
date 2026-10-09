@@ -44,8 +44,26 @@ export const BRANCH_CONFIG = parseJsonEnv('JM1_MARKETING_BRANCH_CONFIG', {
     linkedinOrganizationId: '13048648',
     linkedinOrganizationName: 'J Merrill Publishing, Inc.'
   },
-  one: { active: false, branchName: 'J Merrill One' },
-  financial: { active: false, branchName: 'J Merrill Financial' },
+  one: {
+    active: true,
+    branchName: 'J Merrill One',
+    facebookPageId: '101196349506906',
+    facebookPageName: 'J Merrill One',
+    instagramGraphId: '17841456905118441',
+    instagramHandle: 'jmerrillone',
+    linkedinOrganizationId: '106683183',
+    linkedinOrganizationName: 'J Merrill One'
+  },
+  financial: {
+    active: true,
+    branchName: 'J Merrill Financial',
+    facebookPageId: '1270611542802820',
+    facebookPageName: 'J Merrill Financial',
+    instagramGraphId: '17841438473100276',
+    instagramHandle: 'jmerrillfin',
+    linkedinOrganizationId: '146207089',
+    linkedinOrganizationName: 'J Merrill Financial'
+  },
   foundation: { active: false, branchName: 'J Merrill Foundation' }
 });
 

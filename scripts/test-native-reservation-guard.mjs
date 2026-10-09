@@ -23,6 +23,8 @@ const reservation = {
 };
 
 assert.equal(matchingNativeReservation(row, caption, [reservation]), reservation);
+const bookedReservation = { ...reservation, jm1_status: 'NATIVE_BOOKED_VERIFIED' };
+assert.equal(matchingNativeReservation(row, caption, [bookedReservation]), bookedReservation);
 const facebookAliases = nativeReservationAliases({ id: '307480763084670', name: 'J Merrill Publishing Inc' });
 const facebookRequest = { ...row, jm1_branch: 'J Merrill Publishing', jm1_platform: 'facebook', jm1_requesteddestination: 'J Merrill Publishing Inc' };
 const facebookReservation = { ...reservation, ...facebookRequest, jm1_requesteddestination: '307480763084670', jm1_status: VERIFIED_NATIVE_RESERVATION_STATUS };
@@ -40,4 +42,4 @@ assert.equal(matchingNativeReservation(row, caption, [{ ...reservation, jm1_stat
 assert.equal(matchingNativeReservation({ ...facebookRequest, jm1_requesteddestination: '104395329284856' }, caption, [facebookReservation], facebookAliases), null);
 assert.equal(reservationReadbackComplete({ value: [] }), true);
 assert.equal(reservationReadbackComplete({ value: [], '@odata.nextLink': 'https://example.invalid/next' }), false);
-process.stdout.write('native reservation guard: 12 assertions passed\n');
+process.stdout.write('native reservation guard: 13 assertions passed\n');
