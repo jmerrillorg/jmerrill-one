@@ -117,7 +117,10 @@ async function get(path, optional = false) {
 }
 
 async function publish() {
-  await request('/PublishAllXml', { method: 'POST', body: '{}' });
+  await request('/PublishXml', {
+    method: 'POST',
+    body: JSON.stringify({ ParameterXml: `<importexportxml><entities><entity>${table}</entity></entities></importexportxml>` })
+  });
 }
 
 function label(text) { return { LocalizedLabels: [{ Label: text, LanguageCode: 1033 }] }; }
