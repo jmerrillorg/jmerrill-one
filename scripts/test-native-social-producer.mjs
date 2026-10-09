@@ -98,7 +98,8 @@ test('coverage planning creates only exact-destination gaps, idempotently', () =
   const repeated = planNativeSocialGaps({ campaign: one, socialRows: [...existing,
     ...result.flatMap((item) => item.platforms.map((platform) => ({ jm1_branch: one.jm1_branch, jm1_platform: platform,
       jm1_requesteddestination: branchDestinations[platform], jm1_status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE',
-      jm1_requestedschedule: item.scheduledAt, jm1_idempotencykey: `test:social:rolling-${item.slotKey}:${platform}` })))],
+      jm1_requestedschedule: item.scheduledAt, jm1_idempotencykey: `${one.jm1_idempotencykey.replace(/:campaign$/, '')}:social:rolling-${item.slotKey}:${platform}` })))],
+  approvedRequestMarkers: [one.jm1_idempotencykey.replace(/:campaign$/, '')],
   nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations });
   assert.deepEqual(repeated, []);
   assert.deepEqual(planNativeSocialGaps({ campaign: one, socialRows: existing, readbackComplete: false,
@@ -121,6 +122,23 @@ test('coverage planning moves a slot when a verified booking already occupies it
   assert.equal(currentWeek[0].slot, 2);
   assert.deepEqual(currentWeek[0].platforms, ['facebook', 'instagram', 'linkedin']);
   assert.equal(currentWeek[0].scheduledAt, '2026-10-16T18:00:00.000Z');
+});
+
+test('a scheduled-looking API request consumes cadence only under live-approved campaign authority', () => {
+  const one = campaign('J Merrill One');
+  const branchDestinations = destinations['J Merrill One'];
+  const heldCampaignRequest = {
+    jm1_branch: one.jm1_branch,
+    jm1_platform: 'facebook',
+    jm1_requesteddestination: branchDestinations.facebook,
+    jm1_status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE',
+    jm1_requestedschedule: '2026-10-14T14:00:00Z',
+    jm1_idempotencykey: 'held-author-campaign:social:feature-intro:facebook'
+  };
+  const withoutApproval = planNativeSocialGaps({ campaign: one, socialRows: [heldCampaignRequest], nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations });
+  assert.equal(withoutApproval.find((item) => item.weekKey === '2026-10-12' && item.platforms.includes('facebook'))?.slot, 1);
+  const withApproval = planNativeSocialGaps({ campaign: one, socialRows: [heldCampaignRequest], approvedRequestMarkers: ['held-author-campaign'], nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations });
+  assert.equal(withApproval.find((item) => item.weekKey === '2026-10-12' && item.platforms.includes('facebook'))?.slot, 2);
 });
 
 test('scheduled timestamps preserve Eastern wall-clock time across daylight transition', () => {

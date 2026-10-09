@@ -181,7 +181,7 @@ export function nativeSocialScheduledAt(stage, platform) {
   return easternDateTimeIso(new Date(`${day}T12:00:00Z`), hour);
 }
 
-export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, readbackComplete = true }) {
+export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, approvedRequestMarkers = [], readbackComplete = true }) {
   if (!isApprovedNativeSocialCampaign(campaign) || !readbackComplete || !Array.isArray(socialRows)) return [];
   const now = new Date(nowIso);
   const horizonEnd = new Date(easternDateTimeIso(addDays(easternMidnight(now), 14), 0));
@@ -195,7 +195,7 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
       row.jm1_platform === platform
       && String(row.jm1_branch || campaign.jm1_branch) === campaign.jm1_branch
       && normalizeDestinations(destinationByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination))
-      && occupiesCadence(row)
+      && occupiesCadence(row, approvedRequestMarkers)
       && isInEasternWeek(row.jm1_requestedschedule || row.jm1_actualschedule, weekStart)
     )]));
     const bookedDates = new Map(platforms.map((platform) => [platform, new Set((existingByPlatform.get(platform) || [])
@@ -225,12 +225,16 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
   return plans;
 }
 
-function occupiesCadence(row) {
-  return [
+function occupiesCadence(row, approvedRequestMarkers) {
+  if ([
     'NATIVE_RESERVATION_VERIFIED', 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED', 'NATIVE_BOOKED_VERIFIED',
+    'PUBLISHED_VERIFIED'
+  ].includes(row.jm1_status)) return true;
+  const requestPrefix = approvedRequestMarkers.find((marker) => String(row.jm1_idempotencykey || '').startsWith(`${marker}:social:`));
+  return Boolean(requestPrefix && [
     'PUBLIC_READY_SCHEDULED_ELIGIBLE', 'PUBLISHING_CLAIMED', 'PLATFORM_ACCEPTED', 'READBACK_PENDING',
-    'PUBLISHED_VERIFIED', 'RETRY_REQUIRED'
-  ].includes(row.jm1_status);
+    'RETRY_REQUIRED'
+  ].includes(row.jm1_status));
 }
 
 function startOfEasternWeek(date) {
