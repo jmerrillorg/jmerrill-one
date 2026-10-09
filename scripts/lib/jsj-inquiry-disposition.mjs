@@ -14,3 +14,7 @@ export function dispositionPatch(row, { id, reference, outcome, decidedBy, decis
     jm1_closedat: recordedAt,
   };
 }
+
+export function sameDataverseSecond(actual, expected) {
+  return Math.trunc(Date.parse(actual) / 1000) === Math.trunc(Date.parse(expected) / 1000);
+}

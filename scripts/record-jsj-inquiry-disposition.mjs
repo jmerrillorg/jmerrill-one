@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { dispositionPatch } from './lib/jsj-inquiry-disposition.mjs';
+import { dispositionPatch, sameDataverseSecond } from './lib/jsj-inquiry-disposition.mjs';
 
 const url = process.env.JM1_DATAVERSE_URL || 'https://jm1hq.crm.dynamics.com';
 if (url !== 'https://jm1hq.crm.dynamics.com') throw new Error('JM1-Core production environment required');
@@ -29,7 +29,7 @@ if (apply) {
   const after = await request(`${path}?$select=${fields}`);
   for (const [key, value] of Object.entries(patch)) {
     if (key === 'jm1_closedat' || key === 'jm1_dispositionrecordedat' || key === 'jm1_dispositiondecisionat') {
-      if (value === null ? after[key] !== null : new Date(after[key]).getTime() !== new Date(value).getTime()) throw new Error(`Disposition readback mismatch: ${key}`);
+      if (value === null ? after[key] !== null : !sameDataverseSecond(after[key], value)) throw new Error(`Disposition readback mismatch: ${key}`);
     } else if (after[key] !== value) throw new Error(`Disposition readback mismatch: ${key}`);
   }
   if (after.jm1_jsjinquiryid !== id || after.jm1_name !== reference || after.jm1_deliverystate !== before.jm1_deliverystate || after._ownerid_value !== before._ownerid_value) throw new Error('Inquiry invariant changed');
