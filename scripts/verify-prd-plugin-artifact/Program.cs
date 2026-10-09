@@ -47,43 +47,46 @@ var packagedAssembly = packageBytes.ToArray();
 var buildAssembly = File.ReadAllBytes(buildPath);
 var trackedAssembly = File.ReadAllBytes(trackedPath);
 
-RequireSameBytes("Release build and tracked solution DLL", buildAssembly, trackedAssembly);
-RequireSameBytes("Tracked solution DLL and packed solution DLL", trackedAssembly, packagedAssembly);
-
-using var pe = new PEReader(new MemoryStream(packagedAssembly, writable: false));
-if (!pe.HasMetadata) throw new BadImageFormatException("Packed plug-in DLL has no CLR metadata.");
-var corHeader = pe.PEHeaders.CorHeader ?? throw new BadImageFormatException("Packed plug-in DLL has no CLR header.");
-if (corHeader.StrongNameSignatureDirectory.Size == 0) throw new BadImageFormatException("Packed plug-in DLL has no strong-name signature.");
-
-var metadata = pe.GetMetadataReader();
-var definition = metadata.GetAssemblyDefinition();
-var token = GetPublicKeyToken(metadata.GetBlobBytes(definition.PublicKey));
-var actualAssemblyName = $"{metadata.GetString(definition.Name)}, Version={definition.Version}, Culture=neutral, PublicKeyToken={token}";
-if (!string.Equals(actualAssemblyName, assemblyName, StringComparison.OrdinalIgnoreCase))
-    throw new InvalidDataException($"Packed assembly identity '{actualAssemblyName}' does not match solution manifest '{assemblyName}'.");
-
-var exportedTypes = metadata.TypeDefinitions
-    .Select(handle => metadata.GetTypeDefinition(handle))
-    .Where(type => (type.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.Public)
-    .Select(type =>
-    {
-        var name = metadata.GetString(type.Name);
-        var ns = metadata.GetString(type.Namespace);
-        return string.IsNullOrEmpty(ns) ? name : $"{ns}.{name}";
-    })
-    .ToHashSet(StringComparer.Ordinal);
-
-foreach (var type in declaredTypes)
-    if (!exportedTypes.Contains(type)) throw new InvalidDataException($"Packed assembly does not export solution-registered type '{type}'.");
+RequireSameBytes("Release build and packed solution DLL", buildAssembly, packagedAssembly);
+ValidateAssembly("Tracked solution DLL", trackedAssembly, assemblyName, declaredTypes);
+ValidateAssembly("Packed solution DLL", packagedAssembly, assemblyName, declaredTypes);
 
 var buildHash = Convert.ToHexString(SHA256.HashData(buildAssembly)).ToLowerInvariant();
+var trackedHash = Convert.ToHexString(SHA256.HashData(trackedAssembly)).ToLowerInvariant();
 var packageHash = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(packagePath))).ToLowerInvariant();
-Console.WriteLine($"Assembly identity: {actualAssemblyName}");
-Console.WriteLine($"Assembly SHA-256: {buildHash}");
+Console.WriteLine($"Assembly identity: {assemblyName}");
+Console.WriteLine($"CI Release assembly SHA-256: {buildHash}");
+Console.WriteLine($"Tracked solution assembly SHA-256: {trackedHash}");
 Console.WriteLine($"Solution SHA-256: {packageHash}");
 Console.WriteLine($"Verified solution-registered plug-in types: {string.Join(", ", declaredTypes.Order(StringComparer.Ordinal))}");
 Console.WriteLine("PRD plug-in source/build/solution-package provenance PASS");
 return 0;
+
+static void ValidateAssembly(string description, byte[] bytes, string expectedName, string[] declaredTypes)
+{
+    using var pe = new PEReader(new MemoryStream(bytes, writable: false));
+    if (!pe.HasMetadata) throw new BadImageFormatException($"{description} has no CLR metadata.");
+    var corHeader = pe.PEHeaders.CorHeader ?? throw new BadImageFormatException($"{description} has no CLR header.");
+    if (corHeader.StrongNameSignatureDirectory.Size == 0) throw new BadImageFormatException($"{description} has no strong-name signature.");
+    var metadata = pe.GetMetadataReader();
+    var definition = metadata.GetAssemblyDefinition();
+    var token = GetPublicKeyToken(metadata.GetBlobBytes(definition.PublicKey));
+    var actualName = $"{metadata.GetString(definition.Name)}, Version={definition.Version}, Culture=neutral, PublicKeyToken={token}";
+    if (!string.Equals(actualName, expectedName, StringComparison.OrdinalIgnoreCase))
+        throw new InvalidDataException($"{description} identity '{actualName}' does not match solution manifest '{expectedName}'.");
+    var exportedTypes = metadata.TypeDefinitions
+        .Select(handle => metadata.GetTypeDefinition(handle))
+        .Where(type => (type.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.Public)
+        .Select(type =>
+        {
+            var name = metadata.GetString(type.Name);
+            var ns = metadata.GetString(type.Namespace);
+            return string.IsNullOrEmpty(ns) ? name : $"{ns}.{name}";
+        })
+        .ToHashSet(StringComparer.Ordinal);
+    foreach (var type in declaredTypes)
+        if (!exportedTypes.Contains(type)) throw new InvalidDataException($"{description} does not export solution-registered type '{type}'.");
+}
 
 static string RequiredAttribute(XElement element, string name) =>
     (string?)element.Attribute(name) ?? throw new InvalidDataException($"Missing required attribute '{name}'.");

@@ -32,6 +32,7 @@ jobs:
         with:
           dotnet-version: '10.0.107'
       - run: dotnet build runtime/jm1-productions-bp09-reviewer-plugin/jm1-productions-bp09-reviewer-plugin.csproj --configuration Release --property:ContinuousIntegrationBuild=true --property:Deterministic=true
+      - run: cp runtime/jm1-productions-bp09-reviewer-plugin/bin/Release/net48/jm1-productions-bp09-reviewer-plugin.dll powerplatform/solutions/JM1ProductionsBP09InquiryReview/PluginAssemblies/jm1-productions-bp09-reviewer-plugin-492C3322-EFBF-F111-AAAF-002248046419/jm1-productions-bp09-reviewer-plugin.dll
       - run: dotnet tool install --global Microsoft.PowerApps.CLI.Tool --version 2.8.1
       - run: echo "$HOME/.dotnet/tools" >> "$GITHUB_PATH"
       - run: pac solution pack --folder powerplatform/solutions/JM1ProductionsBP09InquiryReview --zipfile "$RUNNER_TEMP/JM1ProductionsBP09InquiryReview.zip" --packagetype Unmanaged
