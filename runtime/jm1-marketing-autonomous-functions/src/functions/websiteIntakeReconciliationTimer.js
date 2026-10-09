@@ -1,9 +1,11 @@
 import { app } from '@azure/functions';
-import { DATAVERSE_WEB_API_BASE_URL } from '../lib/config.js';
+import { DATAVERSE_URL, DATAVERSE_WEB_API_BASE_URL } from '../lib/config.js';
 import { getDataverseToken } from '../lib/dataverse.js';
 import { createIntakeDataverseAdapter, reconcileIntake } from '../lib/intake.js';
-import { createProductionsRelay, reconcileProductionsBp09Notice, reconcileProductionsBp09Notices } from '../lib/productionsBp09Notice.js';
+import { createProductionsRelay, createProductionsReviewCheckpointNotifier, reconcileProductionsBp09Notice, reconcileProductionsBp09Notices } from '../lib/productionsBp09Notice.js';
 import { scanProductionsBp09DispositionCandidates } from '../lib/productionsBp09Disposition.js';
+import { reconcileProductionsReviewCheckpoints } from '../lib/productionsBp09ReviewCheckpoint.js';
+import { createManagedIdentityTokenProvider, createProductionsReviewCheckpointDataverseAdapter } from '../lib/productionsBp09ReviewCheckpointDataverse.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { runEnvelope } from '../lib/runtime.js';
 
@@ -25,6 +27,38 @@ app.timer('websiteIntakeReconciliationTimer', {
       let noticeFailure = null;
       const retentionMode = process.env.JM1_PRODUCTIONS_BP09_RETENTION_MODE || 'off';
       let retentionFailure = null;
+      let checkpointFailure = null;
+      const checkpointMode = process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE || 'off';
+      if (checkpointMode === 'continuous') {
+        try {
+          const checkpointAdapter = createProductionsReviewCheckpointDataverseAdapter({
+            apiBase: DATAVERSE_WEB_API_BASE_URL,
+            getToken: createManagedIdentityTokenProvider({ resourceUrl: DATAVERSE_URL }),
+            teamId: process.env.JM1_PRODUCTIONS_BP09_REVIEW_TEAM_ID,
+            runtimeUserId: process.env.JM1_PRODUCTIONS_BP09_RUNTIME_USER_ID,
+            reviewerSystemUserId: process.env.JM1_PRODUCTIONS_BP09_REVIEWER_SYSTEMUSER_ID,
+            reviewerObjectId: process.env.JM1_PRODUCTIONS_BP09_REVIEWER_OBJECT_ID
+          });
+          const checkpointOutcomes = await reconcileProductionsReviewCheckpoints({
+            adapter: checkpointAdapter,
+            notify: createProductionsReviewCheckpointNotifier(createProductionsRelay()),
+            now: new Date()
+          });
+          const exceptions = checkpointOutcomes.filter((item) => item.state === 'HELD' ||
+            ['ATTEMPTING', 'PROVIDER_ACCEPTED', 'RETRY_WAIT', 'HELD'].includes(item.overdueAlert) ||
+            ['ATTEMPTING', 'PROVIDER_ACCEPTED', 'RETRY_WAIT', 'HELD'].includes(item.resolutionAlert));
+          context.log(JSON.stringify({ event: 'PRODUCTIONS_BP09_REVIEW_CHECKPOINT', scanned: checkpointOutcomes.length,
+            pending: checkpointOutcomes.filter((item) => item.state === 'PENDING').length,
+            overdue: checkpointOutcomes.filter((item) => item.state === 'OVERDUE').length,
+            resolved: checkpointOutcomes.filter((item) => item.state === 'RESOLVED').length,
+            exceptions: exceptions.map(({ state, overdueAlert, resolutionAlert, code }) => ({ state, overdueAlert, resolutionAlert, code: code || null })) }));
+          if (exceptions.length) checkpointFailure = `${exceptions.length} Productions BP-09 checkpoint(s) require reconciliation`;
+        } catch (error) {
+          checkpointFailure = `Productions BP-09 checkpoint evaluator failed: ${error.code || 'UNCLASSIFIED'}`;
+        }
+      } else if (checkpointMode !== 'off') {
+        throw new Error('Productions BP-09 review checkpoint mode is invalid');
+      }
       if (retentionMode === 'prepare') {
         const candidates = await scanProductionsBp09DispositionCandidates({ adapter });
         const exceptions = candidates.filter((item) => item.state === 'FAILED');
@@ -68,10 +102,13 @@ app.timer('websiteIntakeReconciliationTimer', {
         detail: noticeFailure }));
       if (retentionFailure) context.error(JSON.stringify({ event: 'PRODUCTIONS_BP09_DISPOSITION_FAILURE',
         detail: retentionFailure }));
-      if (failed.length || noticeFailure || retentionFailure) throw new Error([
+      if (checkpointFailure) context.error(JSON.stringify({ event: 'PRODUCTIONS_BP09_REVIEW_CHECKPOINT_FAILURE',
+        detail: checkpointFailure }));
+      if (failed.length || noticeFailure || retentionFailure || checkpointFailure) throw new Error([
         ...(failed.length ? [`${failed.length} website intake receipt(s) remain pending reconciliation`] : []),
         ...(noticeFailure ? [noticeFailure] : []),
-        ...(retentionFailure ? [retentionFailure] : [])
+        ...(retentionFailure ? [retentionFailure] : []),
+        ...(checkpointFailure ? [checkpointFailure] : [])
       ].join('; '));
     }
   )

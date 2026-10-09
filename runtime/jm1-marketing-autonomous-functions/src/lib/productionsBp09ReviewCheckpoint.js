@@ -1,11 +1,12 @@
 import Holidays from 'date-holidays';
 
-const GUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const GUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const ZONE = 'America/New_York';
 const OPEN_MINUTE = 9 * 60;
 const CLOSE_MINUTE = 17 * 60;
-const DAY_MS = 24 * 60 * 60 * 1000;
 const holidays = new Holidays('US');
+const ALERT_STATES = ['NOT_DUE', 'ATTEMPTING', 'PROVIDER_ACCEPTED', 'DELIVERED', 'RETRY_WAIT', 'HELD'];
+const ALERT_MAX_ATTEMPTS = 3;
 
 function fail(code) { const error = new Error(code); error.code = code; return error; }
 function instant(value) { return typeof value === 'string' && Number.isFinite(Date.parse(value)) && value.endsWith('Z'); }
@@ -65,80 +66,183 @@ export function calculateProductionsReviewDueAt(acceptedAt) {
   throw fail('CHECKPOINT_CALENDAR_CAPACITY');
 }
 
+function alertFor(type, receiptId, decisionId = null) {
+  const suffix = type === 'RESOLVED' ? `:${decisionId}` : '';
+  return { eventId: `bp09:productions:review-${type.toLowerCase()}:${receiptId}${suffix}`,
+    state: 'NOT_DUE', attempts: 0, lastAttemptAt: null, nextAttemptAt: null,
+    messageId: null, deliveredAt: null, failureCode: null };
+}
+
+export function createInitialProductionsReviewCheckpoint({ receiptId, leadId, acceptedAt }) {
+  if (!GUID.test(receiptId || '') || !GUID.test(leadId || '') || !instant(acceptedAt)) throw fail('CHECKPOINT_INITIAL_BINDING_INVALID');
+  const checkpoint = {
+    version: 2, receiptId: receiptId.toLowerCase(), leadId: leadId.toLowerCase(), acceptedAt,
+    dueAt: calculateProductionsReviewDueAt(acceptedAt), state: 'PENDING', decision: null,
+    alerts: { overdue: alertFor('OVERDUE', receiptId), resolved: null }
+  };
+  if (JSON.stringify(checkpoint).length > 3500) throw fail('CHECKPOINT_CAPACITY');
+  return checkpoint;
+}
+
+function validAlert(alert, expectedEventId) {
+  if (!alert || alert.eventId !== expectedEventId || !ALERT_STATES.includes(alert.state) ||
+      !Number.isInteger(alert.attempts) || alert.attempts < 0 || alert.attempts > ALERT_MAX_ATTEMPTS ||
+      !(alert.lastAttemptAt === null || instant(alert.lastAttemptAt)) ||
+      !(alert.nextAttemptAt === null || instant(alert.nextAttemptAt)) ||
+      !(alert.messageId === null || (typeof alert.messageId === 'string' && alert.messageId.length <= 200)) ||
+      !(alert.deliveredAt === null || instant(alert.deliveredAt)) ||
+      !(alert.failureCode === null || /^[A-Z0-9_:-]{1,100}$/.test(alert.failureCode))) return false;
+  if (alert.state === 'ATTEMPTING') return alert.attempts > 0 && Boolean(alert.lastAttemptAt) && !alert.nextAttemptAt;
+  if (alert.state === 'PROVIDER_ACCEPTED') return Boolean(alert.messageId) && !alert.nextAttemptAt && !alert.failureCode;
+  if (alert.state === 'DELIVERED') return Boolean(alert.messageId && alert.deliveredAt) && !alert.nextAttemptAt && !alert.failureCode;
+  if (alert.state === 'RETRY_WAIT') return Boolean(alert.nextAttemptAt && alert.failureCode && alert.attempts > 0);
+  if (alert.state === 'HELD') return Boolean(alert.failureCode) && !alert.nextAttemptAt;
+  return !alert.nextAttemptAt && !alert.failureCode && !alert.messageId && !alert.deliveredAt;
+}
+
 export function validateProductionsReviewCheckpoint(value, expected) {
   if (!value || typeof value !== 'object' || !GUID.test(expected?.receiptId || '') || !GUID.test(expected?.leadId || '')) return false;
   const c = value;
-  if (c.version !== 1 || !GUID.test(c.receiptId || '') || !GUID.test(c.leadId || '') ||
+  if (c.version !== 2 || !GUID.test(c.receiptId || '') || !GUID.test(c.leadId || '') ||
       c.receiptId.toLowerCase() !== expected.receiptId.toLowerCase() || c.leadId.toLowerCase() !== expected.leadId.toLowerCase() ||
       !instant(c.acceptedAt) || !instant(c.dueAt) || Date.parse(c.dueAt) < Date.parse(c.acceptedAt) ||
-      !['PENDING', 'OVERDUE', 'RESOLVED'].includes(c.state) ||
-      !['NOT_DUE', 'QUEUED', 'PROVIDER_ACCEPTED', 'DELIVERED', 'RETRY_WAIT', 'HELD'].includes(c.alertState) ||
-      !(c.nextAttemptAt === null || instant(c.nextAttemptAt)) || !(c.resolvedAt === null || instant(c.resolvedAt)) ||
-      !(c.decisionId === null || /^[A-Z0-9_-]{1,100}$/.test(c.decisionId)) ||
-      !(c.failureCode === null || /^[A-Z0-9_:-]{1,100}$/.test(c.failureCode))) return false;
-  if (c.state === 'RESOLVED' ? (!c.resolvedAt || !c.decisionId) : (c.resolvedAt || c.decisionId)) return false;
-  if (c.alertState === 'RETRY_WAIT') return Boolean(c.nextAttemptAt && c.failureCode);
-  if (c.alertState === 'HELD') return Boolean(c.failureCode) && !c.nextAttemptAt;
-  return !c.nextAttemptAt && !c.failureCode;
+      !['PENDING', 'OVERDUE', 'RESOLVED'].includes(c.state) || !c.alerts || typeof c.alerts !== 'object' ||
+      !validAlert(c.alerts.overdue, alertFor('OVERDUE', c.receiptId).eventId)) return false;
+  if (c.state === 'RESOLVED') {
+    if (!c.decision || !GUID.test(c.decision.id || '') || c.decision.actionId !== 'ACCEPT_FOR_FOLLOW_UP' ||
+        c.decision.outcome !== 'ACCEPTED' || c.decision.before !== 'NEW' || c.decision.after !== 'FOLLOW_UP_REQUIRED' ||
+        !GUID.test(c.decision.actorUserId || '') || !GUID.test(c.decision.actorObjectId || '') ||
+        !GUID.test(c.decision.recordingActorId || '') || !instant(c.decision.recordedAt) ||
+        typeof c.decision.idempotencyKey !== 'string' || !GUID.test(c.decision.idempotencyKey)) return false;
+    if (!validAlert(c.alerts.resolved, alertFor('RESOLVED', c.receiptId, c.decision.id).eventId)) return false;
+  } else if (c.decision !== null || c.alerts.resolved !== null) return false;
+  return JSON.stringify(c).length <= 3500;
 }
 
-function newCheckpoint(receipt, lead, acceptedAt) {
-  return {
-    version: 1, receiptId: receipt.id, leadId: lead.id, acceptedAt,
-    dueAt: calculateProductionsReviewDueAt(acceptedAt), state: 'PENDING', alertState: 'NOT_DUE',
-    nextAttemptAt: null, resolvedAt: null, decisionId: null, failureCode: null
-  };
+function actionEvidenceIsValid(action, adapter, receipt, lead) {
+  return action?.id && GUID.test(action.id) && action.receiptId?.toLowerCase() === receipt.id.toLowerCase() &&
+    action.leadId?.toLowerCase() === lead.id.toLowerCase() && action.actionId === 'ACCEPT_FOR_FOLLOW_UP' &&
+    action.outcome === 'ACCEPTED' && action.before === 'NEW' && action.after === 'FOLLOW_UP_REQUIRED' &&
+    action.actorUserId === adapter.reviewerSystemUserId && action.actorObjectId === adapter.reviewerObjectId &&
+    action.idempotencyKey?.toLowerCase() === receipt.id.toLowerCase() && action.recordingActorId && GUID.test(action.recordingActorId) &&
+    instant(action.recordedAt);
 }
 
-export async function reconcileProductionsReviewCheckpoints({ adapter, notify, now = new Date(), limit = 100, maxAttempts = 3 }) {
+function sameDecision(action, decision) {
+  return action && decision && ['id', 'receiptId', 'leadId', 'actionId', 'outcome', 'before', 'after',
+    'actorUserId', 'actorObjectId', 'idempotencyKey', 'recordedAt', 'recordingActorId']
+    .every((key) => action[key] === decision[key]);
+}
+
+async function progressAlert({ checkpoint, type, notify, now, save }) {
+  const alertKey = type === 'OVERDUE' ? 'overdue' : 'resolved';
+  let alert = checkpoint.alerts[alertKey];
+  if (alert.state === 'DELIVERED' || alert.state === 'HELD') return { checkpoint, unresolved: alert.state === 'HELD' };
+  if (alert.state === 'PROVIDER_ACCEPTED' || alert.state === 'ATTEMPTING') {
+    if (!notify?.getDelivery) return { checkpoint, unresolved: true };
+    let delivery;
+    try { delivery = await notify.getDelivery({ eventId: alert.eventId, messageId: alert.messageId }); }
+    catch { return { checkpoint, unresolved: true }; }
+    if (delivery?.state === 'DELIVERED' && delivery.messageId === alert.messageId && instant(delivery.deliveredAt)) {
+      alert = { ...alert, state: 'DELIVERED', deliveredAt: delivery.deliveredAt };
+      checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
+      await save(checkpoint);
+      return { checkpoint, unresolved: false };
+    }
+    if (alert.state === 'PROVIDER_ACCEPTED') return { checkpoint, unresolved: true };
+    if (delivery?.state === 'ACCEPTED' && delivery.messageId) {
+      alert = { ...alert, state: 'PROVIDER_ACCEPTED', messageId: delivery.messageId };
+      checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
+      await save(checkpoint);
+      return { checkpoint, unresolved: true };
+    }
+    if (delivery?.state !== 'NOT_FOUND') return { checkpoint, unresolved: true };
+    alert = { ...alert, state: 'RETRY_WAIT', nextAttemptAt: now.toISOString(), failureCode: 'CHECKPOINT_SEND_NOT_ACCEPTED' };
+    checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
+    await save(checkpoint);
+  }
+  if (alert.state === 'RETRY_WAIT' && Date.parse(alert.nextAttemptAt) > now.getTime()) return { checkpoint, unresolved: true };
+  if (!notify?.send) {
+    alert = { ...alert, state: 'HELD', nextAttemptAt: null, failureCode: 'CHECKPOINT_ALERT_ROUTE_UNAVAILABLE' };
+    checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
+    await save(checkpoint);
+    return { checkpoint, unresolved: true };
+  }
+  if (alert.attempts >= ALERT_MAX_ATTEMPTS) {
+    alert = { ...alert, state: 'HELD', nextAttemptAt: null, failureCode: 'CHECKPOINT_ALERT_ATTEMPTS_EXHAUSTED' };
+    checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
+    await save(checkpoint);
+    return { checkpoint, unresolved: true };
+  }
+  const attempting = { ...alert, state: 'ATTEMPTING', attempts: alert.attempts + 1,
+    lastAttemptAt: now.toISOString(), nextAttemptAt: null, failureCode: null };
+  checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: attempting } };
+  await save(checkpoint);
+  try {
+    const result = await notify.send({ type, receiptId: checkpoint.receiptId, leadId: checkpoint.leadId, eventId: alert.eventId });
+    if (result?.accepted !== true || !result.messageId || result.idempotencyKey !== alert.eventId ||
+        result.recipient !== 'productions@jmerrill.one' || result.privacySafe !== true) throw fail('CHECKPOINT_ALERT_ACCEPTANCE_UNPROVEN');
+    alert = { ...attempting, state: 'PROVIDER_ACCEPTED', messageId: result.messageId };
+  } catch (error) {
+    const exhausted = attempting.attempts >= ALERT_MAX_ATTEMPTS;
+    alert = { ...attempting, state: exhausted ? 'HELD' : 'RETRY_WAIT',
+      nextAttemptAt: exhausted ? null : new Date(now.getTime() + attempting.attempts * 5 * 60_000).toISOString(),
+      failureCode: error.code || 'CHECKPOINT_ALERT_FAILURE' };
+  }
+  checkpoint = { ...checkpoint, alerts: { ...checkpoint.alerts, [alertKey]: alert } };
+  await save(checkpoint);
+  return { checkpoint, unresolved: alert.state !== 'DELIVERED' };
+}
+
+export async function reconcileProductionsReviewCheckpoints({ adapter, notify, now = new Date(), limit = 100 }) {
   if (!adapter || typeof adapter.listPendingReceipts !== 'function' || typeof adapter.getLead !== 'function' ||
       typeof adapter.listReviewerActions !== 'function' || typeof adapter.saveCheckpoint !== 'function') throw fail('CHECKPOINT_ADAPTER_UNAVAILABLE');
+  if (!GUID.test(adapter.teamId || '') || !GUID.test(adapter.reviewerSystemUserId || '') || !GUID.test(adapter.reviewerObjectId || '')) throw fail('CHECKPOINT_AUTHORITY_CONFIG_INVALID');
   if (typeof adapter.authorityCheck !== 'function' || !await adapter.authorityCheck()) throw fail('CHECKPOINT_AUTHORITY_MISSING');
   const receipts = await adapter.listPendingReceipts({ limit });
   const outcomes = [];
   for (const receipt of receipts) {
-    let checkpoint;
     try {
-      if (!GUID.test(receipt?.id || '') || !GUID.test(receipt?.leadId || '') || !instant(receipt.acceptedAt) || receipt.brand !== 'JMPRODUCTIONS') throw fail('CHECKPOINT_RECEIPT_INVALID');
+      if (!GUID.test(receipt?.id || '') || !GUID.test(receipt?.leadId || '') || receipt.brand !== 'JMPRODUCTIONS' ||
+          !instant(receipt.acceptedAt) || receipt.ownerId?.toLowerCase() !== adapter.teamId.toLowerCase()) throw fail('CHECKPOINT_RECEIPT_INVALID');
       const lead = await adapter.getLead(receipt.leadId);
-      if (!lead || lead.id?.toLowerCase() !== receipt.leadId.toLowerCase() || lead.brand !== 'JMPRODUCTIONS' || lead.receiptId?.toLowerCase() !== receipt.id.toLowerCase()) throw fail('CHECKPOINT_RECEIPT_LEAD_MISMATCH');
-      checkpoint = receipt.checkpoint || newCheckpoint(receipt, lead, receipt.acceptedAt);
+      if (!lead || lead.id?.toLowerCase() !== receipt.leadId.toLowerCase() || lead.brand !== 'JMPRODUCTIONS' ||
+          lead.receiptId?.toLowerCase() !== receipt.id.toLowerCase() || lead.ownerId?.toLowerCase() !== adapter.teamId.toLowerCase() ||
+          lead.acceptedAt !== receipt.acceptedAt) throw fail('CHECKPOINT_RECEIPT_LEAD_MISMATCH');
+      let checkpoint = receipt.checkpoint || createInitialProductionsReviewCheckpoint({ receiptId: receipt.id, leadId: lead.id, acceptedAt: receipt.acceptedAt });
       if (!validateProductionsReviewCheckpoint(checkpoint, { receiptId: receipt.id, leadId: lead.id })) throw fail('CHECKPOINT_STATE_INVALID');
+      let persisted = receipt.checkpoint;
+      const save = async (next) => {
+        if (JSON.stringify(next) === JSON.stringify(persisted)) return;
+        await adapter.saveCheckpoint({ receiptId: receipt.id, leadId: lead.id, checkpoint: next, etag: lead.etag });
+        persisted = next;
+      };
+      const actions = await adapter.listReviewerActions({ receiptId: receipt.id, leadId: lead.id, limit: 10 });
+      if (actions.length > 1) throw fail('CHECKPOINT_ACTION_AMBIGUOUS');
+      if (checkpoint.state === 'RESOLVED' && !sameDecision(actions[0], checkpoint.decision)) {
+        throw fail('CHECKPOINT_DECISION_DRIFT');
+      }
       if (checkpoint.state !== 'RESOLVED') {
-        const actions = await adapter.listReviewerActions({ receiptId: receipt.id, leadId: lead.id, limit: 10 });
-        const action = actions.find((item) => item?.attributable === true && item.receiptId?.toLowerCase() === receipt.id.toLowerCase() &&
-          item.leadId?.toLowerCase() === lead.id.toLowerCase() && item.actorId === adapter.reviewerId &&
-          item.outcome === 'ACCEPTED' && GUID.test(item.id || '') && instant(item.createdAt));
+        const action = actions[0];
+        if (action && !actionEvidenceIsValid(action, adapter, receipt, lead)) throw fail('CHECKPOINT_ACTION_NOT_ATTRIBUTABLE');
         if (action) {
-          checkpoint = { ...checkpoint, state: 'RESOLVED', alertState: 'NOT_DUE',
-            nextAttemptAt: null, failureCode: null, resolvedAt: action.createdAt, decisionId: action.id };
-          await adapter.saveCheckpoint(receipt.id, checkpoint);
-          if (notify) await notify({ kind: 'RESOLVED', receiptId: receipt.id, leadId: lead.id, eventId: `bp09:productions:review-resolved:${receipt.id}:${action.id}` });
-          outcomes.push({ receiptId: receipt.id, state: 'RESOLVED' });
-          continue;
+          checkpoint = { ...checkpoint, state: 'RESOLVED', decision: action,
+            alerts: { ...checkpoint.alerts, resolved: alertFor('RESOLVED', receipt.id, action.id) } };
+          await save(checkpoint);
         }
-        if (now.getTime() >= Date.parse(checkpoint.dueAt)) checkpoint = { ...checkpoint, state: 'OVERDUE' };
+        if (!action && now.getTime() >= Date.parse(checkpoint.dueAt)) checkpoint = { ...checkpoint, state: 'OVERDUE' };
       }
-      if (checkpoint.state === 'OVERDUE' && checkpoint.alertState !== 'DELIVERED' && checkpoint.alertState !== 'HELD' &&
-          (!checkpoint.nextAttemptAt || Date.parse(checkpoint.nextAttemptAt) <= now.getTime())) {
-        if ((checkpoint.attempts || 0) >= maxAttempts || !notify) {
-          checkpoint = { ...checkpoint, alertState: 'HELD', nextAttemptAt: null, failureCode: notify ? 'CHECKPOINT_ALERT_ATTEMPTS_EXHAUSTED' : 'CHECKPOINT_ALERT_ROUTE_UNAVAILABLE' };
-        } else {
-          try {
-            const result = await notify({ kind: 'OVERDUE', receiptId: receipt.id, leadId: lead.id, eventId: `bp09:productions:review-overdue:${receipt.id}` });
-            if (result?.accepted !== true || !result.messageId) throw fail('CHECKPOINT_ALERT_NOT_ACCEPTED');
-            checkpoint = { ...checkpoint, alertState: 'PROVIDER_ACCEPTED', attempts: (checkpoint.attempts || 0) + 1,
-              nextAttemptAt: null, failureCode: null, alertMessageId: result.messageId };
-          } catch (error) {
-            const attempts = (checkpoint.attempts || 0) + 1;
-            checkpoint = { ...checkpoint, alertState: attempts >= maxAttempts ? 'HELD' : 'RETRY_WAIT', attempts,
-              nextAttemptAt: attempts >= maxAttempts ? null : new Date(now.getTime() + attempts * 5 * 60_000).toISOString(),
-              failureCode: error.code || 'CHECKPOINT_ALERT_FAILURE' };
-          }
-        }
+      if (checkpoint.state === 'OVERDUE') {
+        const progressed = await progressAlert({ checkpoint, type: 'OVERDUE', notify, now, save });
+        checkpoint = progressed.checkpoint;
       }
-      await adapter.saveCheckpoint(receipt.id, checkpoint);
-      outcomes.push({ receiptId: receipt.id, state: checkpoint.state, alertState: checkpoint.alertState });
+      if (checkpoint.state === 'RESOLVED') {
+        const progressed = await progressAlert({ checkpoint, type: 'RESOLVED', notify, now, save });
+        checkpoint = progressed.checkpoint;
+      }
+      await save(checkpoint);
+      outcomes.push({ receiptId: receipt.id, state: checkpoint.state,
+        overdueAlert: checkpoint.alerts.overdue.state, resolutionAlert: checkpoint.alerts.resolved?.state || 'NOT_APPLICABLE' });
     } catch (error) {
       outcomes.push({ receiptId: receipt?.id || null, state: 'HELD', code: error.code || 'CHECKPOINT_UNCLASSIFIED' });
     }

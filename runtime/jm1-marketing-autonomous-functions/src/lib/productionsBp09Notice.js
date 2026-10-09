@@ -5,6 +5,7 @@ const RELAY = 'https://func-jm1-acs-email-relay.azurewebsites.net';
 const AUDIENCE = 'api://84530e9b-2842-4ca6-8fe6-1a11eed051d1/.default';
 const DESTINATION = 'productions@jmerrill.one';
 const GUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+const DATAVERSE_GUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const MAX_ATTEMPTS = 3;
 
 function hold(code) {
@@ -54,6 +55,39 @@ export function createProductionsRelay({ fetchImpl = fetch, credential } = {}) {
     probe: (payload) => request('relay-authority-probe', payload),
     send: (payload) => request('send-enterprise-governed-email', payload)
   };
+}
+
+export function createProductionsReviewCheckpointNotifier(relay) {
+  const templates = {
+    OVERDUE: 'PRODUCTIONS.BP09_REVIEW_OVERDUE',
+    RESOLVED: 'PRODUCTIONS.BP09_REVIEW_RESOLVED'
+  };
+  async function send({ type, receiptId, leadId, eventId }) {
+    const templateId = templates[type];
+    const eventPrefix = `bp09:productions:review-${type?.toLowerCase()}:${receiptId}`;
+    const validEventId = type === 'OVERDUE' ? eventId === eventPrefix
+      : type === 'RESOLVED' && eventId?.startsWith(`${eventPrefix}:`) && DATAVERSE_GUID.test(eventId.slice(eventPrefix.length + 1));
+    if (!templateId || !GUID.test(receiptId || '') || !GUID.test(leadId || '') ||
+        !validEventId) {
+      throw hold('CHECKPOINT_NOTICE_INPUT_INVALID');
+    }
+    const payload = {
+      brand: 'JMPRODUCTIONS', to: DESTINATION, templateId, templateVersion: '1.0.0',
+      idempotencyKey: eventId, templateData: { referenceId: receiptId, leadId }
+    };
+    const authority = await relay.probe(payload);
+    if (authority.status !== 200 || authority.body.authorized !== true || authority.body.noSend !== true ||
+        authority.body.callerId !== 'one-bp09-productions-prod' || authority.body.brand !== 'JMPRODUCTIONS' ||
+        authority.body.templateId !== templateId || authority.body.templateVersion !== '1.0.0' ||
+        authority.body.recipient !== DESTINATION || authority.body.idempotencyKey !== eventId) throw hold('CHECKPOINT_NOTICE_AUTHORITY_DENIED');
+    const result = await relay.send(payload);
+    if (![200, 202].includes(result.status) || result.body.accepted !== true ||
+        result.body.deliveryState !== 'ACCEPTED' || !result.body.jm1MessageId ||
+        result.body.recipient !== DESTINATION || result.body.idempotencyKey !== eventId) throw hold('CHECKPOINT_NOTICE_ACCEPTANCE_UNPROVEN');
+    return { accepted: true, messageId: result.body.jm1MessageId, idempotencyKey: eventId,
+      recipient: DESTINATION, privacySafe: true };
+  }
+  return { send };
 }
 
 async function verifiedBinding(adapter, id) {

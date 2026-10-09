@@ -168,4 +168,16 @@ assert.equal(legacyOwner.counts.leads, 1);
 await assert.rejects(() => acceptIntake(legacyOwner, { ...teamAfterCutover, message: 'Changed after cutover' }),
   /already bound/);
 
+const previousCheckpointMode = process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE;
+process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE = 'continuous';
+const checkpointSeed = createMock();
+const checkpointSubmission = { ...longSubmission, requestId: randomUUID(), email: 'checkpoint@example.invalid' };
+const checkpointReceipt = (await acceptIntake(checkpointSeed, checkpointSubmission)).receipt;
+await processIntake(checkpointSeed, checkpointReceipt.id);
+const checkpointLead = [...checkpointSeed.tables.leads.values()][0];
+assert.equal(checkpointLead.jm1_bp09receivedat, checkpointReceipt.receivedAt);
+assert.equal(checkpointLead.jm1_bp09reviewcheckpoint, undefined);
+if (previousCheckpointMode === undefined) delete process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE;
+else process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE = previousCheckpointMode;
+
 console.log('JM1 front-door intake: 5/5 brand matrix, durable receipt, replay, post-write failure, and timer recovery PASS');

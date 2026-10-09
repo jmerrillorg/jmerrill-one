@@ -220,6 +220,9 @@ export async function processIntake(adapter, id) {
         telephone1: input.phone || undefined,
         description: `Source: ${input.source || 'Website'}\nIntake receipt: ${id}\n\n${input.message}`,
         ...(input.intent === 'productions' ? { jm1_bp09intakereceiptid: id } : {}),
+        ...(input.intent === 'productions' && detail.channel === 'jmerrill.productions/contact' &&
+          process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE === 'continuous'
+          ? { jm1_bp09receivedat: detail.receivedAt } : {}),
         ...(input.intent === 'productions' && detail.followUpTeamId
           ? { 'ownerid@odata.bind': `/teams(${detail.followUpTeamId})` }
           : input.intent === 'productions' && detail.followUpOwnerId
