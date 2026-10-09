@@ -12,11 +12,12 @@ Status: CANON CANDIDATE - FOUNDER RATIFICATION REQUIRED
 ## Function Deployment
 
 1. Disable only the affected autonomous feature flag when platform execution is at risk.
-2. Capture the active `JM1_RELEASE_SHA`, immutable `WEBSITE_RUN_FROM_PACKAGE` URL, package SHA-256, package-blob identity, package managed-identity setting, open claims, and deployed Function trigger inventory before changing settings.
-3. Require the prior package name to bind to its recorded 40-character release SHA in the governed `function-releases` container; download it read-only and verify its bytes before deployment.
-4. Restore the prior package URL, release SHA, and package managed-identity setting exactly. Sync triggers and compare deployed trigger names and types to the captured pre-release inventory. Do not assume the prior release has the current source inventory.
-5. The current source-owned inventory contains seven timers and one storage-queue trigger: `catalogMarketingHealthTimer`, `credentialMonitorTimer`, `creativeWorkProcessorTimer`, `marketingControlLoopTimer`, `publishingAssetEventOutboxTimer`, `socialExecutionWorkerTimer`, `websiteIntakeReconciliationTimer`, and `productionAssetRegistrationQueue`. The inventory file in the exact release commit is authoritative for that release; missing, unexpected, duplicate, wrong-type, or wrong-source entries fail validation.
-6. After release or rollback, reconcile claimed, accepted, failed, retry-pending, and readback-pending rows before any affected execution is resumed.
+2. Capture the active `JM1_RELEASE_SHA`, immutable `WEBSITE_RUN_FROM_PACKAGE` URL, package managed-identity setting, open claims, and deployed Function trigger inventory before changing settings.
+3. Resolve a completed successful `azure-marketing-functions.yml` run for the prior release SHA, require its successful `deploy` job, and download that run's unexpired GitHub Actions provenance artifact. Validate repository, workflow path, commit SHA, run ID/attempt, artifact name, package name, and the manifest SHA-256 against the downloaded Azure rollback blob. A SHA-named Azure blob or a digest freshly computed from that same blob is not independent provenance.
+4. If the prior successful build artifact or provenance manifest is absent, expired, malformed, or mismatched, fail closed before changing Function App settings. The currently deployed release may require an independently governed provenance bridge; do not manufacture one from the blob itself.
+5. Restore the prior package URL, release SHA, and package managed-identity setting exactly. Sync triggers and compare deployed trigger names and types to the captured pre-release inventory. Do not assume the prior release has the current source inventory.
+6. The current source-owned inventory contains seven timers and one storage-queue trigger: `catalogMarketingHealthTimer`, `credentialMonitorTimer`, `creativeWorkProcessorTimer`, `marketingControlLoopTimer`, `publishingAssetEventOutboxTimer`, `socialExecutionWorkerTimer`, `websiteIntakeReconciliationTimer`, and `productionAssetRegistrationQueue`. The inventory file in the exact release commit is authoritative for that release; missing, unexpected, duplicate, wrong-type, or wrong-source entries fail validation.
+7. After release or rollback, reconcile claimed, accepted, failed, retry-pending, and readback-pending rows before any affected execution is resumed.
 
 ## Natural-Run Acceptance
 
@@ -36,4 +37,4 @@ Dataverse migrations are forward-fixed. Additive migrations may be superseded bu
 
 ## Rollback Completion
 
-Rollback is complete only when restored package/SHA/managed-identity settings match the captured pre-state, the live trigger inventory matches the captured pre-release inventory, timer health is current after natural ticks, open claims are reconciled, duplicate count is zero, branch leakage is zero, and preserved evidence points to the active release.
+Rollback is complete only when the prior package has successful build-artifact provenance and its manifest SHA-256 matches the fetched Azure blob; restored package/SHA/managed-identity settings match the captured pre-state; the live trigger inventory matches the captured pre-release inventory; timer health is current after natural ticks; open claims are reconciled; duplicate count is zero; branch leakage is zero; and preserved evidence points to the active release. When prior provenance is unavailable, release/rollback is blocked before mutation and must not claim byte integrity.

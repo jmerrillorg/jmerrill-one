@@ -10,6 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
   id-token: write
 
@@ -40,8 +41,29 @@ jobs:
           node scripts/test-jm1-productions-bp09-retention.mjs
           node scripts/test-jm1-productions-bp09-disposition.mjs
           npm --prefix runtime/jm1-marketing-autonomous-functions run test:productions-review-checkpoint
+          npm --prefix runtime/jm1-marketing-autonomous-functions run test:release-provenance
           cd runtime/jm1-marketing-autonomous-functions
           zip -qr "$GITHUB_WORKSPACE/jm1-marketing-functions-$GITHUB_SHA.zip" host.json package.json function-inventory.json src node_modules
+          cd "$GITHUB_WORKSPACE"
+          artifact_name="jm1-marketing-functions-$GITHUB_SHA-run-$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
+          node scripts/marketing-release-provenance.mjs create \
+            --package "$GITHUB_WORKSPACE/jm1-marketing-functions-$GITHUB_SHA.zip" \
+            --manifest "$GITHUB_WORKSPACE/release-provenance.json" \
+            --repository "$GITHUB_REPOSITORY" \
+            --commit-sha "$GITHUB_SHA" \
+            --run-id "$GITHUB_RUN_ID" \
+            --run-attempt "$GITHUB_RUN_ATTEMPT" \
+            --workflow-path ".github/workflows/azure-marketing-functions.yml" \
+            --artifact-name "$artifact_name"
+      - name: Preserve release artifact and provenance record
+        uses: actions/upload-artifact@v4
+        with:
+          name: jm1-marketing-functions-${{ github.sha }}-run-${{ github.run_id }}-attempt-${{ github.run_attempt }}
+          path: |
+            release-provenance.json
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 0
       - uses: azure/login@v3
         with:
           client-id: ${{ vars.AZURE_CLIENT_ID }}
@@ -53,6 +75,7 @@ jobs:
           FUNCTION_APP: func-jm1-marketing-runtime
           STORAGE_ACCOUNT: stjm1diagrunner
           RELEASE_CONTAINER: function-releases
+          GH_TOKEN: ${{ github.token }}
         run: |
           package_name="jm1-marketing-functions-$GITHUB_SHA.zip"
           package_url="https://$STORAGE_ACCOUNT.blob.core.windows.net/$RELEASE_CONTAINER/$package_name"
@@ -88,8 +111,19 @@ jobs:
             exit 1
           fi
           az storage blob download --account-name "$STORAGE_ACCOUNT" --container-name "$RELEASE_CONTAINER" --name "$old_package_name" --file "$RUNNER_TEMP/previous-marketing-functions.zip" --auth-mode login --overwrite true --only-show-errors --output none
-          previous_package_hash="$(shasum -a 256 "$RUNNER_TEMP/previous-marketing-functions.zip" | awk '{print $1}')"
-          echo "Verified immutable rollback package SHA-256: $previous_package_hash"
+          previous_provenance="$RUNNER_TEMP/previous-release-provenance.json"
+          rollback_artifact_dir="$RUNNER_TEMP/previous-release-artifact"
+          node scripts/marketing-release-provenance.mjs locate \
+            --repository "$GITHUB_REPOSITORY" \
+            --commit-sha "$old_sha" \
+            --output "$previous_provenance"
+          previous_run_id="$(node -e 'process.stdout.write(JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8")).runId)' "$previous_provenance")"
+          previous_artifact_name="$(node -e 'process.stdout.write(JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8")).artifactName)' "$previous_provenance")"
+          gh run download "$previous_run_id" --repo "$GITHUB_REPOSITORY" --name "$previous_artifact_name" --dir "$rollback_artifact_dir"
+          node scripts/marketing-release-provenance.mjs verify \
+            --expected "$previous_provenance" \
+            --manifest "$rollback_artifact_dir/release-provenance.json" \
+            --deployed-package "$RUNNER_TEMP/previous-marketing-functions.zip"
           az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" -o json > "$runtime_readback"
           node scripts/verify-marketing-function-inventory.mjs --source-root runtime/jm1-marketing-autonomous-functions --inventory runtime/jm1-marketing-autonomous-functions/function-inventory.json --runtime-json "$runtime_readback" --capture-runtime "$previous_inventory"
           rollback() {
