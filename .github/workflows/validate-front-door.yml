@@ -32,4 +32,5 @@ jobs:
       - run: npm --prefix runtime/jm1-marketing-autonomous-functions run check
       - run: npm --prefix runtime/jm1-marketing-autonomous-functions run test:native-reservation
       - run: npm --prefix runtime/jm1-marketing-autonomous-functions run test:productions-review-checkpoint
+      - run: npm --prefix runtime/jm1-marketing-autonomous-functions run test:release-provenance
       - run: npm run build
