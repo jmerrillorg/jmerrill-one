@@ -14,18 +14,34 @@ if (!manifest.caption || (manifest.mediaSha256 && !/^[a-f0-9]{64}$/.test(manifes
 if (manifest.timeZone !== 'UNVERIFIED' && (!manifest.requestedScheduleUtc || Number.isNaN(new Date(manifest.requestedScheduleUtc).getTime()))) throw new Error('Verified timezone requires an exact UTC schedule timestamp');
 
 const captionSha256 = createHash('sha256').update(manifest.caption).digest('hex');
+const nativeReadback = manifest.nativeReadback || null;
+if (nativeReadback) {
+  const expectedSource = manifest.platform === 'linkedin' ? 'LINKEDIN_NATIVE_UI' : 'META_NATIVE_UI';
+  if (nativeReadback.source !== expectedSource || !nativeReadback.observedAt
+    || !nativeReadback.scheduledAt || !nativeReadback.destination
+    || nativeReadback.scheduledAt !== manifest.requestedScheduleUtc
+    || nativeReadback.destination !== manifest.destination
+    || nativeReadback.captionSha256 !== captionSha256
+    || Number.isNaN(new Date(nativeReadback.observedAt).getTime())) {
+    throw new Error('Native booking proof must match the exact platform UI, destination, schedule, caption fingerprint, and observation time');
+  }
+}
 const identity = [manifest.brand, manifest.platform, manifest.destination.toLowerCase(), manifest.localDate, manifest.localTime, captionSha256, manifest.mediaSha256 || 'NO_MEDIA'].join('|');
 const keySuffix = createHash('sha256').update(identity).digest('hex');
 const marker = 'jm1-native-reservation-v1';
 const idempotencyKey = `${marker}:${keySuffix}`;
-const reservationStatus = manifest.timeZone === 'UNVERIFIED' ? 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED' : 'NATIVE_RESERVATION_VERIFIED';
+const reservationStatus = nativeReadback
+  ? 'NATIVE_BOOKED_VERIFIED'
+  : manifest.timeZone === 'UNVERIFIED' ? 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED' : 'NATIVE_RESERVATION_VERIFIED';
 const name = `${manifest.brand} ${manifest.platform} native reservation ${manifest.localDate} ${manifest.localTime}`;
-const readback = [
-  'NATIVE_POST_SCHEDULED',
-  manifest.timeZone === 'UNVERIFIED' ? 'TZ_UNVERIFIED' : 'TZ_VERIFIED',
-  'NO_EXTERNAL_BOOKING_ID',
-  'NO_PUBLICATION_ID'
-].join(';');
+const readback = nativeReadback
+  ? `NATIVE_UI|${manifest.platform === 'linkedin' ? 'LINKEDIN' : 'META'}|AT=${new Date(nativeReadback.observedAt).toISOString()}|BOOKING=${nativeReadback.nativeBookingId || 'NOT_EXPOSED'}`
+  : [
+    'NATIVE_POST_SCHEDULED',
+    manifest.timeZone === 'UNVERIFIED' ? 'TZ_UNVERIFIED' : 'TZ_VERIFIED',
+    'NO_EXTERNAL_BOOKING_ID',
+    'NO_PUBLICATION_ID'
+  ].join(';');
 
 const payload = {
   jm1_name: name,
