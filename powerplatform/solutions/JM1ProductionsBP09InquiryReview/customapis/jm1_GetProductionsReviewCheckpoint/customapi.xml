@@ -2,6 +2,6 @@
   <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype><bindingtype>0</bindingtype>
   <description default="Returns a minimal checkpoint projection and exact bound action evidence for a consented Productions receipt."><label description="Returns a minimal checkpoint projection and exact bound action evidence for a consented Productions receipt." languagecode="1033" /></description>
   <displayname default="Get Productions Review Checkpoint"><label description="Get Productions Review Checkpoint" languagecode="1033" /></displayname>
-  <executeprivilegename>prvReadjm1_ProductionsReviewPermit</executeprivilegename><iscustomizable>1</iscustomizable><isfunction>0</isfunction><isprivate>0</isprivate>
+  <executeprivilegename>prvWritejm1_ProductionsReviewPermit</executeprivilegename><iscustomizable>1</iscustomizable><isfunction>0</isfunction><isprivate>0</isprivate>
   <name>jm1_GetProductionsReviewCheckpoint</name><plugintypeid><plugintypeexportkey>dd30e06f-b9d0-4793-8215-e54f31fb4d18</plugintypeexportkey></plugintypeid><workflowsdkstepenabled>0</workflowsdkstepenabled>
 </customapi>

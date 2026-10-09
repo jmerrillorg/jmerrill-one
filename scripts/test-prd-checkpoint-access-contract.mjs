@@ -13,8 +13,11 @@ const apiFiles = [
 
 for (const path of apiFiles) {
   const source = readFileSync(new URL(path, apiRoot), 'utf8');
-  assert.match(source, /prvReadjm1_ProductionsReviewPermit/);
+  assert.match(source, /prvWritejm1_ProductionsReviewPermit/);
 }
+const humanApi = readFileSync(new URL('jm1_AcceptProductionsInquiry/customapi.xml', apiRoot), 'utf8');
+assert.match(humanApi, /prvReadjm1_ProductionsReviewPermit/);
+assert.doesNotMatch(humanApi, /prvWritejm1_ProductionsReviewPermit/);
 assert.equal((plugin.match(/public sealed class (?:ListProductionsReviewCheckpointCandidates|GetProductionsReviewCheckpoint|SaveProductionsReviewCheckpoint) : IPlugin/g) || []).length, 3);
 assert.match(plugin, /RuntimeObjectId = new Guid\("38b09d6f-34d9-48b3-9627-f04c047fd534"\)/);
 assert.match(plugin, /detail\.Channel != "jmerrill\.productions\/contact"/);
@@ -28,7 +31,7 @@ assert.match(plugin, /IsAttributableReviewerAction\(service, actions\[0\]\)/);
 assert.match(plugin, /azureactivedirectoryobjectid/);
 assert.match(plugin, /teammembership/);
 assert.doesNotMatch(plugin, /update\["(?:subject|description|statuscode|ownerid)"\]/);
-assert.match(roleScript, /const allowedPrivilege = 'prvReadjm1_ProductionsReviewPermit'/);
+assert.match(roleScript, /const allowedPrivilege = 'prvWritejm1_ProductionsReviewPermit'/);
 assert.match(roleScript, /if \(teams\.length\) throw new Error/);
 assert.match(roleScript, /unexpectedRoles/);
 assert.match(roleScript, /RetrieveUserPrivileges\(\)/);

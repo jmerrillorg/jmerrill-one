@@ -6,7 +6,9 @@ const apply = process.argv.includes('--apply');
 const runtimeObjectId = '38b09d6f-34d9-48b3-9627-f04c047fd534';
 const roleName = 'JM1 Productions BP09 Checkpoint Runtime';
 const teamId = '36ee36cf-6ebf-f111-aaaf-6045bdd69435';
-const allowedPrivilege = 'prvReadjm1_ProductionsReviewPermit';
+const rootBusinessUnitId = 'b589d1e7-e690-f011-b4cc-7c1e525b3eb3';
+const allowedPrivilege = 'prvWritejm1_ProductionsReviewPermit';
+const roleOnly = process.argv.includes('--role-only');
 const depthName = (depth) => {
   if (typeof depth === 'number') return ['Basic', 'Local', 'Deep', 'Global'][depth] || `UNKNOWN_${depth}`;
   const key = String(depth || '').split('.').pop().replace(/^PrivilegeDepth/i, '').toLowerCase();
@@ -20,34 +22,34 @@ const user = users[0] || null;
 const teams = user ? (await request(`/systemusers(${user.systemuserid})?$select=systemuserid&$expand=teammembership_association($select=teamid,name)`)).teammembership_association : [];
 const roles = user ? (await request(`/systemusers(${user.systemuserid})?$select=systemuserid&$expand=systemuserroles_association($select=roleid,name)`)).systemuserroles_association : [];
 if (user && (user.isdisabled || user.accessmode !== 4)) throw new Error('Function identity is not an enabled non-interactive application user');
+if (user && user._businessunitid_value !== rootBusinessUnitId) throw new Error('Function identity is outside the verified root business unit');
+if (roleOnly && user) throw new Error('Role-only provisioning is allowed only before the Function application user exists');
+if (apply && !user && !roleOnly) throw new Error('Function application user is absent; use --role-only to prepare its exact scoped role first');
 if (teams.length) throw new Error(`Function identity has team-derived access (${teams.map(({ name, teamid }) => `${name}:${teamid}`).join(', ')}); refusing role mutation`);
 if (roles.some((item) => item.name === 'System Administrator' || item.name === 'System Customizer'))
   throw new Error('Function identity currently has an overbroad administrative role; preserve and resolve before assignment');
 
-let role = null;
-if (user) {
-  const matches = (await request(`/roles?$select=roleid,name,_businessunitid_value&$filter=${encodeURIComponent(`name eq '${roleName}'`)}`)).value
-    .filter((item) => item._businessunitid_value === user._businessunitid_value);
-  if (matches.length > 1) throw new Error('Duplicate checkpoint runtime roles in the identity business unit');
-  role = matches[0] || null;
-  const unexpectedRoles = roles.filter((item) => item.roleid !== role?.roleid);
-  if (unexpectedRoles.length) throw new Error(`Function identity has other assigned roles (${unexpectedRoles.map(({ name, roleid }) => `${name}:${roleid}`).join(', ')}); refusing role mutation`);
-  if (!role && apply) {
-    const created = await request('/roles', { method: 'POST', body: {
-      name: roleName, 'businessunitid@odata.bind': `businessunits(${user._businessunitid_value})`
+const matches = (await request(`/roles?$select=roleid,name,_businessunitid_value&$filter=${encodeURIComponent(`name eq '${roleName}'`)}`)).value
+  .filter((item) => item._businessunitid_value === rootBusinessUnitId);
+if (matches.length > 1) throw new Error('Duplicate checkpoint runtime roles in the verified root business unit');
+let role = matches[0] || null;
+const unexpectedRoles = roles.filter((item) => item.roleid !== role?.roleid);
+if (unexpectedRoles.length) throw new Error(`Function identity has other assigned roles (${unexpectedRoles.map(({ name, roleid }) => `${name}:${roleid}`).join(', ')}); refusing role mutation`);
+if (!role && apply) {
+  const created = await request('/roles', { method: 'POST', body: {
+    name: roleName, 'businessunitid@odata.bind': `businessunits(${rootBusinessUnitId})`
+  } });
+  role = { roleid: created.id, name: roleName, _businessunitid_value: rootBusinessUnitId };
+}
+if (role && apply) {
+  const privilege = (await request(`/privileges?$select=privilegeid,name&$filter=name eq '${allowedPrivilege}'`)).value;
+  if (privilege.length !== 1) throw new Error('Checkpoint Custom API execute privilege is not uniquely provisioned');
+  const current = (await request(`/roles(${role.roleid})/Microsoft.Dynamics.CRM.RetrieveRolePrivilegesRole()`)).RolePrivileges || [];
+  if (current.length === 0) {
+    await request(`/roles(${role.roleid})/Microsoft.Dynamics.CRM.ReplacePrivilegesRole`, { method: 'POST', body: {
+      Privileges: [{ Depth: 'Global', PrivilegeId: privilege[0].privilegeid,
+        PrivilegeName: allowedPrivilege, BusinessUnitId: rootBusinessUnitId }]
     } });
-    role = { roleid: created.id, name: roleName, _businessunitid_value: user._businessunitid_value };
-  }
-  if (role && apply) {
-    const privilege = (await request(`/privileges?$select=privilegeid,name&$filter=name eq '${allowedPrivilege}'`)).value;
-    if (privilege.length !== 1) throw new Error('Checkpoint Custom API execute privilege is not uniquely provisioned');
-    const current = (await request(`/roles(${role.roleid})/Microsoft.Dynamics.CRM.RetrieveRolePrivilegesRole()`)).RolePrivileges || [];
-    if (current.length === 0) {
-      await request(`/roles(${role.roleid})/Microsoft.Dynamics.CRM.ReplacePrivilegesRole`, { method: 'POST', body: {
-        Privileges: [{ Depth: 'Global', PrivilegeId: privilege[0].privilegeid,
-          PrivilegeName: allowedPrivilege, BusinessUnitId: user._businessunitid_value }]
-      } });
-    }
   }
 }
 
@@ -74,18 +76,20 @@ const effectiveAccessExact = effectivePrivilegeSet.length === 1 &&
   effectivePrivilegeSet[0].name === allowedPrivilege && effectivePrivilegeSet[0].depth === 'Global';
 const report = {
   mode: apply ? 'APPLY' : 'READ_ONLY',
+  roleOnly,
   runtimeIdentity: { objectId: runtimeObjectId, systemUserId: user?.systemuserid || null,
     accessMode: user?.accessmode ?? null, enabled: user ? !user.isdisabled : null },
   appUserExists: Boolean(user),
+  businessUnitId: rootBusinessUnitId,
   teamMembership: teams.length ? teams.map(({ teamid, name }) => ({ id: teamid, name })) : 'NONE',
   inheritedAdministrativeRole: roles.some((item) => item.name === 'System Administrator' || item.name === 'System Customizer'),
   runtimeRole: { id: role?.roleid || null, name: roleName, privileges: rolePrivilegeSet, exactSinglePrivilege: exactPrivileges, assigned: assignedReadback },
   effectivePrivileges: effectivePrivilegeSet,
   effectiveAccessExact,
-  expectedPrivilege: { name: allowedPrivilege, depth: 'Global', purpose: 'Execute the three identity-gated checkpoint Custom APIs only' }
+  expectedPrivilege: { name: allowedPrivilege, depth: 'Global', purpose: 'Execute only the three identity-gated checkpoint Custom APIs; the human review API uses a separate Read privilege' }
 };
 console.log(JSON.stringify(report, null, 2));
-if (apply && (!user || !role || !exactPrivileges || !assignedReadback || !effectiveAccessExact)) process.exitCode = 1;
+if (apply && (!role || !exactPrivileges || (user ? !assignedReadback || !effectiveAccessExact : !roleOnly))) process.exitCode = 1;
 
 async function request(path, init = {}) {
   const response = await fetch(`${api}${path}`, {
