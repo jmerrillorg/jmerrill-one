@@ -33,6 +33,7 @@ jobs:
           npm ci --omit=dev --prefix runtime/jm1-marketing-autonomous-functions
           npm --prefix runtime/jm1-marketing-autonomous-functions run check
           npm --prefix runtime/jm1-marketing-autonomous-functions run test:native-reservation
+          npm --prefix runtime/jm1-marketing-autonomous-functions run test:native-social-producer
           node scripts/test-jm1-front-door-intake.mjs
           node scripts/test-jm1-productions-bp09-notice.mjs
           node scripts/test-jm1-productions-bp09-review-checkpoint.mjs

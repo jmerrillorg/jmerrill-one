@@ -5,6 +5,7 @@ import { dv, entitySet, queryByPrefix, safeCount, upsertByIdempotency } from '..
 import { evaluateFourLaneControlCycle, productionPublishingSignals } from '../lib/marketingLifecycle.js';
 import { activeBranches, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
+import { buildReviewedNativeSocialContent, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, planNativeSocialGaps } from '../lib/nativeSocialProgram.js';
 
 app.timer('marketingControlLoopTimer', {
   schedule: process.env.JM1_MARKETING_CONTROL_LOOP_CRON || '0 17 12 * * *',
@@ -54,11 +55,75 @@ app.timer('marketingControlLoopTimer', {
       const [contentRows, creativeRows, socialRows, credentialRows, journeyRows, exceptionRows] = await Promise.all([
         queryByPrefix(contentSet, `${marker}:content`, 'jm1_contentworkid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_draftcopy,jm1_copybrief', 100),
         queryByPrefix(creativeSet, `${marker}:creative`, 'jm1_creativeworkid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_assethash,jm1_logohash,jm1_assetpath', 100),
-        queryByPrefix(socialSet, `${marker}:social`, 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_actualschedule,jm1_verifiedat,jm1_requestedmediahash', 100),
+        queryByPrefix(socialSet, `${marker}:social`, 'jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_platformpostid,jm1_readbackstate,jm1_requestedschedule,jm1_actualschedule,jm1_requesteddestination,jm1_verifiedat,jm1_requestedmediahash', 100),
         queryByPrefix(credentialSet, `${marker}:credential`, 'jm1_credentialmonitorid,jm1_idempotencykey,jm1_currentcredentialstate,jm1_rotationdueat,jm1_expiresat,jm1_exceptioncode', 50),
         queryByPrefix(journeySet, `${marker}:journey`, 'jm1_journeyexecutionid,jm1_idempotencykey,jm1_state,jm1_dynamicsjourneyid', 50),
         queryByPrefix(exceptionSet, `${marker}:exception`, 'jm1_marketingexceptionid,jm1_idempotencykey,jm1_name,jm1_exceptiontype,jm1_resolutionstate,jm1_resolution', 100)
       ]);
+
+      if (isApprovedNativeSocialCampaign(campaign)) {
+        const branch = Object.values(BRANCH_CONFIG).find((item) => item.active && item.branchName === campaign.jm1_branch);
+        if (!branch) {
+          decisions.push({ campaignId: campaign.jm1_campaignauthorityid, marker, controlDecision: 'HOLD_BRANCH_EXECUTION_DISABLED' });
+          continue;
+        }
+        const destinations = {
+          facebook: [branch.facebookPageId, branch.facebookPageName],
+          instagram: [branch.instagramGraphId, branch.instagramHandle],
+          linkedin: [branch.linkedinOrganizationId, branch.linkedinOrganizationName]
+        };
+        const branchFilter = encodeURIComponent(`jm1_branch eq '${campaign.jm1_branch.replaceAll("'", "''")}'`);
+        const branchSocialResponse = await dv(`/${socialSet}?$select=jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_platformpostid,jm1_requestedschedule,jm1_actualschedule,jm1_requesteddestination&$filter=${branchFilter}&$top=5000`);
+        const readbackComplete = !branchSocialResponse['@odata.nextLink'];
+        const approvedRequestMarkers = campaigns
+          .filter((item) => item.jm1_branch === campaign.jm1_branch && item.jm1_state === 'PUBLIC_EXECUTION_APPROVED')
+          .map(campaignMarker);
+        const plans = planNativeSocialGaps({ campaign, socialRows: branchSocialResponse.value, nowIso: envelope.startedAt, destinationByPlatform: destinations, approvedRequestMarkers, readbackComplete });
+        const materialized = [];
+        for (const plan of plans) {
+          const prepared = buildReviewedNativeSocialContent({ campaign, weekKey: plan.weekKey, slot: plan.slot, nowIso: envelope.startedAt });
+          if (!prepared.ok) {
+            materialized.push({ slot: plan.slotKey, state: prepared.reason });
+            continue;
+          }
+          const stage = prepared.stage;
+          const contentKey = `${marker}:content:${stage}`;
+          const contentPayload = {
+            jm1_name: prepared.template.title,
+            jm1_branch: campaign.jm1_branch,
+            jm1_stage: stage,
+            jm1_audience: campaign.jm1_audience || 'Public brand audience',
+            jm1_copybrief: `${prepared.provenance}; platforms=${plan.platforms.join(',')}; destination links and executor are bound by the approved channel configuration. Theme=${prepared.template.theme}. Alt=${campaign.jm1_branch} graphic titled ${prepared.template.title}; the full educational copy accompanies the post.`,
+            jm1_draftcopy: prepared.caption,
+            jm1_publicreadystate: 'PASS',
+            jm1_idempotencykey: contentKey,
+            ...campaignBind
+          };
+          const contentWrite = await upsertByIdempotency(contentSet, 'jm1_contentworkid', contentPayload);
+          writes.push({ entitySet: contentSet, type: 'nativeSocialContent', id: contentWrite.id, created: contentWrite.created, stage });
+          materialized.push({ slot: plan.slotKey, state: 'CONTENT_READY', id: contentWrite.id, platforms: plan.platforms });
+        }
+        const payload = {
+          jm1_name: `${campaign.jm1_branch} autonomous rolling social control loop`,
+          jm1_branch: campaign.jm1_branch,
+          jm1_campaign: campaign.jm1_name,
+          jm1_horizon30day: 'APPROVED_TEMPLATE_SET:v1; source campaign authority read from Dataverse',
+          jm1_horizon14day: `GENERATED_GAPS=${materialized.filter((item) => item.state === 'CONTENT_READY').length}; EASTERN_HALF_OPEN_HORIZON=${envelope.startedAt}`,
+          jm1_horizon7day: `ACTIVE_CHANNELS=${branch.facebookPageId ? 'facebook;' : ''}${branch.instagramGraphId ? 'instagram;' : ''}linkedin=native-authority-required`,
+          jm1_featuredauthorintroeligible: 'NOT_APPLICABLE',
+          jm1_fatiguecheck: 'Exact campaign, branch, and per-channel booking rows checked before materialization.',
+          jm1_controldecision: !readbackComplete ? 'HOLD_INCOMPLETE_BRANCH_SOCIAL_READBACK' : plans.length ? 'MATERIALIZED_APPROVED_TEMPLATE_GAPS' : 'WAIT_COVERAGE_OR_NO_ELIGIBLE_GAP',
+          jm1_unresolvedprerequisites: branch.linkedinOrganizationId ? 'LINKEDIN_NATIVE_SCHEDULING_REQUIRED_WHILE_API_PRODUCT_PENDING' : '',
+          jm1_state: 'AUTONOMOUS_NATIVE_SOCIAL_GAP_PLANNING',
+          jm1_idempotencykey: `${nativeSocialCampaignMarker(campaign)}:autonomous:control-loop:rolling-coverage`,
+          jm1_evaluatedat: envelope.startedAt,
+          ...campaignBind
+        };
+        const controlWrite = await upsertByIdempotency(controlSet, 'jm1_marketingcontrolloopid', payload);
+        writes.push({ entitySet: controlSet, type: 'nativeSocialControlLoop', id: controlWrite.id, created: controlWrite.created, materialized });
+        decisions.push({ campaignId: campaign.jm1_campaignauthorityid, marker, controlDecision: payload.jm1_controldecision, materialized });
+        continue;
+      }
 
       const decision = resolveStageDecision({ campaign, contentRows, creativeRows, socialRows, journeyRows, exceptionRows, nowIso: envelope.startedAt });
       decisions.push({
@@ -135,7 +200,7 @@ function productionCatalogSignals() {
 }
 
 async function activeCampaigns(campaignSet) {
-  const filter = encodeURIComponent("jm1_campaigntype eq 'featured_author_month'");
-  const response = await dv(`/${campaignSet}?$select=jm1_campaignauthorityid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_campaigntype,jm1_program,jm1_subject,jm1_audience,jm1_cta,jm1_journeyrequirement,jm1_start,jm1_stop,jm1_state&$filter=${filter}&$top=10`);
+  const filter = encodeURIComponent("(jm1_campaigntype eq 'featured_author_month' or jm1_campaigntype eq 'native_social') and jm1_state eq 'PUBLIC_EXECUTION_APPROVED'");
+  const response = await dv(`/${campaignSet}?$select=jm1_campaignauthorityid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_campaigntype,jm1_program,jm1_subject,jm1_audience,jm1_cta,jm1_journeyrequirement,jm1_cadence,jm1_start,jm1_stop,jm1_state&$filter=${filter}&$top=50`);
   return response.value || [];
 }
