@@ -258,6 +258,32 @@ test('Dataverse native booking readback verifies exact UI observation without mi
   assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
 });
 
+test('current MBS_BOOKED evidence verifies the observed content ID separately from publication ID', () => {
+  const caption = 'A current Meta Business Suite post with an exact caption.';
+  const captionSha256 = createHash('sha256').update(caption).digest('hex');
+  const row = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'mbs-booked-1',
+    jm1_branch: 'J Merrill One',
+    jm1_platform: 'facebook',
+    jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requesteddestination: '101196349506906',
+    jm1_requestedschedule: '2026-10-13T14:00:00Z',
+    jm1_captionversion: captionSha256,
+    jm1_platformpostid: null,
+    jm1_readbackstate: 'MBS_BOOKED|2026-10-08T15:30:57.000Z|CONTENT_ID=1094388950239342'
+  }], [{ brand: 'J Merrill One', platform: 'facebook', destinationId: '101196349506906' }]).mapped[0];
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-08T16:00:00Z', channels: [{
+    brand: 'J Merrill One', platform: 'facebook', destinationId: '101196349506906',
+    executionOwner: 'META_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08' }
+  }], items: [{ ...row, brand: 'J Merrill One', platform: 'facebook', destinationId: '101196349506906' }] }).channels[0];
+  assert.equal(row.kind, 'NATIVE_BOOKING');
+  assert.equal(row.platformPostId, null);
+  assert.equal(row.nativeEvidence.source, 'META_NATIVE_UI');
+  assert.equal(row.nativeEvidence.platformContentId, '1094388950239342');
+  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
+});
+
 test('Dataverse native-booking claims are visible but never count as verified coverage alone', () => {
   const row = { jm1_socialexecutionid: 'claim-1', jm1_branch: channel.brand,
     jm1_platform: 'facebook', jm1_status: 'NATIVE_BOOKED_VERIFIED',
