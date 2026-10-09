@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { margin: 0; padding: 12px; font: 14px/1.4 Segoe UI, sans-serif; color: #242424; background: #fff; }
+    form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+    label { display: grid; gap: 4px; font-weight: 600; }
+    input, select { box-sizing: border-box; width: 100%; min-height: 32px; border: 1px solid #858585; border-radius: 2px; padding: 4px 7px; font: inherit; }
+    .wide { grid-column: 1 / -1; }
+    button { width: max-content; min-height: 32px; border: 1px solid #095a9d; border-radius: 2px; background: #0f6cbd; color: #fff; padding: 5px 14px; font: inherit; cursor: pointer; }
+    button:disabled { opacity: .55; cursor: default; }
+    [hidden] { display: none !important; }
+    #status { margin: 8px 0 0; min-height: 20px; }
+    @media (max-width: 600px) { form { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <form id="review">
+    <label>Review action
+      <select id="action" required>
+        <option value="">Select action</option>
+        <option value="WAIT">Waiting</option>
+        <option value="DEFER">Defer</option>
+        <option value="FOLLOWUP_REPORTED">Record external follow-up reference</option>
+        <option value="CLOSE_NO_FURTHER_ACTION">Close with no further action</option>
+        <option value="CORRECT">Correct latest action</option>
+      </select>
+    </label>
+    <label id="target-wrap">Corrected state
+      <select id="target">
+        <option value="">Select state</option>
+        <option value="WAITING">Waiting</option>
+        <option value="DEFERRED">Deferred</option>
+        <option value="FOLLOWUP_REPORTED">Follow-up reference reported</option>
+        <option value="CLOSED_NO_FURTHER_ACTION">Closed, no further action</option>
+      </select>
+    </label>
+    <label class="wide" id="next-wrap">Next action
+      <input id="next" maxlength="300" autocomplete="off">
+    </label>
+    <label id="due-wrap">Due date and time
+      <input id="due" type="datetime-local">
+    </label>
+    <label id="reference-wrap">Communication or booking record ID
+      <input id="reference" maxlength="300" autocomplete="off">
+    </label>
+    <label id="reason-wrap">Reason
+      <select id="reason">
+        <option value="">Select reason</option>
+        <option value="NO_RESPONSE_NEEDED">No response needed</option>
+        <option value="NOT_PURSUED">Not pursued</option>
+        <option value="INCORRECT_PRIOR_ACTION">Incorrect prior action</option>
+        <option value="WRONG_REFERENCE">Wrong external reference</option>
+      </select>
+    </label>
+    <div class="wide"><button id="submit" type="submit">Save review action</button></div>
+  </form>
+  <p id="status" role="status" aria-live="polite"></p>
+  <script>
+    (function () {
+      "use strict";
+      var form = document.getElementById("review");
+      var status = document.getElementById("status");
+      var action = document.getElementById("action");
+      var target = document.getElementById("target");
+      var submit = document.getElementById("submit");
+      var params = new URLSearchParams(location.search);
+      var id = String(params.get("id") || "").replace(/[{}]/g, "").toLowerCase();
+      var xrm = parent.Xrm;
+      var row;
+      var storageKey = "jm1-jsj-review-" + id;
+      var pending;
+      try { pending = JSON.parse(sessionStorage.getItem(storageKey) || "null"); }
+      catch (_) { form.hidden = true; status.textContent = "Review action state unavailable."; return; }
+      if (params.get("typename") !== "jm1_jsjinquiry" || !/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/.test(id) || !xrm || !xrm.WebApi) {
+        form.hidden = true;
+        status.textContent = "Review action unavailable for this record.";
+        return;
+      }
+      function visible(id, show) { document.getElementById(id).hidden = !show; }
+      function layout() {
+        var state = action.value === "CORRECT" ? target.value : action.value;
+        visible("target-wrap", action.value === "CORRECT");
+        visible("next-wrap", state === "WAIT" || state === "DEFER" || state === "WAITING" || state === "DEFERRED" || state === "FOLLOWUP_REPORTED");
+        visible("due-wrap", state === "WAIT" || state === "DEFER" || state === "WAITING" || state === "DEFERRED" || state === "FOLLOWUP_REPORTED");
+        visible("reference-wrap", state === "FOLLOWUP_REPORTED");
+        visible("reason-wrap", action.value === "CORRECT" || state === "CLOSE_NO_FURTHER_ACTION" || state === "CLOSED_NO_FURTHER_ACTION");
+      }
+      action.addEventListener("change", layout);
+      target.addEventListener("change", layout);
+      layout();
+      async function refresh() {
+        row = await xrm.WebApi.retrieveRecord("jm1_jsjinquiry", id,
+          "?$select=jm1_name,jm1_deliverystate,jm1_closedat,jm1_reviewhistory,versionnumber");
+        if (row.jm1_deliverystate !== "DELIVERED") throw new Error("This inquiry is not delivered.");
+        var entries = row.jm1_reviewhistory ? JSON.parse(row.jm1_reviewhistory) : [];
+        if (pending && entries.some(function (entry) { return entry.key === pending.key; })) {
+          pending = null;
+          sessionStorage.removeItem(storageKey);
+          status.textContent = "Previously submitted action is recorded.";
+        } else if (pending) status.textContent = "Previous action is unverified. Retry only the same action.";
+        else if (entries.length) {
+          var latest = entries[entries.length - 1];
+          status.textContent = "Latest review: " + latest.state + " at " + new Date(latest.at).toLocaleString() + ".";
+        } else status.textContent = "No review action recorded.";
+        if (row.jm1_closedat && !row.jm1_reviewhistory) {
+          form.hidden = true;
+          status.textContent = "This earlier closure is preserved outside the review-action history.";
+        }
+      }
+      refresh().catch(function () { form.hidden = true; status.textContent = "Review action unavailable. Refresh the inquiry."; });
+
+      function ReviewRequest(payload) { Object.assign(this, payload); }
+      ReviewRequest.prototype.getMetadata = function () {
+        var parameters = {
+          InquiryId: { typeName: "Edm.Guid", structuralProperty: 5 },
+          IdempotencyKey: { typeName: "Edm.Guid", structuralProperty: 5 }
+        };
+        ["Reference", "ActionId", "ExpectedVersion", "NextAction", "DueAt", "ExternalReference", "Reason", "TargetState", "CorrectionOf"]
+          .forEach(function (name) { parameters[name] = { typeName: "Edm.String", structuralProperty: 1 }; });
+        return { boundParameter: null, parameterTypes: parameters, operationType: 0, operationName: "jm1_ReviewJSJInquiry" };
+      };
+
+      async function hashPayload(payload) {
+        var digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(payload)));
+        return Array.from(new Uint8Array(digest), function (byte) { return byte.toString(16).padStart(2, "0"); }).join("");
+      }
+
+      function clearPending(rejection) {
+        if (rejection && pending) {
+          sessionStorage.setItem(storageKey + "-rejected", JSON.stringify({
+            key: pending.key, hash: pending.hash, code: rejection, at: new Date().toISOString()
+          }));
+        }
+        pending = null;
+        sessionStorage.removeItem(storageKey);
+      }
+
+      function rejectionCode(error) {
+        var match = String(error && error.message || error).match(/JSJ_REVIEW_[A-Z_]+/);
+        return match ? match[0] : null;
+      }
+
+      async function executeReview(payload, key) {
+        var response = await xrm.WebApi.online.execute(new ReviewRequest(Object.assign({}, payload, { IdempotencyKey: key })));
+        var body = await response.json();
+        if (!response.ok) throw new Error(body && body.error && body.error.message || "Review action rejected");
+        if (body.Result !== "ACCEPTED" && body.Result !== "REPLAY") throw new Error("Unexpected result");
+        return body.Result;
+      }
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        if (!row || submit.disabled) return;
+        submit.disabled = true;
+        try {
+          var state = action.value === "CORRECT" ? target.value : action.value;
+          var open = ["WAIT", "DEFER", "WAITING", "DEFERRED", "FOLLOWUP_REPORTED"].includes(state);
+          var next = open ? document.getElementById("next").value.trim() : "";
+          var dueInput = open ? document.getElementById("due").value : "";
+          var external = state === "FOLLOWUP_REPORTED" ? document.getElementById("reference").value.trim() : "";
+          var reason = action.value === "CORRECT" || state === "CLOSE_NO_FURTHER_ACTION" || state === "CLOSED_NO_FURTHER_ACTION"
+            ? document.getElementById("reason").value : "";
+          var history = row.jm1_reviewhistory ? JSON.parse(row.jm1_reviewhistory) : [];
+          var correctionOf = action.value === "CORRECT" && history.length ? history[history.length - 1].key : "";
+          if (!action.value || action.value === "CORRECT" && (!target.value || !correctionOf) ||
+              open && (!next || !dueInput || !Number.isFinite(Date.parse(dueInput)) || Date.parse(dueInput) <= Date.now()) ||
+              state === "FOLLOWUP_REPORTED" && !external ||
+              (action.value === "CORRECT" || state === "CLOSE_NO_FURTHER_ACTION") && !reason) {
+            status.textContent = "Complete the required review action, reason, next action, due time, and reference fields.";
+            return;
+          }
+          var payload = {
+            InquiryId: id, Reference: row.jm1_name, ActionId: action.value,
+            ExpectedVersion: String(row.versionnumber), NextAction: next,
+            DueAt: dueInput ? new Date(dueInput).toISOString() : "",
+            ExternalReference: external, Reason: reason, TargetState: action.value === "CORRECT" ? target.value : "",
+            CorrectionOf: correctionOf
+          };
+          var signatureHash = await hashPayload(payload);
+          var attempt = payload;
+          if (pending && pending.hash !== signatureHash) {
+            if (pending.payload && await hashPayload(pending.payload) === pending.hash) {
+              attempt = pending.payload;
+            } else if (!pending.payload && reason && (action.value === "CORRECT" || state === "CLOSE_NO_FURTHER_ACTION")) {
+              var legacyWithoutReason = Object.assign({}, payload, { Reason: "" });
+              if (await hashPayload(legacyWithoutReason) === pending.hash) attempt = legacyWithoutReason;
+              else {
+                status.textContent = "Previous action differs. Do not submit another action; ask for review of the saved attempt.";
+                return;
+              }
+            } else {
+              status.textContent = "Previous action differs. Do not submit another action; ask for review of the saved attempt.";
+              return;
+            }
+          }
+          if (!pending) {
+            pending = { hash: signatureHash, key: crypto.randomUUID(), payload: payload, createdAt: new Date().toISOString() };
+            sessionStorage.setItem(storageKey, JSON.stringify(pending));
+          }
+          status.textContent = attempt === payload ? "Recording action..." : "Rechecking the exact previous action...";
+          var result = await executeReview(attempt, pending.key);
+          await refresh();
+          if (pending) throw new Error("Accepted action missing from inquiry history");
+          status.textContent = result === "REPLAY" ? "Action already recorded." : "Review action recorded.";
+          action.value = "";
+          layout();
+        } catch (error) {
+          var code = rejectionCode(error);
+          try {
+            await refresh();
+            if (!pending) {
+              status.textContent = "Previously submitted action is recorded.";
+            } else if (code) {
+              clearPending(code);
+              status.textContent = code === "JSJ_REVIEW_ACTOR_DENIED"
+                ? "This sign-in cannot record a JSJ review action."
+                : "The previous action was rejected and not recorded. Correct the form, then save again.";
+            } else {
+              status.textContent = "Result unverified. Save will retry the exact previous action with the same key.";
+            }
+          } catch (_) {
+            status.textContent = "Result unverified. Do not change the action until the inquiry can be refreshed.";
+          }
+        } finally { submit.disabled = false; }
+      });
+    })();
+  </script>
+</body>
+</html>

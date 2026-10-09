@@ -19,6 +19,8 @@
 
 # production
 /build
+/runtime/jm1-jsj-inquiry-reviewer-plugin/bin/
+/runtime/jm1-jsj-inquiry-reviewer-plugin/obj/
 
 # misc
 .DS_Store
