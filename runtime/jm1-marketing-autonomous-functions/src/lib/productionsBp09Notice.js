@@ -52,7 +52,8 @@ export function createProductionsRelay({ fetchImpl = fetch, credential } = {}) {
   }
   return {
     probe: (payload) => request('relay-authority-probe', payload),
-    send: (payload) => request('send-enterprise-governed-email', payload)
+    send: (payload) => request('send-enterprise-governed-email', payload),
+    lookup: (payload) => request('lookup-productions-review-notice', payload)
   };
 }
 
