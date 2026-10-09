@@ -6,8 +6,8 @@ const apply = process.argv.includes('--apply');
 const runtimeObjectId = '38b09d6f-34d9-48b3-9627-f04c047fd534';
 const roleName = 'JM1 Productions BP09 Checkpoint Runtime';
 const teamId = '36ee36cf-6ebf-f111-aaaf-6045bdd69435';
-const rootBusinessUnitId = 'b589d1e7-e690-f011-b4cc-7c1e525b3eb3';
 const allowedPrivilege = 'prvWritejm1_ProductionsReviewPermit';
+const expectedRootBusinessUnitId = process.env.DATAVERSE_ROOT_BUSINESS_UNIT_ID?.toLowerCase() || null;
 const roleOnly = process.argv.includes('--role-only');
 const depthName = (depth) => {
   if (typeof depth === 'number') return ['Basic', 'Local', 'Deep', 'Global'][depth] || `UNKNOWN_${depth}`;
@@ -15,6 +15,12 @@ const depthName = (depth) => {
   return ({ basic: 'Basic', local: 'Local', deep: 'Deep', global: 'Global' })[key] || `UNKNOWN_${depth}`;
 };
 const token = execFileSync('az', ['account', 'get-access-token', '--resource', orgUrl, '--query', 'accessToken', '-o', 'tsv'], { encoding: 'utf8' }).trim();
+const rootBusinessUnits = (await request('/businessunits?$select=businessunitid,name,_parentbusinessunitid_value&$filter=_parentbusinessunitid_value%20eq%20null&$top=2')).value;
+if (rootBusinessUnits.length !== 1) throw new Error('Dataverse target must have exactly one readable root business unit');
+const rootBusinessUnit = rootBusinessUnits[0];
+const rootBusinessUnitId = rootBusinessUnit.businessunitid.toLowerCase();
+if (expectedRootBusinessUnitId && expectedRootBusinessUnitId !== rootBusinessUnitId)
+  throw new Error('Configured root business unit does not match the selected Dataverse environment');
 
 const users = (await request(`/systemusers?$select=systemuserid,applicationid,azureactivedirectoryobjectid,isdisabled,accessmode,_businessunitid_value&$filter=azureactivedirectoryobjectid eq ${runtimeObjectId}`)).value;
 if (users.length > 1) throw new Error('Duplicate Function managed-identity Dataverse users');
@@ -93,7 +99,7 @@ const report = {
   runtimeIdentity: { objectId: runtimeObjectId, systemUserId: user?.systemuserid || null,
     accessMode: user?.accessmode ?? null, enabled: user ? !user.isdisabled : null },
   appUserExists: Boolean(user),
-  businessUnitId: rootBusinessUnitId,
+  businessUnit: { id: rootBusinessUnitId, name: rootBusinessUnit.name },
   teamMembership: teams.length ? teams.map(({ teamid, name }) => ({ id: teamid, name })) : 'NONE',
   inheritedAdministrativeRole: roles.some((item) => item.name === 'System Administrator' || item.name === 'System Customizer'),
   runtimeRole: { id: role?.roleid || null, name: roleName, privileges: rolePrivilegeSet, exactSinglePrivilege: exactPrivileges, assigned: assignedReadback },
