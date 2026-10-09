@@ -75,7 +75,10 @@ app.timer('marketingControlLoopTimer', {
         const branchFilter = encodeURIComponent(`jm1_branch eq '${campaign.jm1_branch.replaceAll("'", "''")}'`);
         const branchSocialResponse = await dv(`/${socialSet}?$select=jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_platformpostid,jm1_requestedschedule,jm1_actualschedule,jm1_requesteddestination&$filter=${branchFilter}&$top=5000`);
         const readbackComplete = !branchSocialResponse['@odata.nextLink'];
-        const plans = planNativeSocialGaps({ campaign, socialRows: branchSocialResponse.value, nowIso: envelope.startedAt, destinationByPlatform: destinations, readbackComplete });
+        const approvedRequestMarkers = campaigns
+          .filter((item) => item.jm1_branch === campaign.jm1_branch && item.jm1_state === 'PUBLIC_EXECUTION_APPROVED')
+          .map(campaignMarker);
+        const plans = planNativeSocialGaps({ campaign, socialRows: branchSocialResponse.value, nowIso: envelope.startedAt, destinationByPlatform: destinations, approvedRequestMarkers, readbackComplete });
         const materialized = [];
         for (const plan of plans) {
           const prepared = buildReviewedNativeSocialContent({ campaign, weekKey: plan.weekKey, slot: plan.slot, nowIso: envelope.startedAt });

@@ -173,15 +173,16 @@ export function matchesApprovedNativeSocialContent(campaign, content) {
 
 export function nativeSocialScheduledAt(stage, platform) {
   const match = String(stage || '').match(/^rolling-(\d{4}-\d{2}-\d{2})-(\d+)$/);
-  if (!match) return '';
-  const [, day, slot] = match;
+  if (!match || !['1', '2'].includes(match[2])) return '';
+  const [, weekStart, slot] = match;
+  const day = easternDateKey(addDays(new Date(`${weekStart}T12:00:00Z`), slot === '1' ? 1 : 4));
   const hour = platform === 'facebook' ? (slot === '1' ? 10 : 14)
     : platform === 'instagram' ? (slot === '1' ? 11 : 15)
       : (slot === '1' ? 12 : 16);
   return easternDateTimeIso(new Date(`${day}T12:00:00Z`), hour);
 }
 
-export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, readbackComplete = true }) {
+export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, approvedRequestMarkers = [], readbackComplete = true }) {
   if (!isApprovedNativeSocialCampaign(campaign) || !readbackComplete || !Array.isArray(socialRows)) return [];
   const now = new Date(nowIso);
   const horizonEnd = new Date(easternDateTimeIso(addDays(easternMidnight(now), 14), 0));
@@ -190,12 +191,12 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
   const monday = startOfEasternWeek(now);
   for (let weekStart = monday; weekStart < horizonEnd; weekStart = addDays(weekStart, 7)) {
     const weekKey = easternDateKey(weekStart);
-    const dates = [addDays(weekStart, 2), addDays(weekStart, 4)];
+    const dates = [addDays(weekStart, 1), addDays(weekStart, 4)];
     const existingByPlatform = new Map(platforms.map((platform) => [platform, socialRows.filter((row) =>
       row.jm1_platform === platform
       && String(row.jm1_branch || campaign.jm1_branch) === campaign.jm1_branch
       && normalizeDestinations(destinationByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination))
-      && occupiesCadence(row)
+      && occupiesCadence(row, approvedRequestMarkers)
       && isInEasternWeek(row.jm1_requestedschedule || row.jm1_actualschedule, weekStart)
     )]));
     const bookedDates = new Map(platforms.map((platform) => [platform, new Set((existingByPlatform.get(platform) || [])
@@ -209,28 +210,37 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
       const platformsForSlot = platforms.filter((platform) => {
         const occupied = bookedDates.get(platform);
         if (occupied.has(dayKey) || occupied.size >= 2) return false;
+        if ([...occupied].some((bookedDay) => Math.abs(Date.parse(`${bookedDay}T12:00:00Z`) - Date.parse(`${dayKey}T12:00:00Z`)) < 2 * 86400000)) return false;
+        const platformSchedule = nativeSocialScheduledAt(`rolling-${weekKey}-${slot + 1}`, platform);
+        if (!platformSchedule || new Date(platformSchedule) < now || new Date(platformSchedule) >= horizonEnd) return false;
         const alreadyCreated = socialRows.some((row) => String(row.jm1_idempotencykey || '').includes(`rolling-${slotKey}`)
           && row.jm1_platform === platform
           && normalizeDestinations(destinationByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination)));
         return !alreadyCreated;
       });
       if (!platformsForSlot.length) continue;
-      const scheduledAt = easternDateTimeIso(date, slot === 0 ? 10 : 14);
-      const instant = new Date(scheduledAt);
-      if (instant < now || instant >= horizonEnd) continue;
-      plans.push({ weekKey, slot: slot + 1, slotKey, scheduledAt, platforms: platformsForSlot });
+      const scheduleByPlatform = Object.fromEntries(platformsForSlot.map((platform) => [
+        platform,
+        nativeSocialScheduledAt(`rolling-${weekKey}-${slot + 1}`, platform)
+      ]));
+      const scheduledAt = Object.values(scheduleByPlatform).sort()[0];
+      plans.push({ weekKey, slot: slot + 1, slotKey, scheduledAt, scheduleByPlatform, platforms: platformsForSlot });
       for (const platform of platformsForSlot) bookedDates.get(platform).add(dayKey);
     }
   }
   return plans;
 }
 
-function occupiesCadence(row) {
-  return [
+function occupiesCadence(row, approvedRequestMarkers) {
+  if ([
     'NATIVE_RESERVATION_VERIFIED', 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED', 'NATIVE_BOOKED_VERIFIED',
+    'PUBLISHED_VERIFIED'
+  ].includes(row.jm1_status)) return true;
+  const requestPrefix = approvedRequestMarkers.find((marker) => String(row.jm1_idempotencykey || '').startsWith(`${marker}:social:`));
+  return Boolean(requestPrefix && [
     'PUBLIC_READY_SCHEDULED_ELIGIBLE', 'PUBLISHING_CLAIMED', 'PLATFORM_ACCEPTED', 'READBACK_PENDING',
-    'PUBLISHED_VERIFIED', 'RETRY_REQUIRED'
-  ].includes(row.jm1_status);
+    'RETRY_REQUIRED'
+  ].includes(row.jm1_status));
 }
 
 function startOfEasternWeek(date) {
