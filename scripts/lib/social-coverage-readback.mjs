@@ -139,16 +139,21 @@ function nativeBookingIdFromReadback(value) {
 
 function nativeEvidenceFromReadback(value, row) {
   const compact = String(value || '').match(/^NATIVE_UI\|(META|LINKEDIN)\|AT=([^|]+)\|BOOKING=([^|]+)$/);
-  const source = compact ? `${compact[1]}_NATIVE_UI` : readbackValue(value, 'SOURCE');
-  const observedAt = compact ? compact[2] : readbackValue(value, 'OBSERVED_AT');
-  const scheduledAt = compact ? row.jm1_requestedschedule : readbackValue(value, 'SCHEDULED_AT');
-  const captionSha256 = compact ? row.jm1_captionversion : readbackValue(value, 'CAPTION_SHA256');
+  const metaBooked = String(value || '').match(/^MBS_BOOKED\|([^|]+)\|CONTENT_ID=(.+)$/);
+  const source = compact ? `${compact[1]}_NATIVE_UI`
+    : metaBooked ? 'META_NATIVE_UI'
+      : readbackValue(value, 'SOURCE');
+  const observedAt = compact ? compact[2] : metaBooked ? metaBooked[1] : readbackValue(value, 'OBSERVED_AT');
+  const scheduledAt = compact || metaBooked ? row.jm1_requestedschedule : readbackValue(value, 'SCHEDULED_AT');
+  const captionSha256 = compact || metaBooked ? row.jm1_captionversion : readbackValue(value, 'CAPTION_SHA256');
   if (!source || !observedAt || !scheduledAt || !captionSha256) return null;
   return {
     source,
     observedDateET: easternDate(observedAt),
     scheduledAt,
-    captionSha256
+    captionSha256,
+    nativeBookingId: compact ? (compact[3] === 'NOT_EXPOSED' ? null : compact[3]) : null,
+    platformContentId: metaBooked ? metaBooked[2] : null
   };
 }
 
