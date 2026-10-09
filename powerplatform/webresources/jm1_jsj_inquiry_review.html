@@ -123,52 +123,107 @@
         return { boundParameter: null, parameterTypes: parameters, operationType: 0, operationName: "jm1_ReviewJSJInquiry" };
       };
 
+      async function hashPayload(payload) {
+        var digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(payload)));
+        return Array.from(new Uint8Array(digest), function (byte) { return byte.toString(16).padStart(2, "0"); }).join("");
+      }
+
+      function clearPending(rejection) {
+        if (rejection && pending) {
+          sessionStorage.setItem(storageKey + "-rejected", JSON.stringify({
+            key: pending.key, hash: pending.hash, code: rejection, at: new Date().toISOString()
+          }));
+        }
+        pending = null;
+        sessionStorage.removeItem(storageKey);
+      }
+
+      function rejectionCode(error) {
+        var match = String(error && error.message || error).match(/JSJ_REVIEW_[A-Z_]+/);
+        return match ? match[0] : null;
+      }
+
+      async function executeReview(payload, key) {
+        var response = await xrm.WebApi.online.execute(new ReviewRequest(Object.assign({}, payload, { IdempotencyKey: key })));
+        var body = await response.json();
+        if (!response.ok) throw new Error(body && body.error && body.error.message || "Review action rejected");
+        if (body.Result !== "ACCEPTED" && body.Result !== "REPLAY") throw new Error("Unexpected result");
+        return body.Result;
+      }
+
       form.addEventListener("submit", async function (event) {
         event.preventDefault();
         if (!row || submit.disabled) return;
-        var state = action.value === "CORRECT" ? target.value : action.value;
-        var open = ["WAIT", "DEFER", "WAITING", "DEFERRED", "FOLLOWUP_REPORTED"].includes(state);
-        var next = open ? document.getElementById("next").value.trim() : "";
-        var dueInput = open ? document.getElementById("due").value : "";
-        var external = state === "FOLLOWUP_REPORTED" ? document.getElementById("reference").value.trim() : "";
-        var reason = action.value === "CORRECT" || state === "CLOSE_NO_FURTHER_ACTION" || state === "CLOSED_NO_FURTHER_ACTION"
-          ? document.getElementById("reason").value : "";
-        var due = dueInput ? new Date(dueInput).toISOString() : "";
-        var history = row.jm1_reviewhistory ? JSON.parse(row.jm1_reviewhistory) : [];
-        var correctionOf = action.value === "CORRECT" && history.length ? history[history.length - 1].key : "";
-        var payload = {
-          InquiryId: id, Reference: row.jm1_name, ActionId: action.value,
-          ExpectedVersion: String(row.versionnumber), NextAction: next, DueAt: due,
-          ExternalReference: external, Reason: reason, TargetState: action.value === "CORRECT" ? target.value : "",
-          CorrectionOf: correctionOf
-        };
-        var signature = JSON.stringify(payload);
-        var digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(signature));
-        var signatureHash = Array.from(new Uint8Array(digest), function (byte) { return byte.toString(16).padStart(2, "0"); }).join("");
-        if (pending && pending.hash !== signatureHash) {
-          status.textContent = "The previous result is uncertain. Refresh the inquiry before changing the action.";
-          return;
-        }
-        if (!pending) {
-          pending = { hash: signatureHash, key: crypto.randomUUID() };
-          sessionStorage.setItem(storageKey, JSON.stringify(pending));
-        }
-        payload.IdempotencyKey = pending.key;
         submit.disabled = true;
-        status.textContent = "Recording action...";
         try {
-          var response = await xrm.WebApi.online.execute(new ReviewRequest(payload));
-          if (!response.ok) throw new Error("Review action rejected");
-          var result = await response.json();
-          if (result.Result !== "ACCEPTED" && result.Result !== "REPLAY") throw new Error("Unexpected result");
-          pending = null;
-          sessionStorage.removeItem(storageKey);
+          var state = action.value === "CORRECT" ? target.value : action.value;
+          var open = ["WAIT", "DEFER", "WAITING", "DEFERRED", "FOLLOWUP_REPORTED"].includes(state);
+          var next = open ? document.getElementById("next").value.trim() : "";
+          var dueInput = open ? document.getElementById("due").value : "";
+          var external = state === "FOLLOWUP_REPORTED" ? document.getElementById("reference").value.trim() : "";
+          var reason = action.value === "CORRECT" || state === "CLOSE_NO_FURTHER_ACTION" || state === "CLOSED_NO_FURTHER_ACTION"
+            ? document.getElementById("reason").value : "";
+          var history = row.jm1_reviewhistory ? JSON.parse(row.jm1_reviewhistory) : [];
+          var correctionOf = action.value === "CORRECT" && history.length ? history[history.length - 1].key : "";
+          if (!action.value || action.value === "CORRECT" && (!target.value || !correctionOf) ||
+              open && (!next || !dueInput || !Number.isFinite(Date.parse(dueInput)) || Date.parse(dueInput) <= Date.now()) ||
+              state === "FOLLOWUP_REPORTED" && !external ||
+              (action.value === "CORRECT" || state === "CLOSE_NO_FURTHER_ACTION") && !reason) {
+            status.textContent = "Complete the required review action, reason, next action, due time, and reference fields.";
+            return;
+          }
+          var payload = {
+            InquiryId: id, Reference: row.jm1_name, ActionId: action.value,
+            ExpectedVersion: String(row.versionnumber), NextAction: next,
+            DueAt: dueInput ? new Date(dueInput).toISOString() : "",
+            ExternalReference: external, Reason: reason, TargetState: action.value === "CORRECT" ? target.value : "",
+            CorrectionOf: correctionOf
+          };
+          var signatureHash = await hashPayload(payload);
+          var attempt = payload;
+          if (pending && pending.hash !== signatureHash) {
+            if (pending.payload && await hashPayload(pending.payload) === pending.hash) {
+              attempt = pending.payload;
+            } else if (!pending.payload && reason && (action.value === "CORRECT" || state === "CLOSE_NO_FURTHER_ACTION")) {
+              var legacyWithoutReason = Object.assign({}, payload, { Reason: "" });
+              if (await hashPayload(legacyWithoutReason) === pending.hash) attempt = legacyWithoutReason;
+              else {
+                status.textContent = "Previous action differs. Do not submit another action; ask for review of the saved attempt.";
+                return;
+              }
+            } else {
+              status.textContent = "Previous action differs. Do not submit another action; ask for review of the saved attempt.";
+              return;
+            }
+          }
+          if (!pending) {
+            pending = { hash: signatureHash, key: crypto.randomUUID(), payload: payload, createdAt: new Date().toISOString() };
+            sessionStorage.setItem(storageKey, JSON.stringify(pending));
+          }
+          status.textContent = attempt === payload ? "Recording action..." : "Rechecking the exact previous action...";
+          var result = await executeReview(attempt, pending.key);
           await refresh();
-          status.textContent = result.Result === "REPLAY" ? "Action already recorded." : "Review action recorded.";
+          if (pending) throw new Error("Accepted action missing from inquiry history");
+          status.textContent = result === "REPLAY" ? "Action already recorded." : "Review action recorded.";
           action.value = "";
           layout();
-        } catch (_) {
-          status.textContent = "Action not verified. Retry the same action or refresh this inquiry.";
+        } catch (error) {
+          var code = rejectionCode(error);
+          try {
+            await refresh();
+            if (!pending) {
+              status.textContent = "Previously submitted action is recorded.";
+            } else if (code) {
+              clearPending(code);
+              status.textContent = code === "JSJ_REVIEW_ACTOR_DENIED"
+                ? "This sign-in cannot record a JSJ review action."
+                : "The previous action was rejected and not recorded. Correct the form, then save again.";
+            } else {
+              status.textContent = "Result unverified. Save will retry the exact previous action with the same key.";
+            }
+          } catch (_) {
+            status.textContent = "Result unverified. Do not change the action until the inquiry can be refreshed.";
+          }
         } finally { submit.disabled = false; }
       });
     })();
