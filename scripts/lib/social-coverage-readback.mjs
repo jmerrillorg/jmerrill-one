@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 
 const ZONE = 'America/New_York';
 const DAY = 24 * 60 * 60 * 1000;
+const MAX_NATIVE_READBACK_AGE_MS = 12 * 60 * 60 * 1000;
 const NATIVE_RESERVATION_STATUSES = new Set([
   'NATIVE_RESERVATION_VERIFIED',
   'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'
@@ -49,12 +50,22 @@ function nativeOwner(platform) {
   return platform === 'linkedin' ? 'LINKEDIN_NATIVE' : 'META_NATIVE';
 }
 
-function hasNativeBookingProof(item, asOf) {
+function timestampEvidenceFresh(observedAt, asOfTimestamp) {
+  const observed = Date.parse(observedAt || '');
+  const asOf = Date.parse(asOfTimestamp || '');
+  return Number.isFinite(observed) && Number.isFinite(asOf)
+    && observed <= asOf && asOf - observed <= MAX_NATIVE_READBACK_AGE_MS;
+}
+
+function hasNativeBookingProof(item, asOf, asOfTimestamp = asOf) {
   const source = item.nativeEvidence?.source;
   const uiSourceMatchesPlatform = (item.platform === 'linkedin' && source === 'LINKEDIN_NATIVE_UI')
     || (['facebook', 'instagram'].includes(item.platform) && source === 'META_NATIVE_UI');
+  const evidenceFresh = item.nativeEvidence?.requireTimestamp === true
+    ? timestampEvidenceFresh(item.nativeEvidence.observedAt, asOfTimestamp)
+    : item.nativeEvidence?.observedDateET === asOf;
   return Boolean(item.nativeBookingId || (uiSourceMatchesPlatform
-    && item.nativeEvidence.observedDateET === asOf
+    && evidenceFresh
     && (item.captionText
       ? item.nativeEvidence.captionSha256 === createHash('sha256').update(item.captionText).digest('hex')
       : item.captionSha256 === item.nativeEvidence.captionSha256)
@@ -71,26 +82,35 @@ export function reconcileNativeDataverseClaims(nativeItems, dataverseItems, asOf
   const date = easternDate(asOf);
   const matchedDataverseIds = new Set();
   const items = nativeItems.map((native) => {
-    if (native.kind !== 'NATIVE_BOOKING' || !hasNativeBookingProof(native, date)) return native;
+    if (native.kind !== 'NATIVE_BOOKING' || !hasNativeBookingProof(native, date, asOf)) return native;
     const captionHash = native.nativeEvidence?.captionSha256 || native.captionSha256;
     if (!captionHash) return native;
-    const match = dataverseItems.find((row) => row.kind === 'NATIVE_BOOKING'
+    const sameReservation = (row) => row.kind === 'NATIVE_BOOKING'
       && row.brand === native.brand
       && row.platform === native.platform
       && row.scheduledAt === native.scheduledAt
-      && row.contentKey === `${native.brand}:${captionHash}`
       && ((native.destinationId && row.destinationId === native.destinationId)
-        || (native.destinationHandle && row.destinationHandle === native.destinationHandle)));
+        || (native.destinationHandle && row.destinationHandle === native.destinationHandle));
+    const match = (native.dataverseRecordId
+      ? dataverseItems.find((row) => row.id === native.dataverseRecordId && sameReservation(row))
+      : null) || dataverseItems.find((row) => sameReservation(row)
+        && row.contentKey === `${native.brand}:${captionHash}`);
     if (!match) return native;
     matchedDataverseIds.add(match.id);
     return {
       ...native,
-      approvalState: match.approvalState,
+      nativeBookingId: native.nativeBookingId || null,
+      approvalState: native.approvalState || match.approvalState,
       dataverseSocialExecutionId: match.id,
       dataverseStatus: match.status,
       dataverseReadbackState: match.readbackState,
-      dataverseEvidenceMatch: 'DESTINATION_SCHEDULE_CAPTION_SHA256',
-      dataverseApprovalEvidence: match.status === 'NATIVE_BOOKED_VERIFIED' ? 'NATIVE_BOOKED_VERIFIED' : null
+      dataverseEvidenceMatch: native.dataverseRecordId === match.id
+        ? 'DESTINATION_SCHEDULE_RECORD_ID'
+        : 'DESTINATION_SCHEDULE_CAPTION_SHA256',
+      sourceCopyStatus: match.contentKey === `${native.brand}:${captionHash}`
+        ? 'CAPTION_HASH_MATCH'
+        : native.sourceCopyStatus || 'SOURCE_COPY_NOT_PROVEN',
+      dataverseBookingEvidence: match.status === 'NATIVE_BOOKED_VERIFIED' ? 'NATIVE_BOOKED_VERIFIED' : null
     };
   });
   return { items, matchedDataverseIds };
@@ -154,7 +174,7 @@ export function mapDataverseSocialRows(rows, channels) {
       captionFingerprint: isNativeReservation ? row.jm1_captionversion || null : null,
       mediaSha256: isNativeReservation ? row.jm1_requestedmediahash || null : null,
       reservationReadbackState: isNativeReservation ? row.jm1_readbackstate || null : null,
-      approvalState: isNativeBooking ? 'APPROVED' : /^HELD/.test(row.jm1_status || '') ? 'HELD' : 'UNKNOWN',
+      approvalState: isNativeBooking ? 'UNKNOWN' : /^HELD/.test(row.jm1_status || '') ? 'HELD' : 'UNKNOWN',
       readbackState: row.jm1_readbackstate || null,
       executor: row.jm1_executor || null,
       contentKey: row.jm1_captionversion ? `${channel.brand}:${row.jm1_captionversion}` : null
@@ -268,7 +288,12 @@ export function buildSocialCoverageReadback(snapshot) {
   const results = channels.map((channel) => {
     const related = items.filter((item) => channelKey(item) === channelKey(channel));
     const observedDate = channel.nativeReadback?.observedDateET;
-    const nativeEvidenceFresh = observedDate === asOf;
+    const timestampRequired = channel.nativeReadback?.requireTimestamp === true;
+    const observedAt = channel.nativeReadback?.observedAt;
+    const observationTimestampValid = timestampEvidenceFresh(observedAt, snapshot.asOf);
+    const nativeEvidenceFresh = timestampRequired
+      ? observationTimestampValid
+      : observedDate === asOf;
     const verifiedNative = nativeEvidenceFresh && channel.nativeReadback?.state === 'VERIFIED';
     const destinationResolved = Boolean(channel.destinationId || channel.destinationHandle
       || (channel.platform === 'instagram' && channel.nativeReadback?.portfolioHandle))
@@ -276,28 +301,53 @@ export function buildSocialCoverageReadback(snapshot) {
     const coverageProofValid = verifiedNative && destinationResolved;
     const nativeReadbackStatus = verifiedNative ? 'CURRENT'
       : !observedDate ? 'MISSING'
-        : observedDate > asOf ? 'FUTURE_DATED'
-          : observedDate < asOf ? 'STALE'
+        : timestampRequired && !observedAt ? 'MISSING_TIMESTAMP'
+          : timestampRequired && Date.parse(observedAt) > Date.parse(snapshot.asOf) ? 'FUTURE_DATED'
+            : timestampRequired && !observationTimestampValid ? 'STALE'
+              : observedDate > asOf ? 'FUTURE_DATED'
+                : observedDate < asOf ? 'STALE'
             : /FAIL|ERROR/i.test(channel.nativeReadback?.state || '') ? 'FAILED' : 'UNVERIFIED';
     const nativeScheduled = related.filter((item) =>
       item.kind === 'NATIVE_BOOKING'
       && verifiedNative
       && matchesDestination(item, channel)
-      && hasNativeBookingProof(item, asOf)
+      && hasNativeBookingProof(item, asOf, snapshot.asOf)
       && item.scheduledAt
       && easternDate(item.scheduledAt) >= asOf
       && easternDate(item.scheduledAt) < end
     );
+    const verifiedFutureNativeClaims = related.filter((item) => item.kind === 'NATIVE_BOOKING'
+      && matchesDestination(item, channel)
+      && hasNativeBookingProof(item, asOf, snapshot.asOf)
+      && item.scheduledAt && easternDate(item.scheduledAt) >= asOf);
+    const verifiedBookingsBeyondHorizon = verifiedFutureNativeClaims.filter((item) =>
+      easternDate(item.scheduledAt) >= end
+    );
     const booked = nativeScheduled.filter((item) => item.approvalState === 'APPROVED');
     const bookingClaims = related.filter((item) => item.kind === 'NATIVE_BOOKING');
-    const unverifiedBookingClaims = bookingClaims.filter((item) => !nativeScheduled.includes(item));
+    const unverifiedBookingClaims = bookingClaims.filter((item) => !nativeScheduled.includes(item)
+      && !verifiedBookingsBeyondHorizon.includes(item));
+    const scheduleVisibleInNativeList = (item) => channel.nativeReadback?.visibleScheduledAtUtc?.includes(item.scheduledAt);
+    const visibleScheduleTimes = [...new Set(channel.nativeReadback?.visibleScheduledAtUtc || [])]
+      .filter((slot) => {
+        const date = easternDate(slot);
+        return date >= asOf && date < end;
+      });
+    const exactNativeScheduleTimes = new Set(nativeScheduled.map((item) => item.scheduledAt));
+    const unmatchedVisibleScheduleTimes = visibleScheduleTimes.filter((slot) => !exactNativeScheduleTimes.has(slot));
     const contradictedBookingClaims = verifiedNative && destinationResolved
       ? unverifiedBookingClaims.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) >= asOf
-        && easternDate(item.scheduledAt) < end)
+        && easternDate(item.scheduledAt) < end
+        && !scheduleVisibleInNativeList(item))
       : [];
+    const visibleScheduleCopyMismatches = unverifiedBookingClaims.filter(scheduleVisibleInNativeList);
+    const sourceLineageReviewItems = nativeScheduled.filter((item) =>
+      ['NATIVE_COPY_DIFFERS_FROM_CONTENTWORK', 'SOURCE_COPY_NOT_PROVEN', 'NO_EXACT_CONTENTWORK_MATCH']
+        .includes(item.sourceCopyStatus)
+    );
     const unresolvedBookingClaims = unverifiedBookingClaims.filter((item) =>
-      !contradictedBookingClaims.includes(item));
+      !contradictedBookingClaims.includes(item) && !visibleScheduleCopyMismatches.includes(item));
     const pastDueBookingClaims = unverifiedBookingClaims.filter((item) => item.scheduledAt
       && Date.parse(item.scheduledAt) < Date.parse(snapshot.asOf));
     const unapprovedScheduled = nativeScheduled.filter((item) => item.approvalState !== 'APPROVED');
@@ -327,23 +377,37 @@ export function buildSocialCoverageReadback(snapshot) {
     const weeks = [0, 1].map((week) => {
       const start = addDays(asOf, week * 7);
       const stop = addDays(start, 7);
-      return { start, stopExclusive: stop, verifiedBookings: coverageProofValid ? booked.filter((item) => {
-        const date = easternDate(item.scheduledAt);
-        return date >= start && date < stop;
-      }).length : null };
+      return {
+        start,
+        stopExclusive: stop,
+        scheduledBookings: coverageProofValid ? new Set([
+          ...nativeScheduled.map((item) => item.scheduledAt),
+          ...unmatchedVisibleScheduleTimes
+        ].filter((slot) => {
+          const date = easternDate(slot);
+          return date >= start && date < stop;
+        })).size : null,
+        verifiedBookings: coverageProofValid ? booked.filter((item) => {
+          const date = easternDate(item.scheduledAt);
+          return date >= start && date < stop;
+        }).length : null
+      };
     });
     const states = [];
     if (!verifiedNative) states.push(`NATIVE_READBACK_${nativeReadbackStatus}`);
     if ((!channel.destinationId && !channel.destinationHandle) || channel.executionOwner === 'UNRESOLVED') states.push('DESTINATION_AUTHORITY_UNRESOLVED');
     if (!channel.destinationId && channel.destinationHandle) states.push('NUMERIC_DESTINATION_ID_UNVERIFIED');
     if (!coverageProofValid) states.push('COVERAGE_STATUS_UNKNOWN');
-    else if (weeks.some((week) => week.verifiedBookings === 0)) states.push('ROLLING_COVERAGE_GAP');
+    else if (weeks.some((week) => week.scheduledBookings === 0)) states.push('ROLLING_COVERAGE_GAP');
     if (held.length) states.push('HELD_ITEMS');
     if (failures.length) states.push('EXECUTION_FAILURE');
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
     if (pastDueBookingClaims.length) states.push('PAST_DUE_NATIVE_BOOKING_CLAIM');
     if (unresolvedBookingClaims.length) states.push('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION');
     if (contradictedBookingClaims.length) states.push('NATIVE_BOOKING_CONFLICT');
+    if (visibleScheduleCopyMismatches.length || unmatchedVisibleScheduleTimes.length || sourceLineageReviewItems.length) {
+      states.push('NATIVE_BOOKING_SOURCE_COPY_REVIEW');
+    }
     if (nativeReservations.length) states.push('NATIVE_RESERVATION_REQUIRES_PUBLICATION_READBACK');
     if (nativeReservations.some((item) => item.nativeReservationTimeZone === 'UNVERIFIED')) {
       states.push('NATIVE_RESERVATION_TIMEZONE_UNVERIFIED');
@@ -363,7 +427,7 @@ export function buildSocialCoverageReadback(snapshot) {
       });
     }
     if (coverageProofValid) {
-      for (const week of weeks.filter((entry) => entry.verifiedBookings === 0)) {
+      for (const week of weeks.filter((entry) => entry.scheduledBookings === 0)) {
         const calendarWeekStart = mondayOf(week.start);
         alertFindings.push({
           dedupeKey: findingKey(channel, 'ROLLING_COVERAGE_GAP', calendarWeekStart),
@@ -392,6 +456,18 @@ export function buildSocialCoverageReadback(snapshot) {
         delivery: 'REPORT_ONLY'
       });
     }
+    if (visibleScheduleCopyMismatches.length || unmatchedVisibleScheduleTimes.length || sourceLineageReviewItems.length) {
+      const ids = [...visibleScheduleCopyMismatches.map((item) => item.id),
+        ...sourceLineageReviewItems.map((item) => item.dataverseSocialExecutionId || item.id),
+        ...unmatchedVisibleScheduleTimes].sort();
+      alertFindings.push({
+        dedupeKey: findingKey(channel, 'NATIVE_BOOKING_SOURCE_COPY_REVIEW', ids),
+        state: 'NATIVE_BOOKING_SOURCE_COPY_REVIEW',
+        action: 'REVIEW_NATIVE_BOOKING_SOURCE_COPY',
+        evidence: { recordIds: ids },
+        delivery: 'REPORT_ONLY'
+      });
+    }
     if ((!channel.destinationId && !channel.destinationHandle) || channel.executionOwner === 'UNRESOLVED') {
       alertFindings.push({
         dedupeKey: findingKey(channel, 'DESTINATION_AUTHORITY_UNRESOLVED', channel.destinationId || channel.destinationHandle || 'MISSING'),
@@ -411,10 +487,21 @@ export function buildSocialCoverageReadback(snapshot) {
       nativeReadbackFresh: nativeEvidenceFresh,
       nativeReadbackStatus,
       coverageStatus: coverageProofValid
-        ? weeks.every((week) => week.verifiedBookings > 0) ? 'VERIFIED_COVERED' : 'VERIFIED_GAP'
+        ? weeks.some((week) => week.scheduledBookings === 0) ? 'VERIFIED_GAP'
+          : weeks.every((week) => week.verifiedBookings > 0) && unapprovedScheduled.length === 0
+            && visibleScheduleCopyMismatches.length === 0 && unmatchedVisibleScheduleTimes.length === 0
+            ? 'VERIFIED_COVERED' : 'SCHEDULED_APPROVAL_REVIEW'
         : 'UNKNOWN',
       nativeScheduled: coverageProofValid ? nativeScheduled.length : null,
+      observedScheduledBookings: coverageProofValid ? nativeScheduled.length : null,
+      visibleCalendarSlots: coverageProofValid ? visibleScheduleTimes : null,
+      unmatchedVisibleScheduleTimes,
       nativeBookingClaims: bookingClaims.length,
+      verifiedBookingsBeyondHorizon: verifiedBookingsBeyondHorizon.map((item) => ({
+        id: item.id,
+        scheduledAt: item.scheduledAt,
+        destinationId: item.destinationId || null
+      })),
       unverifiedBookingClaims: unverifiedBookingClaims.map((item) => ({
         id: item.id,
         scheduledAt: item.scheduledAt || null,
@@ -422,7 +509,14 @@ export function buildSocialCoverageReadback(snapshot) {
         destinationHandle: item.destinationHandle || null,
         status: item.status || null,
         readbackState: item.readbackState || null,
+        scheduleVisibleInNativeList: Boolean(scheduleVisibleInNativeList(item)),
         pastDue: Boolean(item.scheduledAt && Date.parse(item.scheduledAt) < Date.parse(snapshot.asOf))
+      })),
+      visibleScheduleCopyMismatches: visibleScheduleCopyMismatches.map((item) => ({
+        id: item.id,
+        scheduledAt: item.scheduledAt || null,
+        destinationId: item.destinationId || null,
+        sourceCopyStatus: item.sourceCopyStatus || 'SOURCE_COPY_NOT_PROVEN'
       })),
       contradictedBookingClaims: contradictedBookingClaims.map((item) => ({
         id: item.id,
@@ -508,19 +602,31 @@ export function buildSocialCoverageReadback(snapshot) {
         && channels.some((channel) => channelKey(channel) === channelKey(item)
           && matchesDestination(item, channel)
           && ((item.kind === 'PUBLISHED' && item.platformPostId && publishedDateET(item))
-            || (item.kind === 'NATIVE_BOOKING' && hasNativeBookingProof(item, asOf)
-              && item.approvalState === 'APPROVED' && item.scheduledAt
+            || (item.kind === 'NATIVE_BOOKING' && hasNativeBookingProof(item, asOf, snapshot.asOf)
+              && item.scheduledAt
               && easternDate(item.scheduledAt) >= asOf
               && channel.nativeReadback?.state === 'VERIFIED'
-              && channel.nativeReadback.observedDateET === asOf)))
+              && (channel.nativeReadback.requireTimestamp === true
+                ? timestampEvidenceFresh(channel.nativeReadback.observedAt, snapshot.asOf)
+                : channel.nativeReadback.observedDateET === asOf))))
       ).filter((item) => {
         const date = item.kind === 'PUBLISHED' ? publishedDateET(item) : easternDate(item.scheduledAt);
         return date >= first && date < stop && date >= start && date < endExclusive;
       });
-      weeks.push({ startMondayET: start, endExclusiveMondayET: endExclusive, proofIds: proof.map((item) => item.id) });
+      weeks.push({
+        startMondayET: start,
+        endExclusiveMondayET: endExclusive,
+        proofIds: proof.map((item) => item.id),
+        approvedProofIds: proof.filter((item) => item.kind === 'PUBLISHED' || item.approvalState === 'APPROVED')
+          .map((item) => item.id),
+        approvalUnverifiedProofIds: proof.filter((item) => item.kind === 'NATIVE_BOOKING'
+          && item.approvalState !== 'APPROVED').map((item) => item.id)
+      });
     }
     return { brand: program.brand, author: program.author, month: program.month,
-      coveredWeeks: weeks.filter((week) => week.proofIds.length).length, totalWeeks: weeks.length, weeks };
+      coveredWeeks: weeks.filter((week) => week.proofIds.length).length,
+      approvalVerifiedWeeks: weeks.filter((week) => week.approvedProofIds.length).length,
+      totalWeeks: weeks.length, weeks };
   });
 
   return {

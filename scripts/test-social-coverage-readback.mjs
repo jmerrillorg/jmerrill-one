@@ -109,6 +109,7 @@ test('same-day Meta UI proof counts only the exact destination, caption, and tim
   const result = buildSocialCoverageReadback({ ...base, channels: [{ ...channel, executionOwner: 'META_NATIVE' }],
     items: [item, { ...item, id: 'wrong-caption', captionText: 'Different caption' },
       { ...item, id: 'stale-ui', nativeEvidence: { ...item.nativeEvidence, observedDateET: '2026-10-01' } }] }).channels[0];
+  assert.equal(result.nativeScheduled, 1);
   assert.equal(result.verifiedBookings, 1);
   assert.equal(result.nativeBookingRows[0].proof, 'META_NATIVE_UI');
 });
@@ -123,6 +124,7 @@ test('native Instagram handle proof counts without equating two unresolved numer
   const result = buildSocialCoverageReadback({ ...base, channels: [instagram], items: [booking,
     { ...booking, nativeBookingId: 'wrong-ig', destinationHandle: 'other' },
     { ...booking, nativeBookingId: 'no-handle', destinationHandle: null }] }).channels[0];
+  assert.equal(result.nativeScheduled, 1);
   assert.equal(result.verifiedBookings, 1);
   assert.equal(result.destinationHandle, 'jmerrillone');
   assert.ok(result.states.includes('NUMERIC_DESTINATION_ID_UNVERIFIED'));
@@ -163,6 +165,48 @@ test('stale native evidence and published platform IDs cannot prove future cover
   assert.ok(result.states.includes('NATIVE_READBACK_STALE'));
   assert.ok(result.states.includes('COVERAGE_STATUS_UNKNOWN'));
   assert.ok(!result.states.includes('ROLLING_COVERAGE_GAP'));
+});
+
+test('timestamp-required native readbacks expire within the same Eastern calendar day', () => {
+  const linkedIn = { brand: 'J Merrill One', platform: 'linkedin', destinationId: '106683183',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+      observedDateET: '2026-10-10', observedAt: '2026-10-10T03:00:00Z' } };
+  const item = { id: 'li-booking', brand: linkedIn.brand, platform: linkedIn.platform,
+    destinationId: linkedIn.destinationId, kind: 'NATIVE_BOOKING', approvalState: 'APPROVED',
+    scheduledAt: '2026-10-16T14:00:00Z', captionSha256: 'caption-hash',
+    nativeEvidence: { source: 'LINKEDIN_NATIVE_UI', requireTimestamp: true,
+      observedDateET: '2026-10-10', observedAt: '2026-10-10T03:00:00Z',
+      scheduledAt: '2026-10-16T14:00:00Z', captionSha256: 'caption-hash' } };
+  const current = buildSocialCoverageReadback({ asOf: '2026-10-10T16:00:00Z', channels: [linkedIn], items: [item] }).channels[0];
+  assert.equal(current.nativeReadbackStatus, 'STALE');
+  assert.equal(current.nativeScheduled, null);
+  assert.ok(current.states.includes('NATIVE_READBACK_STALE'));
+
+  const freshChannel = { ...linkedIn, nativeReadback: { ...linkedIn.nativeReadback,
+    observedAt: '2026-10-10T15:00:00Z' } };
+  const freshItem = { ...item, nativeEvidence: { ...item.nativeEvidence, observedAt: '2026-10-10T15:00:00Z' } };
+  const fresh = buildSocialCoverageReadback({ asOf: '2026-10-10T16:00:00Z',
+    channels: [freshChannel], items: [freshItem] }).channels[0];
+  assert.equal(fresh.nativeReadbackStatus, 'CURRENT');
+  assert.equal(fresh.verifiedBookings, 1);
+});
+
+test('proven native bookings outside the current horizon are not misreported as reconciliation failures', () => {
+  const channel = { brand: 'J Merrill One', platform: 'linkedin', destinationId: '106683183',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-10' } };
+  const item = { id: 'li-oct26', brand: channel.brand, platform: channel.platform,
+    destinationId: channel.destinationId, kind: 'NATIVE_BOOKING', approvalState: 'APPROVED',
+    nativeBookingId: null, scheduledAt: '2026-10-26T14:00:00Z',
+    captionText: 'Exact caption', nativeEvidence: { source: 'LINKEDIN_NATIVE_UI',
+      observedDateET: '2026-10-10', scheduledAt: '2026-10-26T14:00:00Z',
+      captionSha256: createHash('sha256').update('Exact caption').digest('hex') } };
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-10T18:00:00Z', channels: [channel], items: [item] }).channels[0];
+  assert.equal(result.nativeScheduled, 0);
+  assert.deepEqual(result.unverifiedBookingClaims, []);
+  assert.deepEqual(result.verifiedBookingsBeyondHorizon, [{
+    id: 'li-oct26', scheduledAt: '2026-10-26T14:00:00Z', destinationId: channel.destinationId
+  }]);
+  assert.ok(!result.states.includes('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION'));
 });
 
 test('stale readback is unknown, preserves live publication evidence, and emits stable dedupe keys', () => {
@@ -212,6 +256,24 @@ test('author weeks use Monday-Sunday calendar weeks and correct publication mont
   assert.equal(result[0].coveredWeeks, 0);
   assert.equal(result[1].totalWeeks, 6);
   assert.equal(result[1].coveredWeeks, 0);
+});
+
+test('timestamped LinkedIn author bookings contribute to the correct calendar week', () => {
+  const captionText = 'October Author of the Month: Iyorwuese Hagher.';
+  const linkedIn = { brand: 'J Merrill Publishing', platform: 'linkedin', destinationId: '13048648',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+      observedDateET: '2026-10-10', observedAt: '2026-10-10T18:22:07Z' } };
+  const booking = { id: 'hagher-oct22', brand: linkedIn.brand, platform: 'linkedin',
+    destinationId: linkedIn.destinationId, kind: 'NATIVE_BOOKING', approvalState: 'APPROVED',
+    theme: 'AUTHOR_SPOTLIGHT', author: 'Iyorwuese Hagher', scheduledAt: '2026-10-22T15:00:00Z', captionText,
+    nativeEvidence: { source: 'LINKEDIN_NATIVE_UI', requireTimestamp: true,
+      observedDateET: '2026-10-10', observedAt: '2026-10-10T18:22:07Z',
+      scheduledAt: '2026-10-22T15:00:00Z', captionSha256: createHash('sha256').update(captionText).digest('hex') } };
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-10T19:00:00Z', channels: [linkedIn],
+    authorPrograms: [{ brand: linkedIn.brand, author: 'Iyorwuese Hagher', month: '2026-10' }], items: [booking] }).authorCoverage[0];
+  const targetWeek = result.weeks.find((week) => week.startMondayET === '2026-10-19');
+  assert.deepEqual(targetWeek.proofIds, ['hagher-oct22']);
+  assert.equal(result.coveredWeeks, 1);
 });
 
 test('failure readback exposes retry work without treating it as coverage', () => {
@@ -347,7 +409,8 @@ test('Dataverse native booking readback verifies exact UI observation without mi
   }], items: [{ ...row, brand: 'J Merrill Publishing', platform: 'instagram', destinationHandle: 'jmerrillpub' }] }).channels[0];
   assert.equal(row.kind, 'NATIVE_BOOKING');
   assert.equal(row.platformPostId, null);
-  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.nativeScheduled, 1);
+  assert.equal(result.verifiedBookings, 0);
   assert.equal(result.nativeBookingRows[0].proof, 'META_NATIVE_UI');
   assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
 });
@@ -371,8 +434,9 @@ test('verified Instagram portfolio handle resolves a native booking without a du
     nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08', portfolioHandle: 'jmerrillfin' }
   }], items: [row] }).channels[0];
   assert.equal(row.kind, 'NATIVE_BOOKING');
-  assert.equal(result.verifiedBookings, 1);
-  assert.equal(result.nextVerifiedBooking, '2026-10-10T16:00:00Z');
+  assert.equal(result.nativeScheduled, 1);
+  assert.equal(result.verifiedBookings, 0);
+  assert.equal(result.nextVerifiedBooking, null);
   assert.deepEqual(result.unverifiedBookingClaims, []);
 });
 
@@ -398,7 +462,8 @@ test('current MBS_BOOKED evidence verifies the observed content ID separately fr
   assert.equal(row.platformPostId, null);
   assert.equal(row.nativeEvidence.source, 'META_NATIVE_UI');
   assert.equal(row.nativeEvidence.platformContentId, '1094388950239342');
-  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.nativeScheduled, 1);
+  assert.equal(result.verifiedBookings, 0);
   assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
 });
 
@@ -415,6 +480,83 @@ test('fresh empty native readback contradicts an in-window Dataverse booking cla
   assert.deepEqual(result.contradictedBookingClaims.map((claim) => claim.id), ['claim-1']);
   assert.ok(result.states.includes('NATIVE_BOOKING_CONFLICT'));
   assert.ok(!result.states.includes('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION'));
+});
+
+test('native schedule-list presence is distinguished from an exact content match', () => {
+  const financial = { brand: 'J Merrill Financial', platform: 'linkedin', destinationId: '146207089',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-10',
+      visibleScheduledAtUtc: ['2026-10-12T14:00:00Z'] } };
+  const row = { jm1_socialexecutionid: 'fin-li-12', jm1_branch: financial.brand,
+    jm1_platform: 'linkedin', jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requesteddestination: financial.destinationId, jm1_requestedschedule: '2026-10-12T14:00:00Z' };
+  const mapped = mapDataverseSocialRows([row], [financial]).mapped;
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-10T18:00:00Z',
+    channels: [financial], items: mapped }).channels[0];
+  assert.equal(result.verifiedBookings, 0);
+  assert.deepEqual(result.visibleCalendarSlots, ['2026-10-12T14:00:00Z']);
+  assert.deepEqual(result.unmatchedVisibleScheduleTimes, ['2026-10-12T14:00:00Z']);
+  assert.equal(result.unverifiedBookingClaims[0].scheduleVisibleInNativeList, true);
+  assert.deepEqual(result.contradictedBookingClaims, []);
+  assert.ok(result.states.includes('NATIVE_BOOKING_SOURCE_COPY_REVIEW'));
+  assert.ok(!result.states.includes('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION'));
+  assert.ok(!result.states.includes('NATIVE_BOOKING_CONFLICT'));
+});
+
+test('exact UI booking survives a source-copy mismatch without inventing approval or native IDs', () => {
+  const slot = '2026-10-12T14:00:00Z';
+  const captionText = 'Native LinkedIn caption differs from generated draft.';
+  const captionSha256 = createHash('sha256').update(captionText).digest('hex');
+  const financial = { brand: 'J Merrill Financial', platform: 'linkedin', destinationId: '146207089',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+      observedDateET: '2026-10-10', observedAt: '2026-10-10T20:01:34Z',
+      visibleScheduledAtUtc: [slot] } };
+  const native = { id: 'fin-li-12-native', dataverseRecordId: 'fin-li-12-dv',
+    brand: financial.brand, platform: 'linkedin', destinationId: financial.destinationId,
+    kind: 'NATIVE_BOOKING', scheduledAt: slot, approvalState: 'UNKNOWN',
+    sourceCopyStatus: 'NATIVE_COPY_DIFFERS_FROM_CONTENTWORK', captionText, captionSha256,
+    nativeEvidence: { source: 'LINKEDIN_NATIVE_UI', requireTimestamp: true,
+      observedDateET: '2026-10-10', observedAt: '2026-10-10T20:01:34Z',
+      scheduledAt: slot, captionSha256, nativeBookingId: null } };
+  const dataverse = [{ id: 'fin-li-12-dv', kind: 'NATIVE_BOOKING', brand: financial.brand,
+    platform: 'linkedin', destinationId: financial.destinationId, scheduledAt: slot,
+    contentKey: 'J Merrill Financial:generated-copy-hash', status: 'NATIVE_BOOKED_VERIFIED' }];
+  const reconciled = reconcileNativeDataverseClaims([native], dataverse, '2026-10-10T20:02:00Z');
+  const report = buildSocialCoverageReadback({ asOf: '2026-10-10T20:02:00Z', channels: [financial],
+    items: reconciled.items }).channels[0];
+  assert.equal(reconciled.items[0].dataverseEvidenceMatch, 'DESTINATION_SCHEDULE_RECORD_ID');
+  assert.equal(reconciled.items[0].sourceCopyStatus, 'NATIVE_COPY_DIFFERS_FROM_CONTENTWORK');
+  assert.equal(reconciled.items[0].approvalState, 'UNKNOWN');
+  assert.equal(reconciled.items[0].nativeBookingId, null);
+  assert.equal(report.nativeScheduled, 1);
+  assert.equal(report.verifiedBookings, 0);
+  assert.equal(report.coverageStatus, 'VERIFIED_GAP');
+  assert.ok(report.states.includes('NATIVE_BOOKING_SOURCE_COPY_REVIEW'));
+  assert.deepEqual(report.weeks.map((week) => week.scheduledBookings), [1, 0]);
+});
+
+test('native reservation can reconcile by exact Dataverse record while preserving source-copy mismatch', () => {
+  const slot = '2026-10-19T14:00:00Z';
+  const liChannel = { brand: 'J Merrill One', platform: 'linkedin', destinationId: '106683183',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+      observedDateET: '2026-10-10', observedAt: '2026-10-10T18:46:00Z' } };
+  const native = { id: 'li-one-19', kind: 'NATIVE_BOOKING', brand: liChannel.brand,
+    platform: 'linkedin', destinationId: liChannel.destinationId, dataverseRecordId: 'dv-one-19',
+    sourceCopyStatus: 'NO_EXACT_CONTENTWORK_MATCH', approvalState: 'APPROVED',
+    scheduledAt: slot, captionText: 'Native text must be preserved',
+    captionSha256: createHash('sha256').update('Native text must be preserved').digest('hex'),
+    nativeEvidence: { source: 'LINKEDIN_NATIVE_UI', requireTimestamp: true,
+      observedDateET: '2026-10-10', observedAt: '2026-10-10T18:46:00Z',
+      scheduledAt: slot, captionSha256: createHash('sha256').update('Native text must be preserved').digest('hex') } };
+  const sourceRow = { id: 'dv-one-19', kind: 'NATIVE_BOOKING', brand: liChannel.brand,
+    platform: 'linkedin', destinationId: liChannel.destinationId, scheduledAt: slot,
+    contentKey: 'J Merrill One:stage-marker', status: 'NATIVE_BOOKED_VERIFIED',
+    readbackState: 'NATIVE_UI|LINKEDIN|BOOKING=NOT_EXPOSED' };
+  const reconciled = reconcileNativeDataverseClaims([native], [sourceRow], '2026-10-10T18:53:00Z');
+  assert.equal(reconciled.items[0].dataverseSocialExecutionId, 'dv-one-19');
+  assert.equal(reconciled.items[0].dataverseEvidenceMatch, 'DESTINATION_SCHEDULE_RECORD_ID');
+  assert.equal(reconciled.items[0].sourceCopyStatus, 'NO_EXACT_CONTENTWORK_MATCH');
+  assert.equal(reconciled.items[0].captionText, 'Native text must be preserved');
+  assert.deepEqual([...reconciled.matchedDataverseIds], ['dv-one-19']);
 });
 
 test('fresh verified empty LinkedIn queue contradicts in-window Dataverse booking claims without counting them', () => {
@@ -517,7 +659,8 @@ test('fresh exact native card reconciles a matching Dataverse booking despite it
   assert.equal(result.items[0].dataverseSocialExecutionId, 'dv-row');
   assert.equal(result.items[0].dataverseEvidenceMatch, 'DESTINATION_SCHEDULE_CAPTION_SHA256');
   assert.equal(result.items[0].approvalState, 'APPROVED');
-  assert.equal(result.items[0].dataverseApprovalEvidence, 'NATIVE_BOOKED_VERIFIED');
+  assert.equal(result.items[0].dataverseBookingEvidence, 'NATIVE_BOOKED_VERIFIED');
+  assert.equal(result.items[0].approvalState, 'APPROVED');
 });
 
 test('native-to-Dataverse reconciliation fails closed on destination, time, or caption mismatch', () => {
