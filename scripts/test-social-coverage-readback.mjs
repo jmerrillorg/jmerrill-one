@@ -358,7 +358,7 @@ test('current MBS_BOOKED evidence verifies the observed content ID separately fr
   assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
 });
 
-test('Dataverse native-booking claims are visible but never count as verified coverage alone', () => {
+test('fresh empty native readback contradicts an in-window Dataverse booking claim without counting it', () => {
   const row = { jm1_socialexecutionid: 'claim-1', jm1_branch: channel.brand,
     jm1_platform: 'facebook', jm1_status: 'NATIVE_BOOKED_VERIFIED',
     jm1_requesteddestination: channel.destinationId, jm1_requestedschedule: '2026-10-13T14:00:00Z' };
@@ -368,7 +368,43 @@ test('Dataverse native-booking claims are visible but never count as verified co
   assert.equal(result.nativeScheduled, 0);
   assert.equal(result.verifiedBookings, 0);
   assert.deepEqual(result.unverifiedBookingClaims.map((claim) => claim.id), ['claim-1']);
-  assert.ok(result.states.includes('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION'));
+  assert.deepEqual(result.contradictedBookingClaims.map((claim) => claim.id), ['claim-1']);
+  assert.ok(result.states.includes('NATIVE_BOOKING_CONFLICT'));
+  assert.ok(!result.states.includes('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION'));
+});
+
+test('fresh verified empty LinkedIn queue contradicts in-window Dataverse booking claims without counting them', () => {
+  const linkedIn = { brand: 'J Merrill Publishing', platform: 'linkedin', destinationId: '13048648',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-10' } };
+  const claim = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'pub-li-oct10', jm1_branch: linkedIn.brand, jm1_platform: 'linkedin',
+    jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requesteddestination: linkedIn.destinationId,
+    jm1_requestedschedule: '2026-10-10T15:00:00Z', jm1_captionversion: 'caption-sha',
+    jm1_readbackstate: 'LINKEDIN_NATIVE_SCHEDULED_2026_10_10_1100'
+  }], [linkedIn]).mapped[0];
+  const report = buildSocialCoverageReadback({ asOf: '2026-10-10T05:50:00Z', channels: [linkedIn], items: [claim] });
+  const result = report.channels[0];
+  assert.equal(result.nativeReadbackStatus, 'CURRENT');
+  assert.equal(result.nativeScheduled, 0);
+  assert.equal(result.verifiedBookings, 0);
+  assert.deepEqual(result.contradictedBookingClaims.map((item) => item.id), ['pub-li-oct10']);
+  assert.ok(result.states.includes('NATIVE_BOOKING_CONFLICT'));
+  assert.ok(!result.states.includes('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION'));
+  assert.ok(report.alertFindings.some((finding) => finding.action === 'RECONCILE_CONTRADICTED_NATIVE_BOOKING'
+    && finding.evidence.recordIds.includes('pub-li-oct10')));
+});
+
+test('held native booking conflicts remain visible as actionable failures in Dataverse readback', () => {
+  const conflict = { id: 'api-native-conflict', kind: 'API_REQUEST', brand: channel.brand,
+    platform: channel.platform, destinationId: channel.destinationId,
+    status: 'HELD_NATIVE_BOOKING_CONFLICT', scheduledAt: '2026-10-13T14:00:00Z' };
+  const result = buildSocialCoverageReadback({ ...base, items: [conflict] }).channels[0];
+  assert.ok(result.states.includes('HELD_ITEMS'));
+  assert.ok(result.states.includes('EXECUTION_FAILURE'));
+  assert.ok(result.alertFindings.some((finding) => finding.action === 'RECONCILE_EXECUTION_FAILURE'
+    && finding.evidence.recordIds.includes('api-native-conflict')));
+  assert.equal(classifyDataverseExecutionRow({ status: 'HELD_NATIVE_BOOKING_CONFLICT' }).actionRequired, true);
+  assert.equal(classifyDataverseExecutionRow({ status: 'HELD_NATIVE_BOOKING_STALE' }).classification, 'NATIVE_BOOKING_STALE');
 });
 
 test('Dataverse booking claims without publication proof are surfaced for reconciliation', () => {

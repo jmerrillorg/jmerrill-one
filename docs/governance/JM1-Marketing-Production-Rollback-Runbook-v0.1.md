@@ -12,10 +12,16 @@ Status: CANON CANDIDATE - FOUNDER RATIFICATION REQUIRED
 ## Function Deployment
 
 1. Disable only the affected autonomous feature flag when platform execution is at risk.
-2. Record the active `JM1_RELEASE_SHA`, package hash, open claims, and last successful timer readback.
-3. Redeploy the previous verified package by immutable commit/package identity.
-4. Confirm all four timers are visible and App Insights receives a successful natural run.
-5. Reconcile claimed, accepted, and readback-pending rows before re-enabling execution.
+2. Capture the active `JM1_RELEASE_SHA`, immutable `WEBSITE_RUN_FROM_PACKAGE` URL, package managed-identity setting, open claims, and deployed Function trigger inventory before changing settings.
+3. Resolve a completed successful `azure-marketing-functions.yml` run for the prior release SHA, require its successful `deploy` job, and download that run's unexpired GitHub Actions provenance artifact. Validate repository, workflow path, commit SHA, run ID/attempt, artifact name, package name, and the manifest SHA-256 against the downloaded Azure rollback blob. A SHA-named Azure blob or a digest freshly computed from that same blob is not independent provenance.
+4. If the prior successful build artifact or provenance manifest is absent, expired, malformed, or mismatched, fail closed before changing Function App settings. The currently deployed release may require an independently governed provenance bridge; do not manufacture one from the blob itself.
+5. Restore the prior package URL, release SHA, and package managed-identity setting exactly. Sync triggers and compare deployed trigger names and types to the captured pre-release inventory. Do not assume the prior release has the current source inventory.
+6. The current source-owned inventory contains seven timers and one storage-queue trigger: `catalogMarketingHealthTimer`, `credentialMonitorTimer`, `creativeWorkProcessorTimer`, `marketingControlLoopTimer`, `publishingAssetEventOutboxTimer`, `socialExecutionWorkerTimer`, `websiteIntakeReconciliationTimer`, and `productionAssetRegistrationQueue`. The inventory file in the exact release commit is authoritative for that release; missing, unexpected, duplicate, wrong-type, or wrong-source entries fail validation.
+7. After release or rollback, reconcile claimed, accepted, failed, retry-pending, and readback-pending rows before any affected execution is resumed.
+
+## Natural-Run Acceptance
+
+Trigger inventory and settings readback prove deployment configuration only. They do not prove a timer executed. Record the deployed `JM1_RELEASE_SHA`, package SHA-256, deployment-completion time, and each timer's next natural due window. After that window, require an App Insights invocation/readback tied to the deployed release and expected Function name, then reconcile existing schedule/claim state and publication IDs. Never manually invoke a publisher to manufacture acceptance. A future natural tick remains `PENDING` until observed. A queue-trigger function is accepted by a naturally occurring governed queue event or an approved non-effecting diagnostic, not by creating duplicate or synthetic business work.
 
 ## Configuration and Credentials
 
@@ -31,4 +37,4 @@ Dataverse migrations are forward-fixed. Additive migrations may be superseded bu
 
 ## Rollback Completion
 
-Rollback is complete only when timer health is current, open claims are reconciled, duplicate count is zero, branch leakage is zero, and the preserved evidence points to the active release.
+Rollback is complete only when the prior package has successful build-artifact provenance and its manifest SHA-256 matches the fetched Azure blob; restored package/SHA/managed-identity settings match the captured pre-state; the live trigger inventory matches the captured pre-release inventory; timer health is current after natural ticks; open claims are reconciled; duplicate count is zero; branch leakage is zero; and preserved evidence points to the active release. When prior provenance is unavailable, release/rollback is blocked before mutation and must not claim byte integrity.

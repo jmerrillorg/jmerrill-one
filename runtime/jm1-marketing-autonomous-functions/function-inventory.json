@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "functions": [
+    {
+      "name": "catalogMarketingHealthTimer",
+      "triggerType": "timerTrigger",
+      "source": "src/functions/catalogMarketingHealthTimer.js"
+    },
+    {
+      "name": "credentialMonitorTimer",
+      "triggerType": "timerTrigger",
+      "source": "src/functions/credentialMonitorTimer.js"
+    },
+    {
+      "name": "creativeWorkProcessorTimer",
+      "triggerType": "timerTrigger",
+      "source": "src/functions/creativeWorkProcessorTimer.js"
+    },
+    {
+      "name": "marketingControlLoopTimer",
+      "triggerType": "timerTrigger",
+      "source": "src/functions/marketingControlLoopTimer.js"
+    },
+    {
+      "name": "productionAssetRegistrationQueue",
+      "triggerType": "queueTrigger",
+      "source": "src/functions/productionAssetRegistrationQueue.js"
+    },
+    {
+      "name": "publishingAssetEventOutboxTimer",
+      "triggerType": "timerTrigger",
+      "source": "src/functions/publishingAssetEventOutboxTimer.js"
+    },
+    {
+      "name": "socialExecutionWorkerTimer",
+      "triggerType": "timerTrigger",
+      "source": "src/functions/socialExecutionWorkerTimer.js"
+    },
+    {
+      "name": "websiteIntakeReconciliationTimer",
+      "triggerType": "timerTrigger",
+      "source": "src/functions/websiteIntakeReconciliationTimer.js"
+    }
+  ]
+}

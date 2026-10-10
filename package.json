@@ -11,9 +11,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "package:appservice": "node scripts/package-appservice.mjs"
+    "package:appservice": "node scripts/package-appservice.mjs",
+    "test:dataverse-auth": "node --test scripts/test-dataverse-auth.mjs"
   },
   "dependencies": {
+    "@azure/identity": "^4.13.3",
     "framer-motion": "^12.38.0",
     "next": "16.3.8",
     "next-auth": "^4.24.15",

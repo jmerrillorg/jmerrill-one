@@ -200,8 +200,11 @@ function parseNativeReservationName(value) {
 
 export function classifyDataverseExecutionRow(row, asOf) {
   const status = row.status || '';
+  if (['HELD_NATIVE_BOOKING_CONFLICT', 'HELD_NATIVE_BOOKING_STALE'].includes(status)) {
+    return { classification: status === 'HELD_NATIVE_BOOKING_STALE' ? 'NATIVE_BOOKING_STALE' : 'NATIVE_BOOKING_CONFLICT', actionRequired: true };
+  }
   if (/^HELD/.test(status)) return { classification: 'HELD_NOT_BOOKED', actionRequired: false };
-  if (/FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED/.test(status)) {
+  if (/FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED|NATIVE_BOOKING_(CONFLICT|STALE)/.test(status)) {
     return { classification: 'EXECUTION_FAILURE', actionRequired: true };
   }
   if (status === 'PUBLISHED_VERIFIED' && !row.platformPostId) {
@@ -255,6 +258,13 @@ export function buildSocialCoverageReadback(snapshot) {
     const booked = nativeScheduled.filter((item) => item.approvalState === 'APPROVED');
     const bookingClaims = related.filter((item) => item.kind === 'NATIVE_BOOKING');
     const unverifiedBookingClaims = bookingClaims.filter((item) => !nativeScheduled.includes(item));
+    const contradictedBookingClaims = verifiedNative && destinationResolved
+      ? unverifiedBookingClaims.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) >= asOf
+        && easternDate(item.scheduledAt) < end)
+      : [];
+    const unresolvedBookingClaims = unverifiedBookingClaims.filter((item) =>
+      !contradictedBookingClaims.includes(item));
     const pastDueBookingClaims = unverifiedBookingClaims.filter((item) => item.scheduledAt
       && Date.parse(item.scheduledAt) < Date.parse(snapshot.asOf));
     const unapprovedScheduled = nativeScheduled.filter((item) => item.approvalState !== 'APPROVED');
@@ -269,7 +279,7 @@ export function buildSocialCoverageReadback(snapshot) {
     const pastDueRequests = apiRequests.filter((item) => item.scheduledAt && easternDate(item.scheduledAt) < asOf);
     const approvedContent = related.filter((item) => item.kind === 'CONTENT' && item.approvalState === 'APPROVED');
     const held = related.filter((item) => item.status?.startsWith('HELD') || item.approvalState === 'HELD');
-    const failures = related.filter((item) => /FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED/.test(item.status || ''));
+    const failures = related.filter((item) => /FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED|NATIVE_BOOKING_(CONFLICT|STALE)/.test(item.status || ''));
     const duplicateRisk = nativeScheduled.filter((native) =>
       apiRequests.some((request) => request.contentKey
         && request.contentKey === native.contentKey)
@@ -294,7 +304,8 @@ export function buildSocialCoverageReadback(snapshot) {
     if (failures.length) states.push('EXECUTION_FAILURE');
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
     if (pastDueBookingClaims.length) states.push('PAST_DUE_NATIVE_BOOKING_CLAIM');
-    if (unverifiedBookingClaims.length) states.push('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION');
+    if (unresolvedBookingClaims.length) states.push('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION');
+    if (contradictedBookingClaims.length) states.push('NATIVE_BOOKING_CONFLICT');
     if (nativeReservations.length) states.push('NATIVE_RESERVATION_REQUIRES_PUBLICATION_READBACK');
     if (nativeReservations.some((item) => item.nativeReservationTimeZone === 'UNVERIFIED')) {
       states.push('NATIVE_RESERVATION_TIMEZONE_UNVERIFIED');
@@ -329,7 +340,8 @@ export function buildSocialCoverageReadback(snapshot) {
       ['EXECUTION_FAILURE', failures.map((item) => item.id), 'RECONCILE_EXECUTION_FAILURE'],
       ['PAST_DUE_API_REQUEST', pastDueRequests.map((item) => item.id), 'RECONCILE_PAST_DUE_REQUEST'],
       ['PAST_DUE_NATIVE_BOOKING_CLAIM', pastDueBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
-      ['NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION', unverifiedBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
+      ['NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION', unresolvedBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
+      ['NATIVE_BOOKING_CONFLICT', contradictedBookingClaims.map((item) => item.id), 'RECONCILE_CONTRADICTED_NATIVE_BOOKING'],
       ['DUAL_SCHEDULER_RISK', duplicateRisk.map((item) => item.id), 'RESOLVE_DUPLICATE_SCHEDULER_RISK']
     ]) {
       if (!ids.length) continue;
@@ -373,6 +385,13 @@ export function buildSocialCoverageReadback(snapshot) {
         status: item.status || null,
         readbackState: item.readbackState || null,
         pastDue: Boolean(item.scheduledAt && Date.parse(item.scheduledAt) < Date.parse(snapshot.asOf))
+      })),
+      contradictedBookingClaims: contradictedBookingClaims.map((item) => ({
+        id: item.id,
+        scheduledAt: item.scheduledAt,
+        destinationId: item.destinationId || null,
+        destinationHandle: item.destinationHandle || null,
+        readbackState: item.readbackState || null
       })),
       nativeBookingRows: nativeScheduled.map((item) => ({
         id: item.id,

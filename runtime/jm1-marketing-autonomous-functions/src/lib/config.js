@@ -1,8 +1,15 @@
 export const DATAVERSE_URL = requireEnv('DATAVERSE_RESOURCE_URL');
 export const DATAVERSE_WEB_API_BASE_URL = process.env.DATAVERSE_WEB_API_BASE_URL || `${DATAVERSE_URL}/api/data/v9.2`;
-export const DATAVERSE_TENANT_ID = requireEnv('DATAVERSE_TENANT_ID');
-export const DATAVERSE_CLIENT_ID = requireEnv('DATAVERSE_CLIENT_ID');
-export const DATAVERSE_CLIENT_SECRET = requireEnv('DATAVERSE_CLIENT_SECRET');
+export const DATAVERSE_AUTH_MODE = process.env.DATAVERSE_AUTH_MODE || 'client_credentials';
+if (!['client_credentials', 'system_assigned_managed_identity'].includes(DATAVERSE_AUTH_MODE)) {
+  throw new Error('DATAVERSE_AUTH_MODE must be client_credentials or system_assigned_managed_identity');
+}
+export const DATAVERSE_TENANT_ID = process.env.DATAVERSE_TENANT_ID || '';
+export const DATAVERSE_CLIENT_ID = process.env.DATAVERSE_CLIENT_ID || '';
+export const DATAVERSE_CLIENT_SECRET = process.env.DATAVERSE_CLIENT_SECRET || '';
+if (DATAVERSE_AUTH_MODE === 'client_credentials' && (!DATAVERSE_TENANT_ID || !DATAVERSE_CLIENT_ID || !DATAVERSE_CLIENT_SECRET)) {
+  throw new Error('Client-credential Dataverse auth requires tenant, client ID, and client secret settings');
+}
 
 export const META_SYSTEM_USER_TOKEN = process.env.JM1_META_SYSTEM_USER_TOKEN || '';
 export const META_TOKEN_SECRET_REFERENCE = process.env.JM1_META_TOKEN_SECRET_REFERENCE || 'jm1-core-vault/JM1-META-SOCIAL-PUBLISHER-SYSTEM-USER-TOKEN';
