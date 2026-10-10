@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {
   captionFingerprint,
   buildNativeReservationHold,
+  isActionableNativeReservationFailure,
   matchingNativeReservation,
   matchingNativeReservationDisposition,
   nativeReservationAliases,
@@ -74,4 +75,7 @@ assert.equal(matchingNativeReservation(row, caption, [{ ...reservation, jm1_stat
 assert.equal(matchingNativeReservation({ ...facebookRequest, jm1_requesteddestination: '104395329284856' }, caption, [facebookReservation], facebookAliases), null);
 assert.equal(reservationReadbackComplete({ value: [] }), true);
 assert.equal(reservationReadbackComplete({ value: [], '@odata.nextLink': 'https://example.invalid/next' }), false);
-process.stdout.write('native reservation guard: 30 assertions passed\n');
+assert.equal(isActionableNativeReservationFailure('NATIVE_BOOKING_CONFLICT'), true);
+assert.equal(isActionableNativeReservationFailure('NATIVE_BOOKING_STALE'), true);
+assert.equal(isActionableNativeReservationFailure('NATIVE_BOOKING_DUPLICATE_SUPPRESSED'), false);
+process.stdout.write('native reservation guard: 33 assertions passed\n');

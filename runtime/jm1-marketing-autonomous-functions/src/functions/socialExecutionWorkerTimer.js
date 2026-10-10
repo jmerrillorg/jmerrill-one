@@ -18,6 +18,7 @@ import { approvedContentForSocial } from '../lib/socialContentApproval.js';
 import { approvedCampaignForSocial } from '../lib/socialCampaignAuthority.js';
 import {
   buildNativeReservationHold,
+  isActionableNativeReservationFailure,
   matchingNativeReservationDisposition,
   nativeReservationAliases,
   NATIVE_RESERVATION_STATUSES,
@@ -587,9 +588,8 @@ app.timer('socialExecutionWorkerTimer', {
     }
 
     const platformObjectsCreated = writes.filter((write) => write.createdPlatformObject).length;
-    const actionableFailures = writes.filter((write) => [
+    const actionableFailures = writes.filter((write) => isActionableNativeReservationFailure(write.state) || [
       'RETRY_REQUIRED', 'DEAD_LETTERED', 'READBACK_MISMATCH',
-      'NATIVE_BOOKING_CONFLICT',
       'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
       'LINKEDIN_PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'
     ].includes(write.state)).map((write) => ({
