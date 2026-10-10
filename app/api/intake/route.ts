@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { ManagedIdentityCredential } from "@azure/identity";
+import { createDataverseTokenProvider } from "@/lib/dataverse-auth.mjs";
 import { canon } from "@/content/canon";
 import {
   acceptIntake,
@@ -14,6 +16,7 @@ type Payload = Record<string, unknown>;
 
 const intents = new Set<Intent>(["publishing", "financial", "foundation", "productions", "general"]);
 const requestBuckets = new Map<string, { count: number; resetAt: number }>();
+let dataverseTokenProvider: (() => Promise<string>) | null = null;
 
 function clean(value: unknown, maxLength: number) {
   return typeof value === "string"
@@ -81,23 +84,21 @@ function dataverseConfig() {
   const tenant = process.env.DATAVERSE_TENANT_ID || process.env.AZURE_TENANT_ID;
   const client = process.env.DATAVERSE_CLIENT_ID;
   const secret = process.env.DATAVERSE_CLIENT_SECRET;
-  if (!apiBase || !resource || !tenant || !client || !secret) return null;
-  return { apiBase: apiBase.replace(/\/$/, ""), resource: resource.replace(/\/$/, ""), tenant, client, secret };
+  const authMode = process.env.DATAVERSE_AUTH_MODE || "client_credentials";
+  if (!apiBase || !resource || !["client_credentials", "system_assigned_managed_identity"].includes(authMode)) return null;
+  if (authMode === "client_credentials" && (!tenant || !client || !secret)) return null;
+  return { apiBase: apiBase.replace(/\/$/, ""), resource: resource.replace(/\/$/, ""), authMode, tenant, client, secret };
 }
 
 async function tokenFor(config: NonNullable<ReturnType<typeof dataverseConfig>>) {
-  const tokenResponse = await fetch(`https://login.microsoftonline.com/${config.tenant}/oauth2/v2.0/token`, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "client_credentials", client_id: config.client, client_secret: config.secret,
-      scope: `${config.resource}/.default`,
-    }),
+  dataverseTokenProvider ||= createDataverseTokenProvider({
+    mode: config.authMode, resource: config.resource, tenantId: config.tenant,
+    clientId: config.client, clientSecret: config.secret,
+    managedCredentialFactory: config.authMode === "system_assigned_managed_identity"
+      ? () => new ManagedIdentityCredential()
+      : undefined,
   });
-  if (!tokenResponse.ok) throw new Error(`Dataverse auth failed: ${tokenResponse.status}`);
-  const token = (await tokenResponse.json()) as { access_token?: string };
-  if (!token.access_token) throw new Error("Dataverse auth returned no token.");
-  return token.access_token;
+  return dataverseTokenProvider();
 }
 
 async function handlePost(request: NextRequest) {
