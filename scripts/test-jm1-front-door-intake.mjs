@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 import {
   acceptIntake, INTAKE_STATES, processIntake, reconcileIntake
 } from '../runtime/jm1-marketing-autonomous-functions/src/lib/intake.js';
@@ -160,4 +161,12 @@ assert.equal(legacyOwner.counts.leads, 1);
 await assert.rejects(() => acceptIntake(legacyOwner, { ...teamAfterCutover, message: 'Changed after cutover' }),
   /already bound/);
 
-console.log('JM1 front-door intake: 5/5 brand matrix, durable receipt, replay, post-write failure, and timer recovery PASS');
+const deploymentWorkflow = await readFile(new URL('../.github/workflows/azure-marketing-functions.yml', import.meta.url), 'utf8');
+assert.match(deploymentWorkflow, /PRODUCTIONS_FOLLOWUP_TEAM_ID:\s*36ee36cf-6ebf-f111-aaaf-6045bdd69435/);
+assert.match(deploymentWorkflow, /JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID="\$PRODUCTIONS_FOLLOWUP_TEAM_ID"/);
+assert.match(deploymentWorkflow, /active_productions_team_id" != "\$PRODUCTIONS_FOLLOWUP_TEAM_ID"/);
+assert.match(deploymentWorkflow, /old_productions_team_id_present=false/);
+assert.match(deploymentWorkflow, /restored_productions_team_id_count" != 0/);
+assert.match(deploymentWorkflow, /--setting-names JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID --output none/);
+
+console.log('JM1 front-door intake: brand matrix, durable receipt, replay, post-write recovery, and Productions deployment binding PASS');
