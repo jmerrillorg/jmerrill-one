@@ -25,13 +25,18 @@ if (expectedRootBusinessUnitId && expectedRootBusinessUnitId !== rootBusinessUni
 const users = (await request(`/systemusers?$select=systemuserid,applicationid,azureactivedirectoryobjectid,isdisabled,accessmode,_businessunitid_value&$filter=azureactivedirectoryobjectid eq ${runtimeObjectId}`)).value;
 if (users.length > 1) throw new Error('Duplicate Function managed-identity Dataverse users');
 const user = users[0] || null;
-const teams = user ? (await request(`/systemusers(${user.systemuserid})?$select=systemuserid&$expand=teammembership_association($select=teamid,name)`)).teammembership_association : [];
+const memberships = user ? (await request(`/systemusers(${user.systemuserid})?$select=systemuserid&$expand=teammembership_association($select=teamid,name)`)).teammembership_association : [];
+const teams = await Promise.all(memberships.map(async ({ teamid }) => request(
+  `/teams(${teamid})?$select=teamid,name,teamtype,isdefault,_businessunitid_value&$expand=teamroles_association($select=roleid,name)`
+)));
 const roles = user ? (await request(`/systemusers(${user.systemuserid})?$select=systemuserid&$expand=systemuserroles_association($select=roleid,name)`)).systemuserroles_association : [];
 if (user && (user.isdisabled || user.accessmode !== 4)) throw new Error('Function identity is not an enabled non-interactive application user');
 if (user && user._businessunitid_value !== rootBusinessUnitId) throw new Error('Function identity is outside the verified root business unit');
 if (roleOnly && user) throw new Error('Role-only provisioning is allowed only before the Function application user exists');
 if (apply && !user && !roleOnly) throw new Error('Function application user is absent; use --role-only to prepare its exact scoped role first');
-if (teams.length) throw new Error(`Function identity has team-derived access (${teams.map(({ name, teamid }) => `${name}:${teamid}`).join(', ')}); refusing role mutation`);
+const unexpectedTeams = teams.filter((team) => !team.isdefault || team.teamtype !== 0
+  || team._businessunitid_value !== rootBusinessUnitId || team.teamroles_association.length > 0);
+if (unexpectedTeams.length) throw new Error(`Function identity has non-default or role-bearing team access (${unexpectedTeams.map(({ name, teamid }) => `${name}:${teamid}`).join(', ')}); refusing role mutation`);
 if (roles.some((item) => item.name === 'System Administrator' || item.name === 'System Customizer'))
   throw new Error('Function identity currently has an overbroad administrative role; preserve and resolve before assignment');
 
@@ -100,7 +105,10 @@ const report = {
     accessMode: user?.accessmode ?? null, enabled: user ? !user.isdisabled : null },
   appUserExists: Boolean(user),
   businessUnit: { id: rootBusinessUnitId, name: rootBusinessUnit.name },
-  teamMembership: teams.length ? teams.map(({ teamid, name }) => ({ id: teamid, name })) : 'NONE',
+  teamMembership: teams.length ? teams.map(({ teamid, name, isdefault, teamroles_association }) => ({
+    id: teamid, name, defaultBusinessUnitTeam: isdefault,
+    assignedRoles: teamroles_association.map(({ roleid, name: roleName }) => ({ id: roleid, name: roleName }))
+  })) : 'NONE',
   inheritedAdministrativeRole: roles.some((item) => item.name === 'System Administrator' || item.name === 'System Customizer'),
   runtimeRole: { id: role?.roleid || null, name: roleName, privileges: rolePrivilegeSet, exactSinglePrivilege: exactPrivileges, assigned: assignedReadback },
   effectivePrivileges: effectivePrivilegeSet,
