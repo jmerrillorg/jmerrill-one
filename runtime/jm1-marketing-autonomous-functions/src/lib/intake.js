@@ -43,7 +43,7 @@ export function leadId(requestId) {
   return guid('lead', requestId);
 }
 
-export function createIntakeDataverseAdapter({ apiBase, getToken, authMode = 'client_credentials', contactIdentityResolver, fetchImpl = fetch }) {
+export function createIntakeDataverseAdapter({ apiBase, getToken, authMode = 'client_credentials', contactIdentityResolver = undefined, fetchImpl = fetch }) {
   async function request(path, method = 'GET', body) {
     const response = await fetchImpl(`${apiBase}${path}`, {
       method,
