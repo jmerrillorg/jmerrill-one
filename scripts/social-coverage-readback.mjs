@@ -6,15 +6,29 @@ import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-market
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
 const snapshot = JSON.parse(readFileSync(input, 'utf8'));
-snapshot.sourceSnapshotAsOf = snapshot.asOf || null;
+snapshot.sourceSnapshotAsOf = snapshot.sourceSnapshotAsOf || snapshot.asOf || null;
 snapshot.readbackMode = process.argv.includes('--live-dataverse') ? 'LIVE_DATAVERSE' : 'SNAPSHOT_ONLY';
 let reconciliationRows = [];
 if (process.argv.includes('--live-dataverse')) {
   if (!snapshot.dataverseMarker || !snapshot.dataverseUrl) throw new Error('Live readback requires dataverseMarker and dataverseUrl');
-  const token = execFileSync('az', [
-    'account', 'get-access-token', '--resource', snapshot.dataverseUrl,
-    '--query', 'accessToken', '-o', 'tsv'
-  ], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  let token;
+  try {
+    token = execFileSync('az', [
+      'account', 'get-access-token', '--resource', snapshot.dataverseUrl,
+      '--query', 'accessToken', '-o', 'tsv'
+    ], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+      timeout: 15000,
+      killSignal: 'SIGTERM'
+    }).trim();
+  } catch (error) {
+    const detail = error.code === 'ETIMEDOUT'
+      ? 'Azure CLI token acquisition exceeded 15 seconds.'
+      : `Azure CLI token acquisition failed (${error.code || `exit ${error.status ?? 'unknown'}`}).`;
+    throw new Error(`${detail} Existing Azure authentication may need attention; no token value was logged.`);
+  }
+  if (!token) throw new Error('Azure CLI returned an empty access token; no token value was logged.');
   const query = async (set, select, filter) => {
     const values = [];
     const url = new URL(`${snapshot.dataverseUrl}/api/data/v9.2/${set}`);
@@ -23,7 +37,18 @@ if (process.argv.includes('--live-dataverse')) {
     url.searchParams.set('$top', '100');
     let next = url.toString();
     while (next) {
-      const response = await fetch(next, { headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' } });
+      let response;
+      try {
+        response = await fetch(next, {
+          headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' },
+          signal: AbortSignal.timeout(20000)
+        });
+      } catch (error) {
+        const detail = error.name === 'TimeoutError' || error.name === 'AbortError'
+          ? 'request exceeded 20 seconds'
+          : 'request could not be completed';
+        throw new Error(`Dataverse ${set} readback ${detail}; no partial result was reported.`);
+      }
       if (!response.ok) throw new Error(`Dataverse ${set} readback failed: HTTP ${response.status}`);
       const body = await response.json();
       values.push(...(body.value || []));
