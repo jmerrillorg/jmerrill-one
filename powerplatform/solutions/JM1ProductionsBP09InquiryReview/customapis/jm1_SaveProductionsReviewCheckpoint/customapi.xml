@@ -1,0 +1,7 @@
+<customapi uniquename="jm1_SaveProductionsReviewCheckpoint">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype><bindingtype>0</bindingtype>
+  <description default="Validates and persists a receipt-bound checkpoint with row-version concurrency; only the approved checkpoint field is changed."><label description="Validates and persists a receipt-bound checkpoint with row-version concurrency; only the approved checkpoint field is changed." languagecode="1033" /></description>
+  <displayname default="Save Productions Review Checkpoint"><label description="Save Productions Review Checkpoint" languagecode="1033" /></displayname>
+  <executeprivilegename>prvWritejm1_ProductionsReviewPermit</executeprivilegename><iscustomizable>1</iscustomizable><isfunction>0</isfunction><isprivate>0</isprivate>
+  <name>jm1_SaveProductionsReviewCheckpoint</name><plugintypeid><plugintypeexportkey>485ef7f8-bb61-4e0e-ae84-837672291259</plugintypeexportkey></plugintypeid><workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

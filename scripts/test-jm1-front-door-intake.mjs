@@ -22,7 +22,9 @@ function createMock() {
         return { value: [...tables.contacts.values()].filter((row) => row.emailaddress1 === email).map((row) => ({ contactid: row.contactid })) };
       }
       if (path.startsWith('/jm1_executionlogs?')) {
-        return { value: [...tables.jm1_executionlogs.values()].filter((row) => row.jm1_executionstatus === 835500000) };
+        const cutoff = new Date(decodeURIComponent(path).match(/modifiedon lt ([0-9T:.Z-]+)/)?.[1] ?? 0);
+        return { value: [...tables.jm1_executionlogs.values()].filter((row) =>
+          row.jm1_executionstatus === 835500000 && new Date(row.modifiedon) < cutoff) };
       }
       const id = path.match(/\(([0-9a-f-]{36})\)/)?.[1];
       if (method === 'GET') return tables[set]?.get(id) || null;
@@ -30,7 +32,7 @@ function createMock() {
         const key = { jm1_executionlogs: 'jm1_executionlogid', contacts: 'contactid', leads: 'leadid' }[set];
         const recordId = body[key];
         if (tables[set].has(recordId)) throw new Error('duplicate key');
-        tables[set].set(recordId, { ...body });
+        tables[set].set(recordId, { ...body, modifiedon: new Date().toISOString() });
         counts[set]++;
         if (set === 'leads' && failAfterLeadCommit) {
           failAfterLeadCommit = false;
@@ -49,7 +51,7 @@ function createMock() {
         }
         const row = tables[set].get(id);
         if (!row) throw new Error('missing row');
-        Object.assign(row, body);
+        Object.assign(row, body, { modifiedon: new Date().toISOString() });
         return {};
       }
       throw new Error(`unexpected ${method} ${path}`);
@@ -126,8 +128,14 @@ postWrite.failFinalReceiptPatchOnce();
 await assert.rejects(() => processIntake(postWrite, postWriteReceipt.id), /failure after business mutation/);
 assert.equal(postWrite.counts.contacts, 1);
 assert.equal(postWrite.counts.leads, 1);
+assert.equal(JSON.parse(postWrite.tables.jm1_executionlogs.get(postWriteReceipt.id).jm1_actiondescription).state,
+  INTAKE_STATES.RETRY_PENDING);
+assert.deepEqual(await reconcileIntake(postWrite, new Date(Date.now() + 60_000)), []);
+assert.equal(postWrite.counts.leads, 1);
 const postWriteReplay = await acceptIntake(postWrite, postWriteRequest);
 assert.equal(postWriteReplay.replay, true);
+const recovered = await reconcileIntake(postWrite, new Date(Date.now() + 3 * 60_000));
+assert.deepEqual(recovered, [{ id: postWriteReceipt.id, state: INTAKE_STATES.COMPLETED }]);
 const final = await processIntake(postWrite, postWriteReplay.receipt.id);
 assert.equal(final.state, INTAKE_STATES.COMPLETED);
 assert.equal(postWrite.counts.jm1_executionlogs, 1);
@@ -159,5 +167,17 @@ assert.equal(legacyOwner.counts.jm1_executionlogs, 1);
 assert.equal(legacyOwner.counts.leads, 1);
 await assert.rejects(() => acceptIntake(legacyOwner, { ...teamAfterCutover, message: 'Changed after cutover' }),
   /already bound/);
+
+const previousCheckpointMode = process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE;
+process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE = 'continuous';
+const checkpointSeed = createMock();
+const checkpointSubmission = { ...longSubmission, requestId: randomUUID(), email: 'checkpoint@example.invalid' };
+const checkpointReceipt = (await acceptIntake(checkpointSeed, checkpointSubmission)).receipt;
+await processIntake(checkpointSeed, checkpointReceipt.id);
+const checkpointLead = [...checkpointSeed.tables.leads.values()][0];
+assert.equal(checkpointLead.jm1_bp09receivedat, checkpointReceipt.receivedAt);
+assert.equal(checkpointLead.jm1_bp09reviewcheckpoint, undefined);
+if (previousCheckpointMode === undefined) delete process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE;
+else process.env.JM1_PRODUCTIONS_BP09_REVIEW_CHECKPOINT_MODE = previousCheckpointMode;
 
 console.log('JM1 front-door intake: 5/5 brand matrix, durable receipt, replay, post-write failure, and timer recovery PASS');

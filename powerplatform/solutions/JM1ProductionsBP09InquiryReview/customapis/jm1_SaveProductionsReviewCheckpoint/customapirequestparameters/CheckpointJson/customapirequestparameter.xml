@@ -1,0 +1,1 @@
+<customapirequestparameter uniquename="CheckpointJson"><displayname default="CheckpointJson"><label description="CheckpointJson" languagecode="1033" /></displayname><iscustomizable>1</iscustomizable><isoptional>0</isoptional><name>jm1_SaveProductionsReviewCheckpoint.CheckpointJson</name><type>10</type></customapirequestparameter>

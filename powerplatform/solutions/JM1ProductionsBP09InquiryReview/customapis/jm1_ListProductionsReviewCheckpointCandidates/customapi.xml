@@ -1,0 +1,13 @@
+<customapi uniquename="jm1_ListProductionsReviewCheckpointCandidates">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Returns only opaque receipt and Lead IDs with accepted time for open team-owned Productions inquiries.">
+    <label description="Returns only opaque receipt and Lead IDs with accepted time for open team-owned Productions inquiries." languagecode="1033" />
+  </description>
+  <displayname default="List Productions Review Checkpoint Candidates"><label description="List Productions Review Checkpoint Candidates" languagecode="1033" /></displayname>
+  <executeprivilegename>prvWritejm1_ProductionsReviewPermit</executeprivilegename>
+  <iscustomizable>1</iscustomizable><isfunction>0</isfunction><isprivate>0</isprivate>
+  <name>jm1_ListProductionsReviewCheckpointCandidates</name>
+  <plugintypeid><plugintypeexportkey>0e50c9e5-c3c6-4a13-a372-d56ab16ba75a</plugintypeexportkey></plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

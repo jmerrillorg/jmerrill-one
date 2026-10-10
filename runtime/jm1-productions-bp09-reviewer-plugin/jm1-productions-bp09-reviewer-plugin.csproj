@@ -4,6 +4,8 @@
     <TargetFramework>net48</TargetFramework>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=/_/runtime/jm1-productions-bp09-reviewer-plugin</PathMap>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Jm1ProductionsBp09.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -18,6 +20,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.60" PrivateAssets="All" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="All" />
+    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
 
 </Project>
