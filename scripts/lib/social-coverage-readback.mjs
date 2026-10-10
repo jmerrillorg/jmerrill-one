@@ -103,6 +103,8 @@ export function reconcileNativeDataverseClaims(nativeItems, dataverseItems, asOf
       approvalState: native.approvalState && native.approvalState !== 'UNKNOWN'
         ? native.approvalState
         : match.approvalState || 'UNKNOWN',
+      nativeApprovalEvidence: match.nativeApprovalEvidence || native.nativeApprovalEvidence || null,
+      nativeApprovalReason: match.nativeApprovalReason || native.nativeApprovalReason || null,
       dataverseSocialExecutionId: match.id,
       dataverseStatus: match.status,
       dataverseReadbackState: match.readbackState,
@@ -187,6 +189,42 @@ export function mapDataverseSocialRows(rows, channels) {
   return { mapped, unclassified };
 }
 
+export function matchesApprovedLegacyNativeSocialContent(campaign, content, { booking, source } = {}) {
+  const expectedHost = {
+    'J Merrill One': 'www.jmerrill.one',
+    'J Merrill Publishing': 'jmerrill.pub',
+    'J Merrill Financial': 'www.jmerrill.financial'
+  }[campaign?.jm1_branch];
+  const copybrief = String(content?.jm1_copybrief || '');
+  const match = copybrief.match(/^Standing founder marketing authority; source (https:\/\/[^;]+); caption SHA-256 ([a-f0-9]{64}); exact native booking readback ([0-9]+)\.$/);
+  if (!expectedHost || campaign?.jm1_campaigntype !== 'native_social'
+    || campaign?.jm1_state !== 'PUBLIC_EXECUTION_APPROVED'
+    || campaign?.jm1_supersession !== 'Founder standing marketing authorization; item source and media checks required. No Publishing Meta worker release.'
+    || content?.jm1_branch !== campaign.jm1_branch || content?.jm1_publicreadystate !== 'PASS'
+    || !content?.jm1_draftcopy || !source || !booking
+    || source.jm1_socialexecutionid !== booking.jm1_socialexecutionid
+    || source.jm1_status !== 'NATIVE_BOOKED_VERIFIED' || !match) return false;
+  let sourceUrl;
+  try {
+    sourceUrl = new URL(match[1]);
+  } catch {
+    return false;
+  }
+  const captionHash = createHash('sha256').update(content.jm1_draftcopy).digest('hex');
+  const nativeContentId = match[3];
+  const readback = String(source.jm1_readbackstate || '');
+  const readbackIds = [
+    readback.match(/(?:^|\|)CONTENT_ID=([0-9]+)(?:\||$)/)?.[1],
+    readback.match(/NATIVE_CONTENT_ID_([0-9]+)/)?.[1]
+  ].filter(Boolean);
+  return sourceUrl.protocol === 'https:' && sourceUrl.hostname === expectedHost
+    && !sourceUrl.username && !sourceUrl.password && !sourceUrl.port
+    && !sourceUrl.search && !sourceUrl.hash
+    && content.jm1_draftcopy.includes(match[1])
+    && match[2] === captionHash && booking.jm1_captionversion === captionHash
+    && readbackIds.length === 1 && readbackIds[0] === nativeContentId;
+}
+
 export function nativeSocialApprovalProjection(booking, { campaigns, content, creatives, socialRows }, isApprovedContent) {
   if (booking.jm1_status !== 'NATIVE_BOOKED_VERIFIED') return { state: 'UNKNOWN', evidence: null, reason: 'NOT_A_VERIFIED_BOOKING' };
   const captionHash = booking.jm1_captionversion;
@@ -200,22 +238,29 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
 
   const candidates = [];
   let templateAuthorityMismatch = false;
+  let legacyAuthorityMismatch = false;
   for (const source of socialRows) {
     const key = String(source.jm1_idempotencykey || '');
-    const match = key.match(/^(.*):social:([^:]+):([^:]+)$/);
-    if (!match) continue;
-    const [, marker, stage, sourcePlatform] = match;
-    if (sourcePlatform.toLowerCase() !== platform
+    const currentMatch = key.match(/^(.*):social:([^:]+):([^:]+)$/);
+    const legacyMatch = key.match(/^(.*):([^:]+):social$/);
+    const legacyKey = !currentMatch && Boolean(legacyMatch);
+    if (!currentMatch && !legacyKey) continue;
+    const marker = currentMatch ? currentMatch[1] : legacyMatch[1];
+    const stage = currentMatch ? currentMatch[2] : legacyMatch[2];
+    const sourcePlatform = currentMatch ? currentMatch[3] : source.jm1_platform;
+    if (String(sourcePlatform || '').toLowerCase() !== platform
       || source.jm1_branch !== booking.jm1_branch
       || source.jm1_platform?.toLowerCase() !== platform
       || source.jm1_requesteddestination !== destination
       || Date.parse(source.jm1_requestedschedule || '') !== scheduledAt
-      || source.jm1_captionversion !== `${marker}:caption:${stage}:v1`
+      || (legacyKey
+        ? source.jm1_captionversion !== captionHash
+        : source.jm1_captionversion !== `${marker}:caption:${stage}:v1`)
       || source.jm1_requestedmediahash !== mediaHash) continue;
 
     const campaignKey = `${marker}:campaign`;
-    const contentKey = `${marker}:content:${stage}`;
-    const creativeKey = `${marker}:creative:${stage}`;
+    const contentKey = legacyKey ? `${marker}:${stage}:content` : `${marker}:content:${stage}`;
+    const creativeKey = legacyKey ? `${marker}:${stage}:creative` : `${marker}:creative:${stage}`;
     const matchingCampaigns = campaigns.filter((row) => row.jm1_idempotencykey === campaignKey
       && row.jm1_branch === booking.jm1_branch
       && row.jm1_campaigntype === 'native_social'
@@ -231,11 +276,16 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
       && row.jm1_publicreadystate === 'PASS'
       && row.jm1_assethash === mediaHash);
     const allowedSourceState = source.jm1_status === 'HELD_NATIVE_LINKEDIN_BOOKING_REQUIRED'
-      || source.jm1_status === 'PUBLIC_READY_SCHEDULED_ELIGIBLE';
+      || source.jm1_status === 'PUBLIC_READY_SCHEDULED_ELIGIBLE'
+      || (legacyKey && source.jm1_status === 'NATIVE_BOOKED_VERIFIED');
     if (matchingCampaigns.length !== 1 || matchingContent.length !== 1
       || matchingCreatives.length !== 1 || !allowedSourceState) continue;
-    if (!isApprovedContent(matchingCampaigns[0], matchingContent[0])) {
-      templateAuthorityMismatch = true;
+    const contentAuthorityPass = legacyKey
+      ? matchesApprovedLegacyNativeSocialContent(matchingCampaigns[0], matchingContent[0], { booking, source })
+      : isApprovedContent(matchingCampaigns[0], matchingContent[0]);
+    if (!contentAuthorityPass) {
+      if (legacyKey) legacyAuthorityMismatch = true;
+      else templateAuthorityMismatch = true;
       continue;
     }
 
@@ -251,7 +301,8 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
   if (candidates.length > 1) return { state: 'UNKNOWN', evidence: null, reason: 'AMBIGUOUS_EXACT_SOURCE_LINKAGE' };
   if (candidates.length === 0) return {
     state: 'UNKNOWN', evidence: null,
-    reason: templateAuthorityMismatch ? 'REVIEWED_TEMPLATE_VALIDATION_MISMATCH' : 'NO_EXACT_SOURCE_LINKAGE'
+    reason: legacyAuthorityMismatch ? 'LEGACY_SOURCE_AUTHORITY_NOT_PROVEN'
+      : templateAuthorityMismatch ? 'REVIEWED_TEMPLATE_VALIDATION_MISMATCH' : 'NO_EXACT_SOURCE_LINKAGE'
   };
   return { state: 'APPROVED', evidence: candidates[0], reason: 'EXACT_AUTHORITY_LINKAGE_PASS' };
 }
