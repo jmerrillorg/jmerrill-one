@@ -35,15 +35,16 @@ export async function publishFacebookPhoto({ expected, caption, imageUrl }) {
   const page = await pageWithAccessToken(expected);
   if (!page.ok) return page;
 
-  const publish = await graphWithToken(page.accessToken, `/${page.id}/photos`, {
+  const publish = await graphWriteWithToken(page.accessToken, `/${page.id}/photos`, {
     url: imageUrl,
     message: caption,
     published: 'true'
-  }, 'POST');
+  }, 'FACEBOOK_PUBLISH_OUTCOME_AMBIGUOUS');
   if (!publish.ok) {
     return {
       ok: false,
-      state: 'FACEBOOK_PUBLISH_FAILED',
+      state: publish.state || 'FACEBOOK_PUBLISH_FAILED',
+      outcomeAmbiguous: publish.outcomeAmbiguous || false,
       status: publish.status,
       message: publish.json?.error?.message
     };
@@ -57,6 +58,7 @@ export async function publishFacebookPhoto({ expected, caption, imageUrl }) {
     return {
       ok: false,
       state: 'FACEBOOK_READBACK_FAILED',
+      outcomeAmbiguous: true,
       status: readback.status,
       platformPostId: postId,
       message: readback.json?.error?.message
@@ -98,13 +100,14 @@ export async function publishInstagramPhoto({ expected, caption, imageUrl }) {
   }
 
   const mediaId = container.json.id;
-  const publish = await graph(`/${authority.instagramGraphId}/media_publish`, {
+  const publish = await graphWrite(`/${authority.instagramGraphId}/media_publish`, {
     creation_id: mediaId
-  }, 'POST');
+  }, 'INSTAGRAM_PUBLISH_OUTCOME_AMBIGUOUS');
   if (!publish.ok) {
     return {
       ok: false,
-      state: 'INSTAGRAM_PUBLISH_FAILED',
+      state: publish.state || 'INSTAGRAM_PUBLISH_FAILED',
+      outcomeAmbiguous: publish.outcomeAmbiguous || false,
       status: publish.status,
       mediaContainerId: mediaId,
       message: publish.json?.error?.message
@@ -119,6 +122,7 @@ export async function publishInstagramPhoto({ expected, caption, imageUrl }) {
     return {
       ok: false,
       state: 'INSTAGRAM_READBACK_FAILED',
+      outcomeAmbiguous: true,
       status: readback.status,
       platformPostId,
       message: readback.json?.error?.message
@@ -139,8 +143,11 @@ export async function publishInstagramPhoto({ expected, caption, imageUrl }) {
   };
 }
 
-export async function findRecentMatchingMetaObject({ expected, platform, captionPrefix }) {
-  if (!captionPrefix) return { ok: false, state: 'META_RECONCILIATION_CAPTION_PREFIX_MISSING' };
+export async function findRecentMatchingMetaObject({ expected, platform, caption, attemptedAt }) {
+  if (!caption || !attemptedAt) return { ok: false, state: 'META_RECONCILIATION_EXACT_CONTENT_OR_ATTEMPT_TIME_MISSING' };
+  const expectedCaption = normalizeCaption(caption);
+  const expectedTime = Date.parse(attemptedAt);
+  if (!Number.isFinite(expectedTime)) return { ok: false, state: 'META_RECONCILIATION_ATTEMPT_TIME_INVALID' };
 
   if (platform === 'instagram') {
     const authority = await verifyMetaAuthority(expected);
@@ -151,7 +158,9 @@ export async function findRecentMatchingMetaObject({ expected, platform, caption
     });
     if (!media.ok) return { ok: false, state: 'INSTAGRAM_RECONCILIATION_READBACK_FAILED', status: media.status, message: media.json?.error?.message };
     const matches = (media.json.data || [])
-      .filter((item) => (item.caption || '').startsWith(captionPrefix) && item.username === expected.instagramHandle)
+      .filter((item) => normalizeCaption(item.caption) === expectedCaption
+        && item.username === expected.instagramHandle
+        && isWithinAttemptWindow(item.timestamp, expectedTime))
       .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
     const match = matches[0];
     return match
@@ -177,7 +186,9 @@ export async function findRecentMatchingMetaObject({ expected, platform, caption
     });
     if (!photos.ok) return { ok: false, state: 'FACEBOOK_RECONCILIATION_READBACK_FAILED', status: photos.status, message: photos.json?.error?.message };
     const matches = (photos.json.data || [])
-      .filter((item) => (item.name || '').startsWith(captionPrefix) && item.from?.id === expected.facebookPageId)
+      .filter((item) => normalizeCaption(item.name) === expectedCaption
+        && item.from?.id === expected.facebookPageId
+        && isWithinAttemptWindow(item.created_time, expectedTime))
       .sort((a, b) => new Date(a.created_time) - new Date(b.created_time));
     const match = matches[0];
     return match
@@ -194,6 +205,15 @@ export async function findRecentMatchingMetaObject({ expected, platform, caption
   }
 
   return { ok: false, state: 'META_RECONCILIATION_UNSUPPORTED_PLATFORM' };
+}
+
+function normalizeCaption(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function isWithinAttemptWindow(value, expectedTime) {
+  const actualTime = Date.parse(value || '');
+  return Number.isFinite(actualTime) && Math.abs(actualTime - expectedTime) <= 60 * 60 * 1000;
 }
 
 async function pageWithAccessToken(expected) {
@@ -221,6 +241,22 @@ async function graphWithToken(token, path, params = {}, method = 'GET', shouldSa
     : await fetch(url, { method, body });
   const json = await response.json().catch(() => ({}));
   return { ok: response.ok, status: response.status, json: shouldSanitize ? sanitize(json) : json };
+}
+
+async function graphWriteWithToken(token, path, params, ambiguousState) {
+  try {
+    const result = await graphWithToken(token, path, params, 'POST');
+    if (!result.ok && result.status >= 500) {
+      return { ...result, state: ambiguousState, outcomeAmbiguous: true };
+    }
+    return result;
+  } catch {
+    return { ok: false, status: null, state: ambiguousState, outcomeAmbiguous: true, json: {} };
+  }
+}
+
+async function graphWrite(path, params, ambiguousState) {
+  return graphWriteWithToken(META_SYSTEM_USER_TOKEN, path, params, ambiguousState);
 }
 
 function sanitize(input) {
