@@ -65,4 +65,14 @@ test('permission contract enumerates each registered Function trigger once', () 
   assert.equal(names.length, 8);
   assert.deepEqual(names, triggers);
   assert.equal(contract.status, 'SOURCE_CONTRACT_ONLY_NOT_PRODUCTION_AUTHORITY');
+  assert.equal(contract.contractVersion, 2);
+  assert.equal(contract.adoptionContract.status, 'PROPOSAL_PENDING_DATAVERSE_SECURITY_OWNER_REVIEW_AND_ACTUAL_IDENTITY_TESTS');
+  assert.equal(contract.liveOwnershipInventory.ownedRowCounts.jm1_executionlogs, 55299);
+  assert.equal(contract.liveOwnershipInventory.ownedRowCounts.leads, 91);
+  assert.equal(contract.liveEffectivePrivilegeReadback.effectivePrivilegeEntries, 19705);
+  assert.equal(contract.liveEffectivePrivilegeReadback.depthCounts.Global, 19665);
+  assert.equal(contract.auth.functionResource.systemAssignedClientId, 'e6a47c11-b42c-424a-8e4b-241be8f1050a');
+  assert.equal(contract.liveOwnershipInventory.entityOwnershipTypes.OrganizationOwned.length, 4);
+  assert.equal(contract.adoptionContract.proposedRoles[1].contactScopeDecision.includes('Do not adopt Contact Deep'), true);
+  assert.equal(contract.adoptionContract.requiredPreCutoverProof.length, 5);
 });
