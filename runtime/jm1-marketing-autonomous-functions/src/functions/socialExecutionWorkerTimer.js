@@ -631,7 +631,6 @@ app.timer('socialExecutionWorkerTimer', {
         socialRows: rows.length,
         eligibleMetaRows: eligibleMetaRows.length,
         reconciliationMetaRows: reconciliationMetaRows.length,
-        platformIdRecoveryRows: platformIdRecoveryRows.length,
         linkedinRows: linkedinRows.length
       },
       dataverseWrite: writes,

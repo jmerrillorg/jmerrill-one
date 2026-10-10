@@ -83,3 +83,9 @@ test('unverified destination or content never counts as provider recovery', () =
   assert.equal(mismatch.exceptionState, 'OPEN');
   assert.equal(mismatch.repostAllowed, false);
 });
+
+test('worker completion telemetry does not reference the removed platform-ID recovery counter', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const worker = await readFile(new URL('../runtime/jm1-marketing-autonomous-functions/src/functions/socialExecutionWorkerTimer.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(worker, /\bplatformIdRecoveryRows\b/);
+});
