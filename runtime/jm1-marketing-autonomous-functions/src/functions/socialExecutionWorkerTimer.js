@@ -183,12 +183,6 @@ app.timer('socialExecutionWorkerTimer', {
         continue;
       }
 
-      const scheduledFor = new Date(row.jm1_requestedschedule);
-      if (!Number.isNaN(scheduledFor.getTime()) && scheduledFor > new Date(envelope.startedAt)) {
-        writes.push({ id: row.jm1_socialexecutionid, state: 'SCHEDULED_NOT_DUE', scheduledFor: row.jm1_requestedschedule });
-        continue;
-      }
-
       if (!approvedCampaign) {
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_readbackstate: 'CAMPAIGN_PUBLIC_EXECUTION_APPROVAL_REQUIRED',
@@ -265,6 +259,12 @@ app.timer('socialExecutionWorkerTimer', {
           reservedBy: nativeReservation.reservation.jm1_socialexecutionid,
           platform: row.jm1_platform
         });
+        continue;
+      }
+
+      const scheduledFor = new Date(row.jm1_requestedschedule);
+      if (!Number.isNaN(scheduledFor.getTime()) && scheduledFor > new Date(envelope.startedAt)) {
+        writes.push({ id: row.jm1_socialexecutionid, state: 'SCHEDULED_NOT_DUE', scheduledFor: row.jm1_requestedschedule });
         continue;
       }
 
