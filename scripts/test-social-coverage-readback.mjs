@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
   brand: 'J Merrill Publishing', platform: 'facebook', destinationId: '307480763084670',
@@ -255,6 +256,49 @@ test('live Dataverse rows map by exact branch and platform without inventing des
   assert.deepEqual(result.unclassified.map((row) => row.jm1_socialexecutionid), ['bad-branch']);
 });
 
+test('reconciliation findings include mapped past-due native claims and omit held or published rows', () => {
+  const findings = buildDataverseReconciliationFindings([
+    { jm1_socialexecutionid: 'past-due', jm1_branch: 'J Merrill One', jm1_platform: 'linkedin',
+      jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requestedschedule: '2026-10-09T14:00:00Z',
+      jm1_requesteddestination: '106683183' },
+    { jm1_socialexecutionid: 'held', jm1_platform: 'linkedin', jm1_status: 'HELD_NATIVE_LINKEDIN_BOOKING_REQUIRED',
+      jm1_requestedschedule: '2026-10-09T14:00:00Z', jm1_requesteddestination: '146207089' },
+    { jm1_socialexecutionid: 'published', jm1_platform: 'linkedin', jm1_status: 'PUBLISHED_VERIFIED',
+      jm1_requestedschedule: '2026-10-09T14:00:00Z', jm1_requesteddestination: '106683183',
+      jm1_platformpostid: 'urn:li:share:1' },
+    { jm1_socialexecutionid: 'future', jm1_platform: 'linkedin', jm1_status: 'NATIVE_BOOKED_VERIFIED',
+      jm1_requestedschedule: '2026-10-11T14:00:00Z', jm1_requesteddestination: '106683183' }
+  ], '2026-10-10T14:00:00Z');
+
+  assert.equal(findings.length, 1);
+  assert.equal(findings[0].id, 'past-due');
+  assert.equal(findings[0].classification, 'PAST_DUE_NATIVE_BOOKING_CLAIM');
+  assert.equal(findings[0].actionRequired, true);
+});
+
+test('lifecycle-ineligible social rows stay visible but do not become overdue social alerts', () => {
+  assert.equal(lifecycleSocialEligibilityForCampaignType('author_inquiry_nurture'), false);
+  assert.equal(lifecycleSocialEligibilityForCampaignType('reader_reengagement'), false);
+  assert.equal(lifecycleSocialEligibilityForCampaignType('native_social'), true);
+
+  const row = { id: 'inquiry-social-child', kind: 'API_REQUEST', brand: channel.brand,
+    platform: channel.platform, destinationId: channel.destinationId,
+    status: 'WAIT_CREATIVE_RUNTIME_REGISTRY_REQUIRED', scheduledAt: '2026-09-24T14:00:00Z',
+    campaignType: 'author_inquiry_nurture', campaignSocialEligible: false,
+    campaignSocialEligibilityReason: 'SOCIAL_INELIGIBLE_BY_LIFECYCLE_POLICY' };
+  const result = buildSocialCoverageReadback({ ...base, asOf: '2026-10-10T14:00:00Z', items: [row] }).channels[0];
+  assert.deepEqual(result.policyExcludedApiRequests, [{ id: row.id,
+    campaignType: 'author_inquiry_nurture', reason: 'SOCIAL_INELIGIBLE_BY_LIFECYCLE_POLICY',
+    disposition: 'PRESERVE_NO_PUBLISH', owner: 'JM1_MARKETING_RUNTIME_OWNER',
+    action: 'CLASSIFY_LEGACY_NON_SOCIAL_CHILD' }]);
+  assert.equal(result.apiRequestRows[0].pastDue, false);
+  assert.ok(!result.states.includes('PAST_DUE_API_REQUEST'));
+  assert.deepEqual(buildDataverseReconciliationFindings([{
+    jm1_socialexecutionid: row.id, jm1_platform: 'facebook', jm1_status: row.status,
+    jm1_requestedschedule: row.scheduledAt, campaignSocialEligible: false
+  }], '2026-10-10T14:00:00Z'), []);
+});
+
 test('native reservation rows are distinct from API requests and do not count as verified bookings', () => {
   const reservation = mapDataverseSocialRows([{
     jm1_socialexecutionid: 'native-reservation-1',
@@ -405,6 +449,22 @@ test('held native booking conflicts remain visible as actionable failures in Dat
     && finding.evidence.recordIds.includes('api-native-conflict')));
   assert.equal(classifyDataverseExecutionRow({ status: 'HELD_NATIVE_BOOKING_CONFLICT' }).actionRequired, true);
   assert.equal(classifyDataverseExecutionRow({ status: 'HELD_NATIVE_BOOKING_STALE' }).classification, 'NATIVE_BOOKING_STALE');
+});
+
+test('past-due held API requests stay held and are not reported as overdue work', () => {
+  const held = { id: 'held-past-due', kind: 'API_REQUEST', brand: channel.brand,
+    platform: channel.platform, destinationId: channel.destinationId,
+    status: 'HELD_CAMPAIGN_AUTHORITY', approvalState: 'HELD',
+    scheduledAt: '2026-10-01T14:00:00Z' };
+  const result = buildSocialCoverageReadback({
+    ...base,
+    asOf: '2026-10-10T16:00:00Z',
+    items: [held]
+  }).channels[0];
+  assert.deepEqual(result.heldItems, ['held-past-due']);
+  assert.equal(result.apiRequestRows[0].pastDue, false);
+  assert.ok(!result.states.includes('PAST_DUE_API_REQUEST'));
+  assert.ok(!result.alertFindings.some((finding) => finding.action === 'RECONCILE_PAST_DUE_REQUEST'));
 });
 
 test('Dataverse booking claims without publication proof are surfaced for reconciliation', () => {

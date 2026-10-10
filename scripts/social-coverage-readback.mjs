@@ -1,12 +1,14 @@
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
 const snapshot = JSON.parse(readFileSync(input, 'utf8'));
 snapshot.sourceSnapshotAsOf = snapshot.asOf || null;
 snapshot.readbackMode = process.argv.includes('--live-dataverse') ? 'LIVE_DATAVERSE' : 'SNAPSHOT_ONLY';
+let reconciliationRows = [];
 if (process.argv.includes('--live-dataverse')) {
   if (!snapshot.dataverseMarker || !snapshot.dataverseUrl) throw new Error('Live readback requires dataverseMarker and dataverseUrl');
   const token = execFileSync('az', [
@@ -38,6 +40,21 @@ if (process.argv.includes('--live-dataverse')) {
     query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion,jm1_requestedmediahash,jm1_name', `jm1_requestedschedule ge ${overdueLookbackDate}T00:00:00Z`),
     query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion,jm1_requestedmediahash,jm1_name', "jm1_status eq 'NATIVE_RESERVATION_VERIFIED' or jm1_status eq 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'")
   ]);
+  const lifecycleMarkers = [...new Set(futureRows.map((row) => row.jm1_idempotencykey?.split(':social:')[0]).filter(Boolean))];
+  const lifecycleCampaigns = lifecycleMarkers.length
+    ? await query('jm1_campaignauthorities', 'jm1_idempotencykey,jm1_campaigntype,jm1_state,jm1_name', lifecycleMarkers
+      .map((item) => `jm1_idempotencykey eq '${item.replaceAll("'", "''")}:campaign'`).join(' or '))
+    : [];
+  const campaignPolicyByMarker = new Map(lifecycleCampaigns.map((campaign) => {
+    const marker = campaign.jm1_idempotencykey?.replace(/:campaign$/, '');
+    const eligible = lifecycleSocialEligibilityForCampaignType(campaign.jm1_campaigntype);
+    return [marker, {
+      campaignType: campaign.jm1_campaigntype || null,
+      campaignSocialEligible: eligible,
+      campaignSocialEligibilityReason: eligible === false ? 'SOCIAL_INELIGIBLE_BY_LIFECYCLE_POLICY' : null,
+      campaignAuthorityState: campaign.jm1_state || null
+    }];
+  }));
   const campaignApproved = campaigns.length === 1 && campaigns[0].jm1_state === 'PUBLIC_EXECUTION_APPROVED';
   const current = rows.map((row) => {
     const stage = row.jm1_idempotencykey.split(':social:')[1]?.split(':')[0];
@@ -75,14 +92,24 @@ if (process.argv.includes('--live-dataverse')) {
   })));
   const nativeItems = retainNativeEvidenceItems(snapshot.items);
   const futureRowIds = new Set(futureRows.map((row) => row.jm1_socialexecutionid));
-  const allFutureRows = [...futureRows, ...nativeReservationRows.filter((row) => !futureRowIds.has(row.jm1_socialexecutionid))];
+  const allFutureRows = [...futureRows, ...nativeReservationRows.filter((row) => !futureRowIds.has(row.jm1_socialexecutionid))]
+    .map((row) => ({
+      ...row,
+      ...(campaignPolicyByMarker.get(row.jm1_idempotencykey?.split(':social:')[0]) || {})
+    }));
+  reconciliationRows = allFutureRows;
   const mappedDataverse = mapDataverseSocialRows(allFutureRows, snapshot.channels);
+  const sourceRowById = new Map(allFutureRows.map((row) => [row.jm1_socialexecutionid, row]));
   const currentById = new Map(current.map((row) => [row.id, row]));
   const mappedItems = mappedDataverse.mapped.map((item) => {
     const currentRow = currentById.get(item.id);
+    const sourceRow = sourceRowById.get(item.id);
     return {
       ...item,
       ...(currentRow || {}),
+      campaignType: sourceRow?.campaignType || null,
+      campaignSocialEligible: sourceRow?.campaignSocialEligible ?? null,
+      campaignSocialEligibilityReason: sourceRow?.campaignSocialEligibilityReason || null,
       kind: item.kind,
       destinationId: item.destinationId,
       destinationHandle: item.destinationHandle,
@@ -112,15 +139,21 @@ if (process.argv.includes('--live-dataverse')) {
     platformPostId: row.jm1_platformpostid
   }));
   snapshot.mappedDataverseRows = mappedDataverse.mapped.length;
+  snapshot.campaignPolicyExclusions = allFutureRows.filter((row) => row.campaignSocialEligible === false).map((row) => ({
+    id: row.jm1_socialexecutionid,
+    campaignType: row.campaignType,
+    reason: row.campaignSocialEligibilityReason,
+    status: row.jm1_status,
+    scheduledAt: row.jm1_requestedschedule
+  }));
   snapshot.liveDataverseObservedAt = new Date().toISOString();
   snapshot.asOf = snapshot.liveDataverseObservedAt;
 }
 const report = buildSocialCoverageReadback(snapshot);
-const reconciliationFindings = (snapshot.unclassifiedDataverseRows || []).flatMap((row) => {
-  const finding = classifyDataverseExecutionRow(row, snapshot.asOf);
-  return finding ? [{ id: row.id, platform: row.platform, status: row.status,
-    requestedSchedule: row.requestedSchedule, requestedDestination: row.requestedDestination, ...finding }] : [];
-});
+const reconciliationFindings = buildDataverseReconciliationFindings(
+  [...reconciliationRows, ...(snapshot.unclassifiedDataverseRows || [])],
+  snapshot.asOf
+);
 process.stdout.write(`${JSON.stringify({
   ...report,
   readbackMode: snapshot.readbackMode,
@@ -129,5 +162,6 @@ process.stdout.write(`${JSON.stringify({
   alertDelivery: 'REPORT_ONLY_WITH_STABLE_DEDUPE_KEYS',
   ...(snapshot.unclassifiedDataverseRows ? { unclassifiedDataverseRows: snapshot.unclassifiedDataverseRows } : {}),
   ...(snapshot.mappedDataverseRows !== undefined ? { mappedDataverseRows: snapshot.mappedDataverseRows } : {}),
+  ...(snapshot.campaignPolicyExclusions ? { campaignPolicyExclusions: snapshot.campaignPolicyExclusions } : {}),
   ...(snapshot.unclassifiedDataverseRows ? { reconciliationFindings } : {})
 }, null, 2)}\n`);

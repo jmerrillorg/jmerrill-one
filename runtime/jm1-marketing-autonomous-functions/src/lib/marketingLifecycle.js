@@ -117,6 +117,12 @@ const TRIGGER_POLICY = {
   }
 };
 
+export function lifecycleSocialEligibilityForCampaignType(campaignType) {
+  if (campaignType === 'native_social') return true;
+  return Object.values(TRIGGER_POLICY)
+    .find((policy) => policy.campaignType === campaignType)?.socialEligible ?? null;
+}
+
 export function resolveProgramRegistry() {
   return PUBLISHING_PROGRAM_REGISTRY.map((program) => ({
     ...program,
