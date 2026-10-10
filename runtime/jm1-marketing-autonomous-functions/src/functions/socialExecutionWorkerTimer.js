@@ -9,6 +9,7 @@ import {
 } from '../lib/config.js';
 import { dv, entitySet, patchById, queryByIdempotency, queryByPrefix, upsertByIdempotency } from '../lib/dataverse.js';
 import { classifyFailure, deadLetterRecord } from '../lib/failurePolicy.js';
+import { ambiguousPublicationException, isAmbiguousPublicationOutcome, reconcileProviderPublication } from '../lib/publicationOutcome.js';
 import { checkLinkedInAuthority, findRecentMatchingLinkedInPost, publishLinkedInOrganizationImagePost } from '../lib/linkedin.js';
 import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
@@ -83,14 +84,9 @@ app.timer('socialExecutionWorkerTimer', {
         'PUBLISHING_CLAIMED',
         'PLATFORM_ACCEPTED',
         'READBACK_PENDING',
-        'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'
+        'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
+        'AMBIGUOUS_PUBLICATION_OUTCOME'
       ].includes(row.jm1_status)
-      && !row.jm1_platformpostid
-    );
-    const platformIdRecoveryRows = rows.filter((row) =>
-      ['facebook', 'instagram'].includes(row.jm1_platform)
-      && ['PLATFORM_ACCEPTED', 'READBACK_PENDING', 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'].includes(row.jm1_status)
-      && row.jm1_platformpostid
     );
     const linkedinRows = rows.filter((row) =>
       row.jm1_platform === 'linkedin'
@@ -122,9 +118,10 @@ app.timer('socialExecutionWorkerTimer', {
       }
 
       const caption = resolveCaption(row, contentRows);
-      const captionPrefix = caption ? caption.slice(0, 72) : '';
-      const existing = await findRecentMatchingMetaObject({ expected: publishing, platform: row.jm1_platform, captionPrefix });
-      if (existing.ok && existing.duplicateCount === 0) {
+      const attemptedAt = row.jm1_lastattemptat || row.jm1_actualschedule || row.jm1_requestedschedule;
+      const existing = await findRecentMatchingMetaObject({ expected: publishing, platform: row.jm1_platform, caption, attemptedAt });
+      const reconciliation = reconcileProviderPublication(existing);
+      if (reconciliation.state === 'PUBLISHED_VERIFIED') {
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_status: 'PUBLISHED_VERIFIED',
           jm1_platformpostid: existing.platformPostId,
@@ -136,37 +133,34 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_errorcode: '',
           jm1_errormessage: ''
         });
+        if (['PUBLISHING_CLAIMED', 'AMBIGUOUS_PUBLICATION_OUTCOME'].includes(row.jm1_status)) {
+          const exceptionSet = await entitySet('jm1_marketingexception');
+          await upsertByIdempotency(exceptionSet, 'jm1_marketingexceptionid', ambiguousPublicationException({
+          row,
+          envelope,
+          resultState: 'EXACT_PROVIDER_POST_MATCH',
+          resolutionState: 'RESOLVED'
+        }));
+        }
         writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'RECONCILED_PLATFORM_SUCCESS', platformPostId: existing.platformPostId });
-      } else if (row.jm1_status === 'PUBLISHING_CLAIMED') {
-        await patchById(socialSet, row.jm1_socialexecutionid, {
-          jm1_status: 'RETRY_REQUIRED',
-          jm1_readbackstate: 'STALE_CLAIM_NO_PLATFORM_OBJECT_FOUND_READY_FOR_SAFE_RECLAIM',
-          jm1_verifiedat: envelope.startedAt,
-          jm1_errorcode: 'STALE_CLAIM_RECOVERY',
-          jm1_errormessage: 'Claim lease expired; no matching platform object found during reconciliation. Row is eligible for safe reclaim on a later worker tick.'
-        });
-        writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'STALE_CLAIM_RECOVERY_READY_FOR_SAFE_RECLAIM' });
       } else {
+        const readbackState = reconciliation.providerReadback;
         await patchById(socialSet, row.jm1_socialexecutionid, {
-          jm1_status: 'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
-          jm1_readbackstate: existing.state,
+          jm1_status: 'AMBIGUOUS_PUBLICATION_OUTCOME',
+          jm1_readbackstate: readbackState || 'PROVIDER_READBACK_UNAVAILABLE',
           jm1_verifiedat: envelope.startedAt,
-          jm1_errorcode: existing.state,
-          jm1_errormessage: existing.duplicateCount > 0 ? `Duplicate platform objects detected during reconciliation: ${existing.duplicateCount}` : existing.message || ''
+          jm1_errorcode: 'PUBLICATION_OUTCOME_AMBIGUOUS',
+          jm1_errormessage: 'The exact provider post could not be verified. Automatic repost is blocked pending reconciliation.'
         });
-        writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: existing.state, duplicateCount: existing.duplicateCount || 0 });
+        const exceptionSet = await entitySet('jm1_marketingexception');
+        await upsertByIdempotency(exceptionSet, 'jm1_marketingexceptionid', ambiguousPublicationException({
+          row,
+          envelope,
+          resultState: readbackState,
+          resolutionState: reconciliation.resolutionState
+        }));
+        writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'AMBIGUOUS_PUBLICATION_OUTCOME', providerReadback: readbackState, duplicateCount: existing.duplicateCount || 0 });
       }
-    }
-
-    for (const row of platformIdRecoveryRows) {
-      await patchById(socialSet, row.jm1_socialexecutionid, {
-        jm1_status: 'PUBLISHED_VERIFIED',
-        jm1_readbackstate: 'PLATFORM_ID_PRESENT_PROMOTED_WITHOUT_REPUBLISH',
-        jm1_verifiedat: envelope.startedAt,
-        jm1_errorcode: '',
-        jm1_errormessage: ''
-      });
-      writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: 'PLATFORM_ID_PRESENT_PROMOTED_WITHOUT_REPUBLISH', platformPostId: row.jm1_platformpostid });
     }
 
     for (const row of eligibleMetaRows) {
@@ -290,7 +284,8 @@ app.timer('socialExecutionWorkerTimer', {
         ? await publishFacebookPhoto({ expected: publishing, caption, imageUrl: mediaUrl })
         : await publishInstagramPhoto({ expected: publishing, caption, imageUrl: mediaUrl });
 
-      const failure = result.ok ? null : classifyFailure({
+      const ambiguousOutcome = isAmbiguousPublicationOutcome(result);
+      const failure = result.ok || ambiguousOutcome ? null : classifyFailure({
         attempts: Number(row.jm1_attemptcount || 0) + 1,
         maxAttempts: Number(process.env.JM1_SOCIAL_MAX_ATTEMPTS || 3),
         category: result.state,
@@ -308,7 +303,24 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_errorcode: '',
           jm1_errormessage: ''
         }
-        : {
+        : ambiguousOutcome
+          ? {
+            jm1_status: 'AMBIGUOUS_PUBLICATION_OUTCOME',
+            jm1_platformpostid: result.platformPostId || '',
+            jm1_actualdestination: result.actualDestination || '',
+            jm1_actualmediareference: result.permalink || mediaUrl,
+            jm1_actualschedule: result.publishedAt || envelope.startedAt,
+            jm1_readbackstate: result.readbackState || result.state,
+            jm1_attemptcount: Number(row.jm1_attemptcount || 0) + 1,
+            jm1_lastattemptat: envelope.startedAt,
+            jm1_correlationid: envelope.correlationId,
+            jm1_failurecategory: 'PUBLICATION_OUTCOME_AMBIGUOUS',
+            jm1_exceptionowner: 'JM1 marketing runtime operator',
+            jm1_verifiedat: envelope.startedAt,
+            jm1_errorcode: 'PUBLICATION_OUTCOME_AMBIGUOUS',
+            jm1_errormessage: 'Provider outcome is uncertain. Automatic retry is blocked pending exact readback.'
+          }
+          : {
           jm1_status: failure.state === 'DEAD_LETTERED' ? 'DEAD_LETTERED' : 'RETRY_REQUIRED',
           jm1_platformpostid: result.platformPostId || '',
           jm1_actualdestination: result.actualDestination || '',
@@ -326,6 +338,14 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_errormessage: result.message || ''
         };
       await patchById(socialSet, row.jm1_socialexecutionid, patch);
+      if (ambiguousOutcome) {
+        const exceptionSet = await entitySet('jm1_marketingexception');
+        await upsertByIdempotency(exceptionSet, 'jm1_marketingexceptionid', ambiguousPublicationException({
+          row,
+          envelope,
+          resultState: result.state
+        }));
+      }
       if (failure?.state === 'DEAD_LETTERED') {
         const exceptionSet = await entitySet('jm1_marketingexception');
         const exception = deadLetterRecord({
