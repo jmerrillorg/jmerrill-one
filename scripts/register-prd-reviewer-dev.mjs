@@ -133,7 +133,7 @@ for (const specification of checkpointApis) {
       uniquename: specification.name, name: specification.name, displayname: specification.display,
       description: 'PRD-only checkpoint projection or state mutation. Validates the exact consented receipt and team-owned Lead in system context; returns no inquiry content.',
       bindingtype: 0, isfunction: false, isprivate: false, allowedcustomprocessingsteptype: 0,
-      executeprivilegename: 'prvReadjm1_ProductionsReviewPermit',
+      executeprivilegename: 'prvWritejm1_ProductionsReviewPermit',
       'PluginTypeId@odata.bind': `plugintypes(${checkpointType.plugintypeid})`,
       CustomAPIRequestParameters: specification.requests.map(([name, value]) => ({
         name: `${specification.name}.${name}`, uniquename: name, displayname: name, type: value, isoptional: false,
@@ -145,7 +145,7 @@ for (const specification of checkpointApis) {
   }
   const readback = await request(`/customapis?$select=customapiid,uniquename,executeprivilegename,_plugintypeid_value&$filter=uniquename eq '${specification.name}'`);
   if (readback.value.length !== 1 || readback.value[0]._plugintypeid_value !== checkpointType.plugintypeid ||
-      readback.value[0].executeprivilegename !== 'prvReadjm1_ProductionsReviewPermit')
+      readback.value[0].executeprivilegename !== 'prvWritejm1_ProductionsReviewPermit')
     throw new Error(`Checkpoint API readback failed: ${specification.name}`);
   checkpointApiReadbacks.push({ name: specification.name, pluginTypeId: checkpointType.plugintypeid, apiId: readback.value[0].customapiid });
 }

@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 
 const plugin = readFileSync(new URL('../runtime/jm1-productions-bp09-reviewer-plugin/ProductionsReviewCheckpointAccess.cs', import.meta.url), 'utf8');
 const roleScript = readFileSync(new URL('./ensure-prd-checkpoint-runtime-role.mjs', import.meta.url), 'utf8');
+const registration = readFileSync(new URL('./register-prd-reviewer-dev.mjs', import.meta.url), 'utf8');
 const schema = readFileSync(new URL('../powerplatform/solutions/JM1ProductionsBP09InquiryReview/Entities/Lead/Entity.xml', import.meta.url), 'utf8');
 const apiRoot = new URL('../powerplatform/solutions/JM1ProductionsBP09InquiryReview/customapis/', import.meta.url);
 const apiFiles = [
@@ -18,6 +19,15 @@ for (const path of apiFiles) {
 const humanApi = readFileSync(new URL('jm1_AcceptProductionsInquiry/customapi.xml', apiRoot), 'utf8');
 assert.match(humanApi, /prvReadjm1_ProductionsReviewPermit/);
 assert.doesNotMatch(humanApi, /prvWritejm1_ProductionsReviewPermit/);
+const checkpointRegistration = registration.slice(
+  registration.indexOf('for (const specification of checkpointApis)'),
+  registration.indexOf('let published =')
+);
+assert.match(registration, /executeprivilegename: 'prvReadjm1_ProductionsReviewPermit'/);
+assert.match(registration, /result\.value\[0\]\.executeprivilegename !== 'prvReadjm1_ProductionsReviewPermit'/);
+assert.match(checkpointRegistration, /executeprivilegename: 'prvWritejm1_ProductionsReviewPermit'/);
+assert.match(checkpointRegistration, /readback\.value\[0\]\.executeprivilegename !== 'prvWritejm1_ProductionsReviewPermit'/);
+assert.doesNotMatch(checkpointRegistration, /prvReadjm1_ProductionsReviewPermit/);
 assert.equal((plugin.match(/public sealed class (?:ListProductionsReviewCheckpointCandidates|GetProductionsReviewCheckpoint|SaveProductionsReviewCheckpoint) : IPlugin/g) || []).length, 3);
 assert.match(plugin, /RuntimeObjectId = new Guid\("38b09d6f-34d9-48b3-9627-f04c047fd534"\)/);
 assert.match(plugin, /detail\.Channel != "jmerrill\.productions\/contact"/);
