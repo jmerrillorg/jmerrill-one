@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, nativeSocialApprovalProjection, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -680,4 +680,87 @@ test('native-to-Dataverse reconciliation fails closed on destination, time, or c
   }], [{ brand, platform: 'instagram', destinationId: '17841456905118441', destinationHandle: 'jmerrillone' }]).mapped;
   const result = reconcileNativeDataverseClaims([native], rows, '2026-10-10T07:24:00Z');
   assert.deepEqual([...result.matchedDataverseIds], []);
+});
+
+test('native approval projection exact-matches source slot when rolling weeks reuse the same caption', () => {
+  const brand = 'J Merrill One';
+  const marker = 'jm1-native-social-2026-10:j-merrill-one';
+  const caption = 'Approved One copy';
+  const captionHash = createHash('sha256').update(caption).digest('hex');
+  const mediaHash = 'a'.repeat(64);
+  const booking = { jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_branch: brand, jm1_platform: 'linkedin',
+    jm1_requesteddestination: '106683183', jm1_requestedschedule: '2026-10-13T16:00:00Z',
+    jm1_captionversion: captionHash, jm1_requestedmediahash: mediaHash };
+  const campaign = { jm1_campaignauthorityid: 'campaign-1', jm1_idempotencykey: `${marker}:campaign`,
+    jm1_branch: brand, jm1_campaigntype: 'native_social', jm1_state: 'PUBLIC_EXECUTION_APPROVED' };
+  const contentRow = (stage, id) => ({ jm1_contentworkid: id, jm1_idempotencykey: `${marker}:content:${stage}`,
+    jm1_branch: brand, jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_draftcopy: caption,
+    jm1_copybrief: 'APPROVED_TEMPLATE_SET:v1' });
+  const creativeRow = (stage, id) => ({ jm1_creativeworkid: id, jm1_idempotencykey: `${marker}:creative:${stage}`,
+    jm1_branch: brand, jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_assethash: mediaHash });
+  const socialRow = (stage, schedule, id) => ({ jm1_socialexecutionid: id,
+    jm1_idempotencykey: `${marker}:social:${stage}:linkedin`, jm1_branch: brand, jm1_platform: 'linkedin',
+    jm1_status: 'HELD_NATIVE_LINKEDIN_BOOKING_REQUIRED', jm1_requesteddestination: '106683183',
+    jm1_requestedschedule: schedule, jm1_captionversion: `${marker}:caption:${stage}:v1`,
+    jm1_requestedmediahash: mediaHash });
+  const proof = nativeSocialApprovalProjection(booking, {
+    campaigns: [campaign],
+    content: [contentRow('rolling-2026-10-12-1', 'content-current'), contentRow('rolling-2026-10-19-1', 'content-next')],
+    creatives: [creativeRow('rolling-2026-10-12-1', 'creative-current'), creativeRow('rolling-2026-10-19-1', 'creative-next')],
+    socialRows: [socialRow('rolling-2026-10-12-1', '2026-10-13T16:00:00Z', 'social-current'),
+      socialRow('rolling-2026-10-19-1', '2026-10-20T16:00:00Z', 'social-next')]
+  }, (authority, content) => authority === campaign && content.jm1_copybrief.includes('APPROVED_TEMPLATE_SET:v1'));
+  assert.equal(proof.state, 'APPROVED');
+  assert.deepEqual(proof.evidence, { campaignId: 'campaign-1', contentId: 'content-current',
+    creativeId: 'creative-current', socialExecutionId: 'social-current',
+    sourceStatus: 'HELD_NATIVE_LINKEDIN_BOOKING_REQUIRED', stage: 'rolling-2026-10-12-1' });
+  const templateMismatch = nativeSocialApprovalProjection(booking, {
+    campaigns: [campaign], content: [contentRow('rolling-2026-10-12-1', 'content-current')],
+    creatives: [creativeRow('rolling-2026-10-12-1', 'creative-current')],
+    socialRows: [socialRow('rolling-2026-10-12-1', booking.jm1_requestedschedule, 'social-current')]
+  }, () => false);
+  assert.equal(templateMismatch.state, 'UNKNOWN');
+  assert.equal(templateMismatch.reason, 'REVIEWED_TEMPLATE_VALIDATION_MISMATCH');
+
+  const mapped = mapDataverseSocialRows([{ ...booking, jm1_socialexecutionid: 'booking-1',
+    nativeApprovalState: proof.state, nativeApprovalEvidence: proof.evidence }],
+  [{ brand, platform: 'linkedin', destinationId: '106683183' }]).mapped[0];
+  assert.equal(mapped.approvalState, 'APPROVED');
+  assert.equal(mapped.nativeApprovalEvidence.socialExecutionId, 'social-current');
+});
+
+test('native approval projection fails closed for unapproved, mismatched, missing, or ambiguous source authority', () => {
+  const brand = 'J Merrill One';
+  const marker = 'native-one';
+  const stage = 'rolling-2026-10-12-1';
+  const caption = 'Approved copy';
+  const captionHash = createHash('sha256').update(caption).digest('hex');
+  const mediaHash = 'b'.repeat(64);
+  const booking = { jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_branch: brand, jm1_platform: 'linkedin',
+    jm1_requesteddestination: '106683183', jm1_requestedschedule: '2026-10-13T16:00:00Z',
+    jm1_captionversion: captionHash, jm1_requestedmediahash: mediaHash };
+  const campaign = { jm1_campaignauthorityid: 'c1', jm1_idempotencykey: `${marker}:campaign`,
+    jm1_branch: brand, jm1_campaigntype: 'native_social', jm1_state: 'PUBLIC_EXECUTION_APPROVED' };
+  const content = { jm1_contentworkid: 'ct1', jm1_idempotencykey: `${marker}:content:${stage}`,
+    jm1_branch: brand, jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_draftcopy: caption,
+    jm1_copybrief: 'APPROVED_TEMPLATE_SET:v1' };
+  const creative = { jm1_creativeworkid: 'cr1', jm1_idempotencykey: `${marker}:creative:${stage}`,
+    jm1_branch: brand, jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_assethash: mediaHash };
+  const source = { jm1_socialexecutionid: 's1', jm1_idempotencykey: `${marker}:social:${stage}:linkedin`,
+    jm1_branch: brand, jm1_platform: 'linkedin', jm1_status: 'HELD_NATIVE_LINKEDIN_BOOKING_REQUIRED',
+    jm1_requesteddestination: '106683183', jm1_requestedschedule: booking.jm1_requestedschedule,
+    jm1_captionversion: `${marker}:caption:${stage}:v1`, jm1_requestedmediahash: mediaHash };
+  const baseline = { campaigns: [campaign], content: [content], creatives: [creative], socialRows: [source] };
+  const validate = (authority, copy) => authority.jm1_state === 'PUBLIC_EXECUTION_APPROVED'
+    && copy.jm1_copybrief.includes('APPROVED_TEMPLATE_SET:v1');
+  assert.equal(nativeSocialApprovalProjection(booking, { ...baseline,
+    campaigns: [{ ...campaign, jm1_state: 'DRAFT' }] }, validate).state, 'UNKNOWN');
+  assert.equal(nativeSocialApprovalProjection(booking, { ...baseline,
+    content: [{ ...content, jm1_publicreadystate: 'HELD' }] }, validate).state, 'UNKNOWN');
+  assert.equal(nativeSocialApprovalProjection(booking, { ...baseline,
+    creatives: [{ ...creative, jm1_assethash: 'c'.repeat(64) }] }, validate).state, 'UNKNOWN');
+  assert.equal(nativeSocialApprovalProjection(booking, { ...baseline, socialRows: [] }, validate).state, 'UNKNOWN');
+  assert.equal(nativeSocialApprovalProjection(booking, { ...baseline,
+    socialRows: [source, { ...source, jm1_socialexecutionid: 's2' }] }, validate).state, 'UNKNOWN');
+  assert.equal(nativeSocialApprovalProjection({ ...booking, jm1_status: 'DRAFT' }, baseline, validate).state, 'UNKNOWN');
 });

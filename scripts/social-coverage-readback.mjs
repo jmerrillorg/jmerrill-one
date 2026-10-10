@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, nativeSocialApprovalProjection, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
+import { matchesApprovedNativeSocialContent } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
@@ -65,6 +66,23 @@ if (process.argv.includes('--live-dataverse')) {
     query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion,jm1_requestedmediahash,jm1_name', `jm1_requestedschedule ge ${overdueLookbackDate}T00:00:00Z`),
     query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion,jm1_requestedmediahash,jm1_name', "jm1_status eq 'NATIVE_RESERVATION_VERIFIED' or jm1_status eq 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'")
   ]);
+  const nativeCampaigns = await query('jm1_campaignauthorities',
+    'jm1_campaignauthorityid,jm1_idempotencykey,jm1_campaigntype,jm1_state,jm1_branch',
+    "jm1_campaigntype eq 'native_social'");
+  const nativeMarkers = [...new Set(nativeCampaigns.map((campaign) =>
+    campaign.jm1_idempotencykey?.replace(/:campaign$/, '')).filter(Boolean))];
+  const nativeSource = { content: [], creatives: [], socialRows: [] };
+  for (const marker of nativeMarkers) {
+    const prefix = marker.replaceAll("'", "''");
+    const [nativeContent, nativeCreatives, nativeSocialRows] = await Promise.all([
+      query('jm1_contentworks', 'jm1_contentworkid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_draftcopy,jm1_copybrief', `startswith(jm1_idempotencykey,'${prefix}:content:')`),
+      query('jm1_creativeworks', 'jm1_creativeworkid,jm1_idempotencykey,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_assethash', `startswith(jm1_idempotencykey,'${prefix}:creative:')`),
+      query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_captionversion,jm1_requestedmediahash', `startswith(jm1_idempotencykey,'${prefix}:social:')`)
+    ]);
+    nativeSource.content.push(...nativeContent);
+    nativeSource.creatives.push(...nativeCreatives);
+    nativeSource.socialRows.push(...nativeSocialRows);
+  }
   const lifecycleMarkers = [...new Set(futureRows.map((row) => row.jm1_idempotencykey?.split(':social:')[0]).filter(Boolean))];
   const lifecycleCampaigns = lifecycleMarkers.length
     ? await query('jm1_campaignauthorities', 'jm1_idempotencykey,jm1_campaigntype,jm1_state,jm1_name', lifecycleMarkers
@@ -122,6 +140,15 @@ if (process.argv.includes('--live-dataverse')) {
       ...row,
       ...(campaignPolicyByMarker.get(row.jm1_idempotencykey?.split(':social:')[0]) || {})
     }));
+  for (const booking of allFutureRows.filter((row) => row.jm1_status === 'NATIVE_BOOKED_VERIFIED')) {
+    const projection = nativeSocialApprovalProjection(booking, {
+      campaigns: nativeCampaigns,
+      ...nativeSource
+    }, matchesApprovedNativeSocialContent);
+    booking.nativeApprovalState = projection.state;
+    booking.nativeApprovalEvidence = projection.evidence;
+    booking.nativeApprovalReason = projection.reason;
+  }
   reconciliationRows = allFutureRows;
   const mappedDataverse = mapDataverseSocialRows(allFutureRows, snapshot.channels);
   const sourceRowById = new Map(allFutureRows.map((row) => [row.jm1_socialexecutionid, row]));
