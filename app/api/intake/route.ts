@@ -155,7 +155,7 @@ async function handlePost(request: NextRequest) {
       : intent === "productions" ? { followUpOwnerId: productionsOwnerId.toLowerCase() } : {}) };
   try {
     const token = await tokenFor(config);
-    const adapter = createIntakeDataverseAdapter({ apiBase: config.apiBase, getToken: async () => token });
+    const adapter = createIntakeDataverseAdapter({ apiBase: config.apiBase, authMode: config.authMode, getToken: async () => token });
     const { receipt, replay } = await acceptIntake(adapter, submission);
     try {
       await processIntake(adapter, receipt.id);

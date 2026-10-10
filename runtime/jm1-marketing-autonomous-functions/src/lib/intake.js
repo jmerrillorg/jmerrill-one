@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { classifyContactCandidates, CONTACT_IDENTITY_RESOLUTION } from './contactIdentityResolution.js';
 
 export const INTAKE_ACTION = 'BP09WebsiteIntakeV2';
 export const INTAKE_STATES = Object.freeze({
@@ -42,7 +43,7 @@ export function leadId(requestId) {
   return guid('lead', requestId);
 }
 
-export function createIntakeDataverseAdapter({ apiBase, getToken, fetchImpl = fetch }) {
+export function createIntakeDataverseAdapter({ apiBase, getToken, authMode = 'client_credentials', contactIdentityResolver = undefined, fetchImpl = fetch }) {
   async function request(path, method = 'GET', body) {
     const response = await fetchImpl(`${apiBase}${path}`, {
       method,
@@ -63,7 +64,7 @@ export function createIntakeDataverseAdapter({ apiBase, getToken, fetchImpl = fe
     if (response.status === 204) return {};
     return response.json();
   }
-  return { request };
+  return { request, authMode, contactIdentityResolver };
 }
 
 async function getById(adapter, set, id) {
@@ -184,14 +185,39 @@ export async function processIntake(adapter, id) {
   detail.attempts += 1;
   await saveReceipt(adapter, detail);
   try {
-    const contacts = await findContacts(adapter, input.email);
-    if (contacts.length > 1) {
+    let candidates;
+    let scopeComplete;
+    let scopeBasis;
+    if (typeof adapter.contactIdentityResolver === 'function') {
+      const result = await adapter.contactIdentityResolver({ requestId: detail.requestId, email: input.email });
+      candidates = result?.candidates;
+      scopeComplete = result?.scopeComplete === true;
+      scopeBasis = result?.scopeBasis;
+    } else if (adapter.authMode === 'system_assigned_managed_identity') {
+      candidates = [];
+      scopeComplete = false;
+    } else {
+      candidates = await findContacts(adapter, input.email);
+      // Preserve the current shared client-credential path until its replacement is proven.
+      scopeComplete = true;
+      scopeBasis = 'LEGACY_CURRENT_CLIENT_CREDENTIALS';
+    }
+    const identityResolution = classifyContactCandidates(candidates, { scopeComplete, scopeBasis });
+    detail.contactIdentityResolution = identityResolution.state;
+    if (identityResolution.state === CONTACT_IDENTITY_RESOLUTION.LOOKUP_SCOPE_UNAVAILABLE) {
+      detail.state = INTAKE_STATES.RETRY_PENDING;
+      detail.finalState = 'CONTACT_LOOKUP_SCOPE_UNAVAILABLE';
+      await saveReceipt(adapter, detail);
+      return detail;
+    }
+    if ([CONTACT_IDENTITY_RESOLUTION.AMBIGUOUS_EMAIL_MATCH,
+      CONTACT_IDENTITY_RESOLUTION.INVALID_CANDIDATE_SET].includes(identityResolution.state)) {
       detail.state = INTAKE_STATES.ESCALATED;
       detail.finalState = 'IDENTITY_RESOLUTION_REQUIRED';
       await saveReceipt(adapter, detail);
       return detail;
     }
-    let contactId = contacts[0]?.contactid;
+    let contactId = identityResolution.contactId;
     let contactOwnsMessage = false;
     if (!contactId) {
       contactId = guid('contact-email', input.email);

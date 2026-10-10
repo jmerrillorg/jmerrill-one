@@ -65,7 +65,7 @@ test('permission contract enumerates each registered Function trigger once', () 
   assert.equal(names.length, 8);
   assert.deepEqual(names, triggers);
   assert.equal(contract.status, 'SOURCE_CONTRACT_ONLY_NOT_PRODUCTION_AUTHORITY');
-  assert.equal(contract.contractVersion, 2);
+  assert.equal(contract.contractVersion, 3);
   assert.equal(contract.adoptionContract.status, 'PROPOSAL_PENDING_DATAVERSE_SECURITY_OWNER_REVIEW_AND_ACTUAL_IDENTITY_TESTS');
   assert.equal(contract.liveOwnershipInventory.ownedRowCounts.jm1_executionlogs, 55299);
   assert.equal(contract.liveOwnershipInventory.ownedRowCounts.leads, 91);
@@ -73,6 +73,25 @@ test('permission contract enumerates each registered Function trigger once', () 
   assert.equal(contract.liveEffectivePrivilegeReadback.depthCounts.Global, 19665);
   assert.equal(contract.auth.functionResource.systemAssignedClientId, 'e6a47c11-b42c-424a-8e4b-241be8f1050a');
   assert.equal(contract.liveOwnershipInventory.entityOwnershipTypes.OrganizationOwned.length, 4);
-  assert.equal(contract.adoptionContract.proposedRoles[1].contactScopeDecision.includes('Do not adopt Contact Deep'), true);
+  assert.match(contract.adoptionContract.liveSecurityConstraints.contactAlternateKey, /not normalized email/);
+  assert.match(contract.adoptionContract.proposedRoles[1].contactScopeDecision, /Option A: accept Deep Contact Read/);
+  assert.match(contract.adoptionContract.proposedRoles[1].leadScope, /do not establish a query need/);
+  assert.match(contract.adoptionContract.liveSecurityConstraints.assignment, /Do not grant Assign/);
+  assert.deepEqual(contract.adoptionContract.liveSecurityConstraints.organizationOwnedPrivilegeUnion, {
+    jm1pub_titlemarketinghealths: ['Read', 'Create', 'Write'],
+    jm1pub_productionassets: ['Read', 'Create', 'Write'],
+    jm1pub_editorialapprovalgates: ['Read'],
+    jm1pub_editorialartifacts: ['Read']
+  });
+  assert.equal(contract.adoptionContract.sourceOwnershipAndArtifactGate.status, 'BLOCKED_PROVENANCE_AND_ADOPTION');
+  assert.equal(contract.adoptionContract.sourceOwnershipAndArtifactGate.adoptionProposal.packageSelection.includes('JM1 Core Governance'), true);
+  assert.equal(contract.adoptionContract.sourceOwnershipAndArtifactGate.repositoryPackageEvidence.length, 4);
+  assert.equal(contract.adoptionContract.contactIdentityResolverAlternative.status,
+    'INTERFACE_AND_FAIL_CLOSED_AMBIGUITY_IMPLEMENTED; CROSS_REQUEST_PERSON_IDENTITY_POLICY_UNRESOLVED');
+  assert.match(contract.adoptionContract.contactIdentityResolverAlternative.identityBoundary, /emailaddress1 is a contact point only/);
+  assert.ok(contract.adoptionContract.contactIdentityResolverAlternative.schemaAndOwnershipRequirements.some((item) => /Do not add a unique email key/.test(item)));
+  assert.deepEqual(Object.keys(contract.adoptionContract.actualCallerAcceptance).sort(), ['functionHost', 'oneWebHost', 'testData']);
+  assert.match(contract.adoptionContract.perHostRollback.function, /restore func-jm1-marketing-runtime/);
+  assert.match(contract.adoptionContract.perHostRollback.oneWeb, /restore app-jm1-one-prod-v2/);
   assert.equal(contract.adoptionContract.requiredPreCutoverProof.length, 5);
 });

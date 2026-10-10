@@ -1,5 +1,5 @@
 import { app } from '@azure/functions';
-import { DATAVERSE_WEB_API_BASE_URL } from '../lib/config.js';
+import { DATAVERSE_AUTH_MODE, DATAVERSE_WEB_API_BASE_URL } from '../lib/config.js';
 import { getDataverseToken } from '../lib/dataverse.js';
 import { createIntakeDataverseAdapter, reconcileIntake } from '../lib/intake.js';
 import { createProductionsRelay, reconcileProductionsBp09Notice, reconcileProductionsBp09Notices } from '../lib/productionsBp09Notice.js';
@@ -16,6 +16,7 @@ app.timer('websiteIntakeReconciliationTimer', {
     async () => {
       const adapter = createIntakeDataverseAdapter({
         apiBase: DATAVERSE_WEB_API_BASE_URL,
+        authMode: DATAVERSE_AUTH_MODE,
         getToken: getDataverseToken
       });
       const outcomes = await reconcileIntake(adapter);
