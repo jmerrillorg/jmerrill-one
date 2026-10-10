@@ -5,6 +5,8 @@ import { buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDatavers
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
 const snapshot = JSON.parse(readFileSync(input, 'utf8'));
+snapshot.sourceSnapshotAsOf = snapshot.asOf || null;
+snapshot.readbackMode = process.argv.includes('--live-dataverse') ? 'LIVE_DATAVERSE' : 'SNAPSHOT_ONLY';
 if (process.argv.includes('--live-dataverse')) {
   if (!snapshot.dataverseMarker || !snapshot.dataverseUrl) throw new Error('Live readback requires dataverseMarker and dataverseUrl');
   const token = execFileSync('az', [
@@ -103,7 +105,8 @@ if (process.argv.includes('--live-dataverse')) {
     platformPostId: row.jm1_platformpostid
   }));
   snapshot.mappedDataverseRows = mappedDataverse.mapped.length;
-  snapshot.asOf = new Date().toISOString();
+  snapshot.liveDataverseObservedAt = new Date().toISOString();
+  snapshot.asOf = snapshot.liveDataverseObservedAt;
 }
 const report = buildSocialCoverageReadback(snapshot);
 const reconciliationFindings = (snapshot.unclassifiedDataverseRows || []).flatMap((row) => {
@@ -113,6 +116,10 @@ const reconciliationFindings = (snapshot.unclassifiedDataverseRows || []).flatMa
 });
 process.stdout.write(`${JSON.stringify({
   ...report,
+  readbackMode: snapshot.readbackMode,
+  sourceSnapshotAsOf: snapshot.sourceSnapshotAsOf,
+  liveDataverseObservedAt: snapshot.liveDataverseObservedAt || null,
+  alertDelivery: 'REPORT_ONLY_WITH_STABLE_DEDUPE_KEYS',
   ...(snapshot.unclassifiedDataverseRows ? { unclassifiedDataverseRows: snapshot.unclassifiedDataverseRows } : {}),
   ...(snapshot.mappedDataverseRows !== undefined ? { mappedDataverseRows: snapshot.mappedDataverseRows } : {}),
   ...(snapshot.unclassifiedDataverseRows ? { reconciliationFindings } : {})

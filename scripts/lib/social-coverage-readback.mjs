@@ -28,6 +28,12 @@ function channelKey(value) {
   return `${value.brand}:${value.platform}`;
 }
 
+function findingKey(channel, state, evidence) {
+  const identity = [channel.brand, channel.platform, channel.destinationId || channel.destinationHandle || 'UNRESOLVED'];
+  const hash = createHash('sha256').update(JSON.stringify([1, identity, state, evidence])).digest('hex').slice(0, 24);
+  return `social-coverage-v1-${hash}`;
+}
+
 function matchesDestination(item, channel) {
   return Boolean((channel.destinationId && item.destinationId === channel.destinationId)
     || (channel.platform === 'instagram'
@@ -196,8 +202,18 @@ export function buildSocialCoverageReadback(snapshot) {
 
   const results = channels.map((channel) => {
     const related = items.filter((item) => channelKey(item) === channelKey(channel));
-    const nativeEvidenceFresh = channel.nativeReadback?.observedDateET === asOf;
+    const observedDate = channel.nativeReadback?.observedDateET;
+    const nativeEvidenceFresh = observedDate === asOf;
     const verifiedNative = nativeEvidenceFresh && channel.nativeReadback?.state === 'VERIFIED';
+    const destinationResolved = Boolean(channel.destinationId || channel.destinationHandle
+      || (channel.platform === 'instagram' && channel.nativeReadback?.portfolioHandle))
+      && channel.executionOwner !== 'UNRESOLVED';
+    const coverageProofValid = verifiedNative && destinationResolved;
+    const nativeReadbackStatus = verifiedNative ? 'CURRENT'
+      : !observedDate ? 'MISSING'
+        : observedDate > asOf ? 'FUTURE_DATED'
+          : observedDate < asOf ? 'STALE'
+            : /FAIL|ERROR/i.test(channel.nativeReadback?.state || '') ? 'FAILED' : 'UNVERIFIED';
     const nativeScheduled = related.filter((item) =>
       item.kind === 'NATIVE_BOOKING'
       && verifiedNative
@@ -234,16 +250,17 @@ export function buildSocialCoverageReadback(snapshot) {
     const weeks = [0, 1].map((week) => {
       const start = addDays(asOf, week * 7);
       const stop = addDays(start, 7);
-      return { start, stopExclusive: stop, verifiedBookings: booked.filter((item) => {
+      return { start, stopExclusive: stop, verifiedBookings: coverageProofValid ? booked.filter((item) => {
         const date = easternDate(item.scheduledAt);
         return date >= start && date < stop;
-      }).length };
+      }).length : null };
     });
     const states = [];
-    if (!verifiedNative) states.push(nativeEvidenceFresh ? 'NATIVE_READBACK_UNVERIFIED' : 'NATIVE_READBACK_STALE');
+    if (!verifiedNative) states.push(`NATIVE_READBACK_${nativeReadbackStatus}`);
     if ((!channel.destinationId && !channel.destinationHandle) || channel.executionOwner === 'UNRESOLVED') states.push('DESTINATION_AUTHORITY_UNRESOLVED');
     if (!channel.destinationId && channel.destinationHandle) states.push('NUMERIC_DESTINATION_ID_UNVERIFIED');
-    if (weeks.some((week) => week.verifiedBookings === 0)) states.push('ROLLING_COVERAGE_GAP');
+    if (!coverageProofValid) states.push('COVERAGE_STATUS_UNKNOWN');
+    else if (weeks.some((week) => week.verifiedBookings === 0)) states.push('ROLLING_COVERAGE_GAP');
     if (held.length) states.push('HELD_ITEMS');
     if (failures.length) states.push('EXECUTION_FAILURE');
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
@@ -256,6 +273,47 @@ export function buildSocialCoverageReadback(snapshot) {
     if (duplicateRisk.length) states.push('DUAL_SCHEDULER_RISK');
     if (mixedChannelAuthority.length) states.push('MIXED_CHANNEL_EXECUTION_AUTHORITY');
     if (unapprovedScheduled.length) states.push('UNAPPROVED_NATIVE_SCHEDULE');
+    const alertFindings = [];
+    if (!verifiedNative) {
+      const state = `NATIVE_READBACK_${nativeReadbackStatus}`;
+      alertFindings.push({
+        dedupeKey: findingKey(channel, state, observedDate || 'NO_OBSERVATION'),
+        state,
+        action: 'REFRESH_NATIVE_SCHEDULER_READBACK',
+        evidence: { observedDateET: observedDate || null },
+        delivery: 'REPORT_ONLY'
+      });
+    }
+    if (coverageProofValid) {
+      for (const week of weeks.filter((entry) => entry.verifiedBookings === 0)) {
+        const calendarWeekStart = mondayOf(week.start);
+        alertFindings.push({
+          dedupeKey: findingKey(channel, 'ROLLING_COVERAGE_GAP', calendarWeekStart),
+          state: 'ROLLING_COVERAGE_GAP',
+          action: 'REVIEW_VERIFIED_COVERAGE_GAP',
+          evidence: { calendarWeekStart, calendarWeekStopExclusive: addDays(calendarWeekStart, 7) },
+          delivery: 'REPORT_ONLY'
+        });
+      }
+    }
+    for (const [state, ids, action] of [
+      ['EXECUTION_FAILURE', failures.map((item) => item.id), 'RECONCILE_EXECUTION_FAILURE'],
+      ['PAST_DUE_API_REQUEST', pastDueRequests.map((item) => item.id), 'RECONCILE_PAST_DUE_REQUEST'],
+      ['PAST_DUE_NATIVE_BOOKING_CLAIM', pastDueBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
+      ['NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION', unverifiedBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
+      ['DUAL_SCHEDULER_RISK', duplicateRisk.map((item) => item.id), 'RESOLVE_DUPLICATE_SCHEDULER_RISK'],
+      ['DESTINATION_AUTHORITY_UNRESOLVED', [channel.destinationId || channel.destinationHandle || 'MISSING'], 'VERIFY_DESTINATION_AUTHORITY']
+    ]) {
+      if (!ids.length) continue;
+      const orderedIds = [...ids].sort();
+      alertFindings.push({
+        dedupeKey: findingKey(channel, state, orderedIds),
+        state,
+        action,
+        evidence: { recordIds: orderedIds },
+        delivery: 'REPORT_ONLY'
+      });
+    }
     return {
       brand: channel.brand,
       platform: channel.platform,
@@ -264,7 +322,11 @@ export function buildSocialCoverageReadback(snapshot) {
       executionOwner: channel.executionOwner,
       nativeReadback: channel.nativeReadback || null,
       nativeReadbackFresh: nativeEvidenceFresh,
-      nativeScheduled: nativeScheduled.length,
+      nativeReadbackStatus,
+      coverageStatus: coverageProofValid
+        ? weeks.every((week) => week.verifiedBookings > 0) ? 'VERIFIED_COVERED' : 'VERIFIED_GAP'
+        : 'UNKNOWN',
+      nativeScheduled: coverageProofValid ? nativeScheduled.length : null,
       nativeBookingClaims: bookingClaims.length,
       unverifiedBookingClaims: unverifiedBookingClaims.map((item) => ({
         id: item.id,
@@ -283,7 +345,7 @@ export function buildSocialCoverageReadback(snapshot) {
         approvalState: item.approvalState || null,
         executionOwner: nativeOwner(item.platform)
       })),
-      verifiedBookings: booked.length,
+      verifiedBookings: coverageProofValid ? booked.length : null,
       unapprovedScheduled: unapprovedScheduled.map((item) => item.id),
       nextVerifiedBooking: booked.sort((a, b) => a.scheduledAt.localeCompare(b.scheduledAt))[0]?.scheduledAt || null,
       apiRequests: apiRequests.length,
@@ -319,6 +381,7 @@ export function buildSocialCoverageReadback(snapshot) {
       duplicateRisk: duplicateRisk.map((item) => item.id),
       mixedChannelAuthority: mixedChannelAuthority.map((item) => item.id),
       weeks,
+      alertFindings,
       states
     };
   });
@@ -353,5 +416,12 @@ export function buildSocialCoverageReadback(snapshot) {
       coveredWeeks: weeks.filter((week) => week.proofIds.length).length, totalWeeks: weeks.length, weeks };
   });
 
-  return { asOfDateET: asOf, endExclusiveDateET: end, zone: ZONE, channels: results, authorCoverage };
+  return {
+    asOfDateET: asOf,
+    endExclusiveDateET: end,
+    zone: ZONE,
+    channels: results,
+    authorCoverage,
+    alertFindings: results.flatMap((channel) => channel.alertFindings)
+  };
 }
