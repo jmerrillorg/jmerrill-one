@@ -48,6 +48,10 @@ export function nativeReservationAliases(destination) {
   return [...new Set([destination.id, destination.name, destination.handle].filter(Boolean))];
 }
 
+export function isActionableNativeReservationFailure(state) {
+  return state === 'NATIVE_BOOKING_CONFLICT' || state === 'NATIVE_BOOKING_STALE';
+}
+
 export function buildNativeReservationHold({ row, reservation, disposition, requestedSchedule, reservedSchedule, nowIso }) {
   const conflict = disposition !== 'EXACT_SLOT';
   const stale = disposition === 'STALE_SLOT';
