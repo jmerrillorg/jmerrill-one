@@ -9,6 +9,16 @@ const channel = {
 };
 const base = { asOf: '2026-10-02T16:00:00Z', channels: [channel], items: [] };
 
+test('resolved destinations do not emit unresolved-authority alerts; missing authority does', () => {
+  const resolved = buildSocialCoverageReadback(base).channels[0];
+  assert.ok(!resolved.alertFindings.some((finding) => finding.state === 'DESTINATION_AUTHORITY_UNRESOLVED'));
+
+  const unresolved = buildSocialCoverageReadback({ ...base, channels: [{
+    ...channel, destinationId: null, executionOwner: 'UNRESOLVED'
+  }] }).channels[0];
+  assert.ok(unresolved.alertFindings.some((finding) => finding.state === 'DESTINATION_AUTHORITY_UNRESOLVED'));
+});
+
 test('API requests and approved content never count as native bookings', () => {
   const result = buildSocialCoverageReadback({ ...base, items: [
     { id: 'row-1', brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId,

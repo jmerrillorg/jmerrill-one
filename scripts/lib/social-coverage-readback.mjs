@@ -342,8 +342,7 @@ export function buildSocialCoverageReadback(snapshot) {
       ['PAST_DUE_NATIVE_BOOKING_CLAIM', pastDueBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
       ['NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION', unresolvedBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
       ['NATIVE_BOOKING_CONFLICT', contradictedBookingClaims.map((item) => item.id), 'RECONCILE_CONTRADICTED_NATIVE_BOOKING'],
-      ['DUAL_SCHEDULER_RISK', duplicateRisk.map((item) => item.id), 'RESOLVE_DUPLICATE_SCHEDULER_RISK'],
-      ['DESTINATION_AUTHORITY_UNRESOLVED', [channel.destinationId || channel.destinationHandle || 'MISSING'], 'VERIFY_DESTINATION_AUTHORITY']
+      ['DUAL_SCHEDULER_RISK', duplicateRisk.map((item) => item.id), 'RESOLVE_DUPLICATE_SCHEDULER_RISK']
     ]) {
       if (!ids.length) continue;
       const orderedIds = [...ids].sort();
@@ -352,6 +351,15 @@ export function buildSocialCoverageReadback(snapshot) {
         state,
         action,
         evidence: { recordIds: orderedIds },
+        delivery: 'REPORT_ONLY'
+      });
+    }
+    if ((!channel.destinationId && !channel.destinationHandle) || channel.executionOwner === 'UNRESOLVED') {
+      alertFindings.push({
+        dedupeKey: findingKey(channel, 'DESTINATION_AUTHORITY_UNRESOLVED', channel.destinationId || channel.destinationHandle || 'MISSING'),
+        state: 'DESTINATION_AUTHORITY_UNRESOLVED',
+        action: 'VERIFY_DESTINATION_AUTHORITY',
+        evidence: { recordIds: [channel.destinationId || channel.destinationHandle || 'MISSING'] },
         delivery: 'REPORT_ONLY'
       });
     }
