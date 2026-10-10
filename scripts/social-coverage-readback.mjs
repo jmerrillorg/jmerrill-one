@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, nativeSocialApprovalProjection, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, nativeSocialApprovalProjection, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 import { matchesApprovedNativeSocialContent } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 
@@ -31,31 +31,20 @@ if (process.argv.includes('--live-dataverse')) {
   }
   if (!token) throw new Error('Azure CLI returned an empty access token; no token value was logged.');
   const query = async (set, select, filter) => {
-    const values = [];
     const url = new URL(`${snapshot.dataverseUrl}/api/data/v9.2/${set}`);
     url.searchParams.set('$select', select);
     url.searchParams.set('$filter', filter);
-    url.searchParams.set('$top', '100');
-    let next = url.toString();
-    while (next) {
-      let response;
-      try {
-        response = await fetch(next, {
-          headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' },
-          signal: AbortSignal.timeout(20000)
-        });
-      } catch (error) {
+    try {
+      return await queryDataversePages(url.toString(), token);
+    } catch (error) {
+      if (!error.message.startsWith('Dataverse readback failed: HTTP ')) {
         const detail = error.name === 'TimeoutError' || error.name === 'AbortError'
           ? 'request exceeded 20 seconds'
           : 'request could not be completed';
         throw new Error(`Dataverse ${set} readback ${detail}; no partial result was reported.`);
       }
-      if (!response.ok) throw new Error(`Dataverse ${set} readback failed: HTTP ${response.status}`);
-      const body = await response.json();
-      values.push(...(body.value || []));
-      next = body['@odata.nextLink'] || null;
+      throw new Error(`Dataverse ${set} readback failed: ${error.message.replace('Dataverse readback failed: ', '')}`);
     }
-    return values;
   };
   const marker = snapshot.dataverseMarker;
   const overdueLookbackDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -18,6 +18,23 @@ test('resolved destinations do not emit unresolved-authority alerts; missing aut
     ...channel, destinationId: null, executionOwner: 'UNRESOLVED'
   }] }).channels[0];
   assert.ok(unresolved.alertFindings.some((finding) => finding.state === 'DESTINATION_AUTHORITY_UNRESOLVED'));
+});
+
+test('Dataverse readback follows every OData page and requests bounded pages', async () => {
+  const calls = [];
+  const pages = [
+    { value: [{ id: 'first' }], '@odata.nextLink': 'https://example.test/next?$skiptoken=2' },
+    { value: [{ id: 'second' }] }
+  ];
+  const rows = await queryDataversePages('https://example.test/rows?$select=id', 'test-token', async (url, options) => {
+    calls.push({ url, options });
+    return { ok: true, json: async () => pages.shift() };
+  });
+  assert.deepEqual(rows.map((row) => row.id), ['first', 'second']);
+  assert.equal(calls.length, 2);
+  assert.equal(calls[0].options.headers.Authorization, 'Bearer test-token');
+  assert.equal(calls[0].options.headers.Prefer, 'odata.maxpagesize=1000');
+  assert.equal(calls[1].url, 'https://example.test/next?$skiptoken=2');
 });
 
 test('API requests and approved content never count as native bookings', () => {

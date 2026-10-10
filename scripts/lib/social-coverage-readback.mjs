@@ -8,6 +8,22 @@ const NATIVE_RESERVATION_STATUSES = new Set([
   'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'
 ]);
 
+export async function queryDataversePages(initialUrl, token, fetchImpl = fetch) {
+  const values = [];
+  let next = initialUrl;
+  while (next) {
+    const response = await fetchImpl(next, {
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/json', Prefer: 'odata.maxpagesize=1000' },
+      signal: AbortSignal.timeout(20000)
+    });
+    if (!response.ok) throw new Error(`Dataverse readback failed: HTTP ${response.status}`);
+    const body = await response.json();
+    values.push(...(body.value || []));
+    next = body['@odata.nextLink'] || null;
+  }
+  return values;
+}
+
 function easternDate(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) throw new Error(`Invalid timestamp: ${value}`);
