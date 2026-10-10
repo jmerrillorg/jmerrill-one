@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, nativeSocialApprovalProjection, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -676,9 +676,13 @@ test('exact Dataverse source approval replaces stale UNKNOWN but never overrides
   };
   const approvedSource = { id: 'dv-native-approved', kind: 'NATIVE_BOOKING', brand,
     platform: 'instagram', destinationId: '17841456905118441', scheduledAt: slot,
-    approvalState: 'APPROVED', status: 'NATIVE_BOOKED_VERIFIED' };
+    approvalState: 'APPROVED', status: 'NATIVE_BOOKED_VERIFIED',
+    nativeApprovalEvidence: { contentId: 'content-live', creativeId: 'creative-live' },
+    nativeApprovalReason: 'EXACT_AUTHORITY_LINKAGE_PASS' };
   const approved = reconcileNativeDataverseClaims([native], [approvedSource], '2026-10-10T22:00:00Z');
   assert.equal(approved.items[0].approvalState, 'APPROVED');
+  assert.deepEqual(approved.items[0].nativeApprovalEvidence, approvedSource.nativeApprovalEvidence);
+  assert.equal(approved.items[0].nativeApprovalReason, 'EXACT_AUTHORITY_LINKAGE_PASS');
   assert.deepEqual([...approved.matchedDataverseIds], ['dv-native-approved']);
 
   const held = reconcileNativeDataverseClaims([{ ...native, approvalState: 'HELD' }],
@@ -755,6 +759,56 @@ test('native approval projection exact-matches source slot when rolling weeks re
   [{ brand, platform: 'linkedin', destinationId: '106683183' }]).mapped[0];
   assert.equal(mapped.approvalState, 'APPROVED');
   assert.equal(mapped.nativeApprovalEvidence.socialExecutionId, 'social-current');
+});
+
+test('legacy native booking keys resolve exact source linkage and require campaign, source, hash, and native ID authority', () => {
+  const brand = 'J Merrill One';
+  const marker = 'jm1-native-social-2026-10:j-merrill-one';
+  const stage = 'one-instagram-oct-15';
+  const caption = 'Legacy scheduled copy https://www.jmerrill.one/';
+  const captionHash = createHash('sha256').update(caption).digest('hex');
+  const mediaHash = 'd'.repeat(64);
+  const booking = { jm1_socialexecutionid: 'social-legacy', jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_branch: brand, jm1_platform: 'instagram',
+    jm1_requesteddestination: '@jmerrillone', jm1_requestedschedule: '2026-10-15T14:00:00Z',
+    jm1_captionversion: captionHash, jm1_requestedmediahash: mediaHash };
+  const campaign = { jm1_campaignauthorityid: 'campaign-legacy', jm1_idempotencykey: `${marker}:campaign`,
+    jm1_branch: brand, jm1_campaigntype: 'native_social', jm1_state: 'PUBLIC_EXECUTION_APPROVED',
+    jm1_supersession: 'Founder standing marketing authorization; item source and media checks required. No Publishing Meta worker release.' };
+  const content = { jm1_contentworkid: 'content-legacy', jm1_idempotencykey: `${marker}:${stage}:content`,
+    jm1_branch: brand, jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_draftcopy: caption,
+    jm1_copybrief: `Standing founder marketing authority; source https://www.jmerrill.one/; caption SHA-256 ${captionHash}; exact native booking readback 1586935576565032.` };
+  const creative = { jm1_creativeworkid: 'creative-legacy', jm1_idempotencykey: `${marker}:${stage}:creative`,
+    jm1_branch: brand, jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_assethash: mediaHash };
+  const source = { jm1_socialexecutionid: 'social-legacy', jm1_idempotencykey: `${marker}:${stage}:social`,
+    jm1_branch: brand, jm1_platform: 'instagram', jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requesteddestination: '@jmerrillone', jm1_requestedschedule: booking.jm1_requestedschedule,
+    jm1_captionversion: captionHash, jm1_requestedmediahash: mediaHash,
+    jm1_readbackstate: 'META_SCHEDULED_NATIVE_CONTENT_ID_1586935576565032_DESTINATION_AND_TIME_VERIFIED' };
+  const rows = { campaigns: [campaign], content: [content], creatives: [creative], socialRows: [source] };
+  const result = nativeSocialApprovalProjection(booking, rows, () => false);
+  assert.equal(result.state, 'APPROVED');
+  assert.deepEqual(result.evidence, { campaignId: 'campaign-legacy', contentId: 'content-legacy',
+    creativeId: 'creative-legacy', socialExecutionId: 'social-legacy', sourceStatus: 'NATIVE_BOOKED_VERIFIED', stage });
+
+  assert.equal(matchesApprovedLegacyNativeSocialContent({ ...campaign, jm1_supersession: 'unrelated authority' }, content,
+    { booking, source }), false);
+  assert.equal(matchesApprovedLegacyNativeSocialContent(campaign,
+    { ...content, jm1_copybrief: content.jm1_copybrief.replace('www.jmerrill.one', 'attacker.example') },
+    { booking, source }), false);
+  assert.equal(matchesApprovedLegacyNativeSocialContent(campaign,
+    { ...content, jm1_copybrief: content.jm1_copybrief.replace('1586935576565032', '999') },
+    { booking, source }), false);
+  assert.equal(matchesApprovedLegacyNativeSocialContent(campaign, content,
+    { booking, source: { ...source, jm1_readbackstate: 'MBS_BOOKED|2026-10-10|CONTENT_ID=999' } }), false);
+
+  const mismatched = nativeSocialApprovalProjection({ ...booking, jm1_requestedschedule: '2026-10-16T14:00:00Z' }, rows, () => true);
+  assert.equal(mismatched.state, 'UNKNOWN');
+  assert.equal(mismatched.reason, 'NO_EXACT_SOURCE_LINKAGE');
+
+  const ambiguous = nativeSocialApprovalProjection(booking, { ...rows,
+    socialRows: [source, { ...source }] }, () => true);
+  assert.equal(ambiguous.state, 'UNKNOWN');
+  assert.equal(ambiguous.reason, 'AMBIGUOUS_EXACT_SOURCE_LINKAGE');
 });
 
 test('native approval projection fails closed for unapproved, mismatched, missing, or ambiguous source authority', () => {

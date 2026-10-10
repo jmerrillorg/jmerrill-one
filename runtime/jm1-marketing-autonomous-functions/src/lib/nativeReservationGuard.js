@@ -16,25 +16,30 @@ export function matchingNativeReservationDisposition(row, caption, reservations,
   const fingerprint = captionFingerprint(caption);
   const allowedDestinations = new Set(destinationAliases.map(normalizeDestination));
   if (!allowedDestinations.has(normalizeDestination(row.jm1_requesteddestination))) return null;
-  const match = reservations.find((reservation) =>
+  const inScope = (reservation) =>
     NATIVE_RESERVATION_STATUSES.includes(reservation.jm1_status)
     && reservation.jm1_branch === row.jm1_branch
     && reservation.jm1_platform === row.jm1_platform
-    && allowedDestinations.has(normalizeDestination(reservation.jm1_requesteddestination))
+    && allowedDestinations.has(normalizeDestination(reservation.jm1_requesteddestination));
+  const sameSlot = reservations.find((reservation) => inScope(reservation)
+    && Date.parse(reservation.jm1_requestedschedule || '') === Date.parse(row.jm1_requestedschedule || ''));
+  const sameContent = reservations.find((reservation) => inScope(reservation)
     && reservation.jm1_captionversion === fingerprint
-    && reservation.jm1_requestedmediahash === row.jm1_requestedmediahash
-  );
+    && reservation.jm1_requestedmediahash === row.jm1_requestedmediahash);
+  const match = sameSlot || sameContent;
   if (!match) return null;
 
   const requestedTime = Date.parse(row.jm1_requestedschedule || '');
   const reservedTime = Date.parse(match.jm1_requestedschedule || '');
   const observedTime = Date.parse(nowIso || '');
-  const sameSlot = Number.isFinite(requestedTime) && requestedTime === reservedTime;
+  const slotMatches = Number.isFinite(requestedTime) && requestedTime === reservedTime;
+  const contentMatches = match.jm1_captionversion === fingerprint
+    && match.jm1_requestedmediahash === row.jm1_requestedmediahash;
   return {
     reservation: match,
-    disposition: sameSlot && Number.isFinite(observedTime) && reservedTime < observedTime
+    disposition: slotMatches && contentMatches && Number.isFinite(observedTime) && reservedTime < observedTime
       ? 'STALE_SLOT'
-      : sameSlot ? 'EXACT_SLOT' : 'SLOT_CONFLICT',
+      : slotMatches && contentMatches ? 'EXACT_SLOT' : 'SLOT_CONFLICT',
     requestedSchedule: Number.isFinite(requestedTime) ? new Date(requestedTime).toISOString() : null,
     reservedSchedule: Number.isFinite(reservedTime) ? new Date(reservedTime).toISOString() : null
   };

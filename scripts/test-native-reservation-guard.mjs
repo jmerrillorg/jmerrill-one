@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import {
   captionFingerprint,
   buildNativeReservationHold,
@@ -29,6 +30,13 @@ assert.equal(matchingNativeReservation(row, caption, [reservation]), reservation
 const sameSlotRow = { ...row, jm1_requestedschedule: '2026-10-13T14:00:00.000Z' };
 const sameSlotReservation = { ...reservation, jm1_requestedschedule: '2026-10-13T14:00:00Z' };
 assert.equal(matchingNativeReservationDisposition(sameSlotRow, caption, [sameSlotReservation]).disposition, 'EXACT_SLOT');
+const sameSlotDifferentCaption = matchingNativeReservationDisposition(sameSlotRow, `${caption} changed`, [sameSlotReservation]);
+assert.equal(sameSlotDifferentCaption.disposition, 'SLOT_CONFLICT');
+assert.equal(sameSlotDifferentCaption.reservation, sameSlotReservation);
+const sameSlotDifferentMedia = matchingNativeReservationDisposition({ ...sameSlotRow, jm1_requestedmediahash: 'b'.repeat(64) }, caption, [sameSlotReservation]);
+assert.equal(sameSlotDifferentMedia.disposition, 'SLOT_CONFLICT');
+assert.equal(matchingNativeReservationDisposition({ ...sameSlotRow, jm1_platform: 'facebook' }, caption, [sameSlotReservation]), null);
+assert.equal(matchingNativeReservationDisposition({ ...sameSlotRow, jm1_branch: 'J Merrill Financial' }, caption, [sameSlotReservation]), null);
 const movedSlot = matchingNativeReservationDisposition(sameSlotRow, caption, [{ ...sameSlotReservation,
   jm1_requestedschedule: '2026-10-14T14:00:00Z' }]);
 assert.equal(movedSlot.disposition, 'SLOT_CONFLICT');
@@ -78,4 +86,9 @@ assert.equal(reservationReadbackComplete({ value: [], '@odata.nextLink': 'https:
 assert.equal(isActionableNativeReservationFailure('NATIVE_BOOKING_CONFLICT'), true);
 assert.equal(isActionableNativeReservationFailure('NATIVE_BOOKING_STALE'), true);
 assert.equal(isActionableNativeReservationFailure('NATIVE_BOOKING_DUPLICATE_SUPPRESSED'), false);
-process.stdout.write('native reservation guard: 33 assertions passed\n');
+const workerSource = await readFile(new URL('../runtime/jm1-marketing-autonomous-functions/src/functions/socialExecutionWorkerTimer.js', import.meta.url), 'utf8');
+const reservationCheckIndex = workerSource.indexOf('const nativeReservation = matchingNativeReservationDisposition(');
+const notDueCheckIndex = workerSource.indexOf('const scheduledFor = new Date(row.jm1_requestedschedule);');
+assert.ok(reservationCheckIndex >= 0 && notDueCheckIndex > reservationCheckIndex,
+  'future-dated API rows must reconcile native reservations before being skipped as not due');
+process.stdout.write('native reservation guard: 39 assertions passed\n');
