@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 
 const channel = {
   brand: 'J Merrill Publishing', platform: 'facebook', destinationId: '307480763084670',
@@ -423,4 +423,48 @@ test('Dataverse booking claims without publication proof are surfaced for reconc
   }, '2026-10-08T16:00:00Z'), {
     classification: 'PAST_DUE_NATIVE_BOOKING_CLAIM', actionRequired: true
   });
+});
+
+test('fresh exact native card reconciles a matching Dataverse booking despite its older UI observation timestamp', () => {
+  const brand = 'J Merrill One';
+  const captionText = 'Different needs. One place to start.';
+  const captionSha256 = createHash('sha256').update(captionText).digest('hex');
+  const native = {
+    id: 'fresh-mbs-card', kind: 'NATIVE_BOOKING', brand, platform: 'instagram',
+    destinationHandle: 'jmerrillone', scheduledAt: '2026-10-15T14:00:00Z',
+    approvalState: 'APPROVED', captionSha256,
+    nativeEvidence: { source: 'META_NATIVE_UI', observedDateET: '2026-10-10',
+      scheduledAt: '2026-10-15T14:00:00Z', captionSha256, nativeBookingId: null }
+  };
+  const dataverse = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'dv-row', jm1_branch: brand, jm1_platform: 'instagram',
+    jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requesteddestination: '@jmerrillone',
+    jm1_requestedschedule: '2026-10-15T14:00:00Z', jm1_captionversion: captionSha256,
+    jm1_readbackstate: 'NATIVE_UI|META|AT=2026-10-08T15:30:57.000Z|BOOKING=NOT_EXPOSED'
+  }], [{ brand, platform: 'instagram', destinationId: '17841456905118441', destinationHandle: 'jmerrillone' }]).mapped;
+  const result = reconcileNativeDataverseClaims([native], dataverse, '2026-10-10T07:24:00Z');
+  assert.deepEqual([...result.matchedDataverseIds], ['dv-row']);
+  assert.equal(result.items[0].dataverseSocialExecutionId, 'dv-row');
+  assert.equal(result.items[0].dataverseEvidenceMatch, 'DESTINATION_SCHEDULE_CAPTION_SHA256');
+  assert.equal(result.items[0].approvalState, 'APPROVED');
+  assert.equal(result.items[0].dataverseApprovalEvidence, 'NATIVE_BOOKED_VERIFIED');
+});
+
+test('native-to-Dataverse reconciliation fails closed on destination, time, or caption mismatch', () => {
+  const brand = 'J Merrill One';
+  const captionText = 'Different needs. One place to start.';
+  const captionSha256 = createHash('sha256').update(captionText).digest('hex');
+  const native = {
+    id: 'fresh-mbs-card', kind: 'NATIVE_BOOKING', brand, platform: 'instagram',
+    destinationHandle: 'jmerrillone', scheduledAt: '2026-10-15T14:00:00Z',
+    nativeEvidence: { source: 'META_NATIVE_UI', observedDateET: '2026-10-10',
+      scheduledAt: '2026-10-15T14:00:00Z', captionSha256 }
+  };
+  const rows = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'dv-row', jm1_branch: brand, jm1_platform: 'instagram',
+    jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requesteddestination: '@different-account',
+    jm1_requestedschedule: '2026-10-15T14:00:00Z', jm1_captionversion: captionSha256
+  }], [{ brand, platform: 'instagram', destinationId: '17841456905118441', destinationHandle: 'jmerrillone' }]).mapped;
+  const result = reconcileNativeDataverseClaims([native], rows, '2026-10-10T07:24:00Z');
+  assert.deepEqual([...result.matchedDataverseIds], []);
 });

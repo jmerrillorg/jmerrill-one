@@ -67,6 +67,35 @@ export function retainNativeEvidenceItems(items) {
     || (item.kind === 'PUBLISHED' && item.platformPostId));
 }
 
+export function reconcileNativeDataverseClaims(nativeItems, dataverseItems, asOf) {
+  const date = easternDate(asOf);
+  const matchedDataverseIds = new Set();
+  const items = nativeItems.map((native) => {
+    if (native.kind !== 'NATIVE_BOOKING' || !hasNativeBookingProof(native, date)) return native;
+    const captionHash = native.nativeEvidence?.captionSha256 || native.captionSha256;
+    if (!captionHash) return native;
+    const match = dataverseItems.find((row) => row.kind === 'NATIVE_BOOKING'
+      && row.brand === native.brand
+      && row.platform === native.platform
+      && row.scheduledAt === native.scheduledAt
+      && row.contentKey === `${native.brand}:${captionHash}`
+      && ((native.destinationId && row.destinationId === native.destinationId)
+        || (native.destinationHandle && row.destinationHandle === native.destinationHandle)));
+    if (!match) return native;
+    matchedDataverseIds.add(match.id);
+    return {
+      ...native,
+      approvalState: match.approvalState,
+      dataverseSocialExecutionId: match.id,
+      dataverseStatus: match.status,
+      dataverseReadbackState: match.readbackState,
+      dataverseEvidenceMatch: 'DESTINATION_SCHEDULE_CAPTION_SHA256',
+      dataverseApprovalEvidence: match.status === 'NATIVE_BOOKED_VERIFIED' ? 'NATIVE_BOOKED_VERIFIED' : null
+    };
+  });
+  return { items, matchedDataverseIds };
+}
+
 export function mapDataverseSocialRows(rows, channels) {
   const mapped = [];
   const unclassified = [];

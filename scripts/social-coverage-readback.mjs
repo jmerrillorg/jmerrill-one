@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
@@ -89,11 +89,18 @@ if (process.argv.includes('--live-dataverse')) {
       expectedDestinationId: item.expectedDestinationId,
       requestedDestinationText: item.requestedDestinationText
     };
-  }).filter((item) => !nativeItems.some((native) => native.id === item.id
+  });
+  const { items: reconciledNativeItems, matchedDataverseIds } = reconcileNativeDataverseClaims(
+    nativeItems,
+    mappedItems,
+    new Date().toISOString()
+  );
+  const remainingMappedItems = mappedItems.filter((item) => !matchedDataverseIds.has(item.id)
+    && !nativeItems.some((native) => native.id === item.id
     || (item.platformPostId && native.platformPostId === item.platformPostId)));
-  snapshot.items = [...nativeItems, ...mappedItems, ...current.filter((row) =>
-    !mappedItems.some((item) => item.id === row.id)
-      && !nativeItems.some((item) => row.platformPostId && row.platformPostId === item.platformPostId)), ...contentItems];
+  snapshot.items = [...reconciledNativeItems, ...remainingMappedItems, ...current.filter((row) =>
+    !remainingMappedItems.some((item) => item.id === row.id)
+      && !reconciledNativeItems.some((item) => row.platformPostId && row.platformPostId === item.platformPostId)), ...contentItems];
   snapshot.unclassifiedDataverseRows = mappedDataverse.unclassified.map((row) => ({
     id: row.jm1_socialexecutionid,
     idempotencyKey: row.jm1_idempotencykey,
