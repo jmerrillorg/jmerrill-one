@@ -169,6 +169,24 @@
       "ownerAuthority": "Jackie Smith, Jr. — Governance Authority"
     },
     {
+      "policyId": "JM1-HUMAN-FACING-LAST-MILE-CERTIFICATION-v1",
+      "version": "1.0",
+      "status": "CANON",
+      "domain": "Enterprise human-facing recipient-surface proof",
+      "scope": "ENTERPRISE",
+      "enforcementClass": "COMMISSIONING_HARD_GATE",
+      "canonSource": "docs/governance/JM1-HUMAN-FACING-LAST-MILE-CERTIFICATION-v1.md",
+      "resolver": "certifyHumanLastMile",
+      "effectiveDate": "2026-08-27",
+      "executablePolicy": true,
+      "requiresActualRecipientSurfaceProof": true,
+      "requiresActualAttachmentOpenProof": true,
+      "humanFirstWhyFirstBinding": "JM1-HUMAN-FIRST-WHY-FIRST-v1",
+      "driftMonitor": true,
+      "supersedes": [],
+      "ownerAuthority": "Jackie Smith, Jr. — Governance Authority"
+    },
+    {
       "policyId": "JM1-ACS-SENDER-IDENTITY-v1",
       "version": "1.0",
       "status": "CANON",
