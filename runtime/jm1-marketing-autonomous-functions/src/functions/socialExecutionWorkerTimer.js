@@ -17,7 +17,8 @@ import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { approvedContentForSocial } from '../lib/socialContentApproval.js';
 import { approvedCampaignForSocial } from '../lib/socialCampaignAuthority.js';
 import {
-  matchingNativeReservation,
+  buildNativeReservationHold,
+  matchingNativeReservationDisposition,
   nativeReservationAliases,
   NATIVE_RESERVATION_STATUSES,
   reservationReadbackComplete
@@ -235,7 +236,7 @@ app.timer('socialExecutionWorkerTimer', {
         + ` and (${NATIVE_RESERVATION_STATUSES.map((status) => `jm1_status eq '${status}'`).join(' or ')})`
       );
       const reservationResponse = await dv(
-        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_status&$filter=${reservationFilter}&$top=5000`
+        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_requestedschedule,jm1_status&$filter=${reservationFilter}&$top=5000`
       );
       if (!reservationReadbackComplete(reservationResponse)) {
         writes.push({ id: row.jm1_socialexecutionid, state: 'NATIVE_RESERVATION_READBACK_INCOMPLETE', platform: row.jm1_platform });
@@ -244,17 +245,29 @@ app.timer('socialExecutionWorkerTimer', {
       const destination = row.jm1_platform === 'facebook'
         ? { id: publishing.facebookPageId, name: publishing.facebookPageName }
         : { id: publishing.instagramGraphId, handle: publishing.instagramHandle };
-      const nativeReservation = matchingNativeReservation(
+      const nativeReservation = matchingNativeReservationDisposition(
         row,
         caption,
         reservationResponse.value || [],
-        nativeReservationAliases(destination)
+        nativeReservationAliases(destination),
+        envelope.startedAt
       );
       if (nativeReservation) {
+        await persistNativeReservationHold({
+          socialSet,
+          row,
+          reservation: nativeReservation.reservation,
+          disposition: nativeReservation.disposition,
+          requestedSchedule: nativeReservation.requestedSchedule,
+          reservedSchedule: nativeReservation.reservedSchedule,
+          envelope
+        });
         writes.push({
           id: row.jm1_socialexecutionid,
-          state: 'NATIVE_BOOKING_DUPLICATE_SUPPRESSED',
-          reservedBy: nativeReservation.jm1_socialexecutionid,
+          state: nativeReservation.disposition === 'EXACT_SLOT' ? 'NATIVE_BOOKING_DUPLICATE_SUPPRESSED'
+            : nativeReservation.disposition === 'STALE_SLOT' ? 'NATIVE_BOOKING_STALE'
+              : 'NATIVE_BOOKING_CONFLICT',
+          reservedBy: nativeReservation.reservation.jm1_socialexecutionid,
           platform: row.jm1_platform
         });
         continue;
@@ -468,23 +481,35 @@ app.timer('socialExecutionWorkerTimer', {
         + ` and (${NATIVE_RESERVATION_STATUSES.map((status) => `jm1_status eq '${status}'`).join(' or ')})`
       );
       const reservationResponse = await dv(
-        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_status&$filter=${reservationFilter}&$top=5000`
+        `/${socialSet}?$select=jm1_socialexecutionid,jm1_branch,jm1_platform,jm1_requesteddestination,jm1_requestedmediahash,jm1_captionversion,jm1_requestedschedule,jm1_status&$filter=${reservationFilter}&$top=5000`
       );
       if (!reservationReadbackComplete(reservationResponse)) {
         writes.push({ id: row.jm1_socialexecutionid, state: 'NATIVE_RESERVATION_READBACK_INCOMPLETE', platform: row.jm1_platform });
         continue;
       }
-      const nativeReservation = matchingNativeReservation(
+      const nativeReservation = matchingNativeReservationDisposition(
         row,
         caption,
         reservationResponse.value || [],
-        nativeReservationAliases({ id: publishing.linkedinOrganizationId, name: publishing.linkedinOrganizationName || publishing.linkedinOrganizationId })
+        nativeReservationAliases({ id: publishing.linkedinOrganizationId, name: publishing.linkedinOrganizationName || publishing.linkedinOrganizationId }),
+        envelope.startedAt
       );
       if (nativeReservation) {
+        await persistNativeReservationHold({
+          socialSet,
+          row,
+          reservation: nativeReservation.reservation,
+          disposition: nativeReservation.disposition,
+          requestedSchedule: nativeReservation.requestedSchedule,
+          reservedSchedule: nativeReservation.reservedSchedule,
+          envelope
+        });
         writes.push({
           id: row.jm1_socialexecutionid,
-          state: 'NATIVE_BOOKING_DUPLICATE_SUPPRESSED',
-          reservedBy: nativeReservation.jm1_socialexecutionid,
+          state: nativeReservation.disposition === 'EXACT_SLOT' ? 'NATIVE_BOOKING_DUPLICATE_SUPPRESSED'
+            : nativeReservation.disposition === 'STALE_SLOT' ? 'NATIVE_BOOKING_STALE'
+              : 'NATIVE_BOOKING_CONFLICT',
+          reservedBy: nativeReservation.reservation.jm1_socialexecutionid,
           platform: row.jm1_platform
         });
         continue;
@@ -564,6 +589,7 @@ app.timer('socialExecutionWorkerTimer', {
     const platformObjectsCreated = writes.filter((write) => write.createdPlatformObject).length;
     const actionableFailures = writes.filter((write) => [
       'RETRY_REQUIRED', 'DEAD_LETTERED', 'READBACK_MISMATCH',
+      'NATIVE_BOOKING_CONFLICT',
       'PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED',
       'LINKEDIN_PLATFORM_OBJECT_EXISTS_DATAVERSE_RECONCILIATION_REQUIRED'
     ].includes(write.state)).map((write) => ({
@@ -572,6 +598,7 @@ app.timer('socialExecutionWorkerTimer', {
       branch: rows.find((row) => row.jm1_socialexecutionid === write.id)?.jm1_branch || null,
       platform: write.platform || null,
       state: write.state,
+      alertMatch: ['NATIVE_BOOKING_CONFLICT', 'NATIVE_BOOKING_STALE'].includes(write.state) ? 'DUPLICATE' : null,
       correlationId: envelope.correlationId
     }));
     for (const failureEvent of actionableFailures) context.error(JSON.stringify(failureEvent));
@@ -624,6 +651,16 @@ function retryIsDue(nextRetryAt, nowIso) {
 
 function addMinutes(iso, minutes) {
   return new Date(new Date(iso).getTime() + minutes * 60 * 1000).toISOString();
+}
+
+async function persistNativeReservationHold({ socialSet, row, reservation, disposition, requestedSchedule, reservedSchedule, envelope }) {
+  const hold = buildNativeReservationHold({ row, reservation, disposition, requestedSchedule, reservedSchedule, nowIso: envelope.startedAt });
+  await patchById(socialSet, row.jm1_socialexecutionid, hold.socialPatch);
+
+  if (hold.exception) {
+    const exceptionSet = await entitySet('jm1_marketingexception');
+    await upsertByIdempotency(exceptionSet, 'jm1_marketingexceptionid', hold.exception);
+  }
 }
 
 function resolveCaption(row, contentRows) {
