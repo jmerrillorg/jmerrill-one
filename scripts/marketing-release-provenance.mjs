@@ -66,6 +66,27 @@ export function selectSuccessfulArtifact(workflowRuns, artifacts, { repository, 
   throw new Error(`No unexpired successful build artifact proves rollback package provenance for ${commitSha}; refusing release.`);
 }
 
+export function selectSuccessfulLiveDeployment(run, deployedJob, { repository, commitSha, workflowPath = WORKFLOW_PATH }) {
+  if (!run || run.status !== 'completed' || run.conclusion !== 'success'
+    || deployedJob?.name !== 'deploy' || deployedJob.conclusion !== 'success'
+    || run.head_sha !== commitSha || run.path !== workflowPath
+    || run.repository?.full_name !== repository || workflowPath !== WORKFLOW_PATH
+    || !/^[0-9a-f]{40}$/.test(commitSha || '') || !/^\d+$/.test(String(run.id || ''))
+    || !/^\d+$/.test(String(run.run_attempt || ''))) {
+    throw new Error('Live rollback baseline requires an exact successful deployment run for this repository and SHA.');
+  }
+  return {
+    repository,
+    commitSha,
+    workflowPath,
+    runId: String(run.id),
+    runAttempt: String(run.run_attempt),
+    artifactName: null,
+    artifactId: null,
+    baselineOnly: true
+  };
+}
+
 export function verifyManifestIdentity(manifest, expected) {
   const required = ['schemaVersion', 'repository', 'commitSha', 'workflowPath', 'runId', 'runAttempt', 'artifactName', 'packageName', 'packageSha256'];
   if (!manifest || required.some((key) => manifest[key] === undefined || manifest[key] === null || manifest[key] === '')) {
@@ -90,6 +111,21 @@ export async function verifyPackageBytes({ manifest, expected, deployedPackagePa
   return manifest.packageSha256;
 }
 
+export async function verifyLiveDeployedBaseline({ baseline, repository, commitSha, workflowPath = WORKFLOW_PATH,
+  deployedPackageUrl, expectedPackageUrl, deployedPackagePath }) {
+  if (!baseline?.baselineOnly || baseline.repository !== repository || baseline.commitSha !== commitSha
+    || baseline.workflowPath !== workflowPath || !/^\d+$/.test(String(baseline.runId || ''))
+    || !/^\d+$/.test(String(baseline.runAttempt || '')) || baseline.artifactId !== null
+    || baseline.artifactName !== null || workflowPath !== WORKFLOW_PATH) {
+    throw new Error('Live rollback baseline is not bound to a successful deployment run for this repository and SHA.');
+  }
+  if (!/^[0-9a-f]{40}$/.test(commitSha || '') || deployedPackageUrl !== expectedPackageUrl
+    || !deployedPackageUrl.endsWith(`/jm1-marketing-functions-${commitSha}.zip`)) {
+    throw new Error('Live rollback package URL does not match the deployed SHA-named package.');
+  }
+  return sha256File(deployedPackagePath);
+}
+
 export async function sha256File(filePath) {
   return createHash('sha256').update(readFileSync(filePath)).digest('hex');
 }
@@ -109,6 +145,7 @@ async function locateArtifact({ repository, commitSha, token }) {
     && run.repository?.full_name === repository)
     .sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
 
+  let liveBaseline = null;
   for (const run of candidates) {
     const jobsResponse = await fetch(`${base}/actions/runs/${run.id}/jobs?per_page=100`, { headers });
     if (!jobsResponse.ok) throw new Error(`Unable to read deployment job for run ${run.id}: HTTP ${jobsResponse.status}.`);
@@ -126,7 +163,9 @@ async function locateArtifact({ repository, commitSha, token }) {
     if (artifact) {
       return selectSuccessfulArtifact([{ ...run, deployJobConclusion: deployedJob.conclusion }], [artifact], { repository, commitSha });
     }
+    liveBaseline ||= selectSuccessfulLiveDeployment(run, deployedJob, { repository, commitSha });
   }
+  if (liveBaseline) return liveBaseline;
   throw new Error(`No unexpired successful build artifact proves rollback package provenance for ${commitSha}; refusing release.`);
 }
 
@@ -134,7 +173,7 @@ function parseArgs(argv) {
   const args = {};
   for (let index = 0; index < argv.length; index += 1) {
     const key = argv[index];
-    if (!['--package', '--manifest', '--repository', '--commit-sha', '--run-id', '--run-attempt', '--artifact-name', '--workflow-path', '--expected', '--deployed-package', '--output'].includes(key)) {
+    if (!['--package', '--manifest', '--repository', '--commit-sha', '--run-id', '--run-attempt', '--artifact-name', '--workflow-path', '--expected', '--deployed-package', '--deployed-package-url', '--expected-package-url', '--output'].includes(key)) {
       throw new Error(`Unknown argument: ${key}`);
     }
     if (!argv[index + 1] || argv[index + 1].startsWith('--')) throw new Error(`Missing value for ${key}.`);
@@ -177,6 +216,20 @@ async function main() {
       deployedPackagePath: args['deployed-package']
     });
     process.stdout.write(`Rollback artifact provenance and deployed package bytes verified: ${digest}.\n`);
+    return;
+  }
+  if (mode === 'verify-live-baseline') {
+    const baseline = JSON.parse(readFileSync(args.expected, 'utf8'));
+    const digest = await verifyLiveDeployedBaseline({
+      baseline,
+      repository: baseline.repository,
+      commitSha: baseline.commitSha,
+      workflowPath: baseline.workflowPath,
+      deployedPackageUrl: args['deployed-package-url'],
+      expectedPackageUrl: args['expected-package-url'],
+      deployedPackagePath: args['deployed-package']
+    });
+    process.stdout.write(`Live deployed rollback baseline verified; package SHA-256 ${digest}.\n`);
     return;
   }
   throw new Error('Usage: marketing-release-provenance.mjs <create|locate|verify> ...');

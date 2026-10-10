@@ -7,8 +7,10 @@ import test from 'node:test';
 import {
   buildArtifactName,
   createManifest,
+  selectSuccessfulLiveDeployment,
   selectSuccessfulArtifact,
   verifyManifestIdentity,
+  verifyLiveDeployedBaseline,
   verifyPackageBytes
 } from './marketing-release-provenance.mjs';
 
@@ -86,6 +88,18 @@ test('a SHA-named package and locally computed hash are not accepted without a s
   assert.throws(() => selectSuccessfulArtifact([run], [], { repository, commitSha }), /No unexpired successful build artifact/);
 });
 
+test('live baseline selector requires the exact successful deployment run and deploy job', () => {
+  const run = { id: 88, run_attempt: 1, status: 'completed', conclusion: 'success', head_sha: commitSha, path: workflowPath, repository: { full_name: repository } };
+  const job = { name: 'deploy', conclusion: 'success' };
+  assert.equal(selectSuccessfulLiveDeployment(run, job, { repository, commitSha }).baselineOnly, true);
+  for (const [changedRun, changedJob] of [
+    [{ ...run, conclusion: 'failure' }, job],
+    [{ ...run, head_sha: 'b'.repeat(40) }, job],
+    [run, { ...job, conclusion: 'failure' }],
+    [run, { ...job, name: 'validate' }]
+  ]) assert.throws(() => selectSuccessfulLiveDeployment(changedRun, changedJob, { repository, commitSha }), /Live rollback baseline requires/);
+});
+
 test('expired, mismatched-SHA, failed, or wrong-attempt artifacts are rejected', () => {
   const run = { id: 1, run_attempt: 2, status: 'completed', conclusion: 'success', deployJobConclusion: 'success', head_sha: commitSha, path: workflowPath, repository: { full_name: repository }, created_at: '2026-10-09T12:00:00Z' };
   const name = buildArtifactName(commitSha, run.id, run.run_attempt);
@@ -107,4 +121,30 @@ test('latest successful matching workflow run is bound to its exact artifact and
   assert.equal(selected.runId, '11');
   assert.equal(selected.runAttempt, '3');
   assert.equal(selected.artifactId, '22');
+});
+
+test('rollback bootstrap accepts only the exact live SHA-named package with a successful deployment run', async () => {
+  const f = fixtures();
+  const baseline = {
+    repository, commitSha, workflowPath, runId, runAttempt,
+    artifactName: null, artifactId: null, baselineOnly: true
+  };
+  try {
+    const url = `https://stjm1diagrunner.blob.core.windows.net/function-releases/jm1-marketing-functions-${commitSha}.zip`;
+    const hash = await verifyLiveDeployedBaseline({
+      baseline, repository, commitSha, deployedPackageUrl: url, expectedPackageUrl: url,
+      deployedPackagePath: f.deployedPath
+    });
+    assert.equal(hash, f.manifest.packageSha256);
+    await assert.rejects(verifyLiveDeployedBaseline({
+      baseline, repository, commitSha, deployedPackageUrl: url.replace(commitSha, 'b'.repeat(40)),
+      expectedPackageUrl: url, deployedPackagePath: f.deployedPath
+    }), /URL does not match/);
+    await assert.rejects(verifyLiveDeployedBaseline({
+      baseline: { ...baseline, runId: '' }, repository, commitSha,
+      deployedPackageUrl: url, expectedPackageUrl: url, deployedPackagePath: f.deployedPath
+    }), /not bound to a successful deployment/);
+  } finally {
+    rmSync(f.directory, { recursive: true, force: true });
+  }
 });

@@ -117,12 +117,22 @@ jobs:
             --commit-sha "$old_sha" \
             --output "$previous_provenance"
           previous_run_id="$(node -e 'process.stdout.write(JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8")).runId)' "$previous_provenance")"
-          previous_artifact_name="$(node -e 'process.stdout.write(JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8")).artifactName)' "$previous_provenance")"
-          gh run download "$previous_run_id" --repo "$GITHUB_REPOSITORY" --name "$previous_artifact_name" --dir "$rollback_artifact_dir"
-          node scripts/marketing-release-provenance.mjs verify \
-            --expected "$previous_provenance" \
-            --manifest "$rollback_artifact_dir/release-provenance.json" \
-            --deployed-package "$RUNNER_TEMP/previous-marketing-functions.zip"
+          baseline_only="$(node -e 'process.stdout.write(String(JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8")).baselineOnly === true))' "$previous_provenance")"
+          if [ "$baseline_only" = "true" ]; then
+            unzip -t "$RUNNER_TEMP/previous-marketing-functions.zip" >/dev/null
+            node scripts/marketing-release-provenance.mjs verify-live-baseline \
+              --expected "$previous_provenance" \
+              --deployed-package "$RUNNER_TEMP/previous-marketing-functions.zip" \
+              --deployed-package-url "$old_package" \
+              --expected-package-url "$expected_package_prefix$old_package_name"
+          else
+            previous_artifact_name="$(node -e 'process.stdout.write(JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8")).artifactName)' "$previous_provenance")"
+            gh run download "$previous_run_id" --repo "$GITHUB_REPOSITORY" --name "$previous_artifact_name" --dir "$rollback_artifact_dir"
+            node scripts/marketing-release-provenance.mjs verify \
+              --expected "$previous_provenance" \
+              --manifest "$rollback_artifact_dir/release-provenance.json" \
+              --deployed-package "$RUNNER_TEMP/previous-marketing-functions.zip"
+          fi
           az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" -o json > "$runtime_readback"
           node scripts/verify-marketing-function-inventory.mjs --source-root runtime/jm1-marketing-autonomous-functions --inventory runtime/jm1-marketing-autonomous-functions/function-inventory.json --runtime-json "$runtime_readback" --capture-runtime "$previous_inventory"
           rollback() {
