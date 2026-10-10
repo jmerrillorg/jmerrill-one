@@ -84,6 +84,10 @@ test('permission contract enumerates each registered Function trigger once', () 
     jm1pub_editorialartifacts: ['Read']
   });
   assert.equal(contract.adoptionContract.sourceOwnershipAndArtifactGate.status, 'BLOCKED_PROVENANCE_AND_ADOPTION');
+  assert.equal(contract.adoptionContract.contactIdentityResolverAlternative.status,
+    'INTERFACE_AND_FAIL_CLOSED_AMBIGUITY_IMPLEMENTED; CROSS_REQUEST_PERSON_IDENTITY_POLICY_UNRESOLVED');
+  assert.match(contract.adoptionContract.contactIdentityResolverAlternative.identityBoundary, /emailaddress1 is a contact point only/);
+  assert.ok(contract.adoptionContract.contactIdentityResolverAlternative.schemaAndOwnershipRequirements.some((item) => /Do not add a unique email key/.test(item)));
   assert.deepEqual(Object.keys(contract.adoptionContract.actualCallerAcceptance).sort(), ['functionHost', 'oneWebHost', 'testData']);
   assert.match(contract.adoptionContract.perHostRollback.function, /restore func-jm1-marketing-runtime/);
   assert.match(contract.adoptionContract.perHostRollback.oneWeb, /restore app-jm1-one-prod-v2/);

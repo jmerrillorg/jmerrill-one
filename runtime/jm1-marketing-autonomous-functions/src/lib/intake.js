@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { classifyContactCandidates, CONTACT_IDENTITY_RESOLUTION } from './contactIdentityResolution.js';
 
 export const INTAKE_ACTION = 'BP09WebsiteIntakeV2';
 export const INTAKE_STATES = Object.freeze({
@@ -185,13 +186,16 @@ export async function processIntake(adapter, id) {
   await saveReceipt(adapter, detail);
   try {
     const contacts = await findContacts(adapter, input.email);
-    if (contacts.length > 1) {
+    const identityResolution = classifyContactCandidates(contacts);
+    detail.contactIdentityResolution = identityResolution.state;
+    if ([CONTACT_IDENTITY_RESOLUTION.AMBIGUOUS_EMAIL_MATCH,
+      CONTACT_IDENTITY_RESOLUTION.INVALID_CANDIDATE_SET].includes(identityResolution.state)) {
       detail.state = INTAKE_STATES.ESCALATED;
       detail.finalState = 'IDENTITY_RESOLUTION_REQUIRED';
       await saveReceipt(adapter, detail);
       return detail;
     }
-    let contactId = contacts[0]?.contactid;
+    let contactId = identityResolution.contactId;
     let contactOwnsMessage = false;
     if (!contactId) {
       contactId = guid('contact-email', input.email);

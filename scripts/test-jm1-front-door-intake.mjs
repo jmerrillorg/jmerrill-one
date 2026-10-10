@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto';
 import {
   acceptIntake, INTAKE_STATES, processIntake, reconcileIntake
 } from '../runtime/jm1-marketing-autonomous-functions/src/lib/intake.js';
+import { classifyContactCandidates, CONTACT_IDENTITY_RESOLUTION } from '../runtime/jm1-marketing-autonomous-functions/src/lib/contactIdentityResolution.js';
 
 function createMock() {
   const tables = { jm1_executionlogs: new Map(), contacts: new Map(), leads: new Map() };
@@ -160,4 +161,25 @@ assert.equal(legacyOwner.counts.leads, 1);
 await assert.rejects(() => acceptIntake(legacyOwner, { ...teamAfterCutover, message: 'Changed after cutover' }),
   /already bound/);
 
-console.log('JM1 front-door intake: 5/5 brand matrix, durable receipt, replay, post-write failure, and timer recovery PASS');
+assert.deepEqual(classifyContactCandidates([]), {
+  state: CONTACT_IDENTITY_RESOLUTION.NO_EMAIL_MATCH, contactId: null
+});
+assert.deepEqual(classifyContactCandidates([{ contactid: 'canonical-contact' }]), {
+  state: CONTACT_IDENTITY_RESOLUTION.SINGLE_EMAIL_MATCH_LEGACY, contactId: 'canonical-contact'
+});
+assert.equal(classifyContactCandidates(null).state, CONTACT_IDENTITY_RESOLUTION.INVALID_CANDIDATE_SET);
+
+const sharedEmail = createMock();
+sharedEmail.tables.contacts.set('person-a', { contactid: 'person-a', emailaddress1: 'family@example.invalid', firstname: 'Ava' });
+sharedEmail.tables.contacts.set('person-b', { contactid: 'person-b', emailaddress1: 'family@example.invalid', firstname: 'Ben' });
+const sharedEmailSubmission = { ...submission, requestId: randomUUID(), email: 'family@example.invalid' };
+const sharedEmailReceipt = (await acceptIntake(sharedEmail, sharedEmailSubmission)).receipt;
+const sharedEmailResult = await processIntake(sharedEmail, sharedEmailReceipt.id);
+assert.equal(sharedEmailResult.state, INTAKE_STATES.ESCALATED);
+assert.equal(sharedEmailResult.finalState, 'IDENTITY_RESOLUTION_REQUIRED');
+assert.equal(sharedEmailResult.contactIdentityResolution, CONTACT_IDENTITY_RESOLUTION.AMBIGUOUS_EMAIL_MATCH);
+assert.equal(sharedEmail.counts.contacts, 0);
+assert.equal(sharedEmail.counts.leads, 0);
+assert.equal(sharedEmail.counts.jm1_executionlogs, 1);
+
+console.log('JM1 front-door intake: 5/5 brand matrix, durable receipt, replay, post-write failure, timer recovery, and shared-email ambiguity hold PASS');
