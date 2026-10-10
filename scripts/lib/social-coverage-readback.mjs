@@ -100,7 +100,9 @@ export function reconcileNativeDataverseClaims(nativeItems, dataverseItems, asOf
     return {
       ...native,
       nativeBookingId: native.nativeBookingId || null,
-      approvalState: native.approvalState || match.approvalState,
+      approvalState: native.approvalState && native.approvalState !== 'UNKNOWN'
+        ? native.approvalState
+        : match.approvalState || 'UNKNOWN',
       dataverseSocialExecutionId: match.id,
       dataverseStatus: match.status,
       dataverseReadbackState: match.readbackState,
