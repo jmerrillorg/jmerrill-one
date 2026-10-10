@@ -141,6 +141,10 @@ export function mapDataverseSocialRows(rows, channels) {
       captionSha256: isNativeBooking ? row.jm1_captionversion || null : null,
       nativeEvidence: isNativeBooking ? nativeEvidenceFromReadback(row.jm1_readbackstate, row) : null,
       status: row.jm1_status || null,
+      campaignType: row.campaignType || null,
+      campaignSocialEligible: row.campaignSocialEligible ?? null,
+      campaignSocialEligibilityReason: row.campaignSocialEligibilityReason || null,
+      campaignAuthorityState: row.campaignAuthorityState || null,
       nativeReservationStatus: isNativeReservation ? row.jm1_status : null,
       nativeReservationLocalDate: localReservation?.date || null,
       nativeReservationLocalTime: localReservation?.time || null,
@@ -225,6 +229,35 @@ export function classifyDataverseExecutionRow(row, asOf) {
   };
 }
 
+export function buildDataverseReconciliationFindings(rows, asOf) {
+  const seen = new Set();
+  return rows.flatMap((row) => {
+    const id = row.jm1_socialexecutionid || row.id;
+    if (seen.has(id)) return [];
+    seen.add(id);
+    if (row.campaignSocialEligible === false) return [];
+    const finding = classifyDataverseExecutionRow({
+      id,
+      platform: row.jm1_platform || row.platform,
+      status: row.jm1_status || row.status,
+      requestedSchedule: row.jm1_requestedschedule || row.requestedSchedule,
+      requestedDestination: row.jm1_requesteddestination || row.requestedDestination,
+      platformPostId: row.jm1_platformpostid || row.platformPostId
+    }, asOf);
+    return finding?.actionRequired
+      && finding.classification !== 'NATIVE_BOOKING_CLAIM_REQUIRES_FRESH_UI_PROOF'
+      ? [{
+        id,
+        platform: row.jm1_platform || row.platform,
+        status: row.jm1_status || row.status,
+        requestedSchedule: row.jm1_requestedschedule || row.requestedSchedule,
+        requestedDestination: row.jm1_requesteddestination || row.requestedDestination,
+        ...finding
+      }]
+      : [];
+  });
+}
+
 export function buildSocialCoverageReadback(snapshot) {
   const asOf = easternDate(snapshot.asOf);
   const end = addDays(asOf, 14);
@@ -275,8 +308,13 @@ export function buildSocialCoverageReadback(snapshot) {
       && publishedDateET(item)
     );
     const apiRequests = related.filter((item) => item.kind === 'API_REQUEST');
+    const policyExcludedApiRequests = apiRequests.filter((item) => item.campaignSocialEligible === false);
     const nativeReservations = related.filter((item) => item.kind === 'NATIVE_RESERVATION');
-    const pastDueRequests = apiRequests.filter((item) => item.scheduledAt && easternDate(item.scheduledAt) < asOf);
+    const pastDueRequests = apiRequests.filter((item) => item.scheduledAt
+      && easternDate(item.scheduledAt) < asOf
+      && item.campaignSocialEligible !== false
+      && !/^HELD/.test(item.status || '')
+      && item.approvalState !== 'HELD');
     const approvedContent = related.filter((item) => item.kind === 'CONTENT' && item.approvalState === 'APPROVED');
     const held = related.filter((item) => item.status?.startsWith('HELD') || item.approvalState === 'HELD');
     const failures = related.filter((item) => /FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED|NATIVE_BOOKING_(CONFLICT|STALE)/.test(item.status || ''));
@@ -405,6 +443,14 @@ export function buildSocialCoverageReadback(snapshot) {
       unapprovedScheduled: unapprovedScheduled.map((item) => item.id),
       nextVerifiedBooking: booked.sort((a, b) => a.scheduledAt.localeCompare(b.scheduledAt))[0]?.scheduledAt || null,
       apiRequests: apiRequests.length,
+      policyExcludedApiRequests: policyExcludedApiRequests.map((item) => ({
+        id: item.id,
+        campaignType: item.campaignType || null,
+        reason: item.campaignSocialEligibilityReason || 'SOCIAL_INELIGIBLE_BY_LIFECYCLE_POLICY',
+        disposition: 'PRESERVE_NO_PUBLISH',
+        owner: 'JM1_MARKETING_RUNTIME_OWNER',
+        action: 'CLASSIFY_LEGACY_NON_SOCIAL_CHILD'
+      })),
       nativeReservations: nativeReservations.map((item) => ({
         id: item.id,
         status: item.nativeReservationStatus,
@@ -421,7 +467,12 @@ export function buildSocialCoverageReadback(snapshot) {
       apiRequestRows: apiRequests.map((item) => ({
         id: item.id,
         requestedAt: item.scheduledAt || null,
-        pastDue: Boolean(item.scheduledAt && easternDate(item.scheduledAt) < asOf),
+        pastDue: Boolean(item.scheduledAt && easternDate(item.scheduledAt) < asOf
+          && item.campaignSocialEligible !== false
+          && !/^HELD/.test(item.status || '') && item.approvalState !== 'HELD'),
+        campaignType: item.campaignType || null,
+        campaignSocialEligible: item.campaignSocialEligible ?? null,
+        campaignSocialEligibilityReason: item.campaignSocialEligibilityReason || null,
         status: item.status || null,
         approvalState: item.approvalState || null,
         campaignAuthorityState: item.campaignAuthorityState || null,
