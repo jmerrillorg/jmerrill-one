@@ -84,6 +84,8 @@ test('permission contract enumerates each registered Function trigger once', () 
     jm1pub_editorialartifacts: ['Read']
   });
   assert.equal(contract.adoptionContract.sourceOwnershipAndArtifactGate.status, 'BLOCKED_PROVENANCE_AND_ADOPTION');
+  assert.equal(contract.adoptionContract.sourceOwnershipAndArtifactGate.adoptionProposal.packageSelection.includes('JM1 Core Governance'), true);
+  assert.equal(contract.adoptionContract.sourceOwnershipAndArtifactGate.repositoryPackageEvidence.length, 4);
   assert.equal(contract.adoptionContract.contactIdentityResolverAlternative.status,
     'INTERFACE_AND_FAIL_CLOSED_AMBIGUITY_IMPLEMENTED; CROSS_REQUEST_PERSON_IDENTITY_POLICY_UNRESOLVED');
   assert.match(contract.adoptionContract.contactIdentityResolverAlternative.identityBoundary, /emailaddress1 is a contact point only/);

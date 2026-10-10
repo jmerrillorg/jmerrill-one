@@ -65,6 +65,22 @@
       "status": "BLOCKED_PROVENANCE_AND_ADOPTION",
       "component": "jm1_executionlog table and jm1_sourceentity attribute",
       "evidence": "Existing readback found the live table unmanaged, present in overlapping unmanaged solutions, and jm1_sourceentity without solutioncomponent provenance; the tracked ONE solution and Enterprise-Dev fixture do not establish ownership.",
+      "repositoryPackageEvidence": [
+        { "source": "jm1-ops/reports/jm1-mpi-003-power-platform-alm-baseline-2026-09-16/02-solution-authority-matrix.csv", "finding": "JM1 Core Governance and JM1 Core Platform are both marked UNRESOLVED_SHARED_PLATFORM_REPO; components and tables are UNRESOLVED; platform owner is jm1-ops governance." },
+        { "source": "jm1-ops/reports/jm1-mpi-003-power-platform-alm-baseline-2026-09-16/12-table-authority-collisions.csv", "finding": "The snapshot records collisions for other components but does not assign jm1_executionlog or jm1_sourceentity to a source repository/package." },
+        { "source": "jm1-core canonical checkout (jmerrillorg/jm1-core), current main inventory", "finding": "Repository is an application repository; tracked files contain no jm1_executionlog or jm1_sourceentity component source. This is not proof of Dataverse solution ownership." },
+        { "source": "jmerrill-one tracked solution", "finding": "Does not own jm1_executionlog or jm1_sourceentity; ONE is a consuming application, not the shared Dataverse schema owner." }
+      ],
+      "adoptionProposal": {
+        "ownerBoundary": "OPS governs the shared platform ALM decision; the Dataverse/Core platform solution owner must select the source solution and repository. Do not create a third solution/repository or nominate ONE by default.",
+        "packageSelection": "Compare the live component and solutioncomponent memberships of the existing JM1 Core Governance and JM1 Core Platform solutions in JM1-Dev. Select the one that actually owns the table/attribute or formally adopt the components into one existing canonical platform solution; record the exact unique name, publisher, version, solution ID, repository origin, and owner before any edit.",
+        "migrationOrder": [
+          "Export a read-only DEV component inventory for jm1_executionlog, jm1_sourceentity, all overlapping solution memberships, existing values, and dependent roles; checksum the source evidence.",
+          "After ownership designation, reconcile unmanaged overlaps in DEV without deleting or rewriting existing data; package schema, migration map, and scoped role as additive, versioned components in the selected existing solution.",
+          "Import the managed artifact to Test; verify solution/component provenance, field metadata, preservation of existing jm1_sourceentity values, exact role privileges, and actual-caller allow/deny/read-scope tests using synthetic records.",
+          "Only after Test proof and separate production release authority, import the same checksummed artifact to Production and read back solution version, component membership, data preservation, effective privileges, and real consumer acceptance. Retain a per-host rollback that restores prior auth settings without deleting the shared principal."
+        ]
+      },
       "requiredBeforeDeployableRole": [
         "Dataverse/Core solution owner designates one authoritative DEV solution and component owner for the table and attribute.",
         "Resolve overlapping unmanaged memberships and define provenance/source-value migration without overwriting existing evidence.",
@@ -74,8 +90,9 @@
     },
     "contactIdentityResolverAlternative": {
       "status": "INTERFACE_AND_FAIL_CLOSED_AMBIGUITY_IMPLEMENTED; CROSS_REQUEST_PERSON_IDENTITY_POLICY_UNRESOLVED",
-      "productionBoundary": "Current exact-email lookup and unique-match behavior remain unchanged. Multiple or malformed candidates are recorded as IDENTITY_RESOLUTION_REQUIRED and no Contact or Lead is created. Do not cut over to an unadopted schema or disable the current intake path.",
-      "resolverOutcomes": ["MATCH: canonical Contact selected by an approved person-identity rule with auditable basis", "NO_MATCH: no canonical person was established; behavior depends on the approved new-person policy", "AMBIGUOUS: candidate set cannot be safely resolved; preserve receipt and create no relationship/business record", "UNAVAILABLE: resolver/schema is missing or unavailable; preserve receipt for retry, do not silently fall back to email identity"],
+      "productionBoundary": "Current exact-email lookup and unique-match behavior remain unchanged under the currently used client-credential path. Multiple or malformed candidates are recorded as IDENTITY_RESOLUTION_REQUIRED and no Contact or Lead is created. When the host uses managed identity without an injected scope-attested resolver, persist CONTACT_LOOKUP_SCOPE_UNAVAILABLE as RETRY_PENDING and create no Contact or Lead. Do not cut over to an unadopted schema or disable the current intake path.",
+      "resolverOutcomes": ["MATCH: one exact-email Contact candidate returned under proven complete lookup scope, preserving current email-match baseline", "NO_MATCH: no candidate under proven complete lookup scope; continue the existing deterministic creation behavior", "AMBIGUOUS: more than one candidate or malformed candidate set; preserve receipt and create no relationship/business record", "UNAVAILABLE: resolver is absent, failed, or cannot prove complete lookup scope; preserve receipt for retry and do not treat a single visible Local candidate as globally unique"],
+      "scopeAttestation": "An injected resolver must return candidates, scopeComplete=true, and a nonempty scopeBasis that identifies the governed complete lookup boundary/version. Missing, partial, or unrecognized scope evidence yields LOOKUP_SCOPE_UNAVAILABLE. Actual acceptance must verify the resolver's effective caller and test a child-BU synthetic match; a source boolean alone is not production proof.",
       "identityBoundary": "emailaddress1 is a contact point only. Do not treat email, exact name plus email, or a hash of either as a unique natural-person identity without an adopted business rule. Do not auto-merge Contacts.",
       "schemaAndOwnershipRequirements": [
         "Dataverse/Core owner identifies the canonical existing identity source and authoritative solution before adding components; ONE does not claim ownership of shared Contact schema.",

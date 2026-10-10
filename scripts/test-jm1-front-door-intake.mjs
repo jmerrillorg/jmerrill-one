@@ -13,6 +13,7 @@ function createMock() {
   let failFinalReceiptPatch = false;
   return {
     tables, counts,
+    authMode: 'client_credentials',
     failLeadOnce() { failAfterLeadCommit = true; },
     failReceiptPatchOnce() { failAfterReceiptPatch = true; },
     failFinalReceiptPatchOnce() { failFinalReceiptPatch = true; },
@@ -162,9 +163,14 @@ await assert.rejects(() => acceptIntake(legacyOwner, { ...teamAfterCutover, mess
   /already bound/);
 
 assert.deepEqual(classifyContactCandidates([]), {
-  state: CONTACT_IDENTITY_RESOLUTION.NO_EMAIL_MATCH, contactId: null
+  state: CONTACT_IDENTITY_RESOLUTION.LOOKUP_SCOPE_UNAVAILABLE, contactId: null
 });
 assert.deepEqual(classifyContactCandidates([{ contactid: 'canonical-contact' }]), {
+  state: CONTACT_IDENTITY_RESOLUTION.LOOKUP_SCOPE_UNAVAILABLE, contactId: null
+});
+assert.deepEqual(classifyContactCandidates([{ contactid: 'canonical-contact' }], {
+  scopeComplete: true, scopeBasis: 'TEST_COMPLETE_DOMAIN'
+}), {
   state: CONTACT_IDENTITY_RESOLUTION.SINGLE_EMAIL_MATCH_LEGACY, contactId: 'canonical-contact'
 });
 assert.equal(classifyContactCandidates(null).state, CONTACT_IDENTITY_RESOLUTION.INVALID_CANDIDATE_SET);
@@ -182,4 +188,42 @@ assert.equal(sharedEmail.counts.contacts, 0);
 assert.equal(sharedEmail.counts.leads, 0);
 assert.equal(sharedEmail.counts.jm1_executionlogs, 1);
 
-console.log('JM1 front-door intake: 5/5 brand matrix, durable receipt, replay, post-write failure, timer recovery, and shared-email ambiguity hold PASS');
+const incompleteScope = createMock();
+incompleteScope.authMode = 'system_assigned_managed_identity';
+incompleteScope.tables.contacts.set('visible-contact', { contactid: 'visible-contact', emailaddress1: 'scope@example.invalid' });
+const incompleteSubmission = { ...submission, requestId: randomUUID(), email: 'scope@example.invalid' };
+const incompleteReceipt = (await acceptIntake(incompleteScope, incompleteSubmission)).receipt;
+const incompleteResult = await processIntake(incompleteScope, incompleteReceipt.id);
+assert.equal(incompleteResult.state, INTAKE_STATES.RETRY_PENDING);
+assert.equal(incompleteResult.finalState, 'CONTACT_LOOKUP_SCOPE_UNAVAILABLE');
+assert.equal(incompleteResult.contactIdentityResolution, CONTACT_IDENTITY_RESOLUTION.LOOKUP_SCOPE_UNAVAILABLE);
+assert.equal(incompleteScope.counts.contacts, 0);
+assert.equal(incompleteScope.counts.leads, 0);
+
+const unprovenResolver = createMock();
+unprovenResolver.authMode = 'system_assigned_managed_identity';
+unprovenResolver.contactIdentityResolver = async () => ({
+  candidates: [{ contactid: 'only-visible-local-contact' }], scopeComplete: true
+});
+const unprovenSubmission = { ...submission, requestId: randomUUID(), email: 'local-only@example.invalid' };
+const unprovenReceipt = (await acceptIntake(unprovenResolver, unprovenSubmission)).receipt;
+const unprovenResult = await processIntake(unprovenResolver, unprovenReceipt.id);
+assert.equal(unprovenResult.state, INTAKE_STATES.RETRY_PENDING);
+assert.equal(unprovenResult.contactIdentityResolution, CONTACT_IDENTITY_RESOLUTION.LOOKUP_SCOPE_UNAVAILABLE);
+assert.equal(unprovenResolver.counts.contacts, 0);
+assert.equal(unprovenResolver.counts.leads, 0);
+
+const completeResolver = createMock();
+completeResolver.contactIdentityResolver = async () => ({
+  candidates: [{ contactid: 'verified-candidate' }], scopeComplete: true, scopeBasis: 'TEST_COMPLETE_DOMAIN'
+});
+completeResolver.tables.contacts.set('verified-candidate', { contactid: 'verified-candidate' });
+const resolverSubmission = { ...submission, requestId: randomUUID(), email: 'resolved@example.invalid' };
+const resolverReceipt = (await acceptIntake(completeResolver, resolverSubmission)).receipt;
+const resolverResult = await processIntake(completeResolver, resolverReceipt.id);
+assert.equal(resolverResult.state, INTAKE_STATES.COMPLETED);
+assert.equal(resolverResult.contactReference, 'verified-candidate');
+assert.equal(completeResolver.counts.contacts, 0);
+assert.equal(completeResolver.counts.leads, 1);
+
+console.log('JM1 front-door intake: 5/5 brand matrix, replay/recovery, ambiguous-email and incomplete-scope holds, verified resolver path PASS');
