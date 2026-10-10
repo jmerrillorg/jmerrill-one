@@ -74,6 +74,7 @@ jobs:
           FUNCTION_APP: func-jm1-marketing-runtime
           STORAGE_ACCOUNT: stjm1diagrunner
           RELEASE_CONTAINER: function-releases
+          PRODUCTIONS_FOLLOWUP_TEAM_ID: 36ee36cf-6ebf-f111-aaaf-6045bdd69435
           GH_TOKEN: ${{ github.token }}
         run: |
           package_name="jm1-marketing-functions-$GITHUB_SHA.zip"
@@ -96,6 +97,18 @@ jobs:
           old_package="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE'].value | [0]" -o tsv)"
           old_sha="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_RELEASE_SHA'].value | [0]" -o tsv)"
           old_blob_mi="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID'].value | [0]" -o tsv)"
+          old_productions_team_id_count="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID'] | length(@)" -o tsv)"
+          if [ "$old_productions_team_id_count" = 1 ]; then
+            old_productions_team_id_present=true
+            old_productions_team_id="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID'].value | [0]" -o tsv)"
+          else
+            old_productions_team_id_present=false
+            old_productions_team_id=""
+          fi
+          if ! [[ "$PRODUCTIONS_FOLLOWUP_TEAM_ID" =~ ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$ ]]; then
+            echo "Productions follow-up team ID is missing or malformed; refusing deployment."
+            exit 1
+          fi
           if [ -z "$old_package" ] || [ -z "$old_sha" ]; then
             echo "Previous immutable package and release SHA are required for rollback; refusing deployment."
             exit 1
@@ -144,14 +157,29 @@ jobs:
             else
               az functionapp config appsettings delete --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --setting-names WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID --output none
             fi
+            if [ "$old_productions_team_id_present" = true ]; then
+              az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID="$old_productions_team_id" --output none
+            else
+              az functionapp config appsettings delete --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --setting-names JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID --output none
+            fi
             for attempt in {1..18}; do
               az rest --method post --url "https://management.azure.com/subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/resourceGroups/$RESOURCE_GROUP/providers/Microsoft.Web/sites/$FUNCTION_APP/syncfunctiontriggers?api-version=2024-11-01" --output none || true
               az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" -o json > "$runtime_readback" || true
               if node scripts/verify-marketing-function-inventory.mjs --source-root runtime/jm1-marketing-autonomous-functions --inventory runtime/jm1-marketing-autonomous-functions/function-inventory.json --runtime-json "$runtime_readback" --compare-runtime "$previous_inventory"; then
                 restored_sha="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_RELEASE_SHA'].value | [0]" -o tsv)"
                 restored_package="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE'].value | [0]" -o tsv)"
+                restored_productions_team_id_count="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID'] | length(@)" -o tsv)"
+                restored_productions_team_id="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID'].value | [0]" -o tsv)"
                 if [ "$restored_sha" != "$old_sha" ] || [ "$restored_package" != "$old_package" ]; then
                   echo "Restored Function inventory is present but package/SHA settings do not match the captured pre-release values."
+                  return 1
+                fi
+                if [ "$old_productions_team_id_present" = true ] && { [ "$restored_productions_team_id_count" != 1 ] || [ "$restored_productions_team_id" != "$old_productions_team_id" ]; }; then
+                  echo "Rollback restored the Function package but not its captured Productions routing setting."
+                  return 1
+                fi
+                if [ "$old_productions_team_id_present" = false ] && [ "$restored_productions_team_id_count" != 0 ]; then
+                  echo "Rollback restored the Function package but left a Productions routing setting that was absent before deployment."
                   return 1
                 fi
                 echo "Previous immutable package settings and trigger inventory restored and verified."
@@ -163,15 +191,20 @@ jobs:
             return 1
           }
           trap rollback ERR
-          az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings WEBSITE_RUN_FROM_PACKAGE="$package_url" WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID=SystemAssigned JM1_RELEASE_SHA="$GITHUB_SHA" --output none
+          az functionapp config appsettings set --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --settings WEBSITE_RUN_FROM_PACKAGE="$package_url" WEBSITE_RUN_FROM_PACKAGE_BLOB_MI_RESOURCE_ID=SystemAssigned JM1_RELEASE_SHA="$GITHUB_SHA" JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID="$PRODUCTIONS_FOLLOWUP_TEAM_ID" --output none
           for attempt in {1..18}; do
             az rest --method post --url "https://management.azure.com/subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/resourceGroups/$RESOURCE_GROUP/providers/Microsoft.Web/sites/$FUNCTION_APP/syncfunctiontriggers?api-version=2024-11-01" --output none || true
             az functionapp function list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" -o json > "$runtime_readback" || true
             if node scripts/verify-marketing-function-inventory.mjs --source-root runtime/jm1-marketing-autonomous-functions --inventory runtime/jm1-marketing-autonomous-functions/function-inventory.json --runtime-json "$runtime_readback"; then
               active_sha="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_RELEASE_SHA'].value | [0]" -o tsv)"
               active_package="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='WEBSITE_RUN_FROM_PACKAGE'].value | [0]" -o tsv)"
+              active_productions_team_id="$(az functionapp config appsettings list --resource-group "$RESOURCE_GROUP" --name "$FUNCTION_APP" --query "[?name=='JM1_PRODUCTIONS_FOLLOWUP_TEAM_ID'].value | [0]" -o tsv)"
               if [ "$active_sha" != "$GITHUB_SHA" ] || [ "$active_package" != "$package_url" ]; then
                 echo "Function inventory loaded but release SHA/package readback does not match this deployment."
+                false
+              fi
+              if [ "$active_productions_team_id" != "$PRODUCTIONS_FOLLOWUP_TEAM_ID" ]; then
+                echo "Function package loaded but the verified Productions routing team setting does not match."
                 false
               fi
               trap - ERR
