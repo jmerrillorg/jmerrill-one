@@ -663,6 +663,34 @@ test('fresh exact native card reconciles a matching Dataverse booking despite it
   assert.equal(result.items[0].approvalState, 'APPROVED');
 });
 
+test('exact Dataverse source approval replaces stale UNKNOWN but never overrides an explicit hold', () => {
+  const brand = 'J Merrill One';
+  const captionSha256 = createHash('sha256').update('Approved native copy').digest('hex');
+  const slot = '2026-10-15T14:00:00Z';
+  const native = {
+    id: 'mbs-one-ig-2026-10-15', kind: 'NATIVE_BOOKING', brand, platform: 'instagram',
+    destinationId: '17841456905118441', dataverseRecordId: 'dv-native-approved',
+    scheduledAt: slot, approvalState: 'UNKNOWN', captionSha256,
+    nativeEvidence: { source: 'META_NATIVE_UI', observedDateET: '2026-10-10',
+      scheduledAt: slot, captionSha256 }
+  };
+  const approvedSource = { id: 'dv-native-approved', kind: 'NATIVE_BOOKING', brand,
+    platform: 'instagram', destinationId: '17841456905118441', scheduledAt: slot,
+    approvalState: 'APPROVED', status: 'NATIVE_BOOKED_VERIFIED' };
+  const approved = reconcileNativeDataverseClaims([native], [approvedSource], '2026-10-10T22:00:00Z');
+  assert.equal(approved.items[0].approvalState, 'APPROVED');
+  assert.deepEqual([...approved.matchedDataverseIds], ['dv-native-approved']);
+
+  const held = reconcileNativeDataverseClaims([{ ...native, approvalState: 'HELD' }],
+    [approvedSource], '2026-10-10T22:00:00Z');
+  assert.equal(held.items[0].approvalState, 'HELD');
+
+  const unmatched = reconcileNativeDataverseClaims([native], [{ ...approvedSource,
+    id: 'different-record', scheduledAt: '2026-10-16T14:00:00Z' }], '2026-10-10T22:00:00Z');
+  assert.equal(unmatched.items[0].approvalState, 'UNKNOWN');
+  assert.deepEqual([...unmatched.matchedDataverseIds], []);
+});
+
 test('native-to-Dataverse reconciliation fails closed on destination, time, or caption mismatch', () => {
   const brand = 'J Merrill One';
   const captionText = 'Different needs. One place to start.';
