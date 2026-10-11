@@ -939,7 +939,7 @@ test('legacy LinkedIn booking authority carries through only with a fresh exact 
     jm1_requestedmediahash: null, jm1_verifiedat: '2026-10-08T15:55:00Z',
     jm1_readbackstate: 'MBS_BOOKED|2026-10-08T15:55:00.000Z|CONTENT_ID=NOT_EXPOSED' };
   const nativeReadback = { state: 'VERIFIED', requireTimestamp: true,
-    observedAt: '2026-10-10T23:56:00Z', visibleScheduledAtUtc: [schedule] };
+    observedAt: new Date(Date.now() - 60_000).toISOString(), visibleScheduledAtUtc: [schedule] };
   const rows = { campaigns: [campaign], content: [content], creatives: [], socialRows: [booking] };
   assert.equal(nativeSocialApprovalProjection(booking, rows, () => false, () => null,
     '106683183', nativeReadback).state, 'APPROVED');
