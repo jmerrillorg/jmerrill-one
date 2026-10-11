@@ -1,0 +1,18 @@
+{
+  "brand": "J Merrill Publishing",
+  "platform": "linkedin",
+  "destination": "13048648",
+  "localDate": "2026-10-22",
+  "localTime": "11:00",
+  "timeZone": "America/New_York",
+  "requestedScheduleUtc": "2026-10-22T15:00:00Z",
+  "caption": "October Author of the Month: Iyorwuese Hagher. The Conquest of Azenga and A Portrait of Paradise are listed in J Merrill Publishing's JM Signature catalog. Explore his author page: https://lnkd.in/gSZMiCcz",
+  "nativeReadback": {
+    "source": "LINKEDIN_NATIVE_UI",
+    "observedAt": "2026-10-10T23:58:00Z",
+    "scheduledAt": "2026-10-22T15:00:00Z",
+    "destination": "13048648",
+    "captionSha256": "0763e9ea09237739823b8f767c658dd2b63322b3693f83ef2479986c0ccea9a9",
+    "nativeBookingId": null
+  }
+}
