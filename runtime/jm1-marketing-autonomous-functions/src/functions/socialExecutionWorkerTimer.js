@@ -164,6 +164,20 @@ app.timer('socialExecutionWorkerTimer', {
     }
 
     for (const row of eligibleMetaRows) {
+      if (row.jm1_platform === 'instagram' && (publishing.instagramEnabled === false || !publishing.instagramGraphId)) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'HELD_DESTINATION_IDENTITY_MISMATCH',
+          jm1_failurecategory: 'DESTINATION_IDENTITY_MISMATCH',
+          jm1_exceptionowner: 'JM1 marketing runtime operator',
+          jm1_errorcode: 'META_IG_PRODUCTION_ACCOUNT_NOT_CONNECTED',
+          jm1_errormessage: 'Financial Instagram production account is not connected to the approved publishing Page.',
+          jm1_readbackstate: 'HELD_PRODUCTION_ACCOUNT_NOT_CONNECTED_TEST_ACCOUNT_EXCLUDED',
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state: 'HELD_DESTINATION_IDENTITY_MISMATCH' });
+        continue;
+      }
+
       if (!AUTONOMOUS_META_EXECUTION_ENABLED) {
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_readbackstate: metaAuthority.ok ? 'AUTONOMOUS_WORKER_READY_EXECUTION_FLAG_HELD' : metaAuthority.state,
