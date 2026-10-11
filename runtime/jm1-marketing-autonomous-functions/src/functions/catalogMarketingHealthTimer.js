@@ -3,6 +3,7 @@ import { dv, entitySet } from '../lib/dataverse.js';
 import { evaluateFullCatalogMarketingHealth, selectFullCatalogCandidate, summarizeFullCatalogMarketingHealth } from '../lib/marketingLifecycle.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { runEnvelope } from '../lib/runtime.js';
+import { readPublishingDestinations, assessPublishingDestinations } from '../lib/publishingDestinationReadiness.js';
 
 app.timer('catalogMarketingHealthTimer', {
   schedule: process.env.JM1_CATALOG_HEALTH_CRON || '0 7 12 * * *',
@@ -23,8 +24,17 @@ app.timer('catalogMarketingHealthTimer', {
     const nowIso = new Date().toISOString();
     const health = evaluateFullCatalogMarketingHealth(titles, { nowIso, currentFeaturedAuthor: 'Sean A Crowley I', nextFeaturedAuthor: 'Iyorwuese Hagher' });
     for (const row of health) await upsertHealth(healthSet, payload(row));
-    const candidate = health.some((row) => row.disposition === 'ACTIVE_CAMPAIGN') ? null : selectFullCatalogCandidate(health);
-    context.log(JSON.stringify({ event: 'FULL_CATALOG_MARKETING_HEALTH', summary: summarizeFullCatalogMarketingHealth(health), selectedWorkId: candidate?.titleId || null, publicExecutionCreated: false }));
+    let destinations = null;
+    try { destinations = await readPublishingDestinations(); }
+    catch (error) { context.error(JSON.stringify({ event: 'PUBLISHING_DESTINATION_READBACK_FAILED', reason: error.message, publicExecutionCreated: false })); }
+    let assessed;
+    try { assessed = assessPublishingDestinations(health, destinations); }
+    catch (error) {
+      context.error(JSON.stringify({ event: 'PUBLISHING_DESTINATION_CONFLICT', reason: error.message }));
+      assessed = assessPublishingDestinations(health, null);
+    }
+    const candidate = health.some((row) => row.disposition === 'ACTIVE_CAMPAIGN') ? null : selectFullCatalogCandidate(assessed.filter(row => row.destinationReadiness === 'READY'));
+    context.log(JSON.stringify({ event: 'FULL_CATALOG_MARKETING_HEALTH', summary: summarizeFullCatalogMarketingHealth(health), selectedWorkId: candidate?.titleId || null, destinationHolds: assessed.filter(row => row.destinationReadiness === 'HOLD').map(row => ({ titleId: row.titleId, canonicalDestinationId: row.canonicalDestinationId, disposition: row.disposition, missing: row.destinationMissing, existingCampaignPreserved: row.disposition === 'ACTIVE_CAMPAIGN' })), publicExecutionCreated: false, campaignsCancelled: 0 }));
   })
 });
 
