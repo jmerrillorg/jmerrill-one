@@ -6,6 +6,7 @@ import { registerCampaignCreativeMedia } from '../lib/mediaRegistry.js';
 import { runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { buildNativeSocialCreative, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, nativeSocialScheduledAt } from '../lib/nativeSocialProgram.js';
+import { readPublishingDestinations, assessPublishingCampaignUrls } from '../lib/publishingDestinationReadiness.js';
 
 app.timer('creativeWorkProcessorTimer', {
   schedule: process.env.JM1_CREATIVE_WORKER_CRON || '0 22 12 * * *',
@@ -19,6 +20,11 @@ app.timer('creativeWorkProcessorTimer', {
     const exceptionSet = await entitySet('jm1_marketingexception');
     const campaigns = await activeCampaigns(campaignSet);
     const writes = [];
+    let publishingDestinations = null;
+    if (campaigns.some(campaign => campaign.jm1_branch === BRANCH_CONFIG.publishing.branchName)) {
+      try { publishingDestinations = await readPublishingDestinations(); }
+      catch (error) { context.error(JSON.stringify({ event: 'PUBLISHING_DESTINATION_READBACK_FAILED', reason: error.message })); }
+    }
 
     for (const campaign of campaigns) {
       const marker = campaignMarker(campaign);
@@ -35,6 +41,13 @@ app.timer('creativeWorkProcessorTimer', {
       );
 
       for (const content of pendingContent) {
+        if (campaign.jm1_branch === BRANCH_CONFIG.publishing.branchName) {
+          const readiness = assessPublishingCampaignUrls(`${content.jm1_draftcopy || ''} ${content.jm1_copybrief || ''} ${campaign.jm1_cta || ''}`, publishingDestinations);
+          if (readiness.status === 'HOLD') {
+            writes.push({ type: 'destinationReadiness', campaignId: campaign.jm1_campaignauthorityid, contentId: content.jm1_contentworkid, stage: content.jm1_stage, state: 'HOLD_INCOMPLETE_PUBLIC_DESTINATION', missing: readiness.missing, existingCampaignPreserved: true });
+            continue;
+          }
+        }
         if (isApprovedNativeSocialCampaign(campaign)) {
           const nativeCreative = await buildNativeSocialCreative({ campaign, content, slot: content.jm1_stage });
           if (!nativeCreative.ok) {
