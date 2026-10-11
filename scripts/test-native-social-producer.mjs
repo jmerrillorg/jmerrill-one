@@ -124,6 +124,16 @@ test('coverage planning moves a slot when a verified booking already occupies it
   assert.equal(currentWeek[0].scheduledAt, '2026-10-16T18:00:00.000Z');
 });
 
+test('disabled Financial Instagram is excluded without disabling Financial Facebook or LinkedIn', () => {
+  const financial = campaign('J Merrill Financial');
+  const channels = { ...destinations['J Merrill Financial'], instagram: null };
+  const planned = planNativeSocialGaps({ campaign: financial, socialRows: [], nowIso: '2026-10-11T12:00:00Z', destinationByPlatform: channels });
+  assert.ok(planned.length > 0);
+  assert.ok(planned.every((slot) => !slot.platforms.includes('instagram')));
+  assert.ok(planned.some((slot) => slot.platforms.includes('facebook')));
+  assert.ok(planned.some((slot) => slot.platforms.includes('linkedin')));
+});
+
 test('a scheduled-looking API request consumes cadence only under live-approved campaign authority', () => {
   const one = campaign('J Merrill One');
   const branchDestinations = destinations['J Merrill One'];

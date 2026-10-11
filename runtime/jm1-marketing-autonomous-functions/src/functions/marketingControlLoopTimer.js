@@ -69,7 +69,7 @@ app.timer('marketingControlLoopTimer', {
         }
         const destinations = {
           facebook: [branch.facebookPageId, branch.facebookPageName],
-          instagram: [branch.instagramGraphId, branch.instagramHandle],
+          instagram: branch.instagramEnabled === false ? null : [branch.instagramGraphId, branch.instagramHandle],
           linkedin: [branch.linkedinOrganizationId, branch.linkedinOrganizationName]
         };
         const branchFilter = encodeURIComponent(`jm1_branch eq '${campaign.jm1_branch.replaceAll("'", "''")}'`);

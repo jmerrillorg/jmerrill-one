@@ -91,4 +91,9 @@ const reservationCheckIndex = workerSource.indexOf('const nativeReservation = ma
 const notDueCheckIndex = workerSource.indexOf('const scheduledFor = new Date(row.jm1_requestedschedule);');
 assert.ok(reservationCheckIndex >= 0 && notDueCheckIndex > reservationCheckIndex,
   'future-dated API rows must reconcile native reservations before being skipped as not due');
+const identityHoldIndex = workerSource.indexOf("publishing.instagramEnabled === false || !publishing.instagramGraphId");
+const instagramPublishIndex = workerSource.indexOf('await publishInstagramPhoto(');
+assert.ok(identityHoldIndex >= 0 && instagramPublishIndex > identityHoldIndex,
+  'Financial Instagram identity holds must run before any Instagram API publish call');
+assert.ok(workerSource.slice(identityHoldIndex, instagramPublishIndex).includes('HELD_DESTINATION_IDENTITY_MISMATCH'));
 process.stdout.write('native reservation guard: 39 assertions passed\n');

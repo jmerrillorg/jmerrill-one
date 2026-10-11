@@ -186,7 +186,8 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
   if (!isApprovedNativeSocialCampaign(campaign) || !readbackComplete || !Array.isArray(socialRows)) return [];
   const now = new Date(nowIso);
   const horizonEnd = new Date(easternDateTimeIso(addDays(easternMidnight(now), 14), 0));
-  const platforms = ['facebook', 'instagram', 'linkedin'];
+  const platforms = ['facebook', 'instagram', 'linkedin'].filter((platform) =>
+    normalizeDestinations(destinationByPlatform[platform]).length > 0);
   const plans = [];
   const monday = startOfEasternWeek(now);
   for (let weekStart = monday; weekStart < horizonEnd; weekStart = addDays(weekStart, 7)) {
