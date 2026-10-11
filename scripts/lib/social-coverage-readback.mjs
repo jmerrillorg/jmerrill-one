@@ -212,7 +212,10 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
     'J Merrill Financial': 'www.jmerrill.financial'
   }[campaign?.jm1_branch];
   const copybrief = String(content?.jm1_copybrief || '');
-  const match = copybrief.match(/^Standing founder marketing authority; source (https:\/\/[^;]+); caption SHA-256 ([a-f0-9]{64}); exact native booking readback ([0-9]+)\.$/);
+  const exactMatch = copybrief.match(/^Standing founder marketing authority; source (https:\/\/[^;]+); caption SHA-256 ([a-f0-9]{64}); exact native booking readback ([0-9]+)\.$/);
+  const batchMatch = copybrief.match(/^Standing founder marketing authority; source (https:\/\/[^;]+); caption SHA-256 ([a-f0-9]{64}); batch JM1-THREE-BRAND-NATIVE-BATCH-2026-10$/);
+  const itemMatch = copybrief.match(/^Founder-authorized public umbrella content; source (https:\/\/[^;]+); exact caption SHA-256 ([a-f0-9]{64})$/);
+  const match = exactMatch || batchMatch || itemMatch;
   if (!expectedHost || campaign?.jm1_campaigntype !== 'native_social'
     || campaign?.jm1_state !== 'PUBLIC_EXECUTION_APPROVED'
     || campaign?.jm1_supersession !== 'Founder standing marketing authorization; item source and media checks required. No Publishing Meta worker release.'
@@ -227,7 +230,7 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
     return false;
   }
   const captionHash = createHash('sha256').update(content.jm1_draftcopy).digest('hex');
-  const nativeContentId = match[3];
+  const nativeContentId = exactMatch?.[3];
   const readback = String(source.jm1_readbackstate || '');
   const readbackIds = [
     readback.match(/(?:^|\|)CONTENT_ID=([0-9]+)(?:\||$)/)?.[1],
@@ -238,7 +241,18 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
     && !sourceUrl.search && !sourceUrl.hash
     && content.jm1_draftcopy.includes(match[1])
     && match[2] === captionHash && booking.jm1_captionversion === captionHash
-    && readbackIds.length === 1 && readbackIds[0] === nativeContentId;
+    && (itemMatch
+      ? campaign.jm1_branch === 'J Merrill One' && source.jm1_platform === 'facebook'
+        && !booking.jm1_requestedmediahash && !source.jm1_requestedmediahash
+        && /^MBS_BOOKED\|[^|]+\|CONTENT_ID=[0-9]+$/.test(readback)
+      : exactMatch
+      ? readbackIds.length === 1 && readbackIds[0] === nativeContentId
+      : source.jm1_platform === 'linkedin'
+        && source.jm1_executor === 'LINKEDIN_NATIVE'
+        && source.jm1_actualdestination === booking.jm1_requesteddestination
+        && source.jm1_actualschedule === booking.jm1_requestedschedule
+        && timestampEvidenceFresh(source.jm1_verifiedat, new Date().toISOString())
+        && /^LINKEDIN_NATIVE_SCHEDULED_(?:IMAGE_ALT_MATCH_PLATFORM_SHORT_URL|\d{4}_\d{2}_\d{2}_\d{4}_CAPTION_COVER_ALT_MATCH)$/.test(readback));
 }
 
 export function nativeSocialApprovalProjection(booking, { campaigns, content, creatives, socialRows }, isApprovedContent) {
@@ -248,7 +262,7 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
   const destination = booking.jm1_requesteddestination;
   const scheduledAt = Date.parse(booking.jm1_requestedschedule || '');
   const platform = String(booking.jm1_platform || '').toLowerCase();
-  if (!captionHash || !mediaHash || !destination || !Number.isFinite(scheduledAt) || !platform) {
+  if (!captionHash || !destination || !Number.isFinite(scheduledAt) || !platform) {
     return { state: 'UNKNOWN', evidence: null, reason: 'BOOKING_BINDING_INCOMPLETE' };
   }
 
@@ -291,11 +305,14 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
       && row.jm1_stage === stage
       && row.jm1_publicreadystate === 'PASS'
       && row.jm1_assethash === mediaHash);
+    const creativeAuthorityPass = mediaHash
+      ? matchingCreatives.length === 1
+      : source.jm1_requestedmediahash == null && matchingCreatives.length === 0;
     const allowedSourceState = source.jm1_status === 'HELD_NATIVE_LINKEDIN_BOOKING_REQUIRED'
       || source.jm1_status === 'PUBLIC_READY_SCHEDULED_ELIGIBLE'
-      || (legacyKey && source.jm1_status === 'NATIVE_BOOKED_VERIFIED');
+      || source.jm1_status === 'NATIVE_BOOKED_VERIFIED';
     if (matchingCampaigns.length !== 1 || matchingContent.length !== 1
-      || matchingCreatives.length !== 1 || !allowedSourceState) continue;
+      || !creativeAuthorityPass || !allowedSourceState) continue;
     const contentAuthorityPass = legacyKey
       ? matchesApprovedLegacyNativeSocialContent(matchingCampaigns[0], matchingContent[0], { booking, source })
       : isApprovedContent(matchingCampaigns[0], matchingContent[0]);
@@ -308,7 +325,7 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
     candidates.push({
       campaignId: matchingCampaigns[0].jm1_campaignauthorityid,
       contentId: matchingContent[0].jm1_contentworkid,
-      creativeId: matchingCreatives[0].jm1_creativeworkid,
+      creativeId: matchingCreatives[0]?.jm1_creativeworkid || null,
       socialExecutionId: source.jm1_socialexecutionid,
       sourceStatus: source.jm1_status,
       stage
@@ -340,15 +357,33 @@ function nativeBookingIdFromReadback(value) {
 function nativeEvidenceFromReadback(value, row) {
   const compact = String(value || '').match(/^NATIVE_UI\|(META|LINKEDIN)\|AT=([^|]+)\|BOOKING=([^|]+)$/);
   const metaBooked = String(value || '').match(/^MBS_BOOKED\|([^|]+)\|CONTENT_ID=(.+)$/);
+  const linkedInList = String(value || '') === 'LINKEDIN_UI_SCHEDULED_LIST;BOOKING_ID=NOT_EXPOSED'
+    && row.jm1_executor === 'LINKEDIN_NATIVE'
+    && row.jm1_actualschedule === row.jm1_requestedschedule
+    && row.jm1_actualdestination === row.jm1_requesteddestination
+    && timestampEvidenceFresh(row.jm1_verifiedat, new Date().toISOString());
+  const linkedInAssetMatch = String(value || '') === 'LINKEDIN_NATIVE_SCHEDULED_IMAGE_ALT_MATCH_PLATFORM_SHORT_URL'
+    || /^LINKEDIN_NATIVE_SCHEDULED_\d{4}_\d{2}_\d{2}_\d{4}_CAPTION_COVER_ALT_MATCH$/.test(String(value || ''));
+  const linkedInAssetMatchFresh = linkedInAssetMatch
+    && row.jm1_executor === 'LINKEDIN_NATIVE'
+    && row.jm1_actualschedule === row.jm1_requestedschedule
+    && row.jm1_actualdestination === row.jm1_requesteddestination
+    && timestampEvidenceFresh(row.jm1_verifiedat, new Date().toISOString());
   const source = compact ? `${compact[1]}_NATIVE_UI`
     : metaBooked ? 'META_NATIVE_UI'
       : readbackValue(value, 'SOURCE');
-  const observedAt = compact ? compact[2] : metaBooked ? metaBooked[1] : readbackValue(value, 'OBSERVED_AT');
-  const scheduledAt = compact || metaBooked ? row.jm1_requestedschedule : readbackValue(value, 'SCHEDULED_AT');
-  const captionSha256 = compact || metaBooked ? row.jm1_captionversion : readbackValue(value, 'CAPTION_SHA256');
-  if (!source || !observedAt || !scheduledAt || !captionSha256) return null;
+  const evidenceSource = linkedInList || linkedInAssetMatchFresh ? 'LINKEDIN_NATIVE_UI' : source;
+  const observedAt = compact ? compact[2] : metaBooked ? metaBooked[1]
+    : linkedInList || linkedInAssetMatchFresh ? row.jm1_verifiedat : readbackValue(value, 'OBSERVED_AT');
+  const scheduledAt = linkedInList || linkedInAssetMatchFresh ? row.jm1_actualschedule
+    : compact || metaBooked ? row.jm1_requestedschedule : readbackValue(value, 'SCHEDULED_AT');
+  const captionSha256 = compact || metaBooked || linkedInList || linkedInAssetMatchFresh
+    ? row.jm1_captionversion : readbackValue(value, 'CAPTION_SHA256');
+  if (!evidenceSource || !observedAt || !scheduledAt || !captionSha256) return null;
   return {
-    source,
+    source: evidenceSource,
+    observedAt,
+    ...(linkedInList || linkedInAssetMatchFresh ? { requireTimestamp: true } : {}),
     observedDateET: easternDate(observedAt),
     scheduledAt,
     captionSha256,

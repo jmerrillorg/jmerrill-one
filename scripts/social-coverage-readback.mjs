@@ -52,8 +52,8 @@ if (process.argv.includes('--live-dataverse')) {
     query('jm1_campaignauthorities', 'jm1_idempotencykey,jm1_state,jm1_branch', `jm1_idempotencykey eq '${marker}:campaign'`),
     query('jm1_contentworks', 'jm1_idempotencykey,jm1_publicreadystate', `startswith(jm1_idempotencykey,'${marker}:content')`),
     query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion', `startswith(jm1_idempotencykey,'${marker}:social')`),
-    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion,jm1_requestedmediahash,jm1_name', `jm1_requestedschedule ge ${overdueLookbackDate}T00:00:00Z`),
-    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion,jm1_requestedmediahash,jm1_name', "jm1_status eq 'NATIVE_RESERVATION_VERIFIED' or jm1_status eq 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'")
+    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion,jm1_requestedmediahash,jm1_verifiedat,jm1_name', `jm1_requestedschedule ge ${overdueLookbackDate}T00:00:00Z`),
+    query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_platformpostid,jm1_actualschedule,jm1_actualdestination,jm1_readbackstate,jm1_branch,jm1_executor,jm1_captionversion,jm1_requestedmediahash,jm1_verifiedat,jm1_name', "jm1_status eq 'NATIVE_RESERVATION_VERIFIED' or jm1_status eq 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'")
   ]);
   const nativeCampaigns = await query('jm1_campaignauthorities',
     'jm1_campaignauthorityid,jm1_idempotencykey,jm1_campaigntype,jm1_state,jm1_branch,jm1_supersession',
@@ -66,7 +66,7 @@ if (process.argv.includes('--live-dataverse')) {
     const [nativeContent, nativeCreatives, nativeSocialRows] = await Promise.all([
       query('jm1_contentworks', 'jm1_contentworkid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_draftcopy,jm1_copybrief', `startswith(jm1_idempotencykey,'${prefix}:')`),
       query('jm1_creativeworks', 'jm1_creativeworkid,jm1_idempotencykey,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_assethash', `startswith(jm1_idempotencykey,'${prefix}:')`),
-      query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_captionversion,jm1_requestedmediahash,jm1_readbackstate', `startswith(jm1_idempotencykey,'${prefix}:')`)
+      query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_actualschedule,jm1_actualdestination,jm1_executor,jm1_verifiedat,jm1_captionversion,jm1_requestedmediahash,jm1_readbackstate', `startswith(jm1_idempotencykey,'${prefix}:')`)
     ]);
     nativeSource.content.push(...nativeContent);
     nativeSource.creatives.push(...nativeCreatives);
