@@ -5,7 +5,7 @@ import { dv, entitySet, queryByPrefix, safeCount, upsertByIdempotency } from '..
 import { evaluateFourLaneControlCycle, productionPublishingSignals } from '../lib/marketingLifecycle.js';
 import { activeBranches, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
-import { buildReviewedNativeSocialContent, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, planNativeSocialGaps } from '../lib/nativeSocialProgram.js';
+import { buildReviewedNativeSocialContent, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, nativeSocialDestinationsForBranch, planNativeSocialGaps } from '../lib/nativeSocialProgram.js';
 
 app.timer('marketingControlLoopTimer', {
   schedule: process.env.JM1_MARKETING_CONTROL_LOOP_CRON || '0 17 12 * * *',
@@ -67,11 +67,7 @@ app.timer('marketingControlLoopTimer', {
           decisions.push({ campaignId: campaign.jm1_campaignauthorityid, marker, controlDecision: 'HOLD_BRANCH_EXECUTION_DISABLED' });
           continue;
         }
-        const destinations = {
-          facebook: [branch.facebookPageId, branch.facebookPageName],
-          instagram: branch.instagramEnabled === false ? null : [branch.instagramGraphId, branch.instagramHandle],
-          linkedin: [branch.linkedinOrganizationId, branch.linkedinOrganizationName]
-        };
+        const { destinations, blockedChannelGaps } = nativeSocialDestinationsForBranch(branch);
         const branchFilter = encodeURIComponent(`jm1_branch eq '${campaign.jm1_branch.replaceAll("'", "''")}'`);
         const branchSocialResponse = await dv(`/${socialSet}?$select=jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_platformpostid,jm1_requestedschedule,jm1_actualschedule,jm1_requesteddestination&$filter=${branchFilter}&$top=5000`);
         const readbackComplete = !branchSocialResponse['@odata.nextLink'];
@@ -109,11 +105,14 @@ app.timer('marketingControlLoopTimer', {
           jm1_campaign: campaign.jm1_name,
           jm1_horizon30day: 'APPROVED_TEMPLATE_SET:v1; source campaign authority read from Dataverse',
           jm1_horizon14day: `GENERATED_GAPS=${materialized.filter((item) => item.state === 'CONTENT_READY').length}; EASTERN_HALF_OPEN_HORIZON=${envelope.startedAt}`,
-          jm1_horizon7day: `ACTIVE_CHANNELS=${branch.facebookPageId ? 'facebook;' : ''}${branch.instagramGraphId ? 'instagram;' : ''}linkedin=native-authority-required`,
+          jm1_horizon7day: `ACTIVE_CHANNELS=${branch.facebookPageId ? 'facebook;' : ''}${branch.instagramGraphId && branch.instagramEnabled !== false ? 'instagram;' : ''}linkedin=native-authority-required;BLOCKED_CHANNEL_GAPS=${blockedChannelGaps.map((gap) => `${gap.platform}:${gap.reason}`).join(',') || 'NONE'}`,
           jm1_featuredauthorintroeligible: 'NOT_APPLICABLE',
           jm1_fatiguecheck: 'Exact campaign, branch, and per-channel booking rows checked before materialization.',
           jm1_controldecision: !readbackComplete ? 'HOLD_INCOMPLETE_BRANCH_SOCIAL_READBACK' : plans.length ? 'MATERIALIZED_APPROVED_TEMPLATE_GAPS' : 'WAIT_COVERAGE_OR_NO_ELIGIBLE_GAP',
-          jm1_unresolvedprerequisites: branch.linkedinOrganizationId ? 'LINKEDIN_NATIVE_SCHEDULING_REQUIRED_WHILE_API_PRODUCT_PENDING' : '',
+          jm1_unresolvedprerequisites: [
+            branch.linkedinOrganizationId ? 'LINKEDIN_NATIVE_SCHEDULING_REQUIRED_WHILE_API_PRODUCT_PENDING' : '',
+            ...blockedChannelGaps.map((gap) => `${gap.platform.toUpperCase()}_BLOCKED_GAP:${gap.reason}`)
+          ].filter(Boolean).join('; '),
           jm1_state: 'AUTONOMOUS_NATIVE_SOCIAL_GAP_PLANNING',
           jm1_idempotencykey: `${nativeSocialCampaignMarker(campaign)}:autonomous:control-loop:rolling-coverage`,
           jm1_evaluatedat: envelope.startedAt,
@@ -121,7 +120,7 @@ app.timer('marketingControlLoopTimer', {
         };
         const controlWrite = await upsertByIdempotency(controlSet, 'jm1_marketingcontrolloopid', payload);
         writes.push({ entitySet: controlSet, type: 'nativeSocialControlLoop', id: controlWrite.id, created: controlWrite.created, materialized });
-        decisions.push({ campaignId: campaign.jm1_campaignauthorityid, marker, controlDecision: payload.jm1_controldecision, materialized });
+        decisions.push({ campaignId: campaign.jm1_campaignauthorityid, marker, controlDecision: payload.jm1_controldecision, blockedChannelGaps, materialized });
         continue;
       }
 
