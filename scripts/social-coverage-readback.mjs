@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, nativeSocialApprovalProjection, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
-import { matchesApprovedNativeSocialContent } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
+import { matchesApprovedNativeSocialContent, nativeSocialScheduledAt } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
@@ -129,14 +129,26 @@ if (process.argv.includes('--live-dataverse')) {
       ...row,
       ...(campaignPolicyByMarker.get(row.jm1_idempotencykey?.split(':social:')[0]) || {})
     }));
-  for (const booking of allFutureRows.filter((row) => row.jm1_status === 'NATIVE_BOOKED_VERIFIED')) {
+  for (const booking of allFutureRows.filter((row) => ['NATIVE_BOOKED_VERIFIED', 'PUBLIC_READY_SCHEDULED_ELIGIBLE', 'RETRY_REQUIRED'].includes(row.jm1_status))) {
+    const channel = snapshot.channels.find((item) => item.brand === booking.jm1_branch
+      && item.platform === booking.jm1_platform);
+    const expectedDestinations = [channel?.destinationId, channel?.destinationHandle,
+      channel?.nativeReadback?.portfolioHandle].filter(Boolean);
     const projection = nativeSocialApprovalProjection(booking, {
       campaigns: nativeCampaigns,
       ...nativeSource
-    }, matchesApprovedNativeSocialContent);
-    booking.nativeApprovalState = projection.state;
-    booking.nativeApprovalEvidence = projection.evidence;
-    booking.nativeApprovalReason = projection.reason;
+    }, matchesApprovedNativeSocialContent, (stage, platform) => stage?.startsWith('rolling-')
+      ? nativeSocialScheduledAt(stage, platform)
+      : null, expectedDestinations, channel?.nativeReadback || null);
+    if (booking.jm1_status === 'NATIVE_BOOKED_VERIFIED') {
+      booking.nativeApprovalState = projection.state;
+      booking.nativeApprovalEvidence = projection.evidence;
+      booking.nativeApprovalReason = projection.reason;
+    } else {
+      booking.contentApprovalState = projection.state;
+      booking.contentApprovalEvidence = projection.evidence;
+      booking.contentApprovalReason = projection.reason;
+    }
   }
   reconciliationRows = allFutureRows;
   const mappedDataverse = mapDataverseSocialRows(allFutureRows, snapshot.channels);
