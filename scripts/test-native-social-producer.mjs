@@ -4,6 +4,8 @@ import {
   buildNativeSocialCreative,
   buildReviewedNativeSocialContent,
   isApprovedNativeSocialCampaign,
+  nativeSocialChannelGaps,
+  nativeSocialDestinationsForBranch,
   nativeSocialScheduledAt,
   planNativeSocialGaps
 } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
@@ -132,6 +134,42 @@ test('disabled Financial Instagram is excluded without disabling Financial Faceb
   assert.ok(planned.every((slot) => !slot.platforms.includes('instagram')));
   assert.ok(planned.some((slot) => slot.platforms.includes('facebook')));
   assert.ok(planned.some((slot) => slot.platforms.includes('linkedin')));
+});
+
+test('disabled or unconfigured intended channels remain explicit blocked gaps, never executable destinations', () => {
+  const financial = campaign('J Merrill Financial');
+  const channels = { ...destinations['J Merrill Financial'], instagram: null };
+  const gaps = nativeSocialChannelGaps(channels, { disabledPlatforms: ['instagram'] });
+  assert.deepEqual(gaps, [{ platform: 'instagram', state: 'BLOCKED_GAP', reason: 'CHANNEL_DISABLED' }]);
+  const planned = planNativeSocialGaps({ campaign: financial, socialRows: [], nowIso: '2026-10-11T12:00:00Z', destinationByPlatform: channels });
+  assert.ok(planned.every((slot) => !slot.platforms.includes('instagram')));
+  assert.deepEqual(nativeSocialChannelGaps({ facebook: 'page-id', instagram: null, linkedin: null }), [
+    { platform: 'instagram', state: 'BLOCKED_GAP', reason: 'DESTINATION_NOT_CONFIGURED' },
+    { platform: 'linkedin', state: 'BLOCKED_GAP', reason: 'DESTINATION_NOT_CONFIGURED' }
+  ]);
+  const unverifiedInstagram = { ...destinations['J Merrill Financial'], instagram: null };
+  assert.deepEqual(nativeSocialChannelGaps(unverifiedInstagram, {
+    blockedReasonByPlatform: { instagram: 'INSTAGRAM_GRAPH_BUSINESS_ID_UNVERIFIED' }
+  }), [{ platform: 'instagram', state: 'BLOCKED_GAP', reason: 'INSTAGRAM_GRAPH_BUSINESS_ID_UNVERIFIED' }]);
+  const unverifiedBranch = nativeSocialDestinationsForBranch({
+    facebookPageId: '1270611542802820', instagramHandle: 'jmerrillfinancial', instagramEnabled: true,
+    linkedinOrganizationId: '146207089'
+  });
+  assert.equal(unverifiedBranch.destinations.instagram, null);
+  assert.deepEqual(unverifiedBranch.blockedChannelGaps, [{
+    platform: 'instagram', state: 'BLOCKED_GAP', reason: 'INSTAGRAM_GRAPH_BUSINESS_ID_UNVERIFIED'
+  }]);
+  assert.ok(planNativeSocialGaps({ campaign: financial, socialRows: [], nowIso: '2026-10-11T12:00:00Z',
+    destinationByPlatform: unverifiedBranch.destinations })
+    .every((slot) => !slot.platforms.includes('instagram')));
+  const disabledBranch = nativeSocialDestinationsForBranch({
+    facebookPageId: '1270611542802820', instagramHandle: 'jmerrillfinancial', instagramEnabled: false,
+    linkedinOrganizationId: '146207089'
+  });
+  assert.deepEqual(disabledBranch.blockedChannelGaps, [{
+    platform: 'instagram', state: 'BLOCKED_GAP', reason: 'INSTAGRAM_DISABLED_AND_GRAPH_BUSINESS_ID_UNVERIFIED'
+  }]);
+  assert.equal(disabledBranch.destinations.instagram, null);
 });
 
 test('a scheduled-looking API request consumes cadence only under live-approved campaign authority', () => {

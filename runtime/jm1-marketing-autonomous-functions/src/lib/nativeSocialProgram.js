@@ -101,6 +101,36 @@ export function nativeSocialCampaignMarker(campaign) {
   return String(campaign?.jm1_idempotencykey || '').replace(/:campaign$/, '');
 }
 
+export function nativeSocialChannelGaps(destinationByPlatform, { disabledPlatforms = [], blockedReasonByPlatform = {} } = {}) {
+  const disabled = new Set(disabledPlatforms);
+  return ['facebook', 'instagram', 'linkedin']
+    .filter((platform) => normalizeDestinations(destinationByPlatform?.[platform]).length === 0)
+    .map((platform) => ({
+      platform,
+      state: 'BLOCKED_GAP',
+      reason: blockedReasonByPlatform[platform] || (disabled.has(platform) ? 'CHANNEL_DISABLED' : 'DESTINATION_NOT_CONFIGURED')
+    }));
+}
+
+export function nativeSocialDestinationsForBranch(branch) {
+  const instagramReady = branch?.instagramEnabled !== false && Boolean(branch?.instagramGraphId);
+  const instagramBlockedReason = branch?.instagramEnabled === false
+    ? branch?.instagramGraphId ? 'CHANNEL_DISABLED' : 'INSTAGRAM_DISABLED_AND_GRAPH_BUSINESS_ID_UNVERIFIED'
+    : !branch?.instagramGraphId ? 'INSTAGRAM_GRAPH_BUSINESS_ID_UNVERIFIED' : null;
+  const destinations = {
+    facebook: [branch?.facebookPageId, branch?.facebookPageName],
+    instagram: instagramReady ? [branch.instagramGraphId] : null,
+    linkedin: [branch?.linkedinOrganizationId, branch?.linkedinOrganizationName]
+  };
+  return {
+    destinations,
+    blockedChannelGaps: nativeSocialChannelGaps(destinations, {
+      disabledPlatforms: branch?.instagramEnabled === false ? ['instagram'] : [],
+      blockedReasonByPlatform: instagramBlockedReason ? { instagram: instagramBlockedReason } : {}
+    })
+  };
+}
+
 export function buildReviewedNativeSocialContent({ campaign, weekKey, slot, nowIso }) {
   if (!isApprovedNativeSocialCampaign(campaign)) return { ok: false, reason: 'CAMPAIGN_NOT_ELIGIBLE' };
   const brand = BRAND[campaign.jm1_branch];
