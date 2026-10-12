@@ -384,6 +384,16 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
       : nativeBatchBookingProof);
 }
 
+function approvedCampaignKeyForContent(content) {
+  const explicitKey = String(content.jm1_copybrief || '').match(/(?:^|; )campaign=([^; ]+)/)?.[1];
+  if (explicitKey) return explicitKey;
+  const contentKey = String(content.jm1_idempotencykey || '');
+  const currentKey = contentKey.match(/^(.*):content:[^:]+$/);
+  const legacyKey = contentKey.match(/^(.*):[^:]+:content$/);
+  const marker = currentKey?.[1] || legacyKey?.[1];
+  return marker ? `${marker}:campaign` : null;
+}
+
 function reservationBookingProof(source, booking, nativeReadback) {
   const scheduledAt = Date.parse(booking.jm1_requestedschedule || '');
   const observedAt = Date.parse(nativeReadback?.observedAt || '');
@@ -478,8 +488,7 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
           return !platforms || platforms.split(',').map((value) => value.trim()).includes(platform);
         })());
       for (const candidateContent of matchingContent) {
-        const candidateMarker = String(candidateContent.jm1_copybrief || '').match(/(?:^|; )campaign=([^; ]+)/)?.[1]
-          || String(candidateContent.jm1_idempotencykey || '').match(/^(.*):[^:]+:content$/)?.[1] + ':campaign';
+        const candidateMarker = approvedCampaignKeyForContent(candidateContent);
         const matchingCampaigns = campaigns.filter((row) => row.jm1_idempotencykey === candidateMarker
           && row.jm1_branch === booking.jm1_branch
           && row.jm1_campaigntype === 'native_social'

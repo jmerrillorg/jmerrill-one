@@ -996,7 +996,7 @@ test('native reservations link batch-approved exact content by its source key an
     jm1_idempotencykey: `${marker}:campaign`, jm1_branch: brand, jm1_campaigntype: 'native_social',
     jm1_state: 'PUBLIC_EXECUTION_APPROVED',
     jm1_supersession: 'Founder standing marketing authorization; item source and media checks required. No Publishing Meta worker release.' };
-  const content = { jm1_contentworkid: 'approved-fb-content', jm1_idempotencykey: `${marker}:${stage}:content`,
+  const content = { jm1_contentworkid: 'approved-fb-content', jm1_idempotencykey: `${marker}:content:${stage}`,
     jm1_branch: brand, jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_draftcopy: caption,
     jm1_copybrief: `Standing founder marketing authority; source https://www.jmerrill.financial/services; caption SHA-256 ${captionHash}; batch JM1-THREE-BRAND-NATIVE-BATCH-2026-10` };
   const creative = { jm1_creativeworkid: 'approved-fb-creative', jm1_branch: brand, jm1_stage: stage,
