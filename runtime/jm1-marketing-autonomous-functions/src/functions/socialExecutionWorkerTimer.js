@@ -13,6 +13,7 @@ import { ambiguousPublicationException, isAmbiguousPublicationOutcome, reconcile
 import { checkLinkedInAuthority, findRecentMatchingLinkedInPost, publishLinkedInOrganizationImagePost } from '../lib/linkedin.js';
 import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
+import { metaDestinationMatches } from '../lib/metaDestination.js';
 import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { approvedContentForSocial } from '../lib/socialContentApproval.js';
@@ -172,6 +173,20 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_errorcode: 'META_IG_PRODUCTION_ACCOUNT_NOT_CONNECTED',
           jm1_errormessage: 'Financial Instagram production account is not connected to the approved publishing Page.',
           jm1_readbackstate: 'HELD_PRODUCTION_ACCOUNT_NOT_CONNECTED_TEST_ACCOUNT_EXCLUDED',
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state: 'HELD_DESTINATION_IDENTITY_MISMATCH' });
+        continue;
+      }
+
+      if (!metaDestinationMatches(publishing, row.jm1_platform, row.jm1_requesteddestination)) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'HELD_DESTINATION_IDENTITY_MISMATCH',
+          jm1_failurecategory: 'DESTINATION_IDENTITY_MISMATCH',
+          jm1_exceptionowner: 'JM1 marketing runtime operator',
+          jm1_errorcode: 'META_REQUEST_DESTINATION_NOT_CONFIGURED',
+          jm1_errormessage: 'The requested Meta destination does not exactly match the configured production account ID.',
+          jm1_readbackstate: 'HELD_EXACT_DESTINATION_IDENTITY_MISMATCH',
           jm1_verifiedat: envelope.startedAt
         });
         writes.push({ id: row.jm1_socialexecutionid, state: 'HELD_DESTINATION_IDENTITY_MISMATCH' });
