@@ -1,4 +1,5 @@
 import { META_GRAPH_VERSION, META_SYSTEM_USER_TOKEN } from './config.js';
+import { findConfiguredMetaPage } from './metaDestination.js';
 
 const GRAPH_BASE = `https://graph.facebook.com/${META_GRAPH_VERSION}`;
 
@@ -10,7 +11,7 @@ export async function verifyMetaAuthority(expected) {
   });
   if (!accounts.ok) return { ok: false, state: 'META_PAGE_DISCOVERY_FAILED', status: accounts.status, message: accounts.json?.error?.message };
 
-  const page = (accounts.json.data || []).find((item) => item.id === expected.facebookPageId || item.name === expected.facebookPageName);
+  const page = findConfiguredMetaPage(accounts.json.data, expected);
   if (!page) return { ok: false, state: 'META_PUBLISHING_PAGE_NOT_FOUND' };
 
   const igId = page.instagram_business_account?.id;
@@ -222,7 +223,7 @@ async function pageWithAccessToken(expected) {
   }, 'GET', false);
   if (!accounts.ok) return { ok: false, state: 'META_PAGE_DISCOVERY_FAILED', status: accounts.status, message: accounts.json?.error?.message };
 
-  const page = (accounts.json.data || []).find((item) => item.id === expected.facebookPageId || item.name === expected.facebookPageName);
+  const page = findConfiguredMetaPage(accounts.json.data, expected);
   if (!page) return { ok: false, state: 'META_PUBLISHING_PAGE_NOT_FOUND' };
   if (!page.access_token) return { ok: false, state: 'META_PAGE_ACCESS_TOKEN_NOT_RETURNED' };
   return { ok: true, id: page.id, name: page.name, accessToken: page.access_token };
