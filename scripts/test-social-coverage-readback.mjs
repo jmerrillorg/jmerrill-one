@@ -150,6 +150,26 @@ test('only exact approved native bookings count and collide with matching API re
   assert.deepEqual(result.duplicateRisk, ['native-1']);
 });
 
+test('duplicate audit receipts for one exact native content slot count once but both remain visible', () => {
+  const captionText = 'One approved post, one native slot.';
+  const captionSha256 = createHash('sha256').update(captionText).digest('hex');
+  const financialPage = { brand: 'J Merrill Financial', platform: 'facebook', destinationId: '104395329284856',
+    executionOwner: 'META_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' } };
+  const receipt = { brand: financialPage.brand, platform: financialPage.platform,
+    destinationId: financialPage.destinationId, kind: 'NATIVE_BOOKING', approvalState: 'APPROVED',
+    scheduledAt: '2026-10-03T14:00:00Z', captionText, captionSha256, mediaSha256: 'a'.repeat(64),
+    nativeEvidence: { source: 'META_NATIVE_UI', observedDateET: '2026-10-02',
+      scheduledAt: '2026-10-03T14:00:00Z', captionSha256 } };
+  const result = buildSocialCoverageReadback({ ...base, channels: [financialPage],
+    items: [{ ...receipt, id: 'receipt-original' }, { ...receipt, id: 'receipt-duplicate' }] }).channels[0];
+  assert.equal(result.nativeScheduled, 1);
+  assert.equal(result.verifiedBookings, 1);
+  assert.equal(result.nativeBookingClaims, 2);
+  assert.equal(result.nativeBookingRows.length, 2);
+  assert.equal(result.nativeBookingRows.filter((row) => row.countedSlot).length, 1);
+  assert.deepEqual(result.nativeBookingRows[0].sameSlotReceiptIds, ['receipt-original', 'receipt-duplicate']);
+});
+
 test('native booking on worker-owned channel is counted but exposes mixed authority', () => {
   const result = buildSocialCoverageReadback({ ...base, items: [
     { id: 'native-2', brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId,

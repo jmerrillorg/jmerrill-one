@@ -273,6 +273,7 @@ export function mapDataverseSocialRows(rows, channels) {
       platformPostId: isPublished ? row.jm1_platformpostid : null,
       nativeBookingId: isNativeBooking ? nativeBookingIdFromReadback(row.jm1_readbackstate) : null,
       captionSha256: isNativeBooking ? row.jm1_captionversion || null : null,
+      mediaSha256: isNativeBooking ? row.jm1_requestedmediahash || null : null,
       nativeEvidence: isNativeBooking ? nativeEvidenceFromReadback(row.jm1_readbackstate, row, channel) : null,
       status: row.jm1_status || null,
       campaignType: row.campaignType || null,
@@ -738,7 +739,7 @@ export function buildSocialCoverageReadback(snapshot) {
               : observedDate > asOf ? 'FUTURE_DATED'
                 : observedDate < asOf ? 'STALE'
             : /FAIL|ERROR/i.test(channel.nativeReadback?.state || '') ? 'FAILED' : 'UNVERIFIED';
-    const nativeScheduled = related.filter((item) =>
+    const nativeScheduledReceipts = related.filter((item) =>
       item.kind === 'NATIVE_BOOKING'
       && verifiedNative
       && matchesDestination(item, channel)
@@ -747,6 +748,24 @@ export function buildSocialCoverageReadback(snapshot) {
       && easternDate(item.scheduledAt) >= asOf
       && easternDate(item.scheduledAt) < end
     );
+    const nativeSlots = new Map();
+    for (const item of nativeScheduledReceipts) {
+      const destination = item.destinationId || item.destinationHandle || item.requestedDestinationText || '';
+      const captionHash = item.captionSha256 || item.nativeEvidence?.captionSha256 || '';
+      const mediaHash = item.mediaSha256 || item.nativeEvidence?.mediaSha256 || '';
+      const identity = item.nativeBookingId
+        ? `booking:${destination}:${item.nativeBookingId}`
+        : destination && item.scheduledAt && captionHash
+          ? `content:${destination}:${item.scheduledAt}:${captionHash}:${mediaHash}`
+          : `receipt:${item.id}`;
+      const group = nativeSlots.get(identity) || [];
+      group.push(item);
+      nativeSlots.set(identity, group);
+    }
+    const nativeSlotGroups = [...nativeSlots.values()];
+    const nativeScheduled = nativeSlotGroups.map((group) =>
+      group.find((item) => item.approvalState === 'APPROVED') || group[0]);
+    const slotCountedReceiptIds = new Set(nativeScheduled.map((item) => item.id));
     const verifiedFutureNativeClaims = related.filter((item) => item.kind === 'NATIVE_BOOKING'
       && matchesDestination(item, channel)
       && hasNativeBookingProof(item, asOf, snapshot.asOf)
@@ -754,9 +773,10 @@ export function buildSocialCoverageReadback(snapshot) {
     const verifiedBookingsBeyondHorizon = verifiedFutureNativeClaims.filter((item) =>
       easternDate(item.scheduledAt) >= end
     );
-    const booked = nativeScheduled.filter((item) => item.approvalState === 'APPROVED');
+    const booked = nativeSlotGroups.filter((group) => group.some((item) => item.approvalState === 'APPROVED'))
+      .map((group) => group.find((item) => item.approvalState === 'APPROVED'));
     const bookingClaims = related.filter((item) => item.kind === 'NATIVE_BOOKING');
-    const unverifiedBookingClaims = bookingClaims.filter((item) => !nativeScheduled.includes(item)
+    const unverifiedBookingClaims = bookingClaims.filter((item) => !nativeScheduledReceipts.includes(item)
       && !verifiedBookingsBeyondHorizon.includes(item));
     const scheduleVisibleInNativeList = (item) => channel.nativeReadback?.visibleScheduledAtUtc?.includes(item.scheduledAt);
     const visibleScheduleTimes = [...new Set(channel.nativeReadback?.visibleScheduledAtUtc || [])]
@@ -781,7 +801,8 @@ export function buildSocialCoverageReadback(snapshot) {
       !contradictedBookingClaims.includes(item) && !visibleScheduleCopyMismatches.includes(item));
     const pastDueBookingClaims = unverifiedBookingClaims.filter((item) => item.scheduledAt
       && Date.parse(item.scheduledAt) < Date.parse(snapshot.asOf));
-    const unapprovedScheduled = nativeScheduled.filter((item) => item.approvalState !== 'APPROVED');
+    const unapprovedScheduled = nativeSlotGroups.filter((group) =>
+      !group.some((item) => item.approvalState === 'APPROVED')).map((group) => group[0]);
     const published = related.filter((item) =>
       item.kind === 'PUBLISHED'
       && matchesDestination(item, channel)
@@ -959,7 +980,7 @@ export function buildSocialCoverageReadback(snapshot) {
         destinationHandle: item.destinationHandle || null,
         readbackState: item.readbackState || null
       })),
-      nativeBookingRows: nativeScheduled.map((item) => ({
+      nativeBookingRows: nativeScheduledReceipts.map((item) => ({
         id: item.id,
         nativeBookingId: item.nativeBookingId || null,
         proof: item.nativeBookingId ? 'NATIVE_ID' : item.nativeEvidence.source,
@@ -970,6 +991,8 @@ export function buildSocialCoverageReadback(snapshot) {
         linkedCampaignId: item.nativeApprovalEvidence?.campaignId || null,
         linkedContentId: item.nativeApprovalEvidence?.contentId || null,
         linkedCreativeId: item.nativeApprovalEvidence?.creativeId || null,
+        countedSlot: slotCountedReceiptIds.has(item.id),
+        sameSlotReceiptIds: (nativeSlotGroups.find((group) => group.includes(item)) || []).map((receipt) => receipt.id),
         executionOwner: nativeOwner(item.platform)
       })),
       verifiedBookings: coverageProofValid ? booked.length : null,
