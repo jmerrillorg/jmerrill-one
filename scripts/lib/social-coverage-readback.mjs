@@ -388,9 +388,10 @@ function reservationBookingProof(source, booking, nativeReadback) {
   const observedAt = Date.parse(nativeReadback?.observedAt || '');
   return source.jm1_status === 'NATIVE_BOOKED_VERIFIED'
     && source.jm1_executor === 'META_NATIVE'
-    && source.jm1_actualschedule === booking.jm1_requestedschedule
-    && String(source.jm1_actualdestination || '').replace(/^@/, '')
+    && (source.jm1_actualschedule == null || source.jm1_actualschedule === booking.jm1_requestedschedule)
+    && (source.jm1_actualdestination == null || String(source.jm1_actualdestination).replace(/^@/, '')
       === String(booking.jm1_requesteddestination || '').replace(/^@/, '')
+    )
     && /^NATIVE_UI\|META\|AT=[^|]+\|BOOKING=(?:NOT_EXPOSED|[0-9]+)$/.test(String(source.jm1_readbackstate || ''))
     && timestampEvidenceFresh(source.jm1_verifiedat, new Date().toISOString())
     && timestampEvidenceFresh(nativeReadback?.observedAt, new Date().toISOString())
@@ -433,8 +434,9 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
       && nativeReadback.visibleScheduledAtUtc.some((value) => Date.parse(value) === scheduledAt);
     const fresh = [observedAt, verifiedAt].every((timestamp) => Number.isFinite(timestamp)
       && Date.now() - timestamp >= 0 && Date.now() - timestamp <= MAX_NATIVE_READBACK_AGE_MS);
-    if (booking.jm1_actualschedule !== booking.jm1_requestedschedule
-      || booking.jm1_actualdestination !== destination || !exactSlot || !fresh) {
+    if ((booking.jm1_actualschedule != null && booking.jm1_actualschedule !== booking.jm1_requestedschedule)
+      || (booking.jm1_actualdestination != null && booking.jm1_actualdestination !== destination)
+      || !exactSlot || !fresh) {
       return { state: 'UNKNOWN', evidence: null, reason: 'RESERVATION_LACKS_FRESH_EXACT_NATIVE_SLOT_BINDING' };
     }
   }
