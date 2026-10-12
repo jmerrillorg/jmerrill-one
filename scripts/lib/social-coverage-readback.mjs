@@ -386,6 +386,8 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
 function reservationBookingProof(source, booking, nativeReadback) {
   const scheduledAt = Date.parse(booking.jm1_requestedschedule || '');
   const observedAt = Date.parse(nativeReadback?.observedAt || '');
+  const receiptObservedAt = source.jm1_verifiedat
+    || String(source.jm1_readbackstate || '').match(/(?:^|\|)AT=([^|]+)/)?.[1];
   return source.jm1_status === 'NATIVE_BOOKED_VERIFIED'
     && source.jm1_executor === 'META_NATIVE'
     && (source.jm1_actualschedule == null || source.jm1_actualschedule === booking.jm1_requestedschedule)
@@ -393,7 +395,7 @@ function reservationBookingProof(source, booking, nativeReadback) {
       === String(booking.jm1_requesteddestination || '').replace(/^@/, '')
     )
     && /^NATIVE_UI\|META\|AT=[^|]+\|BOOKING=(?:NOT_EXPOSED|[0-9]+)$/.test(String(source.jm1_readbackstate || ''))
-    && timestampEvidenceFresh(source.jm1_verifiedat, new Date().toISOString())
+    && timestampEvidenceFresh(receiptObservedAt, new Date().toISOString())
     && timestampEvidenceFresh(nativeReadback?.observedAt, new Date().toISOString())
     && nativeReadback?.state === 'VERIFIED'
     && Array.isArray(nativeReadback.visibleScheduledAtUtc)
@@ -428,7 +430,8 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
   }
   if (reservationKey) {
     const observedAt = Date.parse(nativeReadback?.observedAt || '');
-    const verifiedAt = Date.parse(booking.jm1_verifiedat || '');
+    const verifiedAt = Date.parse(booking.jm1_verifiedat
+      || String(booking.jm1_readbackstate || '').match(/(?:^|\|)AT=([^|]+)/)?.[1] || '');
     const exactSlot = nativeReadback?.state === 'VERIFIED'
       && Array.isArray(nativeReadback.visibleScheduledAtUtc)
       && nativeReadback.visibleScheduledAtUtc.some((value) => Date.parse(value) === scheduledAt);

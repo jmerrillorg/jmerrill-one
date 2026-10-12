@@ -1027,7 +1027,7 @@ test('native reservation links an exact-caption approval whose source URL lives 
   assert.equal(result.state, 'APPROVED', result.reason);
   assert.equal(result.evidence.contentId, 'financial-fb-oct21-content');
   const legacyReceipt = { ...booking, jm1_actualdestination: null, jm1_actualschedule: null,
-    jm1_verifiedat: '2026-10-12T04:12:21.000Z',
+    jm1_verifiedat: null,
     jm1_readbackstate: 'NATIVE_UI|META|AT=2026-10-12T04:12:21.000Z|BOOKING=NOT_EXPOSED' };
   assert.equal(nativeSocialApprovalProjection(legacyReceipt, {
     campaigns: [campaign], content: [content], creatives: [], socialRows: []
