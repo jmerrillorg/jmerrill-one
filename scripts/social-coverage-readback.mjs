@@ -1,12 +1,16 @@
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, nativeSocialApprovalProjection, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 import { matchesApprovedNativeSocialContent, nativeSocialScheduledAt } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 
 const input = process.argv[2];
 if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
 const snapshot = JSON.parse(readFileSync(input, 'utf8'));
+const financialDestinationOverlay = process.argv.includes('--current-financial-production-destinations');
+const metaReadbackArg = process.argv.find((arg) => arg.startsWith('--financial-meta-readback='));
+const metaReadback = metaReadbackArg ? JSON.parse(readFileSync(metaReadbackArg.slice('--financial-meta-readback='.length), 'utf8')) : null;
+if (financialDestinationOverlay) Object.assign(snapshot, applyCurrentFinancialProductionDestinations(snapshot, metaReadback));
 snapshot.sourceSnapshotAsOf = snapshot.sourceSnapshotAsOf || snapshot.asOf || null;
 snapshot.readbackMode = process.argv.includes('--live-dataverse') ? 'LIVE_DATAVERSE' : 'SNAPSHOT_ONLY';
 let reconciliationRows = [];
@@ -124,11 +128,14 @@ if (process.argv.includes('--live-dataverse')) {
   })));
   const nativeItems = retainNativeEvidenceItems(snapshot.items);
   const futureRowIds = new Set(futureRows.map((row) => row.jm1_socialexecutionid));
-  const allFutureRows = [...futureRows, ...nativeReservationRows.filter((row) => !futureRowIds.has(row.jm1_socialexecutionid))]
+  const observedFutureRows = [...futureRows, ...nativeReservationRows.filter((row) => !futureRowIds.has(row.jm1_socialexecutionid))]
     .map((row) => ({
       ...row,
       ...(campaignPolicyByMarker.get(row.jm1_idempotencykey?.split(':social:')[0]) || {})
     }));
+  const { currentRows: allFutureRows, preservedHistoricalFinancialRows } = financialDestinationOverlay
+    ? partitionCurrentFinancialDestinationRows(observedFutureRows)
+    : { currentRows: observedFutureRows, preservedHistoricalFinancialRows: [] };
   for (const booking of allFutureRows.filter((row) => ['NATIVE_BOOKED_VERIFIED', 'PUBLIC_READY_SCHEDULED_ELIGIBLE', 'RETRY_REQUIRED'].includes(row.jm1_status))) {
     const channel = snapshot.channels.find((item) => item.brand === booking.jm1_branch
       && item.platform === booking.jm1_platform);
@@ -199,6 +206,10 @@ if (process.argv.includes('--live-dataverse')) {
     status: row.jm1_status,
     scheduledAt: row.jm1_requestedschedule
   }));
+  snapshot.preservedHistoricalFinancialDataverseRows = [
+    ...(snapshot.preservedHistoricalFinancialDataverseRows || []),
+    ...preservedHistoricalFinancialRows
+  ];
   snapshot.liveDataverseObservedAt = new Date().toISOString();
   snapshot.asOf = snapshot.liveDataverseObservedAt;
 }
@@ -216,5 +227,20 @@ process.stdout.write(`${JSON.stringify({
   ...(snapshot.unclassifiedDataverseRows ? { unclassifiedDataverseRows: snapshot.unclassifiedDataverseRows } : {}),
   ...(snapshot.mappedDataverseRows !== undefined ? { mappedDataverseRows: snapshot.mappedDataverseRows } : {}),
   ...(snapshot.campaignPolicyExclusions ? { campaignPolicyExclusions: snapshot.campaignPolicyExclusions } : {}),
+  ...(financialDestinationOverlay ? { financialDestinationOverlay: {
+    state: 'CURRENT_DESTINATION_IDENTITIES_ONLY', facebookPageId: '104395329284856',
+    instagramHandle: 'jmerrillfinancial', instagramGraphBusinessId: 'UNVERIFIED',
+    excludedInstagramTestHandle: 'jmerrillfin', historicalSnapshotPreserved: true,
+    nativeReadback: metaReadback ? 'CURRENT_META_UI_READBACK' : 'NOT_REFRESHED'
+  }, preservedHistoricalFinancialEvidence: snapshot.preservedHistoricalFinancialEvidence || [],
+  preservedHistoricalFinancialDataverseRows: (snapshot.preservedHistoricalFinancialDataverseRows || []).map((row) => ({
+    id: row.jm1_socialexecutionid,
+    idempotencyKey: row.jm1_idempotencykey,
+    platform: row.jm1_platform,
+    status: row.jm1_status,
+    requestedSchedule: row.jm1_requestedschedule,
+    requestedDestination: row.jm1_requesteddestination,
+    currentDisposition: row.currentDisposition
+  })) } : {}),
   ...(snapshot.unclassifiedDataverseRows ? { reconciliationFindings } : {})
 }, null, 2)}\n`);

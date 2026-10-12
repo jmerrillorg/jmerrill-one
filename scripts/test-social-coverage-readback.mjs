@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -9,6 +9,71 @@ const channel = {
   executionOwner: 'AZURE_WORKER', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' }
 };
 const base = { asOf: '2026-10-02T16:00:00Z', channels: [channel], items: [] };
+
+test('current Financial destination correction is scoped and leaves historical source intact', () => {
+  const historical = { ...base, channels: [
+    { brand: 'J Merrill Financial', platform: 'facebook', destinationId: '1270611542802820' },
+    { brand: 'J Merrill Financial', platform: 'instagram', destinationId: '17841438473100276', destinationHandle: 'jmerrillfin' },
+    { brand: 'J Merrill Financial', platform: 'linkedin', destinationId: '146207089' }, channel
+  ], items: [
+    { id: 'legacy-fb', kind: 'NATIVE_BOOKING', brand: 'J Merrill Financial', platform: 'facebook', destinationId: '1270611542802820' },
+    { id: 'test-ig', kind: 'NATIVE_BOOKING', brand: 'J Merrill Financial', platform: 'instagram', destinationId: '17841438473100276', destinationHandle: 'jmerrillfin' },
+    { id: 'other-brand', kind: 'NATIVE_BOOKING', brand: 'J Merrill One', platform: 'facebook', destinationId: 'other' }
+  ] };
+  const current = applyCurrentFinancialProductionDestinations(historical);
+  assert.equal(historical.channels[0].destinationId, '1270611542802820');
+  assert.equal(historical.channels[1].destinationHandle, 'jmerrillfin');
+  assert.equal(historical.items.length, 3);
+  assert.deepEqual(current.items.map((item) => item.id), ['other-brand']);
+  assert.deepEqual(current.preservedHistoricalFinancialEvidence.map((item) => [item.id, item.currentDisposition]), [
+    ['legacy-fb', 'EXCLUDED_LEGACY_PAGE'], ['test-ig', 'EXCLUDED_TEST_ACCOUNT']
+  ]);
+  assert.equal(current.channels[0].destinationId, '104395329284856');
+  assert.equal(current.channels[1].destinationId, null);
+  assert.equal(current.channels[1].destinationHandle, 'jmerrillfinancial');
+  assert.equal(current.channels[1].nativeReadback.excludedTestHandle, 'jmerrillfin');
+  assert.equal(current.channels[2].destinationId, '146207089');
+  assert.equal(current.channels[3].destinationId, channel.destinationId);
+});
+
+test('current Financial Meta readback requires exact production identities and records fresh observed slots', () => {
+  const historical = { channels: [
+    { brand: 'J Merrill Financial', platform: 'facebook', destinationId: '1270611542802820', nativeReadback: { observedDateET: '2026-10-10' } },
+    { brand: 'J Merrill Financial', platform: 'instagram', destinationHandle: 'jmerrillfin', nativeReadback: { observedDateET: '2026-10-10' } },
+    { brand: 'J Merrill Financial', platform: 'linkedin', destinationId: '146207089', nativeReadback: { observedDateET: '2026-10-10' } }
+  ] };
+  const observedAt = '2026-10-12T11:55:00.000Z';
+  const readback = { facebookPageId: '104395329284856', instagramHandle: 'jmerrillfinancial', observedAt,
+    facebookScheduledAtUtc: ['2026-10-16T18:00:00Z', '2026-10-21T14:00:00Z'],
+    instagramScheduledAtUtc: ['2026-10-13T15:00:00Z', '2026-10-23T19:00:00Z'],
+    linkedinPageId: '146207089', linkedinObservedAt: '2026-10-12T12:10:00.000Z',
+    linkedinScheduledAtUtc: ['2026-10-12T14:00:00Z', '2026-10-16T15:00:00Z', '2026-10-19T14:00:00Z', '2026-10-23T20:00:00Z'] };
+  const current = applyCurrentFinancialProductionDestinations(historical, readback);
+  assert.equal(historical.channels[0].nativeReadback.observedDateET, '2026-10-10');
+  assert.equal(current.channels[0].nativeReadback.observedDateET, '2026-10-12');
+  assert.deepEqual(current.channels[0].nativeReadback.visibleScheduledAtUtc, readback.facebookScheduledAtUtc);
+  assert.deepEqual(current.channels[1].nativeReadback.visibleScheduledAtUtc, readback.instagramScheduledAtUtc);
+  assert.equal(current.channels[2].nativeReadback.observedAt, readback.linkedinObservedAt);
+  assert.deepEqual(current.channels[2].nativeReadback.visibleScheduledAtUtc, readback.linkedinScheduledAtUtc);
+  assert.throws(() => applyCurrentFinancialProductionDestinations(historical, { ...readback, facebookPageId: '1270611542802820' }), /must bind/);
+  assert.throws(() => applyCurrentFinancialProductionDestinations(historical, { ...readback, linkedinPageId: '1270611542802820' }), /LinkedIn readback/);
+});
+
+test('current Financial readback excludes legacy Page and test Instagram rows without deleting their evidence', () => {
+  const rows = [
+    { jm1_socialexecutionid: 'legacy-fb', jm1_branch: 'J Merrill Financial', jm1_platform: 'facebook', jm1_requesteddestination: '1270611542802820', jm1_status: 'HELD_DESTINATION_IDENTITY_MISMATCH' },
+    { jm1_socialexecutionid: 'test-ig', jm1_branch: 'J Merrill Financial', jm1_platform: 'instagram', jm1_requesteddestination: '@jmerrillfin', jm1_status: 'NATIVE_BOOKING_MOVED_TO_DRAFT' },
+    { jm1_socialexecutionid: 'production-fb', jm1_branch: 'J Merrill Financial', jm1_platform: 'facebook', jm1_requesteddestination: '104395329284856' },
+    { jm1_socialexecutionid: 'one-fb', jm1_branch: 'J Merrill One', jm1_platform: 'facebook', jm1_requesteddestination: '1270611542802820' }
+  ];
+  const { currentRows, preservedHistoricalFinancialRows } = partitionCurrentFinancialDestinationRows(rows);
+  assert.deepEqual(currentRows.map((row) => row.jm1_socialexecutionid), ['production-fb', 'one-fb']);
+  assert.deepEqual(preservedHistoricalFinancialRows.map((row) => [row.jm1_socialexecutionid, row.currentDisposition]), [
+    ['legacy-fb', 'EXCLUDED_LEGACY_PAGE'], ['test-ig', 'EXCLUDED_TEST_ACCOUNT']
+  ]);
+  assert.equal(rows[0].jm1_status, 'HELD_DESTINATION_IDENTITY_MISMATCH');
+  assert.equal(rows[1].jm1_status, 'NATIVE_BOOKING_MOVED_TO_DRAFT');
+});
 
 test('resolved destinations do not emit unresolved-authority alerts; missing authority does', () => {
   const resolved = buildSocialCoverageReadback(base).channels[0];
@@ -846,10 +911,13 @@ test('hash-keyed native reservations link only to one approved stage with exact 
   const caption = 'A practical starting question can clarify the next step.';
   const captionHash = createHash('sha256').update(caption).digest('hex');
   const mediaHash = 'a'.repeat(64);
+  const observedAt = new Date().toISOString();
+  const scheduledAt = '2026-10-13T16:00:00Z';
   const booking = { jm1_socialexecutionid: 'reservation-one-li',
     jm1_idempotencykey: `jm1-native-reservation-v1:${'b'.repeat(64)}`,
     jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_branch: brand, jm1_platform: 'linkedin',
-    jm1_requesteddestination: '106683183', jm1_requestedschedule: '2026-10-13T16:00:00Z',
+    jm1_requesteddestination: '106683183', jm1_actualdestination: '106683183',
+    jm1_requestedschedule: scheduledAt, jm1_actualschedule: scheduledAt, jm1_verifiedat: observedAt,
     jm1_captionversion: captionHash, jm1_requestedmediahash: mediaHash };
   const campaign = { jm1_campaignauthorityid: 'campaign-reservation',
     jm1_idempotencykey: `${marker}:campaign`, jm1_branch: brand,
@@ -866,24 +934,98 @@ test('hash-keyed native reservations link only to one approved stage with exact 
     && item.jm1_copybrief.includes('theme=UMBRELLA_GUIDANCE');
   const scheduleForStage = (candidate, platform) => candidate === stage && platform === 'linkedin'
     ? `${booking.jm1_requestedschedule.replace(/Z$/, '.000Z')}` : null;
+  const nativeReadback = { state: 'VERIFIED', observedAt, visibleScheduledAtUtc: [scheduledAt] };
 
-  assert.equal(nativeSocialApprovalProjection(booking, rows, approved, scheduleForStage, '106683183').state, 'APPROVED');
+  assert.equal(nativeSocialApprovalProjection(booking, rows, approved, scheduleForStage, '106683183', nativeReadback).state, 'APPROVED');
   for (const change of [
     { jm1_requesteddestination: '13048648' },
     { jm1_requestedschedule: '2026-10-14T16:00:00Z' },
     { jm1_captionversion: 'c'.repeat(64) },
     { jm1_requestedmediahash: 'd'.repeat(64) }
   ]) {
-    assert.equal(nativeSocialApprovalProjection({ ...booking, ...change }, rows, approved, scheduleForStage, '106683183').state, 'UNKNOWN');
+    assert.equal(nativeSocialApprovalProjection({ ...booking, ...change }, rows, approved, scheduleForStage, '106683183', nativeReadback).state, 'UNKNOWN');
   }
   assert.equal(nativeSocialApprovalProjection(booking, { ...rows,
-    campaigns: [{ ...campaign, jm1_state: 'HELD' }] }, approved, scheduleForStage, '106683183').state, 'UNKNOWN');
+    campaigns: [{ ...campaign, jm1_state: 'HELD' }] }, approved, scheduleForStage, '106683183', nativeReadback).state, 'UNKNOWN');
   assert.equal(nativeSocialApprovalProjection(booking, { ...rows,
     content: [{ ...content, jm1_copybrief: content.jm1_copybrief.replace('platforms=linkedin', 'platforms=facebook') }] },
-    approved, scheduleForStage, '106683183').state, 'UNKNOWN');
+    approved, scheduleForStage, '106683183', nativeReadback).state, 'UNKNOWN');
   assert.equal(nativeSocialApprovalProjection(booking, { ...rows,
-    content: [content, { ...content, jm1_contentworkid: 'ambiguous-content' }] }, approved, scheduleForStage, '106683183').state, 'UNKNOWN');
+    content: [content, { ...content, jm1_contentworkid: 'ambiguous-content' }] }, approved, scheduleForStage, '106683183', nativeReadback).state, 'UNKNOWN');
   assert.equal(nativeSocialApprovalProjection(booking, rows, approved, scheduleForStage).state, 'UNKNOWN');
+});
+
+test('native reservations link batch-approved exact content by its source key and verified current slot', () => {
+  const brand = 'J Merrill Financial';
+  const marker = 'jm1-native-social-2026-10:j-merrill-financial';
+  const stage = 'f-fb2';
+  const schedule = '2026-10-14T14:00:00.000Z';
+  const observedAt = new Date().toISOString();
+  const caption = 'One folder can make a difficult conversation easier. Start with three lists. https://www.jmerrill.financial/services';
+  const captionHash = createHash('sha256').update(caption).digest('hex');
+  const mediaHash = 'a'.repeat(64);
+  const booking = { jm1_socialexecutionid: 'native-fb-receipt',
+    jm1_idempotencykey: `jm1-native-reservation-v1:${'b'.repeat(64)}`,
+    jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_branch: brand, jm1_platform: 'facebook',
+    jm1_executor: 'META_NATIVE',
+    jm1_requesteddestination: '104395329284856', jm1_actualdestination: '104395329284856',
+    jm1_requestedschedule: schedule, jm1_actualschedule: schedule, jm1_verifiedat: observedAt,
+    jm1_captionversion: captionHash, jm1_requestedmediahash: mediaHash,
+    jm1_readbackstate: `NATIVE_UI|META|AT=${observedAt}|BOOKING=NOT_EXPOSED` };
+  const campaign = { jm1_campaignauthorityid: 'approved-financial-campaign',
+    jm1_idempotencykey: `${marker}:campaign`, jm1_branch: brand, jm1_campaigntype: 'native_social',
+    jm1_state: 'PUBLIC_EXECUTION_APPROVED',
+    jm1_supersession: 'Founder standing marketing authorization; item source and media checks required. No Publishing Meta worker release.' };
+  const content = { jm1_contentworkid: 'approved-fb-content', jm1_idempotencykey: `${marker}:${stage}:content`,
+    jm1_branch: brand, jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_draftcopy: caption,
+    jm1_copybrief: `Standing founder marketing authority; source https://www.jmerrill.financial/services; caption SHA-256 ${captionHash}; batch JM1-THREE-BRAND-NATIVE-BATCH-2026-10` };
+  const creative = { jm1_creativeworkid: 'approved-fb-creative', jm1_branch: brand, jm1_stage: stage,
+    jm1_publicreadystate: 'PASS', jm1_assethash: mediaHash };
+  const nativeReadback = { state: 'VERIFIED', observedAt, visibleScheduledAtUtc: [schedule] };
+  const result = nativeSocialApprovalProjection(booking, {
+    campaigns: [campaign], content: [content], creatives: [creative], socialRows: []
+  }, () => false, () => null, ['104395329284856'], nativeReadback);
+  assert.equal(result.state, 'APPROVED', result.reason);
+  assert.deepEqual(result.evidence, {
+    campaignId: 'approved-financial-campaign', contentId: 'approved-fb-content',
+    creativeId: 'approved-fb-creative', socialExecutionId: 'native-fb-receipt',
+    sourceStatus: 'NATIVE_BOOKED_VERIFIED', stage
+  });
+  const heldPlatformContent = { ...content, jm1_copybrief: `${content.jm1_copybrief}; platforms=instagram` };
+  assert.equal(nativeSocialApprovalProjection(booking, {
+    campaigns: [campaign], content: [heldPlatformContent], creatives: [creative], socialRows: []
+  }, () => false, () => null, ['104395329284856'], nativeReadback).state, 'UNKNOWN');
+});
+
+test('native reservation links an exact-caption approval whose source URL lives in its approval record', () => {
+  const brand = 'J Merrill Financial';
+  const marker = 'jm1-native-social-2026-10:j-merrill-financial';
+  const stage = 'financial-facebook-oct-21';
+  const schedule = '2026-10-21T14:00:00Z';
+  const observedAt = new Date().toISOString();
+  const caption = 'Before a planning conversation, make a short list: what matters most to you, which people should be included, and what questions need answers. Keep important records together and let someone you trust know where they are. A qualified professional can explain options that fit your circumstances. Educational information only; this is not legal or insurance advice.';
+  const captionHash = createHash('sha256').update(caption).digest('hex');
+  const booking = { jm1_socialexecutionid: 'financial-fb-oct21',
+    jm1_idempotencykey: `jm1-native-reservation-v1:${'c'.repeat(64)}`,
+    jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_branch: brand, jm1_platform: 'facebook', jm1_executor: 'META_NATIVE',
+    jm1_requesteddestination: '104395329284856', jm1_actualdestination: '104395329284856',
+    jm1_requestedschedule: schedule, jm1_actualschedule: schedule, jm1_verifiedat: observedAt,
+    jm1_captionversion: captionHash, jm1_requestedmediahash: null,
+    jm1_readbackstate: `NATIVE_UI|META|AT=${observedAt}|BOOKING=NOT_EXPOSED` };
+  const campaign = { jm1_campaignauthorityid: 'financial-approved-campaign',
+    jm1_idempotencykey: `${marker}:campaign`, jm1_branch: brand, jm1_campaigntype: 'native_social',
+    jm1_state: 'PUBLIC_EXECUTION_APPROVED',
+    jm1_supersession: 'Founder standing marketing authorization; item source and media checks required. No Publishing Meta worker release.' };
+  const content = { jm1_contentworkid: 'financial-fb-oct21-content',
+    jm1_idempotencykey: `${marker}:${stage}:content`, jm1_branch: brand, jm1_stage: stage,
+    jm1_publicreadystate: 'PASS', jm1_draftcopy: caption,
+    jm1_copybrief: `Standing founder marketing authority; source https://www.jmerrill.financial/services; caption SHA-256 ${captionHash}; exact native booking readback 1100798145981063.` };
+  const nativeReadback = { state: 'VERIFIED', observedAt, visibleScheduledAtUtc: [schedule] };
+  const result = nativeSocialApprovalProjection(booking, {
+    campaigns: [campaign], content: [content], creatives: [], socialRows: []
+  }, () => false, () => null, ['104395329284856'], nativeReadback);
+  assert.equal(result.state, 'APPROVED', result.reason);
+  assert.equal(result.evidence.contentId, 'financial-fb-oct21-content');
 });
 
 test('native reservation remains the sole authority when its colliding worker request is held', () => {
@@ -894,10 +1036,12 @@ test('native reservation remains the sole authority when its colliding worker re
   const captionHash = createHash('sha256').update(caption).digest('hex');
   const mediaHash = 'a'.repeat(64);
   const schedule = '2026-10-13T15:00:00Z';
+  const observedAt = new Date().toISOString();
   const reservation = { jm1_socialexecutionid: 'native-reservation',
     jm1_idempotencykey: `jm1-native-reservation-v1:${'b'.repeat(64)}`,
     jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_branch: brand, jm1_platform: 'instagram',
-    jm1_requesteddestination: '17841410046020869', jm1_requestedschedule: schedule,
+    jm1_executor: 'META_NATIVE', jm1_requesteddestination: '17841410046020869', jm1_actualdestination: '17841410046020869',
+    jm1_requestedschedule: schedule, jm1_actualschedule: schedule, jm1_verifiedat: observedAt,
     jm1_captionversion: captionHash, jm1_requestedmediahash: mediaHash };
   const campaign = { jm1_campaignauthorityid: 'campaign', jm1_idempotencykey: `${marker}:campaign`,
     jm1_branch: brand, jm1_campaigntype: 'native_social', jm1_state: 'PUBLIC_EXECUTION_APPROVED' };
@@ -914,8 +1058,9 @@ test('native reservation remains the sole authority when its colliding worker re
   const rows = { campaigns: [campaign], content: [content], creatives: [creative], socialRows: [heldWorkerRequest] };
   const scheduleForStage = (candidate, platform) => candidate === stage && platform === 'instagram'
     ? '2026-10-13T15:00:00.000Z' : null;
+  const nativeReadback = { state: 'VERIFIED', observedAt, visibleScheduledAtUtc: [schedule] };
   const result = nativeSocialApprovalProjection(reservation, rows, () => true, scheduleForStage,
-    ['17841410046020869', 'jmerrillpub']);
+    ['17841410046020869', 'jmerrillpub'], nativeReadback);
   assert.equal(result.state, 'APPROVED');
   assert.equal(result.evidence.socialExecutionId, 'native-reservation');
 });

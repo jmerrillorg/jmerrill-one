@@ -8,6 +8,95 @@ const NATIVE_RESERVATION_STATUSES = new Set([
   'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED'
 ]);
 
+export function applyCurrentFinancialProductionDestinations(snapshot, metaReadback = null) {
+  if (metaReadback && (metaReadback.facebookPageId !== '104395329284856'
+    || metaReadback.instagramHandle !== 'jmerrillfinancial'
+    || !metaReadback.observedAt || Number.isNaN(Date.parse(metaReadback.observedAt)))) {
+    throw new Error('Financial Meta readback must bind the verified production Page, Instagram handle, and observation timestamp');
+  }
+  if (metaReadback?.linkedinPageId && (metaReadback.linkedinPageId !== '146207089'
+    || !metaReadback.linkedinObservedAt || Number.isNaN(Date.parse(metaReadback.linkedinObservedAt)))) {
+    throw new Error('Financial LinkedIn readback must bind the verified Page and observation timestamp');
+  }
+  const observedDateET = metaReadback ? new Intl.DateTimeFormat('en-CA', {
+    timeZone: ZONE, year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(new Date(metaReadback.observedAt)) : null;
+  const preservedHistoricalFinancialEvidence = [];
+  const currentItems = (snapshot.items || []).filter((item) => {
+    if (item.brand !== 'J Merrill Financial') return true;
+    const isLegacyFacebook = item.platform === 'facebook' && item.destinationId === '1270611542802820';
+    const isTestInstagram = item.platform === 'instagram'
+      && (item.destinationHandle === 'jmerrillfin' || item.destinationId === '17841438473100276');
+    if (!isLegacyFacebook && !isTestInstagram) return true;
+    preservedHistoricalFinancialEvidence.push({
+      ...item,
+      currentDisposition: isTestInstagram ? 'EXCLUDED_TEST_ACCOUNT' : 'EXCLUDED_LEGACY_PAGE',
+      preservedFromCurrentSnapshot: true
+    });
+    return false;
+  });
+  return {
+    ...snapshot,
+    items: currentItems,
+    preservedHistoricalFinancialEvidence: [
+      ...(snapshot.preservedHistoricalFinancialEvidence || []),
+      ...preservedHistoricalFinancialEvidence
+    ],
+    channels: (snapshot.channels || []).map((channel) => {
+      if (channel.brand !== 'J Merrill Financial') return channel;
+      if (channel.platform === 'facebook') return {
+        ...channel,
+        destinationId: '104395329284856',
+        destinationHandle: null,
+        nativeReadback: { ...channel.nativeReadback, businessPortfolioId: '1306466683241061',
+          accountAssetId: '104395329284856', preservedSeparatePageId: '1270611542802820',
+          ...(metaReadback ? { state: 'VERIFIED', observedDateET, observedAt: metaReadback.observedAt,
+            requireTimestamp: true, visibleScheduledAtUtc: metaReadback.facebookScheduledAtUtc || [] } : {}),
+          view: 'Current Financial production Page overlay; native schedule readback recorded separately' }
+      };
+      if (channel.platform === 'instagram') return {
+        ...channel,
+        destinationId: null,
+        destinationHandle: 'jmerrillfinancial',
+        nativeReadback: { ...channel.nativeReadback, businessPortfolioId: '1306466683241061',
+          accountHandle: 'jmerrillfinancial', excludedTestHandle: 'jmerrillfin',
+          ...(metaReadback ? { state: 'VERIFIED', observedDateET, observedAt: metaReadback.observedAt,
+            requireTimestamp: true, visibleScheduledAtUtc: metaReadback.instagramScheduledAtUtc || [] } : {}),
+          view: 'Current Financial production handle overlay; Graph business ID unverified' }
+      };
+      if (channel.platform === 'linkedin' && metaReadback?.linkedinPageId) return {
+        ...channel,
+        destinationId: '146207089',
+        nativeReadback: { ...channel.nativeReadback, state: 'VERIFIED', observedDateET: new Intl.DateTimeFormat('en-CA', {
+          timeZone: ZONE, year: 'numeric', month: '2-digit', day: '2-digit'
+        }).format(new Date(metaReadback.linkedinObservedAt)), observedAt: metaReadback.linkedinObservedAt,
+        requireTimestamp: true, accountAssetId: metaReadback.linkedinPageId,
+        visibleScheduledAtUtc: metaReadback.linkedinScheduledAtUtc || [],
+        view: 'Current Financial LinkedIn scheduled-post list; native access verified, API permission separate' }
+      };
+      return channel;
+    })
+  };
+}
+
+export function partitionCurrentFinancialDestinationRows(rows) {
+  const preservedHistoricalFinancialRows = [];
+  const currentRows = rows.filter((row) => {
+    if (row.jm1_branch !== 'J Merrill Financial') return true;
+    const destination = String(row.jm1_requesteddestination || '').replace(/^@/, '').toLowerCase();
+    const legacyPage = row.jm1_platform === 'facebook' && destination === '1270611542802820';
+    const testInstagram = row.jm1_platform === 'instagram'
+      && ['jmerrillfin', '17841438473100276'].includes(destination);
+    if (!legacyPage && !testInstagram) return true;
+    preservedHistoricalFinancialRows.push({
+      ...row,
+      currentDisposition: testInstagram ? 'EXCLUDED_TEST_ACCOUNT' : 'EXCLUDED_LEGACY_PAGE'
+    });
+    return false;
+  });
+  return { currentRows, preservedHistoricalFinancialRows };
+}
+
 export async function queryDataversePages(initialUrl, token, fetchImpl = fetch) {
   const values = [];
   let next = initialUrl;
@@ -266,6 +355,7 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
     readback.match(/(?:^|\|)CONTENT_ID=([0-9]+)(?:\||$)/)?.[1],
     readback.match(/NATIVE_CONTENT_ID_([0-9]+)/)?.[1]
   ].filter(Boolean);
+  const nativeMetaReservationProof = reservationBookingProof(source, booking, nativeReadback);
   const nativeBatchBookingProof = source.jm1_platform === 'linkedin'
     ? source.jm1_executor === 'LINKEDIN_NATIVE'
       && source.jm1_actualdestination === booking.jm1_requesteddestination
@@ -277,19 +367,36 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
       && source.jm1_actualschedule === booking.jm1_requestedschedule
       && String(source.jm1_actualdestination || '').replace(/^@/, '')
         === String(booking.jm1_requesteddestination || '').replace(/^@/, '')
-      && /^META_SCHEDULED_LIST_MATCH$|^META_NATIVE_SCHEDULED_CONTENT_ID_\d+_CAPTION_MEDIA_ALT_MATCH$/.test(readback);
+      && (/^META_SCHEDULED_LIST_MATCH$|^META_NATIVE_SCHEDULED_CONTENT_ID_\d+_CAPTION_MEDIA_ALT_MATCH$/.test(readback)
+        || nativeMetaReservationProof);
   return sourceUrl.protocol === 'https:' && sourceUrl.hostname === expectedHost
     && !sourceUrl.username && !sourceUrl.password && !sourceUrl.port
     && !sourceUrl.search && !sourceUrl.hash
-    && (Boolean(batchMatch) || content.jm1_draftcopy.includes(match[1]))
+    && (Boolean(batchMatch) || Boolean(exactMatch) || content.jm1_draftcopy.includes(match[1]))
     && match[2] === captionHash && booking.jm1_captionversion === captionHash
     && (itemMatch
       ? campaign.jm1_branch === 'J Merrill One' && source.jm1_platform === 'facebook'
         && !booking.jm1_requestedmediahash && !source.jm1_requestedmediahash
         && /^MBS_BOOKED\|[^|]+\|CONTENT_ID=[0-9]+$/.test(readback)
       : exactMatch
-      ? readbackIds.length === 1 && readbackIds[0] === nativeContentId
+      ? (readbackIds.length === 1 && readbackIds[0] === nativeContentId) || nativeMetaReservationProof
       : nativeBatchBookingProof);
+}
+
+function reservationBookingProof(source, booking, nativeReadback) {
+  const scheduledAt = Date.parse(booking.jm1_requestedschedule || '');
+  const observedAt = Date.parse(nativeReadback?.observedAt || '');
+  return source.jm1_status === 'NATIVE_BOOKED_VERIFIED'
+    && source.jm1_executor === 'META_NATIVE'
+    && source.jm1_actualschedule === booking.jm1_requestedschedule
+    && String(source.jm1_actualdestination || '').replace(/^@/, '')
+      === String(booking.jm1_requesteddestination || '').replace(/^@/, '')
+    && /^NATIVE_UI\|META\|AT=[^|]+\|BOOKING=(?:NOT_EXPOSED|[0-9]+)$/.test(String(source.jm1_readbackstate || ''))
+    && timestampEvidenceFresh(source.jm1_verifiedat, new Date().toISOString())
+    && timestampEvidenceFresh(nativeReadback?.observedAt, new Date().toISOString())
+    && nativeReadback?.state === 'VERIFIED'
+    && Array.isArray(nativeReadback.visibleScheduledAtUtc)
+    && nativeReadback.visibleScheduledAtUtc.some((value) => Date.parse(value) === scheduledAt);
 }
 
 export function nativeSocialApprovalProjection(booking, { campaigns, content, creatives, socialRows }, isApprovedContent, scheduleForStage = () => null, expectedDestination = null, nativeReadback = null) {
@@ -317,6 +424,19 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
       || expectedDestinations.includes(normalizeDestination(booking.jm1_actualdestination))));
   if (!reservationDestinationMatches) {
     return { state: 'UNKNOWN', evidence: null, reason: 'RESERVATION_DESTINATION_AUTHORITY_MISMATCH' };
+  }
+  if (reservationKey) {
+    const observedAt = Date.parse(nativeReadback?.observedAt || '');
+    const verifiedAt = Date.parse(booking.jm1_verifiedat || '');
+    const exactSlot = nativeReadback?.state === 'VERIFIED'
+      && Array.isArray(nativeReadback.visibleScheduledAtUtc)
+      && nativeReadback.visibleScheduledAtUtc.some((value) => Date.parse(value) === scheduledAt);
+    const fresh = [observedAt, verifiedAt].every((timestamp) => Number.isFinite(timestamp)
+      && Date.now() - timestamp >= 0 && Date.now() - timestamp <= MAX_NATIVE_READBACK_AGE_MS);
+    if (booking.jm1_actualschedule !== booking.jm1_requestedschedule
+      || booking.jm1_actualdestination !== destination || !exactSlot || !fresh) {
+      return { state: 'UNKNOWN', evidence: null, reason: 'RESERVATION_LACKS_FRESH_EXACT_NATIVE_SLOT_BINDING' };
+    }
   }
   const sourceRows = reservationKey ? [booking] : socialRows;
   for (const source of sourceRows) {
@@ -347,12 +467,13 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
       const matchingContent = content.filter((row) => row.jm1_branch === booking.jm1_branch
         && row.jm1_publicreadystate === 'PASS'
         && createHash('sha256').update(String(row.jm1_draftcopy || '')).digest('hex') === captionHash
-        && Date.parse(scheduleForStage(row.jm1_stage, platform) || '') === scheduledAt
-        && String(row.jm1_copybrief || '').match(/(?:^|; )platforms=([^;]+)/)?.[1]
-          ?.split(',').map((value) => value.trim()).includes(platform));
+        && (() => {
+          const platforms = String(row.jm1_copybrief || '').match(/(?:^|; )platforms=([^;]+)/)?.[1];
+          return !platforms || platforms.split(',').map((value) => value.trim()).includes(platform);
+        })());
       for (const candidateContent of matchingContent) {
-        const candidateMarker = String(candidateContent.jm1_copybrief || '')
-          .match(/(?:^|; )campaign=([^; ]+)/)?.[1];
+        const candidateMarker = String(candidateContent.jm1_copybrief || '').match(/(?:^|; )campaign=([^; ]+)/)?.[1]
+          || String(candidateContent.jm1_idempotencykey || '').match(/^(.*):[^:]+:content$/)?.[1] + ':campaign';
         const matchingCampaigns = campaigns.filter((row) => row.jm1_idempotencykey === candidateMarker
           && row.jm1_branch === booking.jm1_branch
           && row.jm1_campaigntype === 'native_social'
@@ -365,17 +486,22 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
           ? matchingCreatives.length === 1
           : source.jm1_requestedmediahash == null && matchingCreatives.length === 0;
         if (matchingCampaigns.length !== 1 || !creativeAuthorityPass) continue;
-        if (!isApprovedContent(matchingCampaigns[0], candidateContent)) {
+        const contentAuthorityPass = isApprovedContent(matchingCampaigns[0], candidateContent)
+          || matchesApprovedLegacyNativeSocialContent(matchingCampaigns[0], candidateContent, {
+            booking, source, nativeReadback
+          });
+        if (!contentAuthorityPass) {
           templateAuthorityMismatch = true;
           continue;
         }
-        candidates.push({
+      candidates.push({
           campaignId: matchingCampaigns[0].jm1_campaignauthorityid,
           contentId: candidateContent.jm1_contentworkid,
           creativeId: matchingCreatives[0]?.jm1_creativeworkid || null,
           socialExecutionId: source.jm1_socialexecutionid,
           sourceStatus: source.jm1_status,
-          stage: candidateContent.jm1_stage
+          stage: candidateContent.jm1_stage,
+          sourceStageScheduledAt: scheduleForStage(candidateContent.jm1_stage, platform) || null
         });
       }
       continue;
@@ -425,13 +551,32 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
       stage
     });
   }
-  if (candidates.length > 1) return { state: 'UNKNOWN', evidence: null, reason: 'AMBIGUOUS_EXACT_SOURCE_LINKAGE' };
+  if (candidates.length > 1) {
+    if (new Set(candidates.map((candidate) => candidate.socialExecutionId)).size > 1) {
+      return { state: 'UNKNOWN', evidence: null, reason: 'AMBIGUOUS_EXACT_SOURCE_LINKAGE' };
+    }
+    if (new Set(candidates.map((candidate) => `${candidate.socialExecutionId}:${candidate.stage}`)).size < candidates.length) {
+      return { state: 'UNKNOWN', evidence: null, reason: 'AMBIGUOUS_EXACT_SOURCE_LINKAGE' };
+    }
+    const campaignIds = new Set(candidates.map((candidate) => candidate.campaignId));
+    if (campaignIds.size !== 1) return { state: 'UNKNOWN', evidence: null, reason: 'AMBIGUOUS_EXACT_SOURCE_LINKAGE' };
+    const exactSlotCandidates = candidates.filter((candidate) =>
+      Date.parse(candidate.sourceStageScheduledAt || '') === scheduledAt);
+    const eligibleCandidates = exactSlotCandidates.length ? exactSlotCandidates : candidates.filter((candidate) =>
+      !candidate.sourceStageScheduledAt || Date.parse(candidate.sourceStageScheduledAt) <= scheduledAt);
+    if (!eligibleCandidates.length) return { state: 'UNKNOWN', evidence: null, reason: 'NO_EXACT_SOURCE_LINKAGE' };
+    eligibleCandidates.sort((left, right) =>
+      Date.parse(right.sourceStageScheduledAt || '') - Date.parse(left.sourceStageScheduledAt || '')
+      || left.contentId.localeCompare(right.contentId));
+    candidates.splice(0, candidates.length, eligibleCandidates[0]);
+  }
   if (candidates.length === 0) return {
     state: 'UNKNOWN', evidence: null,
     reason: legacyAuthorityMismatch ? 'LEGACY_SOURCE_AUTHORITY_NOT_PROVEN'
       : templateAuthorityMismatch ? 'REVIEWED_TEMPLATE_VALIDATION_MISMATCH' : 'NO_EXACT_SOURCE_LINKAGE'
   };
-  return { state: 'APPROVED', evidence: candidates[0], reason: 'EXACT_AUTHORITY_LINKAGE_PASS' };
+  const { sourceStageScheduledAt, ...evidence } = candidates[0];
+  return { state: 'APPROVED', evidence, reason: 'EXACT_AUTHORITY_LINKAGE_PASS' };
 }
 
 function readbackValue(value, key) {
@@ -815,6 +960,11 @@ export function buildSocialCoverageReadback(snapshot) {
         proof: item.nativeBookingId ? 'NATIVE_ID' : item.nativeEvidence.source,
         scheduledAt: item.scheduledAt,
         approvalState: item.approvalState || null,
+        approvalReason: item.nativeApprovalReason || null,
+        sourceCopyStatus: item.sourceCopyStatus || null,
+        linkedCampaignId: item.nativeApprovalEvidence?.campaignId || null,
+        linkedContentId: item.nativeApprovalEvidence?.contentId || null,
+        linkedCreativeId: item.nativeApprovalEvidence?.creativeId || null,
         executionOwner: nativeOwner(item.platform)
       })),
       verifiedBookings: coverageProofValid ? booked.length : null,
