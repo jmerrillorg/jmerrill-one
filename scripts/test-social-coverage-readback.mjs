@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { applyCurrentFinancialProductionDestinations, buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -9,6 +9,71 @@ const channel = {
   executionOwner: 'AZURE_WORKER', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' }
 };
 const base = { asOf: '2026-10-02T16:00:00Z', channels: [channel], items: [] };
+
+test('default snapshot selection uses embedded native observation time, not filename order', () => {
+  const channels = (observedAt) => Array.from({ length: 9 }, (_, index) => ({
+    brand: `Brand ${Math.floor(index / 3)}`, platform: ['facebook', 'instagram', 'linkedin'][index % 3],
+    nativeReadback: { observedAt }
+  }));
+  const selected = selectLatestCoverageSnapshot([
+    { path: 'social-coverage-native-audit-2026-10-14.json', snapshot: { channels: channels('2026-10-10T20:00:00Z') } },
+    { path: 'social-coverage-native-audit-2026-10-12.json', snapshot: { channels: channels('2026-10-12T17:45:37Z') } }
+  ]);
+  assert.equal(selected.path, 'social-coverage-native-audit-2026-10-12.json');
+  assert.equal(selected.latestNativeObservationAt, '2026-10-12T17:45:37Z');
+  assert.throws(() => selectLatestCoverageSnapshot([{ path: 'partial.json', snapshot: { asOf: '2026-10-14', channels: channels('2026-10-14T12:00:00Z').slice(0, 8) } }]),
+    /embedded native observation timestamp/);
+});
+
+test('date-channel matrix preserves state and evidence identity per channel-date cell', () => {
+  const result = buildSocialCoverageReadback({
+    asOf: '2026-10-14T12:00:00Z',
+    channels: Array.from({ length: 9 }, (_, index) => ({
+      brand: `Brand ${Math.floor(index / 3)}`, platform: ['facebook', 'instagram', 'linkedin'][index % 3],
+      destinationId: `destination-${index}`, executionOwner: 'LINKEDIN_NATIVE',
+      nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+        observedAt: '2026-10-14T11:59:00Z', observedDateET: '2026-10-14' }
+    })),
+    items: []
+  });
+  const matrix = buildCoverageDateChannelMatrix(result);
+  assert.equal(matrix.length, 126);
+  assert.equal(new Set(matrix.map((cell) => `${cell.dateET}|${cell.brand}|${cell.platform}`)).size, 126);
+  assert.ok(matrix.every((cell) => cell.evidenceSource === null && cell.qualifiesForDailyCoverage === false));
+  assert.ok(matrix.every((cell) => cell.state === 'MISSING'));
+});
+
+test('exact fresh native schedule-list observations satisfy date slots without inventing booking IDs', () => {
+  const visibleScheduledAtUtc = Array.from({ length: 14 }, (_, offset) =>
+    new Date(Date.parse('2026-10-14T14:00:00Z') + offset * 86400000).toISOString());
+  const report = buildSocialCoverageReadback({
+    asOf: '2026-10-14T12:00:00Z',
+    channels: [{ ...channel, executionOwner: 'META_NATIVE', destinationId: 'page-1',
+      nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+        observedAt: '2026-10-14T11:59:00Z', observedDateET: '2026-10-14', visibleScheduledAtUtc,
+        view: 'Meta Business Suite scheduled posts list' } }],
+    items: []
+  });
+  const days = report.channels[0].dailyCoverage;
+  assert.equal(days.length, 14);
+  assert.ok(days.every((day) => day.status === 'SCHEDULED' && day.qualifiesForDailyCoverage));
+  assert.ok(days.every((day) => day.scheduledReceiptIds.length === 0));
+  assert.ok(days.every((day) => day.nativeObservedScheduledAtUtc.length === 1));
+});
+
+test('an overdue native claim reconciles to publication only through an exact linked destination and date', () => {
+  const row = { jm1_socialexecutionid: 'claim-1', jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requestedschedule: '2026-10-13T14:00:00Z', jm1_requesteddestination: 'page-1', jm1_platform: 'facebook' };
+  const published = { id: 'claim-1', dataverseRecordId: 'claim-1', kind: 'PUBLISHED', platform: 'facebook',
+    destinationId: 'page-1', platformPostId: 'post-1', publishedDateET: '2026-10-13',
+    nativeEvidence: { source: 'META_PUBLISHED_POSTS', observedAt: '2026-10-14T12:00:00Z' } };
+  const result = reconcilePastDueClaimsToPublishedEvidence([row], [published], '2026-10-14T12:00:00Z');
+  assert.equal(result.reconciled.length, 1);
+  assert.equal(result.reconciled[0].platformPostId, 'post-1');
+  assert.ok(result.reconciledIds.has('claim-1'));
+  assert.equal(reconcilePastDueClaimsToPublishedEvidence([row], [{ ...published, destinationId: 'other-page' }],
+    '2026-10-14T12:00:00Z').reconciled.length, 0);
+});
 
 test('current Financial destination correction is scoped and leaves historical source intact', () => {
   const historical = { ...base, channels: [
@@ -75,6 +140,37 @@ test('current Financial readback excludes legacy Page and test Instagram rows wi
   assert.equal(rows[1].jm1_status, 'NATIVE_BOOKING_MOVED_TO_DRAFT');
 });
 
+test('current dated production identities authorize default exclusion of Financial legacy and test destinations', () => {
+  const channels = [
+    { brand: 'J Merrill Financial', platform: 'facebook', destinationId: '104395329284856', nativeReadback: { businessPortfolioId: '1306466683241061' } },
+    { brand: 'J Merrill Financial', platform: 'instagram', destinationHandle: 'jmerrillfinancial', nativeReadback: { businessPortfolioId: '1306466683241061' } },
+    { brand: 'J Merrill Financial', platform: 'linkedin', destinationId: '146207089' }
+  ];
+  assert.equal(hasVerifiedFinancialProductionDestinations(channels), true);
+  assert.equal(hasVerifiedFinancialProductionDestinations(channels.map((entry) => entry.platform === 'instagram'
+    ? { ...entry, destinationHandle: 'jmerrillfin' } : entry)), false);
+  assert.equal(hasVerifiedFinancialProductionDestinations(channels.map((entry) => entry.platform === 'facebook'
+    ? { ...entry, destinationId: '1270611542802820' } : entry)), false);
+});
+
+test('held worker request on a natively covered Eastern date is a suppression, while an explicit hold stays unresolved', () => {
+  const scheduledAt = '2026-10-03T14:00:00Z';
+  const nativeChannel = { ...channel, executionOwner: 'META_NATIVE', nativeReadback: {
+    state: 'VERIFIED', observedDateET: '2026-10-02', visibleScheduledAtUtc: [scheduledAt]
+  } };
+  const heldRequest = { id: 'held-api', brand: channel.brand, platform: channel.platform,
+    destinationId: channel.destinationId, kind: 'API_REQUEST', status: 'HELD_NATIVE_BOOKING_CONFLICT',
+    scheduledAt: '2026-10-03T15:00:00Z' };
+  const explicitHold = { ...heldRequest, id: 'explicit-hold', scheduledAt };
+  const result = buildSocialCoverageReadback({ ...base, channels: [nativeChannel], items: [heldRequest, explicitHold],
+    heldConflicts: [{ id: 'explicit-hold' }] }).channels[0];
+  assert.deepEqual(result.heldNativeConflicts, ['explicit-hold']);
+  assert.deepEqual(result.heldNativeCoverageSuppressions, ['held-api']);
+  assert.ok(result.alertFindings.some((finding) => finding.state === 'NATIVE_BOOKING_CONFLICT'
+    && finding.evidence.recordIds.includes('explicit-hold')));
+  assert.ok(result.states.includes('HELD_ITEMS'));
+});
+
 test('resolved destinations do not emit unresolved-authority alerts; missing authority does', () => {
   const resolved = buildSocialCoverageReadback(base).channels[0];
   assert.ok(!resolved.alertFindings.some((finding) => finding.state === 'DESTINATION_AUTHORITY_UNRESOLVED'));
@@ -112,10 +208,10 @@ test('API requests and approved content never count as native bookings', () => {
   assert.equal(result.apiRequests, 1);
   assert.equal(result.approvedContentNotBooked, 1);
   assert.deepEqual(result.heldItems, ['row-1']);
-  assert.ok(result.states.includes('ROLLING_COVERAGE_GAP'));
+  assert.ok(result.states.includes('DAILY_COVERAGE_GAP'));
 });
 
-test('rolling coverage uses a half-open 14-day Eastern window and two weekly cadence slots', () => {
+test('daily coverage scores fourteen inclusive Eastern dates and reports the next date separately', () => {
   const datedChannel = { ...channel, executionOwner: 'META_NATIVE',
     nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08' } };
   const items = [
@@ -134,6 +230,82 @@ test('rolling coverage uses a half-open 14-day Eastern window and two weekly cad
   assert.equal(result.nativeScheduled, 2);
   assert.equal(result.verifiedBookings, 2);
   assert.deepEqual(result.weeks.map((week) => week.verifiedBookings), [1, 1]);
+  assert.equal(result.requiredDailyPlacements, 14);
+  assert.equal(result.coveredDailyDates, 2);
+  assert.equal(result.dailyCoverage.length, 14);
+  assert.equal(result.dailyCoverage[0].dateET, '2026-10-08');
+  assert.equal(result.dailyCoverage.at(-1).dateET, '2026-10-21');
+  assert.equal(result.preparationDate.dateET, '2026-10-22');
+  assert.equal(result.preparationDate.classification, 'PREPARATION_ONLY_NOT_IN_COMMITTED_COVERAGE');
+  assert.equal(result.preparationDate.scheduledPlacementCount, 1);
+  assert.equal(result.coverageStatus, 'VERIFIED_DAILY_GAP');
+  assert.equal(result.missingDates.length, 12);
+});
+
+test('surplus placements on one day cannot cover a different missing date', () => {
+  const datedChannel = { ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' } };
+  const items = ['a', 'b', 'c'].map((id, index) => ({
+    id, brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId,
+    kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', nativeBookingId: `booking-${id}`,
+    scheduledAt: index < 2 ? '2026-10-03T14:00:00Z' : '2026-10-04T14:00:00Z'
+  }));
+  const result = buildSocialCoverageReadback({ ...base, channels: [datedChannel], items }).channels[0];
+  const oct3 = result.dailyCoverage.find((day) => day.dateET === '2026-10-03');
+  const oct4 = result.dailyCoverage.find((day) => day.dateET === '2026-10-04');
+  const oct5 = result.dailyCoverage.find((day) => day.dateET === '2026-10-05');
+  assert.equal(oct3.scheduledPlacementCount, 2);
+  assert.equal(oct3.qualifiesForDailyCoverage, true);
+  assert.equal(oct4.scheduledPlacementCount, 1);
+  assert.equal(oct4.qualifiesForDailyCoverage, true);
+  assert.equal(oct5.status, 'MISSING');
+  assert.ok(result.missingDates.includes('2026-10-05'));
+  assert.equal(result.coveredDailyDates, 2);
+});
+
+test('pending, failed, held, and same-day overdue requests remain distinct and never count as booked', () => {
+  const requests = [
+    { id: 'pending-tomorrow', kind: 'API_REQUEST', status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE', scheduledAt: '2026-10-03T14:00:00Z' },
+    { id: 'retryable-failure', kind: 'API_REQUEST', status: 'RETRY_REQUIRED', scheduledAt: '2026-10-04T14:00:00Z' },
+    { id: 'ambiguous-result', kind: 'API_REQUEST', status: 'AMBIGUOUS_PUBLICATION_OUTCOME', scheduledAt: '2026-10-05T14:00:00Z' },
+    { id: 'overdue-today', kind: 'API_REQUEST', status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE', scheduledAt: '2026-10-02T15:00:00Z' },
+    { id: 'held-old', kind: 'API_REQUEST', status: 'HELD_BUSINESS', approvalState: 'HELD', scheduledAt: '2026-10-01T14:00:00Z' },
+    { id: 'moved-to-draft', kind: 'API_REQUEST', status: 'NATIVE_BOOKING_MOVED_TO_DRAFT', scheduledAt: '2026-10-01T14:00:00Z' }
+  ].map((item) => ({ ...item, brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId }));
+  const result = buildSocialCoverageReadback({ ...base, asOf: '2026-10-02T16:00:00Z', items: requests }).channels[0];
+  assert.equal(result.verifiedBookings, 0);
+  assert.equal(result.coveredDailyDates, 0);
+  assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-03').pendingRequestIds.includes('pending-tomorrow'));
+  assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-04').failedItemIds.includes('retryable-failure'));
+  assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-05').failedItemIds.includes('ambiguous-result'));
+  assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-02').overdueRequestIds.includes('overdue-today'));
+  assert.ok(result.pastDueRequests.includes('overdue-today'));
+  assert.ok(!result.pastDueRequests.includes('held-old'));
+  assert.ok(!result.pastDueRequests.includes('moved-to-draft'));
+  assert.ok(!result.apiRequestRows.find((item) => item.id === 'moved-to-draft').pastDue);
+  assert.ok(result.states.includes('EXECUTION_FAILURE'));
+  assert.ok(result.states.includes('PAST_DUE_API_REQUEST'));
+  assert.ok(result.missingDates.includes('2026-10-02'));
+  assert.deepEqual(result.dailyCoverage.find((day) => day.dateET === '2026-10-04').failedItemIds,
+    ['retryable-failure']);
+  assert.deepEqual(result.dailyCoverage.find((day) => day.dateET === '2026-10-05').failedItemIds,
+    ['ambiguous-result']);
+});
+
+test('Eastern midnight boundaries assign schedule slots to the correct local dates', () => {
+  const linkedIn = { brand: 'J Merrill One', platform: 'linkedin', destinationId: '106683183',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-07' } };
+  const items = [
+    { id: 'before-midnight', brand: linkedIn.brand, platform: linkedIn.platform, destinationId: linkedIn.destinationId,
+      kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', nativeBookingId: 'before', scheduledAt: '2026-10-08T03:30:00Z' },
+    { id: 'after-midnight', brand: linkedIn.brand, platform: linkedIn.platform, destinationId: linkedIn.destinationId,
+      kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', nativeBookingId: 'after', scheduledAt: '2026-10-08T04:30:00Z' }
+  ];
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-08T02:00:00Z', channels: [linkedIn], items }).channels[0];
+  assert.equal(result.dailyCoverage[0].dateET, '2026-10-07');
+  assert.deepEqual(result.dailyCoverage[0].scheduledReceiptIds, ['before-midnight']);
+  assert.deepEqual(result.dailyCoverage[1].scheduledReceiptIds, ['after-midnight']);
+  assert.equal(result.requiredDailyPlacements, 14);
+  assert.equal(result.preparationDate.dateET, '2026-10-21');
 });
 
 test('only exact approved native bookings count and collide with matching API request', () => {
@@ -168,6 +340,9 @@ test('duplicate audit receipts for one exact native content slot count once but 
   assert.equal(result.nativeBookingRows.length, 2);
   assert.equal(result.nativeBookingRows.filter((row) => row.countedSlot).length, 1);
   assert.deepEqual(result.nativeBookingRows[0].sameSlotReceiptIds, ['receipt-original', 'receipt-duplicate']);
+  const dailySlot = result.dailyCoverage.find((day) => day.dateET === '2026-10-03');
+  assert.equal(dailySlot.scheduledPlacementCount, 1);
+  assert.deepEqual(dailySlot.scheduledReceiptIds, ['receipt-original']);
 });
 
 test('native booking on worker-owned channel is counted but exposes mixed authority', () => {
@@ -265,8 +440,10 @@ test('stale native evidence and published platform IDs cannot prove future cover
   assert.equal(result.publishedWithPlatformId, 1);
   assert.equal(result.nativeReadbackFresh, false);
   assert.ok(result.states.includes('NATIVE_READBACK_STALE'));
-  assert.ok(result.states.includes('COVERAGE_STATUS_UNKNOWN'));
-  assert.ok(!result.states.includes('ROLLING_COVERAGE_GAP'));
+  assert.equal(result.unverifiedDates.length, 14);
+  assert.deepEqual(result.missingDates, []);
+  assert.ok(result.states.includes('DAILY_COVERAGE_UNVERIFIED'));
+  assert.ok(!result.states.includes('DAILY_COVERAGE_GAP'));
 });
 
 test('timestamp-required native readbacks expire within the same Eastern calendar day', () => {
@@ -332,16 +509,19 @@ test('fresh verified empty native readback is a real coverage gap, distinct from
     channels: [{ ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' } }], items: [] });
   const result = report.channels[0];
   assert.equal(result.nativeReadbackStatus, 'CURRENT');
-  assert.equal(result.coverageStatus, 'VERIFIED_GAP');
+  assert.equal(result.coverageStatus, 'VERIFIED_DAILY_GAP');
   assert.equal(result.verifiedBookings, 0);
   assert.deepEqual(result.weeks.map((week) => week.verifiedBookings), [0, 0]);
-  assert.ok(result.states.includes('ROLLING_COVERAGE_GAP'));
-  assert.ok(!result.states.includes('COVERAGE_STATUS_UNKNOWN'));
-  const keys = report.alertFindings.filter((finding) => finding.state === 'ROLLING_COVERAGE_GAP').map((finding) => finding.dedupeKey);
+  assert.ok(result.states.includes('DAILY_COVERAGE_GAP'));
+  assert.ok(!result.states.includes('DAILY_COVERAGE_UNVERIFIED'));
+  const alerts = report.alertFindings.filter((finding) => finding.state === 'DAILY_COVERAGE_GAP');
   const nextDay = buildSocialCoverageReadback({ ...base, asOf: '2026-10-03T16:00:00Z',
     channels: [{ ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-03' } }], items: [] });
-  assert.deepEqual(nextDay.alertFindings.filter((finding) => finding.state === 'ROLLING_COVERAGE_GAP')
-    .map((finding) => finding.dedupeKey), keys);
+  const nextAlerts = nextDay.alertFindings.filter((finding) => finding.state === 'DAILY_COVERAGE_GAP');
+  assert.equal(alerts.find((finding) => finding.evidence.dateET === '2026-10-03').dedupeKey,
+    nextAlerts.find((finding) => finding.evidence.dateET === '2026-10-03').dedupeKey);
+  assert.ok(!nextAlerts.some((finding) => finding.evidence.dateET === '2026-10-02'));
+  assert.ok(nextAlerts.some((finding) => finding.evidence.dateET === '2026-10-16'));
 });
 
 test('author weeks use Monday-Sunday calendar weeks and correct publication month', () => {
@@ -669,7 +849,7 @@ test('exact UI booking survives a source-copy mismatch without inventing approva
   assert.equal(reconciled.items[0].nativeBookingId, null);
   assert.equal(report.nativeScheduled, 1);
   assert.equal(report.verifiedBookings, 0);
-  assert.equal(report.coverageStatus, 'VERIFIED_GAP');
+  assert.equal(report.coverageStatus, 'VERIFIED_DAILY_GAP');
   assert.ok(report.states.includes('NATIVE_BOOKING_SOURCE_COPY_REVIEW'));
   assert.deepEqual(report.weeks.map((week) => week.scheduledBookings), [1, 0]);
 });
@@ -720,14 +900,17 @@ test('fresh verified empty LinkedIn queue contradicts in-window Dataverse bookin
     && finding.evidence.recordIds.includes('pub-li-oct10')));
 });
 
-test('held native booking conflicts remain visible as actionable failures in Dataverse readback', () => {
+test('held native booking conflicts remain actionable but distinct from failed executions', () => {
   const conflict = { id: 'api-native-conflict', kind: 'API_REQUEST', brand: channel.brand,
     platform: channel.platform, destinationId: channel.destinationId,
     status: 'HELD_NATIVE_BOOKING_CONFLICT', scheduledAt: '2026-10-13T14:00:00Z' };
   const result = buildSocialCoverageReadback({ ...base, items: [conflict] }).channels[0];
   assert.ok(result.states.includes('HELD_ITEMS'));
-  assert.ok(result.states.includes('EXECUTION_FAILURE'));
-  assert.ok(result.alertFindings.some((finding) => finding.action === 'RECONCILE_EXECUTION_FAILURE'
+  assert.ok(result.states.includes('NATIVE_BOOKING_CONFLICT'));
+  assert.ok(!result.states.includes('EXECUTION_FAILURE'));
+  assert.deepEqual(result.failures, []);
+  assert.deepEqual(result.heldNativeConflicts, ['api-native-conflict']);
+  assert.ok(result.alertFindings.some((finding) => finding.action === 'RECONCILE_NATIVE_BOOKING_CONFLICT'
     && finding.evidence.recordIds.includes('api-native-conflict')));
   assert.equal(classifyDataverseExecutionRow({ status: 'HELD_NATIVE_BOOKING_CONFLICT' }).actionRequired, true);
   assert.equal(classifyDataverseExecutionRow({ status: 'HELD_NATIVE_BOOKING_STALE' }).classification, 'NATIVE_BOOKING_STALE');

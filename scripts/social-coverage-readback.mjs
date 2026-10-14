@@ -1,13 +1,23 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { applyCurrentFinancialProductionDestinations, buildDataverseReconciliationFindings, buildSocialCoverageReadback, mapDataverseSocialRows, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildSocialCoverageReadback, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 import { matchesApprovedNativeSocialContent, nativeSocialScheduledAt } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 
-const input = process.argv[2];
-if (!input) throw new Error('Usage: node scripts/social-coverage-readback.mjs <evidence.json> [--live-dataverse]');
-const snapshot = JSON.parse(readFileSync(input, 'utf8'));
+const requestedInput = process.argv[2]?.startsWith('--') ? null : process.argv[2];
+const sourceSelection = requestedInput
+  ? { path: resolve(requestedInput), snapshot: JSON.parse(readFileSync(requestedInput, 'utf8')) }
+  : selectLatestCoverageSnapshot(readdirSync('docs/operations')
+    .filter((name) => /^social-coverage-native-audit-.*\.json$/.test(name))
+    .map((name) => {
+      const path = join('docs/operations', name);
+      return { path, snapshot: JSON.parse(readFileSync(path, 'utf8')) };
+    }));
+const input = sourceSelection.path;
+const snapshot = sourceSelection.snapshot;
 const financialDestinationOverlay = process.argv.includes('--current-financial-production-destinations');
+const financialProductionSnapshotVerified = hasVerifiedFinancialProductionDestinations(snapshot.channels);
 const metaReadbackArg = process.argv.find((arg) => arg.startsWith('--financial-meta-readback='));
 const metaReadback = metaReadbackArg ? JSON.parse(readFileSync(metaReadbackArg.slice('--financial-meta-readback='.length), 'utf8')) : null;
 if (financialDestinationOverlay) Object.assign(snapshot, applyCurrentFinancialProductionDestinations(snapshot, metaReadback));
@@ -133,7 +143,7 @@ if (process.argv.includes('--live-dataverse')) {
       ...row,
       ...(campaignPolicyByMarker.get(row.jm1_idempotencykey?.split(':social:')[0]) || {})
     }));
-  const { currentRows: allFutureRows, preservedHistoricalFinancialRows } = financialDestinationOverlay
+  const { currentRows: allFutureRows, preservedHistoricalFinancialRows } = financialDestinationOverlay || financialProductionSnapshotVerified
     ? partitionCurrentFinancialDestinationRows(observedFutureRows)
     : { currentRows: observedFutureRows, preservedHistoricalFinancialRows: [] };
   for (const booking of allFutureRows.filter((row) => ['NATIVE_BOOKED_VERIFIED', 'PUBLIC_READY_SCHEDULED_ELIGIBLE', 'RETRY_REQUIRED'].includes(row.jm1_status))) {
@@ -214,12 +224,39 @@ if (process.argv.includes('--live-dataverse')) {
   snapshot.asOf = snapshot.liveDataverseObservedAt;
 }
 const report = buildSocialCoverageReadback(snapshot);
+const latestNativeObservationAt = (snapshot.channels || [])
+  .map((channel) => channel.nativeReadback?.observedAt)
+  .filter((value) => Number.isFinite(Date.parse(value || '')))
+  .sort((a, b) => Date.parse(b) - Date.parse(a))[0] || null;
+const sourceSnapshotAgeHours = Number.isFinite(Date.parse(snapshot.sourceSnapshotAsOf || ''))
+  ? Math.round((Date.now() - Date.parse(snapshot.sourceSnapshotAsOf)) / 360000) / 10 : null;
+const latestNativeObservationAgeHours = latestNativeObservationAt
+  ? Math.round((Date.now() - Date.parse(latestNativeObservationAt)) / 360000) / 10 : null;
+const channelObservationAges = (snapshot.channels || []).map((channel) => ({
+  brand: channel.brand,
+  platform: channel.platform,
+  destination: channel.destinationId || channel.destinationHandle || null,
+  observedAt: channel.nativeReadback?.observedAt || null,
+  ageHours: channel.nativeReadback?.observedAt
+    ? Math.round((Date.now() - Date.parse(channel.nativeReadback.observedAt)) / 360000) / 10 : null
+}));
+const publishedClaimReconciliation = reconcilePastDueClaimsToPublishedEvidence(reconciliationRows,
+  snapshot.items, snapshot.asOf);
+const heldCoverageSuppressionIds = new Set(report.channels.flatMap((channel) => channel.heldNativeCoverageSuppressions));
 const reconciliationFindings = buildDataverseReconciliationFindings(
-  [...reconciliationRows, ...(snapshot.unclassifiedDataverseRows || [])],
+  [...reconciliationRows.filter((row) => !publishedClaimReconciliation.reconciledIds.has(row.jm1_socialexecutionid)
+      && !heldCoverageSuppressionIds.has(row.jm1_socialexecutionid)),
+    ...(snapshot.unclassifiedDataverseRows || [])],
   snapshot.asOf
 );
 process.stdout.write(`${JSON.stringify({
   ...report,
+  sourceEvidencePath: input,
+  sourceSnapshotAgeHours,
+  latestNativeObservationAt,
+  latestNativeObservationAgeHours,
+  channelObservationAges,
+  dateChannelMatrix: buildCoverageDateChannelMatrix(report),
   readbackMode: snapshot.readbackMode,
   sourceSnapshotAsOf: snapshot.sourceSnapshotAsOf,
   liveDataverseObservedAt: snapshot.liveDataverseObservedAt || null,
@@ -227,13 +264,17 @@ process.stdout.write(`${JSON.stringify({
   ...(snapshot.unclassifiedDataverseRows ? { unclassifiedDataverseRows: snapshot.unclassifiedDataverseRows } : {}),
   ...(snapshot.mappedDataverseRows !== undefined ? { mappedDataverseRows: snapshot.mappedDataverseRows } : {}),
   ...(snapshot.campaignPolicyExclusions ? { campaignPolicyExclusions: snapshot.campaignPolicyExclusions } : {}),
-  ...(financialDestinationOverlay ? { financialDestinationOverlay: {
-    state: 'CURRENT_DESTINATION_IDENTITIES_ONLY', facebookPageId: '104395329284856',
-    instagramHandle: 'jmerrillfinancial', instagramGraphBusinessId: 'UNVERIFIED',
-    excludedInstagramTestHandle: 'jmerrillfin', historicalSnapshotPreserved: true,
-    nativeReadback: metaReadback ? 'CURRENT_META_UI_READBACK' : 'NOT_REFRESHED'
-  }, preservedHistoricalFinancialEvidence: snapshot.preservedHistoricalFinancialEvidence || [],
-  preservedHistoricalFinancialDataverseRows: (snapshot.preservedHistoricalFinancialDataverseRows || []).map((row) => ({
+  ...(financialProductionSnapshotVerified ? { financialProductionDestinations: {
+    state: 'VERIFIED_FROM_CURRENT_SNAPSHOT',
+    facebookPageId: '104395329284856',
+    instagramHandle: 'jmerrillfinancial',
+    linkedinOrganizationId: '146207089',
+    instagramGraphBusinessId: 'UNVERIFIED',
+    apiDispatch: 'DISABLED_UNTIL_EFFECTIVE_ACCESS_VERIFIED',
+    excludedLegacyFacebookPageId: '1270611542802820',
+    excludedTestInstagramHandle: 'jmerrillfin'
+  } } : {}),
+  ...(snapshot.preservedHistoricalFinancialDataverseRows?.length ? { preservedHistoricalFinancialDataverseRows: snapshot.preservedHistoricalFinancialDataverseRows.map((row) => ({
     id: row.jm1_socialexecutionid,
     idempotencyKey: row.jm1_idempotencykey,
     platform: row.jm1_platform,
@@ -242,5 +283,12 @@ process.stdout.write(`${JSON.stringify({
     requestedDestination: row.jm1_requesteddestination,
     currentDisposition: row.currentDisposition
   })) } : {}),
-  ...(snapshot.unclassifiedDataverseRows ? { reconciliationFindings } : {})
+  ...(financialDestinationOverlay ? { financialDestinationOverlay: {
+    state: 'CURRENT_DESTINATION_IDENTITIES_ONLY', facebookPageId: '104395329284856',
+    instagramHandle: 'jmerrillfinancial', instagramGraphBusinessId: 'UNVERIFIED',
+    excludedInstagramTestHandle: 'jmerrillfin', historicalSnapshotPreserved: true,
+    nativeReadback: metaReadback ? 'CURRENT_META_UI_READBACK' : 'NOT_REFRESHED'
+  }, preservedHistoricalFinancialEvidence: snapshot.preservedHistoricalFinancialEvidence || [] } : {}),
+  ...(snapshot.unclassifiedDataverseRows ? { reconciliationFindings } : {}),
+  publishedClaimReconciliations: publishedClaimReconciliation.reconciled
 }, null, 2)}\n`);

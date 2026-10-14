@@ -78,7 +78,7 @@ app.timer('marketingControlLoopTimer', {
           destinationByPlatform: destinations, reservationAliasesByPlatform: reservationAliases, approvedRequestMarkers, readbackComplete });
         const materialized = [];
         for (const plan of plans) {
-          const prepared = buildReviewedNativeSocialContent({ campaign, weekKey: plan.weekKey, slot: plan.slot, nowIso: envelope.startedAt });
+          const prepared = buildReviewedNativeSocialContent({ campaign, dateKey: plan.dateKey, nowIso: envelope.startedAt });
           if (!prepared.ok) {
             materialized.push({ slot: plan.slotKey, state: prepared.reason });
             continue;
@@ -105,7 +105,7 @@ app.timer('marketingControlLoopTimer', {
           jm1_branch: campaign.jm1_branch,
           jm1_campaign: campaign.jm1_name,
           jm1_horizon30day: 'APPROVED_TEMPLATE_SET:v1; source campaign authority read from Dataverse',
-          jm1_horizon14day: `GENERATED_GAPS=${materialized.filter((item) => item.state === 'CONTENT_READY').length}; EASTERN_HALF_OPEN_HORIZON=${envelope.startedAt}`,
+          jm1_horizon14day: `GENERATED_DAILY_GAPS=${materialized.filter((item) => item.state === 'CONTENT_READY').length}; EASTERN_DATE_WINDOW=${easternDateKey(envelope.startedAt)}..${easternDateKey(addEasternDays(envelope.startedAt, 14))}`,
           jm1_horizon7day: `ACTIVE_CHANNELS=${branch.facebookPageId ? 'facebook;' : ''}${branch.instagramGraphId && branch.instagramEnabled !== false ? 'instagram;' : ''}linkedin=native-authority-required;BLOCKED_CHANNEL_GAPS=${blockedChannelGaps.map((gap) => `${gap.platform}:${gap.reason}`).join(',') || 'NONE'}`,
           jm1_featuredauthorintroeligible: 'NOT_APPLICABLE',
           jm1_fatiguecheck: 'Exact campaign, branch, and per-channel booking rows checked before materialization.',
@@ -203,4 +203,16 @@ async function activeCampaigns(campaignSet) {
   const filter = encodeURIComponent("(jm1_campaigntype eq 'featured_author_month' or jm1_campaigntype eq 'native_social') and jm1_state eq 'PUBLIC_EXECUTION_APPROVED'");
   const response = await dv(`/${campaignSet}?$select=jm1_campaignauthorityid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_campaigntype,jm1_program,jm1_subject,jm1_audience,jm1_cta,jm1_journeyrequirement,jm1_cadence,jm1_start,jm1_stop,jm1_state&$filter=${filter}&$top=50`);
   return response.value || [];
+}
+
+function easternDateKey(value) {
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date(value));
+  const part = Object.fromEntries(parts.map(({ type, value: text }) => [type, text]));
+  return `${part.year}-${part.month}-${part.day}`;
+}
+
+function addEasternDays(value, days) {
+  const key = easternDateKey(value);
+  const [year, month, day] = key.split('-').map(Number);
+  return new Date(Date.UTC(year, month - 1, day + days, 12));
 }

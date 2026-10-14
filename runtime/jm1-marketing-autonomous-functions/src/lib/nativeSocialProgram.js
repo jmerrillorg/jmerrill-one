@@ -137,12 +137,13 @@ export function nativeSocialDestinationsForBranch(branch) {
   };
 }
 
-export function buildReviewedNativeSocialContent({ campaign, weekKey, slot, nowIso }) {
+export function buildReviewedNativeSocialContent({ campaign, weekKey, slot, dateKey, nowIso }) {
   if (!isApprovedNativeSocialCampaign(campaign)) return { ok: false, reason: 'CAMPAIGN_NOT_ELIGIBLE' };
   const brand = BRAND[campaign.jm1_branch];
+  const contentDate = dateKey || weekKey;
   const templateIndex = campaign.jm1_branch === 'J Merrill Financial'
-    ? (slot - 1) % 2
-    : hashInt(`${campaign.jm1_branch}:${weekKey}:${slot}`) % brand.templates.length;
+    ? dateKey ? (Number(dateKey.slice(-2)) - 1) % brand.templates.length : (slot - 1) % 2
+    : hashInt(`${campaign.jm1_branch}:${contentDate}:${dateKey ? 'daily' : slot}`) % brand.templates.length;
   const template = brand.templates[templateIndex];
   if (campaign.jm1_branch === 'J Merrill Financial' && PROHIBITED_FINANCIAL.test(template.body)) {
     return { ok: false, reason: 'FINANCIAL_CLAIM_REVIEW_REQUIRED' };
@@ -154,7 +155,7 @@ export function buildReviewedNativeSocialContent({ campaign, weekKey, slot, nowI
     ok: true,
     template,
     caption: `${template.body}\n\n${template.link}`,
-    stage: `rolling-${weekKey}-${slot}`,
+    stage: dateKey ? `daily-${dateKey}` : `rolling-${weekKey}-${slot}`,
     provenance: `APPROVED_TEMPLATE_SET:v1; campaign=${campaign.jm1_idempotencykey}; theme=${template.theme}; evaluated=${nowIso}`
   };
 }
@@ -196,10 +197,13 @@ export async function buildNativeSocialCreative({ campaign, content, slot }) {
 }
 
 export function matchesApprovedNativeSocialContent(campaign, content) {
-  const match = String(content?.jm1_stage || '').match(/^rolling-(\d{4}-\d{2}-\d{2})-(\d+)$/);
-  if (!isApprovedNativeSocialCampaign(campaign) || !match || content.jm1_branch !== campaign.jm1_branch) return false;
-  const [, weekKey, slotText] = match;
-  const expected = buildReviewedNativeSocialContent({ campaign, weekKey, slot: Number(slotText), nowIso: '2026-01-01T00:00:00.000Z' });
+  if (!isApprovedNativeSocialCampaign(campaign) || content.jm1_branch !== campaign.jm1_branch) return false;
+  const dailyMatch = String(content?.jm1_stage || '').match(/^daily-(\d{4}-\d{2}-\d{2})$/);
+  const legacyMatch = String(content?.jm1_stage || '').match(/^rolling-(\d{4}-\d{2}-\d{2})-(\d+)$/);
+  if (!dailyMatch && !legacyMatch) return false;
+  const expected = dailyMatch
+    ? buildReviewedNativeSocialContent({ campaign, dateKey: dailyMatch[1], nowIso: '2026-01-01T00:00:00.000Z' })
+    : buildReviewedNativeSocialContent({ campaign, weekKey: legacyMatch[1], slot: Number(legacyMatch[2]), nowIso: '2026-01-01T00:00:00.000Z' });
   return expected.ok
     && content.jm1_name === expected.template.title
     && content.jm1_draftcopy === expected.caption
@@ -208,6 +212,11 @@ export function matchesApprovedNativeSocialContent(campaign, content) {
 }
 
 export function nativeSocialScheduledAt(stage, platform) {
+  const dailyMatch = String(stage || '').match(/^daily-(\d{4}-\d{2}-\d{2})$/);
+  if (dailyMatch) {
+    const hour = platform === 'facebook' ? 10 : platform === 'instagram' ? 11 : platform === 'linkedin' ? 12 : null;
+    return hour === null ? '' : easternDateTimeIso(new Date(`${dailyMatch[1]}T12:00:00Z`), hour);
+  }
   const match = String(stage || '').match(/^rolling-(\d{4}-\d{2}-\d{2})-(\d+)$/);
   if (!match || !['1', '2'].includes(match[2])) return '';
   const [, weekStart, slot] = match;
@@ -221,49 +230,38 @@ export function nativeSocialScheduledAt(stage, platform) {
 export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, reservationAliasesByPlatform = destinationByPlatform, approvedRequestMarkers = [], readbackComplete = true }) {
   if (!isApprovedNativeSocialCampaign(campaign) || !readbackComplete || !Array.isArray(socialRows)) return [];
   const now = new Date(nowIso);
-  const horizonEnd = new Date(easternDateTimeIso(addDays(easternMidnight(now), 14), 0));
+  const firstDay = easternMidnight(now);
+  // Include today plus the next 14 Eastern dates so the next uncovered day is prepared.
+  const horizonEnd = addDays(firstDay, 15);
   const platforms = ['facebook', 'instagram', 'linkedin'].filter((platform) =>
     normalizeDestinations(destinationByPlatform[platform]).length > 0);
   const plans = [];
-  const monday = startOfEasternWeek(now);
-  for (let weekStart = monday; weekStart < horizonEnd; weekStart = addDays(weekStart, 7)) {
-    const weekKey = easternDateKey(weekStart);
-    const dates = [addDays(weekStart, 1), addDays(weekStart, 4)];
-    const existingByPlatform = new Map(platforms.map((platform) => [platform, socialRows.filter((row) =>
-      row.jm1_platform === platform
-      && String(row.jm1_branch || campaign.jm1_branch) === campaign.jm1_branch
-      && normalizeDestinations(reservationAliasesByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination))
-      && occupiesCadence(row, approvedRequestMarkers)
-      && isInEasternWeek(row.jm1_requestedschedule || row.jm1_actualschedule, weekStart)
-    )]));
-    const bookedDates = new Map(platforms.map((platform) => [platform, new Set((existingByPlatform.get(platform) || [])
-      .map((row) => row.jm1_requestedschedule || row.jm1_actualschedule)
-      .filter(Boolean)
-      .map((value) => easternDateKey(new Date(value))))]));
-    for (let slot = 0; slot < 2; slot += 1) {
-      const date = dates[slot];
-      const dayKey = easternDateKey(date);
-      const slotKey = `${weekKey}-${slot + 1}`;
-      const platformsForSlot = platforms.filter((platform) => {
-        const occupied = bookedDates.get(platform);
-        if (occupied.has(dayKey) || occupied.size >= 2) return false;
-        if ([...occupied].some((bookedDay) => Math.abs(Date.parse(`${bookedDay}T12:00:00Z`) - Date.parse(`${dayKey}T12:00:00Z`)) < 2 * 86400000)) return false;
-        const platformSchedule = nativeSocialScheduledAt(`rolling-${weekKey}-${slot + 1}`, platform);
-        if (!platformSchedule || new Date(platformSchedule) < now || new Date(platformSchedule) >= horizonEnd) return false;
-        const alreadyCreated = socialRows.some((row) => String(row.jm1_idempotencykey || '').includes(`rolling-${slotKey}`)
-          && row.jm1_platform === platform
-          && normalizeDestinations(reservationAliasesByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination)));
-        return !alreadyCreated;
+  for (let offset = 0; offset < 15; offset += 1) {
+    const dateKey = easternDateKey(addDays(firstDay, offset));
+    const platformsForDate = platforms.filter((platform) => {
+      const destinations = normalizeDestinations(reservationAliasesByPlatform[platform]);
+      const occupied = socialRows.some((row) => {
+        const schedule = row.jm1_requestedschedule || row.jm1_actualschedule;
+        return row.jm1_platform === platform
+          && String(row.jm1_branch || campaign.jm1_branch) === campaign.jm1_branch
+          && destinations.includes(normalizeDestination(row.jm1_requesteddestination || row.jm1_actualdestination))
+          && occupiesCadence(row, approvedRequestMarkers)
+          && schedule
+          && easternDateKey(new Date(schedule)) === dateKey;
       });
-      if (!platformsForSlot.length) continue;
-      const scheduleByPlatform = Object.fromEntries(platformsForSlot.map((platform) => [
-        platform,
-        nativeSocialScheduledAt(`rolling-${weekKey}-${slot + 1}`, platform)
-      ]));
-      const scheduledAt = Object.values(scheduleByPlatform).sort()[0];
-      plans.push({ weekKey, slot: slot + 1, slotKey, scheduledAt, scheduleByPlatform, platforms: platformsForSlot });
-      for (const platform of platformsForSlot) bookedDates.get(platform).add(dayKey);
-    }
+      if (occupied) return false;
+      const schedule = nativeSocialScheduledAt(`daily-${dateKey}`, platform);
+      if (!schedule || new Date(schedule) < now || new Date(schedule) >= horizonEnd) return false;
+      const idempotencyKey = `${nativeSocialCampaignMarker(campaign)}:social:daily-${dateKey}:${platform}`;
+      return !socialRows.some((row) => row.jm1_idempotencykey === idempotencyKey
+        && destinations.includes(normalizeDestination(row.jm1_requesteddestination)));
+    });
+    if (!platformsForDate.length) continue;
+    const scheduleByPlatform = Object.fromEntries(platformsForDate.map((platform) => [
+      platform,
+      nativeSocialScheduledAt(`daily-${dateKey}`, platform)
+    ]));
+    plans.push({ dateKey, weekKey: dateKey, slot: 1, slotKey: dateKey, scheduledAt: Object.values(scheduleByPlatform).sort()[0], scheduleByPlatform, platforms: platformsForDate });
   }
   return plans;
 }
@@ -278,14 +276,6 @@ function occupiesCadence(row, approvedRequestMarkers) {
     'PUBLIC_READY_SCHEDULED_ELIGIBLE', 'PUBLISHING_CLAIMED', 'PLATFORM_ACCEPTED', 'READBACK_PENDING',
     'RETRY_REQUIRED'
   ].includes(row.jm1_status));
-}
-
-function startOfEasternWeek(date) {
-  const key = easternDateKey(date);
-  const [year, month, day] = key.split('-').map(Number);
-  const local = new Date(Date.UTC(year, month - 1, day));
-  const weekday = (local.getUTCDay() + 6) % 7;
-  return new Date(Date.UTC(year, month - 1, day - weekday, 12));
 }
 
 function easternMidnight(date) {

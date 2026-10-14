@@ -4,6 +4,7 @@ import {
   buildNativeSocialCreative,
   buildReviewedNativeSocialContent,
   isApprovedNativeSocialCampaign,
+  matchesApprovedNativeSocialContent,
   nativeSocialChannelGaps,
   nativeSocialDestinationsForBranch,
   nativeSocialScheduledAt,
@@ -82,48 +83,44 @@ test('Financial content avoids regulated, product, and unverified relationship c
 test('coverage planning creates only exact-destination gaps, idempotently', () => {
   const one = campaign('J Merrill One');
   const branchDestinations = destinations['J Merrill One'];
-  const existing = [
-    { jm1_branch: 'J Merrill One', jm1_platform: 'facebook', jm1_requesteddestination: branchDestinations.facebook,
-      jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requestedschedule: '2026-10-13T14:00:00Z' },
-    { jm1_branch: 'J Merrill One', jm1_platform: 'facebook', jm1_requesteddestination: branchDestinations.facebook,
-      jm1_status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE', jm1_requestedschedule: '2026-10-20T14:00:00Z' },
-    { jm1_branch: 'J Merrill One', jm1_platform: 'instagram', jm1_requesteddestination: branchDestinations.instagram,
-      jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requestedschedule: '2026-10-13T14:00:00Z' },
-    { jm1_branch: 'J Merrill One', jm1_platform: 'instagram', jm1_requesteddestination: 'wrong-account',
-      jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requestedschedule: '2026-10-20T14:00:00Z' }
-  ];
-  const result = planNativeSocialGaps({ campaign: one, socialRows: existing, nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations });
-  assert.ok(result.length > 0);
-  assert.ok(result.every((item) => item.platforms.includes('instagram') || item.platforms.includes('linkedin')));
-  assert.ok(result.every((item) => item.scheduledAt >= '2026-10-13T15:00:00Z' && item.scheduledAt < '2026-10-27T15:00:00Z'));
-  assert.equal(result.some((item) => item.platforms.includes('facebook') && item.weekKey === '2026-10-12'), true);
+  const existing = ['facebook', 'instagram', 'linkedin'].flatMap((platform) =>
+    Array.from({ length: 14 }, (_, index) => ({
+      jm1_branch: 'J Merrill One', jm1_platform: platform, jm1_requesteddestination: branchDestinations[platform],
+      jm1_status: 'NATIVE_RESERVATION_VERIFIED', jm1_requestedschedule: nativeSocialScheduledAt(`daily-2026-10-${String(index + 14).padStart(2, '0')}`, platform)
+    })));
+  const result = planNativeSocialGaps({ campaign: one, socialRows: existing, nowIso: '2026-10-14T12:17:00Z', destinationByPlatform: branchDestinations });
+  assert.equal(result.length, 1);
+  assert.equal(result[0].dateKey, '2026-10-28');
+  assert.deepEqual(result[0].platforms, ['facebook', 'instagram', 'linkedin']);
   const repeated = planNativeSocialGaps({ campaign: one, socialRows: [...existing,
     ...result.flatMap((item) => item.platforms.map((platform) => ({ jm1_branch: one.jm1_branch, jm1_platform: platform,
       jm1_requesteddestination: branchDestinations[platform], jm1_status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE',
-      jm1_requestedschedule: item.scheduledAt, jm1_idempotencykey: `${one.jm1_idempotencykey.replace(/:campaign$/, '')}:social:rolling-${item.slotKey}:${platform}` })))],
+      jm1_requestedschedule: item.scheduleByPlatform[platform], jm1_idempotencykey: `${one.jm1_idempotencykey.replace(/:campaign$/, '')}:social:daily-${item.dateKey}:${platform}` })))],
   approvedRequestMarkers: [one.jm1_idempotencykey.replace(/:campaign$/, '')],
-  nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations });
+  nowIso: '2026-10-14T12:17:00Z', destinationByPlatform: branchDestinations });
   assert.deepEqual(repeated, []);
   assert.deepEqual(planNativeSocialGaps({ campaign: one, socialRows: existing, readbackComplete: false,
     nowIso: '2026-10-13T15:00:00Z', destinationByPlatform: branchDestinations }), []);
 });
 
-test('coverage planning moves a slot when a verified booking already occupies its candidate day', () => {
+test('daily coverage planning creates only the exact missing channel and ignores other destinations', () => {
   const one = campaign('J Merrill One');
   const branchDestinations = destinations['J Merrill One'];
-  const existing = ['facebook', 'instagram', 'linkedin'].map((platform) => ({
-    jm1_branch: one.jm1_branch,
-    jm1_platform: platform,
-    jm1_requesteddestination: branchDestinations[platform],
-    jm1_status: 'NATIVE_BOOKED_VERIFIED',
-    jm1_requestedschedule: '2026-10-13T14:00:00Z'
-  }));
-  const plans = planNativeSocialGaps({ campaign: one, socialRows: existing, nowIso: '2026-10-12T12:00:00Z', destinationByPlatform: branchDestinations });
-  const currentWeek = plans.filter((item) => item.weekKey === '2026-10-12');
-  assert.equal(currentWeek.length, 1);
-  assert.equal(currentWeek[0].slot, 2);
-  assert.deepEqual(currentWeek[0].platforms, ['facebook', 'instagram', 'linkedin']);
-  assert.equal(currentWeek[0].scheduledAt, '2026-10-16T18:00:00.000Z');
+  const existing = Array.from({ length: 14 }, (_, index) => {
+    const dateKey = `2026-10-${String(index + 14).padStart(2, '0')}`;
+    return ['facebook', 'instagram', 'linkedin'].map((platform) => ({
+      jm1_branch: one.jm1_branch, jm1_platform: platform, jm1_requesteddestination: branchDestinations[platform],
+      jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requestedschedule: nativeSocialScheduledAt(`daily-${dateKey}`, platform)
+    }));
+  }).flat();
+  existing.push(...['facebook', 'instagram', 'linkedin'].map((platform) => ({
+    jm1_branch: one.jm1_branch, jm1_platform: platform,
+    jm1_requesteddestination: platform === 'instagram' ? 'wrong-account' : branchDestinations[platform],
+    jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_requestedschedule: nativeSocialScheduledAt('daily-2026-10-28', platform)
+  })));
+  const plans = planNativeSocialGaps({ campaign: one, socialRows: existing, nowIso: '2026-10-14T12:17:00Z', destinationByPlatform: branchDestinations });
+  assert.deepEqual(plans.map((item) => item.dateKey), ['2026-10-28']);
+  assert.deepEqual(plans[0].platforms, ['instagram']);
 });
 
 test('verified account-handle reservations suppress planning without enabling a disabled API destination', () => {
@@ -149,7 +146,7 @@ test('verified account-handle reservations suppress planning without enabling a 
   assert.ok(financial.reservationAliases.instagram.includes('jmerrillfinancial'));
 });
 
-test('verified production reservations are planning inputs before materialization across covered dates', () => {
+test('verified production reservations suppress covered dates while the separate preparation date is planned once', () => {
   for (const branch of branches) {
     const authority = campaign(branch);
     const configured = nativeSocialDestinationsForBranch({
@@ -177,13 +174,34 @@ test('verified production reservations are planning inputs before materializatio
     const plans = planNativeSocialGaps({
       campaign: authority,
       socialRows: reservations,
-      nowIso: '2026-10-12T12:00:00Z',
+      nowIso: '2026-10-14T12:00:00Z',
       destinationByPlatform: configured.destinations,
       reservationAliasesByPlatform: configured.reservationAliases,
       approvedRequestMarkers: [authority.jm1_idempotencykey.replace(/:campaign$/, '')],
       readbackComplete: true
     });
-    assert.deepEqual(plans, [], `${branch} must not materialize new work for reserved dates`);
+    assert.ok(plans.every((plan) => plan.dateKey === '2026-10-28'), `${branch} must not recreate work for Oct 14-27`);
+    assert.equal(plans.length, 1, `${branch} should prepare only the separate Oct 28 date`);
+    assert.equal(plans[0].platforms.length, branch === 'J Merrill Financial' ? 2 : 3,
+      `${branch} should prepare only enabled Oct 28 channels`);
+    const marker = authority.jm1_idempotencykey.replace(/:campaign$/, '');
+    const prepared = [...reservations, ...plans.flatMap((plan) => plan.platforms.map((platform) => ({
+      jm1_branch: branch,
+      jm1_platform: platform,
+      jm1_requesteddestination: configured.destinations[platform][0],
+      jm1_status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE',
+      jm1_requestedschedule: plan.scheduleByPlatform[platform],
+      jm1_idempotencykey: `${marker}:social:daily-${plan.dateKey}:${platform}`
+    })) )];
+    assert.deepEqual(planNativeSocialGaps({
+      campaign: authority,
+      socialRows: prepared,
+      nowIso: '2026-10-14T12:00:00Z',
+      destinationByPlatform: configured.destinations,
+      reservationAliasesByPlatform: configured.reservationAliases,
+      approvedRequestMarkers: [marker],
+      readbackComplete: true
+    }), [], `${branch} replay must not regenerate the preparation date`);
   }
 });
 
@@ -245,9 +263,9 @@ test('a scheduled-looking API request consumes cadence only under live-approved 
     jm1_idempotencykey: 'held-author-campaign:social:feature-intro:facebook'
   };
   const withoutApproval = planNativeSocialGaps({ campaign: one, socialRows: [heldCampaignRequest], nowIso: '2026-10-12T12:00:00Z', destinationByPlatform: branchDestinations });
-  assert.equal(withoutApproval.find((item) => item.weekKey === '2026-10-12' && item.platforms.includes('facebook'))?.slot, 1);
+  assert.ok(withoutApproval.some((item) => item.dateKey === '2026-10-13' && item.platforms.includes('facebook')));
   const withApproval = planNativeSocialGaps({ campaign: one, socialRows: [heldCampaignRequest], approvedRequestMarkers: ['held-author-campaign'], nowIso: '2026-10-12T12:00:00Z', destinationByPlatform: branchDestinations });
-  assert.equal(withApproval.find((item) => item.weekKey === '2026-10-12' && item.platforms.includes('facebook'))?.slot, 2);
+  assert.ok(!withApproval.some((item) => item.dateKey === '2026-10-13' && item.platforms.includes('facebook')));
 });
 
 test('scheduled timestamps preserve Eastern wall-clock time across daylight transition', () => {
@@ -257,4 +275,17 @@ test('scheduled timestamps preserve Eastern wall-clock time across daylight tran
   assert.equal(nativeSocialScheduledAt('rolling-2026-10-26-2', 'facebook'), '2026-10-30T18:00:00.000Z');
   assert.equal(after, '2026-11-03T15:00:00.000Z');
   assert.equal(nativeSocialScheduledAt('rolling-2026-10-12-1', 'facebook'), '2026-10-13T14:00:00.000Z');
+  assert.equal(nativeSocialScheduledAt('daily-2026-10-28', 'facebook'), '2026-10-28T14:00:00.000Z');
+  assert.equal(nativeSocialScheduledAt('daily-2026-10-28', 'instagram'), '2026-10-28T15:00:00.000Z');
+  assert.equal(nativeSocialScheduledAt('daily-2026-10-28', 'linkedin'), '2026-10-28T16:00:00.000Z');
+  assert.equal(nativeSocialScheduledAt('daily-2026-11-02', 'facebook'), '2026-11-02T15:00:00.000Z');
+});
+
+test('daily content has durable date-keyed provenance and retains legacy content validation', () => {
+  const one = campaign('J Merrill One');
+  const generated = buildReviewedNativeSocialContent({ campaign: one, dateKey: '2026-10-28', nowIso: '2026-10-14T12:17:00Z' });
+  assert.equal(generated.stage, 'daily-2026-10-28');
+  const content = { jm1_branch: one.jm1_branch, jm1_stage: generated.stage, jm1_name: generated.template.title,
+    jm1_draftcopy: generated.caption, jm1_copybrief: `${generated.provenance}; theme=${generated.template.theme}` };
+  assert.equal(matchesApprovedNativeSocialContent(one, content), true);
 });
