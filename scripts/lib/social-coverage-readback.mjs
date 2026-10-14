@@ -868,7 +868,10 @@ export function buildSocialCoverageReadback(snapshot) {
     const pastDueRequests = apiRequests.filter((item) => isOverdueRequest(item, snapshot.asOf));
     const approvedContent = related.filter((item) => item.kind === 'CONTENT' && item.approvalState === 'APPROVED');
     const held = related.filter((item) => item.status?.startsWith('HELD') || item.approvalState === 'HELD');
-    const failures = related.filter((item) => isFailureStatus(item.status));
+    const heldBookingConflicts = related.filter((item) => item.status === 'HELD_NATIVE_BOOKING_CONFLICT');
+    const heldBookingStale = related.filter((item) => item.status === 'HELD_NATIVE_BOOKING_STALE');
+    const failures = related.filter((item) => isFailureStatus(item.status)
+      && !['HELD_NATIVE_BOOKING_CONFLICT', 'HELD_NATIVE_BOOKING_STALE'].includes(item.status));
     const duplicateRisk = nativeScheduled.filter((native) =>
       apiRequests.some((request) => request.contentKey
         && request.contentKey === native.contentKey)
@@ -880,8 +883,12 @@ export function buildSocialCoverageReadback(snapshot) {
       const scheduled = booked.filter((item) => easternDate(item.scheduledAt) === dateET);
       const publications = publishedInWindow.filter((item) => publishedDateET(item) === dateET);
       const requests = apiRequests.filter((item) => item.scheduledAt && easternDate(item.scheduledAt) === dateET);
-      const failedItems = related.filter((item) => item.scheduledAt
-        && easternDate(item.scheduledAt) === dateET && isFailureStatus(item.status));
+      const failedItems = failures.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === dateET);
+      const conflicts = heldBookingConflicts.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === dateET);
+      const staleBookings = heldBookingStale.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === dateET);
       const overdueItems = requests.filter((item) => isOverdueRequest(item, snapshot.asOf));
       const unverifiedClaims = unverifiedBookingClaims.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === dateET);
@@ -901,6 +908,8 @@ export function buildSocialCoverageReadback(snapshot) {
         failedItemIds: failedItems.map((item) => item.id),
         overdueRequestIds: overdueItems.map((item) => item.id),
         unverifiedBookingClaimIds: unverifiedClaims.map((item) => item.id),
+        heldNativeConflictIds: conflicts.map((item) => item.id),
+        heldStaleBookingIds: staleBookings.map((item) => item.id),
         qualifiesForDailyCoverage: ['SCHEDULED', 'PUBLISHED', 'PUBLISHED_AND_SCHEDULED'].includes(status)
       };
     });
@@ -925,8 +934,10 @@ export function buildSocialCoverageReadback(snapshot) {
       pendingRequestIds: apiRequests.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === preparationDate
         && isPendingRequest(item)).map((item) => item.id),
-      failedItemIds: related.filter((item) => item.scheduledAt
-        && easternDate(item.scheduledAt) === preparationDate && isFailureStatus(item.status)).map((item) => item.id)
+      failedItemIds: failures.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id),
+      heldNativeConflictIds: heldBookingConflicts.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id)
     };
     const missingDates = dailyCoverage.filter((day) => day.status === 'MISSING').map((day) => day.dateET);
     const unverifiedDates = dailyCoverage.filter((day) => day.status === 'UNVERIFIED').map((day) => day.dateET);
@@ -960,6 +971,8 @@ export function buildSocialCoverageReadback(snapshot) {
     if (missingDates.length) states.push('DAILY_COVERAGE_GAP');
     if (held.length) states.push('HELD_ITEMS');
     if (failures.length) states.push('EXECUTION_FAILURE');
+    if (heldBookingConflicts.length) states.push('NATIVE_BOOKING_CONFLICT');
+    if (heldBookingStale.length) states.push('NATIVE_BOOKING_STALE');
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
     if (pastDueBookingClaims.length) states.push('PAST_DUE_NATIVE_BOOKING_CLAIM');
     if (unresolvedBookingClaims.length) states.push('NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION');
@@ -996,6 +1009,8 @@ export function buildSocialCoverageReadback(snapshot) {
     }
     for (const [state, ids, action] of [
       ['EXECUTION_FAILURE', failures.map((item) => item.id), 'RECONCILE_EXECUTION_FAILURE'],
+      ['NATIVE_BOOKING_CONFLICT', heldBookingConflicts.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CONFLICT'],
+      ['NATIVE_BOOKING_STALE', heldBookingStale.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_STALE'],
       ['PAST_DUE_API_REQUEST', pastDueRequests.map((item) => item.id), 'RECONCILE_PAST_DUE_REQUEST'],
       ['PAST_DUE_NATIVE_BOOKING_CLAIM', pastDueBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
       ['NATIVE_BOOKING_CLAIM_REQUIRES_RECONCILIATION', unresolvedBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
@@ -1150,6 +1165,8 @@ export function buildSocialCoverageReadback(snapshot) {
       publishedIds: published.map((item) => item.platformPostId),
       heldItems: held.map((item) => item.id),
       failures: failures.map((item) => item.id),
+      heldNativeConflicts: heldBookingConflicts.map((item) => item.id),
+      heldStaleBookings: heldBookingStale.map((item) => item.id),
       pastDueRequests: pastDueRequests.map((item) => item.id),
       duplicateRisk: duplicateRisk.map((item) => item.id),
       mixedChannelAuthority: mixedChannelAuthority.map((item) => item.id),
