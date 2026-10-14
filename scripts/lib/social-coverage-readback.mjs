@@ -1,5 +1,49 @@
 import { createHash } from 'node:crypto';
 
+export function selectLatestCoverageSnapshot(candidates) {
+  const valid = candidates.map((candidate) => {
+    const observations = (candidate.snapshot.channels || [])
+      .map((channel) => channel.nativeReadback?.observedAt)
+      .filter((value) => Number.isFinite(Date.parse(value || '')))
+      .sort((a, b) => Date.parse(a) - Date.parse(b));
+    return {
+      ...candidate,
+      latestNativeObservationAt: observations.at(-1) || null,
+      oldestNativeObservationAt: observations[0] || null,
+      observedChannelCount: observations.length,
+      expectedChannelCount: candidate.snapshot.channels?.length || 0
+    };
+  }).filter((candidate) => candidate.latestNativeObservationAt
+    && candidate.expectedChannelCount === 9
+    && candidate.observedChannelCount === candidate.expectedChannelCount);
+  valid.sort((a, b) => Date.parse(b.latestNativeObservationAt) - Date.parse(a.latestNativeObservationAt)
+    || a.path.localeCompare(b.path));
+  if (!valid.length) throw new Error('No coverage snapshot has a valid embedded native observation timestamp');
+  return valid[0];
+}
+
+export function buildCoverageDateChannelMatrix(report) {
+  return report.channels.flatMap((channel) => channel.dailyCoverage.map((day) => ({
+    dateET: day.dateET,
+    brand: channel.brand,
+    platform: channel.platform,
+    destination: channel.destinationId || channel.destinationHandle || null,
+    state: day.status,
+    scheduledReceiptIds: day.scheduledReceiptIds,
+    nativeObservedScheduledAtUtc: day.nativeObservedScheduledAtUtc,
+    publishedPlatformPostIds: day.confirmedPlatformPostIds,
+    pendingRequestIds: day.pendingRequestIds,
+    failedItemIds: day.failedItemIds,
+    overdueRequestIds: day.overdueRequestIds,
+    heldConflictIds: day.heldNativeConflictIds,
+    unverifiedClaimIds: day.unverifiedBookingClaimIds,
+    evidenceSource: channel.nativeReadback?.view || null,
+    evidenceUrl: channel.nativeReadback?.viewUrl || null,
+    observedAt: channel.nativeReadback?.observedAt || null,
+    qualifiesForDailyCoverage: day.qualifiesForDailyCoverage
+  })));
+}
+
 const ZONE = 'America/New_York';
 const DAY = 24 * 60 * 60 * 1000;
 const MAX_NATIVE_READBACK_AGE_MS = 12 * 60 * 60 * 1000;
@@ -753,6 +797,40 @@ export function buildDataverseReconciliationFindings(rows, asOf) {
   });
 }
 
+export function reconcilePastDueClaimsToPublishedEvidence(rows, publishedItems, asOf) {
+  const published = (publishedItems || []).filter((item) => item.kind === 'PUBLISHED' && item.platformPostId);
+  const reconciled = [];
+  const reconciledIds = new Set();
+  for (const row of rows || []) {
+    const id = row.jm1_socialexecutionid || row.id;
+    const status = row.jm1_status || row.status;
+    const requestedAt = row.jm1_requestedschedule || row.requestedSchedule;
+    if (!id || status !== 'NATIVE_BOOKED_VERIFIED' || !requestedAt || Date.parse(requestedAt) > Date.parse(asOf)) continue;
+    const rowDestination = String(row.jm1_actualdestination || row.jm1_requesteddestination
+      || row.actualDestination || row.requestedDestination || '').replace(/^@/, '');
+    const item = published.find((candidate) => candidate.dataverseRecordId === id
+      && candidate.platform === String(row.jm1_platform || row.platform || '').toLowerCase()
+      && String(candidate.destinationId || candidate.destinationHandle || '').replace(/^@/, '') === rowDestination
+      && publishedDateET(candidate) === easternDate(requestedAt));
+    if (!item) continue;
+    reconciledIds.add(id);
+    reconciled.push({
+      dataverseRecordId: id,
+      dataverseStatus: status,
+      observedDisposition: 'PUBLISHED_VERIFIED',
+      platform: item.platform,
+      destinationId: item.destinationId,
+      scheduledAt: requestedAt,
+      publishedDateET: publishedDateET(item),
+      actualPublishedAt: item.publishedAt || null,
+      platformPostId: item.platformPostId,
+      evidenceSource: item.nativeEvidence?.source || null,
+      observedAt: item.nativeEvidence?.observedAt || null
+    });
+  }
+  return { reconciled, reconciledIds };
+}
+
 export function buildSocialCoverageReadback(snapshot) {
   const asOf = /^\d{4}-\d{2}-\d{2}$/.test(String(snapshot.asOf || ''))
     ? snapshot.asOf : easternDate(snapshot.asOf);
@@ -881,6 +959,10 @@ export function buildSocialCoverageReadback(snapshot) {
     const dailyCoverage = Array.from({ length: 14 }, (_, offset) => {
       const dateET = addDays(asOf, offset);
       const scheduled = booked.filter((item) => easternDate(item.scheduledAt) === dateET);
+      const nativeListTimes = coverageProofValid ? visibleScheduleTimes.filter((slot) => easternDate(slot) === dateET) : [];
+      const nativeListOnlyCount = nativeListTimes.filter((slot) =>
+        !scheduled.some((item) => item.scheduledAt === slot)).length;
+      const scheduledPlacementCount = scheduled.length + nativeListOnlyCount;
       const publications = publishedInWindow.filter((item) => publishedDateET(item) === dateET);
       const requests = apiRequests.filter((item) => item.scheduledAt && easternDate(item.scheduledAt) === dateET);
       const failedItems = failures.filter((item) => item.scheduledAt
@@ -892,16 +974,17 @@ export function buildSocialCoverageReadback(snapshot) {
       const overdueItems = requests.filter((item) => isOverdueRequest(item, snapshot.asOf));
       const unverifiedClaims = unverifiedBookingClaims.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === dateET);
-      const status = publications.length && scheduled.length ? 'PUBLISHED_AND_SCHEDULED'
+      const status = publications.length && scheduledPlacementCount ? 'PUBLISHED_AND_SCHEDULED'
         : publications.length ? 'PUBLISHED'
-          : scheduled.length ? 'SCHEDULED'
+          : scheduledPlacementCount ? 'SCHEDULED'
             : !coverageProofValid ? 'UNVERIFIED' : 'MISSING';
       return {
         dateET,
         status,
         requiredPlacements: 1,
-        scheduledPlacementCount: scheduled.length,
+        scheduledPlacementCount,
         scheduledReceiptIds: scheduled.map((item) => item.id),
+        nativeObservedScheduledAtUtc: nativeListTimes,
         confirmedPublicationCount: publications.length,
         confirmedPlatformPostIds: publications.map((item) => item.platformPostId),
         pendingRequestIds: requests.filter(isPendingRequest).map((item) => item.id),
@@ -1059,8 +1142,10 @@ export function buildSocialCoverageReadback(snapshot) {
       nativeReadbackStatus,
       coverageStatus: missingDates.length ? 'VERIFIED_DAILY_GAP'
         : unverifiedDates.length ? 'UNKNOWN'
-          : unapprovedScheduled.length || visibleScheduleCopyMismatches.length || unmatchedVisibleScheduleTimes.length
-            ? 'SCHEDULED_APPROVAL_REVIEW' : 'VERIFIED_DAILY_COVERED',
+          : 'VERIFIED_DAILY_COVERED',
+      sourceReconciliationStatus: unapprovedScheduled.length || visibleScheduleCopyMismatches.length
+        || unmatchedVisibleScheduleTimes.length || sourceLineageReviewItems.length
+        ? 'REVIEW_REQUIRED' : 'CLEAR',
       requiredDailyPlacements: 14,
       coveredDailyDates: coveredDates.length,
       scheduledDates,
@@ -1071,6 +1156,7 @@ export function buildSocialCoverageReadback(snapshot) {
       preparationDate: preparationDateReadback,
       weeklySummaryIsNonAuthoritativeForDailyCoverage: true,
       nativeScheduled: coverageProofValid ? nativeScheduled.length : null,
+      nativeListScheduledCount: coverageProofValid ? visibleScheduleTimes.length : null,
       observedScheduledBookings: coverageProofValid ? nativeScheduled.length : null,
       visibleCalendarSlots: coverageProofValid ? visibleScheduleTimes : null,
       unmatchedVisibleScheduleTimes,

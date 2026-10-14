@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { applyCurrentFinancialProductionDestinations, buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, retainNativeEvidenceItems } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -9,6 +9,71 @@ const channel = {
   executionOwner: 'AZURE_WORKER', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' }
 };
 const base = { asOf: '2026-10-02T16:00:00Z', channels: [channel], items: [] };
+
+test('default snapshot selection uses embedded native observation time, not filename order', () => {
+  const channels = (observedAt) => Array.from({ length: 9 }, (_, index) => ({
+    brand: `Brand ${Math.floor(index / 3)}`, platform: ['facebook', 'instagram', 'linkedin'][index % 3],
+    nativeReadback: { observedAt }
+  }));
+  const selected = selectLatestCoverageSnapshot([
+    { path: 'social-coverage-native-audit-2026-10-14.json', snapshot: { channels: channels('2026-10-10T20:00:00Z') } },
+    { path: 'social-coverage-native-audit-2026-10-12.json', snapshot: { channels: channels('2026-10-12T17:45:37Z') } }
+  ]);
+  assert.equal(selected.path, 'social-coverage-native-audit-2026-10-12.json');
+  assert.equal(selected.latestNativeObservationAt, '2026-10-12T17:45:37Z');
+  assert.throws(() => selectLatestCoverageSnapshot([{ path: 'partial.json', snapshot: { asOf: '2026-10-14', channels: channels('2026-10-14T12:00:00Z').slice(0, 8) } }]),
+    /embedded native observation timestamp/);
+});
+
+test('date-channel matrix preserves state and evidence identity per channel-date cell', () => {
+  const result = buildSocialCoverageReadback({
+    asOf: '2026-10-14T12:00:00Z',
+    channels: Array.from({ length: 9 }, (_, index) => ({
+      brand: `Brand ${Math.floor(index / 3)}`, platform: ['facebook', 'instagram', 'linkedin'][index % 3],
+      destinationId: `destination-${index}`, executionOwner: 'LINKEDIN_NATIVE',
+      nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+        observedAt: '2026-10-14T11:59:00Z', observedDateET: '2026-10-14' }
+    })),
+    items: []
+  });
+  const matrix = buildCoverageDateChannelMatrix(result);
+  assert.equal(matrix.length, 126);
+  assert.equal(new Set(matrix.map((cell) => `${cell.dateET}|${cell.brand}|${cell.platform}`)).size, 126);
+  assert.ok(matrix.every((cell) => cell.evidenceSource === null && cell.qualifiesForDailyCoverage === false));
+  assert.ok(matrix.every((cell) => cell.state === 'MISSING'));
+});
+
+test('exact fresh native schedule-list observations satisfy date slots without inventing booking IDs', () => {
+  const visibleScheduledAtUtc = Array.from({ length: 14 }, (_, offset) =>
+    new Date(Date.parse('2026-10-14T14:00:00Z') + offset * 86400000).toISOString());
+  const report = buildSocialCoverageReadback({
+    asOf: '2026-10-14T12:00:00Z',
+    channels: [{ ...channel, executionOwner: 'META_NATIVE', destinationId: 'page-1',
+      nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+        observedAt: '2026-10-14T11:59:00Z', observedDateET: '2026-10-14', visibleScheduledAtUtc,
+        view: 'Meta Business Suite scheduled posts list' } }],
+    items: []
+  });
+  const days = report.channels[0].dailyCoverage;
+  assert.equal(days.length, 14);
+  assert.ok(days.every((day) => day.status === 'SCHEDULED' && day.qualifiesForDailyCoverage));
+  assert.ok(days.every((day) => day.scheduledReceiptIds.length === 0));
+  assert.ok(days.every((day) => day.nativeObservedScheduledAtUtc.length === 1));
+});
+
+test('an overdue native claim reconciles to publication only through an exact linked destination and date', () => {
+  const row = { jm1_socialexecutionid: 'claim-1', jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requestedschedule: '2026-10-13T14:00:00Z', jm1_requesteddestination: 'page-1', jm1_platform: 'facebook' };
+  const published = { id: 'claim-1', dataverseRecordId: 'claim-1', kind: 'PUBLISHED', platform: 'facebook',
+    destinationId: 'page-1', platformPostId: 'post-1', publishedDateET: '2026-10-13',
+    nativeEvidence: { source: 'META_PUBLISHED_POSTS', observedAt: '2026-10-14T12:00:00Z' } };
+  const result = reconcilePastDueClaimsToPublishedEvidence([row], [published], '2026-10-14T12:00:00Z');
+  assert.equal(result.reconciled.length, 1);
+  assert.equal(result.reconciled[0].platformPostId, 'post-1');
+  assert.ok(result.reconciledIds.has('claim-1'));
+  assert.equal(reconcilePastDueClaimsToPublishedEvidence([row], [{ ...published, destinationId: 'other-page' }],
+    '2026-10-14T12:00:00Z').reconciled.length, 0);
+});
 
 test('current Financial destination correction is scoped and leaves historical source intact', () => {
   const historical = { ...base, channels: [
