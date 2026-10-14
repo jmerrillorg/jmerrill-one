@@ -112,10 +112,10 @@ test('API requests and approved content never count as native bookings', () => {
   assert.equal(result.apiRequests, 1);
   assert.equal(result.approvedContentNotBooked, 1);
   assert.deepEqual(result.heldItems, ['row-1']);
-  assert.ok(result.states.includes('ROLLING_COVERAGE_GAP'));
+  assert.ok(result.states.includes('DAILY_COVERAGE_GAP'));
 });
 
-test('rolling coverage uses a half-open 14-day Eastern window and two weekly cadence slots', () => {
+test('daily coverage scores fourteen inclusive Eastern dates and reports the next date separately', () => {
   const datedChannel = { ...channel, executionOwner: 'META_NATIVE',
     nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-08' } };
   const items = [
@@ -134,6 +134,75 @@ test('rolling coverage uses a half-open 14-day Eastern window and two weekly cad
   assert.equal(result.nativeScheduled, 2);
   assert.equal(result.verifiedBookings, 2);
   assert.deepEqual(result.weeks.map((week) => week.verifiedBookings), [1, 1]);
+  assert.equal(result.requiredDailyPlacements, 14);
+  assert.equal(result.coveredDailyDates, 2);
+  assert.equal(result.dailyCoverage.length, 14);
+  assert.equal(result.dailyCoverage[0].dateET, '2026-10-08');
+  assert.equal(result.dailyCoverage.at(-1).dateET, '2026-10-21');
+  assert.equal(result.preparationDate.dateET, '2026-10-22');
+  assert.equal(result.preparationDate.classification, 'PREPARATION_ONLY_NOT_IN_COMMITTED_COVERAGE');
+  assert.equal(result.preparationDate.scheduledPlacementCount, 1);
+  assert.equal(result.coverageStatus, 'VERIFIED_DAILY_GAP');
+  assert.equal(result.missingDates.length, 12);
+});
+
+test('surplus placements on one day cannot cover a different missing date', () => {
+  const datedChannel = { ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' } };
+  const items = ['a', 'b', 'c'].map((id, index) => ({
+    id, brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId,
+    kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', nativeBookingId: `booking-${id}`,
+    scheduledAt: index < 2 ? '2026-10-03T14:00:00Z' : '2026-10-04T14:00:00Z'
+  }));
+  const result = buildSocialCoverageReadback({ ...base, channels: [datedChannel], items }).channels[0];
+  const oct3 = result.dailyCoverage.find((day) => day.dateET === '2026-10-03');
+  const oct4 = result.dailyCoverage.find((day) => day.dateET === '2026-10-04');
+  const oct5 = result.dailyCoverage.find((day) => day.dateET === '2026-10-05');
+  assert.equal(oct3.scheduledPlacementCount, 2);
+  assert.equal(oct3.qualifiesForDailyCoverage, true);
+  assert.equal(oct4.scheduledPlacementCount, 1);
+  assert.equal(oct4.qualifiesForDailyCoverage, true);
+  assert.equal(oct5.status, 'MISSING');
+  assert.ok(result.missingDates.includes('2026-10-05'));
+  assert.equal(result.coveredDailyDates, 2);
+});
+
+test('pending, failed, held, and same-day overdue requests remain distinct and never count as booked', () => {
+  const requests = [
+    { id: 'pending-tomorrow', kind: 'API_REQUEST', status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE', scheduledAt: '2026-10-03T14:00:00Z' },
+    { id: 'retryable-failure', kind: 'API_REQUEST', status: 'RETRY_REQUIRED', scheduledAt: '2026-10-04T14:00:00Z' },
+    { id: 'ambiguous-result', kind: 'API_REQUEST', status: 'AMBIGUOUS_PUBLICATION_OUTCOME', scheduledAt: '2026-10-05T14:00:00Z' },
+    { id: 'overdue-today', kind: 'API_REQUEST', status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE', scheduledAt: '2026-10-02T15:00:00Z' },
+    { id: 'held-old', kind: 'API_REQUEST', status: 'HELD_BUSINESS', approvalState: 'HELD', scheduledAt: '2026-10-01T14:00:00Z' }
+  ].map((item) => ({ ...item, brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId }));
+  const result = buildSocialCoverageReadback({ ...base, asOf: '2026-10-02T16:00:00Z', items: requests }).channels[0];
+  assert.equal(result.verifiedBookings, 0);
+  assert.equal(result.coveredDailyDates, 0);
+  assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-03').pendingRequestIds.includes('pending-tomorrow'));
+  assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-04').failedItemIds.includes('retryable-failure'));
+  assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-05').failedItemIds.includes('ambiguous-result'));
+  assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-02').overdueRequestIds.includes('overdue-today'));
+  assert.ok(result.pastDueRequests.includes('overdue-today'));
+  assert.ok(!result.pastDueRequests.includes('held-old'));
+  assert.ok(result.states.includes('EXECUTION_FAILURE'));
+  assert.ok(result.states.includes('PAST_DUE_API_REQUEST'));
+  assert.ok(result.missingDates.includes('2026-10-02'));
+});
+
+test('Eastern midnight boundaries assign schedule slots to the correct local dates', () => {
+  const linkedIn = { brand: 'J Merrill One', platform: 'linkedin', destinationId: '106683183',
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-07' } };
+  const items = [
+    { id: 'before-midnight', brand: linkedIn.brand, platform: linkedIn.platform, destinationId: linkedIn.destinationId,
+      kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', nativeBookingId: 'before', scheduledAt: '2026-10-08T03:30:00Z' },
+    { id: 'after-midnight', brand: linkedIn.brand, platform: linkedIn.platform, destinationId: linkedIn.destinationId,
+      kind: 'NATIVE_BOOKING', approvalState: 'APPROVED', nativeBookingId: 'after', scheduledAt: '2026-10-08T04:30:00Z' }
+  ];
+  const result = buildSocialCoverageReadback({ asOf: '2026-10-08T02:00:00Z', channels: [linkedIn], items }).channels[0];
+  assert.equal(result.dailyCoverage[0].dateET, '2026-10-07');
+  assert.deepEqual(result.dailyCoverage[0].scheduledReceiptIds, ['before-midnight']);
+  assert.deepEqual(result.dailyCoverage[1].scheduledReceiptIds, ['after-midnight']);
+  assert.equal(result.requiredDailyPlacements, 14);
+  assert.equal(result.preparationDate.dateET, '2026-10-21');
 });
 
 test('only exact approved native bookings count and collide with matching API request', () => {
@@ -168,6 +237,9 @@ test('duplicate audit receipts for one exact native content slot count once but 
   assert.equal(result.nativeBookingRows.length, 2);
   assert.equal(result.nativeBookingRows.filter((row) => row.countedSlot).length, 1);
   assert.deepEqual(result.nativeBookingRows[0].sameSlotReceiptIds, ['receipt-original', 'receipt-duplicate']);
+  const dailySlot = result.dailyCoverage.find((day) => day.dateET === '2026-10-03');
+  assert.equal(dailySlot.scheduledPlacementCount, 1);
+  assert.deepEqual(dailySlot.scheduledReceiptIds, ['receipt-original']);
 });
 
 test('native booking on worker-owned channel is counted but exposes mixed authority', () => {
@@ -265,8 +337,10 @@ test('stale native evidence and published platform IDs cannot prove future cover
   assert.equal(result.publishedWithPlatformId, 1);
   assert.equal(result.nativeReadbackFresh, false);
   assert.ok(result.states.includes('NATIVE_READBACK_STALE'));
-  assert.ok(result.states.includes('COVERAGE_STATUS_UNKNOWN'));
-  assert.ok(!result.states.includes('ROLLING_COVERAGE_GAP'));
+  assert.equal(result.unverifiedDates.length, 14);
+  assert.deepEqual(result.missingDates, []);
+  assert.ok(result.states.includes('DAILY_COVERAGE_UNVERIFIED'));
+  assert.ok(!result.states.includes('DAILY_COVERAGE_GAP'));
 });
 
 test('timestamp-required native readbacks expire within the same Eastern calendar day', () => {
@@ -332,16 +406,19 @@ test('fresh verified empty native readback is a real coverage gap, distinct from
     channels: [{ ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' } }], items: [] });
   const result = report.channels[0];
   assert.equal(result.nativeReadbackStatus, 'CURRENT');
-  assert.equal(result.coverageStatus, 'VERIFIED_GAP');
+  assert.equal(result.coverageStatus, 'VERIFIED_DAILY_GAP');
   assert.equal(result.verifiedBookings, 0);
   assert.deepEqual(result.weeks.map((week) => week.verifiedBookings), [0, 0]);
-  assert.ok(result.states.includes('ROLLING_COVERAGE_GAP'));
-  assert.ok(!result.states.includes('COVERAGE_STATUS_UNKNOWN'));
-  const keys = report.alertFindings.filter((finding) => finding.state === 'ROLLING_COVERAGE_GAP').map((finding) => finding.dedupeKey);
+  assert.ok(result.states.includes('DAILY_COVERAGE_GAP'));
+  assert.ok(!result.states.includes('DAILY_COVERAGE_UNVERIFIED'));
+  const alerts = report.alertFindings.filter((finding) => finding.state === 'DAILY_COVERAGE_GAP');
   const nextDay = buildSocialCoverageReadback({ ...base, asOf: '2026-10-03T16:00:00Z',
     channels: [{ ...channel, nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-03' } }], items: [] });
-  assert.deepEqual(nextDay.alertFindings.filter((finding) => finding.state === 'ROLLING_COVERAGE_GAP')
-    .map((finding) => finding.dedupeKey), keys);
+  const nextAlerts = nextDay.alertFindings.filter((finding) => finding.state === 'DAILY_COVERAGE_GAP');
+  assert.equal(alerts.find((finding) => finding.evidence.dateET === '2026-10-03').dedupeKey,
+    nextAlerts.find((finding) => finding.evidence.dateET === '2026-10-03').dedupeKey);
+  assert.ok(!nextAlerts.some((finding) => finding.evidence.dateET === '2026-10-02'));
+  assert.ok(nextAlerts.some((finding) => finding.evidence.dateET === '2026-10-16'));
 });
 
 test('author weeks use Monday-Sunday calendar weeks and correct publication month', () => {
@@ -653,7 +730,7 @@ test('exact UI booking survives a source-copy mismatch without inventing approva
   assert.equal(reconciled.items[0].nativeBookingId, null);
   assert.equal(report.nativeScheduled, 1);
   assert.equal(report.verifiedBookings, 0);
-  assert.equal(report.coverageStatus, 'VERIFIED_GAP');
+  assert.equal(report.coverageStatus, 'VERIFIED_DAILY_GAP');
   assert.ok(report.states.includes('NATIVE_BOOKING_SOURCE_COPY_REVIEW'));
   assert.deepEqual(report.weeks.map((week) => week.scheduledBookings), [1, 0]);
 });

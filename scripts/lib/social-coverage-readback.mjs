@@ -140,6 +140,30 @@ function findingKey(channel, state, evidence) {
   return `social-coverage-v1-${hash}`;
 }
 
+function uniqueBy(items, keyOf) {
+  const seen = new Set();
+  return items.filter((item) => {
+    const key = keyOf(item);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function isFailureStatus(status) {
+  return /FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED|AMBIGUOUS_PUBLICATION_OUTCOME|READBACK_MISMATCH|NATIVE_BOOKING_(CONFLICT|STALE)/.test(status || '');
+}
+
+function isOverdueRequest(item, asOf) {
+  return Boolean(item.scheduledAt
+    && Number.isFinite(Date.parse(asOf))
+    && Date.parse(item.scheduledAt) <= Date.parse(asOf)
+    && item.campaignSocialEligible !== false
+    && !/^HELD/.test(item.status || '')
+    && item.approvalState !== 'HELD'
+    && !['PUBLISHED_VERIFIED', 'NATIVE_BOOKED_VERIFIED'].includes(item.status));
+}
+
 function matchesDestination(item, channel) {
   return Boolean((channel.destinationId && item.destinationId === channel.destinationId)
     || (channel.platform === 'instagram'
@@ -669,7 +693,7 @@ export function classifyDataverseExecutionRow(row, asOf) {
     return { classification: status === 'HELD_NATIVE_BOOKING_STALE' ? 'NATIVE_BOOKING_STALE' : 'NATIVE_BOOKING_CONFLICT', actionRequired: true };
   }
   if (/^HELD/.test(status)) return { classification: 'HELD_NOT_BOOKED', actionRequired: false };
-  if (/FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED|NATIVE_BOOKING_(CONFLICT|STALE)/.test(status)) {
+  if (isFailureStatus(status)) {
     return { classification: 'EXECUTION_FAILURE', actionRequired: true };
   }
   if (status === 'PUBLISHED_VERIFIED' && !row.platformPostId) {
@@ -720,8 +744,10 @@ export function buildDataverseReconciliationFindings(rows, asOf) {
 }
 
 export function buildSocialCoverageReadback(snapshot) {
-  const asOf = easternDate(snapshot.asOf);
+  const asOf = /^\d{4}-\d{2}-\d{2}$/.test(String(snapshot.asOf || ''))
+    ? snapshot.asOf : easternDate(snapshot.asOf);
   const end = addDays(asOf, 14);
+  const preparationDate = end;
   const channels = snapshot.channels || [];
   const items = snapshot.items || [];
   if (new Set(channels.map(channelKey)).size !== channels.length) throw new Error('Duplicate channel authority');
@@ -779,13 +805,17 @@ export function buildSocialCoverageReadback(snapshot) {
       && matchesDestination(item, channel)
       && hasNativeBookingProof(item, asOf, snapshot.asOf)
       && item.scheduledAt && easternDate(item.scheduledAt) >= asOf);
+    const verifiedPreparationClaims = verifiedFutureNativeClaims.filter((item) =>
+      easternDate(item.scheduledAt) === preparationDate
+    );
     const verifiedBookingsBeyondHorizon = verifiedFutureNativeClaims.filter((item) =>
-      easternDate(item.scheduledAt) >= end
+      easternDate(item.scheduledAt) > preparationDate
     );
     const booked = nativeSlotGroups.filter((group) => group.some((item) => item.approvalState === 'APPROVED'))
       .map((group) => group.find((item) => item.approvalState === 'APPROVED'));
     const bookingClaims = related.filter((item) => item.kind === 'NATIVE_BOOKING');
     const unverifiedBookingClaims = bookingClaims.filter((item) => !nativeScheduledReceipts.includes(item)
+      && !verifiedPreparationClaims.includes(item)
       && !verifiedBookingsBeyondHorizon.includes(item));
     const scheduleVisibleInNativeList = (item) => channel.nativeReadback?.visibleScheduledAtUtc?.includes(item.scheduledAt);
     const visibleScheduleTimes = [...new Set(channel.nativeReadback?.visibleScheduledAtUtc || [])]
@@ -818,23 +848,83 @@ export function buildSocialCoverageReadback(snapshot) {
       && item.platformPostId
       && publishedDateET(item)
     );
+    const publishedInWindow = uniqueBy(published.filter((item) => {
+      const date = publishedDateET(item);
+      return date >= asOf && date < end;
+    }), (item) => item.platformPostId);
     const apiRequests = related.filter((item) => item.kind === 'API_REQUEST');
     const policyExcludedApiRequests = apiRequests.filter((item) => item.campaignSocialEligible === false);
     const nativeReservations = related.filter((item) => item.kind === 'NATIVE_RESERVATION');
-    const pastDueRequests = apiRequests.filter((item) => item.scheduledAt
-      && easternDate(item.scheduledAt) < asOf
-      && item.campaignSocialEligible !== false
-      && !/^HELD/.test(item.status || '')
-      && item.approvalState !== 'HELD');
+    const pastDueRequests = apiRequests.filter((item) => isOverdueRequest(item, snapshot.asOf));
     const approvedContent = related.filter((item) => item.kind === 'CONTENT' && item.approvalState === 'APPROVED');
     const held = related.filter((item) => item.status?.startsWith('HELD') || item.approvalState === 'HELD');
-    const failures = related.filter((item) => /FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED|NATIVE_BOOKING_(CONFLICT|STALE)/.test(item.status || ''));
+    const failures = related.filter((item) => isFailureStatus(item.status));
     const duplicateRisk = nativeScheduled.filter((native) =>
       apiRequests.some((request) => request.contentKey
         && request.contentKey === native.contentKey)
     );
     const mixedChannelAuthority = nativeScheduled.filter((native) =>
       channel.executionOwner !== nativeOwner(native.platform));
+    const dailyCoverage = Array.from({ length: 14 }, (_, offset) => {
+      const dateET = addDays(asOf, offset);
+      const scheduled = booked.filter((item) => easternDate(item.scheduledAt) === dateET);
+      const publications = publishedInWindow.filter((item) => publishedDateET(item) === dateET);
+      const requests = apiRequests.filter((item) => item.scheduledAt && easternDate(item.scheduledAt) === dateET);
+      const failedItems = related.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === dateET && isFailureStatus(item.status));
+      const overdueItems = requests.filter((item) => isOverdueRequest(item, snapshot.asOf));
+      const unverifiedClaims = unverifiedBookingClaims.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === dateET);
+      const status = publications.length && scheduled.length ? 'PUBLISHED_AND_SCHEDULED'
+        : publications.length ? 'PUBLISHED'
+          : scheduled.length ? 'SCHEDULED'
+            : !coverageProofValid ? 'UNVERIFIED' : 'MISSING';
+      return {
+        dateET,
+        status,
+        requiredPlacements: 1,
+        scheduledPlacementCount: scheduled.length,
+        scheduledReceiptIds: scheduled.map((item) => item.id),
+        confirmedPublicationCount: publications.length,
+        confirmedPlatformPostIds: publications.map((item) => item.platformPostId),
+        pendingRequestIds: requests.filter((item) => !isFailureStatus(item.status)
+          && !/^HELD/.test(item.status || '') && item.approvalState !== 'HELD').map((item) => item.id),
+        failedItemIds: failedItems.map((item) => item.id),
+        overdueRequestIds: overdueItems.map((item) => item.id),
+        unverifiedBookingClaimIds: unverifiedClaims.map((item) => item.id),
+        qualifiesForDailyCoverage: ['SCHEDULED', 'PUBLISHED', 'PUBLISHED_AND_SCHEDULED'].includes(status)
+      };
+    });
+    const preparationBookings = coverageProofValid
+      ? uniqueBy(verifiedPreparationClaims.filter((item) => item.approvalState === 'APPROVED'), (item) => {
+        const destination = item.destinationId || item.destinationHandle || '';
+        const captionHash = item.captionSha256 || item.nativeEvidence?.captionSha256 || '';
+        const mediaHash = item.mediaSha256 || item.nativeEvidence?.mediaSha256 || '';
+        return item.nativeBookingId
+          ? `booking:${destination}:${item.nativeBookingId}`
+          : `content:${destination}:${item.scheduledAt}:${captionHash}:${mediaHash}`;
+      }) : [];
+    const preparationPublications = uniqueBy(published.filter((item) => publishedDateET(item) === preparationDate),
+      (item) => item.platformPostId);
+    const preparationDateReadback = {
+      dateET: preparationDate,
+      classification: 'PREPARATION_ONLY_NOT_IN_COMMITTED_COVERAGE',
+      scheduledPlacementCount: preparationBookings.length,
+      scheduledReceiptIds: preparationBookings.map((item) => item.id),
+      confirmedPublicationCount: preparationPublications.length,
+      confirmedPlatformPostIds: preparationPublications.map((item) => item.platformPostId),
+      pendingRequestIds: apiRequests.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === preparationDate
+        && !isFailureStatus(item.status) && !/^HELD/.test(item.status || '')
+        && item.approvalState !== 'HELD').map((item) => item.id),
+      failedItemIds: related.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === preparationDate && isFailureStatus(item.status)).map((item) => item.id)
+    };
+    const missingDates = dailyCoverage.filter((day) => day.status === 'MISSING').map((day) => day.dateET);
+    const unverifiedDates = dailyCoverage.filter((day) => day.status === 'UNVERIFIED').map((day) => day.dateET);
+    const scheduledDates = dailyCoverage.filter((day) => day.scheduledPlacementCount > 0).map((day) => day.dateET);
+    const publishedDates = dailyCoverage.filter((day) => day.confirmedPublicationCount > 0).map((day) => day.dateET);
+    const coveredDates = dailyCoverage.filter((day) => day.qualifiesForDailyCoverage).map((day) => day.dateET);
     const weeks = [0, 1].map((week) => {
       const start = addDays(asOf, week * 7);
       const stop = addDays(start, 7);
@@ -858,8 +948,8 @@ export function buildSocialCoverageReadback(snapshot) {
     if (!verifiedNative) states.push(`NATIVE_READBACK_${nativeReadbackStatus}`);
     if ((!channel.destinationId && !channel.destinationHandle) || channel.executionOwner === 'UNRESOLVED') states.push('DESTINATION_AUTHORITY_UNRESOLVED');
     if (!channel.destinationId && channel.destinationHandle) states.push('NUMERIC_DESTINATION_ID_UNVERIFIED');
-    if (!coverageProofValid) states.push('COVERAGE_STATUS_UNKNOWN');
-    else if (weeks.some((week) => week.scheduledBookings === 0)) states.push('ROLLING_COVERAGE_GAP');
+    if (unverifiedDates.length) states.push('DAILY_COVERAGE_UNVERIFIED');
+    if (missingDates.length) states.push('DAILY_COVERAGE_GAP');
     if (held.length) states.push('HELD_ITEMS');
     if (failures.length) states.push('EXECUTION_FAILURE');
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
@@ -887,17 +977,14 @@ export function buildSocialCoverageReadback(snapshot) {
         delivery: 'REPORT_ONLY'
       });
     }
-    if (coverageProofValid) {
-      for (const week of weeks.filter((entry) => entry.scheduledBookings === 0)) {
-        const calendarWeekStart = mondayOf(week.start);
-        alertFindings.push({
-          dedupeKey: findingKey(channel, 'ROLLING_COVERAGE_GAP', calendarWeekStart),
-          state: 'ROLLING_COVERAGE_GAP',
-          action: 'REVIEW_VERIFIED_COVERAGE_GAP',
-          evidence: { calendarWeekStart, calendarWeekStopExclusive: addDays(calendarWeekStart, 7) },
-          delivery: 'REPORT_ONLY'
-        });
-      }
+    for (const dateET of missingDates) {
+      alertFindings.push({
+        dedupeKey: findingKey(channel, 'DAILY_COVERAGE_GAP', dateET),
+        state: 'DAILY_COVERAGE_GAP',
+        action: 'REPLENISH_DAILY_CHANNEL_SLOT',
+        evidence: { dateET, requiredPlacements: 1 },
+        delivery: 'REPORT_ONLY'
+      });
     }
     for (const [state, ids, action] of [
       ['EXECUTION_FAILURE', failures.map((item) => item.id), 'RECONCILE_EXECUTION_FAILURE'],
@@ -947,12 +1034,19 @@ export function buildSocialCoverageReadback(snapshot) {
       nativeReadback: channel.nativeReadback || null,
       nativeReadbackFresh: nativeEvidenceFresh,
       nativeReadbackStatus,
-      coverageStatus: coverageProofValid
-        ? weeks.some((week) => week.scheduledBookings === 0) ? 'VERIFIED_GAP'
-          : weeks.every((week) => week.verifiedBookings > 0) && unapprovedScheduled.length === 0
-            && visibleScheduleCopyMismatches.length === 0 && unmatchedVisibleScheduleTimes.length === 0
-            ? 'VERIFIED_COVERED' : 'SCHEDULED_APPROVAL_REVIEW'
-        : 'UNKNOWN',
+      coverageStatus: missingDates.length ? 'VERIFIED_DAILY_GAP'
+        : unverifiedDates.length ? 'UNKNOWN'
+          : unapprovedScheduled.length || visibleScheduleCopyMismatches.length || unmatchedVisibleScheduleTimes.length
+            ? 'SCHEDULED_APPROVAL_REVIEW' : 'VERIFIED_DAILY_COVERED',
+      requiredDailyPlacements: 14,
+      coveredDailyDates: coveredDates.length,
+      scheduledDates,
+      publishedDates,
+      missingDates,
+      unverifiedDates,
+      dailyCoverage,
+      preparationDate: preparationDateReadback,
+      weeklySummaryIsNonAuthoritativeForDailyCoverage: true,
       nativeScheduled: coverageProofValid ? nativeScheduled.length : null,
       observedScheduledBookings: coverageProofValid ? nativeScheduled.length : null,
       visibleCalendarSlots: coverageProofValid ? visibleScheduleTimes : null,
@@ -1032,9 +1126,7 @@ export function buildSocialCoverageReadback(snapshot) {
       apiRequestRows: apiRequests.map((item) => ({
         id: item.id,
         requestedAt: item.scheduledAt || null,
-        pastDue: Boolean(item.scheduledAt && easternDate(item.scheduledAt) < asOf
-          && item.campaignSocialEligible !== false
-          && !/^HELD/.test(item.status || '') && item.approvalState !== 'HELD'),
+        pastDue: isOverdueRequest(item, snapshot.asOf),
         campaignType: item.campaignType || null,
         campaignSocialEligible: item.campaignSocialEligible ?? null,
         campaignSocialEligibilityReason: item.campaignSocialEligibilityReason || null,
@@ -1050,6 +1142,7 @@ export function buildSocialCoverageReadback(snapshot) {
       publishedIds: published.map((item) => item.platformPostId),
       heldItems: held.map((item) => item.id),
       failures: failures.map((item) => item.id),
+      pastDueRequests: pastDueRequests.map((item) => item.id),
       duplicateRisk: duplicateRisk.map((item) => item.id),
       mixedChannelAuthority: mixedChannelAuthority.map((item) => item.id),
       weeks,
@@ -1102,7 +1195,17 @@ export function buildSocialCoverageReadback(snapshot) {
 
   return {
     asOfDateET: asOf,
+    coverageCadence: 'ONE_APPROVED_PLACEMENT_PER_CHANNEL_PER_EASTERN_DATE',
+    committedCoverage: {
+      startDateInclusiveET: asOf,
+      endDateInclusiveET: addDays(asOf, 13),
+      endDateExclusiveET: end,
+      requiredInclusiveDateCount: 14
+    },
     endExclusiveDateET: end,
+    preparationDateET: preparationDate,
+    preparationDateClassification: 'SEPARATE_FROM_COMMITTED_14_DATES',
+    weeklySummaryIsNonAuthoritativeForDailyCoverage: true,
     zone: ZONE,
     channels: results,
     authorCoverage,
