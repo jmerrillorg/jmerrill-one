@@ -172,7 +172,8 @@ test('pending, failed, held, and same-day overdue requests remain distinct and n
     { id: 'retryable-failure', kind: 'API_REQUEST', status: 'RETRY_REQUIRED', scheduledAt: '2026-10-04T14:00:00Z' },
     { id: 'ambiguous-result', kind: 'API_REQUEST', status: 'AMBIGUOUS_PUBLICATION_OUTCOME', scheduledAt: '2026-10-05T14:00:00Z' },
     { id: 'overdue-today', kind: 'API_REQUEST', status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE', scheduledAt: '2026-10-02T15:00:00Z' },
-    { id: 'held-old', kind: 'API_REQUEST', status: 'HELD_BUSINESS', approvalState: 'HELD', scheduledAt: '2026-10-01T14:00:00Z' }
+    { id: 'held-old', kind: 'API_REQUEST', status: 'HELD_BUSINESS', approvalState: 'HELD', scheduledAt: '2026-10-01T14:00:00Z' },
+    { id: 'moved-to-draft', kind: 'API_REQUEST', status: 'NATIVE_BOOKING_MOVED_TO_DRAFT', scheduledAt: '2026-10-01T14:00:00Z' }
   ].map((item) => ({ ...item, brand: channel.brand, platform: channel.platform, destinationId: channel.destinationId }));
   const result = buildSocialCoverageReadback({ ...base, asOf: '2026-10-02T16:00:00Z', items: requests }).channels[0];
   assert.equal(result.verifiedBookings, 0);
@@ -183,6 +184,8 @@ test('pending, failed, held, and same-day overdue requests remain distinct and n
   assert.ok(result.dailyCoverage.find((day) => day.dateET === '2026-10-02').overdueRequestIds.includes('overdue-today'));
   assert.ok(result.pastDueRequests.includes('overdue-today'));
   assert.ok(!result.pastDueRequests.includes('held-old'));
+  assert.ok(!result.pastDueRequests.includes('moved-to-draft'));
+  assert.ok(!result.apiRequestRows.find((item) => item.id === 'moved-to-draft').pastDue);
   assert.ok(result.states.includes('EXECUTION_FAILURE'));
   assert.ok(result.states.includes('PAST_DUE_API_REQUEST'));
   assert.ok(result.missingDates.includes('2026-10-02'));

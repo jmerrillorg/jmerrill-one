@@ -154,14 +154,24 @@ function isFailureStatus(status) {
   return /FAILED|DEAD_LETTER|RETRY_REQUIRED|RECONCILIATION_REQUIRED|AMBIGUOUS_PUBLICATION_OUTCOME|READBACK_MISMATCH|NATIVE_BOOKING_(CONFLICT|STALE)/.test(status || '');
 }
 
+function isNonActionableRequestStatus(status) {
+  return /^(NATIVE_BOOKING_MOVED_TO_DRAFT|NATIVE_BOOKING_CANCELLED|API_REQUEST_CANCELLED|CANCELLED|CANCELED|DRAFT|PUBLISHED_VERIFIED|NATIVE_BOOKED_VERIFIED)$/i.test(status || '');
+}
+
+function isPendingRequest(item) {
+  return item.scheduledAt
+    && !isFailureStatus(item.status)
+    && !isNonActionableRequestStatus(item.status)
+    && !/^HELD/.test(item.status || '')
+    && item.approvalState !== 'HELD';
+}
+
 function isOverdueRequest(item, asOf) {
   return Boolean(item.scheduledAt
     && Number.isFinite(Date.parse(asOf))
     && Date.parse(item.scheduledAt) <= Date.parse(asOf)
     && item.campaignSocialEligible !== false
-    && !/^HELD/.test(item.status || '')
-    && item.approvalState !== 'HELD'
-    && !['PUBLISHED_VERIFIED', 'NATIVE_BOOKED_VERIFIED'].includes(item.status));
+    && isPendingRequest(item));
 }
 
 function matchesDestination(item, channel) {
@@ -887,8 +897,7 @@ export function buildSocialCoverageReadback(snapshot) {
         scheduledReceiptIds: scheduled.map((item) => item.id),
         confirmedPublicationCount: publications.length,
         confirmedPlatformPostIds: publications.map((item) => item.platformPostId),
-        pendingRequestIds: requests.filter((item) => !isFailureStatus(item.status)
-          && !/^HELD/.test(item.status || '') && item.approvalState !== 'HELD').map((item) => item.id),
+        pendingRequestIds: requests.filter(isPendingRequest).map((item) => item.id),
         failedItemIds: failedItems.map((item) => item.id),
         overdueRequestIds: overdueItems.map((item) => item.id),
         unverifiedBookingClaimIds: unverifiedClaims.map((item) => item.id),
@@ -915,8 +924,7 @@ export function buildSocialCoverageReadback(snapshot) {
       confirmedPlatformPostIds: preparationPublications.map((item) => item.platformPostId),
       pendingRequestIds: apiRequests.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === preparationDate
-        && !isFailureStatus(item.status) && !/^HELD/.test(item.status || '')
-        && item.approvalState !== 'HELD').map((item) => item.id),
+        && isPendingRequest(item)).map((item) => item.id),
       failedItemIds: related.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === preparationDate && isFailureStatus(item.status)).map((item) => item.id)
     };
