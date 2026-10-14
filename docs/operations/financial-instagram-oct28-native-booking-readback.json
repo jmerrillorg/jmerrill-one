@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "brand": "J Merrill Financial",
+  "platform": "instagram",
+  "destination": "@jmerrillfinancial",
+  "destinationHandle": "@jmerrillfinancial",
+  "localDate": "2026-10-28",
+  "localTime": "11:00 AM",
+  "timeZone": "America/New_York",
+  "requestedScheduleUtc": "2026-10-28T15:00:00Z",
+  "caption": "For an estate-planning conversation, start with three notes: the questions you want to ask, where important records are kept, and who should be included. A qualified professional can explain options for your circumstances. Educational information only; not legal, tax, or insurance advice.\n\nhttps://jmerrill.financial/",
+  "mediaSha256": "8434350433980461cb4ef66bf755b0509b4410358fa6df0ee6fb9adee5522b2c",
+  "authorization": {
+    "basis": "Jackie's standing commissioning authorization for ordinary compliant social content and scheduling",
+    "recordedAt": "2026-10-14T14:58:14Z",
+    "contentScope": "Current Instagram-specific estate-readiness adaptation for the existing Oct 28 Instagram native booking. Does not alter the original Facebook or LinkedIn content scope and does not claim a historical Instagram approval."
+  },
+  "nativeReadback": {
+    "source": "META_NATIVE_UI",
+    "observedAt": "2026-10-14T14:58:14Z",
+    "scheduledAt": "2026-10-28T15:00:00Z",
+    "destination": "@jmerrillfinancial",
+    "captionSha256": "08c11e7a029771b858c0ddd7978ad0c05a15298dcfe4dbef6c10db58275b719f",
+    "nativeItemId": "1639799244268167",
+    "nativeBookingId": null,
+    "publicationId": null,
+    "confirmation": "Meta Business Suite was scoped to Financial Page 104395329284856 in portfolio 1306466683241061. The connected production Instagram handle jmerrillfinancial was selected. The Oct 25-31 native calendar showed the Instagram-specific caption at Oct 28 11:00 AM; expanded post detail showed item ID 1639799244268167, the full adapted caption, and the existing Organize before you meet 1080x1080 creative. The native item ID is not a booking ID or publication ID."
+  }
+}

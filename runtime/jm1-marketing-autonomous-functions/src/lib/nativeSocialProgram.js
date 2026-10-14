@@ -122,8 +122,14 @@ export function nativeSocialDestinationsForBranch(branch) {
     instagram: instagramReady ? [branch.instagramGraphId] : null,
     linkedin: [branch?.linkedinOrganizationId, branch?.linkedinOrganizationName]
   };
+  const reservationAliases = {
+    facebook: destinations.facebook,
+    instagram: [branch?.instagramGraphId, branch?.instagramHandle],
+    linkedin: destinations.linkedin
+  };
   return {
     destinations,
+    reservationAliases,
     blockedChannelGaps: nativeSocialChannelGaps(destinations, {
       disabledPlatforms: branch?.instagramEnabled === false ? ['instagram'] : [],
       blockedReasonByPlatform: instagramBlockedReason ? { instagram: instagramBlockedReason } : {}
@@ -212,7 +218,7 @@ export function nativeSocialScheduledAt(stage, platform) {
   return easternDateTimeIso(new Date(`${day}T12:00:00Z`), hour);
 }
 
-export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, approvedRequestMarkers = [], readbackComplete = true }) {
+export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, reservationAliasesByPlatform = destinationByPlatform, approvedRequestMarkers = [], readbackComplete = true }) {
   if (!isApprovedNativeSocialCampaign(campaign) || !readbackComplete || !Array.isArray(socialRows)) return [];
   const now = new Date(nowIso);
   const horizonEnd = new Date(easternDateTimeIso(addDays(easternMidnight(now), 14), 0));
@@ -226,7 +232,7 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
     const existingByPlatform = new Map(platforms.map((platform) => [platform, socialRows.filter((row) =>
       row.jm1_platform === platform
       && String(row.jm1_branch || campaign.jm1_branch) === campaign.jm1_branch
-      && normalizeDestinations(destinationByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination))
+      && normalizeDestinations(reservationAliasesByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination))
       && occupiesCadence(row, approvedRequestMarkers)
       && isInEasternWeek(row.jm1_requestedschedule || row.jm1_actualschedule, weekStart)
     )]));
@@ -246,7 +252,7 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
         if (!platformSchedule || new Date(platformSchedule) < now || new Date(platformSchedule) >= horizonEnd) return false;
         const alreadyCreated = socialRows.some((row) => String(row.jm1_idempotencykey || '').includes(`rolling-${slotKey}`)
           && row.jm1_platform === platform
-          && normalizeDestinations(destinationByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination)));
+          && normalizeDestinations(reservationAliasesByPlatform[platform]).includes(normalizeDestination(row.jm1_requesteddestination)));
         return !alreadyCreated;
       });
       if (!platformsForSlot.length) continue;

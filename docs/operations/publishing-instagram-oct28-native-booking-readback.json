@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "brand": "J Merrill Publishing",
+  "platform": "instagram",
+  "destination": "17841410046020869",
+  "destinationHandle": "jmerrillpub",
+  "localDate": "2026-10-28",
+  "localTime": "11:00 AM",
+  "timeZone": "America/New_York",
+  "requestedScheduleUtc": "2026-10-28T15:00:00Z",
+  "caption": "A practical way to approach revision is to read one page aloud and notice where a sentence or idea becomes hard to follow. Clarify that passage, then read it again with the reader in mind. Explore J Merrill Publishing titles: https://jmerrill.pub/books",
+  "mediaSha256": "c3365b6750171940fa514df383a60059797a1660fba9f3493e26564660be4a74",
+  "authorization": {
+    "basis": "Jackie's standing commissioning authorization for ordinary compliant social content and scheduling",
+    "recordedAt": "2026-10-14T14:49:17Z",
+    "contentScope": "New distinct Instagram writer-practice adaptation; not the already-published October 13 API request content"
+  },
+  "workerSuppression": {
+    "requestId": "29de92d6-c9c7-f111-aaaf-6045bdd69738",
+    "state": "HELD_NATIVE_BOOKING_CONFLICT",
+    "reversible": true,
+    "previousStatePreserved": true,
+    "conflictDisposition": "Existing request content matches an October 13 publication, not an October 28 booking. The hold remains in place; this booking uses distinct caption and creative."
+  },
+  "nativeReadback": {
+    "source": "META_NATIVE_UI",
+    "observedAt": "2026-10-14T14:49:17Z",
+    "scheduledAt": "2026-10-28T15:00:00Z",
+    "destination": "17841410046020869",
+    "captionSha256": "d9a6f136c9d8970b8e4a7d2d0d84d96982da7f9a5d1e133a19180fb7bd506a22",
+    "nativeItemId": "2340084636787002",
+    "nativeBookingId": null,
+    "publicationId": null,
+    "confirmation": "Meta Business Suite Planner was scoped to Publishing Page 307480763084670 and connected Instagram jmerrillpub (Graph business-account ID 17841410046020869). The Oct 25-31 view showed a distinct Oct 28 Instagram card at 11:00 AM. Native post details showed item ID 2340084636787002, jmerrillpub, the writer-practice caption, and the approved reader-promise desk creative (SHA-256 c3365b6750171940fa514df383a60059797a1660fba9f3493e26564660be4a74). Native item ID is not a booking ID or publication ID."
+  }
+}

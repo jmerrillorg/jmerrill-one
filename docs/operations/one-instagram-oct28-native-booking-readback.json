@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "brand": "J Merrill One",
+  "platform": "instagram",
+  "destination": "17841456905118441",
+  "destinationHandle": "jmerrillone",
+  "localDate": "2026-10-28",
+  "localTime": "11:00 AM",
+  "timeZone": "America/New_York",
+  "requestedScheduleUtc": "2026-10-28T15:00:00Z",
+  "caption": "Publishing, Financial, Foundation, and Productions serve different purposes. Explore the J Merrill One divisions and choose the path that matches what you are looking for.\n\nhttps://www.jmerrill.one/",
+  "mediaSha256": "7eed23eff185e462edab98ded1bee11d183bd4840c021541647bc7bc1fc8aa69",
+  "authorization": {
+    "basis": "Jackie's standing commissioning authorization for ordinary compliant social content and scheduling",
+    "recordedAt": "2026-10-14T14:42:59Z",
+    "contentScope": "ONE enterprise-brand placement adapted for the exact Instagram destination, caption and approved creative recorded below"
+  },
+  "workerSuppression": {
+    "requestId": "fd1940e3-c9c7-f111-aaaf-00224820105b",
+    "state": "HELD_NATIVE_SCHEDULER_OWNS_SLOT",
+    "reversible": true,
+    "previousStatePreserved": true,
+    "destination": "17841456905118441",
+    "scheduledAt": "2026-10-28T15:00:00Z",
+    "readbackState": "NATIVE_SCHEDULER_SUPPRESSION|PREVIOUS=PUBLIC_READY_SCHEDULED_ELIGIBLE|AT=2026-10-14T14:34:55.957Z"
+  },
+  "nativeReadback": {
+    "source": "META_NATIVE_UI",
+    "observedAt": "2026-10-14T14:42:59Z",
+    "scheduledAt": "2026-10-28T15:00:00Z",
+    "destination": "17841456905118441",
+    "captionSha256": "26ce1a0d7a1a2816a92134237f690adff07114e52097b37e5b1364c9517e745e",
+    "nativeItemId": "2300388787167498",
+    "nativeBookingId": null,
+    "publicationId": null,
+    "confirmation": "Meta Planner item detail showed ID 2300388787167498 and the jmerrillone account with the approved Find the right starting point creative. The Oct 28 planner row listed this Instagram placement at 11:00 AM. The item ID is stored separately from a booking ID and a publication ID."
+  }
+}

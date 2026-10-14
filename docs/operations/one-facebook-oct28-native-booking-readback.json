@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "brand": "J Merrill One",
+  "platform": "facebook",
+  "destination": "101196349506906",
+  "destinationHandle": "J Merrill One",
+  "localDate": "2026-10-28",
+  "localTime": "10:00 AM",
+  "timeZone": "America/New_York",
+  "requestedScheduleUtc": "2026-10-28T14:00:00Z",
+  "caption": "Publishing, Financial, Foundation, and Productions serve different purposes. Explore the J Merrill One divisions and choose the path that matches what you are looking for.\n\nhttps://www.jmerrill.one/",
+  "mediaSha256": "7eed23eff185e462edab98ded1bee11d183bd4840c021541647bc7bc1fc8aa69",
+  "authorization": {
+    "basis": "Jackie's standing commissioning authorization for ordinary compliant social content and scheduling",
+    "recordedAt": "2026-10-14T14:42:59Z",
+    "contentScope": "ONE enterprise-brand placement for the exact Facebook caption and approved creative recorded below"
+  },
+  "workerSuppression": {
+    "requestId": "b370c5df-c9c7-f111-aaaf-000d3a10aa9c",
+    "state": "HELD_NATIVE_SCHEDULER_OWNS_SLOT",
+    "reversible": true,
+    "previousStatePreserved": true,
+    "destination": "101196349506906",
+    "scheduledAt": "2026-10-28T14:00:00Z",
+    "readbackState": "NATIVE_SCHEDULER_SUPPRESSION|PREVIOUS=PUBLIC_READY_SCHEDULED_ELIGIBLE|AT=2026-10-14T14:34:36.642Z"
+  },
+  "nativeReadback": {
+    "source": "META_NATIVE_UI",
+    "observedAt": "2026-10-14T14:42:59Z",
+    "scheduledAt": "2026-10-28T14:00:00Z",
+    "destination": "101196349506906",
+    "captionSha256": "26ce1a0d7a1a2816a92134237f690adff07114e52097b37e5b1364c9517e745e",
+    "nativeItemId": "2505453816627808",
+    "nativeBookingId": null,
+    "publicationId": null,
+    "confirmation": "Meta Planner item detail showed ID 2505453816627808, J Merrill One, October 28 at 10:00 AM, and the approved Find the right starting point creative. The Meta planner was scoped to Page 101196349506906 in portfolio 846921439784613. The item ID is stored separately from a booking ID and a publication ID."
+  }
+}

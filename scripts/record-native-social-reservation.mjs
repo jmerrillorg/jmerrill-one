@@ -25,6 +25,12 @@ if (nativeReadback) {
     || Number.isNaN(new Date(nativeReadback.observedAt).getTime())) {
     throw new Error('Native booking proof must match the exact platform UI, destination, schedule, caption fingerprint, and observation time');
   }
+  if (nativeReadback.nativeItemId != null && !/^[A-Za-z0-9_-]{6,80}$/.test(String(nativeReadback.nativeItemId))) {
+    throw new Error('Native scheduler item ID must be an exposed platform identifier');
+  }
+  if (nativeReadback.nativeItemId && nativeReadback.nativeItemId === nativeReadback.nativeBookingId) {
+    throw new Error('Native scheduler item ID and booking ID are distinct identifiers');
+  }
 }
 const identity = [manifest.brand, manifest.platform, manifest.destination.toLowerCase(), manifest.localDate, manifest.localTime, captionSha256, manifest.mediaSha256 || 'NO_MEDIA'].join('|');
 const keySuffix = createHash('sha256').update(identity).digest('hex');
@@ -35,7 +41,7 @@ const reservationStatus = nativeReadback
   : manifest.timeZone === 'UNVERIFIED' ? 'NATIVE_RESERVATION_TIMEZONE_UNVERIFIED' : 'NATIVE_RESERVATION_VERIFIED';
 const name = `${manifest.brand} ${manifest.platform} native reservation ${manifest.localDate} ${manifest.localTime}`;
 const readback = nativeReadback
-  ? `NATIVE_UI|${manifest.platform === 'linkedin' ? 'LINKEDIN' : 'META'}|AT=${new Date(nativeReadback.observedAt).toISOString()}|BOOKING=${nativeReadback.nativeBookingId || 'NOT_EXPOSED'}`
+  ? `NATIVE_UI|${manifest.platform === 'linkedin' ? 'LINKEDIN' : 'META'}|AT=${new Date(nativeReadback.observedAt).toISOString()}|NATIVE_ITEM=${nativeReadback.nativeItemId || 'NOT_EXPOSED'}|BOOKING=${nativeReadback.nativeBookingId || 'NOT_EXPOSED'}`
   : [
     'NATIVE_POST_SCHEDULED',
     manifest.timeZone === 'UNVERIFIED' ? 'TZ_UNVERIFIED' : 'TZ_VERIFIED',
@@ -54,7 +60,12 @@ const payload = {
   jm1_status: reservationStatus,
   jm1_readbackstate: readback,
   jm1_requestedschedule: manifest.requestedScheduleUtc || null,
-  jm1_idempotencykey: idempotencyKey
+  jm1_idempotencykey: idempotencyKey,
+  ...(nativeReadback ? {
+    jm1_actualschedule: nativeReadback.scheduledAt,
+    jm1_actualdestination: nativeReadback.destination,
+    jm1_verifiedat: new Date(nativeReadback.observedAt).toISOString()
+  } : {})
 };
 
 if (!apply) {
@@ -87,11 +98,31 @@ const found = await dv(`jm1_socialexecutions?$select=jm1_socialexecutionid,jm1_i
 if ((found.value || []).length > 1) throw new Error('Duplicate reservation idempotency key; refusing to choose a row');
 if (found.value?.length === 1) {
   const existing = found.value[0];
-  for (const key of ['jm1_branch', 'jm1_platform', 'jm1_requesteddestination', 'jm1_requestedmediahash', 'jm1_captionversion', 'jm1_status', 'jm1_readbackstate', 'jm1_requestedschedule']) {
+  for (const key of ['jm1_branch', 'jm1_platform', 'jm1_requesteddestination', 'jm1_requestedmediahash', 'jm1_captionversion', 'jm1_requestedschedule']) {
     if (existing[key] !== payload[key]) throw new Error(`Existing reservation differs at ${key}; preserving it without overwrite`);
   }
-  process.stdout.write(`${JSON.stringify({ mode: 'IDEMPOTENT_EXISTING', id: existing.jm1_socialexecutionid, status: existing.jm1_status, externalBookingId: null, platformPublicationId: null }, null, 2)}\n`);
+  if (existing.jm1_status === payload.jm1_status && existing.jm1_readbackstate === payload.jm1_readbackstate) {
+    if (payload.jm1_status === 'NATIVE_BOOKED_VERIFIED') {
+      for (const key of ['jm1_actualschedule', 'jm1_actualdestination', 'jm1_verifiedat']) {
+        if (existing[key] !== payload[key]) throw new Error(`Existing booking receipt differs at ${key}; preserving it without overwrite`);
+      }
+    }
+    process.stdout.write(`${JSON.stringify({ mode: 'IDEMPOTENT_EXISTING', id: existing.jm1_socialexecutionid, status: existing.jm1_status, nativeItemId: nativeReadback?.nativeItemId || null, externalBookingId: null, platformPublicationId: null }, null, 2)}\n`);
+  } else if (existing.jm1_status === 'NATIVE_RESERVATION_VERIFIED'
+    && payload.jm1_status === 'NATIVE_BOOKED_VERIFIED' && nativeReadback) {
+    if (!existing['@odata.etag']) throw new Error('Reservation lacks an ETag; refusing an unguarded booking-receipt transition');
+    const update = Object.fromEntries(['jm1_status', 'jm1_readbackstate', 'jm1_actualschedule', 'jm1_actualdestination', 'jm1_verifiedat']
+      .map((key) => [key, payload[key]]));
+    await dv(`jm1_socialexecutions(${existing.jm1_socialexecutionid})`, {
+      method: 'PATCH',
+      headers: { 'If-Match': existing['@odata.etag'] },
+      body: JSON.stringify(update)
+    });
+    process.stdout.write(`${JSON.stringify({ mode: 'RESERVATION_TRANSITIONED_TO_BOOKED', id: existing.jm1_socialexecutionid, status: payload.jm1_status, nativeItemId: nativeReadback.nativeItemId || null, externalBookingId: nativeReadback.nativeBookingId || null, platformPublicationId: null }, null, 2)}\n`);
+  } else {
+    throw new Error(`Existing reservation status/readback cannot transition safely (${existing.jm1_status}); preserving it without overwrite`);
+  }
 } else {
   const created = await dv('jm1_socialexecutions', { method: 'POST', body: JSON.stringify(payload) });
-  process.stdout.write(`${JSON.stringify({ mode: 'CREATED', id: created.jm1_socialexecutionid || null, status: payload.jm1_status, externalBookingId: null, platformPublicationId: null, timeZone: manifest.timeZone }, null, 2)}\n`);
+  process.stdout.write(`${JSON.stringify({ mode: 'CREATED', id: created.jm1_socialexecutionid || null, status: payload.jm1_status, nativeItemId: nativeReadback?.nativeItemId || null, externalBookingId: null, platformPublicationId: null, timeZone: manifest.timeZone }, null, 2)}\n`);
 }
