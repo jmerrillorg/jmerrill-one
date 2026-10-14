@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "brand": "J Merrill Publishing",
+  "platform": "facebook",
+  "destination": "307480763084670",
+  "destinationHandle": "J Merrill Publishing Inc",
+  "localDate": "2026-10-28",
+  "localTime": "10:00 AM",
+  "timeZone": "America/New_York",
+  "requestedScheduleUtc": "2026-10-28T14:00:00Z",
+  "caption": "J Merrill Publishing works with books and the people who create them. Explore the catalog to learn about the titles currently available.\n\nhttps://jmerrill.pub/books",
+  "mediaSha256": "e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8",
+  "authorization": {
+    "basis": "Jackie's standing commissioning authorization for ordinary compliant social content and scheduling",
+    "recordedAt": "2026-10-14T14:49:17Z",
+    "contentScope": "Approved native_social Stories deserve thoughtful care content, Publishing Facebook Page only"
+  },
+  "workerSuppression": {
+    "requestId": "477b58d6-c9c7-f111-aaaf-6045bdd69678",
+    "state": "HELD_NATIVE_SCHEDULER_OWNS_SLOT",
+    "reversible": true,
+    "previousStatePreserved": true
+  },
+  "nativeReadback": {
+    "source": "META_NATIVE_UI",
+    "observedAt": "2026-10-14T14:49:17Z",
+    "scheduledAt": "2026-10-28T14:00:00Z",
+    "destination": "307480763084670",
+    "captionSha256": "7ff2885c76bfaeaf26bb4d185112ba6a77b111e09c5477b0ef3d5535d0466f8d",
+    "nativeItemId": "2334216017332799",
+    "nativeBookingId": null,
+    "publicationId": null,
+    "confirmation": "Meta Business Suite Planner was scoped to Publishing Page 307480763084670 in business portfolio 846921439784613. The Oct 25-31 view showed a distinct Oct 28 Facebook card at 10:00 AM. Native post details showed item ID 2334216017332799. Composer success showed the exact caption and approved revision-desk creative (SHA-256 e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8). Native item ID is not a booking ID or publication ID."
+  }
+}

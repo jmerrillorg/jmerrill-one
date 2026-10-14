@@ -697,6 +697,22 @@ test('Dataverse native booking readback verifies exact UI observation without mi
   assert.equal(result.nativeBookingRows[0].nativeBookingId, null);
 });
 
+test('native scheduler item identity remains distinct from booking and publication IDs', () => {
+  const [row] = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'native-item-distinct-1', jm1_branch: 'J Merrill Publishing',
+    jm1_platform: 'facebook', jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requesteddestination: '307480763084670', jm1_requestedschedule: '2026-10-28T14:00:00Z',
+    jm1_captionversion: 'a'.repeat(64), jm1_requestedmediahash: 'b'.repeat(64),
+    jm1_platformpostid: null,
+    jm1_readbackstate: 'NATIVE_UI|META|AT=2026-10-14T14:00:00.000Z|NATIVE_ITEM=meta_item_123|BOOKING=NOT_EXPOSED'
+  }], [{ brand: 'J Merrill Publishing', platform: 'facebook', destinationId: '307480763084670' }]).mapped;
+  assert.equal(row.nativeItemId, 'meta_item_123');
+  assert.equal(row.nativeBookingId, null);
+  assert.equal(row.platformPostId, null);
+  assert.equal(row.nativeEvidence.nativeItemId, 'meta_item_123');
+  assert.equal(row.nativeEvidence.nativeBookingId, null);
+});
+
 test('LinkedIn exact scheduled-list slot proves occupancy without inventing caption or booking IDs', () => {
   const observedAt = new Date().toISOString();
   const schedule = '2026-10-16T14:00:00Z';
@@ -1414,6 +1430,37 @@ test('legacy native booking keys resolve exact source linkage and require campai
     socialRows: [source, { ...source }] }, () => true);
   assert.equal(ambiguous.state, 'UNKNOWN');
   assert.equal(ambiguous.reason, 'AMBIGUOUS_EXACT_SOURCE_LINKAGE');
+});
+
+test('dated standing-authorization provenance reconciles an exact native reservation without backdating', () => {
+  const brand = 'J Merrill One';
+  const caption = 'Different needs call for different owners. J Merrill One brings Publishing, Financial, Foundation, and Productions together while each team keeps its own work and responsibility. Visit https://www.jmerrill.one/ to find the right path for your question.';
+  const captionHash = createHash('sha256').update(caption).digest('hex');
+  const observedAt = new Date().toISOString();
+  const schedule = new Date(Date.now() + 60 * 60 * 1000).toISOString();
+  const booking = { jm1_socialexecutionid: 'native-one-fb', jm1_status: 'NATIVE_BOOKED_VERIFIED', jm1_branch: brand,
+    jm1_platform: 'facebook', jm1_executor: 'META_NATIVE', jm1_requesteddestination: '101196349506906',
+    jm1_requestedschedule: schedule, jm1_captionversion: captionHash, jm1_requestedmediahash: null,
+    jm1_readbackstate: `NATIVE_UI|META|AT=${observedAt}|BOOKING=981487517620543` };
+  const campaign = { jm1_campaignauthorityid: 'one-approved-campaign', jm1_branch: brand, jm1_campaigntype: 'native_social',
+    jm1_state: 'PUBLIC_EXECUTION_APPROVED',
+    jm1_supersession: 'Founder standing marketing authorization; item source and media checks required. No Publishing Meta worker release.' };
+  const provenance = { version: 1,
+    authorizationBasis: 'Founder standing authorization for ordinary compliant social content on the nine approved brand channels',
+    reconciledAt: observedAt, brand, platform: 'facebook', destination: booking.jm1_requesteddestination,
+    scheduledAt: schedule, captionSha256: captionHash, mediaSha256: null,
+    validation: { sourceHost: 'www.jmerrill.one', brandAndClaims: 'PASS', rightsAndCreative: 'LINK_PREVIEW_ONLY' } };
+  const content = { jm1_contentworkid: 'one-content', jm1_idempotencykey: 'fixture:content:one', jm1_branch: brand,
+    jm1_stage: 'one-facebook-oct22', jm1_publicreadystate: 'PASS', jm1_draftcopy: caption,
+    jm1_copybrief: `NATIVE_SOCIAL_PROVENANCE_V1\n${JSON.stringify(provenance)}` };
+  const source = { ...booking };
+  const nativeReadback = { state: 'VERIFIED', observedAt, visibleScheduledAtUtc: [schedule] };
+  assert.equal(matchesApprovedLegacyNativeSocialContent(campaign, content, { booking, source, nativeReadback }), true);
+  assert.equal(matchesApprovedLegacyNativeSocialContent(campaign, { ...content,
+    jm1_copybrief: content.jm1_copybrief.replace(booking.jm1_requesteddestination, 'wrong-page') }, { booking, source, nativeReadback }), false);
+  assert.equal(matchesApprovedLegacyNativeSocialContent(campaign, { ...content,
+    jm1_copybrief: `NATIVE_SOCIAL_PROVENANCE_V1\n${JSON.stringify({ ...provenance,
+      authorizationBasis: 'Created approval after the fact' })}` }, { booking, source, nativeReadback }), false);
 });
 
 test('approved native-batch content reconciles LinkedIn bookings without fabricating a booking ID', () => {

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "brand": "J Merrill Financial",
+  "platform": "facebook",
+  "destination": "104395329284856",
+  "destinationHandle": "J Merrill Financial, LLC",
+  "localDate": "2026-10-28",
+  "localTime": "10:00 AM",
+  "timeZone": "America/New_York",
+  "requestedScheduleUtc": "2026-10-28T14:00:00Z",
+  "caption": "Before an estate-planning conversation, gather the questions you want to ask and note where important records are kept. A qualified professional can explain which options fit your circumstances. Educational information only; not legal, tax, or insurance advice.\n\nhttps://jmerrill.financial/",
+  "mediaSha256": "f6d59a1da5e83b50122a409ec6555cc8600dfdfbecd7538492ccaf7190b80e10",
+  "authorization": {
+    "basis": "Jackie's standing commissioning authorization for ordinary compliant social content and scheduling",
+    "recordedAt": "2026-10-14T14:59:40Z",
+    "contentScope": "Existing approved Financial daily-2026-10-28 Facebook scope; production Page native booking. The separate worker request remains held for unverified API access."
+  },
+  "nativeReadback": {
+    "source": "META_NATIVE_UI",
+    "observedAt": "2026-10-14T14:59:40Z",
+    "scheduledAt": "2026-10-28T14:00:00Z",
+    "destination": "104395329284856",
+    "captionSha256": "a2e72efad6d2094c61f7a07c649b055b6f10ae76e8dcbcb765f91ef88d3acc39",
+    "nativeItemId": "1054692764199365",
+    "nativeBookingId": null,
+    "publicationId": null,
+    "confirmation": "Meta Business Suite Planner was scoped to Financial Page 104395329284856 in portfolio 1306466683241061. The Oct 25-31 native view showed this Page at October 28 10:00 AM. Post detail identified J Merrill Financial, LLC, October 28 at 10:00 AM, and item ID 1054692764199365. The full caption matched the existing daily-2026-10-28 Facebook content record; Dataverse creative record feea94dc-c9c7-f111-aaaf-6045bdd69738 verified creative SHA-256 f6d59a1da5e83b50122a409ec6555cc8600dfdfbecd7538492ccaf7190b80e10. The native item ID is not a booking ID or publication ID."
+  }
+}

@@ -122,8 +122,14 @@ export function nativeSocialDestinationsForBranch(branch) {
     instagram: instagramReady ? [branch.instagramGraphId] : null,
     linkedin: [branch?.linkedinOrganizationId, branch?.linkedinOrganizationName]
   };
+  const reservationAliases = {
+    facebook: destinations.facebook,
+    instagram: [branch?.instagramGraphId, branch?.instagramHandle],
+    linkedin: destinations.linkedin
+  };
   return {
     destinations,
+    reservationAliases,
     blockedChannelGaps: nativeSocialChannelGaps(destinations, {
       disabledPlatforms: branch?.instagramEnabled === false ? ['instagram'] : [],
       blockedReasonByPlatform: instagramBlockedReason ? { instagram: instagramBlockedReason } : {}
@@ -221,7 +227,7 @@ export function nativeSocialScheduledAt(stage, platform) {
   return easternDateTimeIso(new Date(`${day}T12:00:00Z`), hour);
 }
 
-export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, approvedRequestMarkers = [], readbackComplete = true }) {
+export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, reservationAliasesByPlatform = destinationByPlatform, approvedRequestMarkers = [], readbackComplete = true }) {
   if (!isApprovedNativeSocialCampaign(campaign) || !readbackComplete || !Array.isArray(socialRows)) return [];
   const now = new Date(nowIso);
   const firstDay = easternMidnight(now);
@@ -233,7 +239,7 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
   for (let offset = 0; offset < 15; offset += 1) {
     const dateKey = easternDateKey(addDays(firstDay, offset));
     const platformsForDate = platforms.filter((platform) => {
-      const destinations = normalizeDestinations(destinationByPlatform[platform]);
+      const destinations = normalizeDestinations(reservationAliasesByPlatform[platform]);
       const occupied = socialRows.some((row) => {
         const schedule = row.jm1_requestedschedule || row.jm1_actualschedule;
         return row.jm1_platform === platform

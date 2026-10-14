@@ -362,6 +362,7 @@ export function mapDataverseSocialRows(rows, channels) {
       publishedAt: isPublished ? row.jm1_actualschedule || null : null,
       platformPostId: isPublished ? row.jm1_platformpostid : null,
       nativeBookingId: isNativeBooking ? nativeBookingIdFromReadback(row.jm1_readbackstate) : null,
+      nativeItemId: isNativeBooking ? nativeItemIdFromReadback(row.jm1_readbackstate) : null,
       captionSha256: isNativeBooking ? row.jm1_captionversion || null : null,
       mediaSha256: isNativeBooking ? row.jm1_requestedmediahash || null : null,
       nativeEvidence: isNativeBooking ? nativeEvidenceFromReadback(row.jm1_readbackstate, row, channel) : null,
@@ -399,6 +400,13 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
     'J Merrill Financial': 'www.jmerrill.financial'
   }[campaign?.jm1_branch];
   const copybrief = String(content?.jm1_copybrief || '');
+  const provenancePrefix = '\nNATIVE_SOCIAL_PROVENANCE_V1\n';
+  let recordedProvenance = null;
+  const provenanceIndex = copybrief.lastIndexOf(provenancePrefix);
+  if (provenanceIndex >= 0 || copybrief.startsWith('NATIVE_SOCIAL_PROVENANCE_V1\n')) {
+    const start = provenanceIndex >= 0 ? provenanceIndex + provenancePrefix.length : 'NATIVE_SOCIAL_PROVENANCE_V1\n'.length;
+    try { recordedProvenance = JSON.parse(copybrief.slice(start)); } catch { recordedProvenance = null; }
+  }
   const exactMatch = copybrief.match(/^Standing founder marketing authority; source (https:\/\/[^;]+); caption SHA-256 ([a-f0-9]{64}); exact native booking readback ([0-9]+)\.$/);
   const batchMatch = copybrief.match(/^Standing founder marketing authority; source (https:\/\/[^;]+); caption SHA-256 ([a-f0-9]{64}); batch JM1-THREE-BRAND-NATIVE-BATCH-2026-10$/);
   const itemMatch = copybrief.match(/^Founder-authorized public umbrella content; source (https:\/\/[^;]+); exact caption SHA-256 ([a-f0-9]{64})$/);
@@ -410,8 +418,24 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
     || content?.jm1_branch !== campaign.jm1_branch || content?.jm1_publicreadystate !== 'PASS'
     || !content?.jm1_draftcopy || !source || !booking
     || source.jm1_socialexecutionid !== booking.jm1_socialexecutionid
-    || source.jm1_status !== 'NATIVE_BOOKED_VERIFIED' || (!match && !linkedInListMatch)) return false;
+    || source.jm1_status !== 'NATIVE_BOOKED_VERIFIED' || (!match && !linkedInListMatch && !recordedProvenance)) return false;
   const captionHash = createHash('sha256').update(content.jm1_draftcopy).digest('hex');
+  const provenanceMatches = Boolean(recordedProvenance
+    && recordedProvenance.version === 1
+    && recordedProvenance.authorizationBasis === 'Founder standing authorization for ordinary compliant social content on the nine approved brand channels'
+    && recordedProvenance.reconciledAt && Number.isFinite(Date.parse(recordedProvenance.reconciledAt))
+    && recordedProvenance.brand === campaign.jm1_branch
+    && recordedProvenance.platform === String(source.jm1_platform || '').toLowerCase()
+    && recordedProvenance.destination === booking.jm1_requesteddestination
+    && recordedProvenance.scheduledAt === booking.jm1_requestedschedule
+    && recordedProvenance.captionSha256 === captionHash
+    && booking.jm1_captionversion === captionHash
+    && recordedProvenance.mediaSha256 === (booking.jm1_requestedmediahash || null)
+    && recordedProvenance.validation?.sourceHost === expectedHost
+    && recordedProvenance.validation?.brandAndClaims === 'PASS'
+    && recordedProvenance.validation?.rightsAndCreative === (booking.jm1_requestedmediahash ? 'PASS' : 'LINK_PREVIEW_ONLY')
+    && reservationBookingProof(source, booking, nativeReadback));
+  if (provenanceMatches) return true;
   const sourceUrls = [...String(content.jm1_draftcopy || '').matchAll(/https:\/\/[^\s)]+/g)].map(([value]) => {
     try { return new URL(value.replace(/[.,;!?]+$/, '')); } catch { return null; }
   }).filter(Boolean);
@@ -495,7 +519,7 @@ function reservationBookingProof(source, booking, nativeReadback) {
     && (source.jm1_actualdestination == null || String(source.jm1_actualdestination).replace(/^@/, '')
       === String(booking.jm1_requesteddestination || '').replace(/^@/, '')
     )
-    && /^NATIVE_UI\|META\|AT=[^|]+\|BOOKING=(?:NOT_EXPOSED|[0-9]+)$/.test(String(source.jm1_readbackstate || ''))
+    && /^NATIVE_UI\|META\|AT=[^|]+\|(?:NATIVE_ITEM=(?:NOT_EXPOSED|[A-Za-z0-9_-]{6,80})\|)?BOOKING=(?:NOT_EXPOSED|[0-9]+)$/.test(String(source.jm1_readbackstate || ''))
     && timestampEvidenceFresh(receiptObservedAt, new Date().toISOString())
     && timestampEvidenceFresh(nativeReadback?.observedAt, new Date().toISOString())
     && nativeReadback?.state === 'VERIFIED'
@@ -698,8 +722,13 @@ function nativeBookingIdFromReadback(value) {
   return legacy === 'NOT_EXPOSED_BY_UI' ? null : legacy;
 }
 
+function nativeItemIdFromReadback(value) {
+  const match = String(value || '').match(/(?:^|\|)NATIVE_ITEM=([^|]+)/);
+  return match && match[1] !== 'NOT_EXPOSED' ? match[1] : null;
+}
+
 function nativeEvidenceFromReadback(value, row, channel = null) {
-  const compact = String(value || '').match(/^NATIVE_UI\|(META|LINKEDIN)\|AT=([^|]+)\|BOOKING=([^|]+)$/);
+  const compact = String(value || '').match(/^NATIVE_UI\|(META|LINKEDIN)\|AT=([^|]+)\|(NATIVE_ITEM=([^|]+)\|)?BOOKING=([^|]+)$/);
   const metaBooked = String(value || '').match(/^MBS_BOOKED\|([^|]+)\|CONTENT_ID=(.+)$/);
   const linkedInList = String(value || '') === 'LINKEDIN_UI_SCHEDULED_LIST;BOOKING_ID=NOT_EXPOSED'
     && row.jm1_executor === 'LINKEDIN_NATIVE'
@@ -743,7 +772,8 @@ function nativeEvidenceFromReadback(value, row, channel = null) {
     observedDateET: easternDate(observedAt),
     scheduledAt,
     captionSha256: linkedInNativeList ? null : captionSha256,
-    nativeBookingId: compact ? (compact[3] === 'NOT_EXPOSED' ? null : compact[3]) : null,
+    nativeItemId: compact?.[4] && compact[4] !== 'NOT_EXPOSED' ? compact[4] : null,
+    nativeBookingId: compact ? (compact[5] === 'NOT_EXPOSED' ? null : compact[5]) : null,
     platformContentId: metaBooked ? metaBooked[2] : null
   };
 }

@@ -123,6 +123,88 @@ test('daily coverage planning creates only the exact missing channel and ignores
   assert.deepEqual(plans[0].platforms, ['instagram']);
 });
 
+test('verified account-handle reservations suppress planning without enabling a disabled API destination', () => {
+  const publishing = campaign('J Merrill Publishing');
+  const configured = nativeSocialDestinationsForBranch({
+    facebookPageId: '307480763084670', facebookPageName: 'J Merrill Publishing Inc',
+    instagramGraphId: '17841410046020869', instagramHandle: 'jmerrillpub',
+    linkedinOrganizationId: '13048648', linkedinOrganizationName: 'J Merrill Publishing, Inc.'
+  });
+  const handleReservation = { jm1_branch: publishing.jm1_branch, jm1_platform: 'instagram',
+    jm1_requesteddestination: 'jmerrillpub', jm1_status: 'NATIVE_BOOKED_VERIFIED',
+    jm1_requestedschedule: '2026-10-13T15:00:00Z' };
+  const planned = planNativeSocialGaps({ campaign: publishing, socialRows: [handleReservation],
+    nowIso: '2026-10-12T12:00:00Z', destinationByPlatform: configured.destinations,
+    reservationAliasesByPlatform: configured.reservationAliases });
+  assert.equal(planned.some((slot) => slot.platforms.includes('instagram')
+    && slot.scheduledAt === '2026-10-13T15:00:00.000Z'), false);
+
+  const financial = nativeSocialDestinationsForBranch({ facebookPageId: '104395329284856',
+    instagramGraphId: null, instagramHandle: 'jmerrillfinancial', instagramEnabled: false,
+    linkedinOrganizationId: '146207089' });
+  assert.equal(financial.destinations.instagram, null);
+  assert.ok(financial.reservationAliases.instagram.includes('jmerrillfinancial'));
+});
+
+test('verified production reservations suppress covered dates while the separate preparation date is planned once', () => {
+  for (const branch of branches) {
+    const authority = campaign(branch);
+    const configured = nativeSocialDestinationsForBranch({
+      facebookPageId: destinations[branch].facebook,
+      instagramGraphId: branch === 'J Merrill Financial' ? null : destinations[branch].instagram,
+      instagramHandle: branch === 'J Merrill Publishing' ? 'jmerrillpub'
+        : branch === 'J Merrill Financial' ? 'jmerrillfinancial' : null,
+      instagramEnabled: branch === 'J Merrill Financial' ? false : undefined,
+      linkedinOrganizationId: destinations[branch].linkedin
+    });
+    const reservations = [];
+    for (let day = 14; day <= 27; day += 1) {
+      for (const platform of ['facebook', 'instagram', 'linkedin']) {
+        reservations.push({
+          jm1_branch: branch,
+          jm1_platform: platform,
+          jm1_requesteddestination: platform === 'instagram' && branch === 'J Merrill Publishing' ? 'jmerrillpub'
+            : platform === 'instagram' && branch === 'J Merrill Financial' ? 'jmerrillfinancial'
+              : destinations[branch][platform],
+          jm1_status: 'NATIVE_BOOKED_VERIFIED',
+          jm1_requestedschedule: `2026-10-${String(day).padStart(2, '0')}T15:00:00Z`
+        });
+      }
+    }
+    const plans = planNativeSocialGaps({
+      campaign: authority,
+      socialRows: reservations,
+      nowIso: '2026-10-14T12:00:00Z',
+      destinationByPlatform: configured.destinations,
+      reservationAliasesByPlatform: configured.reservationAliases,
+      approvedRequestMarkers: [authority.jm1_idempotencykey.replace(/:campaign$/, '')],
+      readbackComplete: true
+    });
+    assert.ok(plans.every((plan) => plan.dateKey === '2026-10-28'), `${branch} must not recreate work for Oct 14-27`);
+    assert.equal(plans.length, 1, `${branch} should prepare only the separate Oct 28 date`);
+    assert.equal(plans[0].platforms.length, branch === 'J Merrill Financial' ? 2 : 3,
+      `${branch} should prepare only enabled Oct 28 channels`);
+    const marker = authority.jm1_idempotencykey.replace(/:campaign$/, '');
+    const prepared = [...reservations, ...plans.flatMap((plan) => plan.platforms.map((platform) => ({
+      jm1_branch: branch,
+      jm1_platform: platform,
+      jm1_requesteddestination: configured.destinations[platform][0],
+      jm1_status: 'PUBLIC_READY_SCHEDULED_ELIGIBLE',
+      jm1_requestedschedule: plan.scheduleByPlatform[platform],
+      jm1_idempotencykey: `${marker}:social:daily-${plan.dateKey}:${platform}`
+    })) )];
+    assert.deepEqual(planNativeSocialGaps({
+      campaign: authority,
+      socialRows: prepared,
+      nowIso: '2026-10-14T12:00:00Z',
+      destinationByPlatform: configured.destinations,
+      reservationAliasesByPlatform: configured.reservationAliases,
+      approvedRequestMarkers: [marker],
+      readbackComplete: true
+    }), [], `${branch} replay must not regenerate the preparation date`);
+  }
+});
+
 test('disabled Financial Instagram is excluded without disabling Financial Facebook or LinkedIn', () => {
   const financial = campaign('J Merrill Financial');
   const channels = { ...destinations['J Merrill Financial'], instagram: null };
