@@ -189,6 +189,10 @@ test('pending, failed, held, and same-day overdue requests remain distinct and n
   assert.ok(result.states.includes('EXECUTION_FAILURE'));
   assert.ok(result.states.includes('PAST_DUE_API_REQUEST'));
   assert.ok(result.missingDates.includes('2026-10-02'));
+  assert.deepEqual(result.dailyCoverage.find((day) => day.dateET === '2026-10-04').failedItemIds,
+    ['retryable-failure']);
+  assert.deepEqual(result.dailyCoverage.find((day) => day.dateET === '2026-10-05').failedItemIds,
+    ['ambiguous-result']);
 });
 
 test('Eastern midnight boundaries assign schedule slots to the correct local dates', () => {
@@ -784,14 +788,17 @@ test('fresh verified empty LinkedIn queue contradicts in-window Dataverse bookin
     && finding.evidence.recordIds.includes('pub-li-oct10')));
 });
 
-test('held native booking conflicts remain visible as actionable failures in Dataverse readback', () => {
+test('held native booking conflicts remain actionable but distinct from failed executions', () => {
   const conflict = { id: 'api-native-conflict', kind: 'API_REQUEST', brand: channel.brand,
     platform: channel.platform, destinationId: channel.destinationId,
     status: 'HELD_NATIVE_BOOKING_CONFLICT', scheduledAt: '2026-10-13T14:00:00Z' };
   const result = buildSocialCoverageReadback({ ...base, items: [conflict] }).channels[0];
   assert.ok(result.states.includes('HELD_ITEMS'));
-  assert.ok(result.states.includes('EXECUTION_FAILURE'));
-  assert.ok(result.alertFindings.some((finding) => finding.action === 'RECONCILE_EXECUTION_FAILURE'
+  assert.ok(result.states.includes('NATIVE_BOOKING_CONFLICT'));
+  assert.ok(!result.states.includes('EXECUTION_FAILURE'));
+  assert.deepEqual(result.failures, []);
+  assert.deepEqual(result.heldNativeConflicts, ['api-native-conflict']);
+  assert.ok(result.alertFindings.some((finding) => finding.action === 'RECONCILE_NATIVE_BOOKING_CONFLICT'
     && finding.evidence.recordIds.includes('api-native-conflict')));
   assert.equal(classifyDataverseExecutionRow({ status: 'HELD_NATIVE_BOOKING_CONFLICT' }).actionRequired, true);
   assert.equal(classifyDataverseExecutionRow({ status: 'HELD_NATIVE_BOOKING_STALE' }).classification, 'NATIVE_BOOKING_STALE');
