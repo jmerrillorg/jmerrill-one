@@ -91,6 +91,7 @@
             "21e8faf8-cec6-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -112,6 +113,7 @@
             "90220396-00c7-f111-aaaf-6045bdd69678"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -131,6 +133,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -152,6 +155,7 @@
             "69d576aa-01c7-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -173,6 +177,7 @@
             "fcaaa909-02c7-f111-aaaf-00224820105b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -194,6 +199,7 @@
             "44e3958b-02c7-f111-aaaf-000d3a10aa9c"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -215,6 +221,7 @@
             "b47bbadc-25c3-f111-aaad-6045bda898f6"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -236,6 +243,7 @@
             "ee98cc4e-03c7-f111-aaaf-6045bdd69678"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -255,6 +263,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -278,6 +287,7 @@
           "heldNativeConflictIds": [
             "16b8ac32-a5c4-f111-aaaf-000d3a1a9efa"
           ],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -299,6 +309,7 @@
             "42ca480d-04c7-f111-aaaf-000d3a9eacee"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -320,6 +331,7 @@
             "0eb9645f-76c7-f111-aaaf-00224820105b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -341,6 +353,7 @@
             "7823aa5f-76c7-f111-aaaf-000d3a9eacee"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -360,6 +373,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -375,7 +389,8 @@
           "b370c5df-c9c7-f111-aaaf-000d3a10aa9c"
         ],
         "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeConflictIds": [],
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 1,
@@ -747,6 +762,7 @@
       "heldNativeConflicts": [
         "16b8ac32-a5c4-f111-aaaf-000d3a1a9efa"
       ],
+      "heldNativeCoverageSuppressions": [],
       "heldStaleBookings": [],
       "pastDueRequests": [],
       "duplicateRisk": [],
@@ -898,6 +914,7 @@
             "cf9661fc-cec6-f111-aaaf-00224820105b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -912,15 +929,16 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "046a5cde-c9c7-f111-aaaf-6045bdd69435"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
             "4a7234e3-26c3-f111-aaaf-00224820105b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [
+            "046a5cde-c9c7-f111-aaaf-6045bdd69435"
+          ],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -942,6 +960,7 @@
             "6e91c750-01c7-f111-aaaf-000d3a9eacee"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -963,6 +982,7 @@
             "2b09a2a6-01c7-f111-aaaf-000d3a10aa9c"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -984,6 +1004,7 @@
             "5f623f09-02c7-f111-aaaf-7c1e525b15c2"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1005,6 +1026,7 @@
             "7b866689-02c7-f111-aaaf-00224820105b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1026,6 +1048,7 @@
             "b09c4321-03c7-f111-aaaf-6045bdd69738"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1040,15 +1063,16 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "af70c5df-c9c7-f111-aaaf-000d3a10aa9c"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
             "a0c07915-5dc3-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [
+            "af70c5df-c9c7-f111-aaaf-000d3a10aa9c"
+          ],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1070,6 +1094,7 @@
             "ae4c759d-03c7-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1089,6 +1114,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1110,6 +1136,7 @@
             "4951820d-04c7-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1131,6 +1158,7 @@
             "1742d448-04c7-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1152,6 +1180,7 @@
             "c617aa63-76c7-f111-aaaf-7c1e525b15c2"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1173,6 +1202,7 @@
             "73a21c64-76c7-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -1188,7 +1218,8 @@
           "fd1940e3-c9c7-f111-aaaf-00224820105b"
         ],
         "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeConflictIds": [],
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 0,
@@ -1516,12 +1547,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_NATIVE_BOOKING_CONFLICT",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "17841456905118441",
           "requestedDestinationText": "17841456905118441",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_NATIVE_BOOKING_CONFLICT"
         },
         {
           "id": "b2006c35-a5c4-f111-aaad-000d3a1a6e41",
@@ -1558,12 +1589,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_NATIVE_BOOKING_CONFLICT",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "17841456905118441",
           "requestedDestinationText": "17841456905118441",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_NATIVE_BOOKING_CONFLICT"
         },
         {
           "id": "5bc71f56-2ac6-f111-aaaf-6045bdd69678",
@@ -1602,13 +1633,19 @@
         "18112055213218924"
       ],
       "heldItems": [
+        "af70c5df-c9c7-f111-aaaf-000d3a10aa9c",
         "b2006c35-a5c4-f111-aaad-000d3a1a6e41",
+        "046a5cde-c9c7-f111-aaaf-6045bdd69435",
         "5bc71f56-2ac6-f111-aaaf-6045bdd69678",
         "9c9a5c08-dcc3-f111-aaaf-7c1e525b15c2"
       ],
       "failures": [],
       "heldNativeConflicts": [
         "5bc71f56-2ac6-f111-aaaf-6045bdd69678"
+      ],
+      "heldNativeCoverageSuppressions": [
+        "af70c5df-c9c7-f111-aaaf-000d3a10aa9c",
+        "046a5cde-c9c7-f111-aaaf-6045bdd69435"
       ],
       "heldStaleBookings": [],
       "pastDueRequests": [],
@@ -1761,6 +1798,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1780,6 +1818,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1801,6 +1840,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1820,6 +1860,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1839,6 +1880,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1858,6 +1900,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1877,6 +1920,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1896,6 +1940,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1915,6 +1960,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1936,6 +1982,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1955,6 +2002,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1974,6 +2022,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -1993,6 +2042,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2012,6 +2062,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -2025,7 +2076,8 @@
         "confirmedPlatformPostIds": [],
         "pendingRequestIds": [],
         "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeConflictIds": [],
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 13,
@@ -2368,6 +2420,7 @@
       ],
       "failures": [],
       "heldNativeConflicts": [],
+      "heldNativeCoverageSuppressions": [],
       "heldStaleBookings": [],
       "pastDueRequests": [],
       "duplicateRisk": [],
@@ -2483,6 +2536,7 @@
             "43ac3196-d4c6-f111-aaaf-00224820105b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2498,13 +2552,15 @@
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
           "pendingRequestIds": [
-            "36de92d6-c9c7-f111-aaaf-6045bdd69738",
             "5c02df83-d5c6-f111-aaaf-7c1e525b15c2"
           ],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [
+            "36de92d6-c9c7-f111-aaaf-6045bdd69738"
+          ],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2524,6 +2580,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2545,6 +2602,7 @@
             "44c3d286-d5c6-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2564,6 +2622,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2585,6 +2644,7 @@
             "095f6583-d5c6-f111-aaaf-6045bdd69738"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2604,6 +2664,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2625,6 +2686,7 @@
             "296c54e9-ffc6-f111-aaaf-7c1e525b15c2"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2646,6 +2708,7 @@
             "f5e47fee-d6c6-f111-aaaf-00224820105b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2665,6 +2728,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2686,6 +2750,7 @@
             "139769ed-d6c6-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2707,6 +2772,7 @@
             "d962edeb-f8c6-f111-aaaf-6045bdd69678"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2728,6 +2794,7 @@
             "7a23aa5f-76c7-f111-aaaf-000d3a9eacee"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -2749,6 +2816,7 @@
             "7b23aa5f-76c7-f111-aaaf-000d3a9eacee"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -2764,7 +2832,8 @@
           "477b58d6-c9c7-f111-aaaf-6045bdd69678"
         ],
         "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeConflictIds": [],
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 2,
@@ -3273,12 +3342,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_NATIVE_BOOKING_CONFLICT",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "307480763084670",
           "requestedDestinationText": "307480763084670",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_NATIVE_BOOKING_CONFLICT"
         },
         {
           "id": "b1a4b966-24a9-f111-aaac-7c1e525b15c2",
@@ -3384,6 +3453,7 @@
         "c4510039-92a7-f111-b8de-00224820105b",
         "8668125b-baa6-f111-b8de-6045bdd69435",
         "82479db8-b6aa-f111-aaac-6045bdd69678",
+        "36de92d6-c9c7-f111-aaaf-6045bdd69738",
         "efe1b9e1-7fab-f111-aaac-7c1e525b15c2",
         "d7f01f10-49ac-f111-aaac-7c1e525b15c2",
         "68215802-dcc3-f111-aaaf-7c1e525b15c2",
@@ -3392,6 +3462,9 @@
       ],
       "failures": [],
       "heldNativeConflicts": [],
+      "heldNativeCoverageSuppressions": [
+        "36de92d6-c9c7-f111-aaaf-6045bdd69738"
+      ],
       "heldStaleBookings": [],
       "pastDueRequests": [],
       "duplicateRisk": [],
@@ -3539,6 +3612,7 @@
             "01e79f96-d4c6-f111-aaaf-6045bdd69738"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3560,6 +3634,7 @@
             "b6564001-fec6-f111-aaaf-00224820105b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3581,6 +3656,7 @@
             "3c604a5b-25c6-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3602,6 +3678,7 @@
             "894b2c86-d5c6-f111-aaad-00224820f926"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3623,6 +3700,7 @@
             "52ee8662-fec6-f111-aaaf-6045bdd69738"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3644,6 +3722,7 @@
             "5d02df83-d5c6-f111-aaaf-7c1e525b15c2"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3658,15 +3737,16 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "672e8ad9-c9c7-f111-aaaf-000d3a10aa9c"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
             "d74e8005-73c3-f111-aaad-6045bdd39488"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [
+            "672e8ad9-c9c7-f111-aaaf-000d3a10aa9c"
+          ],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3688,6 +3768,7 @@
             "20d825eb-ffc6-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3709,6 +3790,7 @@
             "219e62e9-d6c6-f111-aaaf-6045bdd69678"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3730,6 +3812,7 @@
             "5271715a-25c6-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3751,6 +3834,7 @@
             "169769ed-d6c6-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3772,6 +3856,7 @@
             "f662edeb-f8c6-f111-aaaf-6045bdd69678"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3786,15 +3871,16 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "7c8155da-c9c7-f111-aaaf-7c1e525b15c2"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
             "c717aa63-76c7-f111-aaaf-7c1e525b15c2"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [
+            "7c8155da-c9c7-f111-aaaf-7c1e525b15c2"
+          ],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -3809,15 +3895,16 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "657abfdc-c9c7-f111-aaaf-00224820105b"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
             "d696ef5f-76c7-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [
+            "657abfdc-c9c7-f111-aaaf-00224820105b"
+          ],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -3829,11 +3916,12 @@
         "scheduledReceiptIds": [],
         "confirmedPublicationCount": 0,
         "confirmedPlatformPostIds": [],
-        "pendingRequestIds": [
+        "pendingRequestIds": [],
+        "failedItemIds": [],
+        "heldNativeConflictIds": [
           "29de92d6-c9c7-f111-aaaf-6045bdd69738"
         ],
-        "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 0,
@@ -4178,12 +4266,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_NATIVE_BOOKING_CONFLICT",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "17841410046020869",
           "requestedDestinationText": "17841410046020869",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_NATIVE_BOOKING_CONFLICT"
         },
         {
           "id": "debc7660-24a9-f111-aaab-000d3a14673b",
@@ -4304,12 +4392,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_NATIVE_BOOKING_CONFLICT",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "17841410046020869",
           "requestedDestinationText": "17841410046020869",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_NATIVE_BOOKING_CONFLICT"
         },
         {
           "id": "d8f0155e-baa6-f111-b8de-6045bdd69678",
@@ -4332,12 +4420,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_NATIVE_BOOKING_CONFLICT",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "17841410046020869",
           "requestedDestinationText": "17841410046020869",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_NATIVE_BOOKING_CONFLICT"
         },
         {
           "id": "5ca4b966-24a9-f111-aaac-7c1e525b15c2",
@@ -4388,12 +4476,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_NATIVE_BOOKING_CONFLICT",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "17841410046020869",
           "requestedDestinationText": "17841410046020869",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_NATIVE_BOOKING_CONFLICT"
         },
         {
           "id": "6495ca3c-92a7-f111-b8de-7c1e525b15c2",
@@ -4423,6 +4511,7 @@
         "18015844355734287"
       ],
       "heldItems": [
+        "672e8ad9-c9c7-f111-aaaf-000d3a10aa9c",
         "debc7660-24a9-f111-aaab-000d3a14673b",
         "2e71a166-24a9-f111-aaab-000d3a14673b",
         "c16f3605-dcc3-f111-aaaf-000d3a14673b",
@@ -4431,15 +4520,24 @@
         "ecc3c565-24a9-f111-aaab-00224820105b",
         "f9c3c565-24a9-f111-aaab-00224820105b",
         "fdc3c565-24a9-f111-aaab-00224820105b",
+        "657abfdc-c9c7-f111-aaaf-00224820105b",
         "d8f0155e-baa6-f111-b8de-6045bdd69678",
+        "29de92d6-c9c7-f111-aaaf-6045bdd69738",
         "5ca4b966-24a9-f111-aaac-7c1e525b15c2",
         "2ca5b966-24a9-f111-aaac-7c1e525b15c2",
+        "7c8155da-c9c7-f111-aaaf-7c1e525b15c2",
         "6495ca3c-92a7-f111-b8de-7c1e525b15c2",
         "e60c47b5da7824de99976e0a:content:title_discovery:instagram"
       ],
       "failures": [],
       "heldNativeConflicts": [
-        "ce878706-dcc3-f111-aaaf-000d3a9eacee"
+        "ce878706-dcc3-f111-aaaf-000d3a9eacee",
+        "29de92d6-c9c7-f111-aaaf-6045bdd69738"
+      ],
+      "heldNativeCoverageSuppressions": [
+        "672e8ad9-c9c7-f111-aaaf-000d3a10aa9c",
+        "657abfdc-c9c7-f111-aaaf-00224820105b",
+        "7c8155da-c9c7-f111-aaaf-7c1e525b15c2"
       ],
       "heldStaleBookings": [],
       "pastDueRequests": [],
@@ -4461,11 +4559,12 @@
       ],
       "alertFindings": [
         {
-          "dedupeKey": "social-coverage-v1-f3f28d7eb8e75a0b8192eaf3",
+          "dedupeKey": "social-coverage-v1-45eec8f92c402020fff9fefd",
           "state": "NATIVE_BOOKING_CONFLICT",
           "action": "RECONCILE_NATIVE_BOOKING_CONFLICT",
           "evidence": {
             "recordIds": [
+              "29de92d6-c9c7-f111-aaaf-6045bdd69738",
               "ce878706-dcc3-f111-aaaf-000d3a9eacee"
             ]
           },
@@ -4603,6 +4702,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4622,6 +4722,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4641,6 +4742,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4660,6 +4762,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4679,6 +4782,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4698,6 +4802,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4717,6 +4822,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4736,6 +4842,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4755,6 +4862,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4774,6 +4882,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4793,6 +4902,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4812,6 +4922,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4831,6 +4942,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -4850,6 +4962,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -4863,7 +4976,8 @@
         "confirmedPlatformPostIds": [],
         "pendingRequestIds": [],
         "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeConflictIds": [],
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 13,
@@ -5577,6 +5691,7 @@
       ],
       "failures": [],
       "heldNativeConflicts": [],
+      "heldNativeCoverageSuppressions": [],
       "heldStaleBookings": [],
       "pastDueRequests": [],
       "duplicateRisk": [],
@@ -5707,10 +5822,10 @@
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
-            "00d6a510-afbf-f111-aaaf-000d3a14673b",
             "5f5d7398-3bc6-f111-aaaf-6045bdd69738"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5725,13 +5840,12 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "dcea94dc-c9c7-f111-aaaf-6045bdd69738"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5753,6 +5867,7 @@
             "c8d3941e-f3c5-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5767,13 +5882,12 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "85d271db-c9c7-f111-aaaf-000d3a14673b"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5795,6 +5909,7 @@
             "2c06817d-09c7-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5816,6 +5931,7 @@
             "3cf12b2c-0ac7-f111-aaaf-6045bdd69738"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5830,13 +5946,12 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "22d537dd-c9c7-f111-aaaf-000d3a9eacee"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5856,10 +5971,10 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
             "da796524-34c6-f111-aaaf-000d3a14673b",
-            "c7a8f7bd-3cc6-f111-aaaf-000d3a9eacee",
-            "1b2c01e3-26c3-f111-aaaf-7c1e525b15c2"
+            "c7a8f7bd-3cc6-f111-aaaf-000d3a9eacee"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5874,13 +5989,12 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "1cd537dd-c9c7-f111-aaaf-000d3a9eacee"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5902,6 +6016,7 @@
             "1f319396-3bc6-f111-aaaf-000d3a10aa9c"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5916,13 +6031,12 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "797abfdc-c9c7-f111-aaaf-00224820105b"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5937,13 +6051,12 @@
           ],
           "confirmedPublicationCount": 0,
           "confirmedPlatformPostIds": [],
-          "pendingRequestIds": [
-            "81d271db-c9c7-f111-aaaf-000d3a14673b"
-          ],
+          "pendingRequestIds": [],
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5965,6 +6078,7 @@
             "67c6f865-76c7-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -5986,6 +6100,7 @@
             "76f2ea66-76c7-f111-aaad-7c1e5249b30e"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -5997,11 +6112,10 @@
         "scheduledReceiptIds": [],
         "confirmedPublicationCount": 0,
         "confirmedPlatformPostIds": [],
-        "pendingRequestIds": [
-          "87d271db-c9c7-f111-aaaf-000d3a14673b"
-        ],
+        "pendingRequestIds": [],
         "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeConflictIds": [],
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 0,
@@ -6039,7 +6153,7 @@
         "2026-10-26T15:00:00Z",
         "2026-10-27T15:00:00Z"
       ],
-      "nativeBookingClaims": 11,
+      "nativeBookingClaims": 9,
       "verifiedBookingsBeyondHorizon": [],
       "unverifiedBookingClaims": [
         {
@@ -6052,19 +6166,6 @@
           "nativeApprovalEvidence": null,
           "nativeApprovalReason": "RESERVATION_LACKS_FRESH_EXACT_NATIVE_SLOT_BINDING",
           "readbackState": "NATIVE_UI|META|AT=2026-10-12T12:44:34.000Z|BOOKING=NOT_EXPOSED",
-          "scheduleVisibleInNativeList": true,
-          "pastDue": false
-        },
-        {
-          "id": "00d6a510-afbf-f111-aaaf-000d3a14673b",
-          "scheduledAt": "2026-10-14T14:00:00Z",
-          "destinationId": "1270611542802820",
-          "destinationHandle": null,
-          "status": "NATIVE_BOOKED_VERIFIED",
-          "approvalState": "UNKNOWN",
-          "nativeApprovalEvidence": null,
-          "nativeApprovalReason": "RESERVATION_DESTINATION_AUTHORITY_MISMATCH",
-          "readbackState": "META_SCHEDULED_LIST_MATCH",
           "scheduleVisibleInNativeList": true,
           "pastDue": false
         },
@@ -6171,19 +6272,6 @@
           "readbackState": "NATIVE_UI|META|AT=2026-10-14T02:24:11.000Z|BOOKING=NOT_EXPOSED",
           "scheduleVisibleInNativeList": true,
           "pastDue": false
-        },
-        {
-          "id": "1b2c01e3-26c3-f111-aaaf-7c1e525b15c2",
-          "scheduledAt": "2026-10-21T14:00:00Z",
-          "destinationId": "1270611542802820",
-          "destinationHandle": null,
-          "status": "NATIVE_BOOKED_VERIFIED",
-          "approvalState": "UNKNOWN",
-          "nativeApprovalEvidence": null,
-          "nativeApprovalReason": "RESERVATION_DESTINATION_AUTHORITY_MISMATCH",
-          "readbackState": "META_SCHEDULED_NATIVE_CONTENT_ID_1100798145981063_DESTINATION_AND_TIME_VERIFIED",
-          "scheduleVisibleInNativeList": true,
-          "pastDue": false
         }
       ],
       "visibleScheduleCopyMismatches": [
@@ -6191,12 +6279,6 @@
           "id": "1f319396-3bc6-f111-aaaf-000d3a10aa9c",
           "scheduledAt": "2026-10-23T18:00:00Z",
           "destinationId": "104395329284856",
-          "sourceCopyStatus": "SOURCE_COPY_NOT_PROVEN"
-        },
-        {
-          "id": "00d6a510-afbf-f111-aaaf-000d3a14673b",
-          "scheduledAt": "2026-10-14T14:00:00Z",
-          "destinationId": "1270611542802820",
           "sourceCopyStatus": "SOURCE_COPY_NOT_PROVEN"
         },
         {
@@ -6246,12 +6328,6 @@
           "scheduledAt": "2026-10-27T15:00:00Z",
           "destinationId": "104395329284856",
           "sourceCopyStatus": "SOURCE_COPY_NOT_PROVEN"
-        },
-        {
-          "id": "1b2c01e3-26c3-f111-aaaf-7c1e525b15c2",
-          "scheduledAt": "2026-10-21T14:00:00Z",
-          "destinationId": "1270611542802820",
-          "sourceCopyStatus": "SOURCE_COPY_NOT_PROVEN"
         }
       ],
       "contradictedBookingClaims": [],
@@ -6259,23 +6335,9 @@
       "verifiedBookings": 0,
       "unapprovedScheduled": [],
       "nextVerifiedBooking": null,
-      "apiRequests": 9,
+      "apiRequests": 7,
       "policyExcludedApiRequests": [],
-      "nativeReservations": [
-        {
-          "id": "d2e0a930-6cc3-f111-aaaf-6045bdd69678",
-          "status": "NATIVE_RESERVATION_VERIFIED",
-          "destinationId": "1270611542802820",
-          "destinationHandle": null,
-          "scheduledAtUtc": "2026-10-28T14:00:00Z",
-          "localDate": "2026-10-28",
-          "localTime": "10:00 AM",
-          "timeZone": "LOCAL_ZONE_NOT_STORED",
-          "captionFingerprint": "dd4bbeef2aaa70e4acdfbda370a3c74352c598df6b5f0bd4085dab163b899497",
-          "mediaSha256": null,
-          "readbackState": "NATIVE_POST_SCHEDULED;TZ_VERIFIED;NO_EXTERNAL_BOOKING_ID;NO_PUBLICATION_ID"
-        }
-      ],
+      "nativeReservations": [],
       "apiRequestRows": [
         {
           "id": "81d271db-c9c7-f111-aaaf-000d3a14673b",
@@ -6284,12 +6346,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_BRANCH_API_ACCESS_UNVERIFIED",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "104395329284856",
           "requestedDestinationText": "104395329284856",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_FINANCIAL_PRODUCTION_ASSET_ACCESS_NOT_VERIFIED"
         },
         {
           "id": "85d271db-c9c7-f111-aaaf-000d3a14673b",
@@ -6298,12 +6360,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_BRANCH_API_ACCESS_UNVERIFIED",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "104395329284856",
           "requestedDestinationText": "104395329284856",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_FINANCIAL_PRODUCTION_ASSET_ACCESS_NOT_VERIFIED"
         },
         {
           "id": "87d271db-c9c7-f111-aaaf-000d3a14673b",
@@ -6312,26 +6374,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
-          "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
-          "expectedDestinationId": "104395329284856",
-          "requestedDestinationText": "104395329284856",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
-        },
-        {
-          "id": "b90bfb30-a5c4-f111-aaaf-000d3a9eacee",
-          "requestedAt": "2026-10-23T18:00:00Z",
-          "pastDue": false,
-          "campaignType": "native_social",
-          "campaignSocialEligible": true,
-          "campaignSocialEligibilityReason": null,
-          "status": "HELD_DESTINATION_IDENTITY_MISMATCH",
+          "status": "HELD_BRANCH_API_ACCESS_UNVERIFIED",
           "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "104395329284856",
-          "requestedDestinationText": "1270611542802820",
-          "readbackState": "DEST_MISMATCH|OLD_PAGE_1270611542802820|NATIVE_HANDOFF"
+          "requestedDestinationText": "104395329284856",
+          "readbackState": "HELD_FINANCIAL_PRODUCTION_ASSET_ACCESS_NOT_VERIFIED"
         },
         {
           "id": "1cd537dd-c9c7-f111-aaaf-000d3a9eacee",
@@ -6340,12 +6388,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_BRANCH_API_ACCESS_UNVERIFIED",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "104395329284856",
           "requestedDestinationText": "104395329284856",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_FINANCIAL_PRODUCTION_ASSET_ACCESS_NOT_VERIFIED"
         },
         {
           "id": "22d537dd-c9c7-f111-aaaf-000d3a9eacee",
@@ -6354,12 +6402,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_BRANCH_API_ACCESS_UNVERIFIED",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "104395329284856",
           "requestedDestinationText": "104395329284856",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_FINANCIAL_PRODUCTION_ASSET_ACCESS_NOT_VERIFIED"
         },
         {
           "id": "797abfdc-c9c7-f111-aaaf-00224820105b",
@@ -6368,12 +6416,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
+          "status": "HELD_BRANCH_API_ACCESS_UNVERIFIED",
+          "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "104395329284856",
           "requestedDestinationText": "104395329284856",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
+          "readbackState": "HELD_FINANCIAL_PRODUCTION_ASSET_ACCESS_NOT_VERIFIED"
         },
         {
           "id": "dcea94dc-c9c7-f111-aaaf-6045bdd69738",
@@ -6382,26 +6430,12 @@
           "campaignType": "native_social",
           "campaignSocialEligible": true,
           "campaignSocialEligibilityReason": null,
-          "status": "PUBLIC_READY_SCHEDULED_ELIGIBLE",
-          "approvalState": "APPROVED",
-          "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
-          "expectedDestinationId": "104395329284856",
-          "requestedDestinationText": "104395329284856",
-          "readbackState": "DURABLE_MEDIA_REGISTERED_SCHEDULED_NOT_DUE"
-        },
-        {
-          "id": "869a5c08-dcc3-f111-aaaf-7c1e525b15c2",
-          "requestedAt": "2026-10-16T18:00:00Z",
-          "pastDue": false,
-          "campaignType": "native_social",
-          "campaignSocialEligible": true,
-          "campaignSocialEligibilityReason": null,
-          "status": "HELD_DESTINATION_IDENTITY_MISMATCH",
+          "status": "HELD_BRANCH_API_ACCESS_UNVERIFIED",
           "approvalState": "HELD",
           "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
           "expectedDestinationId": "104395329284856",
-          "requestedDestinationText": "1270611542802820",
-          "readbackState": "DEST_MISMATCH|OLD_PAGE_1270611542802820|NATIVE_HANDOFF"
+          "requestedDestinationText": "104395329284856",
+          "readbackState": "HELD_FINANCIAL_PRODUCTION_ASSET_ACCESS_NOT_VERIFIED"
         }
       ],
       "approvedContentNotBooked": 0,
@@ -6410,11 +6444,17 @@
         "1046446668361672"
       ],
       "heldItems": [
-        "b90bfb30-a5c4-f111-aaaf-000d3a9eacee",
-        "869a5c08-dcc3-f111-aaaf-7c1e525b15c2"
+        "81d271db-c9c7-f111-aaaf-000d3a14673b",
+        "85d271db-c9c7-f111-aaaf-000d3a14673b",
+        "87d271db-c9c7-f111-aaaf-000d3a14673b",
+        "1cd537dd-c9c7-f111-aaaf-000d3a9eacee",
+        "22d537dd-c9c7-f111-aaaf-000d3a9eacee",
+        "797abfdc-c9c7-f111-aaaf-00224820105b",
+        "dcea94dc-c9c7-f111-aaaf-6045bdd69738"
       ],
       "failures": [],
       "heldNativeConflicts": [],
+      "heldNativeCoverageSuppressions": [],
       "heldStaleBookings": [],
       "pastDueRequests": [],
       "duplicateRisk": [],
@@ -6435,13 +6475,11 @@
       ],
       "alertFindings": [
         {
-          "dedupeKey": "social-coverage-v1-745b0ca9c15642db6844f0f6",
+          "dedupeKey": "social-coverage-v1-c33711d7ab49659ed62d2fc3",
           "state": "NATIVE_BOOKING_SOURCE_COPY_REVIEW",
           "action": "REVIEW_NATIVE_BOOKING_SOURCE_COPY",
           "evidence": {
             "recordIds": [
-              "00d6a510-afbf-f111-aaaf-000d3a14673b",
-              "1b2c01e3-26c3-f111-aaaf-7c1e525b15c2",
               "1f319396-3bc6-f111-aaaf-000d3a10aa9c",
               "2026-10-14T14:00:00Z",
               "2026-10-15T15:00:00Z",
@@ -6472,8 +6510,7 @@
       ],
       "states": [
         "HELD_ITEMS",
-        "NATIVE_BOOKING_SOURCE_COPY_REVIEW",
-        "NATIVE_RESERVATION_REQUIRES_PUBLICATION_READBACK"
+        "NATIVE_BOOKING_SOURCE_COPY_REVIEW"
       ]
     },
     {
@@ -6557,6 +6594,7 @@
             "e26d2d07-d1c6-f111-aaaf-7c1e525b15c2"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6576,6 +6614,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6594,10 +6633,10 @@
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
-            "465aa3a4-4bc0-f111-aaaf-000d3a14673b",
             "8e7b5698-3bc6-f111-aaaf-000d3a9eacee"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6617,6 +6656,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6638,6 +6678,7 @@
             "8a9b2d80-09c7-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6659,6 +6700,7 @@
             "66231930-0ac7-f111-aaaf-6045bdd69435"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6677,10 +6719,10 @@
           "failedItemIds": [],
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [
-            "f0ca1399-3bc6-f111-aaaf-000d3a14673b",
-            "cba19d33-71c3-f111-aaad-6045bda898f6"
+            "f0ca1399-3bc6-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6700,6 +6742,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6719,6 +6762,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6738,6 +6782,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6757,6 +6802,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6776,6 +6822,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6797,6 +6844,7 @@
             "c817aa63-76c7-f111-aaaf-7c1e525b15c2"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -6818,6 +6866,7 @@
             "6ac6f865-76c7-f111-aaaf-000d3a14673b"
           ],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -6831,7 +6880,8 @@
         "confirmedPlatformPostIds": [],
         "pendingRequestIds": [],
         "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeConflictIds": [],
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 1,
@@ -6868,22 +6918,9 @@
         "2026-10-26T15:00:00Z",
         "2026-10-27T15:00:00Z"
       ],
-      "nativeBookingClaims": 10,
+      "nativeBookingClaims": 8,
       "verifiedBookingsBeyondHorizon": [],
       "unverifiedBookingClaims": [
-        {
-          "id": "465aa3a4-4bc0-f111-aaaf-000d3a14673b",
-          "scheduledAt": "2026-10-16T16:00:00Z",
-          "destinationId": null,
-          "destinationHandle": "jmerrillfin",
-          "status": "NATIVE_BOOKED_VERIFIED",
-          "approvalState": "UNKNOWN",
-          "nativeApprovalEvidence": null,
-          "nativeApprovalReason": "RESERVATION_DESTINATION_AUTHORITY_MISMATCH",
-          "readbackState": "META_NATIVE_SCHEDULED_CONTENT_ID_1029867206856832_CAPTION_MEDIA_ALT_MATCH",
-          "scheduleVisibleInNativeList": false,
-          "pastDue": false
-        },
         {
           "id": "f0ca1399-3bc6-f111-aaaf-000d3a14673b",
           "scheduledAt": "2026-10-20T15:00:00Z",
@@ -6921,19 +6958,6 @@
           "nativeApprovalReason": "RESERVATION_LACKS_FRESH_EXACT_NATIVE_SLOT_BINDING",
           "readbackState": "NATIVE_UI|META|AT=2026-10-12T12:44:34.000Z|BOOKING=NOT_EXPOSED",
           "scheduleVisibleInNativeList": true,
-          "pastDue": false
-        },
-        {
-          "id": "cba19d33-71c3-f111-aaad-6045bda898f6",
-          "scheduledAt": "2026-10-20T16:00:00Z",
-          "destinationId": null,
-          "destinationHandle": "jmerrillfin",
-          "status": "NATIVE_BOOKED_VERIFIED",
-          "approvalState": "UNKNOWN",
-          "nativeApprovalEvidence": null,
-          "nativeApprovalReason": "RESERVATION_DESTINATION_AUTHORITY_MISMATCH",
-          "readbackState": "NATIVE_UI|META|AT=2026-10-08T23:54:31.000Z|BOOKING=2116801745889687",
-          "scheduleVisibleInNativeList": false,
           "pastDue": false
         },
         {
@@ -7033,22 +7057,7 @@
           "sourceCopyStatus": "SOURCE_COPY_NOT_PROVEN"
         }
       ],
-      "contradictedBookingClaims": [
-        {
-          "id": "465aa3a4-4bc0-f111-aaaf-000d3a14673b",
-          "scheduledAt": "2026-10-16T16:00:00Z",
-          "destinationId": null,
-          "destinationHandle": "jmerrillfin",
-          "readbackState": "META_NATIVE_SCHEDULED_CONTENT_ID_1029867206856832_CAPTION_MEDIA_ALT_MATCH"
-        },
-        {
-          "id": "cba19d33-71c3-f111-aaad-6045bda898f6",
-          "scheduledAt": "2026-10-20T16:00:00Z",
-          "destinationId": null,
-          "destinationHandle": "jmerrillfin",
-          "readbackState": "NATIVE_UI|META|AT=2026-10-08T23:54:31.000Z|BOOKING=2116801745889687"
-        }
-      ],
+      "contradictedBookingClaims": [],
       "nativeBookingRows": [
         {
           "id": "9a2c0d3d-2bc6-f111-aaaf-7c1e525b15c2",
@@ -7073,64 +7082,19 @@
         "9a2c0d3d-2bc6-f111-aaaf-7c1e525b15c2"
       ],
       "nextVerifiedBooking": null,
-      "apiRequests": 3,
+      "apiRequests": 0,
       "policyExcludedApiRequests": [],
       "nativeReservations": [],
-      "apiRequestRows": [
-        {
-          "id": "26751830-a5c4-f111-aaaf-000d3a10aa9c",
-          "requestedAt": "2026-10-23T19:00:00Z",
-          "pastDue": false,
-          "campaignType": "native_social",
-          "campaignSocialEligible": true,
-          "campaignSocialEligibilityReason": null,
-          "status": "HELD_DESTINATION_IDENTITY_MISMATCH",
-          "approvalState": "HELD",
-          "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
-          "expectedDestinationId": null,
-          "requestedDestinationText": "17841438473100276",
-          "readbackState": "HELD_PRODUCTION_ACCOUNT_NOT_CONNECTED_TEST_ACCOUNT_EXCLUDED"
-        },
-        {
-          "id": "ce6f3605-dcc3-f111-aaaf-000d3a14673b",
-          "requestedAt": "2026-10-13T15:00:00Z",
-          "pastDue": false,
-          "campaignType": "native_social",
-          "campaignSocialEligible": true,
-          "campaignSocialEligibilityReason": null,
-          "status": "HELD_DESTINATION_IDENTITY_MISMATCH",
-          "approvalState": "HELD",
-          "campaignAuthorityState": "PUBLIC_EXECUTION_APPROVED",
-          "expectedDestinationId": null,
-          "requestedDestinationText": "17841438473100276",
-          "readbackState": "HELD_PRODUCTION_ACCOUNT_NOT_CONNECTED_TEST_ACCOUNT_EXCLUDED"
-        },
-        {
-          "id": "0a510bd3-70c3-f111-aaad-6045bdd39488",
-          "requestedAt": "2026-10-13T16:00:00Z",
-          "pastDue": false,
-          "campaignType": null,
-          "campaignSocialEligible": null,
-          "campaignSocialEligibilityReason": null,
-          "status": "NATIVE_BOOKING_MOVED_TO_DRAFT",
-          "approvalState": "UNKNOWN",
-          "campaignAuthorityState": null,
-          "expectedDestinationId": null,
-          "requestedDestinationText": "jmerrillfin",
-          "readbackState": "MBS_DRAFT_VERIFIED; moved from scheduled queue on 2026-10-08 to avoid duplicate-week cadence; content preserved as draft"
-        }
-      ],
+      "apiRequestRows": [],
       "approvedContentNotBooked": 0,
       "publishedWithPlatformId": 1,
       "publishedIds": [
         "18130215542496031"
       ],
-      "heldItems": [
-        "26751830-a5c4-f111-aaaf-000d3a10aa9c",
-        "ce6f3605-dcc3-f111-aaaf-000d3a14673b"
-      ],
+      "heldItems": [],
       "failures": [],
       "heldNativeConflicts": [],
+      "heldNativeCoverageSuppressions": [],
       "heldStaleBookings": [],
       "pastDueRequests": [],
       "duplicateRisk": [],
@@ -7150,18 +7114,6 @@
         }
       ],
       "alertFindings": [
-        {
-          "dedupeKey": "social-coverage-v1-e16002cc7f0c03f99ad36d54",
-          "state": "NATIVE_BOOKING_CONFLICT",
-          "action": "RECONCILE_CONTRADICTED_NATIVE_BOOKING",
-          "evidence": {
-            "recordIds": [
-              "465aa3a4-4bc0-f111-aaaf-000d3a14673b",
-              "cba19d33-71c3-f111-aaad-6045bda898f6"
-            ]
-          },
-          "delivery": "REPORT_ONLY"
-        },
         {
           "dedupeKey": "social-coverage-v1-0f895c611a9512607c718750",
           "state": "NATIVE_BOOKING_SOURCE_COPY_REVIEW",
@@ -7195,8 +7147,6 @@
       ],
       "states": [
         "NUMERIC_DESTINATION_ID_UNVERIFIED",
-        "HELD_ITEMS",
-        "NATIVE_BOOKING_CONFLICT",
         "NATIVE_BOOKING_SOURCE_COPY_REVIEW",
         "UNAPPROVED_NATIVE_SCHEDULE"
       ]
@@ -7277,6 +7227,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7296,6 +7247,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7315,6 +7267,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7334,6 +7287,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7353,6 +7307,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7372,6 +7327,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7391,6 +7347,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7410,6 +7367,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7429,6 +7387,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7450,6 +7409,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7469,6 +7429,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7488,6 +7449,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7507,6 +7469,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         },
@@ -7526,6 +7489,7 @@
           "overdueRequestIds": [],
           "unverifiedBookingClaimIds": [],
           "heldNativeConflictIds": [],
+          "heldNativeCoverageSuppressionIds": [],
           "heldStaleBookingIds": [],
           "qualifiesForDailyCoverage": true
         }
@@ -7539,7 +7503,8 @@
         "confirmedPlatformPostIds": [],
         "pendingRequestIds": [],
         "failedItemIds": [],
-        "heldNativeConflictIds": []
+        "heldNativeConflictIds": [],
+        "heldNativeCoverageSuppressionIds": []
       },
       "weeklySummaryIsNonAuthoritativeForDailyCoverage": true,
       "nativeScheduled": 5,
@@ -7866,6 +7831,7 @@
       ],
       "failures": [],
       "heldNativeConflicts": [],
+      "heldNativeCoverageSuppressions": [],
       "heldStaleBookings": [],
       "pastDueRequests": [],
       "duplicateRisk": [],
@@ -8158,11 +8124,12 @@
       "delivery": "REPORT_ONLY"
     },
     {
-      "dedupeKey": "social-coverage-v1-f3f28d7eb8e75a0b8192eaf3",
+      "dedupeKey": "social-coverage-v1-45eec8f92c402020fff9fefd",
       "state": "NATIVE_BOOKING_CONFLICT",
       "action": "RECONCILE_NATIVE_BOOKING_CONFLICT",
       "evidence": {
         "recordIds": [
+          "29de92d6-c9c7-f111-aaaf-6045bdd69738",
           "ce878706-dcc3-f111-aaaf-000d3a9eacee"
         ]
       },
@@ -8245,13 +8212,11 @@
       "delivery": "REPORT_ONLY"
     },
     {
-      "dedupeKey": "social-coverage-v1-745b0ca9c15642db6844f0f6",
+      "dedupeKey": "social-coverage-v1-c33711d7ab49659ed62d2fc3",
       "state": "NATIVE_BOOKING_SOURCE_COPY_REVIEW",
       "action": "REVIEW_NATIVE_BOOKING_SOURCE_COPY",
       "evidence": {
         "recordIds": [
-          "00d6a510-afbf-f111-aaaf-000d3a14673b",
-          "1b2c01e3-26c3-f111-aaaf-7c1e525b15c2",
           "1f319396-3bc6-f111-aaaf-000d3a10aa9c",
           "2026-10-14T14:00:00Z",
           "2026-10-15T15:00:00Z",
@@ -8275,18 +8240,6 @@
           "c7a8f7bd-3cc6-f111-aaaf-000d3a9eacee",
           "c8d3941e-f3c5-f111-aaaf-000d3a14673b",
           "da796524-34c6-f111-aaaf-000d3a14673b"
-        ]
-      },
-      "delivery": "REPORT_ONLY"
-    },
-    {
-      "dedupeKey": "social-coverage-v1-e16002cc7f0c03f99ad36d54",
-      "state": "NATIVE_BOOKING_CONFLICT",
-      "action": "RECONCILE_CONTRADICTED_NATIVE_BOOKING",
-      "evidence": {
-        "recordIds": [
-          "465aa3a4-4bc0-f111-aaaf-000d3a14673b",
-          "cba19d33-71c3-f111-aaad-6045bda898f6"
         ]
       },
       "delivery": "REPORT_ONLY"
@@ -8342,72 +8295,72 @@
     }
   ],
   "sourceEvidencePath": "docs/operations/social-coverage-native-audit-2026-10-14.json",
-  "sourceSnapshotAgeHours": 0.1,
+  "sourceSnapshotAgeHours": 0.3,
   "latestNativeObservationAt": "2026-10-14T12:21:26.412Z",
-  "latestNativeObservationAgeHours": 0.1,
+  "latestNativeObservationAgeHours": 0.3,
   "channelObservationAges": [
     {
       "brand": "J Merrill One",
       "platform": "facebook",
       "destination": "101196349506906",
       "observedAt": "2026-10-14T12:16:38.073Z",
-      "ageHours": 0.2
+      "ageHours": 0.3
     },
     {
       "brand": "J Merrill One",
       "platform": "instagram",
       "destination": "17841456905118441",
       "observedAt": "2026-10-14T12:16:38.073Z",
-      "ageHours": 0.2
+      "ageHours": 0.3
     },
     {
       "brand": "J Merrill One",
       "platform": "linkedin",
       "destination": "106683183",
       "observedAt": "2026-10-14T12:20:42.774Z",
-      "ageHours": 0.1
+      "ageHours": 0.3
     },
     {
       "brand": "J Merrill Publishing",
       "platform": "facebook",
       "destination": "307480763084670",
       "observedAt": "2026-10-14T12:09:26.259Z",
-      "ageHours": 0.3
+      "ageHours": 0.5
     },
     {
       "brand": "J Merrill Publishing",
       "platform": "instagram",
       "destination": "17841410046020869",
       "observedAt": "2026-10-14T12:09:26.259Z",
-      "ageHours": 0.3
+      "ageHours": 0.5
     },
     {
       "brand": "J Merrill Publishing",
       "platform": "linkedin",
       "destination": "13048648",
       "observedAt": "2026-10-14T12:20:01.343Z",
-      "ageHours": 0.2
+      "ageHours": 0.3
     },
     {
       "brand": "J Merrill Financial",
       "platform": "facebook",
       "destination": "104395329284856",
       "observedAt": "2026-10-14T12:09:43.857Z",
-      "ageHours": 0.3
+      "ageHours": 0.5
     },
     {
       "brand": "J Merrill Financial",
       "platform": "instagram",
       "destination": "jmerrillfinancial",
       "observedAt": "2026-10-14T12:09:43.857Z",
-      "ageHours": 0.3
+      "ageHours": 0.5
     },
     {
       "brand": "J Merrill Financial",
       "platform": "linkedin",
       "destination": "146207089",
       "observedAt": "2026-10-14T12:21:26.412Z",
-      "ageHours": 0.1
+      "ageHours": 0.3
     }
   ],
   "dateChannelMatrix": [
@@ -8426,6 +8379,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "21e8faf8-cec6-f111-aaaf-6045bdd69435"
       ],
@@ -8449,6 +8403,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "90220396-00c7-f111-aaaf-6045bdd69678"
       ],
@@ -8472,6 +8427,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=101196349506906&business_id=846921439784613",
@@ -8493,6 +8449,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "69d576aa-01c7-f111-aaaf-6045bdd69435"
       ],
@@ -8516,6 +8473,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "fcaaa909-02c7-f111-aaaf-00224820105b"
       ],
@@ -8539,6 +8497,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "44e3958b-02c7-f111-aaaf-000d3a10aa9c"
       ],
@@ -8562,6 +8521,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "b47bbadc-25c3-f111-aaad-6045bda898f6"
       ],
@@ -8585,6 +8545,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "ee98cc4e-03c7-f111-aaaf-6045bdd69678"
       ],
@@ -8608,6 +8569,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=101196349506906&business_id=846921439784613",
@@ -8631,6 +8593,7 @@
       "heldConflictIds": [
         "16b8ac32-a5c4-f111-aaaf-000d3a1a9efa"
       ],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "15c285dc-04c7-f111-aaaf-00224820105b"
       ],
@@ -8654,6 +8617,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "42ca480d-04c7-f111-aaaf-000d3a9eacee"
       ],
@@ -8677,6 +8641,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "0eb9645f-76c7-f111-aaaf-00224820105b"
       ],
@@ -8700,6 +8665,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "7823aa5f-76c7-f111-aaaf-000d3a9eacee"
       ],
@@ -8723,6 +8689,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=101196349506906&business_id=846921439784613",
@@ -8744,6 +8711,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "cf9661fc-cec6-f111-aaaf-00224820105b"
       ],
@@ -8763,12 +8731,13 @@
         "2026-10-15T14:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "046a5cde-c9c7-f111-aaaf-6045bdd69435"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [
+        "046a5cde-c9c7-f111-aaaf-6045bdd69435"
+      ],
       "unverifiedClaimIds": [
         "4a7234e3-26c3-f111-aaaf-00224820105b"
       ],
@@ -8792,6 +8761,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "6e91c750-01c7-f111-aaaf-000d3a9eacee"
       ],
@@ -8815,6 +8785,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "2b09a2a6-01c7-f111-aaaf-000d3a10aa9c"
       ],
@@ -8838,6 +8809,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "5f623f09-02c7-f111-aaaf-7c1e525b15c2"
       ],
@@ -8861,6 +8833,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "7b866689-02c7-f111-aaaf-00224820105b"
       ],
@@ -8884,6 +8857,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "b09c4321-03c7-f111-aaaf-6045bdd69738"
       ],
@@ -8903,12 +8877,13 @@
         "2026-10-21T16:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "af70c5df-c9c7-f111-aaaf-000d3a10aa9c"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [
+        "af70c5df-c9c7-f111-aaaf-000d3a10aa9c"
+      ],
       "unverifiedClaimIds": [
         "a0c07915-5dc3-f111-aaaf-6045bdd69435"
       ],
@@ -8932,6 +8907,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "ae4c759d-03c7-f111-aaaf-6045bdd69435"
       ],
@@ -8955,6 +8931,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; Instagram connected through Page 101196349506906",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=101196349506906&business_id=846921439784613",
@@ -8976,6 +8953,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "4951820d-04c7-f111-aaaf-6045bdd69435"
       ],
@@ -8999,6 +8977,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "1742d448-04c7-f111-aaaf-000d3a14673b"
       ],
@@ -9022,6 +9001,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "c617aa63-76c7-f111-aaaf-7c1e525b15c2"
       ],
@@ -9045,6 +9025,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "73a21c64-76c7-f111-aaaf-6045bdd69435"
       ],
@@ -9068,6 +9049,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9089,6 +9071,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9112,6 +9095,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9133,6 +9117,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9154,6 +9139,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9175,6 +9161,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9196,6 +9183,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9217,6 +9205,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9238,6 +9227,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9261,6 +9251,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9282,6 +9273,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9303,6 +9295,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9324,6 +9317,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9345,6 +9339,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 106683183",
       "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
@@ -9366,6 +9361,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "43ac3196-d4c6-f111-aaaf-00224820105b"
       ],
@@ -9386,12 +9382,14 @@
       ],
       "publishedPlatformPostIds": [],
       "pendingRequestIds": [
-        "36de92d6-c9c7-f111-aaaf-6045bdd69738",
         "5c02df83-d5c6-f111-aaaf-7c1e525b15c2"
       ],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [
+        "36de92d6-c9c7-f111-aaaf-6045bdd69738"
+      ],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=307480763084670&business_id=846921439784613",
@@ -9413,6 +9411,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=307480763084670&business_id=846921439784613",
@@ -9434,6 +9433,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "44c3d286-d5c6-f111-aaaf-000d3a14673b"
       ],
@@ -9457,6 +9457,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=307480763084670&business_id=846921439784613",
@@ -9478,6 +9479,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "095f6583-d5c6-f111-aaaf-6045bdd69738"
       ],
@@ -9501,6 +9503,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=307480763084670&business_id=846921439784613",
@@ -9522,6 +9525,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "296c54e9-ffc6-f111-aaaf-7c1e525b15c2"
       ],
@@ -9545,6 +9549,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "f5e47fee-d6c6-f111-aaaf-00224820105b"
       ],
@@ -9568,6 +9573,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=307480763084670&business_id=846921439784613",
@@ -9589,6 +9595,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "139769ed-d6c6-f111-aaaf-000d3a14673b"
       ],
@@ -9612,6 +9619,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "d962edeb-f8c6-f111-aaaf-6045bdd69678"
       ],
@@ -9635,6 +9643,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "7a23aa5f-76c7-f111-aaaf-000d3a9eacee"
       ],
@@ -9658,6 +9667,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "7b23aa5f-76c7-f111-aaaf-000d3a9eacee"
       ],
@@ -9681,6 +9691,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "01e79f96-d4c6-f111-aaaf-6045bdd69738"
       ],
@@ -9704,6 +9715,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "b6564001-fec6-f111-aaaf-00224820105b"
       ],
@@ -9727,6 +9739,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "3c604a5b-25c6-f111-aaaf-6045bdd69435"
       ],
@@ -9750,6 +9763,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "894b2c86-d5c6-f111-aaad-00224820f926"
       ],
@@ -9773,6 +9787,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "52ee8662-fec6-f111-aaaf-6045bdd69738"
       ],
@@ -9796,6 +9811,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "5d02df83-d5c6-f111-aaaf-7c1e525b15c2"
       ],
@@ -9815,12 +9831,13 @@
         "2026-10-20T16:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "672e8ad9-c9c7-f111-aaaf-000d3a10aa9c"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [
+        "672e8ad9-c9c7-f111-aaaf-000d3a10aa9c"
+      ],
       "unverifiedClaimIds": [
         "d74e8005-73c3-f111-aaad-6045bdd39488"
       ],
@@ -9844,6 +9861,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "20d825eb-ffc6-f111-aaaf-6045bdd69435"
       ],
@@ -9867,6 +9885,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "219e62e9-d6c6-f111-aaaf-6045bdd69678"
       ],
@@ -9890,6 +9909,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "5271715a-25c6-f111-aaaf-000d3a14673b"
       ],
@@ -9913,6 +9933,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "169769ed-d6c6-f111-aaaf-000d3a14673b"
       ],
@@ -9936,6 +9957,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "f662edeb-f8c6-f111-aaaf-6045bdd69678"
       ],
@@ -9955,12 +9977,13 @@
         "2026-10-26T15:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "7c8155da-c9c7-f111-aaaf-7c1e525b15c2"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [
+        "7c8155da-c9c7-f111-aaaf-7c1e525b15c2"
+      ],
       "unverifiedClaimIds": [
         "c717aa63-76c7-f111-aaaf-7c1e525b15c2"
       ],
@@ -9980,12 +10003,13 @@
         "2026-10-27T15:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "657abfdc-c9c7-f111-aaaf-00224820105b"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [
+        "657abfdc-c9c7-f111-aaaf-00224820105b"
+      ],
       "unverifiedClaimIds": [
         "d696ef5f-76c7-f111-aaaf-000d3a14673b"
       ],
@@ -10009,6 +10033,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10030,6 +10055,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10051,6 +10077,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10072,6 +10099,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10093,6 +10121,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10114,6 +10143,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10135,6 +10165,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10156,6 +10187,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10177,6 +10209,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10198,6 +10231,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10219,6 +10253,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10240,6 +10275,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10261,6 +10297,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10282,6 +10319,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 13048648",
       "evidenceUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
@@ -10303,8 +10341,8 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
-        "00d6a510-afbf-f111-aaaf-000d3a14673b",
         "5f5d7398-3bc6-f111-aaaf-6045bdd69738"
       ],
       "evidenceSource": "Meta Business Suite scheduled posts list; Financial production Page 104395329284856",
@@ -10323,12 +10361,11 @@
         "2026-10-15T15:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "dcea94dc-c9c7-f111-aaaf-6045bdd69738"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; Financial production Page 104395329284856",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10350,6 +10387,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "c8d3941e-f3c5-f111-aaaf-000d3a14673b"
       ],
@@ -10369,12 +10407,11 @@
         "2026-10-17T15:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "85d271db-c9c7-f111-aaaf-000d3a14673b"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; Financial production Page 104395329284856",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10396,6 +10433,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "2c06817d-09c7-f111-aaaf-000d3a14673b"
       ],
@@ -10419,6 +10457,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "3cf12b2c-0ac7-f111-aaaf-6045bdd69738"
       ],
@@ -10438,12 +10477,11 @@
         "2026-10-20T14:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "22d537dd-c9c7-f111-aaaf-000d3a9eacee"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; Financial production Page 104395329284856",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10465,10 +10503,10 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "da796524-34c6-f111-aaaf-000d3a14673b",
-        "c7a8f7bd-3cc6-f111-aaaf-000d3a9eacee",
-        "1b2c01e3-26c3-f111-aaaf-7c1e525b15c2"
+        "c7a8f7bd-3cc6-f111-aaaf-000d3a9eacee"
       ],
       "evidenceSource": "Meta Business Suite scheduled posts list; Financial production Page 104395329284856",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10486,12 +10524,11 @@
         "2026-10-22T15:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "1cd537dd-c9c7-f111-aaaf-000d3a9eacee"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; Financial production Page 104395329284856",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10513,6 +10550,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "1f319396-3bc6-f111-aaaf-000d3a10aa9c"
       ],
@@ -10532,12 +10570,11 @@
         "2026-10-24T15:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "797abfdc-c9c7-f111-aaaf-00224820105b"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; Financial production Page 104395329284856",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10555,12 +10592,11 @@
         "2026-10-25T15:00:00Z"
       ],
       "publishedPlatformPostIds": [],
-      "pendingRequestIds": [
-        "81d271db-c9c7-f111-aaaf-000d3a14673b"
-      ],
+      "pendingRequestIds": [],
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; Financial production Page 104395329284856",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10582,6 +10618,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "67c6f865-76c7-f111-aaaf-000d3a14673b"
       ],
@@ -10605,6 +10642,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "76f2ea66-76c7-f111-aaad-7c1e5249b30e"
       ],
@@ -10628,6 +10666,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "e26d2d07-d1c6-f111-aaaf-7c1e525b15c2"
       ],
@@ -10651,6 +10690,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10672,8 +10712,8 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
-        "465aa3a4-4bc0-f111-aaaf-000d3a14673b",
         "8e7b5698-3bc6-f111-aaaf-000d3a9eacee"
       ],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
@@ -10696,6 +10736,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10717,6 +10758,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "8a9b2d80-09c7-f111-aaaf-6045bdd69435"
       ],
@@ -10740,6 +10782,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "66231930-0ac7-f111-aaaf-6045bdd69435"
       ],
@@ -10763,9 +10806,9 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
-        "f0ca1399-3bc6-f111-aaaf-000d3a14673b",
-        "cba19d33-71c3-f111-aaad-6045bda898f6"
+        "f0ca1399-3bc6-f111-aaaf-000d3a14673b"
       ],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10787,6 +10830,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10808,6 +10852,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10829,6 +10874,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10850,6 +10896,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10871,6 +10918,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Meta Business Suite scheduled posts list; connected production account @jmerrillfinancial (Graph ID not asserted)",
       "evidenceUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
@@ -10892,6 +10940,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "c817aa63-76c7-f111-aaaf-7c1e525b15c2"
       ],
@@ -10915,6 +10964,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [
         "6ac6f865-76c7-f111-aaaf-000d3a14673b"
       ],
@@ -10938,6 +10988,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -10959,6 +11010,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -10980,6 +11032,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11001,6 +11054,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11022,6 +11076,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11043,6 +11098,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11064,6 +11120,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11085,6 +11142,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11106,6 +11164,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11129,6 +11188,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11150,6 +11210,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11171,6 +11232,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11192,6 +11254,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11213,6 +11276,7 @@
       "failedItemIds": [],
       "overdueRequestIds": [],
       "heldConflictIds": [],
+      "heldCoverageSuppressionIds": [],
       "unverifiedClaimIds": [],
       "evidenceSource": "Company Page Admin > Page posts > Start a post > schedule clock > View all scheduled posts; organization 146207089",
       "evidenceUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
@@ -11222,10 +11286,10 @@
   ],
   "readbackMode": "LIVE_DATAVERSE",
   "sourceSnapshotAsOf": "2026-10-14T12:21:26.412Z",
-  "liveDataverseObservedAt": "2026-10-14T12:29:24.571Z",
+  "liveDataverseObservedAt": "2026-10-14T12:37:21.843Z",
   "alertDelivery": "REPORT_ONLY_WITH_STABLE_DEDUPE_KEYS",
   "unclassifiedDataverseRows": [],
-  "mappedDataverseRows": 238,
+  "mappedDataverseRows": 225,
   "campaignPolicyExclusions": [
     {
       "id": "3371a166-24a9-f111-aaab-000d3a14673b",
@@ -11270,6 +11334,135 @@
       "scheduledAt": "2026-09-24T16:00:00Z"
     }
   ],
+  "financialProductionDestinations": {
+    "state": "VERIFIED_FROM_CURRENT_SNAPSHOT",
+    "facebookPageId": "104395329284856",
+    "instagramHandle": "jmerrillfinancial",
+    "linkedinOrganizationId": "146207089",
+    "instagramGraphBusinessId": "UNVERIFIED",
+    "apiDispatch": "DISABLED_UNTIL_EFFECTIVE_ACCESS_VERIFIED",
+    "excludedLegacyFacebookPageId": "1270611542802820",
+    "excludedTestInstagramHandle": "jmerrillfin"
+  },
+  "preservedHistoricalFinancialDataverseRows": [
+    {
+      "id": "26751830-a5c4-f111-aaaf-000d3a10aa9c",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:social:rolling-2026-10-19-2:instagram",
+      "platform": "instagram",
+      "status": "HELD_DESTINATION_IDENTITY_MISMATCH",
+      "requestedSchedule": "2026-10-23T19:00:00Z",
+      "requestedDestination": "17841438473100276",
+      "currentDisposition": "EXCLUDED_TEST_ACCOUNT"
+    },
+    {
+      "id": "00d6a510-afbf-f111-aaaf-000d3a14673b",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:f-fb2:social",
+      "platform": "facebook",
+      "status": "NATIVE_BOOKED_VERIFIED",
+      "requestedSchedule": "2026-10-14T14:00:00Z",
+      "requestedDestination": "1270611542802820",
+      "currentDisposition": "EXCLUDED_LEGACY_PAGE"
+    },
+    {
+      "id": "465aa3a4-4bc0-f111-aaaf-000d3a14673b",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:f-ig1:social",
+      "platform": "instagram",
+      "status": "NATIVE_BOOKED_VERIFIED",
+      "requestedSchedule": "2026-10-16T16:00:00Z",
+      "requestedDestination": "@jmerrillfin",
+      "currentDisposition": "EXCLUDED_TEST_ACCOUNT"
+    },
+    {
+      "id": "cd6f3605-dcc3-f111-aaaf-000d3a14673b",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:social:rolling-2026-10-05-2:facebook",
+      "platform": "facebook",
+      "status": "PUBLISHED_VERIFIED",
+      "requestedSchedule": "2026-10-09T18:00:00Z",
+      "requestedDestination": "1270611542802820",
+      "currentDisposition": "EXCLUDED_LEGACY_PAGE"
+    },
+    {
+      "id": "ce6f3605-dcc3-f111-aaaf-000d3a14673b",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:social:rolling-2026-10-12-1:instagram",
+      "platform": "instagram",
+      "status": "HELD_DESTINATION_IDENTITY_MISMATCH",
+      "requestedSchedule": "2026-10-13T15:00:00Z",
+      "requestedDestination": "17841438473100276",
+      "currentDisposition": "EXCLUDED_TEST_ACCOUNT"
+    },
+    {
+      "id": "b90bfb30-a5c4-f111-aaaf-000d3a9eacee",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:social:rolling-2026-10-19-2:facebook",
+      "platform": "facebook",
+      "status": "HELD_DESTINATION_IDENTITY_MISMATCH",
+      "requestedSchedule": "2026-10-23T18:00:00Z",
+      "requestedDestination": "1270611542802820",
+      "currentDisposition": "EXCLUDED_LEGACY_PAGE"
+    },
+    {
+      "id": "cba19d33-71c3-f111-aaad-6045bda898f6",
+      "idempotencyKey": "jm1-native-reservation-v1:9ffea7348bb501068e0db80f7df7e8100beb0c7e7787defdfc2e942da052f819",
+      "platform": "instagram",
+      "status": "NATIVE_BOOKED_VERIFIED",
+      "requestedSchedule": "2026-10-20T16:00:00Z",
+      "requestedDestination": "jmerrillfin",
+      "currentDisposition": "EXCLUDED_TEST_ACCOUNT"
+    },
+    {
+      "id": "17b50209-7bc3-f111-aaad-6045bda898f6",
+      "idempotencyKey": "jm1-native-reservation-v1:4875141e7e5ebb2bb3691f58835227875e2fd1c3b5ddf1681cbbbd0432a0003a",
+      "platform": "instagram",
+      "status": "PUBLISHED_VERIFIED",
+      "requestedSchedule": "2026-10-10T16:00:00Z",
+      "requestedDestination": "@jmerrillfin",
+      "currentDisposition": "EXCLUDED_TEST_ACCOUNT"
+    },
+    {
+      "id": "0a510bd3-70c3-f111-aaad-6045bdd39488",
+      "idempotencyKey": "jm1-native-reservation-v1:2b5113a401a7b2bd92bb7d0f72aeb1d43da720197d14689cafd85e89e3cc339b",
+      "platform": "instagram",
+      "status": "NATIVE_BOOKING_MOVED_TO_DRAFT",
+      "requestedSchedule": "2026-10-13T16:00:00Z",
+      "requestedDestination": "jmerrillfin",
+      "currentDisposition": "EXCLUDED_TEST_ACCOUNT"
+    },
+    {
+      "id": "1e51200b-97bf-f111-aaaf-6045bdd69678",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:f-fb:social",
+      "platform": "facebook",
+      "status": "PUBLISHED_VERIFIED",
+      "requestedSchedule": "2026-10-05T14:00:00Z",
+      "requestedDestination": "1270611542802820",
+      "currentDisposition": "EXCLUDED_LEGACY_PAGE"
+    },
+    {
+      "id": "d2e0a930-6cc3-f111-aaaf-6045bdd69678",
+      "idempotencyKey": "jm1-native-reservation-v1:b500f3a58b59bbec541795d28a194d2c2e34b0ddf77c5c707d0240ea1a53c312",
+      "platform": "facebook",
+      "status": "NATIVE_RESERVATION_VERIFIED",
+      "requestedSchedule": "2026-10-28T14:00:00Z",
+      "requestedDestination": "1270611542802820",
+      "currentDisposition": "EXCLUDED_LEGACY_PAGE"
+    },
+    {
+      "id": "1b2c01e3-26c3-f111-aaaf-7c1e525b15c2",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:financial-facebook-oct-21:social",
+      "platform": "facebook",
+      "status": "NATIVE_BOOKED_VERIFIED",
+      "requestedSchedule": "2026-10-21T14:00:00Z",
+      "requestedDestination": "1270611542802820",
+      "currentDisposition": "EXCLUDED_LEGACY_PAGE"
+    },
+    {
+      "id": "869a5c08-dcc3-f111-aaaf-7c1e525b15c2",
+      "idempotencyKey": "jm1-native-social-2026-10:j-merrill-financial:social:rolling-2026-10-12-2:facebook",
+      "platform": "facebook",
+      "status": "HELD_DESTINATION_IDENTITY_MISMATCH",
+      "requestedSchedule": "2026-10-16T18:00:00Z",
+      "requestedDestination": "1270611542802820",
+      "currentDisposition": "EXCLUDED_LEGACY_PAGE"
+    }
+  ],
   "reconciliationFindings": [
     {
       "id": "16b8ac32-a5c4-f111-aaaf-000d3a1a9efa",
@@ -11295,6 +11488,15 @@
       "status": "HELD_NATIVE_BOOKING_CONFLICT",
       "requestedSchedule": "2026-10-13T15:00:00Z",
       "requestedDestination": "17841456905118441",
+      "classification": "NATIVE_BOOKING_CONFLICT",
+      "actionRequired": true
+    },
+    {
+      "id": "29de92d6-c9c7-f111-aaaf-6045bdd69738",
+      "platform": "instagram",
+      "status": "HELD_NATIVE_BOOKING_CONFLICT",
+      "requestedSchedule": "2026-10-28T15:00:00Z",
+      "requestedDestination": "17841410046020869",
       "classification": "NATIVE_BOOKING_CONFLICT",
       "actionRequired": true
     }

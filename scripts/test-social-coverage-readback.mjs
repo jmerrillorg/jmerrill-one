@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildSocialCoverageReadback, classifyDataverseExecutionRow, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -138,6 +138,37 @@ test('current Financial readback excludes legacy Page and test Instagram rows wi
   ]);
   assert.equal(rows[0].jm1_status, 'HELD_DESTINATION_IDENTITY_MISMATCH');
   assert.equal(rows[1].jm1_status, 'NATIVE_BOOKING_MOVED_TO_DRAFT');
+});
+
+test('current dated production identities authorize default exclusion of Financial legacy and test destinations', () => {
+  const channels = [
+    { brand: 'J Merrill Financial', platform: 'facebook', destinationId: '104395329284856', nativeReadback: { businessPortfolioId: '1306466683241061' } },
+    { brand: 'J Merrill Financial', platform: 'instagram', destinationHandle: 'jmerrillfinancial', nativeReadback: { businessPortfolioId: '1306466683241061' } },
+    { brand: 'J Merrill Financial', platform: 'linkedin', destinationId: '146207089' }
+  ];
+  assert.equal(hasVerifiedFinancialProductionDestinations(channels), true);
+  assert.equal(hasVerifiedFinancialProductionDestinations(channels.map((entry) => entry.platform === 'instagram'
+    ? { ...entry, destinationHandle: 'jmerrillfin' } : entry)), false);
+  assert.equal(hasVerifiedFinancialProductionDestinations(channels.map((entry) => entry.platform === 'facebook'
+    ? { ...entry, destinationId: '1270611542802820' } : entry)), false);
+});
+
+test('held worker request on a natively covered Eastern date is a suppression, while an explicit hold stays unresolved', () => {
+  const scheduledAt = '2026-10-03T14:00:00Z';
+  const nativeChannel = { ...channel, executionOwner: 'META_NATIVE', nativeReadback: {
+    state: 'VERIFIED', observedDateET: '2026-10-02', visibleScheduledAtUtc: [scheduledAt]
+  } };
+  const heldRequest = { id: 'held-api', brand: channel.brand, platform: channel.platform,
+    destinationId: channel.destinationId, kind: 'API_REQUEST', status: 'HELD_NATIVE_BOOKING_CONFLICT',
+    scheduledAt: '2026-10-03T15:00:00Z' };
+  const explicitHold = { ...heldRequest, id: 'explicit-hold', scheduledAt };
+  const result = buildSocialCoverageReadback({ ...base, channels: [nativeChannel], items: [heldRequest, explicitHold],
+    heldConflicts: [{ id: 'explicit-hold' }] }).channels[0];
+  assert.deepEqual(result.heldNativeConflicts, ['explicit-hold']);
+  assert.deepEqual(result.heldNativeCoverageSuppressions, ['held-api']);
+  assert.ok(result.alertFindings.some((finding) => finding.state === 'NATIVE_BOOKING_CONFLICT'
+    && finding.evidence.recordIds.includes('explicit-hold')));
+  assert.ok(result.states.includes('HELD_ITEMS'));
 });
 
 test('resolved destinations do not emit unresolved-authority alerts; missing authority does', () => {

@@ -36,6 +36,7 @@ export function buildCoverageDateChannelMatrix(report) {
     failedItemIds: day.failedItemIds,
     overdueRequestIds: day.overdueRequestIds,
     heldConflictIds: day.heldNativeConflictIds,
+    heldCoverageSuppressionIds: day.heldNativeCoverageSuppressionIds,
     unverifiedClaimIds: day.unverifiedBookingClaimIds,
     evidenceSource: channel.nativeReadback?.view || null,
     evidenceUrl: channel.nativeReadback?.viewUrl || null,
@@ -139,6 +140,17 @@ export function partitionCurrentFinancialDestinationRows(rows) {
     return false;
   });
   return { currentRows, preservedHistoricalFinancialRows };
+}
+
+export function hasVerifiedFinancialProductionDestinations(channels = []) {
+  const facebook = channels.find((channel) => channel.brand === 'J Merrill Financial' && channel.platform === 'facebook');
+  const instagram = channels.find((channel) => channel.brand === 'J Merrill Financial' && channel.platform === 'instagram');
+  const linkedin = channels.find((channel) => channel.brand === 'J Merrill Financial' && channel.platform === 'linkedin');
+  return facebook?.destinationId === '104395329284856'
+    && facebook.nativeReadback?.businessPortfolioId === '1306466683241061'
+    && instagram?.destinationHandle === 'jmerrillfinancial'
+    && instagram.nativeReadback?.businessPortfolioId === '1306466683241061'
+    && linkedin?.destinationId === '146207089';
 }
 
 export async function queryDataversePages(initialUrl, token, fetchImpl = fetch) {
@@ -947,6 +959,13 @@ export function buildSocialCoverageReadback(snapshot) {
     const approvedContent = related.filter((item) => item.kind === 'CONTENT' && item.approvalState === 'APPROVED');
     const held = related.filter((item) => item.status?.startsWith('HELD') || item.approvalState === 'HELD');
     const heldBookingConflicts = related.filter((item) => item.status === 'HELD_NATIVE_BOOKING_CONFLICT');
+    const explicitHoldIds = new Set((snapshot.heldConflicts || []).map((item) => item.id));
+    const heldNativeCoverageSuppressions = heldBookingConflicts.filter((item) => verifiedNative
+      && destinationResolved && item.scheduledAt && matchesDestination(item, channel)
+      && !explicitHoldIds.has(item.id)
+      && channel.nativeReadback?.visibleScheduledAtUtc?.some((slot) => easternDate(slot) === easternDate(item.scheduledAt)));
+    const unresolvedHeldBookingConflicts = heldBookingConflicts.filter((item) =>
+      !heldNativeCoverageSuppressions.includes(item));
     const heldBookingStale = related.filter((item) => item.status === 'HELD_NATIVE_BOOKING_STALE');
     const failures = related.filter((item) => isFailureStatus(item.status)
       && !['HELD_NATIVE_BOOKING_CONFLICT', 'HELD_NATIVE_BOOKING_STALE'].includes(item.status));
@@ -967,7 +986,9 @@ export function buildSocialCoverageReadback(snapshot) {
       const requests = apiRequests.filter((item) => item.scheduledAt && easternDate(item.scheduledAt) === dateET);
       const failedItems = failures.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === dateET);
-      const conflicts = heldBookingConflicts.filter((item) => item.scheduledAt
+      const conflicts = unresolvedHeldBookingConflicts.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === dateET);
+      const coverageSuppressions = heldNativeCoverageSuppressions.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === dateET);
       const staleBookings = heldBookingStale.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === dateET);
@@ -992,6 +1013,7 @@ export function buildSocialCoverageReadback(snapshot) {
         overdueRequestIds: overdueItems.map((item) => item.id),
         unverifiedBookingClaimIds: unverifiedClaims.map((item) => item.id),
         heldNativeConflictIds: conflicts.map((item) => item.id),
+        heldNativeCoverageSuppressionIds: coverageSuppressions.map((item) => item.id),
         heldStaleBookingIds: staleBookings.map((item) => item.id),
         qualifiesForDailyCoverage: ['SCHEDULED', 'PUBLISHED', 'PUBLISHED_AND_SCHEDULED'].includes(status)
       };
@@ -1019,7 +1041,9 @@ export function buildSocialCoverageReadback(snapshot) {
         && isPendingRequest(item)).map((item) => item.id),
       failedItemIds: failures.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id),
-      heldNativeConflictIds: heldBookingConflicts.filter((item) => item.scheduledAt
+      heldNativeConflictIds: unresolvedHeldBookingConflicts.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id),
+      heldNativeCoverageSuppressionIds: heldNativeCoverageSuppressions.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id)
     };
     const missingDates = dailyCoverage.filter((day) => day.status === 'MISSING').map((day) => day.dateET);
@@ -1054,7 +1078,7 @@ export function buildSocialCoverageReadback(snapshot) {
     if (missingDates.length) states.push('DAILY_COVERAGE_GAP');
     if (held.length) states.push('HELD_ITEMS');
     if (failures.length) states.push('EXECUTION_FAILURE');
-    if (heldBookingConflicts.length) states.push('NATIVE_BOOKING_CONFLICT');
+    if (unresolvedHeldBookingConflicts.length) states.push('NATIVE_BOOKING_CONFLICT');
     if (heldBookingStale.length) states.push('NATIVE_BOOKING_STALE');
     if (pastDueRequests.length) states.push('PAST_DUE_API_REQUEST');
     if (pastDueBookingClaims.length) states.push('PAST_DUE_NATIVE_BOOKING_CLAIM');
@@ -1092,7 +1116,7 @@ export function buildSocialCoverageReadback(snapshot) {
     }
     for (const [state, ids, action] of [
       ['EXECUTION_FAILURE', failures.map((item) => item.id), 'RECONCILE_EXECUTION_FAILURE'],
-      ['NATIVE_BOOKING_CONFLICT', heldBookingConflicts.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CONFLICT'],
+      ['NATIVE_BOOKING_CONFLICT', unresolvedHeldBookingConflicts.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CONFLICT'],
       ['NATIVE_BOOKING_STALE', heldBookingStale.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_STALE'],
       ['PAST_DUE_API_REQUEST', pastDueRequests.map((item) => item.id), 'RECONCILE_PAST_DUE_REQUEST'],
       ['PAST_DUE_NATIVE_BOOKING_CLAIM', pastDueBookingClaims.map((item) => item.id), 'RECONCILE_NATIVE_BOOKING_CLAIM'],
@@ -1251,7 +1275,8 @@ export function buildSocialCoverageReadback(snapshot) {
       publishedIds: published.map((item) => item.platformPostId),
       heldItems: held.map((item) => item.id),
       failures: failures.map((item) => item.id),
-      heldNativeConflicts: heldBookingConflicts.map((item) => item.id),
+      heldNativeConflicts: unresolvedHeldBookingConflicts.map((item) => item.id),
+      heldNativeCoverageSuppressions: heldNativeCoverageSuppressions.map((item) => item.id),
       heldStaleBookings: heldBookingStale.map((item) => item.id),
       pastDueRequests: pastDueRequests.map((item) => item.id),
       duplicateRisk: duplicateRisk.map((item) => item.id),
