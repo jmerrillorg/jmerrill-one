@@ -45,6 +45,123 @@ export function buildCoverageDateChannelMatrix(report) {
   })));
 }
 
+export function mergeNativeBookingObservations(channels, rows, asOf) {
+  const observations = new Map();
+  for (const row of rows) {
+    if (row.jm1_status !== 'NATIVE_BOOKED_VERIFIED') continue;
+    const source = String(row.jm1_readbackstate || '').match(/^NATIVE_UI\|(META|LINKEDIN)\|AT=([^|]+)\|(?:NATIVE_ITEM=([^|]+)\|)?BOOKING=([^|]+)$/);
+    const observedAt = source?.[2] || row.jm1_verifiedat;
+    if (!source || !timestampEvidenceFresh(observedAt, asOf)
+      // Dataverse DateTime columns persist whole seconds while the native UI
+      // receipt keeps milliseconds. Accept only that storage precision loss.
+      || Math.abs(Date.parse(source[2]) - Date.parse(observedAt)) >= 1000
+      || Date.parse(row.jm1_requestedschedule || '') <= Date.parse(asOf)
+      || !row.jm1_requestedschedule || row.jm1_actualschedule !== row.jm1_requestedschedule
+      || row.jm1_actualdestination !== row.jm1_requesteddestination
+      || (source[3] && source[3] !== 'NOT_EXPOSED' && !/^[A-Za-z0-9_-]{6,80}$/.test(source[3]))
+      || !['NOT_EXPOSED', null].includes(source[4]) && !/^\d+$/.test(source[4])) continue;
+    const platform = String(row.jm1_platform || '').toLowerCase();
+    if ((platform === 'linkedin') !== (source[1] === 'LINKEDIN')) continue;
+    const key = `${row.jm1_branch}|${platform}`;
+    const list = observations.get(key) || [];
+    list.push({
+      receiptId: row.jm1_socialexecutionid,
+      source: `${source[1]}_NATIVE_UI`,
+      destination: row.jm1_requesteddestination,
+      scheduledAt: row.jm1_requestedschedule,
+      observedAt: new Date(observedAt).toISOString(),
+      nativeItemId: source[3] && source[3] !== 'NOT_EXPOSED' ? source[3] : null,
+      nativeBookingId: source[4] === 'NOT_EXPOSED' ? null : source[4],
+      platformPublicationId: null
+    });
+    observations.set(key, list);
+  }
+  return channels.map((channel) => {
+    const key = `${channel.brand}|${channel.platform}`;
+    const additions = observations.get(key) || [];
+    if (!additions.length) return channel;
+    const existing = channel.nativeReadback?.bookingObservations || [];
+    const byReceipt = new Map(existing.map((item) => [item.receiptId, item]));
+    for (const item of additions) {
+      const destinationMatches = (channel.destinationId && item.destination === channel.destinationId)
+        || (channel.destinationHandle && item.destination.replace(/^@/, '').toLowerCase()
+          === channel.destinationHandle.replace(/^@/, '').toLowerCase());
+      if (destinationMatches && !byReceipt.has(item.receiptId)) byReceipt.set(item.receiptId, item);
+    }
+    if (byReceipt.size === existing.length) return channel;
+    return { ...channel, nativeReadback: {
+      ...channel.nativeReadback,
+      bookingObservations: [...byReceipt.values()].sort((a, b) => a.observedAt.localeCompare(b.observedAt))
+    } };
+  });
+}
+
+export function buildPreparationDateMatrix(channels, items, dateET) {
+  const itemById = new Map(items.map((item) => [item.id, item]));
+  return channels.map((channel) => {
+    const observations = (channel.nativeReadback?.bookingObservations || [])
+      .filter((item) => easternDate(item.scheduledAt) === dateET
+        && ((channel.destinationId && item.destination === channel.destinationId)
+          || (channel.destinationHandle && String(item.destination || '').replace(/^@/, '').toLowerCase()
+            === channel.destinationHandle.replace(/^@/, '').toLowerCase())))
+      .map((observation) => {
+        const item = itemById.get(observation.receiptId);
+        return {
+          receiptId: observation.receiptId,
+          status: item?.status || 'NATIVE_BOOKED_VERIFIED',
+          destination: observation.destination,
+          scheduledAt: observation.scheduledAt,
+          observedAt: observation.observedAt,
+          source: observation.source,
+          nativeItemId: observation.nativeItemId || null,
+          nativeBookingId: observation.nativeBookingId || null,
+          platformPublicationId: observation.platformPublicationId || null,
+          captionSha256: item?.captionSha256 || item?.nativeEvidence?.captionSha256 || null,
+          mediaSha256: item?.mediaSha256 || item?.nativeEvidence?.mediaSha256 || null,
+          approvalState: item?.approvalState || 'UNKNOWN',
+          approvalReason: item?.nativeApprovalReason || null
+        };
+      });
+    const byPlacement = new Map();
+    for (const item of observations) {
+      const identity = item.nativeItemId
+        ? `item:${item.destination}:${item.nativeItemId}`
+        : item.nativeBookingId
+          ? `booking:${item.destination}:${item.nativeBookingId}`
+          : item.captionSha256
+            ? `content:${item.destination}:${item.scheduledAt}:${item.captionSha256}:${item.mediaSha256 || ''}`
+            : `receipt:${item.receiptId}`;
+      if (!byPlacement.has(identity)) byPlacement.set(identity, item);
+    }
+    const evidence = [...byPlacement.values()];
+    const approved = evidence.filter((item) => item.approvalState === 'APPROVED');
+    const workerHolds = items.filter((item) => item.brand === channel.brand
+      && item.platform === channel.platform
+      && item.scheduledAt && easternDate(item.scheduledAt) === dateET
+      && String(item.status || '').startsWith('HELD'))
+      .map((item) => ({ receiptId: item.id, status: item.status,
+        destination: item.destinationId || item.destinationHandle || item.requestedDestinationText || null,
+        scheduledAt: item.scheduledAt }));
+    return {
+      dateET,
+      classification: 'PREPARATION_ONLY_NOT_IN_COMMITTED_COVERAGE',
+      brand: channel.brand,
+      platform: channel.platform,
+      destination: channel.destinationId || channel.destinationHandle || null,
+      channelListObservedAt: channel.nativeReadback?.observedAt || null,
+      channelListAgeHours: channel.nativeReadback?.observedAt
+        ? Math.round((Date.now() - Date.parse(channel.nativeReadback.observedAt)) / 360000) / 10 : null,
+      scheduledPlacementCount: evidence.length,
+      approvedScheduledPlacementCount: approved.length,
+      approvalUnverifiedReceiptIds: evidence.filter((item) => item.approvalState !== 'APPROVED')
+        .map((item) => item.receiptId),
+      scheduledReceiptIds: evidence.map((item) => item.receiptId),
+      workerHolds,
+      evidence
+    };
+  });
+}
+
 const ZONE = 'America/New_York';
 const DAY = 24 * 60 * 60 * 1000;
 const MAX_NATIVE_READBACK_AGE_MS = 12 * 60 * 60 * 1000;
@@ -431,7 +548,7 @@ export function matchesApprovedLegacyNativeSocialContent(campaign, content, { bo
     && recordedProvenance.captionSha256 === captionHash
     && booking.jm1_captionversion === captionHash
     && recordedProvenance.mediaSha256 === (booking.jm1_requestedmediahash || null)
-    && recordedProvenance.validation?.sourceHost === expectedHost
+    && [expectedHost, expectedHost.replace(/^www\./, '')].includes(recordedProvenance.validation?.sourceHost)
     && recordedProvenance.validation?.brandAndClaims === 'PASS'
     && recordedProvenance.validation?.rightsAndCreative === (booking.jm1_requestedmediahash ? 'PASS' : 'LINK_PREVIEW_ONLY')
     && reservationBookingProof(source, booking, nativeReadback));
@@ -502,7 +619,7 @@ function approvedCampaignKeyForContent(content) {
   const explicitKey = String(content.jm1_copybrief || '').match(/(?:^|; )campaign=([^; ]+)/)?.[1];
   if (explicitKey) return explicitKey;
   const contentKey = String(content.jm1_idempotencykey || '');
-  const currentKey = contentKey.match(/^(.*):content:[^:]+$/);
+  const currentKey = contentKey.match(/^(.*):content:.+$/);
   const legacyKey = contentKey.match(/^(.*):[^:]+:content$/);
   const marker = currentKey?.[1] || legacyKey?.[1];
   return marker ? `${marker}:campaign` : null;
@@ -510,21 +627,28 @@ function approvedCampaignKeyForContent(content) {
 
 function reservationBookingProof(source, booking, nativeReadback) {
   const scheduledAt = Date.parse(booking.jm1_requestedschedule || '');
-  const observedAt = Date.parse(nativeReadback?.observedAt || '');
+  const receiptObservation = (nativeReadback?.bookingObservations || []).find((item) =>
+    item.receiptId === source.jm1_socialexecutionid
+    && String(item.destination || '').replace(/^@/, '').toLowerCase()
+      === String(booking.jm1_requesteddestination || '').replace(/^@/, '').toLowerCase()
+    && Date.parse(item.scheduledAt || '') === scheduledAt
+    && ((booking.jm1_platform === 'linkedin' && item.source === 'LINKEDIN_NATIVE_UI')
+      || (['facebook', 'instagram'].includes(booking.jm1_platform) && item.source === 'META_NATIVE_UI')));
+  const observedAt = Date.parse(receiptObservation?.observedAt || nativeReadback?.observedAt || '');
   const receiptObservedAt = source.jm1_verifiedat
     || String(source.jm1_readbackstate || '').match(/(?:^|\|)AT=([^|]+)/)?.[1];
   return source.jm1_status === 'NATIVE_BOOKED_VERIFIED'
-    && source.jm1_executor === 'META_NATIVE'
+    && source.jm1_executor === (booking.jm1_platform === 'linkedin' ? 'LINKEDIN_NATIVE' : 'META_NATIVE')
     && (source.jm1_actualschedule == null || source.jm1_actualschedule === booking.jm1_requestedschedule)
     && (source.jm1_actualdestination == null || String(source.jm1_actualdestination).replace(/^@/, '')
       === String(booking.jm1_requesteddestination || '').replace(/^@/, '')
     )
-    && /^NATIVE_UI\|META\|AT=[^|]+\|(?:NATIVE_ITEM=(?:NOT_EXPOSED|[A-Za-z0-9_-]{6,80})\|)?BOOKING=(?:NOT_EXPOSED|[0-9]+)$/.test(String(source.jm1_readbackstate || ''))
+    && new RegExp(`^NATIVE_UI\\|${booking.jm1_platform === 'linkedin' ? 'LINKEDIN' : 'META'}\\|AT=[^|]+\\|(?:NATIVE_ITEM=(?:NOT_EXPOSED|[A-Za-z0-9_-]{6,80})\\|)?BOOKING=(?:NOT_EXPOSED|[0-9]+)$`).test(String(source.jm1_readbackstate || ''))
     && timestampEvidenceFresh(receiptObservedAt, new Date().toISOString())
-    && timestampEvidenceFresh(nativeReadback?.observedAt, new Date().toISOString())
-    && nativeReadback?.state === 'VERIFIED'
-    && Array.isArray(nativeReadback.visibleScheduledAtUtc)
-    && nativeReadback.visibleScheduledAtUtc.some((value) => Date.parse(value) === scheduledAt);
+    && timestampEvidenceFresh(receiptObservation?.observedAt || nativeReadback?.observedAt, new Date().toISOString())
+    && (receiptObservation || (nativeReadback?.state === 'VERIFIED'
+      && Array.isArray(nativeReadback.visibleScheduledAtUtc)
+      && nativeReadback.visibleScheduledAtUtc.some((value) => Date.parse(value) === scheduledAt)));
 }
 
 export function nativeSocialApprovalProjection(booking, { campaigns, content, creatives, socialRows }, isApprovedContent, scheduleForStage = () => null, expectedDestination = null, nativeReadback = null) {
@@ -554,12 +678,19 @@ export function nativeSocialApprovalProjection(booking, { campaigns, content, cr
     return { state: 'UNKNOWN', evidence: null, reason: 'RESERVATION_DESTINATION_AUTHORITY_MISMATCH' };
   }
   if (reservationKey) {
-    const observedAt = Date.parse(nativeReadback?.observedAt || '');
+    const receiptObservation = (nativeReadback?.bookingObservations || []).find((item) =>
+      item.receiptId === booking.jm1_socialexecutionid
+      && String(item.destination || '').replace(/^@/, '').toLowerCase()
+        === normalizeDestination(booking.jm1_requesteddestination)
+      && Date.parse(item.scheduledAt || '') === scheduledAt
+      && ((platform === 'linkedin' && item.source === 'LINKEDIN_NATIVE_UI')
+        || (['facebook', 'instagram'].includes(platform) && item.source === 'META_NATIVE_UI')));
+    const observedAt = Date.parse(receiptObservation?.observedAt || nativeReadback?.observedAt || '');
     const verifiedAt = Date.parse(booking.jm1_verifiedat
       || String(booking.jm1_readbackstate || '').match(/(?:^|\|)AT=([^|]+)/)?.[1] || '');
-    const exactSlot = nativeReadback?.state === 'VERIFIED'
+    const exactSlot = Boolean(receiptObservation) || (nativeReadback?.state === 'VERIFIED'
       && Array.isArray(nativeReadback.visibleScheduledAtUtc)
-      && nativeReadback.visibleScheduledAtUtc.some((value) => Date.parse(value) === scheduledAt);
+      && nativeReadback.visibleScheduledAtUtc.some((value) => Date.parse(value) === scheduledAt));
     const fresh = [observedAt, verifiedAt].every((timestamp) => Number.isFinite(timestamp)
       && Date.now() - timestamp >= 0 && Date.now() - timestamp <= MAX_NATIVE_READBACK_AGE_MS);
     if ((booking.jm1_actualschedule != null && booking.jm1_actualschedule !== booking.jm1_requestedschedule)
@@ -1049,11 +1180,13 @@ export function buildSocialCoverageReadback(snapshot) {
       };
     });
     const preparationBookings = coverageProofValid
-      ? uniqueBy(verifiedPreparationClaims.filter((item) => item.approvalState === 'APPROVED'), (item) => {
+      ? uniqueBy(verifiedPreparationClaims, (item) => {
         const destination = item.destinationId || item.destinationHandle || '';
         const captionHash = item.captionSha256 || item.nativeEvidence?.captionSha256 || '';
         const mediaHash = item.mediaSha256 || item.nativeEvidence?.mediaSha256 || '';
-        return item.nativeBookingId
+        return item.nativeItemId
+          ? `item:${destination}:${item.nativeItemId}`
+          : item.nativeBookingId
           ? `booking:${destination}:${item.nativeBookingId}`
           : `content:${destination}:${item.scheduledAt}:${captionHash}:${mediaHash}`;
       }) : [];
@@ -1063,6 +1196,9 @@ export function buildSocialCoverageReadback(snapshot) {
       dateET: preparationDate,
       classification: 'PREPARATION_ONLY_NOT_IN_COMMITTED_COVERAGE',
       scheduledPlacementCount: preparationBookings.length,
+      approvedScheduledPlacementCount: preparationBookings.filter((item) => item.approvalState === 'APPROVED').length,
+      approvalUnverifiedReceiptIds: preparationBookings.filter((item) => item.approvalState !== 'APPROVED')
+        .map((item) => item.id),
       scheduledReceiptIds: preparationBookings.map((item) => item.id),
       confirmedPublicationCount: preparationPublications.length,
       confirmedPlatformPostIds: preparationPublications.map((item) => item.platformPostId),
@@ -1074,7 +1210,11 @@ export function buildSocialCoverageReadback(snapshot) {
       heldNativeConflictIds: unresolvedHeldBookingConflicts.filter((item) => item.scheduledAt
         && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id),
       heldNativeCoverageSuppressionIds: heldNativeCoverageSuppressions.filter((item) => item.scheduledAt
-        && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id)
+        && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id),
+      heldRequestIds: held.filter((item) => item.scheduledAt
+        && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id),
+      nativeBookingRequiredHoldIds: held.filter((item) => item.status === 'HELD_NATIVE_LINKEDIN_BOOKING_REQUIRED'
+        && item.scheduledAt && easternDate(item.scheduledAt) === preparationDate).map((item) => item.id)
     };
     const missingDates = dailyCoverage.filter((day) => day.status === 'MISSING').map((day) => day.dateET);
     const unverifiedDates = dailyCoverage.filter((day) => day.status === 'UNVERIFIED').map((day) => day.dateET);
