@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildSocialCoverageReadback, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, mergeNativeBookingObservations, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 import { matchesApprovedNativeSocialContent, nativeSocialScheduledAt } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 
@@ -146,6 +146,9 @@ if (process.argv.includes('--live-dataverse')) {
   const { currentRows: allFutureRows, preservedHistoricalFinancialRows } = financialDestinationOverlay || financialProductionSnapshotVerified
     ? partitionCurrentFinancialDestinationRows(observedFutureRows)
     : { currentRows: observedFutureRows, preservedHistoricalFinancialRows: [] };
+  snapshot.liveDataverseObservedAt = new Date().toISOString();
+  snapshot.asOf = snapshot.liveDataverseObservedAt;
+  snapshot.channels = mergeNativeBookingObservations(snapshot.channels, allFutureRows, snapshot.asOf);
   for (const booking of allFutureRows.filter((row) => ['NATIVE_BOOKED_VERIFIED', 'PUBLIC_READY_SCHEDULED_ELIGIBLE', 'RETRY_REQUIRED'].includes(row.jm1_status))) {
     const channel = snapshot.channels.find((item) => item.brand === booking.jm1_branch
       && item.platform === booking.jm1_platform);
@@ -220,8 +223,6 @@ if (process.argv.includes('--live-dataverse')) {
     ...(snapshot.preservedHistoricalFinancialDataverseRows || []),
     ...preservedHistoricalFinancialRows
   ];
-  snapshot.liveDataverseObservedAt = new Date().toISOString();
-  snapshot.asOf = snapshot.liveDataverseObservedAt;
 }
 const report = buildSocialCoverageReadback(snapshot);
 const latestNativeObservationAt = (snapshot.channels || [])
@@ -240,9 +241,34 @@ const channelObservationAges = (snapshot.channels || []).map((channel) => ({
   ageHours: channel.nativeReadback?.observedAt
     ? Math.round((Date.now() - Date.parse(channel.nativeReadback.observedAt)) / 360000) / 10 : null
 }));
+const bookingObservationAges = (snapshot.channels || []).flatMap((channel) =>
+  (channel.nativeReadback?.bookingObservations || []).map((observation) => ({
+    brand: channel.brand,
+    platform: channel.platform,
+    receiptId: observation.receiptId,
+    destination: observation.destination,
+    scheduledAt: observation.scheduledAt,
+    nativeItemId: observation.nativeItemId || null,
+    nativeBookingId: observation.nativeBookingId || null,
+    observedAt: observation.observedAt,
+    ageHours: Math.round((Date.now() - Date.parse(observation.observedAt)) / 360000) / 10
+  })));
 const publishedClaimReconciliation = reconcilePastDueClaimsToPublishedEvidence(reconciliationRows,
   snapshot.items, snapshot.asOf);
 const heldCoverageSuppressionIds = new Set(report.channels.flatMap((channel) => channel.heldNativeCoverageSuppressions));
+const preparationDateMatrix = buildPreparationDateMatrix(report.channels, snapshot.items || [], report.preparationDateET);
+const preparationDateSummary = {
+  dateET: report.preparationDateET,
+  requiredChannelPlacements: preparationDateMatrix.length,
+  verifiedNativeBookings: preparationDateMatrix.reduce((count, channel) => count + channel.scheduledPlacementCount, 0),
+  approvedNativeBookings: preparationDateMatrix.reduce((count, channel) => count + channel.approvedScheduledPlacementCount, 0),
+  approvalUnverifiedReceiptIds: preparationDateMatrix.flatMap((channel) => channel.approvalUnverifiedReceiptIds),
+  channelsWithNoVerifiedBooking: preparationDateMatrix.filter((channel) => channel.scheduledPlacementCount === 0)
+    .map((channel) => ({ brand: channel.brand, platform: channel.platform })),
+  heldWorkerRequests: preparationDateMatrix.flatMap((channel) => channel.workerHolds.map((hold) => ({
+    brand: channel.brand, platform: channel.platform, ...hold
+  })))
+};
 const reconciliationFindings = buildDataverseReconciliationFindings(
   [...reconciliationRows.filter((row) => !publishedClaimReconciliation.reconciledIds.has(row.jm1_socialexecutionid)
       && !heldCoverageSuppressionIds.has(row.jm1_socialexecutionid)),
@@ -256,7 +282,10 @@ process.stdout.write(`${JSON.stringify({
   latestNativeObservationAt,
   latestNativeObservationAgeHours,
   channelObservationAges,
+  bookingObservationAges,
   dateChannelMatrix: buildCoverageDateChannelMatrix(report),
+  preparationDateSummary,
+  preparationDateMatrix,
   readbackMode: snapshot.readbackMode,
   sourceSnapshotAsOf: snapshot.sourceSnapshotAsOf,
   liveDataverseObservedAt: snapshot.liveDataverseObservedAt || null,
