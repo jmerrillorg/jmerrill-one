@@ -13,7 +13,7 @@ import { ambiguousPublicationException, isAmbiguousPublicationOutcome, reconcile
 import { checkLinkedInAuthority, findRecentMatchingLinkedInPost, publishLinkedInOrganizationImagePost } from '../lib/linkedin.js';
 import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
-import { metaDestinationMatches } from '../lib/metaDestination.js';
+import { metaBranchApiExecutionEnabled, metaDestinationMatches } from '../lib/metaDestination.js';
 import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { approvedContentForSocial } from '../lib/socialContentApproval.js';
@@ -190,6 +190,20 @@ app.timer('socialExecutionWorkerTimer', {
           jm1_verifiedat: envelope.startedAt
         });
         writes.push({ id: row.jm1_socialexecutionid, state: 'HELD_DESTINATION_IDENTITY_MISMATCH' });
+        continue;
+      }
+
+      if (!metaBranchApiExecutionEnabled(publishing)) {
+        await patchById(socialSet, row.jm1_socialexecutionid, {
+          jm1_status: 'HELD_BRANCH_API_ACCESS_UNVERIFIED',
+          jm1_failurecategory: 'DESTINATION_ACCESS_UNVERIFIED',
+          jm1_exceptionowner: 'JM1 marketing runtime operator',
+          jm1_errorcode: 'META_BRANCH_API_ACCESS_UNVERIFIED',
+          jm1_errormessage: 'Financial Meta API execution is disabled until the configured production Page and connected Instagram asset are visible to the existing runtime identity with effective publishing access.',
+          jm1_readbackstate: 'HELD_FINANCIAL_PRODUCTION_ASSET_ACCESS_NOT_VERIFIED',
+          jm1_verifiedat: envelope.startedAt
+        });
+        writes.push({ id: row.jm1_socialexecutionid, state: 'HELD_BRANCH_API_ACCESS_UNVERIFIED' });
         continue;
       }
 

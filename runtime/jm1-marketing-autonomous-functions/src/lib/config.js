@@ -66,6 +66,7 @@ export const BRANCH_CONFIG = parseJsonEnv('JM1_MARKETING_BRANCH_CONFIG', {
     branchName: 'J Merrill Financial',
     facebookPageId: '104395329284856',
     facebookPageName: 'J Merrill Financial',
+    metaApiExecutionEnabled: false,
     instagramGraphId: null,
     instagramHandle: 'jmerrillfinancial',
     instagramEnabled: false,

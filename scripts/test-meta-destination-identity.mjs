@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { findConfiguredMetaPage, metaDestinationMatches } from '../runtime/jm1-marketing-autonomous-functions/src/lib/metaDestination.js';
+import { findConfiguredMetaPage, metaBranchApiExecutionEnabled, metaDestinationMatches } from '../runtime/jm1-marketing-autonomous-functions/src/lib/metaDestination.js';
 
 const financial = {
   facebookPageId: '104395329284856',
@@ -27,4 +27,11 @@ test('Page discovery cannot substitute a same-name Page for the configured Page 
   ];
   assert.equal(findConfiguredMetaPage(pages, financial), pages[1]);
   assert.equal(findConfiguredMetaPage([pages[0]], financial), null);
+});
+
+test('Financial Meta API execution fails closed until its explicit access flag is verified', () => {
+  assert.equal(metaBranchApiExecutionEnabled({ ...financial, branchName: 'J Merrill Financial' }), false);
+  assert.equal(metaBranchApiExecutionEnabled({ ...financial, branchName: 'J Merrill Financial', metaApiExecutionEnabled: true }), true);
+  assert.equal(metaBranchApiExecutionEnabled({ active: true, branchName: 'J Merrill One' }), true);
+  assert.equal(metaBranchApiExecutionEnabled({ active: false, branchName: 'J Merrill One' }), false);
 });
