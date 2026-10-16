@@ -1,0 +1,103 @@
+{
+  "packet": "JM1-THREE-BRAND-SOCIAL-PRESENCE-001",
+  "asOf": "2026-10-16T13:37:31Z",
+  "timezone": "America/New_York",
+  "details": [
+    {
+      "brand": "J Merrill One", "platform": "facebook", "destination": "101196349506906",
+      "scheduledAt": "2026-10-28T14:00:00Z", "observedAt": "2026-10-16T13:03:18Z",
+      "captionSha256": "26ce1a0d7a1a2816a92134237f690adff07114e52097b37e5b1364c9517e745e",
+      "mediaSha256": "7eed23eff185e462edab98ded1bee11d183bd4840c021541647bc7bc1fc8aa69",
+      "nativeItemId": "2505453816627808", "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "one-oct28-caption-repair-2026-10-16.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/marketing-horizon-label/jmerrill-one/docs/operations/one-oct28-caption-repair-2026-10-16.json"
+    },
+    {
+      "brand": "J Merrill One", "platform": "instagram", "destination": "17841456905118441",
+      "scheduledAt": "2026-10-28T15:00:00Z", "observedAt": "2026-10-16T13:03:18Z",
+      "captionSha256": "26ce1a0d7a1a2816a92134237f690adff07114e52097b37e5b1364c9517e745e",
+      "mediaSha256": "7eed23eff185e462edab98ded1bee11d183bd4840c021541647bc7bc1fc8aa69",
+      "nativeItemId": "2300388787167498", "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "one-oct28-caption-repair-2026-10-16.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/marketing-horizon-label/jmerrill-one/docs/operations/one-oct28-caption-repair-2026-10-16.json"
+    },
+    {
+      "brand": "J Merrill Financial", "platform": "facebook", "destination": "104395329284856",
+      "scheduledAt": "2026-10-29T15:00:00Z", "observedAt": "2026-10-15T17:15:34.397Z",
+      "captionSha256": "3d085e4332fdabf5dc556043de091edd8f2705adeeb22737ca178377ee4f11ed",
+      "mediaSha256": "8434350433980461cb4ef66bf755b0509b4410358fa6df0ee6fb9adee5522b2c",
+      "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "financial-facebook-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/financial-facebook-oct29-native-booking-readback.json"
+    },
+    {
+      "brand": "J Merrill Financial", "platform": "instagram", "destination": "@jmerrillfinancial",
+      "scheduledAt": "2026-10-29T15:00:00Z", "observedAt": "2026-10-15T17:15:34.397Z",
+      "captionSha256": "afaac81bed956d3b17021a347668e6448035edb7093ec4a8b922e703c1121507",
+      "mediaSha256": "8434350433980461cb4ef66bf755b0509b4410358fa6df0ee6fb9adee5522b2c",
+      "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "financial-instagram-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/financial-instagram-oct29-native-booking-readback.json"
+    },
+    {
+      "brand": "J Merrill Financial", "platform": "linkedin", "destination": "146207089",
+      "scheduledAt": "2026-10-29T14:00:00Z", "observedAt": "2026-10-15T20:10:21.104Z",
+      "captionSha256": "e14e24bf25b137e484ab2fe9ef95a2e7e3390e7ebd68cf6ec62a14b9c2751b58",
+      "mediaSha256": null, "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "financial-linkedin-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/financial-linkedin-oct29-native-booking-readback.json"
+    },
+    {
+      "brand": "J Merrill One", "platform": "facebook", "destination": "101196349506906",
+      "scheduledAt": "2026-10-29T14:00:00Z", "observedAt": "2026-10-15T17:15:39.117Z",
+      "captionSha256": "7aef71297dd1e63b3eb8b3373c2f8eaa3b088c79f7d22c474e51c89c37705795",
+      "mediaSha256": "4368a1b662add171062e295c69ff146d5f28beeddab033a3311b43099bac1320",
+      "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "one-facebook-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/one-facebook-oct29-native-booking-readback.json"
+    },
+    {
+      "brand": "J Merrill One", "platform": "instagram", "destination": "17841456905118441",
+      "scheduledAt": "2026-10-29T14:00:00Z", "observedAt": "2026-10-15T17:15:39.117Z",
+      "captionSha256": "7aef71297dd1e63b3eb8b3373c2f8eaa3b088c79f7d22c474e51c89c37705795",
+      "mediaSha256": "4368a1b662add171062e295c69ff146d5f28beeddab033a3311b43099bac1320",
+      "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "one-instagram-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/one-instagram-oct29-native-booking-readback.json"
+    },
+    {
+      "brand": "J Merrill One", "platform": "linkedin", "destination": "106683183",
+      "scheduledAt": "2026-10-29T14:00:00Z", "observedAt": "2026-10-15T20:11:35.520Z",
+      "captionSha256": "7aef71297dd1e63b3eb8b3373c2f8eaa3b088c79f7d22c474e51c89c37705795",
+      "mediaSha256": null, "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "one-linkedin-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/one-linkedin-oct29-native-booking-readback.json"
+    },
+    {
+      "brand": "J Merrill Publishing", "platform": "facebook", "destination": "307480763084670",
+      "scheduledAt": "2026-10-29T17:00:00Z", "observedAt": "2026-10-15T17:15:44.853Z",
+      "captionSha256": "4e4e107528d3631ffb99db860a4e9e7054c8011ddddc6fe8c520003c8a646d8f",
+      "mediaSha256": "e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8",
+      "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "publishing-facebook-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/publishing-facebook-oct29-native-booking-readback.json"
+    },
+    {
+      "brand": "J Merrill Publishing", "platform": "instagram", "destination": "17841410046020869",
+      "scheduledAt": "2026-10-29T17:00:00Z", "observedAt": "2026-10-15T17:15:44.853Z",
+      "captionSha256": "8bd0532f58aa1a1680edbaf3aa2e5a3c9f114200e55909d129bdcb3a10407acc",
+      "mediaSha256": "e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8",
+      "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "publishing-instagram-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/publishing-instagram-oct29-native-booking-readback.json"
+    },
+    {
+      "brand": "J Merrill Publishing", "platform": "linkedin", "destination": "13048648",
+      "scheduledAt": "2026-10-29T15:00:00Z", "observedAt": "2026-10-15T20:11:12.146Z",
+      "captionSha256": "87d586a3427d0df8eb798708235353c22b7e62803d073a505873dc35bfaddd59",
+      "mediaSha256": null, "nativeItemId": null, "nativeBookingId": null, "publicationId": null,
+      "sourceEvidenceFile": "publishing-linkedin-oct29-native-booking-readback.json",
+      "sourceEvidencePath": "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/publishing-linkedin-oct29-native-booking-readback.json"
+    }
+  ]
+}

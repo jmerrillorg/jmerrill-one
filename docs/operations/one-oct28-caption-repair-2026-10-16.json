@@ -1,0 +1,45 @@
+{
+  "packet": "JM1-THREE-BRAND-SOCIAL-PRESENCE-001",
+  "observedAt": "2026-10-16T13:03:18Z",
+  "source": "META_BUSINESS_SUITE_NATIVE_POST_DETAIL",
+  "brand": "J Merrill One",
+  "result": "EXISTING_BOOKINGS_REPAIRED_IN_PLACE",
+  "historicalEvidencePreserved": true,
+  "items": [
+    {
+      "platform": "facebook",
+      "destination": "101196349506906",
+      "destinationName": "J Merrill One",
+      "localDate": "2026-10-28",
+      "localTime": "10:00 AM",
+      "timeZone": "America/New_York",
+      "scheduledAt": "2026-10-28T14:00:00Z",
+      "nativeItemId": "2505453816627808",
+      "nativeBookingId": null,
+      "publicationId": null,
+      "caption": "Publishing, Financial, Foundation, and Productions serve different purposes. Explore the J Merrill One divisions and choose the path that matches what you are looking for.\n\nhttps://www.jmerrill.one/",
+      "captionSha256": "26ce1a0d7a1a2816a92134237f690adff07114e52097b37e5b1364c9517e745e",
+      "mediaSha256": "7eed23eff185e462edab98ded1bee11d183bd4840c021541647bc7bc1fc8aa69",
+      "operation": "Edited the existing scheduled post; retained its media, destination, and schedule.",
+      "verification": "Post detail reopened from the October 25-31 Planner. It showed the same native item ID, J Merrill One, October 28 at 10:00 AM, the full caption, and the existing creative."
+    },
+    {
+      "platform": "instagram",
+      "destination": "17841456905118441",
+      "destinationHandle": "jmerrillone",
+      "localDate": "2026-10-28",
+      "localTime": "11:00 AM",
+      "timeZone": "America/New_York",
+      "scheduledAt": "2026-10-28T15:00:00Z",
+      "nativeItemId": "2300388787167498",
+      "nativeBookingId": null,
+      "publicationId": null,
+      "caption": "Publishing, Financial, Foundation, and Productions serve different purposes. Explore the J Merrill One divisions and choose the path that matches what you are looking for.\n\nhttps://www.jmerrill.one/",
+      "captionSha256": "26ce1a0d7a1a2816a92134237f690adff07114e52097b37e5b1364c9517e745e",
+      "mediaSha256": "7eed23eff185e462edab98ded1bee11d183bd4840c021541647bc7bc1fc8aa69",
+      "operation": "Edited the existing scheduled post; retained its media, destination, and schedule.",
+      "verification": "Post detail reopened from the October 25-31 Planner. It showed the same native item ID and @jmerrillone. The full saved caption was expanded and read back; the existing creative and October 28 11:00 AM schedule were preserved from the edit form."
+    }
+  ],
+  "limitation": "Meta exposes these as native scheduler item IDs; no separate booking ID or publication ID was exposed."
+}

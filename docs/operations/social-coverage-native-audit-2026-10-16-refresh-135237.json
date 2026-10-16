@@ -1,0 +1,561 @@
+{
+  "version": 2,
+  "asOf": "2026-10-16T13:37:31Z",
+  "sourceSnapshotAsOf": "2026-10-16T13:37:31Z",
+  "readbackMode": "CURRENT_ACCOUNT_SPECIFIC_NATIVE_OBSERVATIONS",
+  "dataverseUrl": "https://jm1hq.crm.dynamics.com",
+  "dataverseMarker": "e60c47b5da7824de99976e0a",
+  "evidenceNote": "Current account-specific native observations refreshed Oct16 for all six Meta channels and all three LinkedIn pages through each Page schedule dialog. Meta lists show complete captions. Native item IDs were not exposed. October 14–27 milestone and Oct29 receipts remain preserved as historical/durable evidence. Oct30 is preparation only and is not counted as coverage.",
+  "acceptedCalendarMilestone": {
+    "startDateInclusiveET": "2026-10-14",
+    "endDateInclusiveET": "2026-10-27",
+    "requiredCellCount": 126,
+    "acceptedByUser": true
+  },
+  "historicalAuditSources": [
+    "docs/operations/social-coverage-native-audit-2026-10-10.json",
+    "/Volumes/UsersExternal/Developer/codex-worktrees/social-provider-reconciliation-2026-10/jmerrill-one/docs/operations/social-coverage-native-audit-2026-10-12.json",
+    "docs/operations/social-coverage-native-refresh-2026-10-16.json"
+  ],
+  "nativeScheduleEvidenceSources": [
+    "social-coverage-native-details-2026-10-16.json"
+  ],
+  "nativePublicationEvidenceSources": [
+    "one-oct15-publication-reconciliation-2026-10-16.json"
+  ],
+  "channels": [
+    {
+      "brand": "J Merrill One",
+      "platform": "facebook",
+      "destinationId": "101196349506906",
+      "executionOwner": "META_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:30:42.826Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": "846921439784613",
+        "accountAssetId": "101196349506906",
+        "view": "Meta Business Suite scheduled posts list",
+        "viewUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=101196349506906&business_id=846921439784613",
+        "rowCount": 28,
+        "captionVisibleInRows": true,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T18:00:00Z",
+          "2026-10-17T14:00:00Z",
+          "2026-10-18T15:00:00Z",
+          "2026-10-19T14:00:00Z",
+          "2026-10-20T14:00:00Z",
+          "2026-10-21T14:00:00Z",
+          "2026-10-22T14:00:00Z",
+          "2026-10-23T14:00:00Z",
+          "2026-10-24T14:00:00Z",
+          "2026-10-25T14:00:00Z",
+          "2026-10-26T14:00:00Z",
+          "2026-10-27T14:00:00Z",
+          "2026-10-28T14:00:00Z",
+          "2026-10-29T14:00:00Z"
+        ],
+        "nativeItemIdsNotExposed": true
+      }
+    },
+    {
+      "brand": "J Merrill One",
+      "platform": "instagram",
+      "destinationId": "17841456905118441",
+      "destinationHandle": "@jmerrillone",
+      "executionOwner": "META_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:30:42.826Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": "846921439784613",
+        "accountAssetId": "101196349506906",
+        "view": "Meta Business Suite scheduled posts list",
+        "viewUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=101196349506906&business_id=846921439784613",
+        "rowCount": 28,
+        "captionVisibleInRows": true,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T15:00:00Z",
+          "2026-10-17T14:00:00Z",
+          "2026-10-18T15:00:00Z",
+          "2026-10-19T14:00:00Z",
+          "2026-10-20T16:00:00Z",
+          "2026-10-21T16:00:00Z",
+          "2026-10-22T16:00:00Z",
+          "2026-10-23T19:00:00Z",
+          "2026-10-24T14:00:00Z",
+          "2026-10-25T16:00:00Z",
+          "2026-10-26T14:00:00Z",
+          "2026-10-27T14:00:00Z",
+          "2026-10-28T15:00:00Z",
+          "2026-10-29T14:00:00Z"
+        ],
+        "nativeItemIdsNotExposed": true
+      }
+    },
+    {
+      "brand": "J Merrill One",
+      "platform": "linkedin",
+      "destinationId": "106683183",
+      "executionOwner": "LINKEDIN_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:37:31Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": null,
+        "accountAssetId": null,
+        "view": "Company Page Admin > Start a post > Schedule post > View all scheduled posts",
+        "viewUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
+        "rowCount": 14,
+        "captionVisibleInRows": true,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T14:00:00Z",
+          "2026-10-17T14:00:00Z",
+          "2026-10-18T14:00:00Z",
+          "2026-10-19T14:00:00Z",
+          "2026-10-20T14:00:00Z",
+          "2026-10-21T14:00:00Z",
+          "2026-10-22T14:00:00Z",
+          "2026-10-23T20:00:00Z",
+          "2026-10-24T14:00:00Z",
+          "2026-10-25T14:00:00Z",
+          "2026-10-26T14:00:00Z",
+          "2026-10-27T14:00:00Z",
+          "2026-10-28T16:00:00Z",
+          "2026-10-29T14:00:00Z"
+        ],
+        "nativeItemIdsNotExposed": true
+      }
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "facebook",
+      "destinationId": "307480763084670",
+      "executionOwner": "META_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:52:37Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": "846921439784613",
+        "accountAssetId": "307480763084670",
+        "view": "Meta Business Suite scheduled posts list",
+        "viewUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=307480763084670&business_id=846921439784613",
+        "rowCount": 14,
+        "captionVisibleInRows": true,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T18:00:00Z",
+          "2026-10-17T15:00:00Z",
+          "2026-10-18T15:00:00Z",
+          "2026-10-19T15:00:00Z",
+          "2026-10-20T14:00:00Z",
+          "2026-10-21T15:00:00Z",
+          "2026-10-22T15:00:00Z",
+          "2026-10-23T18:00:00Z",
+          "2026-10-24T15:00:00Z",
+          "2026-10-25T15:00:00Z",
+          "2026-10-26T15:00:00Z",
+          "2026-10-27T15:00:00Z",
+          "2026-10-28T14:00:00Z",
+          "2026-10-29T17:00:00Z"
+        ],
+        "nativeItemIdsNotExposed": true,
+        "refreshEvidenceFile": "publishing-meta-schedule-refresh-2026-10-16.json"
+      }
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "instagram",
+      "destinationId": "17841410046020869",
+      "destinationHandle": "@jmerrillpub",
+      "executionOwner": "META_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:52:37Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": "846921439784613",
+        "accountAssetId": "307480763084670",
+        "view": "Meta Business Suite scheduled posts list",
+        "viewUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=307480763084670&business_id=846921439784613",
+        "rowCount": 14,
+        "captionVisibleInRows": true,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T19:00:00Z",
+          "2026-10-17T15:00:00Z",
+          "2026-10-18T15:00:00Z",
+          "2026-10-19T15:00:00Z",
+          "2026-10-20T16:00:00Z",
+          "2026-10-21T15:00:00Z",
+          "2026-10-22T15:00:00Z",
+          "2026-10-23T19:00:00Z",
+          "2026-10-24T15:00:00Z",
+          "2026-10-25T15:00:00Z",
+          "2026-10-26T15:00:00Z",
+          "2026-10-27T15:00:00Z",
+          "2026-10-28T15:00:00Z",
+          "2026-10-29T17:00:00Z"
+        ],
+        "nativeItemIdsNotExposed": true,
+        "refreshEvidenceFile": "publishing-meta-schedule-refresh-2026-10-16.json"
+      }
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "linkedin",
+      "destinationId": "13048648",
+      "executionOwner": "LINKEDIN_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:37:31Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": null,
+        "accountAssetId": null,
+        "view": "Company Page Admin > Page posts > Start a post > Schedule post > View all scheduled posts",
+        "viewUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
+        "rowCount": 19,
+        "captionVisibleInRows": true,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T15:00:00Z",
+          "2026-10-17T14:00:00Z",
+          "2026-10-18T15:00:00Z",
+          "2026-10-19T15:00:00Z",
+          "2026-10-20T16:00:00Z",
+          "2026-10-21T15:00:00Z",
+          "2026-10-22T15:00:00Z",
+          "2026-10-23T15:00:00Z",
+          "2026-10-24T15:00:00Z",
+          "2026-10-25T14:00:00Z",
+          "2026-10-26T15:00:00Z",
+          "2026-10-27T14:00:00Z",
+          "2026-10-28T16:00:00Z",
+          "2026-10-29T15:00:00Z",
+          "2026-11-03T16:00:00Z",
+          "2026-11-10T16:00:00Z",
+          "2026-11-17T16:00:00Z",
+          "2026-11-24T16:00:00Z",
+          "2026-11-30T16:00:00Z"
+        ],
+        "nativeItemIdsNotExposed": true
+      }
+    },
+    {
+      "brand": "J Merrill Financial",
+      "platform": "facebook",
+      "destinationId": "104395329284856",
+      "executionOwner": "META_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:31:18.756Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": "1306466683241061",
+        "accountAssetId": "104395329284856",
+        "view": "Meta Business Suite scheduled posts list",
+        "viewUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
+        "rowCount": 28,
+        "captionVisibleInRows": true,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T18:00:00Z",
+          "2026-10-17T15:00:00Z",
+          "2026-10-18T15:00:00Z",
+          "2026-10-19T14:00:00Z",
+          "2026-10-20T14:00:00Z",
+          "2026-10-21T14:00:00Z",
+          "2026-10-22T15:00:00Z",
+          "2026-10-23T18:00:00Z",
+          "2026-10-24T15:00:00Z",
+          "2026-10-25T15:00:00Z",
+          "2026-10-26T15:00:00Z",
+          "2026-10-27T15:00:00Z",
+          "2026-10-28T14:00:00Z",
+          "2026-10-29T15:00:00Z"
+        ],
+        "nativeItemIdsNotExposed": true
+      }
+    },
+    {
+      "brand": "J Merrill Financial",
+      "platform": "instagram",
+      "destinationHandle": "@jmerrillfinancial",
+      "executionOwner": "META_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:31:18.756Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": "1306466683241061",
+        "accountAssetId": "104395329284856",
+        "connectedPageId": "104395329284856",
+        "accountHandle": "jmerrillfinancial",
+        "graphBusinessId": "UNVERIFIED",
+        "view": "Meta Business Suite scheduled posts list",
+        "viewUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=104395329284856&business_id=1306466683241061",
+        "rowCount": 28,
+        "captionVisibleInRows": true,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T15:00:00Z",
+          "2026-10-17T15:00:00Z",
+          "2026-10-18T15:00:00Z",
+          "2026-10-19T14:00:00Z",
+          "2026-10-20T15:00:00Z",
+          "2026-10-21T15:00:00Z",
+          "2026-10-22T15:00:00Z",
+          "2026-10-23T19:00:00Z",
+          "2026-10-24T15:00:00Z",
+          "2026-10-25T15:00:00Z",
+          "2026-10-26T15:00:00Z",
+          "2026-10-27T15:00:00Z",
+          "2026-10-28T15:00:00Z",
+          "2026-10-29T15:00:00Z"
+        ],
+        "nativeItemIdsNotExposed": true
+      },
+      "destinationId": "UNVERIFIED_FOR_API"
+    },
+    {
+      "brand": "J Merrill Financial",
+      "platform": "linkedin",
+      "destinationId": "146207089",
+      "executionOwner": "LINKEDIN_NATIVE",
+      "nativeReadback": {
+        "state": "VERIFIED",
+        "requireTimestamp": true,
+        "observedAt": "2026-10-16T13:51:56Z",
+        "observedDateET": "2026-10-16",
+        "businessPortfolioId": null,
+        "accountAssetId": null,
+        "view": "J Merrill Financial's scheduled posts dialog in LinkedIn Page administration",
+        "viewUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
+        "rowCount": 14,
+        "captionVisibleInRows": false,
+        "visibleScheduledAtUtc": [
+          "2026-10-16T15:00:00Z",
+          "2026-10-17T15:00:00Z",
+          "2026-10-18T14:00:00Z",
+          "2026-10-19T14:00:00Z",
+          "2026-10-20T14:00:00Z",
+          "2026-10-21T14:00:00Z",
+          "2026-10-22T14:00:00Z",
+          "2026-10-23T20:00:00Z",
+          "2026-10-24T14:00:00Z",
+          "2026-10-25T14:00:00Z",
+          "2026-10-26T14:00:00Z",
+          "2026-10-27T14:00:00Z",
+          "2026-10-28T16:00:00Z",
+          "2026-10-29T14:00:00Z"
+        ],
+        "organizationId": "146207089",
+        "nativeItemIdsNotExposed": true,
+        "refreshEvidenceFile": "financial-linkedin-schedule-refresh-2026-10-16.json"
+      }
+    }
+  ],
+  "authorPrograms": [
+    {
+      "brand": "J Merrill Publishing",
+      "author": "Iyorwuese Hagher",
+      "month": "2026-10"
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "author": "Kimberly Reeder",
+      "month": "2026-11"
+    }
+  ],
+  "items": [
+    {
+      "id": "102c01e3-26c3-f111-aaaf-7c1e525b15c2",
+      "dataverseRecordId": "102c01e3-26c3-f111-aaaf-7c1e525b15c2",
+      "kind": "PUBLISHED",
+      "brand": "J Merrill One",
+      "platform": "facebook",
+      "destinationId": "101196349506906",
+      "scheduledAt": "2026-10-13T14:00:00Z",
+      "publishedAt": "2026-10-13T14:00:00Z",
+      "publishedDateET": "2026-10-13",
+      "platformPostId": "1144312001861424",
+      "nativeEvidence": {
+        "source": "META_BUSINESS_SUITE_PUBLISHED_LIST",
+        "observedAt": "2026-10-14T12:14:02.864Z",
+        "viewUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=101196349506906&business_id=846921439784613",
+        "visibleDateET": "2026-10-13",
+        "visibleTimeET": "10:00 AM"
+      }
+    },
+    {
+      "id": "66c2d254-25c6-f111-aaaf-7c1e525b15c2",
+      "dataverseRecordId": "66c2d254-25c6-f111-aaaf-7c1e525b15c2",
+      "kind": "PUBLISHED",
+      "brand": "J Merrill One",
+      "platform": "instagram",
+      "destinationId": "17841456905118441",
+      "scheduledAt": "2026-10-13T15:00:00Z",
+      "publishedAt": "2026-10-13T15:00:00Z",
+      "publishedDateET": "2026-10-13",
+      "platformPostId": "18034467605902945",
+      "nativeEvidence": {
+        "source": "META_BUSINESS_SUITE_PUBLISHED_LIST",
+        "observedAt": "2026-10-14T12:14:02.864Z",
+        "viewUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=101196349506906&business_id=846921439784613",
+        "visibleDateET": "2026-10-13",
+        "visibleTimeET": "11:00 AM"
+      }
+    },
+    {
+      "id": "6394768b-2dc3-f111-aaaf-000d3a14673b",
+      "dataverseRecordId": "6394768b-2dc3-f111-aaaf-000d3a14673b",
+      "kind": "PUBLISHED",
+      "brand": "J Merrill Publishing",
+      "platform": "facebook",
+      "destinationId": "307480763084670",
+      "scheduledAt": "2026-10-13T16:00:00Z",
+      "publishedAt": "2026-10-13T16:00:00Z",
+      "publishedDateET": "2026-10-13",
+      "platformPostId": "1434831491988631",
+      "nativeEvidence": {
+        "source": "META_BUSINESS_SUITE_PUBLISHED_LIST",
+        "observedAt": "2026-10-14T12:14:20.219Z",
+        "viewUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=307480763084670&business_id=846921439784613",
+        "visibleDateET": "2026-10-13",
+        "visibleTimeET": "12:00 PM"
+      }
+    },
+    {
+      "id": "aa5b255c-bbc4-f111-aaaf-7c1e525b15c2",
+      "dataverseRecordId": "aa5b255c-bbc4-f111-aaaf-7c1e525b15c2",
+      "kind": "PUBLISHED",
+      "brand": "J Merrill Publishing",
+      "platform": "instagram",
+      "destinationId": "17841410046020869",
+      "scheduledAt": "2026-10-13T15:00:00Z",
+      "publishedAt": "2026-10-13T15:00:00Z",
+      "publishedDateET": "2026-10-13",
+      "platformPostId": "18044104892821646",
+      "nativeEvidence": {
+        "source": "META_BUSINESS_SUITE_PUBLISHED_LIST",
+        "observedAt": "2026-10-14T12:14:20.219Z",
+        "viewUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=307480763084670&business_id=846921439784613",
+        "visibleDateET": "2026-10-13",
+        "visibleTimeET": "11:00 AM"
+      }
+    },
+    {
+      "id": "0c381083-d0c6-f111-aaad-00224820f926",
+      "dataverseRecordId": "0c381083-d0c6-f111-aaad-00224820f926",
+      "kind": "PUBLISHED",
+      "brand": "J Merrill Financial",
+      "platform": "facebook",
+      "destinationId": "104395329284856",
+      "scheduledAt": "2026-10-13T19:00:00Z",
+      "publishedAt": "2026-10-13T19:00:00Z",
+      "publishedDateET": "2026-10-13",
+      "platformPostId": "1046446668361672",
+      "nativeEvidence": {
+        "source": "META_BUSINESS_SUITE_PUBLISHED_LIST",
+        "observedAt": "2026-10-14T12:14:26.284Z",
+        "viewUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=104395329284856&business_id=1306466683241061",
+        "visibleDateET": "2026-10-13",
+        "visibleTimeET": "3:00 PM"
+      }
+    },
+    {
+      "id": "bd59abdb-28c6-f111-aaaf-00224820105b",
+      "dataverseRecordId": "bd59abdb-28c6-f111-aaaf-00224820105b",
+      "kind": "PUBLISHED",
+      "brand": "J Merrill Financial",
+      "platform": "instagram",
+      "destinationHandle": "jmerrillfinancial",
+      "scheduledAt": "2026-10-13T15:00:00Z",
+      "publishedAt": "2026-10-13T15:00:00Z",
+      "publishedDateET": "2026-10-13",
+      "platformPostId": "18130215542496031",
+      "nativeEvidence": {
+        "source": "META_BUSINESS_SUITE_PUBLISHED_LIST",
+        "observedAt": "2026-10-14T12:14:26.284Z",
+        "viewUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=104395329284856&business_id=1306466683241061",
+        "visibleDateET": "2026-10-13",
+        "visibleTimeET": "11:00 AM"
+      }
+    },
+    {
+      "id": "fb400878-f7c4-f111-aaaf-6045bdd69678",
+      "dataverseRecordId": "fb400878-f7c4-f111-aaaf-6045bdd69678",
+      "kind": "PUBLISHED",
+      "brand": "J Merrill One",
+      "platform": "linkedin",
+      "destinationId": "106683183",
+      "scheduledAt": "2026-10-13T16:00:00Z",
+      "publishedDateET": "2026-10-13",
+      "platformPostId": "urn:li:share:7514808686570184705",
+      "nativeEvidence": {
+        "source": "LINKEDIN_COMPANY_ADMIN_PUBLISHED_POST",
+        "observedAt": "2026-10-14T12:20:42.774Z",
+        "viewUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
+        "visibleDateET": "2026-10-13",
+        "actualPublishedTimeET": "NOT_SHOWN_BY_UI"
+      }
+    },
+    {
+      "id": "9ea52608-dcc3-f111-aaaf-000d3a10aa9c",
+      "dataverseRecordId": "9ea52608-dcc3-f111-aaaf-000d3a10aa9c",
+      "kind": "PUBLISHED",
+      "brand": "J Merrill Publishing",
+      "platform": "linkedin",
+      "destinationId": "13048648",
+      "scheduledAt": "2026-10-13T16:00:00Z",
+      "publishedDateET": "2026-10-13",
+      "platformPostId": "urn:li:share:7514721836774121473",
+      "nativeEvidence": {
+        "source": "LINKEDIN_COMPANY_ADMIN_PUBLISHED_POST",
+        "observedAt": "2026-10-14T12:20:01.343Z",
+        "viewUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
+        "visibleDateET": "2026-10-13",
+        "actualPublishedTimeET": "NOT_SHOWN_BY_UI"
+      }
+    }
+  ],
+  "heldConflicts": [
+    {
+      "id": "16b8ac32-a5c4-f111-aaaf-000d3a1a9efa",
+      "brand": "J Merrill One",
+      "platform": "facebook",
+      "scheduledAt": "2026-10-23T18:00:00Z",
+      "status": "HELD_NATIVE_BOOKING_CONFLICT",
+      "disposition": "PRESERVED_NOT_RELEASED"
+    },
+    {
+      "id": "5bc71f56-2ac6-f111-aaaf-6045bdd69678",
+      "brand": "J Merrill One",
+      "platform": "instagram",
+      "scheduledAt": "2026-10-13T15:00:00Z",
+      "status": "HELD_NATIVE_BOOKING_CONFLICT",
+      "disposition": "PRESERVED_NOT_RELEASED"
+    },
+    {
+      "id": "ce878706-dcc3-f111-aaaf-000d3a9eacee",
+      "brand": "J Merrill Publishing",
+      "platform": "instagram",
+      "scheduledAt": "2026-10-13T15:00:00Z",
+      "status": "HELD_NATIVE_BOOKING_CONFLICT",
+      "disposition": "PRESERVED_NOT_RELEASED"
+    }
+  ],
+  "financialProductionIdentity": {
+    "facebookPageId": "104395329284856",
+    "instagramHandle": "jmerrillfinancial",
+    "instagramGraphBusinessId": "UNVERIFIED",
+    "legacyTestPageId": "1270611542802820",
+    "testInstagramHandle": "jmerrillfin",
+    "legacyAndTestRecords": "PRESERVED_EXCLUDED_HISTORY",
+    "apiDispatch": "DISABLED_UNTIL_EFFECTIVE_ACCESS_VERIFIED"
+  },
+  "refreshNotes": [
+    "Financial LinkedIn exact production organization 146207089 was refreshed at 2026-10-16T13:51:56Z; schedule list matched the prior dates/times. Other channel observations retain their own timestamps.",
+    "Publishing Facebook and Instagram were refreshed from the combined native Meta scheduled list at 2026-10-16T13:52:37Z; observed rows matched the preserved per-channel UTC schedule lists."
+  ]
+}

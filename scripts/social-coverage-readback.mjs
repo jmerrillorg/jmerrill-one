@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, mergeNativeBookingObservations, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, mapNativePublicationEvidencePackets, mapUnlinkedNativePublicationEvidencePackets, mergeNativeBookingObservations, mergeNativeScheduleEvidence, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 import { matchesApprovedNativeSocialContent, nativeSocialScheduledAt } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 
@@ -16,6 +16,29 @@ const sourceSelection = requestedInput
     }));
 const input = sourceSelection.path;
 const snapshot = sourceSelection.snapshot;
+const readEvidencePackets = (paths) => (paths || []).map((path) => {
+  if (typeof path !== 'string' || path.includes('..') || path.startsWith('/')) {
+    throw new Error('Evidence source must be a repository-relative operations file');
+  }
+  return { ...JSON.parse(readFileSync(resolve('docs/operations', path), 'utf8')), _sourceEvidenceFile: path };
+});
+const publicationPackets = readEvidencePackets(snapshot.nativePublicationEvidenceSources);
+const publicationItems = mapNativePublicationEvidencePackets(publicationPackets);
+const unlinkedNativePublicationEvidence = mapUnlinkedNativePublicationEvidencePackets(publicationPackets);
+if (publicationItems.length) {
+  const byPostId = new Map((snapshot.items || []).filter((item) => item.kind === 'PUBLISHED')
+    .map((item) => [item.platformPostId, item]));
+  for (const item of publicationItems) {
+    const existing = byPostId.get(item.platformPostId);
+    if (existing && (existing.dataverseRecordId || existing.id) !== item.dataverseRecordId) {
+      throw new Error(`Publication source conflicts with existing platform ID ${item.platformPostId}`);
+    }
+    byPostId.set(item.platformPostId, { ...existing, ...item });
+  }
+  snapshot.items = [...(snapshot.items || []).filter((item) => item.kind !== 'PUBLISHED'), ...byPostId.values()];
+}
+snapshot.channels = mergeNativeScheduleEvidence(snapshot.channels,
+  readEvidencePackets(snapshot.nativeScheduleEvidenceSources));
 const financialDestinationOverlay = process.argv.includes('--current-financial-production-destinations');
 const financialProductionSnapshotVerified = hasVerifiedFinancialProductionDestinations(snapshot.channels);
 const metaReadbackArg = process.argv.find((arg) => arg.startsWith('--financial-meta-readback='));
@@ -223,6 +246,25 @@ if (process.argv.includes('--live-dataverse')) {
     ...(snapshot.preservedHistoricalFinancialDataverseRows || []),
     ...preservedHistoricalFinancialRows
   ];
+  snapshot.heldConflictReconciliation = allFutureRows.filter((row) => row.jm1_status === 'HELD_NATIVE_BOOKING_CONFLICT')
+    .map((row) => {
+      const readbackState = String(row.jm1_readbackstate || '');
+      const canonical = readbackState.match(/CANONICAL_RESERVATION=([^|]+)/)?.[1] || null;
+      const confirmedDuplicateSuppression = Boolean(canonical && readbackState.includes('NO_SECOND_NATIVE_BOOKING'));
+      return {
+        id: row.jm1_socialexecutionid,
+        brand: row.jm1_branch,
+        platform: row.jm1_platform,
+        requestedDestination: row.jm1_requesteddestination || null,
+        scheduledAt: row.jm1_requestedschedule || null,
+        captionVersion: row.jm1_captionversion || null,
+        mediaSha256: row.jm1_requestedmediahash || null,
+        classification: confirmedDuplicateSuppression ? 'CONFIRMED_DUPLICATE_SUPPRESSION' : 'UNRESOLVED_EXACT_NATIVE_IDENTITY',
+        canonicalReservationId: canonical,
+        reason: confirmedDuplicateSuppression ? 'Invalid-media held request is superseded; canonical reservation is retained; no second native booking.'
+          : 'Held state preserved. Available record does not prove an exact content/media/destination/time match to a specific native item; time/destination overlap alone is insufficient.'
+      };
+    });
 }
 const report = buildSocialCoverageReadback(snapshot);
 const latestNativeObservationAt = (snapshot.channels || [])
@@ -293,6 +335,7 @@ process.stdout.write(`${JSON.stringify({
   ...(snapshot.unclassifiedDataverseRows ? { unclassifiedDataverseRows: snapshot.unclassifiedDataverseRows } : {}),
   ...(snapshot.mappedDataverseRows !== undefined ? { mappedDataverseRows: snapshot.mappedDataverseRows } : {}),
   ...(snapshot.campaignPolicyExclusions ? { campaignPolicyExclusions: snapshot.campaignPolicyExclusions } : {}),
+  ...(snapshot.heldConflictReconciliation ? { heldConflictReconciliation: snapshot.heldConflictReconciliation } : {}),
   ...(financialProductionSnapshotVerified ? { financialProductionDestinations: {
     state: 'VERIFIED_FROM_CURRENT_SNAPSHOT',
     facebookPageId: '104395329284856',
@@ -319,5 +362,6 @@ process.stdout.write(`${JSON.stringify({
     nativeReadback: metaReadback ? 'CURRENT_META_UI_READBACK' : 'NOT_REFRESHED'
   }, preservedHistoricalFinancialEvidence: snapshot.preservedHistoricalFinancialEvidence || [] } : {}),
   ...(snapshot.unclassifiedDataverseRows ? { reconciliationFindings } : {}),
-  publishedClaimReconciliations: publishedClaimReconciliation.reconciled
+  publishedClaimReconciliations: publishedClaimReconciliation.reconciled,
+  unlinkedNativePublicationEvidence
 }, null, 2)}\n`);

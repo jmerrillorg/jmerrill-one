@@ -1,0 +1,30 @@
+{
+  "packet": "JM1-THREE-BRAND-SOCIAL-PRESENCE-001",
+  "brand": "J Merrill Financial",
+  "platform": "linkedin",
+  "organizationId": "146207089",
+  "observedAt": "2026-10-16T13:51:56Z",
+  "timezone": "America/New_York",
+  "view": "LinkedIn Page administration scheduled-posts dialog",
+  "viewUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
+  "rowCount": 14,
+  "scheduledAtUtc": [
+    "2026-10-16T15:00:00Z",
+    "2026-10-17T15:00:00Z",
+    "2026-10-18T14:00:00Z",
+    "2026-10-19T14:00:00Z",
+    "2026-10-20T14:00:00Z",
+    "2026-10-21T14:00:00Z",
+    "2026-10-22T14:00:00Z",
+    "2026-10-23T20:00:00Z",
+    "2026-10-24T14:00:00Z",
+    "2026-10-25T14:00:00Z",
+    "2026-10-26T14:00:00Z",
+    "2026-10-27T14:00:00Z",
+    "2026-10-28T16:00:00Z",
+    "2026-10-29T14:00:00Z"
+  ],
+  "nativeItemIdsExposed": false,
+  "captionVisibleInList": false,
+  "notes": "Fresh read-only detail list confirmed the same 14 scheduled dates and Eastern times as the earlier read. This is native scheduler evidence, not API access or publication evidence."
+}
