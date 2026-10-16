@@ -227,6 +227,19 @@ export function nativeSocialScheduledAt(stage, platform) {
   return easternDateTimeIso(new Date(`${day}T12:00:00Z`), hour);
 }
 
+export function summarizeNativeSocialHorizon(nowIso, materialized = []) {
+  const start = easternMidnight(new Date(nowIso));
+  const committedEnd = easternDateKey(addDays(start, 13));
+  const preparationDate = easternDateKey(addDays(start, 14));
+  const ready = materialized.filter((item) => item.state === 'CONTENT_READY');
+  return {
+    committedDateWindow: `${easternDateKey(start)}..${committedEnd}`,
+    preparationDate,
+    committedReadyGaps: ready.filter((item) => item.dateKey <= committedEnd).length,
+    preparationReadyGaps: ready.filter((item) => item.dateKey === preparationDate).length
+  };
+}
+
 export function planNativeSocialGaps({ campaign, socialRows, nowIso, destinationByPlatform, reservationAliasesByPlatform = destinationByPlatform, approvedRequestMarkers = [], readbackComplete = true }) {
   if (!isApprovedNativeSocialCampaign(campaign) || !readbackComplete || !Array.isArray(socialRows)) return [];
   const now = new Date(nowIso);

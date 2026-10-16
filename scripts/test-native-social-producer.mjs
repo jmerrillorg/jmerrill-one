@@ -8,7 +8,8 @@ import {
   nativeSocialChannelGaps,
   nativeSocialDestinationsForBranch,
   nativeSocialScheduledAt,
-  planNativeSocialGaps
+  planNativeSocialGaps,
+  summarizeNativeSocialHorizon
 } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 import { approvedCampaignForSocial } from '../runtime/jm1-marketing-autonomous-functions/src/lib/socialCampaignAuthority.js';
 import { approvedContentForSocial } from '../runtime/jm1-marketing-autonomous-functions/src/lib/socialContentApproval.js';
@@ -279,6 +280,20 @@ test('scheduled timestamps preserve Eastern wall-clock time across daylight tran
   assert.equal(nativeSocialScheduledAt('daily-2026-10-28', 'instagram'), '2026-10-28T15:00:00.000Z');
   assert.equal(nativeSocialScheduledAt('daily-2026-10-28', 'linkedin'), '2026-10-28T16:00:00.000Z');
   assert.equal(nativeSocialScheduledAt('daily-2026-11-02', 'facebook'), '2026-11-02T15:00:00.000Z');
+});
+
+test('horizon telemetry separates 14 committed Eastern dates from the preparation date', () => {
+  const materialized = [
+    { dateKey: '2026-10-16', state: 'CONTENT_READY' },
+    { dateKey: '2026-10-28', state: 'CONTENT_READY' },
+    { dateKey: '2026-10-29', state: 'CONTENT_READY' }
+  ];
+  assert.deepEqual(summarizeNativeSocialHorizon('2026-10-15T16:00:00Z', materialized), {
+    committedDateWindow: '2026-10-15..2026-10-28',
+    preparationDate: '2026-10-29',
+    committedReadyGaps: 2,
+    preparationReadyGaps: 1
+  });
 });
 
 test('daily content has durable date-keyed provenance and retains legacy content validation', () => {
