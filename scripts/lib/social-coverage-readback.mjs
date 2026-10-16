@@ -22,6 +22,88 @@ export function selectLatestCoverageSnapshot(candidates) {
   return valid[0];
 }
 
+export function mapNativePublicationEvidencePackets(packets) {
+  return (packets || []).flatMap((packet) => (packet.publications || []).map((publication) => {
+    const destination = publication.actualDestination;
+    const numericDestination = /^\d+$/.test(String(destination || ''));
+    return {
+      id: publication.dataverseRecordId,
+      dataverseRecordId: publication.dataverseRecordId,
+      kind: 'PUBLISHED',
+      brand: publication.brand,
+      platform: publication.platform,
+      destinationId: numericDestination ? String(destination) : null,
+      destinationHandle: numericDestination ? null : String(destination || '').replace(/^@/, ''),
+      requestedDestinationText: publication.requestedDestination,
+      scheduledAt: publication.scheduledAt,
+      publishedAt: publication.publishedAt || null,
+      publishedDateET: publication.publishedDateET,
+      platformPostId: publication.platformPostId,
+      captionSha256: publication.captionSha256,
+      mediaSha256: publication.mediaSha256 || null,
+      nativeEvidence: {
+        source: publication.source,
+        observedAt: publication.observedAt,
+        viewUrl: publication.evidenceUrl,
+        reconciliationNote: publication.reconciliationNote || null
+      }
+    };
+  }));
+}
+
+export function mapUnlinkedNativePublicationEvidencePackets(packets) {
+  return (packets || []).flatMap((packet) => [
+    ...(packet.unlinkedObservedPost ? [{
+      ...packet.unlinkedObservedPost,
+      evidenceKind: 'OBSERVED_POST_NOT_LINKED_TO_SOURCE',
+      observedAt: packet.observedAt || null,
+      sourceEvidenceFile: packet._sourceEvidenceFile || null
+    }] : []),
+    ...(packet.unlinkedClaims || []).map((claim) => ({
+      ...claim,
+      evidenceKind: 'CLAIM_NOT_MATCHED_TO_OBSERVED_POST',
+      observedAt: packet.observedAt || null,
+      sourceEvidenceFile: packet._sourceEvidenceFile || null
+    }))
+  ]);
+}
+
+export function mergeNativeScheduleEvidence(channels, packets) {
+  const details = (packets || []).flatMap((packet) => packet.details || []);
+  const seen = new Set();
+  for (const detail of details) {
+    const key = `${detail.brand}|${detail.platform}|${detail.destination}|${detail.scheduledAt}|${detail.captionSha256}`;
+    if (seen.has(key)) throw new Error(`Duplicate native schedule evidence: ${key}`);
+    seen.add(key);
+    if (!detail.observedAt || !Number.isFinite(Date.parse(detail.observedAt))
+      || !detail.scheduledAt || !Number.isFinite(Date.parse(detail.scheduledAt))
+      || !/^[a-f0-9]{64}$/.test(detail.captionSha256)
+      || (detail.mediaSha256 && !/^[a-f0-9]{64}$/.test(detail.mediaSha256))) {
+      throw new Error('Native schedule detail lacks valid time or content fingerprints');
+    }
+    if ([detail.nativeItemId, detail.nativeBookingId, detail.publicationId]
+      .some((value) => value != null && (typeof value !== 'string' || !value.trim()))) {
+      throw new Error('Unavailable native IDs must remain null, not placeholders');
+    }
+    const matches = channels.filter((channel) => channel.brand === detail.brand && channel.platform === detail.platform
+      && (channel.destinationId === detail.destination
+        || String(channel.destinationHandle || '').replace(/^@/, '').toLowerCase()
+          === String(detail.destination || '').replace(/^@/, '').toLowerCase()));
+    if (matches.length !== 1) throw new Error(`Native schedule evidence does not resolve one production channel: ${key}`);
+    const channel = matches[0];
+    if (!(channel.nativeReadback?.visibleScheduledAtUtc || []).includes(detail.scheduledAt)) {
+      throw new Error(`Native schedule detail is not present in the observed scheduled list: ${key}`);
+    }
+    const scheduleDetails = channel.nativeReadback.scheduleDetails || [];
+    if (scheduleDetails.some((existing) => existing.scheduledAt === detail.scheduledAt
+      && existing.captionSha256 === detail.captionSha256 && existing.destination === detail.destination)) {
+      continue;
+    }
+    channel.nativeReadback.scheduleDetails = [...scheduleDetails, detail];
+  }
+  return channels;
+}
+
 export function buildCoverageDateChannelMatrix(report) {
   return report.channels.flatMap((channel) => channel.dailyCoverage.map((day) => ({
     dateET: day.dateET,
@@ -41,6 +123,8 @@ export function buildCoverageDateChannelMatrix(report) {
     evidenceSource: channel.nativeReadback?.view || null,
     evidenceUrl: channel.nativeReadback?.viewUrl || null,
     observedAt: channel.nativeReadback?.observedAt || null,
+    nativeScheduleDetails: (channel.nativeReadback?.scheduleDetails || [])
+      .filter((detail) => easternDate(detail.scheduledAt) === day.dateET),
     qualifiesForDailyCoverage: day.qualifiesForDailyCoverage
   })));
 }
@@ -358,6 +442,10 @@ function publishedDateET(item) {
   return item.publishedDateET || (item.publishedAt ? easternDate(item.publishedAt) : null);
 }
 
+function publishedDateFromReadback(value) {
+  return String(value || '').match(/(?:^|\|)PUBLISHED_DATE_ET=(\d{4}-\d{2}-\d{2})(?:\||$)/)?.[1] || null;
+}
+
 function nativeOwner(platform) {
   return platform === 'linkedin' ? 'LINKEDIN_NATIVE' : 'META_NATIVE';
 }
@@ -477,12 +565,14 @@ export function mapDataverseSocialRows(rows, channels) {
       requestedDestinationText: destination || null,
       scheduledAt: row.jm1_requestedschedule || null,
       publishedAt: isPublished ? row.jm1_actualschedule || null : null,
+      publishedDateET: isPublished ? publishedDateFromReadback(row.jm1_readbackstate) : null,
       platformPostId: isPublished ? row.jm1_platformpostid : null,
       nativeBookingId: isNativeBooking ? nativeBookingIdFromReadback(row.jm1_readbackstate) : null,
       nativeItemId: isNativeBooking ? nativeItemIdFromReadback(row.jm1_readbackstate) : null,
       captionSha256: isNativeBooking ? row.jm1_captionversion || null : null,
       mediaSha256: isNativeBooking ? row.jm1_requestedmediahash || null : null,
-      nativeEvidence: isNativeBooking ? nativeEvidenceFromReadback(row.jm1_readbackstate, row, channel) : null,
+      nativeEvidence: isNativeBooking ? nativeEvidenceFromReadback(row.jm1_readbackstate, row, channel)
+        : isPublished ? publicationEvidenceFromReadback(row.jm1_readbackstate, row) : null,
       status: row.jm1_status || null,
       campaignType: row.campaignType || null,
       campaignSocialEligible: row.campaignSocialEligible ?? null,
@@ -858,6 +948,18 @@ function nativeItemIdFromReadback(value) {
   return match && match[1] !== 'NOT_EXPOSED' ? match[1] : null;
 }
 
+function publicationEvidenceFromReadback(value, row) {
+  const readback = String(value || '');
+  const observedAt = readback.match(/(?:^|\|)OBSERVED_AT=([^|]+)/)?.[1] || row.jm1_verifiedat || null;
+  if (!readback.startsWith('NATIVE_PUBLICATION|') || !observedAt || !Number.isFinite(Date.parse(observedAt))) return null;
+  return {
+    source: 'NATIVE_PLATFORM_PUBLICATION',
+    observedAt: new Date(observedAt).toISOString(),
+    viewUrl: null,
+    publishedDateET: publishedDateFromReadback(readback)
+  };
+}
+
 function nativeEvidenceFromReadback(value, row, channel = null) {
   const compact = String(value || '').match(/^NATIVE_UI\|(META|LINKEDIN)\|AT=([^|]+)\|(NATIVE_ITEM=([^|]+)\|)?BOOKING=([^|]+)$/);
   const metaBooked = String(value || '').match(/^MBS_BOOKED\|([^|]+)\|CONTENT_ID=(.+)$/);
@@ -978,10 +1080,11 @@ export function reconcilePastDueClaimsToPublishedEvidence(rows, publishedItems, 
     const id = row.jm1_socialexecutionid || row.id;
     const status = row.jm1_status || row.status;
     const requestedAt = row.jm1_requestedschedule || row.requestedSchedule;
-    if (!id || status !== 'NATIVE_BOOKED_VERIFIED' || !requestedAt || Date.parse(requestedAt) > Date.parse(asOf)) continue;
+    if (!id || !['NATIVE_BOOKED_VERIFIED', 'PUBLISHED_VERIFIED'].includes(status)
+      || !requestedAt || Date.parse(requestedAt) > Date.parse(asOf)) continue;
     const rowDestination = String(row.jm1_actualdestination || row.jm1_requesteddestination
       || row.actualDestination || row.requestedDestination || '').replace(/^@/, '');
-    const item = published.find((candidate) => candidate.dataverseRecordId === id
+    const item = published.find((candidate) => (candidate.dataverseRecordId || candidate.id) === id
       && candidate.platform === String(row.jm1_platform || row.platform || '').toLowerCase()
       && String(candidate.destinationId || candidate.destinationHandle || '').replace(/^@/, '') === rowDestination
       && publishedDateET(candidate) === easternDate(requestedAt));
@@ -993,12 +1096,17 @@ export function reconcilePastDueClaimsToPublishedEvidence(rows, publishedItems, 
       observedDisposition: 'PUBLISHED_VERIFIED',
       platform: item.platform,
       destinationId: item.destinationId,
+      destinationHandle: item.destinationHandle || null,
       scheduledAt: requestedAt,
       publishedDateET: publishedDateET(item),
       actualPublishedAt: item.publishedAt || null,
       platformPostId: item.platformPostId,
+      captionSha256: item.captionSha256 || null,
+      mediaSha256: item.mediaSha256 || null,
       evidenceSource: item.nativeEvidence?.source || null,
-      observedAt: item.nativeEvidence?.observedAt || null
+      evidenceUrl: item.nativeEvidence?.viewUrl || null,
+      observedAt: item.nativeEvidence?.observedAt || null,
+      reconciliationNote: item.nativeEvidence?.reconciliationNote || null
     });
   }
   return { reconciled, reconciledIds };

@@ -1,0 +1,125 @@
+{
+  "packet": "JM1-SOCIAL-OCT15-PUBLICATION-RECONCILIATION-001",
+  "observedAt": "2026-10-16T13:23:03.753Z",
+  "timezone": "America/New_York",
+  "principle": "Append exact platform publication evidence to an exact existing source record; never replace the requested schedule, manufacture an ID, or infer a match from date alone.",
+  "publications": [
+    {
+      "dataverseRecordId": "4a7234e3-26c3-f111-aaaf-00224820105b",
+      "brand": "J Merrill One",
+      "platform": "instagram",
+      "requestedDestination": "@jmerrillone",
+      "actualDestination": "@jmerrillone",
+      "expectedProductionDestination": "@jmerrillone",
+      "scheduledAt": "2026-10-15T14:00:00Z",
+      "publishedDateET": "2026-10-15",
+      "publishedAt": null,
+      "observedAt": "2026-10-16T13:23:03.753Z",
+      "platformPostId": "17942998800092156",
+      "captionSha256": "43552b2af215daebf0f196792a2333b9a77d41d7a13359d53d859398dbce1080",
+      "mediaSha256": "4368a1b662add171062e295c69ff146d5f28beeddab033a3311b43099bac1320",
+      "evidenceUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=101196349506906&business_id=846921439784613",
+      "source": "META_NATIVE_PUBLISHED_LIST_AND_EXACT_CAPTION_MEDIA_MATCH"
+      ,"previousReadbackState": "META_SCHEDULED_NATIVE_CONTENT_ID_1586935576565032_DESTINATION_AND_TIME_VERIFIED"
+    },
+    {
+      "dataverseRecordId": "b6564001-fec6-f111-aaaf-00224820105b",
+      "brand": "J Merrill Publishing",
+      "platform": "instagram",
+      "requestedDestination": "17841410046020869",
+      "actualDestination": "17841410046020869",
+      "expectedProductionDestination": "17841410046020869",
+      "scheduledAt": "2026-10-15T14:00:00Z",
+      "publishedDateET": "2026-10-15",
+      "publishedAt": "2026-10-15T14:00:00Z",
+      "observedAt": "2026-10-16T13:23:03.753Z",
+      "platformPostId": "18451833736127308",
+      "captionSha256": "20ad6a0795a892f0bbab0f25868acf21ecc785c4c125ac1d1352712638db1193",
+      "mediaSha256": "e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8",
+      "evidenceUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=307480763084670&business_id=846921439784613",
+      "source": "META_NATIVE_PUBLISHED_LIST_AND_EXACT_CAPTION_MEDIA_MATCH"
+      ,"previousReadbackState": "NATIVE_UI|META|AT=2026-10-13T12:02:07.000Z|BOOKING=NOT_EXPOSED"
+    },
+    {
+      "dataverseRecordId": "5c02df83-d5c6-f111-aaaf-7c1e525b15c2",
+      "brand": "J Merrill Publishing",
+      "platform": "facebook",
+      "requestedDestination": "307480763084670",
+      "actualDestination": "307480763084670",
+      "expectedProductionDestination": "307480763084670",
+      "scheduledAt": "2026-10-15T15:00:00Z",
+      "publishedDateET": "2026-10-15",
+      "publishedAt": "2026-10-15T14:00:00Z",
+      "observedAt": "2026-10-16T13:23:03.753Z",
+      "platformPostId": "1436618618476585",
+      "captionSha256": "20ad6a0795a892f0bbab0f25868acf21ecc785c4c125ac1d1352712638db1193",
+      "mediaSha256": "e62c2125ec1bc07d8da0274014ec8987c7021a2a1b10666bbb57853d46196fe8",
+      "evidenceUrl": "https://business.facebook.com/latest/posts/published_posts?asset_id=307480763084670&business_id=846921439784613",
+      "source": "META_NATIVE_PUBLISHED_LIST_AND_EXACT_CAPTION_MEDIA_MATCH",
+      "reconciliationNote": "The preserved request was for 11:00 ET (15:00Z); the native publication was observed at 10:00 ET (14:00Z). Requested and actual times are both retained; no booking was moved."
+      ,"previousReadbackState": "EXACT_CONTENT_MEDIA_BOUND_BOOKING_PENDING"
+    },
+    {
+      "dataverseRecordId": "f15ced8b-05c7-f111-aaaf-00224820105b",
+      "brand": "J Merrill One",
+      "platform": "linkedin",
+      "requestedDestination": "106683183",
+      "actualDestination": "106683183",
+      "expectedProductionDestination": "106683183",
+      "scheduledAt": "2026-10-15T14:00:00Z",
+      "publishedDateET": "2026-10-15",
+      "publishedAt": null,
+      "observedAt": "2026-10-16T13:23:03.753Z",
+      "platformPostId": "urn:li:share:7515757146525810688",
+      "captionSha256": "27a8d6c6cdc34ae4fadd86a1394327b8fa670f95e06f444eaca132e098a23cfc",
+      "mediaSha256": null,
+      "evidenceUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
+      "source": "LINKEDIN_NATIVE_PUBLISHED_LIST_AND_EXACT_CAPTION_MATCH"
+      ,"previousReadbackState": "NATIVE_UI|LINKEDIN|AT=2026-10-13T12:56:10.000Z|BOOKING=NOT_EXPOSED"
+    },
+    {
+      "dataverseRecordId": "6ad33fef-e7c4-f111-aaaf-7c1e525b15c2",
+      "brand": "J Merrill Publishing",
+      "platform": "linkedin",
+      "requestedDestination": "13048648",
+      "actualDestination": "13048648",
+      "expectedProductionDestination": "13048648",
+      "scheduledAt": "2026-10-15T15:00:00Z",
+      "publishedDateET": "2026-10-15",
+      "publishedAt": null,
+      "observedAt": "2026-10-16T13:23:03.753Z",
+      "platformPostId": "urn:li:share:7512653230255017984",
+      "captionSha256": "9cb100bb60564618887cc77e848de745a4859498fe009470185e8436f79bb985",
+      "mediaSha256": null,
+      "evidenceUrl": "https://www.linkedin.com/feed/update/urn:li:share:7512653230255017984/",
+      "source": "LINKEDIN_NATIVE_PUBLISHED_LIST_AND_EXACT_CAPTION_MATCH",
+      "reconciliationNote": "This is the single actual Publishing LinkedIn publication for the date. The second claim has caption SHA-256 7d4c1c027466dda597d9c2f108f10a342d6c7bb4a807a0d998b96e802ba31576 and cover-media SHA-256 5cf31e28bfd3eb7dbd091445a4ccbce5f9c65b5d3eb5d039fafae3d642033be3; it does not match this published item and is not counted as another publication."
+      ,"previousReadbackState": "NATIVE_UI|LINKEDIN|AT=2026-10-10T20:19:43.000Z|BOOKING=NOT_EXPOSED"
+    }
+  ],
+  "unlinkedObservedPost": {
+    "brand": "J Merrill One",
+    "platform": "facebook",
+    "destination": "101196349506906",
+    "publishedDateET": "2026-10-15",
+    "platformPostId": "1146262504999707",
+    "observedCaptionPrefix": "Good work starts with a useful question. J Merrill One brings distinct teams together while each division keeps its own purpose.",
+    "candidateRecordId": "90220396-00c7-f111-aaaf-6045bdd69678",
+    "candidateCaptionSha256": "004b0994a29104976a30de51b3fbdc9008773edd2192b7954ce657d7f37ef84d",
+    "disposition": "NOT_LINKED_CONTENT_HASH_MISMATCH"
+  },
+  "unlinkedClaims": [
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "linkedin",
+      "destinationId": "13048648",
+      "dataverseRecordId": "4dd0f14c-02c0-f111-aaaf-7c1e525b15c2",
+      "requestedSchedule": "2026-10-15T15:00:00Z",
+      "captionSha256": "7d4c1c027466dda597d9c2f108f10a342d6c7bb4a807a0d998b96e802ba31576",
+      "mediaSha256": "5cf31e28bfd3eb7dbd091445a4ccbce5f9c65b5d3eb5d039fafae3d642033be3",
+      "comparedPublicationId": "urn:li:share:7512653230255017984",
+      "disposition": "NOT_LINKED_CONTENT_HASH_MISMATCH",
+      "note": "This distinct claim does not match the single actual Publishing LinkedIn publication by caption or media hash, so it is not counted as another publication."
+    }
+  ]
+}

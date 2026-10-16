@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "asOf": "2026-10-16T13:37:31Z",
+  "observedDateET": "2026-10-16",
+  "timeZone": "America/New_York",
+  "source": "Account-specific Meta Business Suite scheduled lists and each LinkedIn Page's native Create post > Schedule post > View all scheduled posts dialog. ONE and Publishing LinkedIn observations were refreshed after the initial Meta/Financial refresh. IDs were not exposed by list views. Times below are displayed Eastern times converted to UTC using the date-specific EDT/EST offset.",
+  "metaObservations": [
+    {
+      "brand": "J Merrill One",
+      "pageId": "101196349506906",
+      "portfolioId": "846921439784613",
+      "instagram": "@jmerrillone",
+      "instagramGraphId": "17841456905118441",
+      "observedAt": "2026-10-16T13:30:42.826Z",
+      "scheduledAtUtc": [
+        "2026-10-16T15:00:00Z", "2026-10-16T18:00:00Z",
+        "2026-10-17T14:00:00Z", "2026-10-17T14:00:00Z",
+        "2026-10-18T15:00:00Z", "2026-10-18T15:00:00Z",
+        "2026-10-19T14:00:00Z", "2026-10-19T14:00:00Z",
+        "2026-10-20T14:00:00Z", "2026-10-20T16:00:00Z",
+        "2026-10-21T14:00:00Z", "2026-10-21T16:00:00Z",
+        "2026-10-22T14:00:00Z", "2026-10-22T16:00:00Z",
+        "2026-10-23T14:00:00Z", "2026-10-23T19:00:00Z",
+        "2026-10-24T14:00:00Z", "2026-10-24T14:00:00Z",
+        "2026-10-25T14:00:00Z", "2026-10-25T16:00:00Z",
+        "2026-10-26T14:00:00Z", "2026-10-26T14:00:00Z",
+        "2026-10-27T14:00:00Z", "2026-10-27T14:00:00Z",
+        "2026-10-28T14:00:00Z", "2026-10-28T15:00:00Z",
+        "2026-10-29T14:00:00Z", "2026-10-29T14:00:00Z"
+      ]
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "pageId": "307480763084670",
+      "portfolioId": "846921439784613",
+      "instagram": "@jmerrillpub",
+      "instagramGraphId": "17841410046020869",
+      "observedAt": "2026-10-16T13:31:49.158Z",
+      "scheduledAtUtc": [
+        "2026-10-16T18:00:00Z", "2026-10-16T19:00:00Z",
+        "2026-10-17T15:00:00Z", "2026-10-17T15:00:00Z",
+        "2026-10-18T15:00:00Z", "2026-10-18T15:00:00Z",
+        "2026-10-19T15:00:00Z", "2026-10-19T15:00:00Z",
+        "2026-10-20T14:00:00Z", "2026-10-20T16:00:00Z",
+        "2026-10-21T15:00:00Z", "2026-10-21T15:00:00Z",
+        "2026-10-22T15:00:00Z", "2026-10-22T15:00:00Z",
+        "2026-10-23T18:00:00Z", "2026-10-23T19:00:00Z",
+        "2026-10-24T15:00:00Z", "2026-10-24T15:00:00Z",
+        "2026-10-25T15:00:00Z", "2026-10-25T15:00:00Z",
+        "2026-10-26T15:00:00Z", "2026-10-26T15:00:00Z",
+        "2026-10-27T15:00:00Z", "2026-10-27T15:00:00Z",
+        "2026-10-28T14:00:00Z", "2026-10-28T15:00:00Z",
+        "2026-10-29T17:00:00Z", "2026-10-29T17:00:00Z"
+      ]
+    },
+    {
+      "brand": "J Merrill Financial",
+      "pageId": "104395329284856",
+      "portfolioId": "1306466683241061",
+      "instagram": "@jmerrillfinancial",
+      "instagramGraphId": "UNVERIFIED_FOR_API",
+      "observedAt": "2026-10-16T13:31:18.756Z",
+      "scheduledAtUtc": [
+        "2026-10-16T15:00:00Z", "2026-10-16T18:00:00Z",
+        "2026-10-17T15:00:00Z", "2026-10-17T15:00:00Z",
+        "2026-10-18T15:00:00Z", "2026-10-18T15:00:00Z",
+        "2026-10-19T14:00:00Z", "2026-10-19T14:00:00Z",
+        "2026-10-20T14:00:00Z", "2026-10-20T15:00:00Z",
+        "2026-10-21T14:00:00Z", "2026-10-21T15:00:00Z",
+        "2026-10-22T15:00:00Z", "2026-10-22T15:00:00Z",
+        "2026-10-23T18:00:00Z", "2026-10-23T19:00:00Z",
+        "2026-10-24T15:00:00Z", "2026-10-24T15:00:00Z",
+        "2026-10-25T15:00:00Z", "2026-10-25T15:00:00Z",
+        "2026-10-26T15:00:00Z", "2026-10-26T15:00:00Z",
+        "2026-10-27T15:00:00Z", "2026-10-27T15:00:00Z",
+        "2026-10-28T14:00:00Z", "2026-10-28T15:00:00Z",
+        "2026-10-29T15:00:00Z", "2026-10-29T15:00:00Z"
+      ]
+    }
+  ],
+  "oneLinkedIn": {
+    "organizationId": "106683183",
+    "observedAt": "2026-10-16T13:37:31Z",
+    "view": "Company Page Admin > Start a post > Schedule post > View all scheduled posts",
+    "viewUrl": "https://www.linkedin.com/company/106683183/admin/page-posts/published/",
+    "scheduledAtUtc": [
+      "2026-10-16T14:00:00Z", "2026-10-17T14:00:00Z",
+      "2026-10-18T14:00:00Z", "2026-10-19T14:00:00Z",
+      "2026-10-20T14:00:00Z", "2026-10-21T14:00:00Z",
+      "2026-10-22T14:00:00Z", "2026-10-23T20:00:00Z",
+      "2026-10-24T14:00:00Z", "2026-10-25T14:00:00Z",
+      "2026-10-26T14:00:00Z", "2026-10-27T14:00:00Z",
+      "2026-10-28T16:00:00Z", "2026-10-29T14:00:00Z"
+    ]
+  },
+  "publishingLinkedIn": {
+    "organizationId": "13048648",
+    "observedAt": "2026-10-16T13:37:31Z",
+    "view": "Company Page Admin > Page posts > Start a post > Schedule post > View all scheduled posts",
+    "viewUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
+    "scheduledAtUtc": [
+      "2026-10-16T15:00:00Z", "2026-10-17T14:00:00Z",
+      "2026-10-18T15:00:00Z", "2026-10-19T15:00:00Z",
+      "2026-10-20T16:00:00Z", "2026-10-21T15:00:00Z",
+      "2026-10-22T15:00:00Z", "2026-10-23T15:00:00Z",
+      "2026-10-24T15:00:00Z", "2026-10-25T14:00:00Z",
+      "2026-10-26T15:00:00Z", "2026-10-27T14:00:00Z",
+      "2026-10-28T16:00:00Z", "2026-10-29T15:00:00Z",
+      "2026-11-03T16:00:00Z", "2026-11-10T16:00:00Z",
+      "2026-11-17T16:00:00Z", "2026-11-24T16:00:00Z",
+      "2026-11-30T16:00:00Z"
+    ]
+  },
+  "financialLinkedIn": {
+    "organizationId": "146207089",
+    "observedAt": "2026-10-16T13:31:21.205Z",
+    "view": "J Merrill Financial's scheduled posts dialog in LinkedIn Page administration",
+    "viewUrl": "https://www.linkedin.com/company/146207089/admin/page-posts/published/",
+    "scheduledAtUtc": [
+      "2026-10-16T15:00:00Z", "2026-10-17T15:00:00Z",
+      "2026-10-18T14:00:00Z", "2026-10-19T14:00:00Z",
+      "2026-10-20T14:00:00Z", "2026-10-21T14:00:00Z",
+      "2026-10-22T14:00:00Z", "2026-10-23T20:00:00Z",
+      "2026-10-24T14:00:00Z", "2026-10-25T14:00:00Z",
+      "2026-10-26T14:00:00Z", "2026-10-27T14:00:00Z",
+      "2026-10-28T16:00:00Z", "2026-10-29T14:00:00Z"
+    ]
+  },
+  "identifiersNotExposed": {
+    "nativeItemIds": null,
+    "nativeBookingIds": null,
+    "publicationIds": null
+  }
+}

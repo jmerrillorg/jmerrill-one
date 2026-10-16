@@ -1,0 +1,28 @@
+{
+  "packet": "JM1-THREE-BRAND-SOCIAL-PRESENCE-001",
+  "businessPortfolioId": "846921439784613",
+  "observedAt": "2026-10-16T13:52:37Z",
+  "timezone": "America/New_York",
+  "view": "Meta Business Suite Scheduled list with Instagram and Facebook assets selected",
+  "viewUrl": "https://business.facebook.com/latest/posts/scheduled_posts?asset_id=307480763084670&business_id=846921439784613",
+  "facebookPageId": "307480763084670",
+  "instagramGraphBusinessId": "17841410046020869",
+  "channels": [
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "facebook",
+      "destinationId": "307480763084670",
+      "scheduledAtUtc": ["2026-10-16T18:00:00Z", "2026-10-17T15:00:00Z", "2026-10-18T15:00:00Z", "2026-10-19T15:00:00Z", "2026-10-20T14:00:00Z", "2026-10-21T15:00:00Z", "2026-10-22T15:00:00Z", "2026-10-23T18:00:00Z", "2026-10-24T15:00:00Z", "2026-10-25T15:00:00Z", "2026-10-26T15:00:00Z", "2026-10-27T15:00:00Z", "2026-10-28T14:00:00Z", "2026-10-29T17:00:00Z"]
+    },
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "instagram",
+      "destinationId": "17841410046020869",
+      "scheduledAtUtc": ["2026-10-16T19:00:00Z", "2026-10-17T15:00:00Z", "2026-10-18T15:00:00Z", "2026-10-19T15:00:00Z", "2026-10-20T16:00:00Z", "2026-10-21T15:00:00Z", "2026-10-22T15:00:00Z", "2026-10-23T19:00:00Z", "2026-10-24T15:00:00Z", "2026-10-25T15:00:00Z", "2026-10-26T15:00:00Z", "2026-10-27T15:00:00Z", "2026-10-28T15:00:00Z", "2026-10-29T17:00:00Z"]
+    }
+  ],
+  "rowCount": 28,
+  "captionVisibleInRows": true,
+  "nativeItemIdsExposed": false,
+  "notes": "The live list displayed each Page and Instagram caption and schedule time for October 16–29. It exposed neither native item IDs nor media hashes; those identifiers remain null/unclaimed."
+}

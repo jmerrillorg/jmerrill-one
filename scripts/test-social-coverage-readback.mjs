@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, classifyDataverseExecutionRow, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, matchesApprovedLegacyNativeSocialContent, mergeNativeBookingObservations, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, classifyDataverseExecutionRow, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, mapNativePublicationEvidencePackets, mapUnlinkedNativePublicationEvidencePackets, matchesApprovedLegacyNativeSocialContent, mergeNativeBookingObservations, mergeNativeScheduleEvidence, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -43,6 +43,77 @@ test('date-channel matrix preserves state and evidence identity per channel-date
   assert.ok(matrix.every((cell) => cell.state === 'MISSING'));
 });
 
+test('date-channel matrix includes exact native detail without inventing scheduler or publication IDs', () => {
+  const report = buildSocialCoverageReadback({
+    asOf: '2026-10-16T13:00:00Z',
+    channels: [{ ...channel, executionOwner: 'META_NATIVE', destinationId: 'page-1',
+      nativeReadback: { state: 'VERIFIED', requireTimestamp: true, observedAt: '2026-10-16T12:00:00Z',
+        observedDateET: '2026-10-16', visibleScheduledAtUtc: ['2026-10-29T14:00:00Z'],
+        scheduleDetails: [{ scheduledAt: '2026-10-29T14:00:00Z', captionSha256: 'a'.repeat(64),
+          mediaSha256: 'b'.repeat(64), destination: 'page-1', observedAt: '2026-10-15T17:00:00Z',
+          nativeItemId: null, nativeBookingId: null, publicationId: null, sourceEvidenceFile: 'receipt.json' }] } }],
+    items: []
+  });
+  const cell = buildCoverageDateChannelMatrix(report).find((item) => item.dateET === '2026-10-29');
+  assert.equal(cell.nativeScheduleDetails.length, 1);
+  assert.equal(cell.nativeScheduleDetails[0].nativeItemId, null);
+  assert.equal(cell.nativeScheduleDetails[0].nativeBookingId, null);
+  assert.equal(cell.nativeScheduleDetails[0].publicationId, null);
+});
+
+test('native publication packets preserve exact source, observed time, destination, and single platform identity', () => {
+  const [item] = mapNativePublicationEvidencePackets([{ publications: [{
+    dataverseRecordId: 'record-1', brand: 'J Merrill Publishing', platform: 'linkedin',
+    requestedDestination: '13048648', actualDestination: '13048648', scheduledAt: '2026-10-15T15:00:00Z',
+    publishedDateET: '2026-10-15', publishedAt: null, platformPostId: 'urn:li:share:post-1',
+    captionSha256: 'c'.repeat(64), mediaSha256: null, observedAt: '2026-10-16T13:23:03.753Z',
+    evidenceUrl: 'https://www.linkedin.com/feed/update/urn:li:share:post-1/',
+    source: 'LINKEDIN_NATIVE_PUBLISHED_LIST_AND_EXACT_CAPTION_MATCH',
+    reconciliationNote: 'One actual post; another claim has different content hashes.'
+  }] }]);
+  assert.equal(item.dataverseRecordId, 'record-1');
+  assert.equal(item.destinationId, '13048648');
+  assert.equal(item.platformPostId, 'urn:li:share:post-1');
+  assert.equal(item.publishedAt, null);
+  assert.equal(item.nativeEvidence.observedAt, '2026-10-16T13:23:03.753Z');
+  assert.equal(item.nativeEvidence.source, 'LINKEDIN_NATIVE_PUBLISHED_LIST_AND_EXACT_CAPTION_MATCH');
+  assert.equal(item.nativeEvidence.reconciliationNote, 'One actual post; another claim has different content hashes.');
+  const reconciled = reconcilePastDueClaimsToPublishedEvidence([{
+    jm1_socialexecutionid: 'record-1', jm1_status: 'PUBLISHED_VERIFIED',
+    jm1_requestedschedule: '2026-10-15T15:00:00Z', jm1_requesteddestination: '13048648', jm1_platform: 'linkedin'
+  }], [item], '2026-10-16T14:00:00Z');
+  assert.equal(reconciled.reconciled[0].reconciliationNote, 'One actual post; another claim has different content hashes.');
+});
+
+test('unlinked observed posts and mismatched claims remain explicit and never count as publications', () => {
+  const [observed, claim] = mapUnlinkedNativePublicationEvidencePackets([{
+    observedAt: '2026-10-16T13:23:03.753Z', _sourceEvidenceFile: 'oct15.json',
+    unlinkedObservedPost: { platformPostId: 'post-1', disposition: 'NOT_LINKED_CONTENT_HASH_MISMATCH' },
+    unlinkedClaims: [{ dataverseRecordId: 'claim-2', comparedPublicationId: 'post-1',
+      disposition: 'NOT_LINKED_CONTENT_HASH_MISMATCH', note: 'Content hashes differ.' }]
+  }]);
+  assert.equal(observed.evidenceKind, 'OBSERVED_POST_NOT_LINKED_TO_SOURCE');
+  assert.equal(observed.platformPostId, 'post-1');
+  assert.equal(claim.evidenceKind, 'CLAIM_NOT_MATCHED_TO_OBSERVED_POST');
+  assert.equal(claim.dataverseRecordId, 'claim-2');
+  assert.equal(claim.observedAt, '2026-10-16T13:23:03.753Z');
+  assert.equal(mapNativePublicationEvidencePackets([{ unlinkedObservedPost: { platformPostId: 'post-1' } }]).length, 0);
+});
+
+test('schedule evidence links only to the exact observed production date and leaves unavailable IDs null', () => {
+  const target = { ...channel, executionOwner: 'META_NATIVE', destinationId: 'page-1',
+    nativeReadback: { state: 'VERIFIED', visibleScheduledAtUtc: ['2026-10-29T14:00:00Z'], scheduleDetails: [] } };
+  const detail = { brand: channel.brand, platform: channel.platform, destination: 'page-1',
+    scheduledAt: '2026-10-29T14:00:00Z', observedAt: '2026-10-16T12:00:00Z',
+    captionSha256: 'a'.repeat(64), mediaSha256: 'b'.repeat(64), nativeItemId: null,
+    nativeBookingId: null, publicationId: null, sourceEvidenceFile: 'receipt.json' };
+  const merged = mergeNativeScheduleEvidence([target], [{ details: [detail] }]);
+  assert.equal(merged[0].nativeReadback.scheduleDetails[0].nativeItemId, null);
+  assert.throws(() => mergeNativeScheduleEvidence([target], [{ details: [{ ...detail,
+    scheduledAt: '2026-10-30T14:00:00Z' }] }]), /not present in the observed scheduled list/);
+  assert.throws(() => mergeNativeScheduleEvidence([target], [{ details: [detail, detail] }]), /Duplicate native schedule evidence/);
+});
+
 test('exact fresh native schedule-list observations satisfy date slots without inventing booking IDs', () => {
   const visibleScheduledAtUtc = Array.from({ length: 14 }, (_, offset) =>
     new Date(Date.parse('2026-10-14T14:00:00Z') + offset * 86400000).toISOString());
@@ -73,6 +144,41 @@ test('an overdue native claim reconciles to publication only through an exact li
   assert.ok(result.reconciledIds.has('claim-1'));
   assert.equal(reconcilePastDueClaimsToPublishedEvidence([row], [{ ...published, destinationId: 'other-page' }],
     '2026-10-14T12:00:00Z').reconciled.length, 0);
+});
+
+test('native publication dates without a verified minute remain reconcilable without inventing actual time', () => {
+  const mapped = mapDataverseSocialRows([{
+    jm1_socialexecutionid: 'published-linkedin-date-only', jm1_branch: 'J Merrill Publishing',
+    jm1_platform: 'linkedin', jm1_status: 'PUBLISHED_VERIFIED', jm1_requestedschedule: '2026-10-15T15:00:00Z',
+    jm1_requesteddestination: '13048648', jm1_actualdestination: '13048648', jm1_actualschedule: null,
+    jm1_platformpostid: 'urn:li:share:7512653230255017984',
+    jm1_verifiedat: '2026-10-16T13:23:03Z',
+    jm1_readbackstate: 'NATIVE_PUBLICATION|PUBLISHED_DATE_ET=2026-10-15|OBSERVED_AT=2026-10-16T13:23:03Z|ACTUAL_PUBLICATION_TIME=UNKNOWN'
+  }], [{ brand: 'J Merrill Publishing', platform: 'linkedin', destinationId: '13048648' }]).mapped[0];
+  assert.equal(mapped.publishedAt, null);
+  assert.equal(mapped.publishedDateET, '2026-10-15');
+  assert.equal(mapped.destinationId, '13048648');
+  assert.equal(mapped.nativeEvidence.source, 'NATIVE_PLATFORM_PUBLICATION');
+  assert.equal(mapped.nativeEvidence.observedAt, '2026-10-16T13:23:03.000Z');
+  const result = reconcilePastDueClaimsToPublishedEvidence([{
+    jm1_socialexecutionid: mapped.id, jm1_status: 'PUBLISHED_VERIFIED',
+    jm1_requestedschedule: mapped.scheduledAt, jm1_requesteddestination: '13048648', jm1_platform: 'linkedin'
+  }], [mapped], '2026-10-16T14:00:00Z');
+  assert.equal(result.reconciled.length, 1);
+  assert.equal(result.reconciled[0].actualPublishedAt, null);
+  assert.equal(result.reconciled[0].publishedDateET, '2026-10-15');
+});
+
+test('a date-only publication already persisted as PUBLISHED_VERIFIED remains visible in reconciliation', () => {
+  const row = { jm1_socialexecutionid: 'published-linkedin-date-only', jm1_status: 'PUBLISHED_VERIFIED',
+    jm1_requestedschedule: '2026-10-15T15:00:00Z', jm1_requesteddestination: '13048648', jm1_platform: 'linkedin' };
+  const item = { dataverseRecordId: row.jm1_socialexecutionid, kind: 'PUBLISHED', platform: 'linkedin',
+    destinationId: '13048648', platformPostId: 'urn:li:share:7512653230255017984',
+    publishedDateET: '2026-10-15', publishedAt: null };
+  const result = reconcilePastDueClaimsToPublishedEvidence([row], [item], '2026-10-16T14:00:00Z');
+  assert.equal(result.reconciled.length, 1);
+  assert.equal(result.reconciled[0].actualPublishedAt, null);
+  assert.equal(result.reconciled[0].platformPostId, item.platformPostId);
 });
 
 test('current Financial destination correction is scoped and leaves historical source intact', () => {
