@@ -1347,7 +1347,7 @@ test('Financial Instagram adaptation links current provenance by its colon-quali
   const marker = 'jm1-native-social-2026-10:j-merrill-financial';
   const stage = 'daily-2026-10-28:instagram-adaptation';
   const schedule = '2026-10-28T15:00:00Z';
-  const observedAt = '2026-10-14T14:58:14.000Z';
+  const observedAt = new Date().toISOString();
   const destination = '@jmerrillfinancial';
   const caption = 'For an estate-planning conversation, start with three notes: the questions you want to ask, where important records are kept, and who should be included. A qualified professional can explain options for your circumstances. Educational information only; not legal, tax, or insurance advice.\n\nhttps://jmerrill.financial/';
   const captionHash = createHash('sha256').update(caption).digest('hex');
@@ -1364,7 +1364,7 @@ test('Financial Instagram adaptation links current provenance by its colon-quali
     jm1_supersession: 'Founder standing marketing authorization; item source and media checks required. No Publishing Meta worker release.' };
   const provenance = { version: 1,
     authorizationBasis: 'Founder standing authorization for ordinary compliant social content on the nine approved brand channels',
-    reconciledAt: '2026-10-14T15:14:47.821Z', brand, platform: 'instagram', destination,
+    reconciledAt: observedAt, brand, platform: 'instagram', destination,
     scheduledAt: schedule, captionSha256: captionHash, mediaSha256: mediaHash,
     sourceUrl: 'https://jmerrill.financial/',
     validation: { sourceHost: 'jmerrill.financial', brandAndClaims: 'PASS', rightsAndCreative: 'PASS',
@@ -1375,7 +1375,7 @@ test('Financial Instagram adaptation links current provenance by its colon-quali
     jm1_copybrief: `NATIVE_SOCIAL_PROVENANCE_V1\n${JSON.stringify(provenance)}` };
   const creative = { jm1_creativeworkid: 'financial-ig-creative', jm1_branch: brand,
     jm1_stage: stage, jm1_publicreadystate: 'PASS', jm1_assethash: mediaHash };
-  const nativeReadback = { state: 'VERIFIED', observedAt: '2026-10-14T12:09:43.857Z',
+  const nativeReadback = { state: 'VERIFIED', observedAt,
     visibleScheduledAtUtc: [], bookingObservations: [{ receiptId: booking.jm1_socialexecutionid,
       source: 'META_NATIVE_UI', destination, scheduledAt: schedule, observedAt,
       nativeItemId: '1639799244268167', nativeBookingId: null }] };

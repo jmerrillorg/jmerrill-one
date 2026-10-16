@@ -5,7 +5,7 @@ import { dv, entitySet, queryByPrefix, safeCount, upsertByIdempotency } from '..
 import { evaluateFourLaneControlCycle, productionPublishingSignals } from '../lib/marketingLifecycle.js';
 import { activeBranches, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
-import { buildReviewedNativeSocialContent, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, nativeSocialDestinationsForBranch, planNativeSocialGaps } from '../lib/nativeSocialProgram.js';
+import { buildReviewedNativeSocialContent, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, nativeSocialDestinationsForBranch, planNativeSocialGaps, summarizeNativeSocialHorizon } from '../lib/nativeSocialProgram.js';
 
 app.timer('marketingControlLoopTimer', {
   schedule: process.env.JM1_MARKETING_CONTROL_LOOP_CRON || '0 17 12 * * *',
@@ -80,7 +80,7 @@ app.timer('marketingControlLoopTimer', {
         for (const plan of plans) {
           const prepared = buildReviewedNativeSocialContent({ campaign, dateKey: plan.dateKey, nowIso: envelope.startedAt });
           if (!prepared.ok) {
-            materialized.push({ slot: plan.slotKey, state: prepared.reason });
+            materialized.push({ dateKey: plan.dateKey, slot: plan.slotKey, state: prepared.reason });
             continue;
           }
           const stage = prepared.stage;
@@ -98,14 +98,15 @@ app.timer('marketingControlLoopTimer', {
           };
           const contentWrite = await upsertByIdempotency(contentSet, 'jm1_contentworkid', contentPayload);
           writes.push({ entitySet: contentSet, type: 'nativeSocialContent', id: contentWrite.id, created: contentWrite.created, stage });
-          materialized.push({ slot: plan.slotKey, state: 'CONTENT_READY', id: contentWrite.id, platforms: plan.platforms });
+          materialized.push({ dateKey: plan.dateKey, slot: plan.slotKey, state: 'CONTENT_READY', id: contentWrite.id, platforms: plan.platforms });
         }
+        const horizon = summarizeNativeSocialHorizon(envelope.startedAt, materialized);
         const payload = {
           jm1_name: `${campaign.jm1_branch} autonomous rolling social control loop`,
           jm1_branch: campaign.jm1_branch,
           jm1_campaign: campaign.jm1_name,
           jm1_horizon30day: 'APPROVED_TEMPLATE_SET:v1; source campaign authority read from Dataverse',
-          jm1_horizon14day: `GENERATED_DAILY_GAPS=${materialized.filter((item) => item.state === 'CONTENT_READY').length}; EASTERN_DATE_WINDOW=${easternDateKey(envelope.startedAt)}..${easternDateKey(addEasternDays(envelope.startedAt, 14))}`,
+          jm1_horizon14day: `COMMITTED_EASTERN_DATES=${horizon.committedDateWindow}; PREPARATION_DATE_ET=${horizon.preparationDate}; GENERATED_COMMITTED_GAPS=${horizon.committedReadyGaps}; GENERATED_PREPARATION_GAPS=${horizon.preparationReadyGaps}`,
           jm1_horizon7day: `ACTIVE_CHANNELS=${branch.facebookPageId ? 'facebook;' : ''}${branch.instagramGraphId && branch.instagramEnabled !== false ? 'instagram;' : ''}linkedin=native-authority-required;BLOCKED_CHANNEL_GAPS=${blockedChannelGaps.map((gap) => `${gap.platform}:${gap.reason}`).join(',') || 'NONE'}`,
           jm1_featuredauthorintroeligible: 'NOT_APPLICABLE',
           jm1_fatiguecheck: 'Exact campaign, branch, and per-channel booking rows checked before materialization.',
@@ -203,16 +204,4 @@ async function activeCampaigns(campaignSet) {
   const filter = encodeURIComponent("(jm1_campaigntype eq 'featured_author_month' or jm1_campaigntype eq 'native_social') and jm1_state eq 'PUBLIC_EXECUTION_APPROVED'");
   const response = await dv(`/${campaignSet}?$select=jm1_campaignauthorityid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_campaigntype,jm1_program,jm1_subject,jm1_audience,jm1_cta,jm1_journeyrequirement,jm1_cadence,jm1_start,jm1_stop,jm1_state&$filter=${filter}&$top=50`);
   return response.value || [];
-}
-
-function easternDateKey(value) {
-  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date(value));
-  const part = Object.fromEntries(parts.map(({ type, value: text }) => [type, text]));
-  return `${part.year}-${part.month}-${part.day}`;
-}
-
-function addEasternDays(value, days) {
-  const key = easternDateKey(value);
-  const [year, month, day] = key.split('-').map(Number);
-  return new Date(Date.UTC(year, month - 1, day + days, 12));
 }
