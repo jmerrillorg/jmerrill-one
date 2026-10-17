@@ -1,5 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
+import { canReconcileNativePublication } from './lib/native-social-publication-status.mjs';
 
 const manifestPath = process.argv[2];
 const apply = process.argv.includes('--apply');
@@ -76,7 +77,7 @@ for (const [field, expected] of checks) {
 if (!sameDestination(row.jm1_requesteddestination, manifest.requestedDestination)) {
   throw new Error('Refusing publication link: requested destination does not match the source record');
 }
-if (!['NATIVE_BOOKED_VERIFIED', 'NATIVE_BOOKING_PENDING', 'PUBLISHED_VERIFIED'].includes(row.jm1_status)) {
+if (!canReconcileNativePublication(row.jm1_status)) {
   throw new Error(`Refusing status transition from ${row.jm1_status}; only an eligible exact request or verified native booking can be reconciled`);
 }
 if (row.jm1_status === 'PUBLISHED_VERIFIED') {
