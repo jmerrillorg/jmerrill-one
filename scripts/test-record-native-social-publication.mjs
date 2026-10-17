@@ -3,6 +3,7 @@ import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { canReconcileNativePublication } from './lib/native-social-publication-status.mjs';
 
 const script = new URL('./record-native-social-publication.mjs', import.meta.url);
 const temp = mkdtempSync(path.join(os.tmpdir(), 'jm1-publication-receipt-'));
@@ -38,6 +39,13 @@ try {
   assert.ok(JSON.parse(valid.stdout).evidence.length <= 120);
   assert.match(valid.stdout, /recordId.*f15ced8b/);
 
+  for (const status of ['NATIVE_BOOKED_VERIFIED', 'NATIVE_BOOKING_PENDING', 'NATIVE_RESERVATION_VERIFIED', 'PUBLISHED_VERIFIED']) {
+    assert.equal(canReconcileNativePublication(status), true, `${status} should accept an exact native publication readback`);
+  }
+  for (const status of ['HELD_NATIVE_BOOKING_DUPLICATE', 'FAILED', 'DRAFT', 'UNKNOWN']) {
+    assert.equal(canReconcileNativePublication(status), false, `${status} must remain protected from publication reconciliation`);
+  }
+
   const stdin = spawnSync(process.execPath, [script.pathname, '-'], { input: JSON.stringify(base), encoding: 'utf8' });
   assert.equal(stdin.status, 0, stdin.stderr);
   assert.equal(JSON.parse(stdin.stdout).mode, 'DRY_RUN');
@@ -51,7 +59,7 @@ try {
   const wrongPublicationDate = run({ ...base, publishedDateET: '2026-10-16' }, 'wrong-publication-date');
   assert.notEqual(wrongPublicationDate.status, 0);
 
-  process.stdout.write('Publication receipt validation tests passed (5 cases).\n');
+  process.stdout.write('Publication receipt validation tests passed (13 checks).\n');
 } finally {
   rmSync(temp, { recursive: true, force: true });
 }
