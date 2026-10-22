@@ -69,6 +69,7 @@
   var rows = [];
   var view = "open";
   var lastRefresh = null;
+  var currentAvailable = false;
   var fields = "jm1_jsjinquiryid,jm1_name,jm1_contactname,jm1_email,jm1_inquirytype,jm1_message,jm1_receivedat,jm1_deliverystate,jm1_closedat,jm1_transferredat,jm1_authoritativerecord,jm1_reviewdueat,jm1_reviewnextaction,jm1_disposition,_ownerid_value";
   var eastern = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", dateStyle: "medium", timeStyle: "short" });
 
@@ -164,17 +165,19 @@
       // Owner must be included in the source query so a response cannot silently turn into an empty queue.
       if (current.length && !current.some(function (row) { return Object.prototype.hasOwnProperty.call(row, "_ownerid_value"); })) throw new Error("Owner field unavailable");
       lastRefresh = new Date();
+      currentAvailable = true;
       refreshed.textContent = "Refreshed " + eastern.format(lastRefresh) + " ET";
       render();
     } catch (_) {
       rows = [];
+      currentAvailable = false;
       list.replaceChildren();
       status.className = "error";
       status.textContent = "Current inquiries are unavailable. Do not rely on an older list; refresh or use JM1-Core directly.";
       refreshed.textContent = lastRefresh ? "Last successful refresh " + eastern.format(lastRefresh) + " ET; list unavailable" : "No successful refresh";
     }
   }
-  tabs.forEach(function (tab) { tab.addEventListener("click", function () { view = tab.dataset.view; if (lastRefresh) render(); }); });
+  tabs.forEach(function (tab) { tab.addEventListener("click", function () { view = tab.dataset.view; if (currentAvailable) render(); }); });
   document.getElementById("refresh").addEventListener("click", refresh);
   refresh();
 }());

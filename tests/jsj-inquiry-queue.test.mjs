@@ -69,6 +69,8 @@ test('failed retrieval exposes no stale private list and reports unavailability'
   assert.match(ui.elements.status.textContent, /Current inquiries are unavailable/);
   assert.equal(ui.elements.list.children.length, 0);
   assert.match(ui.elements.refreshed.textContent, /list unavailable/);
+  ui.tabs[1].listeners.click();
+  assert.match(ui.elements.status.textContent, /Current inquiries are unavailable/);
 });
 
 test('queue script parses and only uses the existing Dataverse reviewer table', () => {
