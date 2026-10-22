@@ -21,10 +21,11 @@
     <label>Review action
       <select id="action" required>
         <option value="">Select action</option>
-        <option value="WAIT">Waiting</option>
+        <option value="CLOSE_NO_FURTHER_ACTION">Dismiss (no reply sent)</option>
+        <option value="FOLLOWUP_INTENT">Follow up (plan only; no message sent)</option>
+        <option value="WAIT">Keep open</option>
         <option value="DEFER">Defer</option>
-        <option value="FOLLOWUP_REPORTED">Record external follow-up reference</option>
-        <option value="CLOSE_NO_FURTHER_ACTION">Close with no further action</option>
+        <option value="FOLLOWUP_REPORTED">Record completed external follow-up reference</option>
         <option value="CORRECT">Correct latest action</option>
       </select>
     </label>
@@ -81,7 +82,7 @@
       }
       function visible(id, show) { document.getElementById(id).hidden = !show; }
       function layout() {
-        var state = action.value === "CORRECT" ? target.value : action.value;
+        var state = action.value === "CORRECT" ? target.value : action.value === "FOLLOWUP_INTENT" ? "WAIT" : action.value;
         visible("target-wrap", action.value === "CORRECT");
         visible("next-wrap", state === "WAIT" || state === "DEFER" || state === "WAITING" || state === "DEFERRED" || state === "FOLLOWUP_REPORTED");
         visible("due-wrap", state === "WAIT" || state === "DEFER" || state === "WAITING" || state === "DEFERRED" || state === "FOLLOWUP_REPORTED");
@@ -156,7 +157,7 @@
         if (!row || submit.disabled) return;
         submit.disabled = true;
         try {
-          var state = action.value === "CORRECT" ? target.value : action.value;
+          var state = action.value === "CORRECT" ? target.value : action.value === "FOLLOWUP_INTENT" ? "WAIT" : action.value;
           var open = ["WAIT", "DEFER", "WAITING", "DEFERRED", "FOLLOWUP_REPORTED"].includes(state);
           var next = open ? document.getElementById("next").value.trim() : "";
           var dueInput = open ? document.getElementById("due").value : "";
@@ -173,7 +174,7 @@
             return;
           }
           var payload = {
-            InquiryId: id, Reference: row.jm1_name, ActionId: action.value,
+            InquiryId: id, Reference: row.jm1_name, ActionId: action.value === "FOLLOWUP_INTENT" ? "WAIT" : action.value,
             ExpectedVersion: String(row.versionnumber), NextAction: next,
             DueAt: dueInput ? new Date(dueInput).toISOString() : "",
             ExternalReference: external, Reason: reason, TargetState: action.value === "CORRECT" ? target.value : "",

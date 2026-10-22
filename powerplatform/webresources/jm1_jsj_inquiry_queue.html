@@ -124,9 +124,9 @@
     link.rel = "noopener noreferrer";
     card.append(link);
     var guide = node("div", undefined, "decision-guide");
-    guide.append(node("strong", "Dismiss"), node("span", "In the decision form, choose Close with no further action and give a reason. No reply is sent."));
-    guide.append(node("strong", "Follow up"), node("span", "Choose Waiting, enter your intended next action and due time. This records an intention; it does not send a message."));
-    guide.append(node("strong", "Keep open"), node("span", "Choose Waiting or Defer with a next action and due time. Opening this page alone does not reset the inquiry's age."));
+    guide.append(node("strong", "Dismiss"), node("span", "Choose Dismiss in the decision form and give a reason. No reply is sent."));
+    guide.append(node("strong", "Follow up"), node("span", "Choose Follow up, enter your intended next action and due time. This records an intention; it does not send a message."));
+    guide.append(node("strong", "Keep open"), node("span", "Choose Keep open or Defer with a next action and due time. Opening this page alone does not reset the inquiry's age."));
     card.append(guide);
     return card;
   }

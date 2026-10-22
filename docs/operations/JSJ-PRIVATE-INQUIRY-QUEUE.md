@@ -17,16 +17,17 @@ service, or change records when opened. It renders all submitted text through
 `textContent` and does not log message bodies.
 
 Each record opens the existing authenticated JM1-Core reviewer form. There,
-Dismiss means `CLOSE_NO_FURTHER_ACTION` with a reason; Follow up means `WAIT`
-with an intended next action and future due time; Keep open means `WAIT` or
-`DEFER` with a next action and future due time. Follow up does **not** send a
-message. That form's `jm1_ReviewJSJInquiry` API supplies actor attribution,
+Dismiss means `CLOSE_NO_FURTHER_ACTION` with a reason; Follow up is a
+user-facing alias for `WAIT` with an intended next action and future due time;
+Keep open means `WAIT` or `DEFER` with a next action and future due time. Follow
+up does **not** send a message. That form's `jm1_ReviewJSJInquiry` API supplies actor attribution,
 idempotent replay, stale-version rejection, and body-free history. This queue
 does not invoke the API itself or preselect a decision.
 
 Deploy after protected merge and validation with
-`node scripts/ensure-jsj-inquiry-queue.mjs --apply` under the existing
-JM1-Core authority. The script publishes and verifies the exact source bytes.
+`node scripts/ensure-jsj-inquiry-queue.mjs --apply` and
+`node scripts/ensure-jsj-inquiry-action-form.mjs --apply` under the existing
+JM1-Core authority. The scripts publish and verify the exact source bytes.
 Run without `--apply` for readback. Rollback may remove or replace this web
 resource without altering any inquiry or review history. Confirm access in
 Jackie's own sign-in and denial for another account before calling the human
