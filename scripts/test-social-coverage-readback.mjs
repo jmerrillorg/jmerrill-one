@@ -907,7 +907,7 @@ test('preparation matrix reports receipt-level freshness and leaves absent chann
 
 test('LinkedIn exact scheduled-list slot proves occupancy without inventing caption or booking IDs', () => {
   const observedAt = new Date().toISOString();
-  const schedule = '2026-10-16T14:00:00Z';
+  const schedule = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
   const channel = { brand: 'J Merrill One', platform: 'linkedin', destinationId: '106683183',
     nativeReadback: { state: 'VERIFIED', requireTimestamp: true, observedAt,
       visibleScheduledAtUtc: [schedule] } };

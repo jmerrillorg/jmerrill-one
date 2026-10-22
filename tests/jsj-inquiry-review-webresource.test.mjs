@@ -56,6 +56,24 @@ test('invalid closure never reserves an idempotency key or calls Dataverse', asy
   assert.equal(ui.calls.length, 0);
 });
 
+test('Follow up is an explicit intention backed by the existing WAIT action', async () => {
+  const ui = harness({ execute: async (request, row) => {
+    row.jm1_reviewhistory = JSON.stringify([{ key: request.IdempotencyKey, state: 'WAITING', at: new Date().toISOString() }]);
+    return 'ACCEPTED';
+  } });
+  ui.elements.action.value = 'FOLLOWUP_INTENT';
+  ui.elements.next.value = 'Consider replying to the sender';
+  ui.elements.due.value = '2027-01-01T12:00';
+  await ui.submit();
+  assert.equal(ui.calls.length, 1);
+  assert.equal(ui.calls[0].ActionId, 'WAIT');
+  assert.equal(ui.calls[0].NextAction, 'Consider replying to the sender');
+  assert.equal(ui.calls[0].ExternalReference, '');
+  assert.match(html, /Follow up \(plan only; no message sent\)/);
+  assert.match(html, /Dismiss \(no reply sent\)/);
+  assert.match(html, /Keep open/);
+});
+
 test('legacy blank-reason attempt is replayed under its original key before correction', async () => {
   const payload = {
     InquiryId: id, Reference: reference, ActionId: 'CLOSE_NO_FURTHER_ACTION',
