@@ -5,7 +5,7 @@ import { dv, entitySet, patchById, queryByPrefix, upsertByIdempotency } from '..
 import { registerCampaignCreativeMedia } from '../lib/mediaRegistry.js';
 import { runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
-import { buildNativeSocialCreative, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, nativeSocialScheduledAt } from '../lib/nativeSocialProgram.js';
+import { buildNativeSocialCreative, isApprovedNativeSocialCampaign, nativeSocialCampaignMarker, nativeSocialCampaignOwnsStage, nativeSocialScheduledAt } from '../lib/nativeSocialProgram.js';
 import { readPublishingDestinations, assessPublishingCampaignUrls } from '../lib/publishingDestinationReadiness.js';
 
 app.timer('creativeWorkProcessorTimer', {
@@ -37,6 +37,7 @@ app.timer('creativeWorkProcessorTimer', {
       const assetState = inferAssetState(exceptionRows);
       const pendingContent = contentRows.filter((row) =>
         row.jm1_publicreadystate === 'PASS'
+        && (!isApprovedNativeSocialCampaign(campaign) || nativeSocialCampaignOwnsStage(campaign, row.jm1_stage))
         && !creativeRows.some((creative) => creative.jm1_stage === row.jm1_stage && creative.jm1_publicreadystate === 'PASS')
       );
 
