@@ -251,6 +251,7 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
   const plans = [];
   for (let offset = 0; offset < 15; offset += 1) {
     const dateKey = easternDateKey(addDays(firstDay, offset));
+    if (!nativeSocialCampaignOwnsDate(campaign, dateKey)) continue;
     const platformsForDate = platforms.filter((platform) => {
       const destinations = normalizeDestinations(reservationAliasesByPlatform[platform]);
       const occupied = socialRows.some((row) => {
@@ -277,6 +278,22 @@ export function planNativeSocialGaps({ campaign, socialRows, nowIso, destination
     plans.push({ dateKey, weekKey: dateKey, slot: 1, slotKey: dateKey, scheduledAt: Object.values(scheduleByPlatform).sort()[0], scheduleByPlatform, platforms: platformsForDate });
   }
   return plans;
+}
+
+export function nativeSocialCampaignOwnsDate(campaign, dateKey) {
+  const month = nativeSocialCampaignMonth(campaign);
+  return !month || String(dateKey || '').startsWith(`${month}-`);
+}
+
+export function nativeSocialCampaignOwnsStage(campaign, stage) {
+  const match = String(stage || '').match(/^(?:daily-|rolling-)(\d{4}-\d{2})-\d{2}(?:-|$)/);
+  const month = nativeSocialCampaignMonth(campaign);
+  return !month ? true : Boolean(match && match[1] === month);
+}
+
+function nativeSocialCampaignMonth(campaign) {
+  const match = nativeSocialCampaignMarker(campaign).match(/^jm1-native-social-(\d{4}-\d{2}):/);
+  return match?.[1] || null;
 }
 
 function occupiesCadence(row, approvedRequestMarkers) {

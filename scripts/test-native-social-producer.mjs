@@ -6,6 +6,8 @@ import {
   isApprovedNativeSocialCampaign,
   matchesApprovedNativeSocialContent,
   nativeSocialChannelGaps,
+  nativeSocialCampaignOwnsDate,
+  nativeSocialCampaignOwnsStage,
   nativeSocialDestinationsForBranch,
   nativeSocialScheduledAt,
   planNativeSocialGaps,
@@ -122,6 +124,26 @@ test('daily coverage planning creates only the exact missing channel and ignores
   const plans = planNativeSocialGaps({ campaign: one, socialRows: existing, nowIso: '2026-10-14T12:17:00Z', destinationByPlatform: branchDestinations });
   assert.deepEqual(plans.map((item) => item.dateKey), ['2026-10-28']);
   assert.deepEqual(plans[0].platforms, ['instagram']);
+});
+
+test('month-keyed campaigns cannot plan across their campaign month boundary', () => {
+  const one = (month) => ({ ...campaign('J Merrill One'),
+    jm1_idempotencykey: `jm1-native-social-2026-${month}:j-merrill-one:campaign` });
+  const configured = destinations['J Merrill One'];
+  const nowIso = '2026-10-23T12:17:00Z';
+  const october = planNativeSocialGaps({ campaign: one('10'), socialRows: [], nowIso, destinationByPlatform: configured });
+  const november = planNativeSocialGaps({ campaign: one('11'), socialRows: [], nowIso, destinationByPlatform: configured });
+
+  assert.ok(october.length > 0);
+  assert.ok(october.every((slot) => slot.dateKey.startsWith('2026-10-')));
+  assert.ok(november.length > 0);
+  assert.ok(november.every((slot) => slot.dateKey.startsWith('2026-11-')));
+  assert.equal(new Set([...october, ...november].map((slot) => slot.dateKey)).size, october.length + november.length);
+  assert.equal(nativeSocialCampaignOwnsDate(one('10'), '2026-11-06'), false);
+  assert.equal(nativeSocialCampaignOwnsStage(one('10'), 'daily-2026-11-06'), false);
+  assert.equal(nativeSocialCampaignOwnsStage(one('10'), 'daily-2026-10-31'), true);
+  assert.equal(nativeSocialCampaignOwnsStage(one('11'), 'daily-2026-11-06'), true);
+  assert.equal(nativeSocialCampaignOwnsStage(one('11'), 'malformed-stage'), false);
 });
 
 test('verified account-handle reservations suppress planning without enabling a disabled API destination', () => {
