@@ -20,3 +20,10 @@ export function metaBranchApiExecutionEnabled(expected) {
   }
   return expected?.active === true;
 }
+
+export async function verifyMetaAuthorityForBranch(expected, verifyAuthority) {
+  if (!metaBranchApiExecutionEnabled(expected)) {
+    return { ok: false, state: 'META_BRANCH_API_EXECUTION_DISABLED' };
+  }
+  return verifyAuthority(expected);
+}

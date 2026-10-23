@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { findConfiguredMetaPage, metaBranchApiExecutionEnabled, metaDestinationMatches } from '../runtime/jm1-marketing-autonomous-functions/src/lib/metaDestination.js';
+import { findConfiguredMetaPage, metaBranchApiExecutionEnabled, metaDestinationMatches, verifyMetaAuthorityForBranch } from '../runtime/jm1-marketing-autonomous-functions/src/lib/metaDestination.js';
 
 const financial = {
   facebookPageId: '104395329284856',
@@ -34,4 +34,27 @@ test('Financial Meta API execution fails closed until its explicit access flag i
   assert.equal(metaBranchApiExecutionEnabled({ ...financial, branchName: 'J Merrill Financial', metaApiExecutionEnabled: true }), true);
   assert.equal(metaBranchApiExecutionEnabled({ active: true, branchName: 'J Merrill One' }), true);
   assert.equal(metaBranchApiExecutionEnabled({ active: false, branchName: 'J Merrill One' }), false);
+});
+
+test('disabled Financial Meta branch makes no authority API call', async () => {
+  let calls = 0;
+  const result = await verifyMetaAuthorityForBranch(
+    { ...financial, branchName: 'J Merrill Financial', metaApiExecutionEnabled: false },
+    async () => { calls += 1; return { ok: true }; }
+  );
+
+  assert.deepEqual(result, { ok: false, state: 'META_BRANCH_API_EXECUTION_DISABLED' });
+  assert.equal(calls, 0);
+});
+
+test('enabled Meta branch performs its normal authority verification', async () => {
+  const expected = { ...financial, branchName: 'J Merrill One', active: true };
+  let verified;
+  const result = await verifyMetaAuthorityForBranch(expected, async (branch) => {
+    verified = branch;
+    return { ok: true, state: 'META_SYSTEM_USER_TOKEN_VERIFIED' };
+  });
+
+  assert.equal(verified, expected);
+  assert.deepEqual(result, { ok: true, state: 'META_SYSTEM_USER_TOKEN_VERIFIED' });
 });
