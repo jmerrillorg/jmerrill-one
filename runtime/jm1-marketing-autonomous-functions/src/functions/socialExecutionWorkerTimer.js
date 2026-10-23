@@ -13,7 +13,7 @@ import { ambiguousPublicationException, isAmbiguousPublicationOutcome, reconcile
 import { checkLinkedInAuthority, findRecentMatchingLinkedInPost, publishLinkedInOrganizationImagePost } from '../lib/linkedin.js';
 import { lookupMediaUrlByHash } from '../lib/mediaRegistry.js';
 import { findRecentMatchingMetaObject, publishFacebookPhoto, publishInstagramPhoto, verifyMetaAuthority } from '../lib/meta.js';
-import { metaBranchApiExecutionEnabled, metaDestinationMatches, verifyMetaAuthorityForBranch } from '../lib/metaDestination.js';
+import { metaBranchApiExecutionEnabled, metaDestinationMatches, runMetaOperationForBranch, verifyMetaAuthorityForBranch } from '../lib/metaDestination.js';
 import { currentFeaturedAuthorMarker, runEnvelope } from '../lib/runtime.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { approvedContentForSocial } from '../lib/socialContentApproval.js';
@@ -120,8 +120,19 @@ app.timer('socialExecutionWorkerTimer', {
 
       const caption = resolveCaption(row, contentRows);
       const attemptedAt = row.jm1_lastattemptat || row.jm1_actualschedule || row.jm1_requestedschedule;
-      const existing = await findRecentMatchingMetaObject({ expected: publishing, platform: row.jm1_platform, caption, attemptedAt });
-      const reconciliation = reconcileProviderPublication(existing);
+      const providerReadback = await runMetaOperationForBranch(
+        publishing,
+        async () => {
+          const existing = await findRecentMatchingMetaObject({ expected: publishing, platform: row.jm1_platform, caption, attemptedAt });
+          return { existing, reconciliation: reconcileProviderPublication(existing) };
+        },
+        'META_BRANCH_API_EXECUTION_DISABLED_RECONCILIATION_SKIPPED'
+      );
+      if (providerReadback.state === 'META_BRANCH_API_EXECUTION_DISABLED_RECONCILIATION_SKIPPED') {
+        writes.push({ id: row.jm1_socialexecutionid, platform: row.jm1_platform, state: providerReadback.state });
+        continue;
+      }
+      const { existing, reconciliation } = providerReadback;
       if (reconciliation.state === 'PUBLISHED_VERIFIED') {
         await patchById(socialSet, row.jm1_socialexecutionid, {
           jm1_status: 'PUBLISHED_VERIFIED',

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { findConfiguredMetaPage, metaBranchApiExecutionEnabled, metaDestinationMatches, verifyMetaAuthorityForBranch } from '../runtime/jm1-marketing-autonomous-functions/src/lib/metaDestination.js';
+import { findConfiguredMetaPage, metaBranchApiExecutionEnabled, metaDestinationMatches, runMetaOperationForBranch, verifyMetaAuthorityForBranch } from '../runtime/jm1-marketing-autonomous-functions/src/lib/metaDestination.js';
 
 const financial = {
   facebookPageId: '104395329284856',
@@ -45,6 +45,30 @@ test('disabled Financial Meta branch makes no authority API call', async () => {
 
   assert.deepEqual(result, { ok: false, state: 'META_BRANCH_API_EXECUTION_DISABLED' });
   assert.equal(calls, 0);
+});
+
+test('disabled Financial Meta branch skips provider reconciliation without changing the row', async () => {
+  let calls = 0;
+  const result = await runMetaOperationForBranch(
+    { ...financial, branchName: 'J Merrill Financial', metaApiExecutionEnabled: false },
+    async () => { calls += 1; return { post: { id: 'unexpected' } }; },
+    'META_BRANCH_API_EXECUTION_DISABLED_RECONCILIATION_SKIPPED'
+  );
+
+  assert.deepEqual(result, { ok: false, state: 'META_BRANCH_API_EXECUTION_DISABLED_RECONCILIATION_SKIPPED' });
+  assert.equal(calls, 0);
+});
+
+test('enabled Financial Meta branch performs provider reconciliation', async () => {
+  const expected = { ...financial, branchName: 'J Merrill Financial', metaApiExecutionEnabled: true };
+  let reconciled;
+  const result = await runMetaOperationForBranch(expected, async (branch) => {
+    reconciled = branch;
+    return { ok: true, state: 'READBACK_COMPLETE' };
+  });
+
+  assert.equal(reconciled, expected);
+  assert.deepEqual(result, { ok: true, state: 'READBACK_COMPLETE' });
 });
 
 test('enabled Meta branch performs its normal authority verification', async () => {
