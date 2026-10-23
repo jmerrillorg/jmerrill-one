@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import test from 'node:test';
-import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, classifyDataverseExecutionRow, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, mapNativePublicationEvidencePackets, mapUnlinkedNativePublicationEvidencePackets, matchesApprovedLegacyNativeSocialContent, mergeNativeBookingObservations, mergeNativeScheduleEvidence, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, chunkValues, classifyDataverseExecutionRow, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, mapNativePublicationEvidencePackets, mapUnlinkedNativePublicationEvidencePackets, matchesApprovedLegacyNativeSocialContent, mergeNativeBookingObservations, mergeNativeScheduleEvidence, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 
 const channel = {
@@ -9,6 +9,14 @@ const channel = {
   executionOwner: 'AZURE_WORKER', nativeReadback: { state: 'VERIFIED', observedDateET: '2026-10-02' }
 };
 const base = { asOf: '2026-10-02T16:00:00Z', channels: [channel], items: [] };
+
+test('large campaign-key readback batches preserve every key within bounded request groups', () => {
+  const markers = Array.from({ length: 200 }, (_, index) => `campaign-${index}`);
+  const chunks = chunkValues(markers, 25);
+  assert.deepEqual(chunks.map((chunk) => chunk.length), Array(8).fill(25));
+  assert.deepEqual(chunks.flat(), markers);
+  assert.throws(() => chunkValues(markers, 0), /positive integer/);
+});
 
 test('default snapshot selection uses embedded native observation time, not filename order', () => {
   const channels = (observedAt) => Array.from({ length: 9 }, (_, index) => ({

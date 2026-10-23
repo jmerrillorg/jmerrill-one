@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, mapNativePublicationEvidencePackets, mapUnlinkedNativePublicationEvidencePackets, mergeNativeBookingObservations, mergeNativeScheduleEvidence, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
+import { applyCurrentFinancialProductionDestinations, buildCoverageDateChannelMatrix, buildDataverseReconciliationFindings, buildPreparationDateMatrix, buildSocialCoverageReadback, chunkValues, hasVerifiedFinancialProductionDestinations, mapDataverseSocialRows, mapNativePublicationEvidencePackets, mapUnlinkedNativePublicationEvidencePackets, mergeNativeBookingObservations, mergeNativeScheduleEvidence, nativeSocialApprovalProjection, partitionCurrentFinancialDestinationRows, queryDataversePages, reconcileNativeDataverseClaims, reconcilePastDueClaimsToPublishedEvidence, retainNativeEvidenceItems, selectLatestCoverageSnapshot } from './lib/social-coverage-readback.mjs';
 import { lifecycleSocialEligibilityForCampaignType } from '../runtime/jm1-marketing-autonomous-functions/src/lib/marketingLifecycle.js';
 import { matchesApprovedNativeSocialContent, nativeSocialScheduledAt } from '../runtime/jm1-marketing-autonomous-functions/src/lib/nativeSocialProgram.js';
 
@@ -98,21 +98,26 @@ if (process.argv.includes('--live-dataverse')) {
   const nativeMarkers = [...new Set(nativeCampaigns.map((campaign) =>
     campaign.jm1_idempotencykey?.replace(/:campaign$/, '')).filter(Boolean))];
   const nativeSource = { content: [], creatives: [], socialRows: [] };
-  for (const marker of nativeMarkers) {
-    const prefix = marker.replaceAll("'", "''");
+  const nativeMarkerBatches = chunkValues(nativeMarkers, 10);
+  const nativeSourceBatches = await Promise.all(nativeMarkerBatches.map(async (markers) => {
+    const prefixFilter = markers.map((item) =>
+      `startswith(jm1_idempotencykey,'${item.replaceAll("'", "''")}:')`).join(' or ');
     const [nativeContent, nativeCreatives, nativeSocialRows] = await Promise.all([
-      query('jm1_contentworks', 'jm1_contentworkid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_draftcopy,jm1_copybrief', `startswith(jm1_idempotencykey,'${prefix}:')`),
-      query('jm1_creativeworks', 'jm1_creativeworkid,jm1_idempotencykey,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_assethash', `startswith(jm1_idempotencykey,'${prefix}:')`),
-      query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_actualschedule,jm1_actualdestination,jm1_executor,jm1_verifiedat,jm1_captionversion,jm1_requestedmediahash,jm1_readbackstate', `startswith(jm1_idempotencykey,'${prefix}:')`)
+      query('jm1_contentworks', 'jm1_contentworkid,jm1_idempotencykey,jm1_name,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_draftcopy,jm1_copybrief', prefixFilter),
+      query('jm1_creativeworks', 'jm1_creativeworkid,jm1_idempotencykey,jm1_branch,jm1_stage,jm1_publicreadystate,jm1_assethash', prefixFilter),
+      query('jm1_socialexecutions', 'jm1_socialexecutionid,jm1_idempotencykey,jm1_branch,jm1_platform,jm1_status,jm1_requestedschedule,jm1_requesteddestination,jm1_actualschedule,jm1_actualdestination,jm1_executor,jm1_verifiedat,jm1_captionversion,jm1_requestedmediahash,jm1_readbackstate', prefixFilter)
     ]);
-    nativeSource.content.push(...nativeContent);
-    nativeSource.creatives.push(...nativeCreatives);
-    nativeSource.socialRows.push(...nativeSocialRows);
-  }
+    return { content: nativeContent, creatives: nativeCreatives, socialRows: nativeSocialRows };
+  }));
+  nativeSource.content.push(...nativeSourceBatches.flatMap((batch) => batch.content));
+  nativeSource.creatives.push(...nativeSourceBatches.flatMap((batch) => batch.creatives));
+  nativeSource.socialRows.push(...nativeSourceBatches.flatMap((batch) => batch.socialRows));
   const lifecycleMarkers = [...new Set(futureRows.map((row) => row.jm1_idempotencykey?.split(':social:')[0]).filter(Boolean))];
   const lifecycleCampaigns = lifecycleMarkers.length
-    ? await query('jm1_campaignauthorities', 'jm1_idempotencykey,jm1_campaigntype,jm1_state,jm1_name', lifecycleMarkers
-      .map((item) => `jm1_idempotencykey eq '${item.replaceAll("'", "''")}:campaign'`).join(' or '))
+    ? (await Promise.all(chunkValues(lifecycleMarkers, 25).map((markers) =>
+      query('jm1_campaignauthorities', 'jm1_idempotencykey,jm1_campaigntype,jm1_state,jm1_name', markers
+        .map((item) => `jm1_idempotencykey eq '${item.replaceAll("'", "''")}:campaign'`).join(' or ')))))
+      .flat()
     : [];
   const campaignPolicyByMarker = new Map(lifecycleCampaigns.map((campaign) => {
     const marker = campaign.jm1_idempotencykey?.replace(/:campaign$/, '');

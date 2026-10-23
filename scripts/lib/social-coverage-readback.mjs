@@ -1,5 +1,16 @@
 import { createHash } from 'node:crypto';
 
+export function chunkValues(values, chunkSize) {
+  if (!Array.isArray(values) || !Number.isInteger(chunkSize) || chunkSize < 1) {
+    throw new Error('Chunking requires an array and a positive integer size');
+  }
+  const chunks = [];
+  for (let index = 0; index < values.length; index += chunkSize) {
+    chunks.push(values.slice(index, index + chunkSize));
+  }
+  return chunks;
+}
+
 export function selectLatestCoverageSnapshot(candidates) {
   const valid = candidates.map((candidate) => {
     const observations = (candidate.snapshot.channels || [])
