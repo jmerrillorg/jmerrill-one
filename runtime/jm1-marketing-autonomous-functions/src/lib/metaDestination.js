@@ -22,8 +22,12 @@ export function metaBranchApiExecutionEnabled(expected) {
 }
 
 export async function verifyMetaAuthorityForBranch(expected, verifyAuthority) {
+  return runMetaOperationForBranch(expected, verifyAuthority);
+}
+
+export async function runMetaOperationForBranch(expected, operation, disabledState = 'META_BRANCH_API_EXECUTION_DISABLED') {
   if (!metaBranchApiExecutionEnabled(expected)) {
-    return { ok: false, state: 'META_BRANCH_API_EXECUTION_DISABLED' };
+    return { ok: false, state: disabledState };
   }
-  return verifyAuthority(expected);
+  return operation(expected);
 }
