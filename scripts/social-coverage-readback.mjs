@@ -39,6 +39,24 @@ if (publicationItems.length) {
 }
 snapshot.channels = mergeNativeScheduleEvidence(snapshot.channels,
   readEvidencePackets(snapshot.nativeScheduleEvidenceSources));
+// Replace only the observed account's schedule. Never refresh another channel or
+// carry old schedule details into a new observation.
+for (const observation of readEvidencePackets(snapshot.nativeScheduleListSources)) {
+  const channels = snapshot.channels.filter(c => c.brand === observation.brand
+    && c.platform === observation.platform && c.destinationId === observation.destinationId);
+  if (channels.length !== 1 || !observation.destinationId || !Number.isFinite(Date.parse(observation.observedAt))
+    || !Array.isArray(observation.visibleScheduledAtUtc)
+    || observation.visibleScheduledAtUtc.some(t => !Number.isFinite(Date.parse(t)))) {
+    throw new Error('Invalid native schedule list observation');
+  }
+  const channel = channels[0];
+  if (Date.parse(channel.nativeReadback?.observedAt) >= Date.parse(observation.observedAt)) continue;
+  channel.nativeReadback = { state: 'VERIFIED', requireTimestamp: true, observedAt: observation.observedAt,
+    observedDateET: new Intl.DateTimeFormat('en-CA', {timeZone:'America/New_York'}).format(new Date(observation.observedAt)),
+    view: channel.nativeReadback?.view, viewUrl: observation.viewUrl, rowCount: observation.visibleScheduledAtUtc.length,
+    authorObservations: observation.authorObservations,
+    visibleScheduledAtUtc: observation.visibleScheduledAtUtc, sourceEvidenceFile: observation._sourceEvidenceFile };
+}
 const financialDestinationOverlay = process.argv.includes('--current-financial-production-destinations');
 const financialProductionSnapshotVerified = hasVerifiedFinancialProductionDestinations(snapshot.channels);
 const metaReadbackArg = process.argv.find((arg) => arg.startsWith('--financial-meta-readback='));
@@ -201,6 +219,16 @@ if (process.argv.includes('--live-dataverse')) {
   reconciliationRows = allFutureRows;
   const mappedDataverse = mapDataverseSocialRows(allFutureRows, snapshot.channels);
   const sourceRowById = new Map(allFutureRows.map((row) => [row.jm1_socialexecutionid, row]));
+  // Attribute the native caption only to the existing receipt at that account and slot.
+  for (const item of mappedDataverse.mapped) {
+    if (item.kind !== 'NATIVE_BOOKING') continue;
+    const channel = snapshot.channels.find(c => c.brand === item.brand && c.platform === item.platform
+      && c.destinationId && c.destinationId === item.destinationId);
+    const observation = channel?.nativeReadback?.authorObservations?.find(o => o.receiptId === item.id
+      && Date.parse(o.scheduledAt) === Date.parse(item.scheduledAt)
+      && channel.nativeReadback.visibleScheduledAtUtc.includes(o.scheduledAt));
+    if (observation) Object.assign(item, {author: observation.author, theme: observation.theme});
+  }
   const currentById = new Map(current.map((row) => [row.id, row]));
   const mappedItems = mappedDataverse.mapped.map((item) => {
     const currentRow = currentById.get(item.id);

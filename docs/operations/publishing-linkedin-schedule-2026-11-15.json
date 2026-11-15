@@ -1,0 +1,34 @@
+{
+  "brand": "J Merrill Publishing",
+  "platform": "linkedin",
+  "destinationId": "13048648",
+  "observedAt": "2026-11-15T17:23:20Z",
+  "viewUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
+  "caption": "November Author of the Month: Kimberly Reeder. Discover Girl, Did You Know... ? and her author page in the J Merrill Publishing catalog:",
+  "link": "https://lnkd.in/g5C63bED",
+  "visibleScheduledAtUtc": [
+    "2026-11-17T16:00:00Z",
+    "2026-11-24T16:00:00Z",
+    "2026-11-30T16:00:00Z"
+  ],
+  "authorObservations": [
+    {
+      "receiptId": "c5152b43-30c3-f111-aaaf-6045bdd69435",
+      "scheduledAt": "2026-11-17T16:00:00Z",
+      "author": "Kimberly Reeder",
+      "theme": "AUTHOR_SPOTLIGHT"
+    },
+    {
+      "receiptId": "d6a7a746-30c3-f111-aaad-6045bdd39488",
+      "scheduledAt": "2026-11-24T16:00:00Z",
+      "author": "Kimberly Reeder",
+      "theme": "AUTHOR_SPOTLIGHT"
+    },
+    {
+      "receiptId": "5c649b9b-30c3-f111-aaaf-000d3a14673b",
+      "scheduledAt": "2026-11-30T16:00:00Z",
+      "author": "Kimberly Reeder",
+      "theme": "AUTHOR_SPOTLIGHT"
+    }
+  ]
+}
