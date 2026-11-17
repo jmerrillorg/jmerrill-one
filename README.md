@@ -40,9 +40,17 @@ content/
 All copy: `content/canon.ts` — edit here, updates everywhere.
 All tokens: `lib/tokens.ts` + `tailwind.config.ts`
 
-## Deployment — Azure Static Web Apps
+## Production deployment — Azure Premium App Service
 
-Framework: Next.js | Build: `npm run build` | Output: `.next`
+Production runs on the Premium App Service `app-jm1-one-prod-v2`. The protected
+GitHub Actions workflow `.github/workflows/azure-app-service-premium.yml`
+builds and deploys the Next.js application, then verifies the production health
+endpoint. Framework: Next.js | Build: `npm run build` | Output: `.next`.
+
+Azure Static Web Apps is retained as a **manual rollback path**, not the
+production deployment authority. Its workflow
+`.github/workflows/azure-static-web-apps.yml` is manually dispatched and
+requires a rollback reason.
 
 ## Phase 2 Next Steps
 
