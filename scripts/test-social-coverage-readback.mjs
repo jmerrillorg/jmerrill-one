@@ -69,6 +69,66 @@ test('date-channel matrix includes exact native detail without inventing schedul
   assert.equal(cell.nativeScheduleDetails[0].publicationId, null);
 });
 
+test('fresh LinkedIn schedule observations retain exact Dataverse booking references without counting duplicate claims', () => {
+  const destinationId = '13048648';
+  const scheduledAt = '2026-11-17T16:00:00Z';
+  const observedAt = '2026-11-17T14:59:00Z';
+  const observations = [
+    { receiptId: 'receipt-reeder-a', scheduledAt },
+    { receiptId: 'receipt-reeder-b', scheduledAt },
+    { receiptId: 'held-receipt', scheduledAt }
+  ];
+  const readback = { state: 'VERIFIED', requireTimestamp: true, observedAt,
+    observedDateET: '2026-11-17', visibleScheduledAtUtc: [scheduledAt], authorObservations: observations };
+  const channel = { brand: 'J Merrill Publishing', platform: 'linkedin', destinationId,
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: readback };
+  const booking = (id) => ({ id, kind: 'NATIVE_BOOKING', brand: channel.brand, platform: channel.platform,
+    destinationId, scheduledAt, status: 'NATIVE_BOOKED_VERIFIED', approvalState: 'UNKNOWN',
+    captionSha256: 'a'.repeat(64), mediaSha256: 'b'.repeat(64),
+    nativeEvidence: { source: 'LINKEDIN_NATIVE_UI', scheduleListOnly: true, scheduledAt,
+      destinationId, observedAt } });
+  const held = { id: 'held-receipt', kind: 'API_REQUEST', brand: channel.brand, platform: channel.platform,
+    destinationId, scheduledAt, status: 'HELD_NATIVE_BOOKING_CONFLICT', approvalState: 'HELD' };
+  const result = buildSocialCoverageReadback({ asOf: '2026-11-17T15:00:00Z', channels: [channel],
+    items: [booking('receipt-reeder-a'), booking('receipt-reeder-b'), held] });
+  const day = result.channels[0].dailyCoverage.find((item) => item.dateET === '2026-11-17');
+  assert.equal(day.status, 'SCHEDULED');
+  assert.equal(day.scheduledPlacementCount, 1);
+  assert.deepEqual(day.scheduledReceiptIds, ['receipt-reeder-a', 'receipt-reeder-b']);
+  assert.deepEqual(day.confirmedPlatformPostIds, []);
+  assert.ok(!day.scheduledReceiptIds.includes('held-receipt'));
+});
+
+test('stale LinkedIn list evidence cannot retain booking references and publication proof is separate', () => {
+  const destinationId = '13048648';
+  const scheduledAt = '2026-11-17T16:00:00Z';
+  const staleChannel = { brand: 'J Merrill Publishing', platform: 'linkedin', destinationId,
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+      observedAt: '2026-11-16T23:00:00Z', observedDateET: '2026-11-16',
+      visibleScheduledAtUtc: [scheduledAt], authorObservations: [{ receiptId: 'stale-receipt', scheduledAt }] } };
+  const staleItem = { id: 'stale-receipt', kind: 'NATIVE_BOOKING', brand: staleChannel.brand,
+    platform: staleChannel.platform, destinationId, scheduledAt, status: 'NATIVE_BOOKED_VERIFIED',
+    approvalState: 'UNKNOWN', nativeEvidence: { source: 'LINKEDIN_NATIVE_UI', scheduleListOnly: true,
+      scheduledAt, destinationId, observedAt: '2026-11-16T23:00:00Z' } };
+  const stale = buildSocialCoverageReadback({ asOf: '2026-11-17T15:00:00Z', channels: [staleChannel], items: [staleItem] })
+    .channels[0].dailyCoverage.find((item) => item.dateET === '2026-11-17');
+  assert.equal(stale.status, 'UNVERIFIED');
+  assert.deepEqual(stale.scheduledReceiptIds, []);
+
+  const publishedChannel = { brand: 'J Merrill Publishing', platform: 'linkedin', destinationId,
+    executionOwner: 'LINKEDIN_NATIVE', nativeReadback: { state: 'VERIFIED', requireTimestamp: true,
+      observedAt: '2026-11-17T21:19:00Z', observedDateET: '2026-11-17', visibleScheduledAtUtc: [], authorObservations: [] } };
+  const publication = { id: 'published-receipt', kind: 'PUBLISHED', brand: publishedChannel.brand,
+    platform: publishedChannel.platform, destinationId, scheduledAt, publishedAt: null,
+    publishedDateET: '2026-11-17', platformPostId: 'urn:li:activity:7528487149466226688',
+    nativeEvidence: { source: 'NATIVE_PLATFORM_PUBLICATION', observedAt: '2026-11-17T21:10:00Z' } };
+  const published = buildSocialCoverageReadback({ asOf: '2026-11-17T21:20:00Z', channels: [publishedChannel], items: [publication] })
+    .channels[0].dailyCoverage.find((item) => item.dateET === '2026-11-17');
+  assert.equal(published.status, 'PUBLISHED');
+  assert.deepEqual(published.scheduledReceiptIds, []);
+  assert.deepEqual(published.confirmedPlatformPostIds, ['urn:li:activity:7528487149466226688']);
+});
+
 test('native publication packets preserve exact source, observed time, destination, and single platform identity', () => {
   const [item] = mapNativePublicationEvidencePackets([{ publications: [{
     dataverseRecordId: 'record-1', brand: 'J Merrill Publishing', platform: 'linkedin',

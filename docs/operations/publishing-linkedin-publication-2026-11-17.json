@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-11-17T21:38:55Z",
+  "publications": [
+    {
+      "dataverseRecordId": "c5152b43-30c3-f111-aaaf-6045bdd69435",
+      "brand": "J Merrill Publishing",
+      "platform": "linkedin",
+      "requestedDestination": "13048648",
+      "actualDestination": "13048648",
+      "scheduledAt": "2026-11-17T16:00:00Z",
+      "publishedDateET": "2026-11-17",
+      "publishedAt": null,
+      "platformPostId": "urn:li:activity:7528487149466226688",
+      "captionSha256": "64f7ecf63e1f0a931529eb64370768f414730fa84bf277aab293e914f8754ac5",
+      "mediaSha256": null,
+      "observedAt": "2026-11-17T21:38:55Z",
+      "evidenceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7528487149466226688",
+      "source": "LINKEDIN_COMPANY_ADMIN_PUBLISHED_LIST_EXACT_CAPTION_AND_LINK",
+      "reconciliationNote": "Native Published list showed the exact author spotlight on Nov 17, 2026; Copy link returned this activity ID. LinkedIn did not expose the actual publication minute, native item ID, or separate booking ID."
+    }
+  ],
+  "receiptLinkage": {
+    "dataverseBookingReference": "c5152b43-30c3-f111-aaaf-6045bdd69435",
+    "platformPublicationId": "urn:li:activity:7528487149466226688",
+    "nativeBookingId": null,
+    "nativeItemId": null
+  }
+}

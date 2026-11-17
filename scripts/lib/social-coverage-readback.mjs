@@ -1261,6 +1261,26 @@ export function buildSocialCoverageReadback(snapshot) {
       const nativeListTimes = coverageProofValid ? visibleScheduleTimes.filter((slot) => easternDate(slot) === dateET) : [];
       const nativeListOnlyCount = nativeListTimes.filter((slot) =>
         !scheduled.some((item) => item.scheduledAt === slot)).length;
+      // A native list observation may be the only current booking proof when a
+      // Dataverse claim's older receipt is incomplete. Retain its Dataverse
+      // reference only when the observed receipt, exact destination and time
+      // resolve to one non-held booking row on this same fresh LinkedIn list.
+      const observedDataverseReceiptIds = coverageProofValid && channel.platform === 'linkedin'
+        ? (channel.nativeReadback?.authorObservations || []).flatMap((observation) => {
+          const scheduledAt = Date.parse(observation.scheduledAt || '');
+          if (!observation.receiptId || !Number.isFinite(scheduledAt)
+            || easternDate(scheduledAt) !== dateET
+            || !nativeListTimes.some((slot) => Date.parse(slot) === scheduledAt)) return [];
+          const matchingRows = related.filter((item) => item.id === observation.receiptId
+            && item.kind === 'NATIVE_BOOKING'
+            && matchesDestination(item, channel)
+            && Date.parse(item.scheduledAt || '') === scheduledAt
+            && item.nativeEvidence?.source === 'LINKEDIN_NATIVE_UI'
+            && item.nativeEvidence?.scheduleListOnly === true
+            && item.nativeEvidence?.destinationId === channel.destinationId
+            && item.nativeEvidence?.observedAt === channel.nativeReadback.observedAt);
+          return matchingRows.length === 1 ? [observation.receiptId] : [];
+        }) : [];
       const scheduledPlacementCount = scheduled.length + nativeListOnlyCount;
       const publications = publishedInWindow.filter((item) => publishedDateET(item) === dateET);
       const requests = apiRequests.filter((item) => item.scheduledAt && easternDate(item.scheduledAt) === dateET);
@@ -1284,7 +1304,7 @@ export function buildSocialCoverageReadback(snapshot) {
         status,
         requiredPlacements: 1,
         scheduledPlacementCount,
-        scheduledReceiptIds: scheduled.map((item) => item.id),
+        scheduledReceiptIds: [...new Set([...scheduled.map((item) => item.id), ...observedDataverseReceiptIds])].sort(),
         nativeObservedScheduledAtUtc: nativeListTimes,
         confirmedPublicationCount: publications.length,
         confirmedPlatformPostIds: publications.map((item) => item.platformPostId),

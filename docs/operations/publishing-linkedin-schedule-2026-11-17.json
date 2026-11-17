@@ -1,0 +1,48 @@
+{
+  "brand": "J Merrill Publishing",
+  "platform": "linkedin",
+  "destinationId": "13048648",
+  "observedAt": "2026-11-17T21:28:15Z",
+  "viewUrl": "https://www.linkedin.com/company/13048648/admin/page-posts/published/",
+  "view": "Company Page Admin > Page posts > native scheduled-post list",
+  "visibleScheduledAtUtc": [
+    "2026-11-24T16:00:00Z",
+    "2026-11-30T16:00:00Z"
+  ],
+  "authorObservations": [
+    {
+      "receiptId": "d6a7a746-30c3-f111-aaad-6045bdd39488",
+      "scheduledAt": "2026-11-24T16:00:00Z",
+      "author": "Kimberly Reeder",
+      "theme": "AUTHOR_SPOTLIGHT"
+    },
+    {
+      "receiptId": "5c649b9b-30c3-f111-aaaf-000d3a14673b",
+      "scheduledAt": "2026-11-30T16:00:00Z",
+      "author": "Kimberly Reeder",
+      "theme": "AUTHOR_SPOTLIGHT"
+    }
+  ],
+  "details": [
+    {
+      "brand": "J Merrill Publishing",
+      "platform": "linkedin",
+      "destination": "13048648",
+      "scheduledAt": "2026-11-24T16:00:00Z",
+      "observedAt": "2026-11-17T21:28:15Z",
+      "captionSha256": "64f7ecf63e1f0a931529eb64370768f414730fa84bf277aab293e914f8754ac5",
+      "mediaSha256": null,
+      "nativeItemId": null,
+      "nativeBookingId": null,
+      "publicationId": null,
+      "sourceEvidenceFile": "publishing-linkedin-schedule-2026-11-17.json",
+      "caption": "November Author of the Month: Kimberly Reeder. Discover Girl, Did You Know... ? and her author page in the J Merrill Publishing catalog:",
+      "link": "https://lnkd.in/g5C63bED"
+    }
+  ],
+  "disposition": {
+    "2026-11-17": "No longer listed in Scheduled; independently verified in Published after due time. See publication evidence packet.",
+    "2026-11-24": "Scheduled; exact detail readback verifies caption and catalog link.",
+    "2026-11-30": "Scheduled in current native list; native item ID and detail view not exposed in this observation."
+  }
+}
