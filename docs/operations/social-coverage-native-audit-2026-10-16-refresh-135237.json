@@ -1,4 +1,8 @@
 {
+  "nativeScheduleListSources": [
+    "publishing-linkedin-schedule-2026-11-15.json",
+    "publishing-linkedin-schedule-2026-11-17.json"
+  ],
   "version": 2,
   "asOf": "2026-10-16T13:37:31Z",
   "sourceSnapshotAsOf": "2026-10-16T13:37:31Z",
@@ -21,7 +25,8 @@
     "social-coverage-native-details-2026-10-16.json"
   ],
   "nativePublicationEvidenceSources": [
-    "one-oct15-publication-reconciliation-2026-10-16.json"
+    "one-oct15-publication-reconciliation-2026-10-16.json",
+    "publishing-linkedin-publication-2026-11-17.json"
   ],
   "channels": [
     {
