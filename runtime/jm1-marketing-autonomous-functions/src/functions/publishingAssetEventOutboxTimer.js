@@ -3,6 +3,7 @@ import { QueueServiceClient } from '@azure/storage-queue';
 import { dv } from '../lib/dataverse.js';
 import { withDistributedTimerLease } from '../lib/runtimeLease.js';
 import { runEnvelope } from '../lib/runtime.js';
+import { summarizeOutbox } from '../lib/publishingAssetEventOutboxTelemetry.js';
 
 const SOURCE_EVENT = 'TITLE_CLOSEOUT_APPROVED_STAGE_V1';
 const EMISSION_EVENT = 'PRODUCTION_ASSET_EVENT_EMITTED_V1';
@@ -14,12 +15,20 @@ app.timer('publishingAssetEventOutboxTimer', {
     await queue.createIfNotExists();
     const logs = (await dv(`/jm1_executionlogs?$select=jm1_executionlogid,jm1_name,jm1_actiontype,jm1_sourcerecordid,createdon&$filter=jm1_actiontype%20eq%20'${SOURCE_EVENT}'&$orderby=createdon%20asc&$top=100`)).value || [];
     const emitted = [];
+    const outcomes = [];
     for (const log of logs) {
       const marker = `${EMISSION_EVENT}:${log.jm1_executionlogid}`;
       const existing = (await dv(`/jm1_executionlogs?$select=jm1_executionlogid&$filter=${encodeURIComponent(`jm1_actiontype eq '${EMISSION_EVENT}' and jm1_name eq '${marker}'`)}&$top=1`)).value?.[0];
-      if (existing) continue;
+      if (existing) {
+        outcomes.push({ sourceExecutionLogId: log.jm1_executionlogid, disposition: 'ALREADY_EMITTED' });
+        continue;
+      }
       const event = await resolveAssetEvent(log);
-      if (!event) { context.warn(JSON.stringify({ event: 'PUBLISHING_ASSET_EVENT_NOT_EMITTED', executionLogId: log.jm1_executionlogid, reason: 'REQUIRED_ARTIFACT_LINEAGE_INCOMPLETE' })); continue; }
+      if (!event) {
+        outcomes.push({ sourceExecutionLogId: log.jm1_executionlogid, disposition: 'NOT_ELIGIBLE', reason: 'REQUIRED_ARTIFACT_LINEAGE_INCOMPLETE' });
+        context.warn(JSON.stringify({ event: 'PUBLISHING_ASSET_EVENT_NOT_EMITTED', sourceExecutionLogId: log.jm1_executionlogid, reason: 'REQUIRED_ARTIFACT_LINEAGE_INCOMPLETE' }));
+        continue;
+      }
       await queue.sendMessage(Buffer.from(JSON.stringify(event)).toString('base64'));
       const now = new Date().toISOString();
       await dv('/jm1_executionlogs', { method: 'POST', body: JSON.stringify({
@@ -29,8 +38,16 @@ app.timer('publishingAssetEventOutboxTimer', {
         jm1_sourceentity: 'jm1_executionlog', jm1_sourcerecordid: log.jm1_executionlogid
       }) });
       emitted.push({ eventId: event.eventId, canonicalWorkId: event.canonicalWorkId });
+      outcomes.push({ sourceExecutionLogId: log.jm1_executionlogid, disposition: 'EMITTED' });
     }
-    context.log(JSON.stringify({ event: 'PUBLISHING_ASSET_EVENT_OUTBOX', sourceEvent: SOURCE_EVENT, sourceRows: logs.length, emitted, routineFounderTouch: 0, routineCodyTouch: 0 }));
+    context.log(JSON.stringify({
+      event: 'PUBLISHING_ASSET_EVENT_OUTBOX',
+      sourceEvent: SOURCE_EVENT,
+      ...summarizeOutbox(logs.length, outcomes),
+      emitted,
+      routineFounderTouch: 0,
+      routineCodyTouch: 0
+    }));
   })
 });
 
